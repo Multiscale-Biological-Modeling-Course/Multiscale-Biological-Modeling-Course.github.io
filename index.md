@@ -6,7 +6,7 @@ toc: true
 
 ## Welcome to our course!
 
-Welcome to our free and open course in multiscale biological modeling!
+Welcome to our free and open course in biological modeling!
 
 That may seem like a mouthful. By "biological modeling" we mean that we are going to build models of biological systems that are relatively simple but nevertheless provide us with some deep insights into how those systems operate.
 
