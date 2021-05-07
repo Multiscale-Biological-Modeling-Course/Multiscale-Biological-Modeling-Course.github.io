@@ -2,6 +2,10 @@
 
 {% include seo.html %}
 
+<!-- Link to Google Analytics in analytics.html -->
+{% if jekyll.environment == 'production' %}
+{% include analytics.html %}
+{% endif %}
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
