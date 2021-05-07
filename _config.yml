@@ -28,7 +28,7 @@ remote_theme: mmistakes/minimal-mistakes
 # Outputting
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-# Google services
+# Google Analytics
 google_analytics: UA—173522486-1
 
 include:
