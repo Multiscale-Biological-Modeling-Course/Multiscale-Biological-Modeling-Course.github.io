@@ -2,11 +2,6 @@
 
 {% include seo.html %}
 
-<!-- Link to Google Analytics in analytics.html -->
-{% if site.google_analytics and jekyll.environment == 'production' %}
-{% include analytics.html %}
-{% endif %}
-
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -37,4 +32,9 @@
   {% for script in site.head_scripts %}
     <script src="{{ script | relative_url }}"></script>
   {% endfor %}
+{% endif %}
+
+<!-- Google analytics code -->
+{% if jekyll.environment == 'production' %}
+{% include analytics.html %}
 {% endif %}
