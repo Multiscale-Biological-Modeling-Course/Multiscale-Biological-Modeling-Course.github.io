@@ -44,7 +44,7 @@ This course was lovingly put together by a professor and a team of superlative s
 
 If you enjoy this course, then we would suggest some additional resources below.
 
-### MMBioS Training Workshops
+#### MMBioS Training Workshops
 
 If you are a biological modeling researcher and want to learn more about how the software resources presented here can be applied to your work, please check out the <a href="https://mmbios.pitt.edu/outreach/workshops" target="_blank">workshops</a> organized as part of the MMBioS project to which this course belongs.
 
@@ -54,13 +54,13 @@ In 2021, these workshops are going to be held online. Please find details regard
 
 * <a href="https://mmbios.pitt.edu/workshops/2021-workshops?id=247" target="_blank">Cell Modeling Workshop</a>: July 12 - July 16, 2021
 
-### Additional open educational materials in computational biology and programming
+#### Additional open educational materials in computational biology and programming
 
 If you are interested in additional open educational materials, we think you would love some of the other free education projects developed by the project founder, Phillip Compeau.  We list these resources below.
 
 * <a href="http://compeau.cbd.cmu.edu/programming-for-lovers/" target="_blank">Programming for Lovers</a>: An ongoing open course in introductory programming aimed at science students.
 
-* <a href="https://bioinformaticsalgorithms.org" target="_blank">Bioinformatics Algorithms: An Active Learning Approach</a>: A best-seller in its field, this textbook has been adopted by over 150 instructors around the world. It has also been used as the basis of the <a href="https://www.coursera.org/specializations/bioinformatics" target="_blank">Bioinformatics Specialization</a> on Coursera, which has reached hundreds of thousands of online learners. The text of the book is available for free on the textbook website.
+* <a href="https://bioinformaticsalgorithms.org" target="_blank">Bioinformatics Algorithms: An Active Learning Approach</a>: A best-seller in its field, this textbook has been adopted by over 170 instructors in 40 countries around the world. It has also been used as the basis of the <a href="https://www.coursera.org/specializations/bioinformatics" target="_blank">Bioinformatics Specialization</a> on Coursera, which has reached hundreds of thousands of online learners. The text of the book is available for free on the textbook website.
 
 * <a href="http://rosalind.info" target="_blank">Rosalind</a>: An open platform for learning bioinformatics independently through problem solving.
 
