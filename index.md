@@ -36,17 +36,27 @@ If you are an instructor who is interested in adopting any or all of these mater
 
 2. Get in touch with us using our [contact](contact) form so that we can add you to our list of adopting instructors and provide you with updates about the project in the future. We plan to build a community of instructors adopting this course.
 
-## Meet the team
+## Meet the team!
 
-This course was lovingly put together by a professor and a team of superlative students in Carnegie Mellon University's [Computational Biology Department](http://cbd.cmu.edu), one of seven departments within CMU's School of Computer Science. You can meet us on our [Meet the Team](meet-the-team) page.
+This course was lovingly put together by a professor and a team of superlative students in Carnegie Mellon University's [Computational Biology Department](http://cbd.cmu.edu). You can meet us on our [Meet the Team](meet-the-team) page.
 
 ## You might also enjoy...
 
 If you enjoy this course, then we would suggest some additional resources below.
 
-First, if you are a biological modeling researcher and want to learn more about how the software resources presented here can be applied to your work, please check out the <a href="https://mmbios.pitt.edu/outreach/workshops" target="_blank">workshops</a> organized as part of the MMBioS project to which this course belongs.
+### MMBioS Training Workshops
 
-Second, if you are interested in additional open educational materials, we think you would love some of the other free education projects developed by the project founder.  We list these resources below.
+If you are a biological modeling researcher and want to learn more about how the software resources presented here can be applied to your work, please check out the <a href="https://mmbios.pitt.edu/outreach/workshops" target="_blank">workshops</a> organized as part of the MMBioS project to which this course belongs.
+
+In 2021, these workshops are going to be held online. Please find details regarding the workshops below.
+
+* <a href="https://mmbios.pitt.edu/workshops/2021-workshops?id=245" target="_blank">Hands-on Workshop on Computational Biophysics</a>: June 28 – July 1, 2021
+
+* <a href="https://mmbios.pitt.edu/workshops/2021-workshops?id=247" target="_blank">Cell Modeling Workshop</a>: July 12 - July 16, 2021
+
+### Additional open educational materials in computational biology and programming
+
+If you are interested in additional open educational materials, we think you would love some of the other free education projects developed by the project founder, Phillip Compeau.  We list these resources below.
 
 * <a href="http://compeau.cbd.cmu.edu/programming-for-lovers/" target="_blank">Programming for Lovers</a>: An ongoing open course in introductory programming aimed at science students.
 
