@@ -69,6 +69,9 @@ The above results seem to indicate that the interaction between SARS-CoV-2 RBD a
 **STOP:** First, compute the total energy of the SARS-CoV RBD complex with ACE2 (PDB entry: <a href="https://www.rcsb.org/structure/2AJF" target="_blank">2ajf</a>). How does it compare against the energy of the SARS-CoV-2 complex? Then, compute the energy contributed by hotspot 31 and hotspot 353 in SARS-CoV-2, as well as that of the regions corresponding to these regions and the loop region in SARS-CoV. (Consult the table below as needed.) How do the energy contributions of corresponding regions compare? Is this surprising, and what can we conclude?
 {: .notice--primary}
 
+**Note:** In the table below, "chain B" is part of the ACE2 enzyme, and "chain F" is part of the viral spike protein RBD for the virus indicated.
+{: .notice--warning}
+
 |Model|Region|Selection 1|Selection 2|
 |:----|:-----|:----------|:----------|
 |SARS-CoV-2 (6vw1)| Total | protein and chain B | protein and chain F|
@@ -83,8 +86,6 @@ The above results seem to indicate that the interaction between SARS-CoV-2 RBD a
 |SARS-CoV-2 (6vw1)| Hotspot353 | protein and chain B and (resid 38 or resid 353)| protein and chain F|
 |SARS-CoV (2ajf)| Hotspot353 | protein and chain B | protein and chain F and resid 487|
 |SARS-CoV (2ajf)| Hotspot353 | protein and chain B and (resid 38 or resid 353)| protein and chain F|
-
-*Note:* Chain B refers to ACE2 and Chain F refers to RBD
 
 [Return to main text](NAMD#differences-in-interaction-energy-with-ace2-between-sars-and-sars-cov-2){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

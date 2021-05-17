@@ -206,9 +206,9 @@ As explained above, the SSGCID models of the S protein released by <a href="http
 |SSGCID4|2.0854|2.047|
 |SSGCID5|4.9636|4.6443|
 
-**STOP:** Consider the following three questions.<br><br>
+**STOP:** Consider the following two questions.<br><br>
 First, note that SSGCID3 modeled a single chain more accurately, but SSGCID4 modeled a more accurate full protein. What do you think might have caused this?<br><br>
-Second, why do you think that the full protein RMSD values are so close to the single chain values?<br><br>
+Second, why do you think that the full protein RMSD values are so close to the single chain values?
 {: .notice--primary}
 
 As we might expect due to their access to the resources of thousands of users' computers, the SSGCID models outperform our SWISS-MODEL models. But it is also worth noting that their RMSD values are not as close to zero as we might expect, even with access to hundreds of contributors' computational resources. Is protein structure prediction a hopeless problem?

@@ -149,7 +149,7 @@ you are interested in an online course covering some of them, then check out the
 
 Thus concludes the third module of this course. In the course's final module, we will turn our attention to a very different type of problem. To fight a virus like SARS, your body employs a cavalry of white blood cells. Maintaining healthy levels of these cells is vital to a strong immune system, and blood reports run counts of these cells to ensure they are within normal ranges. Can we teach a computer to run this analysis automatically?
 
-We hope you will join us to find out!
+We hope you will join us to find out! (New module coming soon.)
 
 <!--
 A Mutating Virus
