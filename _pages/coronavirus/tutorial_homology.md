@@ -14,12 +14,12 @@ The details of how the three software resources presented in this lesson *differ
 ## SWISS-MODEL
 To run SWISS-MODEL, first download the sequence of the spike protein chain: <a href="../_pages/coronavirus/files/CoV2SpikeProteinSeq.txt" download>SARS-CoV-2 spike protein chain</a>.
 
-Next, go to the main <a href="https://swissmodel.expasy.org/" target="_blank">SWISS-MODEL website</a> and click on `Start Modelling`.
+Next, go to the main <a href="https://swissmodel.expasy.org/" target="_blank">SWISS-MODEL website</a> and click `Start Modelling`.
 
 ![image-center](../assets/images/SWISS1.png){: .align-center}
 {: style="font-size: medium;"}
 
-On the next page, copy and paste the sequence into the `Target Sequence(s):` box. Name your project and enter an email address to get a notification of when your results are ready. Finally, click on `Build Model` to submit the job request. Note that you do not need to specify that you want to use the SARS-CoV spike protein as a template because the software will automatically search for a template for you.
+On the next page, copy and paste the sequence into the `Target Sequence(s):` box. Name your project and enter an email address to get a notification of when your results are ready. Finally, click `Build Model` to submit the job request. Note that you do not need to specify that you want to use the SARS-CoV spike protein as a template because the software will automatically search for a template for you.
 
 ![image-center](../assets/images/SWISS2.png){: .align-center}
 {: style="font-size: medium;"}
@@ -42,7 +42,7 @@ Next, visit <a href="https://robetta.bakerlab.org/" target="_blank">Robetta</a> 
 ![image-center](../assets/images/Robetta1.png){: .align-center}
 {: style="font-size: medium;"}
 
-Then, click on `Structure Prediction > Submit`.
+Then, click `Structure Prediction > Submit`.
 
 ![image-center](../assets/images/Robetta2.png){: .align-center}
 {: style="font-size: medium;"}
@@ -62,7 +62,7 @@ Because GalaxyWEB has a sequence limit of 1000 amino acids, we cannot use the en
 
 First, <a href="../_pages/coronavirus/files/CoV2SpikeRBDSeq.txt" download>download</a> the sequence of the RBD.
 
-Then, visit the <a href="http://galaxy.seoklab.org/" target="_blank">GalaxyWEB</a> homepage. At the top, click on `Services > TBM`.
+Then, visit the <a href="http://galaxy.seoklab.org/" target="_blank">GalaxyWEB</a> homepage. At the top, click `Services > TBM`.
 
 ![image-center](../assets/images/Galaxy1.png){: .align-center}
 {: style="font-size: medium;"}

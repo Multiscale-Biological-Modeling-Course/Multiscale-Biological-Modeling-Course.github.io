@@ -12,7 +12,7 @@ We will first visit `CellBlender > Molecules` and create the *B* molecules, as s
 
 ![image-center](../assets/images/motifs_norm1.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Select a color (such as red).
 3. Name the molecule `B`.
 4. Under `molecule type`, select `surface molecule`.
@@ -31,7 +31,7 @@ Now visit `CellBlender > Molecule Placement` to set the following sites for rele
 
 ![image-center](../assets/images/motifs_norm3.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Select or type in the molecule `Hidden`.
 3. Type in the name of the Object/Region `Plane`.
 4. Set the Quantity to Release as `1000`.
@@ -88,9 +88,9 @@ We are going to release an initial collection of *B* particles in a cluster in t
 
 Locate the `Outliner` pane on the top-right of the Blender screen. On the left of the view button in the Outliner pane, there is a code tree icon.
 
-Click on this icon and choose `Text Editor`. To create a new file for our code, click the `+` button. Copy and paste the code into the text editor and save it with the name `pred-center.py`.
+Click this icon and choose `Text Editor`. To create a new file for our code, click the `+` button. Copy and paste the code into the text editor and save it with the name `pred-center.py`.
 
-Next visit `CellBlender > Scripting > Data-Model Scripting > Run Script`, as shown in the following screenshot. Select `Internal` from the Data-Model Scripting menu and click the refresh button. Click on the filename entry area next to `File` and enter `pred_center.py`. Click on `Run Script` to execute
+Next visit `CellBlender > Scripting > Data-Model Scripting > Run Script`, as shown in the following screenshot. Select `Internal` from the Data-Model Scripting menu and click the refresh button. Click the filename entry area next to `File` and enter `pred_center.py`. Click `Run Script` to execute
 
 ![image-center](../assets/images/outliner_script.PNG){: .align-center}
 
@@ -100,7 +100,7 @@ Next go to `CellBlender > Reactions` to create the reactions that will drive the
 
 ![image-center](../assets/images/motifs_norm4.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Under reactants, type `Hidden;` (**note:** the semi-colon is important).
 3. Under products, type `Hidden; + A;`
 4. Set the forward rate as `1e5`.
@@ -123,7 +123,7 @@ We are now ready to run our simulation. To do so, visit `CellBlender > Run Simul
 
 Once the run is complete, save your file.
 
-We can also now visualize our simulation. Click on `CellBlender > Reload Visualization Data`. You have the option of watching the animation within the Blender window by clicking the play button at the bottom of the screen.
+We can also now visualize our simulation. Click `CellBlender > Reload Visualization Data`. You have the option of watching the animation within the Blender window by clicking the play button at the bottom of the screen.
 
 ![image-center](../assets/images/motifs_norm8.png){: .align-center}
 
@@ -131,11 +131,11 @@ If you like, you can export this animation by using the following steps:
 
 ![image-center](../assets/images/cellblender_render.png){: .align-center}
 
-1. Click on the `movie` tab.
+1. Click the `movie` tab.
 2. Scroll down to the file name.
 3. Select a suitable location for the file.
 4. Select the file type you would like (we suggest FFmpeg_video).
-5. Click on `Render > OpenGL Render Animation`.
+5. Click `Render > OpenGL Render Animation`.
 
 The movie will begin playing, and when the animation is complete, the movie file should be in the folder location you selected.
 

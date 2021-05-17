@@ -15,7 +15,7 @@ Go to `CellBlender > Molecules` and create the following molecules:
 
 ![image-center](../assets/images/motifs_norm1.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Select a color (such as white).
 3. Name the molecule `X1`.
 4. Select the molecule type as `Surface Molecule`.
@@ -36,7 +36,7 @@ Now go to `CellBlender > Molecule Placement` to set the following release sites 
 
 ![image-center](../assets/images/motifs_norm3.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Select or type in the molecule `X1`.
 3. Type in the name of the Object/Region `Plane`.
 4. Set the Quantity to Release as `300`.
@@ -52,7 +52,7 @@ Next go to `CellBlender > Reactions` to create the following reactions:
 
 ![image-center](../assets/images/motifs_norm4.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Under reactants, type `X1’` (note the apostrophe).
 3. Under products, type `X1’ + Z1’`.
 4. Set the forward rate as `4e2`.
@@ -73,7 +73,7 @@ Go to `CellBlender > Plot Output Settings` to set up a plot as follows:
 
 ![image-center](../assets/images/motifs_norm6.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Set the molecule name as `Z1`.
 3. Ensure `World` is selected.
 4. Ensure `Java Plotter` is selected.

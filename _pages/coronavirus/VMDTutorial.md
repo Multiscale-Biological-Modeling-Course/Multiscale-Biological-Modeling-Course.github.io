@@ -1,7 +1,7 @@
 ---
 permalink: /coronavirus/VMDTutorial
 title: "VMD Tutorial"
-sidebar: 
+sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
@@ -13,16 +13,16 @@ This is a short tutorial on how to use VMD to visualize molecules and perform so
 
 These steps will be on how to load molecules into VMD. We will use the example of 6vw1.
 
-Download the protein structure of <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> from the protein data bank. 
+Download the protein structure of <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> from the protein data bank.
 
 <img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge0.png">
 
-Next we can launch VMD and load the molecule into the program. In *VMD Main*, go to *File>New Molecule*. Click on *Browse*, select the molecule (6vw1.pdb) and click *Load*. 
+Next we can launch VMD and load the molecule into the program. In `VMD Main`, navigate to `File > New Molecule`. Click `Browse`, select the molecule (`6vw1.pdb`) and click `Load`.
 
 <img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge1.png">
 <img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge2.png">
 
-The molecule should now be listed in *VMD Main* as well as the visualization in the *OpenGL Display*.
+The molecule should now be listed in `VMD Main` as well as the visualization in the `OpenGL Display`.
 
 <img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge3.png">
 
@@ -50,4 +50,3 @@ The end result should look like this:
 </details>
 
 <hr>
-

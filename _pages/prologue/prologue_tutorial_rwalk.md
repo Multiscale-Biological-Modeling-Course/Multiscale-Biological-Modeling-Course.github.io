@@ -29,7 +29,7 @@ Second, once Blender is downloaded,  the file path may be different from what is
 From a new Blender file, initialize CellBlender. Delete the existing default cube by right-clicking on the cube to select the cube (an orange outline should be around the cube when it is selected) and pressing the “x” key to delete. Then, in the tab `CellBlender > Model Objects`, insert a new plane, following the figure below.
 
 ![image-center](../assets/images/motifs_setup1.png){: .align-center}
-In `CellBlender > Model Objects`, click on the `+` symbol to center the cursor. Next press the square “plane” button to create the object. To have CellBlender recognize this object as a model object, press the `+` button. The name of this object is `Plane` by default, although you can change this name and edit the color by selecting the color wheel if you like. A slightly transparent coloring will help with visibility but is not necessary.
+In `CellBlender > Model Objects`, click the `+` symbol to center the cursor. Next press the square “plane” button to create the object. To have CellBlender recognize this object as a model object, press the `+` button. The name of this object is `Plane` by default, although you can change this name and edit the color by selecting the color wheel if you like. A slightly transparent coloring will help with visibility but is not necessary.
 {: style="font-size: medium;"}
 
 Resizing the render preview window so that objects are visible in the center of the screen is recommended. See the following figure for instructions. Then save your file as `CellBlender_Tutorial_Template.blend`.
@@ -44,7 +44,7 @@ This section will provide images and descriptions for the different components o
 
 ![image-center](../assets/images/motifs_nav1.png){: .align-center}
 
-**A:** This is the window for modules like CellBlender. To start CellBlender, you must click on the `CellBlender` tab and then click the `Initialize CellBlender` button as shown in the image. This will then display the image shown as “D” in the figure below.
+**A:** This is the window for modules like CellBlender. To start CellBlender, you must click the `CellBlender` tab and then click the `Initialize CellBlender` button as shown in the image. This will then display the image shown as “D” in the figure below.
 
 **B:** There are many `View` tabs throughout the Blender window. Any future tutorials referring to the `View` tab are referencing this tab.
 
@@ -60,13 +60,13 @@ In CellBlender, load the `CellBlender_Tutorial_Template.blend` file from the pre
 
 ![image-center](../assets/images/cellblender_location.png){: .align-center}
 
-Right click on the plane object to ensure it is selected. Visit the object parameters menu (the orange cube) and move the plane by setting the third `location` value to 1.0 instead of 0.0.
+Right click the plane object to ensure it is selected. Visit the object parameters menu (the orange cube) and move the plane by setting the third `location` value to 1.0 instead of 0.0.
 
 Then select `CellBlender > Molecules` and create the following molecules:
 
 ![image-center](../assets/images/motifs_norm1.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Select a color (such as orange).
 3. Name the molecule `X`.
 4. Select the molecule type as `Surface Molecule`.
@@ -77,7 +77,7 @@ Now visit `CellBlender > Molecule Placement` to set the following sites for mole
 
 ![image-center](../assets/images/motifs_norm3.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Select or type in the molecule `X`.
 3. Type in the name of the Object/Region `Plane`.
 4. Set the Quantity to Release as `1`.
@@ -98,11 +98,11 @@ You can also save and export the movie of your animation using the following ste
 
 ![image-center](../assets/images/cellblender_render.png){: .align-center}
 
-1. Click on the movie tab.
+1. Click the movie tab.
 2. Scroll down to the file name.
 3. Select a suitable location for your file.
 4. Select your favorite file format (we suggest FFmpeg_video).
-5. Click on `Render > OpenGL Render Animation`.
+5. Click `Render > OpenGL Render Animation`.
 
 The movie will begin playing, and when the animation is complete, the movie file should be found in the folder location you selected.
 

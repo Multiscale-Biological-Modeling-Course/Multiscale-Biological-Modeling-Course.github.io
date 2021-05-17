@@ -21,7 +21,7 @@ Next go to `CellBlender > Run Simulation` and ensure that the following options 
 2. Ensure the time step is set as `1e-6`.
 3. Click `Export & Run`.
 
-Click on `CellBlender > Reload Visualization Data`. You have the option of watching the animation within the Blender window by clicking the play button at the bottom of the screen.
+Click `CellBlender > Reload Visualization Data`. You have the option of watching the animation within the Blender window by clicking the play button at the bottom of the screen.
 
 ![image-center](../assets/images/motifs_norm8.png){: .align-center}
 

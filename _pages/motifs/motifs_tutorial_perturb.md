@@ -113,7 +113,7 @@ simulate_nf({t_end=>.06,n_steps=>60000});
 
 Then, save your file.
 
-On the right-hand side, click on `Simulation > Run` to run the simulation. After the simulation is complete, a new window will appear showing the plotted graph. As we can see, this appears to be the same behavior as the CellBlender plot but with a much cleaner pattern (this is because we do not have the noise incurred by having individual particles).
+On the right-hand side, click `Simulation > Run` to run the simulation. After the simulation is complete, a new window will appear showing the plotted graph. As we can see, this appears to be the same behavior as the CellBlender plot but with a much cleaner pattern (this is because we do not have the noise incurred by having individual particles).
 
 We will now perturb the file and test the robustness of this oscillator model.
 
@@ -169,7 +169,7 @@ Finally, add the following to `reaction rules`.  These rules act as a delayed sp
  b() -> y(Y~U) r10
 ~~~
 
-On the right side of the window, click on `Simulation > Run`. After the simulation is complete, a new window will appear showing the plotted graph.
+On the right side of the window, click `Simulation > Run`. After the simulation is complete, a new window will appear showing the plotted graph.
 
 Can you break the oscillator model, or is it just too robust? We recommend playing around with the reaction rules for `b()` -- which other species could it produce? You could also adjust the starting quantities for `a(Y~U~P)` or change the rate at which the `delay()` molecule decays.
 

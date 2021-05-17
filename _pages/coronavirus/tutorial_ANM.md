@@ -24,7 +24,7 @@ We want to focus only on the RBD of SARS-CoV-2, so we need to choose a new selec
 ![image-center](../assets/images/ANM3.png){: .align-center}
 {: style="font-size: medium;"}
 
-**Important Note:** Let the program run and do not click on any of the VMD windows, as clicking on windows may cause the program to crash or become unresponsive. The job can take from a few seconds to a couple minutes. When the job is completed, you will see a new window `NMWiz - 6vw1_anm ...` and the cross=correlation heatmap appear.
+**Important Note:** Let the program run and do not click any of the VMD windows, as this may cause the program to crash or become unresponsive. The job can take from a few seconds to a couple minutes. When the job is completed, you will see a new window `NMWiz - 6vw1_anm ...` and the cross=correlation heatmap appear.
 {: .notice--warning}
 
 ![image-center](../assets/images/ANM4.png){: .align-center}

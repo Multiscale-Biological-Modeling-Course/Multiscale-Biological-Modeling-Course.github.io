@@ -22,7 +22,7 @@ The file `6vw1.pdb` contains two biological assemblies of the complex. The first
 
 We will first add chain B, from the ACE2 enzyme, and color it green.
 
-* `Selected Atoms` allows you to select specific parts of the molecule. The keyword `all` selects all atoms in the file, and so replace `all` with `chain B`. Then, click on `Apply`. (In general, to choose a specific chain, use the expression `chain X`, where `X` is the chain of interest. To choose a specific residue (i.e., amino acid), use the keyword `resid #`. Expressions can be combined using the keywords `and` and `or`, and more complicated selections need parentheses.
+* `Selected Atoms` allows you to select specific parts of the molecule. The keyword `all` selects all atoms in the file, and so replace `all` with `chain B`. Then, click `Apply`. (In general, to choose a specific chain, use the expression `chain X`, where `X` is the chain of interest. To choose a specific residue (i.e., amino acid), use the keyword `resid #`. Expressions can be combined using the keywords `and` and `or`, and more complicated selections need parentheses.
 
 * `Coloring Method` allows you to change the coloring method of the selected atoms. This includes coloring based on element, amino acid residue, and many more. To choose a specific color, select `ColorID`. A drop-down list will appear to color selection. Choose "7" to select green.
 
@@ -36,7 +36,7 @@ At this point, your `OpenGL Display` window should look like the following:
 ![image-center](../assets/images/Ridge6.png){: .align-center}
 {: style="font-size: medium;"}
 
-We next add chain F, from the SARS-CoV-2 chimeric RBD, and color it purple. Click on `Create Rep`, which will duplicate the previous representation. Then, change `Selected Atoms` to `chain F` and `ColoringID` to "11" to color the chain purple. Make sure your other selections are as follows:
+We next add chain F, from the SARS-CoV-2 chimeric RBD, and color it purple. Click `Create Rep`, which will duplicate the previous representation. Then, change `Selected Atoms` to `chain F` and `ColoringID` to "11" to color the chain purple. Make sure your other selections are as follows:
 
 ![image-center](../assets/images/Ridge7.png){: .align-center}
 {: style="font-size: medium;"}
@@ -48,7 +48,7 @@ You should now see two distinct colored structures!
 
 We can also change our visualization to target specific amino acids by creating another representation and specifying the amino acid with the keyword `resid` followed by the position of this amino acid residue.
 
-For example, say that we are interested in residue 486 in the RBD (which is phenylalanine). Click on `Create Rep`. In the new representation, change `Selected Atoms` to `chain F and resid 486` and click `Apply`. Then change the `Coloring Method` to `ColorID` and `4`. Finally, change the `Drawing Method` to `Licorice`.
+For example, say that we are interested in residue 486 in the RBD (which is phenylalanine). Click `Create Rep`. In the new representation, change `Selected Atoms` to `chain F and resid 486` and click `Apply`. Then change the `Coloring Method` to `ColorID` and `4`. Finally, change the `Drawing Method` to `Licorice`.
 
 ![image-center](../assets/images/Ridge8-1.png){: .align-center}
 {: style="font-size: medium;"}

@@ -15,7 +15,7 @@ Multiseq aligns two protein structures using a tool called **Structural Alignmen
 
 For this tutorial, first <a href="https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD" target="_blank">download VMD</a>. Throughout this tutorial, the program may prompt you to download additional protein database information, which you should accept.
 
-We will need to download the `.pdb` files for 6vw1 and 2ajf. Visit the <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> and <a href="https://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a> PDB pages. For each protein,  click on `Download Files` and select `PDB Format`. The following figure shows this for 6vw1.
+We will need to download the `.pdb` files for 6vw1 and 2ajf. Visit the <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> and <a href="https://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a> PDB pages. For each protein,  click `Download Files` and select `PDB Format`. The following figure shows this for 6vw1.
 
 ![image-center](../assets/images/Ridge0.png){: .align-center}
 {: style="font-size: medium;"}
@@ -24,7 +24,7 @@ We will need to download the `.pdb` files for 6vw1 and 2ajf. Visit the <a href="
 
 Next, launch VMD, which will open three windows. We will not use `VMD.exe`, the console window, in this tutorial. We will load molecules and change visualizations in `VMD Main`. Finally, we will use `OpenGL Display` to display our visualizations.
 
-We will first load the SARS-CoV-2 RBD (6vw1) into VMD. In `VMD Main`, go to `File > New Molecule`. Click on `Browse`, select your downloaded file (`6vw1.pdb`) and click `Load`.
+We will first load the SARS-CoV-2 RBD (6vw1) into VMD. In `VMD Main`, go to `File > New Molecule`. Click `Browse`, select your downloaded file (`6vw1.pdb`) and click `Load`.
 
 ![image-center](../assets/images/Ridge1.png){: .align-center}
 {: style="font-size: medium;"}

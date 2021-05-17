@@ -9,13 +9,13 @@ toc_sticky: true
 
 ### Implementing simple regulation in CellBlender
 
-In this tutorial, we will compare simple against negative autoregulation using a particle-based simulation in CellBlender. We will start with simple regulation; first, load your `CellBlender_Tutorial_Template.blend` file from the [Random Walk Tutorial](../prologue/tutorial-random-walk). Save this file as `NAR_comparison.blend`. You may also download the completed tutorial files <a href="../tutorials/NAR_compare_unequal.blend" download="NAR_compare_unequal.blend">here</a>. 
+In this tutorial, we will compare simple against negative autoregulation using a particle-based simulation in CellBlender. We will start with simple regulation; first, load your `CellBlender_Tutorial_Template.blend` file from the [Random Walk Tutorial](../prologue/tutorial-random-walk). Save this file as `NAR_comparison.blend`. You may also download the completed tutorial files <a href="../tutorials/NAR_compare_unequal.blend" download="NAR_compare_unequal.blend">here</a>.
 
 Then go to `CellBlender > Molecules` and create the following molecules:
 
 ![image-center](../assets/images/motifs_norm1.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Select a color (such as yellow).
 3. Name the molecule `Y1`.
 4. Select the molecule type as `Surface Molecule`.
@@ -33,7 +33,7 @@ Now go to `CellBlender > Molecule Placement` to set the following sites to relea
 
 ![image-center](../assets/images/motifs_norm3.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Select or type in the molecule `X1`.
 3. Type in the name of the Object/Region `Plane`.
 4. Set the Quantity to Release as `300`.
@@ -42,7 +42,7 @@ Finally, we set reactions. Go to `CellBlender > Reactions` and define the follow
 
 ![image-center](../assets/images/motifs_norm4.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Under reactants, type `X1’` (note the apostrophe).
 3. Under products, type `X1’ + Y1’`.
 4. Set the forward rate as `2e2`.
@@ -58,7 +58,7 @@ Go to `CellBlender > Plot Output Settings` to ensure that we will be able to plo
 
 ![image-center](../assets/images/motifs_norm6.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Set the molecule name as `Y1`.
 3. Ensure `World` is selected.
 4. Ensure `Java Plotter` is selected.
@@ -95,7 +95,7 @@ Go to `CellBlender > Molecules` and create the following molecules:
 
 ![image-center](../assets/images/motifs_norm1.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Select a color (such as yellow).
 3. Name the molecule `Y2`.
 4. Select the molecule type as `Surface Molecule`.
@@ -115,7 +115,7 @@ Now go to `CellBlender > Molecule Placement` to set the following molecule relea
 
 ![image-center](../assets/images/motifs_norm3.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Select or type in the molecule `X2`.
 3. Type in the name of the Object/Region `Plane`.
 4. Set the Quantity to Release as `300`.
@@ -131,7 +131,7 @@ Next go to `CellBlender > Reactions` to create the following reactions:
 
 ![image-center](../assets/images/motifs_norm4.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Under reactants, type `X2’` (the apostrophe is important).
 3. Under products, type `X2’ + Y2’`.
 4. Set the forward rate as `2e2`.
@@ -150,7 +150,7 @@ Go to `CellBlender > Plot Output Settings` to set up a plot as follows:
 
 ![image-center](../assets/images/motifs_norm6.png){: .align-center}
 
-1. Click on the `+` button.
+1. Click the `+` button.
 2. Set the molecule name as `Y2`.
 3. Ensure `World` is selected.
 4. Ensure `Java Plotter` is selected.
@@ -172,7 +172,7 @@ We are now ready to run the simulation comparing simple regulation and negative 
 2. Ensure the time step is set as `1e-6`.
 3. Click `Export & Run`.
 
-Click on `CellBlender > Reload Visualization Data` to visualize the result of the simulation.
+Click `CellBlender > Reload Visualization Data` to visualize the result of the simulation.
 
 ![image-center](../assets/images/motifs_norm8.png){: .align-center}
 
