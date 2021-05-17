@@ -113,13 +113,13 @@ For bimolecular reactions, the rate constant should have unit M<sup>-1</sup>s<su
 Although the specific numbers of cellular components vary among each bacterium, the components in chemotaxis pathway follows a relatively constant ratio. For all the simulations in this tutorial, we assign the initial number for each molecule and reaction rate by first deciding a reasonable range based on *in vivo* quantities [^Li2004][^Spiro1997][^Stock1991]. Our parameters are summarized below.
 
 ~~~ ruby
-	begin parameters
-		NaV 6.02e8    #Unit conversion M -> #/µm^3
-		L0 1e4        #number of ligand molecules
-		T0 7000       #number of receptor complexes
-		k_lr_bind 8.8e6/NaV   #ligand-receptor binding
-		k_lr_dis 35           #ligand-receptor dissociation
-	end parameters
+begin parameters
+	NaV 6.02e8    #Unit conversion M -> #/µm^3
+	L0 1e4        #number of ligand molecules
+	T0 7000       #number of receptor complexes
+	k_lr_bind 8.8e6/NaV   #ligand-receptor binding
+	k_lr_dis 35           #ligand-receptor dissociation
+end parameters
 ~~~
 
 **Important note:** The `parameters` section has to appear before the `reaction rules` section.
