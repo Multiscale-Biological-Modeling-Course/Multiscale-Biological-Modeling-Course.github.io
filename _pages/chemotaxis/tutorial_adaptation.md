@@ -26,14 +26,14 @@ We first will add all molecules needed for our model. As mentioned in the main t
 Furthermore, we need to represent CheR and CheB; recall that CheR binds to and methylates receptor complexes, while CheB demethylates them. CheR can bind to `T`, so that we will need the molecule `CheR(t)`. CheB is phosphorylated by CheY, and so it will be represented as `CheB(Phos~U~P)`. Later we will specify reactions specifying how CheR and CheB change the methylation states of receptor complexes.
 
 ~~~ ruby
-	begin molecule types
-		L(t)
-		T(l,r,Meth~A~B~C,Phos~U~P)
-		CheY(Phos~U~P)
-		CheZ()
-		CheB(Phos~U~P)
-		CheR(t)
-	end molecule types
+begin molecule types
+	L(t)
+	T(l,r,Meth~A~B~C,Phos~U~P)
+	CheY(Phos~U~P)
+	CheZ()
+	CheB(Phos~U~P)
+	CheR(t)
+end molecule types
 ~~~
 
 In the `observable` section, we specify that we are interested in tracking the concentrations of the bound ligand, phosphorylated CheY and CheB, and the receptor at each methylation level.
