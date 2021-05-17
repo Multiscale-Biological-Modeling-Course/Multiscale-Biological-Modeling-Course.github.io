@@ -57,14 +57,14 @@ To specify our model, add `begin model` and `end model`. Everything below regard
 We first add ligand and receptor molecules to our model under a `molecule types` section. Recall from the main text that we will call these molecules `L(t)` and `T(l)`.  
 
 ~~~ ruby
-	begin model
+begin model
 
-	begin molecule types
-		L(t)
-		T(l)
-	end molecule types
+begin molecule types
+	L(t)
+	T(l)
+end molecule types
 
-	end model
+end model
 ~~~
 
 ## Specifying reaction rules and observables
@@ -72,19 +72,19 @@ We first add ligand and receptor molecules to our model under a `molecule types`
 As discussed in the [main text](home_signalpart2), the ligand-receptor simulation will only need to apply a single bi-directional reaction.
 
 ~~~ ruby
-	begin reaction rules
-		LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
-	end reaction rules
+begin reaction rules
+	LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
+end reaction rules
 ~~~
 
 Once we have specified reactions, we can define the molecules whose concentrations we are interested in tracking. These molecules are added to an  `observables` section.
 
 ~~~ ruby
-  begin observables
-    Molecules free_ligand L(t)
-    Molecules bound_ligand L(t!l).T(l!l)
-    Molecules free_receptor T(l)
-  end observables
+begin observables
+  Molecules free_ligand L(t)
+  Molecules bound_ligand L(t!l).T(l!l)
+  Molecules free_receptor T(l)
+end observables
 ~~~
 
 ## Initializing unbound molecule counts
@@ -94,10 +94,10 @@ Next, we need to specify a variable indicating the number of molecules with whic
 Note that we do not specify an initial number of bound `L.T` complexes, meaning that the initial concentration of these complexes will be equal to zero.
 
 ~~~ ruby
-	begin seed species
-		L(t) L0
-		T(l) T0
-	end seed species
+begin seed species
+	L(t) L0
+	T(l) T0
+end seed species
 ~~~
 
 ## Specifying parameters
