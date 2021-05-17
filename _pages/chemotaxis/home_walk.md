@@ -17,6 +17,8 @@ When we multi-cellular beings examine the bacterium's movement, we see it altern
 The run and tumble mechanism of bacterial movement produces a random walk. Image from <a href="http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html">Parkinson Lab</a>.
 {: style="font-size: medium;"}
 
+{% include image.html url="../assets/images/chemotaxis_intro_runtumble.png" description="Test image with second caption." %}
+
 
 ## Tumbling frequency is constant across species
 
