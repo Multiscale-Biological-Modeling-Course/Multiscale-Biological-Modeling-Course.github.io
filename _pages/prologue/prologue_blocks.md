@@ -1,6 +1,6 @@
 ---
 permalink: /prologue/blocks
-title: "The Gray-Scott Model: A Cellular Automaton Generating Turing Patterns"
+title: "The Gray-Scott Model: A Turing Pattern Cellular Automaton"
 sidebar:
  nav: "prologue"
 toc: true

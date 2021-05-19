@@ -1,6 +1,6 @@
 ---
 permalink: /motifs/home
-title: "Introduction: A Submicroscopic Scale of Interest"
+title: "Introduction: Networks Rule Biology"
 sidebar:
  nav: "motifs"
 ---

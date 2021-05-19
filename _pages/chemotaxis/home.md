@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/home
-title: "Introduction: Lost Immortals and Chemotaxis"
+title: "Introduction: The Lost Immortals"
 sidebar:
  nav: "chemotaxis"
 ---

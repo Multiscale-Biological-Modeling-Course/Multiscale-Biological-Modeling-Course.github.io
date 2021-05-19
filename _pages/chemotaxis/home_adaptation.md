@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/home_adaptation
-title: "Methylation Helps Bacteria Adapt to Differing Concentrations"
+title: "Methylation Helps a Bacterium Adapt to Differing Concentrations"
 toc: true
 toc_sticky: true
 sidebar:

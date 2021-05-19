@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/tutorial_adaptation
-title: "Software Tutorial: Modeling adaptation"
+title: "Software Tutorial: Modeling bacterial adaptation to changing attractant"
 sidebar:
  nav: "chemotaxis"
 toc: true

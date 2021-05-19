@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/tutorial_visualization
-title: "Software Tutorial: Visualizing Specific Regions of Interest within a Protein Structure"
+title: "Software Tutorial: Visualizing Specific Regions of Interest within the Spike Protein Structure"
 sidebar:
  nav: "coronavirus"
 toc: true
