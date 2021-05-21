@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/home_biochemistry
-title: "A Biochemically Accurate Model of Chemotaxis"
+title: "A Biochemically Accurate Model of Bacterial Chemotaxis"
 sidebar:
  nav: "chemotaxis"
 toc: true

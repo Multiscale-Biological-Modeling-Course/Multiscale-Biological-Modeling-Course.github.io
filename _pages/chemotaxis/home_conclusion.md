@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/home_conclusion
-title: "Conclusion: The Beauty of *E. coli*'s Randomized Exploration Algorithm"
+title: "Conclusion: The Beauty of *E. coli*'s Robust Randomized Exploration Algorithm"
 sidebar:
  nav: "chemotaxis"
 toc: true

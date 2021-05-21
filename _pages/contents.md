@@ -24,7 +24,7 @@ The following contents is a work in progress and will be expanded in the coming 
 
 * A reaction-diffusion model generating Turing patterns
 
-* The Gray-Scott model: a cellular automaton generating Turing patterns
+* The Gray-Scott model: a Turing pattern cellular automaton
 
 * Conclusion: Turing patterns are fine-tuned
 
@@ -36,14 +36,14 @@ The following contents is a work in progress and will be expanded in the coming 
 
 * Building a diffusion cellular automaton with Jupyter notebook
 
-* Implementing the Gray-Scott model for coarse-grained reaction-diffusion with Jupyter notebook
+* Implementing the Gray-Scott reaction-diffusion automaton with Jupyter notebook
 
 
 ## [Module 1: Finding motifs in transcription factor networks](../motifs/home) ##
 
 ### Main text
 
-* Introduction: a submicroscopic scale of interest
+* Introduction: Networks rule biology
 
 * Transcription and DNA-protein binding
 
@@ -61,7 +61,7 @@ The following contents is a work in progress and will be expanded in the coming 
 
 ### Software tutorials (featuring MCell and CellBlender)
 
-* Looking for loops in transcription factor networks
+* Hunting for loops in transcription factor networks
 
 * Comparing simple regulation to negative autoregulation
 
@@ -77,7 +77,7 @@ The following contents is a work in progress and will be expanded in the coming 
 
 ### Main text
 
-* Introduction: Lost Immortals and chemotaxis
+* Introduction: The lost immortals
 
 * Bacterial runs and tumbles
 
@@ -85,13 +85,13 @@ The following contents is a work in progress and will be expanded in the coming 
 
 * Stochastic simulation of chemical reactions
 
-* A biochemically accurate model of chemotaxis
+* A biochemically accurate model of bacterial chemotaxis
 
-* Methylation helps bacteria adapt to differing concentrations
+* Methylation helps a bacterium adapt to differing concentrations
 
 * Modeling a bacterium's response to an attractant gradient
 
-* Conclusion: the beauty of E. coli's robust randomized exploration algorithm
+* Conclusion: the beauty of *E. coli*'s robust randomized exploration algorithm
 
 ### Software tutorials (featuring BioNetGen)
 
@@ -99,7 +99,7 @@ The following contents is a work in progress and will be expanded in the coming 
 
 * Adding phosphorylation to our BioNetGen model
 
-* Modeling adaptation
+* Modeling bacterial adaptation to changing attractant
 
 * Traveling up an attractant gradient
 
@@ -112,6 +112,8 @@ The following contents is a work in progress and will be expanded in the coming 
 * Comparing different chemotaxis default tumbling frequencies
 
 ## [Module 3: Analyzing the coronavirus spike protein](../coronavirus/home) ##
+
+* Introduction: A tale of two doctors
 
 ### Part 1: Protein structure prediction
 
@@ -151,7 +153,7 @@ The following contents is a work in progress and will be expanded in the coming 
 
 * Molecular dynamics analysis of coronavirus spike proteins using GNM
 
-* Adding directionality to GNM simulations using ANM
+* Adding directionality to spike protein GNM simulations using ANM
 
 ## Module 4: Training a computer to count white blood cells automatically ##
 

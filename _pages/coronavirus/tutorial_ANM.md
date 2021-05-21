@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/tutorial_ANM
-title: "Software Tutorial: ANM Simulations Add Directionality to GNM"
+title: "Software Tutorial: Adding Directionality to Spike Protein GNM Simulations Using ANM"
 sidebar:
  nav: "coronavirus"
 toc: true

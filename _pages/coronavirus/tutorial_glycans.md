@@ -1,7 +1,7 @@
 ---
 permalink: /coronavirus/tutorial_glycans
-title: "Visualizing Glycans"
-sidebar: 
+title: "Software Tutorial: Visualizing Glycans"
+sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true

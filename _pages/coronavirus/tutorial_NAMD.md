@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/tutorial_NAMD
-title: "Software Tutorial: Computing the Energy Contributed by a Local Region of a Bound Complex"
+title: "Software Tutorial: Computing the Energy Contributed by a Local Region of the SARS-CoV-2 Spike Protein Bound with the Human ACE2 Enzyme"
 sidebar:
  nav: "coronavirus"
 toc: true

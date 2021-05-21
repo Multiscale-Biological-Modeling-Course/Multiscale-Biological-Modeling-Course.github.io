@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/tutorial_DynOmics
-title: "Web Tutorial: Molecular Dynamics Analysis using DynOmics 1.0"
+title: "Software Tutorial: Molecular Dynamics Analysis using DynOmics 1.0"
 sidebar:
  nav: "coronavirus"
 toc: true
@@ -57,12 +57,12 @@ For `Inter-residue Contact Map`, you will see a visualization of the connected a
 ![image-center](../assets/images/DynOmics10.png){: .align-center}
 {: style="font-size: medium;"}
 
-Finally, in `Properties of GNM Mode Spectrum`, we can see two different plots on modes: *Frequency Dispersion* and *Degree of Collectivity*. In the frequency dispersion plot, a high value indicates a slow mode with low frequency, which are expected to be highly related to biological functions. Recall that the slowest modes contribute the most to the protein fluctuation. The degree of collectivity plot measures the extent of structural elements (residues) move together for each mode. High degree of collectivity indicates that the mode is highly cooperative and engages in a large portion of the structure. Low degree of collectivity indicates that the mode only affects a small region. 
+Finally, in `Properties of GNM Mode Spectrum`, we can see two different plots on modes: *Frequency Dispersion* and *Degree of Collectivity*. In the frequency dispersion plot, a high value indicates a slow mode with low frequency, which are expected to be highly related to biological functions. Recall that the slowest modes contribute the most to the protein fluctuation. The degree of collectivity plot measures the extent of structural elements (residues) move together for each mode. High degree of collectivity indicates that the mode is highly cooperative and engages in a large portion of the structure. Low degree of collectivity indicates that the mode only affects a small region.
 
 ![image-center](../assets/images/DynOmics11.png){: .align-center}
 {: style="font-size: medium;"}
 
-That is all for how to get the structural dynamics results of DynOmics. If you are interested in the other results, DynOmics has provided its own tutorial <a href="http://enm.pitt.edu/Tutorial.php" target="_blank">here</a>. 
+That is all for how to get the structural dynamics results of DynOmics. If you are interested in the other results, DynOmics has provided its own tutorial <a href="http://enm.pitt.edu/Tutorial.php" target="_blank">here</a>.
 
 We will now head back to the main text in order to analyze our GNM/ANM results of SARS-CoV-2 S protein and compare it with SARS-CoV S protein to see if we can distinguish any significant differences.
 

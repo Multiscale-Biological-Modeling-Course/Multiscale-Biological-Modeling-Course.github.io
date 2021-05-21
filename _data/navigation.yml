@@ -41,13 +41,13 @@ prologue:
         url: /prologue/turing-cellblender
       - title: "Building a diffusion cellular automaton with Jupyter notebook<br><br>"
         url: /prologue/tutorial-diffusion
-      - title: "Implementing the Gray-Scott model for coarse-grained reaction-diffusion with Jupyter notebook<br><br>"
+      - title: "Implementing the Gray-Scott reaction-diffusion automaton with Jupyter notebook<br><br>"
         url: /prologue/gs-jupyter
 
 motifs:
   - title: "Finding Motifs in Transcription Factor Networks"
     children:
-      - title: "Introduction: a submicroscopic scale of interest<br><br>"
+      - title: "Introduction: networks rule biology<br><br>"
         url: /motifs/home
       - title: "Transcription and DNA-protein binding<br><br>"
         url: /motifs/transcription
@@ -61,11 +61,11 @@ motifs:
         url: /motifs/feed
       - title: "Building a biological oscillator<br><br>"
         url: /motifs/oscillators
-      - title: "Conclusion: the importance of robustness in biological oscillations<br><br>"
+      - title: "Conclusion: the importance of robustness in biological oscillators<br><br>"
         url: /motifs/conclusion
   - title: Software Tutorials (featuring MCell and CellBlender)
     children:
-      - title: "Looking for loops in transcription factor networks<br><br>"
+      - title: "Hunting for loops in transcription factor networks<br><br>"
         url: /motifs/tutorial_loops
       - title: "Comparing simple regulation to negative autoregulation<br><br>"
         url: /motifs/tutorial_nar
@@ -85,7 +85,7 @@ motifs:
 chemotaxis:
   - title: "Unpacking E. coli's Genius Exploration Algorithm"
     children:
-      - title: "Introduction: Lost Immortals and chemotaxis<br><br>"
+      - title: "Introduction: The lost immortals<br><br>"
         url: /chemotaxis/home
       - title: "Bacterial runs and tumbles<br><br>"
         url: /chemotaxis/home_walk
@@ -93,13 +93,13 @@ chemotaxis:
         url: /chemotaxis/home_signal
       - title: "Stochastic simulation of chemical reactions<br><br>"
         url: /chemotaxis/home_signalpart2
-      - title: "A biochemically accurate model of chemotaxis<br><br>"
+      - title: "A biochemically accurate model of bacterial chemotaxis<br><br>"
         url: /chemotaxis/home_biochemistry
-      - title: "Methylation helps bacteria adapt to differing concentrations<br><br>"
+      - title: "Methylation helps a bacterium adapt to differing concentrations<br><br>"
         url: /chemotaxis/home_adaptation
       - title: "Modeling a bacterium's response to an attractant gradient<br><br>"
         url: /chemotaxis/home_gradient
-      - title: "Conclusion: the beauty of E. coli's randomized exploration algorithm<br><br>"
+      - title: "Conclusion: the beauty of E. coli's robust randomized exploration algorithm<br><br>"
         url: /chemotaxis/home_conclusion
   - title: Software Tutorials (featuring BioNetGen)
     children:
@@ -107,7 +107,7 @@ chemotaxis:
         url: /chemotaxis/tutorial_lr
       - title: "Adding phosphorylation to our BioNetGen model<br><br>"
         url: /chemotaxis/tutorial_phos
-      - title: "Modeling adaptation<br><br>"
+      - title: "Modeling bacterial adaptation to changing attractant<br><br>"
         url: /chemotaxis/tutorial_adaptation
       - title: "Traveling up an attractant gradient<br><br>"
         url: /chemotaxis/tutorial_gradient
@@ -127,47 +127,47 @@ chemotaxis:
 coronavirus:
   - title: Analyzing the coronavirus spike protein
     children:
-      - title: "Introduction: A Tale of Two Doctors<br><br>"
+      - title: "Introduction: A tale of two doctors<br><br>"
         url: /coronavirus/home
   - title: "Part 1: Protein Structure Prediction"
     children:
-      - title: "An Introduction to Protein Structure Prediction<br><br>"
+      - title: "An introduction to protein structure prediction<br><br>"
         url: /coronavirus/structure_intro
-      - title: "Ab initio Protein Structure Prediction<br><br>"
+      - title: "Ab initio protein structure prediction<br><br>"
         url: /coronavirus/ab_initio
-      - title: "Homology Modeling for Protein Structure Prediction<br><br>"
+      - title: "Homology modeling for protein structure prediction<br><br>"
         url: /coronavirus/homology
-      - title: "Comparing Protein Structures to Assess Model Accuracy<br><br>"
+      - title: "Comparing protein structures to assess model accuracy<br><br>"
         url: /coronavirus/accuracy
-      - title: "Part 1 Conclusion: Protein Structure Prediction is Solved! (Kinda)<br><br>"
+      - title: "Part 1 conclusion: protein structure prediction is solved! (Kinda…)<br><br>"
         url: /coronavirus/conclusion_part_1
   - title: "Part 2: Comparing SARS-CoV-2 and SARS"
     children:
-      - title: "Searching for Local Differences in the SARS-CoV and SARS-CoV-2 Spike Proteins<br><br>"
+      - title: "Searching for local differences in the SARS-CoV and SARS-CoV-2 spike proteins<br><br>"
         url: /coronavirus/multiseq
-      - title: "Analyzing Structural Differences in the Bonding of SARS-CoV and SARS-CoV-2 with the ACE2 Enzyme<br><br>"
+      - title: "Analyzing structural differences in the bonding of SARS-CoV and SARS-CoV-2 with the ACE2 enzyme<br><br>"
         url: /coronavirus/structural_diff
-      - title: "Quantifying the Interaction Energy Between the SARS-CoV-2 Spike Protein and ACE2<br><br>"
+      - title: "Quantifying the interaction energy between the SARS-CoV-2 spike protein and ACE2<br><br>"
         url: /coronavirus/NAMD
-      - title: "Part 2 Conclusion: From Static Protein Analysis to Molecular Dynamics<br><br>"
+      - title: "Part 2 conclusion: from static protein analysis to molecular dynamics<br><br>"
         url: /coronavirus/conclusion_part_2
   - title: Software Tutorials (featuring ProDy)
     children:
-      - title: "Using ab initio Modeling to Predict the Structure of Hemoglobin Subunit Alpha<br><br>"
+      - title: "Using ab initio modeling to predict the structure of hemoglobin subunit alpha<br><br>"
         url: /coronavirus/tutorial_ab_initio
-      - title: "Using Homology Modeling to Predict the Structure of the SARS-CoV-2 Spike Protein<br><br>"
+      - title: "Using homology modeling to predict the structure of the SARS-CoV-2 spike protein<br><br>"
         url: /coronavirus/tutorial_homology
-      - title: "Using RMSD to Compare Two Protein Structures<br><br>"
+      - title: "Using RMSD to compare the predicted SARS-CoV-2 spike protein against its experimentally validated structure<br><br>"
         url: /coronavirus/tutorial_rmsd
-      - title: "Finding Local Differences in Two Protein Structures<br><br>"
+      - title: "Finding local differences in the SARS-CoV and SARS-CoV-2 spike protein structures<br><br>"
         url: /coronavirus/tutorial_multiseq
-      - title: "Visualizing Specific Regions of Interest within a Protein Structure<br><br>"
+      - title: "Visualizing specific regions of interest within the spike protein structure<br><br>"
         url: /coronavirus/tutorial_visualization
-      - title: "Computing the Energy Contributed by a Local Region of a Bound Complex<br><br>"
+      - title: "Computing the energy contributed by a local region of the SARS-CoV-2 spike protein bound with the human ACE2 enzyme<br><br>"
         url: /coronavirus/tutorial_NAMD
-      - title: "Molecular Dynamics Analysis with GNM<br><br>"
+      - title: "Molecular dynamics analysis of coronavirus spike proteins using GNM<br><br>"
         url: /coronavirus/tutorial_GNM
-      - title: "ANM Simulations Add Directionality to GNM<br><br>"
+      - title: "Adding directionality to spike protein GNM simulations using ANM<br><br>"
         url: /coronavirus/tutorial_ANM
 
 wbcells:
