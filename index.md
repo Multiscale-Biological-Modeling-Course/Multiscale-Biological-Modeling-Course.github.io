@@ -1,6 +1,7 @@
 ---
 title: "Biological Modeling: A Free Online Course"
 classes: wide
+layout: home
 toc: true
 ---
 
