@@ -7,7 +7,7 @@ main:
     url: /contents/
   - title: "Take the Course"
     sublinks:
-      - title: "<b>Prologue:</b> Introducing biological modeling with Turing patterns"
+      - title: "<b>Prologue:</b> an introduction to biological modeling via random walks and Turing patterns"
         url: /prologue/
       - title: "<b>Module 1:</b> Finding motifs in transcription factor networks"
         url: /motifs/home
@@ -125,9 +125,9 @@ chemotaxis:
         url: /chemotaxis/home_exercise
 
 coronavirus:
-  - title: Introduction
+  - title: Analyzing the coronavirus spike protein
     children:
-      - title: "A Tale of Two Doctors<br><br>"
+      - title: "Introduction: A Tale of Two Doctors<br><br>"
         url: /coronavirus/home
   - title: "Part 1: Protein Structure Prediction"
     children:
