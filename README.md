@@ -1,8 +1,8 @@
-# Multiscale Biological Modeling Test Website
+# Multiscale Biological Modeling Website
 
-*Remember to use F5 as a hard refresh when previewing the GitHub Pages website, as your computer might otherwise save the page information and not display updates* 
+*Remember to use F5 as a hard refresh when previewing the GitHub Pages website, as your computer might otherwise save the page information and not display updates*
 
-### Quick References: 
+### Quick References:
 
 Github Pages References: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
 
@@ -16,9 +16,9 @@ Wonderful $$\LaTeX$$ can be processed with Kramdown using double dollar signs, e
 
 $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 
-**Notice** This LaTex will only process if the layout is specified as "layout: single" 
+**Notice** This LaTex will only process if the layout is specified as "layout: single"
 
-**Notice** Text in a notice should start with a double asteriks for emphasis, and requires a special piece of code on the next line 
+**Notice** Text in a notice should start with a double asteriks for emphasis, and requires a special piece of code on the next line
 {: .notice--primary}
 
 ~~~~~~
@@ -66,11 +66,11 @@ An image: ![gras](assets/images/bio-photo.jpg)
 
 Lastly, you can repair or delete the "Previous" and "Next Page" buttons at the bottom of each *moduleX_pagename.md* file.   
 
-The syntax shown here: 
+The syntax shown here:
 ~~~
 [Previous](#)
 ~~~
-represents 
+represents
 ~~~
 [Text inside button](link)
 ~~~
@@ -83,5 +83,3 @@ Only sometimes noticable- specific page build order: it seems certain elements d
   2. Wait a few minutes, refresh preview, see changed navigation but no text
   3. Edit text in file to say "Hi2"
   4. Wait a few minutes, refresh preview, see changed navigation and "Hi"
-
-
