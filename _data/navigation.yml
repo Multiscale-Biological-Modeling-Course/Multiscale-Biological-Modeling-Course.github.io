@@ -7,7 +7,7 @@ main:
     url: /contents/
   - title: "Take the Course"
     sublinks:
-      - title: "<b>Prologue:</b> Introducing biological modeling with Turing patterns"
+      - title: "<b>Prologue:</b> an introduction to biological modeling via random walks and Turing patterns"
         url: /prologue/
       - title: "<b>Module 1:</b> Finding motifs in transcription factor networks"
         url: /motifs/home
@@ -29,7 +29,7 @@ prologue:
         url: /prologue/random-walk
       - title: "A reaction-diffusion model generating Turing patterns<br><br>"
         url: /prologue/animals
-      - title: "The Gray-Scott model: a Turing pattern cellular automaton<br><br>"
+      - title: "The Gray-Scott model: a cellular automaton generating Turing patterns<br><br>"
         url: /prologue/blocks
       - title: "Conclusion: Turing patterns are fine-tuned<br><br>"
         url: /prologue/conclusion
@@ -125,7 +125,7 @@ chemotaxis:
         url: /chemotaxis/home_exercise
 
 coronavirus:
-  - title: Introduction
+  - title: Analyzing the coronavirus spike protein
     children:
       - title: "Introduction: A tale of two doctors<br><br>"
         url: /coronavirus/home
@@ -153,9 +153,9 @@ coronavirus:
         url: /coronavirus/conclusion_part_2
   - title: Software Tutorials (featuring ProDy)
     children:
-      - title: "Using ab initio Modeling to Predict the Structure of Hemoglobin Subunit Alpha<br><br>"
+      - title: "Using ab initio modeling to predict the structure of hemoglobin subunit alpha<br><br>"
         url: /coronavirus/tutorial_ab_initio
-      - title: "Using Homology Modeling to Predict the Structure of the SARS-CoV-2 Spike Protein<br><br>"
+      - title: "Using homology modeling to predict the structure of the SARS-CoV-2 spike protein<br><br>"
         url: /coronavirus/tutorial_homology
       - title: "Using RMSD to compare the predicted SARS-CoV-2 spike protein against its experimentally validated structure<br><br>"
         url: /coronavirus/tutorial_rmsd
