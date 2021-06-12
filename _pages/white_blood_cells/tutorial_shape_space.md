@@ -1,8 +1,8 @@
 ---
 permalink: /white_blood_cells/tutorial_shape_space
-title: "CellOrganizer Tutorial"
+title: "Software Tutorial: Generalizing and Visualizing an Image Shape Space"
 sidebar:
- nav: "wbcells"
+ nav: "white_blood_cells"
 toc: true
 toc_sticky: true
 ---

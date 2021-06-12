@@ -1,8 +1,8 @@
 ---
-permalink: /white_blood_cells/PCA
-title: "CellOrganizer Tutorial"
+permalink: /white_blood_cells/tutorial_PCA
+title: "Software Tutorial: Applying Principal Components Analysis to Nuclear Image Boundaries"
 sidebar:
- nav: "wbcells"
+ nav: "white_blood_cells"
 toc: true
 toc_sticky: true
 ---

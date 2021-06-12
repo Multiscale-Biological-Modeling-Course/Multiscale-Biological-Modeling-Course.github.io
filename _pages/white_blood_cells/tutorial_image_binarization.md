@@ -1,8 +1,8 @@
 ---
 permalink: /white_blood_cells/tutorial_image_binarization
-title: "CellOrganizer Tutorial"
+title: "Software Tutorial: Binarizing Images"
 sidebar:
- nav: "wbcells"
+ nav: "white_blood_cells"
 toc: true
 toc_sticky: true
 ---

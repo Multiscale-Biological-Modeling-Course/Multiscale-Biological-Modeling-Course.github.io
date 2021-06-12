@@ -173,7 +173,7 @@ coronavirus:
 white_blood_cells:
   - title: Software Tutorials (featuring CellOrganizer)
     children:
-      - title: "Segmenting Nuclei from Cellular Images"
+      - title: "Segmenting nuclei from cellular images"
         url: /white_blood_cells/tutorial_nuclear_segmentation
       - title: "Binarizing Images"
         url: /white_blood_cells/tutorial_image_binarization

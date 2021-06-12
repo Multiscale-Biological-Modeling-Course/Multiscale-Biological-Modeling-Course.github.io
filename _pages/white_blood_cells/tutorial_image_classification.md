@@ -1,8 +1,8 @@
 ---
 permalink: /white_blood_cells/tutorial_image_classification
-title: "CellOrganizer Tutorial"
+title: "Software Tutorial: Training a Classifier on an Image Shape Space"
 sidebar:
- nav: "wbcells"
+ nav: "white_blood_cells"
 toc: true
 toc_sticky: true
 ---

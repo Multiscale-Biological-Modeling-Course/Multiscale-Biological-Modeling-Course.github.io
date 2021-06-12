@@ -1,8 +1,8 @@
 ---
 permalink: /white_blood_cells/tutorial_nuclear_segmentation
-title: "CellOrganizer Tutorial"
+title: "Software Tutorial: Segmenting Nuclei from Cellular Images"
 sidebar:
- nav: "wbcells"
+ nav: "white_blood_cells"
 toc: true
 toc_sticky: true
 ---
