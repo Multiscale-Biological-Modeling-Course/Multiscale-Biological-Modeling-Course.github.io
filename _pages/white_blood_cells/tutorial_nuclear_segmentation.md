@@ -1,5 +1,5 @@
 ---
-permalink: /wbcells/tutorial
+permalink: /white_blood_cells/tutorial_nuclear_segmentation
 title: "CellOrganizer Tutorial"
 sidebar:
  nav: "wbcells"
