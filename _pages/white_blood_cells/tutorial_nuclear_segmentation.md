@@ -44,7 +44,7 @@ v WBC_PCAPipeline
 	* README.pdf
 ~~~
 
-Change into the WBC_PCAPipeline directory by running the following command in a new terminal:
+Open a terminal window and navigate into the `WBC_PCAPipeline` directory by running the following command:
 
 ~~~
 > cd ~/Desktop/WBC_PCAPipeline
@@ -59,11 +59,9 @@ For this dataset, we would like to identify the white blood cell types by the nu
 
 Method: RStudio
 
-Open RStudio.
-Navigate to File --> Open File
-Step through the files until you find Desktop/WBC_PCAPipeline/Step1_Segmentation/WBC_imgSeg.R.
-Source this file.
-Should you be asked in the console about upgrading dependencies during the EBImage library installation, type in a and hit Enter/Return.
+Open RStudio, and navigate to `File --> Open File`, and find `Desktop/WBC_PCAPipeline/Step1_Segmentation/WBC_imgSeg.R`.
+
+Should you be asked in the console about upgrading dependencies during the EBImage library installation, type in `a` and hit `enter`.
 
 **Note:** If you source the file multiple times, three directories are created each time within the Data folder with the form of `SegImgs_i`, `ColNuc_i`, and `BWImgs_i`, where *i* is an integer. The images are only segmented into the most recently created directories (those with the largest value of *i*). Should you run into trouble and need to run this file multiple times, ensure that future file paths are pointing to the right folders!
 {: .notice--warning}
@@ -72,8 +70,10 @@ After we have sourced our R file, you’ll notice the creation of three director
 
 Assuming the file ran correctly, the first directory, `SegImgs_1`, contains all of the segmented nuclei images where the white blood cell nucleus is in white and the rest of the image is seemingly in black. The second directory, `ColNuc_1`, should be empty, but will eventually contain all of the segmented nuclei images; however, the white blood cell nucleus will be in its original color and the rest of the image will be in black. Finally, the third directory, `BWImgs_1`, should be empty, but will eventually hold binarized versions (strictly black and white) of the images in `SegImgs_1`.
 
-Nuclear Segmentation Example using `BloodImage_00001.jpg`
-
 ![image-center](../assets/images/cellorg_raw_image.png)
-![image-center](../assets/images/cellorg_segmented.png){: .align-center}
-  Raw Image		             Segmented Nucleus in Greyscale
+Nuclear Segmentation Example using `BloodImage_00001.jpg`.
+{: style="font-size: medium;"}
+
+![image-center](../assets/images/cellorg_segmented.png)
+Greyscale segmented nucleus from the above image.
+{: style="font-size: medium;"}	             
