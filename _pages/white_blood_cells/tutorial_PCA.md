@@ -31,8 +31,8 @@ Run the following commands in the MATLAB command window:
 
 As a result, the Step3_PCAModel and Step4_Visualization directories have been updated. The principal components along with the assigned label to each cell are captured in the WBC_PCA.csv file within the Step4 directory. Information about the images used and the CellOrganizer generated shape space can be found by clicking on Step3_PCAModel/report/index.html.
 
-NOTE: For any subsequent run of the WBC_PCAModel file, make sure to delete any log and param files that have been created from a previous run. All other files will be overwritten unless preemptively removed from the WBC_PCAModel file’s access. Saving the files can be done by either compressing the files into a zip folder or removing them from the directory.
-{: .notice--primary}
+**Note:** For any subsequent run of the WBC_PCAModel file, make sure to delete any log and param files that have been created from a previous run. All other files will be overwritten unless preemptively removed from the WBC_PCAModel file’s access. Saving the files can be done by either compressing the files into a zip folder or removing them from the directory.
+{: .notice--warning}
 
 To look at our model results, we want to do the following while in MATLAB:
 Run the following commands in the MATLAB command window:

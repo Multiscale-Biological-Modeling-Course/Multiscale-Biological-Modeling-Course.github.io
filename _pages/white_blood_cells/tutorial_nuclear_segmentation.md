@@ -48,8 +48,8 @@ Change into the WBC_PCAPipeline directory by running the following command in a 
 > cd ~/Desktop/WBC_PCAPipeline
 ~~~
 
-NOTE: Please ensure the WBC_PCAPipeline file is onto your desktop. Otherwise, you will have to manually change all file paths to point to the appropriate folders on your computer. While unconventional, we’ve noticed occasional software glitches with using setwd() or pwd otherwise.
-{: .notice--primary}
+**Note:** Please ensure the WBC_PCAPipeline file is onto your desktop. Otherwise, you will have to manually change all file paths to point to the appropriate folders on your computer. While unconventional, we’ve noticed occasional software glitches with using `setwd()` or `pwd()` otherwise.
+{: .notice--warning}
 
 ### Step 1 Nuclear Segmentation
 
@@ -62,6 +62,9 @@ Navigate to File --> Open File
 Step through the files until you find Desktop/WBC_PCAPipeline/Step1_Segmentation/WBC_imgSeg.R.
 Source this file.
 Should you be asked in the console about upgrading dependencies during the EBImage library installation, type in a and hit Enter/Return.
+
+**Note:** If you source the file multiple times, three directories are created each time within the Data folder with the form of SegImgs_i, ColNuc_i, and BWImgs_i,where i is a natural number. The images are only segmented into the most recently created directories (those with the largest i). Should you run into trouble and need to run this file multiple times, ensure that future filepaths are pointing to the right folders!
+{: .notice--warning}
 
 NOTE: If you source the file multiple times, three directories are created each time within the Data folder with the form of SegImgs_i, ColNuc_i, and BWImgs_i,where i is a natural number. The images are only segmented into the most recently created directories (those with the largest i). Should you run into trouble and need to run this file multiple times, ensure that future filepaths are pointing to the right folders!
 {: .notice--primary}

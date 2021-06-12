@@ -59,7 +59,10 @@ Next go to `CellBlender > Reactions` to create the following reactions:
 3. Under products, type `HiddenX’ + X’`.
 4. Set the forward rate as `2e3`.
 
-Repeat the above steps for the following reactions, ensuring that you have the appropriate parameters for each reaction. (**Note:** Some molecules require an apostrophe or a comma. This represents the orientation of the molecule in space and is very important to the reactions!)
+Repeat the above steps for the following reactions, ensuring that you have the appropriate parameters for each reaction.
+
+**Note:** Some molecules require an apostrophe or a comma. This represents the orientation of the molecule in space and is very important to the reactions!
+{: .notice--warning}
 
 | Reactants |Products|Forward Rate|
 |:--------|:-------:|--------:|

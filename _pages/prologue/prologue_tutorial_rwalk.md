@@ -13,8 +13,8 @@ Setting up CellBlender can be done using the default tutorial with just a few ch
 
 First, follow the instructions from the [CellBlender website](https://mcell.org/downloads/windows/install_2019_05/index.html), with the following disclaimer.
 
-**Important:** CellBlender requires a previous version of Blender. Use the following two changes to the default installation instructions.
-{: .notice--primary}
+**Note:** CellBlender requires a previous version of Blender. Use the following two changes to the default installation instructions.
+{: .notice--warning}
 
 First, instead of downloading the newest version of Blender, go to the previous versions tab...
 
