@@ -13,10 +13,8 @@ As mentioned in Step 1, we would ideally have black and white segmented images a
 
 In this step of the pipeline, we open up MATLAB for running the binarization and file conversion code.
 
-Method: MATLAB
+Open MATLAB. Then, run the following commands in the MATLAB command window:
 
-Open MATLAB.
-Run the following commands in the MATLAB command window:
 ~~~
 > clear
 > clc
@@ -24,11 +22,16 @@ Run the following commands in the MATLAB command window:
 > WBC_imgBin
 ~~~
 
-As a result, the BWImgs_1 directory will now contain binarized TIFF versions of the segmented images. That is, each greyscale image resulting from the nuclear segmentation step with have pixel values strictly of 0, which is black, or 1, which is white.
-Our other result is that the ColNuc_1 directory will now contain TIFF versions of the segmented images where the nuclei is in color and the background is in black. We won’t be using these images further along the pipeline, but they are useful to look at for visual confirmation that the majority of the nucleus is being considered for the PCA model.
+As a result, the `BWImgs_1` directory will now contain binarized TIFF versions of the segmented images. That is, each greyscale image resulting from the nuclear segmentation step with have pixel values strictly of 0, which is black, or 1, which is white.
 
-Binarization and Color Nuclear Segmentation Example using BloodImage_00001.jpg
+Our other result is that the `ColNuc_1` directory will now contain TIFF versions of the segmented images where the nuclei is in color and the background is in black. We won’t be using these images further along the pipeline, but they are useful to look at for visual confirmation that the majority of the nucleus is being considered for the PCA model.
+
+Binarization and Color Nuclear Segmentation Example using `BloodImage_00001.jpg`.
 
 ![image-center](../assets/images/cellorg_segmented.png)
-![image-center](../assets/images/cellorg_segmented_color.png){: .align-center}
-Nuclear Segmentation in B/W                  Nuclear Segmentation in Color
+Nuclear Segmentation Example using `BloodImage_00001.jpg`.
+{: style="font-size: medium;"}
+
+![image-center](../assets/images/cellorg_segmented_color.png)
+Nuclear Segmentation of `BloodImage_00001.jpg` in color.
+{: style="font-size: medium;"}
