@@ -85,7 +85,10 @@ In the following tutorial, we will expand our BioNetGen model from the previous 
 
 In the figures below, we show plots of the concentration of each molecule of interest in our system for a few different cases. In each case, we suddenly change the concentration of the attractant ligand (*l*<sub>0</sub>) and examine how this affects the concentration of phosphorylated CheY (the molecule whose phosphorylation is directly correlated with increased tumbling frequency). The attractant concentration will then level off; because the relative concentration is not changing, will our model reflect the hypothesis that *E. coli* can return to approximately the same steady-state concentration of phosphorylated CheY regardless of the concentration of the ligand?
 
-Below, we show simulation results for some different concentrations of ligand molecules added at the beginning of the simulation. First we add a relatively small amount, setting *l*<sub>0</sub> equal to 10,000. The system returns so quickly to an equilibrium in phosphorylated CheY that it is difficult to think that the attractant has had any effect on tumbling frequency. (Note: time is shown in seconds on the x-axis in the following figures.)
+Below, we show simulation results for some different concentrations of ligand molecules added at the beginning of the simulation. First we add a relatively small amount, setting *l*<sub>0</sub> equal to 10,000. The system returns so quickly to an equilibrium in phosphorylated CheY that it is difficult to think that the attractant has had any effect on tumbling frequency.
+
+**Note:** Time is shown in seconds on the x-axis in the following figures.
+{: .notice--warning}
 
 ![image-center](../assets/images/chemotaxis_tutorial_oneadd1e4.png){: .align-center}
 

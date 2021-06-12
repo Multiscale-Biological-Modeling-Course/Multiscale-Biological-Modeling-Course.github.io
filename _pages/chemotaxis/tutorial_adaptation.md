@@ -51,7 +51,12 @@ end observables
 
 ## Defining reactions
 
-We now expand our reaction rules to include methylation. First, we change the autophosphorylation rules of the receptor to have different rates depending on whether the receptor is bound and its current methylation level, which produces six rules. (Note: we cannot avoid combinatorial explosion in the case of these phosphorylation reactions because they take place at different rates.) In what follows, we use experimentally verified reaction rates.
+We now expand our reaction rules to include methylation. First, we change the autophosphorylation rules of the receptor to have different rates depending on whether the receptor is bound and its current methylation level, which produces six rules.
+
+**Note:** We cannot avoid combinatorial explosion in the case of these phosphorylation reactions because they take place at different rates.) In what follows, we use experimentally verified reaction rates.
+{: .notice--warning}
+
+
 
 ~~~ ruby
 #Receptor complex (specifically CheA) autophosphorylation
@@ -192,7 +197,8 @@ end seed species
 
 Finally, we need to assign values to the parameters. We will assume that we start with a zero ligand concentration.  We then assign the initial concentration of each molecule and rates of our reactions based on *in vivo* stoichiometry and parameter tuning [^Li2004][^Stock1991].
 
-**An important note:** although we discussed reaction rules first, the `parameters` section below has to appear before the `reaction rules` section.
+**Note:** Although we discussed reaction rules first, the `parameters` section below has to appear before the `reaction rules` section.
+{: .notice--warning}
 
 ~~~ ruby
 begin parameters

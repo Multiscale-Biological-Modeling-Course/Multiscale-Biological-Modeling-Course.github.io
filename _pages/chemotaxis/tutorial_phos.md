@@ -16,7 +16,10 @@ To get started, create a copy of your file from the ligand-receptor tutorial and
 
 ## Defining molecules
 
-First, we introduce a state into the receptor and CheY particles to mark whether they are is phosphorylated or not. The notation `Phos~U~P` indicates we introduce phosphorylation states to a molecule (`U` indicates unphosphorylated, and `P` indicates phosphorylated). We also add molecule `CheY(Phos~U~P)` and `CheZ()`. (**Note:** be careful with the use of spaces; don't put spaces after the comma in the specification of the receptor.)
+First, we introduce a state into the receptor and CheY particles to mark whether they are is phosphorylated or not. The notation `Phos~U~P` indicates we introduce phosphorylation states to a molecule (`U` indicates unphosphorylated, and `P` indicates phosphorylated). We also add molecule `CheY(Phos~U~P)` and `CheZ()`.
+
+**Note:** Be careful with the use of spaces; don't put spaces after the comma in the specification of the receptor.)
+{: .notice--warning}
 
 ~~~ ruby
 begin molecule types
@@ -56,7 +59,10 @@ end reaction rules
 
 ## Initializing molecules and parameters
 
-To initialize our simulation, we need to indicate the number of molecules in *each state* present at the beginning of the simulation. Since we are adding ligands at the beginning of the simulation, the initial amount of molecules at each same state should be equal to the equilibrium concentrations when no ligand is present.  To this end, we set the amount of phosphorylated receptor equal to one-fourth the concentration of unphosphorylated receptor, and the concentration of phosphorylated CheY to be equal to the concentration of unphosphorylated CheY. (Note: this was validated through trial and error.)
+To initialize our simulation, we need to indicate the number of molecules in *each state* present at the beginning of the simulation. Since we are adding ligands at the beginning of the simulation, the initial amount of molecules at each same state should be equal to the equilibrium concentrations when no ligand is present.  To this end, we set the amount of phosphorylated receptor equal to one-fourth the concentration of unphosphorylated receptor, and the concentration of phosphorylated CheY to be equal to the concentration of unphosphorylated CheY.
+
+**Note:** This was validated through trial and error.
+{: .notice--warning}
 
 ~~~ ruby
 begin seed species
@@ -87,7 +93,8 @@ begin parameters
 end parameters
 ~~~
 
-**Important note:** The `parameters` section has to appear before the `reaction rules` section.
+**Note:** The `parameters` section has to appear before the `reaction rules` section.
+{: .notice--warning}
 
 Place everything occurring above between `begin model` and `end model` tags.
 
