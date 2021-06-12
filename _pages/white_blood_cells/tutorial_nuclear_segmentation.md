@@ -21,6 +21,7 @@ For the following steps, a variety of software and programs are used to go throu
 
 Furthermore, we ask that you download our `WBC_PCAPipeline` folder onto your desktop and ensure that the following contents are available, where v represents an open directory and * represents a file:
 
+~~~
 v WBC_PCAPipeline
 	v Data
 		v RawImgs
@@ -41,6 +42,7 @@ v WBC_PCAPipeline
 		* WBC_SS_CellType.py
 	v Step5_Classification
 	* README.pdf
+~~~
 
 Change into the WBC_PCAPipeline directory by running the following command in a new terminal:
 
