@@ -170,8 +170,16 @@ coronavirus:
       - title: "Adding directionality to spike protein GNM simulations using ANM<br><br>"
         url: /coronavirus/tutorial_ANM
 
-wbcells:
-  - title: Tutorial
+white_blood_cells:
+  - title: Software Tutorials (featuring CellOrganizer)
     children:
-      - title: "Tutorial"
-        url: /wbcells/tutorial
+      - title: "Segmenting Nuclei from Cellular Images"
+        url: /white_blood_cells/tutorial_nuclear_segmentation
+      - title: "Binarizing Images"
+        url: /white_blood_cells/tutorial_image_binarization
+      - title: "Applying principal components analysis to nuclear image boundaries"
+        url: /white_blood_cells/tutorial_PCA
+      - title: "Generating and visualizing an image shape space"
+        url: /white_blood_cells/tutorial_shape_space
+      - title: "Training a classifier on an image shape space"
+        url: /white_blood_cells/tutorial_image_classification
