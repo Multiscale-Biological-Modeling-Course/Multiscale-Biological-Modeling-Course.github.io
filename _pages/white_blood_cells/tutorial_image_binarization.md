@@ -28,10 +28,10 @@ Our other result is that the `ColNuc_1` directory will now contain TIFF versions
 
 Binarization and Color Nuclear Segmentation Example using `BloodImage_00001.jpg`.
 
-![image-center](../assets/images/cellorg_segmented.png)
+![image-center](../assets/images/cellorg_segmented.png){: .align-center}
 Nuclear Segmentation Example using `BloodImage_00001.jpg`.
 {: style="font-size: medium;"}
 
-![image-center](../assets/images/cellorg_segmented_color.png)
+![image-center](../assets/images/cellorg_segmented_color.png){: .align-center}
 Nuclear Segmentation of `BloodImage_00001.jpg` in color.
 {: style="font-size: medium;"}
