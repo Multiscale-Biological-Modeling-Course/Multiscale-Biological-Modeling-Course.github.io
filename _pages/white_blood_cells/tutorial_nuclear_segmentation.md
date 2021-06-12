@@ -19,7 +19,7 @@ For the following steps, a variety of software and programs are used to go throu
 | CellOrganizer (v. 2.8.x) | - |
 | RStudio | - |
 
-Furthermore, we ask that you download our WBC_PCAPipeline folder onto your desktop and ensure that the following contents are available, where v represents an open directory and * represents a file:
+Furthermore, we ask that you download our `WBC_PCAPipeline` folder onto your desktop and ensure that the following contents are available, where v represents an open directory and * represents a file:
 
 v WBC_PCAPipeline
 	v Data
@@ -63,17 +63,14 @@ Step through the files until you find Desktop/WBC_PCAPipeline/Step1_Segmentation
 Source this file.
 Should you be asked in the console about upgrading dependencies during the EBImage library installation, type in a and hit Enter/Return.
 
-**Note:** If you source the file multiple times, three directories are created each time within the Data folder with the form of SegImgs_i, ColNuc_i, and BWImgs_i,where i is a natural number. The images are only segmented into the most recently created directories (those with the largest i). Should you run into trouble and need to run this file multiple times, ensure that future filepaths are pointing to the right folders!
+**Note:** If you source the file multiple times, three directories are created each time within the Data folder with the form of `SegImgs_i`, `ColNuc_i`, and `BWImgs_i`, where *i* is an integer. The images are only segmented into the most recently created directories (those with the largest value of *i*). Should you run into trouble and need to run this file multiple times, ensure that future file paths are pointing to the right folders!
 {: .notice--warning}
 
-NOTE: If you source the file multiple times, three directories are created each time within the Data folder with the form of SegImgs_i, ColNuc_i, and BWImgs_i,where i is a natural number. The images are only segmented into the most recently created directories (those with the largest i). Should you run into trouble and need to run this file multiple times, ensure that future filepaths are pointing to the right folders!
-{: .notice--primary}
+After we have sourced our R file, you’ll notice the creation of three directories of the form: `SegImgs_1`, `ColNuc_1`, and `BWImgs_1` within the `Data` folder.
 
-After we have sourced our R file, you’ll notice the creation of three directories of the form: SegImgs_1, ColNuc_1, and BWImgs_1 within the Data folder.
+Assuming the file ran correctly, the first directory, `SegImgs_1`, contains all of the segmented nuclei images where the white blood cell nucleus is in white and the rest of the image is seemingly in black. The second directory, `ColNuc_1`, should be empty, but will eventually contain all of the segmented nuclei images; however, the white blood cell nucleus will be in its original color and the rest of the image will be in black. Finally, the third directory, `BWImgs_1`, should be empty, but will eventually hold binarized versions (strictly black and white) of the images in `SegImgs_1`.
 
-Assuming the file ran correctly, the first directory, SegImgs_1, contains all of the segmented nuclei images where the white blood cell nucleus is in white and the rest of the image is seemingly in black. The second directory, ColNuc_1, should be empty, but will eventually contain all of the segmented nuclei images, however the white blood cell nucleus will be in its original color and the rest of the image will be in black. Finally, the third directory, BWImgs_1, should be empty, but will eventually hold binarized versions (strictly black and white) of the images in SegImgs_1.
-
-Nuclear Segmentation Example using BloodImage_00001.jpg
+Nuclear Segmentation Example using `BloodImage_00001.jpg`
 
 ![image-center](../assets/images/cellorg_raw_image.png)
 ![image-center](../assets/images/cellorg_segmented.png){: .align-center}
