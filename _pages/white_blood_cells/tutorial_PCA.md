@@ -35,8 +35,8 @@ As a result, the `Step3_PCAModel` and `Step4_Visualization` directories have bee
 We next want to view our model results. First, run the following commands in the MATLAB command window:
 
 ~~~
->> load(‘WBC_PCA.mat’);
->> scr = model.nuclearShapeModel.score;
+> load(‘WBC_PCA.mat’);
+> scr = model.nuclearShapeModel.score;
 ~~~
 
 Double-click on the `scr` variable in the `Workspace` window.
