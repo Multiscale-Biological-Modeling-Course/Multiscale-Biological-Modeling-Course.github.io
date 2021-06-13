@@ -19,39 +19,39 @@ For the following steps, a variety of software and programs are used to go throu
 | CellOrganizer (v. 2.8.x) | - |
 | RStudio | - |
 
-Furthermore, we ask that you download our `WBC_PCAPipeline` folder onto your desktop and ensure that the following contents are available, where v represents an open directory and * represents a file:
+Furthermore, we ask that you download our `WBC_PCAPipeline` folder onto your desktop and verify that it has the following contents:
 
 ~~~
-v WBC_PCAPipeline
-	v Data
-		v RawImgs
-			* BloodImage_00001.jpg
+WBC_PCAPipeline
+	Data
+		RawImgs
+			BloodImage_00001.jpg
 			·
 			·
 			·
-			* BloodImage_00410.jpg
-		* WBC_Labels.csv
-	v Step1_Segmentation
-		* WBC_imgSeg.R
-	v Step2_Binarization
-		* WBC_imgBin.m
-	v Step3_PCAModel
-		* WBC_PCAModel.m
-	v Step4_ShapeSpaceVisualization
-		* WBC_SS_CellClass.py
-		* WBC_SS_CellType.py
-	v Step5_Classification
-	* README.pdf
-~~~
-
-Open a terminal window and navigate into the `WBC_PCAPipeline` directory by running the following command:
-
-~~~
-> cd ~/Desktop/WBC_PCAPipeline
+			BloodImage_00410.jpg
+		WBC_Labels.csv
+	Step1_Segmentation
+		WBC_imgSeg.R
+	Step2_Binarization
+		WBC_imgBin.m
+	Step3_PCAModel
+		WBC_PCAModel.m
+	Step4_ShapeSpaceVisualization
+		WBC_SS_CellClass.py
+		WBC_SS_CellType.py
+	Step5_Classification
+	README.pdf
 ~~~
 
 **Note:** Please ensure the WBC_PCAPipeline file is onto your desktop. Otherwise, you will have to manually change all file paths to point to the appropriate folders on your computer. While unconventional, we’ve noticed occasional software glitches with using `setwd()` or `pwd()` otherwise.
 {: .notice--warning}
+
+Now open a terminal window and navigate into your `WBC_PCAPipeline` directory by running the following command:
+
+~~~
+> cd ~/Desktop/WBC_PCAPipeline
+~~~
 
 ### Step 1 Nuclear Segmentation
 
