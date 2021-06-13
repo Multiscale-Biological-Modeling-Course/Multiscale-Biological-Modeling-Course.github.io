@@ -32,6 +32,7 @@ We will work with a <a href="https://github.com/Shenggan/BCCD_Dataset" target="_
 | Granulocyte | Monocyte | Lymphocyte |
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](../assets/images/neutrophil.png)  |  ![](../assets/images/monocyte.png)   |  ![](../assets/images/lymphocyte.png)
+
 Three images from the blood cell image dataset showing three types of WBCs. (Left) A neutrophil, illustrating the multilobular structure of this WBC type. (Center) A monocyte with a single, irregularly-shaped nucleus. (Right) A lymphocyte with a round nucleus. (Note: blood cells correspond to image IDs 3, 15, and 20, respectively.)
 {: style="font-size: medium;"}
 
