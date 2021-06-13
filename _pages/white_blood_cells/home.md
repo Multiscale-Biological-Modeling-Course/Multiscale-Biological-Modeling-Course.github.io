@@ -24,28 +24,15 @@ In this module, we will focus on identifying WBCs in cellular images, which can 
 
 WBCs further divide into subclasses based on their structure and function, and some other diseases may cause an abnormally low or high count of a specific subclass of WBCs. We therefore to not only identify WBCs in cellular images but also **classify** these WBCs into their appropriate types.
 
-We will work with a <a href="https://github.com/Shenggan/BCCD_Dataset" target="_blank">dataset</a> containing blood cell images depicting both RBCs and WBCs. As shown in the figure below, these images contain the three main families of WBCs: **granulocytes**, **lymphocytes**, and **monocytes**.  Our goal is twofold: first, can we excise the WBCs from the images? Second, can we train a computer to categorize them by family?
-
-
-
+We will work with a <a href="https://github.com/Shenggan/BCCD_Dataset" target="_blank">dataset</a> containing blood cell images depicting both RBCs and WBCs. As shown in the figure below, these images contain the three main families of WBCs: **granulocytes**, **lymphocytes**, and **monocytes**.  Granulocytes have a **multilobular nucleus**, which consists of several round “lobes” that are linked by thin strands of nuclear material. Monocyte and lymphocyte nuclei only have a single lobe, but the resulting shapes of the nuclei are quite different: lymphocyte nuclei tend to have a more rounded shape (taking up a greater fraction of the cell’s volume), whereas monocyte nuclei have a more irregular shape.
 
 | Granulocyte | Monocyte | Lymphocyte |
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](../assets/images/neutrophil.png)  |  ![](../assets/images/monocyte.png)   |  ![](../assets/images/lymphocyte.png)
 
-Three images from the blood cell image dataset showing three types of WBCs. (Left) A neutrophil, illustrating the multilobular structure of this WBC type. (Center) A monocyte with a single, irregularly-shaped nucleus. (Right) A lymphocyte with a round nucleus. (Note: blood cells correspond to image IDs 3, 15, and 20, respectively.)
+Three images from the blood cell image dataset showing three types of WBCs. (Left) A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family. (Center) A monocyte with a single, irregularly-shaped nucleus. (Right) A lymphocyte with a round nucleus. (In the provided dataset, these cells correspond to image IDs 3, 15, and 20, respectively.)
 {: style="font-size: medium;"}
 
+Our goal is twofold: first, can we excise the WBCs from the images? Second, can we train a computer to classify these WBCs by family? To perform these tasks, we will enlist <a href="http://www.cellorganizer.org" target="_blank">CellOrganizer</a>, a powerful software resource that can perform automated analyses on cellular images.
 
-
-Using biological features
-
-Note that the cells have been stained so that WBC nuclei show up as bluish purple.
-
-To perform these tasks, we will enlist <a href="http://www.cellorganizer.org" target="_blank">CellOrganizer</a>, a powerful software resource that can perform automated analyses on cellular images.
-
-Identifying WBCs is particularly easy, since we only need to excise the large purplish regions. That having been said,
-
-Dividing WBCs into three different classes might be a bit trickier, but is made easier if we know what to look for. For example, neutrophils have a multilobular nucleus, meaning that the nucleus consists of several round “lobes” that are linked by thin strands of nuclear material. Monocyte and lymphocyte nuclei only have a single lobe, but the resulting shapes of the nuclei are quite different. Lymphocyte nuclei tend to have a more rounded shape (and take up more of the cell’s volume), whereas monocyte nuclei have a more irregular shape.
-
-How can we program a computer to "see" the WBCs in these images and classify them into families? This module will focus on resolving these two questions.
+When you look at the cells in the figure above, you may think that our tasks will be easy. After all, identifying WBCs is simply a matter of excising the large purplish regions. our eyes are the result of billions of years of evolution to be able to identify patterns and differentiate objects. For that reason, we will see that training a computer to "see" these images in order to separate and classify WBCs is trickier than you might think.
