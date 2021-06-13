@@ -171,10 +171,12 @@ coronavirus:
         url: /coronavirus/tutorial_ANM
 
 white_blood_cells:
-  - title: "Training a Computer to Count White Blood Cells"
+  - title: "Training a Computer to Identify White Blood Cells"
     children:
       - title: "Introduction<br><br>"
         url: /white_blood_cells/home
+      - title: "Segmentation<br><br>"
+        url: /white_blood_cells/segmentation
   - title: Software Tutorials (featuring CellOrganizer)
     children:
       - title: "Segmenting nuclei from cellular images<br><br>"

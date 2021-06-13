@@ -1,6 +1,6 @@
 ---
-permalink: /white_blood_cells/home
-title: "Introduction: Counting Blood Cells"
+permalink: /white_blood_cells/segmentation
+title: "Segmentation"
 sidebar:
  nav: "white_blood_cells"
 toc: true
