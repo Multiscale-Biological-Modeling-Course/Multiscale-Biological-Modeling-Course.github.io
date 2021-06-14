@@ -10,6 +10,8 @@ toc_sticky: true
 We begin our work by programming a computer to “see” a stained WBC nucleus within a larger image containing RBCs, like the one in the figure below, reproduced from the [introduction](home). The more general problem of identifying objects within an image is called **segmentation**.
 
 <center><img src="../assets/images/neutrophil.png" width="300"></center>
+The granulocyte presented in the introduction (having ID 3 in our dataset).
+{: style="font-size: medium;"}
 
 Many different approaches for image segmentation have been developed, but no one has yet developed a single algorithm that could be used in all contexts. We therefore will apply a maxim that is more general than its application to biological modeling and that will recur throughout this module, which is to identify the key features special to this dataset, and then convert these features into instructions that a computer can follow.
 
