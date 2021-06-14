@@ -77,7 +77,7 @@ Yet this is not to say that our segmentation pipeline is perfect; the figure bel
 <table>
 <tr>
     <td><img src="../assets/images/WBC_167.png"></td>
-    <td><img src="../assets/images/WBC_167_segmented.png"></td>
+    <td><img src="../assets/images/WBC_167_segmentation.png"></td>
 </tr>
 </table>
 
