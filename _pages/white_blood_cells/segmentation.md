@@ -39,6 +39,13 @@ A binarized version of our granulocyte from the introduction (having image ID 3 
 
 Before we give up, let’s consider the other two primary colors. The blue channel was unable to distinguish between the image background and the WBC nucleus, but you can verify with a color picker that the green content of nuclear pixels is typically much lower than the background. The WBC nucleus also tends to have a lower red content than both the RBCs and the background. So, if we binarize the original image using a green threshold and then (separately) a red threshold, we obtain the two images in the figure below.
 
+<table>
+<tr>
+    <td><img src="../assets/images/neutrophil_binarized_green.png"></td>
+    <td><img src="../assets/images/neutrophil_binarized_red.png"></td>
+</tr>
+</table>
+
 |  |  |
 :-------------------------:|:-------------------------:
 ![](../assets/images/neutrophil_binarized_green.png)  |  ![](../assets/images/neutrophil_binarized_red.png)
