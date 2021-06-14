@@ -29,6 +29,8 @@ This observation gives us an idea for finding a WBC nucleus. Why don’t we scan
 
 When using a color picker, we can see that a stained WBC nucleus has more blue than the surrounding RBCs, which is unsurprising. We can then **binarize** our image by turning a pixel white if its blue value is above some threshold and turning a pixel black if its blue value is beneath some threshold. The result for a threshold value of 153 is shown in the figure below. We can’t clearly see the WBC nucleus in this binarized image because although the nucleus has high blue values, so does the whitish background of the image (remember that colors close to white are formed by mixing high percentages of red, green, and blue).
 
+<center><img src="../assets/images/neutrophil_binarized_blue.png" width="300"></center>
+
 ![image-center](../assets/images/neutrophil_binarized_blue.png){: .align-center}
 
 A binarized version of our granulocyte from the introduction (having image ID 3 in our dataset). A pixel is colored black if it has a blue channel value of 153 or greater, and the pixel is colored black otherwise. The region with the nucleus is shown in white but is not clearly visible because much of the background of the image, which is very light, also has a high red value (remember that mixing all three colors in equal proportions yields white).
