@@ -49,6 +49,48 @@ Before we give up, let’s consider the other two primary colors. The blue chann
 Two more binarized versions of the neutrophil image from the figure above (left), based on the green and red values. For both of these colors, the WBC nucleus tends to have lower values than other parts of the original image. (Left) A binarization in which a pixel is turned white if it has a green value less than or equal to 153. (Right) A binarization in which a pixel is turned white if it has a red value less than or equal to 166.
 {: style="font-size: medium;"}
 
+We have found a signal! It would seem that we should work with the image based on the red threshold, since the nucleus there is the clearest. However, each threshold was able to eliminate unnecessary parts of the image from consideration. For example, note the white blob in the top left of the binarized image based on the red channel. Although the red channel did not exclude this area, the blue channel did; this same region is black in the preceding figure.
+
+This insight gives us an idea; let's produce a fourth image for which a pixel is white only if it is white in all three binarized images. In the following tutorial, we will build an R pipeline that does just this for all of our blood cell images to produce binarized WBC nuclei.
+
+[Visit tutorial](tutorial_nuclear_segmentation){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
+## New section
+
+If you followed the above tutorial, then you might be tempted to celebrate, since it seems that we have resolved our first main objective of identifying WBCs. Now that we can identify WBCs, this means that we can count the number of WBCs in a given sample without the need for any human labor.
+
+Indeed, if we segment all of the images in the dataset via the same process, then we typically obtain a nice result, as indicated in the figure below for the monocyte and lymphocyte example images presented in the [introduction](home).
+
+<table>
+<tr>
+    <td><img src="../assets/images/monocyte_binarized.png"></td>
+    <td><img src="../assets/images/lymphocyte_binarized.png"></td>
+</tr>
+</table>
+
+Image segmentation of the monocyte (left) and lymphocyte (right) corresponding to IDs 15 and 20 in the provided dataset.
+{: style="font-size: medium;"}
+
+Yet this is not to say that our segmentation pipeline is perfect; the figure below illustrates that we may not parse out all of the nucleus.
+
+<table>
+<tr>
+    <td><img src="../assets/images/WBC_167.png"></td>
+    <td><img src="../assets/images/WBC_167_segmented.png"></td>
+</tr>
+</table>
+
+(Left) An image of a WBC (ID: 167) whose nucleus is not currently identified during segmentation (right).
+{: style="font-size: medium;"}
+
+
+**STOP:** Play around with the threshold parameters for red, green, and blue values from the tutorial. Can you find a better choice of parameters? How should we quantify whether one collection of parameters is better than another?
+
+<!--
+Exercise: local search and parameter estimation -- tie back to previous modules.
+-->
+
 Perhaps remove the following (but need to define binarized).
 
 Needs to be clear that the nucleus is darker.
