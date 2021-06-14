@@ -3,8 +3,6 @@ permalink: /white_blood_cells/home
 title: "Introduction: Counting Blood Cells"
 sidebar:
  nav: "white_blood_cells"
-toc: true
-toc_sticky: true
 ---
 
 <span style="font-size:larger;">by Phillip Compeau, with software tutorials by Nicole Matamala</span>
