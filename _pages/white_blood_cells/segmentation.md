@@ -46,10 +46,6 @@ Before we give up, let’s consider the other two primary colors. The blue chann
 </tr>
 </table>
 
-|  |  |
-:-------------------------:|:-------------------------:
-![](../assets/images/neutrophil_binarized_green.png)  |  ![](../assets/images/neutrophil_binarized_red.png)
-
 Two more binarized versions of the neutrophil image from the figure above (left), based on the green and red values. For both of these colors, the WBC nucleus tends to have lower values than other parts of the original image. (Left) A binarization in which a pixel is turned white if it has a green value less than or equal to 153. (Right) A binarization in which a pixel is turned white if it has a red value less than or equal to 166.
 {: style="font-size: medium;"}
 
