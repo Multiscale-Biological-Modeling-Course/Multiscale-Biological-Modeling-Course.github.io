@@ -86,6 +86,7 @@ Yet this is not to say that our segmentation pipeline is perfect; the figure bel
 
 
 **STOP:** Play around with the threshold parameters for red, green, and blue values from the tutorial. Can you find a better choice of parameters? How should we quantify whether one collection of parameters is better than another?
+{: .notice--primary}
 
 <!--
 Exercise: local search and parameter estimation -- tie back to previous modules.
