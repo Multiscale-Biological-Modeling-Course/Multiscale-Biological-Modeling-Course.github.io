@@ -1,6 +1,6 @@
 ---
 permalink: /white_blood_cells/segmentation
-title: "Segmentation"
+title: "Segmenting White Blood Cells by Color"
 sidebar:
  nav: "white_blood_cells"
 toc: true
@@ -89,6 +89,9 @@ Yet this is not to say that our segmentation pipeline is perfect; the figure bel
 {: .notice--primary}
 
 We can continue to tweak our threshold parameters, but you can verify that our relatively simple segmentation program has successfully excised most of the WBC nuclei from our dataset. We now will move on to our second goal of classifying the WBC nuclei into the three main families constituting WBCs.
+
+[Next lesson](vectorization){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 <!--
 Exercise idea: local search and parameter estimation -- tie back to previous modules.

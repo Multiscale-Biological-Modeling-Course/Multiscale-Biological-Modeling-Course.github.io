@@ -1,6 +1,6 @@
 ---
 permalink: /white_blood_cells/home
-title: "Introduction: Counting Blood Cells"
+title: "Introduction: How Are Blood Cells Counted?"
 sidebar:
  nav: "white_blood_cells"
 ---

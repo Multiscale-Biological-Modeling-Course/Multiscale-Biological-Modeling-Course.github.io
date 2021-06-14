@@ -173,9 +173,9 @@ coronavirus:
 white_blood_cells:
   - title: "Training a Computer to Identify White Blood Cells"
     children:
-      - title: "Introduction<br><br>"
+      - title: "Introduction: How are blood cells counted?<br><br>"
         url: /white_blood_cells/home
-      - title: "Segmentation<br><br>"
+      - title: "Segmenting white blood cells by color<br><br>"
         url: /white_blood_cells/segmentation
   - title: Software Tutorials (featuring CellOrganizer)
     children:
