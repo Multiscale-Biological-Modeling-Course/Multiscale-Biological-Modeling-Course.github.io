@@ -75,4 +75,7 @@ Nuclear Segmentation Example using `BloodImage_00001.jpg`.
 
 ![image-center](../assets/images/cellorg_segmented.png)
 Greyscale segmented nucleus from the above image.
-{: style="font-size: medium;"}	             
+{: style="font-size: medium;"}	 
+
+[Return to main text](segmentation){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}            

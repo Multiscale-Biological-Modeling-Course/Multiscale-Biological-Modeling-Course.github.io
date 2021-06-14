@@ -83,7 +83,7 @@ Yet this is not to say that our segmentation pipeline is perfect; the figure bel
 </tr>
 </table>
 
-(Left) An image of a WBC (ID: 167) whose nucleus is not currently identified during segmentation (right).
+(Left) An image of a WBC (ID: 167) whose nucleus is not correctly identified during segmentation (right) using the parameters from the tutorial.
 {: style="font-size: medium;"}
 
 
