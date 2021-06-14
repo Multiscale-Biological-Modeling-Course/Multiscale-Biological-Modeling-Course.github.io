@@ -175,7 +175,7 @@ white_blood_cells:
     children:
       - title: "Introduction: How are blood cells counted?<br><br>"
         url: /white_blood_cells/home
-      - title: "Segmenting white blood cells by color<br><br>"
+      - title: "Segmenting white blood cells<br><br>"
         url: /white_blood_cells/segmentation
   - title: Software Tutorials (featuring CellOrganizer)
     children:

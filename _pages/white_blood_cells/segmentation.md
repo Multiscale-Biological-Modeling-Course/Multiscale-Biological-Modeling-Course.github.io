@@ -1,15 +1,15 @@
 ---
 permalink: /white_blood_cells/segmentation
-title: "Segmenting White Blood Cells by Color"
+title: "Segmenting White Blood Cells"
 sidebar:
  nav: "white_blood_cells"
 toc: true
 toc_sticky: true
 ---
 
-In the [introduction](home), we established that we would like to program a computer to first separate WBCs from images containing both WBCs and RBCs and then classify the WBCs by cell family.
+We begin our work by programming a computer to “see” a stained WBC nucleus within a larger image containing RBCs, like the one in the figure below, reproduced from the [introduction](home). The more general problem of identifying objects within an image is called **segmentation**.
 
-We will begin with the first problem, training a computer to “see” a stained WBC nucleus within a larger image. The more general problem of identifying objects within an image is called **segmentation**.
+<center><img src="../assets/images/neutrophil.png" width="300"></center>
 
 Many different approaches for image segmentation have been developed, but no one has yet developed a single algorithm that could be used in all contexts. We therefore will apply a maxim that is more general than its application to biological modeling and that will recur throughout this module, which is to identify the key features special to this dataset, and then convert these features into instructions that a computer can follow.
 
@@ -83,7 +83,6 @@ Yet this is not to say that our segmentation pipeline is perfect; the figure bel
 
 (Left) An image of a WBC (ID: 167) whose nucleus is not correctly identified during segmentation (right) using the parameters from the tutorial.
 {: style="font-size: medium;"}
-
 
 **STOP:** Play around with the threshold parameters for red, green, and blue values from the tutorial. Can you find a better choice of parameters? How should we quantify whether one collection of parameters is better than another?
 {: .notice--primary}
