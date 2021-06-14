@@ -31,8 +31,6 @@ When using a color picker, we can see that a stained WBC nucleus has more blue t
 
 <center><img src="../assets/images/neutrophil_binarized_blue.png" width="300"></center>
 
-![image-center](../assets/images/neutrophil_binarized_blue.png){: .align-center}
-
 A binarized version of our granulocyte from the introduction (having image ID 3 in our dataset). A pixel is colored black if it has a blue channel value of 153 or greater, and the pixel is colored black otherwise. The region with the nucleus is shown in white but is not clearly visible because much of the background of the image, which is very light, also has a high red value (remember that mixing all three colors in equal proportions yields white).
 {: style="font-size: medium;"}
 
