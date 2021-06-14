@@ -7,6 +7,8 @@ toc: true
 toc_sticky: true
 ---
 
+## Image segmentation and the RGB color model
+
 We begin our work by programming a computer to “see” a stained WBC nucleus within a larger image containing RBCs, like the one in the figure below, reproduced from the [introduction](home). The more general problem of identifying objects within an image is called **segmentation**.
 
 <center><img src="../assets/images/neutrophil.png" width="300"></center>
@@ -26,10 +28,12 @@ A collection of colors along with their RGB codes. Note that this table correspo
 
 This observation gives us an idea for finding a WBC nucleus. Why don’t we scan through the pixels in a blood cell image and determine the amounts of each primary color in different parts of the image? We can then “turn off” any pixels whose color codes are not similar to the pixels inside the nucleus.
 
-**STOP:** You can find a color picker in `Utilities > Digital Color Meter` (Mac OS X) or by using <a href="https://getsharex.com" target="_blank">ShareX</a> (Windows). Open your color picker and one of the WBC images from our dataset, and scan through different pixels in the WBC nucleus, in the RBCs, and in the background parts of the cell. What are the RGB values for the WBC nucleus, and how do they differ from other parts of the cell?
+**STOP:** You can find a color picker in `Utilities > Digital Color Meter` (Mac OS X) or by using <a href="https://getsharex.com" target="_blank">ShareX</a> (Windows). Open your color picker, and hover the picker over different parts of the the granulocyte image above. What are the typical RGB values for the WBC nucleus, and how do these RGB values differ from other parts of the cell?
 {: .notice--primary}
 
-When using a color picker, we can see that a stained WBC nucleus has more blue than the surrounding RBCs, which is unsurprising. We can then **binarize** our image by turning a pixel white if its blue value is above some threshold and turning a pixel black if its blue value is beneath some threshold. The result for a threshold value of 153 is shown in the figure below. We can’t clearly see the WBC nucleus in this binarized image because although the nucleus has high blue values, so does the whitish background of the image (remember that colors close to white are formed by mixing high percentages of red, green, and blue).
+## Binarizing an image based on a color threshold
+
+When using a color picker, we see that a stained WBC nucleus has more blue than the surrounding RBCs, which is unsurprising. We can then **binarize** our image by turning a pixel white if its blue value is above some threshold and turning a pixel black if its blue value is beneath some threshold. The result for a threshold value of 153 is shown in the figure below. We can’t clearly see the WBC nucleus in this binarized image because although the nucleus has high blue values, so does the whitish background of the image (remember that colors close to white are formed by mixing high percentages of red, green, and blue).
 
 <center><img src="../assets/images/neutrophil_binarized_blue.png" width="300"></center>
 
@@ -58,7 +62,7 @@ This insight gives us an idea; let's produce a fourth image for which a pixel is
 [Visit tutorial](tutorial_nuclear_segmentation){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## New section
+## Successful segmentation is subject to parameters
 
 If you followed the above tutorial, then you might be tempted to celebrate, since it seems that we have resolved our first main objective of identifying WBCs. Now that we can identify WBCs, this means that we can count the number of WBCs in a given sample without the need for any human labor.
 
