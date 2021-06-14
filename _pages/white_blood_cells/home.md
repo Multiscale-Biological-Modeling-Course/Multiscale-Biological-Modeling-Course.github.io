@@ -36,3 +36,6 @@ Three images from the blood cell image dataset showing three types of WBCs. (Lef
 Our goal is twofold: first, can we excise the WBCs from the images? Second, can we train a computer to classify these WBCs by family? To perform these tasks, we will enlist <a href="http://www.cellorganizer.org" target="_blank">CellOrganizer</a>, a powerful software resource that can perform automated analyses on cellular images.
 
 When you look at the cells in the figure above, you may think that our tasks will be easy. After all, identifying WBCs is simply a matter of excising the large purplish regions. our eyes are the result of billions of years of evolution to be able to identify patterns and differentiate objects. For that reason, we will see that training a computer to "see" these images in order to separate and classify WBCs is trickier than you might think.
+
+[Next lesson](segmentation){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}

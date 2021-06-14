@@ -13,7 +13,7 @@ We will begin with the first problem, training a computer to “see” a stained
 
 Many different approaches for image segmentation have been developed, but no one has yet developed a single algorithm that could be used in all contexts. We therefore will apply a maxim that is more general than its application to biological modeling and that will recur throughout this module, which is to identify the key features special to this dataset, and then convert these features into instructions that a computer can follow.
 
-In particular, we ask ourselves what makes the nucleus so easy for a human to spot in the blood cell images. You may be screaming already, “The nucleus is dark purple, of course!” And this is a very good idea. But to train a computer to segment images by color, we need first to understand how the computer represents color in images.
+In particular, we ask ourselves what makes the WBC nucleus so easy for a human to spot in the blood cell images. You may be screaming already, “It is dark purple!” And this is a very good idea. But to train a computer to segment images by color, we need first to understand how the computer represents color in images.
 
 In the **RGB color model**, every rectangular pixel on a computer screen receives a solid color which is formed as a mixture of the three primary colors of light: red, green, and blue (hence the acronym “RGB”). The amount of each color in a pixel is expressed as an integer between 0 and 255, respectively, where larger integers correspond to larger amounts of the color. Some simple colors are shown in the figure below along with their RGB equivalents; for example, magenta corresponds to equal parts red and blue. Note that a color like (128, 0, 0) contains only red but appears duskier than (256, 0, 0) because the red has not been “turned on” fully.
 
@@ -72,7 +72,7 @@ Indeed, if we segment all of the images in the dataset via the same process, the
 Image segmentation of the monocyte (left) and lymphocyte (right) corresponding to IDs 15 and 20 in the provided dataset.
 {: style="font-size: medium;"}
 
-Yet this is not to say that our segmentation pipeline is perfect; the figure below illustrates that we may not parse out all of the nucleus.
+Yet this is not to say that our segmentation pipeline is perfect; the figure below illustrates that we may not correctly parse out all of the nucleus.
 
 <table>
 <tr>
@@ -88,12 +88,8 @@ Yet this is not to say that our segmentation pipeline is perfect; the figure bel
 **STOP:** Play around with the threshold parameters for red, green, and blue values from the tutorial. Can you find a better choice of parameters? How should we quantify whether one collection of parameters is better than another?
 {: .notice--primary}
 
+We can continue to tweak our threshold parameters, but you can verify that our relatively simple segmentation program has successfully excised most of the WBC nuclei from our dataset. We now will move on to our second goal of classifying the WBC nuclei into the three main families constituting WBCs.
+
 <!--
-Exercise: local search and parameter estimation -- tie back to previous modules.
+Exercise idea: local search and parameter estimation -- tie back to previous modules.
 -->
-
-Perhaps remove the following (but need to define binarized).
-
-Needs to be clear that the nucleus is darker.
-
-Even though we are training a computer to find patterns in images, we will need to help the computer understand what patterns it should look for. In this case, the end result that we want is a binarized image in which the nucleus’s pixels are essentially all white, and every other pixel in the diagram is colored black. Once we have an image of this form, we can take the outline of this image and know the shape of the nucleus.
