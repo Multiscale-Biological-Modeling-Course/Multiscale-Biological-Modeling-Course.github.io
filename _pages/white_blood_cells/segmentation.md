@@ -27,10 +27,18 @@ This observation gives us an idea for finding a WBC nucleus. Why don’t we scan
 **STOP:** You can find a color picker in `Utilities > Digital Color Meter` (Mac OS X) or by using <a href="https://getsharex.com" target="_blank">ShareX</a> (Windows). Open your color picker and one of the WBC images from our dataset, and scan through different pixels in the WBC nucleus, in the RBCs, and in the background parts of the cell. What are the RGB values for the WBC nucleus, and how do they differ from other parts of the cell?
 {: .notice--primary}
 
-START HERE
+When using a color picker, we can see that a stained WBC nucleus has more blue than the surrounding RBCs, which is unsurprising. We can then **binarize** our image by turning a pixel white if its blue value is above some threshold and turning a pixel black if its blue value is beneath some threshold. The result for a threshold value of 153 is shown in the figure below. We can’t clearly see the WBC nucleus in this binarized image because although the nucleus has high blue values, so does the whitish background of the image (remember that colors close to white are formed by mixing high percentages of red, green, and blue).
 
-With some exploration, we can find that a stained WBC nucleus has more blue than the surrounding RBCs, which is unsurprising. So if we instruct the computer to binarize our image by turning everything black that falls below a threshold amount of blue, and turning everything else white, the result is shown in the figure below. We can’t clearly see the WBC nucleus because although the nucleus has a high blue content, so does the whitish background of the image. So how can our approach to image segmentation possibly be useful?
+![image-center](../assets/images/neutrophil_binarized_blue.png){: .align-center}
 
+**STOP:** How might we modify our segmentation approach to perform a binarization that identifies the WBC nucleus more effectively?
+{: .notice--primary}
+
+Before we give up, let’s consider the other two primary colors. The blue channel was unable to distinguish between the image background and the WBC nucleus, but you can verify with a color picker that the green content of nuclear pixels is typically much lower than the background. The WBC nucleus also tends to have a lower red content than both the RBCs and the background. So, if we binarize the original image using a green threshold and then (separately) a red threshold, we obtain the two images in the figure below.
+
+|  |  |
+:-------------------------:|:-------------------------:
+![](../assets/images/neutrophil_binarized_green.png)  |  ![](../assets/images/neutrophil_binarized_red.png)
 
 Perhaps remove the following (but need to define binarized).
 
