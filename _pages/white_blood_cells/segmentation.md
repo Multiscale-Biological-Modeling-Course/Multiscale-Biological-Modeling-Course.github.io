@@ -31,6 +31,9 @@ When using a color picker, we can see that a stained WBC nucleus has more blue t
 
 ![image-center](../assets/images/neutrophil_binarized_blue.png){: .align-center}
 
+A binarized version of our granulocyte from the introduction (having image ID 3 in our dataset). A pixel is colored black if it has a blue channel value of 153 or greater, and the pixel is colored black otherwise. The region with the nucleus is shown in white but is not clearly visible because much of the background of the image, which is very light, also has a high red value (remember that mixing all three colors in equal proportions yields white).
+{: style="font-size: medium;"}
+
 **STOP:** How might we modify our segmentation approach to perform a binarization that identifies the WBC nucleus more effectively?
 {: .notice--primary}
 
@@ -39,6 +42,9 @@ Before we give up, let’s consider the other two primary colors. The blue chann
 |  |  |
 :-------------------------:|:-------------------------:
 ![](../assets/images/neutrophil_binarized_green.png)  |  ![](../assets/images/neutrophil_binarized_red.png)
+
+Two more binarized versions of the neutrophil image from the figure above (left), based on the green and red values. For both of these colors, the WBC nucleus tends to have lower values than other parts of the original image. (Left) A binarization in which a pixel is turned white if it has a green value less than or equal to 153. (Right) A binarization in which a pixel is turned white if it has a red value less than or equal to 166.
+{: style="font-size: medium;"}
 
 Perhaps remove the following (but need to define binarized).
 
