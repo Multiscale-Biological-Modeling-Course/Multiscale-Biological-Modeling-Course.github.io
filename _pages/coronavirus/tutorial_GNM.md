@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/tutorial_GNM
-title: "Software Tutorial: Molecular Dynamics Analysis of Coronavirus Spike Proteins Using GNM"
+title: "Software Tutorial: Analysis of Coronavirus Spike Proteins Using GNM"
 sidebar:
  nav: "coronavirus"
 toc: true

@@ -165,7 +165,7 @@ coronavirus:
         url: /coronavirus/tutorial_visualization
       - title: "Computing the energy contributed by a local region of the SARS-CoV-2 spike protein bound with the human ACE2 enzyme<br><br>"
         url: /coronavirus/tutorial_NAMD
-      - title: "Molecular dynamics analysis of coronavirus spike proteins using GNM<br><br>"
+      - title: "Analysis of coronavirus spike proteins using GNM<br><br>"
         url: /coronavirus/tutorial_GNM
       - title: "Adding directionality to spike protein GNM simulations using ANM<br><br>"
         url: /coronavirus/tutorial_ANM
