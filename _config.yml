@@ -50,6 +50,7 @@ plugins:
   - jekyll-gist
   - jemoji
   - jekyll-include-cache
+  - jekyll-seo-tag
 
 footer:
   links:
