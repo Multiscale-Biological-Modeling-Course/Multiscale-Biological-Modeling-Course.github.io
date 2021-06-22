@@ -1,6 +1,7 @@
 ---
 permalink: /meet-the-team/
 title: "Meet the Team"
+description: Meet the development team for Biological Modeling, a free online course.
 layout: splash
 ---
 

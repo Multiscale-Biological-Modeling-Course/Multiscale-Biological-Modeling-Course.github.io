@@ -1,6 +1,7 @@
 ---
 permalink: /contact/
 title: "Contact Us"
+description: Contact the developers of Biological Modeling, a free online course.
 ---
 
 Work on this project is ongoing. If you have any questions about this project, or to report typos/bugs, please use the form below.
