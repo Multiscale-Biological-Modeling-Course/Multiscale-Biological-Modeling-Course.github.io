@@ -1,10 +1,11 @@
 ---
 permalink: /coronavirus/prody
 title: "ProDy"
-sidebar: 
+sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
+image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
 <a href="http://prody.csb.pitt.edu/" target="_blank">ProDy</a> is an open-source Python package that allows users to perform protein structural dynamics analysis. Its flexibility allows users to select specific parts or atoms of the structure for conducting normal mode analysis and structure comparison. Please be sure to have the following installed:

@@ -5,6 +5,7 @@ sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
+image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
 In this tutorial, we will get started with VMD and then calculate Qres between the SARS-CoV-2 RBD (PDB entry: <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>) and SARS-CoV RBD (PDB entry: <a href="https://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a>) using the VMD plugin Multiseq. By locating regions with low Qres, we can hopefully identify regions of structural differences between the two RBDs.

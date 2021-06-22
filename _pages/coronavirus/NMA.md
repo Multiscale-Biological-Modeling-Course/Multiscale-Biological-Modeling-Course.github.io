@@ -1,10 +1,11 @@
 ---
 permalink: /coronavirus/NMA
 title: NMA Calculations
-sidebar: 
+sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
+image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 ## NMA Introduction
 
@@ -74,7 +75,7 @@ The anisotropic counterpart to GNM, where direction does matter, is called **ani
 
 <hr>
 
-In this tutorial, we will use NMWiz, a GUI for ProDy and is available as a plugin for VMD, to perform ANM calculations and create the animation of the SARS-CoV-2 (chimeric) RBD using the PDB entry <a href="http://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>. 
+In this tutorial, we will use NMWiz, a GUI for ProDy and is available as a plugin for VMD, to perform ANM calculations and create the animation of the SARS-CoV-2 (chimeric) RBD using the PDB entry <a href="http://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>.
 
 [Visit tutorial](tutorial_ANM){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
@@ -87,7 +88,7 @@ This figure shows the cross-correlation map (top) and the square fluctuation plo
 
 Perhaps unsurprisingly, the maps and plots show very small differences between SARS-CoV-2 and SARS RBD, just like in the GNM calculations for the S proteins. This indicates that the two RBDs are structurally similar.
 
-Using NMWiz and VMD, we also created animations of the protein fluctuation calculated through ANM analysis. The following animations are of the SARS-CoV-2 RBD/SARS RBD (purple) and ACE2 (green). Important residues from the three sites of conformational differences from the previous lessens are also colored. 
+Using NMWiz and VMD, we also created animations of the protein fluctuation calculated through ANM analysis. The following animations are of the SARS-CoV-2 RBD/SARS RBD (purple) and ACE2 (green). Important residues from the three sites of conformational differences from the previous lessens are also colored.
 
 *It is important to note that fluctuation calculated by ANM provides information on possible movement and flexibility, but does not depict actual protein movements.*
 
@@ -137,4 +138,3 @@ Using both the GNM and ANM approaches for normal mode analysis of SARS-CoV-2 S p
 [^Skjaerven]: Skjaerven, L., Hollup, S., Reuter, N. 2009. Journal of Molecular Structure: THEOCHEM 898, 42-48. https://doi.org/10.1016/j.theochem.2008.09.024
 
 [^Yang]: Yang, L., Song, G., Jernigan, R. 2009. Protein elastic network models and the ranges of cooperativity. PNAS 106(30), 12347-12352. https://doi.org/10.1073/pnas.0902159106
-

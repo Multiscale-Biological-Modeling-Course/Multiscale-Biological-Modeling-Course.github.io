@@ -5,6 +5,7 @@ sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
+image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
 ## Homology modeling uses an existing structure to reduce the search space

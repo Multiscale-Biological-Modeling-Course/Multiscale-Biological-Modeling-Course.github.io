@@ -5,6 +5,7 @@ sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
+image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
 In this tutorial, we will show how to use NAMD Energy to calculate the interaction energy for a bound complex, as well as to determine how much a given region of this complex contributes to the overall potential energy. We will use the chimeric SARS-CoV-2 RBD-ACE2 complex (PDB entry: <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>) and compute the interaction energy contributed by the loop site that we identified as a region of structural difference in a [previous lesson](structural_diff).

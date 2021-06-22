@@ -5,6 +5,7 @@ sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
+image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
 Here, we will show how to visualize glycans in VMD. Be sure to have installed VMD and know how to load molecules into the program. If you need a refresher, go to the <a href="tutorial_multiseq" target="_blank">VMD and Multiseq Tutorial</a>. In the <a href="tutorial_visualization" target="_blank">Visualizing Regions and Residues Tutorial</a>, we went over how to change the visualizations of molecules and proteins in VMD. Please visit that tutorial first if you have not done so already.

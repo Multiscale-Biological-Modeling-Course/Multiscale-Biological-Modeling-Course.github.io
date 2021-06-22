@@ -6,6 +6,7 @@ sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
+image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
 <span style="font-size:larger;">by Chris Lee and Phillip Compeau</span>

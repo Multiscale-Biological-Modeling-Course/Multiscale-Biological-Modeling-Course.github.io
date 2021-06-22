@@ -5,6 +5,7 @@ sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
+image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
 In this tutorial, we will use Normal Mode Wizard (NMWiz), a plugin in VMD that is designed to be a GUI for ProDy, to perform ANM analysis on the SARS-CoV-2 RBD. We will visualize the results in a cross-correlation map and square fluctuation plot and then produce ANM animations showing the predicted range of motion of the SARS-CoV-2 Spike RBD. Be sure to have installed VMD and know how to load molecules into the program. If you need a refresher, go to the <a href="tutorial_multiseq" target="_blank">VMD and Multiseq Tutorial</a>.

@@ -5,6 +5,7 @@ sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
+image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
 This is a short tutorial on how to use VMD to visualize molecules and perform some basic analysis. Before you start, make sure to have downloaded and installed <a href="https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD" target="_blank">VMD</a>.

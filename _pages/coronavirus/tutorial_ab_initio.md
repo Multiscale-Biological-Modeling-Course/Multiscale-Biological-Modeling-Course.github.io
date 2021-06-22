@@ -3,6 +3,7 @@ permalink: /coronavirus/tutorial_ab_initio
 title: "Software Tutorial: Using ab initio Modeling to Predict the Structure of Hemoglobin Subunit Alpha"
 sidebar:
  nav: "coronavirus"
+image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
 In this software tutorial, we will use the popular *ab initio* modeling software called QUARK. Because of the complexity of *ab initio* algorithms, QUARK limits us to polypeptides with at most 200 amino acids, and so rather than determining the structure of the SARS-CoV-2 spike protein (each monomer has 1281 amino acids), we will work with hemoglobin subunit alpha (PDB entry [1si4](https://www.rcsb.org/structure/1sI4)), which is only 141 amino acids long.

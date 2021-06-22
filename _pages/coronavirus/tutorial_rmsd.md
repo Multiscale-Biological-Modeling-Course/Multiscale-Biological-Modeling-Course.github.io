@@ -5,6 +5,7 @@ sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
+image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
 In this tutorial, we will demonstrate how to apply the Kabsch algorithm to compute the RMSD between two protein structures. In particular, we will show how to compare the experimentally validated structure of the SARS-CoV-2 spike protein (PDB entry: [6vxx](http://www.rcsb.org/structure/6VXX)) against one of our resulting from homology modeling. You should then feel empowered to run this comparison on our other spike protein predictions, as well as compare our *ab initio* prediction of human hemoglobin subunit alpha against its validated structure (PDB entry: [1si4](http://www.rcsb.org/structure/1SI4)).

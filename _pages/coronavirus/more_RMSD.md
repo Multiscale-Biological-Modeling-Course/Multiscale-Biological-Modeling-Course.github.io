@@ -1,17 +1,18 @@
 ---
 permalink: /coronavirus/more_RMSD
 title: "Protein Structure Prediction"
-sidebar: 
+sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
+image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
 To use RMSD as a quantitative measure for comparing protein structures, the structures must first be superposed in such a way that the RMSD is minimized.
 
 Back in the tutorial, superposing was accomplished by utilizing the *calcTransformation()* function, which returns the optimal transformation matrix between two structures such that the RMSD is minimized. This transformation matrix is consists of translation vector and rotation matrix, which can be calculated using the Kabsch Algorithm.
 
-The source code for *calcTransformation()* can be found 
+The source code for *calcTransformation()* can be found
 <a href="http://prody.csb.pitt.edu/_modules/prody/measure/transform.html#calcTransformation" target="_blank">here</a>.
 
 ## How it Works: Kabsch Algorithm (Partial Procrustes Superimposition)
