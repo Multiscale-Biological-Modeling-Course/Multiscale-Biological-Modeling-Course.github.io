@@ -5,6 +5,7 @@ sidebar:
  nav: "motifs"
 toc: true
 toc_sticky: true
+image: "../assets/images/repress_graph.png"
 ---
 
 ## Transcription factor networks
