@@ -5,6 +5,7 @@ sidebar:
  nav: "prologue"
  toc: true
  toc_sticky: true
+image: "../assets/images/gray_scott_jupyter_3.png"
 ---
 
 The Turing patterns that emerged from our particle simulations are a testament to the human eye's ability to find organization within the net behavior of tens of thousands of particles. For example, take another look at the video we produced that showed mottling in our particle simulator. Patterns are present, but they are also noisy --- even in the dark red regions we will have quite a few green particles, and vice-versa. The rapid inference of large-scale patterns from small-scale visual phenomena is one of the tasks that our brains have evolved to perform well.

@@ -3,6 +3,7 @@ permalink: /prologue/
 title: "Introduction: Life is Random"
 sidebar:
  nav: "prologue"
+image: "../assets/images/gray_scott_jupyter_3.png"
 ---
 
 <span style="font-size:larger;">by Noah Lee, Mert Inan, and Phillip Compeau</span>

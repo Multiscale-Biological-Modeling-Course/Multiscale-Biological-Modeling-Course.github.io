@@ -5,6 +5,7 @@ sidebar:
  nav: "prologue"
  toc: true
  toc_sticky: true
+image: "../assets/images/gray_scott_jupyter_3.png"
 ---
 
 ## Exercises
