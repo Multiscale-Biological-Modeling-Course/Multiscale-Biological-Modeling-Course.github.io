@@ -1,6 +1,7 @@
 ---
 permalink: /motifs/home
 title: "Introduction: Networks Rule Biology"
+description: Learn to comb through biological networks to find network "motifs" that have evolved to occur surprisingly often and drive cellular processes.
 sidebar:
  nav: "motifs"
 ---

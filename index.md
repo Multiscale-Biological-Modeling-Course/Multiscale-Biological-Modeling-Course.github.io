@@ -2,6 +2,7 @@
 title: "Biological Modeling: A Free Online Course"
 classes: wide
 layout: home
+description: A free course in biological modeling at multiple scales.
 toc: true
 ---
 

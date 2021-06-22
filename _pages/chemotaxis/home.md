@@ -1,6 +1,7 @@
 ---
 permalink: /chemotaxis/home
 title: "Introduction: The Lost Immortals"
+description: Learn how to model the complete set of reactions that drive a bacterium's exploration of its environment in chemotaxis. 
 sidebar:
  nav: "chemotaxis"
 ---
