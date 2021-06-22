@@ -5,6 +5,7 @@ sidebar:
  nav: "chemotaxis"
 toc: true
 toc_sticky: true
+image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
 In the [previous tutorial](tutorial_gradient), we simulated the behavior of a bacterium moving up the concentration gradient. In this tutorial, we will simulate the opposite - when the bacterium is not in luck and moves down a concentration gradient.

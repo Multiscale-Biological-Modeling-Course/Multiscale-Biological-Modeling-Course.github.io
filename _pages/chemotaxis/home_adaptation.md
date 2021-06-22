@@ -7,6 +7,7 @@ sidebar:
  nav: "chemotaxis"
 toc: true
 toc_sticky: true
+image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
 ## Bacterial tumbling frequencies remain constant despite background attractant concentrations

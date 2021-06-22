@@ -5,6 +5,7 @@ sidebar:
  nav: "chemotaxis"
 toc: true
 toc_sticky: true
+image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
 In this tutorial, we will simulate a random walk and take a look at how well this allows a bacterium to reach a goal. We might not anticipate that the random walk will do a very good job of this -- which is correct -- but it will give us a baseline simple strategy to compare against a more advanced random walk strategy.

@@ -5,6 +5,7 @@ sidebar:
  nav: "chemotaxis"
 toc: true
 toc_sticky: true
+image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
 In this tutorial, we will extend the BioNetGen model covered in the [ligand-receptor tutorial](tutorial_lr) to add the phosphorylation chemotaxis mechanisms described in the main text, shown in the figure reproduced below.

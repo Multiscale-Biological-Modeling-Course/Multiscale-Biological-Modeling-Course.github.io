@@ -5,6 +5,7 @@ sidebar:
  nav: "chemotaxis"
 toc: true
 toc_sticky: true
+image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
 In this tutorial, we will run a comparison of the chemotactic random walk over a variety of different background tumbling frequencies. Are some frequencies better than others at helping the bacterium reach the goal?

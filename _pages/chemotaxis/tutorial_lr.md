@@ -5,6 +5,7 @@ sidebar:
  nav: "chemotaxis"
 toc: true
 toc_sticky: true
+image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
 This collection of tutorials will gradually build up from scratch a chemotaxis simulation using [BioNetGen](http://bionetgen.org).

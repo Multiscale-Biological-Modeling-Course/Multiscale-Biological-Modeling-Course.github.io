@@ -5,6 +5,7 @@ sidebar:
  nav: "chemotaxis"
 toc: true
 toc_sticky: true
+image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
 ## How to calculate steady state concentration in a reversible bimolecular reaction?
@@ -64,4 +65,3 @@ Dinoflagellate helical klinotaxis trajectories. Screenshot from Fenchel 2001[^Fe
 [^Mitchell2006]: Michell J.G., Kogure K. 2005. Bacterial motility: links to the environment and a driving force for microbial physics. FEMS Microbial Ecol 55:3-16. [Available online](https://academic.oup.com/femsec/article/55/1/3/554107)
 
 [^Fenchel2001]: Fenchel T. 2001. How dinoflagellates swim. Protist 152(4):329-338. [Available online](https://www.sciencedirect.com/science/article/pii/S1434461004700711)
-
