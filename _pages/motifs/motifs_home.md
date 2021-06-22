@@ -4,7 +4,7 @@ title: "Introduction: Networks Rule Biology"
 description: Learn to comb through biological networks to find network "motifs" that have evolved to occur surprisingly often and drive cellular processes.
 sidebar:
  nav: "motifs"
-image: "../assets/images/repress_graph.png"
+image: "../assets/images/repress_graph.PNG"
 ---
 
 <span style="font-size:larger;">by Noah Lee and Phillip Compeau</span>

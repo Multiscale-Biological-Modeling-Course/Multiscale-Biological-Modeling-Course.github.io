@@ -5,7 +5,7 @@ sidebar:
  nav: "motifs"
 toc: true
 toc_sticky: true
-image: "../assets/images/repress_graph.png"
+image: "../assets/images/repress_graph.PNG"
 ---
 
 In this tutorial, we will build a Jupyter Notebook to analyze loops in the *E. coli* transcription factor network, which can be downloaded <a href="../downloads/network_tf_tf_clean.txt" download="network_tf_tf_clean.txt">here</a>. If you would like to jump to the end of the analysis, you can download the complete Jupyter Notebook <a href="../downloads/Network_Demo.ipynb" download="Network_Demo.ipynb">here</a>.

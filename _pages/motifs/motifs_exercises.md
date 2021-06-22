@@ -3,7 +3,7 @@ permalink: /motifs/exercises
 title: "Network Motifs Exercises"
 sidebar:
  nav: "motifs"
-image: "../assets/images/repress_graph.png"
+image: "../assets/images/repress_graph.PNG"
 ---
 
 ## Identifying Feed-Forward Loops and More Complex Motifs

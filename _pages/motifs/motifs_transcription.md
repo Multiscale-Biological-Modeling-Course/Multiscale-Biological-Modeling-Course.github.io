@@ -5,7 +5,7 @@ sidebar:
  nav: "motifs"
 toc: true
 toc_sticky: true
-image: "../assets/images/repress_graph.png"
+image: "../assets/images/repress_graph.PNG"
 ---
 
 ## The central dogma of molecular biology
