@@ -3,6 +3,7 @@ title: "Biological Modeling: A Free Online Course"
 classes: wide
 layout: home
 description: A free course in biological modeling at multiple scales.
+image: "assets/images/alan_turing_npg_cc.png"
 toc: true
 ---
 
