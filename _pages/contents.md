@@ -5,6 +5,11 @@ classes: wide
 description: Table of contents for Biological Modeling, a free online course.
 ---
 
+<div>
+<script async src="https://cse.google.com/cse.js?cx=f517f335d138257dd"></script>
+<div class="gcse-search"></div>
+</div>
+
 This online course is divided into modules. Each module covers a single biological topic (e.g., "Analyzing the structure of the coronavirus spike protein") and introduces all of the modeling topics needed to address that topic from first principles.
 
 Each module has a main narrative that can be explored by anyone, including beginners. When we need to build a model along the way, we pass our modeling work to "software tutorials" that show how to use high-powered modeling software produced by [MMBioS](http://mmbios.pitt.edu) researchers in order to build biological models. The software tutorials allow users wishing to get their hands dirty with modeling software to build all of the models that we need in this course. This allows for a course that can be explored by both casual and serious biological modeling learners alike.
