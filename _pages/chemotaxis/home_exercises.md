@@ -8,22 +8,23 @@ toc_sticky: true
 image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
-## How do *E. coli* respond to repellents?
+## How does *E. coli* respond to repellents?
 
 Just as *E. coli* has receptors that bond to attractant ligands, it has other receptors that can bond to **repellent** ligands.
 
-**Exercise:** Based on what we have learned in this module about how *E. coli* and other bacteria act in the presence of an attractant, what do you think that the chemotaxis response is in the presence of a repellent? How do you think that the bacterium adjusts to relative changes in repellent?
+**Exercise:** Based on what we have learned in this module about how *E. coli* and other bacteria act in the presence of an attractant, what do you think that the chemotaxis response is in the presence of a repellent? How do you think that the bacterium adjusts to relative changes of the repellent?
 {: .notice--info}
 
-**Exercise:** In the [phosphorylation tutorial](tutorial_phos), we defined the rate constant for free CheA autophosphorylation `k_T_phos`, and specified that when the receptor complex is bound to an attractant molecule, the autophosphorylation rate constant becomes `0.2 · k_T_phos`. When the receptor complex is bound to a **repellent** molecule, we will change the autophosphorylation rate constant to `5 · k_T_phos`. Adapt the BioNetGen model accordingly, and then run your simulation with `L0 = 5000` and `L0 = 1e5` repellent ligand molecules added at the beginning of the simulation, and run the simulation for 3 seconds. How does the concentration of phosphorylated CheY change? What do you conclude?
+In the [phosphorylation tutorial](tutorial_phos), we defined the rate constant for free CheA autophosphorylation `k_T_phos`, and specified that when the receptor complex is bound to an attractant molecule, the autophosphorylation rate constant decreases to `0.2 · k_T_phos`. To model a receptor complex bound to a repellent molecule, we will need to change the autophosphorylation rate so that it is greater than `k_T_phos`.
+
+**Exercise:** Adapt the BioNetGen model so that the autophosphorylation rate constant is `5 · k_T_phos`. then run your simulation for 3 seconds with `L0 = 5000` and `L0 = 1e5` repellent ligand molecules added at the beginning of the simulation. How does the concentration of phosphorylated CheY change? What do you conclude?
 {: .notice--info}
 
 ## What if there are multiple attractant sources?
 
-The simulations in this chapter became quite complex, but there is one way in which the reality is even more complicated. Not only can *E. coli* sense both repellents and attractants, but it is able to detect *more than one* attractant gradient at the same time.  This has a clear evolutionary purpose in an environment of multiple sparsely populated food sources. In this section, we will explore whether the chemotaxis mechanism allows cells to navigate through more realistic nutrient distributions.
+Not only can *E. coli* sense both repellents and attractants, but it can detect *more than one* attractant gradient at the same time.  This function has a clear evolutionary purpose in a bacterial environment of multiple sparsely populated food sources. In this section, we will explore whether the chemotaxis mechanism allows cells to navigate through heterogeneous nutrient distributions.
 
-**Exercise:**  In reality, *E. coli* has different receptors specific for different types of attractants. Modify your model from the [adaptation tutorial](tutorial_adaptation) to reflect two types of receptor, each specific to its own ligand (call them *A* and *B*). Assume that we have 3500 receptor molecules of each type.\\
- **Hint:** you will not need to have additional molecules in addition to `L` and `T`. Instead, specify additional states for the two molecules that we already have; for example `L(t,Lig~A)` only binds with `T(l,Lig~A)`. Don't forget to update `seed species` as well!
+**Exercise:** Modify our model from the [adaptation tutorial](tutorial_adaptation) to reflect two types of receptor, each specific to its own ligand (call them *A* and *B*). Assume that we have 3500 receptor molecules of each type. (**Hint:** you will not need to have additional molecules in addition to `L` and `T`. Instead, specify additional states for the two molecules that we already have; for example `L(t,Lig~A)` only binds with `T(l,Lig~A)`. Don't forget to update `seed species` as well!)
 {: .notice--info}
 
 **Exercise:** What will happen if after the cell adapts to attractant *A*, molecules of *B* are  suddenly added to the system? Model this scenario by assuming that after the cell adapts to `1e6` molecules of *A*, suddenly `1e6` molecules of *B* are added. Observe the concentration of phosphorylated CheY. Is the cell able to respond to *B* after adapting to the concentration of ligand *A*? Why is the change in CheY phosphorylation different from the scenario in which we release the two different ligands concurrently?\\
