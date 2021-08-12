@@ -10,30 +10,32 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## Two randomized exploration strategies
 
-In this final lesson of the module, we will use what we have learned about chemotaxis to build a random walk model emulating the behavior of *E. coli* within a background containing a variable concentration of attractant. The bacterium will reorient itself randomly, but it will be able to change its tumbling frequency based on the current relative concentration of attractant at its location.
+In this final lesson of the module, we will use what we have learned about chemotaxis to build a random walk model emulating the behavior of *E. coli* within a background containing a variable concentration of attractant. The bacterium will reorient itself randomly, but it will be able to change its tumbling frequency based on the relative concentration of attractant at its current location.
 
-We will then compare this realistic model of bacterial movement against a baseline algorithm modeling a fixed-tumbling frequency random walk. That is, the bacterium walks for a fixed distance and then reorients itself randomly. Which exploration algorithm allows the bacterium to locate the source of the attractant more reliably? And is one algorithm faster than the other?
+We will then compare this realistic algorithm of bacterial movement against a baseline simplistic algorithm in which the bacterium walks for a fixed distance and then reorients itself in a random direction. Does the more realistic exploration algorithm allow the bacterium to find attractant faster?
 
-We will represent a bacterium as a point in two-dimensional space. At any point (*x*, *y*), there is some concentration *L*(*x*, *y*) of ligand; furthermore, we simulate an attractant gradient by ensuring that there is a point (called the **goal**) at which *L*(*x*, *y*) is maximized, with the concentration of attractant diminishing as the distance from this point increases.
+We will represent a bacterium as a point in two-dimensional space. Units in our space will be measured in µm, so that moving from (0, 0) to (0, 20) is 20µm, a distance that we know from the introduction can be covered by the bacterium in 1 second during an uninterrupted run. The bacterium will start at the **origin** (0, 0), which we will establish to have a ligand concentration of 100 molecules/µm<sup>3</sup>.
 
-Units in this space will be in µm, so that moving from (0, 0) to (0, 20) is 20µm, a distance that we know from the introduction can be covered by the bacterium in 1 second during an uninterrupted run. The bacterium will start at the **origin** (0, 0), which we will establish to have a ligand concentration of 100 molecules/µm<sup>3</sup>. The goal contains a maximum concentration of 10<sup>8</sup> molecules/µm<sup>3</sup> and is located at the point (1500, 1500), requiring the bacterium to travel a significant distance to locate the attractant. The concentration of ligands [*L*] grows exponentially from the origin to the goal; specifically, *L*(*x*, *y*) = 100 · 10<sup>6 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal.
+At any point (*x*, *y*), there is some concentration *L*(*x*, *y*) of ligand; furthermore, we simulate an attractant gradient by ensuring that there is a point (called the **goal**) at which *L*(*x*, *y*) is maximized, with the concentration of attractant diminishing as the distance from this point increases. The goal contains a maximum concentration of 10<sup>8</sup> molecules/µm<sup>3</sup>, and we will place the goal at (1500, 1500), so that the bacterium must travel a significant distance to locate the attractant.
+
+The concentration of ligands *L*(*x*, *y*) is maximized at the goal and decreases exponentially the farther we travel from it. To represent this, we set *L*(*x*, *y*) = 100 · 10<sup>6 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal, which in this case is 1500√2 ≈ 2121 µm.
 
 **STOP:** How can we quantify how well a bacterium has done at finding the attractant?
 {: .notice--primary}
 
-To measure average-case behavior, we will run our random walk simulations many times for each of our two strategies, where each simulation lasts some fixed time *t*. (This parameter should be large enough to allow the bacterium to have enough time to reach the goal.) To compare the two strategies, we will then measure how far on average a bacterium with each strategy ends up from the goal.
+For each of our two strategies, we will simulate many random walks of a given bacterium throughout this space, where each each simulation lasts some fixed time. (The total time needed by our simulation should be large enough to allow the bacterium to have enough time to reach the goal.) To compare the two strategies, we will then measure how far *on average* a bacterium with each strategy is from the goal at the end of the simulation.
 
-We now will specify the details of the two strategies.
+Now that we have established how we will model a bacterum searching for attractant, we will specify how we will implement each of the two specific strategies that we wish to model.
 
 ### Strategy 1: Standard random walk
 
-Given a specified amount of time to run the simulation, the model takes the following steps. First, we select a random direction of movement along with a duration of our tumble. The degree of reorientation follows a uniform distribution from 0° to 360°. The duration of each tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. As the result of a tumble, the cell only changes its orientation, not its position.
+To model our "unintelligent" random walk strategy, we first select a random direction of movement along with a duration of our tumble. The degree of reorientation follows a uniform distribution from 0° to 360°. The duration of each tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. As the result of a tumble, the cell only changes its orientation, not its position.
 
-We then select a random duration to run and let the bacterium run in that direction for the specified amount of time. The duration of each run follows an exponential distribution with mean equal to some parameter *t*<sub>0</sub>, which we set equal to the experimentally verified value of 1 second.
+We then select a random duration to run and let the bacterium run in that direction for the specified amount of time. The duration of each run follows an exponential distribution with mean equal to the experimentally verified value of 1 second.
 
 We then iterate these two steps of tumbling and running until the total time used is equal to the time devoted to the simulation.
 
-In the following tutorial, we simulate this naive strategy using a Jupyter notebook that will also help us visualize the results of the simulation. We will later use this notebook as a starting point when examining our second strategy, which attempts to mimic the response of *E. coli* to its environment based on what we have learned about chemotaxis and is described below.
+In the following tutorial, we simulate this naive strategy using a Jupyter notebook that will also help us visualize the results of the simulation.
 
 [Visit standard random walk tutorial](tutorial_purerandom){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
@@ -41,15 +43,17 @@ In the following tutorial, we simulate this naive strategy using a Jupyter noteb
 
 ### Strategy 2: Chemotactic random walk
 
-In our second strategy, we mimic the modified random walk that we discussed in previous lessons. The bacterium will still follow a run and tumble model, but the duration of its runs (and therefore its tumbling frequency) depends on the relative change in attractant concentration that it detects.
+In our second strategy, we attempt to mimic the real response of *E. coli* to its environment based on what we have learned about chemotaxis throughout this module. The bacterium will still follow a run and tumble model, but the duration of its runs (which is a function of its tumbling frequency) depends on the relative change in attractant concentration that it detects.
 
 To ensure a mathematically controlled comparison, we will use the same approach for determining the duration of a tumble and the resulting direction of a run as in strategy 1.
 
-This strategy will therefore differ only in how it chooses the length of a run. Let *t*<sub>0</sub> denote the mean background run duration, which in the first strategy was equal to 1 second, and let Δ[*L*] denote the difference between the ligand concentration *L*(*x*, *y*) at the current point and the ligand concentration at the cell's previous point. We would like to choose a simple formula for the expected run duration like *t*<sub>0</sub> * (1 + 10 · Δ[*L*]). The only issue is that if Δ[*L*] is less than -0.1, then the run duration could be negative, and if Δ[*L*] is very large then we could run in one direction for too long without allowing the cell to reassess the ligand concentration.
+This second strategy will therefore differ only in how it chooses the length of a run. Let *t*<sub>0</sub> denote the mean background run duration, which in the first strategy was equal to 1 second, and let Δ[*L*] denote the difference between the ligand concentration *L*(*x*, *y*) at the cell's current point and the ligand concentration at the cell's previous point. We would like to choose a simple formula for the expected run duration like *t*<sub>0</sub> * (1 + 10 · Δ[*L*]).
 
-As a result, we will choose an expected duration for our run step by first taking the maximum of some small value close to 1 (we will use 0.000001) and *t*<sub>0</sub> * (1 + 10 · Δ[*L*]); then, we take the minimum of the resulting value and 4 · *t*<sub>0</sub>. We use this expected duration as the mean for an exponential distribution for this step, and sample the run duration.
+However, there are two issues with using this formula. First, if Δ[*L*] is less than -0.1, then the run duration could be negative. Second, if Δ[*L*] is large, then the bacterium will run for so long that it may simply bypass the goal.
 
-As with the first strategy, our simulated cell will alternate between tumbling and running until the total amount of time devoted to the simulation has been consumed. In the following tutorial, we will adapt the Jupyter notebook that we built in the previous tutorial to simulate this strategy. We then will compare the two strategies in the next section.
+To prevent the run duration from being negative, we will first take the maximum of *t*<sub>0</sub> * (1 + 10 · Δ[*L*]) and some small positive number (we will use 0.000001). We will then take the minimum of the resulting value and 4 · *t*<sub>0</sub> to prevent the run length from being too large. We will then use the resulting value as the mean of an exponential distribution to determine run duration.
+
+As with the first strategy, our simulated cell will alternate between tumbling and running until the total time devoted to the simulation has been consumed. In the following tutorial, we will adapt the Jupyter notebook that we built in the previous tutorial to simulate this second strategy.
 
 [Visit chemotactic walk tutorial](tutorial_walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
