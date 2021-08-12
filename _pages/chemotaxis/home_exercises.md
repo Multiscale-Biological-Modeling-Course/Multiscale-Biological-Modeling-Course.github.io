@@ -39,41 +39,46 @@ To simulate an environment with more than one food source, we will include anoth
 **Exercise:** Change the chemotactic walk simulation so that it includes the two goals, and visualize the trajectories of several cells using a background tumbling frequency of once every second. Are the cells able to find one of the goals? How long does it take them?
 {: .notice--info}
 
-**Exercise:** Vary the tumbling frequency according to the parameters given in the [chemotactic walk tutorial](tutorial_walk) to see how tumbling frequency influences the average distance of a cell to the closer of the two goals. As in the tutorial, run your simulation for 500 cells.
+**Exercise:** Vary the tumbling frequency according to the parameters given in the [chemotactic walk tutorial](tutorial_walk) to see how tumbling frequency influences the average distance of a cell to the closer of the two goals. As in the tutorial, run your simulation for 500 cells with tumbling frequencies `time_exp = [0.2, 0.5, 1.0, 2.0, 5.0]`.
 {: .notice--info}
 
-## Is *E. coli* even smarter than we think?
+## Changing the *E. coli* choice of direction
 
-Earlier in this module, we said that when *E. coli* tumbles, the degree of reorientation is actually not uniformly random from 0° to 360°. With background ligand concentration, the degree of reorientation approximately follows a normal distribution with mean of 68° (or equivalently, 1.19π) and standard deviation of 36° (equivalently, 0.63π). Recent research suggests that when the cell is moving up the gradient, the degree of reorientation is smaller [^Saragosti2011]. Although currently we don't have definitive measurements for the smaller angle of reorientation when moving up the gradient, let's specify it is 0.1 π smaller. Before actually implementing, what do you predict this reorientation strategy would change the chemotaxis responses? Do you think it brings some evolutionary advantages?
+In the [conclusion](home_conclusion), we mentioned that when *E. coli* tumbles, the degree of reorientation is not uniformly random from 0° to 360°. Rather, research has shown that it follows a normal distribution with mean of 68° (1.19 radians) and standard deviation of 36° (0.63 radians).
 
-**Exercise:** Please modify your model from [chemotactic walk tutorial](tutorial_walk) to change the random uniform sampling to this "smarter" sampling. Please quantitatively compare the performance for the chemotactic walk strategy, and this smarter strategy by calculating the mean and standard deviation of each cell's distance to the goal for 500 cells with `time_exp = [0.2, 0.5, 1.0, 2.0, 5.0]`. How much faster can the cells find the goal? Why faster?
+**Exercise:** Modify your model from the [chemotactic walk tutorial](tutorial_walk) to change the random uniform sampling to this "smarter" sampling. Compare the chemotactic walk strategy and this smarter strategy by calculating the mean and standard deviation of each cell's distance to the goal for 500 simulated cells with the collection of tumbling frequencies `time_exp = [0.2, 0.5, 1.0, 2.0, 5.0]`. Do these simulated cells do a better job of finding the goal?
 {: .notice--info}
+
+More recent research suggests that when the bacterium is moving up an attractant gradient, the degree of reorientation may be even smaller[^Saragosti2011]. Do you think that such a reorientation strategy would improve a cell's chemotaxis response?
+
+**Exercise:** Modify your model from the previous exercise so that if the cell has just made a move of increasing ligand concentration, then its mean reorientation angle is 0.1 radians smaller to change the random uniform sampling to this "smarter" sampling. Calculate  the mean and standard deviation of each cell's distance to the goal for 500 cells with `time_exp = [0.2, 0.5, 1.0, 2.0, 5.0]`. Do the cells find the goal faster?
+{: .notice--info}
+
 
 ## Can't get enough BioNetGen?
 
-As we have seen in this module, BioNetGen is very good at simulating systems that involve a large number of species and particles but can be summarized with a small set of rules. Polymerization reactions offer another good example of such a system.
+As we have seen in this module, BioNetGen is very good at simulating systems that involve a large number of species and particles but can be summarized with a small set of rules.
 
-**Exercise:** Imagine you were to implement a BioNetGen simulation for a hypothetical reaction system. What do you need to know about the system before implementing? What do you need to define in your program?
-{: .notice--info}
+**Polymerization** reactions offer another good example of such a system. Polymerization is the process by which **monomer** molecules combine into chains called **polymers**. Biological polymers are everywhere, from DNA (formed of monomer nucleotides) to proteins (formed of monomer amino acids) to lipids (formed of monomer fatty acids). For a nonbiological example, polyvinyl chloride (which lends its name to "PVC pipe") is a polymer made up of many vinyl molymers.
 
-**Polymerization** is the process by which **monomer** molecules combine into chains called **polymers**. Biological polymers are everywhere, from DNA (formed of monomer nucleotides) to proteins (formed of monomer amino acids) to lipids (formed of monomer fatty acids). For another example, polyvinyl chloride (PVC) is formed from many vinyl monomers.
+We would like to simulate the polymerization of copies of a monomer *A* to form a polymer *AAAAAA*..., where the length of the polymer is allowed to vary. If we simulate this process, we are curious what the distribution of the polymer lengths will be.
 
-We would like to simulate the polymerization of copies of a monomer *A* to form polymer *AAAAAA*..., where the length of the polymer is allowed to vary. To do so, we will write our reaction as *A*<sub><em>m</em></sub> + *A*<sub><em>n</em></sub> -> *A*<sub><em>m</em>+<em>n</em></sub>, where here *A*<sub>m</sub> denotes a polymer consisting of *m* copies of *A*. Using classical reaction rules, this would require an infinite number of reactions; will BioNetGen come to our rescue?
+We will write our polymer reaction as *A*<sub><em>m</em></sub> + *A*<sub><em>n</em></sub> -> *A*<sub><em>m</em>+<em>n</em></sub>, where *A*<sub>m</sub> denotes a polymer consisting of *m* copies of *A*. Using classical reaction rules, this would require an infinite number of reactions; will BioNetGen come to our rescue?
 
-There are two sites on the monomer *A* that are involved in a polymerization reaction: the "head" and the "tail". We need the head on one monomer and the tail on another to be free for these two monomers to bind. The following BioNetGen model is inspired by the [BLBR model in official BioNetGen tutorials](https://github.com/RuleWorld/BNGTutorial/blob/master/CBNGL/BLBR.bngl).
+There are two sites on the monomer *A* that are involved in a polymerization reaction: the "head" and the "tail". For two monomers to bind, we need the head on one monomer and the tail on another to both be free. The following BioNetGen model is taken from the [BioNetGen tutorials](https://github.com/RuleWorld/BNGTutorial/blob/master/CBNGL/BLBR.bngl).
 
-Open a new `.bngl` file and save it as `polymers.bngl`. We will have only one molecule type: `A(h,t)`; the `h` and `t` indicating the "head" and "tail" binding sites, respectively. We will need to represent four reaction rules:
+Create a new BioNetGen file and save it as `polymers.bngl`. We will have only one molecule type: `A(h,t)`; the `h` and `t` labels indicate the "head" and "tail" binding sites, respectively. To model polymerization, we will need to represent four reaction rules:
 
-1. initializing the series of polymerization reactions: two unbound `A` forms an initial **dimer**, or two monomers joined together;
+1. initializing the series of polymerization reactions: two unbound copies of `A` form an initial **dimer**, or a polymer with just two monomers;
 2. adding an unbound `A` to the "tail" of an existing polymer;
 3. adding an existing polymer to the "tail" of an unbound `A`; and
 4. adding an existing polymer to the "tail" of another polymer.
 
-To select any species that is bound at a component, use the notation `!+`; for example, `A(h!+,t)` will select any `A` bound at "head", whether it is bound in a chain of one or one million monomers.
+To select any species that is bound at a component, we use the notation `!+`; for example, `A(h!+,t)` will select any `A` whose "head" is bound, whether it belongs to a chain of one or one million monomers.
 
-We will assume that all forward and reverse rates for each reaction occur at the same rate. For simplicity, we will set all forward and reverse reaction rates to be equal to 0.01.
+We will assume that the forward and reverse rates for each reaction occur at the same rate. For simplicity, we will set all forward and reverse reaction rates to be equal to 0.01.
 
-What will our distribution of polymer lengths be? We will initialize our simulation with 1000 unbound *A* monomers and observe the formation of polymer chains of a few different lengths (1, 2, 3, 5, 10, and 20).  To do so, we select the pattern of containing *n* copies of *A* with the notation `A == x`. `Species` instead of `Molecules` is required for selecting polymer patterns.
+We will initialize our simulation with 1000 unbound *A* monomers and observe the formation of polymer chains of a few different lengths (1, 2, 3, 5, 10, and 20).  To do so, we can use an "observable" `A == n` to denote that a polymer contains *n* copies of `A`. We need to use `Species` instead of `Molecules` to select polymer patterns.
 
 ~~~ ruby
 
@@ -92,17 +97,19 @@ begin observables
 end observables
 ~~~
 
-For this model, we will try an alternative to the Gillespie (SSA) algorithm called **network-free simulation**. This approach is similar to the Gillespie algorithm, but instead of simulating transitions between states of the whole *system*, it tracks individual *particles*. In this polymerization model, the possible number of reactions is much higher than we had in chemotaxis models - we can have two polymers of any length reacting at any step, which slows down the Gillespie algorithm. In this case, we actually do not have very many particles compared to the (infinite) number of possible reactions, and so tracking each particle will be much faster for this model.
+For this model, the infinite number of possible interactions will slow down the Gillespie algorithm. For that reason, we will use an alternative to the Gillespie algorithm called **network-free simulation**, which tracks individual particles.
 
-After building the model, run your simulation with the following command (note that we do not need the `generate_network()` command):
+After building the model, we can run our simulation with the following command (note that we do not need the `generate_network()` command):
 
 ~~~ ruby
 simulate({method=>"nf", t_end=>100, n_steps=>1000})
 ~~~
 
-**Exercise:**What happens to the concentration of shorter polymers? What about the longer polymers? Try adjusting the lengths of the polymers that we are interested in. What happens if we also tweak the reaction rates so that bonding is a little more likely than dissociation? What if dissociation is more likely? Does this reflect what you would guess?
+**Exercise:**Run the simulation. What happens to the concentration of shorter polymers? What about the longer polymers? You may like to play around with the lengths of the polymers that we are interested in.
 {: .notice--info}
 
+**Exercise:** What happens if we also tweak the reaction rates so that bonding is a little more likely than dissociation? What if dissociation is more likely? Does this reflect what you would guess?
+{: .notice--info}
 
 [^Saragosti2011]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2011. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)
 
