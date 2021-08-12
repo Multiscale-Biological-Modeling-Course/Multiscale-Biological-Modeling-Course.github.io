@@ -8,16 +8,15 @@ toc_sticky: true
 image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
-In this page, we will:
- - Simulate *E. coli* chemotaxis at a cellular level
- - Compare performance of chemotactic walk vs. standard random walk
- - Compare performances of different default tumbling frequencies.
+In a [previous tutorial](tutorial_purerandom), we built a Jupyter notebook to simulate the movement of a cell moving randomly throughout two-dimensional space in a sequence of steps. At each step, the next direction of the cell's movement is chosen completely randomly. We called this simple algorithm "strategy 1" in the [main text](home_conclusion).
+
+In this tutorial, we will adapt this simulation into one that attempts to more closely mimic the real behavior of *E. coli* chemotaxis. We will then be able to compare the results of these two algorithms.
 
 ## Simulation files and dependencies
 
-Please download the simulation and visualization here: <a href="../downloads/downloadable/chemotaxis_compare.ipynb" download="chemotaxis_compare.ipynb">chemotaxis_compare.ipynb</a>. Detailed explanation of the model and each functions can be found in the file too.
+Download the simulation and visualization here: <a href="../downloads/downloadable/chemotaxis_compare.ipynb" download="chemotaxis_compare.ipynb">chemotaxis_compare.ipynb</a>. Detailed explanation of the model and each functions can be found in the file too.
 
-Please make sure the following dependencies are installed:
+Make sure the following dependencies are installed:
 
 | Installation Link | Version | Check install/version |
 |:------|:-----:|------:|
@@ -148,7 +147,7 @@ We will simulate 3 cells for 800 seconds for each of the strategies.
 #Run simulation for 3 cells for each strategy, plot paths
 duration = 800   #seconds, duration of the simulation
 num_cells = 3
-origin_to_center = euclidean_distance(start, ligand_center) #Update the global constant
+origin_to_center = distance(start, ligand_center) #Update the global constant
 run_time_expected = 1.0
 
 paths_rand = simulate_std_random(num_cells, duration, run_time_expected)
@@ -217,7 +216,7 @@ Like we did above, we run simulations for each strategies.
 
 duration = 1500   #seconds, duration of the simulation
 num_cells = 500
-origin_to_center = euclidean_distance(start, ligand_center) #Update the global constant
+origin_to_center = distance(start, ligand_center) #Update the global constant
 run_time_expected = 1.0
 
 paths_rand = simulate_std_random(num_cells, duration, run_time_expected)
@@ -230,7 +229,7 @@ for m in range(2): #two methods
     for c in range(num_cells): #each cell
         for t in range(duration): #every time point
             pos = paths[m, c, t]
-            dist = euclidean_distance(ligand_center, pos)
+            dist = distance(ligand_center, pos)
             all_distance[m, c, t] = dist
 
 all_dist_avg = np.mean(all_distance, axis = 1) #Calculate average over cells, array of shape (2,duration,)
