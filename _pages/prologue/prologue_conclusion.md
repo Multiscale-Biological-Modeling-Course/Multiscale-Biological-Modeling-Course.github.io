@@ -6,6 +6,15 @@ sidebar:
  toc: true
  toc_sticky: true
 image: "../assets/images/gray_scott_jupyter_3.png"
+gallery:
+  - url: ../assets/images/Juvenile_Mbu_pufferfish.jpg
+    image_path: ../assets/images/Juvenile_Mbu_pufferfish.jpg
+    alt: "Juvenile Mbu pufferfish"
+    title: "A juvenile Mbu Pufferfish with a very familiar pattern.[^youngfish]"
+  - url: /assets/images/unsplash-gallery-image-2.jpg
+    image_path: /assets/images/unsplash-gallery-image-2-th.jpg
+    alt: "Adult Mbu pufferfish"
+    title: "An adult Mbu Pufferfish exhibiting another familiar pattern.[^pufferfish]"
 ---
 
 The Turing patterns that emerged from our particle simulations are a testament to the human eye's ability to find organization within the net behavior of tens of thousands of particles. For example, take another look at the video we produced that showed mottling in our particle simulator. Patterns are present, but they are also noisy --- even in the dark red regions we will have quite a few green particles, and vice-versa. The rapid inference of large-scale patterns from small-scale visual phenomena is one of the tasks that our brains have evolved to perform well.
@@ -29,12 +38,14 @@ It turns out that although Turing's work offers a compelling argument for how ze
 
 Furthermore, note the following two photos of giant pufferfish. These fish are genetically very similar, but their skin patterns are very different. What may seem like a drastic change in the appearance of the fish from spots to stripes is likely attributable to a small change of parameters in a fine-tuned biological system that, like all of life, is powered by randomness.
 
+{% include gallery caption="This is a sample gallery with **Markdown support**." %}
+
 ![image-center](../assets/images/Juvenile_Mbu_pufferfish.jpg){: .align-center}
-A juvenile Mbu Pufferfish with a very familiar pattern![^youngfish]
+A juvenile Mbu Pufferfish with a very familiar pattern.[^youngfish]
 {: style="font-size: medium;"}
 
 ![image-center](../assets/images/Giant_Puffer_fish_skin_pattern.jpg){: .align-center}
-An adult Mbu Pufferfish exhibiting another familiar pattern![^pufferfish]
+An adult Mbu Pufferfish exhibiting another familiar pattern.[^pufferfish]
 {: style="font-size: medium;"}
 
 ## A final note
