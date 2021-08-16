@@ -1,0 +1,511 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Software Tutorial: Segmenting Nuclei from Cellular Images - Biological Modeling: A Free Online Course</title>
+<meta name="description" content="A free and open online course in biological modeling at multiple scales.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Biological Modeling: A Free Online Course">
+<meta property="og:title" content="Software Tutorial: Segmenting Nuclei from Cellular Images">
+<meta property="og:url" content="http://localhost:4000/white_blood_cells/tutorial_nuclear_segmentation">
+
+
+  <meta property="og:description" content="A free and open online course in biological modeling at multiple scales.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/white_blood_cells/tutorial_nuclear_segmentation">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+
+
+<!--SEO tagging -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Software Tutorial: Segmenting Nuclei from Cellular Images | Biological Modeling: A Free Online Course</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Software Tutorial: Segmenting Nuclei from Cellular Images" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A free and open online course in biological modeling at multiple scales." />
+<meta property="og:description" content="A free and open online course in biological modeling at multiple scales." />
+<link rel="canonical" href="http://localhost:4000/white_blood_cells/tutorial_nuclear_segmentation" />
+<meta property="og:url" content="http://localhost:4000/white_blood_cells/tutorial_nuclear_segmentation" />
+<meta property="og:site_name" content="Biological Modeling: A Free Online Course" />
+<meta property="og:image" content="http://localhost:4000/assets/images/cellorg_pca_graph_cell.png" />
+<script type="application/ld+json">
+{"description":"A free and open online course in biological modeling at multiple scales.","@type":"WebPage","url":"http://localhost:4000/white_blood_cells/tutorial_nuclear_segmentation","image":"http://localhost:4000/assets/images/cellorg_pca_graph_cell.png","headline":"Software Tutorial: Segmenting Nuclei from Cellular Images","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173522486-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-173522486-1');
+</script>
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Biological Modeling: A Free Online Course</a>
+        <ul class="visible-links">
+                
+                
+                    <li class="masthead__menu-item">
+                        <a href="/meet-the-team/">Course Team</a>
+                    </li>
+                
+            
+                
+                
+                    <li class="masthead__menu-item">
+                        <a href="/contact/">Contact Us</a>
+                    </li>
+                
+            
+                
+                
+                    <li class="masthead__menu-item">
+                        <a href="/contents/">Contents</a>
+                    </li>
+                
+            
+                
+                
+                    <li class="dropdown ">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Take the Course    <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i><span class="caret"></span></a>
+                        <ul class="dropdown-content">
+                            
+                                <li>
+                                    <a href="/prologue/">    <b>Prologue:</b> an introduction to biological modeling via random walks and Turing patterns</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="/motifs/home">    <b>Module 1:</b> Finding motifs in transcription factor networks</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="/chemotaxis/home">    <b>Module 2:</b> Unpacking E. coli's genius exploration algorithm</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="/coronavirus/home">    <b>Module 3:</b> Analyzing the coronavirus spike protein</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="">    <b>Module 4:</b> coming soon!</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                
+            
+        </ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Training a Computer to Identify White Blood Cells</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/white_blood_cells/home">Introduction: How are blood cells counted?<br><br></a></li>
+          
+            <li><a href="/white_blood_cells/segmentation">Segmenting white blood cells<br><br></a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Software Tutorials (featuring CellOrganizer)</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/white_blood_cells/tutorial_nuclear_segmentation" class="active">Segmenting nuclei from cellular images<br><br></a></li>
+          
+            <li><a href="/white_blood_cells/tutorial_image_binarization">Binarizing Images<br><br></a></li>
+          
+            <li><a href="/white_blood_cells/tutorial_PCA">Applying principal components analysis to nuclear image boundaries<br><br></a></li>
+          
+            <li><a href="/white_blood_cells/tutorial_shape_space">Generating and visualizing an image shape space<br><br></a></li>
+          
+            <li><a href="/white_blood_cells/tutorial_image_classification">Training a classifier on an image shape space<br><br></a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Software Tutorial: Segmenting Nuclei from Cellular Images">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Software Tutorial: Segmenting Nuclei from Cellular Images
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#cell-organizer-tutorial">Cell Organizer Tutorial</a><ul><li><a href="#step-1-nuclear-segmentation">Step 1 Nuclear Segmentation</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="cell-organizer-tutorial">Cell Organizer Tutorial</h2>
+
+<p>For the following steps, a variety of software and programs are used to go through our PCA Pipeline for the Kaggle White Blood Cells dataset. Please ensure that the following pre – requisite applications have been installed before continuing.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Required Applications</th>
+      <th style="text-align: right">Terminal Command to Check Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Python (v. 3.7.3)</td>
+      <td style="text-align: right">python –version</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">R (v. 3.5.2)</td>
+      <td style="text-align: right">R –version</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MATLAB (2016b or newer)</td>
+      <td style="text-align: right">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">CellOrganizer (v. 2.8.x)</td>
+      <td style="text-align: right">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">RStudio</td>
+      <td style="text-align: right">-</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Furthermore, we ask that you download our <code class="language-plaintext highlighter-rouge">WBC_PCAPipeline</code> folder onto your desktop and verify that it has the following contents:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WBC_PCAPipeline
+	Data
+		RawImgs
+			BloodImage_00001.jpg
+			·
+			·
+			·
+			BloodImage_00410.jpg
+		WBC_Labels.csv
+	Step1_Segmentation
+		WBC_imgSeg.R
+	Step2_Binarization
+		WBC_imgBin.m
+	Step3_PCAModel
+		WBC_PCAModel.m
+	Step4_ShapeSpaceVisualization
+		WBC_SS_CellClass.py
+		WBC_SS_CellType.py
+	Step5_Classification
+	README.pdf
+</code></pre></div></div>
+
+<p class="notice--warning"><strong>Note:</strong> Please ensure the WBC_PCAPipeline file is onto your desktop. Otherwise, you will have to manually change all file paths to point to the appropriate folders on your computer. While unconventional, we’ve noticed occasional software glitches with using <code class="language-plaintext highlighter-rouge">setwd()</code> or <code class="language-plaintext highlighter-rouge">pwd()</code> otherwise.</p>
+
+<p>Now open a terminal window and navigate into your <code class="language-plaintext highlighter-rouge">WBC_PCAPipeline</code> directory by running the following command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; cd ~/Desktop/WBC_PCAPipeline
+</code></pre></div></div>
+
+<h3 id="step-1-nuclear-segmentation">Step 1 Nuclear Segmentation</h3>
+
+<p>For this dataset, we would like to identify the white blood cell types by the nuclear shape since that particular feature is easy to verify with the naked eye. Moreover, the nucleus of the white blood cell(s) in each image are of a distinctly darker color than the rest of the red blood cells or platelets in the image. This allows us to implement a technique called thresholding. In thresholding, we examine each pixel in the image and reset the color value of the image according to our thresholds. If the original RGB values for the pixel are above the thresholds we set in each channel, then we reset the pixel value to white. All other pixels below the thresholds will be set to black (ideally). This way, our target, the white blood cell nucleus, is a white blob in a black background.</p>
+
+<p>Open RStudio, and navigate to <code class="language-plaintext highlighter-rouge">File --&gt; Open File</code>, and find <code class="language-plaintext highlighter-rouge">Desktop/WBC_PCAPipeline/Step1_Segmentation/WBC_imgSeg.R</code>.</p>
+
+<p>Should you be asked in the console about upgrading dependencies during the EBImage library installation, type in <code class="language-plaintext highlighter-rouge">a</code> and hit <code class="language-plaintext highlighter-rouge">enter</code>.</p>
+
+<p class="notice--warning"><strong>Note:</strong> If you source the file multiple times, three directories are created each time within the Data folder with the form of <code class="language-plaintext highlighter-rouge">SegImgs_i</code>, <code class="language-plaintext highlighter-rouge">ColNuc_i</code>, and <code class="language-plaintext highlighter-rouge">BWImgs_i</code>, where <em>i</em> is an integer. The images are only segmented into the most recently created directories (those with the largest value of <em>i</em>). Should you run into trouble and need to run this file multiple times, ensure that future file paths are pointing to the right folders!</p>
+
+<p>After we have sourced our R file, you’ll notice the creation of three directories of the form: <code class="language-plaintext highlighter-rouge">SegImgs_1</code>, <code class="language-plaintext highlighter-rouge">ColNuc_1</code>, and <code class="language-plaintext highlighter-rouge">BWImgs_1</code> within the <code class="language-plaintext highlighter-rouge">Data</code> folder.</p>
+
+<p>Assuming the file ran correctly, the first directory, <code class="language-plaintext highlighter-rouge">SegImgs_1</code>, contains all of the segmented nuclei images where the white blood cell nucleus is in white and the rest of the image is seemingly in black. The second directory, <code class="language-plaintext highlighter-rouge">ColNuc_1</code>, should be empty, but will eventually contain all of the segmented nuclei images; however, the white blood cell nucleus will be in its original color and the rest of the image will be in black. Finally, the third directory, <code class="language-plaintext highlighter-rouge">BWImgs_1</code>, should be empty, but will eventually hold binarized versions (strictly black and white) of the images in <code class="language-plaintext highlighter-rouge">SegImgs_1</code>.</p>
+
+<p style="font-size: medium;"><img src="../assets/images/cellorg_raw_image.png" alt="image-center" class="align-center" />
+Nuclear Segmentation Example using <code class="language-plaintext highlighter-rouge">BloodImage_00001.jpg</code>.</p>
+
+<p style="font-size: medium;"><img src="../assets/images/cellorg_segmented.png" alt="image-center" />
+Greyscale segmented nucleus from the above image.</p>
+
+<p style="font-size: 100%; text-align: center;"><a href="segmentation" class="btn btn--primary btn--large">Return to main text</a></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  <!-- only show related on a post page when `related: true`
+  
+  
+  -->
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+  <div class="search-hits"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <hr>
+  <a href="http://cbd.cmu.edu" target="_blank"><img align = "left" src="../assets/images/CMU_CBD_logos.png" alt="CBD Logo" width="40%" height="40%"></a>
+  <a href="http://mmbios.pitt.edu" target="_blank"><img align="right" src="../assets/images/MMBioS_Logo.png" alt="MMBioS Logo" width="50%" height="50%"></a>
+</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: 'O24616B64D',
+  apiKey: '3d5df9a350e2a9a5039314b58ef8c32d',
+  indexName: 'biological_modeling',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate,
+      empty: 'No results',
+    }
+  })
+);
+
+// Starting the search only when toggle is clicked
+$(document).ready(function () {
+  $(".search__toggle").on("click", function() {
+    if(!search.started) {
+      search.start();
+    }
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+  </body>
+</html>

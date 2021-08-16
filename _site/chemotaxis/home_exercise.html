@@ -1,0 +1,556 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Exercises - Biological Modeling: A Free Online Course</title>
+<meta name="description" content="A free and open online course in biological modeling at multiple scales.">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Biological Modeling: A Free Online Course">
+<meta property="og:title" content="Exercises">
+<meta property="og:url" content="http://localhost:4000/chemotaxis/home_exercise">
+
+
+  <meta property="og:description" content="A free and open online course in biological modeling at multiple scales.">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/chemotaxis/home_exercise">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+
+
+<!--SEO tagging -->
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Exercises | Biological Modeling: A Free Online Course</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Exercises" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A free and open online course in biological modeling at multiple scales." />
+<meta property="og:description" content="A free and open online course in biological modeling at multiple scales." />
+<link rel="canonical" href="http://localhost:4000/chemotaxis/home_exercise" />
+<meta property="og:url" content="http://localhost:4000/chemotaxis/home_exercise" />
+<meta property="og:site_name" content="Biological Modeling: A Free Online Course" />
+<meta property="og:image" content="http://localhost:4000/assets/images/chemotaxis_traj_1.0.png" />
+<script type="application/ld+json">
+{"description":"A free and open online course in biological modeling at multiple scales.","@type":"WebPage","url":"http://localhost:4000/chemotaxis/home_exercise","image":"http://localhost:4000/assets/images/chemotaxis_traj_1.0.png","headline":"Exercises","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173522486-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-173522486-1');
+</script>
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Biological Modeling: A Free Online Course</a>
+        <ul class="visible-links">
+                
+                
+                    <li class="masthead__menu-item">
+                        <a href="/meet-the-team/">Course Team</a>
+                    </li>
+                
+            
+                
+                
+                    <li class="masthead__menu-item">
+                        <a href="/contact/">Contact Us</a>
+                    </li>
+                
+            
+                
+                
+                    <li class="masthead__menu-item">
+                        <a href="/contents/">Contents</a>
+                    </li>
+                
+            
+                
+                
+                    <li class="dropdown ">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Take the Course    <i class="fa fa-caret-down fa-sm" aria-hidden="true"></i><span class="caret"></span></a>
+                        <ul class="dropdown-content">
+                            
+                                <li>
+                                    <a href="/prologue/">    <b>Prologue:</b> an introduction to biological modeling via random walks and Turing patterns</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="/motifs/home">    <b>Module 1:</b> Finding motifs in transcription factor networks</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="/chemotaxis/home">    <b>Module 2:</b> Unpacking E. coli's genius exploration algorithm</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="/coronavirus/home">    <b>Module 3:</b> Analyzing the coronavirus spike protein</a>
+                                </li>
+                            
+                                <li>
+                                    <a href="">    <b>Module 4:</b> coming soon!</a>
+                                </li>
+                            
+                        </ul>
+                    </li>
+                
+            
+        </ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Unpacking E. coli's Genius Exploration Algorithm</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/chemotaxis/home">Introduction: The lost immortals<br><br></a></li>
+          
+            <li><a href="/chemotaxis/home_walk">Bacterial runs and tumbles<br><br></a></li>
+          
+            <li><a href="/chemotaxis/home_signal">Signaling & ligand-receptor dynamics<br><br></a></li>
+          
+            <li><a href="/chemotaxis/home_signalpart2">Stochastic simulation of chemical reactions<br><br></a></li>
+          
+            <li><a href="/chemotaxis/home_biochemistry">A biochemically accurate model of bacterial chemotaxis<br><br></a></li>
+          
+            <li><a href="/chemotaxis/home_adaptation">Methylation helps a bacterium adapt to differing concentrations<br><br></a></li>
+          
+            <li><a href="/chemotaxis/home_gradient">Modeling a bacterium's response to an attractant gradient<br><br></a></li>
+          
+            <li><a href="/chemotaxis/home_conclusion">Conclusion: the beauty of E. coli's robust randomized exploration algorithm<br><br></a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Software Tutorials (featuring BioNetGen)</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/chemotaxis/tutorial_lr">Getting started wtih BioNetGen and modeling ligand-receptor dynamics<br><br></a></li>
+          
+            <li><a href="/chemotaxis/tutorial_phos">Adding phosphorylation to our BioNetGen model<br><br></a></li>
+          
+            <li><a href="/chemotaxis/tutorial_adaptation">Modeling bacterial adaptation to changing attractant<br><br></a></li>
+          
+            <li><a href="/chemotaxis/tutorial_gradient">Traveling up an attractant gradient<br><br></a></li>
+          
+            <li><a href="/chemotaxis/tutorial_removal">Traveling down an attractant gradient<br><br></a></li>
+          
+            <li><a href="/chemotaxis/tutorial_purerandom">Modeling a pure random walk strategy<br><br></a></li>
+          
+            <li><a href="/chemotaxis/tutorial_walk">Modeling E. coli's sophisticated random walk algorithm<br><br></a></li>
+          
+            <li><a href="/chemotaxis/tutorial_tumbling_frequencies">Comparing different chemotaxis default tumbling frequencies</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Exercises</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/chemotaxis/home_exercise" class="active">Exercises on Chemotaxis<br><br></a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Exercises">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Exercises
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#how-does-e-coli-respond-to-repellents">How does E. coli respond to repellents?</a></li><li><a href="#what-if-e-coli-has-multiple-attractant-sources">What if E. coli has multiple attractant sources?</a></li><li><a href="#changing-the-e-coli-choice-of-direction">Changing the E. coli choice of direction</a></li><li><a href="#cant-get-enough-bionetgen">Can’t get enough BioNetGen?</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="how-does-e-coli-respond-to-repellents">How does <em>E. coli</em> respond to repellents?</h2>
+
+<p>Just as <em>E. coli</em> has receptors that bond to attractant ligands, it has other receptors that can bond to <strong>repellent</strong> ligands.</p>
+
+<p class="notice--info"><strong>Exercise:</strong> Based on what we have learned in this module about how <em>E. coli</em> and other bacteria act in the presence of an attractant, what do you think that the chemotaxis response is in the presence of a repellent? How do you think that the bacterium adjusts to relative changes of the repellent?</p>
+
+<p>In the <a href="tutorial_phos">phosphorylation tutorial</a>, we defined the rate constant for free CheA autophosphorylation <code class="language-plaintext highlighter-rouge">k_T_phos</code>, and specified that when the receptor complex is bound to an attractant molecule, the autophosphorylation rate constant decreases to <code class="language-plaintext highlighter-rouge">0.2 · k_T_phos</code>. To model a receptor complex bound to a repellent molecule, we will need to change the autophosphorylation rate so that it is greater than <code class="language-plaintext highlighter-rouge">k_T_phos</code>.</p>
+
+<p class="notice--info"><strong>Exercise:</strong> Adapt the BioNetGen model so that the autophosphorylation rate constant is <code class="language-plaintext highlighter-rouge">5 · k_T_phos</code>. then run your simulation for 3 seconds with <code class="language-plaintext highlighter-rouge">L0 = 5000</code> and <code class="language-plaintext highlighter-rouge">L0 = 1e5</code> repellent ligand molecules added at the beginning of the simulation. How does the concentration of phosphorylated CheY change? What do you conclude?</p>
+
+<h2 id="what-if-e-coli-has-multiple-attractant-sources">What if <em>E. coli</em> has multiple attractant sources?</h2>
+
+<p>Not only can <em>E. coli</em> sense both repellents and attractants, but it can detect <em>more than one</em> attractant gradient at the same time.  This function has a clear evolutionary purpose in a bacterial environment of multiple sparsely populated food sources. In this section, we will explore whether the chemotaxis mechanism allows cells to navigate through heterogeneous nutrient distributions.</p>
+
+<p class="notice--info"><strong>Exercise:</strong> Modify our model from the <a href="tutorial_adaptation">adaptation tutorial</a> to reflect two types of receptor, each specific to its own ligand (call them <em>A</em> and <em>B</em>). Assume that we have 3500 receptor molecules of each type. (<strong>Hint:</strong> you will not need to have additional molecules in addition to <code class="language-plaintext highlighter-rouge">L</code> and <code class="language-plaintext highlighter-rouge">T</code>. Instead, specify additional states for the two molecules that we already have; for example <code class="language-plaintext highlighter-rouge">L(t,Lig~A)</code> should only bind with <code class="language-plaintext highlighter-rouge">T(l,Lig~A)</code>. Don’t forget to update <code class="language-plaintext highlighter-rouge">seed species</code> as well!)</p>
+
+<p>In the previous exercise, the cell adapts to the presence of two different attractants at the same time. We now consider what will happen if we only add <em>B</em> molecules of <em>B</em> once the cell has already adapted to <em>A</em> molecules.</p>
+
+<p class="notice--info"><strong>Exercise:</strong> Change your model by assuming that after the cell adapts to <code class="language-plaintext highlighter-rouge">1e6</code> molecules of <em>A</em>, <code class="language-plaintext highlighter-rouge">1e6</code> molecules of <em>B</em> are added. Observe the concentration of phosphorylated CheY. Is the cell able to respond to <em>B</em> after adapting to the concentration of ligand <em>A</em>? Why do you think that the change in CheY phosphorylation different from the scenario in which we release the two different ligands concurrently? (The hint for the previous exercise also applies to this exercise.)</p>
+
+<p>In the <a href="tutorial_walk">chemotactic walk tutorial</a>, we used a concentration gradient that grew exponentially toward a single goal. Specifically, if <em>L</em>(<em>x</em>, <em>y</em>) was the concentration of ligand at (<em>x</em>, <em>y</em>), we set <em>L</em>(<em>x</em>,<em>y</em>) = 100 · 10<sup>6 · (1-<em>d</em>/<em>D</em>)</sup>, where <em>d</em> is the distance from (<em>x</em>, <em>y</em>) to the goal, and <em>D</em> is the distance from the origin to the goal (we used a goal of (1500, 1500)).</p>
+
+<p>To simulate an environment with more than one food source, we will include another goal at (-1500, 1500). The new ligand concentration formula will be <em>L</em>(<em>x</em>, <em>y</em>) = 100 · 10<sup>8 · (1-<em>d</em><sub>1</sub>/<em>D</em><sub>1</sub>)</sup> + 100 · 10<sup>8 · (1-<em>d</em><sub>2</sub>/<em>D</em><sub>2</sub>)</sup>, where <em>d</em><sub>1</sub> is the distance from (<em>x</em>, <em>y</em>) to the goal at (1500, 1500), <em>d</em><sub>2</sub> is the distance from (<em>x</em>, <em>y</em>) to the goal at (-1500, 1500), and <em>D</em><sub>1</sub> and <em>D</em><sub>2</sub> are the distances from the origin to the two respective goals.</p>
+
+<p class="notice--info"><strong>Exercise:</strong> Change the chemotactic walk simulation so that it includes the two goals, and visualize the trajectories of several cells using a background tumbling frequency of once every second. Are the cells able to find one of the goals? How long does it take them?</p>
+
+<p class="notice--info"><strong>Exercise:</strong> Vary the tumbling frequency according to the parameters given in the <a href="tutorial_walk">chemotactic walk tutorial</a> to see how tumbling frequency influences the average distance of a cell to the closer of the two goals. As in the tutorial, run your simulation for 500 cells with tumbling frequencies <code class="language-plaintext highlighter-rouge">time_exp = [0.2, 0.5, 1.0, 2.0, 5.0]</code>.</p>
+
+<h2 id="changing-the-e-coli-choice-of-direction">Changing the <em>E. coli</em> choice of direction</h2>
+
+<p>In the <a href="home_conclusion">conclusion</a>, we mentioned that when <em>E. coli</em> tumbles, the degree of reorientation is not uniformly random from 0° to 360°. Rather, research has shown that it follows a normal distribution with mean of 68° (1.19 radians) and standard deviation of 36° (0.63 radians).</p>
+
+<p class="notice--info"><strong>Exercise:</strong> Modify your model from the <a href="tutorial_walk">chemotactic walk tutorial</a> to change the random uniform sampling to this “smarter” sampling. Compare the chemotactic walk strategy and this smarter strategy by calculating the mean and standard deviation of each cell’s distance to the goal for 500 simulated cells with the collection of tumbling frequencies <code class="language-plaintext highlighter-rouge">time_exp = [0.2, 0.5, 1.0, 2.0, 5.0]</code>. Do these simulated cells do a better job of finding the goal?</p>
+
+<p>More recent research suggests that when the bacterium is moving up an attractant gradient, the degree of reorientation may be even smaller<sup id="fnref:Saragosti2011" role="doc-noteref"><a href="#fn:Saragosti2011" class="footnote">1</a></sup>. Do you think that such a reorientation strategy would improve a cell’s chemotaxis response?</p>
+
+<p class="notice--info"><strong>Exercise:</strong> Modify your model from the previous exercise so that if the cell has just made a move of increasing ligand concentration, then its mean reorientation angle is 0.1 radians smaller to change the random uniform sampling to this “smarter” sampling. Calculate  the mean and standard deviation of each cell’s distance to the goal for 500 cells with <code class="language-plaintext highlighter-rouge">time_exp = [0.2, 0.5, 1.0, 2.0, 5.0]</code>. Do the cells find the goal faster?</p>
+
+<h2 id="cant-get-enough-bionetgen">Can’t get enough BioNetGen?</h2>
+
+<p>As we have seen in this module, BioNetGen is very good at simulating systems that involve a large number of species and particles but can be summarized with a small set of rules.</p>
+
+<p><strong>Polymerization</strong> reactions offer another good example of such a system. Polymerization is the process by which <strong>monomer</strong> molecules combine into chains called <strong>polymers</strong>. Biological polymers are everywhere, from DNA (formed of monomer nucleotides) to proteins (formed of monomer amino acids) to lipids (formed of monomer fatty acids). For a nonbiological example, polyvinyl chloride (which lends its name to “PVC pipe”) is a polymer made up of many vinyl molymers.</p>
+
+<p>We would like to simulate the polymerization of copies of a monomer <em>A</em> to form a polymer <em>AAAAAA</em>…, where the length of the polymer is allowed to vary. If we simulate this process, we are curious what the distribution of the polymer lengths will be.</p>
+
+<p>We will write our polymer reaction as <em>A</em><sub><em>m</em></sub> + <em>A</em><sub><em>n</em></sub> -&gt; <em>A</em><sub><em>m</em>+<em>n</em></sub>, where <em>A</em><sub>m</sub> denotes a polymer consisting of <em>m</em> copies of <em>A</em>. Using classical reaction rules, this would require an infinite number of reactions; will BioNetGen come to our rescue?</p>
+
+<p>There are two sites on the monomer <em>A</em> that are involved in a polymerization reaction: the “head” and the “tail”. For two monomers to bind, we need the head on one monomer and the tail on another to both be free. The following BioNetGen model is taken from the <a href="https://github.com/RuleWorld/BNGTutorial/blob/master/CBNGL/BLBR.bngl">BioNetGen tutorials</a>.</p>
+
+<p>Create a new BioNetGen file and save it as <code class="language-plaintext highlighter-rouge">polymers.bngl</code>. We will have only one molecule type: <code class="language-plaintext highlighter-rouge">A(h,t)</code>; the <code class="language-plaintext highlighter-rouge">h</code> and <code class="language-plaintext highlighter-rouge">t</code> labels indicate the “head” and “tail” binding sites, respectively. To model polymerization, we will need to represent four reaction rules:</p>
+
+<ol>
+  <li>initializing the series of polymerization reactions: two unbound copies of <code class="language-plaintext highlighter-rouge">A</code> form an initial <strong>dimer</strong>, or a polymer with just two monomers;</li>
+  <li>adding an unbound <code class="language-plaintext highlighter-rouge">A</code> to the “tail” of an existing polymer;</li>
+  <li>adding an existing polymer to the “tail” of an unbound <code class="language-plaintext highlighter-rouge">A</code>; and</li>
+  <li>adding an existing polymer to the “tail” of another polymer.</li>
+</ol>
+
+<p>To select any species that is bound at a component, we use the notation <code class="language-plaintext highlighter-rouge">!+</code>; for example, <code class="language-plaintext highlighter-rouge">A(h!+,t)</code> will select any <code class="language-plaintext highlighter-rouge">A</code> whose “head” is bound, whether it belongs to a chain of one or one million monomers.</p>
+
+<p>We will assume that the forward and reverse rates for each reaction occur at the same rate. For simplicity, we will set all forward and reverse reaction rates to be equal to 0.01.</p>
+
+<p>We will initialize our simulation with 1000 unbound <em>A</em> monomers and observe the formation of polymer chains of a few different lengths (1, 2, 3, 5, 10, and 20).  To do so, we can use an “observable” <code class="language-plaintext highlighter-rouge">A == n</code> to denote that a polymer contains <em>n</em> copies of <code class="language-plaintext highlighter-rouge">A</code>. We need to use <code class="language-plaintext highlighter-rouge">Species</code> instead of <code class="language-plaintext highlighter-rouge">Molecules</code> to select polymer patterns.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">begin</span> <span class="n">seed</span> <span class="n">species</span>
+	<span class="no">A</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="mi">1000</span>
+<span class="k">end</span> <span class="n">seed</span> <span class="n">species</span>
+
+<span class="k">begin</span> <span class="n">observables</span>
+	<span class="no">Species</span> <span class="no">A1</span> <span class="no">A</span><span class="o">==</span><span class="mi">1</span>
+	<span class="no">Species</span> <span class="no">A2</span> <span class="no">A</span><span class="o">==</span><span class="mi">2</span>
+	<span class="no">Species</span> <span class="no">A3</span> <span class="no">A</span><span class="o">==</span><span class="mi">3</span>
+	<span class="no">Species</span> <span class="no">A5</span> <span class="no">A</span><span class="o">==</span><span class="mi">5</span>
+	<span class="no">Species</span> <span class="no">A10</span> <span class="no">A</span><span class="o">==</span><span class="mi">10</span>
+	<span class="no">Species</span> <span class="no">A20</span> <span class="no">A</span><span class="o">==</span><span class="mi">20</span>
+	<span class="no">Species</span> <span class="no">ALong</span> <span class="no">A</span><span class="o">&gt;=</span><span class="mi">30</span>
+<span class="k">end</span> <span class="n">observables</span>
+</code></pre></div></div>
+
+<p>For this model, the infinite number of possible interactions will slow down the Gillespie algorithm. For that reason, we will use an alternative to the Gillespie algorithm called <strong>network-free simulation</strong>, which tracks individual particles.</p>
+
+<p>After building the model, we can run our simulation with the following command (note that we do not need the <code class="language-plaintext highlighter-rouge">generate_network()</code> command):</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">simulate</span><span class="p">({</span><span class="nb">method</span><span class="o">=&gt;</span><span class="s2">"nf"</span><span class="p">,</span> <span class="n">t_end</span><span class="o">=&gt;</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=&gt;</span><span class="mi">1000</span><span class="p">})</span>
+</code></pre></div></div>
+
+<p class="notice--info"><strong>Exercise:</strong>Run the simulation. What happens to the concentration of shorter polymers? What about the longer polymers? You may like to play around with the lengths of the polymers that we are interested in.</p>
+
+<p class="notice--info"><strong>Exercise:</strong> What happens if we also tweak the reaction rates so that bonding is a little more likely than dissociation? What if dissociation is more likely? Does this reflect what you would guess?</p>
+
+<p style="font-size: 100%; text-align: center;"><a href="../coronavirus/home" class="btn btn--primary btn--large">Next module</a></p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:Saragosti2011" role="doc-endnote">
+      <p>Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2011. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. <a href="https://www.pnas.org/content/pnas/108/39/16235.full.pdf">Available online</a> <a href="#fnref:Saragosti2011" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  <!-- only show related on a post page when `related: true`
+  
+  
+  -->
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><div class="search-searchbar"></div>
+  <div class="search-hits"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <hr>
+  <a href="http://cbd.cmu.edu" target="_blank"><img align = "left" src="../assets/images/CMU_CBD_logos.png" alt="CBD Logo" width="40%" height="40%"></a>
+  <a href="http://mmbios.pitt.edu" target="_blank"><img align="right" src="../assets/images/MMBioS_Logo.png" alt="MMBioS Logo" width="50%" height="50%"></a>
+</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: 'O24616B64D',
+  apiKey: '3d5df9a350e2a9a5039314b58ef8c32d',
+  indexName: 'biological_modeling',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <div class="list__item">
+      <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+        <h2 class="archive__item-title" itemprop="headline"><a href="${url}">${title}</a></h2>
+        <div class="archive__item-excerpt" itemprop="description">${content}</div>
+      </article>
+    </div>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate,
+      empty: 'No results',
+    }
+  })
+);
+
+// Starting the search only when toggle is clicked
+$(document).ready(function () {
+  $(".search__toggle").on("click", function() {
+    if(!search.started) {
+      search.start();
+    }
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
