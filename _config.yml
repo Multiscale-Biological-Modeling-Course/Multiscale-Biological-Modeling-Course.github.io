@@ -96,6 +96,7 @@ defaults:
       type: pages
     values:
       layout: single
+      comments: true # adding comments
 
 category_archive:
   type: liquid
