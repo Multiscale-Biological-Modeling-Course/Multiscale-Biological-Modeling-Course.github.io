@@ -26,18 +26,14 @@ minimal_mistakes_skin: contrast
 author:
   name: "Phillip Compeau"
   avatar: "/assets/images/Phillip_Compeau.JPG"
-  bio: "Dedicated teaching professor and online education founder." # Note: Markdown is allowed
-  location: "Pittsburgh, PA"
+  bio: "Dedicated teaching professor and online education founder. Proud to have built Biological Modeling with my students." # Note: Markdown is allowed
   links:
-    - label: "Personal website"
+    - label: "See my personal website for other educational resources."
       icon: "fas fa-fw fa-link"
       url: "http://compeau.cbd.cmu.edu"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/phillipcompeau"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/phcompeau"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/phillipcompeau/"
