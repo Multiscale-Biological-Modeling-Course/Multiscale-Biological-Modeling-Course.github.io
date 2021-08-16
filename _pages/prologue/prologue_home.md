@@ -1,12 +1,16 @@
 ---
 permalink: /prologue/
-title: "Introduction: Life is Random"
+title: "Prologue: Random Walks and Turing Patterns"
 sidebar:
  nav: "prologue"
 image: "../assets/images/gray_scott_jupyter_3.png"
+excerpt: "by Noah Lee, Mert Inan, and Phillip Compeau"
+header:
+  overlay_image: "../assets/images/gray_scott_jupyter_3.png"
+  overlay_filter: 0.3
 ---
 
-<span style="font-size:larger;">by Noah Lee, Mert Inan, and Phillip Compeau</span>
+# Introduction: Life is Random
 
 Quantum physics tells us that everything that happens in the universe ultimately depends on the interaction of tiny particles.  Yet it is difficult for beings like ourselves to acknowledge this fundamental truth of the universe when our experience of existence is guided by "macro" phenomena.
 
