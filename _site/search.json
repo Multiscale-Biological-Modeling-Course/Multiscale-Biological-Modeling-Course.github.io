@@ -922,6 +922,36 @@
   
     {
 
+      "title"    : "v1.0.3 Short Fuse",
+      "url"      : "/node_modules/fuzzysearch/CHANGELOG.html",
+      "category" : "",
+      "tags"     : "",
+      "date"     : ""
+
+    } ,
+  
+    {
+
+      "title"    : "fuzzysearch",
+      "url"      : "/node_modules/fuzzysearch/",
+      "category" : "",
+      "tags"     : "",
+      "date"     : ""
+
+    } ,
+  
+    {
+
+      "title"    : "Simple-Jekyll-Search",
+      "url"      : "/node_modules/simple-jekyll-search/",
+      "category" : "",
+      "tags"     : "",
+      "date"     : ""
+
+    } ,
+  
+    {
+
       "title"    : "",
       "url"      : "/sitemap.xml",
       "category" : "",
