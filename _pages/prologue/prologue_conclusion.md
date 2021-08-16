@@ -40,16 +40,6 @@ Furthermore, note the following two photos of giant pufferfish.[^youngfish][^puf
 
 {% include gallery caption="Two similar pufferfish exhibiting very different skin patterns." %}
 
-![image-center](../assets/images/Juvenile_Mbu_pufferfish.jpg){: .align-center}
-A juvenile Mbu Pufferfish with a very familiar pattern.
-{: style="font-size: medium;"}
-
-![image-center](../assets/images/Giant_Puffer_fish_skin_pattern.jpg){: .align-center}
-An adult Mbu Pufferfish exhibiting another familiar pattern.
-{: style="font-size: medium;"}
-
-
-
 ## A final note
 
 Thank you for making it this far! We hope that you are enjoying the course. You can join the next module of the course by clicking on the "next module" button below. In the meantime, we ask that you complete the <a href="https://forms.gle/egmmBxGtBciDPYNS8" target="_blank">course survey</a> if you have not done so already.
