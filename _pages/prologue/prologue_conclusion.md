@@ -30,8 +30,6 @@ Robert Munafo provides a great figure, reproduced below, showing how the Turing 
 
 {% include figure image_path="../assets/images/xmorphia-parameter-map.jpg" alt="Changing feed and kill rates of Gray-Scott model" caption="Changing feed and kill parameters affects the Turing patterns produced in the Gray-Scott model." %}
 
-![image-center](../assets/images/xmorphia-parameter-map.jpg){: .align-center}
-
 Later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In a **robust** system, variation in parameters does not lead to substantive changes in the ultimate behavior of the system. Robust processes are vital for processes in which an organism needs to be resilient to small changes in its environment.
 
 It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism by which these stripes form is still an unresolved question. However, the pigmentation of *zebrafish* does follow a Turing pattern because two types of pigment cells follow a reaction-diffusion model much like the one we presented above.[^zebrafish]
