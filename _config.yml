@@ -44,6 +44,12 @@ include:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+# Travis bundles all gems in the vendor directory on its servers,
+# which Jekyll will mistakenly read.
+# This will likely make the process fail.
+# To avoid this, add vendor to the exclude list in your _config.yml file.
+exclude: [vendor]
+
 # Plugins (previously gems:)
 plugins:
   #- jekyll-paginate
