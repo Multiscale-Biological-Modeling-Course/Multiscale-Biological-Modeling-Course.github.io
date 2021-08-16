@@ -26,9 +26,9 @@ minimal_mistakes_skin: contrast
 author:
   name: "Phillip Compeau"
   avatar: "/assets/images/Phillip_Compeau.JPG"
-  bio: "Dedicated teaching professor and online education founder. Proud to have built Biological Modeling with my students." # Note: Markdown is allowed
+  bio: "Teaching professor and online education founder. Proud to have built Biological Modeling with my students." # Note: Markdown is allowed
   links:
-    - label: "See my personal website for other educational resources."
+    - label: "Personal website"
       icon: "fas fa-fw fa-link"
       url: "http://compeau.cbd.cmu.edu"
     - label: "Twitter"

@@ -7,6 +7,7 @@ image: "assets/images/gray_scott_jupyter_3.png"
 toc: true
 related: false
 comments: false
+author_profile: true
 ---
 
 ## Welcome to our course!

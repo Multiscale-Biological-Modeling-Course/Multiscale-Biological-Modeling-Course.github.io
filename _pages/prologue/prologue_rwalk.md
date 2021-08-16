@@ -3,7 +3,6 @@ permalink: /prologue/random-walk
 title: "An Introduction to Random Walks"
 sidebar:
  nav: "prologue"
- nav: "prologue"
 toc: true
 toc_sticky: true
 image: "../assets/images/gray_scott_jupyter_3.png"
