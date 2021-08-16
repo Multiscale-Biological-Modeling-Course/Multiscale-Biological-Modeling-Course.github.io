@@ -59,6 +59,7 @@ plugins:
   - jekyll-include-cache
   - jekyll-seo-tag
   - jekyll-algolia
+  - kramdown
 
 algolia:
   application_id: O24616B64D
