@@ -19,7 +19,7 @@ header:
       url: "/prologue/"
 ---
 
-## Welcome to our course!
+## Welcome!
 
 Welcome to our free and open course in biological modeling!
 
