@@ -29,9 +29,6 @@ search_provider: algolia
 # Site logo (next to title)
 logo: "/assets/images/gray_scott_jupyter_3.png"
 
-# Add social sharing to pages
-share: true
-
 # Allow comments
 comments:
   provider: "disqus"
@@ -97,6 +94,7 @@ defaults:
     values:
       layout: single
       comments: true # adding comments
+      share: true # add social sharing to pages
 
 category_archive:
   type: liquid
