@@ -21,7 +21,7 @@ twitter_username: phillipcompeau
 github_username: phcompeau
 minimal_mistakes_skin: contrast
 search: true
-search_provider: lunr
+search_provider: algolia
 
 # Build settings
 markdown: kramdown
@@ -52,6 +52,13 @@ plugins:
   - jemoji
   - jekyll-include-cache
   - jekyll-seo-tag
+  - jekyll-algolia
+
+algolia:
+  application_id: O24616B64D
+  index_name: biological_modeling
+  search_only_api_key: 3d5df9a350e2a9a5039314b58ef8c32d
+  powered_by: true
 
 footer:
   links:
