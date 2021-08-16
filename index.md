@@ -11,8 +11,8 @@ author_profile: true
 
 excerpt: "A free course in biological modeling at multiple scales."
 header:
-  overlay_image: /assets/images/unsplash-image-1.jpg
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+  overlay_image: "assets/images/gray_scott_jupyter_3.png"
+  # caption: "Photo credit: [**foo**](blah.com)"
   actions:
     - label: "More Info"
       url: "https://unsplash.com"
