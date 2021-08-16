@@ -44,8 +44,10 @@ search_provider: algolia
 
 # Site logo (next to title) -- doesn't seem to work
 # logo: "/assets/images/gray_scott_jupyter_3.png"
-header:
-  image: "assets/images/f38_k61.jpg"
+
+# if we want a header, use following
+# header:
+#   image: "assets/images/f38_k61.jpg"
 
 # Allow comments
 comments:
