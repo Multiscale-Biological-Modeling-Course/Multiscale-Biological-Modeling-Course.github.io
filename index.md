@@ -9,7 +9,7 @@ related: false
 comments: false
 author_profile: true
 
-excerpt: "A free course in biological modeling at multiple scales."
+excerpt: "An open course in modeling biological systems at multiple scales."
 header:
   overlay_image: "assets/images/f38_k61.jpg"
   # caption: "Photo credit: [**foo**](blah.com)"
