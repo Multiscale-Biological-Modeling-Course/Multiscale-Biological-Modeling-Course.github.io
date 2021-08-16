@@ -20,8 +20,13 @@ description: >- # this means to ignore newlines until "baseurl:"
 twitter_username: phillipcompeau
 github_username: phcompeau
 minimal_mistakes_skin: contrast
+
+# Search
 search: true
 search_provider: algolia
+
+# Site logo (next to title)
+logo: "images/gray_scott_jupyter_3.png"
 
 # Build settings
 markdown: kramdown
