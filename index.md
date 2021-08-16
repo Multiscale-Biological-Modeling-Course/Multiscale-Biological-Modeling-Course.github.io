@@ -13,9 +13,9 @@ excerpt: "A free course in biological modeling at multiple scales."
 header:
   overlay_image: "assets/images/gray_scott_jupyter_3.png"
   # caption: "Photo credit: [**foo**](blah.com)"
-  actions:
-    - label: "More Info"
-      url: "https://unsplash.com"
+  # actions:
+  #  - label: "More Info"
+  #   url: "https://unsplash.com"
 ---
 
 ## Welcome to our course!
