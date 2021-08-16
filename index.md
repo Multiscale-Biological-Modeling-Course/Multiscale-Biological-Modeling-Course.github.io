@@ -14,7 +14,7 @@ header:
   overlay_image: "assets/images/f38_k61.jpg"
   overlay_filter: 0.3
   # caption: "Photo credit: [**foo**](blah.com)"
-   actions:
+  actions:
     - label: "Start learning!"
       url: "/prologue/"
 ---
