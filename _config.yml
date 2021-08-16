@@ -26,7 +26,7 @@ search: true
 search_provider: algolia
 
 # Site logo (next to title)
-logo: "images/gray_scott_jupyter_3.png"
+logo: "assets/images/gray_scott_jupyter_3.png"
 
 # Add social sharing to pages
 share: true
