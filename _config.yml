@@ -22,6 +22,26 @@ twitter_username: phillipcompeau
 github_username: phcompeau
 minimal_mistakes_skin: contrast
 
+# Author settings
+author:
+  name: "Phillip Compeau"
+  avatar: "/assets/images/Phillip_Compeau.JPG"
+  bio: "Dedicated teaching professor and online education founder." # Note: Markdown is allowed
+  location: "Pittsburgh, PA"
+  links:
+    - label: "Personal website"
+      icon: "fas fa-fw fa-link"
+      url: "http://compeau.cbd.cmu.edu"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/phillipcompeau"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/phcompeau"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/phillipcompeau/"
+
 # Search
 search: true
 search_provider: algolia
