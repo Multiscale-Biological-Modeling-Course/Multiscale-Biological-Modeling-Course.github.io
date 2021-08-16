@@ -1,7 +1,6 @@
 ---
 permalink: /contents/
 title: "Contents"
-classes: wide
 description: Table of contents for Biological Modeling, a free online course.
 comments: false
 share: false
