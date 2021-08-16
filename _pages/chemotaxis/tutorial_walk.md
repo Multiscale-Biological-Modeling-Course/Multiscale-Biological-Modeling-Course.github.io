@@ -10,7 +10,7 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 In a [previous tutorial](tutorial_purerandom), we built a Jupyter notebook to simulate the movement of a cell moving randomly throughout two-dimensional space in a sequence of steps. At each step, the next direction of the cell's movement is chosen completely randomly. We called this simple algorithm "strategy 1" in the [main text](home_conclusion).
 
-In this tutorial, we will adapt this simulation into one that attempts to more closely mimic the real behavior of *E. coli* chemotaxis. We will then be able to compare the results of these two algorithms.
+In this tutorial, we will adapt this simulation into one that attempts to more closely mimic the real behavior of *E. coli* chemotaxis. We will then be able to compare the results of these two algorithms back in the main text.
 
 ## Simulation files and dependencies
 
