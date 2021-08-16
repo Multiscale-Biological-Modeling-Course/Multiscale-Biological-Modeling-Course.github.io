@@ -28,6 +28,9 @@ search_provider: algolia
 # Site logo (next to title)
 logo: "images/gray_scott_jupyter_3.png"
 
+# Add social sharing to pages
+share: true
+
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
@@ -66,6 +69,7 @@ plugins:
   - jekyll-algolia
   - kramdown
 
+# Search with Algolia
 algolia:
   application_id: O24616B64D
   index_name: biological_modeling
