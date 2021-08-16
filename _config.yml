@@ -21,6 +21,7 @@ twitter_username: phillipcompeau
 github_username: phcompeau
 minimal_mistakes_skin: contrast
 search: true
+search_provider: lunr
 
 # Build settings
 markdown: kramdown
