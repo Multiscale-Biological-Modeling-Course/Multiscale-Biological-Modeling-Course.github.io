@@ -8,6 +8,14 @@ toc: true
 related: false
 comments: false
 author_profile: true
+
+excerpt: "A free course in biological modeling at multiple scales."
+header:
+  overlay_image: /assets/images/unsplash-image-1.jpg
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+  actions:
+    - label: "More Info"
+      url: "https://unsplash.com"
 ---
 
 ## Welcome to our course!
