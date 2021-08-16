@@ -1,13 +1,17 @@
 ---
 permalink: /chemotaxis/home
-title: "Introduction: The Lost Immortals"
+title: "Unpacking E. coli’s Genius Exploration Algorithm"
 description: Learn how to model the complete set of reactions that drive a bacterium's exploration of its environment in chemotaxis.
 sidebar:
  nav: "chemotaxis"
 image: "../assets/images/chemotaxis_traj_1.0.png"
+excerpt: "by Shuanger Li and Phillip Compeau"
+header:
+  overlay_image: "../assets/images/chemotaxis_traj_1.0.png"
+  overlay_filter: 0.3
 ---
 
-<span style="font-size:larger;">by Shuanger Li and Phillip Compeau</span>
+# Introduction: The lost immortals
 
 The book *What If?*[^Munroe], by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these situations occurred. Here is an example, called "Lost Immortals".
 

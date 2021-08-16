@@ -1,15 +1,19 @@
 ---
 permalink: /coronavirus/home
-title: "Introduction: A Tale of Two Doctors"
-description: Learn how to predict the structure of a protein, and then compare the spike proteins of  pandemic-causing coronaviruses.
+title: "Analyzing the Coronavirus Spike Protein"
+description: Learn how to predict the structure of a protein, and then compare the spike proteins of pandemic-causing coronaviruses.
 sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
 image: "../assets/images/SARS_spike_proteins.jpg"
+excerpt: "by Chris Lee and Phillip Compeau"
+header:
+  overlay_image: "../assets/images/SARS_spike_proteins.jpg"
+  overlay_filter: 0.3
 ---
 
-<span style="font-size:larger;">by Chris Lee and Phillip Compeau</span>
+# Introduction: A Tale of Two Doctors
 
 > One of the world's most important warning systems for a deadly new outbreak is a doctor's or nurse's recognition that some new disease is emerging and then sounding the alarm. It takes intelligence and courage to step up and say something like that, even in the best of circumstances.
 >
