@@ -7,7 +7,7 @@ main:
     url: /contents/
   - title: "Take the Course"
     sublinks:
-      - title: "<b>Prologue:</b> an introduction to biological modeling via random walks and Turing patterns"
+      - title: "<b>Prologue:</b> Random walks and Turing patterns"
         url: /prologue/
       - title: "<b>Module 1:</b> Finding motifs in transcription factor networks"
         url: /motifs/home
@@ -15,11 +15,11 @@ main:
         url: /chemotaxis/home
       - title: "<b>Module 3:</b> Analyzing the coronavirus spike protein"
         url: /coronavirus/home
-      - title: "<b>Module 4:</b> coming soon!"
+      - title: "<b>Module 4:</b> Training a computer to count white blood cells automatically (coming soon!)"
 
 
 prologue:
-  - title: "Prologue: an Introduction to Biological Modeling via Random Walks and Turing Patterns"
+  - title: "Prologue: Random Walks and Turing Patterns"
     children:
       - title: "Introduction: Life is random<br><br>"
         url: /prologue/
