@@ -12,7 +12,7 @@
  * Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
  * Licensed under MIT (https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE)
 */
-/* NoahL: Inserted to remove sidebar 
+/* NoahL: Inserted to remove sidebar
 article.page { float: left; width: 100%;
 } */
 /* Edited for YouTube embed issues */
@@ -476,6 +476,9 @@ tr, td, th { vertical-align: middle; }
 .btn--facebook { background-color: #3b5998; color: #fff; }
 .btn--facebook:visited { background-color: #3b5998; color: #fff; }
 .btn--facebook:hover { background-color: #2f477a; color: #fff; }
+.btn--reddit { background-color: #ff4500; color: #fff; }
+.btn--reddit:visited { background-color: #ff4500; color: #fff; }
+.btn--reddit:hover { background-color: #ba3600; color: #fff; }
 .btn--twitter { background-color: #55acee; color: #fff; }
 .btn--twitter:visited { background-color: #55acee; color: #fff; }
 .btn--twitter:hover { background-color: #448abe; color: #fff; }
