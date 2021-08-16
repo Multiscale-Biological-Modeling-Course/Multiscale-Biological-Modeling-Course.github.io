@@ -19,6 +19,8 @@ Our reaction-diffusion system is remarkable because it is so **fine-tuned**, mea
 
 Robert Munafo provides a great figure, reproduced below, showing how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary.[^robert] The kill rate increases along the *x*-axis, and the feed rate increases along the *y*-axis. Notice how quickly the patterns change! You may like to try tweaking the parameters of our own Gray-Scott simulator to see if you can reproduce these different patterns.
 
+{% include figure image_path="../assets/images/xmorphia-parameter-map.jpg" alt="this is a placeholder image" caption="Changing feed and kill parameters affects the Turing patterns produced in the Gray-Scott model." %}
+
 ![image-center](../assets/images/xmorphia-parameter-map.jpg){: .align-center}
 
 Later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In a **robust** system, variation in parameters does not lead to substantive changes in the ultimate behavior of the system. Robust processes are vital for processes in which an organism needs to be resilient to small changes in its environment.
