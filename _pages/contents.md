@@ -16,7 +16,7 @@ After building a model in a software tutorial, we return to the main text and an
 
 The following contents is a work in progress and will be expanded in the coming weeks. For now, you can find links to the start of each published module below.
 
-## [Prologue: An introduction to biological modeling via random walks and Turing patterns](../prologue/) ##
+## [Prologue: Random walks and Turing patterns](../prologue/) ##
 
 ### Main text
 
