@@ -32,6 +32,12 @@ logo: "/assets/images/gray_scott_jupyter_3.png"
 # Add social sharing to pages
 share: true
 
+# Allow comments
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "biological-modeling"
+
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
