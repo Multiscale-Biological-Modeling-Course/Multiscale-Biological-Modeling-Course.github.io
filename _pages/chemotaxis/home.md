@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/home
-title: "Unpacking E. coli’s Genius Exploration Algorithm"
+title: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
 description: Learn how to model the complete set of reactions that drive a bacterium's exploration of its environment in chemotaxis.
 sidebar:
  nav: "chemotaxis"
