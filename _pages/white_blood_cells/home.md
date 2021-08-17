@@ -5,6 +5,7 @@ description: Learn how to train a computer to identify cells in images and class
 sidebar:
  nav: "white_blood_cells"
 image: "../assets/images/cellorg_pca_graph_cell.png"
+author_profile: true # add author to page
 ---
 
 <span style="font-size:larger;">by Phillip Compeau, with software tutorials by Nicole Matamala</span>

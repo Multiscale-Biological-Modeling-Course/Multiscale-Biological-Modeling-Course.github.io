@@ -9,6 +9,7 @@ excerpt: "by Shuanger Li and Phillip Compeau"
 header:
   overlay_image: "../assets/images/chemotaxis_traj_1.0.png"
   overlay_filter: 0.3
+author_profile: true # add author to page
 ---
 
 # Introduction: The lost immortals

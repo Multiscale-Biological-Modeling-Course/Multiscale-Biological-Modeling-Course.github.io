@@ -115,7 +115,7 @@ defaults:
       layout: single
       comments: true # adding comments
       share: true # add social sharing to pages
-      author_profile: true
+      author_profile: false
 
 category_archive:
   type: liquid

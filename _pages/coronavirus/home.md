@@ -11,6 +11,7 @@ excerpt: "by Chris Lee and Phillip Compeau"
 header:
   overlay_image: "../assets/images/SARS_spike_proteins.jpg"
   overlay_filter: 0.3
+author_profile: true # add author to page
 ---
 
 # Introduction: A Tale of Two Doctors

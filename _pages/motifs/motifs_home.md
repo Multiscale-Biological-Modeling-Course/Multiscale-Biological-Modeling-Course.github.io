@@ -9,6 +9,7 @@ excerpt: "by Noah Lee and Phillip Compeau"
 header:
   overlay_image: "../assets/images/repress_graph.PNG"
   overlay_filter: 0.3
+author_profile: true # add author to page
 ---
 
 # Introduction: Networks rule biology
