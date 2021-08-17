@@ -51,7 +51,9 @@ Even with a much larger jolt to the concentration of *Y*, we observe the concent
 
 The repressilator is not the only network motif that leads to oscillations of particle concentrations, but robustness to disturbance is a shared feature of all these motifs. This having been said, the repressilator is particularly successful at stabilizing. And although there have been some attempts to study what makes oscillators robust, the process remains difficult to describe. By characterizing the number and type of interactions within the oscillator model, it has been shown that at least five reactions are typically needed to build a very robust oscillator[^repress].
 
-The robustness of the repressilator also implies a bigger picture moral in biological modeling. If an underlying biological system demonstrates robustness to change, then any model of that system should also be able to withstand this change. Conversely, we should be wary of a model of a robust system that does not display this robustness.
+The robustness of the repressilator also implies a bigger picture moral in biological modeling. If an underlying biological system demonstrates robustness to change, then any model of that system should also be able to withstand this change. Conversely, we should be wary of a non-robust model of a robust system.
+
+## Toward more complicated models of biochemical processes
 
 We have seen that even very simple network motifs can have a powerful effect on a cell's ability to implement elegant behavior. In the next module, we will encounter a much more involved biochemical process, with far more molecules and reactions, that is used by bacteria to cleverly (and robustly) explore their environment. In fact, we will have so many particles and so many reactions that we will need to completely rethink how we set up our model. We hope that you will join us!
 
@@ -59,6 +61,12 @@ In the meantime, check out the exercises below to continue developing your under
 
 [Visit exercises](exercises){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+## Special acknowledgement
+
+This module was in part inspired by the superlative textbook on systems biology by Uri Alon[^alon], which we strongly recommend to those interested in a greater discussion of biological network motifs.
+
+[^alon]: Alon, U. An Introduction to Systems Biology: Design Principles of Biological Circuits (2019). 2nd edition. Chapman & Hall/CRC Computational Biology Series.
 
 [^ffl]: Image adapted from Mangan, S., & Alon, U. (2003). Structure and function of the feed-forward loop network motif. Proceedings of the National Academy of Sciences of the United States of America, 100(21), 11980–11985. https://doi.org/10.1073/pnas.2133841100
 
