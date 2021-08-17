@@ -12,10 +12,6 @@ In a [previous tutorial](tutorial_purerandom), we built a Jupyter notebook to si
 
 In this tutorial, we will adapt this simulation into one that attempts to more closely mimic the real behavior of *E. coli* chemotaxis. We will then be able to compare the results of these two algorithms back in the main text.
 
-## Simulation files and dependencies
-
-Download the simulation and visualization here: <a href="../downloads/downloadable/chemotaxis_compare.ipynb" download="chemotaxis_compare.ipynb">chemotaxis_compare.ipynb</a>. Detailed explanation of the model and each functions can be found in the file too.
-
 Make sure the following dependencies are installed:
 
 | Installation Link | Version | Check install/version |
@@ -28,22 +24,16 @@ Make sure the following dependencies are installed:
 
 ## Modeling chemotactic walk at a cellular level
 
-Our model will be based on observations from BNG simulation and *E. coli* biology.
+We will use the run-and-tumble model introduced in the tutorial implementing a pure random walk as a basis for building a more realistic model of bacterial movement.
 
-Ingredients and simplifying assumptions of the model:
- - Run. The background average duration of each run (`time_exp`) is a variable of interest. When the cell senses concentration change, the cell changes the expected run duration (`exp_run_time`). The duration of each run follows an exponential distribution with mean = `exp_run_time`.
- - Tumble. The duration of cell tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes the orientation for the next run but doesn't move in space. The degree of reorientation follows uniform distribution from 0° to 360°.
- - Response. As we've seen in the BNG model, the cell can respond to the gradient change within 0.5 seconds. In this model, we allow cells to re-measure the concentration after it runs for 0.5 seconds.
- - Gradient. We model an exponential gradient centered at [1500, 1500] with a concentration of 10<sup>10</sup>. All cells start at [0, 0], which has a concentration of 10<sup>2</sup>. The receptors saturate at a concentration of 10<sup>10</sup>.
- - Performance. The closer to the center of the gradient the better.
+Recall that the previous simulation involved the following components.
+ 1. **Run.** The duration of a cell's run follows an exponential distribution with mean equal to the background run duration `run_time_expected`.
+ 2. **Tumble.** The duration of a cell's tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes its orientation for the next run but doesn't move in space. The degree of reorientation is a random number sampled uniformly between 0° and 360°.
+ 3. **Gradient.** We model an exponential gradient with a goal (1500, 1500) having a concentration of 10<sup>8</sup>. All cells start at the origin (0, 0), which has a concentration of 10<sup>2</sup>. The ligand concentration at a point (*x*, *y*) is given by *L*(*x*, *y*) = 100 · 10<sup>8 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal; in this case, *D* is 1500√2 ≈ 2121 µm.
 
-What's different between this more advanced model and the [earlier model](tutorial_purerandom) using a standard random walk strategy is we decide the run duration before tumbling based on current vs. past concentrations.
+In this simulation, we will start from this model and change the run duration so that it is based on how the concentration of attractant at the cell's current point compares to the concentration at its previous point. Specifically, we saw when building a BioNetGen model of chemotaxis that the bacterium was able to respond to a change of gradient in about 0.5 seconds. Accordingly, in this model, we will allow the cell to measure the concentration after running for 0.5 seconds and compare it against the concentration at the previous point.
 
-We will start from our previous model and only modify on including this ability.
-
-## Updating run time before tumbling based on concentrations
-
-In our standard random walk model, we sampled each run duration from an exponential distribution with mean `run_time_expected`. This time, we will include the concentrations into our sampling.
+## Updating run time based on attractant concentration
 
 The updated run durations adjusted with concentration changes follow an exponential distribution with mean of `run_time_expected_adj_conc`. When no gradient is present, `run_time_expected_adj_conc` = `run_time_expected`. When there is a change in ligand concentration, `run_time_expected_adj_conc` changes accordingly. The change is calculated as `(curr_conc - past_conc) / past_conc` to normalize for the exponential gradient. We model this response with `run_time_expected_adj_conc` = `run_time_expected` + 10 * `change`.
 
@@ -206,6 +196,10 @@ plt.show()
 Which strategy allows the cell to travel towards the higher concentration?
 
 Are we ready to conclude which default tumbling frequencies are the best?
+
+
+
+Download the simulation and visualization here: <a href="../downloads/downloadable/chemotaxis_compare.ipynb" download="chemotaxis_compare.ipynb">chemotaxis_compare.ipynb</a>. Detailed explanation of the model and each functions can be found in the file too.
 
 **Quantitative comparsion**. Because of the high variations due to randomness, trajectories for 3 cells is not convincing enough. To verify your hypothesis on which strategy is better, let's simulate 500 cells for 1500 seconds for each strategy. Run the two code for Part3: Comparing performances. Each colored line indicates a strategy, plotting average distances for the 500 cells; the shaded area is standard deviation; the grey dashed line is where concentration reaches 1e8.
 

@@ -26,7 +26,7 @@ Make sure that the following dependencies are installed:
 
 Our model will be based on observations from our BioNetGen simulation and known biology of *E. coli*. We summarize this simulation, discussed in the main text, as follows.
 
-1. **Run.** The duration of a cell's run follows an exponential distribution with mean equal to the background run duration `time_exp`.
+1. **Run.** The duration of a cell's run follows an exponential distribution with mean equal to the background run duration `run_time_expected`.
 2. **Tumble.** The duration of a cell's tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes its orientation for the next run but doesn't move in space. The degree of reorientation is a random number sampled uniformly between 0° and 360°.
 3. **Gradient.** We model an exponential gradient with a goal (1500, 1500) having a concentration of 10<sup>8</sup>. All cells start at the origin (0, 0), which has a concentration of 10<sup>2</sup>. The ligand concentration at a point (*x*, *y*) is given by *L*(*x*, *y*) = 100 · 10<sup>8 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal; in this case, *D* is 1500√2 ≈ 2121 µm.
 
@@ -117,13 +117,13 @@ def tumble_move():
 
 In a given run of the simulation, we keep track of the total time `t`, and we only continue our simulation if `t` < `duration`, where `duration` is a parameter indicating how long to run the simulation. If `t` < `duration`, then we apply the following steps to a given cell.
 
- - Sample the run duration `curr_run_time` from an exponential distribution with mean `time_exp`;
+ - Sample the run duration `curr_run_time` from an exponential distribution with mean `run_time_expected`;
  - run for `curr_run_time` seconds in the current direction;
  - sample the duration of tumble `tumble_time`;
  - determine the new direction of the simulated bacterium by calling the `tumble_move` function discussed above;
  - increment `t` by `curr_run_time` and `tumble_time`.
 
-These steps are achieved by the `simulate_std_random` function below, which takes the number of cells `num_cells` to simulate, the time to run each simulation for `duration`, and the mean time of a single run `time_exp`. This function stores the trajectories of these cells in a variable named `path`.
+These steps are achieved by the `simulate_std_random` function below, which takes the number of cells `num_cells` to simulate, the time to run each simulation for `duration`, and the mean time of a single run `run_time_expected`. This function stores the trajectories of these cells in a variable named `path`.
 
 ~~~ python
 # This function performs simulation
@@ -229,7 +229,7 @@ We mark the starting point of each cell's trajectory with a black dot and the en
 
 ~~~ python
 ax.plot(1500, 1500, 'bX', markersize = 8) #Mark the highest concentration point [1500, 1500]
-ax.set_title("Pure random walk \n Background: avg tumble every {} s".format(run_time_exped), x = 0.5, y = 0.87)
+ax.set_title("Pure random walk \n Background: avg tumble every {} s".format(run_time_expected), x = 0.5, y = 0.87)
 ax.set_xlim(-1000, 3000)
 ax.set_ylim(-1000, 3000)
 ax.set_xlabel("poisiton in um")
