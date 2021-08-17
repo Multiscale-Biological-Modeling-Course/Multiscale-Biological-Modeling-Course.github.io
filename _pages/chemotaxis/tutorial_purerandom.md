@@ -243,7 +243,7 @@ plt.show()
 
 ## Quantifying the performance of our search algorithm
 
-We already know from our work in previous modules that a random walk simulation can produce very different outcomes. In order to assess the performance of the random walk algorithm, we will simulate `num_cells` = 500 cells and `duration` = 1500 seconds.
+We already know from our work in previous modules that a random walk simulation can produce very different outcomes. To assess the performance of the random walk algorithm, we will simulate `num_cells` = 500 cells and `duration` = 1500 seconds.
 
 Visualizing the trajectories for this many cells will be messy. Instead, we will measure the distance between each cell and the target at the end of the simulation, and then take the average and standard deviation of this value over all cells.
 
