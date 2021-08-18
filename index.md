@@ -5,6 +5,7 @@ classes: wide
 description: A free course in biological modeling at multiple scales.
 image: "assets/images/gray_scott_jupyter_3.png"
 toc: true
+toc_sticky: true
 related: false
 comments: false
 author_profile: true
