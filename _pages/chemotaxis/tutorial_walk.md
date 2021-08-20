@@ -31,7 +31,39 @@ Recall that the previous simulation involved the following components.
  2. **Tumble.** The duration of a cell's tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes its orientation for the next run but doesn't move in space. The degree of reorientation is a random number sampled uniformly between 0° and 360°.
  3. **Gradient.** We model an exponential gradient with a goal (1500, 1500) having a concentration of 10<sup>8</sup>. All cells start at the origin (0, 0), which has a concentration of 10<sup>2</sup>. The ligand concentration at a point (*x*, *y*) is given by *L*(*x*, *y*) = 100 · 10<sup>8 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal; in this case, *D* is 1500√2 ≈ 2121 µm.
 
-In this tutorial, we will start from the above simulation and change the run duration so that it is based on how the concentration of attractant at the cell's current point compares to the concentration at its previous point. Specifically, we saw when building a BioNetGen model of chemotaxis that the bacterium was able to respond to a change of gradient in about 0.5 seconds. As a result, we will allow our simulated cell to measure the concentration after running for 0.5 seconds and compare it against the concentration at the previous point.
+In this tutorial, we will start from the above simulation and change the run duration so that it is based on the relative change of concentration of attractant at the cell's current point compared to its previous point.
+
+In the main text, we let *t*<sub>0</sub> denote the mean background run duration. We then set Δ[*L*] denote the percentage difference between the ligand concentration *L*(*x*, *y*) at the cell's current point and the ligand concentration at the cell's previous point. We then:
+
+1. took the maximum of 0.000001 and *t*<sub>0</sub> * (1 + 10 · Δ[*L*]);
+2. took the minimum of the resulting value and 4 · *t*<sub>0</sub>;
+3. used the resulting value as the mean of an exponential distribution, and sampled a run time from this distribution.
+
+~~~ python
+# Calculate the wait time for next tumbling event
+# Input: current concentration (float), past concentration (float), position (array [x, y]), expected run time (float)
+# Return: duration of current run (float)
+def run_duration(curr_conc, past_conc, position, run_time_expected):
+
+  curr_conc = min(curr_conc, saturation_conc) #Can't detect higher concentration if receptors saturates
+  past_conc = min(past_conc, saturation_conc)
+  change = (curr_conc - past_conc) / past_conc #proportion change in concentration, float
+  run_time_expected_adj_conc = run_time_expected * (1 + 10 * change) #adjust based on concentration change, float
+
+  if run_time_expected_adj_conc < 0.000001:
+      run_time_expected_adj_conc = 0.000001 #positive wait times
+  elif run_time_expected_adj_conc > 4 * run_time_expected:
+      run_time_expected_adj_conc = 4 * run_time_expected     #the decrease to tumbling frequency is only to a certain extent
+  #Sample the duration of current run from exponential distribution, mean=run_time_expected_adj_conc
+  curr_run_time = np.random.exponential(run_time_expected_adj_conc)
+
+  return curr_run_time
+~~~
+
+
+Specifically, we saw when building a BioNetGen model of chemotaxis that the bacterium was able to respond to a change of gradient in about 0.5 seconds. As a result, we will allow our simulated cell to measure the concentration after running for 0.5 seconds and compare it against the concentration at the previous point.
+
+
 
 To be more precise, recall that we will have a variable `t` storing the time elapsed in the simulation, and a variable `duration` holding the total amount of time allocated for the simulation. The outline of our algorithm is as follows:
 
@@ -47,79 +79,54 @@ while `t` < `duration`:
    1. run for 0.5 seconds in the current direction;
    2. increment `t` by 0.5s.
 
-
-
-
-   ~~~ python
-   # This function performs simulation
-   # Input: number of cells to simulate (int), how many seconds (int), the expected run time before tumble (float)
-   # Return: the simulated trajectories paths: array of shape (num_cells, duration+1, 2)
-   def simulate_chemotaxis(num_cells, duration, run_time_expected):
-
-       #Takes the shape (num_cells, duration+1, 2)
-       #any point [x,y] on the simulated trajectories can be accessed via paths[cell, time]
-       paths = np.zeros((num_cells, duration + 1, 2))
-
-       for rep in range(num_cells):
-           # Initialize simulation
-           t = 0 #record the time elapse
-           curr_position = np.array(start) #start at [0, 0]
-           past_conc = calc_concentration(start) #Initialize concentration
-           projection_h, projection_v, tumble_time = tumble_move() #Initialize direction randomly
-
-           while t < duration:
-               curr_conc = calc_concentration(curr_position)
-
-               curr_run_time = run_duration(curr_conc, past_conc, curr_position, run_time_expected) #get run duration, float
-
-               # if run time (r) is within the step (s), run for r second and then tumble
-               if curr_run_time < response_time:
-                   #displacement on either direction is calculated as the projection * speed * time
-                   #update current position by summing old position and displacement
-                   curr_position = curr_position + np.array([projection_h, projection_v]) * speed * curr_run_time
-                   projection_h, projection_v, tumble_time = tumble_move() #tumble
-                   t += (curr_run_time + tumble_time) #increment time
-
-               # if r > s, run for r; then it will be in the next iteration
-               else:
-                   #displacement on either direction is calculated as the projection * speed * time
-                   #update current position by summing old position and displacement
-                   curr_position = curr_position + np.array([projection_h, projection_v]) * speed * response_time
-                   t += response_time #no tumble here
-
-               #record position approximate for integer number of second
-               curr_sec = int(t)
-               if curr_sec <= duration:
-                   #fill values from last time point to current time point
-                   paths[rep, curr_sec] = curr_position.copy()
-                   past_conc = curr_conc
-
-       return paths
-   ~~~
-
-The updated run durations adjusted with concentration changes follow an exponential distribution with mean of `run_time_expected_adj_conc`. When no gradient is present, `run_time_expected_adj_conc` = `run_time_expected`. When there is a change in ligand concentration, `run_time_expected_adj_conc` changes accordingly. The change is calculated as `(curr_conc - past_conc) / past_conc` to normalize for the exponential gradient. We model this response with `run_time_expected_adj_conc` = `run_time_expected` + 10 * `change`.
+This algorithm is summarized by the following Python code, which calls a function `run_duration()` to determine the length of a run.
 
 ~~~ python
-# Calculate the wait time for next tumbling event
-# Input: current concentration (float), past concentration (float), position (array [x, y]), expected run time (float)
-# Return: duration of current run (float)
-def run_duration(curr_conc, past_conc, position, run_time_expected):
+ # This function performs simulation
+ # Input: number of cells to simulate (int), how many seconds (int), the expected run time before tumble (float)
+ # Return: the simulated trajectories paths: array of shape (num_cells, duration+1, 2)
+ def simulate_chemotaxis(num_cells, duration, run_time_expected):
 
-    curr_conc = min(curr_conc, saturation_conc) #Can't detect higher concentration if receptors saturates
-    past_conc = min(past_conc, saturation_conc)
-    change = (curr_conc - past_conc) / past_conc #proportion change in concentration, float
-    run_time_expected_adj_conc = run_time_expected * (1 + 10 * change) #adjust based on concentration change, float
+     #Takes the shape (num_cells, duration+1, 2)
+     #any point [x,y] on the simulated trajectories can be accessed via paths[cell, time]
+     paths = np.zeros((num_cells, duration + 1, 2))
 
-    if run_time_expected_adj_conc < 0.000001:
-        run_time_expected_adj_conc = 0.000001 #positive wait times
-    elif run_time_expected_adj_conc > 4 * run_time_expected:
-        run_time_expected_adj_conc = 4 * run_time_expected     #the decrease to tumbling frequency is only to a certain extent
-    #Sample the duration of current run from exponential distribution, mean=run_time_expected_adj_conc
-    curr_run_time = np.random.exponential(run_time_expected_adj_conc)
+     for rep in range(num_cells):
+         # Initialize simulation
+         t = 0 #record the time elapse
+         curr_position = np.array(start) #start at [0, 0]
+         past_conc = calc_concentration(start) #Initialize concentration
+         projection_h, projection_v, tumble_time = tumble_move() #Initialize direction randomly
 
-    return curr_run_time
+         while t < duration:
+             curr_conc = calc_concentration(curr_position)
+
+             curr_run_time = run_duration(curr_conc, past_conc, curr_position, run_time_expected) #get run duration, float
+
+             # if run time (r) is within the step (s), run for r second and then tumble
+             if curr_run_time < response_time:
+                 #displacement on either direction is calculated as the projection * speed * time
+                 #update current position by summing old position and displacement
+                 curr_position = curr_position + np.array([projection_h, projection_v]) * speed * curr_run_time
+                 projection_h, projection_v, tumble_time = tumble_move() #tumble
+                 t += (curr_run_time + tumble_time) #increment time
+
+             # if r > s, run for r; then it will be in the next iteration
+             else:
+                 #displacement on either direction is calculated as the projection * speed * time
+                 #update current position by summing old position and displacement
+                 curr_position = curr_position + np.array([projection_h, projection_v]) * speed * response_time
+                 t += response_time #no tumble here
+
+             #record position approximate for integer number of second
+             curr_sec = int(t)
+             if curr_sec <= duration:
+                 #fill values from last time point to current time point
+                 paths[rep, curr_sec] = curr_position.copy()
+                 past_conc = curr_conc
+
+     return paths
 ~~~
-
 
 
 ## Comparing performance of the two strategies
