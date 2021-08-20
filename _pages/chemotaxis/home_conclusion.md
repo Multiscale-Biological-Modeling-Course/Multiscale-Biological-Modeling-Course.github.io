@@ -43,17 +43,26 @@ In the following tutorial, we simulate this naive strategy using a Jupyter noteb
 
 ### Strategy 2: Chemotactic random walk
 
-In our second strategy, we attempt to mimic the real response of *E. coli* to its environment based on what we have learned about chemotaxis throughout this module. The bacterium will still follow a run and tumble model, but the duration of its runs (which is a function of its tumbling frequency) depends on the relative change in attractant concentration that it detects.
+In our second strategy, we attempt to mimic the real response of *E. coli* to its environment based on what we have learned about chemotaxis throughout this module. Specifically, the bacterium will still follow a run and tumble model, but the duration of its runs (which is a function of its tumbling frequency) will depend on the relative change in attractant concentration that it detects.
 
 To ensure a mathematically controlled comparison, we will use the same approach for determining the duration of a tumble and the resulting direction of a run as in strategy 1.
 
-This second strategy will therefore differ only in how it chooses the length of a run. Let *t*<sub>0</sub> denote the mean background run duration, which in the first strategy was equal to 1 second, and let Δ[*L*] denote the percentage difference between the ligand concentration *L*(*x*, *y*) at the cell's current point and the ligand concentration at the cell's previous point. We would like to choose a simple formula for the expected run duration like *t*<sub>0</sub> * (1 + 10 · Δ[*L*]).
+Say that the "response time" of a bacterium, *t*<sub>response<sub>, is the time in seconds that it takes for the bacterium to change its internal behavior in response to its change in environment. (We saw earlier in this module that the response time for *E. coli* in chemotaxis is about half a second.) To model chemotaxis, we will check the attractant concentration at a simulated bacterium's current location every *t*<sub>response<sub> seconds.
 
-However, there are two issues with using this formula. First, if Δ[*L*] is less than -0.1, then the run duration could be negative. Second, if Δ[*L*] is large, then the bacterium will run for so long that it may simply bypass the goal.
+We will then measure the percentage difference between the attractant concentration *L*(*x*, *y*) at the cell's current point and the attractant concentration at the cell's previous point; we denote this difference as Δ[*L*]. If Δ[*L*] is equal to zero, then the probability of a tumble in the next *t*<sub>response<sub> should be the same as the likelihood of a tumble in strategy 1 over the same time period. If Δ[*L*] is positive, then the probability of a tumble should be greater than it was in strategy 1; if Δ[*L*] is negative, then the probability of a tumble should be less than it was in strategy 1.
 
-To prevent the run duration from being negative, we will first take the maximum of *t*<sub>0</sub> * (1 + 10 · Δ[*L*]) and some small positive number (we will use 0.000001). We will then take the minimum of the resulting value and 4 · *t*<sub>0</sub> to prevent the run length from being too large. We will then use the resulting value as the mean of an exponential distribution to determine run duration.
+To model the change in likelihood of a tumble depending on the value of Δ[*L*], we will let *t*<sub>0</sub> denote the mean background run duration, which in the first strategy was equal to 1 second. We would like to choose a simple formula for the expected run duration like *t*<sub>0</sub> * (1 + 10 · Δ[*L*]).
 
-As with the first strategy, our simulated cell will alternate between tumbling and running until the total time devoted to the simulation has been consumed. In the following tutorial, we will adapt the Jupyter notebook that we built in the previous tutorial to simulate this second strategy.
+Unfortunately, there are two issues with this formula. First, if Δ[*L*] is less than -0.1, then the run duration could be negative. Second, if Δ[*L*] is large, then the bacterium will run for so long that it may simply bypass the goal.
+
+To prevent the run duration from being negative, we will first take the maximum of *t*<sub>0</sub> * (1 + 10 · Δ[*L*]) and some small positive number (we will use 0.000001). We will then take the minimum of the resulting value and 4 · *t*<sub>0</sub> to prevent the run length from being too large. This resulting value becomes the mean run length of a bacterium based on the recent relative change in concentration given its previous two points.
+
+**STOP:** What is the mean run duration when Δ[*L*] is equal to zero? Is this what we would hope? You may assume that *t*<sub>0</sub> is much larger than 0.000001.
+{: .notice--primary}
+
+As with the first strategy, our simulated cell will alternate between tumbling and running until the total time devoted to the simulation has been consumed. The only difference is that we will measure the percentage change in concentration Δ[*L*] between a cell's current point and its previous point every *t*<sub>response<sub> seconds. After determining a mean run time *t*(Δ[*L*]), we will sample a random number *p* from an exponential distribution with this mean run time, and the cell will tumble after *p* seconds only if *p* is smaller than *t*<sub>response<sub>.
+
+In the following tutorial, we will adapt the Jupyter notebook that we built in the previous tutorial to simulate this second strategy.
 
 [Visit chemotactic walk tutorial](tutorial_walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
