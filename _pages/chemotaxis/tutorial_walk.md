@@ -31,55 +31,18 @@ Recall that the previous simulation involved the following components.
  2. **Tumble.** The duration of a cell's tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes its orientation for the next run but doesn't move in space. The degree of reorientation is a random number sampled uniformly between 0° and 360°.
  3. **Gradient.** We model an exponential gradient with a goal (1500, 1500) having a concentration of 10<sup>8</sup>. All cells start at the origin (0, 0), which has a concentration of 10<sup>2</sup>. The ligand concentration at a point (*x*, *y*) is given by *L*(*x*, *y*) = 100 · 10<sup>8 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal; in this case, *D* is 1500√2 ≈ 2121 µm.
 
-In this tutorial, we will start from the above simulation and change the run duration so that it is based on the relative change of concentration of attractant at the cell's current point compared to its previous point.
+In this tutorial, we will change this simulation so that the duration of a run is based on the relative change of concentration of attractant at the cell's current point compared to its previous point.
 
-In the main text, we let *t*<sub>0</sub> denote the mean background run duration. We then set Δ[*L*] denote the percentage difference between the ligand concentration *L*(*x*, *y*) at the cell's current point and the ligand concentration at the cell's previous point. We then:
+In the main text, we described that we would model a chemotactic strategy by sampling from an exponential distribution every *t*<sub>response<sub> seconds (*t*<sub>response<sub> is called the response time), where the mean of the exponential distribution changes based on the relative change in concentration. Specifically, we *t*<sub>0</sub> denote the mean background run duration. We then every set Δ[*L*] denote the percentage difference between the ligand concentration *L*(*x*, *y*) at the cell's current point and the ligand concentration at the cell's previous point. We then:
 
 1. took the maximum of 0.000001 and *t*<sub>0</sub> * (1 + 10 · Δ[*L*]);
 2. took the minimum of the resulting value and 4 · *t*<sub>0</sub>;
-3. used the resulting value as the mean of an exponential distribution, and sampled a run time from this distribution.
+3. used the resulting value as the mean of an exponential distribution, and sampled a run time *p* from this distribution.
+4. If *p* is smaller than *t*<sub>response<sub>, then the cell will tumble after *p* seconds. Otherwise, it continues in its current direction for *t*<sub>response<sub> seconds, at which time it will repeat the above steps.
 
-~~~ python
-# Calculate the wait time for next tumbling event
-# Input: current concentration (float), past concentration (float), position (array [x, y]), expected run time (float)
-# Return: duration of current run (float)
-def run_duration(curr_conc, past_conc, position, run_time_expected):
+We continue this process of running and tumbling for a total of `duration` seconds, where every *t*<sub>response<sub> seconds, we assess whether or not to tumble in the next time interval. (And where the likelihood of a tumble is directly related to the change in concentration Δ[*L*].)
 
-  curr_conc = min(curr_conc, saturation_conc) #Can't detect higher concentration if receptors saturates
-  past_conc = min(past_conc, saturation_conc)
-  change = (curr_conc - past_conc) / past_conc #proportion change in concentration, float
-  run_time_expected_adj_conc = run_time_expected * (1 + 10 * change) #adjust based on concentration change, float
-
-  if run_time_expected_adj_conc < 0.000001:
-      run_time_expected_adj_conc = 0.000001 #positive wait times
-  elif run_time_expected_adj_conc > 4 * run_time_expected:
-      run_time_expected_adj_conc = 4 * run_time_expected     #the decrease to tumbling frequency is only to a certain extent
-  #Sample the duration of current run from exponential distribution, mean=run_time_expected_adj_conc
-  curr_run_time = np.random.exponential(run_time_expected_adj_conc)
-
-  return curr_run_time
-~~~
-
-
-Specifically, we saw when building a BioNetGen model of chemotaxis that the bacterium was able to respond to a change of gradient in about 0.5 seconds. As a result, we will allow our simulated cell to measure the concentration after running for 0.5 seconds and compare it against the concentration at the previous point.
-
-
-
-To be more precise, recall that we will have a variable `t` storing the time elapsed in the simulation, and a variable `duration` holding the total amount of time allocated for the simulation. The outline of our algorithm is as follows:
-
-while `t` < `duration`:
- * Measure the current concentration of attractant against the concentration at the cell's previous point.
- * Update the run duration `curr_run_time` based on the change in concentration.
- * If `curr_run_time` < 0.5s:
-   1. run for `curr_run_time` seconds in the current direction;
-   2. determine the tumble duration `tumble_time`
-   3. determine a new random direction of travel;
-   4. increment `t` by `curr_run_time` + `tumble_time`.
- * If `curr_run_time` > 0.5s:
-   1. run for 0.5 seconds in the current direction;
-   2. increment `t` by 0.5s.
-
-This algorithm is summarized by the following Python code, which calls a function `run_duration()` to determine the length of a run.
+This algorithm is summarized by the following Python code, which calls a function `run_duration()` to determine the length of a run. This algorithm uses a value of `response_time` of 0.5 seconds, since this is the approximate time that we have observed that it takes *E. coli* to change its behavior in response to an attractant.
 
 ~~~ python
  # This function performs simulation
@@ -128,8 +91,30 @@ This algorithm is summarized by the following Python code, which calls a functio
      return paths
 ~~~
 
+We now provide code for the function `run_duration`. This function samples a random number from an exponential distribution whose mean is equal to min(4 · *t*<sub>0</sub>, max(0.000001, *t*<sub>0</sub> * (1 + 10 · Δ[*L*]))). Note that before we compute this formula, we ensure that the current concentration is not greater than some maximum concentration `saturation_conc` at which the concentration of attractant is saturated.
 
-## Comparing performance of the two strategies
+~~~ python
+# Calculate the wait time for next tumbling event
+# Input: current concentration (float), past concentration (float), position (array [x, y]), expected run time (float)
+# Return: duration of current run (float)
+def run_duration(curr_conc, past_conc, position, run_time_expected):
+
+  curr_conc = min(curr_conc, saturation_conc) #Can't detect higher concentration if receptors saturates
+  past_conc = min(past_conc, saturation_conc)
+  change = (curr_conc - past_conc) / past_conc #proportion change in concentration, float
+  run_time_expected_adj_conc = run_time_expected * (1 + 10 * change) #adjust based on concentration change, float
+
+  if run_time_expected_adj_conc < 0.000001:
+      run_time_expected_adj_conc = 0.000001 #positive wait times
+  elif run_time_expected_adj_conc > 4 * run_time_expected:
+      run_time_expected_adj_conc = 4 * run_time_expected     #the decrease to tumbling frequency is only to a certain extent
+  #Sample the duration of current run from exponential distribution, mean=run_time_expected_adj_conc
+  curr_run_time = np.random.exponential(run_time_expected_adj_conc)
+
+  return curr_run_time
+~~~
+
+## Comparing the performance of the two strategies
 
 Please download the simulation and visualization here: <a href="../downloads/downloadable/chemotaxis_compare.ipynb" download="chemotaxis_compare.ipynb">chemotaxis_compre.ipynb</a>.
 
