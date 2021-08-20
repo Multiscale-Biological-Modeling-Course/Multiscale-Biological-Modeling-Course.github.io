@@ -91,7 +91,7 @@ This algorithm is summarized by the following Python code, which calls a functio
      return paths
 ~~~
 
-We now provide code for the function `run_duration`. This function samples a random number from an exponential distribution whose mean is equal to min(4 · *t*<sub>0</sub>, max(0.000001, *t*<sub>0</sub> * (1 + 10 · Δ[*L*]))). Note that before we compute this formula, we ensure that the current concentration is not greater than some maximum concentration `saturation_conc` at which the concentration of attractant is saturated.
+We now provide code for the function `run_duration`. This function samples a random number from an exponential distribution whose mean is equal to min(4 · *t*<sub>0</sub>, max(0.000001, *t*<sub>0</sub> · (1 + 10 · Δ[*L*]))). Note that before we compute this formula, we ensure that the current concentration is not greater than some maximum concentration `saturation_conc` at which the concentration of attractant is saturated.
 
 ~~~ python
 # Calculate the wait time for next tumbling event
@@ -116,15 +116,15 @@ def run_duration(curr_conc, past_conc, position, run_time_expected):
 
 ## Comparing the performance of the two strategies
 
-Please download the simulation and visualization here: <a href="../downloads/downloadable/chemotaxis_compare.ipynb" download="chemotaxis_compare.ipynb">chemotaxis_compre.ipynb</a>.
+Please download the simulation and visualization here: <a href="../downloads/downloadable/chemotaxis_compare.ipynb" download="chemotaxis_compare.ipynb">chemotaxis_compare.ipynb</a>.
 
 To compare the performance of the two strategies, we visualize the trajectories of simulation with 3 cells and compare the performance using simulation with 500 cells for each strategy.
 
 ### Qualitative comparison
 
-Run the code for Part2: Visualizing trajectories. The background color indicates concentration: white -> red = low -> high; black dot are starting points; red dots are the points they reached at the end of the simulation; colored points represents trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the goal.
+Run the code for `Part 2: Visualizing trajectories`. The background color indicates concentration: white -> red = low -> high; the black dot represents the origin; red dots are the points they reached at the end of the simulation; colored points represent cells' trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the goal.
 
-We will simulate 3 cells for 800 seconds for each of the strategies.
+We will simulate three cells for 800 seconds for each of the two strategies.
 
 ~~~ python
 #Run simulation for 3 cells for each strategy, plot paths
@@ -187,11 +187,6 @@ plt.show()
 ~~~
 
 Which strategy allows the cell to travel towards the higher concentration?
-
-Are we ready to conclude which default tumbling frequencies are the best?
-
-
-
 
 ### Quantitative comparison
 
