@@ -8,11 +8,11 @@ toc_sticky: true
 image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
-In a [previous tutorial](tutorial_purerandom), we built a Jupyter notebook to simulate the movement of a cell moving randomly throughout two-dimensional space in a sequence of steps. At each step, the next direction of the cell's movement is chosen completely randomly. We called this simple algorithm "strategy 1" in the [main text](home_conclusion).
+In a [previous tutorial](tutorial_purerandom), we simulated the movement of a cell moving randomly throughout two-dimensional space in a sequence of steps. At each step, the next direction of the cell's movement is chosen completely randomly. We called this simple algorithm "strategy 1" in the [main text](home_conclusion).
 
-In this tutorial, we will adapt this simulation into one that attempts to more closely mimic the real behavior of *E. coli* chemotaxis. We will then be able to compare the results of these two algorithms back in the main text.
+In this tutorial, we will adapt this simulation into one that attempts to more closely mimic the real behavior of *E. coli* chemotaxis, based on what we have learned in this module. We will then be able to compare the results of these two algorithms.
 
-Make sure the following dependencies are installed:
+Make sure that the following dependencies are installed:
 
 | Installation Link | Version | Check install/version |
 |:------|:-----:|------:|
@@ -24,21 +24,20 @@ Make sure the following dependencies are installed:
 
 ## The chemotactic walk reassesses run length based on relative attractant concentration
 
-We will use the run-and-tumble model introduced in the tutorial implementing a pure random walk as a basis for building a more realistic model of bacterial movement.
+We will use the run-and-tumble model introduced in the random walk tutorial as a basis for building a more realistic model of bacterial movement. Recall that this previous simulation involved the following components.
 
-Recall that the previous simulation involved the following components.
  1. **Run.** The duration of a cell's run follows an exponential distribution with mean equal to the background run duration `run_time_expected`.
- 2. **Tumble.** The duration of a cell's tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume it only changes its orientation for the next run but doesn't move in space. The degree of reorientation is a random number sampled uniformly between 0° and 360°.
- 3. **Gradient.** We model an exponential gradient with a goal (1500, 1500) having a concentration of 10<sup>8</sup>. All cells start at the origin (0, 0), which has a concentration of 10<sup>2</sup>. The ligand concentration at a point (*x*, *y*) is given by *L*(*x*, *y*) = 100 · 10<sup>8 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal; in this case, *D* is 1500√2 ≈ 2121 µm.
+ 2. **Tumble.** The duration of a cell's tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume that the cell changes its orientation but does not change its position. The degree of reorientation is a random number sampled uniformly between 0° and 360°.
+ 3. **Gradient.** We model an exponential gradient with a goal (1500, 1500) having a concentration of 10<sup>8</sup>. All cells start at the origin (0, 0), which has a concentration of 10<sup>2</sup>. The ligand concentration at the point (*x*, *y*) is given by *L*(*x*, *y*) = 100 · 10<sup>8 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal; in this case, *D* is 1500√2 ≈ 2121 µm.
 
-In this tutorial, we will change this simulation so that the duration of a run is based on the relative change of concentration of attractant at the cell's current point compared to its previous point.
+In this tutorial, we will modify this simulation so that the duration of a run is based on the *relative* change of concentration of attractant at the cell's current point compared to its previous point.
 
-In the main text, we described that we would model a chemotactic strategy by sampling from an exponential distribution every *t*<sub>response</sub> seconds (*t*<sub>response</sub> is called the response time), where the mean of the exponential distribution changes based on the relative change in concentration. Specifically, we *t*<sub>0</sub> denote the mean background run duration. We then every set Δ[*L*] denote the percentage difference between the ligand concentration *L*(*x*, *y*) at the cell's current point and the ligand concentration at the cell's previous point. We then:
+In the main text, we stated that we would model a chemotactic strategy by sampling from an exponential distribution every *t*<sub>response</sub> seconds (*t*<sub>response</sub> is called the response time), where the mean of the exponential distribution changes based on the relative change in concentration. Specifically, we let *t*<sub>0</sub> denote the mean background run duration and Δ[*L*] denote the percentage difference between the ligand concentration *L*(*x*, *y*) at the cell's current point and the ligand concentration at the cell's previous point. We then:
 
 1. took the maximum of 0.000001 and *t*<sub>0</sub> * (1 + 10 · Δ[*L*]);
 2. took the minimum of the resulting value and 4 · *t*<sub>0</sub>;
 3. used the resulting value as the mean of an exponential distribution, and sampled a run time *p* from this distribution.
-4. If *p* is smaller than *t*<sub>response</sub>, then the cell will tumble after *p* seconds. Otherwise, it continues in its current direction for *t*<sub>response</sub> seconds, at which time it will repeat the above steps.
+4. If *p* is smaller than *t*<sub>response</sub>, then the cell will tumble after *p* seconds. Otherwise, it continues in its current direction for *t*<sub>response</sub> seconds, at which time it will repeat steps 1-4.
 
 We continue this process of running and tumbling for a total of `duration` seconds, where every *t*<sub>response</sub> seconds, we assess whether or not to tumble in the next time interval. (And where the likelihood of a tumble is directly related to the change in concentration Δ[*L*].)
 
