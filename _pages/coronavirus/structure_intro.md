@@ -10,7 +10,9 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 ## Determining protein structure is fundamental to understanding protein function
 
-Proteins are one of the most important groups of macromolecules in living organisms, contributing to essentially all functions within them. Recall that in our [introduction to transcription](../motifs/transcription) in a previous module, we introduced the "central dogma" of molecular biology, in which DNA is transcribed into RNA, which is then translated into protein. This process is represented in the figure reproduced below.
+Proteins are one of the most important groups of macromolecules in living organisms, contributing to essentially all functions within them. For example, they are so important that over half of all the molecules in an *E. coli* cell are devoted to protein synthesis.[^machinery]
+
+Recall that in our [introduction to transcription](../motifs/transcription) in a previous module, we introduced the "central dogma" of molecular biology, in which DNA is transcribed into RNA, which is then translated into protein. This process is represented in the figure reproduced below.
 
 ![image-center](../assets/images/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg){: .align-center}
 The central dogma of molecular biology states that molecular information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA. Image courtesy: Dhorpool, Wikimedia commons user.
@@ -121,6 +123,8 @@ Although protein structure prediction is difficult, it is not impossible; the pr
 [^Koshland]: Koshland D.E. 1958. Application of a Theory of Enzyme Specificity to Protein Synthesis. Proc Natl Acad Sci U S A. 44(2):98-104. doi:10.1073/pnas.44.2.98
 
 [^Levinthal]: Levinthal, C. 1969. How to Fold Graciously. Mossbaur Spectroscopy in Biological Systems, Proceedings of a meeting held at Allerton House, Monticello, Illinois. eds. Debrunner, P., Tsibris, J.C.M., Munck, E. University of Illinois Press Pages 22-24.
+
+[^machinery]: Goodsell, David (2009), *The Machinery of Life*. Copernicus Books.
 
 [^HPP]: https://hupo.org/human-proteome-project
 

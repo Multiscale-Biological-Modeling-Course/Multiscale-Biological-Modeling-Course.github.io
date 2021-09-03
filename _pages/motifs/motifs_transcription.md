@@ -52,7 +52,9 @@ In a future module, we will discuss the details of how the cell detects an extra
 
 Over the years, a number of both computational and experimental approaches have been developed to identify the collection of genes that a given transcription factor regulates.
 
-For example, genes that are regulated by the same transcription factor often share the same short region of DNA preceding the genes where the transcription factor binds. Computational biologists have developed algorithms to scan through the genome, looking for genes with similar regions preceding them, and predicting that they are regulated by the same transcription factor. If you are interested in learning more about these algorithms, we encourage you to check out [Chapter 2](https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-2) of *Bioinformatics Algorithms: An Active Learning Approach*, which can be read for free online.
+A transcription factor will have a weak binding affinity to DNA in general, but it will have a very strong binding affinity for a single specific short sequence of nucleotides[^machinery] called a **motif**. As a result, when the transcription factor latches on to DNA, it is able to "slide" up and down the DNA molecule until it finds its target motif. If this motif occurs immediately preceding a gene, then the transcription factor will regulate this gene.
+
+By extension, genes that are regulated by the same transcription factor will often share the same motif. Computational biologists have therefore developed algorithms to scan through the genome, looking for genes with similar regions preceding them, and predicting that they must be regulated by the same transcription factor. If you are interested in learning more about these algorithms, we encourage you to check out [Chapter 2](https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-2) of *Bioinformatics Algorithms: An Active Learning Approach*, which can be read for free online.
 
 A widespread experimental practice for determining whether a protein bonds to a given region of DNA is called **ChIP-seq**[^chip], which is short for **chromatin immunoprecipitation sequencing**. This approach, which is illustrated in the figure below, combines an organism's DNA with a collection of proteins that bond to DNA (which in this case would be transcription factors). After allowing for the proteins to bond naturally to the DNA, the DNA (with proteins attached) is cleaved into much smaller fragments of a few hundred base pairs. As a result of this process, we obtain a collection of DNA fragments, some of which are attached to protein.
 
@@ -70,7 +72,7 @@ You may also like to check out the following excellent video on identifying gene
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/voEDurUgz_4" frameborder="0" allowfullscreen></iframe>
 
-**STOP:** How do you think that researchers measure whether a transcription factor activates or inhibits a given gene?
+**STOP:** How do you think that researchers could measure whether a transcription factor activates or inhibits a given gene?
 {: .notice--primary}
 
 ## Organizing transcription factor information
@@ -83,6 +85,8 @@ We would like to organize the relationships between transcription factors and th
 {: style="font-size: 100%; text-align: center;"}
 
 [^dogma]: CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/
+
+[^machinery]: Goodsell, David (2009), *The Machinery of Life*. Copernicus Books.
 
 [^signalResponse]: CC https://www.open.edu/openlearn/science-maths-technology/general-principles-cellular-communication/content-section-1
 

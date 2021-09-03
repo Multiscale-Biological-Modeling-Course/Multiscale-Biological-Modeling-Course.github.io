@@ -10,7 +10,9 @@ image: "../assets/images/gray_scott_jupyter_3.png"
 
 ## The wanderlust of a single particle
 
-We have mentioned that our experience of the world is often influenced by the random interactions of objects that we cannot see. Our goal is to see how randomness can help us understand how zebras get their stripes, and to this end, we will consider a simpler phenomenon by observing the movement of a single particle taking a **random walk** in a two-dimensional plane. At each step, the particle moves a single unit in a randomly chosen direction.
+We introduced this prologue with the observation that our experience of the world is influenced by the random movements of invisible particles. For example, throughout this course, we will work with proteins, molecules that perform nearly every function in our cells. If a protein could move in a straight line, it would move 20 kph or more[^machinery], but the cellular cytoplasm is so densely packed with molecules that the protein constantly bounces off these molecules and changes direction.
+
+We can therefore model the random movements of a particle by **random walk** in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction.
 
 **STOP**: After *n* steps, how far do you think the particle will have traveled (as the crow flies) from its starting point?
 {: .notice--primary}
@@ -56,6 +58,8 @@ Before continuing, we point you to a beautiful animation illustrating just how f
 
 [Next lesson](animals){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+[^machinery]: Goodsell, David (2009), *The Machinery of Life*. Copernicus Books.
 
 ## (Optional) A proof of the Random Walk Theorem
 

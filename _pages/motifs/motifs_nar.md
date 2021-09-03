@@ -22,7 +22,9 @@ In the [prologue](../prologue/), we simulated chemical reactions to run a random
 
 We will begin with a model of the first cell, in which *X* upregulates *Y* but we do not have negative autoregulation of *Y*. We start without any *Y* particles and a constant number of *X* particles. To simulate *X* upregulating the expression of *Y*, we add the reaction *X* → *X* + *Y*. This reaction ensures that in a given interval of time there is a constant underlying probability that a given *X* particle will spontaneously form a new *Y* particle.
 
-We should also account for the fact that proteins are *degraded* over time by enzymes called proteases. Protein degradation offers a natural mechanism by which proteins at high concentrations can return to a steady-state. To this end, we add a "kill" reaction that removes *Y* particles. We will assume that *X* starts at steady-state, meaning that *X* is being produced at a rate that exactly balances its degradation rate, and we will therefore not need to add reactions to the model simulating the production or degradation of *X*.
+We should also account for the fact that proteins are *degraded* over time by enzymes called proteases. The typical protein's concentration will be degraded by 20 to 40 percent in an hour, but transcription factors degrade even faster, only lasting for a matter of minutes.[^machinery] Degradation may seem like a bug, but it is in fact a feature, as it allows the cell to remove a protein after increasing its concentration in response to its environment.
+
+To model the degradation of a protein, we add a "kill" reaction that removes *Y* particles. We will assume that *X* starts at steady-state, meaning that *X* is being produced at a rate that exactly balances its degradation rate, and we will therefore not need to add reactions to the model simulating the production or degradation of *X*.
 
 Diffusion of the *X* and *Y* particles is not necessary because there is no reaction in which more than one particle interacts, but we will allow both *X* and *Y* particles to diffuse through the system at the same rate.
 
@@ -80,5 +82,7 @@ In this lesson, we have seen that particle-based simulations can be powerful for
 [^Alon]: Alon, Uri. *An Introduction to Systems Biology: Design Principles of Biological Circuits*, 2nd Edition. Chapman & Hall/CRC Mathematical and Computational Biology Series. 2019.
 
 [^Dob]: Dobzhansky, Theodosius (March 1973), "Nothing in Biology Makes Sense Except in the Light of Evolution", American Biology Teacher, 35 (3): 125–129, JSTOR 4444260)
+
+[^machinery]: Goodsell, David (2009), *The Machinery of Life*. Copernicus Books.
 
 [^Savageau]: Savageau, 1976 https://ucdavis.pure.elsevier.com/en/publications/biochemical-systems-analysis-a-study-of-function-and-design-in-mo
