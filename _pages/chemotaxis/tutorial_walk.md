@@ -32,16 +32,18 @@ We will use the run-and-tumble model introduced in the random walk tutorial as a
 
 In this tutorial, we will modify this simulation so that the duration of a run is based on the *relative* change of concentration of attractant at the cell's current point compared to its previous point.
 
-In the main text, we stated that we would model a chemotactic strategy by sampling from an exponential distribution every *t*<sub>response</sub> seconds (*t*<sub>response</sub> is called the response time), where the mean of the exponential distribution changes based on the relative change in concentration. Specifically, we let *t*<sub>0</sub> denote the mean background run duration and Δ[*L*] denote the percentage difference between the ligand concentration *L*(*x*, *y*) at the cell's current point and the ligand concentration at the cell's previous point. We then:
+In the main text, we stated that we would model a chemotactic strategy by sampling from an exponential distribution every *t*<sub>response</sub> seconds (*t*<sub>response</sub> is called the response time), where the mean of the exponential distribution changes based on the relative change in concentration. Specifically, we let *t*<sub>0</sub> denote the mean background run duration and Δ[*L*] denote the percentage difference between the ligand concentration *L*(*x*, *y*) at the cell's current point and the ligand concentration at the cell's previous point.
 
-1. took the maximum of 0.000001 and *t*<sub>0</sub> * (1 + 10 · Δ[*L*]);
-2. took the minimum of the resulting value and 4 · *t*<sub>0</sub>;
-3. used the resulting value as the mean of an exponential distribution, and sampled a run time *p* from this distribution.
+Then, to determine whether the cell will tumble, we perform the following steps.
+
+1. We take the maximum of 0.000001 and *t*<sub>0</sub> * (1 + 10 · Δ[*L*]).
+2. We take the minimum of the resulting value and 4 · *t*<sub>0</sub>.
+3. We set the resulting value as the mean of an exponential distribution and sample a run time *p* from this distribution.
 4. If *p* is smaller than *t*<sub>response</sub>, then the cell will tumble after *p* seconds. Otherwise, it continues in its current direction for *t*<sub>response</sub> seconds, at which time it will repeat steps 1-4.
 
-We continue this process of running and tumbling for a total of `duration` seconds, where every *t*<sub>response</sub> seconds, we assess whether or not to tumble in the next time interval. (And where the likelihood of a tumble is directly related to the change in concentration Δ[*L*].)
+We continue this process of running and tumbling for the total duration of the simulation, where every *t*<sub>response</sub> seconds, we use the above steps to assess whether or not to tumble in the next time interval.
 
-This algorithm is summarized by the following Python code, which calls a function `run_duration()` to determine the length of a run. This algorithm uses a value of `response_time` of 0.5 seconds, since this is the approximate time that we have observed that it takes *E. coli* to change its behavior in response to an attractant.
+This algorithm is summarized by the following Python code, which calls a function `run_duration()` to determine the length of a single run. This algorithm uses a value of `response_time` of 0.5 seconds, since this is the approximate time that we have observed that it takes *E. coli* to change its behavior in response to an attractant. The total time of the simulation is given as a parameter `duration` in seconds.
 
 ~~~ python
  # This function performs simulation
