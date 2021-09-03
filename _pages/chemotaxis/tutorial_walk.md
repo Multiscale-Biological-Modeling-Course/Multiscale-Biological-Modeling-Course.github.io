@@ -24,7 +24,7 @@ Make sure that the following dependencies are installed:
 
 ## The chemotactic walk reassesses run length based on relative attractant concentration
 
-We will use the run-and-tumble model introduced in the random walk tutorial as a basis for building a more realistic model of bacterial movement. Recall that this previous simulation involved the following components.
+We will use the run-and-tumble model introduced in the [random walk tutorial](tutorial_purerandom) as a basis for building a more realistic model of bacterial movement. Recall that this previous simulation involved the following components.
 
  1. **Run.** The duration of a cell's run follows an exponential distribution with mean equal to the background run duration `run_time_expected`.
  2. **Tumble.** The duration of a cell's tumble follows an exponential distribution with mean 0.1s[^Saragosti2012]. When it tumbles, we assume that the cell changes its orientation but does not change its position. The degree of reorientation is a random number sampled uniformly between 0° and 360°.
@@ -117,15 +117,15 @@ def run_duration(curr_conc, past_conc, position, run_time_expected):
 
 ## Comparing the performance of the two strategies
 
-Please download the simulation and visualization here: <a href="../downloads/downloadable/chemotaxis_compare.ipynb" download="chemotaxis_compare.ipynb">chemotaxis_compare.ipynb</a>.
+Now that we have modified our random walk simulation to be more biologically accurate, we will compare the performance of these cells against those following the original random walk. How much better do the cells following the biologically accurate strategy fare?
 
-To compare the performance of the two strategies, we visualize the trajectories of simulation with 3 cells and compare the performance using simulation with 500 cells for each strategy.
+To do so, we will provide a Jupyter notebook here: <a href="../downloads/downloadable/chemotaxis_compare.ipynb" download="chemotaxis_compare.ipynb">chemotaxis_compare.ipynb</a>.
 
 ### Qualitative comparison
 
-Run the code for `Part 2: Visualizing trajectories`. The background color indicates concentration: white -> red = low -> high; the black dot represents the origin; red dots are the points they reached at the end of the simulation; colored points represent cells' trajectories (one color one cell): dark -> bright color = older -> newer time points; blue cross indicates the goal.
+We will first visualize the trajectories of three cells following each of our two strategies. To do so, first initialize the model by running the code for `Part 1: Model specification`.
 
-We will simulate three cells for 800 seconds for each of the two strategies.
+The following code simulates three cells for 800 seconds for each of the two strategies.
 
 ~~~ python
 #Run simulation for 3 cells for each strategy, plot paths
@@ -139,7 +139,7 @@ paths_che = simulate_chemotaxis(num_cells, duration, run_time_expected)
 paths = np.array([paths_rand, paths_che])
 ~~~
 
-The plotting is similar as before, except that this time, we will have two subplots, one for pure random walk and another for chemotactic random walk, initialized with `plt.subplots(1, 2)`. We will plot the simulation results for each strategy.
+Now that we have simulated the cells, we will visualize the results of their walks. The plotting is similar as in the [random walk tutorial](tutorial_purerandom), except that this time, we will have two subplots, one for the pure random walk strategy, and the other for the chemotactic random walk. (These subplots are initialized using `plt.subplots(1, 2)`.)
 
 ~~~ python
 #Below are all for plotting purposes
@@ -187,16 +187,13 @@ fig.tight_layout()
 plt.show()
 ~~~
 
-Which strategy allows the cell to travel towards the higher concentration?
+You are now ready to run the code for `Part 2: Visualizing trajectories`. Do you notice a difference in the two strategies in helping the cell travel toward the goal?
 
 ### Quantitative comparison
 
+If you performed the plotting in the previous section, then you may have formed a hypothesis about the effectiveness of the chemotactic strategy compared to the pure random walk. However, because of the variations due to randomness, we should be careful about using only three cells as our sample size. To more rigorously compare the two strategies, we will simulate 500 cells for 1500 seconds for each strategy and consider how close, on average, the cell is to the goal at the end for each strategy.
 
-Download the simulation and visualization here: <a href="../downloads/downloadable/chemotaxis_compare.ipynb" download="chemotaxis_compare.ipynb">chemotaxis_compare.ipynb</a>. Detailed explanation of the model and each functions can be found in the file too.
-
-Because of the high variations due to randomness, trajectories for 3 cells is not convincing enough. To verify your hypothesis on which strategy is better, let's simulate 500 cells for 1500 seconds for each strategy. Run the two code for Part3: Comparing performances. Each colored line indicates a strategy, plotting average distances for the 500 cells; the shaded area is standard deviation; the grey dashed line is where concentration reaches 1e8.
-
-Like we did above, we run simulations for each strategies.
+As in the previous section, we first simulate each of the two strategies for the desired number of cells, and store the results of the walk for each cell. We also compute the average and standard deviation of the distance from a cell to the goal for each of the two strategies.
 
 ~~~ python
 #Run simulation for 3 cells with different background tumbling frequencies, Plot paths
@@ -223,7 +220,8 @@ all_dist_avg = np.mean(all_distance, axis = 1) #Calculate average over cells, ar
 all_dist_std = np.std(all_distance, axis = 1) #Calculate the standard deviation, array of shape (2,duration,)
 ~~~
 
-And then plotting the average distance to center vs. time like in the [previous tutorial](tutorial_purerandom).
+Then, for each of the two strategies, we plot the average distance to the goal as a function of time, as we did in the [random walk tutorial](tutorial_purerandom). Recall that the shaded area corresponds to one standard deviation from the mean.
+
 ~~~ python
 #Below are all for plotting purposes
 #Define the colors to use
@@ -250,7 +248,7 @@ ax.legend(loc='upper right', ncol = 2, fontsize = 15)
 ax.grid()
 ~~~
 
-Which strategy is more efficient?
+You are now ready to run the code in `Part 3: Comparing performances`. Consider whether you feel confident in your hypothesis about the performance of the two cellular strategies before we discuss our analysis back in the main text.
 
 [Return to main text](home_conclusion#comparing-the-effectiveness-of-our-two-random-walk-strategies){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

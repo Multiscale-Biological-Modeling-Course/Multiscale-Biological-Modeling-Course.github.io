@@ -298,7 +298,7 @@ ax.grid()
 **STOP:** Before visualizing the average distances at each time step, what do you expect the average distance to the goal to be?
 {: .notice--primary}
 
-Now, run the notebook. The colored line indicates average distance of the 500 cells; the shaded area is standard deviation; and the grey dashed line corresponds to a maximum ligand concentration of 10<sup>8</sup>.
+Now, run the notebook. The colored line indicates average distance of the 500 cells; the shaded area corresponds to one standard deviation from the mean; and the grey dashed line corresponds to a maximum ligand concentration of 10<sup>8</sup>.
 
 As mentioned, you may not be surprised that this simple random walk strategy is not very effective at finding the goal. Not to worry: in the main text, we discuss how to adapt this strategy into one that better reflects how *E. coli* explores its environment based on what we have learned in this module about chemotaxis.
 
