@@ -10,20 +10,10 @@ image: "../assets/images/gray_scott_jupyter_3.png"
 ---
 
 ## Setting up CellBlender
-Setting up CellBlender can be done using the default tutorial with just a few changes from the original installation instructions.
 
-First, follow the instructions from the [CellBlender website](https://mcell.org/downloads/windows/install_2019_05/index.html), with the following disclaimer.
+In the main text, we mentioned that we would need MCell to simulate a reaction-diffusion particle model, along with the CellBlender add-on for Blender that will integrate MCell simulations and help us visualize these simulations.
 
-**Note:** CellBlender requires a previous version of Blender. Use the following two changes to the default installation instructions.
-{: .notice--warning}
-
-First, instead of downloading the newest version of Blender, go to the previous versions tab...
-
-![image-center](../assets/images/motifs_website.png){: .align-center}
-
-...and download Blender 2.79b.
-
-Second, once Blender is downloaded,  the file path may be different from what is shown in the CellBlender tutorial- instead of *Blender/2.79/python/bin*, the pathway may be something like: *blender-2.79/2.79/python/bin*. Changing the name of the downloaded Blender folder to match the path in the tutorial may help reduce confusion.
+You can download and install all three programs by following the installation guide at the [MCell homepage](https://mcell.org/download.html). Once you have followed the installation instructions, start Blender, and you will be ready to build and visualize a particle diffusion model.
 
 ## Setting up CellBlender simulations
 

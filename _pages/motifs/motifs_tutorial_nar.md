@@ -10,7 +10,7 @@ image: "../assets/images/repress_graph.PNG"
 
 ### Implementing simple regulation in CellBlender
 
-In this tutorial, we will compare simple against negative autoregulation using a particle-based simulation in CellBlender. We will start with simple regulation; first, load your `CellBlender_Tutorial_Template.blend` file from the [Random Walk Tutorial](../prologue/tutorial-random-walk). Save this file as `NAR_comparison.blend`. You may also download the completed tutorial files <a href="../tutorials/NAR_compare_unequal.blend" download="NAR_compare_unequal.blend">here</a>.
+In this tutorial, we will compare simple against negative autoregulation using a particle-based simulation in CellBlender. We will start with simple regulation; if you followed the prologue, then load your `CellBlender_Tutorial_Template.blend` file; otherwise, follow the steps indicated in the the prologue's [Random Walk Tutorial](../prologue/tutorial-random-walk) to produce this file. Then, save a copy of this file as `NAR_comparison.blend`. You may also download the completed tutorial files <a href="../tutorials/NAR_compare_unequal.blend" download="NAR_compare_unequal.blend">here</a>.
 
 Then go to `CellBlender > Molecules` and create the following molecules:
 
