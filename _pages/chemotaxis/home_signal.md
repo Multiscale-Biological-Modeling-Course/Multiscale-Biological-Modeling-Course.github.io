@@ -132,7 +132,7 @@ and solving for *x* gives
 **STOP:** Use a similar argument to show that the units of the dissociation constant *k*<sub>dissociate</sub> should be s<sup>-1</sup>.
 {: .notice--primary}
 
-For these parameters, we obtain the following constants *a*, *b*, *c* in the quadratic equation:
+Now that we understand the reaction rate units, we return to the task of determining steady-state concentrations using experimental values. When *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup> and *k*<sub>dissociate</sub> = 35s<sup>-1</sup>, we obtain the following constants *a*, *b*, and *c* in the quadratic equation:
 
 * *a* = *k*<sub>bind</sub> = 0.0146
 * *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -283.2
@@ -142,6 +142,11 @@ When we solve for [*LT*] in the quadratic equation, we obtain [*LT*] = 4793. Now
 
 [*L*] = *l*<sub>0</sub> - [*LT*] = 5207<br>
 [*T*] = *t*<sub>0</sub> - [*LT*] = 2207
+
+We can therefore determine the steady-state concentration for a *single* reversible reaction. However, if we want to model real cellular processes, we will have *many* reactions for a variety of different particles. We will see that it quickly becomes infeasible to solve all the resulting equations exactly. Instead, we need a method of simulating many reactions without the significant computational overhead that would be required to keep track of every individual particle we wish to model.
+
+[Next lesson](home_signalpart2){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)
@@ -182,8 +187,7 @@ When we solve for [*LT*] in the quadratic equation, we obtain [*LT*] = 4793. Now
 
 [^Spiro1997]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
 
-[Next lesson](home_signalpart2){: .btn .btn--primary .btn--large}
-{: style="font-size: 100%; text-align: center;"}
+
 
 
 <!--
