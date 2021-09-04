@@ -134,7 +134,7 @@ and solving for *x* gives that
 
 ## Steady state ligand-receptor concentrations for an experimentally verified example
 
-Let's use our formula to show how we could determine the steady state concentration of bound receptor-ligand complexes using values obtained from experimental results. We will model an *E. coli* cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. The experimentally verified binding rate is *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the dissociation rate constant is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991] Using these constants, we obtain the following constants *a*, *b*, and *c* in the quadratic equation:
+Let's use our formula to show how we could determine the steady state concentration of bound receptor-ligand complexes using values obtained from experimental results. We will model an *E. coli* cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. The experimentally verified binding rate is *k*<sub>bind</sub> = 0.0146 ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the dissociation rate constant is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991] Using these constants, we obtain the following constants *a*, *b*, and *c* in the quadratic equation:
 
 * *a* = *k*<sub>bind</sub> = 0.0146
 * *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -283.2
