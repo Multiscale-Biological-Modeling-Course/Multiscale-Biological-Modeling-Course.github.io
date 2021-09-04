@@ -117,22 +117,24 @@ In this case, if we solve for [*LT*], we obtain [*LT*] = 36.492; the steady stat
 **STOP**: What do you think will happen to the steady state concentration of *LT* if the initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for [*LT*].
 {: .notice--primary}
 
-## Steady state ligand-receptor concentrations for an experimentally verified example
+## What are the units?
 
-Let's use our formula to show how we could determine the steady state concentration of bound receptor-ligand complexes using values obtained from experimental results. We will model an *E. coli* cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. The experimentally verified binding rate is *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the dissociation rate constant is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991]
+We have conspicuously not provided any units in the equations above, and so we will pause to explain what these units are. The concentration of a particle (whether it is *L*, *T*, or *LT*) is measured in (molecules/µm<sup>3</sup>), the number of molecules per unit volume. But what about the binding and dissociation rates?
 
-If you find these units confusing, then you are not alone. Consider that the concentration of a particle will be measured in (molecules/µm<sup>3</sup>), the number of molecules per unit volume. When we multiply the binding rate *k*<sub>bind</sub> by the concentrations [*L*] and [*T*], the resulting unit should be in molecules/µm<sup>3</sup> per second, since this corresponds to the rate at which the concentration of *LT* complexes is increasing. If we let *x* denote the unknown units of *k*<sub>bind</sub>, then we therefore should have that
+When we multiply the binding rate *k*<sub>bind</sub> by the concentrations [*L*] and [*T*], the resulting unit should be in molecules/µm<sup>3</sup> per second, which corresponds to the rate at which the concentration of *LT* complexes is increasing. If we let *x* denote the unknown units of *k*<sub>bind</sub>, then we should have that
 
 *x* · (molecules/µm<sup>3</sup>) · (molecules/µm<sup>3</sup>) = (molecules/µm<sup>3</sup>)s<sup>-1</sup>
 
-and solving for *x* gives
+and solving for *x* gives that
 
 *x* = ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>
 
 **STOP:** Use a similar argument to show that the units of the dissociation constant *k*<sub>dissociate</sub> should be s<sup>-1</sup>.
 {: .notice--primary}
 
-Now that we understand the reaction rate units, we return to the task of determining steady-state concentrations using experimental values. When *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup> and *k*<sub>dissociate</sub> = 35s<sup>-1</sup>, we obtain the following constants *a*, *b*, and *c* in the quadratic equation:
+## Steady state ligand-receptor concentrations for an experimentally verified example
+
+Let's use our formula to show how we could determine the steady state concentration of bound receptor-ligand complexes using values obtained from experimental results. We will model an *E. coli* cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. The experimentally verified binding rate is *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the dissociation rate constant is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991] Using these constants, we obtain the following constants *a*, *b*, and *c* in the quadratic equation:
 
 * *a* = *k*<sub>bind</sub> = 0.0146
 * *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -283.2
