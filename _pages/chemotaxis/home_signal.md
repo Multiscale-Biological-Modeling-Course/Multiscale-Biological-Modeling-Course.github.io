@@ -119,7 +119,7 @@ In this case, if we solve for [*LT*], we obtain [*LT*] = 36.492; the steady stat
 
 ## What are the units?
 
-We have conspicuously not provided any units in the equations above, and so we will pause to explain what these units are. The concentration of a particle (whether it is *L*, *T*, or *LT*) is measured in (molecules/µm<sup>3</sup>), the number of molecules per unit volume. But what about the binding and dissociation rates?
+We have conspicuously not provided any units in the equations above for the sake of simplicity, and so we will pause to explain what these units are. The concentration of a particle (whether it is *L*, *T*, or *LT*) is measured in (molecules/µm<sup>3</sup>), the number of molecules per unit volume. But what about the binding and dissociation rates?
 
 When we multiply the binding rate *k*<sub>bind</sub> by the concentrations [*L*] and [*T*], the resulting unit should be in molecules/µm<sup>3</sup> per second, which corresponds to the rate at which the concentration of *LT* complexes is increasing. If we let *x* denote the unknown units of *k*<sub>bind</sub>, then we should have that
 
