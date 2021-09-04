@@ -95,7 +95,7 @@ The following tutorial shows how to implement this rule in BioNetGen and use the
 
 ## Does a simulation confirm our steady state calculations?
 
-We previously showed a worked example in which a system with 10,000 free ligand molecules and 7,000 free receptor molecules produced the following steady state concentrations using bonding rates of *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup> and *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.
+We previously showed a worked example in which a system with 10,000 free ligand molecules and 7,000 free receptor molecules produced the following steady state concentrations using binding rates of *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup> and *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.
 
 * [*LT*] = 4793
 * [*L*] = 5207

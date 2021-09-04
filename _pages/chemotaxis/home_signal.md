@@ -29,7 +29,7 @@ Although *E. coli* has different types of surface receptors that can sense a var
 
 The chemical reactions that we have considered earlier in this course are **irreversible**, meaning they can only proceed in one direction. For example, in the prologue's reaction-diffusion model for [Turing patterns](../prologue/animals), we had the reaction *A* + 2*B* → 3*B*, which we conceptualized as two predators eating a prey and reproducing. But we did not have the reverse reaction 3*B* → *A* + 2*B*.
 
-To model ligand-receptor dynamics, we will use a **reversible** reaction that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bond into a complex. But at the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will **dissociate** into two separate molecules. In a future module, we will discuss the biochemical details underlying what makes two molecules more or less likely to bond, but for now, we assert that the more suited a receptor is to a ligand, the higher the bonding rate and the lower the dissociation rate.
+To model ligand-receptor dynamics, we will use a **reversible** reaction that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bond into a complex. But at the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will **dissociate** into two separate molecules. In a future module, we will discuss the biochemical details underlying what makes two molecules more or less likely to bond, but for now, we assert that the more suited a receptor is to a ligand, the higher the binding rate and the lower the dissociation rate.
 
 Why should ligand-receptor bonding be reversible? First, surface receptors are typically complicated molecules, and it would be costly to an organism if it needed to keep manufacturing surface receptors rather than sometimes releasing bound ligands. Second, if complexes did not dissociate, then a brief increase in ligand concentration would be detected by an organism indefinitely. We will say more about how the cell responds to a *changing* concentration of ligand soon.
 
@@ -119,17 +119,18 @@ In this case, if we solve for [*LT*], we obtain [*LT*] = 36.492; the steady stat
 
 ## Steady state ligand-receptor concentrations for an experimentally verified example
 
-Let's use our formula to show how we could determine the steady state concentration of bound receptor-ligand complexes using values obtained from experimental results. We will model an *E. coli* cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. The experimentally verified bonding rate is *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the dissociation rate constant is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991]
+Let's use our formula to show how we could determine the steady state concentration of bound receptor-ligand complexes using values obtained from experimental results. We will model an *E. coli* cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. The experimentally verified binding rate is *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the dissociation rate constant is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991]
 
-As an aside, we note that if you find the above units confusing, you are not alone. To clarify these units, consider that the concentration of a particle will be measured in (molecules/µm<sup>3</sup>), or number of molecules per unit volume. So when we multiply the bonding rate by the concentrations of *L* and *T* particles, then the units become
+If you find these units confusing, then you are not alone. Consider that the concentration of a particle will be measured in (molecules/µm<sup>3</sup>), the number of molecules per unit volume. When we multiply the binding rate *k*<sub>bind</sub> by the concentrations [*L*] and [*T*], the resulting unit should be in molecules/µm<sup>3</sup> per second, since this corresponds to the rate at which the concentration of *LT* complexes is increasing. If we let *x* denote the unknown units of *k*<sub>bind</sub>, then we therefore should have that
 
-((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup> · (molecules/µm<sup>3</sup>) · (molecules/µm<sup>3</sup>) = (molecules/µm<sup>3</sup>)s<sup>-1</sup>
+*x* · (molecules/µm<sup>3</sup>) · (molecules/µm<sup>3</sup>) = (molecules/µm<sup>3</sup>)s<sup>-1</sup>
 
-That is, the resulting units are in molecules/µm<sup>3</sup> per second, which corresponds to the rate at which the concentration of *LT* complexes is increasing.
+and solving for *x* gives
 
-On the other hand, when *LT* complexes dissociate, we multiply the dissociation constant by the units of *LT* concentration and obtain the same units as before:
+*x* = ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>
 
-(s<sup>-1</sup>) · (molecules/µm<sup>3</sup>)  = (molecules/µm<sup>3</sup>)s<sup>-1</sup>.
+**STOP:** Use a similar argument to show that the units of the dissociation constant *k*<sub>dissociate</sub> should be s<sup>-1</sup>.
+{: .notice--primary}
 
 For these parameters, we obtain the following constants *a*, *b*, *c* in the quadratic equation:
 
