@@ -8,6 +8,23 @@ toc_sticky: true
 image: "../assets/images/cellorg_pca_graph_cell.png"
 ---
 
+## The classification problem
+
+We have discussed classifying images of WBCs according to their family. This is a specific instance of an ubiqitous problem in data science.
+
+In this problem, which we call the Classification Problem, we have a collection of data, and we want to classify each object in the dataset into one of *k* classes. In this case, our data are images of WBCs, and the *k* classes are the three main families of WBCs. To take a different example, our data might be genomes taken from cancer tumors, which we want to classify based on which therapeutic should be prescribed for this patient. Or it may be the past behavior of shoppers, who we want to classify into two classes based on whether they will buy some new product.
+
+A classical dataset that is commonly used for explaining classification is called the Iris flower data set. (CITE, with where it comes from.)
+
+Something about machine learning.
+
+In a classification problem,
+
+Classification Problem
+Input: A collection of data divided into a training set and a test set. Each training data point is labeled into one of k classes.
+Output: a predictive labeling of all the points in the test set into one of k classes.
+
+
 * Need overview of the problem of classification, with some visuals (preferably our own, in a 2-D example)
 
 * Use Iris flower data set
