@@ -14,20 +14,17 @@ In this module's introduction, we established our goal of labeling images of WBC
 
 In our ongoing example, the data are images of WBCs, and the classes are the three main families of WBCs (granulocytes, lymphocytes, and monocytes). To take a different example, our data might be genomes sequenced from cancer tumors, which we want to classify based on which therapeutic should be prescribed for the patient from which the tumor was taken. Or the data may be  past behavior of shoppers, who we want to classify into two classes based on a prediction of whether they will buy a new product.
 
-A classical dataset commonly used for motivating classification is the **Iris flower data set**, which Ronald Fisher used in a seminal statistical paper in 1936, and which was compiled by Edgar Anderson. (CITE both and look up paper). Anderson measured four attributes, or **features**, of a collection of 50 Iris flowers from three species: both the width and height of the flower's petal, and both the width and height of the flower's sepal. Fisher considered whether it was possible to use the information in the features to correctly classify each flower according to its species.
-
-Pictures of the three flower species are shown in the figures below.
+A classical dataset commonly used for motivating classification is the **Iris flower data set**, which Ronald Fisher used in a seminal statistical paper in 1936, and which was compiled by Edgar Anderson. (CITE both and look up paper). Anderson collected fifty Iris flowers taken from three species shown in the figure below.
 
 | *Iris setosa* | *Iris versicolor* | *Iris virginica* |
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](../assets/images/Iris_setosa_2.jpg)  |  ![](../assets/images/Iris_versicolor.jpg)   |  ![](../assets/images/Iris_virginica.jpg)
 
-Images of the three species of iris included in the Iris flower data set. Image courtesies: Emma Forsberg, unknown author, Robert H. Mohlenbrock.
+Representative images of the three species of iris included in the Iris flower data set. Image courtesies, from left to right: Emma Forsberg, unknown author, Robert H. Mohlenbrock.
 {: style="font-size: medium;"}
 
-Add link to download the full Iris flower dataset. Link to https://archive.ics.uci.edu/ml/datasets/iris as courtesy.
 
-[Iris dataset](../downloads/iris.csv)
+Anderson further measured four attributes, or **features**, of each of the flowers in his dataset: both the width and height of the flower's petal, and both the width and height of the flower's sepal (a green offshoot beneath the petals). The features and species labels for ten of the fifty flowers in the Iris flower dataset are shown in the table below (click [here](../downloads/iris.csv) for the full dataset). Fisher considered whether it was possible to use the information in the features Anderson had measured to correctly classify each flower according to its species.
 
 | Sepal length (cm) | Sepal width (cm) | Petal length (cm) | Petal width (cm) | Species |
 | :----: | :----: | :----: | :----: | :----: |
@@ -42,10 +39,13 @@ Add link to download the full Iris flower dataset. Link to https://archive.ics.u
 | 5.8 | 2.7 | 5.1 | 1.9 | *I. virginica* |
 | 7.1 | 3.0 | 5.9 | 2.1 | *I. virginica* |
 
-A table containing the four features and the correct species label for ten members of the Iris flower data set.
+A table containing the four features and the correct species label for ten members of the Iris flower data set. The complete dataset can be downloaded [here](../downloads/iris.csv) and was accessed from the <a target="_blank" href="https://archive.ics.uci.edu/ml/datasets/iris">University of California, Irvine Machine Learning Repository</a>].
 {: style="font-size: medium;"}
 
+**STOP:** Can you differentiate the three species using only the four features given in the table above?
+{: .notice--primary}
 
+START HERE
 
 
 The key point is that although we are working with flowers, each flower has been reduced to four numbers representing the flower's features. If we had used only two features, then a flower's feature values *x* and *y* could be represented as a point in two-dimensional space (*x*, *y*). With four features, each flower is represented by a point in four-dimensional space. More generally, when classifying a collection of data with *n* features, if these features can be quantified, then each data point can be represented by a **vector** of length *n*, or a point in *n*-dimensional space.
