@@ -20,9 +20,9 @@ Pictures of the three flower species are shown in the figures below.
 
 | *Iris setosa* | *Iris versicolor* | *Iris virginica* |
 :-------------------------:|:-------------------------:|:-------------------------:
-![](../assets/images/Iris_setosa.jpg)  |  ![](../assets/images/Iris_versicolor.jpg)   |  ![](../assets/images/Iris_virginica.jpg)
+![](../assets/images/Iris_setosa_2.jpg)  |  ![](../assets/images/Iris_versicolor.jpg)   |  ![](../assets/images/Iris_virginica.jpg)
 
-Insert caption here.
+Insert caption here.Image courtesies: Emma Forsberg, unknown author, Robert H. Mohlenbrock.
 {: style="font-size: medium;"}
 
 Add link to download the full dataset.
@@ -42,7 +42,7 @@ Add link to download the full dataset.
 | 5.8 | 2.7 | 5.1 | 1.9 | *Iris virginica* |
 | 7.1 | 3.0 | 5.9 | 2.1 | *Iris virginica* |
 
-A table containing the four features as well as the correct species label for ten representative elements from the Iris flower data set. Image courtesies: Qwert1234, unknown author, Robert H. Mohlenbrock.
+A table containing the four features as well as the correct species label for ten representative elements from the Iris flower data set.
 {: style="font-size: medium;"}
 
 
@@ -51,6 +51,8 @@ A table containing the four features as well as the correct species label for te
 The key point is that although we are working with flowers, each flower has been reduced to four numbers representing the flower's features. If we had used only two features, then a flower's feature values *x* and *y* could be represented as a point in two-dimensional space (*x*, *y*). With four features, each flower is represented by a point in four-dimensional space. More generally, when classifying a collection of data with *n* features, if these features can be quantified, then each data point can be represented by a **vector** of length *n*, or a point in *n*-dimensional space.
 
 VISUALIZATION -- TWO FEATURES? THREE?
+
+Perhaps just petal width and height.
 
 
 
