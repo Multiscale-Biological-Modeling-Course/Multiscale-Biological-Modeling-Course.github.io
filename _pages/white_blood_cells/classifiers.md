@@ -20,7 +20,7 @@ Pictures of the three flower species are shown in the figures below.
 
 | *Iris setosa* | *Iris versicolor* | *Iris virginica* |
 :-------------------------:|:-------------------------:|:-------------------------:
-![](../assets/images/Iris_setosa_2.jpg)  |  ![](../assets/images/Iris_versicolor.jpg)   |  ![](../assets/images/Iris_virginica.jpg)
+![](../assets/images/Iris_setosa.jpg)  |  ![](../assets/images/Iris_versicolor.jpg)   |  ![](../assets/images/Iris_virginica.jpg)
 
 Images of the three species of iris included in the Iris flower data set. Image courtesies: Emma Forsberg, unknown author, Robert H. Mohlenbrock.
 {: style="font-size: medium;"}
