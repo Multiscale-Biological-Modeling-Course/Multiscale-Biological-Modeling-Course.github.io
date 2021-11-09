@@ -16,9 +16,15 @@ In our ongoing example, the data are images of WBCs, and the classes are the thr
 
 A classical dataset commonly used for motivating classification is the **Iris flower data set**, which Ronald Fisher used in a seminal statistical paper in 1936, and which was compiled by Edgar Anderson. (CITE both and look up paper). Anderson measured four attributes, or **features**, of a collection of 50 Iris flowers from three species: both the width and height of the flower's petal, and both the width and height of the flower's sepal. Fisher considered whether it was possible to use the information in the features to correctly classify each flower according to its species.
 
+Pictures of the three flower species are shown in the figures below.
+
+| *Iris setosa* | *Iris versicolor* | *Iris virginica* |
+:-------------------------:|:-------------------------:|:-------------------------:
+![](../assets/images/Iris_setosa.jpg)  |  ![](../assets/images/Iris_versicolor.jpg)   |  ![](../assets/images/Iris_virginica.jpg)
+
 Add link to download the full dataset.
 
-Need pictures of the three different flowers.
+
 
 | Sepal length (cm) | Sepal width (cm) | Petal length (cm) | Petal width (cm) | Species |
 | :----: | :----: | :----: | :----: | :----: |
