@@ -23,9 +23,11 @@ A classical dataset commonly used for motivating classification is the **Iris fl
 
 NEED TABLE
 
+<center>
 | Sepal length (cm) | Sepal width (cm) | Petal length (cm) | Petal width (cm) | Species |
-| ----------- | ----------- | ----------- | ----------- | ----------- |
-| 5.1 | 3.5 | 1.4 | 0.2 | *Iris setosa*|
+| :----: | :----: | :----: | :----: | :----: |
+| 5.1 | 3.5 | 1.4 | 0.2 | *Iris setosa* |
+</center>
 
 The key point is that although we are working with flowers, each flower has been reduced to four numbers representing the flower's features. If we had used only two features, then a flower's feature values *x* and *y* could be represented as a point in two-dimensional space (*x*, *y*). With four features, each flower is represented by a point in four-dimensional space. More generally, when classifying a collection of data with *n* features, if these features can be quantified, then each data point can be represented by a **vector** of length *n*, or a point in *n*-dimensional space.
 
