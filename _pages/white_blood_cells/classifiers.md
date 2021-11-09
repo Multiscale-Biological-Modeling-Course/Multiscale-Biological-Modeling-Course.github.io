@@ -18,11 +18,20 @@ A classical dataset commonly used for motivating classification is the **Iris fl
 
 Add link to download the full dataset.
 
+Need pictures of the three different flowers.
+
 | Sepal length (cm) | Sepal width (cm) | Petal length (cm) | Petal width (cm) | Species |
 | :----: | :----: | :----: | :----: | :----: |
 | 5.1 | 3.5 | 1.4 | 0.2 | *Iris setosa* |
+| 4.9 | 3.0 | 1.4 | 0.2 | *Iris setosa* |
+| 4.7 | 3.2 | 1.3 | 0.2 | *Iris setosa* |
+| 4.6 | 3.1 | 1.5 | 0.2 | *Iris setosa* |
 | 7.0 | 3.2 | 4.7 | 1.4 | *Iris versicolor* |
+| 6.4 | 3.2 | 4.5 | 1.5 | *Iris versicolor* |
+| 6.9 | 3.1 | 4.9 | 1.5 | *Iris versicolor* |
 | 6.3 | 3.3 | 6.0 | 2.5 | *Iris virginica* |
+| 5.8 | 2.7 | 5.1 | 1.9 | *Iris virginica* |
+| 7.1 | 3.0 | 5.9 | 2.1 | *Iris virginica* |
 
 A table containing the four features as well as the correct species label for ten representative elements from the Iris flower data set.
 {: style="font-size: medium;"}
