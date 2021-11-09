@@ -40,25 +40,16 @@ Trying Something
 </tr>
 {% for flower in site.data.iris %}
 <tr>
-  <td>flower.sepal_length</td>
-  <td>flower.sepal_width</td>
-  <td>flower.petal_length</td>
-  <td>flower.petal_width</td>
-  <td>flower.species</td>
+  <td>{{ flower.sepal_length }}</td>
+  <td>{{ flower.sepal_width }}</td>
+  <td>{{ flower.petal_length }}</td>
+  <td>{{ flower.petal_width }}</td>
+  <td>{{ flower.species }}</td>
 </tr>
 {% endfor %}
 </table>
 </center>
 
-<ul>
-{% for flower in site.data.iris %}
-  <li>
-    <a href="https://github.com/{{ flower.sepal width }}">
-      {{ flower.species }}
-    </a>
-  </li>
-{% endfor %}
-</ul>
 
 | Sepal length (cm) | Sepal width (cm) | Petal length (cm) | Petal width (cm) | Species |
 | :----: | :----: | :----: | :----: | :----: |
