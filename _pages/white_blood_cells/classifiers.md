@@ -29,6 +29,18 @@ Add link to download the full Iris flower dataset. Link to https://archive.ics.u
 
 Trying Something
 
+<table>
+{% for flower in site.data.iris %}
+<tr>
+  <th>flower.sepal_length</th>
+  <th>flower.sepal_width</th>
+  <th>flower.petal_length</th>
+  <th>flower.petal_width</th>
+  <th>flower.species</th>
+</tr>
+{% endfor %}
+</table>
+
 <ul>
 {% for flower in site.data.iris %}
   <li>
