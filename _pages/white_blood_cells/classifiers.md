@@ -29,7 +29,7 @@ Add link to download the full Iris flower dataset. Link to https://archive.ics.u
 
 Trying Something
 
-[Iris dataset](../_data/iris.csv)
+[Iris dataset](../downloads/iris.csv)
 
 <center>
 <table>
