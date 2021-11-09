@@ -16,7 +16,7 @@ In our ongoing example, the data are images of WBCs, and the classes are the thr
 
 ## The iris flower data set
 
-A classical dataset commonly used for motivating classification is the **iris flower data set**, which Ronald Fisher used in a seminal statistical paper in 1936, and which was compiled by Edgar Anderson. (CITE both and look up paper). Anderson collected fifty iris flowers taken from three species shown in the figure below.
+A classical dataset commonly used for motivating classification is the **iris flower data set**, which Ronald Fisher used in a seminal statistical paper in 1936, and which was compiled by Edgar Anderson. (CITE both and look up paper). Anderson collected 150 iris flowers, equally divided among three species, which are illustrated in the figure below.
 
 | *Iris setosa* | *Iris versicolor* | *Iris virginica* |
 :-------------------------:|:-------------------------:|:-------------------------:
@@ -25,7 +25,7 @@ A classical dataset commonly used for motivating classification is the **iris fl
 Representative images of the three species of iris included in the iris flower data set. Image courtesies, from left to right: Emma Forsberg, unknown author, Robert H. Mohlenbrock.
 {: style="font-size: medium;"}
 
-Anderson further measured four attributes, or **features**, of each of the flowers in his dataset: both the width and height of the flower's petal, and both the width and height of the flower's sepal (a green offshoot beneath the petals). The features and species labels for ten of the fifty flowers in the iris flower dataset are shown in the table below (click [here](../downloads/iris.csv) for the full dataset). Fisher considered whether it was possible to classify each flower according to its species using only the features Anderson had measured.
+Anderson further measured four attributes, or **features**, of each of the flowers in his dataset: both the width and height of the flower's petal, and both the width and height of the flower's sepal (a green offshoot beneath the petals). The features and species labels for twelve of the flowers in the iris flower dataset are shown in the table below (click [here](../downloads/iris.csv) for the full dataset). Fisher considered whether it was possible to classify each flower according to its species using only the features Anderson had measured.
 
 | Sepal length (cm) | Sepal width (cm) | Petal length (cm) | Petal width (cm) | Species |
 | :----: | :----: | :----: | :----: | :----: |
@@ -36,11 +36,13 @@ Anderson further measured four attributes, or **features**, of each of the flowe
 | 7.0 | 3.2 | 4.7 | 1.4 | *I. versicolor* |
 | 6.4 | 3.2 | 4.5 | 1.5 | *I. versicolor* |
 | 6.9 | 3.1 | 4.9 | 1.5 | *I. versicolor* |
+| 5.5 | 2.3 | 4.0 | 1.3 | *I. versicolor* |
 | 6.3 | 3.3 | 6.0 | 2.5 | *I. virginica* |
 | 5.8 | 2.7 | 5.1 | 1.9 | *I. virginica* |
 | 7.1 | 3.0 | 5.9 | 2.1 | *I. virginica* |
+| 6.3 | 2.9 | 5.6 | 1.8 | *I. virginica* |
 
-A table containing the four features and the correct species label for ten members of the iris flower data set. The complete dataset can be downloaded [here](../downloads/iris.csv) and was accessed from the <a target="_blank" href="https://archive.ics.uci.edu/ml/datasets/iris">University of California, Irvine Machine Learning Repository</a>].
+A table containing the four features and the correct species label for twelve members of the iris flower data set. The complete dataset can be downloaded [here](../downloads/iris.csv) and was accessed from the <a target="_blank" href="https://archive.ics.uci.edu/ml/datasets/iris">University of California, Irvine Machine Learning Repository</a>].
 {: style="font-size: medium;"}
 
 **STOP:** What characteristics do flowers from each species tend to share in terms of the four features in the table above?
@@ -56,11 +58,6 @@ Petal width (*x*-axis) plotted against width (*y*-axis) for each of the flowers 
 
 Since we have four features, each flower is represented by a point in four-dimensional space. More generally, when classifying a collection of data with *n* features, if these features can be quantified, then each data point can be represented by a **vector** of length *n*, or a point in *n*-dimensional space.
 
-VISUALIZATION -- TWO FEATURES? THREE?
-
-Perhaps just petal width and height.
-
-
 
 Reducing each data point to a vector helps us visualize the data (at least, in the case of only two or three features), but the greater insight is that two data points are typically more likely to belong to the same class if their vectors are closer in *n*-dimensional space. We will use this insight in the hopes of correctly classifying a data point whose class is *unknown* by determining which data points with *known* classification it is near.
 
@@ -70,12 +67,7 @@ Transition to training and test sets -- connect
 
 
 
-
-
-(Say more about this dataset.)
-
-
-Something about machine learning.
+Make point about machine learning.
 
 Classification Problem
 Input: A collection of data divided into a training set and a test set. Each training data point is labeled into one of k classes.
@@ -97,7 +89,7 @@ Output: a predictive labeling of all the points in the test set into one of k cl
 
 * Better approach is to use distances. Identify distances between points and then try to assign shapes to points -- this is the stone tablet problem (perhaps move to intro).
 
-* Issue: we'd love to build a shape space, but dimension is huge. Need for dimensionality reduction (not if we are doing Kabsch).
+* Issue: we'd love to build a shape space, but dimension is huge. Need for dimensionality reduction (although not if we are doing Kabsch).
 
 * Applying classifier to our space.
 
