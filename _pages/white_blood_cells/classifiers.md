@@ -31,16 +31,16 @@ Add link to download the full Iris flower dataset. Link to https://archive.ics.u
 
 | Sepal length (cm) | Sepal width (cm) | Petal length (cm) | Petal width (cm) | Species |
 | :----: | :----: | :----: | :----: | :----: |
-| 5.1 | 3.5 | 1.4 | 0.2 | *Iris setosa* |
-| 4.9 | 3.0 | 1.4 | 0.2 | *Iris setosa* |
-| 4.7 | 3.2 | 1.3 | 0.2 | *Iris setosa* |
-| 4.6 | 3.1 | 1.5 | 0.2 | *Iris setosa* |
-| 7.0 | 3.2 | 4.7 | 1.4 | *Iris versicolor* |
-| 6.4 | 3.2 | 4.5 | 1.5 | *Iris versicolor* |
-| 6.9 | 3.1 | 4.9 | 1.5 | *Iris versicolor* |
-| 6.3 | 3.3 | 6.0 | 2.5 | *Iris virginica* |
-| 5.8 | 2.7 | 5.1 | 1.9 | *Iris virginica* |
-| 7.1 | 3.0 | 5.9 | 2.1 | *Iris virginica* |
+| 5.1 | 3.5 | 1.4 | 0.2 | *I. setosa* |
+| 4.9 | 3.0 | 1.4 | 0.2 | *I. setosa* |
+| 4.7 | 3.2 | 1.3 | 0.2 | *I. setosa* |
+| 4.6 | 3.1 | 1.5 | 0.2 | *I. setosa* |
+| 7.0 | 3.2 | 4.7 | 1.4 | *I. versicolor* |
+| 6.4 | 3.2 | 4.5 | 1.5 | *I. versicolor* |
+| 6.9 | 3.1 | 4.9 | 1.5 | *I. versicolor* |
+| 6.3 | 3.3 | 6.0 | 2.5 | *I. virginica* |
+| 5.8 | 2.7 | 5.1 | 1.9 | *I. virginica* |
+| 7.1 | 3.0 | 5.9 | 2.1 | *I. virginica* |
 
 A table containing the four features and the correct species label for ten members of the Iris flower data set.
 {: style="font-size: medium;"}
