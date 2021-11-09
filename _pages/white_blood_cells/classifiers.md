@@ -42,7 +42,7 @@ Add link to download the full dataset.
 | 5.8 | 2.7 | 5.1 | 1.9 | *Iris virginica* |
 | 7.1 | 3.0 | 5.9 | 2.1 | *Iris virginica* |
 
-A table containing the four features as well as the correct species label for ten representative elements from the Iris flower data set.
+A table containing the four features as well as the correct species label for ten representative elements from the Iris flower data set. Image courtesies: Qwert1234, unknown author, Robert H. Mohlenbrock.
 {: style="font-size: medium;"}
 
 
