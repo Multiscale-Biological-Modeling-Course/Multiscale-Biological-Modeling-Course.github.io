@@ -27,7 +27,17 @@ Images of the three species of iris included in the Iris flower data set. Image 
 
 Add link to download the full Iris flower dataset. Link to https://archive.ics.uci.edu/ml/datasets/iris as courtesy.
 
+Trying Something
 
+<ul>
+{% for flower in site.data.iris %}
+  <li>
+    <a href="https://github.com/{{ flower.sepal width }}">
+      {{ flower.species }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
 
 | Sepal length (cm) | Sepal width (cm) | Petal length (cm) | Petal width (cm) | Species |
 | :----: | :----: | :----: | :----: | :----: |
