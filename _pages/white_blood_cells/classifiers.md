@@ -50,14 +50,13 @@ A table containing the four features and the correct species label for twelve me
 
 ## From flowers to vectors
 
-If we were to use only two features in the Iris flower dataset, then a flower's feature values *x* and *y* could be represented as a point in two-dimensional space (*x*, *y*). For example, consider the
+If we were to use only two features in the Iris flower dataset, then a flower's feature values *x* and *y* could be represented as a point in two-dimensional space (*x*, *y*). In the figure below, we do just this for the features petal length (*x*-axis) and petal width (*y*-axis).
 
 ![image-center](../assets/images/iris_petal_data.png){: .align-center}
-Petal width (*x*-axis) plotted against width (*y*-axis) for each of the flowers in the Iris flower data set, colored by species. There are not fifty points for every species because some flowers have the same petal length and width.
+Petal width (*x*-axis) plotted against width (*y*-axis) for each of the flowers in the Iris flower data set, colored by species. There are not fifty points corresponding to every species because some flowers have the same petal length and width.
 {: style="font-size: medium;"}
 
-Since we have four features, each flower is represented by a point in four-dimensional space. More generally, when classifying a collection of data with *n* features, if these features can be quantified, then each data point can be represented by a **vector** of length *n*, or a point in *n*-dimensional space.
-
+If we were to use all four features, then every flower would be represented by a point in four-dimensional space. More generally, when classifying a collection of data with *n* quantifiable features, each data point can be represented by a **vector** of length *n*, i.e., a point in *n*-dimensional space.
 
 Reducing each data point to a vector helps us visualize the data (at least, in the case of only two or three features), but the greater insight is that two data points are typically more likely to belong to the same class if their vectors are closer in *n*-dimensional space. We will use this insight in the hopes of correctly classifying a data point whose class is *unknown* by determining which data points with *known* classification it is near.
 
