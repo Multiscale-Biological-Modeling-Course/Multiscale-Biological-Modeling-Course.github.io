@@ -51,7 +51,7 @@ A table containing the four features and the correct species label for ten membe
 If we were to use only two features in the Iris flower dataset, then a flower's feature values *x* and *y* could be represented as a point in two-dimensional space (*x*, *y*). For example, consider the
 
 ![image-center](../assets/images/iris_petal_data.png){: .align-center}
-An overview of the signaling pathway of chemotaxis. The red circles represent attractant ligands(L). When ligands bind to receptors, this signal is transduced via a series of enzymes, and it finally influences the rotation direction of a flagellum. We will discuss how this response is achieved in a later lesson.
+Petal width (*x*-axis) plotted against width (*y*-axis) for each of the flowers in the Iris flower data set, colored by species. There are not fifty points for every species because some flowers have the same petal length and width.
 {: style="font-size: medium;"}
 
 Since we have four features, each flower is represented by a point in four-dimensional space. More generally, when classifying a collection of data with *n* features, if these features can be quantified, then each data point can be represented by a **vector** of length *n*, or a point in *n*-dimensional space.
