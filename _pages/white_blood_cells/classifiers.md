@@ -25,7 +25,7 @@ A classical dataset commonly used for motivating classification is the **iris fl
 Representative images of the three species of iris included in the iris flower data set. Image courtesies, from left to right: Emma Forsberg, unknown author, Robert H. Mohlenbrock.
 {: style="font-size: medium;"}
 
-Anderson further measured four attributes, or **features**, of each of the flowers in his dataset: both the width and height of the flower's petal, and both the width and height of the flower's sepal (a green offshoot beneath the petals). The features and species labels for ten of the fifty flowers in the iris flower dataset are shown in the table below (click [here](../downloads/iris.csv) for the full dataset). Fisher considered whether it was possible to use the information in the features Anderson had measured to correctly classify each flower according to its species.
+Anderson further measured four attributes, or **features**, of each of the flowers in his dataset: both the width and height of the flower's petal, and both the width and height of the flower's sepal (a green offshoot beneath the petals). The features and species labels for ten of the fifty flowers in the iris flower dataset are shown in the table below (click [here](../downloads/iris.csv) for the full dataset). Fisher considered whether it was possible to classify each flower according to its species using only the features Anderson had measured.
 
 | Sepal length (cm) | Sepal width (cm) | Petal length (cm) | Petal width (cm) | Species |
 | :----: | :----: | :----: | :----: | :----: |
@@ -43,15 +43,18 @@ Anderson further measured four attributes, or **features**, of each of the flowe
 A table containing the four features and the correct species label for ten members of the iris flower data set. The complete dataset can be downloaded [here](../downloads/iris.csv) and was accessed from the <a target="_blank" href="https://archive.ics.uci.edu/ml/datasets/iris">University of California, Irvine Machine Learning Repository</a>].
 {: style="font-size: medium;"}
 
-**STOP:** Can you differentiate the three species using only the four features given in the table above?
+**STOP:** What characteristics do flowers from each species tend to share in terms of the four features in the table above?
 {: .notice--primary}
 
 ## From flowers to vectors
 
-START HERE
+If we were to use only two features in the Iris flower dataset, then a flower's feature values *x* and *y* could be represented as a point in two-dimensional space (*x*, *y*). For example, consider the
 
+![image-center](../assets/images/iris_petal_data.png){: .align-center}
+An overview of the signaling pathway of chemotaxis. The red circles represent attractant ligands(L). When ligands bind to receptors, this signal is transduced via a series of enzymes, and it finally influences the rotation direction of a flagellum. We will discuss how this response is achieved in a later lesson.
+{: style="font-size: medium;"}
 
-The key point is that although we are working with flowers, each flower has been reduced to four numbers representing the flower's features. If we had used only two features, then a flower's feature values *x* and *y* could be represented as a point in two-dimensional space (*x*, *y*). With four features, each flower is represented by a point in four-dimensional space. More generally, when classifying a collection of data with *n* features, if these features can be quantified, then each data point can be represented by a **vector** of length *n*, or a point in *n*-dimensional space.
+Since we have four features, each flower is represented by a point in four-dimensional space. More generally, when classifying a collection of data with *n* features, if these features can be quantified, then each data point can be represented by a **vector** of length *n*, or a point in *n*-dimensional space.
 
 VISUALIZATION -- TWO FEATURES? THREE?
 
