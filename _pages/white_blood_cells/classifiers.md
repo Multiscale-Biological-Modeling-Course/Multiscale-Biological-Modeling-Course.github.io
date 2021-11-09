@@ -21,6 +21,8 @@ Pictures of the three flower species are shown in the figures below.
 | *Iris setosa* | *Iris versicolor* | *Iris virginica* |
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](../assets/images/Iris_setosa.jpg)  |  ![](../assets/images/Iris_versicolor.jpg)   |  ![](../assets/images/Iris_virginica.jpg)
+Insert caption here.
+{: style="font-size: medium;"}
 
 Add link to download the full dataset.
 
@@ -38,7 +40,6 @@ Add link to download the full dataset.
 | 6.3 | 3.3 | 6.0 | 2.5 | *Iris virginica* |
 | 5.8 | 2.7 | 5.1 | 1.9 | *Iris virginica* |
 | 7.1 | 3.0 | 5.9 | 2.1 | *Iris virginica* |
-
 A table containing the four features as well as the correct species label for ten representative elements from the Iris flower data set.
 {: style="font-size: medium;"}
 
