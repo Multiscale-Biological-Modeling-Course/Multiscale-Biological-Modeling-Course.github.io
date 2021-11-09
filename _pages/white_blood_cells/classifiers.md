@@ -29,6 +29,8 @@ Add link to download the full Iris flower dataset. Link to https://archive.ics.u
 
 Trying Something
 
+[Iris dataset](../data/iris.csv)
+
 <center>
 <table>
 <tr>
@@ -49,6 +51,8 @@ Trying Something
 {% endfor %}
 </table>
 </center>
+
+Download dataset: [1si4](https://www.rcsb.org/structure/1sI4)
 
 
 | Sepal length (cm) | Sepal width (cm) | Petal length (cm) | Petal width (cm) | Species |
