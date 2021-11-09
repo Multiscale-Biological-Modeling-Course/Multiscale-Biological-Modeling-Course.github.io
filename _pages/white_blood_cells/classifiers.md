@@ -22,10 +22,10 @@ Pictures of the three flower species are shown in the figures below.
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](../assets/images/Iris_setosa_2.jpg)  |  ![](../assets/images/Iris_versicolor.jpg)   |  ![](../assets/images/Iris_virginica.jpg)
 
-Insert caption here.Image courtesies: Emma Forsberg, unknown author, Robert H. Mohlenbrock.
+Images of the three species of iris included in the Iris flower data set. Image courtesies: Emma Forsberg, unknown author, Robert H. Mohlenbrock.
 {: style="font-size: medium;"}
 
-Add link to download the full dataset.
+Add link to download the full Iris flower dataset. Link to https://archive.ics.uci.edu/ml/datasets/iris as courtesy.
 
 
 
@@ -42,7 +42,7 @@ Add link to download the full dataset.
 | 5.8 | 2.7 | 5.1 | 1.9 | *Iris virginica* |
 | 7.1 | 3.0 | 5.9 | 2.1 | *Iris virginica* |
 
-A table containing the four features as well as the correct species label for ten representative elements from the Iris flower data set.
+A table containing the four features and the correct species label for ten members of the Iris flower data set.
 {: style="font-size: medium;"}
 
 
