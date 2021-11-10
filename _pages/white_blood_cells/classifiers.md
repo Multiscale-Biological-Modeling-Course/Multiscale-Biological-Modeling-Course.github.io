@@ -1,6 +1,6 @@
 ---
-permalink: /white_blood_cells/classifiers
-title: "Classifiers"
+permalink: /white_blood_cells/classification
+title: "An Overview of Classification"
 sidebar:
  nav: "white_blood_cells"
 toc: true
@@ -60,17 +60,26 @@ Note how stark the pattern in the above figure is. Even though we chose only two
 
 If we were to use all four features for the iris dataset, then every flower would be represented by a point in four-dimensional space. For example, the first flower in our initial table of iris features would be represented by the point (5.1, 3.5, 1.4, 0.2). More generally, when classifying a collection of data with *n* features, each element in the dataset can be represented by a **feature vector** of length *n*, whose *i*-th value corresponds to its value for the *i*-th feature.
 
-## Classifying unknown elements with k-Nearest Neighbors
+## Classifying unknown elements with k-nearest neighbors
 
 For the iris dataset, recall our observation that data points were more likely to belong to the same class if they were nearby. Our hope is that this is true for other datasets, that elements from the same class will have feature vectors that are close in *n*-dimensional space. If so, we can classify a data point whose class is *unknown* by determining which data points with *known* classification it is near.
 
-This task may seem straightforward, but it is also open-ended. How should we define "nearness"? Once we have done so, what if there are points from more than one known class that lie near a point with unknown class? Because of this freedom, researchers have devised a variety of different approaches for classifying data given data with known classes. We will discuss a classic classification algorithm that is simple but nevertheless powerful called **k-nearest neighbors**.
+**STOP:** Consider the point with unknown class (gray) in the figure below. Should it be assigned to the class of the green points or to the class of the blue points? Why?
+{: .notice--primary}
 
-In this approach, 
+![image-center](../assets/images/knn_neighborhood.png){: .align-center}
+An unknown point along with a collection of
+{: style="font-size: medium;"}
 
-(Fix and Hodges, 1951)
-are many different app for performing the task of
+This task may seem straightforward, but the preceding question also indicates that it is also open-ended. Because of this freedom, researchers have devised a variety of different approaches for classifying data given data with known classes. We will discuss a simple but powerful classification algorithm called **k-nearest neighbors**, or **k-NN**. (CITE: Fix and Hodges, 1951)
 
+
+
+In k-NN, we classify a point according to how many
+
+![image-center](../assets/images/knn_neighborhood.png){: .align-center}
+Petal width (*x*-axis) plotted against width (*y*-axis) for each of the flowers in the Iris flower data set, colored by species. There are not fifty points corresponding to every species because some flowers have the same petal length and width.
+{: style="font-size: medium;"}
 
 
 Transition to training and test sets -- connect
