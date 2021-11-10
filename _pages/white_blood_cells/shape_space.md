@@ -10,7 +10,25 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 ## Interlude: Stone tablets and lost cities
 
-If you have not yet managed to see the 1968 movie *Planet of the Apes*[^apes], we will spoil its [ending](https://www.youtube.com/watch?v=XvuM3DjvYf0) for you.
+If you have not yet managed to see the 1968 movie *Planet of the Apes*[^apes], we will spoil its [ending](https://www.youtube.com/watch?v=XvuM3DjvYf0) for you. Charlton Heston's character finds the Statue of Liberty protruding from the sand and has the epiphany that the mysterious planet he has come across was just Earth all along.
+
+Imagine that you are a traveler to Earth and come across the ruins of New York. You hope to find the other cities of this area as well, and you find an old road Atlas that has driving distances between cities (in miles), shown in the table below.
+
+| | New York | Los Angeles | Pittsburgh | Miami | Houston | Seattle |
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: |
+| **New York** | 0 | 2805 | 371 | 1283 | 1628 | 2852 |
+| **Los Angeles** | 2805 | 0 | 2427 | 2733 | 1547 | 1135 |
+| **Pittsburgh** | 371 | 2427 | 0 | 1181 | 1388 | 2502 |
+| **Miami** | 1283 | 2733 | 1181 | 0 | 1189 | 3300 |
+| **Houston** | 1628 | 1547 | 1388 | 1189 | 0 | 2340 |
+| **Seattle** | 2852 | 1135 | 2502 | 3300 | 2340 | 0 |
+
+**STOP:** Since you know the location of New York, how could you use the information in the table above to find the other cities?
+{: .notice--primary}
+
+This example may be contrived, but it has a real archaeological counterpart. 
+
+Not clear what interest this could hold, or what it might have to do with biology.
 
 Test YouTube video
 
@@ -22,16 +40,9 @@ Test image with lightbox below
 [![image-center](../assets/images/iris_petal_data.png)](../assets/images/iris_petal_data.png){: .align-center}
 
 
-| | New York | Los Angeles | Pittsburgh | Miami | Houston | Seattle |
-| :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-| **New York** | 0 | 2805 | 371 | 1283 | 1628 | 2852 |
-| **Los Angeles** | 2805 | 0 | 2427 | 2733 | 1547 | 1135 |
-| **Pittsburgh** | 371 | 2427 | 0 | 1181 | 1388 | 2502 |
-| **Miami** | 1283 | 2733 | 1181 | 0 | 1189 | 3300 |
-| **Houston** | 1628 | 1547 | 1388 | 1189 | 0 | 2340 |
-| **Seattle** | 2852 | 1135 | 2502 | 3300 | 2340 | 0 |
 
-Not clear what interest this could hold, or what it might have to do with biology.
+
+
 
 
 
