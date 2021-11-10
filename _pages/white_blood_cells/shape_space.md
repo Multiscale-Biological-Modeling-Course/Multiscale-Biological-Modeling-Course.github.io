@@ -8,7 +8,7 @@ toc_sticky: true
 image: "../assets/images/cellorg_pca_graph_cell.png"
 ---
 
-Transition to training and test sets -- connect to machine learning.
+
 
 Classification Problem
 Input: A collection of data divided into a training set and a test set. Each training data point is labeled into one of k classes.
@@ -24,6 +24,8 @@ Output: a predictive labeling of all the points in the test set into one of k cl
 * Issue: we'd love to build a shape space, but dimension is huge. Need for dimensionality reduction (although not if we are doing Kabsch).
 
 * Applying classifier to our space.
+
+* Transition to training and test sets -- connect to machine learning?
 
 * Probably need cross-validation as its own section.
 
