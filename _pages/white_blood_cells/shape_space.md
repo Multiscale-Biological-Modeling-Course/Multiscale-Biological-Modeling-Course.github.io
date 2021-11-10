@@ -10,7 +10,9 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 ## Interlude: Stone tablets and lost cities
 
-Imagine that you
+If you have never seen the movie *Planet of the Apes*, we will spoil its ending by filling
+
+Imagine that you are a traveler from outer space, far in the future. You arrive to Earth to find a harbor, with the Statue of Liberty protruding
 
 New York
 Pittsburgh
@@ -34,6 +36,12 @@ Test table
     <td>Carrot</td>
   </tr>
 </table>
+
+| | New York | Los Angeles | Pittsburgh |
+| :----: | :----: | :----: | :----: |
+| <th> New York </th> | | | |
+| <th> Los Angeles </th> | | | |
+| <th> Pittsburgh </th> | | | |
 
 Not clear what interest this could hold, or what it might have to do with biology.
 
