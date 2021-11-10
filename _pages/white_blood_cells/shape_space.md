@@ -24,24 +24,14 @@ Seattle
 St. Louis
 Boston
 
-Test table
-
-<table>
-  <tr>
-    <th>Fruit</th>
-    <td>Banana</td>
-  </tr>
-  <tr>
-    <th>Vegetable</th>
-    <td>Carrot</td>
-  </tr>
-</table>
-
-| | New York | Los Angeles | Pittsburgh |
-| :----: | :----: | :----: | :----: |
-| <th> New York </th> | | | |
-| <th> Los Angeles </th> | | | |
-| <th> Pittsburgh </th> | | | |
+| | New York | Los Angeles | Pittsburgh | Miami | Houston | Seattle |
+| :----: | :----: | :----: | :----: | :----: | :----: | :----: |
+| **New York** | 0 | | | | | |
+| **Los Angeles** | | 0 | | | | |
+| **Pittsburgh** | | | 0 | | | |
+| **Miami** | | | | 0 | | |
+| **Houston** | | | | | 0 | |
+| **Seattle** | | | | | | 0 |
 
 Not clear what interest this could hold, or what it might have to do with biology.
 
