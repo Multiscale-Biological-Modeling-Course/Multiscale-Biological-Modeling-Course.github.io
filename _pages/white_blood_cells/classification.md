@@ -92,6 +92,6 @@ When using k-NN with *k* equal to 4, we consider the four nearest points when cl
 
 In the more general case in which feature vectors have length *n*, we can determine which points are nearest to a given point by using the **Euclidean distance**, which generalizes the distance between two points in two-dimensional space to vectors in *n*-dimensional space. Say that we have the vectors **x** = (*x*<sub>1</sub>, *x*<sub>2</sub>, ..., *x*<sub>*n*</sub>) and **y** = (*y*<sub>1</sub>, *y*<sub>2</sub>, ..., *y*<sub>*n*</sub>). Then the Euclidean distance between them is given by the sum of squares of differences between corresponding vector elements:
 
-$$d(\mathbf{x}, \mathbf{y}) = sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n-y_n)^2}$$
+$$d(\mathbf{x}, \mathbf{y}) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n-y_n)^2}$$
 
 We now have learned how to use k-NN to classify unknown points given a set of points of known classes. Returning to our ongoing example of WBCs, we could imagine that researchers classify hundreds of images of WBCs in advance to give us a validated dataset, which we can compare a new WBC image against to determine the family to which this WBC belongs. There is just one problem: how can we convert an image of a WBC into a vector?
