@@ -12,18 +12,20 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 If you have not yet managed to see the 1968 movie *Planet of the Apes*, we will spoil its [![](ending)](https://www.youtube.com/watch?v=XvuM3DjvYf0) for you.
 
-Test
+Test image with lightbox below
 
-[![](../assets/images/iris_petal_data.png)](../assets/images/iris_petal_data.png){: .align-center}
+![image-center](../assets/images/iris_petal_data.png){: .align-center}
+
+[![image-center](../assets/images/iris_petal_data.png)](../assets/images/iris_petal_data.png){: .align-center}
 
 | | New York | Los Angeles | Pittsburgh | Miami | Houston | Seattle |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-| **New York** | 0 | | | | | |
-| **Los Angeles** | | 0 | | | | |
-| **Pittsburgh** | | | 0 | | | |
-| **Miami** | | | | 0 | | |
-| **Houston** | | | | | 0 | |
-| **Seattle** | | | | | | 0 |
+| **New York** | 0 | 2805 | 371 | 1283 | 1628 | 2852 |
+| **Los Angeles** | 2805 | 0 | 2427 | 2733 | 1547 | 1135 |
+| **Pittsburgh** | 371 | 2427 | 0 | 1181 | 1388 | 2502 |
+| **Miami** | 1283 | 2733 | 1181 | 0 | 1189 | 3300 |
+| **Houston** | 1628 | 1547 | 1388 | 1189 | 0 | 2340 |
+| **Seattle** | 2852 | 1135 | 2502 | 3300 | 2340 | 0 |
 
 Not clear what interest this could hold, or what it might have to do with biology.
 
