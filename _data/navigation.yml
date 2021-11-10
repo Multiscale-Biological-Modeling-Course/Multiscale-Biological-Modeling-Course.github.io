@@ -177,6 +177,8 @@ white_blood_cells:
         url: /white_blood_cells/home
       - title: "Segmenting white blood cells<br><br>"
         url: /white_blood_cells/segmentation
+      - title: "An overview of classification<br><br>"
+        url: /white_blood_cells/classification
   - title: Software Tutorials (featuring CellOrganizer)
     children:
       - title: "Segmenting nuclei from cellular images<br><br>"
