@@ -10,7 +10,7 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 ## Interlude: Stone tablets and lost cities
 
-If you have never seen the movie *Planet of the Apes*, we will spoil its ending by filling
+If you have not yet managed to see the 1968 movie *Planet of the Apes*, we will spoil its ending for you.
 
 Imagine that you are a traveler from outer space, far in the future. You arrive to Earth to find a harbor, with the Statue of Liberty protruding
 
