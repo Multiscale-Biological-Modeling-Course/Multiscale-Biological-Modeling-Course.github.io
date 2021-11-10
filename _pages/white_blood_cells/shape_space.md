@@ -10,7 +10,7 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 ## Interlude: Stone tablets and lost cities
 
-If you have not yet managed to see the 1968 movie *Planet of the Apes*, we will spoil its ending for you.
+If you have not yet managed to see the 1968 movie *Planet of the Apes*, we will spoil its [![](ending)](https://www.youtube.com/watch?v=XvuM3DjvYf0) for you.
 
 Test
 
