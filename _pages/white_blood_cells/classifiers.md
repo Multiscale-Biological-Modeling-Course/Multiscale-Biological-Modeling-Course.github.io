@@ -71,14 +71,18 @@ For the iris dataset, recall our observation that data points were more likely t
 An unknown point (gray) along with a collection of nearby points belonging to two classes, colored green and blue.
 {: style="font-size: medium;"}
 
-This task may seem straightforward, but the preceding question also indicates that it is also open-ended. Because of this freedom, researchers have devised a variety of different approaches for classifying data given data with known classes. We will discuss a simple but powerful classification algorithm called **k-nearest neighbors**, or **k-NN**. (CITE: Fix and Hodges, 1951)
+The task of classifying points with unknown class may seem straightforward, but the preceding question also indicates that it is also open-ended. Because of this freedom, researchers have devised a variety of different approaches for classifying data given data with known classes. We will discuss a simple but powerful classification algorithm called **k-nearest neighbors**, or **k-NN**. (CITE: Fix and Hodges, 1951)
 
+In k-NN, we fix a positive integer *k* in advance. Then, for each point with unknown class, we assign it the class possessed by the largest number of its *k* closest neighbors.
 
+For example, if we were using *k* = 1, then we would assign the unknown point to the blue class, as the nearest point with known class is blue (see figure below).
 
-In k-NN, we classify a point according to how many
+![image-center](../assets/images/knn_neighborhood_k=1.png){: .align-center}
+Fill caption.
+{: style="font-size: medium;"}
 
-![image-center](../assets/images/knn_neighborhood.png){: .align-center}
-Petal width (*x*-axis) plotted against width (*y*-axis) for each of the flowers in the Iris flower data set, colored by species. There are not fifty points corresponding to every species because some flowers have the same petal length and width.
+![image-center](../assets/images/knn_neighborhood_k=4.png){: .align-center}
+Fill caption.
 {: style="font-size: medium;"}
 
 
