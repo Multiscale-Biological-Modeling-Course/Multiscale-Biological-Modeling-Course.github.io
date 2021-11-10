@@ -14,8 +14,6 @@ If you have not yet managed to see the 1968 movie *Planet of the Apes*, we will 
 
 Test image with lightbox below
 
-![image-center](../assets/images/iris_petal_data.png){: .align-center}
-
 [![image-center](../assets/images/iris_petal_data.png)](../assets/images/iris_petal_data.png){: .align-center}
 
 | | New York | Los Angeles | Pittsburgh | Miami | Houston | Seattle |
