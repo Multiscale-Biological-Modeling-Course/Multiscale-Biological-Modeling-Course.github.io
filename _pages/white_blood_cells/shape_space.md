@@ -10,7 +10,7 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 ## Interlude: Stone tablets and lost cities
 
-If you have not yet managed to see the 1968 movie *Planet of the Apes*, we will spoil its [ending](https://www.youtube.com/watch?v=XvuM3DjvYf0) for you.
+If you have not yet managed to see the 1968 movie *Planet of the Apes*[^apes], we will spoil its [ending](https://www.youtube.com/watch?v=XvuM3DjvYf0) for you.
 
 Test YouTube video
 
@@ -59,3 +59,5 @@ Output: a predictive labeling of all the points in the test set into one of k cl
 * Probably need cross-validation as its own section.
 
 * Epilogue: neural nets? Maybe not depending on Kabsch.
+
+[^apes]: Your author has not either.
