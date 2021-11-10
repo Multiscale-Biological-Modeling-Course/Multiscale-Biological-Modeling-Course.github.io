@@ -16,7 +16,7 @@ In our ongoing example, the data are images of WBCs, and the classes are the thr
 
 ## The iris flower data set
 
-A classical dataset commonly used for motivating classification is the **iris flower data set**, which Ronald Fisher used in a seminal statistical paper in 1936[^Fisher1936], and which was compiled by Edgar Anderson[^Anderson1935]. Anderson collected 150 iris flowers, equally divided among three species, which are illustrated in the figure below.
+A classical dataset commonly used for motivating classification is the **iris flower data set**, which Ronald Fisher used in a seminal statistical paper in 1936[^Fisher1936], and which was compiled by Edgar Anderson[^Anderson1935][^Anderson1936]. Anderson collected 150 iris flowers, equally divided among three species, which are illustrated in the figure below.
 
 | *Iris setosa* | *Iris versicolor* | *Iris virginica* |
 :-------------------------:|:-------------------------:|:-------------------------:
