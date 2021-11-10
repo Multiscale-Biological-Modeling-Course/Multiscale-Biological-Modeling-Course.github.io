@@ -16,16 +16,16 @@ In our ongoing example, the data are images of WBCs, and the classes are the thr
 
 ## The iris flower data set
 
-A classical dataset commonly used for motivating classification is the **iris flower data set**, which Ronald Fisher used in a seminal statistical paper in 1936[^Fisher1936], and which was compiled by Edgar Anderson[^Anderson1935][^Anderson1936]. Anderson collected 150 iris flowers, equally divided among three species, which are illustrated in the figure below.
+A classical dataset commonly used for motivating classification is the **iris flower data set**, which Ronald Fisher used in a seminal paper on classification in 1936[^Fisher1936], and which had been compiled by Edgar Anderson[^Anderson1935][^Anderson1936]. Anderson collected 150 iris flowers, equally divided among three species, which are illustrated in the figure below.
 
 | *Iris setosa* | *Iris versicolor* | *Iris virginica* |
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](../assets/images/Iris_setosa_2.jpg)  |  ![](../assets/images/Iris_versicolor.jpg)   |  ![](../assets/images/Iris_virginica.jpg)
 
-Representative images of the three species of iris included in the iris flower data set. Image courtesies, from left to right: Emma Forsberg, unknown author, Robert H. Mohlenbrock.
+Representative images of the three species of iris included in Anderson's iris flower data set. Image courtesies, from left to right: Emma Forsberg, unknown author, Robert H. Mohlenbrock.
 {: style="font-size: medium;"}
 
-Anderson further measured four attributes, or **features**, of each of the flowers in his dataset: both the width and height of the flower's petal, and both the width and height of the flower's sepal (a green offshoot beneath the petals). The features and species labels for twelve of the flowers in the iris flower dataset are shown in the table below (click [here](../downloads/iris.csv) for the full dataset). Fisher considered whether it was possible to classify each flower according to its species using only the features Anderson had measured.
+Anderson measured four attributes, or **features**, of each of the flowers in his dataset: both the width and height of the flower's petal, and both the width and height of the flower's sepal (a green offshoot beneath the petals). The features and species labels for twelve of the flowers in the iris flower dataset are shown in the table below (click [here](../downloads/iris.csv) for the full dataset). Fisher considered whether it was possible to classify each flower according to its species using only the features Anderson had measured.
 
 | Sepal length (cm) | Sepal width (cm) | Petal length (cm) | Petal width (cm) | Species |
 | :----: | :----: | :----: | :----: | :----: |
