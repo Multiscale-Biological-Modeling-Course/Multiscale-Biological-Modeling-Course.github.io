@@ -14,7 +14,6 @@ Classification Problem
 Input: A collection of data divided into a training set and a test set. Each training data point is labeled into one of k classes.
 Output: a predictive labeling of all the points in the test set into one of k classes.
 
-* Section break
 
 * Another idea: find a way of directly assigning shapes to points. We've done this! When we sampled points from a protein structure we sampled n points from the surface.
 
