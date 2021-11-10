@@ -81,7 +81,7 @@ For example, if we were using *k* equal to 1, then we would assign the unknown p
 When using k-NN with *k* equal to 1, we classify an unknown point according to the point of known class that is nearby; the above figure indicates that the blue point is the closest to the unknown point.
 {: style="font-size: medium;"}
 
-However, with the same data and *k* equal to 3 or 4, the figure below shows that a majority of the *k* nearest neighbors are green, and so we classify the unknown point as green.
+However, with the same data and *k* equal to 3 or 4, the figure below shows that a majority of the *k* nearest neighbors are green, and so we classify the unknown point as green. This example reinforces a theme of this course, and of data science in general, that the results of an algorithm can be sensitive to our choice of parameters.
 
 ![image-center](../assets/images/knn_neighborhood_k=4.png){: .align-center}
 When using k-NN with *k* equal to 4, we consider the four nearest points when classifying the unknown point, which will therefore receive the green class.

@@ -8,7 +8,40 @@ toc_sticky: true
 image: "../assets/images/cellorg_pca_graph_cell.png"
 ---
 
+## Interlude: Stone tablets and lost cities
 
+Imagine that you
+
+New York
+Pittsburgh
+Los Angeles
+Chicago
+Houston
+Miami
+Seattle
+St. Louis
+Boston
+
+Test table
+
+<table>
+  <tr>
+    <th>Fruit</th>
+    <td>Banana</td>
+  </tr>
+  <tr>
+    <th>Vegetable</th>
+    <td>Carrot</td>
+  </tr>
+</table>
+
+Not clear what interest this could hold, or what it might have to do with biology.
+
+
+
+## Temp
+
+Thus far in this module, we have learned how to segment images of WBCs, and we have discussed the k-nearest neighbors approach for classifying a collection of objects with unknown class. Yet this approach required each object to be represented by a feature vector, and it is
 
 Classification Problem
 Input: A collection of data divided into a training set and a test set. Each training data point is labeled into one of k classes.
