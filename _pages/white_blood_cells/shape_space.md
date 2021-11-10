@@ -12,7 +12,7 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 If you have not yet managed to see the 1968 movie *Planet of the Apes*[^apes], we will spoil its <a href="https://www.youtube.com/watch?v=XvuM3DjvYf0" target="_blank">ending</a> for you. Charlton Heston's character finds the Statue of Liberty protruding from the sand and has the epiphany that the mysterious planet he has come across was just Earth all along.
 
-Imagine that you are a traveler to Earth and come across the ruins of New York. You hope to find the other cities of this area as well, and you find an old road Atlas that has driving distances between cities (in miles), shown in the table below.
+Imagine that you are a traveler to Earth and come across the ruins of New York. You hope to find the other cities of this area as well, and you find an old road atlas that has driving distances between cities (in miles), shown in the table below.
 
 | | New York | Los Angeles | Pittsburgh | Miami | Houston | Seattle |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
@@ -28,7 +28,7 @@ Imagine that you are a traveler to Earth and come across the ruins of New York. 
 
 This example may be contrived, but it has a real archaeological counterpart.
 
-Not clear what interest this could hold, or what it might have to do with biology.
+Not clear what it might have to do with biology.
 
 
 ## Temp

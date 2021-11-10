@@ -16,7 +16,7 @@ In our ongoing example, the data are images of WBCs, and the classes are the thr
 
 ## The iris flower data set
 
-A classical dataset commonly used for motivating classification is the **iris flower data set**, which Ronald Fisher used in a seminal statistical paper in 1936, and which was compiled by Edgar Anderson. (CITE both and look up paper). Anderson collected 150 iris flowers, equally divided among three species, which are illustrated in the figure below.
+A classical dataset commonly used for motivating classification is the **iris flower data set**, which Ronald Fisher used in a seminal statistical paper in 1936[^Fisher1936], and which was compiled by Edgar Anderson[^Anderson1935]. Anderson collected 150 iris flowers, equally divided among three species, which are illustrated in the figure below.
 
 | *Iris setosa* | *Iris versicolor* | *Iris virginica* |
 :-------------------------:|:-------------------------:|:-------------------------:
@@ -71,7 +71,7 @@ For the iris dataset, recall our observation that data points were more likely t
 An unknown point (gray) along with a collection of nearby points belonging to two classes, colored green and blue.
 {: style="font-size: medium;"}
 
-The task of classifying points with unknown class may seem straightforward, but the preceding question also indicates that it is also open-ended. Because of this freedom, researchers have devised a variety of different approaches for classifying data given data with known classes. We will discuss a simple but powerful classification algorithm called **k-nearest neighbors**, or **k-NN**. (CITE: Fix and Hodges, 1951)
+The task of classifying points with unknown class may seem straightforward, but the preceding question also indicates that it is also open-ended. Because of this freedom, researchers have devised a variety of different approaches for classifying data given data with known classes. We will discuss a simple but powerful classification algorithm called **k-nearest neighbors**, or **k-NN**[^FixHodges1951].
 
 In k-NN, we fix a positive integer *k* in advance, which will be used for classification of all points. Then, for each point with unknown class, we assign it the class possessed by the largest number of its *k* closest neighbors.
 
@@ -95,3 +95,9 @@ In the more general case in which feature vectors have length *n*, we can determ
 $$d(\mathbf{x}, \mathbf{y}) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n-y_n)^2}$$
 
 We now have learned how to use k-NN to classify unknown points given a set of points of known classes. Returning to our ongoing example of WBCs, we could imagine that researchers classify hundreds of images of WBCs in advance to give us a validated dataset, which we can compare a new WBC image against to determine the family to which this WBC belongs. There is just one problem: how can we convert an image of a WBC into a vector?
+
+[^Anderson1935]:
+
+[^Fisher1936]: Fisher RA (1936) The Use of Multiple Measurements in Taxonomic Problems. Annals of Eugenics (7)2:179-188. [Available online](https://doi.org/10.1111/j.1469-1809.1936.tb02137.x)
+
+[^FixHodges1951]: Fix E. and Hodges J.L. (1951) Discriminatory Analysis, Nonparametric Discrimination: Consistency Properties. Technical Report 4, USAF School of Aviation Medicine, Randolph Field. [Available online](https://www.jstor.org/stable/1403797)
