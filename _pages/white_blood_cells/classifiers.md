@@ -68,7 +68,7 @@ For the iris dataset, recall our observation that data points were more likely t
 {: .notice--primary}
 
 ![image-center](../assets/images/knn_neighborhood.png){: .align-center}
-An unknown point along with a collection of
+An unknown point (gray) along with a collection of nearby points belonging to two classes, colored green and blue.
 {: style="font-size: medium;"}
 
 This task may seem straightforward, but the preceding question also indicates that it is also open-ended. Because of this freedom, researchers have devised a variety of different approaches for classifying data given data with known classes. We will discuss a simple but powerful classification algorithm called **k-nearest neighbors**, or **k-NN**. (CITE: Fix and Hodges, 1951)
