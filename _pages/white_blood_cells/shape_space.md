@@ -16,6 +16,8 @@ Test image with lightbox below
 
 [![image-center](../assets/images/iris_petal_data.png)](../assets/images/iris_petal_data.png){: .align-center}
 
+<center>
+
 | | New York | Los Angeles | Pittsburgh | Miami | Houston | Seattle |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | **New York** | 0 | 2805 | 371 | 1283 | 1628 | 2852 |
@@ -24,6 +26,8 @@ Test image with lightbox below
 | **Miami** | 1283 | 2733 | 1181 | 0 | 1189 | 3300 |
 | **Houston** | 1628 | 1547 | 1388 | 1189 | 0 | 2340 |
 | **Seattle** | 2852 | 1135 | 2502 | 3300 | 2340 | 0 |
+
+</center>
 
 Not clear what interest this could hold, or what it might have to do with biology.
 
