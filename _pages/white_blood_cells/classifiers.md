@@ -73,18 +73,22 @@ An unknown point (gray) along with a collection of nearby points belonging to tw
 
 The task of classifying points with unknown class may seem straightforward, but the preceding question also indicates that it is also open-ended. Because of this freedom, researchers have devised a variety of different approaches for classifying data given data with known classes. We will discuss a simple but powerful classification algorithm called **k-nearest neighbors**, or **k-NN**. (CITE: Fix and Hodges, 1951)
 
-In k-NN, we fix a positive integer *k* in advance. Then, for each point with unknown class, we assign it the class possessed by the largest number of its *k* closest neighbors.
+In k-NN, we fix a positive integer *k* in advance, which will be used for classification of all points. Then, for each point with unknown class, we assign it the class possessed by the largest number of its *k* closest neighbors.
 
-For example, if we were using *k* = 1, then we would assign the unknown point to the blue class, as the nearest point with known class is blue (see figure below).
+For example, if we were using *k* equal to 1, then we would assign the unknown point to the blue class, as the nearest point with known class is blue (see figure below).
 
 ![image-center](../assets/images/knn_neighborhood_k=1.png){: .align-center}
 Fill caption.
 {: style="font-size: medium;"}
 
+However, with the same data and *k* equal to 3 or 4, the figure below shows that a majority of the *k* nearest neighbors are green, and so we classify the unknown point as green.
+
 ![image-center](../assets/images/knn_neighborhood_k=4.png){: .align-center}
 Fill caption.
 {: style="font-size: medium;"}
 
+**STOP:** When *k* = 2 or *k* = 6 for the above figure, note that we obtain a tie in the number of points from each known class belonging to the *k* nearest neighbors of a point with unknown class. How could we break ties in k-NN?
+{: .notice--primary}
 
 Transition to training and test sets -- connect
 
