@@ -56,15 +56,24 @@ If we were to use only two features in the Iris flower dataset, then a flower's 
 Petal width (*x*-axis) plotted against width (*y*-axis) for each of the flowers in the Iris flower data set, colored by species. There are not fifty points corresponding to every species because some flowers have the same petal length and width.
 {: style="font-size: medium;"}
 
-If we were to use all four features, then every flower would be represented by a point in four-dimensional space. More generally, when classifying a collection of data with *n* quantifiable features, each data point can be represented by a **vector** of length *n*, i.e., a point in *n*-dimensional space.
+Note how stark the pattern in the above figure is. Even though we chose only two features from the Iris flowers, the points associated with the flowers essentially divide into three main clusters by species. In other words, nearby points tend to correspond to flowers from the same species.
 
-Reducing each data point to a vector helps us visualize the data (at least, in the case of only two or three features), but the greater insight is that two data points are typically more likely to belong to the same class if their vectors are closer in *n*-dimensional space. We will use this insight in the hopes of correctly classifying a data point whose class is *unknown* by determining which data points with *known* classification it is near.
+If we were to use all four features for the iris dataset, then every flower would be represented by a point in four-dimensional space. For example, the first flower in our initial table of iris features would be represented by the point (5.1, 3.5, 1.4, 0.2). More generally, when classifying a collection of data with *n* features, each element in the dataset can be represented by a **feature vector** of length *n*, whose *i*-th value corresponds to its value for the *i*-th feature.
+
+## Classifying unknown elements with k-Nearest Neighbors
+
+For the iris dataset, recall our observation that data points were more likely to belong to the same class if they were nearby. Our hope is that this is true for other datasets, that elements from the same class will have feature vectors that are close in *n*-dimensional space. If so, we can classify a data point whose class is *unknown* by determining which data points with *known* classification it is near.
+
+This task may seem straightforward, but it is also open-ended. How should we define "nearness"? Once we have done so, what if there are points from more than one known class that lie near a point with unknown class? Because of this freedom, researchers have devised a variety of different approaches for classifying data given data with known classes. We will discuss a classic classification algorithm that is simple but nevertheless powerful called **k-nearest neighbors**.
+
+In this approach, 
+
+(Fix and Hodges, 1951)
+are many different app for performing the task of
 
 
 
 Transition to training and test sets -- connect
-
-
 
 Make point about machine learning.
 
@@ -72,11 +81,7 @@ Classification Problem
 Input: A collection of data divided into a training set and a test set. Each training data point is labeled into one of k classes.
 Output: a predictive labeling of all the points in the test set into one of k classes.
 
-
-
 * Give overview of most standard approach for classification, kNN
-
-* Quantifying quality: training and test datasets
 
 * But this is an algorithm that applies to points. What we have are *shapes*. How can shapes be assigned to points in space?
 
