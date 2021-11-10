@@ -12,17 +12,9 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 If you have not yet managed to see the 1968 movie *Planet of the Apes*, we will spoil its ending for you.
 
-Imagine that you are a traveler from outer space, far in the future. You arrive to Earth to find a harbor, with the Statue of Liberty protruding
+Test
 
-New York
-Pittsburgh
-Los Angeles
-Chicago
-Houston
-Miami
-Seattle
-St. Louis
-Boston
+[![](../assets/images/iris_petal_data.png)](../assets/images/iris_petal_data.png){: .align-center}
 
 | | New York | Los Angeles | Pittsburgh | Miami | Houston | Seattle |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
