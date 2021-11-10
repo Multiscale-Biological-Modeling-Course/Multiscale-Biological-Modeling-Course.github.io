@@ -12,6 +12,11 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 If you have not yet managed to see the 1968 movie *Planet of the Apes*, we will spoil its [ending](https://www.youtube.com/watch?v=XvuM3DjvYf0) for you.
 
+Test YouTube video
+
+<a class="popup-youtube" href="http://www.youtube.com/watch?v=0O2aH4XLbto">Open YouTube video</a><br>
+
+
 Test image with lightbox below
 
 [![image-center](../assets/images/iris_petal_data.png)](../assets/images/iris_petal_data.png){: .align-center}
