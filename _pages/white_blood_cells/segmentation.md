@@ -99,3 +99,6 @@ This is not to say that our segmentation pipeline is perfect. The figure below i
 {: .notice--primary}
 
 We can continue to tweak threshold parameters, but our relatively simple algorithm has successfully segmented most of the WBC nuclei from our dataset. We are ready to move on to our second goal of classifying WBC nuclei into families.
+
+[Next lesson](classification){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}

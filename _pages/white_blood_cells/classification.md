@@ -78,42 +78,20 @@ In k-NN, we fix a positive integer *k* in advance, which will be used for classi
 For example, if we were using *k* equal to 1, then we would assign the unknown point to the blue class, as the nearest point with known class is blue (see figure below).
 
 ![image-center](../assets/images/knn_neighborhood_k=1.png){: .align-center}
-Fill caption.
+When using k-NN with *k* equal to 1, we classify an unknown point according to the point of known class that is nearby; the above figure indicates that the blue point is the closest to the unknown point.
 {: style="font-size: medium;"}
 
 However, with the same data and *k* equal to 3 or 4, the figure below shows that a majority of the *k* nearest neighbors are green, and so we classify the unknown point as green.
 
 ![image-center](../assets/images/knn_neighborhood_k=4.png){: .align-center}
-Fill caption.
+When using k-NN with *k* equal to 4, we consider the four nearest points when classifying the unknown point, which will therefore receive the green class.
 {: style="font-size: medium;"}
 
 **STOP:** When *k* = 2 or *k* = 6 for the above figure, note that we obtain a tie in the number of points from each known class belonging to the *k* nearest neighbors of a point with unknown class. How could we break ties in k-NN?
 {: .notice--primary}
 
-Transition to training and test sets -- connect
+In the more general case in which feature vectors have length *n*, we can determine which points are nearest to a given point by using the **Euclidean distance**, which generalizes the distance between two points in two-dimensional space to vectors in *n*-dimensional space. Say that we have the vectors **x** = (*x*<sub>1</sub>, *x*<sub>2</sub>, ..., *x*<sub>*n*</sub>) and **y** = (*y*<sub>1</sub>, *y*<sub>2</sub>, ..., *y*<sub>*n*</sub>). Then the Euclidean distance between them is given by the sum of squares of differences between corresponding vector elements:
 
-Make point about machine learning.
+$$d(\mathbf{x}, \mathbf{y}) = sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n-y_n)^2}$$
 
-Classification Problem
-Input: A collection of data divided into a training set and a test set. Each training data point is labeled into one of k classes.
-Output: a predictive labeling of all the points in the test set into one of k classes.
-
-* Give overview of most standard approach for classification, kNN
-
-* But this is an algorithm that applies to points. What we have are *shapes*. How can shapes be assigned to points in space?
-
-* Section break
-
-* Another idea: find a way of directly assigning shapes to points. We've done this! When we sampled points from a protein structure we sampled n points from the surface.
-
-* (There is an issue here, which is that we also need the Kabsch algorithm. It may be that we have the exact same proteins, but they have to be aligned and rotated to reveal this.)
-
-* Better approach is to use distances. Identify distances between points and then try to assign shapes to points -- this is the stone tablet problem (perhaps move to intro).
-
-* Issue: we'd love to build a shape space, but dimension is huge. Need for dimensionality reduction (although not if we are doing Kabsch).
-
-* Applying classifier to our space.
-
-* Probably need cross-validation as its own section.
-
-* Epilogue: neural nets? Maybe not depending on Kabsch.
+We now have learned how to use k-NN to classify unknown points given a set of points of known classes. Returning to our ongoing example of WBCs, we could imagine that researchers classify hundreds of images of WBCs in advance to give us a validated dataset, which we can compare a new WBC image against to determine the family to which this WBC belongs. There is just one problem: how can we convert an image of a WBC into a vector?
