@@ -32,32 +32,45 @@ You may be confused as to why stone tablets and lost cities  matter to biologist
 
 ## Temp
 
-In the [previous lesson](classification), we discussed the k-nearest neighbors algorithm (k-NN) for classifying an object with unknown class given a collection of objects with known classes. Yet k-NN first requires each object to be represented by a feature vector, and so we need some way of converting a WBC image into a feature vector.
+In the [previous lesson](classification), we discussed the k-nearest neighbors algorithm (k-NN) for classifying an object with unknown class given a collection of objects with known classes. We would like to apply this approach to our example of segmented WBC images. Yet k-NN first requires each object to be represented by a feature vector, and so we need some way of converting an image of a WBC into a feature vector. In this way, we can produce a **shape space**, or an assignment of (cellular image) shapes to points in multi-dimensional space.
 
-If you have followed the rest of this course, you may notice that this question is very similar to one that we have already encountered in a [different module](), when we vectorized a protein structure as the locations of its alpha carbons to compare protein structures.
+If you have followed the rest of this course, then you may notice that the problem of "vectorizing" a WBC image is similar to one that we have already encountered in our [module on protein structures](../coronavirus/accuracy). In that module, we vectorized a protein structure as the collection of locations of its alpha carbons.
+
+* When Euclidean distance is introduced, point out how similar it is to RMSD.
+
+* natural thing to do is to sample n equally spaced points [x(t), y(t)] around the outside of a shape. For example, we could take n = 360, which would sample a point every 1 degree. As a result, each shape would correspond to a vector of length 2n.
+
+* (Note: CO uses 2000 points by default? Can this be changed?)
+
+* The idea is that two similar shapes would be close together in the shape space, and different shapes would be far apart.
+
+* However, the problem is the same as what we already encountered with protein structures!
+
+* Show dissimilar shapes that would have lower RMSD. This is handled by ensuring that n is large enough -- call back to protein structures.
+
+* Show identical shapes that would have higher RMSD/Euclidean distances
+
+* The 2nd issue is trickier. We handled it in the protein structure discussion with Kabsch algorithm, which identified the best rotation of one shape into another that would minimize the RMSD of the resulting vectors.
+
+* But the issue is that we don't have 2 images. We have hundreds! The best rotation of a shape when aligning against one shape may not be the same as its rotation against another shape.
+
+* We therefore have two options:
+
+1. Apply some algorithm like Kabsch (cite diffeomorphic model here), which will give us pairs of distances between points. We therefore must use the resulting pairs of distances to estimate a shape space from these distances. Sound familiar? This is just the lost city problem from the interlude at the start of this lesson.
+
+2. Computing all these distances between shapes can take a really long time, so perhaps instead we can find the best rotation of all images at the same time so that the images are "aligned" against each other.
+
+* To do so, first identify the "major axis" of each image (show figure). Define axis as a line segment through the shape's center of gravity that connects two points on the shape's boundary. The major axis is the axis of the shape that has maximum length.
+
+* Then, rotate images so that their major axes are aligned; for example, align them so that the major axis is horizontal. Only then do we sample each image's vector, starting at one side of the major axis and proceeding clockwise.
+
+* (There is just one problem, which is that similar shapes could be mirror images of each other. Pincus and Thierot 2007 used a reference shape and found the minimum RMSD between a shape and the reference or its inverse and the reference.)
+
+* We now have a shape space, but there is one more pitfall.
 
 
+We then used the Kabsch algorithm to compute a distance between two points so that  identify the rotation of one of the two protein structure that
 
-Classification Problem
-Input: A collection of data divided into a training set and a test set. Each training data point is labeled into one of k classes.
-Output: a predictive labeling of all the points in the test set into one of k classes.
-
-
-* Another idea: find a way of directly assigning shapes to points. We've done this! When we sampled points from a protein structure, we sampled points from the surface.
-
-* (There is an issue here, which is that we also need the Kabsch algorithm. It may be that we have the exact same proteins, but they have to be aligned and rotated to reveal this.)
-
-* Better approach is to use distances. Identify distances between points and then try to assign shapes to points -- this is the stone tablet problem (perhaps move to intro).
-
-* Issue: we'd love to build a shape space, but dimension is huge. Need for dimensionality reduction (although not if we are doing Kabsch).
-
-* Applying classifier to our space.
-
-* Transition to training and test sets -- connect to machine learning?
-
-* Probably need cross-validation as its own section.
-
-* Epilogue: neural nets? Maybe not depending on Kabsch.
 
 [^apes]: Your author has not either.
 
