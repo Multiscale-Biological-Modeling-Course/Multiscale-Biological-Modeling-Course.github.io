@@ -11,7 +11,7 @@ Load the `CellBlender_Tutorial_Template.blend` file that you generated in the [R
 
 We will first visit `CellBlender > Molecules` and create the *B* molecules, as shown in the screenshot below.
 
-![image-center](../assets/images/motifs_norm1.png){: .align-center}
+[![image-center](../assets/images/motifs_norm1.png)]{: .align-center}
 
 1. Click the `+` button.
 2. Select a color (such as red).
@@ -30,7 +30,7 @@ Then, repeat the above steps to make sure that all of the following molecules ar
 
 Now visit `CellBlender > Molecule Placement` to set the following sites for releasing molecules of each of the three types. First, we will release the hidden molecules across the region so that any new *A* particles will be produced uniformly.
 
-![image-center](../assets/images/motifs_norm3.png){: .align-center}
+[![image-center](../assets/images/motifs_norm3.png)]{: .align-center}
 
 1. Click the `+` button.
 2. Select or type in the molecule `Hidden`.
@@ -93,13 +93,13 @@ Click this icon and choose `Text Editor`. To create a new file for our code, cli
 
 Next visit `CellBlender > Scripting > Data-Model Scripting > Run Script`, as shown in the following screenshot. Select `Internal` from the Data-Model Scripting menu and click the refresh button. Click the filename entry area next to `File` and enter `pred_center.py`. Click `Run Script` to execute
 
-![image-center](../assets/images/outliner_script.PNG){: .align-center}
+[![image-center](../assets/images/outliner_script.png)]{: .align-center}
 
 You should see that another placement site called `pred_rel` has appeared in the `Molecule Placement` tab.
 
 Next go to `CellBlender > Reactions` to create the reactions that will drive the system.
 
-![image-center](../assets/images/motifs_norm4.png){: .align-center}
+[![image-center](../assets/images/motifs_norm4.png)]{: .align-center}
 
 1. Click the `+` button.
 2. Under reactants, type `Hidden;` (**note:** the semi-colon is important).
@@ -116,7 +116,7 @@ Repeat these steps to ensure that we have all of the following reactions.
 
 We are now ready to run our simulation. To do so, visit `CellBlender > Run Simulation` and select the following options:
 
-![image-center](../assets/images/motifs_norm7.png){: .align-center}
+[![image-center](../assets/images/motifs_norm7.png)]{: .align-center}
 
 1. Set the number of iterations to `200`.
 2. Ensure the time step is set as `1e-6`.
@@ -126,11 +126,11 @@ Once the run is complete, save your file.
 
 We can also now visualize our simulation. Click `CellBlender > Reload Visualization Data`. You have the option of watching the animation within the Blender window by clicking the play button at the bottom of the screen.
 
-![image-center](../assets/images/motifs_norm8.png){: .align-center}
+[![image-center](../assets/images/motifs_norm8.png)]{: .align-center}
 
 If you like, you can export this animation by using the following steps:
 
-![image-center](../assets/images/cellblender_render.png){: .align-center}
+[![image-center](../assets/images/cellblender_render.png)]{: .align-center}
 
 1. Click the `movie` tab.
 2. Scroll down to the file name.

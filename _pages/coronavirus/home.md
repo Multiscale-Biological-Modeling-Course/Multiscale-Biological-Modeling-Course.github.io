@@ -50,7 +50,7 @@ Meanwhile, the World Health Organization (WHO) received reports regarding multip
 
 Throughout January, the virus silently raged through China, spreading to both South Korea and the United States as Lunar New Year celebrations took place within the country. By the end of the month, the disease was in 19 countries, as shown below.
 
-![image-center](../assets/images/WHOReport10.png){: .align-center}
+[![image-center](../assets/images/WHOReport10.png)]{: .align-center}
 The number of reported confirmed cases of 2019-nCoV (COVID-19) as of January 30th, 2020. Figure courtesy World Health Organization [^10].
 {: style="font-size: medium;"}
 
@@ -62,7 +62,7 @@ As for Dr. Li? Despite warning against the risk of this new virus, he contracted
 
 The similarity between SARS and COVID extends well beyond their symptoms. The viruses causing these diseases, whose respective names are **SARS coronavirus (SARS-CoV)** and **SARS coronavirus 2 (SARS-CoV-2)** are both **coronaviruses**, which means that their outer membranes are covered in a layer of **spike proteins** that cause them to look like the sun's corona during an eclipse (see figure below). In fact, if we look at the two viruses under a microscope, they look virtually identical.
 
-![image-center](../assets/images/coronavirus.png){: .align-center}
+[![image-center](../assets/images/coronavirus.png)]{: .align-center}
 Coronviruses as seen under a microscope. The fuzzy blobs on the cell surface are spike proteins, which the virus uses to gain entry to host cells. Figure courtesy F. Murphy and S. Whitfield, CDC[^coronaimage].
 {: style="font-size: medium;"}
 
@@ -72,7 +72,7 @@ Part of the reason for the spread of SARS-CoV-2 is that it can be spread by indi
 
 In this module, we will place ourselves in the shoes of early SARS-CoV-2 researchers studying the new virus in January 2020. The virus's **genome** (the 30,000 nucleotide sequence making up its DNA) was published on January 10[^Genome][^Annotation], and an annotation of this genome showing the position of the virus's genes is shown in the figure below. Upon sequence comparison, SARS-CoV-2 was found to be related to several coronaviruses isolated from bats and distantly related to SARS-CoV, the viral strain that caused the 2003 SARS outbreak. In fact, SARS-CoV-2 has a sequence identity of around 96% with bat coronavirus RaTG13, providing further evidence that the virus originated in bats.
 
-![image-center](../assets/images/SARSCoV2Annotation.png){: .align-center}
+[![image-center](../assets/images/SARSCoV2Annotation.png)]{: .align-center}
 An annotated genome of SARS-CoV-2. The Spike protein, found at the bottom of this image, is labeled "S" and begins at position 21,563. Accessed from GenBank: [https://go.usa.gov/xfzMM](https://go.usa.gov/xfzMM).
 {: style="font-size: medium;"}
 

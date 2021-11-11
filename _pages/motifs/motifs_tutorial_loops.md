@@ -56,7 +56,7 @@ plot(network, vertex_label=vertex_names, vertex_label_size=8,
 
 Running the notebook now produces the following network.
 
-![image-center](../assets/images/motifs_finding_ecoli_2.png){: .align-center}
+[![image-center](../assets/images/motifs_finding_ecoli_2.png)]{: .align-center}
 
 Our plan is to compare this network against a random network. The following code will call a function from a package to generate a random network with 197 nodes and 477 edges and plot it. It uses a built in function called `random.seed()` that takes an integer as input and uses this function to initiate a (pseudo)random number generator that will allow us to generate a random network.  There is nothing special about the input value 42 here -- or is there?
 
@@ -68,7 +68,7 @@ plot(g, edge_arrow_width=1, edge_arrow_size=0.5, autocurve=True)
 
 The resulting network is shown in the figure below.
 
-![image-center](../assets/images/motifs_finding_random.png){: .align-center}
+[![image-center](../assets/images/motifs_finding_random.png)]{: .align-center}
 
 The question is how many edges and self-loops this network has, which is handled by the following code.
 

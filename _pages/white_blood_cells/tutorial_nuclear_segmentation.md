@@ -69,12 +69,12 @@ After we have sourced our R file, you’ll notice the creation of three director
 
 Assuming the file ran correctly, the first directory, `SegImgs_1`, contains all of the segmented nuclei images where the white blood cell nucleus is in white and the rest of the image is seemingly in black. The second directory, `ColNuc_1`, should be empty, but will eventually contain all of the segmented nuclei images; however, the white blood cell nucleus will be in its original color and the rest of the image will be in black. Finally, the third directory, `BWImgs_1`, should be empty, but will eventually hold binarized versions (strictly black and white) of the images in `SegImgs_1`.
 
-![image-center](../assets/images/cellorg_raw_image.png){: .align-center}
+[![image-center](../assets/images/cellorg_raw_image.png)]{: .align-center}
 Nuclear Segmentation Example using `BloodImage_00001.jpg`.
 {: style="font-size: medium;"}
 
 
-![image-center](../assets/images/cellorg_segmented.png)
+[![image-center](../assets/images/cellorg_segmented.png)]
 Greyscale segmented nucleus from the above image.
 {: style="font-size: medium;"}	 
 

@@ -43,11 +43,11 @@ Equilibrium is reached when `k_lr_bind [L][T]` = `k_lr_dis[L.T]`. Our goal in th
 
 First, open RuleBender and select `File > New BioNetGen Project`.
 
-![image-center](../assets/images/chemotaxis_tutorial1.png){: .align-center}
+[![image-center](../assets/images/chemotaxis_tutorial1.png)]{: .align-center}
 
 Save your file as `ligand_receptor.BioNetGenl`. Now you should be able to start coding on line 1.
 
-![image-center](../assets/images/chemotaxis_tutorial2.png){: .align-center}
+[![image-center](../assets/images/chemotaxis_tutorial2.png)]{: .align-center}
 
 ## Specifying molecule types
 
@@ -128,7 +128,7 @@ end parameters
 
 If you save your file, then you should see a "contact map" in the upper right corner of the window indicating the potential bonding of `L` and `T`. This contact map is currently very simplistic, but for more complicated simulations it can help visualize the interaction of species in the system.
 
-![image-center](../assets/images/chemotaxis_tutorial3.png){: .align-center}
+[![image-center](../assets/images/chemotaxis_tutorial3.png)]{: .align-center}
 
 ## Specifying simulation commands
 

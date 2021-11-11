@@ -37,7 +37,7 @@ We will focus on the technical details behind such a coarse-grained "particle-fr
 
 In the figure below, we show a plot of concentrations of each particle in our particle-free simulation of the repressilator, with one caveat.  Midway through the simulation, we greatly increase the concentration of *Y*.
 
-![image-center](../assets/images/nf_sim_interrupted.PNG){: .align-center}
+[![image-center](../assets/images/nf_sim_interrupted.png)]{: .align-center}
 Adding a significant number of *Y* particles to our simulation produces little ultimate disturbance to the concentrations of the three particles, which return to normal oscillations within a single cycle.
 {: style="font-size: medium;"}
 
@@ -47,7 +47,7 @@ We might hypothesize that this process would continue, with a tall peak in the c
 
 Even with a much larger jolt to the concentration of *Y*, we observe the concentrations of the three particles return to normal oscillations very quickly (figure below).
 
-![image-center](../assets/images/nf_sim_interrupted_spike.PNG){: .align-center}
+[![image-center](../assets/images/nf_sim_interrupted_spike.png)]{: .align-center}
 
 The repressilator is not the only network motif that leads to oscillations of particle concentrations, but robustness to disturbance is a shared feature of all these motifs. This having been said, the repressilator is particularly successful at stabilizing. And although there have been some attempts to study what makes oscillators robust, the process remains difficult to describe. By characterizing the number and type of interactions within the oscillator model, it has been shown that at least five reactions are typically needed to build a very robust oscillator[^repress].
 

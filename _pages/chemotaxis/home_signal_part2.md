@@ -62,7 +62,7 @@ Pr(*LT* → *L* + *T*) = *k*<sub>dissociate</sub>/(*k*<sub>bind</sub> + *k*<sub>
 
 The process of selecting a reaction is visualized in the figure below.
 
-![image-center](../assets/images/chemotaxis_visualizessa.png){: .align-center}
+[![image-center](../assets/images/chemotaxis_visualizessa.png)]{: .align-center}
 A visualization of a single reaction event used by the Gillespie algorithm for ligand-receptor binding/dissociation. Red circles represent ligands (*L*), and orange wedges represent receptors (*T*). The wait time for the next reaction is drawn from an exponential distribution with mean 1/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>). The probability of this event corresponding to a binding or dissociation reaction is proportional to the rate of the respective reaction.
 {: style="font-size: medium;"}
 
@@ -105,7 +105,7 @@ The BioNetGen model covered in the previous tutorial uses the same number of ini
 
 The figure below demonstrates that the Gillespie algorithm quickly converges to the same values as the ones that we obtained by hand in the last lesson. As a result, we can see the power of using a particle-free stochastic simulator to quickly obtain a result without needing to perform any mathematical calculations.
 
-![image-center](../assets/images/chemotaxis_tutorial4_ssa.png){: .align-center}
+[![image-center](../assets/images/chemotaxis_tutorial4_ssa.png)]{: .align-center}
 A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.
 {: style="font-size: medium;"}
 
