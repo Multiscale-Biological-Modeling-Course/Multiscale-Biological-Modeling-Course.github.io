@@ -38,6 +38,9 @@ If you have followed the rest of this course, then you may notice that the probl
 
 We will apply the same idea to vectorize our segmented WBCs. Specifically, given a binarized image *I*, we will first center the image so that its center of mass is at the origin, and then sample *n* points from the boundary of the cell nucleus to produce a **shape vector** *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is a point with coordinates (*x*(*i*), *y*(*i*)).
 
+**Note:** Both isolating the boundary of a binarized image, and sampling points from this boundary to ensure that points are similarly spaced, are challenging tasks that are outside the scope of our work here, and which we will let CellOrganizer handle for us.
+{: .notice--warning}
+
 **STOP:** What is the dimension of the space in which the vector *s* lies? (Hint: the answer is not *n*.)
 {: .notice--primary}
 
@@ -56,8 +59,7 @@ CellOrganizer uses *n* = 1000 by default for cell nuclei.
 
 
 
-**Note:** Both isolating the boundary of a binarized image, and sampling points from this boundary to ensure that points are similarly spaced, are challenging tasks that are outside the scope of our work here, and which we will let CellOrganizer handle for us.
-{: .notice--warning}
+
 
 * However, the problem is the same as what we already encountered with protein structures!
 
