@@ -27,10 +27,10 @@ As a result, the `BWImgs_1` directory will now contain binarized TIFF versions o
 
 Our other result is that the `ColNuc_1` directory will now contain TIFF versions of the segmented images where the nuclei is in color and the background is in black. We won’t be using these images further along the pipeline, but they are useful to look at for visual confirmation that the majority of the nucleus is being considered for the PCA model.
 
-[![image-center](../assets/images/600px/cellorg_segmented.png){: .align-center}]()
+[![image-center](../assets/images/600px/cellorg_segmented.png){: .align-center}](../assets/images/cellorg_segmented.png)
 Nuclear segmentation of `BloodImage_00001.jpg` in black and white.
 {: style="font-size: medium;"}
 
-[![image-center](../assets/images/600px/cellorg_segmented_color.png){: .align-center}]()
+[![image-center](../assets/images/600px/cellorg_segmented_color.png){: .align-center}](../assets/images/cellorg_segmented_color.png)
 Nuclear segmentation of `BloodImage_00001.jpg` with color retained in the nucleus.
 {: style="font-size: medium;"}
