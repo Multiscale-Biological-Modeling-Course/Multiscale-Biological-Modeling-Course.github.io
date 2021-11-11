@@ -18,7 +18,7 @@ In the case of chemotaxis, *E. coli* has receptor proteins that detect attractan
 
 In this lesson, we will discuss how the bacterium is able to detect this molecular signal; in the next lesson, we focus on how the bacterium can convert the detected signal into an internal sequence of reactions that lead to a change in movement. See the figure below for a high-level overview of this process.
 
-[![image-center](../assets/images/600px/chemotaxis_signal.png){: .align-center}]()
+[![image-center](../assets/images/600px/chemotaxis_signal.png){: .align-center}](../assets/images/chemotaxis_signal.png)
 An overview of the signaling pathway of chemotaxis. The red circles represent attractant ligands(L). When ligands bind to receptors, this signal is transduced via a series of enzymes, and it finally influences the rotation direction of a flagellum. We will discuss how this response is achieved in a later lesson.
 {: style="font-size: medium;"}
 
@@ -200,7 +200,7 @@ BNG supports simulation with Ordinary Differential Equation (ODE) and with Stoch
  - SSA: When simulating the change of the system through time, we define states of the system. Transition can happen between states that differ by one reaction event. We track the *discrete* amount of each reactants and simulate the system via transition of the states[^Schwartz17]. For example, the state can transit from [#L=100, #T=50, #L.T=0] to [#L=99, #T=49, #L.T=1], with probability determined both by reaction rate *k<sub>bind</sub>* and the the number of ways to choose the L and T molecules.[^Schwartz17] For using SSA, the measurement of abundance of molecules should actually be number of molecule instead of concentration.
 
 Remove the ODE results
-[![image-center](../assets/images/600px/chemotaxis_tutorial4.png){: .align-center}]()
+[![image-center](../assets/images/600px/chemotaxis_tutorial4.png){: .align-center}](../assets/images/chemotaxis_tutorial4.png)
 Concentration plot for ligand-receptor dynamics with ODE simulation. The concentrations reach a steady state at the end of the simulation.
 {: style="font-size: medium;"}
 -->
