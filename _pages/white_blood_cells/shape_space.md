@@ -30,25 +30,42 @@ This example may be contrived, but it has a real archaeological counterpart. In 
 
 You may be confused as to why stone tablets and lost cities  matter to biologists. Let us therefore return to our central problem of classifying segmented WBC images by family.
 
-## Temp
+## Vectorizing a segmented image
 
 In the [previous lesson](classification), we discussed the k-nearest neighbors algorithm (k-NN) for classifying an object with unknown class given a collection of objects with known classes. We would like to apply this approach to our example of segmented WBC images. Yet k-NN first requires each object to be represented by a feature vector, and so we need some way of converting an image of a WBC into a feature vector. In this way, we can produce a **shape space**, or an assignment of (cellular image) shapes to points in multi-dimensional space.
 
-If you have followed the rest of this course, then you may notice that the problem of "vectorizing" a WBC image is similar to one that we have already encountered in our [module on protein structures](../coronavirus/accuracy). In that module, we vectorized a protein structure as the collection of locations of its alpha carbons.
+If you have followed the rest of this course, then you may notice that the problem of "vectorizing" a WBC image is similar to one that we have already encountered in our [module on protein structures](../coronavirus/accuracy). In that module, we vectorized a protein structure as the collection of locations of its alpha carbons. Specifically, given a protein structure *S*, we sampled the *n* alpha carbons from *S*, producing a vector  *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is the position of the *i*-th alpha carbon of *S*.
 
-* When Euclidean distance is introduced, point out how similar it is to RMSD.
+We will apply the same idea to vectorize our segmented WBCs. Specifically, given a binarized image *I*, we will first center the image so that its center of mass is at the origin, and then sample *n* points from the boundary of the cell nucleus to produce a **shape vector** *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is a point with coordinates (*x*(*i*), *y*(*i*)).
 
-* natural thing to do is to sample n equally spaced points [x(t), y(t)] around the outside of a shape. For example, we could take n = 360, which would sample a point every 1 degree. As a result, each shape would correspond to a vector of length 2n.
+**STOP:** What is the dimension of the space in which the vector *s* lies? (Hint: the answer is not *n*.)
+{: .notice--primary}
 
-* (Note: CO uses 2000 points by default? Can this be changed?)
+To answer the preceding question, note that the feature vector of a binarized image has 2*n* elements, two corresponding to each of the coordinates of its *n* sampled points. However, working with this vector is less intuitive than what we have done in the past, and so we will think of the vector as having length *n*, with each element having two coordinates.
+
+Furthermore, to determine the "distance" between two images' shape vectors, we will use our old friend root mean square deviation (RMSD), which is very similar to the Euclidean distance introduced in the previous lesson. Recall from the [module on protein structures](../coronavirus/accuracy) that RMSD is the square root of the average squared distance between corresponding points in the vectors. More precisely, given shape vectors *s* and *t*, the RMSD between these vectors is
+
+$$\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)}\,. $$
+
+## Ensuring that vectorization of images preserves (dis)similarity
+
+
+CellOrganizer uses *n* = 1000 by default for cell nuclei.
 
 * The idea is that two similar shapes would be close together in the shape space, and different shapes would be far apart.
+
+
+
+**Note:** Both isolating the boundary of a binarized image, and sampling points from this boundary to ensure that points are similarly spaced, are challenging tasks that are outside the scope of our work here, and which we will let CellOrganizer handle for us.
+{: .notice--warning}
 
 * However, the problem is the same as what we already encountered with protein structures!
 
 * Show dissimilar shapes that would have lower RMSD. This is handled by ensuring that n is large enough -- call back to protein structures.
 
 * Show identical shapes that would have higher RMSD/Euclidean distances
+
+
 
 * The 2nd issue is trickier. We handled it in the protein structure discussion with Kabsch algorithm, which identified the best rotation of one shape into another that would minimize the RMSD of the resulting vectors.
 
@@ -60,13 +77,22 @@ If you have followed the rest of this course, then you may notice that the probl
 
 2. Computing all these distances between shapes can take a really long time, so perhaps instead we can find the best rotation of all images at the same time so that the images are "aligned" against each other.
 
-* To do so, first identify the "major axis" of each image (show figure). Define axis as a line segment through the shape's center of gravity that connects two points on the shape's boundary. The major axis is the axis of the shape that has maximum length.
+* To do so, first identify the "major axis" of each image (show figure). Define axis as a line segment through the shape's center of mass that connects two points on the shape's boundary. The major axis is the axis of the shape that has maximum length.
 
 * Then, rotate images so that their major axes are aligned; for example, align them so that the major axis is horizontal. Only then do we sample each image's vector, starting at one side of the major axis and proceeding clockwise.
 
 * (There is just one problem, which is that similar shapes could be mirror images of each other. Pincus and Thierot 2007 used a reference shape and found the minimum RMSD between a shape and the reference or its inverse and the reference.)
 
 * We now have a shape space, but there is one more pitfall.
+
+
+
+
+## Notes to self
+
+* Shape differences is what drives our analysis -- need to hammer home this point
+
+* Can the default value of n = 1000 sampled points for nuclear images be changed?
 
 
 We then used the Kabsch algorithm to compute a distance between two points so that  identify the rotation of one of the two protein structure that
