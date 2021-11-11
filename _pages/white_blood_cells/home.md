@@ -31,7 +31,7 @@ The figure below also illustrates the three main families of WBCs: **granulocyte
 
 | Granulocyte | Monocyte | Lymphocyte |
 :-------------------------:|:-------------------------:|:-------------------------:
-[![](../assets/images/neutrophil.png)]  |  [![](../assets/images/monocyte.png)]   |  [![](../assets/images/lymphocyte.png)]
+[![](../assets/images/neutrophil.png)]()  |  [![](../assets/images/monocyte.png)]()   |  [![](../assets/images/lymphocyte.png)]()
 
 Three images from the blood cell image dataset showing three types of WBCs. (Left) A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family. (Center) A monocyte with a single, irregularly-shaped nucleus. (Right) A lymphocyte with a round nucleus. (In our dataset, these cells correspond to image IDs 3, 15, and 20, respectively.)
 {: style="font-size: medium;"}

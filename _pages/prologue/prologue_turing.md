@@ -12,7 +12,7 @@ image: "../assets/images/gray_scott_jupyter_3.png"
 
 Our story begins with the unlikeliest of major characters: Alan Turing. If you have heard of Turing, then you might be surprised as to why he would appear in a course on biological modeling.
 
-[![image-center](../assets/images/alan_turing_npg_cc.png)]{: .align-center}
+[![image-center](../assets/images/alan_turing_npg_cc.png)](){: .align-center}
 Alan Turing in 1951. © National Portrait Gallery, London.
 {: style="font-size: medium; text-align: center;"}
 

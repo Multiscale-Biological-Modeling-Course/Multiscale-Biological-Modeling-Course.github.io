@@ -16,13 +16,13 @@ In our case, we have a very "fine-grained" reaction-diffusion model illustrating
 
 Let us begin with a simple example of the diffusion of only *A* particles (we will later add *B* particles as well as reactions to our model). Say that the particles are at maximum concentration in the central cell of our grid, and are present nowhere else, as the following figure illustrates.
 
-[![image-center](../assets/images/initial_A_concentration.png)]{: .align-center}
+[![image-center](../assets/images/initial_A_concentration.png)](){: .align-center}
 A 5 x 5 grid showing hypothetical initial concentrations of *A* particles. Cells are labeled by numbers between 0 and 1 representing their concentration of a single particle. In this example, the central cell has maximum concentration, and no particles are contained in any other cell.
 {: style="font-size: medium;"}
 
 We will now update the grid of cells after one time step in a way that mimics diffusion. To do so, we will spread out the concentration of particles in each square to its eight neighbors; one way of doing so is to assume that 20% of the current cell's concentration diffuses to each of its four adjacent neighbors, and that 5% of the cell's concentration diffuses to its four diagonal neighbors. Because the central square in our ongoing example is the only cell with any particles, the updated concentrations of our particle after a single time step are shown in the following figure.
 
-[![image-center](../assets/images/A_concentration_one_time_step.png)]{: .align-center}
+[![image-center](../assets/images/A_concentration_one_time_step.png)](){: .align-center}
 A grid showing an update to the system in the previous figure after diffusion of particles after a single time step.
 {: style="font-size: medium;"}
 
@@ -34,7 +34,7 @@ Finally, the central square receives 20% of the particles from each of its four 
 
 As a result, the central nine squares after two time steps are as shown in the following figure.
 
-[![image-center](../assets/images/A_concentration_two_time_steps_partial.png)]{: .align-center}
+[![image-center](../assets/images/A_concentration_two_time_steps_partial.png)](){: .align-center}
 A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled "?" are left as an exercise for the reader.
 {: style="font-size: medium;"}
 
@@ -51,7 +51,7 @@ Our solution is to add a parameter <em>d</em><sub><em>A</em></sub> representing 
 
 To revisit our original example, say that <em>d</em><sub><em>A</em></sub> is equal to 0.2. After the first time step, only 20% of the central cell's particles will be spread to its neighbors. The figure below illustrates that the central square is updated to 0.8, its adjacent neighbors are updated to 0.2<em>d</em><sub><em>A</em></sub> = 0.04, and its diagonal neighbors are updated to 0.05<em>d</em><sub><em>A</em></sub> = 0.01.
 
-[![image-center](../assets/images/A_concentration_slower_diffusion.png)]{: .align-center}
+[![image-center](../assets/images/A_concentration_slower_diffusion.png)](){: .align-center}
 An updated grid of cells showing the concentration of <em>A</em> particles after one time step if <em>d</em><sub><em>A</em></sub> = 0.2.
 {: style="font-size: medium;"}
 
@@ -59,7 +59,7 @@ An updated grid of cells showing the concentration of <em>A</em> particles after
 
 We now will add particle *B* to the simulation, which also starts with 100% concentration in the central square. Recall that *B*, our "predator" molecule, diffuses half as fast as *A*, the "prey" molecule. If we set the diffusion rate <em>d</em><sub><em>B</em></sub> equal to 0.1, then our cells after a time step will be updated as shown in the figure below. This figure represents the concentration of the two particles in each cell as an ordered pair ([*A*], [*B*]).
 
-[![image-center](../assets/images/two_particle_concentration_diffusion.png)]{: .align-center}
+[![image-center](../assets/images/two_particle_concentration_diffusion.png)](){: .align-center}
 A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> diffusing at rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by the ordered pair ([<em>A</em>], [<em>B</em>]).
 {: style="font-size: medium;"}
 
@@ -117,29 +117,29 @@ In contrast to using a particle simulator, our Jupyter Notebook demo probably pr
 
 To visualize the changing concentrations in each cell, we use a color map to color each cell based on its concentrations. Specifically, we plot a cell's color based on its value of the concentration of predators divided by the sum of the concentrations of predators and prey. If a cell has a value close to zero for this ratio (meaning very few predators compared to prey), then it will be colored red, while if it has a value close to 1 (meaning many predators), then it will be colored dark blue. The `Spectral` color map that we use is shown in the figure below.
 
-[![image-center](../assets/images/matplotlib_colormap.png)]{: .align-center}
+[![image-center](../assets/images/matplotlib_colormap.png)](){: .align-center}
 
 The following animation shows an animation of the Gray-Scott model using the parameters *f* = 0.034 and *k* = 0.095.
 
-[![image-center](../assets/gs_movie.gif)]{: .align-center}
+[![image-center](../assets/gs_movie.gif)](){: .align-center}
 
 If we expand the size of the simulation and add new predator locations to the grid, then the patterns become more complex as they intersect.
 
-[![image-center](../assets/0_Bgs_movie.gif)]{: .align-center}
+[![image-center](../assets/0_Bgs_movie.gif)](){: .align-center}
 
 If we keep the feed rate constant and tweak the kill rate ever so slightly to *k* = 0.097, then the patterns change significantly into spots.
 
-[![image-center](../assets/0_f34_k63.gif)]{: .align-center}
+[![image-center](../assets/0_f34_k63.gif)](){: .align-center}
 {: style="font-size: medium;"}
 
 If we make the prey a little happier as well, raising  *f* to 0.038 and *k* to 0.099, then we have a different striped pattern.
 
-[![image-center](../assets/0_f38_k61.gif)]{: .align-center}
+[![image-center](../assets/0_f38_k61.gif)](){: .align-center}
 {: style="font-size: medium;"}
 
 And if we raise *f* to 0.042 and *k* to 0.101, then again we see a spot pattern.
 
-[![image-center](../assets/0_f42_k59.gif)]{: .align-center}
+[![image-center](../assets/0_f42_k59.gif)](){: .align-center}
 {: style="font-size: medium;"}
 
 The point that we are making here is that very slight changes in our model's parameters can produce drastically different results in terms of the patterns that we witness. In this prologue's conclusion, we will say more about this and connect this observation back to our original motivation of patterns on animals' skin.

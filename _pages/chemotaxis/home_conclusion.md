@@ -71,13 +71,13 @@ In the following tutorial, we will adapt the Jupyter notebook that we built in t
 
 The following figure visualizes the trajectories of three cells using strategy 1 (left) and strategy 2 (right). After 500 seconds, cells using strategy 1 have traveled away from the origin, and some of them are found in locations with higher concentrations. The cells using strategy 2, however, quickly hone in on the goal and remain near it.
 
-[![image-center](../assets/images/chemotaxis_traj_compare_uniform.png)]{: .align-center}
+[![image-center](../assets/images/chemotaxis_traj_compare_uniform.png)](){: .align-center}
 Sample trajectories for the two strategies. The standard random walk strategy is shown on the left, and the chemotactic random walk is shown on the right. Regions that are more heavily colored red correspond to higher concentrations of ligand, with a goal having maximum concentration at the point (1500, 1500), which is highlighted using a blue square. A single cell's walk is colored from darker to lighter colors across the time frame of the trajectory.
 {: style="font-size: medium;"}
 
 Of course, we should be wary of our small sample size. To confirm that what we observed in these trajectories is true on average, we will compare the two strategies for many simulations. The following figure plots the cell's average distance to the goal over 500 simulations for both strategies.
 
-[![image-center](../assets/images/chemotaxis_performance_compare_uniform.png)]{: .align-center}
+[![image-center](../assets/images/chemotaxis_performance_compare_uniform.png)](){: .align-center}
 Average distance to the goal plotted over time for 500 cellular simulations following each of the two strategies; the standard random walk is shown in red, and the chemotactic random walk is shown in blue. The shaded area for each strategy represents one standard deviation from the average.
 {: style="font-size: medium;"}
 
@@ -98,25 +98,25 @@ To address this question, we will make changes to *t*<sub>0</sub>, the default t
 
 The following figures show three trajectories for a few different values of *t*<sub>0</sub> and a simulation that lasts for 800 seconds. First, we set *t*<sub>0</sub> equal to 0.2 seconds and see that the bacteria are not able to walk far enough in a single step. That is, the "rubber band" effect is too rigid.
 
-[![image-center](../assets/images/chemotaxis_traj_0.2_uniform.png)]{: .align-center}
+[![image-center](../assets/images/chemotaxis_traj_0.2_uniform.png)](){: .align-center}
 Three sample trajectories of a simulated cell following the chemotactic random walk strategy with a tumble every 0.2 seconds on average.
 {: style="font-size: medium;"}
 
 If we increase *t*<sub>0</sub> to 5.0 seconds, then the rubber band becomes too flexible, meaning that cells can run past the goal without being able to put on the brakes by tumbling.
 
-[![image-center](../assets/images/chemotaxis_traj_5.0_uniform.png)]{: .align-center}
+[![image-center](../assets/images/chemotaxis_traj_5.0_uniform.png)](){: .align-center}
 Three sample trajectories of a simulated cell following the chemotactic random walk strategy with a tumble every 5 seconds on average.
 {: style="font-size: medium;"}
 
 When we set *t*<sub>0</sub> equal to 1.0, we see a "Goldilocks" effect in which the rubber band effect is just right. The simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it there.
 
-[![image-center](../assets/images/chemotaxis_traj_1.0_uniform.png)]{: .align-center}
+[![image-center](../assets/images/chemotaxis_traj_1.0_uniform.png)](){: .align-center}
 Three sample trajectories of a simulated cell following the chemotactic random walk strategy with a tumble on average of once every second.
 {: style="font-size: medium;" }
 
 To make this analysis more concrete, the figure below shows a plot of average distance to the goal over time for 500 simulated cells following the chemotactic strategy for a variety of choices of *t*<sub>0</sub>.
 
-[![image-center](../assets/images/chemotaxis_performance_uniform.png)]{: .align-center}
+[![image-center](../assets/images/chemotaxis_performance_uniform.png)](){: .align-center}
 Average distance to the goal over time for 500 cells. Each colored line indicates the average distance to the goal over time a different value of *t*<sub>0</sub>; the shaded area represents one standard deviation.
 {: style="font-size: medium;"}
 

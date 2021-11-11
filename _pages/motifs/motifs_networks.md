@@ -29,7 +29,7 @@ The *E. coli* transcription factor network seems to have a surprising number of 
 
 A transcription factor is a protein, which means that because of the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In **autoregulation**, illustrated in the figure below, the transcription factor protein then binds to the DNA in the upstream region of the gene encoding the *same* transcription factor. This type of **feedback** is a beautiful and surprising feature of a simple biological system.
 
-[![image-center](../assets/images/autoregulation_example.png)]{: .align-center}
+[![image-center](../assets/images/autoregulation_example.png)](){: .align-center}
 A simplified illustration of autoregulation. "Protein" labels the transcription factor binding factor protein, which binds to the DNA encoding this transcription factor, labeled by "Gene".[^auto]
 {: style="font-size: medium;"}
 

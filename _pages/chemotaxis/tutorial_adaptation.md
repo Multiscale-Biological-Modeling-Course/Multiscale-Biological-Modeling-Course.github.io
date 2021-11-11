@@ -14,7 +14,7 @@ We will also add **compartmentalization** to our model, which will allow us to d
 
 Finally, after running our model, we will see how methylation can be used to help the bacterium adapt to a relative change in attractant concentration. For reference, consult the figure below, reproduced from the main text, for an overview of the chemotaxis pathway.
 
-[![image-center](../assets/images/chemotaxis_wholestory.png)]{: .align-center}
+[![image-center](../assets/images/chemotaxis_wholestory.png)](){: .align-center}
 The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates MCPs, while CheR demethylates MCPs. Blue lines denote phosphorylation, grey lines denote dephosphorylation, and the green arrow denotes methylation. Image modified from <a href="http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html">Parkinson Lab</a>'s illustrations.
 {: style="font-size: medium;"}
 
@@ -364,7 +364,7 @@ simulate({method=>"ssa", t_end=>800, n_steps=>800})
 
 Now save your file and run the model. Because the model is at equilibrium, we will see the seemingly boring plot shown below.
 
-[![image-center](../assets/images/chemotaxis_tutorial_oneadd0.png)]{: .align-center}
+[![image-center](../assets/images/chemotaxis_tutorial_oneadd0.png)](){: .align-center}
 
 Things get interesting when we change the initial concentration of ligand to see how the simulated bacterium will adapt. Run your simulation with `L0` = `1e6`. What happens to CheY activity? What happens to the concentration of receptors at different methylation states?
 

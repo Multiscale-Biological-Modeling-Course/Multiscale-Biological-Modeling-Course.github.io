@@ -36,7 +36,7 @@ We now have two different ways that tumbling frequency can be elevated. First, i
 Methylation of MCPs is achieved by an additional protein called **CheR**. When bound to MCPs, CheR methylates ligand-bound MCPs faster[^Amin2010][^Terwilliger1986], and so the rate of MCP methylation by CheR is higher if the MCP is bound to a ligand.[^Spiro1997]. Therefore, say that *E. coli* encounters an increase in attractant concentration. Then the lack of a phosphorylation cascade will mean that there is less phosphorylated CheY, and so the tumbling frequency will decrease. However, if the attractant concentration levels off, then the tumbling frequency will flatten, while CheR starts methylating the MCP. Over time, the rising methylation will increase CheA autophosphorylation, bringing back the phosphorylation cascade and raising tumbling frequency back to default levels.
 
 <!--
-[![image-center](../assets/images/chemotaxis_methylation.png)]{: .align-center}
+[![image-center](../assets/images/chemotaxis_methylation.png)](){: .align-center}
 <figcaption>The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB. CheB methylates while CheR demethylates MCP. Blue curve: phosphorylation; grey curve: dephosphorylation; green arrow: methylation. Figure inspired by Parkinson Lab illustrations.[^ParkinsonLab]</figcaption>
 -->
 
@@ -51,7 +51,7 @@ Just as the phosphorylation of CheY can be reversed, MCP methylation can be undo
 
 The figure below adds CheR and CheB to provide a complete picture of the core pathways influencing chemotaxis. To model these pathways, we will need to add quite a few molecules and reactions to our current model.
 
-[![image-center](../assets/images/chemotaxis_wholestory.png)]{: .align-center}
+[![image-center](../assets/images/chemotaxis_wholestory.png)](){: .align-center}
 The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates MCPs while CheR demethylates MCPs. Blue lines denote phosphorylation, grey lines denote dephosphorylation, and the green arrow denotes methylation. Image modified from <a href="http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html">Parkinson Lab</a>'s illustrations.
 {: style="font-size: medium;"}
 
@@ -91,23 +91,23 @@ Below, we show simulation results for some different concentrations of ligand mo
 **Note:** Time is shown in seconds on the x-axis in the following figures.
 {: .notice--warning}
 
-[![image-center](../assets/images/chemotaxis_tutorial_oneadd1e4.png)]{: .align-center}
+[![image-center](../assets/images/chemotaxis_tutorial_oneadd1e4.png)](){: .align-center}
 
 If instead *l*<sub>0</sub> is equal to 100,000, we obtain the figure below. After a drop in the concentration of phosphorylated CheY, the system returns to equilibrium after a few minutes.
 
-[![image-center](../assets/images/chemotaxis_tutorial_oneadd1e5.png)]{: .align-center}
+[![image-center](../assets/images/chemotaxis_tutorial_oneadd1e5.png)](){: .align-center}
 
 When we increase *l*<sub>0</sub> by another factor of ten to 1 million, the initial drop is more pronounced, but the system is able to just as quickly return to equilibrium. Note how much higher the concentration of methylated receptors are in this figure compared to the previous figure; however, there are still a significant concentration of receptors with low methylation, indicating that the system may be able to handle a yet bigger jolt.
 
-[![image-center](../assets/images/chemotaxis_tutorial_oneadd1e6.png)]{: .align-center}
+[![image-center](../assets/images/chemotaxis_tutorial_oneadd1e6.png)](){: .align-center}
 
 When we set *l*<sub>0</sub> equal to 10 million, we give the system this bigger jolt. Once again, the model is resilient to this change in the concentration of the ligand after a few minutes.
 
-[![image-center](../assets/images/chemotaxis_tutorial_oneadd1e7.png)]{: .align-center}
+[![image-center](../assets/images/chemotaxis_tutorial_oneadd1e7.png)](){: .align-center}
 
 Finally, with *l*<sub>0</sub> equal to 100 million, we see what we might expect: the steepest drop in phosphorylated CheY yet, but a system that is able to return to equilibrium.
 
-[![image-center](../assets/images/chemotaxis_tutorial_oneadd1e8.png)]{: .align-center}
+[![image-center](../assets/images/chemotaxis_tutorial_oneadd1e8.png)](){: .align-center}
 
 Our model therefore has provided compelling evidence that the *E. coli* chemotaxis system is very robust to changes in its environment. The simulated bacterium can make a very rapid change in response to a sudden change in its environment, but even if this change is significant, the system will return to its default state. This robustness in our simulation has been observed in real bacteria[^Shimizu2005][^Krembel2015], as well as replicated by other computational simulations[^Bray1993].
 

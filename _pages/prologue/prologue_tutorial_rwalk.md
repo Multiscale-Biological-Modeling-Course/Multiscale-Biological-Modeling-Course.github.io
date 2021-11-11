@@ -19,13 +19,13 @@ You can download and install all three programs by following the installation gu
 
 From a new Blender file, initialize CellBlender. Delete the existing default cube by right-clicking on the cube to select the cube (an orange outline should be around the cube when it is selected) and pressing the “x” key to delete. Then, in the tab `CellBlender > Model Objects`, insert a new plane, following the figure below.
 
-[![image-center](../assets/images/motifs_setup1.png)]{: .align-center}
+[![image-center](../assets/images/motifs_setup1.png)](){: .align-center}
 In `CellBlender > Model Objects`, click the `+` symbol to center the cursor. Next press the square “plane” button to create the object. To have CellBlender recognize this object as a model object, press the `+` button. The name of this object is `Plane` by default, although you can change this name and edit the color by selecting the color wheel if you like. A slightly transparent coloring will help with visibility but is not necessary.
 {: style="font-size: medium;"}
 
 Resizing the render preview window so that objects are visible in the center of the screen is recommended. See the following figure for instructions. Then save your file as `CellBlender_Tutorial_Template.blend`.
 
-[![image-center](../assets/images/motifs_setup2.png)]{: .align-center}
+[![image-center](../assets/images/motifs_setup2.png)](){: .align-center}
 From the View menu, select `Top` to align the view directly overhead. With the plane object selected, follow the arrow over to the object parameters menu (the orange cube) and scale the plane by setting the first two values to “1.5”. Then, hover the mouse over the object and either use ctrl + “+” 6 times or the scroll wheel on your mouse to zoom in.
 {: style="font-size: medium;"}
 
@@ -33,7 +33,7 @@ From the View menu, select `Top` to align the view directly overhead. With the p
 
 This section will provide images and descriptions for the different components of the Blender window. When a new file has been created, the following figure shows the menu options available.
 
-[![image-center](../assets/images/motifs_nav1.png)]{: .align-center}
+[![image-center](../assets/images/motifs_nav1.png)](){: .align-center}
 
 **A:** This is the window for modules like CellBlender. To start CellBlender, you must click the `CellBlender` tab and then click the `Initialize CellBlender` button as shown in the image. This will then display the image shown as “D” in the figure below.
 
@@ -41,7 +41,7 @@ This section will provide images and descriptions for the different components o
 
 **C:** This window contains options relating to a selected object.
 
-[![image-center](../assets/images/motifs_nav2.png)]{: .align-center}
+[![image-center](../assets/images/motifs_nav2.png)](){: .align-center}
 
 **D:** This is the `CellBlender` menu, which opens after CellBlender has been initialized, and contains sub-menus which will be noted as follows: `CellBlender > Model Objects`. We recommend dragging the edge of the window outward to increase visibility (see box “e” on the image above).
 
@@ -49,13 +49,13 @@ This section will provide images and descriptions for the different components o
 
 In CellBlender, load the `CellBlender_Tutorial_Template.blend` file from the previous section and save your file as `random_walk.blend`. You may also download the completed tutorial file <a href="../tutorials/random_walk_200.blend" download="random_walk_200.blend">here</a>.
 
-[![image-center](../assets/images/cellblender_location.png)]{: .align-center}
+[![image-center](../assets/images/cellblender_location.png)](){: .align-center}
 
 Right click the plane object to ensure it is selected. Visit the object parameters menu (the orange cube) and move the plane by setting the third `location` value to 1.0 instead of 0.0.
 
 Then select `CellBlender > Molecules` and create the following molecules:
 
-[![image-center](../assets/images/motifs_norm1.png)]{: .align-center}
+[![image-center](../assets/images/motifs_norm1.png)](){: .align-center}
 
 1. Click the `+` button.
 2. Select a color (such as orange).
@@ -66,7 +66,7 @@ Then select `CellBlender > Molecules` and create the following molecules:
 
 Now visit `CellBlender > Molecule Placement` to set the following sites for molecules to be released:
 
-[![image-center](../assets/images/motifs_norm3.png)]{: .align-center}
+[![image-center](../assets/images/motifs_norm3.png)](){: .align-center}
 
 1. Click the `+` button.
 2. Select or type in the molecule `X`.
@@ -75,7 +75,7 @@ Now visit `CellBlender > Molecule Placement` to set the following sites for mole
 
 Finally, we are ready to run our diffusion simulation. Visit `CellBlender > Run Simulation` and select the following options:
 
-[![image-center](../assets/images/motifs_norm7.png)]{: .align-center}
+[![image-center](../assets/images/motifs_norm7.png)](){: .align-center}
 
 1. Set the number of iterations to `1000`.
 2. Ensure the time step is set as `1e-6`.
@@ -83,11 +83,11 @@ Finally, we are ready to run our diffusion simulation. Visit `CellBlender > Run 
 
 The simulation should run quickly, and we are ready to visualize the outcome of the simulation. To do so, visit `CellBlender > Reload Visualization Data`. You have the option of watching the animation within the Blender window by clicking the play button at the bottom of the screen, as indicated in the figure below. Then, save your file.
 
-[![image-center](../assets/images/motifs_norm8.png)]{: .align-center}
+[![image-center](../assets/images/motifs_norm8.png)](){: .align-center}
 
 You can also save and export the movie of your animation using the following steps:
 
-[![image-center](../assets/images/cellblender_render.png)]{: .align-center}
+[![image-center](../assets/images/cellblender_render.png)](){: .align-center}
 
 1. Click the movie tab.
 2. Scroll down to the file name.

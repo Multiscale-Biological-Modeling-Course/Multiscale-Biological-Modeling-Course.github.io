@@ -22,19 +22,19 @@ We will also introduce the concept of a **network**, or a collection of **nodes*
 
 When studying the functions and binding of proteins, biologists may build a **protein-protein interaction network** (figure below). Nodes correspond to proteins, and two proteins are connected with an edge if they are known to interact.
 
-[![image-center](../assets/images/PPI_network.png)]{: .align-center}
+[![image-center](../assets/images/PPI_network.png)](){: .align-center}
 A complete hepatitis C virus-host protein-protein interaction network in hepatoma cells.[^PPInetwork] Nodes correspond to proteins, and an edge connects two proteins if the two proteins interact.
 {: style="font-size: medium;"}
 
 When studying the more complex interactions and processes taking place within a cell, biologists form a **metabolic network** (figure below). Nodes correspond to substances in a chemical reaction, and an edge connects two nodes if there is some enzyme that catalyzes a reaction involving these substances.
 
-[![image-center](../assets/images/The-metabolic-network-of-tomato-cells-The-system-is-a-cell-with-symbolic-subcellular.png)]{: .align-center}
+[![image-center](../assets/images/The-metabolic-network-of-tomato-cells-The-system-is-a-cell-with-symbolic-subcellular.png)](){: .align-center}
 The metabolic network of tomato cells.[^metabolicNetwork]
 {: style="font-size: medium; text-align:center;"}
 
 When studying the nervous system, biologists build **neuronal networks** that link neurons together according to how they are linked in the body (figure below). These networks have been studied since the 1940s but have recently exploded as a model for solving applied problems in machine learning.
 
-[![image-center](../assets/images/Neuron-networks-a-brain-b-neural-network-c-neuron-connecting-structure-d-neuron.png)]{: .align-center}
+[![image-center](../assets/images/Neuron-networks-a-brain-b-neural-network-c-neuron-connecting-structure-d-neuron.png)](){: .align-center}
 Mapping and models of neurons.[^neuralNetwork]
 {: style="font-size: medium;"}
 

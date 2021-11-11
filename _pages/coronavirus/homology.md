@@ -30,7 +30,7 @@ Another way to perform homology modeling is to account for variance in similarit
 
 The phenomenon of conserved and variable regions even occurs within individual genes. For example, as the following figure shows that within a spike protein subunit, the S2 domain is 90% similar between the two viruses, whereas the S1 domain is only 64% similar. Note that there are subregions of greater or less variability within each of the two domains!
 
-[![image-center](../assets/images/spike_protein_similarity.png)]{: .align-center}
+[![image-center](../assets/images/spike_protein_similarity.png)](){: .align-center}
 Variable and conserved regions in the SARS-CoV and SARS-CoV-2 spike proteins. The S1 domain tends to be more variable, whereas the S2 domain is more conserved (and even has a small region of 100% similarity). In this figure, "NTD" stands for "N-terminal domain" and "RBD" stands for "receptor binding domain", two subunits of the S1 domain. Source: Jaimes et al. 2020[^Jaimes].
 {: style="font-size: medium;"}
 
@@ -59,7 +59,7 @@ To compare these protein structures, we need a way to represent a protein's tert
 4. the position of the amino acid within this chain; and
 5. the 3D coordinates (*x*, *y*, *z*) of the atom in angstroms (10<sup>-10</sup> meters).
 
-[![image-center](../assets/images/simplifiedPDB.png)]{: .align-center}
+[![image-center](../assets/images/simplifiedPDB.png)](){: .align-center}
 A simplified diagram showing how the `.pdb` format encodes the 3D coordinates of every atom while labeling the identity of this atom and the chain on which it is found. Source: [https://proteopedia.org/wiki/index.php/Atomic_coordinate_file](https://proteopedia.org/wiki/index.php/Atomic_coordinate_file).
 {: style="font-size: medium;"}
 

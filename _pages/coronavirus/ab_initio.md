@@ -22,20 +22,20 @@ As we dive into structure prediction, we should be more precise about two things
 
 A protein's **secondary structure** describes its highly regular, repeating substructures that serve as intermediate structures forming before the overall protein structure comes together. The two most common such substructures, shown in the figure below, are **alpha helices** (left) and **beta sheets** (right). Alpha helices occur when nearby amino acids wrap around to form a tube-like structure; beta sheets occur when nearby amino acids line up side-by-side to form a sheet-like structure.
 
-[![image-center](../assets/images/hemoglobin_secondary_structure.png)]{: .align-center}
+[![image-center](../assets/images/hemoglobin_secondary_structure.png)](){: .align-center}
 General shape of secondary structure alpha helices (left) and beta sheets (right). Source: Cornell, B. (n.d.). [https://ib.bioninja.com.au/higher-level/topic-7-nucleic-acids/73-translation/protein-structure.html](https://ib.bioninja.com.au/higher-level/topic-7-nucleic-acids/73-translation/protein-structure.html)
 {: style="font-size: medium;"}
 
 A protein's **tertiary structure** describes its final 3D shape after the polypeptide chain has folded and is stable. Throughout this module, when discussing the "shape" or "structure" of a protein, we are almost exclusively referring to its tertiary structure. The figure below shows the tertiary structure of human hemoglobin subunit alpha. Note that for the sake of simplicity, the figure does not show the positions of every atom in the protein but rather represents the protein shape as a composition of secondary structures.
 
-[![image-center](../assets/images/hemoglobin_tertiary_structure.png)]{: .align-center}
+[![image-center](../assets/images/hemoglobin_tertiary_structure.png)](){: .align-center}
 The tertiary structure of human hemoglobin subunit alpha. Within the structure are multiple alpha helix secondary structures. Source: [https://www.rcsb.org/structure/1SI4](https://www.rcsb.org/structure/1SI4).
 {: style="font-size: medium;"}
 
 Finally, some proteins have a **quaternary structure**, which describes the protein’s interaction with other copies of itself to form a single functional unit, or a **multimer**. Many proteins do not have a quaternary structure and function as an independent monomer. The figure below shows the quaternary structure of hemoglobin, which is a multimer consisting of two alpha subunits and two beta subunits.
 
-[![image-center](../assets/images/hemoglobin_quaternary_structure.png)]{: .align-center}
-The quaternary structure of human hemoglobin, which consists of two alpha subunits (shown in red) and two beta subunits (shown in blue). Source: [https://commons.wikimedia.org/wiki/File:1GZX_Haemoglobin.png](https://commons.wikimedia.org/wiki/File:1GZX_Haemoglobin.png)].
+[![image-center](../assets/images/hemoglobin_quaternary_structure.png)](){: .align-center}
+The quaternary structure of human hemoglobin, which consists of two alpha subunits (shown in red) and two beta subunits (shown in blue). Source: [https://commons.wikimedia.org/wiki/File:1GZX_Haemoglobin.png](https://commons.wikimedia.org/wiki/File:1GZX_Haemoglobin.png)]().
 {: style="font-size: medium;"}
 
 As for SARS-CoV and SARS-CoV-2, the spike protein is a **homotrimer**, meaning that it is formed of three essentially identical units called **chains**, each one translated from the corresponding region of the coronavirus's genome. When we talk about identifying the structure of the spike protein in this module, we typically are referring to the structure of a single chain.
@@ -48,7 +48,7 @@ Now that we know a bit more about how protein structure is defined, we will disc
 
 Amino acids' variety of side chains causes the amino acids to have different chemical properties, which can lead to different conformations being more chemically "preferable" than others. For example, the table below shows the twenty standard amino acids occurring in proteins grouped by chemical properties. Nine of these amino acids are **hydrophobic** (also called **non-polar**), meaning that their side chains tend to be repelled by water, and as a result we tend to find these amino acids sheltered from the environment on the interior of the protein.
 
-[![image-center](../assets/images/AminoAcidChart.png)]{: .align-center}
+[![image-center](../assets/images/AminoAcidChart.png)](){: .align-center}
 A chart of the twenty amino acid grouped by chemical properties. The side chain of each amino acid is highlighted in blue. Source: OpenStax Biology. [http://cnx.org/contents/185cbf87-c72e-48f5-b51e-f14f21b5eabd@14.1](http://cnx.org/contents/185cbf87-c72e-48f5-b51e-f14f21b5eabd@14.1).
 {: style="font-size: medium;"}
 
@@ -60,13 +60,13 @@ Bonded energy derives from the protein's covalent bonds, as well as the angles o
 
 Non-bonded energy comprises **electrostatic interactions** (Coulomb potential) and van **der Waals interactions** (Lennard-Jones potential). Electrostatic interactions refer to the attraction and repulsion force from the electric charge between pairs of atoms. For example, nonpolar amino acids are repelled by water, which is **polar**, meaning that its constituent atoms have electric charges. Because a water molecule's oxygen atom has a negative charge and its hydrogen atoms have a positive charge, the molecule is not attracted to a nonpolar molecule, since opposite charges in the two molecules will not attract. As for van der Waals interactions, atoms are dynamic systems. The electrons are constantly buzzing around the nucleus, and at any given moment, they could be unevenly distributed on one side of the nucleus. Because electrons are negatively charged, the atom will have a temporary negative charge on the side with the excess electrons (and a temporary positive charge on the opposite side). These temporary charges are called  **induced dipoles**, and van der Waals interactions refer to the attraction and repulsion between atoms because of these induced dipoles.
 
-[![image-center](../assets/images/van_der_waals.png)]{: .align-center}
+[![image-center](../assets/images/van_der_waals.png)](){: .align-center}
 An illustration of how induced dipoles and therefore van der Waals forces arise from random fluctuations in the positions of electrons. Source: <a href="http://universe-review.ca/F12-molecule12.htm" target="_blank">http://universe-review.ca/F12-molecule12.htm</a>.
 {: style="font-size: medium;"}
 
 As the protein folds, it seeks a conformation of *lowest* total potential energy based on all these forces. For a simple analogy, imagine a ball on a slope, as shown in the following figure. Even if the ball bounces around, it will tend to move down the slope. In this analogy, the lower points on the slope correspond to lower energy conformations of a polypeptide.
 
-[![image-center](../assets/images/EnergyCartoon.png)]{: .align-center}
+[![image-center](../assets/images/EnergyCartoon.png)](){: .align-center}
 An analogy for a protein folding into a lowest energy structure is a ball on a hill. As the ball is more likely to move down into a valley, a protein is more likely to fold into a low-energy conformation.
 {: style="font-size: medium;"}
 
@@ -80,7 +80,7 @@ This formulation of protein structure may not strike you as similar to anything 
 
 In the case of structure prediction, our search space is the collection of all possible conformations of a given protein. And each point in this search space is characterized by the energy of the conformation at the point. Just as we imagined a ball rolling down a hill to find lower energy, we can now imagine "exploring" this space of all conformations in order to find the conformation of lowest energy. This analogy is illustrated in the hypothetical figure below, in which the height of each point is the energy of the associated conformation;  our goal, then, is to find the lowest point in this space.
 
-[![image-center](../assets/images/energy_landscape.png)]{: .align-center}
+[![image-center](../assets/images/energy_landscape.png)](){: .align-center}
 We can imagine each conformation of a given protein as occupying a point in a landscape, in which the elevation of a point corresponds to the energy of the conformation at that point. Courtesy: David Beamish.
 {: style="font-size: medium;"}
 
@@ -110,7 +110,7 @@ Despite the sophistication of software like QUARK, the search space of all confo
 
 The figure below shows the top five structures produced by QUARK for human hemoglobin subunit alpha, along with the protein's experimentally verified structure. It takes a keen eye to see any differences between these structures. We conclude that although *ab initio* prediction is slow, it is still able to accurately reconstruct a model of this protein from its amino acid sequence.
 
-[![image-center](../assets/images/ab_initio_results.png)]{: .align-center}
+[![image-center](../assets/images/ab_initio_results.png)](){: .align-center}
 A protein structure of human hemoglobin subunit alpha along with five *ab initio* models of this protein produced by QUARK. We can see how close all five models are to the experimentally verified structure, as shown in the superimposition of all six structures at right.
 {: style="font-size: medium;"}
 
