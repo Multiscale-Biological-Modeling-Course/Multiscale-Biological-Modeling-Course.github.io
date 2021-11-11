@@ -113,13 +113,3 @@ In the main text, we will discuss how much as we saw with the particle-based rea
 
 [Return to main text](blocks#reflection-on-the-gray-scott-model){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
-
-<!--
-[![image-center](../assets/images/600px/gray_scott_jupyter_1.png)]()
-[![image-center](../assets/images/600px/gray_scott_jupyter_2.png)]()
-[![image-center](../assets/images/600px/gray_scott_jupyter_3.png){: .align-center}]()
-
-A great follow up would be to use a gif library package for python, such as Pillow or ImageIO. https://stackoverflow.com/questions/753190/programmatically-generate-video-or-animated-gif-in-python
-
-<iframe width="640" height="360" src="../assets/gs_movie.gif" frameborder="0" allowfullscreen></iframe>
--->

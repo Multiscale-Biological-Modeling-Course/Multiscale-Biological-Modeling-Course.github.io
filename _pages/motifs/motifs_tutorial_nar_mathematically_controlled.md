@@ -16,7 +16,7 @@ Now go to `CellBlender > Reactions` to scale up the simple regulation reaction i
 
 Next go to `CellBlender > Run Simulation` and ensure that the following options are selected:
 
-[![image-center](../assets/images/600px/motifs_norm7.png){: .align-center}]()
+[![image-center](../assets/images/600px/motifs_norm7.png){: .align-center}](../assets/images/motifs_norm7.png)
 
 1. Set the number of iterations to `20000`.
 2. Ensure the time step is set as `1e-6`.
@@ -24,11 +24,11 @@ Next go to `CellBlender > Run Simulation` and ensure that the following options 
 
 Click `CellBlender > Reload Visualization Data`. You have the option of watching the animation within the Blender window by clicking the play button at the bottom of the screen.
 
-[![image-center](../assets/images/600px/motifs_norm8.png){: .align-center}]()
+[![image-center](../assets/images/600px/motifs_norm8.png){: .align-center}](../assets/images/motifs_norm8.png)
 
 Now go back to `CellBlender > Plot Output Settings` and scroll to the bottom to click `Plot`; this should produce a plot. How does your plot
 
-[![image-center](../assets/images/600px/motifs_norm9.png){: .align-center}]()
+[![image-center](../assets/images/600px/motifs_norm9.png){: .align-center}](../assets/images/motifs_norm9.png)
 
 Save your file before returning to the main text, where we will interpret the plot produced to see if we were able to obtain a mathematically controlled simulation and then interpret the result of this simulation from an evolutionary perspective.
 

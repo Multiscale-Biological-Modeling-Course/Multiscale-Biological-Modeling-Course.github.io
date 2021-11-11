@@ -15,11 +15,11 @@ First, you will need to install NFSim and a program called **RuleBender**, which
 
 We will first build a simulation of the repressilator that we will perturb later. Assuming you have installed RuleBender, open the RuleBender program and select `File > New BioNetGen Project`.
 
-[![image-center](../assets/images/600px/nfsim_new_project.png){: .align-center}]()
+[![image-center](../assets/images/600px/nfsim_new_project.png){: .align-center}](../assets/images/nfsim_new_project.png)
 
 Select `blank_file.bngl` and name your project `oscillators`.
 
-[![image-center](../assets/images/600px/nfsim_new_file.png){: .align-center}]()
+[![image-center](../assets/images/600px/nfsim_new_file.png){: .align-center}](../assets/images/nfsim_new_file.png)
 
 **Note:** Occasionally the following error will pop up to inform the user: “There was a failure during the copy of the sample”. The folder will be created, but no files will be loaded. Select `File > New > File` to create a new blank file.
 {: .notice--warning}
