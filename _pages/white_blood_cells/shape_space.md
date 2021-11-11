@@ -52,6 +52,8 @@ $$\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + 
 
 ## Ensuring that vectorization of images preserves (dis)similarity
 
+If we are going to build an algorithm to classify WBC images by family, then our hope is that vectorization of these images results in
+
 
 CellOrganizer uses *n* = 1000 by default for cell nuclei.
 
