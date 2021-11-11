@@ -52,7 +52,7 @@ A table containing the four features and the correct species label for twelve me
 
 If we were to use only two features in the Iris flower dataset, then a flower's feature values *x* and *y* could be represented as a point in two-dimensional space (*x*, *y*). In the figure below, we do just this for the features petal length (*x*-axis) and petal width (*y*-axis).
 
-[![image-center](../assets/images/iris_petal_data.png)](../assets/images/iris_petal_data.png){: .align-center}
+[![image-center](../assets/images/600px/iris_petal_data.png)](../assets/images/iris_petal_data.png){: .align-center}
 Petal width (*x*-axis) plotted against width (*y*-axis) for each of the flowers in the Iris flower data set, colored by species. There are not fifty points corresponding to every species because some flowers have the same petal length and width.
 {: style="font-size: medium;"}
 
@@ -67,7 +67,7 @@ For the iris dataset, recall our observation that data points were more likely t
 **STOP:** Consider the point with unknown class (gray) in the figure below. Should it be assigned to the class of the green points or to the class of the blue points? Why?
 {: .notice--primary}
 
-[![image-center](../assets/images/knn_neighborhood.png){: .align-center}]()
+[![image-center](../assets/images/600px/knn_neighborhood.png){: .align-center}]()
 An unknown point (gray) along with a collection of nearby points belonging to two classes, colored green and blue.
 {: style="font-size: medium;"}
 
@@ -77,13 +77,13 @@ In k-NN, we fix a positive integer *k* in advance, which will be used for classi
 
 For example, if we were using *k* equal to 1, then we would assign the unknown point to the blue class, as the nearest point with known class is blue (see figure below).
 
-[![image-center](../assets/images/knn_neighborhood_k=1.png){: .align-center}]()
+[![image-center](../assets/images/600px/knn_neighborhood_k=1.png){: .align-center}]()
 When using k-NN with *k* equal to 1, we classify an unknown point according to the point of known class that is nearby; the above figure indicates that the blue point is the closest to the unknown point.
 {: style="font-size: medium;"}
 
 However, with the same data and *k* equal to 3 or 4, the figure below shows that a majority of the *k* nearest neighbors are green, and so we classify the unknown point as green. This example reinforces a theme of this course, and of data science in general, that the results of an algorithm can be sensitive to our choice of parameters.
 
-[![image-center](../assets/images/knn_neighborhood_k=4.png){: .align-center}]()
+[![image-center](../assets/images/600px/knn_neighborhood_k=4.png){: .align-center}]()
 When using k-NN with *k* equal to 4, we consider the four nearest points when classifying the unknown point, which will therefore receive the green class.
 {: style="font-size: medium;"}
 

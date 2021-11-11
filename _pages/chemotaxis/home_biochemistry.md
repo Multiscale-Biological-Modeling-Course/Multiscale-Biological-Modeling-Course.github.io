@@ -22,7 +22,7 @@ In the case of chemotaxis, a sequence of phosphorylation events inside *E. coli*
 
 A high-level view of the transduction pathway for chemotaxis is shown in the figure below. The cell membrane contains receptors called **methyl-accepting chemotaxis proteins (MCPs)**.  The MCPs, which bridge the cellular membrane, bond to ligand stimuli in the cell exterior, and then also bond to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix *Che* (short for "chemotaxis"). In what follows, we explain the reactions detailed in this figure.
 
-[![image-center](../assets/images/chemotaxisphosnew.png){: .align-center}]()
+[![image-center](../assets/images/600px/chemotaxisphosnew.png){: .align-center}]()
 A summary of the chemotaxis transduction pathway. A ligand binding signal is propagated through CheA and CheY phosphorylation, which leads to a response of clockwise flagellar rotation. The blue curved arrow denotes phosphorylation, the grey curved arrow denotes dephosphorylation, and the blue dashed arrow denotes a chemical interaction. Figure is a simplification of <a href="http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html">Parkinson Lab</a>'s illustrations.
 {: style="font-size: medium;"}
 
@@ -86,15 +86,15 @@ But does higher attractant concentration in our model really lead to a lower con
 
 The following figure shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, we see the concentrations of these particles remain at steady-state (with some noise in the concentrations), and we can presume that the cell stays at its background tumbling frequency.
 
-[![image-center](../assets/images/chemotaxis_tutorial5.png){: .align-center}]()
+[![image-center](../assets/images/600px/chemotaxis_tutorial5.png){: .align-center}]()
 
 The sudden addition of 5,000 attractant ligand molecules increases the concentration of bound receptors, therefore leading to less CheA autophosphorylation, and less phosphorylated CheY.
 
-[![image-center](../assets/images/chemotaxis_tutorial6.png){: .align-center}]()
+[![image-center](../assets/images/600px/chemotaxis_tutorial6.png){: .align-center}]()
 
 If we instead add 100,000 attractant molecules, then we see an even more drastic decrease in phosphorylated CheA and CheY.
 
-[![image-center](../assets/images/chemotaxis_tutorial7.png){: .align-center}]()
+[![image-center](../assets/images/600px/chemotaxis_tutorial7.png){: .align-center}]()
 
 In other words, the BNG simulation is confirming that an increase in attractant reduces the concentration of phosphorylated CheY, which therefore lowers the tumbling frequency.
 
@@ -102,9 +102,9 @@ In other words, the BNG simulation is confirming that an increase in attractant 
 
 The cell also has MCPs that detect repellents and serve to *increase* CheA autophosphorylation. The following two figures show what happens when we add 5,000 and 100,000 repellent molecules to our simulation, which increases the phosphorylation of both CheA and CheY.
 
-[![image-center](../assets/images/chemotaxis_tutorial_phosrepel5e3.png){: .align-center}]()
+[![image-center](../assets/images/600px/chemotaxis_tutorial_phosrepel5e3.png){: .align-center}]()
 
-[![image-center](../assets/images/chemotaxis_tutorial_phosrepel1e5.png){: .align-center}]()
+[![image-center](../assets/images/600px/chemotaxis_tutorial_phosrepel1e5.png){: .align-center}]()
 -->
 
 ## So … what's the big deal?

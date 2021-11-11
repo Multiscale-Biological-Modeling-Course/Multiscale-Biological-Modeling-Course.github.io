@@ -27,13 +27,13 @@ Recall that we used the expression [*L*] to denote the concentration of ligand *
 
 For example, the following figure depicts the concentration of phosphorylated CheY (shown in blue) over time when *l*<sub>0</sub> = 1000 and *k* = 0.1. The concentration of phosphorylated CheY, and therefore the tumbling frequency, still decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (shown by the plateau in the red curve), the methylation of receptors causes the concentration of phosphorylated CheY to return to its equilibrium. In other words, for these values of *l*<sub>0</sub> and *k*, the outcome is similar to when we provided an instantaneous increase in ligand, although the cell takes longer to reach a minimum concentration of phosphorylated CheY because the attractant concentration is increasing gradually.
 
-[![image-center](../assets/images/chemotaxis_tutorial_addition01.png){: .align-center}]()
+[![image-center](../assets/images/600px/chemotaxis_tutorial_addition01.png){: .align-center}]()
 Plots of relevant molecule concentrations in our system when the concentration of ligand grows exponentially with *l*<sub>0</sub> = 1000 and *k* = 0.1. The concentration of bound ligand (shown in red) quickly hits saturation, which causes a minimum in phosphorylated CheY (and therefore a low tumbling frequency). To respond, the cell increases the methylation of receptors, which boosts the concentration of phosphorylated CheY back to equilibrium.
 {: style="font-size: medium;"}
 
 Our next question is what happens as we change *k*, the growth rate of the ligand concentration. The following figure shows the results of multiple simulations in which we vary the growth parameter *k* and plot the concentration of phosphorylated CheY over time. The larger the value of *k*, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.
 
-[![image-center](../assets/images/chemotaxis_tutorial_addition03.png){: .align-center}]()
+[![image-center](../assets/images/600px/chemotaxis_tutorial_addition03.png){: .align-center}]()
 Plots of phosphorylated CheY for different growth rates *k* of the concentration of ligand. The larger the value of *k*, the steeper the initial drop as the concentration of bound ligand becomes saturated, and the faster that the concentration of phosphorylated CheY returns to equilibrium.
 {: style="font-size: medium;"}
 
@@ -57,13 +57,13 @@ You may like to modify the previous tutorial on your own to account for travelin
 
 The following figure shows the plot of molecules in our model as the concentration of attractant ligand decreases exponentially with *l*<sub>0</sub> = 10<sup>7</sup> and *k* equal to -0.3. As the ligand concentration decreases, the concentration of bound ligands plummet as bound ligands dissociate and there are not enough free ligands to replace the dissociating ones. In the absence of ligand-receptor binding, CheY can readily phosphorylate, causing a spike in phosphorylated CheY. Demethylation of receptors then causes the concentration of phosphorylated CheY to steadily return back to its equilibrium.
 
-[![image-center](../assets/images/chemotaxis_tutorial_removal01.png){: .align-center}]()
+[![image-center](../assets/images/600px/chemotaxis_tutorial_removal01.png){: .align-center}]()
 Simulating a bacterium traveling down an attractant gradient with *l*<sub>0</sub> = 10<sup>7</sup> and *k* equal to -0.3. Phosphorylated CheY follows the opposite pattern to traveling up an attractant gradient, with the concentration of phosphorylated CheY rising quickly only to slowly decrease to equilibrium due to demethylation.
 {: style="font-size: medium;"}
 
 To be thorough, we should also test the robustness of our model to see whether the CheY concentration will return to the same steady-state for a variety of values of *k* when *k* is negative. As in the case of an increasing gradient, the figure below shows that the more sudden the change in the concentration of attractant, the sharper the spike. And yet regardless of the value of *k*, methylation does its work to bring the concentration back to the same steady-state. More importantly, this figure and the one above are confirmed by experimental observations.[^Krembel2015]
 
-[![image-center](../assets/images/chemotaxis_tutorial_removal02.png){: .align-center}]()
+[![image-center](../assets/images/600px/chemotaxis_tutorial_removal02.png){: .align-center}]()
 Varying values of *k* in our exponential decrease in the concentration of attractant ligand produce the same equilibrium concentration of phosphorylated CheY. The smaller the value of *k*, the steeper the initial spike, and the faster the recovery to steady state.
 {: style="font-size: medium;"}
 

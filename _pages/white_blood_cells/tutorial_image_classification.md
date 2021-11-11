@@ -16,27 +16,27 @@ To convert our current PCA pipeline coordinates to a format to be used in Weka, 
 
 Open Weka and navigate to `Tools --> ArffViewer`.
 
-[![image-center](../assets/images/cellorg_step_2.png){: .align-center}]()
+[![image-center](../assets/images/600px/cellorg_step_2.png){: .align-center}]()
 
 
 Then navigate to `File --> Open`.
 
-[![image-center](../assets/images/cellorg_step_3.png){: .align-center}]()
+[![image-center](../assets/images/600px/cellorg_step_3.png){: .align-center}]()
 
 Change the `Files of Type` option to `CSV data files`.
 
-[![image-center](../assets/images/cellorg_step_4.png){: .align-center}]()
+[![image-center](../assets/images/600px/cellorg_step_4.png){: .align-center}]()
 
 Find the `WBC_PCA.csv` file in your `Step4_ShapeSpaceVisualization` folder and click `Open`.
 
-[![image-center](../assets/images/cellorg_step_5.png){: .align-center}]()
+[![image-center](../assets/images/600px/cellorg_step_5.png){: .align-center}]()
 
 Once all the data is loaded on screen, navigate to `File --> Save as …`.
 
-[![image-center](../assets/images/cellorg_step_6.png){: .align-center}]()
+[![image-center](../assets/images/600px/cellorg_step_6.png){: .align-center}]()
 
 Locate the `Step5_Classification` folder, remove the `.csv` extension in the `File Name` field, and click `Save`.
 
-[![image-center](../assets/images/cellorg_step_7.png){: .align-center}]()
+[![image-center](../assets/images/600px/cellorg_step_7.png){: .align-center}]()
 
 As a result, our PCA pipeline coordinates have now been converted to the file format that Weka accepts for further classification. This file should be saved as `WBC_PCA.arff` in the `Step5_Classification` subfolder of the `WBC_CellClass` folder.

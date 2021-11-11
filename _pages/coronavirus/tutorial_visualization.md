@@ -16,7 +16,7 @@ First, download the chimeric RBD `.pdb` file and load it into VMD.
 
 To change the visualization of the protein, click `Graphics > Representation`. Double clicking on a representation will enable/disable it.
 
-[![image-center](../assets/images/Ridge4.png){: .align-center}]()
+[![image-center](../assets/images/600px/Ridge4.png){: .align-center}]()
 {: style="font-size: medium;"}
 
 The file `6vw1.pdb` contains two biological assemblies of the complex. The first assembly contains Chain A (taken from ACE2) and chain E (taken from RBD), and the second assembly contains chain B (ACE2) and chain F (RBD). We will focus on the second assembly.
@@ -29,46 +29,46 @@ We will first add chain B, from the ACE2 enzyme, and color it green.
 
 * `Drawing Method` allows you to change the visualization of the selected atoms. `Lines` (also known as `wireframe`) draws a line between atoms to represent bonds. `Tube` focuses only on the backbone of the molecule.  `Licorice` will show both the backbone and the side chains of the protein. `Cartoon/NewCartoon` will show the secondary structure of the molecule (protein). We are interesed mostly in the backbone, and so we will choose `Tube`.
 
-[![image-center](../assets/images/Ridge5.png){: .align-center}]()
+[![image-center](../assets/images/600px/Ridge5.png){: .align-center}]()
 {: style="font-size: medium;"}
 
 At this point, your `OpenGL Display` window should look like the following:
 
-[![image-center](../assets/images/Ridge6.png){: .align-center}]()
+[![image-center](../assets/images/600px/Ridge6.png){: .align-center}]()
 {: style="font-size: medium;"}
 
 We next add chain F, from the SARS-CoV-2 chimeric RBD, and color it purple. Click `Create Rep`, which will duplicate the previous representation. Then, change `Selected Atoms` to `chain F` and `ColoringID` to "11" to color the chain purple. Make sure your other selections are as follows:
 
-[![image-center](../assets/images/Ridge7.png){: .align-center}]()
+[![image-center](../assets/images/600px/Ridge7.png){: .align-center}]()
 {: style="font-size: medium;"}
 
 You should now see two distinct colored structures!
 
-[![image-center](../assets/images/Ridge8.png){: .align-center}]()
+[![image-center](../assets/images/600px/Ridge8.png){: .align-center}]()
 {: style="font-size: medium;"}
 
 We can also change our visualization to target specific amino acids by creating another representation and specifying the amino acid with the keyword `resid` followed by the position of this amino acid residue.
 
 For example, say that we are interested in residue 486 in the RBD (which is phenylalanine). Click `Create Rep`. In the new representation, change `Selected Atoms` to `chain F and resid 486` and click `Apply`. Then change the `Coloring Method` to `ColorID` and `4`. Finally, change the `Drawing Method` to `Licorice`.
 
-[![image-center](../assets/images/Ridge8-1.png){: .align-center}]()
+[![image-center](../assets/images/600px/Ridge8-1.png){: .align-center}]()
 {: style="font-size: medium;"}
 
 In the `OpenGL Display` window, you will now see a new yellow projection coming out of the RBD, as shown in the image below. This is residue 486! You may need to rotate the protein a bit to see it. (Instructions on how to rotate a molecule and zoom in and out within VMD were given in our [tutorial on finding local protein differences](tutorial_multiseq).)
 
-[![image-center](../assets/images/Ridge8-2.png){: .align-center}]()
+[![image-center](../assets/images/600px/Ridge8-2.png){: .align-center}]()
 {: style="font-size: medium;"}
 
 Let's now color a few more residues from our region of interest: residues 475 and 487 of the RBD, and residues 19, 24, 79, 82, and 83 of ACE2. As we return to the main text, we will explain why these residues are implicated in binding affinity.  
 
 Coloring these residues is analogous to the previous steps of just adding new representations and changing `Selected Atoms`, `Coloring Method`, and `Drawing Method`. Make the following representations; note the colors that we use.
 
-[![image-center](../assets/images/Ridge9.png){: .align-center}]()
+[![image-center](../assets/images/600px/Ridge9.png){: .align-center}]()
 {: style="font-size: medium;"}
 
 Your final visualization should look like the following figure.
 
-[![image-center](../assets/images/Ridge10.png){: .align-center}]()
+[![image-center](../assets/images/600px/Ridge10.png){: .align-center}]()
 {: style="font-size: medium;"}
 
 Congratulations! You have now created a detailed visualization of the RBD-ACE2 complex that focuses on our site of interest. As we return to the main text, we will discuss how the highlighted amino acids help increase the binding affinity of the SARS-CoV-2 spike protein to ACE2.
