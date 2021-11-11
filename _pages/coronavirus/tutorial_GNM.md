@@ -58,7 +58,7 @@ Contact Map:
 In[#]: showContactMap(gnm);
 ~~~~
 
-[![image-center](../assets/images/SARS-CoV-2_ChainA_Contact_20A.png)](){: .align-center}
+[![image-center](../assets/images/SARS-CoV-2_ChainA_Contact_20A.png){: .align-center}]()
 {: style="font-size: medium;"}
 
 Cross-correlations:
@@ -66,7 +66,7 @@ Cross-correlations:
 In[#]: showCrossCorr(gnm);
 ~~~~
 
-[![image-center](../assets/images/SARS-CoV-2_ChainA_CrossCorr_20A.png)](){: .align-center}
+[![image-center](../assets/images/SARS-CoV-2_ChainA_CrossCorr_20A.png){: .align-center}]()
 {: style="font-size: medium;"}
 
 Slow Mode Shape:
@@ -75,7 +75,7 @@ In[#]: showMode(gnm[0], hinges=True)
 In[#]: grid();
 ~~~~~
 
-[![image-center](../assets/images/SARS-CoV-2_ChainA_SlowMode_20A.png)](){: .align-center}
+[![image-center](../assets/images/SARS-CoV-2_ChainA_SlowMode_20A.png){: .align-center}]()
 {: style="font-size: medium;"}
 
 Square Fluctuations
@@ -83,7 +83,7 @@ Square Fluctuations
 In[#]: showSqFlucts(gnm[0], hinges=True);
 ~~~~
 
-[![image-center](../assets/images/SARS-CoV-2_ChainA_SqFlucts_20A.png)](){: .align-center}
+[![image-center](../assets/images/SARS-CoV-2_ChainA_SqFlucts_20A.png){: .align-center}]()
 {: style="font-size: medium;"}
 
 Now, let's head back to the main text on how to read our visualizations and analyze our results.

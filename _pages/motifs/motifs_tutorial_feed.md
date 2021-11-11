@@ -14,7 +14,7 @@ Load your `CellBlender_Tutorial_Template.blend` file from the [Random Walk Tutor
 
 Go to `CellBlender > Molecules` and create the following molecules:
 
-[![image-center](../assets/images/motifs_norm1.png)](){: .align-center}
+[![image-center](../assets/images/motifs_norm1.png){: .align-center}]()
 
 1. Click the `+` button.
 2. Select a color (such as white).
@@ -35,7 +35,7 @@ Repeat the above steps to make sure that the following molecules are entered wit
 
 Now go to `CellBlender > Molecule Placement` to set the following release sites for our molecules:
 
-[![image-center](../assets/images/motifs_norm3.png)](){: .align-center}
+[![image-center](../assets/images/motifs_norm3.png){: .align-center}]()
 
 1. Click the `+` button.
 2. Select or type in the molecule `X1`.
@@ -51,7 +51,7 @@ Repeat the above steps to make sure all of the following molecule release sites 
 
 Next go to `CellBlender > Reactions` to create the following reactions:
 
-[![image-center](../assets/images/motifs_norm4.png)](){: .align-center}
+[![image-center](../assets/images/motifs_norm4.png){: .align-center}]()
 
 1. Click the `+` button.
 2. Under reactants, type `X1’` (note the apostrophe).
@@ -72,7 +72,7 @@ Repeat the above steps for the following reactions.
 
 Go to `CellBlender > Plot Output Settings` to set up a plot as follows:
 
-[![image-center](../assets/images/motifs_norm6.png)](){: .align-center}
+[![image-center](../assets/images/motifs_norm6.png){: .align-center}]()
 
 1. Click the `+` button.
 2. Set the molecule name as `Z1`.
@@ -90,7 +90,7 @@ Repeat the above steps to ensure that we plot all of the following molecules.
 
 We are now ready to run our simulation. Go to `CellBlender > Run Simulation` and select the following options:
 
-[![image-center](../assets/images/motifs_norm7.png)](){: .align-center}
+[![image-center](../assets/images/motifs_norm7.png){: .align-center}]()
 
 1. Set the number of iterations to `12000`.
 2. Ensure the time step is set as `1e-6`.
@@ -98,13 +98,13 @@ We are now ready to run our simulation. Go to `CellBlender > Run Simulation` and
 
 Once the simulation has run, we can visualize our data with `CellBlender > Reload Visualization Data`.
 
-[![image-center](../assets/images/motifs_norm8.png)](){: .align-center}
+[![image-center](../assets/images/motifs_norm8.png){: .align-center}]()
 
 If you like, you can watch the animation within the Blender window by clicking the play button at the bottom of the screen.
 
 Now go back to `CellBlender > Plot Output Settings` and scroll to the bottom to click “Plot”. This will produce a plot of the amount of *Z* under simple regulation compared to the amount of *Z* for the feed-forward loop. Is it what you expected?
 
-[![image-center](../assets/images/motifs_norm9.png)](){: .align-center}
+[![image-center](../assets/images/motifs_norm9.png){: .align-center}]()
 
 Save your file, and then use the link below to return to the main text, where we will interpret the outcome of our simulation.
 

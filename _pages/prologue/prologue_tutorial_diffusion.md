@@ -44,7 +44,7 @@ images = []
 
 To simulate the diffusion process, we will rely upon an imported **convolution function**. The convolve function will use a specified 3 x 3 **laplacian matrix** to simulate diffusion as discussed in the main text. Specifically, the convolve function in this case takes two matrices, `mtx` and `lapl`, and uses `lapl` as a set of multipliers for each square in `mtx`. We can see this operation in action in the image below.
 
-[![image-center](../assets/images/convolution.png)](){: .align-center}
+[![image-center](../assets/images/convolution.png){: .align-center}]()
 A single step in the convolution function which takes the first matrix and adds up each cell multiplied by the number in the second matrix. Here we see (0 * 0) + (2 * ¼) + (0 * 0) + (3 * ¼) + (1 * -1) + (2 * ¼) + (1 * 0) + (1 * ¼) +(1 * 0) = 1
 {: style="font-size: medium;"}
 
@@ -118,7 +118,7 @@ We now are ready to save and run our notebook. When you run the notebook, you sh
 
 Above, we used a parameter when plotting called `Spectral` that uses a **color map** of this name to color the images of our GIF. A color map assigns different color values to different cell values, where we are plotting a cell's color based on its value of the concentration of predators divided by the sum of the concentrations of predators and prey. If a cell has a value close to zero for this ratio (meaning very few predators compared to prey), then it will be colored red, while if it has a value close to 1 (meaning many predators), then it will be colored dark blue. The `Spectral` color map is shown in the figure below.
 
-[![image-center](../assets/images/matplotlib_colormap.png)](){: .align-center}
+[![image-center](../assets/images/matplotlib_colormap.png){: .align-center}]()
 
 As we return to the main text, we will discuss this animation and extend our model to be able to handle reactions as well as diffusion.
 

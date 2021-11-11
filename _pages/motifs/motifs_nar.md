@@ -42,7 +42,7 @@ To recap, the simulations of both cells will include diffusion of *X* and *Y*, r
 
 If you followed the above tutorial, then you were likely  disappointed in our second cell and its negative autoregulating transcription factor *Y*. The figure below shows a plot of *Y* particles for the two simulations.
 
-[![image-center](../assets/images/nar_unequal_graph.png)](){: .align-center}
+[![image-center](../assets/images/nar_unequal_graph.png){: .align-center}]()
 A comparison of the number of *Y* particles across two simulations. In the first cell (shown in red), we only have upregulation of *Y* by *X*, whereas in the second cell (shown in yellow), we keep all parameters fixed but add a reaction simulating negative autoregulation of *Y*.
 {: style="font-size: medium;"}
 
@@ -64,7 +64,7 @@ With these parameters fixed, the only way that the steady-state concentration of
 
 The figure below plots the number of *Y* particles for the two simulations on the same chart over time, with the rate of the *X* → *X* + *Y* reaction increased in the simulation involving negative autoregulation. The two simulations now have approximately the same steady-state concentration of *Y*. However, the second simulation is able to reach this concentration faster; that is, its **response time** to the external stimulus causing the increase in regulation of *Y* is faster.
 
-[![image-center](../assets/images/nar_equal_graph.png)](){: .align-center}
+[![image-center](../assets/images/nar_equal_graph.png){: .align-center}]()
 A comparison of the number of *Y* particles across the same two simulations from the previous figure, with the change that in the second simulation (shown in yellow), we increase the rate of the reaction simulating upregulation of *Y* by *X*.  As a result, the two simulations have approximately the same steady state of *Y*, and the simulation involving negative autoregulation reaches this steady state more quickly.
 {: style="font-size: medium;"}
 

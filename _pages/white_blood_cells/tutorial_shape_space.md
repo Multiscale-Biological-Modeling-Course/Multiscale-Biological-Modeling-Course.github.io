@@ -25,7 +25,7 @@ First, we will classify images by cell family. Open a new terminal window and ru
 
 As a result, you can click, drag, and rotate the graphical space to see the clusters of cell classes by color (a legend can be found in the upper right - hand corner). Furthermore, an image file of this visualization is saved within the current directory under `WBC_ShapeSpace_CF.png`.
 
-[![image-center](../assets/images/cellorg_pca_graph.png)](){: .align-center}
+[![image-center](../assets/images/cellorg_pca_graph.png){: .align-center}]()
 
 
 ### Classification by cell type
@@ -39,4 +39,4 @@ Now we will classify images by cell type. Open a new terminal window and run the
 
 As a result, you can click, drag, and rotate the graphical space to see the clusters of cell classes by color (a legend can be found in the upper right - hand corner). Furthermore, an image file of this visualization is saved within the current directory under `WBC_ShapeSpace_CT.png`.
 
-[![image-center](../assets/images/cellorg_pca_graph_cell.png)](){: .align-center}
+[![image-center](../assets/images/cellorg_pca_graph_cell.png){: .align-center}]()

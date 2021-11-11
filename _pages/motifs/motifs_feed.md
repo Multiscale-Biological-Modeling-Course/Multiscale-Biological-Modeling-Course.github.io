@@ -14,7 +14,7 @@ In the previous section, we saw that negative autoregulation can be used to spee
 
 The answer will lie in another small network motif called the **feedforward loop** (**FFL**). The FFL motif, shown in the figure below, is a network substructure in which *X* is connected to both *Y* and *Z*, and *Y* is connected to *Z*. In this sense, calling the FFL motif a "loop" is a misnomer. Rather, it is a small structure in which there are two "paths" from *X* to *Z*; one via direct regulation of *Z* by *X*, and another in which there is an intermediate transcription factor *Y*. This is why this motif is called *feedforward* rather than *feedback*.
 
-[![image-center](../assets/images/feed-forward_loop.png)](){: .align-center}
+[![image-center](../assets/images/feed-forward_loop.png){: .align-center}]()
 The FFL motif. *X* regulates both *Y* and *Z*, and *Y* regulates *Z*.
 {: style="font-size: medium;"}
 
@@ -27,7 +27,7 @@ Among the 42 total FFLs in the *E. coli* transcription factor network, five of t
 **STOP:** How could we simulate a feedforward loop with chemical reactions akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
 {: .notice--primary}
 
-[![image-center](../assets/images/type-1_incoherent_feed-forward_loop.png)](){: .align-center}
+[![image-center](../assets/images/type-1_incoherent_feed-forward_loop.png){: .align-center}]()
 The incoherent feed-forward loop network motif. Note that *X* upregulates *Y* and *Z*, while *Y* downregulates *Z*.
 {: style="font-size: medium;"}
 
@@ -48,7 +48,7 @@ If you are feeling adventurous, then you may like to adapt the [NAR tutorial](tu
 
 The figure below shows a plot visualizing the amount of *Z* across the two simulations. As with negative autoregulation, we see that the type-1 incoherent FFL allows the cell to ramp up production of a gene *Z* much faster than it would under simple regulation.
 
-[![image-center](../assets/images/ffl_graph.png)](){: .align-center}
+[![image-center](../assets/images/ffl_graph.png){: .align-center}]()
 The concentration of *Z* in the two simulations referenced in the main text. Simple activation of *Z* by *X* is shown in blue, and the type-1 incoherent FFL is shown in purple.
 {: style="font-size: medium;"}
 
@@ -66,7 +66,7 @@ We only considered one of the eight types of FFL in this lesson. You might wonde
 
 Finally, recall the figure above, in which the concentration of *Z* swung past its steady state before returning to the steady state. This figure is reminiscent of a **damped oscillation** process in which the concentration of a particle alternates between being above and below its steady state, while the amplitude of the oscillation gets smaller and smaller.
 
-[![image-center](../assets/images/damped_oscillator.png)](){: .align-center}
+[![image-center](../assets/images/damped_oscillator.png){: .align-center}]()
 In a damped oscillation, the value of some variable (shown on the *y*-axis) back and forth around an asymptotic value while the amplitude of the oscillations decreases.[^dampedOscillator]
 {: style="font-size: medium;"}
 

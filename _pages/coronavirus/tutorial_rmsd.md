@@ -94,9 +94,9 @@ In[#]: for match in matches:
 
 You should see the results printed out as follows.
 
-[![image-center](../assets/images/RMSDResult1.png)](){: .align-center}
+[![image-center](../assets/images/RMSDResult1.png){: .align-center}]()
 
-[![image-center](../assets/images/RMSDResult2.png)](){: .align-center}
+[![image-center](../assets/images/RMSDResult2.png){: .align-center}]()
 
 For example, `matches[0][0]` corresponds to `Chain 1 : AtomMap Chain A from swiss1 -> Chain A from 6vxx` and `matches[5][1]` corresponds to `Chain 2: AtomMap Chain C from 6vxx -> Chain B from swiss1`.
 
@@ -116,7 +116,7 @@ In[#]: calcRMSD(first_ca, second_ca)
 
 You should now see something like the following:
 
-[![image-center](../assets/images/RMSDResult3.png)](){: .align-center}
+[![image-center](../assets/images/RMSDResult3.png){: .align-center}]()
 
 ## Merging multiple chains to compute RMSD of an overall structure
 
@@ -130,7 +130,7 @@ In[#]: calcRMSD(first_ca, second_ca)
 ~~~
 
 Your results should look like the following:
-[![image-center](../assets/images/RMSDResult4.png)](){: .align-center}
+[![image-center](../assets/images/RMSDResult4.png){: .align-center}]()
 
 We will leave the RMSD computation for the other models we produced as an exercise.
 

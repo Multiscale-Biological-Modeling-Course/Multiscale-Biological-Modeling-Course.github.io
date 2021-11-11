@@ -82,7 +82,7 @@ simulate({method=>"ssa", t_end=>3, n_steps=>100})
 ~~~
 
 The simulation outputs:
-[![image-center](../_pages/chemotaxis/solutions_folder/exercise_repel.png)](){: .align-center}
+[![image-center](../_pages/chemotaxis/solutions_folder/exercise_repel.png){: .align-center}]()
 
 
 ## What if there are multiple attractant sources?
@@ -259,7 +259,7 @@ simulate({method=>"ssa", t_end=>700, n_steps=>400})
 ~~~
 
 The simulation outputs:
-[![image-center](../_pages/chemotaxis/solutions_folder/exercise_twoligand_figure.png)](){: .align-center}
+[![image-center](../_pages/chemotaxis/solutions_folder/exercise_twoligand_figure.png){: .align-center}]()
 
 **Exercise 3:**
 
@@ -365,7 +365,7 @@ simulate({method=>"nf", t_end=>50, n_steps=>1000})
 ~~~
 
 The simulation outputs (note the concentrations are in log-scale):
-[![image-center](../_pages/chemotaxis/solutions_folder/exercise_polymorization_figure_log.png)](){: .align-center}
+[![image-center](../_pages/chemotaxis/solutions_folder/exercise_polymorization_figure_log.png){: .align-center}]()
 
 
 ## How to calculate steady state concentration in a reversible bimolecular reaction?

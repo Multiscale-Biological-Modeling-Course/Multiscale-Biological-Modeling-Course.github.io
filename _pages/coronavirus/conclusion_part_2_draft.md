@@ -16,7 +16,7 @@ You may think that simulating the movments of proteins with hundreds of amino ac
 
 A protein's molecular bonds are constantly vibrating, stretching and compressing, much like that of the oscillating mass-spring system shown in the figure below. Bonded atoms are held together by sharing electrons and are held at specific bond length due to the attraction and repulsion forces of the negatively charged electrons and positively charged nucleus. If you push the atoms closer together or pull them farther apart, they will "bounce back" to their equilibrium.
 
-[![image-center](../assets/images/mass-spring.gif)](){: .align-center}
+[![image-center](../assets/images/mass-spring.gif){: .align-center}]()
 A mass-spring system in which a mass is attached to the end of a spring. The more we move the mass from its equilibrium, the greater its resistance and the more it will be repelled back toward equilibrium. Courtesy: [flippingphysics.com](http://flippingphysics.com).
 {: style="font-size: medium;"}
 
@@ -34,13 +34,13 @@ Performing GNM analysis on a protein gives us a fairly accurate understanding of
 Study by Kundu et al. showing that 7.3 Å being the optimal cutoff across a set of 113 proteins.
 -->
 
-[![image-center](../assets/images/hemoglobin_enm.png)](){: .align-center}
+[![image-center](../assets/images/hemoglobin_enm.png){: .align-center}]()
 Conversion of human hemoglobin (left) to an elastic network model with cutoff distance of 7.3 Å (right).
 {: style="font-size: medium;"}
 
 Each node in the model is subject to **Gaussian fluctuations** that cause it to deviate in position from its equilibrium. As a direct consequence, the distance between nodes will also undergo Gaussian fluctuations. For a given node *i* and node *j*, the equilibrium position is represented by the equilibrium position vector $$ R_i^0 $$ and $$ R_j^0 $$. The fluctuation for node *i* and node *j* is represented by instantaneous fluction vectors $$ \Delta R_i $$ and $$ \Delta R_j $$. The distance between node *i* and node *j* at equilibrium is represented by the equilibrium distance vector $$ R_{ij}^0 $$, and the distance between nodes *i* and *j* in fluctuation is represented by the instantaneous distance vector $$ R_{ij} $$. Finally, we can calculate the fluctionation in the distance, $$ \Delta R_{ij} = R_{ij} - R_{ij}^0 = \Delta R_j - \Delta R_i $$.
 
-[![image-center](../assets/images/gaussian_fluctuations.png)](){: .align-center}
+[![image-center](../assets/images/gaussian_fluctuations.png){: .align-center}]()
 Schematic showing gaussian fluctuations between two nodes. Equilibrium positions of node *i* and node *j* are represented by distance vectors $$ R_i^0 $$ and $$ R_j^0 $$. The equilibrium distance between the nodes is labelled $$ R_{ij}^0 $$. The instantaneous fluction vectors, are labelled $$ \Delta R_i $$ and $$ \Delta R_j $$ and the instantaneous distance vector is labeled $$ \Delta R_{ij} $$. Image courtesy of Ahmet Bakan.
 {: style="font-size: medium;"}
 
@@ -52,7 +52,7 @@ $$ \Gamma_{ii} = -\sum_j \Gamma_{ij} $$
 
 where $$r_c$$ is the threshold distance. Simply put, if residue i and residue j are connected, then the value of position i,j in the matrix will be -1. If they are not connected, the the value will be 0. The values of the diagonals, i.e. position i,i, correspond to the total number of connections of residue i.
 
-[![image-center](../assets/images/kirchhoff_example.png)](){: .align-center}
+[![image-center](../assets/images/kirchhoff_example.png){: .align-center}]()
 Toy structure and the corresponding Kirchhoff matrix.
 {: style="font-size: medium;"}
 
@@ -94,7 +94,7 @@ where $$ C^{(n)}_{ij} $$ corresponds to the orientational cross-correlation betw
 
 Cross-correlation analysis provides useful insight on the structure of the protein. The regions of high correlation coming off the diagonal typically provide information on secondary structures (residues in the same secondary structure will typically move together). On the other hand, high correlation regions not near the diagonal provide information on the tertiary structure of the protein, such as protein domains and clues to which parts of the protein work together. In general, we can observe complex patterns of correlated and anti-correlated movement throughout the protein (both inter- and intrasubunit), which can act like some sort of fingerprint. We can compare the cross-correlation between regions of the same protein or the cross correlation map between two similar proteins to find differences in the correlation patterns. This would then provide clues in where the proteins or protein regions are different structurally and possibly functionally. After calculating the cross-correlation for each residue pair, we can organize the data as a matrix and then visualize it as a **cross-correlation heat map** like the figure below.
 
-[![image-center](../assets/images/hemoglobin_cc.png)](){: .align-center}
+[![image-center](../assets/images/hemoglobin_cc.png){: .align-center}]()
 Normalized cross-correlation heat map of human hemoglobin (1A3N) using the first 20 slowest normal modes. Red regions indicate correlated residue pairs which move in the same direction; blue regions indicate anti-correlated residue pairs which move in opposite directions.
 {: style="font-size: medium;"}
 
@@ -110,7 +110,7 @@ $$ B_i = \frac{8 \pi^2}{3} \langle \Delta R_i^2 \rangle $$
 
 We can calculate the **theoretical B-factors** using the equation and GNM analysis, and the correlation with the **experimental B-factors** that are included in the PDB entry as a simple way to evaluate the GNM analysis. A study in 2009 by Lei Yang et al. compared the experimental and theoretical B-factors of 190 sufficiently different (<50% similarity) protein stuctures from X-ray and found the correlation to be about 0.58 on average [^Yang2]. Below is a plot of the B-factor, synonomous to the mean-square fluctutation, of $$ \alpha_1 $$. Residues with high values are those that fluctuate with greater motion or residues with greater positional uncertainty, and are colored red in the figures. In this case, we see that the residues colored in red are generally at the ends of secondary structures in the outer edges of the protein and loops (segments in between secondary structures). This is expected because protein loops typically contain highly fluctuating residues.
 
-[![image-center](../assets/images/hemoglobin_b_factors.png)](){: .align-center}
+[![image-center](../assets/images/hemoglobin_b_factors.png){: .align-center}]()
 (Top): Human hemoglobin colored according to the GNM calculated theoretical B-factors (left) and the experimental B-factors (right). (Bottom): 2D plot comparing the theoretical and experimental B-factors of subunit $$ \alpha_1 $$ (chain A of the protein). $$ \alpha_1 $$ is located at the top left quarter of the protein figure. A correlation coefficient of 0.63 was calculated between the theoretical and experimental B-factors.
 {: style="font-size: medium;"}
 
@@ -118,19 +118,19 @@ We can calculate the **theoretical B-factors** using the equation and GNM analys
 
 A benefit from decomposing the protein fluctuation into individual normal modes is that we are able to observe the characteristics of slow modes separately, i.e. which residues does it affect and to what degree, or **slow mode shape**. This is typically done by visualizing the modes as 2D plots where the x-axis is the residue sequence and the y-axis is the inverse eigenvalues of the Kirchhoff matrix. Peaks in the plot indicate which region of residues the mode describes, with higher peaks representing greater magnitude of motions. It is also common to observe the plot of the average of multiple modes to see the collective contribution of the modes. Below is an example of slow mode shape using human hemoglobin.
 
-[![image-center](../assets/images/hemoglobin_mode_shape.png)](){: .align-center}
+[![image-center](../assets/images/hemoglobin_mode_shape.png){: .align-center}]()
 (Top): Visualization of human hemoglobin colored based on GNM slow mode shape. Red represents regions of high mobility and correspond to peaks in the plot. The first image represents the slowest mode (left) and the second image represents the average of the first 10 slowest modes (right). (Bottom): 2D plot of the slowest mode separate by the four chains of hemoglobin.
 {: style="font-size: medium;"}
 
 Similar to cross-correlation, analyzing slow mode shapes will give us insight on the structure of the protein and comparing the slow mode shapes can reveal differences between protein structures. From the shape of the slowest mode of all four chains (subunits), we can see that the shape for the four subunits of hemoglobin are quite similar. However, it is important to realize that the slowest mode only captures the largest movements of the protein. Therefore, we cannot say with certainty that the four subunits are as structurally similar as the slow mode shape, although from the cross-correlation map patterns and experimental studies, we know that subunit $$ \alpha $$ and subunit $$ \beta $$ are similar but have structural differences. As mentioned before, we can also view the average shape of the modes. Below is the slow mode plot of the slowest ten modes of hemoglobin. Here, we can see a stark difference between two groups of subunits/chains, where the $$ \alpha $$ subunits (chains A and C) share a very similar slow mode shape while the $$ \beta $$ subunits (chains B and D) share a different, yet similar, slow mode shape as well.
 
-[![image-center](../assets/images/hemoglobin_mode_shape_avg.png)](){: .align-center}
+[![image-center](../assets/images/hemoglobin_mode_shape_avg.png){: .align-center}]()
 The average mode shape of the slowest ten modes of human hemoglobin using GNM.
 {: style="font-size: medium;"}
 
 There are two more commonly used plots used in mode analysis. The first is called the **frequency dispersion** of the modes, which is the plot of representing the frequency of each mode. The y-axis represents the reciprocal of the corresponding eigenvalue of the mode, where a higher value indicates a slow mode with low frequency, which are expected to be highly related to biological functions.
 
-[![image-center](../assets/images/hemoglobin_frequency.png)](){: .align-center}
+[![image-center](../assets/images/hemoglobin_frequency.png){: .align-center}]()
 The frequency dispersion of modes in human hemoglobin. Higher values indicates low frequency, slower modes that are likely to be highly relative to biological functions.
 {: style="font-size: medium;"}
 
@@ -140,7 +140,7 @@ $$ Collectivity_k = \frac{1}{N} e^{- \sum^N_i \Delta R_i^2 ln \Delta R_i^2} $$
 
 where N is the total number of residues. A high degree of collectivity indicates that the mode is highly cooperative and engages in a large portion of the structure. Low degree of collectivity indicates that the mode only affects a small region. Modes of high degree of collectivity are generally believed to be functionally relevant nodes and are usually found at the low frequency end of the mode spectrum.
 
-[![image-center](../assets/images/hemoglobin_collectivity.png)](){: .align-center}
+[![image-center](../assets/images/hemoglobin_collectivity.png){: .align-center}]()
 The degree of collectivitiy of modes in human hemoglobin. Higher values indicate modes that describe a large portion of the protein while low values indicate modes that describe small local regions.
 {: style="font-size: medium;"}
 
@@ -148,7 +148,7 @@ The degree of collectivitiy of modes in human hemoglobin. Higher values indicate
 
 The anisotropic counterpart to GNM, in which the direction of fluctuations is also considered, is called **anisotropic network model (ANM)**. The main difference in ANM analysis is that a Hessian matrix, $$ H $$, is used in place of the Kirchhoff matrix. Each element $$ H_{ij} $$ in the matrix is a 3x3 matrix that contain anisotropic information about the orientation of node *i* and node *j*. The calculations proceeds similarly to GNM, where eigen decomposition is used to calculate cross correlation and mean square fluctuations. Although ANM includes directionality, it typically performs worse than GNM when compared with experimental data [^Yang]. However, this model offers the benefit of creating animations depicting the range of motions and fluctuations of the protein because of the inclusion of orientation. We will not go in depth regarding the intricacies of ANM calculations in this module, but we will use ANM for the purpose of creating animations to visualize protein fluctuations. Below is the animation of hemoglobin showing the ANM calculated fluctuation. Here, we can clearly see a distinction in the direction of fluctuation between the left and right side of the protein, separated by immobile regions.
 
-[![image-center](../assets/images/hemoglobin_anm_2.gif)](){: .align-center}
+[![image-center](../assets/images/hemoglobin_anm_2.gif){: .align-center}]()
 Collective motions of the slowest mode in human hemoglobin from ANM calculations using DynOmics.
 {: style="font-size: medium;"}
 
@@ -173,7 +173,7 @@ In the tutorial, we performed and visualized the GNM results of SARS-CoV-2 Spike
 
 First, we will look at the average slow mode shape of the first ten slow modes. Recall in our hemoglobin example that peaks in the mode shape indicate regions of high flexibility/fluctuation. Below is the slow mode shape and visualization of the two Spike proteins, using the colors red for high flexibility and blue for low flexibility.
 
-[![image-center](../assets/images/spike_slowmode_comparison.png)](){: .align-center}
+[![image-center](../assets/images/spike_slowmode_comparison.png){: .align-center}]()
 Average mode shape of the slowest ten modes of SARS-CoV-2 Spike (left) and SARS-CoV Spike (right). The first peak corresponds to the N-Terminal Domain (NTD) and the second peak corresponds to the Receptor Binding Domain (RBD).
 {: style="font-size: medium;"}
 
@@ -183,7 +183,7 @@ The results show that the NTD and RBD of SARS-CoV-2 Spike protein are highly fle
 
 Next, we will look at the cross-correlation heat map of SARS-CoV-2 Spike and SARS-CoV Spike.
 
-[![image-center](../assets/images/spike_crosscorr_comparison.png)](){: .align-center}
+[![image-center](../assets/images/spike_crosscorr_comparison.png){: .align-center}]()
 Cross-correlation heat map of SARS-CoV-2 Spike (left) and SARS-CoV Spike (right). Along the central diagonal, three identical substructures (boxed in orange) representing the three identical chains of the Spike protein can be seen. There are three regions of high correlation within each chain, representing the NTD, RBD, and the S1 domain. Throughout the heat map, the correlation patterns are shared between the two proteins (boxed in blue).
 {: style="font-size: medium;"}
 

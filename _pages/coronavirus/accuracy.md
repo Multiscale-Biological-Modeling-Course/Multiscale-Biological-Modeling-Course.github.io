@@ -23,7 +23,7 @@ Ultimately, the problem of comparing protein structures is intrinsically similar
 **STOP:** Consider the two shapes in the figure below. How similar are they?
 {: .notice--primary}
 
-[![image-center](../assets/images/two_shapes.png)](){: .align-center}
+[![image-center](../assets/images/two_shapes.png){: .align-center}]()
 {: style="font-size: medium;"}
 
 Even if you think you have a good handle on comparing the above two shapes, it is because humans have very highly evolved eyes and brains that help us quickly cluster and classify the objects that we see in the world. Training a computer to see objects as well as we can is more difficult than you think!
@@ -32,7 +32,7 @@ Our goal is to develop a "distance function *d*(*S*, *T*) that takes two shapes 
 
 You may have noticed that the two shapes in the preceding figure are similar; in fact, they are the same. To demonstrate that this is true, we can first move the red shape to superimpose it over the blue shape, then flip the red shape, and finally rotate it so that its boundary coincides with the blue shape, as shown below.
 
-[![image-center](../assets/images/shape_transformations.gif)](){: .align-center}
+[![image-center](../assets/images/shape_transformations.gif){: .align-center}]()
 We can transform the red shape into the blue shape by translating it, flipping it, and then rotating it.
 {: style="font-size: medium;"}
 
@@ -44,7 +44,7 @@ To this end, we first translate *S* to have the same **centroid** (or **center o
 
 For example, suppose *S* is the semicircular arc shown in the figure below, with endpoints (-1, 0) and (1, 0).
 
-[![image-center](../assets/images/semicircular_arc.png)](){: .align-center}
+[![image-center](../assets/images/semicircular_arc.png){: .align-center}]()
 A semicircular arc with radius 1 corresponding to a circle whose center is at the origin.
 {: style="font-size: medium;"}
 
@@ -74,7 +74,7 @@ In this formula, *d*(*s*<sub><em>i</em></sub>, *t*<sub><em>i</em></sub>) is the 
 
 For an example RMSD calculation, consider the figure below, which shows two shapes with four points sampled from each.
 
-[![image-center](../assets/images/rmsd_simple_shapes.png)](){: .align-center}
+[![image-center](../assets/images/rmsd_simple_shapes.png){: .align-center}]()
 Two shapes with four points sampled from each.
 {: style="font-size: medium;"}
 
@@ -92,7 +92,7 @@ $$\begin{align*}
 
 Even if we assume that the shapes have already been overlapped and rotated appropriately, we still need to make sure that we sample enough points to give a good approximation of how different the shapes are.  For an extreme example, consider a circle inscribed within a square, as shown in the figure below. If we happened to sample only the four points indicated, we would sample the same points in each shape, and conclude that the RMSD between these two shapes is zero.  This issue is easily resolved by making sure to sample enough points to avoid approximation errors.
 
-[![image-center](../assets/images/circle_square_undersampling.png)](){: .align-center}
+[![image-center](../assets/images/circle_square_undersampling.png){: .align-center}]()
 A circle inscribed within a square. Sampling of the four points where the shapes intersect will give a flawed estimate of zero for RMSD.
 {: style="font-size: medium;"}
 
@@ -107,13 +107,13 @@ The Kabsch algorithm offers a compelling way to determine the similarity of two 
 
 Unfortunately, no perfect metric for shape comparison exists. To see why the Kabsch algorithm can be flawed, consider the figure below showing two toy protein structures. The orange structure (*S*) is identical to the blue structure (*T*) except for the change in a single bond angle between the third and fourth amino acids. And yet this tiny change in the protein's structure causes a significant increase in *d*(*s*<sub><em>i</em></sub>, *t*<sub><em>i</em></sub>) for every *i* greater than 3, which inflates the RMSD.
 
-[![image-center](../assets/images/RMSD_weakness_mutation.png)](){: .align-center}
+[![image-center](../assets/images/RMSD_weakness_mutation.png){: .align-center}]()
 (Top) Two hypothetical protein structures that differ in only a single bond angle between the third and fourth amino acids, shown in red. Each circle represents an alpha carbon. (Bottom left) Overlaying the first three amino acids shows how much the change in the bond angle throws off the computation of RMSD by increasing the distances between corresponding alpha carbons. (Bottom right) The Kabsch algorithm would align the centers of gravity of the two structures in order to minimize RMSD between corresponding alpha carbons. This makes it difficult for the untrained observer to notice that the two proteins only really differ in a single bond angle.
 {: style="font-size: medium;"}
 
 Another way in which the Kabsch algorithm can be fooled is in the case of a substructure that is appended to the side of a structure and that throws off the ordering of the amino acids. For example, consider the following toy example of a structure into which we incorporate a loop.
 
-[![image-center](../assets/images/RMSD_weakness_loop.png)](){: .align-center}
+[![image-center](../assets/images/RMSD_weakness_loop.png){: .align-center}]()
 A simplification of two protein structures, one of which includes a loop of three amino acids. After the loop, each amino acid in the orange structure will be compared against an amino acid that occurs farther long in the blue structure, thus increasing *d*(*s*<sub><em>i</em></sub>, *t*<sub><em>i</em></sub>)<sup>2</sup> for each such amino acid.
 {: style="font-size: medium;"}
 

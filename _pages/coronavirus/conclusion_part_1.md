@@ -22,13 +22,13 @@ We will show a few plots to illustrate the decisiveness of AlphaFold's CASP vict
 
 Instead of using RMSD, CASP scores a predicted structure against a known structure using the **global distance test (GDT)**. For some threshold *t*, we first take the percentage alpha carbon positions for which the distance between corresponding alpha carbons in the two structures is at most *t*. The GDT score that CASP uses then averages the percentages obtained when *t* is equal to each of 1, 2, 4, and 8 angstroms. A GDT score of 90% is considered good, and a score of 95% is considered excellent (i.e., comparable to minor errors resulting from experimentation) [^AlQuraishi].
 
-[![image-center](../assets/images/AlphaFold2_BAKER.png)](){: .align-center}
+[![image-center](../assets/images/AlphaFold2_BAKER.png){: .align-center}]()
 A plot of GDT scores for the 1st place (AlphaFold2) and 2nd place (Baker lab) submissions over all proteins in the CASP14 contest. Source: [https://bit.ly/39Mnym3](https://bit.ly/39Mnym3).
 {: style="font-size: medium;"}
 
 We can appreciate the margin of victory over the second-place competitor if we compare this second-place competitor against the third-place competitor (submitted by the Yang Zhang lab). The results are shown in the figure below.
 
-[![image-center](../assets/images/BAKER_Zhang.png)](){: .align-center}
+[![image-center](../assets/images/BAKER_Zhang.png){: .align-center}]()
 A plot of GDT scores for the 2nd place (Baker lab) and 3rd place (Zhang lab) submissions over all proteins in the CASP14 contest. Source: [https://bit.ly/39Mnym3](https://bit.ly/39Mnym3).
 {: style="font-size: medium;"}
 
@@ -36,7 +36,7 @@ For each protein target in the contest, we can determine each algorithm's **z-sc
 
 By summing all of an algorithm's positive z-scores, we obtain a reasonable metric for the relative quality of an algorithm compared to its competitors. If an algorithm's sum of z-scores is large, then the algorithm racked up lots of positive z-scores, and we can conclude that it performed well. The figure below shows the sum of z-scores for all CASP14 participants and reiterates the margin of AlphaFold's victory.
 
-[![image-center](../assets/images/CASP14_overall_results.png)](){: .align-center}
+[![image-center](../assets/images/CASP14_overall_results.png){: .align-center}]()
 Sum of z-scores for every   Source: [https://predictioncenter.org/casp14/zscores_final.cgi](https://predictioncenter.org/casp14/zscores_final.cgi).
 {: style="font-size: medium;"}
 

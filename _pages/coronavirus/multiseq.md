@@ -16,7 +16,7 @@ Now begins part 2, in which we ask a simple question: how does the structure of 
 
 We already know from our work in part 1 that when we compare the SARS-CoV and SARS-CoV-2 genomes, the spike protein is much more variable than other regions. We even see variable and conserved regions within the spike protein, as the following figure (reproduced from the section on [homology modeling](homology)) indicates.
 
-[![image-center](../assets/images/spike_protein_similarity.png)](){: .align-center}
+[![image-center](../assets/images/spike_protein_similarity.png){: .align-center}]()
 Variable and conserved regions in the SARS-CoV and SARS-CoV-2 spike proteins. The S1 domain tends to be more variable, while the S2 domain is more conserved (and even has a small region of 100% similarity). Source: Jaimes et al. 2020[^Jaimes].
 {: style="font-size: medium;"}
 
@@ -30,7 +30,7 @@ Given that the RBM is so critical to the virus's ability to bond to the target h
 
 As we hone in on the RBM, we provide an alignment of the 70 amino acid long RBM region from SARS-CoV and SARS-CoV-2 (as well as two animal viruses) in the figure below.
 
-[![image-center](../assets/images/RBM_alignment.png)](){: .align-center}
+[![image-center](../assets/images/RBM_alignment.png){: .align-center}]()
 A multiple alignment of the RBM (colored amino acids) across the human SARS-CoV virus (first row), a version of the virus isolated in a palm civet (second row), a virus isolated in a bat in 2013 (third row), and the SARS-CoV-2 virus (fourth row). Beneath each column, an asterisk denotes full conservation, a period denotes a slight mutation, and a colon indicates high variability [^Wan].
 {: style="font-size: medium;"}
 
@@ -62,7 +62,7 @@ comparing the local structure of <em>s</em><sub><em>i</em></sub> against <em>t</
 
 One of the weaknesses of RMSD that we pointed out in part 1 of this module is that a change to a single bond angle at the *i*-th position may cause *d*(<em>s</em><sub><em>j</em></sub>, <em>t</em><sub><em>j</em></sub>) to be nonzero when *j* > *i*, even though the structure of the protein structure downstream of the bond angle change has not changed. For example, when we discussed the [Kabsch algorithm](accuracy#applying-the-kabsch-algorithm-to-protein-structure-comparison), we showed the figure below of two protein structures that are identical except for a single bond angle. All of the alpha carbon distances *d*(<em>s</em><sub><em>i</em></sub>, <em>t</em><sub><em>i</em></sub>) for *i* at least 4 will be thrown off by this changed angle.
 
-[![image-center](../assets/images/single_bond_angle.png)](){: .align-center}
+[![image-center](../assets/images/single_bond_angle.png){: .align-center}]()
 Two toy protein structures in which the bond angle between the third and fourth alpha carbon has been changed. This change does not affect the distance between the *i*-th and *j*-th alpha carbons when *i* and *j* are both at least 4.
 {: style="font-size: medium;"}
 
@@ -77,7 +77,7 @@ Note two things in the contact maps below. First, many black values cluster arou
 **Note:** Interested in learning how to make contact maps? We will use ProDy to do so in a later section.
 {: .notice--warning}
 
-[![image-center](../assets/images/Contact.png)](){: .align-center}
+[![image-center](../assets/images/Contact.png){: .align-center}]()
 The contact maps of the SARS-CoV-2 spike protein (top left), SARS-CoV spike protein (top right), single chain of the SARS-CoV-2 spike protein (bottom left), and single chain of the SARS-CoV spike protein (bottom right). If the distance between the *i*-th and *j*-th amino acids in a protein structure is 20.0 Å or less, then the (*i*, *j*)-th cell of the figure is colored black. We see that SARS-CoV-2 and SARS S proteins have very similar contact maps, indicating similar structures.
 {: style="font-size: medium;"}
 
@@ -114,15 +114,15 @@ In the tutorial, we formed a "structural" alignment of the two coronavirus RBD r
 
 If we zoom in on the region around position 150 of the alignment, we find a 13-column region of the alignment within the RBD region for which Qres values are significantly lower than they are elsewhere. This region corresponds to positions 476 to 485 in the SARS-CoV-2 spike protein and is shown in the figure below.
 
-[![image-center](../assets/images/QresResult.png)](){: .align-center}
+[![image-center](../assets/images/QresResult.png){: .align-center}]()
 
-[![image-center](../assets/images/QresResult_cropped.png)](){: .align-center}
+[![image-center](../assets/images/QresResult_cropped.png){: .align-center}]()
 (Top) A snapshot of the sequence alignment between the SARS-CoV RBD (first row) and the SARS-CoV-2 chimeric RBD[^Shang] (second row). Columns are colored along a spectrum from blue (high Qres) to red (low Qres), with positions that correspond to an inserted or deleted amino acid colored red. (Bottom) Zooming in on a region of the alignment with low Qres, which corresponds to amino acids at positions 476 to 485 in the SARS-CoV-2 spike protein.
 {: style="font-size: medium;"}
 
 We also can create a 3-D visualization of the structures. The figure below shows the superimposed structures of both the SARS and SARS-CoV-2 RBD bound with ACE2, shown in green. The same color-coding of columns of the multiple alignment in the figure above is used to highlight differences between the SARS-CoV and SARS-CoV-2 structures; that is, blue represents regions of high Qres, and red represents regions of low Qres. The low-Qres region of the RBM alignment that we highlighted in the above figure is outlined in the figure below.
 
-[![image-center](../assets/images/QresVMD.png)](){: .align-center}
+[![image-center](../assets/images/QresVMD.png){: .align-center}]()
 A visualization showing the superposed structures of SARS-CoV-2 chimeric RBD [^Shang] and SARS RBD in blue and red based on Qres. Blue indicates high Qres and red indicates low Qres. ACE2 is shown in green. The highlighted region corresponds to the part of the RBM with a potential structural difference. Because it is adjacent to ACE2, it is likely that the structural difference here will affect ACE2 interactions.
 {: style="font-size: medium;"}
 

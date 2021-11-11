@@ -13,7 +13,7 @@ image: "../assets/images/repress_graph.PNG"
 
 There are eight types of feed-forward loops based on the eight different ways in which we can label the edges in the network with a "+" or a "-" based on upregulation or downregulation.
 
-[![image-center](../assets/images/ffl_types.png)](){: .align-center}
+[![image-center](../assets/images/ffl_types.png){: .align-center}]()
 The eight types of feed-forward loops.[^ffl]
 {: style="text-align: center; font-size: medium;"}
 
@@ -25,7 +25,7 @@ The eight types of feed-forward loops.[^ffl]
 
 More complex motifs may require more computational power to discover.
 
-[![image-center](../assets/images/s_cerevisiae_tf_network.jpg)](){: .align-center}
+[![image-center](../assets/images/s_cerevisiae_tf_network.jpg){: .align-center}]()
 Example of different motifs within the *S. Cerevisiae* network.[^scNetwork]
 {: style="text-align: center; font-size: medium;"}
 
@@ -66,17 +66,17 @@ If we plot this graph, we can see the steady states of Y1 and Y2 are different o
 
 In *A Synthetic Oscillatory Network of Transcriptional Regulators* by Elowitz and Leibler[^oscillator], the repressilator model we have simulated in CellBlender was successfully tested in a real E. coli cell (an *in vivo* experiment). Instead of the X, Y, Z molecules we used in our simulation, the authors inserted the genes *TetR*, *LacI*, and *cI*. These genes were set up in the same arrangement as our simulation, however there were key differences in the scale of the model. Our simulation was carried out in a single space with approximately 300 molecules per species. The reactions were carried out on the order of around 600 reactions per time step for 120,000 steps.
 
-[![image-center](../assets/images/repressilator_ecoli.png)](){: .align-center}
+[![image-center](../assets/images/repressilator_ecoli.png){: .align-center}]()
 The repressilator model used in Elowitz and Leibler's *E. coli* system.
 {: style="text-align: center;"}
 
 In contrast, Elowitz and Leibler described a model with a variety of different reaction rates, such as a 0.0005 promoter strength, 20 proteins created per transcript, and a protein half-life of 10 minutes. Interestingly, this scale led to oscillations occurring with a periodicity that spanned different generations of E. coli! Nevertheless, the real E. coli repressilator systems showed clear patterns of oscillations with robustness to interruptions and disturbances. How would our simulations hold up to interruptions, and why is this kind of behavior needed in oscillators?  
 
-[![image-center](../assets/images/nf_sim_interrupted_break.png)](){: .align-center}
+[![image-center](../assets/images/nf_sim_interrupted_break.png){: .align-center}]()
 
-[![image-center](../assets/images/nf_sim_interrupted_long.png)](){: .align-center}
+[![image-center](../assets/images/nf_sim_interrupted_long.png){: .align-center}]()
 
-[![image-center](../assets/images/nf_sim_interrupted_spike.png)](){: .align-center}
+[![image-center](../assets/images/nf_sim_interrupted_spike.png){: .align-center}]()
 -->
 
 [^ffl]: Image adapted from Mangan, S., & Alon, U. (2003). Structure and function of the feed-forward loop network motif. Proceedings of the National Academy of Sciences of the United States of America, 100(21), 11980–11985. https://doi.org/10.1073/pnas.2133841100
