@@ -38,7 +38,7 @@ Structural differences are challenging to show with a 2-D image, but if you foll
 **STOP:** See if you can identify the major structural difference between the proteins in the figure below. Hint: look at the yellow residue.
 {: .notice--primary}
 
-[![image-center](../assets/images/600px/Ridge.png){: .align-center}]()
+[![image-center](../assets/images/600px/Ridge.png){: .align-center}](../assets/images/Ridge.png)
 A visualization of the loop in the ACE2-binding ridge that is conformationally different between SARS-CoV-2 (top) and SARS-CoV (bottom). The coronavirus RBD is shown in purple, and ACE2 is shown in green. Structural differences cause certain amino acid residues (highlighted in various colors) to behave differently between the two interactions.
 {: style="font-size: medium;"}
 
@@ -55,7 +55,7 @@ Although the interaction with the hydrophobic pocket is the most critical differ
 **STOP:** Again, see if you can spot the differences between SARS-CoV-2 and SARS-CoV.
 {: .notice--primary}
 
-[![image-center](../assets/images/600px/Hotspot31.png){: .align-center}]()
+[![image-center](../assets/images/600px/Hotspot31.png){: .align-center}](../assets/images/Hotspot31.png)
 Visualizations of hotspot 31 in SARS-CoV-2 (top) and SARS-CoV (bottom). The RBD is shown in purple, and ACE2 is shown in green. In SARS-CoV, hotspot 31 corresponds to a salt bridge, which is broken in SARS-CoV-2 to form a new hydrogen bond.
 {: style="font-size: medium;"}
 
@@ -65,7 +65,7 @@ The figure above shows how the salt bridge is radically different in the two vir
 
 Finally, we consider **hotspot 353**, which involves another salt bridge connecting Lys353 and Asp38 of ACE2. In this region, the difference between the residues is so subtle that it takes a keen eye to notice them.
 
-[![image-center](../assets/images/600px/Hotspot353.png){: .align-center}]()
+[![image-center](../assets/images/600px/Hotspot353.png){: .align-center}](../assets/images/Hotspot353.png)
 Visualizations of hotspot 353 in SARS-CoV-2 (top) and SARS-CoV (bottom). The RBD is shown in purple, and ACE2 is shown in green. In SARS-CoV, the RBD residue Thr487 (yellow) stabilizes the salt bridge between ACE2 residues Lys 353 and Asp38 (red). In SARS-CoV-2, the corresponding RBD residue Asn501 (yellow) provides less support, causing ACE2 residue Lys353 (red residue on the left) to be in a slightly different conformation and form a new hydrogen bond with the RBD [^Shang].
 {: style="font-size: medium;"}
 

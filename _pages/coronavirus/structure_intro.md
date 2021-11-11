@@ -14,7 +14,7 @@ Proteins are one of the most important groups of macromolecules in living organi
 
 Recall that in our [introduction to transcription](../motifs/transcription) in a previous module, we introduced the "central dogma" of molecular biology, in which DNA is transcribed into RNA, which is then translated into protein. This process is represented in the figure reproduced below.
 
-[![image-center](../assets/images/600px/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg){: .align-center}]()
+[![image-center](../assets/images/600px/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg){: .align-center}](../assets/images/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg)
 The central dogma of molecular biology states that molecular information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA. Image courtesy: Dhorpool, Wikimedia commons user.
 {: style="font-size: medium;"}
 
@@ -34,7 +34,7 @@ As we have seen throughout this course, molecular interactions are ruled by prob
 
 Because structure prediction is such a fundamental problem, researchers wish to catalog the enormously varied shapes that different proteins can have. For example, the figure below shows each "protein of the month" in 2019 named by the **Protein Data Bank** (**PDB**). But the fact remains that proteins are submicroscopic; so how did researchers determine these shapes?
 
-[![image-center](../assets/images/600px/different_protein_shapes_2020.jpg){: .align-center}]()
+[![image-center](../assets/images/600px/different_protein_shapes_2020.jpg){: .align-center}](../assets/images/different_protein_shapes_2020.jpg)
 Each "molecule of the month" in 2020 named by the PDB. Note how different the shapes are of all these proteins, which accomplish a wide variety of cellular tasks. Note that the SARS-CoV-2 spike protein was the molecule of the month in June 2020. Source: [https://pdb101.rcsb.org/motm/motm-by-date](https://pdb101.rcsb.org/motm/motm-by-date).
 {: style="font-size: medium;"}
 
@@ -70,13 +70,13 @@ Unfortunately, predicting protein structure from amino acid sequence is a very c
 
 For example, the following figure compares both the sequences and structures of hemoglobin subunit alpha from humans (*Homo sapiens*; PDB: [1si4](https://www.rcsb.org/structure/1SI4) shortfin mako sharks (*Isurus oxyrinchus* ; PDB: [3mkb](https://www.rcsb.org/structure/3mkb) and emus (*Dromaius novaehollandia*; PDB: [3wtg](https://www.rcsb.org/structure/3wtg). Hemoglobin is the oxygen-transport protein in the blood, consisting of two alpha "subunit" proteins and two beta subunit proteins that combine into a protein complex; because hemoglobin is well-studied and much shorter than the SARS-CoV-2 spike protein, we will use it as an example throughout this module. The subunit alpha proteins across the three species are markedly different in terms of primary structure, and yet their 3-D structures are essentially identical.
 
-[![image-center](../assets/images/600px/SequenceStructureExample.png){: .align-center}]()
+[![image-center](../assets/images/600px/SequenceStructureExample.png){: .align-center}](../assets/images/SequenceStructureExample.png)
 (Top) An amino acid sequence comparison of the first 40 (out of 140) amino acids of hemoglobin subunit alpha for three species: human, mako shark, and emu. A column is colored blue if all three species have the same amino acid, white if two species have the same amino acid, and red if all amino acids are different. Sequence identity calculates the number of positions in two amino acid sequences that share the same character. (Bottom) Side by side comparisons of the 3-D structures of the three proteins. The final figure on the right superimposes the first three structures to highlight their similarities.
 {: style="font-size: medium;"}
 
 Another reason why protein structure prediction is so difficult is because a polypeptide is very flexible, with the ability to rotate in multiple ways at each amino acid, which means that the polypeptide is able to fold into a staggering number of different shapes. A good analogy for polypeptide flexibility is the "Rubik's Twist" puzzle, shown below, which consists of a linear chain of flexible blocks that can form a huge number of different shapes.
 
-[![image-center](../assets/images/600px/rubiks_twist.gif){: .align-center}]()
+[![image-center](../assets/images/600px/rubiks_twist.gif){: .align-center}](../assets/images/rubiks_twist.gif)
 An animation of Rubik's twist forming into a ball and then back into a linear chain. Source: [https://grabcad.com/library/rubik-s-snake-1](https://grabcad.com/library/rubik-s-snake-1).
 {: style="font-size: medium;"}
 
@@ -84,24 +84,24 @@ To explain why the protein is so flexible, we should say a bit more about the mo
 
 An amino acid is formed of four parts. In the center, a carbon atom (called the **alpha carbon**) is connected to four different molecules: a hydrogen atom (H), a **carboxyl group** (–COOH), an **amino group** (-NH<sub>2</sub>), and a **side chain** (denoted "R" and often called an R group). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) all the way up to -C<sub>8</sub>H<sub>7</sub>N (tryptophan). The simplified structure of an amino acid is shown in the figure below.
 
-[![image-center](../assets/images/600px/AminoAcid.png){: .align-center}]()
+[![image-center](../assets/images/600px/AminoAcid.png){: .align-center}](../assets/images/AminoAcid.png)
 {: style="font-size: medium;"}
 
 To form a polypeptide chain, consecutive amino acids are linked together during a condensation reaction in which the amino group of one amino acid is joined to the carboxyl group of another, while a water molecule (H<sub>2</sub>O) is expelled. This reaction is illustrated by the figure below.
 
-[![image-center](../assets/images/600px/dipeptide_reaction.png){: .align-center}]()
+[![image-center](../assets/images/600px/dipeptide_reaction.png){: .align-center}](../assets/images/dipeptide_reaction.png)
 A condensation reaction joins two amino acids into a "dipeptide" by joining the amino group of one amino acid to the carboxyl group of the other. Source: [https://bit.ly/3q0Ph8V](https://bit.ly/3q0Ph8V).
 {: style="font-size: medium;"}
 
 The resulting bond that is produced between the carbon atom of one amino acid's carboxyl group and the nitrogen atom of the next amino acid's amino group, called a **peptide bond**, is very strong. The peptide has very little rotation around this bond, which is almost always locked at 180°. As peptide bonds are formed between adjacent amino acids, the polypeptide chain takes shape, as shown in the figure below.
 
-[![image-center](../assets/images/600px/Backbone.png){: .align-center}]()
+[![image-center](../assets/images/600px/Backbone.png){: .align-center}](../assets/images/Backbone.png)
 A protein backbone formed of three amino acids.
 {: style="font-size: medium;"}
 
 However, the bonds *within* an amino acid, joining the alpha carbon to its carboxyl group and amino group, are not as rigid. Like the Rubik's twist, the polypeptide is free to rotate around these two bonds. This rotation produces two angles of interest, called the **phi angle (φ)** and **psi angle (ψ)** (see figure below), which are formed at the alpha carbon's connections to its amino group and carboxyl group, respectively.
 
-[![image-center](../assets/images/600px/torsion_angles.png){: .align-center}]()
+[![image-center](../assets/images/600px/torsion_angles.png){: .align-center}](../assets/images/torsion_angles.png)
 A polypeptide chain of multiple amino acids with the torsion angles φ and ψ indicated. The angle ω indicates the angle of the peptide bond, which is typically 180°. Image courtesy: Adam Rędzikowski.
 {: style="font-size: medium;"}
 
