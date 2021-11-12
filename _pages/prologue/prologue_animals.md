@@ -80,26 +80,26 @@ On the other hand, if *f* is too high, then there will be an increase in the con
 The interesting behavior in this system lies in a sweet spot of the parameters *f* and *k*. For example, consider the following visualization when *f* is equal to 100,000 and *k* is equal to 200,000. We see a very clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where there is a critical mass of predators to interact with each other.
 
 <center>
-<iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1_k_2.mp4" frameborder="0" allowfullscreen>
+<iframe width="750" height="360" src="../assets/videos/predator_prey_11_by_11_f_1_k_2.mp4" frameborder="0" allowfullscreen>
 </iframe>
 </center>
 
 When we hold *k* fixed and increase *f* to 140,000, the higher feed rate increases the likelihood of *B* particles encountering *A* particles, and so we see even more waves of *A* cascades.  Note the clear red-green stripes that have appeared by the end of the movie.
 
 <center>
-<iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1.4_k_2.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="750" height="360" src="../assets/videos/predator_prey_11_by_11_f_1.4_k_2.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
 
 As *f* approaches *k*, the stripe structure becomes chaotic and breaks down because there are so many pockets of *B* particles that these particles constantly collide and mix with each other. The following animation shows the result of raising *f* to 175,000.
 
 <center>
-<iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1.75_k_2_new.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="750" height="360" src="../assets/videos/predator_prey_11_by_11_f_1.75_k_2_new.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
 
 Once *f* and *k* are equal, the stripes will disappear. We might expect this to mean that the *B* particles will be uniformly distributed across a background of *A* particles. But what we see is that after an initial outward explosion of *B* particles, the system produces a mottled background, with pockets having higher or lower concentration of *B*. Pay attention to the following video at a point late in the animation. Although the concentrations of the particles are still changing, there is much less large-scale change than in earlier videos. If we freeze the video, our eye cannot help but see patterns of red and green clusters that resemble spots (or at the very least mottling).
 
 <center>
-<iframe width="750" height="360" src="../assets/gray_scott_11_by_11_f_1_k_1.mp4" frameborder="0" allowfullscreen>
+<iframe width="750" height="360" src="../assets/videos/predator_prey_11_by_11_f_1_k_1.mp4" frameborder="0" allowfullscreen>
 </iframe>
 </center>
 
