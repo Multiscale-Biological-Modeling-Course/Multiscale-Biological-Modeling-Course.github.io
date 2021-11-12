@@ -27,9 +27,12 @@ The particle's movements are random, but the *average-case* behavior of the part
 
 **Random Walk Theorem:** After *n* steps of unit length in a random walk, a particle will on average find itself a distance of approximately $$\sqrt{n}$$ from its origin.
 
+**Note:** If you love mathematics and are interested in seeing a proof of this theorem, click <a href="../assets/tex/random_walk_theorem.pdf" download>here</a>.
+{: .notice--warning}
+
 ## From one particle to many
 
-The Random Walk Theorem does not say that after *n* steps a particle will be exactly $$\sqrt{n}$$ from the origin, any more than we would expect that in flipping a coin 2,000 times the coin will come up heads exactly 1,000 times. Yet the statement about the particle's average behavior is powerful. If we animate the action of many independent particles following random walks, then we will see that although some particles hug their starting point and some wind up far away, most particles steadily move outward. Click the following video to watch a simulation of 200 randomly walking particles.
+The Random Walk Theorem does not say that after *n* steps a particle will be exactly $$\sqrt{n}$$ from the origin, any more than we would expect that in flipping a coin 2,000 times the coin will come up heads exactly 1,000 times. Yet the statement about the particle's average behavior is powerful. If we animate the action of many independent particles following random walks, then we will see that although some particles hug their starting point and some wind up far away, most particles steadily move outward. Click on the following video to watch a simulation of 200 randomly walking particles.
 
 [![image-center](../assets/images/600px/random_walk_200_first_frame.png){: .align-center}](../assets/images/random_walk_200.gif)
 
@@ -56,44 +59,3 @@ Before continuing, we point you to a beautiful animation illustrating just how f
 {: style="font-size: 100%; text-align: center;"}
 
 [^machinery]: Goodsell, David (2009), *The Machinery of Life*. Copernicus Books.
-
-## (Optional) A proof of the Random Walk Theorem
-
-The Random Walk Theorem states that the average distance that a randomly walking particle will find itself from its starting point after taking *n* steps of unit length is $$\sqrt{n}$$. Below, we provide a justification for why this is true for interested learners who are familiar with probability.
-
-Let <b>x<sub><i>i</i></sub></b> denote the random variable corresponding to the vector of the particle's *i*-th step.  The distance *d* traveled by the particle can be represented by the sum of all the <b>x<sub><i>i</i></sub></b>,
-
-$$d = \mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n} \,.$$
-
-We will show that the expected value of <i>d</i><sup>2</sup> is equal to *n*. First note that
-
-$$d^2 = (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n})\,.$$
-
-After expansion, we obtain
-
-$$
-\begin{align*}
-d^2 = ~ & \mathbf{x_1} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n})\\
-+ & \mathbf{x_2} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n})\\
-+ & \cdots\\
-+ & \mathbf{x_n} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) \,.
-\end{align*}
-$$
-
-Finally, we rearrange this equation so that the terms $$\mathbf{x_1} \cdot \mathbf{x_1}$$, $$\mathbf{x_2} \cdot \mathbf{x_2}$$, and so on occur first, and the remaining terms appear last. This allows us to write <i>d</i><sup>2</sup> as follows.
-
-$$d^2 = \sum_{i=1}^n (\mathbf{x_i} \cdot \mathbf{x_i}) + \sum_{i \neq j} (\mathbf{x_i} \cdot \mathbf{x_j})\, .$$
-
-The right side of this equation is the sum of <i>n</i><sup>2</sup> dot products.  When we take the expectation of both sides, we can apply a fundamental theorem called the "linearity of expectation", which states that for any two random variables $$x$$ and $$y$$, the expectation of their sum $$\mathbb{E}(x + y)$$ is equal to the sum of the corresponding expectations $$\mathbb{E}(x) + \mathbb{E}(y)$$:
-
-$$\mathbb{E}(d^2) = \sum_{i=1}^n \mathbb{E}(\mathbf{x_i} \cdot \mathbf{x_i}) + \sum_{i \neq j} \mathbb{E}(\mathbf{x_i} \cdot \mathbf{x_j})\, .$$
-
-For any *i*, $$\mathbf{x_i} \cdot \mathbf{x_i}$$ is just the length of the vector $$x_i$$, which is equal to 1.  On the other hand, the expected value of the dot product of any two random unit vectors is zero.  Therefore, the right side of the above equation can be simplified to give the equation
-
-$$\mathbb{E}(d^2) = \sum_{i=1}^n 1 + \sum_{i \neq j} 0 = n + 0 = n\, ,$$
-
-which is what we set out to prove.
-
-A couple of notes before we continue. First, we did not use anything about the random walk being two-dimensional in this proof; therefore, it holds whether our particle is walking in two, three, or any number of dimensions.
-
-Second, we technically did not show that the expected value of $$d$$ is $$\sqrt{n}$$, but rather that the expected value of $$d^2$$ is $$n$$. It is not true that $$\mathbb{E}(d)$$ is equal to $$\sqrt{n}$$, but rather that as $$n$$ grows, $$\mathbb{E}(d)$$ grows like $$c \cdot \sqrt{n}$$ for some constant factor $$c$$. A proof is beyond the scope of this course, but it can be shown that as $$n$$ goes off to infinity, $$\mathbb{E}(d)$$ tends toward $$\sqrt{(2/\pi)} \cdot \sqrt{n}$$. Who knew that the mathematics of random walks could be so complicated!

@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{fancyhdr}
+\usepackage{lipsum}% just to generate some text
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\fancyhf{}
+\fancyhead[C]{\textbf{Proof of Random Walk Theorem\\Phillip Compeau}}
+\renewcommand\headrulewidth{0pt}
+\pagestyle{fancy}
+
+\begin{document}
+
+The Random Walk Theorem states that the average distance that a randomly walking particle will find itself from its starting point after taking $n$ steps of unit length is $\sqrt{n}$. Below, we provide a justification for why this is true for interested learners who are familiar with probability.
+
+Let $\mathbf{b}_i$ denote the random variable corresponding to the vector of the particle's $i$-th step.  The distance $d$ traveled by the particle can be represented by the sum of all the $\mathbf{b}_i$,
+
+\begin{center}
+$d = \mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n} \,.$
+\end{center}
+
+We will show that the expected value of $d^2$ is equal to $n$. First note that
+
+\begin{center}
+$d^2 = (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n})\,.$
+\end{center}
+
+\noindent After expansion, we obtain
+\begin{center}
+\begin{align*}
+d^2 = ~ & \mathbf{x_1} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n})\\
++ & \mathbf{x_2} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n})\\
++ & \cdots\\
++ & \mathbf{x_n} \cdot (\mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}) \,.
+\end{align*}
+\end{center}
+
+Finally, we rearrange this equation so that the terms $\mathbf{x_1} \cdot \mathbf{x_1}$, $\mathbf{x_2} \cdot \mathbf{x_2}$, and so on occur first, and the remaining terms appear last. This allows us to write $d^2$ as follows.
+
+\begin{center}
+$d^2 = \sum_{i=1}^n (\mathbf{x_i} \cdot \mathbf{x_i}) + \sum_{i \neq j} (\mathbf{x_i} \cdot \mathbf{x_j})\, .$
+\end{center}
+
+The right side of this equation is the sum of $n^2$ dot products.  When we take the expectation of both sides, we can apply a fundamental theorem called the ``linearity of expectation'', which states that for any two random variables $x$ and $y$, the expectation of their sum $\mathbb{E}(x + y)$ is equal to the sum of the corresponding expectations $\mathbb{E}(x) + \mathbb{E}(y)$:
+
+\begin{center}
+$\mathbb{E}(d^2) = \sum_{i=1}^n \mathbb{E}(\mathbf{x_i} \cdot \mathbf{x_i}) + \sum_{i \neq j} \mathbb{E}(\mathbf{x_i} \cdot \mathbf{x_j})\, .$
+\end{center}
+
+For any $i$, $\mathbf{x_i} \cdot \mathbf{x_i}$ is just the length of the vector $x_i$, which is equal to 1.  On the other hand, the expected value of the dot product of any two random unit vectors is zero.  Therefore, the right side of the above equation can be simplified to give the equation
+
+\begin{center}
+$\mathbb{E}(d^2) = \sum_{i=1}^n 1 + \sum_{i \neq j} 0 = n + 0 = n\, ,$
+\end{center}
+
+\noindent which is what we set out to prove.
+
+We make a couple of notes about the above proof. First, we did not use anything about the random walk being two-dimensional in this proof; therefore, it holds whether our particle is walking in two, three, or any number of dimensions.
+
+Second, we technically did not show that the expected value of $d$ is $\sqrt{n}$, but rather that the expected value of $d^2$ is $n$. It is not true that $\mathbb{E}(d)$ is equal to $\sqrt{n}$, but rather that as $n$ grows, $\mathbb{E}(d)$ grows like $c \cdot \sqrt{n}$ for some constant factor $c$. A proof is beyond the scope of this course, but it can be shown that as $n$ goes off to infinity, $\mathbb{E}(d)$ tends toward $\sqrt{(2/\pi)} \cdot \sqrt{n}$. Who knew that the mathematics of random walks could be so complicated!
+
+\end{document}
