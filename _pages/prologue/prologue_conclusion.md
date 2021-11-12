@@ -8,11 +8,11 @@ sidebar:
 image: "../assets/images/gray_scott_jupyter_3.png"
 gallery:
   - url: ../assets/images/Juvenile_Mbu_pufferfish.jpg
-    image_path: ../assets/images/Juvenile_Mbu_pufferfish.jpg
+    image_path: ../assets/images/600px/Juvenile_Mbu_pufferfish.jpg
     alt: "Juvenile Mbu pufferfish"
     title: "A juvenile Mbu Pufferfish with a very familiar pattern."
-  - url: /assets/images/unsplash-gallery-image-2.jpg
-    image_path: ../assets/images/Giant_Puffer_fish_skin_pattern.jpg
+  - url: ../assets/images/Giant_Puffer_fish_skin_pattern.jpg
+    image_path: ../assets/images/600px/Giant_Puffer_fish_skin_pattern.jpg
     alt: "Adult Mbu pufferfish"
     title: "An adult Mbu Pufferfish exhibiting another familiar pattern."
 ---
