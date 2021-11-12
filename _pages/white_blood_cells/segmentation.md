@@ -12,7 +12,7 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 We begin our work in this module by discussing the problem of segmenting WBCs from an image of blood cells like the one in the figure below, reproduced from the [introduction](home).
 
-<center><img src="../assets/images/neutrophil.png" width="300"></center>
+[![image-center](../assets/images/600px/neutrophil.png){: .align-center}](../assets/images/neutrophil.png)
 The granulocyte presented in the introduction (having ID 3 in our dataset).
 {: style="font-size: medium;"}
 
