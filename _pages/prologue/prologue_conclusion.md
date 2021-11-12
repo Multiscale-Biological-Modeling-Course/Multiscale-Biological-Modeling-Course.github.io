@@ -39,7 +39,7 @@ It turns out that although Turing's work offers a compelling argument for how ze
 
 Furthermore, note the following two photos of giant pufferfish.[^youngfish][^pufferfish] These fish are genetically very similar, but their skin patterns are very different. What may seem like a drastic change in the appearance of the fish from spots to stripes is likely attributable to a small change of parameters in a fine-tuned biological system that, like all of life, is powered by randomness.
 
-{% include gallery caption="Two similar pufferfish exhibiting very different skin patterns." %}
+{% include gallery caption="Two similar pufferfish with very different skin patterns. (Left) A juvenile Mbu Pufferfish with a very familiar pattern. (Right) An adult Mbu Pufferfish exhibiting another familiar pattern." %}
 
 ## A final note
 
