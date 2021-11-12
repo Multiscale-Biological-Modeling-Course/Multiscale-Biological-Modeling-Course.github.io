@@ -14,7 +14,7 @@ Recall that DNA is a double-stranded molecule consisting of the four nucleobases
 
 The RNA transcript is then **translated** into an amino acid sequence. Because there are four different bases but twenty amino acids available, RNA is translated in **codons**, or triplets of nucleobases. The figure below shows the way in which codons are translated into amino acids, which is called the **genetic code**.
 
-[![image-center](http://bioinformaticsalgorithms.com/images/Antibiotics/genetic_code.png){: .align-center}](http://bioinformaticsalgorithms.com/images/Antibiotics/genetic_code.png)
+[![image-center](../assets/images/600px/genetic_code.png){: .align-center}](../assets/images/genetic_code.png)
 The genetic code, which dictates the conversion of RNA codons into amino acids.
 {: style="font-size: medium;"}
 

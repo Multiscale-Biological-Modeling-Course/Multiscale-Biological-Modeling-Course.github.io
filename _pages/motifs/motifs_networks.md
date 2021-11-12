@@ -16,7 +16,7 @@ The figure below shows a portion of the transcription factor network for *Escher
 
 Note that the edges in the *E. coli* transcription factor network below are colored red or green. An edge connecting *X* to *Y* is colored green if *X* upregulates *Y*, and it is colored red if *X* downregulates *Y*. (Alternatively, we could label the edges with a "+" or "-".)
 
-[![image-center](../assets/images/600px/e_coli_tf_network.jpeg){: .align-center}
+[![image-center](../assets/images/600px/e_coli_tf_network.jpeg){: .align-center}(../assets/images/e_coli_tf_network.jpeg)
 A subset of the *E. coli* transcription factor network.[^eColiNetwork] An edge from *X* to *Y* denotes that *X* is a transcription factor that regulates *Y*. Edges corresponding to upregulation are colored green, and edges corresponding to downregulation are colored red. Click [here](../downloads/e_coli_tf_network.jpeg) to zoom in on this network.
 {: style="font-size: medium;"}
 
