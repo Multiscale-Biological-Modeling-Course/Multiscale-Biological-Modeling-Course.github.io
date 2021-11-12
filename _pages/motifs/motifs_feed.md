@@ -48,7 +48,7 @@ If you are feeling adventurous, then you may like to adapt the [NAR tutorial](tu
 
 The figure below shows a plot visualizing the amount of *Z* across the two simulations. As with negative autoregulation, we see that the type-1 incoherent FFL allows the cell to ramp up production of a gene *Z* much faster than it would under simple regulation.
 
-[![image-center](../assets/images/600px/ffl_graph.png){: .align-center}](../assets/images/ffl_graph.png)
+[![image-center](../assets/images/600px/ffl_graph.PNG){: .align-center}](../assets/images/ffl_graph.PNG)
 The concentration of *Z* in the two simulations referenced in the main text. Simple activation of *Z* by *X* is shown in blue, and the type-1 incoherent FFL is shown in purple.
 {: style="font-size: medium;"}
 
