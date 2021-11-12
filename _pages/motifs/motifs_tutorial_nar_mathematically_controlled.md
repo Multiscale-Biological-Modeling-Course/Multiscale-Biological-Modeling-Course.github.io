@@ -5,7 +5,7 @@ sidebar:
  nav: "motifs"
 toc: true
 toc_sticky: true
-image: "../assets/images/repress_graph.PNG"
+image: "../assets/images/repressilator_graph.png"
 ---
 
 In this tutorial, we will use CellBlender to adapt our simulation from the [tutorial](tutorial_nar) on negative autoregulation into a mathematically controlled simulation.

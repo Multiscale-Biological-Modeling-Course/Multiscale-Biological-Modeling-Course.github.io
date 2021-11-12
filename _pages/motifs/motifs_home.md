@@ -4,10 +4,10 @@ title: "Module 1: Finding Motifs in Transcription Factor Networks"
 description: Learn to comb through biological networks to find network "motifs" that have evolved to occur surprisingly often and drive cellular processes.
 sidebar:
  nav: "motifs"
-image: "../assets/images/repress_graph.PNG"
+image: "../assets/images/repressilator_graph.png"
 excerpt: "by Noah Lee and Phillip Compeau"
 header:
-  overlay_image: "../assets/images/repress_graph.PNG"
+  overlay_image: "../assets/images/repressilator_graph.png"
   overlay_filter: 0.3
 author_profile: true # add author to page
 ---
