@@ -93,6 +93,11 @@ plugins:
   - jekyll-algolia
   - kramdown
 
+# Needed to copy code to clipboard
+after_footer_scripts:
+  - https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js
+  - assets/js/clipboardrouge.js
+
 # Search with Algolia
 algolia:
   application_id: O24616B64D
