@@ -77,10 +77,6 @@ On the other hand, if *f* is too high, then there will be an increase in the con
 
 [![image-center](../assets/images/600px/predator_prey_f1e6_d1e5.png){: .align-center}](../assets/images/predator_prey_f1e6_d1e5.gif)
 
-<center>
-<iframe width="750" height="360" src="../assets/mert_f1e6_d1e5.mp4" frameborder="0" allowfullscreen></iframe>
-</center>
-
 The interesting behavior in this system lies in a sweet spot of the parameters *f* and *k*. For example, consider the following visualization when *f* is equal to 100,000 and *k* is equal to 200,000. We see a very clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where there is a critical mass of predators to interact with each other.
 
 <center>
