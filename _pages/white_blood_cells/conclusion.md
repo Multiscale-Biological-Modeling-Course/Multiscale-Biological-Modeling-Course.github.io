@@ -23,3 +23,5 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 * Point to exercises
 
 * Thank you!
+
+* Need at some point to define binarization and appeal to that tutorial separately
