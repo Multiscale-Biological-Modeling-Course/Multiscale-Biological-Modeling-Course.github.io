@@ -93,7 +93,7 @@ Click this icon and choose `Text Editor`. To create a new file for our code, cli
 
 Next visit `CellBlender > Scripting > Data-Model Scripting > Run Script`, as shown in the following screenshot. Select `Internal` from the Data-Model Scripting menu and click the refresh button. Click the filename entry area next to `File` and enter `pred_center.py`. Click `Run Script` to execute
 
-[![image-center](../assets/images/600px/outliner_script.png){: .align-center}](../assets/images/outliner_script.png)
+[![image-center](../assets/images/600px/outliner_run_script.png){: .align-center}](../assets/images/outliner_run_script.png)
 
 You should see that another placement site called `pred_rel` has appeared in the `Molecule Placement` tab.
 
