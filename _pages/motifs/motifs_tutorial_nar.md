@@ -5,7 +5,7 @@ sidebar:
  nav: "motifs"
 toc: true
 toc_sticky: true
-image: "../assets/images/repressilator_graph.png"
+image: "../assets/images/repressilator_graph.PNG"
 ---
 
 ### Implementing simple regulation in CellBlender

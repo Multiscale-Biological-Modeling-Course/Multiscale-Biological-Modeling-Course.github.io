@@ -5,7 +5,7 @@ sidebar:
  nav: "motifs"
 toc: true
 toc_sticky: true
-image: "../assets/images/repressilator_graph.png"
+image: "../assets/images/repressilator_graph.PNG"
 ---
 
 In this tutorial, we will use CellBlender to run a (mathematically controlled) comparison of simple regulation against regulation via the type-1 incoherent feed-forward loop that we saw in the main text.
