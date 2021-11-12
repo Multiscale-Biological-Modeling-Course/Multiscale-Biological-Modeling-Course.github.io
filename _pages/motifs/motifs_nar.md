@@ -42,7 +42,7 @@ To recap, the simulations of both cells will include diffusion of *X* and *Y*, r
 
 If you followed the above tutorial, then you were likely  disappointed in our second cell and its negative autoregulating transcription factor *Y*. The figure below shows a plot of *Y* particles for the two simulations.
 
-[![image-center](../assets/images/600px/nar_unequal_graph.png){: .align-center}](../assets/images/nar_unequal_graph.png)
+[![image-center](../assets/images/600px/nar_unequal_graph.PNG){: .align-center}](../assets/images/nar_unequal_graph.PNG)
 A comparison of the number of *Y* particles across two simulations. In the first cell (shown in red), we only have upregulation of *Y* by *X*, whereas in the second cell (shown in yellow), we keep all parameters fixed but add a reaction simulating negative autoregulation of *Y*.
 {: style="font-size: medium;"}
 
