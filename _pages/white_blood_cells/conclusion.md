@@ -14,6 +14,8 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 * Note that this takes tons of resources.
 
+* Call back to AlphaFold and how disappointing it is that the models just appear to work without any higher level understanding provided (not interpretable).
+
 * Cite the state of the art for WBC analysis. And yet this is often still done manually because of liability. Major issue in modern medicine of the ramifications of turning our lives over to algorithms.
 
 * Point out other neat applications of CellOrganizer. Like using a Ferrari to drive to the supermarket.
