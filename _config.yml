@@ -100,9 +100,9 @@ after_footer_scripts:
 
 # Search with Algolia
 algolia:
-  application_id: O24616B64D
+  application_id: B3Q5EI8OM3
   index_name: biological_modeling
-  search_only_api_key: 3d5df9a350e2a9a5039314b58ef8c32d
+  search_only_api_key: 809cb9cee21df5bf9f0e36e4af371cfe
   powered_by: true
 
 footer:
