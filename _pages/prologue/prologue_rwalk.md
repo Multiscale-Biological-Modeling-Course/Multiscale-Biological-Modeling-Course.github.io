@@ -29,7 +29,7 @@ The particle's movements are random, but the *average-case* behavior of the part
 
 ## From one particle to many
 
-The Random Walk Theorem does not say that after *n* steps a particle will be exactly $$\sqrt{n}$$ from the origin, any more than we would expect that in flipping a coin 2,000 times the coin will come up heads exactly 1,000 times. Yet the statement about the particle's average behavior is powerful. If we animate the action of many independent particles following random walks, then we will see that although some particles hug their starting point and some wind up far away, most particles steadily move outward as the simulation continues.
+The Random Walk Theorem does not say that after *n* steps a particle will be exactly $$\sqrt{n}$$ from the origin, any more than we would expect that in flipping a coin 2,000 times the coin will come up heads exactly 1,000 times. Yet the statement about the particle's average behavior is powerful. If we animate the action of many independent particles following random walks, then we will see that although some particles hug their starting point and some wind up far away, most particles steadily move outward. Click the following video to watch a simulation of 200 randomly walking particles.
 
 [![image-center](../assets/images/600px/random_walk_200_first_frame.png){: .align-center}](../assets/images/random_walk_200.gif)
 
