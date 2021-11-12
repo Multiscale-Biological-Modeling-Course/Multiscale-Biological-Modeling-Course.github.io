@@ -19,7 +19,7 @@ We can therefore model the random movements of a particle by **random walk** in 
 
 Let's generate an animation of a particle following a random walk. The video below shows a randomly walking particle, shown in red, taking 1000 steps.
 
-[![image-center](../assets/images/600px/alan_turing_npg_cc.jpg){: .align-center}](../assets/random_walk_1.mp4)
+[![image-center](../assets/images/600px/alan_turing_npg_cc.jpg){: .align-center}](../assets/0diffusion_movie.gif)
 
 <center>
 <iframe width="640" height="360" src="../assets/random_walk_1.mp4" frameborder="0" allowfullscreen></iframe>
