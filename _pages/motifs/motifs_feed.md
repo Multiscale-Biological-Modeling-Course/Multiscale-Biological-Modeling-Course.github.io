@@ -10,7 +10,7 @@ image: "../assets/images/repressilator_graph.PNG"
 
 ## Feedforward loops
 
-In the previous section, we saw that negative autoregulation can be used to speed up the response time of a protein to an external stimulus. The catch is that negative autoregulation can only be used if the protein is itself a transcription factor. Only about 300 out of 4,400 total *E. coli* proteins are transcription factors[^tfNumber]. Is there a simple way of speeding up a cell's ability to manufacture a protein if that protein is not a transcription factor?
+In the previous lesson, we saw that negative autoregulation can be used to speed up the response time of a protein to an external stimulus. The catch is that negative autoregulation can only be used if the protein is itself a transcription factor. Only about 300 out of 4,400 total *E. coli* proteins are transcription factors[^tfNumber]. Is there a simple way of speeding up a cell's ability to manufacture a protein if that protein is not a transcription factor?
 
 The answer will lie in another small network motif called the **feedforward loop** (**FFL**). The FFL motif, shown in the figure below, is a network substructure in which *X* is connected to both *Y* and *Z*, and *Y* is connected to *Z*. In this sense, calling the FFL motif a "loop" is a misnomer. Rather, it is a small structure in which there are two "paths" from *X* to *Z*; one via direct regulation of *Z* by *X*, and another in which there is an intermediate transcription factor *Y*. This is why this motif is called *feedforward* rather than *feedback*.
 
