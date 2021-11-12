@@ -75,6 +75,8 @@ For some parameter values, our reaction-diffusion system is not particularly int
 
 On the other hand, if *f* is too high, then there will be an increase in the concentration of *A* particles. However, there will also be more interactions between *A* particles and pairs of *B* particles, and so we will see an explosion in the number of predators. The following simulation has the parameters *f* = 1,000,000 and *k* = 100,000.
 
+[![image-center](../assets/images/600px/predator_prey_f1e6_d1e5.png){: .align-center}](../assets/images/predator_prey_f1e6_d1e5.gif)
+
 <center>
 <iframe width="750" height="360" src="../assets/mert_f1e6_d1e5.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
