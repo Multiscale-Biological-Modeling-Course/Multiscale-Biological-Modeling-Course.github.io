@@ -10,15 +10,15 @@ gallery:
   - url: ../assets/images/600px/Iris_setosa_2.jpg
     image_path: ../assets/images/Iris_setosa_2.jpg
     alt: "Iris setosa"
-    title: "*Iris setosa*."
+    title: "Iris setosa."
   - url: ../assets/images/600px/Iris_versicolor.jpg
     image_path: ../assets/images/Iris_versicolor.jpg
     alt: "Iris versicolor"
-    title: "*Iris versicolor*."
+    title: "Iris versicolor."
   - url: ../assets/images/600px/Iris_virginica.jpg
     image_path: ../assets/images/Iris_virginica.jpg
     alt: "Iris virginica"
-    title: "*Iris virginica*."
+    title: "Iris virginica."
 ---
 
 ## The classification problem
