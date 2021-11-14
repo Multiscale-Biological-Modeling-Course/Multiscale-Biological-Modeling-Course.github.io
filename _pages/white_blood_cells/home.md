@@ -6,6 +6,19 @@ sidebar:
  nav: "white_blood_cells"
 image: "../assets/images/cellorg_pca_graph_cell.png"
 author_profile: true # add author to page
+gallery:
+  - url: ../assets/images/600px/neutrophil.png
+    image_path: ../assets/images/neutrophil.png
+    alt: "Neutrophil"
+    title: "An image of a neutrophil."
+  - url: ../assets/images/600px/monocyte.png
+    image_path: ../assets/images/monocyte.png
+    alt: "Monocyte"
+    title: "An image of a monocyte."
+  - url: ../assets/images/600px/lymphocyte.png
+    image_path: ../assets/images/lymphocyte.png
+    alt: "Lymphocyte"
+    title: "An image of a lymphocyte."
 ---
 
 <span style="font-size:larger;">by Phillip Compeau (software tutorials by Nicole Matamala)</span>
@@ -28,6 +41,8 @@ WBCs divide into families based on their structure and function, and some diseas
 We will work with a <a href="https://github.com/Shenggan/BCCD_Dataset" target="_blank">publicly available dataset</a> containing blood cell images that depict both RBCs and WBCs, as shown in the figure below. The cells have been applied with a stain in which a red-orange dye bonds to hemoglobin and a blue dye bonds to DNA and RNA. Because RBCs have no cell nucleus, the stain will cause the WBC nuclei to appear as purple.
 
 The figure below also illustrates the three main families of WBCs: **granulocytes**, **lymphocytes**, and **monocytes**.  Granulocytes have a **multilobular nucleus**, which consists of several round “lobes” that are linked by thin strands of nuclear material. Monocyte and lymphocyte nuclei only have a single lobe, but the shapes of the nuclei are quite different: lymphocyte nuclei tend to have a more rounded shape (taking up a greater fraction of the cell’s volume), whereas monocyte nuclei have a more irregular shape.
+
+{% include gallery caption="Three images from the blood cell image dataset showing three types of WBCs. (Left) A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family. (Center) A monocyte with a single, irregularly-shaped nucleus. (Right) A lymphocyte with a round nucleus. (In our dataset, these cells correspond to image IDs 3, 15, and 20, respectively.)" %}
 
 | Granulocyte | Monocyte | Lymphocyte |
 :-------------------------:|:-------------------------:|:-------------------------:
