@@ -6,6 +6,19 @@ sidebar:
 toc: true
 toc_sticky: true
 image: "../assets/images/cellorg_pca_graph_cell.png"
+gallery:
+  - url: ../assets/images/600px/Iris_setosa_2.jpg
+    image_path: ../assets/images/Iris_setosa_2.jpg
+    alt: "Iris setosa"
+    title: "*Iris setosa*."
+  - url: ../assets/images/600px/Iris_versicolor.jpg
+    image_path: ../assets/images/Iris_versicolor.jpg
+    alt: "Iris versicolor"
+    title: "*Iris versicolor*."
+  - url: ../assets/images/600px/Iris_virginica.jpg
+    image_path: ../assets/images/Iris_virginica.jpg
+    alt: "Iris virginica"
+    title: "*Iris virginica*."
 ---
 
 ## The classification problem
@@ -17,6 +30,8 @@ In our ongoing example, the data are images of WBCs, and the classes are the thr
 ## The iris flower data set
 
 A classical dataset commonly used for motivating classification is the **iris flower data set**, which Ronald Fisher used in a seminal paper on classification in 1936[^Fisher1936], and which had been compiled by Edgar Anderson[^Anderson1935][^Anderson1936]. Anderson collected 150 iris flowers, equally divided among three species, which are illustrated in the figure below.
+
+{% include gallery caption="Representative images of the three species of iris included in Anderson's iris flower data set. Image courtesies, from left to right: Emma Forsberg, unknown author, Robert H. Mohlenbrock." %}
 
 | *Iris setosa* | *Iris versicolor* | *Iris virginica* |
 :-------------------------:|:-------------------------:|:-------------------------:
