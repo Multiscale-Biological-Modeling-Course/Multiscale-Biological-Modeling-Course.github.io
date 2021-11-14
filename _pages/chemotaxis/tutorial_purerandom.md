@@ -238,7 +238,7 @@ ax.set_ylabel("poisiton in um")
 plt.show()
 ~~~
 
-<span style="color:red">**STOP:**</span> Run the notebook. What do you observe? Are the cells moving up the gradient? Is this a good strategy for a bacterium to use to search for food?
+**STOP:** Run the notebook. What do you observe? Are the cells moving up the gradient? Is this a good strategy for a bacterium to use to search for food?
 {: .notice--primary}
 
 ## Quantifying the performance of our search algorithm
@@ -295,7 +295,7 @@ ax.legend(loc='upper right')
 ax.grid()
 ~~~
 
-<span style="color:red">**STOP:**</span> Before visualizing the average distances at each time step, what do you expect the average distance to the goal to be?
+**STOP:** Before visualizing the average distances at each time step, what do you expect the average distance to the goal to be?
 {: .notice--primary}
 
 Now, run the notebook. The colored line indicates average distance of the 500 cells; the shaded area corresponds to one standard deviation from the mean; and the grey dashed line corresponds to a maximum ligand concentration of 10<sup>8</sup>.

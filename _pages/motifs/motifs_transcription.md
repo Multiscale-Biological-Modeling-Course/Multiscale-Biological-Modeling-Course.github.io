@@ -72,7 +72,7 @@ You may also like to check out the following excellent video on identifying gene
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/voEDurUgz_4" frameborder="0" allowfullscreen></iframe>
 
-<span style="color:red">**STOP:**</span> How do you think that researchers could measure whether a transcription factor activates or inhibits a given gene?
+**STOP:** How do you think that researchers could measure whether a transcription factor activates or inhibits a given gene?
 {: .notice--primary}
 
 ## Organizing transcription factor information

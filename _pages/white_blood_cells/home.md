@@ -29,7 +29,7 @@ The classic device for counting blood cells is the **hemocytometer**. As illustr
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/pP0xERLUhyc#t=1m24s" frameborder="0" allowfullscreen></iframe>
 
-<span style="color:red">**STOP:**</span> Why might the size of the blood sample influence the estimate of blood cell count?
+**STOP:** Why might the size of the blood sample influence the estimate of blood cell count?
 {: .notice--primary}
 
 You would not be wrong if you think that the hemocytometer seems old-fashioned; it was invented by Louis-Charles Malassez 150 years ago. In an attempt to reduce the human error inherent in using a hemocytometer, what if we train a computer to count blood cells for us?

@@ -53,7 +53,7 @@ Anderson measured four attributes, or **features**, of each of the flowers in hi
 A table containing the four features and the correct species label for twelve members of the iris flower data set. The complete dataset can be downloaded [here](../downloads/iris.csv) and was accessed from the <a target="_blank" href="https://archive.ics.uci.edu/ml/datasets/iris">University of California, Irvine Machine Learning Repository</a>].
 {: style="font-size: medium;"}
 
-<span style="color:red">**STOP:**</span> What characteristics do flowers from each species tend to share in terms of the four features in the table above?
+**STOP:** What characteristics do flowers from each species tend to share in terms of the four features in the table above?
 {: .notice--primary}
 
 ## From flowers to vectors
@@ -72,7 +72,7 @@ If we were to use all four features for the iris dataset, then every flower woul
 
 For the iris dataset, recall our observation that data points were more likely to belong to the same class if they were nearby. Our hope is that this is true for other datasets, that elements from the same class will have feature vectors that are close in *n*-dimensional space. If so, we can classify a data point whose class is *unknown* by determining which data points with *known* classification it is near.
 
-<span style="color:red">**STOP:**</span> Consider the point with unknown class (gray) in the figure below. Should it be assigned to the class of the green points or to the class of the blue points? Why?
+**STOP:** Consider the point with unknown class (gray) in the figure below. Should it be assigned to the class of the green points or to the class of the blue points? Why?
 {: .notice--primary}
 
 [![image-center](../assets/images/600px/knn_neighborhood.png){: .align-center}](../assets/images/knn_neighborhood.png)
@@ -95,7 +95,7 @@ However, with the same data and *k* equal to 3 or 4, the figure below shows that
 When using k-NN with *k* equal to 4, we consider the four nearest points when classifying the unknown point, which will therefore receive the green class.
 {: style="font-size: medium;"}
 
-<span style="color:red">**STOP:**</span> When *k* = 2 or *k* = 6 for the above figure, note that we obtain a tie in the number of points from each known class belonging to the *k* nearest neighbors of a point with unknown class. How could we break ties in k-NN?
+**STOP:** When *k* = 2 or *k* = 6 for the above figure, note that we obtain a tie in the number of points from each known class belonging to the *k* nearest neighbors of a point with unknown class. How could we break ties in k-NN?
 {: .notice--primary}
 
 In the more general case in which feature vectors have length *n*, we can determine which points are nearest to a given point by using the **Euclidean distance**, which generalizes the distance between two points in two-dimensional space to vectors in *n*-dimensional space. Say that we have the vectors **x** = (*x*<sub>1</sub>, *x*<sub>2</sub>, ..., *x*<sub>*n*</sub>) and **y** = (*y*<sub>1</sub>, *y*<sub>2</sub>, ..., *y*<sub>*n*</sub>). Then the Euclidean distance between them is given by the sum of squares of differences between corresponding vector elements:

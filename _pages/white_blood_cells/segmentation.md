@@ -60,7 +60,7 @@ A collection of colors along with their RGB codes. Note that this table correspo
 
 The RGB model gives us an idea for finding a WBC nucleus. If we scan through the pixels in a blood cell image, we can “turn off” any pixels whose RGB color values are not sufficiently purple.
 
-<span style="color:red">**STOP:**</span> You can find a color picker in `Utilities > Digital Color Meter` (Mac OS X) or by using <a href="https://getsharex.com" target="_blank">ShareX</a> (Windows). Open your color picker, and hover the picker over different parts of the the granulocyte image above. What are the typical RGB values for the WBC nucleus, and how do these RGB values differ from both the RBCs and the background of the image?
+**STOP:** You can find a color picker in `Utilities > Digital Color Meter` (Mac OS X) or by using <a href="https://getsharex.com" target="_blank">ShareX</a> (Windows). Open your color picker, and hover the picker over different parts of the the granulocyte image above. What are the typical RGB values for the WBC nucleus, and how do these RGB values differ from both the RBCs and the background of the image?
 {: .notice--primary}
 
 ## Binarizing an image based on a color threshold
@@ -74,7 +74,7 @@ The binarized version of the above cellular image for the threshold value of 153
 A binarized version of the granulocyte from the previous figure (having image ID 3 in our dataset). A pixel is colored white if it has a blue value of 153 or greater, and the pixel is colored black otherwise. The region with the nucleus is shown in white but is not clearly visible because much of the background of the image, which is very light, also has a high blue value (remember that mixing all three colors in equal proportions yields white).
 {: style="font-size: medium;"}
 
-<span style="color:red">**STOP:**</span> How might we modify our segmentation approach to perform a binarization that identifies the WBC nucleus more effectively?
+**STOP:** How might we modify our segmentation approach to perform a binarization that identifies the WBC nucleus more effectively?
 {: .notice--primary}
 
 We were unable to distinguish between the image background and the WBC nucleus using only blue, but a color picker will verify that nuclear pixels have a green content that is much lower than the background and a red content that is lower than every other part of the image. The binarizations of the original image using a green threshold of 153 and a red threshold of 166 are shown in the figure below.
@@ -98,7 +98,7 @@ This is not to say that our segmentation pipeline is perfect. The figure below i
 
 {% include gallery id="gallery3" caption="(Left) An image of a WBC (ID: 167). (Right) The binarization of this image, showing that the nucleus is not correctly identified during segmentation using the parameters from the tutorial." %}
 
-<span style="color:red">**STOP:**</span> Play around with the threshold parameters for red, green, and blue values from the tutorial. Can you find a better choice of parameters? How should we quantify whether one collection of parameters is better than another?
+**STOP:** Play around with the threshold parameters for red, green, and blue values from the tutorial. Can you find a better choice of parameters? How should we quantify whether one collection of parameters is better than another?
 {: .notice--primary}
 
 We can continue to tweak threshold parameters, but our relatively simple algorithm has successfully segmented most of the WBC nuclei from our dataset. We are ready to move on to our second goal of classifying WBC nuclei into families according to their shape.

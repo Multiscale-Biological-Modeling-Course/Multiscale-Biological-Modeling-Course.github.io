@@ -69,7 +69,7 @@ for freq_i in range(len(run_time_expected_all)):
 plt.show()
 ~~~
 
-<span style="color:red">**STOP:**</span> Run the code blocks for simulating the random walks and plotting the outcome. Are the cells moving up the gradient? How do the shapes of the trajectories differ for different tumbling frequencies? What value of the average tumbling frequency do you think is best?
+**STOP:** Run the code blocks for simulating the random walks and plotting the outcome. Are the cells moving up the gradient? How do the shapes of the trajectories differ for different tumbling frequencies? What value of the average tumbling frequency do you think is best?
 {: .notice--primary}
 
 ## Comparing tumbling frequencies over many cells
@@ -128,7 +128,7 @@ ax.legend(loc='lower left', ncol = 1)
 ax.grid()
 ~~~
 
-<span style="color:red">**STOP:**</span> Run the code blocks we have provided, simulating the random walks and plotting the average distance to the goal over time for each tumbling frequency. Is there any difference in the performance of the search algorithm for different tumbling frequencies? For each frequency, how long does it take the cell to "reach" the goal? And can we conclude that one tumbling frequency is better than the others?
+**STOP:** Run the code blocks we have provided, simulating the random walks and plotting the average distance to the goal over time for each tumbling frequency. Is there any difference in the performance of the search algorithm for different tumbling frequencies? For each frequency, how long does it take the cell to "reach" the goal? And can we conclude that one tumbling frequency is better than the others?
 {: .notice--primary}
 
 As we return to the main text, we interpret the results of this final tutorial. It turns out that there are significant differences in our chemotaxis algorithm's ability to find (and remain at) the goal for differing default tumbling frequencies. It hopefully will not surprise you to learn that the frequency that evolution has bestowed upon *E. coli* turns out to be optimal.

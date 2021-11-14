@@ -24,7 +24,7 @@ Furthermore, recall that every edge of a transcription factor network is assigne
 
 Among the 42 total FFLs in the *E. coli* transcription factor network, five of them have the structure below, in which the edges connecting *X* to *Y* and *X* to *Z* are assigned a "+" and the edge connecting *Y* to *Z* is assigned a "-". This specific form of the FFL motif is  called a **type-1 incoherent feedforward loop**. This form of the FFL will be our focus for the rest of the module.
 
-<span style="color:red">**STOP:**</span> How could we simulate a feedforward loop with chemical reactions akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
+**STOP:** How could we simulate a feedforward loop with chemical reactions akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
 {: .notice--primary}
 
 [![image-center](../assets/images/600px/type-1_incoherent_feed-forward_loop.png){: .align-center}](../assets/images/type-1_incoherent_feed-forward_loop.png)

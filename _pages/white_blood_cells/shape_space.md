@@ -60,17 +60,14 @@ On the one hand, we could have very dissimilar shapes with low RMSD, such as tho
 A circle inscribed within a square. Sampling of the four points where the shapes intersect will give a flawed estimate of zero for RMSD.
 {: style="font-size: medium;"}
 
-On the other hand,
+On the other hand, we could have very similar shapes whose RMSD winds up being high. For example, recall the shapes in the figure below, which are identical, but one has been flipped and rotated. If we were to vectorize these shapes as they are now in the same way (say, by starting at the top of the shape and proceeding clockwise), then we would obtain two vectors with high RMSD.
 
+[![image-center](../assets/images/600px/two_shapes.png){: .align-center}](../assets/images/two_shapes.png)
+{: style="font-size: medium;"}
 
+We handled this issue in our work on protein structure comparison by introducing the Kabsch algorithm, which identified the best rotation of one shape into another that would minimize the RMSD of the resulting vectors.
 
-
-
-* Show identical shapes that would have higher RMSD/Euclidean distances
-
-
-
-* The 2nd issue is trickier. We handled it in the protein structure discussion with Kabsch algorithm, which identified the best rotation of one shape into another that would minimize the RMSD of the resulting vectors.
+And yet what
 
 * But the issue is that we don't have 2 images. We have hundreds! The best rotation of a shape when aligning against one shape may not be the same as its rotation against another shape.
 
@@ -93,12 +90,7 @@ On the other hand,
 
 ## Notes to self
 
-* Shape differences is what drives our analysis -- need to hammer home this point
-
 * Can the default value of n = 1000 sampled points for nuclear images be changed?
-
-
-We then used the Kabsch algorithm to compute a distance between two points so that  identify the rotation of one of the two protein structure that
 
 
 [^apes]: Your author has not either.

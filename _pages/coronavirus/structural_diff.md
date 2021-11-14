@@ -35,7 +35,7 @@ The first location is our region of interest from the previous lesson and is fou
 
 Structural differences are challenging to show with a 2-D image, but if you followed the preceding tutorial, then we encourage you to use VMD to view the 3-D representation of the protein. Instructions on how to rotate a molecule and zoom in and out within VMD were given in our [tutorial on finding local protein differences](tutorial_multiseq).
 
-<span style="color:red">**STOP:**</span> See if you can identify the major structural difference between the proteins in the figure below. Hint: look at the yellow residue.
+**STOP:** See if you can identify the major structural difference between the proteins in the figure below. Hint: look at the yellow residue.
 {: .notice--primary}
 
 [![image-center](../assets/images/600px/Ridge.png){: .align-center}](../assets/images/Ridge.png)
@@ -52,7 +52,7 @@ Although the interaction with the hydrophobic pocket is the most critical differ
 
 **Hotspot 31** is not a failed Los Angeles nightclub but rather another site of notable conformational differences between SARS-CoV-2 and SARS-CoV, which was previously studied in SARS-CoV as early as 2008[^Li][^Wu]. This location earns its name because it involves a "salt bridge", or a combination of hydrogen and ionic bonding between two amino acids, that takes place between Lys31 and Glu35. Hotspot 31 is colored red in the figure below.
 
-<span style="color:red">**STOP:**</span> Again, see if you can spot the differences between SARS-CoV-2 and SARS-CoV.
+**STOP:** Again, see if you can spot the differences between SARS-CoV-2 and SARS-CoV.
 {: .notice--primary}
 
 [![image-center](../assets/images/600px/Hotspot31.png){: .align-center}](../assets/images/Hotspot31.png)

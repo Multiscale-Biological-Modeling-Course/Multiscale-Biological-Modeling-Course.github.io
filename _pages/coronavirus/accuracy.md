@@ -20,7 +20,7 @@ In this lesson, we will compare our predicted results from the previous lesson t
 
 Ultimately, the problem of comparing protein structures is intrinsically similar to the comparison of two shapes, a problem that we will discuss first.
 
-<span style="color:red">**STOP:**</span> Consider the two shapes in the figure below. How similar are they?
+**STOP:** Consider the two shapes in the figure below. How similar are they?
 {: .notice--primary}
 
 [![image-center](../assets/images/600px/two_shapes.png){: .align-center}](../assets/images/two_shapes.png)
@@ -56,7 +56,7 @@ y_S & = \dfrac{\int_{0}^{\pi}{\sin{\theta}}}{\pi} \\
 & = \dfrac{2}{\pi}
 \end{align*}$$
 
-<span style="color:red">**STOP:**</span> Say that we connect (-1, 0) and (0, 1) to form a closed semicircle. What will be the centroid of the resulting shape?
+**STOP:** Say that we connect (-1, 0) and (0, 1) to form a closed semicircle. What will be the centroid of the resulting shape?
 {: .notice--primary}
 
 The centroid of some shapes, like the semicircular arc in the preceding example, can be determined mathematically. But for irregular shapes, we can estimate the centroid of *S* by sampling *n* points from the boundary of the shape and taking the point whose coordinates are the average of the *x* and *y* coordinates of points on the boundary.
@@ -87,7 +87,7 @@ $$\begin{align*}
 & = \dfrac{3}{2}
 \end{align*}$$
 
-<span style="color:red">**STOP:**</span> Do you see any issues with using RMSD to compare two shapes?
+**STOP:** Do you see any issues with using RMSD to compare two shapes?
 {: .notice--primary}
 
 Even if we assume that the shapes have already been overlapped and rotated appropriately, we still need to make sure that we sample enough points to give a good approximation of how different the shapes are.  For an extreme example, consider a circle inscribed within a square, as shown in the figure below. If we happened to sample only the four points indicated, we would sample the same points in each shape, and conclude that the RMSD between these two shapes is zero.  This issue is easily resolved by making sure to sample enough points to avoid approximation errors.
@@ -102,7 +102,7 @@ However, all this has left open the fact that we assumed that we had rotated *S*
 
 The Kabsch algorithm offers a compelling way to determine the similarity of two protein structures. We can convert a protein containing *n* amino acids into a vector of length *n* by selecting a single representative point from each amino acid. To do so, scientists typically choose the alpha carbon, the amino acid's centrally located carbon atom that lies on the peptide's backbone; the position of this atom will already be present in the `.pdb` file for a given structure.
 
-<span style="color:red">**STOP:**</span> Can you think of example where a small difference between protein structures can cause a large inflation in RMSD score?
+**STOP:** Can you think of example where a small difference between protein structures can cause a large inflation in RMSD score?
 {: .notice--primary}
 
 Unfortunately, no perfect metric for shape comparison exists. To see why the Kabsch algorithm can be flawed, consider the figure below showing two toy protein structures. The orange structure (*S*) is identical to the blue structure (*T*) except for the change in a single bond angle between the third and fourth amino acids. And yet this tiny change in the protein's structure causes a significant increase in *d*(*s*<sub><em>i</em></sub>, *t*<sub><em>i</em></sub>) for every *i* greater than 3, which inflates the RMSD.
@@ -190,7 +190,7 @@ From the scores, we can see that model SWISS1 performed the best. Even though th
 |Robetta4| 2.5852|
 |Robetta5| 12.0975|
 
-<span style="color:red">**STOP:**</span> Which do you think performed more accurately on our predictions: SWISS-MODEL or Robetta?
+**STOP:** Which do you think performed more accurately on our predictions: SWISS-MODEL or Robetta?
 {: .notice--primary}
 
 Most of the Robetta models for a single chain beat the SWISS-Model predictions for the entire protein. This makes it difficult to say at the moment which resource has performed better.
@@ -207,7 +207,7 @@ As explained above, the SSGCID models of the S protein released by <a href="http
 |SSGCID4|2.0854|2.047|
 |SSGCID5|4.9636|4.6443|
 
-<span style="color:red">**STOP:**</span> Consider the following two questions.<br><br>
+**STOP:** Consider the following two questions.<br><br>
 First, note that SSGCID3 modeled a single chain more accurately, but SSGCID4 modeled a more accurate full protein. What do you think might have caused this?<br><br>
 Second, why do you think that the full protein RMSD values are so close to the single chain values?
 {: .notice--primary}

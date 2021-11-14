@@ -20,7 +20,7 @@ At any point (*x*, *y*), there is some concentration *L*(*x*, *y*) of ligand; fu
 
 The concentration of ligands *L*(*x*, *y*) is maximized at the goal and decreases exponentially the farther we travel from it. To represent this, we set *L*(*x*, *y*) = 100 · 10<sup>6 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal, which in this case is 1500√2 ≈ 2121 µm.
 
-<span style="color:red">**STOP:**</span> How can we quantify how well a bacterium has done at finding the attractant?
+**STOP:** How can we quantify how well a bacterium has done at finding the attractant?
 {: .notice--primary}
 
 For each of our two strategies, we will simulate many random walks of a given bacterium throughout this space, where each each simulation lasts some fixed time. (The total time needed by our simulation should be large enough to allow the bacterium to have enough time to reach the goal.) To compare the two strategies, we will then measure how far *on average* a bacterium with each strategy is from the goal at the end of the simulation.
@@ -57,7 +57,7 @@ Unfortunately, there are two issues with this formula. First, if Δ[*L*] is less
 
 To prevent the run duration from being negative, we will first take the maximum of *t*<sub>0</sub> * (1 + 10 · Δ[*L*]) and some small positive number (we will use 0.000001). We will then take the minimum of the resulting value and 4 · *t*<sub>0</sub> to prevent the run length from being too large. This resulting value becomes the mean run length of a bacterium based on the recent relative change in concentration given its previous two points.
 
-<span style="color:red">**STOP:**</span> What is the mean run duration when Δ[*L*] is equal to zero? Is this what we would hope? You may assume that *t*<sub>0</sub> is much larger than 0.000001.
+**STOP:** What is the mean run duration when Δ[*L*] is equal to zero? Is this what we would hope? You may assume that *t*<sub>0</sub> is much larger than 0.000001.
 {: .notice--primary}
 
 As with the first strategy, our simulated cell will alternate between tumbling and running until the total time devoted to the simulation has been consumed. The only difference is that we will measure the percentage change in concentration Δ[*L*] between a cell's current point and its previous point every *t*<sub>response</sub> seconds. After determining a mean run time *t*(Δ[*L*]), we will sample a random number *p* from an exponential distribution with this mean run time, and the cell will tumble after *p* seconds only if *p* is smaller than *t*<sub>response</sub>.

@@ -129,7 +129,7 @@ and solving for *x* gives us that
 
 *x* = ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>.
 
-<span style="color:red">**STOP:**</span> Use a similar argument to show that the units of the dissociation constant *k*<sub>dissociate</sub> should be s<sup>-1</sup>.
+**STOP:** Use a similar argument to show that the units of the dissociation constant *k*<sub>dissociate</sub> should be s<sup>-1</sup>.
 {: .notice--primary}
 
 ## Steady state ligand-receptor concentrations for an experimentally verified example

@@ -20,7 +20,7 @@ We first need to argue rigorously that a loop is indeed a motif within a transcr
 
 A seminal biological example of this paradigm is the search tool [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi), which allows researchers to compare a query against a database (e.g., comparing the DNA sequence of a newly sequenced gene against a collection of many known proteins). Once BLAST finds a "hit" in which the query occurs with slight modifications within the database, it asks, "What is the *probability* that we would find a hit of the same quality of the query against a randomly generated 'decoy' database?" If this probability is low, then we can feel confident that the hit is statistically significant.
 
-<span style="color:red">**STOP:**</span> How can we apply this paradigm to determine whether a transcription factor network contains a significant number of loops?
+**STOP:** How can we apply this paradigm to determine whether a transcription factor network contains a significant number of loops?
 {: .notice--primary}
 
 ## Comparing a real transcription factor network against a random network
@@ -29,7 +29,7 @@ To determine whether the number of loops in the transcription factor network of 
 
 There are multiple ways to generate a random network, but we will use an approach developed by Edgar Gilbert in 1959[^Gilbert]. Given an integer *n* and a probability *p* (between 0 and 1), we first form *n* nodes; then, for every possible pair of nodes *X* and *Y*, we connect *X* to *Y* via a directed edge with probability *p*.
 
-<span style="color:red">**STOP:**</span> What should *n* and *p* be if we are generating a random network to compare against the *E. coli* transcription factor network?
+**STOP:** What should *n* and *p* be if we are generating a random network to compare against the *E. coli* transcription factor network?
 {: .notice--primary}
 
 The full *E. coli* transcription factor network contains thousands of genes, most of which are not transcription factors. As a result, the approach described above may form a random network that connects non-transcription factors to other nodes, which we should avoid.
