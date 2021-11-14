@@ -72,16 +72,6 @@ We were unable to distinguish between the image background and the WBC nucleus u
 
 {% include gallery caption="Two more binarized versions of the neutrophil image from the figure above (left), based on the green and red channels. For both of these colors, the WBC nucleus tends to have lower values than other parts of the original image. (Left) A binarization in which a pixel is turned white if it has a green value less than or equal to 153. (Right) A binarization in which a pixel is turned white if it has a red value less than or equal to 166." %}
 
-<table>
-<tr>
-    <td><img src="../assets/images/neutrophil_binarized_green.png"></td>
-    <td><img src="../assets/images/neutrophil_binarized_red.png"></td>
-</tr>
-</table>
-
-Two more binarized versions of the neutrophil image from the figure above (left), based on the green and red channels. For both of these colors, the WBC nucleus tends to have lower values than other parts of the original image. (Left) A binarization in which a pixel is turned white if it has a green value less than or equal to 153. (Right) A binarization in which a pixel is turned white if it has a red value less than or equal to 166.
-{: style="font-size: medium;"}
-
 It would seem that we should work with the binarized image based on the red threshold, which contains the clearest image of the nucleus among the three binarized images. However, each threshold was successful in eliminating non-nuclear parts of the image. For example, note the white blob in the top left of the binarized image based on the red threshold. Although this image did not exclude this area, the binarized image based on blue was successful in doing so; this same region is black in the preceding figure.
 
 This insight gives us an idea: if each of the three images is successful at excluding some part of the image, then let us produce a fourth image such that a pixel is white if it is white in all three binarized images. In the following tutorial, we will build an R pipeline that implements this approach to produce binarized WBC nuclei for all our blood cell images.
@@ -94,16 +84,6 @@ This insight gives us an idea: if each of the three images is successful at excl
 If you followed the above tutorial, then you may be tempted to celebrate, since it seems that we have resolved our first main objective of identifying WBCs. Indeed, if we segment all of the images in the dataset via the same process, then we typically obtain a nice result, as indicated in the figure below for the sample monocyte and lymphocyte images presented in the [introduction](home). Even though these images have been binarized, the large irregular shape of the monocyte nucleus and the small round shape of the lymphocyte nucleus are still visible.
 
 {% include gallery id="gallery2" caption="Image segmentation of the monocyte (left) and lymphocyte (right) corresponding to IDs 15 and 20 in the provided dataset." %}
-
-<table>
-<tr>
-    <td><img src="../assets/images/monocyte_binarized.png"></td>
-    <td><img src="../assets/images/lymphocyte_binarized.png"></td>
-</tr>
-</table>
-
-Image segmentation of the monocyte (left) and lymphocyte (right) corresponding to IDs 15 and 20 in the provided dataset.
-{: style="font-size: medium;"}
 
 This is not to say that our segmentation pipeline is perfect. The figure below illustrates that for a few images in our dataset, we may not correctly parse out the entire nucleus.
 
