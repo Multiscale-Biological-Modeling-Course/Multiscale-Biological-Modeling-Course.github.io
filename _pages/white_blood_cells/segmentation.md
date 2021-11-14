@@ -6,6 +6,24 @@ sidebar:
 toc: true
 toc_sticky: true
 image: "../assets/images/cellorg_pca_graph_cell.png"
+gallery:
+  - url: ../assets/images/600px/neutrophil_binarized_green.png
+    image_path: ../assets/images/neutrophil_binarized_green.png
+    alt: "Neutrophil"
+    title: "A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family."
+  - url: ../assets/images/600px/neutrophil_binarized_red.png
+    image_path: ../assets/images/neutrophil_binarized_red.png
+    alt: "Monocyte"
+    title: "A monocyte with a single, irregularly-shaped nucleus."
+gallery:
+  - url: ../assets/images/600px/neutrophil.png
+    image_path: ../assets/images/neutrophil.png
+    alt: "Binarized neutrophil based on green color channel"
+    title: "A binarization in which a pixel is turned white if it has a green value less than or equal to 153."
+  - url: ../assets/images/600px/monocyte.png
+    image_path: ../assets/images/monocyte.png
+    alt: "Binarized neutrophil based on red color channel"
+    title: "A binarization in which a pixel is turned white if it has a red value less than or equal to 166."
 ---
 
 ## Cellular image segmentation requires a tailored approach
@@ -44,8 +62,6 @@ The binarized version of the above cellular image for the threshold value of 153
 
 [![image-center](../assets/images/600px/neutrophil_binarized_blue.png){: .align-center width="300px"}](../assets/images/neutrophil_binarized_blue.png)
 
-<center><img src="../assets/images/neutrophil_binarized_blue.png" width="300"></center>
-
 A binarized version of the granulocyte from the previous figure (having image ID 3 in our dataset). A pixel is colored white if it has a blue value of 153 or greater, and the pixel is colored black otherwise. The region with the nucleus is shown in white but is not clearly visible because much of the background of the image, which is very light, also has a high blue value (remember that mixing all three colors in equal proportions yields white).
 {: style="font-size: medium;"}
 
@@ -53,6 +69,8 @@ A binarized version of the granulocyte from the previous figure (having image ID
 {: .notice--primary}
 
 We were unable to distinguish between the image background and the WBC nucleus using only blue, but a color picker will verify that nuclear pixels have a green content that is much lower than the background and a red content that is lower than every other part of the image. The binarizations of the original image using a green threshold of 153 and a red threshold of 166 are shown in the figure below.
+
+{% include gallery caption="Two more binarized versions of the neutrophil image from the figure above (left), based on the green and red channels. For both of these colors, the WBC nucleus tends to have lower values than other parts of the original image. (Left) A binarization in which a pixel is turned white if it has a green value less than or equal to 153. (Right) A binarization in which a pixel is turned white if it has a red value less than or equal to 166." %}
 
 <table>
 <tr>
@@ -63,6 +81,8 @@ We were unable to distinguish between the image background and the WBC nucleus u
 
 Two more binarized versions of the neutrophil image from the figure above (left), based on the green and red channels. For both of these colors, the WBC nucleus tends to have lower values than other parts of the original image. (Left) A binarization in which a pixel is turned white if it has a green value less than or equal to 153. (Right) A binarization in which a pixel is turned white if it has a red value less than or equal to 166.
 {: style="font-size: medium;"}
+
+{% include gallery caption="Two more binarized versions of the neutrophil image from the figure above (left), based on the green and red channels. For both of these colors, the WBC nucleus tends to have lower values than other parts of the original image. (Left) A binarization in which a pixel is turned white if it has a green value less than or equal to 153. (Right) A binarization in which a pixel is turned white if it has a red value less than or equal to 166." %}
 
 It would seem that we should work with the binarized image based on the red threshold, which contains the clearest image of the nucleus among the three binarized images. However, each threshold was successful in eliminating non-nuclear parts of the image. For example, note the white blob in the top left of the binarized image based on the red threshold. Although this image did not exclude this area, the binarized image based on blue was successful in doing so; this same region is black in the preceding figure.
 
