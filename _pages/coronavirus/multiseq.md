@@ -48,7 +48,7 @@ Because we know the structures of the bound complexes, we can produce 3-D visual
 
 In the previous lesson on assessing the accuracy of a predicted structure, we introduced a metric called root mean square deviation (RMSD) for quantifying the difference between two protein structures. RMSD offered an excellent method for a *global* comparison (i.e., a comparison across all structures), but we are interested in the *local* regions where the SARS-CoV and SARS-CoV-2 complexes differ. To this end, we will need an approach that examines individual amino acids in similar protein structures.
 
-**STOP:** How could we compare individual amino acid differences of two (similar) protein structures?
+<span style="color:red">**STOP:**</span> How could we compare individual amino acid differences of two (similar) protein structures?
 {: .notice--primary}
 
 Recall the following definition of RMSD for two protein structures *s* and *t*, in which each structure is represented by the positions of its *n* alpha carbons (<em>s</em><sub>1</sub>, ..., <em>s</em><sub><em>n</em></sub>) and (<em>t</em><sub>1</sub>, ..., <em>t</em><sub><em>n</em></sub>).
@@ -81,7 +81,7 @@ Note two things in the contact maps below. First, many black values cluster arou
 The contact maps of the SARS-CoV-2 spike protein (top left), SARS-CoV spike protein (top right), single chain of the SARS-CoV-2 spike protein (bottom left), and single chain of the SARS-CoV spike protein (bottom right). If the distance between the *i*-th and *j*-th amino acids in a protein structure is 20.0 Å or less, then the (*i*, *j*)-th cell of the figure is colored black. We see that SARS-CoV-2 and SARS S proteins have very similar contact maps, indicating similar structures.
 {: style="font-size: medium;"}
 
-**STOP:** How do you think the contact map will change as we increase or lower the threshold distance?
+<span style="color:red">**STOP:**</span> How do you think the contact map will change as we increase or lower the threshold distance?
 {: .notice--primary}
 
 Consider the *i*-th row (or column) of a protein's contact map, which represents all alpha carbons that are near the *i*-th alpha carbon. We can see how two proteins differ at the *i*-th position if we look at all of this row's values. That is, if we compare all of the *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) values to all of the *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) values.

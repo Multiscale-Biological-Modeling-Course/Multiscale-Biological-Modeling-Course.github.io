@@ -189,7 +189,7 @@ Save your file.
 
 ### Comparing simple regulation and negative autoregulation
 
-**STOP:** Now that you have run the simulation comparing simple regulation and negative autoregulation, are the plots of *Y* for the two simulations what you would expect? Why or why not?
+<span style="color:red">**STOP:**</span> Now that you have run the simulation comparing simple regulation and negative autoregulation, are the plots of *Y* for the two simulations what you would expect? Why or why not?
 {: .notice--primary}
 
 If you find the outcome of the simulation in this tutorial confusion, don't be concerned. In the main text, we will interpret this outcome and see if it allows us to start making conclusions about why negative autoregulation has evolved, or if we will need to further tweak our model.

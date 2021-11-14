@@ -57,7 +57,7 @@ Note that there are four parameters relevant to our reaction-diffusion system. T
 
 You can think of all these parameters as dials we can turn, observing how the system changes on the macro level. For example, if we raise the diffusion rate, then the particles will be moving around and bouncing into each other more, which means that we will see more of the reaction *A* + 2*B* → 3*B*.
 
-**STOP:** What will happen as we increase or decrease the feed rate *f*? What about the kill rate *k*?
+<span style="color:red">**STOP:**</span> What will happen as we increase or decrease the feed rate *f*? What about the kill rate *k*?
 {: .notice--primary}
 
 A reaction like *A* + 2*B* → 3*B* is typically thought of as occurring at a **bulk reaction rate**, which is the total number of reactions occurring as a function of the concentration of reactants. In the following tutorial, CellBlender uses the software **MCell** to simulate our reaction-diffusion model; MCell is built upon some advanced probabilistic methods that allow it to use the bulk reaction rate to determine the probability that a reaction will happen if the particles needed as reactants collide. The same goes for the feed and kill reactions; new *A* particles are formed, and old *B* particles are destroyed, via probabilities that are computed from reaction rates. For now, you can think of the rate of a reaction as directly related to its probability of occurring.

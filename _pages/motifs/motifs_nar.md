@@ -28,7 +28,7 @@ To model the degradation of a protein, we add a "kill" reaction that removes *Y*
 
 Diffusion of the *X* and *Y* particles is not necessary because there is no reaction in which more than one particle interacts, but we will allow both *X* and *Y* particles to diffuse through the system at the same rate.
 
-**STOP:** What chemical reaction could be used to add negative autoregulation of *Y* to this simulation?
+<span style="color:red">**STOP:**</span> What chemical reaction could be used to add negative autoregulation of *Y* to this simulation?
 {: .notice--primary}
 
 We now will simulate the second cell, which will inherit the reactions for the first cell while incorporating adding negative autoregulation of *Y*. We will do so using the reaction 2*Y* → *Y*. In other words, when two *Y* particles encounter each other, there is some probability that one of the particles serves to remove the other, which mimics the process of a transcription factor turning off another copy of itself during negative autoregulation.
@@ -50,7 +50,7 @@ By allowing *Y* to slow its own transcription, we wound up with a simulation in 
 
 The answer to our quandary is that the model we built was not a fair comparison between the two systems. In particular, the two simulations must be controlled so that they have approximately the *same* steady-state concentration of *Y*. Ensuring this equal footing for the two simulations is called a **mathematically controlled comparison.**[^Savageau]
 
-**STOP:** How can we change the parameters of our models to obtain a mathematically controlled comparison?
+<span style="color:red">**STOP:**</span> How can we change the parameters of our models to obtain a mathematically controlled comparison?
 {: .notice--primary}
 
 There are a number of parameters that we must keep constant across the two simulations because they are not related to regulation: the diffusion rates of *X* and *Y*, the number of initial particles *X* and *Y*, and the degradation rate of *Y*.

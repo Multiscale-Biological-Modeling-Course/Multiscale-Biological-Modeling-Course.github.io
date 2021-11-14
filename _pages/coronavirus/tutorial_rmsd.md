@@ -134,7 +134,7 @@ Your results should look like the following:
 
 We will leave the RMSD computation for the other models we produced as an exercise.
 
-**STOP:** Apply what you have learned in this tutorial to compute the RMSD between the SARS-CoV-2 spike protein and every one of our predicted homology models, as well as between human hemoglobin subunit alpha and its *ab initio* model. Download the predicted models [here](../_pages/coronavirus/files/RMSD_Tutorial.zip); you should consult the included readme for reference.
+<span style="color:red">**STOP:**</span> Apply what you have learned in this tutorial to compute the RMSD between the SARS-CoV-2 spike protein and every one of our predicted homology models, as well as between human hemoglobin subunit alpha and its *ab initio* model. Download the predicted models [here](../_pages/coronavirus/files/RMSD_Tutorial.zip); you should consult the included readme for reference.
 {: .notice--primary}
 
 We are now ready to head back to the main text, where we will discuss the RMSD calculations for all models. Were we successful in predicting the structure of the SARS-CoV-2 spike protein?

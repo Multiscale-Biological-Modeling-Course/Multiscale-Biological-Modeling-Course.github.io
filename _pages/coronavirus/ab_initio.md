@@ -92,7 +92,7 @@ Adapting this exploration algorithm to protein structure prediction requires us 
 
 Yet returning to the chemotaxis analogy, imagine what happens if we were to place many small sugar cubes and one large sugar cube into the bacterium's environment. The bacterium will sense the gradient not of the large sugar cube but of its *nearest* attractant. As a result, because the smaller food sources outnumber the larger food source, the bacterium will likely not move to the point of greatest attractant concentration. In terms of bacterial exploration, this is a feature, not a bug; if the bacterium exhausts one food source, then it will just move to another. But in terms of protein structure prediction, we should be worried of winding up in such a **local minimum**, or a point of our search space for which no "neighboring" points have smaller score.
 
-**STOP:** Do you see any ways in which we could improve our local search approach for structure prediction?
+<span style="color:red">**STOP:**</span> Do you see any ways in which we could improve our local search approach for structure prediction?
 {: .notice--primary}
 
 Fortunately, we can modify our local search algorithm in a variety of ways. First, because the initial conformation chosen has a huge influence on the final conformation that we return, we could run the algorithm multiple times with different starting conformations. This is analogous to allowing multiple bacteria to explore their environment at different starting points. Second, by allowing ourselves to move to a conformation with *greater* potential energy with some probability, we would give our local search algorithm a chance to "bounce" out of a local minimum. In an approach called **simulated annealing**, which is borrowed from metallurgy, we reduce the probability of increasing the free energy over time, so that the likelihood of bouncing out of a local minimum decreases over time, and eventually we will settle into a final conformation. Once again, randomness helps us solve practical problems!
@@ -116,7 +116,7 @@ A protein structure of human hemoglobin subunit alpha along with five *ab initio
 
 Yet we also wonder whether we can speed up our structure prediction algorithms so that they will scale to a larger protein like the SARS-CoV-2 spike protein. In the next lesson, we will learn about another type of protein structure prediction that allows researchers to model large proteins by comparing a protein of unknown structure against a database of known structures.
 
-**STOP:** What existing protein structure(s) would you first want to consult when studying the SARS-CoV-2 spike protein?
+<span style="color:red">**STOP:**</span> What existing protein structure(s) would you first want to consult when studying the SARS-CoV-2 spike protein?
 {: .notice--primary}
 
 [Next lesson](homology){: .btn .btn--primary .btn--large}

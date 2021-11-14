@@ -26,7 +26,7 @@ The repressilator motif is shown in the figure below. In this motif, all three p
 The repressilator motif for three particles <em>X</em>, <em>Y</em>, and <em>Z</em>. <em>X</em> represses <em>Y</em>, which represses <em>Z</em>, which in turn represses <em>X</em>, forming a feedback loop.
 {: style="font-size: medium;"}
 
-**STOP:** Try building a reaction-diffusion model for the repressilator, assuming that we start with an initial concentration of *X* and no *Y* or *Z* particles.
+<span style="color:red">**STOP:**</span> Try building a reaction-diffusion model for the repressilator, assuming that we start with an initial concentration of *X* and no *Y* or *Z* particles.
 {: .notice--primary}
 
 To build a reaction-diffusion model accompanying the repressilator, we start with a quantity of *X* particles, and no *Y* or *Z* particles. We assume that all three particles diffuse at the same rate and degrade at the same rate.
@@ -44,7 +44,7 @@ If you have followed our previous tutorials, then you may feel comfortable takin
 
 The figure below shows the results of our simulation by plotting the number of *X*, *Y*, and *Z* particles over time. As we can see, the system shows clear oscillatory behavior, with the concentrations of *X*, *Y*, and *Z* taking turns being at high concentration.
 
-**STOP:** Why do you think that the repressilator motif leads to this pattern of oscillations?
+<span style="color:red">**STOP:**</span> Why do you think that the repressilator motif leads to this pattern of oscillations?
 {: .notice--primary}
 
 [![image-center](../assets/images/600px/repressilator_graph.png){: .align-center}](../assets/images/repressilator_graph.PNG)

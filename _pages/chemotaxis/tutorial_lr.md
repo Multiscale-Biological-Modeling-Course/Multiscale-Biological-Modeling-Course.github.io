@@ -185,7 +185,7 @@ generate_network({overwrite=>1})
 simulate({method=>"ssa", t_end=>1, n_steps=>100})
 ~~~
 
-**STOP:** Based on our results from calculating steady-state concentration by hand in the main text, predict how the concentrations will change and what the equilibrium concentrations will be.
+<span style="color:red">**STOP:**</span> Based on our results from calculating steady-state concentration by hand in the main text, predict how the concentrations will change and what the equilibrium concentrations will be.
 {: .notice--primary}
 
 ## Running our simulation

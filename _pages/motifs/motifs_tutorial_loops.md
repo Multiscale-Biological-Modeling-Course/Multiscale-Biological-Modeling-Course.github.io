@@ -87,7 +87,7 @@ This code produces the following statistics for the random network.
 
 The number of self-loops is significantly lower in the random network compared to the real transcription factor network.
 
-**STOP:** Change the input integer to ``random.seed`` to any integer you like. How does it affect the number of nodes, edges, and self-loops? Try changing the input to a few different values.
+<span style="color:red">**STOP:**</span> Change the input integer to ``random.seed`` to any integer you like. How does it affect the number of nodes, edges, and self-loops? Try changing the input to a few different values.
 {: .notice--primary}
 
 Regardless of what seed value we use, we can confirm that the number of self-loops expected in a random graph is significantly lower than in the real *E. coli* network. Back in the main text, we will discuss this significance and then see if we can determine why autoregulation has arisen.
