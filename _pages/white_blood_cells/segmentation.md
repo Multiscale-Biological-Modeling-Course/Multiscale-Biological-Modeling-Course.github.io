@@ -16,14 +16,14 @@ gallery:
     alt: "Monocyte"
     title: "A monocyte with a single, irregularly-shaped nucleus."
 gallery2:
-  - url: ../assets/images/600px/neutrophil.png
-    image_path: ../assets/images/neutrophil.png
-    alt: "Binarized neutrophil based on green color channel"
-    title: "A binarization in which a pixel is turned white if it has a green value less than or equal to 153."
-  - url: ../assets/images/600px/monocyte.png
-    image_path: ../assets/images/monocyte.png
-    alt: "Binarized neutrophil based on red color channel"
-    title: "A binarization in which a pixel is turned white if it has a red value less than or equal to 166."
+  - url: ../assets/images/600px/monocyte_binarized.png
+    image_path: ../assets/images/monocyte_binarized.png
+    alt: "Segmented monocyte"
+    title: "Image segmentation of the monocyte corresponding to ID 15 in the provided dataset."
+  - url: ../assets/images/600px/lymphocyte_binarized.png
+    image_path: ../assets/images/lymphocyte_binarized.png
+    alt: "Segmented lymphocyte"
+    title: "Image segmentation of the lymphocyte corresponding to ID 20 in the provided dataset."
 ---
 
 ## Cellular image segmentation requires a tailored approach
@@ -82,8 +82,6 @@ We were unable to distinguish between the image background and the WBC nucleus u
 Two more binarized versions of the neutrophil image from the figure above (left), based on the green and red channels. For both of these colors, the WBC nucleus tends to have lower values than other parts of the original image. (Left) A binarization in which a pixel is turned white if it has a green value less than or equal to 153. (Right) A binarization in which a pixel is turned white if it has a red value less than or equal to 166.
 {: style="font-size: medium;"}
 
-{% include gallery id="gallery2" caption="Two more binarized versions of the neutrophil image from the figure above (left), based on the green and red channels. For both of these colors, the WBC nucleus tends to have lower values than other parts of the original image. (Left) A binarization in which a pixel is turned white if it has a green value less than or equal to 153. (Right) A binarization in which a pixel is turned white if it has a red value less than or equal to 166." %}
-
 It would seem that we should work with the binarized image based on the red threshold, which contains the clearest image of the nucleus among the three binarized images. However, each threshold was successful in eliminating non-nuclear parts of the image. For example, note the white blob in the top left of the binarized image based on the red threshold. Although this image did not exclude this area, the binarized image based on blue was successful in doing so; this same region is black in the preceding figure.
 
 This insight gives us an idea: if each of the three images is successful at excluding some part of the image, then let us produce a fourth image such that a pixel is white if it is white in all three binarized images. In the following tutorial, we will build an R pipeline that implements this approach to produce binarized WBC nuclei for all our blood cell images.
@@ -94,6 +92,8 @@ This insight gives us an idea: if each of the three images is successful at excl
 ## Successful segmentation is subject to parameters
 
 If you followed the above tutorial, then you may be tempted to celebrate, since it seems that we have resolved our first main objective of identifying WBCs. Indeed, if we segment all of the images in the dataset via the same process, then we typically obtain a nice result, as indicated in the figure below for the sample monocyte and lymphocyte images presented in the [introduction](home). Even though these images have been binarized, the large irregular shape of the monocyte nucleus and the small round shape of the lymphocyte nucleus are still visible.
+
+{% include gallery id="gallery2" caption="Image segmentation of the monocyte (left) and lymphocyte (right) corresponding to IDs 15 and 20 in the provided dataset." %}
 
 <table>
 <tr>
