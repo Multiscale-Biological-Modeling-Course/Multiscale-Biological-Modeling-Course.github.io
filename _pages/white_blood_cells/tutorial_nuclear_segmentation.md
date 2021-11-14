@@ -54,7 +54,7 @@ Now open a terminal window and navigate into your `WBC_PCAPipeline` directory by
 > cd ~/Desktop/WBC_PCAPipeline
 ~~~
 
-### Step 1 Nuclear Segmentation
+## Segmenting Nuclei from WBC Images
 
 For this dataset, we would like to identify the white blood cell types by the nuclear shape since that particular feature is easy to verify with the naked eye. Moreover, the nucleus of the white blood cell(s) in each image are of a distinctly darker color than the rest of the red blood cells or platelets in the image. This allows us to implement a technique called thresholding. In thresholding, we examine each pixel in the image and reset the color value of the image according to our thresholds. If the original RGB values for the pixel are above the thresholds we set in each channel, then we reset the pixel value to white. All other pixels below the thresholds will be set to black (ideally). This way, our target, the white blood cell nucleus, is a white blob in a black background.
 
@@ -76,6 +76,33 @@ Nuclear Segmentation Example using `BloodImage_00001.jpg`.
 
 [![image-center](../assets/images/600px/cellorg_segmented.png){: .align-center}](../assets/images/cellorg_segmented.png)
 Greyscale segmented nucleus from the above image.
+{: style="font-size: medium;"}
+
+### Binarizing Segmented Images
+
+As mentioned in Step 1, we would ideally have black and white segmented images as a result of running the above commands. However, we would like to ensure that our segmented images are in black and white, and if not (suppose they are in greyscale), we would like to convert them into this form. Furthermore, the CellOrganizer PCA method requires all images to be in TIFF format, so this step handles that file conversion as well. To go an extra step, we also want another set of images that show the segmented nuclei in color while the background is in black.
+
+In this step of the pipeline, we open up MATLAB for running the binarization and file conversion code.
+
+Open MATLAB. Then, run the following commands in the MATLAB command window:
+
+~~~
+> clear
+> clc
+> cd ~/Desktop/WBC_PCAPipeline/Step2_Binarization
+> WBC_imgBin
+~~~
+
+As a result, the `BWImgs_1` directory will now contain binarized TIFF versions of the segmented images. That is, each greyscale image resulting from the nuclear segmentation step with have pixel values strictly of 0, which is black, or 1, which is white.
+
+Our other result is that the `ColNuc_1` directory will now contain TIFF versions of the segmented images where the nuclei is in color and the background is in black. We won’t be using these images further along the pipeline, but they are useful to look at for visual confirmation that the majority of the nucleus is being considered for the PCA model.
+
+[![image-center](../assets/images/600px/cellorg_segmented.png){: .align-center}](../assets/images/cellorg_segmented.png)
+Nuclear segmentation of `BloodImage_00001.jpg` in black and white.
+{: style="font-size: medium;"}
+
+[![image-center](../assets/images/600px/cellorg_segmented_color.png){: .align-center}](../assets/images/cellorg_segmented_color.png)
+Nuclear segmentation of `BloodImage_00001.jpg` with color retained in the nucleus.
 {: style="font-size: medium;"}	 
 
 [Return to main text](segmentation){: .btn .btn--primary .btn--large}
