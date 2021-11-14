@@ -25,3 +25,5 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 * Thank you!
 
 * Need at some point to define binarization and appeal to that tutorial separately
+
+* Also need to define a confusion matrix

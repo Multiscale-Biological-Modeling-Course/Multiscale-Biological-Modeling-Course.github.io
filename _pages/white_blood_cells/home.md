@@ -10,15 +10,15 @@ gallery:
   - url: ../assets/images/600px/neutrophil.png
     image_path: ../assets/images/neutrophil.png
     alt: "Neutrophil"
-    title: "An image of a neutrophil."
+    title: "A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family."
   - url: ../assets/images/600px/monocyte.png
     image_path: ../assets/images/monocyte.png
     alt: "Monocyte"
-    title: "An image of a monocyte."
+    title: "A monocyte with a single, irregularly-shaped nucleus."
   - url: ../assets/images/600px/lymphocyte.png
     image_path: ../assets/images/lymphocyte.png
     alt: "Lymphocyte"
-    title: "An image of a lymphocyte."
+    title: "A lymphocyte with a round nucleus."
 ---
 
 <span style="font-size:larger;">by Phillip Compeau (software tutorials by Nicole Matamala)</span>
@@ -42,14 +42,7 @@ We will work with a <a href="https://github.com/Shenggan/BCCD_Dataset" target="_
 
 The figure below also illustrates the three main families of WBCs: **granulocytes**, **lymphocytes**, and **monocytes**.  Granulocytes have a **multilobular nucleus**, which consists of several round “lobes” that are linked by thin strands of nuclear material. Monocyte and lymphocyte nuclei only have a single lobe, but the shapes of the nuclei are quite different: lymphocyte nuclei tend to have a more rounded shape (taking up a greater fraction of the cell’s volume), whereas monocyte nuclei have a more irregular shape.
 
-{% include gallery caption="Three images from the blood cell image dataset showing three types of WBCs. (Left) A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family. (Center) A monocyte with a single, irregularly-shaped nucleus. (Right) A lymphocyte with a round nucleus. (In our dataset, these cells correspond to image IDs 3, 15, and 20, respectively.)" %}
-
-| Granulocyte | Monocyte | Lymphocyte |
-:-------------------------:|:-------------------------:|:-------------------------:
-[![](../assets/images/neutrophil.png)]()  |  [![](../assets/images/monocyte.png)]()   |  [![](../assets/images/lymphocyte.png)]()
-
-Three images from the blood cell image dataset showing three types of WBCs. (Left) A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family. (Center) A monocyte with a single, irregularly-shaped nucleus. (Right) A lymphocyte with a round nucleus. (In our dataset, these cells correspond to image IDs 3, 15, and 20, respectively.)
-{: style="font-size: medium;"}
+{% include gallery caption="Three images from the blood cell image dataset showing three types of WBCs. In our dataset, these cells correspond to image IDs 3, 15, and 20. (Left) A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family. (Center) A monocyte with a single, irregularly-shaped nucleus. (Right) A lymphocyte with a round nucleus." %}
 
 In this module, our goal is twofold. First, can we excise, or **segment**, WBCs from cellular images? Second, can we train a computer to classify WBCs by family? To perform these tasks, we will enlist <a href="http://www.cellorganizer.org" target="_blank">CellOrganizer</a>, a powerful software resource that can perform a wide variety of automated analyses on cellular images.
 
