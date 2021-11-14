@@ -42,6 +42,8 @@ Using a color picker, we find (unsurprisingly) that the blue values for pixels i
 
 The binarized version of the above cellular image for the threshold value of 153 is shown in the figure below. Unfortunately, we cannot clearly see the WBC nucleus in this binarized image because although the nucleus has high blue values, so does the image's background, because light colors are formed by mixing high percentages of red, green, and blue.
 
+[![image-center](../assets/images/600px/neutrophil_binarized_blue.png){: .align-center width="300px"}](../assets/images/neutrophil_binarized_blue.png)
+
 <center><img src="../assets/images/neutrophil_binarized_blue.png" width="300"></center>
 
 A binarized version of the granulocyte from the previous figure (having image ID 3 in our dataset). A pixel is colored white if it has a blue value of 153 or greater, and the pixel is colored black otherwise. The region with the nucleus is shown in white but is not clearly visible because much of the background of the image, which is very light, also has a high blue value (remember that mixing all three colors in equal proportions yields white).
