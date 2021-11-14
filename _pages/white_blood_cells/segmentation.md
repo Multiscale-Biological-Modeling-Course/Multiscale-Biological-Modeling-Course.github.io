@@ -101,7 +101,7 @@ This is not to say that our segmentation pipeline is perfect. The figure below i
 **STOP:** Play around with the threshold parameters for red, green, and blue values from the tutorial. Can you find a better choice of parameters? How should we quantify whether one collection of parameters is better than another?
 {: .notice--primary}
 
-We can continue to tweak threshold parameters, but our relatively simple algorithm has successfully segmented most of the WBC nuclei from our dataset. We are ready to move on to our second goal of classifying WBC nuclei into families.
+We can continue to tweak threshold parameters, but our relatively simple algorithm has successfully segmented most of the WBC nuclei from our dataset. We are ready to move on to our second goal of classifying WBC nuclei into families according to their shape.
 
 [Next lesson](classification){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
