@@ -98,16 +98,6 @@ This is not to say that our segmentation pipeline is perfect. The figure below i
 
 {% include gallery id="gallery3" caption="(Left) An image of a WBC (ID: 167). (Right) The binarization of this image, showing that the nucleus is not correctly identified during segmentation using the parameters from the tutorial." %}
 
-<table>
-<tr>
-    <td><img src="../assets/images/WBC_167.png"></td>
-    <td><img src="../assets/images/WBC_167_segmentation.png"></td>
-</tr>
-</table>
-
-(Left) An image of a WBC (ID: 167). (Right) The binarization of this image, showing that the nucleus is not correctly identified during segmentation using the parameters from the tutorial.
-{: style="font-size: medium;"}
-
 **STOP:** Play around with the threshold parameters for red, green, and blue values from the tutorial. Can you find a better choice of parameters? How should we quantify whether one collection of parameters is better than another?
 {: .notice--primary}
 
