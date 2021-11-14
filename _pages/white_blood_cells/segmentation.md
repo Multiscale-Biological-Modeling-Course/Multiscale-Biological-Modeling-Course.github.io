@@ -24,6 +24,15 @@ gallery2:
     image_path: ../assets/images/lymphocyte_binarized.png
     alt: "Segmented lymphocyte"
     title: "Image segmentation of the lymphocyte corresponding to ID 20 in the provided dataset."
+gallery3:
+  - url: ../assets/images/600px/WBC_167.png
+    image_path: ../assets/images/WBC_167.png
+    alt: "White blood cell image."
+    title: "An image of a WBC (ID: 167)."
+  - url: ../assets/images/600px/WBC_167_segmentation.png
+    image_path: ../assets/images/WBC_167_segmentation.png
+    alt: "Binarized white blood cell."
+    title: "The binarization of this image, showing that the nucleus is not correctly identified during segmentation using the parameters from the tutorial."
 ---
 
 ## Cellular image segmentation requires a tailored approach
@@ -86,6 +95,8 @@ If you followed the above tutorial, then you may be tempted to celebrate, since 
 {% include gallery id="gallery2" caption="Image segmentation of the monocyte (left) and lymphocyte (right) corresponding to IDs 15 and 20 in the provided dataset." %}
 
 This is not to say that our segmentation pipeline is perfect. The figure below illustrates that for a few images in our dataset, we may not correctly parse out the entire nucleus.
+
+{% include gallery id="gallery3" caption="(Left) An image of a WBC (ID: 167). (Right) The binarization of this image, showing that the nucleus is not correctly identified during segmentation using the parameters from the tutorial." %}
 
 <table>
 <tr>
