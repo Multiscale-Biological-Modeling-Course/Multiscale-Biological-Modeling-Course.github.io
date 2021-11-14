@@ -63,6 +63,7 @@ A circle inscribed within a square. Sampling of the four points where the shapes
 On the other hand, we could have very similar shapes whose RMSD winds up being high. For example, recall the shapes in the figure below, which are identical, but one has been flipped and rotated. If we were to vectorize these shapes as they are now in the same way (say, by starting at the top of the shape and proceeding clockwise), then we would obtain two vectors with high RMSD.
 
 [![image-center](../assets/images/600px/two_shapes.png){: .align-center}](../assets/images/two_shapes.png)
+Two identical shapes, with one shape flipped and rotated. Vectorizing these shapes without first correctly aligning them will produce two vectors with high RMSD.
 {: style="font-size: medium;"}
 
 We handled this issue in our work on protein structure comparison by introducing the Kabsch algorithm, which identified the best rotation of one shape into another that would minimize the RMSD of the resulting vectors.
