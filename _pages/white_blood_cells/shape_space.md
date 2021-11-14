@@ -67,7 +67,7 @@ On the other hand, we could have very similar shapes whose RMSD winds up being h
 
 We handled this issue in our work on protein structure comparison by introducing the Kabsch algorithm, which identified the best rotation of one shape into another that would minimize the RMSD of the resulting vectors.
 
-And yet what
+And yet what makes our work here more complicated is that we are not comparing just two shape vectors. We have hundreds of images!
 
 * But the issue is that we don't have 2 images. We have hundreds! The best rotation of a shape when aligning against one shape may not be the same as its rotation against another shape.
 
