@@ -52,20 +52,19 @@ $$\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + 
 
 ## Ensuring that vectorization of images preserves (dis)similarity
 
-If we are going to build an algorithm to classify WBC images by family, then our hope is that vectorization of these images results in
+After vectorizing our WBC images, we hope that images of similarly shaped nuclei will have low RMSD and that the more dissimilar two nuclei become, the higher the RMSD of their shape vectors. The potential issues with this assumption are the same as those encountered when discussing protein structures.
+
+On the one hand, we could have very dissimilar shapes with low RMSD, such as those shown in the figure below. However, this issue can be easily resolved by ensuring that the number of points (*n*) that we choose is sufficiently high. For this reason, CellOrganizer uses *n* = 1000 by default for cell nuclei.
+
+[![image-center](../assets/images/600px/circle_square_undersampling.png){: .align-center}](../assets/images/circle_square_undersampling.png)
+A circle inscribed within a square. Sampling of the four points where the shapes intersect will give a flawed estimate of zero for RMSD.
+{: style="font-size: medium;"}
+
+On the other hand,
 
 
-CellOrganizer uses *n* = 1000 by default for cell nuclei.
-
-* The idea is that two similar shapes would be close together in the shape space, and different shapes would be far apart.
 
 
-
-
-
-* However, the problem is the same as what we already encountered with protein structures!
-
-* Show dissimilar shapes that would have lower RMSD. This is handled by ensuring that n is large enough -- call back to protein structures.
 
 * Show identical shapes that would have higher RMSD/Euclidean distances
 
