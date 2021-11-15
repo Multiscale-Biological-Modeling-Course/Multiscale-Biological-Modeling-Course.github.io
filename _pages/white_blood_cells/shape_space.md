@@ -62,6 +62,12 @@ A circle inscribed within a square. Sampling of the four points where the shapes
 
 On the other hand, we could have very similar shapes whose RMSD winds up being high. For example, recall the shapes in the figure below, which are identical, but one has been flipped and rotated. If we were to vectorize these shapes as they are now in the same way (say, by starting at the top of the shape and proceeding clockwise), then we would obtain two vectors with high RMSD.
 
+Test popup vertical
+
+<a class="image-popup-vertical-fit" href="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_b.jpg" title="Caption. Can be aligned to any side and contain any HTML.">
+	<img src="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_s.jpg" width="75" height="75">
+</a>
+
 [![image-center](../assets/images/600px/two_shapes.png){: .align-center}](../assets/images/two_shapes.png)
 Two identical shapes, with one shape flipped and rotated. Vectorizing these shapes without first correctly aligning them will produce two vectors with high RMSD.
 {: style="font-size: medium;"}
