@@ -98,12 +98,6 @@ And yet what makes our work here more complicated is that we are not comparing j
 
 
 
-
-## Notes to self
-
-* Can the default value of n = 1000 sampled points for nuclear images be changed?
-
-
 [^apes]: Your author has not either.
 
 [^Barjamovich2019]: Barjamovic B, Chaney T, Coşar K, Hortaçsu A (2019) Trade, Merchants, and the Lost Cities of the Bronze Age. The Quarterly Journal of Economics 134(3):1455-1503.[Available online](https://doi.org/10.1093/qje/qjz009)

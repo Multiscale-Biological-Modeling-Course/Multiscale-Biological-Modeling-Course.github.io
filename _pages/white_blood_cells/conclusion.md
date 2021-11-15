@@ -24,6 +24,11 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 * Thank you!
 
+
+## Notes to self
+
+* Can the default value of n = 1000 sampled points for nuclear images be changed?
+
 * Need at some point to define binarization and appeal to that tutorial separately
 
 * Also need to define a confusion matrix
