@@ -90,6 +90,10 @@ Unfortunately, if we have a large dataset, computing the distance between every 
 
 We can align a collection of images by first identifying the **major axis** of each image, which is the line segment crossing through the image's center of mass that is as long as possible. The figure below shows the major axis for a few similar shapes.
 
+[![image-center](../assets/images/600px/three_similar_shapes_unaligned.png){: .align-center}](../assets/images/three_similar_shapes_unaligned.png)
+Caption.
+{: style="font-size: medium;"}
+
 NEED FIGURE SHOWING AXIS -- very similar shapes
 
 Because these shapes are similar, when we align their major axes, their similarities will overlap, as shown below. We are now ready to vectorize these images (say, starting from the point on the right side of an image's major axis and proceeding clockwise).
