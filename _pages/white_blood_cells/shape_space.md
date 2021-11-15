@@ -64,9 +64,11 @@ On the other hand, we could have very similar shapes whose RMSD winds up being h
 
 Test popup vertical
 
-<a class="image-popup-vertical-fit" href="../assets/images/two_shapes.png" title="Caption. Can be aligned to any side and contain any HTML.">
+<a class="image-popup-vertical-fit" href="../assets/images/two_shapes.png" title="Two identical shapes, with one shape flipped and rotated. Vectorizing these shapes without first correctly aligning them will produce two vectors with high RMSD.">
 	<img src="../assets/images/600px/two_shapes.png">
 </a>
+Two identical shapes, with one shape flipped and rotated. Vectorizing these shapes without first correctly aligning them will produce two vectors with high RMSD.
+{: style="font-size: medium;"}
 
 [![image-center](../assets/images/600px/two_shapes.png){: .align-center}](../assets/images/two_shapes.png)
 Two identical shapes, with one shape flipped and rotated. Vectorizing these shapes without first correctly aligning them will produce two vectors with high RMSD.
