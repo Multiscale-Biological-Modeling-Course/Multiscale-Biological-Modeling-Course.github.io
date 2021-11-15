@@ -10,11 +10,13 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 ## The curse of dimensionality
 
-Things get weird in multi-dimensional space. For example, consider a circle inscribed
+Things get weird in multi-dimensional space. Consider a circle inscribed in a square, and a sphere inscribed in a cube. The ratio of the area of the square to the sphere is
 
-[![image-center](../assets/images/600px/inscribed_circle_and_sphere.png){: .align-center width="300px"}](../assets/images/inscribed_circle_and_sphere.png)
+[![image-center](../assets/images/600px/inscribed_circle_and_sphere.png){: .align-center}](../assets/images/inscribed_circle_and_sphere.png)
 Caption.
 {: style="font-size: medium;"}
+
+One attempt to explain this phenomenon is that the cube has more corners than a square, and the more dimensions that we have, the more
 
 Define
 
