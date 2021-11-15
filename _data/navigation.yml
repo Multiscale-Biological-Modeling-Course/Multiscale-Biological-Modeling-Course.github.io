@@ -179,6 +179,8 @@ white_blood_cells:
         url: /white_blood_cells/segmentation
       - title: "An overview of classification<br><br>"
         url: /white_blood_cells/classification
+      - title: "Building shape spaces from images<br><br>"
+        url: /white_blood_cells/shape_space
   - title: Software Tutorials (featuring CellOrganizer)
     children:
       - title: "Segmenting nuclei from cellular images<br><br>"
