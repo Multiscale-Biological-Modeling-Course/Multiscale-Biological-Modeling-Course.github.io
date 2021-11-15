@@ -104,6 +104,9 @@ $$d(\mathbf{x}, \mathbf{y}) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_
 
 We now have learned how to use k-NN to classify unknown points given a set of points of known classes. Returning to our ongoing example of WBCs, we could imagine that researchers classify hundreds of images of WBCs in advance to give us a validated dataset, which we can compare a new WBC image against to determine the family to which this WBC belongs. There is just one problem: how can we convert an image of a WBC into a vector?
 
+[Next lesson](shape_space){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
 [^Anderson1935]: Anderson E (1935) The irises of the Gaspe Peninsula. Bulletin of the American Iris Society 59: 2-5.
 
 [^Anderson1936]: Anderson E (1936) The species problem in Iris. Annals of the Missouri Botanical Garden 23(3):457-509. [Available online](https://www.jstor.org/stable/2394164?origin=crossref)
