@@ -94,17 +94,16 @@ We can align a collection of images by first identifying the **major axis** of e
 Three similar shapes, with their major axes highlighted in gray.
 {: style="font-size: medium;"}
 
-When we align the major axes of similar shapes, their similarities will overlap, as shown in the figure below. These images are ready to be vectorized (say, starting from the point on the right side of an image's major axis and proceeding clockwise).
+When we align the major axes of similar shapes, their similarities will overlap, as shown in the figure below. These images are ready to be vectorized (say, starting from the point on the right side of an image's major axis and proceeding clockwise). The resulting vectors will have low RMSD because corresponding points on the shapes are nearby.
 
 [![image-center](../assets/images/600px/three_similar_shapes_aligned.png){: .align-center}](../assets/images/three_similar_shapes_aligned.png)
-Caption.
+Aligning the three images from the previous figure so that their major axes overlap allows us to see similarities between the shapes as well as build consistent shape vectors for them.
 {: style="font-size: medium;"}
 
 **Note:** When we align images along their major axes, we need to ensure that a shape's mirror image is not a better alignment. Handling this issue is beyond the scope of our work here but is discussed in the literature[^Pincus2007].
 {: .notice--warning}
 
 We can now generate a shape space for a collection of binarized cellular images. To review, after aligning the images along their major axis, we sample *n* points from the boundary of each image. These points can be translated into a vector of 2*n* coordinates, which is a point in a very high-dimensional space. We now can construct our desired shape space for a collection of images, but one more pitfall remains, which we will discuss in the next lesson.
-
 
 [^Barjamovich2019]: Barjamovic B, Chaney T, Coşar K, Hortaçsu A (2019) Trade, Merchants, and the Lost Cities of the Bronze Age. The Quarterly Journal of Economics 134(3):1455-1503.[Available online](https://doi.org/10.1093/qje/qjz009)
 
