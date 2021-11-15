@@ -96,7 +96,7 @@ Three similar shapes, with their major axes highlighted in gray.
 
 When we align the major axes of similar shapes, their similarities will overlap, as shown in the figure below. These images are ready to be vectorized (say, starting from the point on the right side of an image's major axis and proceeding clockwise). The resulting vectors will have low RMSD because corresponding points on the shapes are nearby.
 
-[![image-center](../assets/images/600px/three_similar_shapes_aligned.png){: .align-center}](../assets/images/three_similar_shapes_aligned.png)
+[![image-center](../assets/images/600px/three_similar_shapes_aligned.png){: .align-center width="300px"}](../assets/images/three_similar_shapes_aligned.png)
 Aligning the three images from the previous figure so that their major axes overlap allows us to see similarities between the shapes as well as build consistent shape vectors for them.
 {: style="font-size: medium;"}
 
