@@ -88,22 +88,22 @@ Statisticians have devised a collection of approaches to solve the Lost Cities p
 
 Unfortunately, if we have a large dataset, computing the distance between every pair of objects can become very time-intensive, even with a powerful computer. Instead, we will rotate all images concurrently so that the images are all aligned against each other before we begin. After this alignment, we can then vectorize all the images starting at the same position to ensure that two shape vectors have high RMSD when (and only when) they derive from dissimilar shapes.
 
-We can align a collection of images by first identifying the **major axis** of each image, which is the line segment crossing through the image's center of mass that is as long as possible. The figure below shows the major axis for a few similar shapes.
+We can align a collection of images by first identifying the **major axis** of each image, which is the line segment crossing through the image's center of mass that is as long as possible. The figure below shows the major axis for a few similar shapes -- they may not look similar because they have not been aligned to reveal these similarities.
 
 [![image-center](../assets/images/600px/three_similar_shapes_unaligned.png){: .align-center}](../assets/images/three_similar_shapes_unaligned.png)
+Three similar shapes, with their major axes highlighted in gray.
+{: style="font-size: medium;"}
+
+When we align the major axes of similar shapes, their similarities will overlap, as shown in the figure below. These images are ready to be vectorized (say, starting from the point on the right side of an image's major axis and proceeding clockwise).
+
+[![image-center](../assets/images/600px/three_similar_shapes_aligned.png){: .align-center}](../assets/images/three_similar_shapes_aligned.png)
 Caption.
 {: style="font-size: medium;"}
 
-NEED FIGURE SHOWING AXIS -- very similar shapes
-
-Because these shapes are similar, when we align their major axes, their similarities will overlap, as shown below. We are now ready to vectorize these images (say, starting from the point on the right side of an image's major axis and proceeding clockwise).
-
-NEED FIGURE SHOWING SIMILAR SHAPES OVERLAPPED BASED ON MAJOR AXIS
-
-**Note:** When we align images along their major axis, we need to ensure that a shape's mirror image is not a better alignment. Handling this issue is beyond the scope of our work here but is discussed in the literature[^Pincus2007].
+**Note:** When we align images along their major axes, we need to ensure that a shape's mirror image is not a better alignment. Handling this issue is beyond the scope of our work here but is discussed in the literature[^Pincus2007].
 {: .notice--warning}
 
-We are now ready to generate a shape space for a collection of binarized cellular images. To review, after aligning the images along their major axis, we sample *n* points from the boundary of each image. These points can be translated into a vector of 2*n* coordinates, which is a point in a very high-dimensional space. We now can construct our desired shape space for a collection of images, but one more pitfall remains, which we will discuss in the next lesson.
+We can now generate a shape space for a collection of binarized cellular images. To review, after aligning the images along their major axis, we sample *n* points from the boundary of each image. These points can be translated into a vector of 2*n* coordinates, which is a point in a very high-dimensional space. We now can construct our desired shape space for a collection of images, but one more pitfall remains, which we will discuss in the next lesson.
 
 
 [^Barjamovich2019]: Barjamovic B, Chaney T, Coşar K, Hortaçsu A (2019) Trade, Merchants, and the Lost Cities of the Bronze Age. The Quarterly Journal of Economics 134(3):1455-1503.[Available online](https://doi.org/10.1093/qje/qjz009)
