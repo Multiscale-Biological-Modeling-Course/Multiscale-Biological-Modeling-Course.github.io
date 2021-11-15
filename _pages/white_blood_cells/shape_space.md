@@ -64,8 +64,8 @@ On the other hand, we could have very similar shapes whose RMSD winds up being h
 
 Test popup vertical
 
-<a class="image-popup-vertical-fit" href="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_b.jpg" title="Caption. Can be aligned to any side and contain any HTML.">
-	<img src="http://farm9.staticflickr.com/8241/8589392310_7b6127e243_s.jpg" width="75" height="75">
+<a class="image-popup-vertical-fit" href="../assets/images/two_shapes.png" title="Caption. Can be aligned to any side and contain any HTML.">
+	<img src="../assets/images/600px/two_shapes.png">
 </a>
 
 [![image-center](../assets/images/600px/two_shapes.png){: .align-center}](../assets/images/two_shapes.png)
