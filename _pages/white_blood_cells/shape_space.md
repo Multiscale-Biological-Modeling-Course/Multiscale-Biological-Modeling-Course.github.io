@@ -92,23 +92,14 @@ We can align a collection of images by first identifying the **major axis** of e
 
 NEED FIGURE SHOWING AXIS -- very similar shapes
 
-Because these shapes are similar, when we align their major axes, their similarities will overlap, as shown below.
+Because these shapes are similar, when we align their major axes, their similarities will overlap, as shown below. We are now ready to vectorize these images (say, starting from the point on the right side of an image's major axis and proceeding clockwise).
 
 NEED FIGURE SHOWING SIMILAR SHAPES OVERLAPPED BASED ON MAJOR AXIS
 
-**Note:** We discussed rotations of the images, but we did not discuss what happens when we need to flip an image to align it. This is beyond the scope of our work here but is discussed in research[^Pincus2007].
+**Note:** When we align images along their major axis, we need to ensure that a shape's mirror image is not a better alignment. Handling this issue is beyond the scope of our work here but is discussed in the literature[^Pincus2007].
 {: .notice--warning}
 
-
-
-* Then, rotate images so that their major axes are aligned; for example, align them so that the major axis is horizontal. Only then do we sample each image's vector, starting at one side of the major axis and proceeding clockwise.
-
-
-
-* (There is just one problem, which is that similar shapes could be mirror images of each other. Pincus and Thierot 2007 used a reference shape and found the minimum RMSD between a shape and the reference or its inverse and the reference.)
-
-* We now have a shape space, but there is one more pitfall.
-
+We are now ready to generate a shape space for a collection of binarized cellular images. To review, after aligning the images along their major axis, we sample *n* points from the boundary of each image. These points can be translated into a vector of 2*n* coordinates, which is a point in a very high-dimensional space. We now can construct our desired shape space for a collection of images, but one more pitfall remains, which we will discuss in the next lesson.
 
 
 [^Barjamovich2019]: Barjamovic B, Chaney T, Coşar K, Hortaçsu A (2019) Trade, Merchants, and the Lost Cities of the Bronze Age. The Quarterly Journal of Economics 134(3):1455-1503.[Available online](https://doi.org/10.1093/qje/qjz009)
