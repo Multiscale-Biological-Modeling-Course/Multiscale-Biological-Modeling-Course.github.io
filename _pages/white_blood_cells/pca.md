@@ -10,15 +10,17 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 ## The curse of dimensionality
 
-Things get weird in multi-dimensional space. For example, consider the  
+Things get weird in multi-dimensional space. For example, consider a circle inscribed
 
-[![image-center](../assets/images/600px/inscribed_circle_sphere.png){: .align-center width="300px"}](../assets/images/inscribed_circle_sphere.png)
+[![image-center](../assets/images/600px/inscribed_circle_and_sphere.png){: .align-center width="300px"}](../assets/images/inscribed_circle_and_sphere.png)
 Caption.
 {: style="font-size: medium;"}
 
+Define
+
 * Curse of dimensionality -- takes many forms but this is one of them.
 
-* Make a note that with classifiers the issue exists too?
+* Make a note that with classifiers the issue exists too? Issue is related to the issue noted above; points tend to fly apart in multi-dimensional space.
 
 ## Regression and principal components analysis
 
