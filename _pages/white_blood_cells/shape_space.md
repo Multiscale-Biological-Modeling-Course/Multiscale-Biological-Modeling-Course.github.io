@@ -12,7 +12,7 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 If you have not yet managed to see the 1968 movie *Planet of the Apes*[^apes], we will spoil its <a href="https://www.youtube.com/watch?v=XvuM3DjvYf0" class="popup-youtube" target="_blank">ending</a> for you. Charlton Heston's character finds the Statue of Liberty protruding from the sand and has the epiphany that the mysterious planet he has come across was just Earth all along.
 
-Imagine that you are a traveler to Earth and come across the ruins of New York. You hope to find the other cities of this area as well, and you find an old road atlas that has driving distances between cities (in miles), shown in the table below.
+Imagine that you are a traveler to Earth and come across the ruins of New York. You find an old road atlas that has driving distances between cities (in miles), shown in the table below. Can you use this atlas to find the other cities in the table? In an [earlier module](chemotaxis/home), we had a Lost Immortals problem; this problem, of inferring the locations of cities given the distance between them, we call "Lost Cities".
 
 | | New York | Los Angeles | Pittsburgh | Miami | Houston | Seattle |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
@@ -62,35 +62,36 @@ A circle inscribed within a square. Sampling of the four points where the shapes
 
 On the other hand, we could have very similar shapes whose RMSD winds up being high. For example, recall the shapes in the figure below, which are identical, but one has been flipped and rotated. If we were to vectorize these shapes as they are now in the same way (say, by starting at the top of the shape and proceeding clockwise), then we would obtain two vectors with high RMSD.
 
-Test popup vertical
-
-<center>
-<a class="image-popup-vertical-fit" href="../assets/images/two_shapes.png" title="Two identical shapes, with one shape flipped and rotated. Vectorizing these shapes without first correctly aligning them will produce two vectors with high RMSD.">
-	<img src="../assets/images/600px/two_shapes.png">
-</a>
-</center>
-Two identical shapes, with one shape flipped and rotated. Vectorizing these shapes without first correctly aligning them will produce two vectors with high RMSD.
-{: style="font-size: medium;"}
-
 [![image-center](../assets/images/600px/two_shapes.png){: .align-center}](../assets/images/two_shapes.png)
 Two identical shapes, with one shape flipped and rotated. Vectorizing these shapes without first correctly aligning them will produce two vectors with high RMSD.
 {: style="font-size: medium;"}
 
 We handled this issue in our work on protein structure comparison by introducing the Kabsch algorithm, which identified the best rotation of one shape into another that would minimize the RMSD of the resulting vectors.
 
-And yet what makes our work here more complicated is that we are not comparing just two shape vectors. We have hundreds of images!
+And yet what makes our work here more complicated is that we are not comparing just two shape vectors in our example of WBC images. We will have shape vectors deriving from hundreds of images!
 
-* But the issue is that we don't have 2 images. We have hundreds! The best rotation of a shape when aligning against one shape may not be the same as its rotation against another shape.
+## Inferring a shape space from pairwise distances
 
-* We therefore have two options:
+One attempt to build a shape space for a collection of binarized images is to apply the Kabsch algorithm, which includes a step in which the best rotation is found, to every pair of images. As a result, we would obtain the RMSD between every pair of images, and our goal is to use the collection of all these "distances" to build a shape space of our images.
 
-1. Apply some algorithm like Kabsch (cite diffeomorphic model here), which will give us pairs of distances between points. We therefore must use the resulting pairs of distances to estimate a shape space from these distances. Sound familiar? This is just the lost city problem from the interlude at the start of this lesson.
+We hope that this problem sounds familiar, as it is Lost Cities problem from the start of this lesson in disguise. The pairs of distances between images correspond to a road map, and the locations of images in the shape space correspond to locating cities.
 
-2. Computing all these distances between shapes can take a really long time, so perhaps instead we can find the best rotation of all images at the same time so that the images are "aligned" against each other.
+Statisticians have devised a collection of approaches for the Lost Cities problem, which we now think of as assigning points to *n*-dimensional space such that the distances between points in this space approximately resemble a collection of distances between pairs of objects in some dataset (which in our case is cellular images). Furthermore, CellOrganizer includes a related approach to the Kabsch algorithm for computing a cellular distance, called the **diffeomorphic distance**, which can be thought of as determining the amount of energy required to deform one shape into another.
+
+**STOP:** If we have *m* cellular images, then how many times will we need to compute the distance between a pair of images?
+{: .notice--primary}
+
+Unfortunately, for a large dataset, computing the distance between every pair of objects can become very time-intensive, even with a powerful computer. Instead, we will try to rotate all images at the same time so that the images are all aligned against each other before we begin. After this alignment, we can then vectorize all the images starting at the same point, which will hopefully ensure that two shape vectors have high RMSD when (and only when) they derive from shapes that are dissimilar.
+
+## Aligning many images concurrently
+
+
 
 * To do so, first identify the "major axis" of each image (show figure). Define axis as a line segment through the shape's center of mass that connects two points on the shape's boundary. The major axis is the axis of the shape that has maximum length.
 
 * Then, rotate images so that their major axes are aligned; for example, align them so that the major axis is horizontal. Only then do we sample each image's vector, starting at one side of the major axis and proceeding clockwise.
+
+* SHOW EXAMPLE?
 
 * (There is just one problem, which is that similar shapes could be mirror images of each other. Pincus and Thierot 2007 used a reference shape and found the minimum RMSD between a shape and the reference or its inverse and the reference.)
 
