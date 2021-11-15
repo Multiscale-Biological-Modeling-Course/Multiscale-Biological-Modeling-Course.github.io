@@ -30,7 +30,7 @@ In particular, say that we sample *k* points randomly from the interior of an *n
 
 Because of the curse of dimensionality, it makes sense to reduce the number of dimensions before performing any further analysis. We could reduce the number of features used for generating a vector, especially if we have reason to believe that some features are more informative than others. This approach will likely not work for our WBC image example, since it is not clear why one point on the boundary of our images would be inherently better than another.
 
-Instead, we will reduce the number of dimensions of the space without removing any features from the data. As perplexing as multi-dimensional space may already seem, it may be totally unclear how we could reduce the dimensions of a space. We will therefore explain how dimension reduction can work in the context of three-dimensional space; you will be surprised that our approach is likely similar to something you learned in math class long ago.
+Instead, we will reduce the number of dimensions of the space without removing any features from the data. As perplexing as multi-dimensional space may already seem, it may be totally unclear how we could reduce the dimensions of a space. We will therefore explain how dimension reduction can work in the context of three-dimensional space; you may be surprised that our approach is similar to something that you may already be familiar with.
 
 ## Dimension reduction with principal components analysis
 
