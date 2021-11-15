@@ -8,15 +8,23 @@ toc_sticky: true
 image: "../assets/images/cellorg_pca_graph_cell.png"
 ---
 
-## Regression and principal components analysis
-
-* Motivate regression and PCA analogously to 02-251. Regression and PCA.
-
 ## The curse of dimensionality
+
+Things get weird in multi-dimensional space. For example, consider the  
+
+[![image-center](../assets/images/600px/inscribed_circle_sphere.png){: .align-center width="300px"}](../assets/images/inscribed_circle_sphere.png)
+Caption.
+{: style="font-size: medium;"}
 
 * Curse of dimensionality -- takes many forms but this is one of them.
 
 * Make a note that with classifiers the issue exists too?
+
+## Regression and principal components analysis
+
+* Motivate regression and PCA analogously to 02-251. Regression and PCA.
+
+
 
 ## Dimension reduction with principal components analysis
 
