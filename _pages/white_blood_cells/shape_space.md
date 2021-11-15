@@ -10,7 +10,7 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 ## Interlude: Talking monkeys, stone tablets, and lost cities
 
-If you have not yet managed to see the 1968 movie *Planet of the Apes*[^apes], we will spoil its <a href="https://www.youtube.com/watch?v=XvuM3DjvYf0" class="popup-youtube" target="_blank">ending</a> for you. Charlton Heston's character finds the Statue of Liberty protruding from the sand and has the epiphany that the mysterious planet he has come across was just Earth all along.
+If you have not yet managed to see the 1968 movie *Planet of the Apes*, we will spoil its <a href="https://www.youtube.com/watch?v=XvuM3DjvYf0" class="popup-youtube" target="_blank">ending</a> for you. Charlton Heston's character finds the Statue of Liberty protruding from the sand and has the epiphany that the mysterious planet he has come across was just Earth all along.
 
 Imagine that you are a traveler to Earth and come across the ruins of New York. You find an old road atlas that has driving distances between cities (in miles), shown in the table below. Can you use this atlas to find the other cities in the table? In an [earlier module](chemotaxis/home), we had a Lost Immortals problem; this problem, of inferring the locations of cities given the distance between them, we call "Lost Cities".
 
@@ -62,7 +62,7 @@ A circle inscribed within a square. Sampling of the four points where the shapes
 
 On the other hand, we could have very similar shapes whose RMSD winds up being high. For example, recall the shapes in the figure below, which are identical, but one has been flipped and rotated. If we were to vectorize these shapes as they are now in the same way (say, by starting at the top of the shape and proceeding clockwise), then we would obtain two vectors with high RMSD.
 
-[![image-center](../assets/images/600px/two_shapes.png "Two identical shapes, with one shape flipped and rotated. Vectorizing these shapes without first correctly aligning them will produce two vectors with high RMSD."){: .align-center}](../assets/images/two_shapes.png)
+[![image-center](../assets/images/600px/two_shapes.png){: .align-center}](../assets/images/two_shapes.png)
 Two identical shapes, with one shape flipped and rotated. Vectorizing these shapes without first correctly aligning them will produce two vectors with high RMSD.
 {: style="font-size: medium;"}
 
@@ -74,24 +74,36 @@ And yet what makes our work here more complicated is that we are not comparing j
 
 One attempt to build a shape space for a collection of binarized images is to apply the Kabsch algorithm, which includes a step in which the best rotation is found, to every pair of images. As a result, we would obtain the RMSD between every pair of images, and our goal is to use the collection of all these "distances" to build a shape space of our images.
 
-We hope that this problem sounds familiar, as it is Lost Cities problem from the start of this lesson in disguise. The pairs of distances between images correspond to a road map, and the locations of images in the shape space correspond to locating cities.
+**Note:** CellOrganizer applies a related approach to the Kabsch algorithm for computing a cellular distance, called the **diffeomorphic distance**[^Rohde2008], which can be thought of as determining the amount of energy required to deform one shape into another.
+{: .notice--warning}
 
-Statisticians have devised a collection of approaches for the Lost Cities problem, which we now think of as assigning points to *n*-dimensional space such that the distances between points in this space approximately resemble a collection of distances between pairs of objects in some dataset (which in our case is cellular images). Furthermore, CellOrganizer includes a related approach to the Kabsch algorithm for computing a cellular distance, called the **diffeomorphic distance**, which can be thought of as determining the amount of energy required to deform one shape into another.
+We hope that this problem sounds familiar, as it is Lost Cities problem from the start of this lesson in disguise. The pairs of distances between images correspond to a road atlas, and placing images into a shape space corresponds to locating cities.
+
+Statisticians have devised a collection of approaches to solve the Lost Cities problem, the most common of which are called multi-dimensional scaling. The fundamental idea is to assign points to *n*-dimensional space such that the distances between points in this space approximately resemble a collection of distances between pairs of objects in some dataset (which in our case is cellular images).
 
 **STOP:** If we have *m* cellular images, then how many times will we need to compute the distance between a pair of images?
 {: .notice--primary}
 
-Unfortunately, for a large dataset, computing the distance between every pair of objects can become very time-intensive, even with a powerful computer. Instead, we will try to rotate all images at the same time so that the images are all aligned against each other before we begin. After this alignment, we can then vectorize all the images starting at the same point, which will hopefully ensure that two shape vectors have high RMSD when (and only when) they derive from shapes that are dissimilar.
-
 ## Aligning many images concurrently
 
+Unfortunately, if we have a large dataset, computing the distance between every pair of objects can become very time-intensive, even with a powerful computer. Instead, we will rotate all images concurrently so that the images are all aligned against each other before we begin. After this alignment, we can then vectorize all the images starting at the same position to ensure that two shape vectors have high RMSD when (and only when) they derive from dissimilar shapes.
+
+We can align a collection of images by first identifying the **major axis** of each image, which is the line segment crossing through the image's center of mass that is as long as possible. The figure below shows the major axis for a few shapes.
+
+NEED FIGURE SHOWING AXIS -- very similar shapes
+
+Because these shapes are similar, when we align their major axes, their similarities will overlap, as shown below.
+
+NEED FIGURE SHOWING SIMILAR SHAPES OVERLAPPED BASED ON MAJOR AXIS
+
+**Note:** We discussed rotations of the images, but we did not discuss what happens when we need to flip an image to align it. This is beyond the scope of our work here but is discussed in research[^Pincus2007].
+{: .notice--warning}
 
 
-* To do so, first identify the "major axis" of each image (show figure). Define axis as a line segment through the shape's center of mass that connects two points on the shape's boundary. The major axis is the axis of the shape that has maximum length.
 
 * Then, rotate images so that their major axes are aligned; for example, align them so that the major axis is horizontal. Only then do we sample each image's vector, starting at one side of the major axis and proceeding clockwise.
 
-* SHOW EXAMPLE?
+
 
 * (There is just one problem, which is that similar shapes could be mirror images of each other. Pincus and Thierot 2007 used a reference shape and found the minimum RMSD between a shape and the reference or its inverse and the reference.)
 
@@ -99,6 +111,8 @@ Unfortunately, for a large dataset, computing the distance between every pair of
 
 
 
-[^apes]: Your author has not either.
-
 [^Barjamovich2019]: Barjamovic B, Chaney T, Coşar K, Hortaçsu A (2019) Trade, Merchants, and the Lost Cities of the Bronze Age. The Quarterly Journal of Economics 134(3):1455-1503.[Available online](https://doi.org/10.1093/qje/qjz009)
+
+[^Pincus2007]: Pincus Z, Theriot J (2007) Comparison of quantitative methods for cell-shape analysis. Journal of Microscopy 227(Pt 2):140-56.[Available online](https://doi.org/10.1111/j.1365-2818.2007.01799.x)
+
+[^Rohde2008]: Rohde G, Ribeiro A, Dahl K, Murphy F (2008) Deformation-based nuclear morphometry: capturing nuclear shape variation in hela cells. Cytometry Part A 73:341–350.[Available online](https://doi.org/10.1002/cyto.a.20506)
