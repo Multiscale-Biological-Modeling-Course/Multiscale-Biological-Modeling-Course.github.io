@@ -9,16 +9,16 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 gallery:
   - url: ../assets/images/600px/genotyping_europe.png
     image_path: ../assets/images/genotyping_europe.png
-    alt: "Iris setosa"
-    title: "Iris setosa."
+    alt: "Fill caption"
+    title: "Fill caption."
   - url: ../assets/images/600px/genotyping_switzerland.png
     image_path: ../assets/images/genotyping_switzerland.png
-    alt: "Iris versicolor"
-    title: "Iris versicolor."
+    alt: "Fill caption"
+    title: "Fill caption."
   - url: ../assets/images/600px/genotyping_continents.png
     image_path: ../assets/images/genotyping_continents.png
-    alt: "Iris virginica"
-    title: "Iris virginica."
+    alt: "Fill caption"
+    title: "Fill caption."
 ---
 
 ## The curse of dimensionality
