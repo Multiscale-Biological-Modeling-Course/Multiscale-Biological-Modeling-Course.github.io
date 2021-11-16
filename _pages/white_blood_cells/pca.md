@@ -6,6 +6,19 @@ sidebar:
 toc: true
 toc_sticky: true
 image: "../assets/images/cellorg_pca_graph_cell.png"
+gallery:
+  - url: ../assets/images/600px/genotyping_europe.png
+    image_path: ../assets/images/genotyping_europe.png
+    alt: "Iris setosa"
+    title: "Iris setosa."
+  - url: ../assets/images/600px/genotyping_switzerland.png
+    image_path: ../assets/images/genotyping_switzerland.png
+    alt: "Iris versicolor"
+    title: "Iris versicolor."
+  - url: ../assets/images/600px/genotyping_continents.png
+    image_path: ../assets/images/genotyping_continents.png
+    alt: "Iris virginica"
+    title: "Iris virginica."
 ---
 
 ## The curse of dimensionality
@@ -81,6 +94,8 @@ An animated GIF showing that distances of points to their projections on a line 
 {: style="font-size: medium;"}
 
 
+
+
 * Note also that we can *reduce* the dimensionality of our dataset from two dimensions to one by mapping each point to its projection onto the line of best fit.
 
 * Show original figure and projections against PCA line.
@@ -101,7 +116,7 @@ An animated GIF showing that distances of points to their projections on a line 
 
 * Yet if we apply PCA with *d* = 2 to produce a lower-dimensional map of the data, we get some amazing results.
 
-* Show Europe, Switzerland, India.
+{% include gallery caption="Fill in caption." %}
 
 * We will lose some information present in the original data, but the more structure that is present in the data, the less information that we will lose.
 
