@@ -36,6 +36,10 @@ Instead, we will reduce the number of dimensions of the space without removing a
 
 ## Dimension reduction with principal components analysis
 
+To motivate dimension reduction, let us return to the example iris flower data set discussed in a [previous lesson](classification) when we introduced the problem of classification.
+
+[![image-center](../assets/images/600px/iris_petal_data_unlabeled.png){: .align-center}](../assets/images/iris_petal_data_unlabeled.png)
+
 * Petal length vs. petal width in irises (don't need species labels this time)
 
 * We can trust our eyes to notice the clear pattern: that as petal width increases, petal length tends to increase as well.
