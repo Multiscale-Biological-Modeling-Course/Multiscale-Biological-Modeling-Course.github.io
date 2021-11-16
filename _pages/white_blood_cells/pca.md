@@ -46,7 +46,7 @@ We can once again trust our eyes to notice the clear pattern: regardless of the 
 
 You may be able to guess where this discussion is headed. If we draw a line through the center of the data (see figure below), then the line provides a reasonable estimate of a flower's petal length from its petal width, or vice-versa. In other words, a one-dimensional object (a line) approximates a collection of points in two dimensions.
 
-**STOP:** How do you think we can determine the best line to approximate a collection of points data?
+**STOP:** How do you think we can determine the best line to approximate a collection of data points?
 {: .notice--primary}
 
 * You may have learned about regression as part of your mathematics education: we want to minimize the sum of squared y distances between the point and its point (x, y) on the line.
