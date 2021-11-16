@@ -46,8 +46,14 @@ We can once again trust our eyes to notice the clear pattern: regardless of the 
 
 You may be able to guess where this discussion is headed. If we draw a line through the center of the data (see figure below), then the line provides a reasonable estimate of a flower's petal length from its petal width, or vice-versa. In other words, a one-dimensional object (a line) approximates a collection of points in two dimensions.
 
+INSERT FIGURE
+
 **STOP:** How do you think we can determine the best line to approximate a collection of data points?
 {: .notice--primary}
+
+As part of your mathematics education, you may have learned about choosing a line of best fit using an approach called **linear regression.** In this approach, we establish one variable as the dependent variable, which is typically plotted on the y-axis. Say that we have a line through our data; we use *L*(*x*) to denote the *y*-coordinate of the point on the line corresponding to a given *x*-coordinate. We then define the **residual** of a data point (*x*, *y*) as the difference *y* - *L*(*x*). If a residual is positive, then the point lies "above" the line, and if the residual is negative, then the point lies "below" the line (see figure below).
+
+ILLUSTRATE RESIDUALS WITH FIGURE
 
 * You may have learned about regression as part of your mathematics education: we want to minimize the sum of squared y distances between the point and its point (x, y) on the line.
 
@@ -111,6 +117,8 @@ You may be able to guess where this discussion is headed. If we draw a line thro
 ## Notes
 
 * (Need to define projection at some point)
+
+* Note that regression generalizes to multiple dimensions.
 
 
 
