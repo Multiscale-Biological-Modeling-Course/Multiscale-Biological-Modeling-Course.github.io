@@ -36,20 +36,77 @@ Instead, we will reduce the number of dimensions of the space without removing a
 
 ## Dimension reduction with principal components analysis
 
+* Petal length vs. petal width in irises (don't need species labels this time)
+
+* We can trust our eyes to notice the clear pattern: that as petal width increases, petal length tends to increase as well.
+
+* Another way of noting this is that a line through the data does a good job of approximating the data. That is, if we knew the petal width, we could guess the petal length, and vice-versa. Even though the points exist in two dimensions, the line (a one-dimensional object) does a good job of approximating the data.
+
+STOP: How do you think we determine the line?
+
+* You may have learned about regression as part of your mathematics education: we want to minimize the sum of squared y distances between the point and its point (x, y) on the line.
+
+* But this is not the only way to form a line through the data explaining it. In particular, regression is good if we want to explain y as a function of x, but it's not clear why petal width would depend on petal length or vice-versa. As a result, if we switched the coordinates, then we would be minimizing the sum of squared differences in the x coordinates.
+
+* SHOW NEW LINE
+
+* Because we don't want to prioritize one variable over another, perhaps instead of minimizing the sum of squares of x residuals, or the sum of squares of y residuals, we could instead find the line that minimizes the sum of squares of distances from the points in the data to their nearest point on the line.
+
+* Note: the resuling line will be quite similar.
+
+* Show figure that indicates the difference in what we are looking for.
+
+* Great GIF from slides showing how if we rotate lines throughout the data, we can see the squared distances to the lines decrease at the point where the line is the best fit. Often this is said to be the line that "explains the most variance in the data" since the distances to the line are the variance perhaps caused by randomness, and the line minimizes these squared distances.
+
+* Note also that we can *reduce* the dimensionality of our dataset from two dimensions to one by mapping each point to its nearest point on the line of best fit.
+
+* Show original figure and projections against PCA line.
+
+* Say that we wanted to generalize this to three-dimensional space. We might find the line through the data minimizing the sum of squared distances to the lines, or it might be that the line is insufficient to this end. Maybe instead we find the plane (a two-dimensional object) to minimize the sum of squared distances from each point to its nearest point on the plane.
+
+* Visual of plane through three-d data?
+
+* It is impossible to provide visual intuition for extending this concept into higher dimensions, but to generalize our idea for dimension reduction, we are looking for a *d*-dimensional "hyperplane" that explains as most variation in an *n*-dimensional dataset as possible, where *n* < *d*, meaning the hyperplane that minimizes the sum of squared distances from each data point to its nearest point on the hyperplane.
+
+* The mathematics for performing this task is over 100 years old (CITE?) and is called **principal components analysis**; a closely related concept is called **singular value decomposition** by mathematicians.
+
+## Genotyping maps: PCA is more powerful than you think
+
+* Proof of concept: one of the things that ancestry companies do is sample genotyping markers from individuals. For example, they are able to detect the nucleotide that an individual has at a single position in their genome.
+
+* This produces a vector of markers for an individual *v* such that *v*(*i*) is 1 if the individual posssesses the marker and 0 otherwise. There are hundreds of thousands of markers used, meaning that this vector inhabits an enormous space.
+
+* Yet if we apply PCA with *d* = 2 to produce a lower-dimensional map of the data, we get some amazing results.
+
+* Show Europe, Switzerland, India.
+
 * We will lose some information present in the original data, but the more structure that is present in the data, the less information that we will lose.
 
-* Motivate regression and PCA analogously to 02-251. Regression and PCA.
+## The curse of dimensionality strikes again
 
-* For an example of how much can be gleaned from a simple PCA analysis, show the Novembre PCA paper.
+* You may be curious how we know what value of *d* to choose, since *d* = 2 produced such good results in the previous section. In practice, *d* may not be 2, but it does tend to be quite small, because the curse of dimensionality affects our results.
 
-* Link to PCA tutorial on generating and visualizing a shape space.
+* Let's look at an example in lower dimensional space. For example, say that we had only sampled two lilies.
 
-* We would like to visualize the shape space before we apply a classifier.
+* Show two lilies with inverse relationship. We can find the line of best fit through them, and it's wrong!
 
-## Visualizing a shape space of WBC images
+* This idea extends to higher dimensions when we have  *n* much bigger than *m* (number of data points), so that when we apply dimension reduction, we want the number of dimensions *d* in the hyperplane to be significantly smaller than *m*. Recall that we only have a few hundred images in our WBC image set, and so *d* will need to be quite small.
 
-* Show shape space post PCA.
 
-* Pointer to next lesson: more about classifiers.
+* We are now ready to apply PCA to our shape vectors and visualize the shape space.
+
+## Shape space of WBC images
+
+* Return from tutorial and show shape space post PCA.
+
+* We are now ready to apply a classifier, not to our original space, but to the lower dimensional plane returned by PCA. (We can do this for a few different values of d?)
+
+* Point to next lesson.
+
+## Notes
+
+* (Need to define projection at some point)
+
+
 
 [^author]: Much like your author.
