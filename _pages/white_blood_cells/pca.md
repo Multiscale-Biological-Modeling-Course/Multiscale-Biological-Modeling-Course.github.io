@@ -77,8 +77,11 @@ INSERT IMAGE SHOWING MINIMIZING DIFFERENCES
 * Great GIF from slides showing how if we rotate lines throughout the data, we can see the squared distances to the lines decrease at the point where the line is the best fit. Often this is said to be the line that "explains the most variance in the data" since the distances to the line are the variance perhaps caused by randomness, and the line minimizes these squared distances.
 
 [![image-center](../assets/images/600px/pca_rotating_line_first_frame.png){: .align-center}](../assets/images/pca_rotating_line.gif)
+The distances of points to their projections on a line change as the line rotates. The line of best fit is the one in which the sum of the square of these distances is minimized.  Source: amoeba, StackExchange user.[^amoeba]
+{: style="font-size: medium;"}
 
-* Note also that we can *reduce* the dimensionality of our dataset from two dimensions to one by mapping each point to its nearest point on the line of best fit.
+
+* Note also that we can *reduce* the dimensionality of our dataset from two dimensions to one by mapping each point to its projection onto the line of best fit.
 
 * Show original figure and projections against PCA line.
 
@@ -130,5 +133,6 @@ INSERT IMAGE SHOWING MINIMIZING DIFFERENCES
 * Note that regression generalizes to multiple dimensions.
 
 
+[^amoeba]: [Amoeba](https://stats.stackexchange.com/users/28666/amoeba), Stack Exchange user. Making sense of principal component analysis, eigenvectors & eigenvalues, Stack exchange URL (version: 2021-08-05): [https://stats.stackexchange.com/q/140579](https://stats.stackexchange.com/q/140579)
 
 [^author]: Much like your author.
