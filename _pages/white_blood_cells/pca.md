@@ -55,7 +55,9 @@ As part of your mathematics education, you may have learned about choosing a lin
 
 ILLUSTRATE RESIDUALS WITH FIGURE
 
-* You may have learned about regression as part of your mathematics education: we want to minimize the sum of squared y distances between the point and its point (x, y) on the line.
+Residuals will vary depending on the particular line chosen. In linear regression, we are therefore looking for the line that *minimizes* the sum of squared residuals, since this line will minimize the variation in the *y*-direction between data points and the line. The figure below shows the linear regression line for the iris flower data presented above.
+
+INSERT IRIS REGRESSION LINE
 
 * But this is not the only way to form a line through the data explaining it. In particular, regression is good if we want to explain y as a function of x, but it's not clear why petal width would depend on petal length or vice-versa. As a result, if we switched the coordinates, then we would be minimizing the sum of squared differences in the x coordinates.
 
