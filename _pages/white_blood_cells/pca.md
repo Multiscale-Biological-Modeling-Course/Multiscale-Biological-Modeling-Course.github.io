@@ -36,17 +36,18 @@ Instead, we will reduce the number of dimensions of the space without removing a
 
 ## Dimension reduction with principal components analysis
 
-To motivate dimension reduction, let us return to the example iris flower data set discussed in a [previous lesson](classification) when we introduced the problem of classification.
+We will dimension reduction with a lower-dimensional example, returning to the  iris flower data set discussed in a [previous lesson](classification) when we introduced the problem of classification. In the figure below, we reproduce the figure containing petal width plotted against petal width, ignoring the species from which each data point derives.
 
 [![image-center](../assets/images/600px/iris_petal_data_unlabeled.png){: .align-center}](../assets/images/iris_petal_data_unlabeled.png)
+Petal width (*x*-axis) plotted against petal width (*y*-axis) for all flowers in the iris flower data set, not labeled according to species.
+{: style="font-size: medium;"}
 
-* Petal length vs. petal width in irises (don't need species labels this time)
+We can once again trust our eyes to notice the clear pattern: regardless of the species of iris, as petal width increases, petal length tends to increase as well.
 
-* We can trust our eyes to notice the clear pattern: that as petal width increases, petal length tends to increase as well.
+You may be able to guess where this discussion is headed. If we draw a line through the center of the data (see figure below), then the line provides a reasonable estimate of a flower's petal length from its petal width, or vice-versa. In other words, a one-dimensional object (a line) approximates a collection of points in two dimensions.
 
-* Another way of noting this is that a line through the data does a good job of approximating the data. That is, if we knew the petal width, we could guess the petal length, and vice-versa. Even though the points exist in two dimensions, the line (a one-dimensional object) does a good job of approximating the data.
-
-STOP: How do you think we determine the line?
+**STOP:** How do you think we can determine the best line to approximate a collection of points data?
+{: .notice--primary}
 
 * You may have learned about regression as part of your mathematics education: we want to minimize the sum of squared y distances between the point and its point (x, y) on the line.
 

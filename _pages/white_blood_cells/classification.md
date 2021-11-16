@@ -61,7 +61,7 @@ A table containing the four features and the correct species label for twelve me
 If we were to use only two features in the Iris flower dataset, then a flower's feature values *x* and *y* could be represented as a point in two-dimensional space (*x*, *y*). In the figure below, we do just this for the features petal length (*x*-axis) and petal width (*y*-axis).
 
 [![image-center](../assets/images/600px/iris_petal_data.png){: .align-center}](../assets/images/iris_petal_data.png)
-Petal width (*x*-axis) plotted against width (*y*-axis) for each of the flowers in the Iris flower data set, colored by species. There are not fifty points corresponding to every species because some flowers have the same petal length and width.
+Petal width (*x*-axis) plotted against width (*y*-axis) for each of the flowers in the iris flower data set, colored by species. There are not fifty points corresponding to every species because some flowers have the same petal length and width.
 {: style="font-size: medium;"}
 
 Note how stark the pattern in the above figure is. Even though we chose only two features from the Iris flowers, the points associated with the flowers essentially divide into three main clusters by species. In other words, nearby points tend to correspond to flowers from the same species.
