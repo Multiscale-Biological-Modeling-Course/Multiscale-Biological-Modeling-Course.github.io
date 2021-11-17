@@ -81,26 +81,28 @@ As the line changes, so will the points' residuals. In linear regression, since 
 However, this is not the only way to fit a line to a collection of data. Choosing petal width as the dependent variable makes sense if we want to explain petal width as a function of petal length, but it is not clear why this dependence would exist. If we were to make petal length the dependent variable instead, then linear regression would minimize the squared differences between residuals in the *x*-direction, as illustrated in the figure below.
 
 [![image-center](../assets/images/600px/residuals_x_coordinates.png){: .align-center width="300px"}](../assets/images/residuals_x_coordinates.png)
-If *x* is the dependent variable, then the residuals for a given line become the horizontal distances between points and the line.
+If *x* is the dependent variable, then the residuals for a line become the horizontal distances between points and the line, and linear regression finds the line that minimizes these horizontal residuals.
 {: style="font-size: medium;"}
 
 **Note:** The linear regression line will likely differ according to which variable we choose as the dependent variable, since the quantity that we are minimizing changes. However, if there is a linear pattern in our data, then the two regression lines will be similar.
 {: .notice--warning}
 
+**STOP:** For the iris flower dataset, which of the two choices for dependent variable do you think is better?
+{: .notice--primary}
 
+The preceding question is implying that it is not clear whether petal width or petal length should be the dependent variable, because it is not clear at all how we might have any *causality* underlying the correlation between these variables. Because this causality is most likely absent, it does not make sense to prioritize one variable over the other as the dependent variable, and we should revisit how we are finding the line that best fits the data.
 
-* (Need to define projection)
-
-* Because we don't want to prioritize one variable over another, perhaps instead of minimizing the sum of squares of x residuals, or the sum of squares of y residuals, we could instead find the line that minimizes the sum of squares of distances from the points in the data to their nearest point on the line.
+In particular, instead of considering residuals based on distances to the line in only the *x*-direction or the *y*-direction, we can instead examine the distances from our data points to the line, as shown in the figure below. Minimizing the sum of the squares of these distances will give us yet a third line fitting a dataset, and one that treats each of the two variables equally.
 
 [![image-center](../assets/images/600px/residuals_projections.png){: .align-center width="300px"}](../assets/images/residuals_projections.png)
 Caption here.
 {: style="font-size: medium;"}
 
-* FIGURE ZOOMING IN ON DIFFERENCES BETWEEN RESIDUALS AND PROJECTIONS
-
 **Note:** The three lines that we produce for this dataset may be very similar, but they will have differences that can affect our analysis.
 {: .notice--warning}
+
+* (Need to define projection)
+
 
 
 * Great GIF from slides showing how if we rotate lines throughout the data, we can see the squared distances to the lines decrease at the point where the line is the best fit. Often this is said to be the line that "explains the most variance in the data" since the distances to the line are the variance perhaps caused by randomness, and the line minimizes these squared distances.
