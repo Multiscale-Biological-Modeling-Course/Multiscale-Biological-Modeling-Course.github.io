@@ -103,8 +103,6 @@ Caption here.
 
 * (Need to define projection)
 
-
-
 * Great GIF from slides showing how if we rotate lines throughout the data, we can see the squared distances to the lines decrease at the point where the line is the best fit. Often this is said to be the line that "explains the most variance in the data" since the distances to the line are the variance perhaps caused by randomness, and the line minimizes these squared distances.
 
 [![image-center](../assets/images/600px/pca_rotating_line_first_frame.png){: .align-center}](../assets/images/pca_rotating_line.gif)
