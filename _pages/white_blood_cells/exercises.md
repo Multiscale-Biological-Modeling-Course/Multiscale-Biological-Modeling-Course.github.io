@@ -27,3 +27,5 @@ Exercise idea: local search and parameter estimation -- tie back to previous mod
 Exercise idea: soft classification, and breaking ties.
 
 Exercise idea: show that RMSD of two vectors of length n is equivalent to Euclidean distance of two vectors of length 2n.
+
+Exercise idea: PCA vs. linear regression for a few different data points to see that the resulting lines are different.
