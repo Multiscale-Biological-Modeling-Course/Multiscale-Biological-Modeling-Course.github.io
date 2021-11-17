@@ -151,7 +151,7 @@ Although PCA is old, it is one of the fundamental tools of statistical analysis 
 
 ## Notes
 
-* Note that regression generalizes to multiple dimensions.
+* Note that regression generalizes to multiple dimensions?
 
 
 [^amoeba]: [Amoeba](https://stats.stackexchange.com/users/28666/amoeba), Stack Exchange user. Making sense of principal component analysis, eigenvectors & eigenvalues, Stack exchange URL (version: 2021-08-05): [https://stats.stackexchange.com/q/140579](https://stats.stackexchange.com/q/140579)
