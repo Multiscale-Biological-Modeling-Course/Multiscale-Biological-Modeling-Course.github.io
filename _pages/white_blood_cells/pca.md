@@ -108,19 +108,16 @@ An animated GIF showing that distances of points to their projections on a line 
 
 Another benefit of finding the first principal component of a dataset is that it allows us to *reduce* the dimensionality of our dataset from two dimensions to one. We call the point on a line that is nearest to a given point the **projection** of that point onto the line; in the figure above, the projection of each point onto the line is shown in red. As a result, the collection of projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
 
-This may not seem useful at all. 
+Dimension reduction may not seem useful at all, but it becomes more powerful as we increase the number of dimensions. With that in mind, say that we wanted to generalize the ideas above to three-dimensional space. The first principal component would offer a one-dimensional explanation of the variance in the data, but perhaps a line is insufficient to this end. Maybe the points all lie very near to a plane (a two-dimensional object), and projecting these points onto the plane would reduce the dataset to two dimensions, as shown in the figure below.
+
+* Insert visual of plane through three-d data.
+
+Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but it is possible to generalize these concepts mathematically. Given a collection of *m* data points (vectors) in *n*-dimensional space, we are looking for a *d*-dimensional **hyperplane**, or an embedding of *d*-dimensional space inside *n*-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized.
+
+We will see some biological examples in the next
 
 
-
-* Note also that we can *reduce* the dimensionality of our dataset from two dimensions to one by mapping each point to its projection onto the line of best fit.
-
-* Show original figure and projections against PCA line.
-
-* Say that we wanted to generalize this to three-dimensional space. We might find the line through the data minimizing the sum of squared distances to the lines, or it might be that the line is insufficient to this end. Maybe instead we find the plane (a two-dimensional object) to minimize the sum of squared distances from each point to its nearest point on the plane.
-
-* Visual of plane through three-d data?
-
-* It is impossible to provide visual intuition for extending this concept into higher dimensions, but to generalize our idea for dimension reduction, we are looking for a *d*-dimensional "hyperplane" that explains as most variation in an *n*-dimensional dataset as possible, where *n* < *d*, meaning the hyperplane that minimizes the sum of squared distances from each data point to its nearest point on the hyperplane.
+* It is impossible to provide visual intuition for extending this concept into higher dimensions, but to generalize our idea for dimension reduction,
 
 * The mathematics for performing this task is over 100 years old (CITE?) and is called **principal components analysis**; a closely related concept is called **singular value decomposition** by mathematicians.
 
