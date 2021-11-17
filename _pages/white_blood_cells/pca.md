@@ -66,7 +66,9 @@ INSERT FIGURE
 
 As part of your mathematics education, you may have learned about choosing a line of best fit using an approach called **linear regression.** In this approach, we establish one variable as the dependent variable, which is typically plotted on the y-axis. Say that we have a line through our data; we use *L*(*x*) to denote the *y*-coordinate of the point on the line corresponding to a given *x*-coordinate. We then define the **residual** of a data point (*x*, *y*) as the difference *y* - *L*(*x*). If a residual is positive, then the point lies "above" the line, and if the residual is negative, then the point lies "below" the line (see figure below).
 
-ILLUSTRATE RESIDUALS WITH FIGURE
+[![image-center](../assets/images/600px/residuals_y_coordinates.png){: .align-center}](../assets/images/residuals_y_coordinates.png)
+Caption here.
+{: style="font-size: medium;"}
 
 Residuals will vary depending on the particular line chosen. In linear regression, we are therefore looking for the line that *minimizes* the sum of squared residuals, since this line will minimize the variation in the *y*-direction between data points and the line. The figure below shows the linear regression line for the iris flower data presented above.
 
@@ -76,12 +78,17 @@ A regression line applied to the iris flower data, where the independent variabl
 
 * But this is not the only way to form a line through the data explaining it. In particular, regression is good if we want to explain y as a function of x, but it's not clear why petal width would depend on petal length or vice-versa. As a result, if we switched the coordinates, then we would be minimizing the sum of squared differences in the x coordinates.
 
-INSERT IMAGE SHOWING MINIMIZING DIFFERENCES
+[![image-center](../assets/images/600px/residuals_x_coordinates.png){: .align-center}](../assets/images/residuals_x_coordinates.png)
+Caption here.
+{: style="font-size: medium;"}
 
-
-* (Define projection)
+* (Need to define projection)
 
 * Because we don't want to prioritize one variable over another, perhaps instead of minimizing the sum of squares of x residuals, or the sum of squares of y residuals, we could instead find the line that minimizes the sum of squares of distances from the points in the data to their nearest point on the line.
+
+[![image-center](../assets/images/600px/residuals_projections.png){: .align-center}](../assets/images/residuals_projections.png)
+Caption here.
+{: style="font-size: medium;"}
 
 * FIGURE ZOOMING IN ON DIFFERENCES BETWEEN RESIDUALS AND PROJECTIONS
 
