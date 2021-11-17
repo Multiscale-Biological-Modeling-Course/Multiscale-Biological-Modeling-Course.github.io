@@ -59,7 +59,9 @@ We can once again trust our eyes to notice the clear pattern: regardless of the 
 
 You may be able to guess where this discussion is headed. If we draw a line through the center of the data (see figure below), then the line provides a reasonable estimate of a flower's petal length from its petal width, or vice-versa. In other words, a one-dimensional object (a line) approximates a collection of points in two dimensions.
 
-INSERT FIGURE
+[![image-center](../assets/images/600px/iris_flowers_regression_line.png){: .align-center}](../assets/images/iris_flowers_regression_line.png)
+A regression line applied to the iris flower data, where the independent variable (on the *x*-axis) is petal length, and the dependent variable (on the *y*-axis) is petal width.
+{: style="font-size: medium;"}
 
 **STOP:** How do you think we can determine the best line to approximate a collection of data points?
 {: .notice--primary}
