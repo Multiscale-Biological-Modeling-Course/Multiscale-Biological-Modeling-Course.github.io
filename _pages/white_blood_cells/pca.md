@@ -74,8 +74,6 @@ Residuals will vary depending on the particular line chosen. In linear regressio
 A regression line applied to the iris flower data, where the independent variable (on the *x*-axis) is petal length, and the dependent variable (on the *y*-axis) is petal width.
 {: style="font-size: medium;"}
 
-INSERT IRIS REGRESSION LINE
-
 * But this is not the only way to form a line through the data explaining it. In particular, regression is good if we want to explain y as a function of x, but it's not clear why petal width would depend on petal length or vice-versa. As a result, if we switched the coordinates, then we would be minimizing the sum of squared differences in the x coordinates.
 
 INSERT IMAGE SHOWING MINIMIZING DIFFERENCES
