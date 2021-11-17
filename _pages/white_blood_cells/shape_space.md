@@ -1,6 +1,6 @@
 ---
 permalink: /white_blood_cells/shape_space
-title: "Building Shape Spaces from Images"
+title: "Building a Shape Space from a Collection of Images"
 sidebar:
  nav: "white_blood_cells"
 toc: true
