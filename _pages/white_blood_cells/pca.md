@@ -73,16 +73,12 @@ We first establish one variable as the *dependent* variable, which is typically 
 Given a line, we use *L*(*x*) to denote the *y*-coordinate of the point on the line corresponding to a given *x*-coordinate. For this line, we can then define the **residual** of a data point (*x*, *y*) as the difference *y* - *L*(*x*) between its *y*-coordinate and the *y*-coordinate that the line estimates as corresponding to *x*. If a residual is positive, then the data point lies "above" the line, and if the residual is negative, then the point lies "below" the line (see figure below).
 
 [![image-center](../assets/images/600px/residuals_y_coordinates.png){: .align-center width="300px"}](../assets/images/residuals_y_coordinates.png)
-A regression line applied to the iris flower data, where the independent variable (on the *x*-axis) is petal length, and the dependent variable (on the *y*-axis) is petal width.
+An example line with a visual depiction of residuals; the absolute value of a residual is the length of its dashed line, and the sign of a residual corresponds to whether it lies above or below the line.
 {: style="font-size: medium;"}
 
-Residuals will vary depending on the particular line chosen. In linear regression, we are therefore looking for the line that *minimizes* the sum of squared residuals, since this line will minimize the variation in the *y*-direction between data points and the line. The figure below shows the linear regression line for the iris flower data presented above.
+As the line changes, so will the points' residuals. In linear regression, since we are looking for the line that best fits the data, we want the line that *minimizes* the sum of squared residuals. In other words, this line will minimize the variation between data points and the line in the *y*-direction.
 
-[![image-center](../assets/images/600px/iris_flowers_regression_line.png){: .align-center}](../assets/images/iris_flowers_regression_line.png)
-A regression line applied to the iris flower data, where the independent variable (on the *x*-axis) is petal length, and the dependent variable (on the *y*-axis) is petal width.
-{: style="font-size: medium;"}
-
-* But this is not the only way to form a line through the data explaining it. In particular, regression is good if we want to explain y as a function of x, but it's not clear why petal width would depend on petal length or vice-versa. As a result, if we switched the coordinates, then we would be minimizing the sum of squared differences in the x coordinates.
+However, this is not the only way to fit a line to a collection of data. Choosing petal width as the dependent variable makes sense if we want to explain petal width as a function of petal length, but it is not clear why this dependence would exist. If we were to switch  we switched the coordinates, then we would be minimizing the sum of squared differences in the x coordinates.
 
 [![image-center](../assets/images/600px/residuals_x_coordinates.png){: .align-center width="300px"}](../assets/images/residuals_x_coordinates.png)
 Caption here.
