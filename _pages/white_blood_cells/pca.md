@@ -78,11 +78,16 @@ An example line with a visual depiction of residuals; the absolute value of a re
 
 As the line changes, so will the points' residuals. In linear regression, since we are looking for the line that best fits the data, we want the line that *minimizes* the sum of squared residuals. In other words, this line will minimize the variation between data points and the line in the *y*-direction.
 
-However, this is not the only way to fit a line to a collection of data. Choosing petal width as the dependent variable makes sense if we want to explain petal width as a function of petal length, but it is not clear why this dependence would exist. If we were to switch  we switched the coordinates, then we would be minimizing the sum of squared differences in the x coordinates.
+However, this is not the only way to fit a line to a collection of data. Choosing petal width as the dependent variable makes sense if we want to explain petal width as a function of petal length, but it is not clear why this dependence would exist. If we were to make petal length the dependent variable instead, then linear regression would minimize the squared differences between residuals in the *x*-direction, as illustrated in the figure below.
 
 [![image-center](../assets/images/600px/residuals_x_coordinates.png){: .align-center width="300px"}](../assets/images/residuals_x_coordinates.png)
-Caption here.
+If *x* is the dependent variable, then the residuals for a given line become the horizontal distances between points and the line.
 {: style="font-size: medium;"}
+
+**Note:** The linear regression line will likely differ according to which variable we choose as the dependent variable, since the quantity that we are minimizing changes. However, if there is a linear pattern in our data, then the two regression lines will be similar.
+{: .notice--warning}
+
+
 
 * (Need to define projection)
 
