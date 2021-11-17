@@ -119,7 +119,7 @@ An animated GIF showing that distances of points to their projections on a line 
 
 * The mathematics for performing this task is over 100 years old (CITE?) and is called **principal components analysis**; a closely related concept is called **singular value decomposition** by mathematicians.
 
-## Genotyping maps: PCA is more powerful than you think
+## Aside on genotyping: PCA is more powerful than you think
 
 * Proof of concept: one of the things that ancestry companies do is sample genotyping markers from individuals. For example, they are able to detect the nucleotide that an individual has at a single position in their genome.
 
