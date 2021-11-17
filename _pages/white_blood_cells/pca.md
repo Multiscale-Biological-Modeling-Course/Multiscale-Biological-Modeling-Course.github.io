@@ -116,7 +116,7 @@ Our three-dimensional minds will not permit us the intuition needed to visualize
 
 Although PCA is old, it is one of the fundamental tools of statistical analysis in an era defined by growing datasets. We will soon apply this approach to reduce the dimensions of our shape space; first, we make a brief aside to discuss a different biological problem in which the application of PCA provided amazing insights.
 
-## Aside on genotyping: PCA is more powerful than you imagine
+## Genotyping: PCA is more powerful than you think
 
 * One of the things that ancestry companies do is sample genotyping markers from individuals. For example, they are able to detect the nucleotide that an individual has at a single position in their genome.
 
