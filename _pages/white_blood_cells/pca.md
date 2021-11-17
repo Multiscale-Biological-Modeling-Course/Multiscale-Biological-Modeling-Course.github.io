@@ -49,27 +49,31 @@ Instead, we will reduce the number of dimensions of the space without removing a
 
 ## Dimension reduction with principal components analysis
 
-We will dimension reduction with a lower-dimensional example, returning to the  iris flower data set discussed in a [previous lesson](classification) when we introduced the problem of classification. In the figure below, we reproduce the figure containing petal width plotted against petal width, ignoring the species from which each data point derives.
+We will introduce dimension reduction with the low-dimensional example of the iris flower data set that we introduced in a [previous lesson](classification) when discussing classification. In the figure below, we reproduce the plot of iris petal width against petal width, ignoring the species from which each flower derives.
 
 [![image-center](../assets/images/600px/iris_petal_data_unlabeled.png){: .align-center}](../assets/images/iris_petal_data_unlabeled.png)
 Petal width (*x*-axis) plotted against petal width (*y*-axis) for all flowers in the iris flower data set, not labeled according to species.
 {: style="font-size: medium;"}
 
-We can once again trust our eyes to notice the clear pattern: regardless of the species of iris, as petal width increases, petal length tends to increase as well.
+We can once again trust our eyes to notice the clear pattern: as iris petal width increases, petal length tends to increase as well.
 
-You may be able to guess where this discussion is headed. If we draw a line through the center of the data (see figure below), then the line provides a reasonable estimate of a flower's petal length from its petal width, or vice-versa. In other words, a one-dimensional object (a line) approximates a collection of points in two dimensions.
+You may surmise where this discussion is headed. If we draw a line through the center of the data (see figure below), then that line provides a reasonable estimate of a flower's petal width from its length, and vice-versa. The line, a one-dimensional object, therefore approximates a collection of two-dimensional points.
 
 [![image-center](../assets/images/600px/iris_flowers_regression_line.png){: .align-center}](../assets/images/iris_flowers_regression_line.png)
-A regression line applied to the iris flower data, where the independent variable (on the *x*-axis) is petal length, and the dependent variable (on the *y*-axis) is petal width.
+A line passing through the plot of iris petal length against petal width. The line tells us approximately how wide we can expect an iris petal to be given the petal's width.
 {: style="font-size: medium;"}
 
-**STOP:** How do you think we can determine the best line to approximate a collection of data points?
+**STOP:** How can we determine the best line to approximate a collection of two-dimensional data points?
 {: .notice--primary}
 
-As part of your mathematics education, you may have learned about choosing a line of best fit using an approach called **linear regression.** In this approach, we establish one variable as the dependent variable, which is typically plotted on the y-axis. Say that we have a line through our data; we use *L*(*x*) to denote the *y*-coordinate of the point on the line corresponding to a given *x*-coordinate. We then define the **residual** of a data point (*x*, *y*) as the difference *y* - *L*(*x*). If a residual is positive, then the point lies "above" the line, and if the residual is negative, then the point lies "below" the line (see figure below).
+Long ago in math class, you may have learned about how to choose a line to best approximate a two-dimensional dataset using **linear regression**, which we will describe in what follows.
+
+We first establish one variable as the *dependent* variable, which is typically plotted on the y-axis. In our iris flower example, the dependent variable is petal width.
+
+Given a line, we use *L*(*x*) to denote the *y*-coordinate of the point on the line corresponding to a given *x*-coordinate. For this line, we can then define the **residual** of a data point (*x*, *y*) as the difference *y* - *L*(*x*) between its *y*-coordinate and the *y*-coordinate that the line estimates as corresponding to *x*. If a residual is positive, then the data point lies "above" the line, and if the residual is negative, then the point lies "below" the line (see figure below).
 
 [![image-center](../assets/images/600px/residuals_y_coordinates.png){: .align-center width="300px"}](../assets/images/residuals_y_coordinates.png)
-Caption here.
+A regression line applied to the iris flower data, where the independent variable (on the *x*-axis) is petal length, and the dependent variable (on the *y*-axis) is petal width.
 {: style="font-size: medium;"}
 
 Residuals will vary depending on the particular line chosen. In linear regression, we are therefore looking for the line that *minimizes* the sum of squared residuals, since this line will minimize the variation in the *y*-direction between data points and the line. The figure below shows the linear regression line for the iris flower data presented above.
