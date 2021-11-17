@@ -112,18 +112,13 @@ Dimension reduction may not seem useful at all, but it becomes more powerful as 
 
 * Insert visual of plane through three-d data.
 
-Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but it is possible to generalize these concepts mathematically. Given a collection of *m* data points (vectors) in *n*-dimensional space, we are looking for a *d*-dimensional **hyperplane**, or an embedding of *d*-dimensional space inside *n*-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized.
+Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but it is possible to generalize these concepts mathematically. Given a collection of *m* data points (vectors) in *n*-dimensional space, we are looking for a *d*-dimensional **hyperplane**, or an embedding of *d*-dimensional space inside *n*-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on the hyperplane, we reduce the dimension of the dataset from *n* to *d*. This approach, which is over 100 years old, is called **principal component analysis (PCA)**; a closely related concept called **singular value decomposition** was developed in the 19th century.
 
-We will see some biological examples in the next
+Although PCA is old, it is one of the fundamental tools of statistical analysis in an era defined by growing datasets. We will soon apply this approach to reduce the dimensions of our shape space; first, we make a brief aside to discuss a different biological problem in which the application of PCA provided amazing insights.
 
+## Aside on genotyping: PCA is more powerful than you imagine
 
-* It is impossible to provide visual intuition for extending this concept into higher dimensions, but to generalize our idea for dimension reduction,
-
-* The mathematics for performing this task is over 100 years old (CITE?) and is called **principal components analysis**; a closely related concept is called **singular value decomposition** by mathematicians.
-
-## Aside on genotyping: PCA is more powerful than you think
-
-* Proof of concept: one of the things that ancestry companies do is sample genotyping markers from individuals. For example, they are able to detect the nucleotide that an individual has at a single position in their genome.
+* One of the things that ancestry companies do is sample genotyping markers from individuals. For example, they are able to detect the nucleotide that an individual has at a single position in their genome.
 
 * This produces a vector of markers for an individual *v* such that *v*(*i*) is 1 if the individual posssesses the marker and 0 otherwise. There are hundreds of thousands of markers used, meaning that this vector inhabits an enormous space.
 
