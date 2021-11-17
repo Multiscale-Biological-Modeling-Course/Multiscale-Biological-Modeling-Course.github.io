@@ -92,23 +92,23 @@ If *x* is the dependent variable, then the residuals for a line become the horiz
 
 The preceding question is implying that it is not clear whether petal width or petal length should be the dependent variable, because it is not clear at all how we might have any *causality* underlying the correlation between these variables. Because this causality is most likely absent, it does not make sense to prioritize one variable over the other as the dependent variable, and we should revisit how we are finding the line that best fits the data.
 
-In particular, instead of considering residuals based on distances to the line in only the *x*-direction or the *y*-direction, we can instead examine the distances from our data points to the line, as shown in the figure below. Minimizing the sum of the squares of these distances will give us yet a third line fitting a dataset, and one that treats each of the two variables equally.
+In particular, instead of considering residuals based on distances to the line in only the *x*-direction or the *y*-direction, we can instead examine the distances from our data points to the line, as shown in the figure below. Minimizing the sum of the squares of these distances will give us a third line fitting a dataset that treats each of the two variables equally and is called the **first principal component** of the data.
 
 [![image-center](../assets/images/600px/residuals_projections.png){: .align-center width="300px"}](../assets/images/residuals_projections.png)
-Caption here.
+A collection of points along with their
 {: style="font-size: medium;"}
 
-**Note:** The three lines that we produce for this dataset may be very similar, but they will have differences that can affect our analysis.
-{: .notice--warning}
+The first principal component is often said to be the line that "explains the most variance in the data". If there is indeed a correspondence between lily petal width and length, then the distances from each point to the first principal component correspond to variation due to randomness. By minimizing the sum of squares of these distances, we limit the amount of variation in our data that we cannot explain.
 
-* (Need to define projection)
-
-* Great GIF from slides showing how if we rotate lines throughout the data, we can see the squared distances to the lines decrease at the point where the line is the best fit. Often this is said to be the line that "explains the most variance in the data" since the distances to the line are the variance perhaps caused by randomness, and the line minimizes these squared distances.
+The following animated GIF shows a line rotating through a collection of data points, with the distance of each point onto the line shown in red. As the line rotates, we can see the distances to the lines become larger and smaller.
 
 [![image-center](../assets/images/600px/pca_rotating_line_first_frame.png){: .align-center}](../assets/images/pca_rotating_line.gif)
 An animated GIF showing that distances of points to their projections on a line change as the line rotates. The line of best fit is the one in which the sum of the square of these distances is minimized.  Source: amoeba, StackExchange user.[^amoeba]
 {: style="font-size: medium;"}
 
+Another benefit of finding the first principal component of a dataset is that it allows us to *reduce* the dimensionality of our dataset from two dimensions to one. We call the point on a line that is nearest to a given point the **projection** of that point onto the line; in the figure above, the projection of each point onto the line is shown in red. As a result, the collection of projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
+
+This may not seem useful at all. 
 
 
 
