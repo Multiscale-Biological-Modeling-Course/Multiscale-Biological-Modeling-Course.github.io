@@ -151,8 +151,6 @@ Although PCA is old, it is one of the fundamental tools of statistical analysis 
 
 ## Notes
 
-* (Need to define projection at some point)
-
 * Note that regression generalizes to multiple dimensions.
 
 
