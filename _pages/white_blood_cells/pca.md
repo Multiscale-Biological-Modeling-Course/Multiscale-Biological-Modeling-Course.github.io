@@ -6,19 +6,6 @@ sidebar:
 toc: true
 toc_sticky: true
 image: "../assets/images/cellorg_pca_graph_cell.png"
-gallery:
-  - url: ../assets/images/600px/genotyping_europe.png
-    image_path: ../assets/images/genotyping_europe.png
-    alt: "Fill caption"
-    title: "Fill caption."
-  - url: ../assets/images/600px/genotyping_switzerland.png
-    image_path: ../assets/images/genotyping_switzerland.png
-    alt: "Fill caption"
-    title: "Fill caption."
-  - url: ../assets/images/600px/genotyping_continents.png
-    image_path: ../assets/images/genotyping_continents.png
-    alt: "Fill caption"
-    title: "Fill caption."
 ---
 
 ## The curse of dimensionality
@@ -118,42 +105,63 @@ Although PCA is old, it is one of the fundamental tools of statistical analysis 
 
 ## Genotyping: PCA is more powerful than you think
 
-* One of the things that ancestry companies do is sample genotyping markers from individuals. For example, they are able to detect the nucleotide that an individual has at a single position in their genome.
+Have you ever wondered how genetic testing companies  identify individuals' ethnicity from a saliva sample? After isolating the DNA in a sample, researchers identify hundreds of thousands of **markers** within the DNA, or locations in the DNA that are common sources of variation in humans. The most commonly type of marker is a single nucleotide (A, C, G, or T).
 
-* This produces a vector of markers for an individual *v* such that *v*(*i*) is 1 if the individual posssesses the marker and 0 otherwise. There are hundreds of thousands of markers used, meaning that this vector inhabits an enormous space.
+An individual's *n* markers can be converted to an *n*-dimensional vector *v* such that *v*(*i*) is 1 if the individual possesses the variant for a marker and *v*(*i*) is 0 if the individual has the more common version of the marker. (The mathematically astute reader will notice that this vector lies on one of the many corners of an *n*-dimensional hypercube.)
 
-* Yet if we apply PCA with *d* = 2 to produce a lower-dimensional map of the data, we get some amazing results.
+Because *n* is so large -- and in the early days of ancestry companies it far outnumbered the number of individual samples -- we need to be wary of the curse of dimensionality. When we apply PCA with *d* = 2 to produce a lower-dimensional projection of the data, we see some amazing results that helped launch the multi-billion dollar human ancestry industry.
 
-{% include gallery caption="Fill in caption." %}
+The figure below shows a two-dimensional projection for individuals of known European ancestry. Even though we have condensed hundreds of thousands of dimensions to two, the projected points reconstruct the map of Europe.
 
-* We will lose some information present in the original data, but the more structure that is present in the data, the less information that we will lose.
+[![image-center](../assets/images/600px/genotyping_europe.png){: .align-center}](../assets/images/genotyping_europe.png)
+The projection of a collection of marker vectors sampled from individuals of known European ethnicity onto the plane produced by PCA with *d* = 2. Individuals cluster by country, and neighboring countries remain nearby in the projected plane.[^Novembre2008]
+{: style="font-size: medium;"}
 
-## The curse of dimensionality strikes again
+If we zoom in on Switzerland, we can see that the countries around Switzerland tend to pull individuals toward them based on language spoken.
 
-* You may be curious how we know what value of *d* to choose, since *d* = 2 produced such good results in the previous section. In practice, *d* may not be 2, but it does tend to be quite small, because the curse of dimensionality affects our results.
+[![image-center](../assets/images/600px/genotyping_switzerland.png){: .align-center}](../assets/images/genotyping_switzerland.png)
+A PCA plot (*d* = 2) of individuals from Switzerland as well as nearby countries shows that an individual's mother tongue correlates with the individual's genetic similarity to representatives from a neighboring country where that language is spoken.[^Novembre2008]
+{: style="font-size: medium;"}
 
-* Let's look at an example in lower dimensional space. For example, say that we had only sampled two lilies.
+And when we zoom farther out, we can see continental patterns emerge as well, with India standing out as its own entity. What is particularly remarkable about all these figures is that humans on the whole are genetically very similar, and yet PCA is able to find evidence of human migrations lurking within the small differences we do have.
 
-* Show two lilies with inverse relationship. We can find the line of best fit through them, and it's wrong!
+[![image-center](../assets/images/600px/genotyping_continents.png){: .align-center}](../assets/images/genotyping_continents.png)
+A PCA plot (*d* = 2) shows clustering of individuals from Europe, Asia, Africa, and India.[^Xing2009]
+{: style="font-size: medium;"}
 
-* This idea extends to higher dimensions when we have  *n* much bigger than *m* (number of data points), so that when we apply dimension reduction, we want the number of dimensions *d* in the hyperplane to be significantly smaller than *m*. Recall that we only have a few hundred images in our WBC image set, and so *d* will need to be quite small.
+Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to apply PCA to the shape space of our WBC images.
 
-
-* We are now ready to apply PCA to our shape vectors and visualize the shape space.
+[Visit tutorial](tutorial_PCA){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 ## Shape space of WBC images
 
 * Return from tutorial and show shape space post PCA.
 
-* We are now ready to apply a classifier, not to our original space, but to the lower dimensional plane returned by PCA. (We can do this for a few different values of d?)
+Now that we have reduced the dimension of our shape space, we are ready to apply a classification algorithm to this lower-dimensional space. In the next lesson, we will revisit the k-nearest neighbors algorithm that we introduced in a previous lesson and sprinkle a little machine learning on top.
 
-* Point to next lesson.
+<!--
+[Next lesson](training){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+-->
 
-## Notes
+## Notes to self
 
 * Note that regression generalizes to multiple dimensions?
+
+* Add citations to each of the three genotyping images.
+
+* Possibly visualize PCA applied to shape space when we build it?
+
+* We will lose some information present in the original data, but the more structure that is present in the data, the less information that we will lose. -- something about the percentage of variation in the data that can be explained by the multiple dimensions?
+
+* (We can do this for a few different values of d?)
 
 
 [^amoeba]: [Amoeba](https://stats.stackexchange.com/users/28666/amoeba), Stack Exchange user. Making sense of principal component analysis, eigenvectors & eigenvalues, Stack exchange URL (version: 2021-08-05): [https://stats.stackexchange.com/q/140579](https://stats.stackexchange.com/q/140579)
 
 [^author]: Much like your author.
+
+[^Novembre2008]: 
+
+[^Xing2009]:

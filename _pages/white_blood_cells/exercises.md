@@ -29,3 +29,14 @@ Exercise idea: soft classification, and breaking ties.
 Exercise idea: show that RMSD of two vectors of length n is equivalent to Euclidean distance of two vectors of length 2n.
 
 Exercise idea: PCA vs. linear regression for a few different data points to see that the resulting lines are different.
+
+
+## The curse of dimensionality strikes again!
+
+* You may be curious how we know what value of *d* to choose, since *d* = 2 produced such good results in the previous section. In practice, *d* may not be 2, but it does tend to be quite small, because the curse of dimensionality affects our results.
+
+* Let's look at an example in lower dimensional space. For example, say that we had only sampled two lilies.
+
+* Show two lilies with inverse relationship. We can find the line of best fit through them, and it's wrong!
+
+* This idea extends to higher dimensions when we have  *n* much bigger than *m* (number of data points), so that when we apply dimension reduction, we want the number of dimensions *d* in the hyperplane to be significantly smaller than *m*. Recall that we only have a few hundred images in our WBC image set, and so *d* will need to be quite small.
