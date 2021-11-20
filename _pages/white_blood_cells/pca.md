@@ -1,6 +1,6 @@
 ---
 permalink: /white_blood_cells/pca
-title: "Principal Components Analysis"
+title: "Reducing the Dimension of a Dataset with Principal Components Analysis"
 sidebar:
  nav: "white_blood_cells"
 toc: true
@@ -95,9 +95,7 @@ An animated GIF showing that distances of points to their projections on a line 
 
 Another benefit of finding the first principal component of a dataset is that it allows us to *reduce* the dimensionality of our dataset from two dimensions to one. We call the point on a line that is nearest to a given point the **projection** of that point onto the line; in the figure above, the projection of each point onto the line is shown in red. As a result, the collection of projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
 
-Dimension reduction may not seem useful at all, but it becomes more powerful as we increase the number of dimensions. With that in mind, say that we wanted to generalize the ideas above to three-dimensional space. The first principal component would offer a one-dimensional explanation of the variance in the data, but perhaps a line is insufficient to this end. Maybe the points all lie very near to a plane (a two-dimensional object), and projecting these points onto the plane would reduce the dataset to two dimensions, as shown in the figure below.
-
-* Insert visual of plane through three-d data.
+Dimension reduction may not seem useful at all, but it becomes more powerful as we increase the number of dimensions. With that in mind, say that we wanted to generalize the ideas above to three-dimensional space. The first principal component would offer a one-dimensional explanation of the variance in the data, but perhaps a line is insufficient to this end. Maybe the points all lie very near to a plane (a two-dimensional object), and projecting these points onto the plane would reduce the dataset to two dimensions.
 
 Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but it is possible to generalize these concepts mathematically. Given a collection of *m* data points (vectors) in *n*-dimensional space, we are looking for a *d*-dimensional **hyperplane**, or an embedding of *d*-dimensional space inside *n*-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on the hyperplane, we reduce the dimension of the dataset from *n* to *d*. This approach, which is over 100 years old, is called **principal component analysis (PCA)**; a closely related concept called **singular value decomposition** was developed in the 19th century.
 
@@ -134,9 +132,7 @@ Now that we have established the power of PCA to help us see patterns in high-di
 [Visit tutorial](tutorial_PCA){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Shape space of WBC images
-
-* Return from tutorial and show shape space post PCA.
+## Applying PCA to an image shape space
 
 Now that we have reduced the dimension of our shape space, we are ready to apply a classification algorithm to this lower-dimensional space. In the next lesson, we will revisit the k-nearest neighbors algorithm that we introduced in a previous lesson and sprinkle a little machine learning on top.
 
@@ -145,23 +141,12 @@ Now that we have reduced the dimension of our shape space, we are ready to apply
 {: style="font-size: 100%; text-align: center;"}
 -->
 
-## Notes to self
-
-* Note that regression generalizes to multiple dimensions?
-
-* Add citations to each of the three genotyping images.
-
-* Possibly visualize PCA applied to shape space when we build it?
-
-* We will lose some information present in the original data, but the more structure that is present in the data, the less information that we will lose. -- something about the percentage of variation in the data that can be explained by the multiple dimensions?
-
-* (We can do this for a few different values of d?)
-
-
 [^amoeba]: [Amoeba](https://stats.stackexchange.com/users/28666/amoeba), Stack Exchange user. Making sense of principal component analysis, eigenvectors & eigenvalues, Stack exchange URL (version: 2021-08-05): [https://stats.stackexchange.com/q/140579](https://stats.stackexchange.com/q/140579)
 
 [^author]: Much like your author.
 
-[^Novembre2008]: 
+[^Fisher1936]: Fisher RA (1936) The Use of Multiple Measurements in Taxonomic Problems. Annals of Eugenics 7(2):179-188. [Available online](https://doi.org/10.1111/j.1469-1809.1936.tb02137.x)
 
-[^Xing2009]:
+[^Novembre2008]: Novembre J et al (2008) Genes mirror geography within Europe. Nature 456:98–101. [Available online](https://www.nature.com/articles/nature07331)
+
+[^Xing2009]: Xing J et al (2009) Fine-scaled human genetic structure revealed by SNP microarrays. Genome Research 19(5): 815-825. [Available online](https://dx.doi.org/10.1101%2Fgr.085589.108)

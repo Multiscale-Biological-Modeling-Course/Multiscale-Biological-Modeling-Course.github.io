@@ -105,6 +105,9 @@ Aligning the three images from the previous figure so that their major axes over
 
 We can now generate a shape space for a collection of binarized cellular images. To review, after aligning the images along their major axis, we sample *n* points from the boundary of each image. These points can be translated into a vector of 2*n* coordinates, which is a point in a very high-dimensional space. We now can construct our desired shape space for a collection of images, but one more pitfall remains, which we will discuss in the next lesson.
 
+[Next lesson](pca){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
 [^Barjamovich2019]: Barjamovic B, Chaney T, Coşar K, Hortaçsu A (2019) Trade, Merchants, and the Lost Cities of the Bronze Age. The Quarterly Journal of Economics 134(3):1455-1503.[Available online](https://doi.org/10.1093/qje/qjz009)
 
 [^Pincus2007]: Pincus Z, Theriot J (2007) Comparison of quantitative methods for cell-shape analysis. Journal of Microscopy 227(Pt 2):140-56.[Available online](https://doi.org/10.1111/j.1365-2818.2007.01799.x)
