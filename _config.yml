@@ -119,7 +119,7 @@ defaults:
     values:
       layout: single
       comments: true # adding comments
-      share: true # add social sharing to pages
+      share: false # don't add social sharing to pages
       author_profile: false
 
 category_archive:
