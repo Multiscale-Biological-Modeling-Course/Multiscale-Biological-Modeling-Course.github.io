@@ -76,13 +76,9 @@ For some parameter values, our reaction-diffusion system is not particularly int
 
 <iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/MOO0fmwoz7E" frameborder="0" allowfullscreen></iframe>
 
-[![image-center](../assets/images/600px/predator_prey_predator_dies_f1e1_r5e5_first_frame.png){: .align-center}](../assets/images/predator_prey_predator_dies_f1e1_r5e5.gif)
-
 On the other hand, if *f* is too high, then there will be an increase in the concentration of *A* particles. However, there will also be more interactions between *A* particles and pairs of *B* particles, and so we will see an explosion in the number of predators. The following simulation has the parameters *f* = 1,000,000 and *k* = 100,000.
 
 <iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/ayvWHWBCg70" frameborder="0" allowfullscreen></iframe>
-
-[![image-center](../assets/images/600px/predator_prey_f1e6_d1e5_first_frame.png){: .align-center}](../assets/images/predator_prey_f1e6_d1e5.gif)
 
 The interesting behavior in this system lies in a sweet spot of the parameters *f* and *k*. For example, consider the following visualization when *f* is equal to 100,000 and *k* is equal to 200,000. We see a very clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where there is a critical mass of predators to interact with each other.
 
