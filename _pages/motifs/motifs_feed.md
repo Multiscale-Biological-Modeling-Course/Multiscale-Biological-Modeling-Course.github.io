@@ -14,7 +14,7 @@ In the previous lesson, we saw that negative autoregulation can be used to speed
 
 The answer will lie in another small network motif called the **feedforward loop** (**FFL**). The FFL motif, shown in the figure below, is a network substructure in which *X* is connected to both *Y* and *Z*, and *Y* is connected to *Z*. In this sense, calling the FFL motif a "loop" is a misnomer. Rather, it is a small structure in which there are two "paths" from *X* to *Z*; one via direct regulation of *Z* by *X*, and another in which there is an intermediate transcription factor *Y*. This is why this motif is called *feedforward* rather than *feedback*.
 
-[![image-center](../assets/images/600px/feed-forward_loop.png){: .align-center}](../assets/images/feed-forward_loop.png)
+[![image-center](../assets/images/600px/feed-forward_loop.png){: .align-center width="300px"}](../assets/images/feed-forward_loop.png)
 The FFL motif. *X* regulates both *Y* and *Z*, and *Y* regulates *Z*.
 {: style="font-size: medium;"}
 
@@ -27,7 +27,7 @@ Among the 42 total FFLs in the *E. coli* transcription factor network, five of t
 **STOP:** How could we simulate a feedforward loop with chemical reactions akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
 {: .notice--primary}
 
-[![image-center](../assets/images/600px/type-1_incoherent_feed-forward_loop.png){: .align-center}](../assets/images/type-1_incoherent_feed-forward_loop.png)
+[![image-center](../assets/images/600px/type-1_incoherent_feed-forward_loop.png){: .align-center width="300px"}](../assets/images/type-1_incoherent_feed-forward_loop.png)
 The incoherent feed-forward loop network motif. Note that *X* upregulates *Y* and *Z*, while *Y* downregulates *Z*.
 {: style="font-size: medium;"}
 
