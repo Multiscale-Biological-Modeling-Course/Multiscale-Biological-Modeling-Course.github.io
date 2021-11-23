@@ -84,14 +84,14 @@ The interesting behavior in this system lies in a sweet spot of the parameters *
 
 <iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/W_eCGTlgi4k" frameborder="0" allowfullscreen></iframe>
 
-
-
 <center>
 <iframe width="750" height="360" src="../assets/videos/predator_prey_11_by_11_f_1_k_2.mp4" frameborder="0" allowfullscreen>
 </iframe>
 </center>
 
 When we hold *k* fixed and increase *f* to 140,000, the higher feed rate increases the likelihood of *B* particles encountering *A* particles, and so we see even more waves of *A* cascades.  Note the clear red-green stripes that have appeared by the end of the movie.
+
+<iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/I5wyKpIWgrE" frameborder="0" allowfullscreen></iframe>
 
 <center>
 <iframe width="750" height="360" src="../assets/videos/predator_prey_11_by_11_f_1.4_k_2.mp4" frameborder="0" allowfullscreen></iframe>
