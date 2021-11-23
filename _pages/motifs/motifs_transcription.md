@@ -14,7 +14,7 @@ Recall that DNA is a double-stranded molecule consisting of the four nucleobases
 
 The RNA transcript is then **translated** into an amino acid sequence. Because there are four different bases but twenty amino acids available, RNA is translated in **codons**, or triplets of nucleobases. The figure below shows the way in which codons are translated into amino acids, which is called the **genetic code**.
 
-[![image-center](../assets/images/600px/genetic_code.png){: .align-center}](../assets/images/genetic_code.png)
+[![image-center](../assets/images/600px/genetic_code.png){: .align-center width="300px"}](../assets/images/genetic_code.png)
 The genetic code, which dictates the conversion of RNA codons into amino acids.
 {: style="font-size: medium;"}
 
@@ -42,7 +42,7 @@ Note that by the central dogma, transcription factors are involved in a sort of 
 
 Transcription factors are vital for the cell's response to its environment because extracellular stimuli can serve to activate a transcription factor via a system of signaling molecules that convey a signal through relay molecules to the transcription factor (see figure below). Only when the transcription factor is activated will it regulate its target protein(s).
 
-[![image-center](../assets/images/600px/signal_pathway.jpg){: .align-center}](../assets/images/signal_pathway.jpg)
+[![image-center](../assets/images/600px/signal_pathway.jpg){: .align-center width="400px"}](../assets/images/signal_pathway.jpg)
 A cell receiving a signal which triggers a response in which this signal is "transduced" into the cell, resulting in transcription of a gene. We will discuss signal transduction in greater detail in a future module.[^signalResponse]
 {: style="font-size: medium;"}
 
@@ -64,7 +64,7 @@ The clever trick is to use an **antibody** (i.e., a protein that your immune sys
 
 In a final step, we unlink the protein from the DNA, leaving a collection of DNA fragments that were previously bonded to a single transcription factor. These fragments are read using **DNA sequencing** to determine the order of nucleotides on each fragment. Once we have read the fragments, we can then scan through the genome to determine the genes that these fragments precede. We can then postulate that these are the genes regulated by the transcription factor!
 
-[![image-center](../assets/images/600px/ChIP-seq_workflow.png){: .align-center}](../assets/images/ChIP-seq_workflow.png)
+[![image-center](../assets/images/600px/ChIP-seq_workflow.png){: .align-center width="400px"}](../assets/images/ChIP-seq_workflow.png)
 An overview of ChIP-seq. Figure courtesy Jkwchui, Wikimedia Commons user.
 {: style="font-size: medium;"}
 
