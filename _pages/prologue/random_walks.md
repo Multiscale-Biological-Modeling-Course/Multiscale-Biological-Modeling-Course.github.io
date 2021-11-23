@@ -21,8 +21,6 @@ Let's generate an animation of a particle following a random walk. Click on the 
 
 <iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/htggKpDKQDk" frameborder="0" allowfullscreen></iframe>
 
-[![image-center](../assets/images/600px/random_walk_1_first_frame.png){: .align-center}](../assets/videos/random_walk_1.mp4)
-
 The distance that the particle wanders from its starting point may surprise you. And yet the astute scientist would point out that this is just a single particle; perhaps the typical particle would be much more of a homebody.
 
 The particle's movements are random, but the *average-case* behavior of the particle can be predicted, as the following theorem indicates. For mathematics lovers, we explain why this theorem is true in an optional bonus section at the bottom of this page.
@@ -37,8 +35,6 @@ The particle's movements are random, but the *average-case* behavior of the part
 The Random Walk Theorem does not say that after *n* steps a particle will be exactly $$\sqrt{n}$$ from the origin, any more than we would expect that in flipping a coin 2,000 times the coin will come up heads exactly 1,000 times. Yet the statement about the particle's average behavior is powerful. If we animate the action of many independent particles following random walks, then we will see that although some particles hug their starting point and some wind up far away, most particles steadily move outward. Click on the following video to watch a simulation of 200 randomly walking particles.
 
 <iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/U9uPFDBc0VY" frameborder="0" allowfullscreen></iframe>
-
-[![image-center](../assets/images/600px/random_walk_200_first_frame.png){: .align-center}](../assets/images/random_walk_200.gif)
 
 If you are interested in seeing how to build this random walk simulation as an introduction to the software that we will soon be using for biological modeling, then please visit the following software tutorial. This tutorial uses **CellBlender**, an add-on to the popular open graphics software program **Blender**, which allows us to create and visualize biological models. These models rely on particle-based reaction-diffusion simulations that are implemented by the program **MCell**.
 
