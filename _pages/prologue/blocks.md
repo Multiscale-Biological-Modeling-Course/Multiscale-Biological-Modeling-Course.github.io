@@ -16,7 +16,7 @@ In our case, we have a very "fine-grained" reaction-diffusion model illustrating
 
 Let us begin with a simple example of the diffusion of only *A* particles (we will later add *B* particles as well as reactions to our model). Say that the particles are at maximum concentration in the central cell of our grid, and are present nowhere else, as the following figure illustrates.
 
-[![image-center](../assets/images/600px/initial_A_concentration.png){: .align-center}](../assets/images/initial_A_concentration.png)
+[![image-center](../assets/images/600px/initial_A_concentration.png){: .align-center width="300px"}](../assets/images/initial_A_concentration.png)
 A 5 x 5 grid showing hypothetical initial concentrations of *A* particles. Cells are labeled by numbers between 0 and 1 representing their concentration of a single particle. In this example, the central cell has maximum concentration, and no particles are contained in any other cell.
 {: style="font-size: medium;"}
 
