@@ -84,7 +84,7 @@ To explain why the protein is so flexible, we should say a bit more about the mo
 
 An amino acid is formed of four parts. In the center, a carbon atom (called the **alpha carbon**) is connected to four different molecules: a hydrogen atom (H), a **carboxyl group** (–COOH), an **amino group** (-NH<sub>2</sub>), and a **side chain** (denoted "R" and often called an R group). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) all the way up to -C<sub>8</sub>H<sub>7</sub>N (tryptophan). The simplified structure of an amino acid is shown in the figure below.
 
-[![image-center](../assets/images/600px/AminoAcid.png){: .align-center}](../assets/images/AminoAcid.png)
+[![image-center](../assets/images/600px/AminoAcid.png){: .align-center width="300px"}](../assets/images/AminoAcid.png)
 {: style="font-size: medium;"}
 
 To form a polypeptide chain, consecutive amino acids are linked together during a condensation reaction in which the amino group of one amino acid is joined to the carboxyl group of another, while a water molecule (H<sub>2</sub>O) is expelled. This reaction is illustrated by the figure below.
@@ -101,7 +101,7 @@ A protein backbone formed of three amino acids.
 
 However, the bonds *within* an amino acid, joining the alpha carbon to its carboxyl group and amino group, are not as rigid. Like the Rubik's twist, the polypeptide is free to rotate around these two bonds. This rotation produces two angles of interest, called the **phi angle (φ)** and **psi angle (ψ)** (see figure below), which are formed at the alpha carbon's connections to its amino group and carboxyl group, respectively.
 
-[![image-center](../assets/images/600px/torsion_angles.png){: .align-center}](../assets/images/torsion_angles.png)
+[![image-center](../assets/images/600px/torsion_angles.png){: .align-center width="400px"}](../assets/images/torsion_angles.png)
 A polypeptide chain of multiple amino acids with the torsion angles φ and ψ indicated. The angle ω indicates the angle of the peptide bond, which is typically 180°. Image courtesy: Adam Rędzikowski.
 {: style="font-size: medium;"}
 

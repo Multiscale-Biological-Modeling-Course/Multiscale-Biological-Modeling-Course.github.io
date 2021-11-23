@@ -34,7 +34,7 @@ The tertiary structure of human hemoglobin subunit alpha. Within the structure a
 
 Finally, some proteins have a **quaternary structure**, which describes the protein’s interaction with other copies of itself to form a single functional unit, or a **multimer**. Many proteins do not have a quaternary structure and function as an independent monomer. The figure below shows the quaternary structure of hemoglobin, which is a multimer consisting of two alpha subunits and two beta subunits.
 
-[![image-center](../assets/images/600px/hemoglobin_quaternary_structure.png){: .align-center}](../assets/images/hemoglobin_quaternary_structure.png)
+[![image-center](../assets/images/600px/hemoglobin_quaternary_structure.png){: .align-center width="400px"}](../assets/images/hemoglobin_quaternary_structure.png)
 The quaternary structure of human hemoglobin, which consists of two alpha subunits (shown in red) and two beta subunits (shown in blue). Source: [https://commons.wikimedia.org/wiki/File:1GZX_Haemoglobin.png](https://commons.wikimedia.org/wiki/File:1GZX_Haemoglobin.png)]().
 {: style="font-size: medium;"}
 

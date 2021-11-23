@@ -44,7 +44,7 @@ To this end, we first translate *S* to have the same **centroid** (or **center o
 
 For example, suppose *S* is the semicircular arc shown in the figure below, with endpoints (-1, 0) and (1, 0).
 
-[![image-center](../assets/images/600px/semicircular_arc.png){: .align-center}](../assets/images/semicircular_arc.png)
+[![image-center](../assets/images/600px/semicircular_arc.png){: .align-center width="300px"}](../assets/images/semicircular_arc.png)
 A semicircular arc with radius 1 corresponding to a circle whose center is at the origin.
 {: style="font-size: medium;"}
 
@@ -74,7 +74,7 @@ In this formula, *d*(*s*<sub><em>i</em></sub>, *t*<sub><em>i</em></sub>) is the 
 
 For an example RMSD calculation, consider the figure below, which shows two shapes with four points sampled from each.
 
-[![image-center](../assets/images/600px/rmsd_simple_shapes.png){: .align-center}](../assets/images/rmsd_simple_shapes.png)
+[![image-center](../assets/images/600px/rmsd_simple_shapes.png){: .align-center width="400px"}](../assets/images/rmsd_simple_shapes.png)
 Two shapes with four points sampled from each.
 {: style="font-size: medium;"}
 
@@ -92,7 +92,7 @@ $$\begin{align*}
 
 Even if we assume that the shapes have already been overlapped and rotated appropriately, we still need to make sure that we sample enough points to give a good approximation of how different the shapes are.  For an extreme example, consider a circle inscribed within a square, as shown in the figure below. If we happened to sample only the four points indicated, we would sample the same points in each shape, and conclude that the RMSD between these two shapes is zero.  This issue is easily resolved by making sure to sample enough points to avoid approximation errors.
 
-[![image-center](../assets/images/600px/circle_square_undersampling.png){: .align-center}](../assets/images/circle_square_undersampling.png)
+[![image-center](../assets/images/600px/circle_square_undersampling.png){: .align-center width="300px"}](../assets/images/circle_square_undersampling.png)
 A circle inscribed within a square. Sampling of the four points where the shapes intersect will give a flawed estimate of zero for RMSD.
 {: style="font-size: medium;"}
 
