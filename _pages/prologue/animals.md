@@ -71,6 +71,11 @@ When we return from this tutorial, we will examine the patterns that we are able
 
 For some parameter values, our reaction-diffusion system is not particularly interesting.  For example, the following animation is produced when using parameter rates in CellBlender of *f* = 1000 and *k* = 500,000. It shows that if the kill rate is too high, then the *B* particles will die out more quickly than they can be replenished by the reaction with *A* particles, and so only *A* particles will be left. In this animation, *A* particles have been colored green, and *B* particles have been colored red.
 
+**Note:** Some of the videos in this lesson are short because we can find the end result behavior of the system with only a short simulation, and the videos are very computationally intensive to generate due to the number of particles simulated.
+{: .notice--warning}
+
+<iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/MOO0fmwoz7E" frameborder="0" allowfullscreen></iframe>
+
 [![image-center](../assets/images/600px/predator_prey_predator_dies_f1e1_r5e5_first_frame.png){: .align-center}](../assets/images/predator_prey_predator_dies_f1e1_r5e5.gif)
 
 On the other hand, if *f* is too high, then there will be an increase in the concentration of *A* particles. However, there will also be more interactions between *A* particles and pairs of *B* particles, and so we will see an explosion in the number of predators. The following simulation has the parameters *f* = 1,000,000 and *k* = 100,000.
