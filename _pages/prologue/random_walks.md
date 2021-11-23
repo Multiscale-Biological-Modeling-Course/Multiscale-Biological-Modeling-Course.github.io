@@ -19,6 +19,8 @@ We can therefore model the random movements of a particle by **random walk** in 
 
 Let's generate an animation of a particle following a random walk. Click on the video below to show a randomly walking particle, shown in red, taking 1000 steps.
 
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/htggKpDKQDk" frameborder="0" allowfullscreen></iframe>
+
 [![image-center](../assets/images/600px/random_walk_1_first_frame.png){: .align-center}](../assets/videos/random_walk_1.mp4)
 
 The distance that the particle wanders from its starting point may surprise you. And yet the astute scientist would point out that this is just a single particle; perhaps the typical particle would be much more of a homebody.
