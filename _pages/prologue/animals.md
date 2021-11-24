@@ -99,6 +99,8 @@ When we hold *k* fixed and increase *f* to 140,000, the higher feed rate increas
 
 As *f* approaches *k*, the stripe structure becomes chaotic and breaks down because there are so many pockets of *B* particles that these particles constantly collide and mix with each other. The following animation shows the result of raising *f* to 175,000.
 
+<iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/CM0JUzRn4X8" frameborder="0" allowfullscreen></iframe>
+
 <center>
 <iframe width="750" height="360" src="../assets/videos/predator_prey_11_by_11_f_1.75_k_2_new.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
