@@ -107,6 +107,8 @@ As *f* approaches *k*, the stripe structure becomes chaotic and breaks down beca
 
 Once *f* and *k* are equal, the stripes will disappear. We might expect this to mean that the *B* particles will be uniformly distributed across a background of *A* particles. But what we see is that after an initial outward explosion of *B* particles, the system produces a mottled background, with pockets having higher or lower concentration of *B*. Pay attention to the following video at a point late in the animation. Although the concentrations of the particles are still changing, there is much less large-scale change than in earlier videos. If we freeze the video, our eye cannot help but see patterns of red and green clusters that resemble spots (or at the very least mottling).
 
+<iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/Pva4e0w7i24" frameborder="0" allowfullscreen></iframe>
+
 <center>
 <iframe width="750" height="360" src="../assets/videos/predator_prey_11_by_11_f_1_k_1.mp4" frameborder="0" allowfullscreen>
 </iframe>
