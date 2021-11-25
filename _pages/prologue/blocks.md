@@ -119,7 +119,9 @@ To visualize the changing concentrations in each cell, we use a color map to col
 
 [![image-center](../assets/images/600px/matplotlib_colormap.png){: .align-center}](../assets/images/matplotlib_colormap.png)
 
-The following animation shows an animation of the Gray-Scott model using the parameters *f* = 0.034 and *k* = 0.095.
+Click on the following animation to see an animation of the Gray-Scott model using the parameters *f* = 0.034 and *k* = 0.095.
+
+[![image-center](../assets/images/600px/gray-scott_movie_first_frame.png){: .align-center}](../assets/images/gray-scott_movie.gif)
 
 [![image-center](../assets/gs_movie.gif){: .align-center}](../assets/gs_movie.gif)
 
