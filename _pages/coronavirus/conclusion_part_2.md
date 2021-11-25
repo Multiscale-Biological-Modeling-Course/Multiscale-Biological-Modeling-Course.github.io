@@ -124,9 +124,11 @@ The fluctuations calculated by ANM provide information on possible movement and 
 |Resid 31, 35 (Hotspot 31)|Orange|
 |Resid 38, 353 (Hotspot 353)|Red|
 
-<video width="480" height="320" controls="controls">
+<center>
+<video width="496" height="472" controls="controls">
   <source src="../assets/videos/6vw1_B&F.mp4" type="video/mp4">
 </video>
+</center>
 
 <center>
 <iframe width="640" height="360" src="../assets/videos/6vw1_B&F.mp4" frameborder="0" allowfullscreen></iframe>
