@@ -107,9 +107,12 @@ Using NMWiz and VMD, we also created animations of the protein fluctuation calcu
 |Resid 31, 35 (Hotspot 31)|Orange|
 |Resid 38, 353 (Hotspot 353)|Red|
 
+<video width="480" height="320" controls="controls">
+  <source src="../assets/videos/6vw1_B&F.mp4" type="video/mp4">
+</video>
 
 <center>
-<iframe width="640" height="360" src="../assets/6vw1_B&F.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="../assets/videos/6vw1_B&F.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
 
 ### SARS Spike RBD (2ajf):
