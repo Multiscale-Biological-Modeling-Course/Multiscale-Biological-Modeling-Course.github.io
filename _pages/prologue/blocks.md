@@ -123,11 +123,9 @@ Click on the following animation to see an animation of the Gray-Scott model usi
 
 [![image-center](../assets/images/600px/gray-scott_movie_first_frame.png){: .align-center}](../assets/images/gray-scott_movie.gif)
 
-[![image-center](../assets/gs_movie.gif){: .align-center}](../assets/gs_movie.gif)
-
 If we expand the size of the simulation and add new predator locations to the grid, then the patterns become more complex as they intersect.
 
-[![image-center](../assets/0_Bgs_movie.gif){: .align-center}](../assets/0_Bgs_movie.gif)
+[![image-center](../assets/images/600px/gray-scott_multiple_predators_first_frame.png){: .align-center}](../assets/images/gray-scott_multiple_predators.gif)
 
 If we keep the feed rate constant and tweak the kill rate ever so slightly to *k* = 0.097, then the patterns change significantly into spots.
 
