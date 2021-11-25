@@ -28,7 +28,7 @@ Our reaction-diffusion system is remarkable because it is so **fine-tuned**, mea
 
 Robert Munafo provides a great figure, reproduced below, showing how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary.[^robert] The kill rate increases along the *x*-axis, and the feed rate increases along the *y*-axis. Notice how quickly the patterns change! You may like to try tweaking the parameters of our own Gray-Scott simulator to see if you can reproduce these different patterns.
 
-[![image-center](../assets/images/600px/xmorphia-parameter-map.jpg){: .align-center width="300px"}](../assets/images/xmorphia-parameter-map.jpg)
+[![image-center](../assets/images/600px/xmorphia-parameter-map.jpg){: .align-center width="400px"}](../assets/images/xmorphia-parameter-map.jpg)
 
 Changing feed and kill parameters affects the Turing patterns produced in the Gray-Scott model.
 {: style="font-size: medium;"}
