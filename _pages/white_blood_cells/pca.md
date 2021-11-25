@@ -82,7 +82,7 @@ The preceding question is implying that it is not clear whether petal width or p
 In particular, instead of considering residuals based on distances to the line in only the *x*-direction or the *y*-direction, we can instead examine the distances from our data points to the line, as shown in the figure below. Minimizing the sum of the squares of these distances will give us a third line fitting a dataset that treats each of the two variables equally and is called the **first principal component** of the data.
 
 [![image-center](../assets/images/600px/residuals_projections.png){: .align-center width="300px"}](../assets/images/residuals_projections.png)
-A collection of points along with their
+A line along with a collection of points; dashed lines show the shortest segments connecting each point to the line.
 {: style="font-size: medium;"}
 
 The first principal component is often said to be the line that "explains the most variance in the data". If there is indeed a correspondence between lily petal width and length, then the distances from each point to the first principal component correspond to variation due to randomness. By minimizing the sum of squares of these distances, we limit the amount of variation in our data that we cannot explain.
@@ -111,19 +111,19 @@ Because *n* is so large -- and in the early days of ancestry companies it far ou
 
 The figure below shows a two-dimensional projection for individuals of known European ancestry. Even though we have condensed hundreds of thousands of dimensions to two, the projected points reconstruct the map of Europe.
 
-[![image-center](../assets/images/600px/genotyping_europe.png){: .align-center}](../assets/images/genotyping_europe.png)
+[![image-center](../assets/images/600px/genotyping_europe.png){: .align-center width="500px"}](../assets/images/genotyping_europe.png)
 The projection of a collection of marker vectors sampled from individuals of known European ethnicity onto the plane produced by PCA with *d* = 2. Individuals cluster by country, and neighboring countries remain nearby in the projected plane.[^Novembre2008]
 {: style="font-size: medium;"}
 
 If we zoom in on Switzerland, we can see that the countries around Switzerland tend to pull individuals toward them based on language spoken.
 
-[![image-center](../assets/images/600px/genotyping_switzerland.png){: .align-center}](../assets/images/genotyping_switzerland.png)
+[![image-center](../assets/images/600px/genotyping_switzerland.png){: .align-center width="400px"}](../assets/images/genotyping_switzerland.png)
 A PCA plot (*d* = 2) of individuals from Switzerland as well as nearby countries shows that an individual's mother tongue correlates with the individual's genetic similarity to representatives from a neighboring country where that language is spoken.[^Novembre2008]
 {: style="font-size: medium;"}
 
 And when we zoom farther out, we can see continental patterns emerge as well, with India standing out as its own entity. What is particularly remarkable about all these figures is that humans on the whole are genetically very similar, and yet PCA is able to find evidence of human migrations lurking within the small differences we do have.
 
-[![image-center](../assets/images/600px/genotyping_continents.png){: .align-center}](../assets/images/genotyping_continents.png)
+[![image-center](../assets/images/600px/genotyping_continents.png){: .align-center width="400px"}](../assets/images/genotyping_continents.png)
 A PCA plot (*d* = 2) shows clustering of individuals from Europe, Asia, Africa, and India.[^Xing2009]
 {: style="font-size: medium;"}
 
