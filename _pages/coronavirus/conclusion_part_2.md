@@ -107,7 +107,7 @@ The fluctuations calculated by ANM provide information on possible movement and 
 |Resid 38, 353 (Hotspot 353)|Red|
 
 <center>
-<iframe width="640" height="360" src="../assets/2ajf_B&F.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="../assets/videos/2ajf_B&F.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
 
 ### SARS-CoV-2 spike protein chimeric RBD (PDB: 6vw1)

@@ -62,7 +62,7 @@ The animation should also be visible in `OpenGL Display`. However, the previous 
 Now, you should be able to clearly see the animation of the ANM fluctuations of 6vw1.
 
 <center>
-<iframe width="640" height="360" src="../assets/6vw1_chainF.mp4" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="../assets/videos/6vw1_chainF.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
 
 Now let's go back to the main text to interpret the results.
