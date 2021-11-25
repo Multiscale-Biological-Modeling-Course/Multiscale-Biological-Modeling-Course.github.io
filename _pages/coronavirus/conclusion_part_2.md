@@ -107,7 +107,9 @@ The fluctuations calculated by ANM provide information on possible movement and 
 |Resid 38, 353 (Hotspot 353)|Red|
 
 <center>
-<iframe width="640" height="360" src="../assets/videos/2ajf_B&F.mp4" frameborder="0" allowfullscreen></iframe>
+<video width="484" height="500" controls="controls">
+  <source src="../assets/videos/2ajf_B&F.mp4" type="video/mp4">
+</video>
 </center>
 
 ### SARS-CoV-2 spike protein chimeric RBD (PDB: 6vw1)
@@ -128,10 +130,6 @@ The fluctuations calculated by ANM provide information on possible movement and 
 <video width="496" height="472" controls="controls">
   <source src="../assets/videos/6vw1_B&F.mp4" type="video/mp4">
 </video>
-</center>
-
-<center>
-<iframe width="640" height="360" src="../assets/videos/6vw1_B&F.mp4" frameborder="0" allowfullscreen></iframe>
 </center>
 
 Recall from our work in the [previous lesson](NAMD#differences-in-interaction-energy-with-ace2-between-sars-and-sars-cov-2) that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called "hotspot 31". This region is highlighted in blue and orange in the above figures. If you look very closely (you may need to zoom in), as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This provides one more piece of evidence that SARS-CoV-2 is more effective at binding to the ACE2 enzyme.
