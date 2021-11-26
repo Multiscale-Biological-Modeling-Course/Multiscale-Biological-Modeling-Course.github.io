@@ -5,7 +5,7 @@ sidebar:
  nav: "motifs"
 toc: true
 toc_sticky: true
-image: "../assets/images/repressilator_graph.PNG"
+image: "../assets/images/repressilator_chart.png"
 ---
 
 ## Hunting for a biological motivation for negative autoregulation

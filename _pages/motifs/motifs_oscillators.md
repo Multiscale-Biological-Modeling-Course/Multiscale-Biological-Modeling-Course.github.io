@@ -5,7 +5,7 @@ sidebar:
  nav: "motifs"
 toc: true
 toc_sticky: true
-image: "../assets/images/repressilator_graph.PNG"
+image: "../assets/images/repressilator_chart.png"
 ---
 
 ## Oscillators are everywhere in nature
@@ -47,7 +47,7 @@ The figure below shows the results of our simulation by plotting the number of *
 **STOP:** Why do you think that the repressilator motif leads to this pattern of oscillations?
 {: .notice--primary}
 
-[![image-center](../assets/images/600px/repressilator_graph.png){: .align-center}](../assets/images/repressilator_graph.PNG)
+[![image-center](../assets/images/600px/repressilator_chart.png){: .align-center}](../assets/images/repressilator_chart.png)
 Modeling the repressilator's concentration of particles. *X* is shown in yellow, *Y* is shown in red, and *Z* is shown in blue.
 {: style="font-size: medium;"}
 
