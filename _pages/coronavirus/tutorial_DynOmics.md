@@ -67,13 +67,6 @@ That is all for how to get the structural dynamics results of DynOmics. If you a
 
 We will now head back to the main text in order to analyze our GNM/ANM results of SARS-CoV-2 S protein and compare it with SARS-CoV S protein to see if we can distinguish any significant differences.
 
-If you would rather perform GNM/ANM analysis using command line, ProDy, and VMD, please go to the following tutorials
-
-[Visit GNM tutorial](tutorial_GNM){: .btn .btn--primary .btn--large}
-{: style="font-size: 100%; text-align: center;"}
-[Visit ANM tutorial](tutorial_ANM){: .btn .btn--primary .btn--large}
-{: style="font-size: 100%; text-align: center;"}
-
 
 [Return to main text](conclusion_part_2_draft){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
