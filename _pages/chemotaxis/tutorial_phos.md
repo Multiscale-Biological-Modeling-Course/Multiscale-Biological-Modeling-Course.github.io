@@ -155,7 +155,7 @@ begin reaction rules
 end reaction rules
 
 begin species
-	L(t) 0
+	L(t) L0
 	T(l,Phos~U) T0*0.8
 	T(l,Phos~P) T0*0.2
 	CheY(Phos~U) CheY0*0.5
