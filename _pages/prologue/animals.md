@@ -99,7 +99,7 @@ Once *f* and *k* are equal, the stripes will disappear. We might expect this to 
 You may still be skeptical, since the patterns above do not have the concrete boundaries that we would expect of animal stripes and spots. Yet when we zoom into the skin of an animal like the zebrafish, we see that the patterns we infer on a higher level are in fact the net result of many individual points, and that the colors of these points show a great deal of variety. The figure below shows an example of this effect for zebrafish skin.
 
 [![image-center](../assets/images/600px/zebrafish_zoom.jpg){: .align-center width="300px"}](../assets/images/zebrafish_zoom.jpg)
-Caption.
+Zooming in on the striped skin of a zebrafish shows that each stripe is formed of thousands of differently colored cells, and that the boundaries of the stripes are more variable than they seem at lower resolution. Courtesy: JenniferOwen, Wikimedia Commons (adapted by Kit Yates).
 {: style="font-size: medium;"}
 
 
