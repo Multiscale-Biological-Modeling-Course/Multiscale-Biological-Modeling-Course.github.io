@@ -111,7 +111,7 @@ begin parameters
 	k_TaUnbound_phos 7.5   #receptor complex autophosphorylation
 
 	k_Y_phos 3.8e6/NaV2    #receptor complex phosphorylates Y
-	k_Y_dephos 8.6e5/NaV2  #Z dephosphoryaltes Y
+	k_Y_dephos 8.6e5/NaV2  #Z dephosphorylates Y
 
 	k_TR_bind 2e7/NaV2          #Receptor-CheR binding
 	k_TR_dis  1            #Receptor-CheR dissociaton

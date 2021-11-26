@@ -90,7 +90,7 @@ begin parameters
 	k_lr_dis 35           #ligand-receptor dissociation
 	k_T_phos 15           #receptor complex autophosphorylation
 	k_Y_phos 3.8e6/NaV    #receptor complex phosphorylates CheY
-	k_Y_dephos 8.6e5/NaV  #Z dephosphoryaltes CheY
+	k_Y_dephos 8.6e5/NaV  #Z dephosphorylates CheY
 end parameters
 ~~~
 
@@ -140,7 +140,7 @@ begin parameters
 	k_lr_dis 35            #ligand-receptor dissociation
 	k_T_phos 15            #receptor complex autophosphorylation
 	k_Y_phos 3.8e6/NaV2    #receptor complex phosphorylates Y
-	k_Y_dephos 8.6e5/NaV2  #Z dephosphoryaltes Y
+	k_Y_dephos 8.6e5/NaV2  #Z dephosphorylates Y
 end parameters
 
 begin reaction rules
