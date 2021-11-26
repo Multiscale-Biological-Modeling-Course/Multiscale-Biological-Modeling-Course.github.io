@@ -92,9 +92,16 @@ As *f* approaches *k*, the stripe structure becomes chaotic and breaks down beca
 
 <iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/CM0JUzRn4X8" frameborder="0" allowfullscreen></iframe>
 
-Once *f* and *k* are equal, the stripes will disappear. We might expect this to mean that the *B* particles will be uniformly distributed across a background of *A* particles. But what we see is that after an initial outward explosion of *B* particles, the system produces a mottled background, with pockets having higher or lower concentration of *B*. Pay attention to the following video at a point late in the animation. Although the concentrations of the particles are still changing, there is much less large-scale change than in earlier videos. If we freeze the video, our eye cannot help but see patterns of red and green clusters that resemble spots (or at the very least mottling).
+Once *f* and *k* are equal, the stripes will disappear. We might expect this to mean that the *B* particles will be uniformly distributed across a background of *A* particles. But what we see is that after an initial outward explosion of *B* particles, the system produces a mottled background, with pockets having higher or lower concentration of *B*. Pay attention to the following video at a point late in the animation. Although the concentrations of the particles are still changing, there is much less large-scale change than in earlier videos. If we freeze the video, our eye cannot help but see patterns of red and green clusters that resemble spots (a more appropriate term would be mottling).
 
 <iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/Pva4e0w7i24" frameborder="0" allowfullscreen></iframe>
+
+You may still be skeptical, since the patterns above do not have the concrete boundaries that we would expect of animal stripes and spots. Yet when we zoom into the skin of an animal like the zebrafish, we see that the patterns we infer on a higher level are in fact the net result of many individual points, and that the colors of these points show a great deal of variety. The figure below shows an example of this effect for zebrafish skin.
+
+[![image-center](../assets/images/600px/zebrafish_zoom.jpg){: .align-center width="300px"}](../assets/images/zebrafish_zoom.jpg)
+Caption.
+{: style="font-size: medium;"}
+
 
 ## Turing's patterns and Klüver's hallucinations
 
