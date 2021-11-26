@@ -387,13 +387,13 @@
 <span class="no">L0</span> <span class="mf">1e7</span>
 </code></pre></div></div>
 
-<p>We will set the initial concentrations of all <code class="language-plaintext highlighter-rouge">seed species</code> to be the final steady-state concentrations from the result for our <code class="language-plaintext highlighter-rouge">adaptation.bngl</code> model, and see if after reducing the concentration of unbound ligand gradually, the simulation can restore these concentrations to steady-state.</p>
+<p>We will set the initial concentrations of all <code class="language-plaintext highlighter-rouge">species</code> to be the final steady-state concentrations from the result for our <code class="language-plaintext highlighter-rouge">adaptation.bngl</code> model, and see if after reducing the concentration of unbound ligand gradually, the simulation can restore these concentrations to steady-state.</p>
 
 <p>First, visit the <code class="language-plaintext highlighter-rouge">adaptation.bngl</code> model and add the concentration for each combination of methylation state and ligand binding state of the receptor complex to the <code class="language-plaintext highlighter-rouge">observables</code> section. Then run this simulation with <code class="language-plaintext highlighter-rouge">L0</code> equal to <code class="language-plaintext highlighter-rouge">1e7</code>.</p>
 
 <p>When the simulation is finished, visit <code class="language-plaintext highlighter-rouge">RuleBender-workspace/PROJECT_NAME/results/adaptation/</code> and find the simulation result at the final time point.</p>
 
-<p>When the model finishes running, input the final concentrations of molecules to the <code class="language-plaintext highlighter-rouge">seed species</code> section of our <code class="language-plaintext highlighter-rouge">removal.bngl</code> model. Here is what we have.</p>
+<p>When the model finishes running, input the final concentrations of molecules to the <code class="language-plaintext highlighter-rouge">species</code> section of our <code class="language-plaintext highlighter-rouge">removal.bngl</code> model. Here is what we have.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">begin</span> <span class="n">seed</span> <span class="n">species</span>
 	<span class="vi">@EC</span><span class="ss">:L</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="no">L0</span>

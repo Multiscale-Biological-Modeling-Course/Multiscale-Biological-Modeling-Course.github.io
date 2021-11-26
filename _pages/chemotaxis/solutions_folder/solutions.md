@@ -60,14 +60,14 @@ begin reaction rules
 	YDeps: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
 end reaction rules
 
-begin seed species
+begin species
 	L(t) L0
 	T(l,Phos~U) T0*0.8
 	T(l,Phos~P) T0*0.2
 	CheY(Phos~U) CheY0*0.5
 	CheY(Phos~P) CheY0*0.5
 	CheZ() CheZ0
-end seed species
+end species
 
 begin observables
 	Molecules phosphorylated_CheY CheY(Phos~P)
@@ -101,7 +101,7 @@ L1R: L(t,Lig~A) + T(l,Lig~A) <-> L(t!1,Lig~A).T(l!1,Lig~A) k_lr_bind, k_lr_dis
 L2R: L(t,Lig~B) + T(l,Lig~B) <-> L(t!1,Lig~B).T(l!1,Lig~B) k_lr_bind, k_lr_dis
 ~~~
 
-Also update the `seed species` by equally split the initial receptor concentrations by 2.
+Also update the `species` by equally split the initial receptor concentrations by 2.
 
 You can download a completed BioNetGen file here: <a href="../_pages/chemotaxis/solutions_folder/exercise_twoligand.bngl" download="exercise_twoligand.bngl">exercise_twoligand.bngl</a>.
 
@@ -229,7 +229,7 @@ begin reaction rules
 
 end reaction rules
 
-begin seed species
+begin species
 	@EC:L(t,Lig~A) L0
 	@EC:L(t,Lig~B) L0
 	@PM:T(l,r,Lig~A,Meth~A,Phos~U) T0*0.84*0.9*0.5
@@ -250,7 +250,7 @@ begin seed species
 	@CP:CheB(Phos~U) CheB0*0.62
 	@CP:CheB(Phos~P) CheB0*0.38
 	@CP:CheR(t) CheR0
-end seed species
+end species
 
 end model
 
@@ -327,7 +327,7 @@ curr_direction, projection_h, projection_v, tumble_time = tumble_move(curr_direc
 ## Can't get enough BioNetGen?
 
 **Exercise 1:**
-You should know the molecules involved (`molecule types`), reactions and reaction rate constants (`reaction rules`), the initial conditions (`seed species`), the quantities you are interested in observing (`observables`), your simulation methods and time steps. Compartments and parameters should also be considered if applicable.
+You should know the molecules involved (`molecule types`), reactions and reaction rate constants (`reaction rules`), the initial conditions (`species`), the quantities you are interested in observing (`observables`), your simulation methods and time steps. Compartments and parameters should also be considered if applicable.
 
 **Exercise 2:**
 The complete code (you can download a completed BioNetGen file here: <a href="../_pages/chemotaxis/solutions_folder/exercise_polymorization.bngl" download="exercise_polymerization.bngl">exercise_polymerization.bngl</a>):
@@ -345,9 +345,9 @@ begin reaction rules
 	Polymerizationbound: A(h!+,t) + A(h,t!+) <-> A(h!+,t!1).A(h!1,t!+) 0.01,0.01
 end reaction rules
 
-begin seed species
+begin species
 	A(h,t) 1000
-end seed species
+end species
 
 begin observables
 	Species A1 A==1

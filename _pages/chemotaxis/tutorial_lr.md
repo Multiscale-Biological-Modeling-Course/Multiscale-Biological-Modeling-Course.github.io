@@ -90,15 +90,15 @@ end observables
 
 ## Initializing unbound molecule counts
 
-Next, we need to specify a variable indicating the number of molecules with which we would like to initialize our simulation. We place these molecules within a `seed species` section. We are putting `L0` unbound `L` molecules, and `T0` unbound `T` molecules at the beginning; we will set these parameters later.
+Next, we need to specify a variable indicating the number of molecules with which we would like to initialize our simulation. We place these molecules within a `species` section. We are putting `L0` unbound `L` molecules, and `T0` unbound `T` molecules at the beginning; we will set these parameters later.
 
 Note that we do not specify an initial number of bound `L.T` complexes, meaning that the initial concentration of these complexes will be equal to zero.
 
 ~~~ ruby
-begin seed species
+begin species
 	L(t) L0
 	T(l) T0
-end seed species
+end species
 ~~~
 
 ## Specifying parameters
@@ -174,10 +174,10 @@ begin reaction rules
 	LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 end reaction rules
 
-begin seed species
+begin species
 	L(t) L0
 	T(l) T0
-end seed species
+end species
 
 end model
 

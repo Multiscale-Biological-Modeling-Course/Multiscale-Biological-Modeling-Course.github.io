@@ -176,10 +176,10 @@ end compartments
 
 ## Specifying concentrations and reaction rates
 
-To add compartmentalization information in the `seed species` section of our BioNetGen model, we use the notation `@location` before the specification of the  concentrations. In what follows, we specify initial concentrations of ligand, receptor, and chemotaxis enzymes at different states.  The distribution of molecule concentrations at each state is very difficult to verify experimentally; the distribution provided here approximates equilibrium concentrations in our simulation, and they are within a biologically reasonable range.[^Bray1993]
+To add compartmentalization information in the `species` section of our BioNetGen model, we use the notation `@location` before the specification of the  concentrations. In what follows, we specify initial concentrations of ligand, receptor, and chemotaxis enzymes at different states.  The distribution of molecule concentrations at each state is very difficult to verify experimentally; the distribution provided here approximates equilibrium concentrations in our simulation, and they are within a biologically reasonable range.[^Bray1993]
 
 ~~~ ruby
-begin seed species
+begin species
 	@EC:L(t) L0
 	@PM:T(l,r,Meth~A,Phos~U) T0*0.84*0.9
 	@PM:T(l,r,Meth~B,Phos~U) T0*0.15*0.9
@@ -193,7 +193,7 @@ begin seed species
 	@CP:CheB(Phos~U) CheB0*0.62
 	@CP:CheB(Phos~P) CheB0*0.38
 	@CP:CheR(t) CheR0
-end seed species
+end species
 ~~~
 
 Finally, we need to assign values to the parameters. We will assume that we start with a zero ligand concentration.  We then assign the initial concentration of each molecule and rates of our reactions based on *in vivo* stoichiometry and parameter tuning [^Li2004][^Stock1991].
@@ -338,7 +338,7 @@ begin compartments
   CP  3  1   PM    #um^3
 end compartments
 
-begin seed species
+begin species
 	@EC:L(t) L0
 	@PM:T(l,r,Meth~A,Phos~U) T0*0.84*0.9
 	@PM:T(l,r,Meth~B,Phos~U) T0*0.15*0.9
@@ -352,7 +352,7 @@ begin seed species
 	@CP:CheB(Phos~U) CheB0*0.62
 	@CP:CheB(Phos~P) CheB0*0.38
 	@CP:CheR(t) CheR0
-end seed species
+end species
 
 end model
 

@@ -11,9 +11,9 @@ begin reaction rules
 	Polymerizationbound: A(h!+,t) + A(h,t!+) <-> A(h!+,t!1).A(h!1,t!+) 0.01,0.01
 end reaction rules
 
-begin seed species
+begin species
 	A(h,t) 1000
-end seed species
+end species
 
 begin observables
 	Species A1 A==1

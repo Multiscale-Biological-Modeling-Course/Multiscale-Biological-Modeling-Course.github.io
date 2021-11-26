@@ -96,7 +96,7 @@ begin reaction rules
 	
 end reaction rules
 
-begin seed species
+begin species
 	@EC:L(t,Lig~A) L0
 	@EC:L(t,Lig~B) L0
 	@PM:T(l,r,Lig~A,Meth~A,Phos~U) T0*0.84*0.9*0.5
@@ -117,7 +117,7 @@ begin seed species
 	@CP:CheB(Phos~U) CheB0*0.62
 	@CP:CheB(Phos~P) CheB0*0.38
 	@CP:CheR(t) CheR0
-end seed species
+end species
 
 end model
 

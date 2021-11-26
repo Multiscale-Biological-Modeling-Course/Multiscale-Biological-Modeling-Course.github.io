@@ -23,10 +23,10 @@ begin reaction rules
 	LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 end reaction rules
 
-begin seed species
+begin species
 	L(t) L0
 	T(l) T0
-end seed species
+end species
 
 end model
 

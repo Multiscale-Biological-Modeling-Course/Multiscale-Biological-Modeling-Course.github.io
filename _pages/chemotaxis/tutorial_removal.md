@@ -42,16 +42,16 @@ k_gone 0.3
 L0 1e7
 ~~~
 
-We will set the initial concentrations of all `seed species` to be the final steady-state concentrations from the result for our `adaptation.bngl` model, and see if after reducing the concentration of unbound ligand gradually, the simulation can restore these concentrations to steady-state.
+We will set the initial concentrations of all `species` to be the final steady-state concentrations from the result for our `adaptation.bngl` model, and see if after reducing the concentration of unbound ligand gradually, the simulation can restore these concentrations to steady-state.
 
 First, visit the `adaptation.bngl` model and add the concentration for each combination of methylation state and ligand binding state of the receptor complex to the `observables` section. Then run this simulation with `L0` equal to `1e7`.
 
 When the simulation is finished, visit `RuleBender-workspace/PROJECT_NAME/results/adaptation/` and find the simulation result at the final time point.
 
-When the model finishes running, input the final concentrations of molecules to the `seed species` section of our `removal.bngl` model. Here is what we have.
+When the model finishes running, input the final concentrations of molecules to the `species` section of our `removal.bngl` model. Here is what we have.
 
 ~~~ ruby
-begin seed species
+begin species
 	@EC:L(t) L0
 	@PM:T(l!1,r,Meth~A,Phos~U).L(t!1) 1190
 	@PM:T(l!1,r,Meth~B,Phos~U).L(t!1) 2304
@@ -65,7 +65,7 @@ begin seed species
 	@CP:CheB(Phos~U) CheB0*0.62
 	@CP:CheB(Phos~P) CheB0*0.38
 	@CP:CheR(t) CheR0
-end seed species
+end species
 ~~~
 
 ## Running the BioNetGen model
@@ -177,7 +177,7 @@ begin compartments
   CP  3  1   PM    #um^3
 end compartments
 
-begin seed species
+begin species
 	@EC:L(t) L0
 	@PM:T(l!1,r,Meth~A,Phos~U).L(t!1) 1190
 	@PM:T(l!1,r,Meth~B,Phos~U).L(t!1) 2304
@@ -191,7 +191,7 @@ begin seed species
 	@CP:CheB(Phos~U) CheB0*0.62
 	@CP:CheB(Phos~P) CheB0*0.38
 	@CP:CheR(t) CheR0
-end seed species
+end species
 
 end model
 

@@ -66,14 +66,14 @@ To initialize our simulation, we need to indicate the number of molecules in *ea
 {: .notice--warning}
 
 ~~~ ruby
-begin seed species
+begin species
 	L(t) L0
 	T(l,Phos~U) T0*0.8
 	T(l,Phos~P) T0*0.2
 	CheY(Phos~U) CheY0*0.5
 	CheY(Phos~P) CheY0*0.5
 	CheZ() CheZ0
-end seed species
+end species
 ~~~
 
 We now set initial quantities of molecules along with reaction rate parameters to be consistent with *in vivo* quantities [^Li2004][^Spiro1997][^Stock1991].
@@ -154,14 +154,14 @@ begin reaction rules
 	YDep: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
 end reaction rules
 
-begin seed species
+begin species
 	L(t) 0
 	T(l,Phos~U) T0*0.8
 	T(l,Phos~P) T0*0.2
 	CheY(Phos~U) CheY0*0.5
 	CheY(Phos~P) CheY0*0.5
 	CheZ() CheZ0
-end seed species
+end species
 
 end model
 
