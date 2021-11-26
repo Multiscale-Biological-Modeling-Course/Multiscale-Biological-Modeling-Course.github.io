@@ -119,27 +119,27 @@ To visualize the changing concentrations in each cell, we use a color map to col
 
 [![image-center](../assets/images/600px/matplotlib_colormap.png){: .align-center}](../assets/images/matplotlib_colormap.png)
 
-The following animation shows an animation of the Gray-Scott model using the parameters *f* = 0.034 and *k* = 0.095.
+Click on the following animation to see an animation of the Gray-Scott model using the parameters *f* = 0.034 and *k* = 0.095.
 
-[![image-center](../assets/gs_movie.gif){: .align-center}](../assets/gs_movie.gif)
+[![image-center](../assets/images/600px/gray-scott_movie_first_frame.png){: .align-center}](../assets/images/gray-scott_movie.gif)
 
 If we expand the size of the simulation and add new predator locations to the grid, then the patterns become more complex as they intersect.
 
-[![image-center](../assets/0_Bgs_movie.gif){: .align-center}](../assets/0_Bgs_movie.gif)
+[![image-center](../assets/images/600px/gray-scott_multiple_predators_first_frame.png){: .align-center}](../assets/images/gray-scott_multiple_predators.gif)
 
 If we keep the feed rate constant and tweak the kill rate ever so slightly to *k* = 0.097, then the patterns change significantly into spots.
 
-[![image-center](../assets/0_f34_k63.gif){: .align-center}](../assets/0_f34_k63.gif)
+[![image-center](../assets/images/600px/gray-scott_f34_k63_first_frame.png){: .align-center}](../assets/images/gray-scott_f34_k63.gif)
 {: style="font-size: medium;"}
 
 If we make the prey a little happier as well, raising  *f* to 0.038 and *k* to 0.099, then we have a different striped pattern.
 
-[![image-center](../assets/0_f38_k61.gif){: .align-center}](../assets/0_f38_k61.gif)
+[![image-center](../assets/images/600px/gray-scott_f38_k61_first_frame.png){: .align-center}](../assets/images/gray-scott_f38_k61.gif)
 {: style="font-size: medium;"}
 
 And if we raise *f* to 0.042 and *k* to 0.101, then again we see a spot pattern.
 
-[![image-center](../assets/0_f42_k59.gif){: .align-center}](../assets/0_f42_k59.gif)
+[![image-center](../assets/images/600px/gray-scott_f42_k59_first_frame.png){: .align-center}](../assets/images/gray-scott_f42_k59.gif)
 {: style="font-size: medium;"}
 
 The point that we are making here is that very slight changes in our model's parameters can produce drastically different results in terms of the patterns that we witness. In this prologue's conclusion, we will say more about this and connect this observation back to our original motivation of patterns on animals' skin.

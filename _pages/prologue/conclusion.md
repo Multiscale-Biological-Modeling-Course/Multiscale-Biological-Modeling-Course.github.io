@@ -19,16 +19,13 @@ gallery:
 
 The Turing patterns that emerged from our particle simulations are a testament to the human eye's ability to find organization within the net behavior of tens of thousands of particles. For example, take another look at the video we produced that showed mottling in our particle simulator. Patterns are present, but they are also noisy --- even in the dark red regions we will have quite a few green particles, and vice-versa. The rapid inference of large-scale patterns from small-scale visual phenomena is one of the tasks that our brains have evolved to perform well.
 
-<center>
-<iframe width="750" height="360" src="../assets/videos/predator_prey_11_by_11_f_1_k_1.mp4" frameborder="0" allowfullscreen>
-</iframe>
-</center>
+<iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/Pva4e0w7i24" frameborder="0" allowfullscreen></iframe>
 
 Our reaction-diffusion system is remarkable because it is so **fine-tuned**, meaning that very slight changes in parameter values can lead to significant changes in the system. These changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
 
 Robert Munafo provides a great figure, reproduced below, showing how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary.[^robert] The kill rate increases along the *x*-axis, and the feed rate increases along the *y*-axis. Notice how quickly the patterns change! You may like to try tweaking the parameters of our own Gray-Scott simulator to see if you can reproduce these different patterns.
 
-[![image-center](../assets/images/600px/xmorphia-parameter-map.jpg){: .align-center width="300px"}](../assets/images/xmorphia-parameter-map.jpg)
+[![image-center](../assets/images/600px/xmorphia-parameter-map.jpg){: .align-center width="400px"}](../assets/images/xmorphia-parameter-map.jpg)
 
 Changing feed and kill parameters affects the Turing patterns produced in the Gray-Scott model.
 {: style="font-size: medium;"}

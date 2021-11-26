@@ -16,7 +16,7 @@ You may think that simulating the movments of proteins with hundreds of amino ac
 
 A protein's molecular bonds are constantly vibrating, stretching and compressing, much like that of the oscillating mass-spring system shown in the figure below. Bonded atoms are held together by sharing electrons and are held at specific bond length due to the attraction and repulsion forces of the negatively charged electrons and positively charged nucleus. If you push the atoms closer together or pull them farther apart, they will "bounce back" to their equilibrium.
 
-[![image-center](../assets/images/600px/mass-spring.gif){: .align-center}](../assets/images/mass-spring.gif)
+[![image-center](../assets/images/600px/mass-spring_first_frame.png){: .align-center}](../assets/images/mass-spring.gif)
 A mass-spring system in which a mass is attached to the end of a spring. The more we move the mass from its equilibrium, the greater its resistance and the more it will be repelled back toward equilibrium. Courtesy: [flippingphysics.com](http://flippingphysics.com).
 {: style="font-size: medium;"}
 
@@ -107,7 +107,9 @@ The fluctuations calculated by ANM provide information on possible movement and 
 |Resid 38, 353 (Hotspot 353)|Red|
 
 <center>
-<iframe width="640" height="360" src="../assets/2ajf_B&F.mp4" frameborder="0" allowfullscreen></iframe>
+<video width="484" height="500" controls="controls">
+  <source src="../assets/videos/2ajf_B&F.mp4" type="video/mp4">
+</video>
 </center>
 
 ### SARS-CoV-2 spike protein chimeric RBD (PDB: 6vw1)
@@ -125,7 +127,9 @@ The fluctuations calculated by ANM provide information on possible movement and 
 |Resid 38, 353 (Hotspot 353)|Red|
 
 <center>
-<iframe width="640" height="360" src="../assets/6vw1_B&F.mp4" frameborder="0" allowfullscreen></iframe>
+<video width="496" height="472" controls="controls">
+  <source src="../assets/videos/6vw1_B&F.mp4" type="video/mp4">
+</video>
 </center>
 
 Recall from our work in the [previous lesson](NAMD#differences-in-interaction-energy-with-ace2-between-sars-and-sars-cov-2) that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called "hotspot 31". This region is highlighted in blue and orange in the above figures. If you look very closely (you may need to zoom in), as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This provides one more piece of evidence that SARS-CoV-2 is more effective at binding to the ACE2 enzyme.

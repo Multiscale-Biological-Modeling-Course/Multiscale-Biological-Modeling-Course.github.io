@@ -56,7 +56,7 @@ After vectorizing our WBC images, we hope that images of similarly shaped nuclei
 
 On the one hand, we could have very dissimilar shapes with low RMSD, such as those shown in the figure below. However, this issue can be easily resolved by ensuring that the number of points (*n*) that we choose is sufficiently high. For this reason, CellOrganizer uses *n* = 1000 by default for cell nuclei.
 
-[![image-center](../assets/images/600px/circle_square_undersampling.png){: .align-center}](../assets/images/circle_square_undersampling.png)
+[![image-center](../assets/images/600px/circle_square_undersampling.png){: .align-center width="300px"}](../assets/images/circle_square_undersampling.png)
 A circle inscribed within a square. Sampling of the four points where the shapes intersect will give a flawed estimate of zero for RMSD.
 {: style="font-size: medium;"}
 
