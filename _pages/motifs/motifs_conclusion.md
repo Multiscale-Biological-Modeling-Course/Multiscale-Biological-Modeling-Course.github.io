@@ -37,7 +37,7 @@ We will focus on the technical details behind such a coarse-grained "particle-fr
 
 In the figure below, we show a plot of concentrations of each particle in our particle-free simulation of the repressilator, with one caveat.  Midway through the simulation, we greatly increase the concentration of *Y*.
 
-[![image-center](../assets/images/600px/nf_sim_interrupted.PNG){: .align-center}](../assets/images/nf_sim_interrupted.PNG)
+[![image-center](../assets/images/600px/nf_sim_interrupted_chart.png){: .align-center}](../assets/images/nf_sim_interrupted_chart.png)
 Adding a significant number of *Y* particles to our simulation produces little ultimate disturbance to the concentrations of the three particles, which return to normal oscillations within a single cycle.
 {: style="font-size: medium;"}
 
