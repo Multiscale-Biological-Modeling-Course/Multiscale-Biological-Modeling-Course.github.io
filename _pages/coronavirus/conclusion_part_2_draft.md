@@ -27,7 +27,10 @@ A major strength of ProDy is its implementation of a **Gaussian network model (G
 **Note:** A GNM is called "Gaussian" because protein bond movements follow normally distributed (Gaussian) distributions around their equilibria.
 {: .notice--warning}
 
-Although it may seem that atomic movements are frantic and random, the movements of protein atoms are in fact heavily coordinated, owing to the evolution of the proteins to perform replicable tasks. As a result, the oscillations of these particles are often highly structured and can be summarized by using a combination of functions explaining them, or **modes**. (For those familiar with Fourier analysis, this is analogous to the fact that a function under certain conditions can be approximated using a sum of sine and cosine waves.) The paradigm resulting from the insight of breaking down oscillations into a comparatively small number of modes that summarize them is called **normal mode analysis (NMA)** and powers the elastic model that ProDy implements.
+Although it may seem that atomic movements are frantic and random, the movements of protein atoms are in fact heavily coordinated, owing to the evolution of the proteins to perform replicable tasks. As a result, the oscillations of these particles are often highly structured and can be summarized by using a combination of functions explaining them, or **modes**. The paradigm resulting from the insight of breaking down oscillations into a comparatively small number of modes that summarize them is called **normal mode analysis (NMA)** and powers the elastic model that ProDy implements.
+
+**Note:** For those familiar with Fourier analysis, this is analogous to the fact that a function under certain conditions can be approximated using a sum of sine and cosine waves.
+{: .notice--warning}
 
 ## Introduction to GNM
 
