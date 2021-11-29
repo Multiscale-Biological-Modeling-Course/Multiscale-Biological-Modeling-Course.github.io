@@ -47,58 +47,17 @@ For a given node *i* and node *j*, the equilibrium position is represented by th
 Schematic showing gaussian fluctuations between two nodes. Equilibrium positions of node *i* and node *j* are represented by distance vectors $$ R_i^0 $$ and $$ R_j^0 $$. The equilibrium distance between the nodes is labelled $$ R_{ij}^0 $$. The instantaneous fluction vectors, are labelled $$ \Delta R_i $$ and $$ \Delta R_j $$ and the instantaneous distance vector is labeled $$ \Delta R_{ij} $$. Image courtesy of Ahmet Bakan.
 {: style="font-size: medium;"}
 
-<!--
-The next step is to construct a **Kirchhoff matrix**, also known as the **Laplacian matrix** or **connectivity matrix**, represented by the symbol $$ \Gamma $$. Commonly used in graph theory, the Kirchhoff matrix is essentially a square matrix representation of a graph. By transforming the protein into a set of connected nodes, we are converting the protein into a graph. Therefore, the Kirchhoff matrix can be used to represent the protein, allowing us to go from a biochemistry problem to a linear algebra problem. In this case, the Kirchhoff matrix is the matrix representation of which pairs of residues are connected. There are also some useful properties of the Kirchhoff matrix that we will take advantage of later on. The matrix is constructed as follows:
-
-$$ \Gamma_{ij} = \begin{cases} & -1 \text{ if $i \neq j$ and $R_{ij} \leq r_c$}\\ &  0 \text{ if $i \neq j$ and $R_{ij} > r_c$} \end{cases} $$
-
-$$ \Gamma_{ii} = -\sum_j \Gamma_{ij} $$
-
-where $$r_c$$ is the threshold distance. Simply put, if residue i and residue j are connected, then the value of position i,j in the matrix will be -1. If they are not connected, the the value will be 0. The values of the diagonals, i.e. position i,i, correspond to the total number of connections of residue i.
-
-[![image-center](../assets/images/600px/kirchhoff_example.png){: .align-center}](../assets/images/kirchhoff_example.png)
-Toy structure and the corresponding Kirchhoff matrix.
-{: style="font-size: medium;"}
-
--->
-
 ### Inner products and cross correlations
 
-One of the most common analysis using GNM is on the coordinated movement between residues as the protein fluctuates. More specifically, we want to see how each residue will move relative to other residues, or the **cross-correlation** between the residues. Recall that we are representing the fluctuations as vectors (see Gaussian Fluctuations). Therefore, for some residue *i* and residue *j*, we are trying to compute how much of the fluctation vector $$ \Delta R_i $$ points in the the same direction as the fluctuation vector $$ \Delta R_j $$. To do this, we need to compute the **inner product** of the vectors, denoted by the angle brackets: $$ \langle \rangle $$, which is a generalization of the dot product. In other words, computing the inner product between the fluctuation vectors is synonomous to computing the cross-correlation between the residues. As such, the cross-correlation between residue *i* and residue *j* is often represented as $$ \langle \Delta R_i \cdot \Delta R_j \rangle $$. It turns out that the inner product is correlated to the inverse of the Kirchhoff matrix, allowing us to simply invert the Kirchhoff matrix. The cross-correlation between some residue *i* and residue *j* can be mathmatically calculated as follows:
+One of the most common analyses using GNM is on the coordinated movement between residues as the protein fluctuates. More specifically, we want to see how each residue will move relative to other residues, or the **cross-correlation** between the residues. Recall that we are representing the fluctuations as vectors (see Gaussian Fluctuations). Therefore, for some residue *i* and residue *j*, we are trying to compute how much of the fluctation vector $$ \Delta R_i $$ points in the the same direction as the fluctuation vector $$ \Delta R_j $$. To do this, we need to compute the **inner product** of the vectors, denoted by the angle brackets: $$ \langle \rangle $$, which is a generalization of the dot product. In other words, computing the inner product between the fluctuation vectors is synonomous to computing the cross-correlation between the residues. As such, the cross-correlation between residue *i* and residue *j* is often represented as $$ \langle \Delta R_i \cdot \Delta R_j \rangle $$.
 
-$$ \langle \Delta R_i \cdot \Delta R_j \rangle = \frac{3 k_B T}{\gamma} \left[ \Gamma^{-1} \right]_{ij} $$
-
-where $$ k_B $$ is the Boltzmann constant, $$ \gamma $$ is the spring constant (stiffness of the spring), and $$ \left[ \Gamma^{-1} \right]_{ij} $$ is element *ij* in the inverted Kirchhoff matrix. Similarly, we can also calculate the expectation values of the fluctuation for each residue, or the **mean-square fluctuations**, which is the inner product of the fluctuation vector with itself:
-
-$$  \langle \Delta R_i^2  \rangle = \frac{3 k_B T}{\gamma} \left[ \Gamma^{-1} \right]_{ii} $$
-
-From these equations, we can see that the inverse Kirchhoff matrix fully defines both the cross-correlations between residue motions as well as the mean-square fluctions of the residues.
-
-$$ \left[ \Gamma^{-1} \right]_{ij} \sim \langle \Delta R_i \cdot \Delta R_j \rangle $$
-
-$$ \left[ \Gamma^{-1} \right]_{ii} \sim \langle \Delta R_i^2  \rangle $$
-
-However, we run into problems here because cannot simply invert the Kirchhoff matrix. In linear algebra, a matrix is invertible if and only if its determinant is zero. Unfortunately for us, one of the special properties of the Kirchhoff matrix in GNM is that the determinant is zero, and we cannot directly invert the matrix to get $$ \Gamma^{-1} $$. Thankfully, there is a method to compute the values of the inverted matrix by performing eigen decomposition on the matrix.
-
-$$ \Gamma = U \Lambda U^T $$
-
-where $$ U $$ is the orthogonal matrix with the $$ k^{th} $$ column, represented by $$ u_k $$, corresponding to the $$ k^{th} $$ eigenvector of $$ \Gamma $$, and $$ \Lambda $$ is the diagonal matrix of eigenvalues, represented by $$ \lambda_k $$. Based on the characteristics of the Kirchhoff matrix (positive semi-definite), the first eigenvalue, $$ \lambda_1 $$, is 0. The remaining $$ N-1 $$ eigenvalues, as well as the eigenvectors in $$ U $$, actually directly describe the modes of motion that discussed earlier in this lesson. The elements of eigenvector $$ u_k $$ describe the distribution of residue displacements, normalized over all the residues, along the $$ k^{th} $$ mode axis. In other words, the motion of the $$ i^{th} $$ residue along the $$ k^{th} $$ mode is described by the $$ i^{th} $$ element in eigenvector $$ u_k $$. The corresponding eigenvalue $$ \lambda_k $$ describes the frequency of the $$ k^{th} $$ mode, where the smallest $$ \lambda $$ value corresponds to the lowest frequency modes, or slowest modes, that make the largest contribution to the overall protein motion.
-
-After eigen decomposition, we can now rewrite the cross-correlation equation as a sum of the N-1 GNM modes:
-
-$$ \langle \Delta R_i \cdot \Delta R_j \rangle = \frac{3 k_B T}{\gamma} \sum_{k=1}^{N-1} \left[ \lambda_k^{-1} u_k u_k^T \right]_{ij} $$
-
-and similarly for mean-square fluctuation:
-
-$$ \langle \Delta R_i^2  \rangle = \frac{3 k_B T}{\gamma} \sum_{k=1}^{N-1} \left[ \lambda_k^{-1} u_k u_k^T \right]_{ii} $$
+Similarly, we can also calculate the expectation values of the fluctuation for each residue, or the **mean-square fluctuations**, which is the inner product of the fluctuation vector with itself, $$  \langle \Delta R_i^2 $$.
 
 Now that we can compute the cross-correlation between residues, we can normalize the values and construct a normalized cross-correlation matrix, $$ C^{(n)} $$, such that:
 
 $$ C^{(n)}_{ij} = \frac{\langle \Delta R_i \cdot \Delta R_j \rangle}{\left[ \langle \Delta R_i \cdot \Delta R_i \rangle \langle \Delta R_j \cdot \Delta R_j \rangle \right]^{\frac{1}{2}}} $$
 
 where $$ C^{(n)}_{ij} $$ corresponds to the orientational cross-correlation between residue *i* and residue *j*. Because we normalized the values, the range of $$ C^{(n)}_{ij} $$ is $$ [-1,1] $$, where 1 means the residues are fully correlated in motion, and -1 means the residues are fully anti-correlated in motion.
-
-### Cross-Correlation Map
 
 Cross-correlation analysis provides useful insight on the structure of the protein. The regions of high correlation coming off the diagonal typically provide information on secondary structures (residues in the same secondary structure will typically move together). On the other hand, high correlation regions not near the diagonal provide information on the tertiary structure of the protein, such as protein domains and clues to which parts of the protein work together. In general, we can observe complex patterns of correlated and anti-correlated movement throughout the protein (both inter- and intrasubunit), which can act like some sort of fingerprint. We can compare the cross-correlation between regions of the same protein or the cross correlation map between two similar proteins to find differences in the correlation patterns. This would then provide clues in where the proteins or protein regions are different structurally and possibly functionally. After calculating the cross-correlation for each residue pair, we can organize the data as a matrix and then visualize it as a **cross-correlation heat map** like the figure below.
 
