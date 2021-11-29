@@ -36,7 +36,7 @@ Study by Kundu et al. showing that 7.3 Å being the optimal cutoff across a set
 -->
 
 [![image-center](../assets/images/600px/hemoglobin_enm.png){: .align-center}](../assets/images/hemoglobin_enm.png)
-Conversion of human hemoglobin (left) to a network of nodes and springs (right) in which two nodes are connected by a spring if they are within a 7.3 angstroms.
+Conversion of human hemoglobin (left) to a network of nodes and springs (right) in which two nodes are connected by a spring if they are within a threshold distance of 7.3 angstroms.
 {: style="font-size: medium;"}
 
 As the alpha carbons within a protein move randomly, they are subject to *Gaussian* fluctuations that cause them to deviate in position from their equilibrium positions. Yet although atomic fluctuations are powered by randomness, the movements of protein atoms are in fact heavily correlated, owing to the evolution of the proteins to perform replicable tasks. As a result, the oscillations of these particles can be summarized by using a combination of functions explaining them, or **modes**. The paradigm resulting from the insight of breaking down oscillations into a comparatively small number of modes that summarize them is called **normal mode analysis (NMA)** and powers the elastic model that ProDy implements.
