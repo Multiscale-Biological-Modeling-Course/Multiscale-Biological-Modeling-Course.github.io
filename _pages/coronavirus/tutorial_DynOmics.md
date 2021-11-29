@@ -58,7 +58,25 @@ For `Inter-residue Contact Map`, you will see a visualization of the connected a
 [![image-center](../assets/images/600px/DynOmics10.png){: .align-center}](../assets/images/DynOmics10.png)
 {: style="font-size: medium;"}
 
-Finally, in `Properties of GNM Mode Spectrum`, we can see two different plots on modes: *Frequency Dispersion* and *Degree of Collectivity*. In the frequency dispersion plot, a high value indicates a slow mode with low frequency, which are expected to be highly related to biological functions. Recall that the slowest modes contribute the most to the protein fluctuation. The degree of collectivity plot measures the extent of structural elements (residues) move together for each mode. High degree of collectivity indicates that the mode is highly cooperative and engages in a large portion of the structure. Low degree of collectivity indicates that the mode only affects a small region.
+Finally, in `Properties of GNM Mode Spectrum`, we can see two different plots on modes: *Frequency Dispersion* and *Degree of Collectivity*. We will pause to explain these two plots.
+
+The **frequency dispersion** of the modes is the plot representing the frequency of each mode. The y-axis represents the reciprocal of the corresponding eigenvalue of the mode, where a higher value indicates a slow mode with low frequency, which are expected to be highly related to biological functions.
+
+[![image-center](../assets/images/600px/hemoglobin_frequency.png){: .align-center}](../assets/images/hemoglobin_frequency.png)
+The frequency dispersion of modes in human hemoglobin. Higher values indicates low frequency, slower modes that are likely to be highly relative to biological functions.
+{: style="font-size: medium;"}
+
+The **degree of collectivity** is the measure of the extent of structural elements, in this case residues, that move together for each mode. The degree of collectivity of the $$ k^{th} $$ mode is calculated by the following equation:
+
+$$ Collectivity_k = \frac{1}{N} e^{- \sum^N_i \Delta R_i^2 ln \Delta R_i^2} $$
+
+where *N* is the total number of residues. A high degree of collectivity indicates that the mode is highly cooperative and engages in a large portion of the structure. Low degree of collectivity indicates that the mode only affects a small region. Modes of high degree of collectivity are generally believed to be functionally relevant nodes and are usually found at the low frequency end of the mode spectrum.
+
+[![image-center](../assets/images/600px/hemoglobin_collectivity.png){: .align-center}](../assets/images/hemoglobin_collectivity.png)
+The degree of collectivitiy of modes in human hemoglobin. Higher values indicate modes that describe a large portion of the protein while low values indicate modes that describe small local regions.
+{: style="font-size: medium;"}
+
+When we produce these two plots for the SARS-CoV-2 spike protein, we obtain the following.
 
 [![image-center](../assets/images/600px/DynOmics11.png){: .align-center}](../assets/images/DynOmics11.png)
 {: style="font-size: medium;"}
