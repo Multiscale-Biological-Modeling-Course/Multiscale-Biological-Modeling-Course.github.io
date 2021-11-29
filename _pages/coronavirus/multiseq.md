@@ -38,7 +38,7 @@ We know from our work in structure prediction that just because the sequence of 
 
 ## From protein structure to bound complexes
 
-Not only did researchers experimentally verify the structure of the spike protein of the two viruses, they also determined the structure of the RBD complexed with ACE2 in both SARS-CoV (PDB entry: <a href="https://www.rcsb.org/structure/2AJF" target="_blank">2ajf</a>) and SARS-CoV-2 (PDB entry: <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>).
+Earlier in this module, we mentioned that researchers experimentally verified the structure of the spike protein from both SARS-CoV and SARS-CoV-2. They also  determined the structure of the RBD complexed with ACE2 in both SARS-CoV (PDB entry: <a href="https://www.rcsb.org/structure/2AJF" target="_blank">2ajf</a>) and SARS-CoV-2 (PDB entry: <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>).
 
 The experimentally verified SARS-CoV-2 structure is a *chimeric* protein formed of the SARS-CoV RBD in which the RBM has the sequence from SARS-CoV-2 [^Shang]. A chimeric RBD was used for complex technical reasons to ensure that the crystallization process during X-ray crystallography could be borrowed from that used for SARS-CoV.
 
@@ -46,7 +46,7 @@ Because we know the structures of the bound complexes, we can produce 3-D visual
 
 ## A first attempt at identifying local dissimilarities between protein structures
 
-In the previous lesson on assessing the accuracy of a predicted structure, we introduced a metric called root mean square deviation (RMSD) for quantifying the difference between two protein structures. RMSD offered an excellent method for a *global* comparison (i.e., a comparison across all structures), but we are interested in the *local* regions where the SARS-CoV and SARS-CoV-2 complexes differ. To this end, we will need an approach that examines individual amino acids in similar protein structures.
+In a previous lesson on assessing the accuracy of a predicted structure, we introduced a metric called root mean square deviation (RMSD) for quantifying the difference between two protein structures. RMSD offered an excellent method for a *global* comparison (i.e., a comparison across all structures), but we are interested in the *local* regions where the SARS-CoV and SARS-CoV-2 complexes differ. To this end, we will need an approach that considers individual amino acids in similar protein structures.
 
 **STOP:** How could we compare individual amino acid differences of two (similar) protein structures?
 {: .notice--primary}
@@ -56,7 +56,7 @@ Recall the following definition of RMSD for two protein structures *s* and *t*, 
 $$\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)} $$
 
 If two similar protein structures differ in a few locations, then the corresponding alpha carbon distances *d*(<em>s</em><sub><em>i</em></sub>, <em>t</em><sub><em>i</em></sub>) will likely be higher at these locations. However, we will introduce a more sophisticated approach for
-comparing the local structure of <em>s</em><sub><em>i</em></sub> against <em>t</em><sub><em>i</em></sub>. To do so, we first shift gears to discuss an alternative to RMSD for computing global structure.
+comparing the local structure of <em>s</em><sub><em>i</em></sub> against <em>t</em><sub><em>i</em></sub>. First, however, we will discuss an alternative to RMSD for computing global structure.
 
 ## Contact maps and Qres
 
@@ -66,13 +66,13 @@ One of the weaknesses of RMSD that we pointed out in part 1 of this module is th
 Two toy protein structures in which the bond angle between the third and fourth alpha carbon has been changed. This change does not affect the distance between the *i*-th and *j*-th alpha carbons when *i* and *j* are both at least 4.
 {: style="font-size: medium;"}
 
-However, note that when *i* and *j* are both at least 4, the distance *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) between the *i*-th and *j*-th alpha carbons in *S* will still be similar to the distance *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) between the same alpha carbons in *T*. This observation leads us to a more robust approach for measuring differences in two protein structures, which compares *all* pairwise distances *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) in one protein structure against the corresponding distances *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) in the other structure.
+However, note in the above figure that when *i* and *j* are both at least 4, the distance *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) between the *i*-th and *j*-th alpha carbons in *S* will still be similar to the distance *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) between the same alpha carbons in *T*. This observation leads us to a more robust approach for measuring differences in two protein structures, which compares *all* pairwise distances *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) in one protein structure against the corresponding distances *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) in the other structure.
 
 To help us visualize all these pairwise distances, we will introduce the **contact map** of a given protein structure, which is a binary 2-D matrix indicating whether two alpha carbons are near each other. After setting a threshold distance *D*, and then for a given structure *s*, we set *M*(*i*, *j*) = 1 if the distance *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) is less than *D*, and *M*(*i*, *j*) = 0 if *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) is greater than or equal to *D*.
 
 The following figure shows the contact maps for the SARS-CoV-2 and SARS-CoV spike proteins (both full proteins and single chains) with a threshold distance *D* of twenty angstroms. In this map, we color contact map values black if they are equal to 1 (close amino acids) and white if they are equal to 0 (distant amino acids).
 
-Note two things in the contact maps below. First, many black values cluster around the main diagonal of the matrix, since amino acids that are near each other in the protein sequence will remain near each other in the 3-D structure. Second, the contact maps for the two proteins are very similar, driving home further the similarity of the two proteins' structures.
+Note two things in the contact maps below. First, many black values cluster around the main diagonal of the matrix, since amino acids that are nearby in the protein sequence will remain near each other in the 3-D structure. Second, the contact maps for the two proteins are very similar, reinforcing that these two proteins have similar structures.
 
 **Note:** Interested in learning how to make contact maps? We will use ProDy to do so in a later section.
 {: .notice--warning}
@@ -84,7 +84,7 @@ The contact maps of the SARS-CoV-2 spike protein (top left), SARS-CoV spike prot
 **STOP:** How do you think the contact map will change as we increase or lower the threshold distance?
 {: .notice--primary}
 
-Consider the *i*-th row (or column) of a protein's contact map, which represents all alpha carbons that are near the *i*-th alpha carbon. We can see how two proteins differ at the *i*-th position if we look at all of this row's values. That is, if we compare all of the *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) values to all of the *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) values.
+Consider the *i*-th row (or column) of a protein's contact map, which represents all alpha carbons that are near the *i*-th alpha carbon. We can see how two proteins differ at the *i*-th position if we look at all of this row's values; that is, if we compare all of the *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) values to all of the *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) values.
 
 We now will use pairwise distances between alpha carbons to determine how different two proteins are at the *i*-th alpha carbon, using a metric called **Q per residue (Qres)**.  The formal definition of Qres for two structures *s* and *t* is as follows[^Qres]:
 
