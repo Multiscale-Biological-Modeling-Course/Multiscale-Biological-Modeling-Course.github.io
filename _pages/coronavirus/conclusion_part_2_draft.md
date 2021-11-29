@@ -22,7 +22,10 @@ A mass-spring system in which a mass is attached to the end of a spring. The mor
 
 In an **elastic network model (ENM)**, we imagine nearby alpha carbons of a protein structure to be connected by springs. Because distant atoms will not influence each other, we will only connect two alpha carbons if they are within some threshold distance of each other (the default threshold used by ProDy is seven angstroms).
 
-A major strength of ProDy is its implementation of a **Gaussian network model (GNM)**, an ENM for molecular dynamics; the GNM is called "Gaussian" because protein bond movements follow normally distributed (Gaussian) distributions around their equilibria. Furthermore, this model is **isotropic**, meaning that it only considers the magnitude of force exerted on the springs between nearby molecules and ignores any global effect on the directions of these forces.
+A major strength of ProDy is its implementation of a **Gaussian network model (GNM)**, an ENM for molecular dynamics. Furthermore, this model is **isotropic**, meaning that it only considers the magnitude of force exerted on the springs between nearby molecules and ignores any global effect on the directions of these forces.
+
+**Note:** A GNM is called "Gaussian" because protein bond movements follow normally distributed (Gaussian) distributions around their equilibria.
+{: .notice--warning}
 
 Although it may seem that atomic movements are frantic and random, the movements of protein atoms are in fact heavily coordinated, owing to the evolution of the proteins to perform replicable tasks. As a result, the oscillations of these particles are often highly structured and can be summarized by using a combination of functions explaining them, or **modes**. (For those familiar with Fourier analysis, this is analogous to the fact that a function under certain conditions can be approximated using a sum of sine and cosine waves.) The paradigm resulting from the insight of breaking down oscillations into a comparatively small number of modes that summarize them is called **normal mode analysis (NMA)** and powers the elastic model that ProDy implements.
 
