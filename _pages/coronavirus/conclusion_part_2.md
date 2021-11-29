@@ -51,7 +51,7 @@ Schematic showing gaussian fluctuations between two nodes. Equilibrium positions
 
 One of the most common analyses using GNM is on the coordinated movement between residues as the protein fluctuates. More specifically, we want to see how each residue will move relative to other residues, or the **cross-correlation** between the residues. Recall that we are representing the fluctuations as vectors (see Gaussian Fluctuations). Therefore, for some residue *i* and residue *j*, we are trying to compute how much of the fluctation vector $$ \Delta R_i $$ points in the the same direction as the fluctuation vector $$ \Delta R_j $$. To do this, we need to compute the **inner product** of the vectors, denoted by the angle brackets: $$ \langle \rangle $$, which is a generalization of the dot product. In other words, computing the inner product between the fluctuation vectors is synonomous to computing the cross-correlation between the residues. As such, the cross-correlation between residue *i* and residue *j* is often represented as $$ \langle \Delta R_i \cdot \Delta R_j \rangle $$.
 
-Similarly, we can also calculate the expectation values of the fluctuation for each residue, or the **mean-square fluctuations**, which is the inner product of the fluctuation vector with itself, $$  \langle \Delta R_i^2 $$.
+Similarly, we can also calculate the expectation values of the fluctuation for each residue, or the **mean-square fluctuations**, which is the inner product of the fluctuation vector with itself, $$  \langle \Delta R_i^2 \rangle $$.
 
 Now that we can compute the cross-correlation between residues, we can normalize the values and construct a normalized cross-correlation matrix, $$ C^{(n)} $$, such that:
 
