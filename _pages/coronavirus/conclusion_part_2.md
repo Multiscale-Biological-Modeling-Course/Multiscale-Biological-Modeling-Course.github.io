@@ -27,7 +27,7 @@ In an **elastic network model (ENM)**, we imagine nearby alpha carbons of a prot
 
 ## An Introduction to Gaussian Network Models
 
-## Converting a protein structure to vectors
+### Converting a protein structure to vectors
 
 In this section, we will introduce GNM using our old friend human hemoglobin protein (<a href="https://www.rcsb.org/structure/1a3n" target="_blank">1A3N.pdb</a>). We first convert hemoglobin into a network of nodes and springs, in which each alpha carbon is given by a node, and two alpha carbons are connected by a string if they are within a threshold distance; the figure below uses a threshold value of 7.3 angstroms.
 
