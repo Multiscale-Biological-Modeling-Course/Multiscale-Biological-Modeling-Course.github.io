@@ -67,7 +67,7 @@ Normalized cross-correlation heat map of human hemoglobin (1A3N) using the first
 
 In the cross-correlation map of human hemoglobin above, we see four squares of positive correlation along the diagonal. This represents the four subunits of hemoglobin, $$ \alpha_1 $$, $$ \beta_1 $$, $$ \alpha_2 $$, and $$ \beta_2 $$ in this order and the intrasubunit correlations. We can differentiate between the two types of subunits by comparing the correlation patterns between the four squares. We see that the same patterns can be seen between the first and third square, and the second and fourth square. Assuming that first square represents $$ \alpha_1 $$, we can deduce that the third square represents $$ \alpha_2 $$, and that the second and fourth square represent $$ \beta $$ subunits.
 
-The rest of the cross-correlation map (regions next to the diagonal squares) provide evidence of high intersubunit correlations between $$ \alpha_1 \beta_1 $$/$$ \alpha_2 \beta_2 $$, some correlation between the $$ \alpha_1 \beta_2 $$/$$ \alpha_2 \beta_1 $$, and minimal correlation between the $$ \alpha_1 \alpha_2 $$/$$ \beta_1 \beta_2 $$. This agrees with experimental analysis of human hemoglobin on the interaction of the extensive, cooperative interactions between $$ \alpha $$ and $$ \beta $$ subunits, and minimal interactions between $$ \alpha $$ subunits and between $$ \beta $$ subunits [^Garrett].
+The rest of the cross-correlation map (regions next to the diagonal squares) provide evidence of high intersubunit correlations between $$ \alpha_1 \beta_1 $$/$$ \alpha_2 \beta_2 $$, some correlation between the $$ \alpha_1 \beta_2 $$/$$ \alpha_2 \beta_1 $$, and minimal correlation between the $$ \alpha_1 \alpha_2 $$/$$ \beta_1 \beta_2 $$. This agrees with experimental analysis of human hemoglobin on the interaction of the extensive, cooperative interactions between $$ \alpha $$ and $$ \beta $$ subunits, and minimal interactions between $$ \alpha $$ subunits and between $$ \beta $$ subunits[^Garrett].
 
 ### Mean-square Fluctuations & B-factor
 
@@ -266,3 +266,13 @@ As COVID-19 continues to circulate, new variants will continue to emerge, meanin
 [^Yang]: Yang, L., Song, G., Jernigan, R. 2009. Protein elastic network models and the ranges of cooperativity. PNAS 106(30), 12347-12352. https://doi.org/10.1073/pnas.0902159106
 
 [^cdc]: New COVID-19 Variants. 2021. Retrieved January 27, 2021, from https://www.cdc.gov/coronavirus/2019-ncov/transmission/variant.html
+
+[^Yang]: Yang, L., Song, G., Jernigan, R. 2009. Protein elastic network models and the ranges of cooperativity. PNAS 106(30), 12347-12352. https://doi.org/10.1073/pnas.0902159106
+
+[^Yang2]: Yang, L., Song, G., & Jernigan, R. L. 2009. Comparisons of experimental and computed protein anisotropic temperature factors. Proteins, 76(1), 164–175. https://doi.org/10.1002/prot.22328
+
+[^Garrett]: Garrett, R. H., Grisham, C. M., 2010. *Biochemistry*, 4th ed. Brooks/Cole, Cengage Learning.
+
+[^Davis]: Davis, M., Tobi, D. 2014. Multiple Gaussian network modes alignments reveals dynamically variable regions: The hemoglobin case. Proteins: Structure, Function, and Bioinformatics, 82(9), 2097-2105. https://doi-org.cmu.idm.oclc.org/10.1002/prot.24565
+
+[^Soh]: Soh, W. T., Liu, Y., Nakayama, E. E., Ono, C., Torii, S., Nakagami, H., Matsuura, Y., Shioda, T., Arase, H. The N-terminal domain of spike glycoprotein mediates SARS-CoV-2 infection by associating with L-SIGN and DC-SIGN.
