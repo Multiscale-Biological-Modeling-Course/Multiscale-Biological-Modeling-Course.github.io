@@ -35,11 +35,17 @@ In this section, we will introduce GNM using our old friend human hemoglobin pro
 Conversion of human hemoglobin (left) to a network of nodes and springs (right) in which two nodes are connected by a spring if they are within a threshold distance of 7.3 angstroms.
 {: style="font-size: medium;"}
 
-As the alpha carbons in a protein move randomly, they are subject to fluctuations that cause them to deviate from their equilibrium positions. (These fluctuations are *Gaussian*, which give the model its name.) For a given node *i* and node *j*, the equilibrium position is represented by the equilibrium position vector $$ R_i^0 $$ and $$ R_j^0 $$. The fluctuation for node *i* and is represented by a vector, denoted $$ \Delta R_i $$. The distance between node *i* and node *j* at equilibrium is represented by the equilibrium distance vector $$ R_{ij}^0 $$, and the distance between nodes *i* and *j* in fluctuation is represented by the instantaneous distance vector $$ R_{ij} $$. Finally, we denote the change in the distance between *i* and *j* compared to equilibrium as $$ \Delta R_{ij} $$, which is equal to $$ R_{ij} - R_{ij}^0 = \Delta R_j - \Delta R_i $$.
+As the alpha carbons in a protein move randomly, they are subject to fluctuations that cause them to deviate from their equilibrium positions. These fluctuations are *Gaussian*, which give the model its name. In short, this means that the alpha carbon can deviate randomly from its equilibrium position, but that it is more likely to be near the equilibrium than far away.
+
+The equilibrium position of node *i* is represented by the vector $$ R_i^0 $$, and its position at a given point in time is denoted by the (variable) vector $$ \Delta R_i $$. The distance between node *i* and node *j* at equilibrium is denoted by the vector $$ R_{ij}^0 $$, which is equal to $$ R_j^0 - R_i^0 $$ (as illustrated in the figure below); at a given point in time, this distance becomes the vector $$ R_{ij} $$.
 
 [![image-center](../assets/images/600px/gaussian_fluctuations.png){: .align-center}](../assets/images/gaussian_fluctuations.png)
-Schematic showing gaussian fluctuations between two nodes. Equilibrium positions of node *i* and node *j* are represented by distance vectors $$ R_i^0 $$ and $$ R_j^0 $$. The equilibrium distance between the nodes is labelled $$ R_{ij}^0 $$. The instantaneous fluction vectors, are labelled $$ \Delta R_i $$ and $$ \Delta R_j $$ and the instantaneous distance vector is labeled $$ \Delta R_{ij} $$. Image courtesy of Ahmet Bakan.
+(Left) A small network of nodes connected by springs deriving from a protein structure. The distance between two nodes *i* and *j* is denoted by the variable $$ R_{ij} $$. (Right) showing gaussian fluctuations between two nodes. Equilibrium positions of node *i* and node *j* are represented by distance vectors $$ R_i^0 $$ and $$ R_j^0 $$. The equilibrium distance between the nodes is labelled $$ R_{ij}^0 $$. The instantaneous fluction vectors, are labelled $$ \Delta R_i $$ and $$ \Delta R_j $$ and the instantaneous distance vector is labeled $$ \Delta R_{ij} $$. Image courtesy: Ahmet Bakan.
 {: style="font-size: medium;"}
+
+<!--
+We are interested in the change in the distance between *i* and *j* compared to equilibrium, $$ \Delta R_{ij} $$, which is equal to $$ R_{ij} - R_{ij}^0 = \Delta R_j - \Delta R_i $$.
+-->
 
 Yet although atomic fluctuations are powered by randomness, the movements of protein atoms are in fact heavily correlated, owing to the evolution of the proteins to perform replicable tasks. As a result, the oscillations of these particles can be summarized by using a combination of functions explaining them, or **modes**. The paradigm resulting from the insight of breaking down oscillations into a comparatively small number of modes that summarize them is called **normal mode analysis (NMA)** and powers the elastic model that ProDy implements.
 
