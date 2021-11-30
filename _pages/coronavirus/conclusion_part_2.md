@@ -53,9 +53,9 @@ Yet although atomic fluctuations are powered by randomness, the movements of pro
 
 To determine how the movements of nodes *i* and *j* may be related, we need to examine the fluctuation vectors $$ \Delta R_i $$ and $$ \Delta R_j $$. Do these vectors point in similar or opposing directions?
 
-This question is answered by computing the **inner product** of the two vectors, denoted by the angle brackets: $$ \langle \rangle $$, which is a generalization of the dot product. In other words, computing the inner product between the fluctuation vectors is synonomous to computing the cross-correlation between the residues. As such, the cross-correlation between residue *i* and residue *j* is often represented as $$ \langle \Delta R_i \cdot \Delta R_j \rangle $$.
+This question is answered by computing the **inner product**, or **dot product**, of the two vectors, $$ \langle \Delta R_i \cdot \Delta R_j \rangle $$.
 
-Similarly, we can also calculate the expectation values of the fluctuation for each residue, or the **mean-square fluctuations**, which is the inner product of the fluctuation vector with itself, $$  \langle \Delta R_i^2 \rangle $$.
+The inner product of a fluctuation vector with itself, $$  \langle \Delta R_i^2 \rangle $$ is also helpful in giving the **mean-square fluctuation** of an alpha carbon. This value is the expected squared distance of node *i* from equilibrium.
 
 Now that we can compute the cross-correlation between residues, we can normalize the values and construct a normalized cross-correlation matrix, $$ C^{(n)} $$, such that:
 
