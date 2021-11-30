@@ -34,7 +34,7 @@ We use a large value ‘20000’ to ensure that the rest of the protein is captu
 
 
 
-* Why are contact maps and cross correlation maps "symmetric" about the main diagonal?
+* Why are contact maps and cross-correlation maps "symmetric" about the main diagonal?
 
 * Something on identifying a dynamics difference from a contact map or better cross-correlation in similar proteins.
 
