@@ -27,7 +27,7 @@ In an **elastic network model (ENM)**, we imagine nearby alpha carbons of a prot
 
 ## An Introduction to Gaussian Network Models
 
-### Converting a protein structure into vectors
+### Representing random movements of alpha carbons
 
 In this section, we will introduce GNM using our old friend human hemoglobin protein (<a href="https://www.rcsb.org/structure/1a3n" target="_blank">1A3N.pdb</a>). We first convert hemoglobin into a network of nodes and springs, in which each alpha carbon is given by a node, and two alpha carbons are connected by a string if they are within a threshold distance; the figure below uses a threshold value of 7.3 angstroms.
 
@@ -47,7 +47,7 @@ The equilibrium position of node *i* is represented by the vector $$ R_i^0 $$, a
 We are interested in the change in the distance between *i* and *j* compared to equilibrium, $$ \Delta R_{ij} $$, which is equal to $$ R_{ij} - R_{ij}^0 = \Delta R_j - \Delta R_i $$.
 -->
 
-Yet although atomic fluctuations are powered by randomness, the movements of protein atoms are in fact heavily correlated, owing to the evolution of the proteins to perform replicable tasks. As a result, the oscillations of these particles can be summarized by using a combination of functions explaining them, or **modes**. The paradigm resulting from the insight of breaking down oscillations into a comparatively small number of modes that summarize them is called **normal mode analysis (NMA)** and powers the elastic model that ProDy implements.
+Yet although atomic fluctuations are powered by randomness, the movements of protein atoms are in fact heavily correlated, owing to the evolution of the proteins to perform replicable tasks. For example, imagine the simple case in which all a protein's alpha carbons are connected in a straight line. If we pull the first alpha carbon away from the second node, then because we think of this atom being connected to the second alpha carbon by a "spring", the second alpha carbon will be pulled toward the first alpha carbon. Our goal is to understand how the seemingly random movements of *all* of a protein's alpha carbons might be correlated to each other, and we will see how using vectors to represent these movements can be helpful.
 
 ### Inner products and cross correlations
 
@@ -84,6 +84,8 @@ We can calculate the **theoretical B-factors** using the equation and GNM analys
 {: style="font-size: medium;"}
 
 ### Slow Modes
+
+The oscillations of a protein's atoms can be summarized by using a combination of functions explaining them, or **modes**. The paradigm resulting from the insight of breaking down oscillations into a comparatively small number of modes that summarize them is called **normal mode analysis (NMA)** and powers the elastic model that ProDy implements.
 
 A benefit from decomposing the protein fluctuation into individual normal modes is that we are able to observe the characteristics of slow modes separately, i.e. which residues does it affect and to what degree, or **slow mode shape**. This is typically done by visualizing the modes as 2D plots where the x-axis is the residue sequence and the y-axis is the inverse eigenvalues of the Kirchhoff matrix. Peaks in the plot indicate which region of residues the mode describes, with higher peaks representing greater magnitude of motions. It is also common to observe the plot of the average of multiple modes to see the collective contribution of the modes. Below is an example of slow mode shape using human hemoglobin.
 
