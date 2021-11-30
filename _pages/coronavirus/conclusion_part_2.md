@@ -22,14 +22,11 @@ A mass-spring system in which a mass is attached to the end of a spring. The mor
 
 In an **elastic network model (ENM)**, we imagine nearby alpha carbons of a protein structure to be connected by springs. Because distant atoms will not influence each other, we will only connect two alpha carbons if they are within some threshold distance of each other. A major strength of ProDy is its implementation of a **Gaussian network model (GNM)**, an ENM for molecular dynamics. We describe how a GNM works in the following section.
 
-**Note:** The following section is at times mathematically advanced, so feel free to skim it if you do not have a background in linear algebra. A full treatment of the mathematics of GNMs can also be found in the chapter at <a href="https://www.csb.pitt.edu/Faculty/bahar/publications/b14.pdf" target="_blank">https://www.csb.pitt.edu/Faculty/bahar/publications/b14.pdf</a>
-{: .notice--warning}
-
 ## An Introduction to Gaussian Network Models
 
 ### Representing random movements of alpha carbons
 
-In this section, we will introduce GNM using our old friend human hemoglobin protein (<a href="https://www.rcsb.org/structure/1a3n" target="_blank">1A3N.pdb</a>). We first convert hemoglobin into a network of nodes and springs, in which each alpha carbon is given by a node, and two alpha carbons are connected by a string if they are within a threshold distance; the figure below uses a threshold value of 7.3 angstroms.
+We will introduce GNM using our old friend human hemoglobin protein (<a href="https://www.rcsb.org/structure/1a3n" target="_blank">1A3N.pdb</a>). We first convert hemoglobin into a network of nodes and springs, in which each alpha carbon is given by a node, and two alpha carbons are connected by a string if they are within a threshold distance; the figure below uses a threshold value of 7.3 angstroms.
 
 [![image-center](../assets/images/600px/hemoglobin_enm.png){: .align-center}](../assets/images/hemoglobin_enm.png)
 Conversion of human hemoglobin (left) to a network of nodes and springs (right) in which two nodes are connected by a spring if they are within a threshold distance of 7.3 angstroms.
@@ -60,6 +57,9 @@ This question is answered by computing the **inner product**, or **dot product**
 
 The inner product is also useful for representing  giving the **mean-square fluctuation** of an alpha carbon, or the expected squared distance of node *i* from equilibrium. This value is given simply by the inner product $$  \langle \Delta R_i, R_i \rangle $$ of a fluctuation vector with itself.
 
+**Note:** In practice, we will not know the exact values for the $$ \Delta R_i $$ and must compute the inner products of fluctuation vectors indirectly using linear algebra, which is beyond the scope of this work. A full treatment of the mathematics of GNMs can also be found in the chapter at <a href="https://www.csb.pitt.edu/Faculty/bahar/publications/b14.pdf" target="_blank">https://www.csb.pitt.edu/Faculty/bahar/publications/b14.pdf</a>
+{: .notice--warning}
+
 Long vectors pointing in the same direction will have a larger inner product than short vectors pointing in the same direction. As a result, we can normalize the inner product so that we can have a sense of the correlation of these vectors, independent of their length. To be precise, the **cross-correlation** of nodes *i* and *j* is given by
 
 $$ C_{ij} = \frac{\langle \Delta R_i \cdot \Delta R_j \rangle}{\left[ \langle \Delta R_i \cdot \Delta R_i \rangle \langle \Delta R_j \cdot \Delta R_j \rangle \right]^{\frac{1}{2}}} $$.
@@ -69,14 +69,21 @@ After normalization, the cross-correlation ranges from -1 to 1. A cross-correlat
 After computing the cross-correlation of every pair of alpha carbons in a protein structure with *n* residues, we obtain an *n* × *n* **cross-correlation matrix** *C*. We can visualize this matrix using a **heat map**, in which we color matrix values along a spectrum from red (1) to blue (-1). This heat map for the cross-correlation matrix of human hemoglobin is shown in the figure below.
 
 [![image-center](../assets/images/600px/hemoglobin_cc.png){: .align-center width="400px"}](../assets/images/hemoglobin_cc.png)
-The normalized cross-correlation heat map of human hemoglobin (PDB: 1A3N). Red regions indicate correlated residue pairs which move in the same direction; blue regions indicate anti-correlated residue pairs which move in opposite directions.
+The normalized cross-correlation heat map of human hemoglobin (PDB: 1A3N). Red regions indicate correlated residue pairs which move in the same direction; blue regions indicate anti-correlated residue pairs which move in opposite directions. Note that the matrix is oriented so that its first element is in the bottom left corner.
 {: style="font-size: medium;"}
 
-Cross-correlation analysis provides useful insight on the structure of the protein. The regions of high correlation coming off the diagonal typically provide information on secondary structures (residues in the same secondary structure will typically move together). On the other hand, high correlation regions not near the diagonal provide information on the tertiary structure of the protein, such as protein domains and clues to which parts of the protein work together. In general, we can observe complex patterns of correlated and anti-correlated movement throughout the protein (both inter- and intrasubunit), which can act like some sort of fingerprint. We can compare the cross-correlation between regions of the same protein or the cross-correlation map between two similar proteins to find differences in the correlation patterns. This would then provide clues in where the proteins or protein regions are different structurally and possibly functionally. After calculating the cross-correlation for each residue pair, we can organize the data as a matrix and then visualize it as a **cross-correlation heat map** like the figure below.
+The cross-correlation map of a protein contains complex patterns of correlated and anti-correlated movement of the protein's atoms. As such, it serves as a "fingerprint" of sorts for the protein, giving useful insights into the protein's structure.
 
-In the cross-correlation map of human hemoglobin above, we see four squares of positive correlation along the diagonal. This represents the four subunits of hemoglobin, $$ \alpha_1 $$, $$ \beta_1 $$, $$ \alpha_2 $$, and $$ \beta_2 $$ in this order and the intrasubunit correlations. We can differentiate between the two types of subunits by comparing the correlation patterns between the four squares. We see that the same patterns can be seen between the first and third square, and the second and fourth square. Assuming that first square represents $$ \alpha_1 $$, we can deduce that the third square represents $$ \alpha_2 $$, and that the second and fourth square represent $$ \beta $$ subunits.
+We should not be surprised that the main diagonal of the cross-correlation map is colored red, since alpha carbons that are near each other in a polypeptide chain will likely have correlated movements.
 
-The rest of the cross-correlation map (regions next to the diagonal squares) provide evidence of high intersubunit correlations between $$ \alpha_1 \beta_1 $$/$$ \alpha_2 \beta_2 $$, some correlation between the $$ \alpha_1 \beta_2 $$/$$ \alpha_2 \beta_1 $$, and minimal correlation between the $$ \alpha_1 \alpha_2 $$/$$ \beta_1 \beta_2 $$. This agrees with experimental analysis of human hemoglobin on the interaction of the extensive, cooperative interactions between $$ \alpha $$ and $$ \beta $$ subunits, and minimal interactions between $$ \alpha $$ subunits and between $$ \beta $$ subunits[^Garrett].
+Furthermore, the regions of high correlation near the main diagonal typically provide information regarding the protein's secondary structures, since amino acids belonging to the same secondary structure will typically move in concert.
+
+High correlation regions that are far away from the matrix's main diagonal provide information about the *tertiary* structure of the protein, such as protein domains and other components of the protein that work together.
+
+Consider again the cross-correlation map of human hemoglobin shown above. We can see four squares of positive correlation along the main diagonal, representing the four subunits of hemoglobin: α<sub>1</sub>, β<sub>1</sub>, α<sub>2</sub>, and β<sub>2</sub>. Note that the first and third squares have the same patterns; these correspond to α<sub>1</sub> and α<sub>2</sub>, respectively. Similarly, the second and fourth squares correspond to β<sub>1</sub> and β<sub>2</sub>.
+
+**STOP:** What other patterns do you notice in the hemoglobin cross-correlation heat map?
+{: .notice--primary}
 
 ### Mean-square Fluctuations & B-factor
 
@@ -84,10 +91,10 @@ Just like cross-correlation, we can also visualize the mean-square fluctuations 
 
 $$ B_i = \frac{8 \pi^2}{3} \langle \Delta R_i^2 \rangle $$
 
-We can calculate the **theoretical B-factors** using the equation and GNM analysis, and the correlation with the **experimental B-factors** that are included in the PDB entry as a simple way to evaluate the GNM analysis. A study in 2009 by Lei Yang et al. compared the experimental and theoretical B-factors of 190 sufficiently different (<50% similarity) protein stuctures from X-ray and found the correlation to be about 0.58 on average [^Yang2]. Below is a plot of the B-factor, synonomous to the mean-square fluctutation, of $$ \alpha_1 $$. Residues with high values are those that fluctuate with greater motion or residues with greater positional uncertainty, and are colored red in the figures. In this case, we see that the residues colored in red are generally at the ends of secondary structures in the outer edges of the protein and loops (segments in between secondary structures). This is expected because protein loops typically contain highly fluctuating residues.
+We can calculate the **theoretical B-factors** using the equation and GNM analysis, and the correlation with the **experimental B-factors** that are included in the PDB entry as a simple way to evaluate the GNM analysis. A study in 2009 by Lei Yang et al. compared the experimental and theoretical B-factors of 190 sufficiently different (<50% similarity) protein stuctures from X-ray and found the correlation to be about 0.58 on average [^Yang2]. Below is a plot of the B-factor, synonomous to the mean-square fluctutation, of α<sub>1</sub>. Residues with high values are those that fluctuate with greater motion or residues with greater positional uncertainty, and are colored red in the figures. In this case, we see that the residues colored in red are generally at the ends of secondary structures in the outer edges of the protein and loops (segments in between secondary structures). This is expected because protein loops typically contain highly fluctuating residues.
 
 [![image-center](../assets/images/600px/hemoglobin_b_factors.png){: .align-center}](../assets/images/hemoglobin_b_factors.png)
-(Top): Human hemoglobin colored according to the GNM calculated theoretical B-factors (left) and the experimental B-factors (right). (Bottom): 2D plot comparing the theoretical and experimental B-factors of subunit $$ \alpha_1 $$ (chain A of the protein). $$ \alpha_1 $$ is located at the top left quarter of the protein figure. A correlation coefficient of 0.63 was calculated between the theoretical and experimental B-factors.
+(Top): Human hemoglobin colored according to the GNM calculated theoretical B-factors (left) and the experimental B-factors (right). (Bottom): 2D plot comparing the theoretical and experimental B-factors of subunit α<sub>1</sub> (chain A of the protein). α<sub>1</sub> is located at the top left quarter of the protein figure. A correlation coefficient of 0.63 was calculated between the theoretical and experimental B-factors.
 {: style="font-size: medium;"}
 
 ### Slow Modes
