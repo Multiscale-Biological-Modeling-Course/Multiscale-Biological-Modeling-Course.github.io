@@ -85,9 +85,9 @@ Consider again the cross-correlation map of human hemoglobin shown above. We can
 **STOP:** What other patterns do you notice in the hemoglobin cross-correlation heat map?
 {: .notice--primary}
 
-### Mean-square Fluctuations & B-factor
+### Mean-square fluctuations and B-factors
 
-Just as we can visualize cross-correlation, we could also plot the mean-square fluctuations of residues using a line graph, where the *x*-axis represents the order of alpha carbons, and the y-axis represents the mean-square fluctuation $$ \langle \Delta R_i, \Delta R_i \rangle $$ of the *i*-th alpha carbon. Large *y*-values in this plot would correspond to mobile alpha carbons, whereas lower values would correspond to static alpha carbons.
+Just as we can visualize cross-correlation, we could also plot the mean-square fluctuations of residues using a line graph, where the x-axis represents the order of alpha carbons, and the y-axis represents the mean-square fluctuation $$ \langle \Delta R_i, \Delta R_i \rangle $$ of the *i*-th alpha carbon. Large *y*-values in this plot would correspond to mobile alpha carbons, whereas lower values would correspond to static alpha carbons.
 
 We also would like to compare these predicted mean-square fluctuations against what we can infer from experimental results. During X-ray crystallography, the displacement of atoms within the protein crystal decreases the intensity of the scattered X-ray, creating uncertainty in the positions of atoms. **B-factor**, also known as **temperature factor** or **Debye-Waller factor**, is a measure of this uncertainty, which includes noise from positional variance of thermal protein motion, model errors, and lattice defects.
 
@@ -103,26 +103,30 @@ The figure below shows a plot of the B-factor of the α<sub>1</sub> subunit of h
 (Top): Human hemoglobin colored according to theoretical B-factors calculated from GNM (left) and experimental B-factors (right). Subunit α<sub>1</sub> is located at the top left quarter of the protein figure. (Bottom): A 2-D plot comparing the theoretical (blue) and experimental (black) B-factors of subunit α<sub>1</sub>.  The theoretical and experimental B-factors are correlated with a coefficient of 0.63.
 {: style="font-size: medium;"}
 
-### Slow Modes
+### Normal mode analysis
 
-The oscillations of a protein's atoms can be summarized by using a combination of functions explaining them, or **modes**. The paradigm resulting from the insight of breaking down oscillations into a comparatively small number of modes that summarize them is called **normal mode analysis (NMA)** and powers the elastic model that ProDy implements.
+When listening to your favorite song, you probably do not think of the individual notes that it comprises. Yet a talented musician can dissect the song into the set of notes that each instrument contributes to the whole.
 
-A benefit from decomposing the protein fluctuation into individual normal modes is that we are able to observe the characteristics of slow modes separately, i.e. which residues does it affect and to what degree, or **slow mode shape**. This is typically done by visualizing the modes as 2D plots where the x-axis is the residue sequence and the y-axis is the inverse eigenvalues of the Kirchhoff matrix. Peaks in the plot indicate which region of residues the mode describes, with higher peaks representing greater magnitude of motions. It is also common to observe the plot of the average of multiple modes to see the collective contribution of the modes. Below is an example of slow mode shape using human hemoglobin.
+A more quantitative way of thinking about this is that a piece of music can be represented as the sum of a (potentially large) number of individual sound waves. Furthermore, just because the music combines all of these waves does not mean that we cannot deconvolve the music into its substituent waves.
+
+All objects, from colossal skyscrapers to tiny proteins, vibrate. And, just like in our musical example, these oscillations are the net result of individual waves passing through the object. The paradigm of breaking down a collection of vibrations into the comparatively small number of "modes" that summarize them is called **normal mode analysis (NMA)** and is at the heart of elastic network models.
+
+The mathematical details are complicated, but by deconvolving a protein's movement into individual normal modes, we can observe how each mode affects individual amino acids and to what extent. As we did with B-factors, for a given mode, we can visualize the results of a mode with a two-dimensional plot. The x-axis of this plot corresponds to the sequence of the protein, and the height of the *i*-th element on the x-axis corresponds to the magnitude of movement caused by the mode on the *i*-th alpha carbon.
 
 [![image-center](../assets/images/600px/hemoglobin_mode_shape.png){: .align-center}](../assets/images/hemoglobin_mode_shape.png)
 (Top): Visualization of human hemoglobin colored based on GNM slow mode shape. Red represents regions of high mobility and correspond to peaks in the plot. The first image represents the slowest mode (left) and the second image represents the average of the first 10 slowest modes (right). (Bottom): 2D plot of the slowest mode separate by the four chains of hemoglobin.
 {: style="font-size: medium;"}
 
-Similar to cross-correlation, analyzing slow mode shapes will give us insight on the structure of the protein and comparing the slow mode shapes can reveal differences between protein structures. From the shape of the slowest mode of all four chains (subunits), we can see that the shape for the four subunits of hemoglobin are quite similar. However, it is important to realize that the slowest mode only captures the largest movements of the protein. Therefore, we cannot say with certainty that the four subunits are as structurally similar as the slow mode shape, although from the cross-correlation map patterns and experimental studies, we know that subunit $$ \alpha $$ and subunit $$ \beta $$ are similar but have structural differences. As mentioned before, we can also view the average shape of the modes. Below is the slow mode plot of the slowest ten modes of hemoglobin. Here, we can see a stark difference between two groups of subunits/chains, where the $$ \alpha $$ subunits (chains A and C) share a very similar slow mode shape while the $$ \beta $$ subunits (chains B and D) share a different, yet similar, slow mode shape as well.
+Similar to cross-correlation, analyzing slow mode shapes will give us insight on the structure of the protein and comparing the slow mode shapes can reveal differences between protein structures. From the shape of the slowest mode of all four chains (subunits), we can see that the shape for the four subunits of hemoglobin are quite similar.
+
+We can also view the average shape of the modes. Below is the slow mode plot of the slowest ten modes of hemoglobin. Here, we can see a stark difference between two groups of subunits/chains, where the $$ \alpha $$ subunits (chains A and C) share a very similar slow mode shape while the $$ \beta $$ subunits (chains B and D) share a different, yet similar, slow mode shape as well.
 
 [![image-center](../assets/images/600px/hemoglobin_mode_shape_avg.png){: .align-center}](../assets/images/hemoglobin_mode_shape_avg.png)
 The average mode shape of the slowest ten modes of human hemoglobin using GNM.
 {: style="font-size: medium;"}
 
 
-### Performing NMA calculations
-
-By running molecular dynamics simulations, we obtain another way to study two homologous proteins by comparing their patterns of fluctuation under perturbation. With this in mind, we will use ProDy to perform NMA calculations as a final method of comparing the SARS-CoV-2 and SARS-CoV spike proteins. We also will use ProDy to compute a contact map, if you are interested in doing this after our discussion of contact maps in a [previous lesson](multiseq#contact-maps-and-qres). When we return from the tutorial, we will explain each of the analyses that we perform in the tutorial.
+We are now ready to apply what we have learned above and use ProDy to build a GNM for the SARS-CoV and SARS-CoV-2 spike proteins. When we return from the following tutorial, we will explain each of the analyses that we have performed.
 
 [Visit tutorial](tutorial_GNM){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

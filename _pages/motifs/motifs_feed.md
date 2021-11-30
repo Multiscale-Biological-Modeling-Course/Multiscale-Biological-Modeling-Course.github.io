@@ -67,7 +67,7 @@ We only considered one of the eight types of FFL in this lesson. You might wonde
 Finally, recall the figure above, in which the concentration of *Z* swung past its steady state before returning to the steady state. This figure is reminiscent of a **damped oscillation** process in which the concentration of a particle alternates between being above and below its steady state, while the amplitude of the oscillation gets smaller and smaller.
 
 [![image-center](../assets/images/600px/damped_oscillator.png){: .align-center}](../assets/images/damped_oscillator.png)
-In a damped oscillation, the value of some variable (shown on the *y*-axis) back and forth around an asymptotic value while the amplitude of the oscillations decreases.[^dampedOscillator]
+In a damped oscillation, the value of some variable (shown on the y-axis) back and forth around an asymptotic value while the amplitude of the oscillations decreases.[^dampedOscillator]
 {: style="font-size: medium;"}
 
 In a true oscillation process, the concentration of the particle is not damped, and this concentration alternates with regularity between a minimum and maximum value. Oscillations are common-place in nature and remarkable because the oscillating behavior arises from the system and can be maintained without outside influence. But can oscillations be explained by transcription factor network motifs? We hope you will join us in the next lesson to find out.

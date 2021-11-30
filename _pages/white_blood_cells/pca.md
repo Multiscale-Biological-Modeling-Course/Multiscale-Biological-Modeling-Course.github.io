@@ -39,7 +39,7 @@ Instead, we will reduce the number of dimensions of the space without removing a
 We will introduce dimension reduction with the low-dimensional example of the iris flower data set that we introduced in a [previous lesson](classification) when discussing classification. In the figure below, we reproduce the plot of iris petal width against petal width, ignoring the species from which each flower derives.
 
 [![image-center](../assets/images/600px/iris_petal_data_unlabeled.png){: .align-center}](../assets/images/iris_petal_data_unlabeled.png)
-Petal width (*x*-axis) plotted against petal width (*y*-axis) for all flowers in the iris flower data set, not labeled according to species.
+Petal width (x-axis) plotted against petal width (y-axis) for all flowers in the iris flower data set, not labeled according to species.
 {: style="font-size: medium;"}
 
 We can once again trust our eyes to notice the clear pattern: as iris petal width increases, petal length tends to increase as well.

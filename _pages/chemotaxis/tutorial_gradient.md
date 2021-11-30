@@ -270,7 +270,7 @@ def load_data(val):
     return time, concentration
 ~~~
 
-Now we will write a function to plot the time coordinates on the *x*-axis and the concentrations of the molecule at these time points on the *y*-axis. To do so, we will use the [Matplotlib plot](https://matplotlib.org/3.3.2/api/_as_gen/matplotlib.axes.Axes.plot.html) function to plot concentrations through time for each gradient value. Time-series data will be colored by the color palette we mentioned earlier.
+Now we will write a function to plot the time coordinates on the x-axis and the concentrations of the molecule at these time points on the y-axis. To do so, we will use the [Matplotlib plot](https://matplotlib.org/3.3.2/api/_as_gen/matplotlib.axes.Axes.plot.html) function to plot concentrations through time for each gradient value. Time-series data will be colored by the color palette we mentioned earlier.
 
 ~~~ python
 def plot(val, time, concentration, ax, i):
@@ -281,7 +281,7 @@ def plot(val, time, concentration, ax, i):
     return
 ~~~
 
-The plotting function above needs to be initialized with a figure defined by the [subplot](https://matplotlib.org/3.3.2/api/_as_gen/matplotlib.pyplot.subplots.html) function. We loop through every gradient concentration to perform the plotting. Afterward, we define labels for the *x*-axis and *y*-axis, figure title, and tick lines. The call to `plt.show()` displays the plot.
+The plotting function above needs to be initialized with a figure defined by the [subplot](https://matplotlib.org/3.3.2/api/_as_gen/matplotlib.pyplot.subplots.html) function. We loop through every gradient concentration to perform the plotting. Afterward, we define labels for the x-axis and y-axis, figure title, and tick lines. The call to `plt.show()` displays the plot.
 
 ~~~ python
 fig, ax = plt.subplots(1, 1, figsize = (10, 8))

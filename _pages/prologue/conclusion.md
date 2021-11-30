@@ -23,7 +23,7 @@ The Turing patterns that emerged from our particle simulations are a testament t
 
 Our reaction-diffusion system is remarkable because it is so **fine-tuned**, meaning that very slight changes in parameter values can lead to significant changes in the system. These changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
 
-Robert Munafo provides a great figure, reproduced below, showing how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary.[^robert] The kill rate increases along the *x*-axis, and the feed rate increases along the *y*-axis. Notice how quickly the patterns change! You may like to try tweaking the parameters of our own Gray-Scott simulator to see if you can reproduce these different patterns.
+Robert Munafo provides a great figure, reproduced below, showing how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary.[^robert] The kill rate increases along the x-axis, and the feed rate increases along the y-axis. Notice how quickly the patterns change! You may like to try tweaking the parameters of our own Gray-Scott simulator to see if you can reproduce these different patterns.
 
 [![image-center](../assets/images/600px/xmorphia-parameter-map.jpg){: .align-center width="400px"}](../assets/images/xmorphia-parameter-map.jpg)
 
