@@ -60,19 +60,21 @@ If two vectors **x** and **y** are at right angles, then <**x**, **y**> is equal
 **STOP:** Say that **x** = (1, -2, 3), **y** = (2, -3, 5), and **z** = (-1, 3, -4). Compute the inner products <**x**, **y**> and <**x**, **z**> and ensure that your answers match the preceding observation.
 {: .notice--primary}
 
-The inner product of a fluctuation vector with itself, $$  \langle \Delta R_i^2 \rangle $$ is also helpful in giving the **mean-square fluctuation** of an alpha carbon. This value is the expected squared distance of node *i* from equilibrium.
+The inner product is also useful for representing  giving the **mean-square fluctuation** of an alpha carbon, or the expected squared distance of node *i* from equilibrium. This value is given simply by the inner product $$  \langle \Delta R_i, R_i \rangle $$ of a fluctuation vector with itself.
 
-Now that we can compute the cross-correlation between residues, we can normalize the values and construct a normalized cross-correlation matrix, $$ C^{(n)} $$, such that:
+Long vectors pointing in the same direction will have a larger inner product than short vectors pointing in the same direction. As a result, we can normalize the inner product so that we can have a sense of the correlation of these vectors, independent of their length. To be precise, the **cross correlation** of nodes *i* and *j* is given by
 
-$$ C^{(n)}_{ij} = \frac{\langle \Delta R_i \cdot \Delta R_j \rangle}{\left[ \langle \Delta R_i \cdot \Delta R_i \rangle \langle \Delta R_j \cdot \Delta R_j \rangle \right]^{\frac{1}{2}}} $$
+$$ C_{ij} = \frac{\langle \Delta R_i \cdot \Delta R_j \rangle}{\left[ \langle \Delta R_i \cdot \Delta R_i \rangle \langle \Delta R_j \cdot \Delta R_j \rangle \right]^{\frac{1}{2}}} $$.
 
-where $$ C^{(n)}_{ij} $$ corresponds to the orientational cross-correlation between residue *i* and residue *j*. Because we normalized the values, the range of $$ C^{(n)}_{ij} $$ is $$ [-1,1] $$, where 1 means the residues are fully correlated in motion, and -1 means the residues are fully anti-correlated in motion.
+After normalization, the cross correlation ranges from -1 to 1. A cross correlation of -1 means that the two alpha carbons' movements are completely anti-correlated, and a cross correlation of 1 means that their movements are completely correlated.
+
+After computing the cross correlation of every pair of alpha carbons in a protein structure with *n* residues, we obtain an *n* × *n* **cross-correlation matrix** *C*. We can visualize this matrix using a **heat map**, in which we color matrix values along a spectrum from red (1) to blue (-1). This heat map for the cross correlation matrix of human hemoglobin is shown in the figure below.
+
+[![image-center](../assets/images/600px/hemoglobin_cc.png){: .align-center width="400px"}](../assets/images/hemoglobin_cc.png)
+The normalized cross-correlation heat map of human hemoglobin (PDB: 1A3N). Red regions indicate correlated residue pairs which move in the same direction; blue regions indicate anti-correlated residue pairs which move in opposite directions.
+{: style="font-size: medium;"}
 
 Cross-correlation analysis provides useful insight on the structure of the protein. The regions of high correlation coming off the diagonal typically provide information on secondary structures (residues in the same secondary structure will typically move together). On the other hand, high correlation regions not near the diagonal provide information on the tertiary structure of the protein, such as protein domains and clues to which parts of the protein work together. In general, we can observe complex patterns of correlated and anti-correlated movement throughout the protein (both inter- and intrasubunit), which can act like some sort of fingerprint. We can compare the cross-correlation between regions of the same protein or the cross correlation map between two similar proteins to find differences in the correlation patterns. This would then provide clues in where the proteins or protein regions are different structurally and possibly functionally. After calculating the cross-correlation for each residue pair, we can organize the data as a matrix and then visualize it as a **cross-correlation heat map** like the figure below.
-
-[![image-center](../assets/images/600px/hemoglobin_cc.png){: .align-center}](../assets/images/hemoglobin_cc.png)
-Normalized cross-correlation heat map of human hemoglobin (1A3N) using the first 20 slowest normal modes. Red regions indicate correlated residue pairs which move in the same direction; blue regions indicate anti-correlated residue pairs which move in opposite directions.
-{: style="font-size: medium;"}
 
 In the cross-correlation map of human hemoglobin above, we see four squares of positive correlation along the diagonal. This represents the four subunits of hemoglobin, $$ \alpha_1 $$, $$ \beta_1 $$, $$ \alpha_2 $$, and $$ \beta_2 $$ in this order and the intrasubunit correlations. We can differentiate between the two types of subunits by comparing the correlation patterns between the four squares. We see that the same patterns can be seen between the first and third square, and the second and fourth square. Assuming that first square represents $$ \alpha_1 $$, we can deduce that the third square represents $$ \alpha_2 $$, and that the second and fourth square represent $$ \beta $$ subunits.
 
