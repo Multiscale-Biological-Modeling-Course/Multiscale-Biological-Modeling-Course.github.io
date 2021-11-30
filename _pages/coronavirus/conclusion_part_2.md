@@ -60,9 +60,9 @@ The inner product is also useful for representing  giving the **mean-square fluc
 **Note:** In practice, we will not know the exact values for the $$ \Delta R_i $$ and must compute the inner products of fluctuation vectors indirectly using linear algebra, which is beyond the scope of this work. A full treatment of the mathematics of GNMs can also be found in the chapter at <a href="https://www.csb.pitt.edu/Faculty/bahar/publications/b14.pdf" target="_blank">https://www.csb.pitt.edu/Faculty/bahar/publications/b14.pdf</a>
 {: .notice--warning}
 
-Long vectors pointing in the same direction will have a larger inner product than short vectors pointing in the same direction. As a result, we can normalize the inner product so that we can have a sense of the correlation of these vectors, independent of their length. To be precise, the **cross-correlation** of nodes *i* and *j* is given by
+Long vectors pointing in the same direction will have a larger inner product than short vectors pointing in the same direction. As a result, we can normalize the inner product so that we can have a sense of the correlation of these vectors, independent of their length. To be precise, the cross-correlation of nodes *i* and *j* is given by
 
-$$ C_{ij} = \dfrac{\langle \Delta R_i, \Delta R_j \rangle}{\sqrt{\langle \Delta R_i, \Delta R_i \rangle \langle \Delta R_j, \Delta R_j \rangle}} $$.
+$$ C_{ij} = \dfrac{\langle \Delta R_i, \Delta R_j \rangle}{\sqrt{\langle \Delta R_i, \Delta R_i \rangle \langle \Delta R_j, \Delta R_j \rangle}}. $$
 
 After normalization, the cross-correlation ranges from -1 to 1. A cross-correlation of -1 means that the two alpha carbons' movements are completely anti-correlated, and a cross-correlation of 1 means that their movements are completely correlated.
 
@@ -93,7 +93,7 @@ We also would like to compare these predicted mean-square fluctuations against w
 
 We can then compare these *experimental* B-factors against a *theoretical* estimate of their value. It is beyond the scope of this work, but the theoretical B-factors are given by
 
-$$ B_i = \frac{8 \pi^2}{3} \langle \Delta R_i, \Delta R_i \rangle $$.
+$$ B_i = \frac{8 \pi^2}{3} \langle \Delta R_i, \Delta R_i \rangle. $$
 
 In other words, once we can estimate the mean-square fluctuations $$\langle \Delta R_i, \Delta R_i \rangle $$, the theoretical B-factor of the *i*-th alpha carbon is simply a constant times this inner product. This theoretical B-factor tends to correlate well with theoretical B-factors in practice.[^Yang2]
 
