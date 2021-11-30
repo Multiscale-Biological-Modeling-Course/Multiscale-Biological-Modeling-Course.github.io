@@ -133,13 +133,7 @@ In the tutorial, we used ProDy to generate visualizations of how the SARS-CoV-2 
 
 ### Cross-Correlation
 
-Much as a contact map indicated which amino acids in a protein structure are close to each other, we will use a **cross-correlation map** to show whether the *movements* of different amino acids are coordinated as the protein flexes. A matrix *M* receives a value at *M*(*i*, *j*) equal to the correlation between the movements of the *i*-th and *j*-th amino acids in a protein structure. The values of this matrix are decimals ranging from -1 to 1. *M*(*i*, *j*) is equal to 1 if the movements are completely correlated (both amino acids always move in the same direction), a value of -1 if the movements are completely anticorrelated (both amino acids always move in opposite directions), and a value of 0 if the movements are completely uncorrelated.
-
-Much as the contact map typically has many values equal to 1 near the main diagonal, we commonly see a diagonal of strong cross-correlation values (i.e., either close to -1 or close to 1) because movements in an amino acid will almost always affect nearby amino acids.
-
-Positive correlations near the diagonal represents correlations between contiguous residues and are characteristics of secondary structures (e.g., alpha helices and beta sheets), in which amino acids tend to move together. Correlations and anticorrellations off the diagonal (i.e., for amino acids distant from each other in the protein structure) may potential represent interesting interactions between non-contiguous residues and domains for further study.
-
-From our results, we see that the SARS-CoV-2 and SARS S protein fluctuate similarly, supporting that they not only have similar structures, but similar dynamics as well.
+We show the results of the cross-correlation heat maps of SARS-CoV and SARS-CoV-2 spike proteins in the figure below. These heat maps show that the proteins fluctuate similarly, giving evidence that these proteins not only have similar structures, but similar dynamics as well.
 
 [![image-center](../assets/images/600px/CrossCorr.png){: .align-center}](../assets/images/CrossCorr.png)
 The cross-correlation heat maps of the SARS-CoV-2 spike protein (top-left), SARS-CoV spike protein (top-right), single chain of the SARS-CoV-2 spike protein (bottom-left), and single-chain of the SARS-CoV spike protein (bottom-right). The map shows every residue pair in the structure and the colors represent the correlation in the fluctuations of residues as shown in the spectrum. A value of 1.0 (red) means that the amino acids' movements are perfectly correlated, and a value of -1.0 (dark blue) means that their movements are perfectly anticorrelated.
