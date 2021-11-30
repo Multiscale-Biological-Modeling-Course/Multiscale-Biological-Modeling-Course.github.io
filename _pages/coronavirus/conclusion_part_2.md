@@ -53,7 +53,12 @@ Yet although atomic fluctuations are powered by randomness, the movements of pro
 
 To determine how the movements of nodes *i* and *j* may be related, we need to examine the fluctuation vectors $$ \Delta R_i $$ and $$ \Delta R_j $$. Do these vectors point in similar or opposing directions?
 
-This question is answered by computing the **inner product**, or **dot product**, of the two vectors, $$ \langle \Delta R_i \cdot \Delta R_j \rangle $$.
+This question is answered by computing the **inner product**, or **dot product**, of the two vectors, $$ \langle \Delta R_i \cdot \Delta R_j \rangle $$. The inner product of two vectors **x** = (*x*<sub>1</sub>, *x*<sub>2</sub>, *x*<sub>3</sub>) and **y** = (*y*<sub>1</sub>, *y*<sub>2</sub>, *y*<sub>3</sub>) is given by <**x**, **y**> = *x*<sub>1</sub> · *y*<sub>1</sub> + *x*<sub>2</sub> · *y*<sub>2</sub> + *x*<sub>3</sub> · *y*<sub>3</sub>.
+
+If two vectors **x** and **y** are at right angles, then <**x**, **y**> is equal to zero. The more that the two vectors point in the same direction, the larger the value of <**x**, **y**>. And the more that the two vectors point in opposite directions, the smaller the value of <**x**, **y**>.
+
+**STOP:** Say that **x** = (1, -2, 3), **y** = (2, -3, 5), and **z** = (-1, 3, -4). Compute the inner products <**x**, **y**> and <**x**, **z**> and ensure that your answers match the preceding observation.
+{: .notice--primary}
 
 The inner product of a fluctuation vector with itself, $$  \langle \Delta R_i^2 \rangle $$ is also helpful in giving the **mean-square fluctuation** of an alpha carbon. This value is the expected squared distance of node *i* from equilibrium.
 
