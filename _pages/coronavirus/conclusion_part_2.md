@@ -62,7 +62,7 @@ The inner product is also useful for representing  giving the **mean-square fluc
 
 Long vectors pointing in the same direction will have a larger inner product than short vectors pointing in the same direction. As a result, we can normalize the inner product so that we can have a sense of the correlation of these vectors, independent of their length. To be precise, the **cross-correlation** of nodes *i* and *j* is given by
 
-$$ C_{ij} = \frac{\langle \Delta R_i, \Delta R_j \rangle}{\left[ \langle \Delta R_i, \Delta R_i \rangle \langle \Delta R_j, \Delta R_j \rangle \right]^{\frac{1}{2}}} $$.
+$$ C_{ij} = \dfrac{\langle \Delta R_i, \Delta R_j \rangle}{\sqrt{\langle \Delta R_i, \Delta R_i \rangle \langle \Delta R_j, \Delta R_j \rangle}} $$.
 
 After normalization, the cross-correlation ranges from -1 to 1. A cross-correlation of -1 means that the two alpha carbons' movements are completely anti-correlated, and a cross-correlation of 1 means that their movements are completely correlated.
 
