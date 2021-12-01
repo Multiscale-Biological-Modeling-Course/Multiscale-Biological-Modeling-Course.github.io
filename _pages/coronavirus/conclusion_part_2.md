@@ -134,14 +134,12 @@ We are now ready to apply what we have learned in this lesson and use ProDy to b
 
 ## Molecular dynamics analyses of SARS-CoV and SARS-CoV-2 spike proteins using GNM
 
-In the tutorial, we used ProDy to generate visualizations of how the SARS-CoV-2 spike protein fluctuates compared to that of SARS-CoV. Here, we will explain how to interpret the results and compare them to analyze the similarities between the two proteins.
-
 ### Cross-Correlation
 
-We show the results of the cross-correlation heat maps of SARS-CoV and SARS-CoV-2 spike proteins in the figure below. These heat maps show that the proteins fluctuate similarly, giving evidence that these proteins not only have similar structures, but similar dynamics as well.
+We show the results of the cross-correlation heat maps of SARS-CoV and SARS-CoV-2 spike proteins in the figure below. These heat maps show that the proteins fluctuate similarly, indicating that these proteins may have similar dynamics.
 
 [![image-center](../assets/images/600px/CrossCorr.png){: .align-center}](../assets/images/CrossCorr.png)
-The cross-correlation heat maps of the SARS-CoV-2 spike protein (top-left), SARS-CoV spike protein (top-right), single chain of the SARS-CoV-2 spike protein (bottom-left), and single-chain of the SARS-CoV spike protein (bottom-right). The map shows every residue pair in the structure and the colors represent the correlation in the fluctuations of residues as shown in the spectrum. A value of 1.0 (red) means that the amino acids' movements are perfectly correlated, and a value of -1.0 (dark blue) means that their movements are perfectly anticorrelated.
+The cross-correlation heat maps of the SARS-CoV-2 spike protein (top-left), SARS-CoV spike protein (top-right), single chain of the SARS-CoV-2 spike protein (bottom-left), and single-chain of the SARS-CoV spike protein (bottom-right).
 {: style="font-size: medium;"}
 
 ### Slow mode shape and square fluctuations
