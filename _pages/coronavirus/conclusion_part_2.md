@@ -111,24 +111,23 @@ A more quantitative way of thinking about this is that a piece of music can be r
 
 All objects, from colossal skyscrapers to tiny proteins, vibrate. And, just like in our musical example, these oscillations are the net result of individual waves passing through the object. The paradigm of breaking down a collection of vibrations into the comparatively small number of "modes" that summarize them is called **normal mode analysis (NMA)** and is at the heart of elastic network models.
 
-The mathematical details are complicated, but by deconvolving a protein's movement into individual normal modes, we can observe how each mode affects individual amino acids and to what extent. As we did with B-factors, for a given mode, we can visualize the results of a mode with a line graph. The x-axis of this plot corresponds to the sequence of the protein, and the height of the *i*-th position on the x-axis corresponds to the magnitude of the square fluctuation caused by the mode on the protein's *i*-th alpha carbon.
+The mathematical details are complicated, but by deconvolving a protein's movement into individual normal modes, we can observe how each mode affects individual amino acids and to what extent. As we did with B-factors, for a given mode, we can visualize the results of a mode with a line graph, called the **mode shape** plot. The x-axis of this plot corresponds to the sequence of the protein, and the height of the *i*-th position on the x-axis corresponds to the magnitude of the square fluctuation caused by the mode on the protein's *i*-th residue.
 
-Just as a piece of music can have one instrument that is much louder than another, some of the oscillations contributing to an object's vibrations may be more significant than others. NMA is also able to determine the degree to which each node contributes to the overall fluctuations of a protein; the mode contributing the most is called the **slowest mode** of the protein. The figure below shows a plot of the  slowest mode for human hemoglobin. 
+Just as a piece of music can have one instrument that is much louder than another, some of the oscillations contributing to an object's vibrations may be more significant than others. NMA is also able to determine the degree to which each node contributes to the overall fluctuations of a protein; the mode contributing the most is called the **slowest mode** of the protein. The figure below shows a mode shape plot of the slowest mode for each of the four subunits of human hemoglobin.
 
 [![image-center](../assets/images/600px/hemoglobin_mode_shape.png){: .align-center}](../assets/images/hemoglobin_mode_shape.png)
-(Top): Visualization of human hemoglobin colored based on GNM slow mode shape. Red represents regions of high mobility and correspond to peaks in the plot. The first image represents the slowest mode (left) and the second image represents the average of the first 10 slowest modes (right). (Bottom): 2D plot of the slowest mode separate by the four chains of hemoglobin.
+(Top) Visualization of human hemoglobin colored based on GNM slow mode shape for the slowest mode (left) and the average of the ten slowest modes (right), or the ten modes that contribute the most to the square fluctuation. Red is used to denote region of high mobility, corresponding to peaks in the mode shape plot. (Bottom) A mode shape plot of the slowest mode for human hemoglobin, separated over each of the four chains, shows similarities between the chains.
 {: style="font-size: medium;"}
 
-Similar to cross-correlation, analyzing slow mode shapes will give us insight into the structure of the protein, and comparing the slow mode shapes can reveal differences between protein structures. From the shape of the slowest mode of all four chains (subunits), we can see that the shape for the four subunits of hemoglobin are quite similar.
+Similar to cross-correlation, analyzing a protein's mode shapes will give insights into the structure of the protein, and comparing mode shapes for two proteins can reveal structural differences in the proteins. For example, in the mode shape plots above, we can see that the shape for the four subunits of hemoglobin are quite similar.
 
-We can also view the average shape of the modes. Below is the slow mode plot of the slowest ten modes of hemoglobin. Here, we can see a stark difference between two groups of subunits/chains, where the $$ \alpha $$ subunits (chains A and C) share a very similar slow mode shape while the $$ \beta $$ subunits (chains B and D) share a different, yet similar, slow mode shape as well.
+Another aspect of normal mode analysis is taking an average of multiple modes. Below is the slow mode plot averaging the "slowest" ten modes of hemoglobin, meaning the modes that have the greatest affect on mean fluctuation. Unlike when we examined only the slowest mode, we can now see a stark difference between the two groups of subunits/chains; the plots for α subunits (chains A and C) are very similar, whereas the plots for β subunits (chains B and D) share a different, yet similar, average slow mode shape. This figure indicates that we should consult more than just a single mode when completing a full analysis of a protein's molecular dynamics.
 
 [![image-center](../assets/images/600px/hemoglobin_mode_shape_avg.png){: .align-center}](../assets/images/hemoglobin_mode_shape_avg.png)
-The average mode shape of the slowest ten modes of human hemoglobin using GNM.
+The average mode shape of the slowest ten modes for each of the four human hemoglobin subunits using GNM.
 {: style="font-size: medium;"}
 
-
-We are now ready to apply what we have learned above and use ProDy to build a GNM for the SARS-CoV and SARS-CoV-2 spike proteins. When we return from the following tutorial, we will explain each of the analyses that we have performed.
+We are now ready to apply what we have learned in this lesson and use ProDy to build a GNM for the SARS-CoV and SARS-CoV-2 spike proteins. When we return from the following tutorial, we will interpret each of the analyses that we have performed.
 
 [Visit tutorial](tutorial_GNM){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
