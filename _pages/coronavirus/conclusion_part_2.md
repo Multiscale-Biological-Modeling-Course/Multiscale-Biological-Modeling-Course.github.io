@@ -146,12 +146,6 @@ We next provide a figure showing the mode shape plot for the slowest modes of th
 (Top) A mode shape plot for the slowest mode of the SARS-CoV-2 spike protein (left) and SARS-CoV spike protein (right). (Bottom) A mode shape plot for the slowest mode of a single chain of the SARS-CoV-2 spike protein (left) and a single chain of the SARS-CoV spike protein (right). Note that the plot on the right is inverted compared to the one on the left, but the two plots have the same shape if we consider the absolute value. These plots show that the two viruses have similar dynamics, and that residues 200 – 500 fluctuate the most, a region that overlaps heavily with the RBD.
 {: style="font-size: medium;"}
 
-A related plot called a slow mode **square fluctuations plot** is similar to the slow mode shape plot, except that its values are produced by multiplying the square of the slow mode by the variance along the mode. In this case, all the values will be positive, and larger amplitudes represent regions of greater fluctuation. The square fluctuations plots for SARS-CoV-2 and SARS-CoV below confirm our previous finding that the RBD is highly mobile compared with the rest of the spike protein.
-
-[![image-center](../assets/images/600px/SqFlucts.png){: .align-center}](../assets/images/SqFlucts.png)
-Plots of the slow mode square fluctuation of the SARS-CoV-2 spike protein (top-left), SARS-CoV spike protein (top-right), a single chain of the SARS-CoV-2 spike protein (bottom-left), and a single chain of the SARS-CoV spike protein (bottom-right). The x-axis represents the amino acid positions along the protein, and the y-axis is proportional to the square of the fluctuations at each amino acid position. The plots between SARS-CoV-2 and SARS-CoV are very similar, indicating similar protein fluctuations for this mode.
-{: style="font-size: medium;"}
-
 We should perhaps not be surprised that the SARS-CoV-2 and SARS-CoV spike proteins tend to have similar dynamics, since their structures were similar, and both viral proteins target the ACE2 enzyme. To help confirm this hypothesis, however, let us learn first about one more aspect of molecular dynamics.
 
 ## ANM models account for the direction of protein fluctuations

@@ -78,14 +78,6 @@ In[#]: grid();
 [![image-center](../assets/images/600px/SARS-CoV-2_ChainA_SlowMode_20A.png){: .align-center}](../assets/images/SARS-CoV-2_ChainA_SlowMode_20A.png)
 {: style="font-size: medium;"}
 
-Square Fluctuations
-~~~ python
-In[#]: showSqFlucts(gnm[0], hinges=True);
-~~~~
-
-[![image-center](../assets/images/600px/SARS-CoV-2_ChainA_SqFlucts_20A.png){: .align-center}](../assets/images/SARS-CoV-2_ChainA_SqFlucts_20A.png)
-{: style="font-size: medium;"}
-
 Now, let's head back to the main text on how to read our visualizations and analyze our results.
 
 [Return to main text](conclusion_part_2#molecular-dynamics-analyses-of-sars-cov-and-sars-cov-2-spike-proteins-using-gnm){: .btn .btn--primary .btn--large}
