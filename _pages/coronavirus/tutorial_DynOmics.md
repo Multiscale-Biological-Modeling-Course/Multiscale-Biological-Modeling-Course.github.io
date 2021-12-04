@@ -9,8 +9,10 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 ### Molecular Dynamics Analysis using DynOmics 1.0
 
-In this tutorial, we will be using a publically available web server, DynOmics, by Dr. Hongchun Li
-et. al. in the <a href="https://www.csb.pitt.edu/Faculty/bahar/index.html" target="_blank">Bahar Lab</a> at the University of Pittsburgh, School of Medicine. This server is dedicated to performing molecular dynamics analysis by integrating the Gaussian Network Model (GNM) and the Anisotropic Network Model (ANM).
+In this tutorial, we will be using a publically available web server, DynOmics, by Dr. Hongchun Li and colleagues in the <a href="https://www.csb.pitt.edu/Faculty/bahar/index.html" target="_blank">Bahar Lab</a> at the University of Pittsburgh, School of Medicine. This server is dedicated to performing molecular dynamics analysis by integrating the Gaussian Network Model (GNM) and the Anisotropic Network Model (ANM).
+
+**Note:** At the current time, the DynOmics server is unfortunately down. Please let us know in the comments if you find that it is back up.
+{: .notice--warning}
 
 Head over to the main page of DynOmics by following this link <a href="http://enm.pitt.edu/index.php" target="_blank">DynOmics 1.0</a>. Here, we can see many options that we can change to customize our analysis. But for now, we will stick to the default options. To choose our target molecule, we need to input the PDB ID. Since we will be performing the analysis on the SARS-CoV-2 S protein, we will use the `PDB ID: 6vxx`. Then, click `Submit`.
 
