@@ -26,6 +26,19 @@ For this GNM calculation, we will focus only on the alpha carbons of Chain A. We
 In[#]: calphas = spike.select('calpha and chain A')
 ~~~~~
 
+Recall in the main text that we converted a protein into a network of nodes and springs, where two nodes are connected by an edge if the alpha carbons corresponding to these nodes are within some threshold distance. We can also represent this network with a matrix called the  **Kirchhoff matrix** $$ \Gamma $$ and constructed as follows:
+
+$$ \Gamma_{ij} = \begin{cases} & -1 \text{ if $i \neq j$ and $R_{ij} \leq r_c$}\\ &  0 \text{ if $i \neq j$ and $R_{ij} > r_c$} \end{cases} $$
+
+$$ \Gamma_{ii} = -\sum_j \Gamma_{ij} $$
+
+Here, $$r_c$$ is the threshold distance between alpha carbons used to build our network. Simply put, if residue i and residue j are connected, then the value of position i,j in the matrix will be -1. If they are not connected, the the value will be 0. The values of the diagonals, i.e. position i,i, correspond to the total number of connections of residue i.
+
+[![image-center](../assets/images/600px/kirchhoff_example.png){: .align-center}](../assets/images/kirchhoff_example.png)
+Toy structure and the corresponding Kirchhoff matrix.
+{: style="font-size: medium;"}
+
+
 Now, we will instantiate a GNM instance and build the corresponding Kirchhoff matrix. You can pass parameters for the cutoff (threshold distance between atoms) and gamma (spring constant). The defaults are 10.0 Å and 1.0, respectively. Here, we will set the cutoff to be 20.0 Å.
 
 ~~~ python
