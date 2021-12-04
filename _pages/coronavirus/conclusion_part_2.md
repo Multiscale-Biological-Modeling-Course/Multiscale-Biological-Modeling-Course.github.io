@@ -224,7 +224,7 @@ Recall from our work in the [previous lesson](NAMD#differences-in-interaction-en
 
 ### DynOmics conveniently combines GNM and ANM analysis
 
-
+Although we have separated our discussion of GNM and ANM, the <a href="http://enm.pitt.edu/index.php" target="_blank">DynOmics 1.0</a> server is an effort to integrate these approaches on a user-friendly platform. If you are interested, the following tutorial shows how to use DynOmics to replicate some of our above analysis.
 
 [Visit tutorial](tutorial_DynOmics){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
