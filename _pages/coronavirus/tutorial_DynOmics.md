@@ -1,16 +1,19 @@
 ---
 permalink: /coronavirus/tutorial_DynOmics
-title: "Software Tutorial: Molecular Dynamics Analysis using DynOmics 1.0"
+title: "Software Tutorial: Integrating Molecular Dynamics Analyses with DynOmics"
 sidebar:
  nav: "coronavirus"
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
-In this tutorial, we will be using a publically available web server, DynOmics, by Dr. Hongchun Li and colleagues in the <a href="https://www.csb.pitt.edu/Faculty/bahar/index.html" target="_blank">Bahar Lab</a> at the University of Pittsburgh, School of Medicine. This server is dedicated to performing molecular dynamics analysis by integrating the Gaussian Network Model (GNM) and the Anisotropic Network Model (ANM).
 
-**Note:** At the current time, the DynOmics server is unfortunately down. Please let us know in the comments if you find that it is back up.
+In this tutorial, we will be using a publicly available web server, DynOmics, produced by Dr. Hongchun Li and colleagues at the University of Pittsburgh School of Medicine. This server is dedicated to performing molecular dynamics analysis by integrating the GNM and ANM models that we learned about in the [main text](conclusion_part_2).
+
+**Note:** At the current time, the DynOmics server is down. Please let us know in the comments if you find that it is back up.
 {: .notice--warning}
 
-Head over to the main page of DynOmics by following this link <a href="http://enm.pitt.edu/index.php" target="_blank">DynOmics 1.0</a>. Here, we can see many options that we can change to customize our analysis. But for now, we will stick to the default options. To choose our target molecule, we need to input the PDB ID. Since we will be performing the analysis on the SARS-CoV-2 S protein, we will use the `PDB ID: 6vxx`. Then, click `Submit`.
+Navigate to the <a href="http://enm.pitt.edu/index.php" target="_blank">DynOmics homepage</a>. This page contains many options that we can change to customize our analysis, but we will keep the default options for now.
+
+To choose our target molecule, we need to input the PDB ID. Since we will be performing the analysis on the SARS-CoV-2 spike protein, enter `6vxx` under `PDB ID`. Then, click `Submit`.
 
 [![image-center](../assets/images/600px/DynOmics1.png){: .align-center}](../assets/images/DynOmics1.png)
 {: style="font-size: medium;"}
@@ -20,12 +23,14 @@ Once the analysis is complete, you will see all the ANM and GNM results listed n
 [![image-center](../assets/images/600px/DynOmics2.png){: .align-center}](../assets/images/DynOmics2.png)
 {: style="font-size: medium;"}
 
-Let's explore some of the results starting with `Molecular Motions - Animations`. Here we see an animated, interactive visualization of the protein with the same coloring as before. This time, we are able to see the actual predicted motion of the protein fluctuation based on ANM calculations. On the right, we can customize the animation by changing the vibrations and vectors to make the motions more pronounced. More importantly, we can change the `Mode index`. Recall that we have learned that the motion of protein fluctuations can be broken down into a collection of modes. By changing the `Mode index`, we can see the different contribution of each mode to the motion. Another neat thing that we can do is to download the calculations as a .nmd file and visualize it in VMD!
+Let's start exploring some of the results by clicking `Molecular Motions - Animations`. This shows an interactive animation of the protein with the same coloring as before and showing the predicted motion of protein fluctuation based on ANM calculations. On the right, we can customize the animation by changing the vibrations and vectors to make the motions more pronounced.
+
+We can also change the `Mode index`. We learned in the main text that the motion of protein fluctuations can be broken down into a collection of individual modes. By changing the `Mode index`, we can see the different contribution of each mode to the motion. The lower the index of the mode, the greater this mode contributes to the square fluctuations of the protein's residues.
 
 [![image-center](../assets/images/600px/DynOmics3.png){: .align-center}](../assets/images/DynOmics3.png)
 {: style="font-size: medium;"}
 
-If you are interested in using VMD, open the software and go to `Extensions > Analysis > Normal Mode Wizard`. Then, click `Load NMD File` and select the .nmd that you downloaded. Now that the ANM calculation is loaded into VMD, you can customize the visualization and recreate the animation by clicking `Animation: Play`.
+We can also download the calculations as a `.nmd` file and visualize it in VMD. If you are interested in using VMD, open the software and go to `Extensions > Analysis > Normal Mode Wizard`. Then, click `Load NMD File` and select the `.nmd` file that you downloaded. Now that the ANM calculation is loaded into VMD, you can customize the visualization and recreate the animation by clicking `Animation: Play`.
 
 [![image-center](../assets/images/600px/DynOmics4.png){: .align-center}](../assets/images/DynOmics4.png)
 {: style="font-size: medium;"}
@@ -33,12 +38,12 @@ If you are interested in using VMD, open the software and go to `Extensions > An
 [![image-center](../assets/images/600px/DynOmics5.png){: .align-center}](../assets/images/DynOmics5.png)
 {: style="font-size: medium;"}
 
-Next, head over to `Mean-Square Fluctuations of Residues`. On this page, you will see two visualizations of the protein, labelled "Theoretical B-Factors" and "Experimental B-Factors" as well as the B-factor plot. Recall that theoretical B-factors are calculated during the GNM analysis while the experimental B-factors are included in the PDB. On the bottom, we can see the plot of the B-factors across the entire protein split into chains.
+Next, return to DynOmics and click `Mean-Square Fluctuations of Residues`. On this page, you will see two visualizations of the protein, labeled `Theoretical B-Factors` and `Experimental B-Factors` as well as the B-factor plot. Recall that theoretical B-factors are calculated during GNM analysis, whereas experimental B-factors are included in the PDB. On the bottom, we can see the plot of the B-factors across the entire protein split into chains.
 
 [![image-center](../assets/images/600px/DynOmics6.png){: .align-center}](../assets/images/DynOmics6.png)
 {: style="font-size: medium;"}
 
-The next result page is `Selected Modes - Color-coded Diagrams`. Here, we can see the shape of each individual slow mode or an average of slowest 1-2, 1-3, or 1-10. Again, we can see a wide peak that corresponds to the RBD of the S protein. You can also click on the plot to highlight the residue on the interactive visualizations.
+The next result page we will visit is `Selected Modes - Color-coded Diagrams`. On this page, we can see the shape of each individual mode, or an average of the "slowest" two, three, or ten modes. As we saw earlier in the main text, we can see a wide peak that corresponds to the RBD of the spike protein. Clicking the plot highlights the residue on the interactive visualizations.
 
 [![image-center](../assets/images/600px/DynOmics7.png){: .align-center}](../assets/images/DynOmics7.png)
 {: style="font-size: medium;"}

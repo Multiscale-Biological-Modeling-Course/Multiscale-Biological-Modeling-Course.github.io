@@ -169,6 +169,8 @@ coronavirus:
         url: /coronavirus/tutorial_GNM
       - title: "Adding directionality to spike protein GNM simulations using ANM<br><br>"
         url: /coronavirus/tutorial_ANM
+      - title: "Integrating molecular dynamics analyses with DynOmics<br><br>"
+        url: /coronavirus/tutorial_DynOmics
 
 white_blood_cells:
   - title: "Training a Computer to Identify White Blood Cells"
