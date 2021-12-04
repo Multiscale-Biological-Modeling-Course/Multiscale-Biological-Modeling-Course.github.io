@@ -3,8 +3,6 @@ permalink: /coronavirus/tutorial_GNM
 title: "Software Tutorial: Analyzing Coronavirus Spike Proteins Using GNM"
 sidebar:
  nav: "coronavirus"
-toc: true
-toc_sticky: true
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
