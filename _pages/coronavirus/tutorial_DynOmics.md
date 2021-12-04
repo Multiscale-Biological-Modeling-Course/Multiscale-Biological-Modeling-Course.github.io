@@ -48,12 +48,12 @@ The next result page we will visit is `Selected Modes - Color-coded Diagrams`. O
 [![image-center](../assets/images/600px/DynOmics7.png){: .align-center}](../assets/images/DynOmics7.png)
 {: style="font-size: medium;"}
 
-In `Cross-correlations between Residue Fluctuations`, we can see the full cross-correlation heat map and see the correlation between each pair of residue.
+Next, click `Cross-correlations between Residue Fluctuations`, which shows the full cross-correlation heat map that we produced in the GNM tutorial.
 
-[![image-center](../assets/images/600px/DynOmics8.png){: .align-center}](../assets/images/DynOmics8.png)
+[![image-center](../assets/images/600px/DynOmics8.png){: .align-center width="400px"}](../assets/images/DynOmics8.png)
 {: style="font-size: medium;"}
 
-For `Inter-residue Contact Map`, you will see a visualization of the connected alpha-Carbon structure based on the cutoff distance. On the right is the Connectivity Map that indicates which pair of residues are within the cutoff distance. The default is set to 7.3 Å. If you want to change the threshold, we have to redo the calculations and change the cutoff distance in `Advanced options`.
+Click `Inter-residue Contact Map`, which shows a visualization of the connected alpha carbon network based on the threshold distance, along with a contact map (called a "connectivity map"). The default threshold distance is set to 7.3 angstroms; to change the threshold, we need to perform the calculations again after changing the cutoff distance in `Advanced options`.
 
 [![image-center](../assets/images/600px/DynOmics9.png){: .align-center}](../assets/images/DynOmics9.png)
 {: style="font-size: medium;"}
@@ -61,6 +61,9 @@ For `Inter-residue Contact Map`, you will see a visualization of the connected a
 [![image-center](../assets/images/600px/DynOmics10.png){: .align-center}](../assets/images/DynOmics10.png)
 {: style="font-size: medium;"}
 
+There is plenty more to say about the additional results produced by DynOmics; if you are interested in these results, please check out the <a href="http://enm.pitt.edu/Tutorial.php" target="_blank">DynOmics tutorial</a>.
+
+<!--
 Finally, in `Properties of GNM Mode Spectrum`, we can see two different plots on modes: *Frequency Dispersion* and *Degree of Collectivity*. We will pause to explain these two plots.
 
 The **frequency dispersion** of the modes is the plot representing the frequency of each mode. The y-axis represents the reciprocal of the corresponding eigenvalue of the mode, where a higher value indicates a slow mode with low frequency, which are expected to be highly related to biological functions.
@@ -84,9 +87,9 @@ When we produce these two plots for the SARS-CoV-2 spike protein, we obtain the 
 [![image-center](../assets/images/600px/DynOmics11.png){: .align-center}](../assets/images/DynOmics11.png)
 {: style="font-size: medium;"}
 
-That is all for how to get the structural dynamics results of DynOmics. If you are interested in the other results, DynOmics has provided its own tutorial <a href="http://enm.pitt.edu/Tutorial.php" target="_blank">here</a>.
+-->
 
-We will now head back to the main text in order to analyze our GNM/ANM results of SARS-CoV-2 S protein and compare it with SARS-CoV S protein to see if we can distinguish any significant differences.
+If you have made it this far, congratulations! You have become an expert in protein analysis. We will now head back to the main text to wrap up this module with some concluding thoughts.
 
 [Return to main text](conclusion_part_2#fighting-a-virus-with-open-science){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
