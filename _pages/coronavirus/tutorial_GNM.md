@@ -10,17 +10,17 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 ### Gaussian Network Model Calculations
 
-In this tutorial, we will be on performing GNM calculations on one of the chains in the SARS-CoV-2 S protein and then visualizing the results in different maps and plots. Please be sure to have <a href="http://www.rcsb.org/structure/6VXX" target="_blank">6vxx.pdb</a> downloaded in the current working directory. (You can also download it directly while parsing as explained in the [RMSD Tutorial](tutorial_rmsd).)
+In this tutorial, we will be performing GNM calculations on one of the chains in the SARS-CoV-2 spike protein (<a href="http://www.rcsb.org/structure/6VXX" target="_blank">6vxx</a>) and then visualizing the results using the plots that we discussed in the [main text](conclusion_part_2#an-introduction-to-gaussian-network-models).
 
 First, follow the steps in <a href="prody">Setting up ProDy</a> to start up IPython and import the neccessary functions.
 
-Next, we will parse in `6vxx` and set it as the variable `spike`.
+Next, we will parse in <a href="http://www.rcsb.org/structure/6VXX" target="_blank">6vxx.pdb</a> and set it as the variable `spike`.
 
 ~~~ python
 In[#]: spike = parsePDB('6vxx.pdb')
 ~~~~~
 
-For this GNM calculation, we will focus only on the alpha-carbons of Chain A. We will create variable `calphas` with the selection.
+For this GNM calculation, we will focus only on the alpha carbons of Chain A. We can access these atoms using the `spike.select` function as follows, storing the alpha carbons in a variable `calphas`.
 
 ~~~ python
 In[#]: calphas = spike.select('calpha and chain A')
