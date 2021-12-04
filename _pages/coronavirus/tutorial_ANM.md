@@ -6,16 +6,18 @@ sidebar:
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
-In this tutorial, we will use Normal Mode Wizard (NMWiz), a plugin in VMD that is designed to be a GUI for ProDy, to perform ANM analysis on the SARS-CoV-2 RBD. We will visualize the results in a cross-correlation map and square fluctuation plot and then produce ANM animations showing the predicted range of motion of the SARS-CoV-2 Spike RBD. Be sure to have installed VMD and know how to load molecules into the program. If you need a refresher, go to the <a href="tutorial_multiseq" target="_blank">VMD and Multiseq Tutorial</a>.
+In this tutorial, we will use **Normal Mode Wizard (NMWiz)**, a VMD plugin that serves as a GUI for ProDy, to perform ANM analysis on the SARS-CoV-2 RBD. We will visualize the results in a cross-correlation map and square fluctuation plot and then produce ANM animations showing the predicted range of motion of the SARS-CoV-2 spike RBD.
 
-First, load <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> into VMD by following the steps in the previous section `Loading Molecules`. Then, start up NMWiz by clicking `Extensions > Analysis > Normal Mode Wizard`.
+Before starting, make sure that you have installed VMD and know how to load molecules into the program. If you need a refresher, visit the [Multiseq tutorial](tutorial_multiseq).
+
+First, load the SARS-CoV-2 spike protein/ACE2 enzyme complex (<a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>) into VMD. Then, start up NMWiz by clicking `Extensions > Analysis > Normal Mode Wizard`.
 
 [![image-center](../assets/images/600px/ANM1.png){: .align-center}](../assets/images/ANM1.png)
 {: style="font-size: medium;"}
 
 A small window will open. Select `ProDy Interface`.
 
-[![image-center](../assets/images/600px/ANM2.png){: .align-center}](../assets/images/ANM2.png)
+[![image-center](../assets/images/600px/ANM2.png){: .align-center width="200px"}](../assets/images/ANM2.png)
 {: style="font-size: medium;"}
 
 We want to focus only on the RBD of SARS-CoV-2, so we need to choose a new selection. In the `ProDy Interface`, change `Selection` to `protein and chain F` and click `Select`. Next, make sure that `ANM calculation` is selected for `ProDy job:`. Check the box for `write and load cross-correlations heatmap`. Finally, click `Submit Job`.
