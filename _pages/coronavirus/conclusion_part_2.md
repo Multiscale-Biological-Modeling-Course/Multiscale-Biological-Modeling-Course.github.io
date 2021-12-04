@@ -229,7 +229,7 @@ Although we have separated our discussion of GNM and ANM, the <a href="http://en
 [Visit tutorial](tutorial_DynOmics){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Summing Up
+## Fighting a Virus with Open Science
 
 In this module, we began with a discussion of the fundamental problem of determining a protein's structure. Because experimental methods for identifying protein structure are costly and time consuming, we transitioned to discuss algorithmic approaches that do a good job of predicting a protein's structure from its sequence of amino acids.
 
