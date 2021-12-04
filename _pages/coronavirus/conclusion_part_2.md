@@ -146,6 +146,16 @@ We also show the mode shape plot for the slowest modes of the two proteins. In t
 (Top) A mode shape plot for the slowest mode of the SARS-CoV-2 spike protein (left) and SARS-CoV spike protein (right). (Bottom) A mode shape plot for the slowest mode of a single chain of the SARS-CoV-2 spike protein (left) and a single chain of the SARS-CoV spike protein (right). Note that the plot on the right is inverted compared to the one on the left because of a choice made by the software, but the two plots have the same shape if we consider the absolute value. These plots show that the two viruses have similar dynamics, and that residues 200 – 500 fluctuate the most, a region that overlaps heavily with the RBD.
 {: style="font-size: medium;"}
 
+We can also examine the mode shape plot for the average of the slowest ten modes for the two spike proteins, shown in the figure below. We also color flexible parts of the protein red and inflexible parts of the protein blue.
+
+[![image-center](../assets/images/600px/spike_slowmode_comparison.png){: .align-center}](../assets/images/spike_slowmode_comparison.png)
+Average mode shape of the slowest ten modes of SARS-CoV-2 Spike (left) and SARS-CoV Spike (right). The first peak corresponds to the N-Terminal Domain (NTD) and the second peak corresponds to the Receptor Binding Domain (RBD).
+{: style="font-size: medium;"}
+
+The mode shape plots show that the RBD of both spike proteins are highly flexible, which agrees with the biological functions of these regions. As we have learned, the RBD is responsible for the interaction with ACE2 on human cells. During this interaction, the RBD of one of the three chains "opens" up, exposing itself to more easily bind with ACE2.
+
+The other region with peaks indicated in the figure corresponds to the spike protein's non-terminal domain (NTD). Similar to the RBD, the NTD of the Spike proteins also mediates viral infection, but by interacting with DC-SIGN and L-SIGN receptors rather than ACE2[^Soh]. DC-SIGN (dendritic cell-specific intracellular adjesion molecules ICAM-r grabbing non-integrin) and L-SIGN (liver/lymph node-specific ICAM-3 grabbing non-integrin) are closely related C-type lectin that are present on macrophages and dendritic cells. This allows SARS-CoV-2 to infect different tissues such as the lungs, where ACE2 expression levels are low. The ability to infect lung cells attributes to pneumonia, the main symptom of severe COVID-19 cases. As with the RBD, high flexibility in this domain allows the Spike protein to more easily interact with these receptors.
+
 We should perhaps not be surprised that the SARS-CoV-2 and SARS-CoV spike proteins tend to have similar dynamics, since their structures were similar, and both viral proteins target the ACE2 enzyme. To help confirm this hypothesis, however, let us learn first about one more aspect of molecular dynamics.
 
 ## ANM models account for the direction of protein fluctuations
@@ -169,13 +179,7 @@ In the tutorial linked below, we will apply ANM to produce versions of the plots
 
 ## ANM analysis of the coronavirus binding domain
 
-In the tutorial, we were able to generate a cross-correlation map and square fluctuation plot for the SARS-CoV-2 RBD, which resemble the results that we obtained previously for GNM (see figure below). Unsurprisingly, we do not see significant differences between the plots for the two viruses.
-
-[![image-center](../assets/images/600px/ANMResults.png){: .align-center}](../assets/images/ANMResults.png)
-The cross-correlation map (top) and the square fluctuation plot (bottom) for the SARS-CoV-2 (left) and SARS (right) RBDs using ANM. Like the results from the GNM analysis, the map and plot are very similar between the two RBDs.
-{: style="font-size: medium;"}
-
-The fluctuations calculated by ANM provide information on possible movement and flexibility but do not depict actual protein movements. To predict these movements, we used NMWiz and VMD to create animations of the protein fluctuations over time as calculated via ANM analysis. The following two animations show of the complex of each virus's RBD (purple) bound with ACE2 (green). Important residues from the three sites of conformational differences from the previous lessons are also highlighted.
+The fluctuations calculated by ANM provide information on possible movement and flexibility but do not depict actual protein movements. In the tutorial, to predict these movements, we used NMWiz and VMD to create animations of the protein fluctuations over time as calculated via ANM analysis. The following two animations show of the complex of each virus's RBD (purple) bound with ACE2 (green). Important residues from the three sites of conformational differences from the previous lessons are also highlighted.
 
 ### SARS-CoV spike protein RBD (PDB: 2ajf)
 
@@ -216,7 +220,7 @@ The fluctuations calculated by ANM provide information on possible movement and 
 </video>
 </center>
 
-Recall from our work in the [previous lesson](NAMD#differences-in-interaction-energy-with-ace2-between-sars-and-sars-cov-2) that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called "hotspot 31". This region is highlighted in blue and orange in the above figures. If you look very closely (you may need to zoom in), as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This provides one more piece of evidence that SARS-CoV-2 is more effective at binding to the ACE2 enzyme.
+Recall from our work in the [previous lesson](NAMD#differences-in-interaction-energy-with-ace2-between-sars-and-sars-cov-2) that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called "hotspot 31". This region is highlighted in blue and orange in the above figures. If you look very closely, as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This provides one more piece of evidence that SARS-CoV-2 is more effective at binding to the ACE2 enzyme.
 
 ## Summing Up
 
