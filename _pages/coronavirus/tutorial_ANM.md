@@ -22,31 +22,31 @@ A small window will open. Select `ProDy Interface`.
 
 We want to focus only on the RBD of SARS-CoV-2, so we need to choose a new selection. In the `ProDy Interface`, change `Selection` to `protein and chain F` and click `Select`. Next, make sure that `ANM calculation` is selected for `ProDy job:`. Check the box for `write and load cross-correlations heatmap`. Finally, click `Submit Job`.
 
-[![image-center](../assets/images/600px/ANM3.png){: .align-center}](../assets/images/ANM3.png)
+[![image-center](../assets/images/600px/ANM3.png){: .align-center width="300px"}](../assets/images/ANM3.png)
 {: style="font-size: medium;"}
 
 **Note:** Let the program run and do not click any of the VMD windows, as this may cause the program to crash or become unresponsive. The job can take from a few seconds to a couple minutes. When the job is completed, you will see a new window `NMWiz - 6vw1_anm ...` and the cross=correlation heatmap appear.
 {: .notice--warning}
 
-[![image-center](../assets/images/600px/ANM4.png){: .align-center}](../assets/images/ANM4.png)
+[![image-center](../assets/images/600px/ANM4.png){: .align-center width="300px"}](../assets/images/ANM4.png)
 {: style="font-size: medium;"}
 
-[![image-center](../assets/images/600px/ANM5.png){: .align-center}](../assets/images/ANM5.png)
+[![image-center](../assets/images/600px/ANM5.png){: .align-center width="400px"}](../assets/images/ANM5.png)
 {: style="font-size: medium;"}
 
 Now that the ANM calculations are completed, you will see the visualization displayed in `VMD Main`. Disable the visualization of the original visualization of `6vw1` by double-clicking on the letter 'D'. The color red will represent that it is disabled.
 
-[![image-center](../assets/images/600px/ANM6.png){: .align-center}](../assets/images/ANM6.png)
+[![image-center](../assets/images/600px/ANM6.png){: .align-center width="400px"}](../assets/images/ANM6.png)
 {: style="font-size: medium;"}
 
 In `OpenGL Display`, you will be able to see the protein with numerous arrows that represents the calculated fluctuations.
 
-[![image-center](../assets/images/600px/ANM7.png){: .align-center}](../assets/images/ANM7.png)
+[![image-center](../assets/images/600px/ANM7.png){: .align-center width="400px"}](../assets/images/ANM7.png)
 {: style="font-size: medium;"}
 
 To actually see the protein move as described by the arrows, we have to create the animation. Go back to the `NMWiz - 6vw1_anm...` window and click `Make` next to `Animations`.
 
-[![image-center](../assets/images/600px/ANM8.png){: .align-center}](../assets/images/ANM8.png)
+[![image-center](../assets/images/600px/ANM8.png){: .align-center width="300px"}](../assets/images/ANM8.png)
 {: style="font-size: medium;"}
 
 `VMD Main` should now display a new row for the animation.
