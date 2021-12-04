@@ -3,8 +3,6 @@ permalink: /motifs/tutorial_feed
 title: "Software Tutorial: Implementing the Feed-Forward Loop Motif"
 sidebar:
  nav: "motifs"
-toc: true
-toc_sticky: true
 image: "../assets/images/repressilator_chart.png"
 ---
 

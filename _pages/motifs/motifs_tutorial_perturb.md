@@ -3,8 +3,6 @@ permalink: /motifs/tutorial_perturb
 title: "Software Tutorial: Perturbing the Repressilator"
 sidebar:
  nav: "motifs"
-toc: true
-toc_sticky: true
 image: "../assets/images/repressilator_chart.png"
 ---
 

@@ -3,12 +3,8 @@ permalink: /coronavirus/tutorial_DynOmics
 title: "Software Tutorial: Molecular Dynamics Analysis using DynOmics 1.0"
 sidebar:
  nav: "coronavirus"
-toc: true
-toc_sticky: true
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
-### Molecular Dynamics Analysis using DynOmics 1.0
-
 In this tutorial, we will be using a publically available web server, DynOmics, by Dr. Hongchun Li and colleagues in the <a href="https://www.csb.pitt.edu/Faculty/bahar/index.html" target="_blank">Bahar Lab</a> at the University of Pittsburgh, School of Medicine. This server is dedicated to performing molecular dynamics analysis by integrating the Gaussian Network Model (GNM) and the Anisotropic Network Model (ANM).
 
 **Note:** At the current time, the DynOmics server is unfortunately down. Please let us know in the comments if you find that it is back up.

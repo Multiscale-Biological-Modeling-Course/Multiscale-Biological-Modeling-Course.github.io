@@ -3,8 +3,6 @@ permalink: /motifs/tutorial_loops
 title: "Software Tutorial: Hunting for Loops in Transcription Factor Networks"
 sidebar:
  nav: "motifs"
-toc: true
-toc_sticky: true
 image: "../assets/images/repressilator_chart.png"
 ---
 

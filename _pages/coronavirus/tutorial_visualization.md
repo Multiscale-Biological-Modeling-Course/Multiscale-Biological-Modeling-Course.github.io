@@ -3,8 +3,6 @@ permalink: /coronavirus/tutorial_visualization
 title: "Software Tutorial: Visualizing Specific Regions of Interest within the Spike Protein Structure"
 sidebar:
  nav: "coronavirus"
-toc: true
-toc_sticky: true
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 

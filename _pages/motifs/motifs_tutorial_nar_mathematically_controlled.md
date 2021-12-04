@@ -3,8 +3,6 @@ permalink: /motifs/tutorial_nar_mathematically_controlled
 title: "Software Tutorial: Ensuring a mathematically controlled simulation for comparing simple regulation to negative autoregulation"
 sidebar:
  nav: "motifs"
-toc: true
-toc_sticky: true
 image: "../assets/images/repressilator_chart.png"
 ---
 
