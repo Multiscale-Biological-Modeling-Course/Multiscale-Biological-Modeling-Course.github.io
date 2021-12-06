@@ -18,6 +18,8 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 * Cite the state of the art for WBC analysis. And yet this is often still done manually because of liability. Major issue in modern medicine of the ramifications of turning our lives over to algorithms.
 
+* Tradeoff between flexibility and interpretability. k-NN is inflexible but very interpretable. DL is extremely flexible -- the number of different functions that it could "compute" are huge -- but mystical at times, so that it is difficult to understand and know how to change the model when needed.
+
 * Point out other neat applications of CellOrganizer. Like using a Ferrari to drive to the supermarket.
 
 * Point to exercises
