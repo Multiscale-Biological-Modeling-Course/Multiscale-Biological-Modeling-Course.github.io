@@ -14,8 +14,8 @@ For the following steps, a variety of software and programs are used to go throu
 
 |Required Applications | Terminal Command to Check Version |
 |:---|---:|
-| Python (v. 3.7.3)	|	python --version |
-| R (v. 3.5.2)		|	R --version |
+| Python (v. 3.7.3 or newer)	|	python \-\-version |
+| R (v. 3.5.2 or newer)		|	R \-\-version |
 | MATLAB (2016b or newer) | - |
 | CellOrganizer (v. 2.8.x) | - |
 | RStudio | - |

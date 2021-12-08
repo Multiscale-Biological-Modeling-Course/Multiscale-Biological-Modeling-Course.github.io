@@ -8,3 +8,9 @@
 * We will lose some information present in the original data, but the more structure that is present in the data, the less information that we will lose. -- something about the percentage of variation in the data that can be explained by the multiple dimensions?
 
 * (We can do perform PCA for a few different values of d and see which one is best? That requires the point about percentage of variation explained by PCA.)
+
+## Tutorials
+
+* Need to explain how to install CellOrganizer
+
+* 
