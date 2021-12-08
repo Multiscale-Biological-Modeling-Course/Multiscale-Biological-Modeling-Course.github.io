@@ -78,20 +78,6 @@ WBC_PCAPipeline
 **Note:** Please ensure the WBC_PCAPipeline file is onto your desktop. Otherwise, you will have to manually change all file paths to point to the appropriate folders on your computer. While unconventional, we’ve noticed occasional software glitches with using `setwd()` or `pwd()` otherwise.
 {: .notice--warning}
 
-### Other Installations
-
-Please ensure that the following additional applications have been installed before continuing.
-
-|Required Applications | Terminal Command to Check Version |
-|:---|---:|
-| Python (v. 3.7.3 or newer)	|	python \-\-version |
-
-Now open a terminal window and navigate into your `WBC_PCAPipeline` directory by running the following command:
-
-~~~
-cd Desktop/WBC_PCAPipeline
-~~~
-
 ### Segmenting Nuclei from WBC Images
 
 For this dataset, we would like to identify the white blood cell types by the nuclear shape since that particular feature is easy to verify with the naked eye. Moreover, the nucleus of the white blood cell(s) in each image are of a distinctly darker color than the rest of the red blood cells or platelets in the image. This allows us to implement a technique called thresholding. In thresholding, we examine each pixel in the image and reset the color value of the image according to our thresholds. If the original RGB values for the pixel are above the thresholds we set in each channel, then we reset the pixel value to white. All other pixels below the thresholds will be set to black (ideally). This way, our target, the white blood cell nucleus, is a white blob in a black background.
@@ -107,12 +93,116 @@ install.packages("BiocManager")
 BiocManager::install("EBImage")
 ~~~
 
-You will need to install three image-related packages for R in order to run this file. To do so, while in RStudio, navigate to `Tools > Install Packages`. In the `Packages` line of the window that pops up, enter `EBImage, jpeg, tiff` and click `Install`.
-
 **Note:** Should you be asked in the RStudio console about upgrading dependencies during the EBImage library installation, type in `a` and hit `enter`.
 {: .notice--warning}
 
+Next few lines -- establishing the libraries that we need.
 
+~~~
+# Required Libraries
+library("EBImage")
+library("jpeg")
+library("tiff")
+~~~
+
+Create a directory counter to count how many files we have encountered thus far.
+
+~~~
+# dir Counter
+i = 1
+~~~
+
+Set paths for raw image files and segmented images, respectively.
+
+~~~
+# Set path for raw image files
+path="~/Desktop/WBC_PCAPipeline/Data/"
+rawImgs=paste(path, "RawImgs/", sep="")
+
+# Set up directory path for segemented images
+segImgs=paste(path, "SegImgs_", sep="")
+colImgs=paste(path, "ColNuc_", sep="")
+bwImgs=paste(path, "BWImgs_", sep="")
+~~~
+
+Setting up directories and printing some messages to the console.
+
+~~~
+# Check if unique seg directory exists, otherwise create one
+while (file.exists(paste(segImgs, toString(i), sep=""))) {
+  i = i + 1
+}
+print(noquote(paste("Creating", paste(segImgs, toString(i), sep=""), "directory for segmented images.")))
+dir.create(paste(segImgs, toString(i), sep=""), showWarnings = FALSE);
+print(noquote(paste("Creating", paste(bwImgs, toString(i), sep=""), "directory for binarized images.")))
+dir.create(paste(bwImgs, toString(i), sep=""), showWarnings = FALSE)
+print(noquote(paste("Creating", paste(colImgs, toString(i), sep=""), "directory for nucleus in color images.")))
+dir.create(paste(colImgs, toString(i), sep=""), showWarnings = FALSE)
+
+outDir=paste(segImgs, toString(i), sep="")
+setwd(rawImgs)
+
+# Gather all files within the directory above
+all.files <- list.files()
+my.files <- grep("*.jpg", all.files, value=T)
+
+print(noquote("Starting nucleus segmentation..."))
+~~~
+
+Engine of our work is a function that processes every image individually.
+
+~~~
+# Loop through each file and process each image individually
+for (i in my.files) {
+  print(noquote(paste("Segmenting nucleus from file", i)))
+  # Read the image, change to its directory
+  nuc = readImage(paste(rawImgs, i, sep=""))
+
+  # Each nuclear stain has low red, low green and high blue.
+
+  # Need to invert the red and green channels, and then threshold according to
+  # the above criteria
+  nuc_r = channel(nuc, 'r')
+  nuc_g = channel(nuc, 'g')
+  nuc_b = channel(nuc, 'b')
+
+  # Assigned thresholds for low red, low green, and high blue.
+  r_threshold = 0.65
+  g_threshold = 0.60
+  b_threshold = 0.5975
+
+  # Apply the thresholds accordingly
+  nuc_rTH = nuc_r < r_threshold
+  nuc_gTH = nuc_g < g_threshold
+  nuc_bTH = nuc_b > b_threshold
+
+  nucleusComp = nuc_rTH & nuc_gTH & nuc_bTH
+  nucleusBW = bwlabel(fillHull(nucleusComp))
+
+
+  # Compute features for objects that have made the threshold boundaries
+  features = computeFeatures.shape(nucleusBW)
+
+  # Assigned area threshold
+  area_threshold <- 1500
+
+  # Find all features that do not meet the area threshold
+  indices = which(features < area_threshold)
+  nucleusFin = rmObjects(nucleusBW, indices)
+
+  newFeatures = computeFeatures.shape(nucleusFin)
+
+  # Write final nucleus image to disk
+  filename = paste(outDir, i, sep="/")
+  writeImage(nucleusFin, filename)
+}
+~~~
+
+Finally, we print that we are finished. If we see this command printed to the console, then we know that we are done.
+
+~~~
+print(noquote("DONE!"))
+~~~
 
 **Note:** If you source the file multiple times, three directories are created each time within the Data folder with the form of `SegImgs_i`, `ColNuc_i`, and `BWImgs_i`, where *i* is an integer. The images are only segmented into the most recently created directories (those with the largest value of *i*). Should you run into trouble and need to run this file multiple times, ensure that future file paths are pointing to the right folders!
 {: .notice--warning}

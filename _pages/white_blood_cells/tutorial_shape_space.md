@@ -8,9 +8,17 @@ toc_sticky: true
 image: "../assets/images/cellorg_pca_graph_cell.png"
 ---
 
-### Step 4 Shape Space Visualization
+### Installations
 
-Having generated a PCA model from the images and completed the post – processing in Step 3, we are now ready to visualize our results!
+Please ensure that the following additional applications have been installed before continuing.
+
+|Required Applications | Terminal Command to Check Version |
+|:---|---:|
+| Python (v. 3.7.3 or newer)	|	python \-\-version |
+
+### Shape Space Visualization
+
+Having generated a PCA model from the images and completed the post – processing in the previous tutorial, we are ready to visualize our results!
 
 In this step of the pipeline, we will use Python to visualize the computed shape space by label. The goal is to see clusters of cells within the same region of the same type. We can classify our white blood cells by two different parameters, cell type or cell family. If we are classifying by cell family, then we are attempting to classify images into the three classes of granulocytes, lymphocytes, and monocytes. We can also classify by cell type, in which case granulocytes subdivide out into neutrophils, eosinophils, and basophils, so that we are dividing the data into five classes.
 
