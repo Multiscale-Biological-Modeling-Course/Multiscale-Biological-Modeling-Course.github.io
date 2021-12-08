@@ -9,8 +9,14 @@
 
 * (We can do perform PCA for a few different values of d and see which one is best? That requires the point about percentage of variation explained by PCA.)
 
+* Need to classify by both family and type to see that not everything is 100 percent perfect
+
+* Try running the algorithm first on every imaginable coordinate. This will be bad.
+
+* Then reduce it down to 10 principal components.
+
 ## Tutorials
 
 * Need to explain how to install CellOrganizer
 
-* 
+* Save .arff into new step 5 folder?
