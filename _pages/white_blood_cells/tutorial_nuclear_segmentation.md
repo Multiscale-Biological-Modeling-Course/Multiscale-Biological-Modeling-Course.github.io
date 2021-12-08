@@ -8,7 +8,7 @@ toc_sticky: true
 image: "../assets/images/cellorg_pca_graph_cell.png"
 ---
 
-## Installing CellOrganizer
+### Installing CellOrganizer
 
 **Note:** The current version of CellOrganizer that these tutorials are built on is a free distribution provided as an add-on to MATLAB, which is paid software. We are in the process of investigating a way to run all of the tutorials in this module without needing paid software.
 {: .notice--warning}
@@ -42,13 +42,13 @@ Checking if your system and Matlab version is compatible with CellOrganizer.
 Checking for updates. CellOrganizer version 2.9.2 is the latest stable release.
 ~~~
 
-## Installing R and RStudio
+### Installing R and RStudio
 
 To run our segmentation pipeline, we will use <a href="https://www.r-project.org" target="_blank">R</a>, a free programming language that is popular among data scientists across disciplines. We will also use <a href="https://www.rstudio.com" target="_blank">RStudio</a>, an integrated development environment that makes working with R easy.
 
 You can download R and RStudio from their respective home sites or follow the instructions at <a href="https://rstudio-education.github.io/hopr/starting.html" target="_blank">Hands-On Programming with R</a>.
 
-## Obtaining the Data
+### Obtaining the Data
 
 Next, we ask that you download our `WBC_PCAPipeline` folder onto your desktop and verify that it has the following contents:
 
@@ -78,7 +78,7 @@ WBC_PCAPipeline
 **Note:** Please ensure the WBC_PCAPipeline file is onto your desktop. Otherwise, you will have to manually change all file paths to point to the appropriate folders on your computer. While unconventional, we’ve noticed occasional software glitches with using `setwd()` or `pwd()` otherwise.
 {: .notice--warning}
 
-## Other Installations
+### Other Installations
 
 Please ensure that the following additional applications have been installed before continuing.
 
@@ -92,7 +92,7 @@ Now open a terminal window and navigate into your `WBC_PCAPipeline` directory by
 cd Desktop/WBC_PCAPipeline
 ~~~
 
-## Segmenting Nuclei from WBC Images
+### Segmenting Nuclei from WBC Images
 
 For this dataset, we would like to identify the white blood cell types by the nuclear shape since that particular feature is easy to verify with the naked eye. Moreover, the nucleus of the white blood cell(s) in each image are of a distinctly darker color than the rest of the red blood cells or platelets in the image. This allows us to implement a technique called thresholding. In thresholding, we examine each pixel in the image and reset the color value of the image according to our thresholds. If the original RGB values for the pixel are above the thresholds we set in each channel, then we reset the pixel value to white. All other pixels below the thresholds will be set to black (ideally). This way, our target, the white blood cell nucleus, is a white blob in a black background.
 
