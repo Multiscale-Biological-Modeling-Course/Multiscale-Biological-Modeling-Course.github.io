@@ -16,16 +16,16 @@ In this step of the pipeline, we return to MATLAB for running a modified version
 
 Open MATLAB and navigate into your CellOrganizer directory. Then, run the following command in the MATLAB command window:
 ~~~
-> setup
+setup
 ~~~
 
 Run the following commands in the MATLAB command window:
 
 ~~~
-> clear
-> clc
-> cd ~/Desktop/WBC_PCAPipeline/Step3_PCAModel
-> WBC_PCAModel
+clear
+clc
+cd ~/Desktop/WBC_PCAPipeline/Step3_PCAModel
+WBC_PCAModel
 ~~~
 
 As a result, the `Step3_PCAModel` and `Step4_Visualization` directories have been updated. The principal components along with the assigned label to each cell are captured in the `WBC_PCA.csv` file within the `Step4` directory. Information about the images used and the CellOrganizer generated shape space can be found by clicking on `Step3_PCAModel/report/index.html`.
@@ -36,8 +36,8 @@ As a result, the `Step3_PCAModel` and `Step4_Visualization` directories have bee
 We next want to view our model results. First, run the following commands in the MATLAB command window:
 
 ~~~
-> load(‘WBC_PCA.mat’);
-> scr = model.nuclearShapeModel.score;
+load(‘WBC_PCA.mat’);
+scr = model.nuclearShapeModel.score;
 ~~~
 
 Double-click on the `scr` variable in the `Workspace` window.

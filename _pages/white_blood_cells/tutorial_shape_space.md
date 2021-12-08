@@ -19,8 +19,8 @@ In this step of the pipeline, we will use Python to visualize the computed shape
 First, we will classify images by cell family. Open a new terminal window and run the following commands:
 
 ~~~
-> cd ~/Desktop/WBC_PCAPipeline/Step4_Visualization
-> python WBC_CellFamily.py
+cd ~/Desktop/WBC_PCAPipeline/Step4_Visualization
+python WBC_CellFamily.py
 ~~~
 
 As a result, you can click, drag, and rotate the graphical space to see the clusters of cell classes by color (a legend can be found in the upper right - hand corner). Furthermore, an image file of this visualization is saved within the current directory under `WBC_ShapeSpace_CF.png`.
@@ -33,8 +33,8 @@ As a result, you can click, drag, and rotate the graphical space to see the clus
 Now we will classify images by cell type. Open a new terminal window and run the following commands.
 
 ~~~
-> cd ~/Desktop/WBC_PCAPipeline/Step4_Visualization
-> python WBC_CellType.py
+cd ~/Desktop/WBC_PCAPipeline/Step4_Visualization
+python WBC_CellType.py
 ~~~
 
 As a result, you can click, drag, and rotate the graphical space to see the clusters of cell classes by color (a legend can be found in the upper right - hand corner). Furthermore, an image file of this visualization is saved within the current directory under `WBC_ShapeSpace_CT.png`.

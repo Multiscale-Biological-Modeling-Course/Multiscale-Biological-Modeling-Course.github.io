@@ -42,17 +42,15 @@ Checking if your system and Matlab version is compatible with CellOrganizer.
 Checking for updates. CellOrganizer version 2.9.2 is the latest stable release.
 ~~~
 
-## Global Installations
+## Installing R and RStudio
 
-For the following steps, a variety of software and programs are used to go through our PCA Pipeline for the Kaggle White Blood Cells dataset. Please ensure that the following pre – requisite applications have been installed before continuing.
+To run our segmentation pipeline, we will use <a href="https://www.r-project.org" target="_blank">R</a>, a free programming language that is popular among data scientists across disciplines. We will also use <a href="https://www.rstudio.com" target="_blank">RStudio</a>, an integrated development environment that makes working with R easy.
 
-|Required Applications | Terminal Command to Check Version |
-|:---|---:|
-| Python (v. 3.7.3 or newer)	|	python \-\-version |
-| R (v. 3.5.2 or newer)		|	R \-\-version |
-| RStudio | - |
+You can download R and RStudio from their respective home sites or follow the instructions at <a href="https://rstudio-education.github.io/hopr/starting.html" target="_blank">Hands-On Programming with R</a>.
 
-Furthermore, we ask that you download our `WBC_PCAPipeline` folder onto your desktop and verify that it has the following contents:
+## Obtaining the Data
+
+Next, we ask that you download our `WBC_PCAPipeline` folder onto your desktop and verify that it has the following contents:
 
 ~~~
 WBC_PCAPipeline
@@ -80,19 +78,41 @@ WBC_PCAPipeline
 **Note:** Please ensure the WBC_PCAPipeline file is onto your desktop. Otherwise, you will have to manually change all file paths to point to the appropriate folders on your computer. While unconventional, we’ve noticed occasional software glitches with using `setwd()` or `pwd()` otherwise.
 {: .notice--warning}
 
+## Other Installations
+
+Please ensure that the following additional applications have been installed before continuing.
+
+|Required Applications | Terminal Command to Check Version |
+|:---|---:|
+| Python (v. 3.7.3 or newer)	|	python \-\-version |
+
 Now open a terminal window and navigate into your `WBC_PCAPipeline` directory by running the following command:
 
 ~~~
-> cd ~/Desktop/WBC_PCAPipeline
+cd Desktop/WBC_PCAPipeline
 ~~~
 
 ## Segmenting Nuclei from WBC Images
 
 For this dataset, we would like to identify the white blood cell types by the nuclear shape since that particular feature is easy to verify with the naked eye. Moreover, the nucleus of the white blood cell(s) in each image are of a distinctly darker color than the rest of the red blood cells or platelets in the image. This allows us to implement a technique called thresholding. In thresholding, we examine each pixel in the image and reset the color value of the image according to our thresholds. If the original RGB values for the pixel are above the thresholds we set in each channel, then we reset the pixel value to white. All other pixels below the thresholds will be set to black (ideally). This way, our target, the white blood cell nucleus, is a white blob in a black background.
 
-Open RStudio, and navigate to `File --> Open File`, and find `Desktop/WBC_PCAPipeline/Step1_Segmentation/WBC_imgSeg.R`.
+Open RStudio, and navigate to `File --> Open File`, and find `Desktop/WBC_PCAPipeline/Step1_Segmentation/WBC_imgSeg.R`. You should see the `WBC_imgSeg.R` file appear on the left side.
 
-Should you be asked in the console about upgrading dependencies during the EBImage library installation, type in `a` and hit `enter`.
+The first few lines of `WBC_imgSeg.R` refer to a collection of packages that we need to install to run our segmentation pipeline. Two of these packages (`jpeg` and `tiff`) are image packages, and the third (`EBImage`) is installed from the <a href="https://bioconductor.org" target="_blank">Bioconductor</a> project. These package installations correspond to the following lines of our R file.
+
+~~~
+install.packages("jpeg")
+install.packages("tiff")
+install.packages("BiocManager")
+BiocManager::install("EBImage")
+~~~
+
+You will need to install three image-related packages for R in order to run this file. To do so, while in RStudio, navigate to `Tools > Install Packages`. In the `Packages` line of the window that pops up, enter `EBImage, jpeg, tiff` and click `Install`.
+
+**Note:** Should you be asked in the RStudio console about upgrading dependencies during the EBImage library installation, type in `a` and hit `enter`.
+{: .notice--warning}
+
+
 
 **Note:** If you source the file multiple times, three directories are created each time within the Data folder with the form of `SegImgs_i`, `ColNuc_i`, and `BWImgs_i`, where *i* is an integer. The images are only segmented into the most recently created directories (those with the largest value of *i*). Should you run into trouble and need to run this file multiple times, ensure that future file paths are pointing to the right folders!
 {: .notice--warning}
@@ -119,10 +139,10 @@ In this step of the pipeline, we open up MATLAB for running the binarization and
 Open MATLAB. Then, run the following commands in the MATLAB command window:
 
 ~~~
-> clear
-> clc
-> cd ~/Desktop/WBC_PCAPipeline/Step2_Binarization
-> WBC_imgBin
+clear
+clc
+cd ~/Desktop/WBC_PCAPipeline/Step2_Binarization
+WBC_imgBin
 ~~~
 
 As a result, the `BWImgs_1` directory will now contain binarized TIFF versions of the segmented images. That is, each greyscale image resulting from the nuclear segmentation step with have pixel values strictly of 0, which is black, or 1, which is white.
