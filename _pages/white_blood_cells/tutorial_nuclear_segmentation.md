@@ -8,7 +8,14 @@ toc_sticky: true
 image: "../assets/images/cellorg_pca_graph_cell.png"
 ---
 
-## Cell Organizer Tutorial
+## Installing CellOrganizer
+
+**Note:** The current version of CellOrganizer that these tutorials are built on is a free distribution provided as an add-on to MATLAB, which is paid software. We are in the process of investigating a way to run all of the tutorials in this module without needing paid software.
+{: .notice--warning}
+
+First, you will need the latest version of <a href="https://www.mathworks.com/products/matlab.html" target="_blank">MATLAB</a>.
+
+Next, you should download and install the latest version of CellOrganizer for MATLAB, which you can find under `Downloads` at the <a href="http://www.cellorganizer.org" target="_blank">CellOrganizer homepage</a>. You should then install CellOrganizer locally by following the instructions provided as part of the <a href="http://www.cellorganizer.org/docs/2.9.0/chapters/cellorganizer_for_matlab.html#" target="_blank">CellOrganizer documentation</a>.
 
 For the following steps, a variety of software and programs are used to go through our PCA Pipeline for the Kaggle White Blood Cells dataset. Please ensure that the following pre – requisite applications have been installed before continuing.
 
