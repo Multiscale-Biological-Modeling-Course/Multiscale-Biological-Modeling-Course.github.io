@@ -15,7 +15,34 @@ image: "../assets/images/cellorg_pca_graph_cell.png"
 
 First, you will need the latest version of <a href="https://www.mathworks.com/products/matlab.html" target="_blank">MATLAB</a>.
 
-Next, you should download and install the latest version of CellOrganizer for MATLAB, which you can find under `Downloads` at the <a href="http://www.cellorganizer.org" target="_blank">CellOrganizer homepage</a>. You should then install CellOrganizer locally by following the instructions provided as part of the <a href="http://www.cellorganizer.org/docs/2.9.0/chapters/cellorganizer_for_matlab.html#" target="_blank">CellOrganizer documentation</a>.
+Next, you should download the latest version of CellOrganizer for MATLAB, which you can find under `Downloads` at the <a href="http://www.cellorganizer.org" target="_blank">CellOrganizer homepage</a>. You should extract the `.zip` file into a folder, and then place this folder somewhere on your computer where you will remember it. (Our suggestion is to place it in the same applications folder where MATLAB is found.)
+
+To install CellOrganizer, open MATLAB, and in the command window navigate to the CellOrganizer folder that you just extracted using the `cd` command. For example, if you are using a Mac, and you extracted the CellOrganizer folder as `cellorganizer-master` and moved it to your `Applications` folder, then you would type the following command:
+
+~~~
+cd /Applications/cellorganizer-master
+~~~
+
+Once you have navigated into this folder, you will see the contents of the CellOrganizer directory you downloaded appear under the `Current Directory` window in MATLAB.
+
+[![image-center](../assets/images/600px/CellOrganizer_installation_directory.png){: .align-center width="400px"}](../assets/images/CellOrganizer_installation_directory.png)
+{: style="font-size: medium;"}
+
+You are now ready to install CellOrganizer by running `setup.m` by entering the following command into the MATLAB command window.
+
+~~~
+setup();
+~~~
+
+That's it! If your installation was successful, then you should see a message in the MATLAB command window similar to the following.
+
+~~~
+Adding appropiate folders to path.
+Checking if your system and Matlab version is compatible with CellOrganizer.
+Checking for updates. CellOrganizer version 2.9.2 is the latest stable release.
+~~~
+
+## Global Installations
 
 For the following steps, a variety of software and programs are used to go through our PCA Pipeline for the Kaggle White Blood Cells dataset. Please ensure that the following pre – requisite applications have been installed before continuing.
 
@@ -23,8 +50,6 @@ For the following steps, a variety of software and programs are used to go throu
 |:---|---:|
 | Python (v. 3.7.3 or newer)	|	python \-\-version |
 | R (v. 3.5.2 or newer)		|	R \-\-version |
-| MATLAB (2016b or newer) | - |
-| CellOrganizer (v. 2.8.x) | - |
 | RStudio | - |
 
 Furthermore, we ask that you download our `WBC_PCAPipeline` folder onto your desktop and verify that it has the following contents:
