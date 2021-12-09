@@ -20,3 +20,7 @@
 * Need to explain how to install CellOrganizer
 
 * Save .arff into new step 5 folder?
+
+* Provide completed .arff file
+
+* Provide .zip of full set of tutorials -- and remind students in future tutorials if it is needed

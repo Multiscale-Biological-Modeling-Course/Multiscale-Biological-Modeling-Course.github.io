@@ -8,6 +8,40 @@ toc_sticky: true
 image: "../assets/images/cellorg_pca_graph_cell.png"
 ---
 
+### Installing CellOrganizer
+
+**Note:** The current version of CellOrganizer that these tutorials are built on is a free distribution provided as an add-on to MATLAB, which is paid software. We are in the process of investigating a way to run all of the tutorials in this module without needing paid software.
+{: .notice--warning}
+
+First, you will need the latest version of <a href="https://www.mathworks.com/products/matlab.html" target="_blank">MATLAB</a>.
+
+Next, you should download the latest version of CellOrganizer for MATLAB, which you can find under `Downloads` at the <a href="http://www.cellorganizer.org" target="_blank">CellOrganizer homepage</a>. You should extract the `.zip` file into a folder, and then place this folder somewhere on your computer where you will remember it. (Our suggestion is to place it in the same applications folder where MATLAB is found.)
+
+To install CellOrganizer, open MATLAB, and in the command window navigate to the CellOrganizer folder that you just extracted using the `cd` command. For example, if you are using a Mac, and you extracted the CellOrganizer folder as `cellorganizer-master` and moved it to your `Applications` folder, then you would type the following command:
+
+~~~
+cd /Applications/cellorganizer-master
+~~~
+
+Once you have navigated into this folder, you will see the contents of the CellOrganizer directory you downloaded appear under the `Current Directory` window in MATLAB.
+
+[![image-center](../assets/images/600px/CellOrganizer_installation_directory.png){: .align-center width="400px"}](../assets/images/CellOrganizer_installation_directory.png)
+{: style="font-size: medium;"}
+
+You are now ready to install CellOrganizer by running `setup.m` by entering the following command into the MATLAB command window.
+
+~~~
+setup();
+~~~
+
+That's it! If your installation was successful, then you should see a message in the MATLAB command window similar to the following.
+
+~~~
+Adding appropiate folders to path.
+Checking if your system and Matlab version is compatible with CellOrganizer.
+Checking for updates. CellOrganizer version 2.9.2 is the latest stable release.
+~~~
+
 ### Step 3 PCA Model Generation
 
 Having completed Steps 1 and 2, all of our remaining images, and their subsequent labels, should be pre – processed and ready to train into a PCA model. In CellOrganizer, this is sampled as `demo2D08`.  

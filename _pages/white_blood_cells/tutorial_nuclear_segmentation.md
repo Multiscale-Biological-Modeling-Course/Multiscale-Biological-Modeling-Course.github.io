@@ -8,49 +8,15 @@ toc_sticky: true
 image: "../assets/images/cellorg_pca_graph_cell.png"
 ---
 
-### Installing CellOrganizer
-
-**Note:** The current version of CellOrganizer that these tutorials are built on is a free distribution provided as an add-on to MATLAB, which is paid software. We are in the process of investigating a way to run all of the tutorials in this module without needing paid software.
-{: .notice--warning}
-
-First, you will need the latest version of <a href="https://www.mathworks.com/products/matlab.html" target="_blank">MATLAB</a>.
-
-Next, you should download the latest version of CellOrganizer for MATLAB, which you can find under `Downloads` at the <a href="http://www.cellorganizer.org" target="_blank">CellOrganizer homepage</a>. You should extract the `.zip` file into a folder, and then place this folder somewhere on your computer where you will remember it. (Our suggestion is to place it in the same applications folder where MATLAB is found.)
-
-To install CellOrganizer, open MATLAB, and in the command window navigate to the CellOrganizer folder that you just extracted using the `cd` command. For example, if you are using a Mac, and you extracted the CellOrganizer folder as `cellorganizer-master` and moved it to your `Applications` folder, then you would type the following command:
-
-~~~
-cd /Applications/cellorganizer-master
-~~~
-
-Once you have navigated into this folder, you will see the contents of the CellOrganizer directory you downloaded appear under the `Current Directory` window in MATLAB.
-
-[![image-center](../assets/images/600px/CellOrganizer_installation_directory.png){: .align-center width="400px"}](../assets/images/CellOrganizer_installation_directory.png)
-{: style="font-size: medium;"}
-
-You are now ready to install CellOrganizer by running `setup.m` by entering the following command into the MATLAB command window.
-
-~~~
-setup();
-~~~
-
-That's it! If your installation was successful, then you should see a message in the MATLAB command window similar to the following.
-
-~~~
-Adding appropiate folders to path.
-Checking if your system and Matlab version is compatible with CellOrganizer.
-Checking for updates. CellOrganizer version 2.9.2 is the latest stable release.
-~~~
-
 ### Installing R and RStudio
 
 To run our segmentation pipeline, we will use <a href="https://www.r-project.org" target="_blank">R</a>, a free programming language that is popular among data scientists across disciplines. We will also use <a href="https://www.rstudio.com" target="_blank">RStudio</a>, an integrated development environment that makes working with R easy.
 
 You can download R and RStudio from their respective home sites or follow the instructions at <a href="https://rstudio-education.github.io/hopr/starting.html" target="_blank">Hands-On Programming with R</a>.
 
-### Obtaining the Data
+### Obtaining the WBC Image Data
 
-Next, we ask that you download our `WBC_PCAPipeline` folder onto your desktop and verify that it has the following contents:
+Next, we ask that you download our `WBC_PCAPipeline` folder, move this folder to your desktop, and verify that it has the following contents:
 
 ~~~
 WBC_PCAPipeline
@@ -75,16 +41,18 @@ WBC_PCAPipeline
 	README.pdf
 ~~~
 
-**Note:** Please ensure the WBC_PCAPipeline file is onto your desktop. Otherwise, you will have to manually change all file paths to point to the appropriate folders on your computer. While unconventional, we’ve noticed occasional software glitches with using `setwd()` or `pwd()` otherwise.
+**Note:** Asking you to place this directory of files onto your desktop is unconventional. If you place it elsewhere, then you will have to manually change all file paths in the tutorials that follow in order to point to the appropriate directory. However, we have noticed occasional software glitches with using `setwd()` or `pwd()` if not specifying a universal location.
 {: .notice--warning}
+
+You may like to take a look at the `Data` folder, which contains the WBC images that we will work with in `RawImgs`. The other folders contain files that we will use to run different aspects of our analysis, starting with segmentation of the nuclei from the WBC images.
 
 ### Segmenting Nuclei from WBC Images
 
-For this dataset, we would like to identify the white blood cell types by the nuclear shape since that particular feature is easy to verify with the naked eye. Moreover, the nucleus of the white blood cell(s) in each image are of a distinctly darker color than the rest of the red blood cells or platelets in the image. This allows us to implement a technique called thresholding. In thresholding, we examine each pixel in the image and reset the color value of the image according to our thresholds. If the original RGB values for the pixel are above the thresholds we set in each channel, then we reset the pixel value to white. All other pixels below the thresholds will be set to black (ideally). This way, our target, the white blood cell nucleus, is a white blob in a black background.
+In the [main text](segmentation), we stated that we would segment the nuclei from our WBC images by binarizing the image based on color. The nucleus shows up as bluish, so that our idea is to color a pixel white if it has above a certain threshold level of blue, below a threshold amount of red, and below a threshold amount of green.
 
-Open RStudio, and navigate to `File --> Open File`, and find `Desktop/WBC_PCAPipeline/Step1_Segmentation/WBC_imgSeg.R`. You should see the `WBC_imgSeg.R` file appear on the left side.
+Open RStudio, navigate to `File --> Open File`, and find `Desktop/WBC_PCAPipeline/Step1_Segmentation/WBC_imgSeg.R`. You should see the `WBC_imgSeg.R` file appear on the left side of the RStudio window.
 
-The first few lines of `WBC_imgSeg.R` refer to a collection of packages that we need to install to run our segmentation pipeline. Two of these packages (`jpeg` and `tiff`) are image packages, and the third (`EBImage`) is installed from the <a href="https://bioconductor.org" target="_blank">Bioconductor</a> project. These package installations correspond to the following lines of our R file.
+The first few lines of `WBC_imgSeg.R` refer to a collection of three **packages** (or **libraries**) that we need to install in order to run segmentation pipeline. Two of these packages (`jpeg` and `tiff`) are contained in R, and the third (`EBImage`) is installed from the <a href="https://bioconductor.org" target="_blank">Bioconductor</a> project as part of the `BiocManager` package. These package installations correspond to the following lines of our R file.
 
 ~~~
 install.packages("jpeg")
@@ -93,10 +61,14 @@ install.packages("BiocManager")
 BiocManager::install("EBImage")
 ~~~
 
-**Note:** Should you be asked in the RStudio console about upgrading dependencies during the EBImage library installation, type in `a` and hit `enter`.
+Place your cursor on the first line of the file, and click `Run`, which will install the `jpeg` package along with any packages upon which it depends.
+
+You can then click `Run` three more times to install each of the other three packages.
+
+**Note:** Should you be asked in the RStudio console about upgrading dependencies during the EBImage library installation, type `a` and hit `enter`. Also, after you run this file once, should you decide to run this file again, you will not need to run the package installations and can comment them out using `#`.
 {: .notice--warning}
 
-Next few lines -- establishing the libraries that we need.
+Now that we have installed the required packages, we indicate to R that we want to use each of the three packages that we just installed in this file. Run each of the following three lines.
 
 ~~~
 # Required Libraries
@@ -105,7 +77,7 @@ library("jpeg")
 library("tiff")
 ~~~
 
-Create a directory counter to count how many files we have encountered thus far.
+Next, we run the following lines, which will create a directory counter that will keep track of how many files we have processed thus far. 
 
 ~~~
 # dir Counter
@@ -245,7 +217,6 @@ Nuclear segmentation of `BloodImage_00001.jpg` in black and white.
 
 [![image-center](../assets/images/600px/cellorg_segmented_color.png){: .align-center}](../assets/images/cellorg_segmented_color.png)
 Nuclear segmentation of `BloodImage_00001.jpg` with color retained in the nucleus.
-{: style="font-size: medium;"}	 
+{: style="font-size: medium;"}
 
-[Return to main text](segmentation){: .btn .btn--primary .btn--large}
-{: style="font-size: 100%; text-align: center;"}            
+[Return to main text](segmentation#successful-segmentation-is-subject-to-parameters){: .btn .btn--primary .btn--large}         
