@@ -26,7 +26,7 @@ Imagine that you are a traveler to Earth and come across the ruins of New York. 
 **STOP:** If you know the location of New York, how could you use the information in the table above to find the other cities?
 {: .notice--primary}
 
-This example may be contrived, but it has a real archaeological counterpart. In 2019, researchers used commercial records on 19th Century BCE stone tablets compiled by Assyrian merchants to estimate distances between pairs of lost Bronze age cities in present-day Turkey. Using these approximated "atlas" of sorts, they predicted the location of the lost cities[^Barjamovich2019].
+This seemingly contrived example has a real archaeological counterpart. In 2019, researchers used commercial records on 19th Century BCE stone tablets compiled by Assyrian merchants to estimate distances between pairs of lost Bronze age cities in present-day Turkey. Using these approximated "atlas" of sorts, they predicted the location of the lost cities[^Barjamovich2019].
 
 You may be confused as to why stone tablets and lost cities  matter to biologists. Let us therefore return to our central problem of classifying segmented WBC images by family.
 
