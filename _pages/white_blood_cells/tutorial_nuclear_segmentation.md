@@ -84,7 +84,7 @@ Next, we run the following lines, which will create a directory counter that wil
 i = 1
 ~~~
 
-Set paths for raw image files and segmented images, respectively.
+We will now run commands to set paths for raw images and segmented images. `segImgs` will contain all of the segmented nuclei images in which the WBC nucleus is white and the rest of the image is in black. `colImgs` will contain all of the segmented nucleus images in which the nucleus retains its original color (and the background of the image is black). Finally, `BWImgs` will store binarized versions of our segmented images (more on this later).
 
 ~~~ R
 # Set path for raw image files
@@ -97,7 +97,7 @@ colImgs=paste(path, "ColNuc_", sep="")
 bwImgs=paste(path, "BWImgs_", sep="")
 ~~~
 
-Setting up directories and printing some messages to the console.
+Next, we run commands to set up directories and print some messages to the console regarding the creation of these directories.
 
 ~~~ R
 # Check if unique seg directory exists, otherwise create one
@@ -121,7 +121,9 @@ my.files <- grep("*.jpg", all.files, value=T)
 print(noquote("Starting nucleus segmentation..."))
 ~~~
 
-Engine of our work is a function that processes every image individually.
+Finally, the engine of our work is a function that processes and segmentes every image individually according to the thresholding that we discussed above. Note that in the following code, a pixel is only retained if its red value is less than 65%, its green value is less than 60%, and its blue value is above 59.75% (see the values of `r_threshold`, `g_threshold`, and `b_threshold`).
+
+We will only need to run the first line, since R will automatically perform everything inside this "for loop" for as many files as are in our dataset. You should not feel obligated to consult the following lines unless you are interested.
 
 ~~~ R
 # Loop through each file and process each image individually
@@ -170,13 +172,13 @@ for (i in my.files) {
 }
 ~~~
 
-Finally, we print that we are finished. If we see this command printed to the console, then we know that we are done.
+Finally, we print that we are finished. If we see this command printed to the console, then we know that we are finished.
 
 ~~~ R
 print(noquote("DONE!"))
 ~~~
 
-**Note:** If you source the file multiple times, three directories are created each time within the Data folder with the form of `SegImgs_i`, `ColNuc_i`, and `BWImgs_i`, where *i* is an integer. The images are only segmented into the most recently created directories (those with the largest value of *i*). Should you run into trouble and need to run this file multiple times, ensure that future file paths are pointing to the right folders!
+**Note:** If you run the file multiple times, three directories are created each time within the Data folder with the form of `SegImgs_i`, `ColNuc_i`, and `BWImgs_i`, where *i* is an integer. The images are only segmented into the most recently created directories (those with the largest value of *i*). Should you run into trouble and need to run this file multiple times, ensure that future file paths are pointing to the right folders!
 {: .notice--warning}
 
 After we have sourced our R file, you’ll notice the creation of three directories of the form: `SegImgs_1`, `ColNuc_1`, and `BWImgs_1` within the `Data` folder.
@@ -200,7 +202,7 @@ In this step of the pipeline, we open up MATLAB for running the binarization and
 
 Open MATLAB. Then, run the following commands in the MATLAB command window:
 
-~~~ MATLAB
+~~~
 clear
 clc
 cd ~/Desktop/WBC_PCAPipeline/Step2_Binarization
