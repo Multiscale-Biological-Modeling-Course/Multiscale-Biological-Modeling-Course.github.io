@@ -200,7 +200,7 @@ In this step of the pipeline, we open up MATLAB for running the binarization and
 
 Open MATLAB. Then, run the following commands in the MATLAB command window:
 
-~~~
+~~~ MATLAB
 clear
 clc
 cd ~/Desktop/WBC_PCAPipeline/Step2_Binarization
