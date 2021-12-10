@@ -209,7 +209,7 @@ As a result, the `BWImgs_1` directory will now contain binarized TIFF versions o
 Nuclear segmentation of `BloodImage_00001.jpg` with color retained in the nucleus.
 {: style="font-size: medium;"}
 
-**STOP:** Before we return to the main text, try running the segmentation pipeline on a few different values of `r_threshold`, `g_threshold`, and `b_threshold` to see how they change the segmentation results. (You should use the values above the last time that you run the R pipeline so that your results will match those in future tutorials.)
+**STOP:** Before we return to the main text, try running the segmentation pipeline on a few different values of `r_threshold`, `g_threshold`, and `b_threshold` to see how they change the segmentation results. How could we quantify whether one collection of parameters is better than another? (You should use the values above the last time that you run the R pipeline so that your results will match those in future tutorials.)
 {: .notice--primary}
 
 [Return to main text](segmentation#successful-segmentation-is-subject-to-parameters){: .btn .btn--primary .btn--large}
