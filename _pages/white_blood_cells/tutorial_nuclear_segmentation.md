@@ -54,7 +54,7 @@ Open RStudio, navigate to `File --> Open File`, and find `Desktop/WBC_PCAPipelin
 
 The first few lines of `WBC_imgSeg.R` refer to a collection of three **packages** (or **libraries**) that we need to install in order to run segmentation pipeline. Two of these packages (`jpeg` and `tiff`) are contained in R, and the third (`EBImage`) is installed from the <a href="https://bioconductor.org" target="_blank">Bioconductor</a> project as part of the `BiocManager` package. These package installations correspond to the following lines of our R file.
 
-~~~
+~~~ R
 install.packages("jpeg")
 install.packages("tiff")
 install.packages("BiocManager")
@@ -70,23 +70,23 @@ You can then click `Run` three more times to install each of the other three pac
 
 Now that we have installed the required packages, we indicate to R that we want to use each of the three packages that we just installed in this file. Run each of the following three lines.
 
-~~~
+~~~ R
 # Required Libraries
 library("EBImage")
 library("jpeg")
 library("tiff")
 ~~~
 
-Next, we run the following lines, which will create a directory counter that will keep track of how many files we have processed thus far. 
+Next, we run the following lines, which will create a directory counter that will keep track of how many files we have processed thus far.
 
-~~~
+~~~ R
 # dir Counter
 i = 1
 ~~~
 
 Set paths for raw image files and segmented images, respectively.
 
-~~~
+~~~ R
 # Set path for raw image files
 path="~/Desktop/WBC_PCAPipeline/Data/"
 rawImgs=paste(path, "RawImgs/", sep="")
@@ -99,7 +99,7 @@ bwImgs=paste(path, "BWImgs_", sep="")
 
 Setting up directories and printing some messages to the console.
 
-~~~
+~~~ R
 # Check if unique seg directory exists, otherwise create one
 while (file.exists(paste(segImgs, toString(i), sep=""))) {
   i = i + 1
@@ -123,7 +123,7 @@ print(noquote("Starting nucleus segmentation..."))
 
 Engine of our work is a function that processes every image individually.
 
-~~~
+~~~ R
 # Loop through each file and process each image individually
 for (i in my.files) {
   print(noquote(paste("Segmenting nucleus from file", i)))
@@ -172,7 +172,7 @@ for (i in my.files) {
 
 Finally, we print that we are finished. If we see this command printed to the console, then we know that we are done.
 
-~~~
+~~~ R
 print(noquote("DONE!"))
 ~~~
 
