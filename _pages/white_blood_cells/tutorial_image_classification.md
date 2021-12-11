@@ -16,7 +16,8 @@ To install Weka, follow the instructions provided at the <a href="https://waikat
 
 ### Method 1: Weka for File Conversion
 
-To convert our current PCA pipeline coordinates to a format to be used in Weka, we need to convert our `WBC_PCA.csv` file into the `arff` format used by Weka.
+To convert our current PCA pipeline coordinates to a format to be used in Weka, we need to convert our `WBC_PCA.csv` file into the `arff` format used by Weka. If you did not complete the previous tutorial, or you would like to skip this section, we provide the completed file <a href="../downloads/WBC_PCA.arff">here</a>.
+
 
 Open Weka and navigate to `Tools --> ArffViewer`.
 
