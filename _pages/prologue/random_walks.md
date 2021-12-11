@@ -8,7 +8,7 @@ toc_sticky: true
 image: "../assets/images/gray_scott_jupyter_3.png"
 ---
 
-## Life is Random
+## Life is random
 
 Quantum physics tells us that everything that happens in the universe ultimately depends on the interaction of tiny particles.  Yet it is difficult for beings like ourselves to acknowledge this fundamental truth of the universe when our experience of existence is guided by "macro" phenomena.
 
