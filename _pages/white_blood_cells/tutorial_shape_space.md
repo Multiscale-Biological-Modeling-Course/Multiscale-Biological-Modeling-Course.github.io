@@ -145,3 +145,6 @@ python WBC_CellType.py
 As a result, you can click, drag, and rotate the graphical space to see the clusters of cell classes by color (a legend can be found in the upper right - hand corner). Furthermore, an image file of this visualization is saved within the current directory under `WBC_ShapeSpace_CT.png`.
 
 [![image-center](../assets/images/600px/cellorg_pca_graph_cell.png){: .align-center}](../assets/images/cellorg_pca_graph_cell.png)
+
+[Return to main text](pca#visualizing-the-wbc-shape-space-after-pca){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
