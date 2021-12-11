@@ -94,37 +94,28 @@ An important point is that the first *d* columns in this matrix correspond to th
 
 Having generated a PCA model from our WBC images, we are now ready to visualize the resulting simplified three-dimensional shape space with each cell labeled according to its type. To do so, we will use <a href="https://www.python.org/downloads/" target="_blank">Python 3</a>, so make sure you have installed Python 3.
 
-In `WBC_PCAPipeline/Step4_Visualization` of our provided folder, we provide two Python
+In `WBC_PCAPipeline/Step4_Visualization` of our provided folder, we provide two Python files (`WBC_CellFamily.py` and `WBC_CellType.py`) that we will use for plotting to visualize our shape space and label each image. The first file will label each image by cell family (granulocyte, lymphocyte, or monocyte); the second will use five labels, subdividing granulocytes into basophils, eosinophils, and neutrophils.
 
-First, we will label each image in the shape space by cell family: granulocyte, lymphocyte, or monocyte. Open a new terminal window (the "Terminal" app on MacOS, and the "Command Prompt" app on Windows) and run the following commands to navigate to "Step 4" of the Pipeline and run our Python plotter.
+First, we will label each image in the shape space by cell family. Open a new terminal window (the "Terminal" app on MacOS, and the "Command Prompt" app on Windows) and run the following commands to navigate to "Step 4" of the Pipeline and run our cell family plotter.
 
 ~~~
 cd ~/Desktop/WBC_PCAPipeline/Step4_Visualization
 python WBC_CellFamily.py
 ~~~
 
-If we are classifying by cell family, then we are attempting to classify images into the three classes of . We can also classify by cell type, in which case granulocytes subdivide out into neutrophils, eosinophils, and basophils, so that we are dividing the data into five classes.
-
-As a result, you can click, drag, and rotate the graphical space to see the clusters of cell classes by color (a legend can be found in the upper right - hand corner). Furthermore, an image file of this visualization is saved within the current directory under `WBC_ShapeSpace_CF.png`.
-
-[![image-center](../assets/images/600px/cellorg_pca_graph.png){: .align-center}](../assets/images/cellorg_pca_graph.png)
+You can click, drag, and rotate the resulting plot to see the clusters of cell classes by color (a legend can be found in the upper right corner). Furthermore, an image file of this visualization is saved within `WBC_PCAPipeline/Step4_Visualization` as `WBC_ShapeSpace_CF.png`.
 
 **Note:** You may need to close the window containing the shape space in order to be able to run additional commands in your terminal window.
 {: .notice--warning}
 
-
-### Classification by cell type
-
-Now we will classify images by cell type. Open a new terminal window and run the following commands.
+Next, we will classify images by cell type. In a terminal window, run the following commands to label the shape space according to each of the five cell types. An image of this visualization will be saved within `WBC_PCAPipeline/Step4_Visualization` as `WBC_ShapeSpace_CT.png`.
 
 ~~~
 cd ~/Desktop/WBC_PCAPipeline/Step4_Visualization
 python WBC_CellType.py
 ~~~
 
-As a result, you can click, drag, and rotate the graphical space to see the clusters of cell classes by color (a legend can be found in the upper right - hand corner). Furthermore, an image file of this visualization is saved within the current directory under `WBC_ShapeSpace_CT.png`.
-
-[![image-center](../assets/images/600px/cellorg_pca_graph_cell.png){: .align-center}](../assets/images/cellorg_pca_graph_cell.png)
+As we return to the main text, we will show the labeled shape space plots and return to the problem of classification.
 
 [Return to main text](pca#visualizing-the-wbc-shape-space-after-pca){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

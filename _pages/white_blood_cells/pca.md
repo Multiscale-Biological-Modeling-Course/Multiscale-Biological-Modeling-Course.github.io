@@ -127,14 +127,26 @@ And when we zoom farther out, we can see continental patterns emerge as well, wi
 A PCA plot (*d* = 2) shows clustering of individuals from Europe, Asia, Africa, and India.[^Xing2009]
 {: style="font-size: medium;"}
 
-Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to apply PCA to the shape space of our WBC images and then visualize this space.
+Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to use CellOrganizer to build a shape space for our WBC images and apply PCA to this shape space to produce a lower-dimensional representation of the shape space.
 
 [Visit tutorial](tutorial_shape_space){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Visualizing the WBC shape space after PCA
 
-Now that we have reduced the dimension of our shape space, we are ready to apply a classification algorithm to this lower-dimensional space. In the next lesson, we will revisit the k-nearest neighbors algorithm that we introduced in a previous lesson and sprinkle a little machine learning on top.
+The figures below show the shape space of WBC images, reduced to three dimensions by PCA, and in which each image is represented by a point that is color-coded according to its cell family.
+
+[![image-center](../assets/images/600px/cellorg_pca_graph.png){: .align-center}](../assets/images/cellorg_pca_graph.png)
+The projection of each WBC shape vector onto a three-dimensional hyperplane produces this three-dimensional space, in which each image is assigned a point and color-coded according to cell family.
+{: style="font-size: medium;"}
+
+As we mentioned in the tutorial, we can also subdivide granulocytes into basophils, eosinophils, and neutrophils. Updating our labels according to this subdivision produces the following figure.
+
+[![image-center](../assets/images/600px/cellorg_pca_graph_cell.png){: .align-center}](../assets/images/cellorg_pca_graph_cell.png)
+The reduced dimension shape space from the previous figure, with granulocytes further subdivided into three classes.
+{: style="font-size: medium;"}
+
+Although images from the same family do not cluster as tightly as the iris data set --- which could be criticized as an unrealistic representation of the noise inherent in most real datasets --- we do see that images appear to be near other images of the same type. This fact should give us hope that proximity in the dimension-reduced space may help us correctly classify images of unknown type, which we will attempt to do in the next lesson.
 
 <!--
 [Next lesson](training){: .btn .btn--primary .btn--large}
