@@ -1,6 +1,6 @@
 ---
 permalink: /white_blood_cells/tutorial_shape_space
-title: "Software Tutorial: Generalizing and Visualizing an Image Shape Space"
+title: "Software Tutorial: Generalizing and Visualizing an Image Shape Space After Applying PCA"
 sidebar:
  nav: "white_blood_cells"
 toc: true

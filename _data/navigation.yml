@@ -189,9 +189,7 @@ white_blood_cells:
     children:
       - title: "Segmenting nuclei from cellular images<br><br>"
         url: /white_blood_cells/tutorial_nuclear_segmentation
-      - title: "Applying principal components analysis to nuclear image boundaries<br><br>"
-        url: /white_blood_cells/tutorial_PCA
-      - title: "Generating and visualizing an image shape space<br><br>"
+      - title: "Generating and visualizing an image shape space after applying PCA<br><br>"
         url: /white_blood_cells/tutorial_shape_space
       - title: "Training a classifier on an image shape space<br><br>"
         url: /white_blood_cells/tutorial_image_classification
