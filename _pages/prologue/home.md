@@ -8,6 +8,8 @@ excerpt: "by Noah Lee, Mert Inan, and Phillip Compeau"
 header:
   overlay_image: "../assets/images/gray_scott_jupyter_3.png"
   overlay_filter: 0.3
+toc: true
+toc_sticky: true
 author_profile: true # add author to page
 ---
 
