@@ -16,7 +16,7 @@ You can download R and RStudio from their respective home sites or follow the in
 
 ### Obtaining the WBC Image Data
 
-Download our `WBC_PCAPipeline` <a href="../downloads/WBC_PCAPipeline.zip">folder</a>, move this folder to your desktop, and verify that it has the following contents:
+The raw images and files that we will need to run our analysis are contained in a `WBC_PCAPipeline` folder that can be downloaded <a href="../downloads/WBC_PCAPipeline.zip">here</a> as a .zip. Extract this file, move the resulting folder onto your desktop, and verify that it has the following contents:
 
 ~~~
 WBC_PCAPipeline
