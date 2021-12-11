@@ -22,12 +22,12 @@ To install CellOrganizer, open MATLAB, and in the command window navigate to the
 cd /Applications/cellorganizer-master
 ~~~
 
-Once you have navigated into this folder, you will see the contents of the CellOrganizer directory you downloaded appear under the `Current Directory` window in MATLAB.
+Once you have navigated into this folder, you will see the contents of your CellOrganizer directory appear under the `Current Directory` window in MATLAB, as shown below.
 
 [![image-center](../assets/images/600px/CellOrganizer_installation_directory.png){: .align-center width="400px"}](../assets/images/CellOrganizer_installation_directory.png)
 {: style="font-size: medium;"}
 
-You are now ready to install CellOrganizer by running `setup.m` by entering the following command into the MATLAB command window.
+You are now ready to install CellOrganizer by running `setup.m`. To do so, enter the following command into the MATLAB command window.
 
 ~~~
 setup();
@@ -41,18 +41,13 @@ Checking if your system and Matlab version is compatible with CellOrganizer.
 Checking for updates. CellOrganizer version 2.9.2 is the latest stable release.
 ~~~
 
-### Step 3 PCA Model Generation
+Keep MATLAB open, as we will be using it in the next step.
 
-Having completed Steps 1 and 2, all of our remaining images, and their subsequent labels, should be pre – processed and ready to train into a PCA model. In CellOrganizer, this is sampled as `demo2D08`.  
+### Generating a PCA Model
 
-In this step of the pipeline, we return to MATLAB for running a modified version of CellOrganizer’s demo2D08 in order to generate the PCA model for our white blood cells. This model would then be used to plot the shape space by either cell type or cell class. Furthermore, we do some post – processing cleanup to ensure our resulting model could be easily read into the visualization code by using only the first three principal components.
+CellOrganizer has several different models to perform a collection of cell modeling tasks; we will focus on `demo2D08`, which will generate a PCA model for our white blood cell nucleus images. All of the necessary code for doing so is contained in `WBC_PCAModel.m`, a MATLAB file contained within the `WBC_PCAPipeline/Step3_ModelGeneration` directory. We will not walk through all the details of this file, but feel free to open this file with a text editor.
 
-Open MATLAB and navigate into your CellOrganizer directory. Then, run the following command in the MATLAB command window:
-~~~
-setup
-~~~
-
-Run the following commands in the MATLAB command window:
+Run the following commands in the MATLAB command window to navigate into the `WBC_PCAPipeline/Step3_ModelGeneration` directory and then run `WBC_PCAModel.m`.
 
 ~~~
 clear
@@ -75,51 +70,47 @@ Creating output directory /Users/phillipcompeau/Desktop/WBC_PCAPipeline/Step3_Mo
 Number of objects: 345
 ~~~
 
-As a result, the `Step3_PCAModel` and `Step4_Visualization` directories have been updated. The principal components along with the assigned label to each cell are captured in the `WBC_PCA.csv` file within the `Step4` directory. Information about the images used and the CellOrganizer generated shape space can be found by clicking on `Step3_PCAModel/report/index.html`.
+As a result, the `Step3_PCAModel` and `Step4_Visualization` directories have been updated. The principal components along with the assigned label to each cell are captured in the `WBC_PCA.csv` file within the `Step4` directory. Information about the images used and the shape space that CellOrganizer generated can be found in `Step3_PCAModel/report/index.html`.
 
-**Note:** For any subsequent run of the `WBC_PCAModel file`, make sure to delete any log and param files that have been created from a previous run. All other files will be overwritten unless preemptively removed from the `WBC_PCAModel` file’s access. Saving the files can be done by either compressing the files into a zip folder or removing them from the directory.
+**Note:** If you run the `WBC_PCAModel.m` file more than once, make sure to delete any log and param files that have been created from a previous run. All other files will be overwritten unless preemptively removed from the `WBC_PCAModel` file’s access. Saving the files can be done by either compressing the files into a zip folder or removing them from the directory.
 {: .notice--warning}
 
-We next want to view our model results. First, run the following commands in the MATLAB command window:
+Now that CellOrganizer has vectorized the images and applied PCA to the resulting shape vectors, we would like to explore the resulting vectors for each image. (Recall from the main text that these vectors are the original shape vectors projected onto the "nearest" hyperplane.)
+
+First, run the following commands in the MATLAB command window:
 
 ~~~
 load('WBC_PCA.mat');
 scr = model.nuclearShapeModel.score;
 ~~~
 
-Double-click on the `scr` variable in the `Workspace` window.
+Then, double-click on the `scr` variable in the `Workspace` window.
 
-In the matrix on your screen, each row represents an image and each column represents the subsequent PCA components for the image. For the purpose of our shape space visualization, we will only be focusing on the first three principal components.
+In the matrix on your screen, each row represents the coordinates for the projection of a single image's shape vector.
 
-**Note:** You may need to close the window containing the shape space in order to be able to run additional commands in your terminal window.
-{: .notice--warning}
-
-### Installations
-
-Please ensure that the following additional applications have been installed before continuing.
-
-|Required Applications | Terminal Command to Check Version |
-|:---|---:|
-| Python (v. 3.7.3 or newer)	|	python \-\-version |
+An important point is that the first *d* columns in this matrix correspond to the vector's projection onto the *d*-dimensional hyperplane minimizing the sum of squared distances from each shape vector to this hyperplane. For the purpose of our shape space visualization, we will only be focusing on the first three columns of this matrix. In this way, even though each shape vector lives in a high-dimensional space, we will obtain a three-dimensional representation of the data that represents the data faithfully.
 
 ### Shape Space Visualization
 
-Having generated a PCA model from the images and completed the post – processing in the previous tutorial, we are ready to visualize our results!
+Having generated a PCA model from our WBC images, we are now ready to visualize the resulting simplified three-dimensional shape space with each cell labeled according to its type. To do so, we will use <a href="https://www.python.org/downloads/" target="_blank">Python 3</a>, so make sure you have installed Python 3.
 
-In this step of the pipeline, we will use Python to visualize the computed shape space by label. The goal is to see clusters of cells within the same region of the same type. We can classify our white blood cells by two different parameters, cell type or cell family. If we are classifying by cell family, then we are attempting to classify images into the three classes of granulocytes, lymphocytes, and monocytes. We can also classify by cell type, in which case granulocytes subdivide out into neutrophils, eosinophils, and basophils, so that we are dividing the data into five classes.
+In `WBC_PCAPipeline/Step4_Visualization` of our provided folder, we provide two Python
 
-### Classification by cell family
-
-First, we will classify images by cell family. Open a new terminal window and run the following commands:
+First, we will label each image in the shape space by cell family: granulocyte, lymphocyte, or monocyte. Open a new terminal window (the "Terminal" app on MacOS, and the "Command Prompt" app on Windows) and run the following commands to navigate to "Step 4" of the Pipeline and run our Python plotter.
 
 ~~~
 cd ~/Desktop/WBC_PCAPipeline/Step4_Visualization
 python WBC_CellFamily.py
 ~~~
 
+If we are classifying by cell family, then we are attempting to classify images into the three classes of . We can also classify by cell type, in which case granulocytes subdivide out into neutrophils, eosinophils, and basophils, so that we are dividing the data into five classes.
+
 As a result, you can click, drag, and rotate the graphical space to see the clusters of cell classes by color (a legend can be found in the upper right - hand corner). Furthermore, an image file of this visualization is saved within the current directory under `WBC_ShapeSpace_CF.png`.
 
 [![image-center](../assets/images/600px/cellorg_pca_graph.png){: .align-center}](../assets/images/cellorg_pca_graph.png)
+
+**Note:** You may need to close the window containing the shape space in order to be able to run additional commands in your terminal window.
+{: .notice--warning}
 
 
 ### Classification by cell type
