@@ -8,11 +8,21 @@ toc_sticky: true
 image: "../assets/images/gray_scott_jupyter_3.png"
 ---
 
+## Life is Random
+
+Quantum physics tells us that everything that happens in the universe ultimately depends on the interaction of tiny particles.  Yet it is difficult for beings like ourselves to acknowledge this fundamental truth of the universe when our experience of existence is guided by "macro" phenomena.
+
+After all, although you may feel like a single, coherent being, you are just a skin-covered bag of trillions of cells that act largely independently. Over half of these cells aren't even yours! They correspond to bacteria that make up a couple of kilograms of your mass.
+
+What makes the whole affair seem even crueler is that the whole cellular symphony is largely based on *randomness*. Not only is there no sentient being driving the molecular interactions in your cells, but these interactions rely upon interactions fueled by the random movement of particles.
+
+For example, your cells are full of **proteins**, complex macromolecules that perform nearly every function in our cells. If a protein could move in a straight line, it would move 20 kph or more[^machinery], but the cellular cytoplasm is so densely packed with molecules that the protein constantly bounces off these water molecules, changing direction.
+
+In this prologue and throughout this course, we will often make high-level inferences about biological systems by building simple models of these systems that sometimes include randomness as a key feature of the model. We will see that even though a system is driven by randomness and simple rules does not mean that it does not have emergent behavior that can be elegant and beautiful.
+
 ## The wanderlust of a single particle
 
-We introduced this prologue with the observation that our experience of the world is influenced by the random movements of invisible particles. For example, throughout this course, we will work with proteins, molecules that perform nearly every function in our cells. If a protein could move in a straight line, it would move 20 kph or more[^machinery], but the cellular cytoplasm is so densely packed with molecules that the protein constantly bounces off these molecules and changes direction.
-
-We can therefore model the random movements of a particle by **random walk** in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction.
+We will model the movements of a particle in the cell by a **random walk** in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction.
 
 **STOP**: After *n* steps, how far do you think the particle will have traveled (as the crow flies) from its starting point?
 {: .notice--primary}

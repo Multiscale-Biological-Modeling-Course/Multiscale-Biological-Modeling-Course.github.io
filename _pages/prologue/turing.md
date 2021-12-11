@@ -1,11 +1,14 @@
 ---
-permalink: /prologue/turing
-title: "Alan Turing and the Zebra's Stripes"
+permalink: /prologue/
+title: "Prologue: Random Walks and Turing Patterns"
 sidebar:
  nav: "prologue"
-toc: true
-toc_sticky: true
 image: "../assets/images/gray_scott_jupyter_3.png"
+excerpt: "by Noah Lee, Mert Inan, and Phillip Compeau"
+header:
+  overlay_image: "../assets/images/gray_scott_jupyter_3.png"
+  overlay_filter: 0.3
+author_profile: true # add author to page
 ---
 
 ## Turing machines and the foundations of computer science

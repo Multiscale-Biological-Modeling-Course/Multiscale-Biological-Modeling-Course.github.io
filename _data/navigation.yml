@@ -21,10 +21,8 @@ main:
 prologue:
   - title: "Prologue: Random Walks and Turing Patterns"
     children:
-      - title: "Introduction: Life is random<br><br>"
+      - title: "Introduction: Alan Turing and the zebra's stripes<br><br>"
         url: /prologue/
-      - title: "Alan Turing and the zebra's stripes<br><br>"
-        url: /prologue/turing
       - title: "An introduction to random walks<br><br>"
         url: /prologue/random-walk
       - title: "A reaction-diffusion model generating Turing patterns<br><br>"
