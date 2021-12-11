@@ -127,12 +127,12 @@ And when we zoom farther out, we can see continental patterns emerge as well, wi
 A PCA plot (*d* = 2) shows clustering of individuals from Europe, Asia, Africa, and India.[^Xing2009]
 {: style="font-size: medium;"}
 
-Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to apply PCA to the shape space of our WBC images.
+Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to apply PCA to the shape space of our WBC images and then visualize this space.
 
-[Visit tutorial](tutorial_PCA){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_shape_space){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Applying PCA to an image shape space
+## Visualizing the WBC shape space after PCA
 
 Now that we have reduced the dimension of our shape space, we are ready to apply a classification algorithm to this lower-dimensional space. In the next lesson, we will revisit the k-nearest neighbors algorithm that we introduced in a previous lesson and sprinkle a little machine learning on top.
 
