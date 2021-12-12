@@ -39,11 +39,11 @@ After building a model in a software tutorial, we will return to the main text a
 
 Our course contents are found below.
 
-* [Prologue: Random walks and Turing patterns](../prologue/) (with software tutorials featuring <a href="https://mcell.org"target="_blank">MCell and CellBlender</a>)
+* [Prologue: Random walks and Turing patterns](../prologue/) (with software tutorials featuring <a href="https://mcell.org" target="_blank">MCell and CellBlender</a>)
 
-* [Module 1: Finding motifs in transcription factor networks](../motifs/home) (with software tutorials featuring <a href="https://mcell.org"target="_blank">MCell and CellBlender</a>)
+* [Module 1: Finding motifs in transcription factor networks](../motifs/home) (with software tutorials featuring <a href="https://mcell.org" target="_blank">MCell and CellBlender</a>)
 
-* [Module 2: Unpacking E. coli's genius exploration algorithm](../chemotaxis/home) (with software tutorials featuring <a href="http://bionetgen.org"target="_blank">BioNetGen</a>)
+* [Module 2: Unpacking E. coli's genius exploration algorithm](../chemotaxis/home) (with software tutorials featuring <a href="http://bionetgen.org" target="_blank">BioNetGen</a>)
 
 * [Module 3: Analyzing the coronavirus spike protein](../coronavirus/home) (with software tutorials featuring <a href="http://prody.csb.pitt.edu" target="_blank">ProDy</a> and affiliated tools)
 
