@@ -15,6 +15,12 @@
 
 * Then reduce it down to 10 principal components.
 
+* Point out how low the resolution is for the images that we have, and that this can contribute to the issue. This is a feature, not a bug, as real datasets are often noisy.
+
+* Need to make an area under curve plot for different # of principal components.
+
+* Also, explore how changing the value of k used in k-NN can help.
+
 ## Tutorials
 
 * Need to explain how to install CellOrganizer
