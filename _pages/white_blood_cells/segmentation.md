@@ -5,7 +5,7 @@ sidebar:
  nav: "white_blood_cells"
 toc: true
 toc_sticky: true
-image: "../assets/images/cellorg_pca_graph_cell.png"
+image: "../assets/images/normal_adult_blood_smear.JPG"
 gallery:
   - url: ../assets/images/600px/neutrophil_binarized_green.png
     image_path: ../assets/images/neutrophil_binarized_green.png

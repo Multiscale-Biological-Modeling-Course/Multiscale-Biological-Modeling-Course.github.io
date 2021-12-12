@@ -5,7 +5,7 @@ sidebar:
  nav: "white_blood_cells"
 toc: true
 toc_sticky: true
-image: "../assets/images/cellorg_pca_graph_cell.png"
+image: "../assets/images/normal_adult_blood_smear.JPG"
 ---
 
 In a [previous tutorial](tutorial_nuclear_segmentation), we segmented and binarized a collection of WBC images. If you completed that tutorial, then you should see those images as a collection of .tiff files in your `BWImgs_1` folder inside your `WBC_PCAPipeline/Data` directory.
