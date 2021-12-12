@@ -1,6 +1,6 @@
 ---
 permalink: /white_blood_cells/home
-title: "Introduction: How Are Blood Cells Counted?"
+title: "Module 4: Training a Computer to Count White Blood Cells Automatically"
 description: Learn how to train a computer to identify cells in images and classify these images into categories.
 sidebar:
  nav: "white_blood_cells"
