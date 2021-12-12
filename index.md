@@ -56,6 +56,12 @@ If you are an instructor who is interested in adopting any or all of these mater
 
 This course was lovingly put together by a professor and a team of superlative students in Carnegie Mellon University's [Computational Biology Department](http://cbd.cmu.edu). You can meet us on our [Meet the Team](meet-the-team) page.
 
+## Acknowledgements
+
+This online course is a dissemination effort for the <a href="https://mmbios.pitt.edu" target="_blank">National Center for Multiscale Modeling of Biological Systems (MMBioS)</a>. It is graciously supported by the National Institutes of Health (grant ID: P41 GM103712).
+
+We are also grateful to Wendy Velasquez Ebanks and Ulani Qi, who provided additional work on the course during its conception.
+
 ## You might also enjoy...
 
 If you enjoy this course, then we would suggest some additional resources below.
@@ -73,9 +79,3 @@ If you are interested in additional open educational materials, we think you wou
 #### MMBioS Training Workshops
 
 If you are a biological modeling researcher and want to learn more about how the software resources presented here can be applied to your work, please check out the <a href="https://mmbios.pitt.edu/outreach/workshops" target="_blank">workshops</a> organized as part of the MMBioS project to which this course belongs.
-
-## Acknowledgements
-
-This online course is a dissemination effort for the <a href="https://mmbios.pitt.edu" target="_blank">National Center for Multiscale Modeling of Biological Systems (MMBioS)</a>. It is graciously supported by the National Institutes of Health (grant ID: P41 GM103712).
-
-We are also grateful to Wendy Velasquez Ebanks and Ulani Qi, who provided additional work on the course during its conception.
