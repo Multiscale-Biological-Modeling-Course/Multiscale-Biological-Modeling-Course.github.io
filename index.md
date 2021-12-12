@@ -1,7 +1,7 @@
 ---
 title: <em>Biological Modeling</em>
 classes: wide
-# layout: home
+layout: single
 description: A free course in biological modeling at multiple scales.
 image: "assets/images/gray_scott_jupyter_3.png"
 toc: true
