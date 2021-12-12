@@ -1,5 +1,5 @@
 ---
-title: "Biological Modeling: A Free Online Course"
+title: <em>Biological Modeling</em>
 classes: wide
 # layout: home
 description: A free course in biological modeling at multiple scales.
