@@ -1,5 +1,5 @@
 ---
-permalink: /white_blood_cells/training_classifier
+permalink: /white_blood_cells/training
 title: "Training a Classifier"
 sidebar:
  nav: "white_blood_cells"
