@@ -30,6 +30,12 @@ image: "../assets/images/normal_adult_blood_smear.JPG"
 
 * Appeal to final tutorial with results
 
+* Videos from Jen Golbeck
+
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/gfhGfnkypCY" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/V9PNyx5-kxM" frameborder="0" allowfullscreen></iframe>
+
 
 ### Notes to self
 
