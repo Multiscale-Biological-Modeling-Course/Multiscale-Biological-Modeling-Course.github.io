@@ -4,11 +4,11 @@ title: "Module 4: Training a Computer to Count White Blood Cells Automatically"
 description: Learn how to train a computer to identify cells in images and classify these images into categories.
 sidebar:
  nav: "white_blood_cells"
- header:
-   overlay_image: "../assets/images/cellorg_pca_graph_cell.png"
-   overlay_filter: 0.3
 image: "../assets/images/cellorg_pca_graph_cell.png"
 excerpt: "by Phillip Compeau (with software tutorials by Nicole Matamala)"
+header:
+  overlay_image: "../assets/images/cellorg_pca_graph_cell.png"
+  overlay_filter: 0.3
 author_profile: true # add author to page
 gallery:
   - url: ../assets/images/600px/neutrophil.png
