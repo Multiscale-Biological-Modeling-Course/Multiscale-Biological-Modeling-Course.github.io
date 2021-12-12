@@ -12,7 +12,7 @@ header:
 author_profile: true # add author to page
 ---
 
-# Introduction: Networks rule biology
+# Introduction: Networks rule (biology)
 
 In the [prologue](../prologue), we worked with a particle-based model that simulated the interactions of skin cells to produce complex Turing patterns. In this module, we will zoom into a much lower biological scale and model protein interactions, which occur on a molecular level. The scale of these interactions is tiny: a protein is typically on the order of about 10nm in diameter. (For comparison, a light microscope's highest resolution is about 2000 nm, and the diameter of a single human hair is about 100,000 nm.)
 

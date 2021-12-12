@@ -5,6 +5,7 @@ description: Learn how to train a computer to identify cells in images and class
 sidebar:
  nav: "white_blood_cells"
 image: "../assets/images/cellorg_pca_graph_cell.png"
+excerpt: "by Phillip Compeau (with software tutorials by Nicole Matamala)"
 author_profile: true # add author to page
 gallery:
   - url: ../assets/images/600px/neutrophil.png
@@ -21,7 +22,7 @@ gallery:
     title: "A lymphocyte with a small, round nucleus."
 ---
 
-<span style="font-size:larger;">by Phillip Compeau (software tutorials by Nicole Matamala)</span>
+# Introduction: how are blood cells counted?
 
 Your doctor sometimes wants to count your blood cells to ensure that they are within healthy ranges as part of a complete blood count. Blood cells consist of **red blood cells (RBCs)**, which transport oxygen via the hemoglobin protein, and **white blood cells (WBCs)**, which help identify and attack foreign cells as part of your immune system.
 

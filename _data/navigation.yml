@@ -45,7 +45,7 @@ prologue:
 motifs:
   - title: "Finding Motifs in Transcription Factor Networks"
     children:
-      - title: "Introduction: networks rule biology<br><br>"
+      - title: "Introduction: networks rule (biology)<br><br>"
         url: /motifs/home
       - title: "Transcription and DNA-protein binding<br><br>"
         url: /motifs/transcription

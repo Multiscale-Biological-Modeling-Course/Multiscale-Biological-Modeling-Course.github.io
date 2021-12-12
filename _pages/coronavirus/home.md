@@ -14,7 +14,7 @@ header:
 author_profile: true # add author to page
 ---
 
-# Introduction: A Tale of Two Doctors
+# Introduction: A tale of two doctors
 
 > One of the world's most important warning systems for a deadly new outbreak is a doctor's or nurse's recognition that some new disease is emerging and then sounding the alarm. It takes intelligence and courage to step up and say something like that, even in the best of circumstances.
 >
