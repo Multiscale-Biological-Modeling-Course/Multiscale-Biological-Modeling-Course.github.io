@@ -39,15 +39,15 @@ After building a model in a software tutorial, we will return to the main text a
 
 Our course contents are found below.
 
-* [Prologue: Random walks and Turing patterns](../prologue/)
+* [Prologue: Random walks and Turing patterns](../prologue/) (with software tutorials featuring <a href="https://mcell.org"target="_blank">MCell and CellBlender</a>)
 
-* [Module 1: Finding motifs in transcription factor networks](../motifs/home)
+* [Module 1: Finding motifs in transcription factor networks](../motifs/home) (with software tutorials featuring <a href="https://mcell.org"target="_blank">MCell and CellBlender</a>)
 
-* [Module 2: Unpacking E. coli's genius exploration algorithm](../chemotaxis/home)
+* [Module 2: Unpacking E. coli's genius exploration algorithm](../chemotaxis/home) (with software tutorials featuring <a href="http://bionetgen.org"target="_blank">BioNetGen</a>)
 
-* [Module 3: Analyzing the coronavirus spike protein](../coronavirus/home)
+* [Module 3: Analyzing the coronavirus spike protein](../coronavirus/home) (with software tutorials featuring <a href="http://prody.csb.pitt.edu" target="_blank">ProDy</a> and affiliated tools)
 
-* Module 4: Training a computer to count white blood cells automatically (coming soon!)
+* Module 4: Training a computer to count white blood cells automatically (with software tutorials featuring <a href="http://www.cellorganizer.org" target="_blank">CellOrganizer</a>) -- coming soon!
 
 ## Meet the team
 
@@ -69,7 +69,7 @@ We are also very grateful to Wendy Velasquez Ebanks and Ulani Qi, who provided a
 
 If you like this course, then we would suggest some additional resources below.
 
-#### Additional open educational materials in computational biology and programming
+### Additional open educational materials in computational biology and programming
 
 We think you would love some of the other free education projects developed by the project founder.  We list these resources below.
 
@@ -79,6 +79,6 @@ We think you would love some of the other free education projects developed by t
 
 * <a href="http://compeau.cbd.cmu.edu/programming-for-lovers/" target="_blank">Programming for Lovers</a>: An open course in introductory programming aimed at science students. The course is still in development.
 
-#### MMBioS Training Workshops
+### MMBioS Training Workshops
 
 If you are a biological modeling researcher and want to learn more about how the software resources presented here can be applied to your work, please check out the <a href="https://mmbios.pitt.edu/outreach/workshops" target="_blank">workshops</a> organized as part of the MMBioS project to which this course belongs.
