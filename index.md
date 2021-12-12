@@ -63,7 +63,10 @@ Whether you loved our course and would like to provide a testimonial, or you're 
 
 This online course is a training and dissemination effort for the <a href="https://mmbios.pitt.edu" target="_blank">National Center for Multiscale Modeling of Biological Systems (MMBioS)</a>. It is supported by the National Institutes of Health (grant ID: P41 GM103712).
 
+The cover image on Module 4 was created by Keith Chambers.
+
 We are also very grateful to Wendy Velasquez Ebanks and Ulani Qi, who provided additional work on the course during its conception.
+
 
 ## You might also enjoy...
 
