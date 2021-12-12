@@ -7,7 +7,7 @@ sidebar:
 image: "../assets/images/cellorg_pca_graph_cell.png"
 excerpt: "by Phillip Compeau (with software tutorials by Nicole Matamala)"
 header:
-  overlay_image: "../assets/images/cellorg_pca_graph_cell.png"
+  overlay_image: "../assets/images/monocyte.png"
   overlay_filter: 0.3
 author_profile: true # add author to page
 gallery:
