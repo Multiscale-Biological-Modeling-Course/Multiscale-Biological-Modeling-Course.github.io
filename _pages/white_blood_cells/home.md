@@ -4,6 +4,9 @@ title: "Introduction: How Are Blood Cells Counted?"
 description: Learn how to train a computer to identify cells in images and classify these images into categories.
 sidebar:
  nav: "white_blood_cells"
+ header:
+   overlay_image: "../assets/images/cellorg_pca_graph_cell.png"
+   overlay_filter: 0.3
 image: "../assets/images/cellorg_pca_graph_cell.png"
 excerpt: "by Phillip Compeau (with software tutorials by Nicole Matamala)"
 author_profile: true # add author to page
