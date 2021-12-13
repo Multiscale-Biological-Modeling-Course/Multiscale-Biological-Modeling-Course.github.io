@@ -70,7 +70,7 @@ For another example, say that we design a COVID test that always comes back nega
 **STOP:** What other metrics could we use for measuring the success of a classifier?
 {: .notice--primary}
 
-## Precision and recall
+## Recall, specificity, and precision
 
 To motivate our discussion of other measures of classifier success, let's stay in the realm of medical tests, which can be thought of as two-class classifiers.
 
@@ -91,29 +91,31 @@ A hypothetical COVID test confusion matrix.
 
 Once again, this test has lower accuracy than one that returns negative for all individuals, but now we will provide metrics for which it is superior.
 
-The **recall** (a.k.a. **sensitivity**) of a two-class classifier is the percentage of positive cases that the test correctly identifies. That is, the recall is the ratio of true positives over the sum of the true positives and false negatives (found )
+The **recall** (a.k.a. **sensitivity**) of a two-class classifier is the percentage of positive cases that the test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives (found by summing the top row of the confusion matrix). For our hypothetical COVID confusion matrix in the figure above, the recall is 1,000/1,500 = 66.7%. The recall ranges from 0 to 1, with larger values indicating that the test is "sensitive", meaning that it can identify true positives out of patients who actually are positive.
 
-Test Twitter embed
+* **STOP:** How could we trick a test to have recall close to 1?
+{: .notice--primary}
+
+
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">🎨 Finally got around to adding all my <a href="https://twitter.com/procreateapp">@procreateapp</a> creations with time lapse videos <a href="https://t.co/1nNbkefC3L">https://t.co/1nNbkefC3L</a> <a href="https://t.co/gcNLJoJ0Gn">pic.twitter.com/gcNLJoJ0Gn</a></p>&mdash; Michael Rose (@mmistakes) <a href="https://twitter.com/mmistakes/status/662678050795094016">November 6, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">🎨 Finally got around to adding all my <a href="https://twitter.com/procreateapp">@procreateapp</a> creations with time lapse videos <a href="https://t.co/1nNbkefC3L">https://t.co/1nNbkefC3L</a> <a href="https://t.co/gcNLJoJ0Gn">pic.twitter.com/gcNLJoJ0Gn</a></p>&mdash; Michael Rose (@mmistakes) <a href="https://twitter.com/kylegriffin1/status/1263518696309313537">November 6, 2015</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">🎨<a href="https://twitter.com/kylegriffin1/status/1263518696309313537">November 6, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-* The recall (a.k.a. sensitivity) of a test is the percentage of cases that the test correctly identifies:
-#true positives /(#true positives + #false negatives)
 
-* STOP: How could we ”trick” a test to have recall close to 1?
-
-* Answer: Report basically everything as positive, so that there are rarely ever any false negatives.
 
 * The precision of a test is the percentage of its positive tests that are correct:
 #true positives / (#true positives + #false positives)
 
+Just like accuracy, all three of the metrics introduced in this section are not perfect
+
+* Answer for recall: Report basically everything as positive, so that there are rarely ever any false negatives.
+
 * STOP: How could we ”trick” a test to have precision close to 1?
 
-* Answer: Be extremely stingy in the decisions we make, only reporting a positive test when we are 100% sure (and causing many false negatives).
+* Answer for precision: Be extremely stingy in the decisions we make, only reporting a positive test when we are 100% sure (and causing many false negatives).
 
 * When we move toward multiple classes, we consider each class individually and assume that identifying an element as part of the class corresponds to a "positive".
 
