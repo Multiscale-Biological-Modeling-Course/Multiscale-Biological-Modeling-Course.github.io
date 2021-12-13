@@ -118,7 +118,11 @@ You may find all these terms confusing and difficult to keep straight. You are n
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Here is a quote from Trump:<br><br>"I tested very positively in another sense so— this morning. Yeah. I tested positively toward negative, right. So. I tested perfectly this morning. Meaning I tested negative."<a href="https://twitter.com/kylegriffin1/status/1263518696309313537">November 6, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-An entire generation of scientists agree with you and make copious trips to the <a href="https://en.wikipedia.org/wiki/Precision_and_recall#Definition_(classification_context)" target="_blank">Wikipedia page</a> describing these metrics as well as others.
+<iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/AzC0rGJwMXs" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/1G1dfLF8-jo" frameborder="0" allowfullscreen></iframe>
+
+An entire generation of scientists make copious trips to the <a href="https://en.wikipedia.org/wiki/Precision_and_recall#Definition_(classification_context)" target="_blank">Wikipedia page</a> describing these metrics as well as others. It's called a confusion matrix for a reason…
 
 ## Extending metrics to multiclass classifiers
 
