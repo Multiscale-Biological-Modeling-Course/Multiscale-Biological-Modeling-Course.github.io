@@ -104,15 +104,6 @@ The
 
 
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">🎨 Finally got around to adding all my <a href="https://twitter.com/procreateapp">@procreateapp</a> creations with time lapse videos <a href="https://t.co/1nNbkefC3L">https://t.co/1nNbkefC3L</a> <a href="https://t.co/gcNLJoJ0Gn">pic.twitter.com/gcNLJoJ0Gn</a></p>&mdash; Michael Rose (@mmistakes) <a href="https://twitter.com/mmistakes/status/662678050795094016">November 6, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<!--
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Here is a quote from Trump:<br><br>"I tested very positively in another sense so— this morning. Yeah. I tested positively toward negative, right. So. I tested perfectly this morning. Meaning I tested negative."<a href="https://twitter.com/kylegriffin1/status/1263518696309313537">November 6, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
--->
-
-
 
 * The precision of a test is the percentage of its positive tests that are correct:
 #true positives / (#true positives + #false positives)
@@ -158,3 +149,9 @@ Just like accuracy, all three of the metrics introduced in this section are not 
 * We could also try a different classifier (we encourage you to do so). One idea is to use a cost-sensitive classifier that charges a penalty for assigning a point to the wrong class and varies this penalty depending on the correct class and where it was assigned. For example, we could charge a very large penalty for assigning a monocyte as one of the other two classes, which would force the classifier to assign more monocytes. This approach doesn't work with the k-NN classifier as currently presented because there is no way to incorporate cost into it.
 
 [^Mistry]: Mistry DA, Wang JY, Moeser ME, Starkey T, Lee LYW 2021. A systematic review of the sensitivity and specificity of lateral flow devices in the detection of SARS-CoV-2. BMC Infectious Diseases 21(1):828. [Available online](https://doi.org/10.1186/s12879-021-06528-3)
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">🎨 Finally got around to adding all my <a href="https://twitter.com/procreateapp">@procreateapp</a> creations with time lapse videos <a href="https://t.co/1nNbkefC3L">https://t.co/1nNbkefC3L</a> <a href="https://t.co/gcNLJoJ0Gn">pic.twitter.com/gcNLJoJ0Gn</a></p>&mdash; Michael Rose (@mmistakes) <a href="https://twitter.com/mmistakes/status/662678050795094016">November 6, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Here is a quote from Trump:<br><br>"I tested very positively in another sense so— this morning. Yeah. I tested positively toward negative, right. So. I tested perfectly this morning. Meaning I tested negative."<a href="https://twitter.com/kylegriffin1/status/1263518696309313537">November 6, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
