@@ -70,7 +70,7 @@ For another example, say that we design a COVID test that always comes back nega
 **STOP:** What other metrics could we use for measuring the success of a classifier?
 {: .notice--primary}
 
-## Recall, specificity, and precision
+## Recall, specificity, and precision of a medical test
 
 To motivate our discussion of other measures of classifier success, let's stay in the realm of medical tests, which can be thought of as two-class classifiers.
 
@@ -98,26 +98,29 @@ For our hypothetical COVID confusion matrix in the figure above, the recall is 1
 **STOP:** How could we trick a test to have recall close to 1?
 {: .notice--primary}
 
+The **specificity** of a test is an analogous metric for patients whose actual status is negative. It measures the ratio of true negatives to the sum of true negatives and false positives (found by summing the second row of our confusion matrix). For our hypothetical COVID test confusion matrix, the test specificity is 198,000/(198,000 + 2,000) = 99%.
 
+**STOP:** How could we trick a test to have specificity close to 1?
+{: .notice--primary}
 
-The
+Finally, the **precision** of a test is the percentage of positive tests that are correct, formed by taking the ratio of true positives to the sum of true positives and false positives (found by summing the first column of the confusion matrix). For example, the precision of our hypothetical COVID test is 1,000/(1,000 + 2,000) = 33.3%.
 
+**STOP:** How could we trick a test to have precision close to 1?
+{: .notice--primary}
 
-
-
-* The precision of a test is the percentage of its positive tests that are correct:
-#true positives / (#true positives + #false positives)
-
-Just like accuracy, all three of the metrics introduced in this section are not perfect
-
-* Answer for recall: Report basically everything as positive, so that there are rarely ever any false negatives.
-
-* STOP: How could we ”trick” a test to have precision close to 1?
-
-* Answer for precision: Be extremely stingy in the decisions we make, only reporting a positive test when we are 100% sure (and causing many false negatives).
+Just like accuracy, all three of the metrics introduced in this section are not perfect, and can be fooled by silly tests that, for example, always return positive or negative. However, a frivolous test achieving all of these metrics at the same time is not possible.
 
 **STOP:** Compute the recall, specificity, and precision of the dummy COVID test that always returns negative.
 {: .notice--primary}
+
+You may find all these terms confusing and difficult to keep straight. You are not alone!
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Here is a quote from Trump:<br><br>"I tested very positively in another sense so— this morning. Yeah. I tested positively toward negative, right. So. I tested perfectly this morning. Meaning I tested negative."<a href="https://twitter.com/kylegriffin1/status/1263518696309313537">November 6, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+An entire generation of scientists agree with you and make copious trips to the <a href="https://en.wikipedia.org/wiki/Precision_and_recall#Definition_(classification_context)" target="_blank">Wikipedia page</a> describing these metrics as well as others.
+
+## Extending metrics to multiclass classifiers
 
 * When we move toward multiple classes, we consider each class individually and assume that identifying an element as part of the class corresponds to a "positive".
 
@@ -151,7 +154,4 @@ Just like accuracy, all three of the metrics introduced in this section are not 
 [^Mistry]: Mistry DA, Wang JY, Moeser ME, Starkey T, Lee LYW 2021. A systematic review of the sensitivity and specificity of lateral flow devices in the detection of SARS-CoV-2. BMC Infectious Diseases 21(1):828. [Available online](https://doi.org/10.1186/s12879-021-06528-3)
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">🎨 Finally got around to adding all my <a href="https://twitter.com/procreateapp">@procreateapp</a> creations with time lapse videos <a href="https://t.co/1nNbkefC3L">https://t.co/1nNbkefC3L</a> <a href="https://t.co/gcNLJoJ0Gn">pic.twitter.com/gcNLJoJ0Gn</a></p>&mdash; Michael Rose (@mmistakes) <a href="https://twitter.com/mmistakes/status/662678050795094016">November 6, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Here is a quote from Trump:<br><br>"I tested very positively in another sense so— this morning. Yeah. I tested positively toward negative, right. So. I tested perfectly this morning. Meaning I tested negative."<a href="https://twitter.com/kylegriffin1/status/1263518696309313537">November 6, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
