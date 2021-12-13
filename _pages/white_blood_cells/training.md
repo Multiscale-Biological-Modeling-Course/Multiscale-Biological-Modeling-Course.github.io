@@ -25,11 +25,77 @@ The most common solution is called **cross validation**, in which we divide our 
 
 The case in which *f* is equal to the number of points in our dataset is called **leave one out cross validation**. This approach amounts to, for every point in the dataset, pretending that we do not know its label, using the classification algorithm to assign it a class, and then comparing this prediction against the known class.
 
+## Quantifying the success of a classifier with accuracy
 
+* Before we apply cross validation to WBC images, we need to do a better job of answering "How good did the classifier do?"
 
-* Appeal to final tutorial with results
+* This probably seems like an easy question to answer, but it's packed with pitfalls.
 
-* Videos from Jen Golbeck
+* Let's return to the iris flower dataset and see how k-NN does on this dataset.
+
+* Show the confusion matrix since it provides an excellent way of visualizing the results.
+
+* Define accuracy. What is the accuracy of the iris approach? Easily inferrable from the confusion matrix.
+
+* OK, so we're done! Great! But if you're in a smarmy mood, you could design a "classifier" that produces the following confusion matrix.
+
+* Show confusion matrix in which we classify everything as a granulocyte. What is its accuracy? 259/345 = 84.3%. However, we would never consider this to be a good approach.
+
+* Show a different confusion matrix that has a slightly worse accuracy. But this is much better because the accuracy for each class is high -- instead of being zero for two of the classes!
+
+* This is comparable to medical testing. We could design a test for COVID that always comes back negative. If 1% of the population is actually COVID-positive, then the test is 99% accurate! But it's a horrible test.
+
+## Precision and recall
+
+* To motivate other measures of the success of a classifier, let's stay in the world of a medical test like a COVID test, in which there are just two classes for each patient.
+
+* Define true positive, true negative, false positive, and false negative.
+
+* Show figure that illustrates this concept.
+
+* Need hypothetical "confusion matrix" for a COVID test. (Ideally it would have less than 99% accuracy but is more practical.)
+
+* The recall (a.k.a. sensitivity) of a test is the percentage of cases that the test correctly identifies:
+#true positives /(#true positives + #false negatives)
+
+* STOP: How could we ”trick” a test to have recall close to 1?
+
+* Answer: Report basically everything as positive, so that there are rarely ever any false negatives.
+
+* The precision of a test is the percentage of its positive tests that are correct:
+#true positives / (#true positives + #false positives)
+
+* STOP: How could we ”trick” a test to have precision close to 1?
+
+* Answer: Be extremely stingy in the decisions we make, only reporting a positive test when we are 100% sure (and causing many false negatives).
+
+* When we move toward multiple classes, we consider each class individually and assume that identifying an element as part of the class corresponds to a "positive".
+
+* Show computations of precision and recall for the iris flower data set and each individual class.
+
+* STOP: Compute precision and recall for the confusion matrix that is so wildly incorrect in which everything is a granulocyte.
+
+* Conclusion is that accuracy can be helpful, but only in concert with precision and recall.
+
+* Link to final tutorial
+
+* Reminder in tutorial to complete the analysis for cell type as well.
+
+## Results of applying a classifier to the WBC shape space
+
+* Return from this and show the best results that we can obtain with k-NN.
+
+* Also show type results.
+
+* However, we still have a problem, which is that the approach does very poorly on monocytes.
+
+* The problem is that the class imbalance means that it is much more rare to encounter a monocyte or lymphocyte, so although there is certainly signal in our dataset, random noise means that granulocytes might show up as nearby to a monocyte or lymphocyte.
+
+* There are a variety of approaches to try and fix this. We could throw out some of our data, but our dataset is not that large to begin with, and it would feel weird to throw some out.
+
+* We could also try a different classifier (we encourage you to do so). One idea is to use a cost-sensitive classifier that charges a penalty for assigning a point to the wrong class and varies this penalty depending on the correct class and where it was assigned. For example, we could charge a very large penalty for assigning a monocyte as one of the other two classes, which would force the classifier to assign more monocytes. This approach doesn't work with the k-NN classifier as currently presented because there is no way to incorporate cost into it.
+
+* Videos from Jen Golbeck -- these need to go into the tutorial
 
 <iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/gfhGfnkypCY" frameborder="0" allowfullscreen></iframe>
 
@@ -38,12 +104,6 @@ The case in which *f* is equal to the number of points in our dataset is called 
 
 ### Notes to self
 
-* Should we show a k-NN "decision boundary"? Perhaps for the iris dataset? NO
+* We have been doing ML all along -- meme with cake?
 
 * Would be good to have the trade-off between using different values of *k*, showing a plot of accuracy.
-
-* Need to adapt the discussion of true and false positives and ROC/AUC curve from our PreCollege slides. Use COVID test as an example.
-
-* Could also discuss bootstrapping, but its not clear how we should adapt the Monte Carlo simulation aspect of bootstrapping here.
-
-* Note somewhere that although the input variables are quantitative, the desired output is qualitative.
