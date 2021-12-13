@@ -21,13 +21,13 @@ header:
 
 ## Welcome!
 
-Welcome to our free course, *Biological Modeling*!
+Welcome to *Biological Modeling*!
 
 Have you ever wondered why zebras have stripes? Have you ever wondered how your cells can quickly react to their environment and perform complex tasks without intelligence? Have you ever wondered why the original SARS coronavirus fizzled out but SARS-CoV-2 has spread like wildfire around the planet? Have you ever wondered how  algorithms can be trained to “see” cells as well as a human?
 
 What these questions share is that they can start to be answered by modeling biological systems at multiple "scales" of resolution, from the microscopic to the molecular.
 
-In this course, we will build models of biological systems that are relatively simple but nevertheless provide us with deep, fascinating insights into how those systems operate.
+In this free course, we will build models of biological systems that are relatively simple but nevertheless provide us with deep, fascinating insights into how those systems operate.
 
 ## Course structure and contents
 
