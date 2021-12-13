@@ -135,12 +135,6 @@ o	If we’re given different types of cells, can we differentiate them based on 
 o	(Murphy 2015) Cells and their nuclei and organelles change shape and behavior over time or have noise or differ between different cells of the same category due to differences between them.  How can we differentiate them?
 •	Both of these tasks require a computer if we are going to do so for thousands of images … but how?
 
-•	NEED BIBLIOGRAPHY NOTES
-o	Median axis was Blum 1973, adapted in Zhao and Murphy 2007
-o	Beg et al. 2005 gave diffeomorphic distance
-o	Lloyd and k-means
-o	Multidimensional scaling
-
 -->
 
 ## Kicking tires on our approach
