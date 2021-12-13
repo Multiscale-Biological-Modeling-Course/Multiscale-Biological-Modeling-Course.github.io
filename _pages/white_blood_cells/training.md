@@ -72,9 +72,9 @@ For another example, say that we design a COVID test that always comes back nega
 
 ## Precision and recall
 
-* To motivate other measures of the success of a classifier, let's stay in the world of a medical test like a COVID test, in which there are just two classes for each patient.
+To motivate our discussion of other measures of classifier success, let's stay in the realm of medical tests, which can be thought of as two-class classifiers.
 
-* Define true positive, true negative, false positive, and false negative.
+First, we define some terms. A **true positive** is a positive test in a patient that has the disease; a **false positive** is a positive test in a patient that does not have the disease; a **true negative** is a negative test in a patient that does not have the disease; and a **false negative** is a negative test in a patient that does have the disease. The locations of these four terms in a confusion matrix are shown in the table below.
 
 * Show figure that illustrates this concept.
 
