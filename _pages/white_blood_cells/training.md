@@ -91,17 +91,23 @@ A hypothetical COVID test confusion matrix.
 
 Once again, this test has lower accuracy than one that returns negative for all individuals, but now we will provide metrics for which it is superior.
 
-The **recall** (a.k.a. **sensitivity**) of a two-class classifier is the percentage of positive cases that the test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives (found by summing the top row of the confusion matrix). For our hypothetical COVID confusion matrix in the figure above, the recall is 1,000/1,500 = 66.7%. The recall ranges from 0 to 1, with larger values indicating that the test is "sensitive", meaning that it can identify true positives out of patients who actually are positive.
+The **recall** (a.k.a. **sensitivity**) of a two-class classifier is the percentage of positive cases that the test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives (found by summing the top row of the confusion matrix).
 
-* **STOP:** How could we trick a test to have recall close to 1?
+For our hypothetical COVID confusion matrix in the figure above, the recall is 1,000/1,500 = 66.7%. The recall ranges from 0 to 1, with larger values indicating that the test is "sensitive", meaning that it can identify true positives out of patients who actually are positive.
+
+**STOP:** How could we trick a test to have recall close to 1?
 {: .notice--primary}
+
+
+
+The
 
 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">🎨 Finally got around to adding all my <a href="https://twitter.com/procreateapp">@procreateapp</a> creations with time lapse videos <a href="https://t.co/1nNbkefC3L">https://t.co/1nNbkefC3L</a> <a href="https://t.co/gcNLJoJ0Gn">pic.twitter.com/gcNLJoJ0Gn</a></p>&mdash; Michael Rose (@mmistakes) <a href="https://twitter.com/mmistakes/status/662678050795094016">November 6, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">🎨<a href="https://twitter.com/kylegriffin1/status/1263518696309313537">November 6, 2015</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Here is a quote from Trump:<br><br>"I tested very positively in another sense so— this morning. Yeah. I tested positively toward negative, right. So. I tested perfectly this morning. Meaning I tested negative."<a href="https://twitter.com/kylegriffin1/status/1263518696309313537">November 6, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
@@ -117,11 +123,17 @@ Just like accuracy, all three of the metrics introduced in this section are not 
 
 * Answer for precision: Be extremely stingy in the decisions we make, only reporting a positive test when we are 100% sure (and causing many false negatives).
 
+**STOP:** Compute the recall, specificity, and precision of the dummy COVID test that always returns negative.
+{: .notice--primary}
+
 * When we move toward multiple classes, we consider each class individually and assume that identifying an element as part of the class corresponds to a "positive".
 
 * Show computations of precision and recall for the iris flower data set and each individual class.
 
-* STOP: Compute precision and recall for the confusion matrix that is so wildly incorrect in which everything is a granulocyte.
+
+
+**STOP:** Compute the recall, specificity, and precision for the confusion matrix that labels everything a granulocyte.
+{: .notice--primary}
 
 * Conclusion is that accuracy can be helpful, but only in concert with precision and recall.
 
