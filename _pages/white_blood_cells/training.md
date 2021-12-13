@@ -27,11 +27,21 @@ The case in which *f* is equal to the number of points in our dataset is called 
 
 ## Quantifying the success of a classifier with accuracy
 
-* Before we apply cross validation to WBC images, we need to do a better job of answering "How good did the classifier do?"
+Before we can apply cross validation to WBC images, we should know how to answer the question, "How well did our classifier do?" This question may seem easy to answer, but we will see that pitfalls are lurking.
 
-* This probably seems like an easy question to answer, but it's packed with pitfalls.
+Let us return to our example iris flower dataset. The figure below shows the result of applying k-NN to this dataset, using *k* = 1 and ten folds (meaning that since there are 150 flowers, each fold contains 15 flowers).
 
-* Let's return to the iris flower dataset and see how k-NN does on this dataset.
+
+
+
+| *Iris setosa* | *Iris versicolor* | *Iris virginica* |
+| :---: |  :----: | :---: |
+| 50 | 0 | 0 |
+| 0 | 47 | 3 |
+| 0 | 4 | 46 |
+
+**STOP:** Why did we not need to apply a dimension reduction like PCA to this dataset before applying a classifier?
+{: .notice--primary}
 
 * Show the confusion matrix since it provides an excellent way of visualizing the results.
 

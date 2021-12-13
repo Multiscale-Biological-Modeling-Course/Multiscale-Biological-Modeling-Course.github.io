@@ -175,7 +175,7 @@ o	(Murphy 2015) Cells and their nuclei and organelles change shape and behavior 
 
 * And yet here is their confusion matrix. SHOW -- and this paper was on the cover of *Nature*!
 
-* I bet you feel a bit better about our results on WBC image analysis! So the approach does improve over a human, but we aren't any good at solving this problem either. This is the ultimate hope of machine learning algorithms -- that they not just beat us, but they do so in resounding fashion.
+* I bet you feel a bit better about our results on WBC nuclear image analysis! So the approach does improve over a human, but we aren't any good at solving this problem either. This is the ultimate hope of machine learning algorithms -- that they not just beat us, but they do so in resounding fashion.
 
 ## Wrapping up
 
