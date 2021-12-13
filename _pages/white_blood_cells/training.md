@@ -29,10 +29,9 @@ The case in which *f* is equal to the number of points in our dataset is called 
 
 Before we can apply cross validation to WBC images, we should know how to answer the question, "How well did our classifier do?" This question may seem easy to answer, but we will see that pitfalls are lurking.
 
-Let us return to our example iris flower dataset. The figure below shows the result of applying k-NN to this dataset, using *k* = 1 and ten folds (meaning that since there are 150 flowers, each fold contains 15 flowers).
+Let us return to our example iris flower dataset. The table below shows the result of applying k-NN to this dataset, using *k* = 1 and ten folds (meaning that since there are 150 flowers, each fold contains 15 flowers). This table is called a **confusion matrix**, because it makes it easy to see if we are "confusing" the assignment of a flower to the wrong class.
 
-
-
+To read a confusion matrix, consider the table below. Rows correspond to true classes, and columns correspond to predicted classes. For example, consider the second row, which corresponds to the flowers that we know are *Iris versicolor*. Our classifier predicted that none of these flowers were *Iris setosa*, that 47 of these flowers were *Iris versicolor*, and that three of the flowers were *Iris virginica*. Therefore, it correctly predicted the class of 47 of the 50 total *Iris versicolor* flowers.
 
 | *Iris setosa* | *Iris versicolor* | *Iris virginica* |
 | :---: |  :----: | :---: |
@@ -40,20 +39,36 @@ Let us return to our example iris flower dataset. The figure below shows the res
 | 0 | 47 | 3 |
 | 0 | 4 | 46 |
 
-**STOP:** Why did we not need to apply a dimension reduction like PCA to this dataset before applying a classifier?
+**STOP:** Why did we not need to apply a dimension reduction like PCA to the iris flower dataset before applying a classifier?
 {: .notice--primary}
 
-* Show the confusion matrix since it provides an excellent way of visualizing the results.
+We define the **accuracy** of a classifier as the fraction of objects that it correctly identifies out of the total. The accuracy is easily computable from the confusion matrix; for the above iris flower exmap k-NN has an accuracy of (50 + 47 + 46)/150 = 95.3%.
 
-* Define accuracy. What is the accuracy of the iris approach? Easily inferrable from the confusion matrix.
+It may seem that we are finished, that the accuracy gives us everything we need. But if you were in a smarmy mood, then you might design a classifier that produces the following confusion matrix for our WBC dataset.
 
-* OK, so we're done! Great! But if you're in a smarmy mood, you could design a "classifier" that produces the following confusion matrix.
+| Granulocyte | Monocyte | Lymphocyte |
+| :---: |  :----: | :---: |
+| 291 | 0 | 0 |
+| 21 | 0 | 0 |
+| 33 | 0 | 0 |
 
-* Show confusion matrix in which we classify everything as a granulocyte. What is its accuracy? 259/345 = 84.3%. However, we would never consider this to be a good approach.
+**STOP:** What is the accuracy of this classifier?
+{: .notice--primary}
 
-* Show a different confusion matrix that has a slightly worse accuracy. But this is much better because the accuracy for each class is high -- instead of being zero for two of the classes!
+Your clown classifier blindly assigned every image in the dataset to be a granulocyte. But its accuracy is 84.3%! To make matters worse, below is a confusion matrix for a hypothetical classifier on the same dataset that is clearly better. And yet its accuracy would be only 79.7%.
 
-* This is comparable to medical testing. We could design a test for COVID that always comes back negative. If 1% of the population is actually COVID-positive, then the test is 99% accurate! But it's a horrible test.
+| Granulocyte | Monocyte | Lymphocyte |
+| :---: |  :----: | :---: |
+| 232 | 25 | 34 |
+| 2 | 17 | 2 |
+| 6 | 1 | 26 |
+
+This particular issue arises because our dataset has *imbalanced* classes, a common issue in data science. As a result, only reporting a classifier's accuracy may be misleading if the classifier does not correctly predict many members from smaller classes.
+
+For another example, say that we design a COVID test that always comes back negative. If 1% of the population at a given point in time is COVID-positive, then we could report that our test is 99% accurate. But we would fail to get this test approved for widespread use because it performs horribly on COVID-positive individuals.
+
+**STOP:** What other metrics could we use for measuring the success of a classifier?
+{: .notice--primary}
 
 ## Precision and recall
 
