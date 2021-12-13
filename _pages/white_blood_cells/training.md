@@ -95,11 +95,7 @@ The case in which *f* is equal to the number of points in our dataset is called 
 
 * We could also try a different classifier (we encourage you to do so). One idea is to use a cost-sensitive classifier that charges a penalty for assigning a point to the wrong class and varies this penalty depending on the correct class and where it was assigned. For example, we could charge a very large penalty for assigning a monocyte as one of the other two classes, which would force the classifier to assign more monocytes. This approach doesn't work with the k-NN classifier as currently presented because there is no way to incorporate cost into it.
 
-* Videos from Jen Golbeck -- these need to go into the tutorial
 
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/gfhGfnkypCY" frameborder="0" allowfullscreen></iframe>
-
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/V9PNyx5-kxM" frameborder="0" allowfullscreen></iframe>
 
 
 ### Notes to self

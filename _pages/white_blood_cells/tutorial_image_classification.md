@@ -47,3 +47,13 @@ Remove the `.csv` extension in the `File Name` field, and click `Save`.
 As a result, our PCA pipeline coordinates have now been converted to the file format that Weka accepts for further classification. This file should be saved as `WBC_PCA.arff` in the `Step4_Visualization` subfolder of the `WBC_CellClass` folder.
 
 Now that we have the PCA dataset in the correct format, click `Exit` to return to the Weka home screen.
+
+<!--
+* We will lose some information present in the original data, but the more structure that is present in the data, the less information that we will lose. -- something about the percentage of variation in the data that can be explained by the multiple dimensions?
+
+* Videos from Jen Golbeck -- these need to go into the tutorial
+
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/gfhGfnkypCY" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/V9PNyx5-kxM" frameborder="0" allowfullscreen></iframe>
+-->
