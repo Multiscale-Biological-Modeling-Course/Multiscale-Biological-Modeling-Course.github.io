@@ -113,15 +113,13 @@ Just like accuracy, all three of the metrics introduced in this section are not 
 **STOP:** Compute the recall, specificity, and precision of the dummy COVID test that always returns negative.
 {: .notice--primary}
 
-You may find all these terms confusing and difficult to keep straight. You are not alone!
+You may find all these terms confusing and difficult to keep straight. You are not alone! An entire generation of scientists make copious trips to the <a href="https://en.wikipedia.org/wiki/Precision_and_recall#Definition_(classification_context)" target="_blank">Wikipedia page</a> describing these metrics as well as others. It's called a confusion matrix for a reason…
 
 <iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/6gJdf7LyGpg" frameborder="0" allowfullscreen></iframe>
 
 <iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/bv26dLnbi9g" frameborder="0" allowfullscreen></iframe>
 
 <iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/1G1dfLF8-jo" frameborder="0" allowfullscreen></iframe>
-
-An entire generation of scientists make copious trips to the <a href="https://en.wikipedia.org/wiki/Precision_and_recall#Definition_(classification_context)" target="_blank">Wikipedia page</a> describing these metrics as well as others. It's called a confusion matrix for a reason…
 
 ## Extending metrics to multiclass classifiers
 
