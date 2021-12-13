@@ -80,13 +80,25 @@ First, we define some terms. A **true positive** is a positive test in a patient
 A visualization of where true positives, true positives, true negatives, and false negatives are found in the confusion matrix corresponding to a medical test. Correct predictions are shown in green, and incorrect predictions are shown in red.
 {: style="font-size: medium;"}
 
-To illustrate our points, we will use the hypothetical confusion matrix for a COVID test shown in the figure below.
+To illustrate our points, we will use the hypothetical confusion matrix for a COVID test shown in the figure below. We used a hypothetical confusion matrix because results for COVID tests, even the same type of test like a lateral flow test, can vary wildly.[^Mistry]
 
 [![image-center](../assets/images/600px/medical_test_confusion_matrix_hypothetical.png){: .align-center}](../assets/images/medical_test_confusion_matrix_hypothetical.png)
-Caption.
+A hypothetical COVID test confusion matrix.
 {: style="font-size: medium;"}
 
-* Need hypothetical "confusion matrix" for a COVID test. (Ideally it would have less than 99% accuracy but is more practical.)
+**STOP:** What is the accuracy of this test? How does it compare to the accuracy of a dummy test that returns negative for everyone in the population?
+{: .notice--primary}
+
+Note that the accuracy of this test is
+
+Test Twitter embed
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">🎨 Finally got around to adding all my <a href="https://twitter.com/procreateapp">@procreateapp</a> creations with time lapse videos <a href="https://t.co/1nNbkefC3L">https://t.co/1nNbkefC3L</a> <a href="https://t.co/gcNLJoJ0Gn">pic.twitter.com/gcNLJoJ0Gn</a></p>&mdash; Michael Rose (@mmistakes) <a href="https://twitter.com/mmistakes/status/662678050795094016">November 6, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+This post tests Twitter Embeds.
+
+* Show accuracy
 
 * The recall (a.k.a. sensitivity) of a test is the percentage of cases that the test correctly identifies:
 #true positives /(#true positives + #false negatives)
@@ -128,11 +140,4 @@ Caption.
 
 * We could also try a different classifier (we encourage you to do so). One idea is to use a cost-sensitive classifier that charges a penalty for assigning a point to the wrong class and varies this penalty depending on the correct class and where it was assigned. For example, we could charge a very large penalty for assigning a monocyte as one of the other two classes, which would force the classifier to assign more monocytes. This approach doesn't work with the k-NN classifier as currently presented because there is no way to incorporate cost into it.
 
-
-
-
-### Notes to self
-
-* We have been doing ML all along -- meme with cake?
-
-* Would be good to have the trade-off between using different values of *k*, showing a plot of accuracy.
+[^Mistry]: Mistry DA, Wang JY, Moeser ME, Starkey T, Lee LYW 2021. A systematic review of the sensitivity and specificity of lateral flow devices in the detection of SARS-CoV-2. BMC Infectious Diseases 21(1):828. [Available online](https://doi.org/10.1186/s12879-021-06528-3)

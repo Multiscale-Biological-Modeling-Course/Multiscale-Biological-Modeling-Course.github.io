@@ -21,6 +21,10 @@ gallery:
     title: "A lymphocyte with a small, round nucleus."
 ---
 
+## Story about phone
+
+* We have been doing ML all along -- meme with cake?
+
 ## point about cellorganizer
 
 * Point out other neat applications of CellOrganizer. Like using a Ferrari to drive to the supermarket.
