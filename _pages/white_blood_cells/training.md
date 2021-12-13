@@ -25,7 +25,7 @@ The most common solution is called **cross validation**, in which we divide our 
 
 The case in which *f* is equal to the number of points in our dataset is called **leave one out cross validation**. This approach amounts to, for every point in the dataset, pretending that we do not know its label, using the classification algorithm to assign it a class, and then comparing this prediction against the known class.
 
-## Quantifying the success of a classifier with accuracy
+## A first attempt at quantifying the success of a classifier
 
 Before we can apply cross validation to WBC images, we should know how to answer the question, "How well did our classifier do?" This question may seem easy to answer, but we will see that pitfalls are lurking.
 
@@ -95,17 +95,11 @@ The **recall** (a.k.a. **sensitivity**) of a two-class classifier is the percent
 
 For our hypothetical COVID confusion matrix in the figure above, the recall is 1,000/1,500 = 66.7%. The recall ranges from 0 to 1, with larger values indicating that the test is "sensitive", meaning that it can identify true positives out of patients who actually are positive.
 
-**STOP:** How could we trick a test to have recall close to 1?
-{: .notice--primary}
-
 The **specificity** of a test is an analogous metric for patients whose actual status is negative. It measures the ratio of true negatives to the sum of true negatives and false positives (found by summing the second row of our confusion matrix). For our hypothetical COVID test confusion matrix, the test specificity is 198,000/(198,000 + 2,000) = 99%.
-
-**STOP:** How could we trick a test to have specificity close to 1?
-{: .notice--primary}
 
 Finally, the **precision** of a test is the percentage of positive tests that are correct, formed by taking the ratio of true positives to the sum of true positives and false positives (found by summing the first column of the confusion matrix). For example, the precision of our hypothetical COVID test is 1,000/(1,000 + 2,000) = 33.3%.
 
-**STOP:** How could we trick a test to have precision close to 1?
+**STOP:** How could we trick a test to have recall close to 1? What about specificity? Precision?
 {: .notice--primary}
 
 Just like accuracy, all three of the metrics introduced in this section are not perfect, and can be fooled by silly tests that, for example, always return positive or negative. However, a frivolous test achieving all of these metrics at the same time is not possible.
@@ -121,7 +115,7 @@ You may find all these terms confusing and difficult to keep straight. You are n
 
 <iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/1G1dfLF8-jo" frameborder="0" allowfullscreen></iframe>
 
-## Extending metrics to multiclass classifiers
+## Extending classification metrics to multiple classes
 
 * When we move toward multiple classes, we consider each class individually and assume that identifying an element as part of the class corresponds to a "positive".
 
