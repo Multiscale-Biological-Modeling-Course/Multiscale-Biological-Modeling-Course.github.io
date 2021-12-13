@@ -86,19 +86,20 @@ To illustrate our points, we will use the hypothetical confusion matrix for a CO
 A hypothetical COVID test confusion matrix.
 {: style="font-size: medium;"}
 
-**STOP:** What is the accuracy of this test? How does it compare to the accuracy of a dummy test that returns negative for everyone in the population?
+**STOP:** What is the accuracy of this test? What about the accuracy of a test that returns negative for everyone in the population?
 {: .notice--primary}
 
-Note that the accuracy of this test is
+Once again, this test has lower accuracy than one that returns negative for all individuals, but now we will provide metrics for which it is superior.
+
+The **recall** (a.k.a. **sensitivity**) of a two-class classifier is the percentage of positive cases that the test correctly identifies. That is, the recall is the ratio of true positives over the sum of the true positives and false negatives (found )
 
 Test Twitter embed
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">🎨 Finally got around to adding all my <a href="https://twitter.com/procreateapp">@procreateapp</a> creations with time lapse videos <a href="https://t.co/1nNbkefC3L">https://t.co/1nNbkefC3L</a> <a href="https://t.co/gcNLJoJ0Gn">pic.twitter.com/gcNLJoJ0Gn</a></p>&mdash; Michael Rose (@mmistakes) <a href="https://twitter.com/mmistakes/status/662678050795094016">November 6, 2015</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-This post tests Twitter Embeds.
-
-* Show accuracy
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">🎨 Finally got around to adding all my <a href="https://twitter.com/procreateapp">@procreateapp</a> creations with time lapse videos <a href="https://t.co/1nNbkefC3L">https://t.co/1nNbkefC3L</a> <a href="https://t.co/gcNLJoJ0Gn">pic.twitter.com/gcNLJoJ0Gn</a></p>&mdash; Michael Rose (@mmistakes) <a href="https://twitter.com/kylegriffin1/status/1263518696309313537">November 6, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 * The recall (a.k.a. sensitivity) of a test is the percentage of cases that the test correctly identifies:
 #true positives /(#true positives + #false negatives)
