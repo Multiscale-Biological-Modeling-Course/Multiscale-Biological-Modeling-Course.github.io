@@ -77,10 +77,14 @@ To motivate our discussion of other measures of classifier success, let's stay i
 First, we define some terms. A **true positive** is a positive test in a patient that has the disease; a **false positive** is a positive test in a patient that does not have the disease; a **true negative** is a negative test in a patient that does not have the disease; and a **false negative** is a negative test in a patient that does have the disease. The locations of these four terms in a confusion matrix are shown in the table below.
 
 [![image-center](../assets/images/600px/medical_test_confusion_matrix.png){: .align-center}](../assets/images/medical_test_confusion_matrix.png)
-A visualization of where true positives, true true positives, true negatives, and false negatives are found in the confusion matrix corresponding to a medical test. Correct predictions are shown in green, and incorrect predictions are shown in red.
+A visualization of where true positives, true positives, true negatives, and false negatives are found in the confusion matrix corresponding to a medical test. Correct predictions are shown in green, and incorrect predictions are shown in red.
 {: style="font-size: medium;"}
 
-* Show figure that illustrates this concept.
+To illustrate our points, we will use the hypothetical confusion matrix for a COVID test shown in the figure below.
+
+[![image-center](../assets/images/600px/medical_test_confusion_matrix_hypothetical.png){: .align-center}](../assets/images/medical_test_confusion_matrix_hypothetical.png)
+Caption.
+{: style="font-size: medium;"}
 
 * Need hypothetical "confusion matrix" for a COVID test. (Ideally it would have less than 99% accuracy but is more practical.)
 
