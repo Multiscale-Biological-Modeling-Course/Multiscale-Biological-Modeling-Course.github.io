@@ -8,23 +8,22 @@ toc_sticky: true
 image: "../assets/images/normal_adult_blood_smear.JPG"
 ---
 
-* Once we have our k-NN approach, the question is how it performs on a collection of new data. That is, how often is the approach correct?
+## Cross validation
 
-* Ideally we would build a model on our given dataset, and then determine how it performs on a collection of new data, but we don't have more data!
+In previous lessons, we learned how to build a shape space for a collection of images (in our case containing WBC nuclei) and then reduce the dimension of this space using PCA. We also learned about the k-nearest neighbors (k-NN) classification algorithm that assigns a "class" to a data point based on the class held by a plurality of its *k* closest neighbors.
 
-* Since our data are fixed, and we know the correct classification of each image, we could exclude some *subset* of the data, and then ask how well we correctly predict the classes that we left out. This dataset that we left out is called the "validation set".
+We would like to apply k-NN to WBC images to see how well it performs. That is, how often does k-NN assign an image to the correct class?
 
-* STOP: Why is this approach bad?
+The tricky part is that we already know the correct class for every image in our dataset. To get around this issue, we could exclude some *subset* of the data, pretending that we don't know the correct classes, and then ask how well we are able to correctly predict the classes of the objects that we excluded, called the **validation set**.
 
-* The issue with this excluding a subset is that it is unclear which subset we should use. Because of random error, maybe one subset leads to 80% accurate predictions, and another subset is 70% accurate.
+**STOP:** What issues do you see with this approach?
+{: .notice--primary}
 
-* Ideally, we would have an approach that does two things. One, that is not so subject to random variation, and two, that would use *all* of the data to help build our model.
+The problem is that it is unclear which subset we should use as a validation set. Random variation could mean that the reported accuracy will change depending on which subset we choose. And for that matter, what makes the elements of the validation set so special? Ideally, we would use an approach that is not subject to random variation and that uses *all* of the data for validation.
 
-* One idea: leave one out cross validation. For each data point, pretend that we don't know its label. How accurate is the predicted class?
+The most common solution is called **cross validation**, in which we divide our data into a collection of *f* (approximately) equally sized groups called **folds**. We use one of these folds as a validation set, keeping track of how many objects are correctly classified, and then we start over with a different fold as our validation set. Cross validation is democratic, since every element in our dataset will get used as a member of a validation set exactly once.
 
-* A related idea: divide the data into *k* equally-sized groups, called *folds*. Ignore the classes of all of these points and determine how well we do on all unkown points.
-
-* Note: This idea is more useful for more complicated classifiers that take a long time to run.
+The case in which *f* is equal to the number of points in our dataset is called **leave one out cross validation**. This approach amounts to, for every point in the dataset, pretending that we do not know its label, using the classification algorithm to assign it a class, and then comparing this prediction against the known class.
 
 
 
@@ -39,7 +38,7 @@ image: "../assets/images/normal_adult_blood_smear.JPG"
 
 ### Notes to self
 
-* Should we show a k-NN "decision boundary"? Perhaps for the iris dataset?
+* Should we show a k-NN "decision boundary"? Perhaps for the iris dataset? NO
 
 * Would be good to have the trade-off between using different values of *k*, showing a plot of accuracy.
 
