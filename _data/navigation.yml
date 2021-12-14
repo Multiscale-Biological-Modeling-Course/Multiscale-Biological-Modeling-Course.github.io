@@ -3,6 +3,8 @@ main:
     url: /meet-the-team/
   - title: "Contact Us"
     url: /contact/
+  - title: "Preorder the Book"
+    url: /buy_the_book/
   - title: "Take the Course"
     sublinks:
       - title: "<b>Prologue:</b> Random walks and Turing patterns"
