@@ -15,8 +15,6 @@ author_profile: true # add author to page
 
 # Introduction: Turing and the Zebra's Stripes
 
-## Turing machines and the foundations of computer science
-
 Our story begins with an likely character: Alan Turing. If you have heard of Turing, then you might be surprised as to why he would appear in a course on biological modeling.
 
 [![image-center](../assets/images/600px/alan_turing_npg_cc.jpg){: .align-center}](../assets/images/alan_turing_npg_cc.jpg)
