@@ -53,7 +53,11 @@ You should now be at the `Weka GUI Chooser` window that shows at the application
 
 [![image-center](../assets/images/600px/weka_explorer.png){: .align-center}](../assets/images/weka_explorer.png)
 
+Next, we need to load our `WBC_PCA.arff` file that we just created. At the top left of the window, click `Open file...` Navigate to the location of your `WBC_PCA.arff` file (the default location would be `Desktop/WBC_PCAPipeline/Step4_Visualization`).
 
+[![image-center](../assets/images/600px/weka_explorer_data.png){: .align-center}](../assets/images/weka_explorer_data.png)
+
+The best way to
 
 <!--
 * We will lose some information present in the original data, but the more structure that is present in the data, the less information that we will lose. -- something about the percentage of variation in the data that can be explained by the multiple dimensions?
