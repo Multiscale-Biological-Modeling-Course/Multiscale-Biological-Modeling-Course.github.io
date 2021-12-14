@@ -40,10 +40,6 @@ The equilibrium position of node *i* is represented by the vector $$ R_i^0 $$, a
 (Left) A small network of nodes connected by springs deriving from a protein structure. The distance between two nodes *i* and *j* is denoted by the variable $$ R_{ij} $$. (Right) Zooming in on two nodes *i* and *j* that are within the threshold distance. The equilibrium positions of node *i* and node *j* are represented by the distance vectors $$ R_i^0 $$ and $$ R_j^0 $$, with the distance between them denoted $$ R_{ij}^0 $$, which is equal to $$ R_j^0 - R_i^0 $$. The vectors $$ \Delta R_i $$ and $$ \Delta R_j $$ represent the nodes' respective changes from equilibrium. Image courtesy: Ahmet Bakan.
 {: style="font-size: medium;"}
 
-<!--
-We are interested in the change in the distance between *i* and *j* compared to equilibrium, $$ \Delta R_{ij} $$, which is equal to $$ R_{ij} - R_{ij}^0 = \Delta R_j - \Delta R_i $$.
--->
-
 Yet although atomic fluctuations are powered by randomness, the movements of protein atoms are in fact heavily correlated, owing to the evolution of the proteins to perform replicable tasks. For example, imagine the simple case in which all a protein's alpha carbons are connected in a straight line. If we pull the first alpha carbon away from the second node, then because we think of this atom being connected to the second alpha carbon by a "spring", the second alpha carbon will be pulled toward the first alpha carbon. Our goal is to understand how the movements of *every* pair of alpha carbons, called the **cross-correlation** of these atoms, may be related. We will see how using vectors to represent these movements can be helpful.
 
 ### Inner products and cross-correlations
