@@ -148,6 +148,9 @@ The reduced dimension shape space from the previous figure, with granulocytes fu
 
 Although images from the same family do not cluster as tightly as the iris data set --- which could be criticized as an unrealistic representation of the noise inherent in most real datasets --- we do see that images appear to be near other images of the same type. This fact should give us hope that proximity in the dimension-reduced space may help us correctly classify images of unknown type, which we will attempt to do in the next lesson.
 
+[Next lesson](training){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
 <!--
 [Next lesson](training){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

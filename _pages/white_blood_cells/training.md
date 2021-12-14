@@ -150,7 +150,7 @@ Now that we understand more about how to quantify the performance of a classifie
 
 ## Results of applying a classifier to the WBC shape space
 
-If we run k-NN on our shape space, with *d* (the number of dimensions to use for PCA) equal to 10, *f* (the number of folds) equal to 10, and *k* (the number of nearest neighbors to consider when assigning a class) equal to 1, then we obtain the confusion matrix shown below.
+If we run k-NN on our shape space, with *d* (the number of dimensions to use for PCA) equal to 10, *k* (the number of nearest neighbors to consider when assigning a class) equal to 1, and *f* (the number of folds) equal to 10, then we obtain the confusion matrix shown below, which has an accuracy of 84.3% and a weighted average of precision and recall over all three classes of 0.857 and 0.843, respectively.
 
 | Granulocyte | Monocyte | Lymphocyte |
 | :---: |  :----: | :---: |
@@ -158,24 +158,42 @@ If we run k-NN on our shape space, with *d* (the number of dimensions to use for
 | 14 | 6 | 1 |
 | 5 | 2 | 26 |
 
-* Also show type results. Confusion matrix shown below.
+These three values of *d*, *k*, and *f* appear to be close to optimal, and a natural question is to ask why this is the case.
 
-| Neutrophil | Basophil |Eosinophil | Monocyte | Lymphocyte |
-| :---: |  :----: | :---: |  :----: | :---: |
-| 120 | 0 | 60 | 3 | 19 |
-| 1 | 0 | 1 | 0 | 1 |
-| 43 | 0 | 29 | 1 | 13 |
-| 11 | 1 | 4 | 0 | 5 |
-| 0 | 0 | 7 | 0 | 26 |
+We start with *d*, the dimension of the hyperplane used by PCA to reduce the dimension of the data. If we set *d* too large, then once again the curse of dimension strikes. Using *d* = 344 produces the baffling confusion matrix below, in which every element in the space is closest to a lymphocyte.
 
-* However, we still have a problem, which is that the approach does very poorly on monocytes.
+| Granulocyte | Monocyte | Lymphocyte |
+| :---: |  :----: | :---: |
+| 0 | 0 | 291 |
+| 0 | 0 | 21 |
+| 0 | 0 | 33 |
 
-* The problem is that the class imbalance means that it is much more rare to encounter a monocyte or lymphocyte, so although there is certainly signal in our dataset, random noise means that granulocytes might show up as nearby to a monocyte or lymphocyte.
+And using *d* = 3, we obtain better results, but we have reduced the dimension so much that we start to lose the signal in the data.
 
-* There are a variety of approaches to try and fix this. We could throw out some of our data, but our dataset is not that large to begin with, and it would feel weird to throw some out.
+| Granulocyte | Monocyte | Lymphocyte |
+| :---: |  :----: | :---: |
+| 257 | 15 | 19 |
+| 16 | 5 | 0 |
+| 20 | 0 | 13 |
 
-* We could also try a different classifier (we encourage you to do so). One idea is to use a cost-sensitive classifier that charges a penalty for assigning a point to the wrong class and varies this penalty depending on the correct class and where it was assigned. For example, we could charge a very large penalty for assigning a monocyte as one of the other two classes, which would force the classifier to assign more monocytes. This approach doesn't work with the k-NN classifier as currently presented because there is no way to incorporate cost into it.
+As for *k*, it may seem that taking more neighbors into account would be helpful. But because there are so many granulocytes in the data, the effects of random noise will mean that as we increase *k*, we threaten to start incorporating granulocytes that just happen to be nearby in the dataset. For example, when *k* is equal to 5, every monocyte is assigned as a granulocyte, as shown below.
 
-* Need something about other classifiers not really outperforming k-NN here on this dataset, and explain the reason for that.
+| Granulocyte | Monocyte | Lymphocyte |
+| :---: |  :----: | :---: |
+| 264 | 1 | 26 |
+| 21 | 0 | 0 |
+| 7 | 0 | 26 |
+
+The question of the number of folds, *f*, is trickier. Increasing this parameter does not change the confusion matrix much, but if *f* is too small, then we ignore too many known classes of our data.
+
+However, we still have a problem, which is that although k-NN can identify granulocytes and lymphocytes quite well, it performs poorly on monocytes because of the **class imbalance** in our data. We have so few monocytes that it is rare to encounter another one in the shape space.
+
+Statisticians have devised a variety of approaches to address class imbalance. We could **undersample** our data by excluding a random sample of the granulocytes. Undersampling works better when we have a huge amount of data, and in this case, it would risk plummeting the classifier's performance on granulocytes.
+
+We could also try a different classifier (and in the tutorial we encouraged you to do so). One idea is to use a **cost-sensitive classifier** that charges a variable penalty for assigning an element to the wrong class, and then minimizes the total cost over all elements. For example, classifying a monocyte as a granulocyte would receive a greater penalty than classifying a granulocyte as a monocyte. Such a classifier would help increase the number of images that are classified as monocytes, although it would also incorporate incorrectly classified monocytes as well.
+
+Yet ultimately, k-NN outperforms much more advanced classifiers on this dataset. It may be a relatively simple approach, but it also is a great match for classifying images within a WBC shape space, since proximity in this space indicates that two WBCs belong to the same family.
+
+This is not to say that we cannot make improvements, both to our data and to our methods. We will discuss these potential improvements in this module's conclusion.
 
 [^Mistry]: Mistry DA, Wang JY, Moeser ME, Starkey T, Lee LYW 2021. A systematic review of the sensitivity and specificity of lateral flow devices in the detection of SARS-CoV-2. BMC Infectious Diseases 21(1):828. [Available online](https://doi.org/10.1186/s12879-021-06528-3)
