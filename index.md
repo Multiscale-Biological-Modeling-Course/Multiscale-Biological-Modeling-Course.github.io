@@ -2,7 +2,7 @@
 title: <em>Biological Modeling</em>
 layout: single
 description: A free course in biological modeling at multiple scales.
-image: "assets/images/gray_scott_jupyter_3.png"
+image: "assets/images/gray_scott_jupyter_high-res.png"
 toc: true
 toc_sticky: true
 related: false
@@ -11,7 +11,7 @@ author_profile: true
 
 excerpt: "A free course in modeling biological systems at multiple scales."
 header:
-  overlay_image: "assets/images/f38_k61.jpg"
+  overlay_image: "assets/images/f38_k61_high-res.jpg"
   overlay_filter: 0.4
   # caption: "Photo credit: [**foo**](blah.com)"
   actions:
