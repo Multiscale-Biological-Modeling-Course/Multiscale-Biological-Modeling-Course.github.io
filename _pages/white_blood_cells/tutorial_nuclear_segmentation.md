@@ -123,7 +123,7 @@ print(noquote("Starting nucleus segmentation..."))
 
 Finally, the engine of our work is a function that processes and segmentes every image individually according to the thresholding that we discussed above. Note that in the following code, a pixel is only retained if its red value is less than 65%, its green value is less than 60%, and its blue value is above 59.75% (see the values of `r_threshold`, `g_threshold`, and `b_threshold`).
 
-We will only need to run the first line, since R will automatically perform everything inside this "for loop" for as many files as are in our dataset. You should not feel obligated to consult the following lines unless you are interested.
+We should only need to run the first line of the following code, since R will automatically perform everything inside this "for loop" for as many files as are in our dataset. You should not feel obligated to consult the following lines unless you are interested. The only thing that this code does that we have not discussed is that after segmentation, it identifies contiguous objects in the image and removes any objects whose area is smaller than some threshold, which allows us to remove any small artifacts from the image.
 
 ~~~ R
 # Loop through each file and process each image individually
