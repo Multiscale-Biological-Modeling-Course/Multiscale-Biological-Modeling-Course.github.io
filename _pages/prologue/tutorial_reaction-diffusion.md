@@ -4,7 +4,7 @@ title: "Software Tutorial: Generating Turing Patterns with a Reaction-Diffusion 
 sidebar:
  nav: "prologue"
  nav: "prologue"
-image: "../assets/images/gray_scott_jupyter_3.png"
+image: "../assets/images/gray_scott_jupyter_high-res.png"
 ---
 
 Load the `CellBlender_Tutorial_Template.blend` file that you generated in the [Random Walk Tutorial](tutorial-random-walk). You may also download the complete file <a href="../tutorials/CellBlender_Tutorial_Template.blend" download="CellBlender_Tutorial_Template.blend">here</a>. Save this file as a new file named `turing_pattern.blend`. The completed tutorial is also available <a href="../tutorials/turing_pattern.blend" download="turing_pattern.blend">here</a>.

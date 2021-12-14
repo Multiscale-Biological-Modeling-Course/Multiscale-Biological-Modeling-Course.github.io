@@ -4,7 +4,7 @@ title: "Software Tutorial: Building a Diffusion Cellular Automaton with Jupyter 
 sidebar:
  nav: "prologue"
  nav: "prologue"
-image: "../assets/images/gray_scott_jupyter_3.png"
+image: "../assets/images/gray_scott_jupyter_high-res.png"
 ---
 
 In this tutorial, we will use Python to build a Jupyter notebook. We suggest only following the tutorial closely if you are familiar with Python or programming in general. If you have not installed Python, then the following software and packages will need to be installed:

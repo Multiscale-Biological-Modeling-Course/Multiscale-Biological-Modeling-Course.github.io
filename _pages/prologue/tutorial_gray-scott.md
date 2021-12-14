@@ -4,7 +4,7 @@ title: "Software Tutorial: Implementing the Gray-Scott Model for Coarse-Grained 
 sidebar:
  nav: "prologue"
  nav: "prologue"
-image: "../assets/images/gray_scott_jupyter_3.png"
+image: "../assets/images/gray_scott_jupyter_high-res.png"
 ---
 
 The following tutorial will use a Jupyter Notebook to implement the Gray-Scott model. It requires a familiarity with Python, and installation instructions can be found in our coarse-grained [diffusion tutorial](tutorial-diffusion). You may also download the completed tutorial file <a href="../tutorials/Gray-Scott.ipynb" download="Gray-Scott.ipynb">here</a>.

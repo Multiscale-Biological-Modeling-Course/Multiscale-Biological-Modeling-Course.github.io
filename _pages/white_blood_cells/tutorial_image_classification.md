@@ -47,7 +47,7 @@ As a result, our PCA pipeline coordinates have now been converted to the file fo
 
 Now that we have the PCA dataset in the correct format, click `Exit` to return to the Weka home screen.
 
-### Running a classifier
+### Running our first classifier
 
 You should now be at the `Weka GUI Chooser` window that shows at the application's startup. Under `Applications`, click `Explorer` to bring up the `Weka Explorer` window. This is the main window that we will use to run our classifier.
 
@@ -134,7 +134,9 @@ We have therefore replicated an instance of a very deep fact in data science, wh
 
 **Note:** If anything is still unclear about using Weka and exploring its output, Jen Golbeck made an excellent <a href="https://www.youtube.com/watch?v=gfhGfnkypCY" target="_blank">Youtube video</a> that you may like to check out.
 
-### Choosing a value of k for k-NN
+### Choosing a value of k for k-nearest neighbors
+
+Now that we have determined the number of dimensions that we will use, we could 
 
 **STOP:** We could also try changing the number of folds that we use. Try running the classifier with the number of folds equal to 2, 5, 10, 20, 100, and 345. What do you find is best?
 {: .notice--primary}

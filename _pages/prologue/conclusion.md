@@ -5,7 +5,7 @@ sidebar:
  nav: "prologue"
  toc: true
  toc_sticky: true
-image: "../assets/images/gray_scott_jupyter_3.png"
+image: "../assets/images/gray_scott_jupyter_high-res.png"
 gallery:
   - url: ../assets/images/Juvenile_Mbu_pufferfish.jpg
     image_path: ../assets/images/600px/Juvenile_Mbu_pufferfish.jpg
