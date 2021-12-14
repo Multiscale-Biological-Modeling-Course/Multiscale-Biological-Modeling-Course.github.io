@@ -80,7 +80,7 @@ Now for the magic moment. Click `Start`. The classifier should run very quickly,
 
 The results are horrible! Every image in our dataset has been assigned as a lymphocyte. What could have gone wrong?
 
-## Reducing the number of dimensions considered
+### Reducing the number of dimensions considered
 
 Remember when we said that weird things happen in multi-dimensional space? The above result is one of those things. For some reason, every object in the dataset is closest to a lymphocyte. We could dig into the gritty details of the data to try and determine why this is the case, but instead, we will mutter something about the curse of dimensionality.
 
@@ -134,7 +134,7 @@ We have therefore replicated an instance of a very deep fact in data science, wh
 
 **Note:** If anything is still unclear about using Weka and exploring its output, Jen Golbeck made an excellent <a href="https://www.youtube.com/watch?v=gfhGfnkypCY" target="_blank">Youtube video</a> that you may like to check out.
 
-## Choosing a value of k for k-NN
+### Choosing a value of k for k-NN
 
 **STOP:** We could also try changing the number of folds that we use. Try running the classifier with the number of folds equal to 2, 5, 10, 20, 100, and 345. What do you find is best?
 {: .notice--primary}
