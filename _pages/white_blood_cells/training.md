@@ -93,16 +93,16 @@ Once again, this test has lower accuracy than one that returns negative for all 
 
 The **recall** (a.k.a. **sensitivity**) of a two-class classifier is the percentage of positive cases that the test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives (found by summing the top row of the confusion matrix).
 
-For our hypothetical COVID confusion matrix in the figure above, the recall is 1,000/1,500 = 66.7%. The recall ranges from 0 to 1, with larger values indicating that the test is "sensitive", meaning that it can identify true positives out of patients who actually are positive.
+For our hypothetical COVID confusion matrix in the figure above, the recall is 1,000/1,500 = 0.667. The recall ranges from 0 to 1, with larger values indicating that the test is "sensitive", meaning that it can identify true positives out of patients who actually are positive.
 
-The **specificity** of a test is an analogous metric for patients whose actual status is negative. It measures the ratio of true negatives to the sum of true negatives and false positives (found by summing the second row of our confusion matrix). For our hypothetical COVID test confusion matrix, the test specificity is 198,000/(198,000 + 2,000) = 99%.
+The **specificity** of a test is an analogous metric for patients whose actual status is negative. It measures the ratio of true negatives to the sum of true negatives and false positives (found by summing the second row of our confusion matrix). For our hypothetical COVID test confusion matrix, the test specificity is 198,000/(198,000 + 2,000) = 0.99.
 
-Finally, the **precision** of a test is the percentage of positive tests that are correct, formed by taking the ratio of true positives to the sum of true positives and false positives (found by summing the first column of the confusion matrix). For example, the precision of our hypothetical COVID test is 1,000/(1,000 + 2,000) = 33.3%.
+Finally, the **precision** of a test is the percentage of positive tests that are correct, formed by taking the ratio of true positives to the sum of true positives and false positives (found by summing the first column of the confusion matrix). For example, the precision of our hypothetical COVID test is 1,000/(1,000 + 2,000) = 0.333.
 
 **STOP:** How could we trick a test to have recall close to 1? What about specificity? Precision?
 {: .notice--primary}
 
-Just like accuracy, all three of the metrics introduced in this section are not perfect, and can be fooled by silly tests that, for example, always return positive or negative. However, a frivolous test achieving all of these metrics at the same time is not possible.
+Just like accuracy, all three of the metrics introduced in this section are not perfect, and can be fooled by silly tests that, for example, always return positive or negative. However, a frivolous test achieving all of these metrics at the same time is not possible. Therefore, in practice we may examine all of these metrics, as well as accuracy, when assessing the quality of a classifier.
 
 **STOP:** Compute the recall, specificity, and precision of the dummy COVID test that always returns negative.
 {: .notice--primary}
@@ -117,22 +117,40 @@ You may find all these terms confusing and difficult to keep straight. You are n
 
 ## Extending classification metrics to multiple classes
 
-* When we move toward multiple classes, we consider each class individually and assume that identifying an element as part of the class corresponds to a "positive".
+As we return to our example of classifying images of WBC nuclei, we need to extend the ideas discussed in the previous section to handle the case of multiple classes. To do so, we consider each class individually and treat this class as the "positive" case.
 
-* Show computations of precision and recall for the iris flower data set and each individual class.
+To see how this works, we return to our iris flower data set. Say that we wish to compute the recall, specificity, and precision for *Iris virginica* using the k-NN confusion matrix that we generated, reproduced below.
 
+| *Iris setosa* | *Iris versicolor* | *Iris virginica* |
+| :---: |  :----: | :---: |
+| 50 | 0 | 0 |
+| 0 | 47 | 3 |
+| 0 | 4 | 46 |
 
+We can simplify this confusion matrix into a two-class confusion matrix that combines the two classes corresponding to the other two species. The figure below shows this smaller confusion matrix, with *Iris virginica* moved to the first row and column.
 
-**STOP:** Compute the recall, specificity, and precision for the confusion matrix that labels everything a granulocyte.
+| *Iris virginica* | *Iris setosa* and *Iris versicolor* |
+| :---: |  :----: |
+| 46 | 4 |
+| 3 | 47 |
+
+This simplification allows us to compute the recall, specificity, and precision for ths classifier with respect to *Iris virginica*.
+
+* recall: 46/(46+4) = 0.92
+* specificity: 47/(3+47) = 0.94
+* precision: 46/(46+3) = 0.939
+
+**STOP:** Compute the recall, specificity, and precision for each of the other two iris species using the above confusion matrix.
 {: .notice--primary}
 
-* Conclusion is that accuracy can be helpful, but only in concert with precision and recall.
+Now that we understand how to quantify the performance of a classifier, we are now ready to apply k-NN to our WBC shape space (post-PCA of course!) and assess how well it performs.
 
-* Link to final tutorial
-
-* Reminder in tutorial to complete the analysis for cell type as well.
+[Visit tutorial](tutorial_image_classification){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 ## Results of applying a classifier to the WBC shape space
+
+* Reminder in tutorial to complete the analysis for cell type as well.
 
 * Return from this and show the best results that we can obtain with k-NN.
 
