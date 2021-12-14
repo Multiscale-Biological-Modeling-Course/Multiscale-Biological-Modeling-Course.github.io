@@ -47,7 +47,7 @@ Our course contents are found below.
 
 * [Module 3: Analyzing the coronavirus spike protein](../coronavirus/home) (with software tutorials featuring <a href="http://prody.csb.pitt.edu" target="_blank">ProDy</a> and affiliated tools)
 
-* Module 4: Training a computer to count white blood cells automatically (with software tutorials featuring <a href="http://www.cellorganizer.org" target="_blank">CellOrganizer</a>) -- coming soon!
+* [Module 4: Training a computer to count white blood cells automatically](../white_blood_cells/home) (with software tutorials featuring <a href="http://www.cellorganizer.org" target="_blank">CellOrganizer</a>)
 
 ## Meet the team
 

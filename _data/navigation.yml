@@ -13,7 +13,8 @@ main:
         url: /chemotaxis/home
       - title: "<b>Module 3:</b> Analyzing the coronavirus spike protein"
         url: /coronavirus/home
-      - title: "<b>Module 4:</b> Training a computer to count white blood cells automatically (coming soon!)"
+      - title: "<b>Module 4:</b> Training a computer to classify white blood cells"
+        url: /white_blood_cells/home
 
 
 prologue:
@@ -169,7 +170,7 @@ coronavirus:
         url: /coronavirus/tutorial_DynOmics
 
 white_blood_cells:
-  - title: "Training a Computer to Identify White Blood Cells"
+  - title: "Training a Computer to Classify White Blood Cells"
     children:
       - title: "Introduction: How are blood cells counted?<br><br>"
         url: /white_blood_cells/home
@@ -182,6 +183,7 @@ white_blood_cells:
       - title: "Reducing the dimension of a dataset with principal components analysis<br><br>"
         url: /white_blood_cells/pca
       - title: "Applying a Classifier to a Cellular Shape Space"
+        url: /white_blood_cells/training
   - title: Software Tutorials (featuring CellOrganizer)
     children:
       - title: "Segmenting nuclei from cellular images<br><br>"

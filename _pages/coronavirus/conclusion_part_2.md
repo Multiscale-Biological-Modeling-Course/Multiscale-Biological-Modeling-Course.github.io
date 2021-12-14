@@ -239,11 +239,13 @@ Finally, we would point out that although scientific research has often historic
 
 Thus concludes the third module of this course. In the course's final module, we will turn our attention to a very different type of problem. To fight a virus like SARS-CoV-2, your body employs a cavalry of white blood cells. Maintaining healthy levels of these cells is vital to a strong immune system, and blood reports run counts of these cells to ensure they are within normal ranges. Can we teach a computer to run this analysis automatically?
 
-We hope you will join us to find out! (Please stay tuned.)
+We hope you will join us to find out!
 
 **Note:** Although we have covered a great deal in this chapter, there is still much more to say about SARS-CoV-2. What exactly happens after the spike protein binds to ACE2? How does the virus enter the cell and replicate? How does it fight our immune systems, and how should we design a vaccine to fight back? If you are interested in an online course covering some of them, then check out the free online course *<a href="https://sites.google.com/view/sarswars/home" target="_blank">SARS Wars: A New Hope</a>* by <a href="https://www.cs.cmu.edu/~cjl/" target="_blank">Christopher Langmead</a>.
 {: .notice--warning}
 
+[Next module](../white_blood_cells/home){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 [^Dwek]: Dwek, R.A. Glycobiology: Toward Understanding the Function of Sugars. Chem. Rev. 96(2),  683-720 (1996). https://doi.org/10.1021/cr940283b
 
