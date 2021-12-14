@@ -150,17 +150,23 @@ Now that we understand more about how to quantify the performance of a classifie
 
 ## Results of applying a classifier to the WBC shape space
 
+If we run k-NN on our shape space, with *d* (the number of dimensions to use for PCA) equal to 10, *f* (the number of folds) equal to 10, and *k* (the number of nearest neighbors to consider when assigning a class) equal to 1, then we obtain the confusion matrix shown below.
 
-
-* Return from this and show the best results that we can obtain with k-NN.
+| Granulocyte | Monocyte | Lymphocyte |
+| :---: |  :----: | :---: |
+| 259 | 9 | 23 |
+| 14 | 6 | 1 |
+| 5 | 2 | 26 |
 
 * Also show type results. Confusion matrix shown below.
 
-120   0  60   3  19 |   a = NEUTROPHIL
-  1   0   1   0   1 |   b = BASOPHIL
- 43   0  29   1  13 |   c = EOSINOPHIL
- 11   1   4   0   5 |   d = MONOCYTE
-  0   0   7   0  26 |   e = LYMPHOCYTE
+| Neutrophil | Basophil |Eosinophil | Monocyte | Lymphocyte |
+| :---: |  :----: | :---: |  :----: | :---: |
+| 120 | 0 | 60 | 3 | 19 |
+| 1 | 0 | 1 | 0 | 1 |
+| 43 | 0 | 29 | 1 | 13 |
+| 11 | 1 | 4 | 0 | 5 |
+| 0 | 0 | 7 | 0 | 26 |
 
 * However, we still have a problem, which is that the approach does very poorly on monocytes.
 
