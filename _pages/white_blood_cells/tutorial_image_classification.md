@@ -47,7 +47,7 @@ As a result, our PCA pipeline coordinates have now been converted to the file fo
 
 Now that we have the PCA dataset in the correct format, click `Exit` to return to the Weka home screen.
 
-###
+### Running a classifier
 
 You should now be at the `Weka GUI Chooser` window that shows at the application's startup. Under `Applications`, click `Explorer` to bring up the `Weka Explorer` window. This is the main window that we will use to run our classifier.
 
@@ -69,20 +69,73 @@ The k-NN classifer is contained under `lazy > IBK`. Select `IBK`, and you will b
 
 Under `Test Options`, we see `Cross-validation` is selected, which is what we want. Let us leave the number of folds equal to 10, the default value.
 
-Finally, beneath `More options`, we will see `(Num) Var344`. This is the variable that Weka will use to assign classes; rather, we would like Weka to classify objects by family. So, select this field, scroll up to the top, and select `(Nom) Family`.
+Finally, beneath `More options`, we will see `(Num) Var344`. This is the variable that Weka will use to assign classes; rather, we would like Weka to classify objects by family. So, select this field, scroll up to the top, and select `(Nom) FAMILY`.
 
 **Note:** Here, `Num` indicates a numeric variable, and `Nom` indicates a nominal variable (meaning that it corresponds to a name).
 {: .notice--warning}
 
-Now for the magic moment. Click `Start`. The classifier should run very quickly, and the results will show in the main window to the right.
+Now for the magic moment. Click `Start`. The classifier should run very quickly, and the results will show in the main window to the right and are reproduced below.
 
 [![image-center](../assets/images/600px/classifier_output_all_pca_variables.png){: .align-center}](../assets/images/classifier_output_all_pca_variables.png)
 
 The results are horrible! Every image in our dataset has been assigned as a lymphocyte. What could have gone wrong?
 
-Remember when we said that weird things happen in multi-dimensional space? The above result would be one of those things.
+## Reducing the number of dimensions considered
 
+Remember when we said that weird things happen in multi-dimensional space? The above result is one of those things. For some reason, every object in the dataset is closest to a lymphocyte. We could dig into the gritty details of the data to try and determine why this is the case, but instead, we will mutter something about the curse of dimensionality.
 
+When we used CellOrganizer to build a shape space with PCA, it produced a hyperplane with 344 dimensions (one fewer than the total number of images), which is far more than we need. The good news is that one of the features of PCA is that if we would instead like a hyperplane with some smaller number of dimensions *d*, then we only need to consider the first *d* coordinates of every point in the space.
+
+In our case, we will simply remove most of the variables under consideration by taking *d* = 20. To do so, click on the `Preprocess` tab. Under `Attributes`, select `All`, and then unselect `FAMILY` and the variables `VAR1` through `VAR20`. Click `Remove` to ignore the other variables.
+
+Removing variables is always counterintuitive to a three-dimensional mind, but let us see what happens when we run the classifier again. Click the `Classify` tab, and you will see that `(Num) Var20` is selected as the variable to use for classification. Select `(Nom) FAMILY` and click `Start`. In our run, this produces the following confusion matrix in the output window.
+
+| Granulocyte | Monocyte | Lymphocyte |
+| :---: |  :----: | :---: |
+| 255 | 3 | 33 |
+| 16 | 0 | 5 |
+| 7 | 0 | 26 |
+
+This is much better! The classifier seems to be performing particularly well on granulocytes. So, if removing some variables was a good thing, let's remove a few more. Head back to `Preprocess`, remove `Var16` through `Var20`, and run the classifier again. Our run yields the following updated confusion matrix.
+
+| Granulocyte | Monocyte | Lymphocyte |
+| :---: |  :----: | :---: |
+| 252 | 8 | 31 |
+| 18 | 2 | 1 |
+| 4 | 1 | 28 |
+
+We are getting a little better! If we remove `Var11` through `Var15`, you can verify that we obtain the following confusion matrix.
+
+| Granulocyte | Monocyte | Lymphocyte |
+| :---: |  :----: | :---: |
+| 259 | 9 | 23 |
+| 14 | 6 | 1 |
+| 5 | 2 | 26 |
+
+In each step, our confusion matrix appears to be a little better, and the metrics that we introduced in the main text improve as well. In the `Classifier output` window, you can see that the accuracy has increased to 84.3%, while the weighted average of precision and recall over all three classes have increased to 0.857 and 0.843, respectively.
+
+All this dimension reduction may make us wonder how far we should take it -- should we reduce everything down to a single dimension? Yet if we remove `Var6` through `Var10`, we see that our confusion matrix gets a little worse:
+
+| Granulocyte | Monocyte | Lymphocyte |
+| :---: |  :----: | :---: |
+| 261 | 13 | 17 |
+| 13 | 8 | 0 |
+| 16 | 2 | 17 |
+
+And if we take the number of dimensions down to three, it gets a little worse still:
+
+| Granulocyte | Monocyte | Lymphocyte |
+| :---: |  :----: | :---: |
+| 257 | 15 | 19 |
+| 16 | 5 | 0 |
+| 20 | 0 | 13 |
+
+We have therefore replicated an instance of a very deep fact in data science, which is that there is typically a "Goldilocks" value in the number of dimensions we should use for our PCA hyperplane, at which the algorithm is performing optimally. In the case of this WBC image dataset, that sweet spot value is around 10.
+
+## Choosing a value of k
+
+**STOP:** We could also try changing the number of folds that we use. Try running the classifier with the number of folds equal to 2, 5, 10, 20, 100, and 345. What do you find is best?
+{: .notice--primary}
 
 <!--
 * We will lose some information present in the original data, but the more structure that is present in the data, the less information that we will lose. -- something about the percentage of variation in the data that can be explained by the multiple dimensions?

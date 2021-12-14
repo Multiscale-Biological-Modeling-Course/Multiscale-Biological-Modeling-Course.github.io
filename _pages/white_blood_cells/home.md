@@ -5,7 +5,7 @@ description: Learn how to train a computer to identify cells in images and class
 sidebar:
  nav: "white_blood_cells"
 image: "../assets/images/normal_adult_blood_smear.JPG"
-excerpt: "by Phillip Compeau (with software tutorials by Nicole Matamala)"
+excerpt: "by Phillip Compeau (with software tutorials featuring Nicole Matamala)"
 header:
   overlay_image: "../assets/images/normal_adult_blood_smear.JPG"
   overlay_filter: 0.3
