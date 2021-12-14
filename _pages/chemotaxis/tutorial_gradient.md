@@ -209,16 +209,6 @@ All of your simulation results are stored in the `RuleBender-workspace/PROJECT_N
 
 You will observe that CheY phosphorylation drops gradually first, instead of the instantaneous sharp drop as we add lots of ligand at once. That means, with the ligand concentration increases, the cell is able to continuously lower the tumbling frequency.
 
-
-<!--
-Please make sure have dependencies installed:
- - [Jupyter Notebook](https://jupyter.org/index.html)
- - [Python3](https://www.python.org/downloads/), version 3.6+
- - [Numpy](https://numpy.org/install/)
- - [Matplotlib](https://matplotlib.org/users/installing.html)
- - [Colorspace](https://python-colorspace.readthedocs.io/en/latest/installation.html) (simply [install with pip](https://pypi.org/project/colorspace/) works too)
--->
-
 ## Visualizing the results of our simulation
 
 We are now ready to fill in `plotter_up.ipynb`, a Jupyter notebook that we will use to visualize the outcome of our simulations.

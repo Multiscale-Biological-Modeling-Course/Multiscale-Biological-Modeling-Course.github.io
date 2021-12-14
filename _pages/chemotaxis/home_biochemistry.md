@@ -98,15 +98,6 @@ If we instead add 100,000 attractant molecules, then we see an even more drastic
 
 In other words, the BNG simulation is confirming that an increase in attractant reduces the concentration of phosphorylated CheY, which therefore lowers the tumbling frequency.
 
-<!--
-
-The cell also has MCPs that detect repellents and serve to *increase* CheA autophosphorylation. The following two figures show what happens when we add 5,000 and 100,000 repellent molecules to our simulation, which increases the phosphorylation of both CheA and CheY.
-
-[![image-center](../assets/images/600px/chemotaxis_tutorial_phosrepel5e3.png){: .align-center}](../assets/images/chemotaxis_tutorial_phosrepel5e3.png)
-
-[![image-center](../assets/images/600px/chemotaxis_tutorial_phosrepel1e5.png){: .align-center}](../assets/images/chemotaxis_tutorial_phosrepel1e5.png)
--->
-
 ## So … what's the big deal?
 
 You may not be surprised that we have been able to build a model simulating the system that *E. coli* uses to detect extracellular concentration of ligand and change its behavior accordingly. After all, the biochemistry presented here may be elegant, but it is also simple.

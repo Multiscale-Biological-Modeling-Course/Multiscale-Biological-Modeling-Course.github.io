@@ -23,12 +23,6 @@ We will first use VMD to highlight the amino acids in the region of interest of 
 
 Our region of interest is one of three sites showing significant conformational differences between the SARS-CoV-2 and SARS-CoV spike proteins that were identified by Shang et al.[^Shang]. We will now discuss each of these three locations and see how they affect binding affinity between the spike protein and ACE2.
 
-<!--
-
-SARS-CoV-2 chimeric RBD complexed with ACE2 (PDB entry <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>).
-
--->
-
 ### Site 1: loop in ACE2-binding ridge
 
 The first location is our region of interest from the previous lesson and is found on a loop in a region called the ACE2 binding ridge. This region is shown in the figure below, in which SARS-CoV-2 is on top and SARS-CoV is on the bottom.
