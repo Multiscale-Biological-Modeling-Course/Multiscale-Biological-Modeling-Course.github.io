@@ -150,11 +150,17 @@ Now that we understand more about how to quantify the performance of a classifie
 
 ## Results of applying a classifier to the WBC shape space
 
-* Reminder in tutorial to complete the analysis for cell type as well.
+
 
 * Return from this and show the best results that we can obtain with k-NN.
 
-* Also show type results.
+* Also show type results. Confusion matrix shown below.
+
+120   0  60   3  19 |   a = NEUTROPHIL
+  1   0   1   0   1 |   b = BASOPHIL
+ 43   0  29   1  13 |   c = EOSINOPHIL
+ 11   1   4   0   5 |   d = MONOCYTE
+  0   0   7   0  26 |   e = LYMPHOCYTE
 
 * However, we still have a problem, which is that the approach does very poorly on monocytes.
 
