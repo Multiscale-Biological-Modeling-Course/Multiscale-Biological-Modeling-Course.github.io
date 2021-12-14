@@ -181,7 +181,7 @@ white_blood_cells:
         url: /white_blood_cells/shape_space
       - title: "Reducing the dimension of a dataset with principal components analysis<br><br>"
         url: /white_blood_cells/pca
-      - title: "Training a Classifier on a Cellular Shape Space"
+      - title: "Applying a Classifier to a Cellular Shape Space"
   - title: Software Tutorials (featuring CellOrganizer)
     children:
       - title: "Segmenting nuclei from cellular images<br><br>"
