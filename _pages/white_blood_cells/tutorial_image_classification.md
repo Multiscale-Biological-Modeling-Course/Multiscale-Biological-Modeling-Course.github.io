@@ -138,14 +138,3 @@ We have therefore replicated an instance of a very deep fact in data science, wh
 
 **STOP:** We could also try changing the number of folds that we use. Try running the classifier with the number of folds equal to 2, 5, 10, 20, 100, and 345. What do you find is best?
 {: .notice--primary}
-
-<!--
-* We will lose some information present in the original data, but the more structure that is present in the data, the less information that we will lose. -- something about the percentage of variation in the data that can be explained by the multiple dimensions?
-
-* Videos from Jen Golbeck -- these need to go into the tutorial
-
-{% include video id="gfhGfnkypCY" provider="youtube" %}
-
-{% include video id="V9PNyx5-kxM" provider="youtube" %}
-
--->
