@@ -1,9 +1,9 @@
 main:
   - title: "Course Team"
     url: /meet-the-team/
-  - title: "Contact Us"
+  - title: "Contact"
     url: /contact/
-  - title: "Preorder the Book"
+  - title: "Order the Book"
     url: /buy_the_book/
   - title: "Take the Course"
     sublinks:
