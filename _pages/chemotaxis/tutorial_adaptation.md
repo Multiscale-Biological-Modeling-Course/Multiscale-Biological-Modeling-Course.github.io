@@ -270,7 +270,7 @@ begin parameters
 	NaV2 6.02e8   #Unit conversion to cellular concentration M/L -> #/um^3
 	miu 1e-6
 
-	L0 1e7
+	L0 0
 	T0 7000
 	CheY0 20000
 	CheZ0 6000
