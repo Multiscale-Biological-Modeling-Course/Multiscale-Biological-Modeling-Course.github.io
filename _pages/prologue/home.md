@@ -6,7 +6,7 @@ sidebar:
 image: "../assets/images/gray_scott_jupyter_high-res.png"
 excerpt: "by Noah Lee, Mert Inan, and Phillip Compeau"
 header:
-  overlay_image: "../assets/images/gray_scott_jupyter_high-res_cropped.png"
+  overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
   overlay_filter: 0.3
 toc: true
 toc_sticky: true
