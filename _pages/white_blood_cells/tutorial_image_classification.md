@@ -14,7 +14,7 @@ In this tutorial, we will apply the k-NN classifier to the post-PCA shape space 
 
 To install Weka, follow the instructions provided at the <a href="https://waikato.github.io/weka-wiki/downloading_weka/" target="_blank">Weka wiki</a>.
 
-### File conversion of the shape space file
+### Converting a shape space file
 
 To convert our current PCA pipeline coordinates to a format to be used in Weka, we need to convert the `WBC_PCA.csv` file that we produced in the previous tutorial and that contains the coordinates of every image in the post-PCA shape space into the `arff` format used by Weka. If you have not completed the previous tutorial, or you would like to skip to the next section of this tutorial, we provide the completed file for download <a href="../downloads/WBC_PCA.arff">here</a>.
 
@@ -46,6 +46,14 @@ Remove the `.csv` extension in the `File Name` field, and click `Save`.
 As a result, our PCA pipeline coordinates have now been converted to the file format that Weka accepts for further classification. This file should be saved as `WBC_PCA.arff` in the `Step4_Visualization` subfolder of the `WBC_CellClass` folder.
 
 Now that we have the PCA dataset in the correct format, click `Exit` to return to the Weka home screen.
+
+###
+
+You should now be at the `Weka GUI Chooser` window that shows at the application's startup. Under `Applications`, click `Explorer` to bring up the `Weka Explorer` window. This is the main window that we will use to run our classifier.
+
+[![image-center](../assets/images/600px/weka_explorer.png){: .align-center}](../assets/images/weka_explorer.png)
+
+
 
 <!--
 * We will lose some information present in the original data, but the more structure that is present in the data, the less information that we will lose. -- something about the percentage of variation in the data that can be explained by the multiple dimensions?
