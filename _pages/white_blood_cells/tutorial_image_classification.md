@@ -63,7 +63,7 @@ Let's classify! Click the `Classify` tab at the top of the explorer window. Near
 
 If you're curious what `ZeroR` means, it is the clown classifier from the [main text](training) that assigns every object to the class containing the most elements. Let's not use this classifier! Instead, click `Choose`, which will bring up a menu of folders as shown below.
 
-[![image-center](../assets/images/600px/classifier_list.png){: .align-center}](../assets/images/classifier_list.png)
+[![image-center](../assets/images/600px/classifier_list.png){: .align-center width="400"}](../assets/images/classifier_list.png)
 
 The k-NN classifer is contained under `lazy > IBK`. Select `IBK`, and you will be taken back to the explorer window, except that next to `Choose` you should now see `IBK` followed by a collection of parameters. The only parameter that we need for k-NN is the value of *k* (the number of nearest neighbors to consider when assigning a class to an object), which by default is set to 1 as indicated by `-K 1`.
 
