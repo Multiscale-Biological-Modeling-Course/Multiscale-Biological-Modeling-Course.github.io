@@ -133,10 +133,11 @@ And if we take the number of dimensions down to three, it gets a little worse st
 We have therefore replicated an instance of a very deep fact in data science, which is that there is typically a "Goldilocks" value in the number of dimensions we should use for our PCA hyperplane, at which the algorithm is performing optimally. In the case of this WBC image dataset, that sweet spot value is around 10.
 
 **Note:** If anything is still unclear about using Weka and exploring its output, Jen Golbeck made an excellent <a href="https://www.youtube.com/watch?v=gfhGfnkypCY" target="_blank">Youtube video</a> that you may like to check out.
+{: .notice--warning}
 
 ### Choosing a value of k for k-nearest neighbors
 
-Now that we have determined the number of dimensions that we will use, we could 
+Now that we have determined the number of dimensions that we will use, we could
 
 **STOP:** We could also try changing the number of folds that we use. Try running the classifier with the number of folds equal to 2, 5, 10, 20, 100, and 345. What do you find is best?
 {: .notice--primary}
