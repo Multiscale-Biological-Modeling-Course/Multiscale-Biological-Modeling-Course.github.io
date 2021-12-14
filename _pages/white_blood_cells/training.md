@@ -1,6 +1,6 @@
 ---
 permalink: /white_blood_cells/training
-title: "Training a Classifier"
+title: "Training a Classifier on a WBC Image Shape Space"
 sidebar:
  nav: "white_blood_cells"
 toc: true
