@@ -135,7 +135,19 @@ We have therefore replicated an instance of a very deep fact in data science, wh
 **Note:** If anything is still unclear about using Weka and exploring its output, Jen Golbeck made an excellent <a href="https://www.youtube.com/watch?v=gfhGfnkypCY" target="_blank">Youtube video</a> that you may like to check out.
 {: .notice--warning}
 
-There are two other considerations that we should take into account: the value of *k* in our k-nearest neighbors approach (which has defaulted to 1) and the number of folds *f* used (which has defaulted to 10). Before we return to the main text, we encourage you to continue running the k-NN classifier for a few different values of *k* and *f* (which can range from 2 to 365). What do you find? Does it match your intuition?
+**STOP:** There are two other considerations that we should take into account: the value of *k* in our k-nearest neighbors approach (which has defaulted to 1) and the number of folds *f* used (which has defaulted to 10). We encourage you to continue running the k-NN classifier for a few different values of *k* and *f* (which can range from 2 to 365). What do you find? Does it match your intuition? And what happens if we try a different classifier entirely?
+{: .notice--primary}
+
+### Subclassifying images by cell type
+
+We classified our WBC images by family, but granulocytes further subdivide into three classes (basophils, eosinophils, and neutrophils). This means that we could just as well have classified images into *five* categories corresponding to cell type.
+
+To do so, click the `Preprocess` tab at the top of the Weka explorer window. Click `Open File` again, and open your `WBC_PCA.arff` file. (It has not been modified by Weka.) This time, under `Attributes`, remove `FILENAME`, `FAMILY`, and the variables `Var11` through `Var344`.
+
+Then, click `Classify`, and again run k-NN with *k* = 1 and the number of folds equal to 10, making sure to select `(Nom) TYPE` as your variable to classify. As we return to the main text, we ask you to reflect on the results.
+
+**STOP:** What are the accuracy, precision, and recall of this classifier? How does the confusion matrix compare to the one that we produced for three classes? From a biological perspective, why do you think that the algorithm is struggling?
+{: .notice--primary}
 
 [Return to main text](training#results-of-applying-a-classifier-to-the-wbc-shape-space){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
