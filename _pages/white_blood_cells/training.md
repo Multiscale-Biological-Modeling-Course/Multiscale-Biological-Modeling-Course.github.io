@@ -194,6 +194,6 @@ We could also try a different classifier (and in the tutorial we encouraged you 
 
 Yet ultimately, k-NN outperforms much more advanced classifiers on this dataset. It may be a relatively simple approach, but it also is a great match for classifying images within a WBC shape space, since proximity in this space indicates that two WBCs belong to the same family.
 
-This is not to say that we cannot make improvements, both to our data and to our methods. We will discuss these potential improvements in this module's conclusion.
+This is not to say that we cannot make improvements, both to our data and to our methods. We will discuss these potential improvements in this module's conclusion. (Coming soon!)
 
 [^Mistry]: Mistry DA, Wang JY, Moeser ME, Starkey T, Lee LYW 2021. A systematic review of the sensitivity and specificity of lateral flow devices in the detection of SARS-CoV-2. BMC Infectious Diseases 21(1):828. [Available online](https://doi.org/10.1186/s12879-021-06528-3)
