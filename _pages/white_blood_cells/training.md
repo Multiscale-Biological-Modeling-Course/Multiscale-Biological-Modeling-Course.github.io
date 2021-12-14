@@ -109,6 +109,12 @@ Just like accuracy, all three of the metrics introduced in this section are not 
 
 You may find all these terms confusing and difficult to keep straight. You are not alone! An entire generation of scientists make copious trips to the <a href="https://en.wikipedia.org/wiki/Precision_and_recall#Definition_(classification_context)" target="_blank">Wikipedia page</a> describing these metrics as well as others. It's called a confusion matrix for a reason…
 
+{% include video id="6gJdf7LyGpg" provider="youtube" %}
+
+{% include video id="bv26dLnbi9g" provider="youtube" %}
+
+{% include video id="1G1dfLF8-jo" provider="youtube" %}
+
 <iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/6gJdf7LyGpg" frameborder="0" allowfullscreen></iframe>
 
 <iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/bv26dLnbi9g" frameborder="0" allowfullscreen></iframe>
