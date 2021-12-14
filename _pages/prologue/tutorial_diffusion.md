@@ -16,7 +16,7 @@ In this tutorial, we will use Python to build a Jupyter notebook. We suggest onl
 | [matplotlib](https://matplotlib.org/users/installing.html) | 2.2.3 | *conda list* or *pip list* |
 | [numpy](https://numpy.org/install/) | 1.15.1 | *conda list* or *pip list* |
 | [scipy](https://www.scipy.org/install.html) |  1.1.0 | *conda list* or *pip list* |
-| [imageio](https://imageio.readthedocs.io/en/stable/installation.html) | 2.4.1 | *conda list* or *pip list* |
+| [imageio](https://imageio.readthedocs.io/en/stable/) | 2.4.1 | *conda list* or *pip list* |
 
 [^version]: Other versions may be compatible with this code, but those listed are known to work for this tutorial
 
