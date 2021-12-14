@@ -1,6 +1,7 @@
 ---
 permalink: /contact/
 title: "Contact Us"
+image: "assets/images/f38_k61_high-res.png"
 description: Contact the developers of Biological Modeling, a free online course.
 comments: false
 share: false
