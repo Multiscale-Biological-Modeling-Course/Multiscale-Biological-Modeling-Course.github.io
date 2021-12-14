@@ -78,6 +78,10 @@ Now for the magic moment. Click `Start`. The classifier should run very quickly,
 
 [![image-center](../assets/images/600px/classifier_output_all_pca_variables.png){: .align-center}](../assets/images/classifier_output_all_pca_variables.png)
 
+The results are horrible! Every image in our dataset has been assigned as a lymphocyte. What could have gone wrong?
+
+Remember when we said that weird things happen in multi-dimensional space? The above result would be one of those things.
+
 
 
 <!--
