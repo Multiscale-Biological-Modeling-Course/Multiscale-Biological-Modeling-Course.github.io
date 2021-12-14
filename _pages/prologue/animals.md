@@ -74,27 +74,28 @@ For some parameter values, our reaction-diffusion system is not particularly int
 **Note:** Some of the videos in this lesson are short because we can find the end result behavior of the system with only a short simulation, and the videos are very computationally intensive to generate due to the number of particles simulated.
 {: .notice--warning}
 
-<iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/MOO0fmwoz7E" frameborder="0" allowfullscreen></iframe>
+{% include video id="MOO0fmwoz7E" provider="youtube" %}
 
 On the other hand, if *f* is too high, then there will be an increase in the concentration of *A* particles. However, there will also be more interactions between *A* particles and pairs of *B* particles, and so we will see an explosion in the number of predators. The following simulation has the parameters *f* = 1,000,000 and *k* = 100,000.
 
-<iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/ayvWHWBCg70" frameborder="0" allowfullscreen></iframe>
+{% include video id="ayvWHWBCg70" provider="youtube" %}
 
 The interesting behavior in this system lies in a sweet spot of the parameters *f* and *k*. For example, consider the following visualization when *f* is equal to 100,000 and *k* is equal to 200,000. We see a very clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where there is a critical mass of predators to interact with each other.
 
-<iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/W_eCGTlgi4k" frameborder="0" allowfullscreen></iframe>
+{% include video id="W_eCGTlgi4k" provider="youtube" %}
 
 When we hold *k* fixed and increase *f* to 140,000, the higher feed rate increases the likelihood of *B* particles encountering *A* particles, and so we see even more waves of *A* cascades.  Note the clear red-green stripes that have appeared by the end of the movie.
 
-<iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/I5wyKpIWgrE" frameborder="0" allowfullscreen></iframe>
+{% include video id="I5wyKpIWgrE" provider="youtube" %}
 
 As *f* approaches *k*, the stripe structure becomes chaotic and breaks down because there are so many pockets of *B* particles that these particles constantly collide and mix with each other. The following animation shows the result of raising *f* to 175,000.
 
-<iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/CM0JUzRn4X8" frameborder="0" allowfullscreen></iframe>
+{% include video id="CM0JUzRn4X8" provider="youtube" %}
 
 Once *f* and *k* are equal, the stripes will disappear. We might expect this to mean that the *B* particles will be uniformly distributed across a background of *A* particles. But what we see is that after an initial outward explosion of *B* particles, the system produces a mottled background, with pockets having higher or lower concentration of *B*. Pay attention to the following video at a point late in the animation. Although the concentrations of the particles are still changing, there is much less large-scale change than in earlier videos. If we freeze the video, our eye cannot help but see patterns of red and green clusters that resemble spots (a more appropriate term would be mottling).
 
-<iframe width="640" height="380" src="https://www.youtube-nocookie.com/embed/Pva4e0w7i24" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="380" src="https://www.youtube-
+.com/embed/Pva4e0w7i24" frameborder="0" allowfullscreen></iframe>
 
 You may still be skeptical, since the patterns above do not have the concrete boundaries that we would expect of animal stripes and spots. Yet when we zoom into the skin of an animal like the zebrafish, we see that the patterns we infer on a higher level are in fact the net result of many individual points, and that the colors of these points show a great deal of variety. The figure below shows an example of this effect for zebrafish skin.
 

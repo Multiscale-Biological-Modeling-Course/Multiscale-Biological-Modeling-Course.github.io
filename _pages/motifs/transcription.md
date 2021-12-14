@@ -24,14 +24,6 @@ DNA can be thought of as a blueprint for storing information that flows from DNA
 The central dogma of molecular biology states that molecular information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA. Image courtesy: Dhorpool, Wikimedia commons user.
 {: style="font-size: medium;"}
 
-<!--
-
-If you would like a refresher on transcription, the following video from the YouTube channel "*Professor Dave Explains*" will explain the process in eukaryotes at 1:09. For those more familiar with transcription, skip to 2:50, where Dave gives a great overview of why gene regulation is necessary.
-
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/J9jhg90A7Lw?start=69" frameborder="0" allowfullscreen></iframe>
-
--->
-
 ## Transcription factors control gene regulation
 
 All of your cells have essentially the same DNA, and yet your liver cells, neurons, and brain cells are able to serve different functions. This is because the rates at which these genes are **regulated**, or converted into RNA and then protein, vary between genes in different tissues.
@@ -70,7 +62,7 @@ An overview of ChIP-seq. Figure courtesy Jkwchui, Wikimedia Commons user.
 
 You may also like to check out the following excellent video on identifying genes regulated by a transcription factor. This video was produced by students in the 2020 [PreCollege Program in Computational Biology](http://www.cbd.cmu.edu/education/pre-college-program-in-computational-biology/) at Carnegie Mellon. The presenters won an award from their peers for their work, and for good reason!
 
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/voEDurUgz_4" frameborder="0" allowfullscreen></iframe>
+{% include video id="voEDurUgz_4" provider="youtube" %}
 
 **STOP:** How do you think that researchers could measure whether a transcription factor activates or inhibits a given gene?
 {: .notice--primary}

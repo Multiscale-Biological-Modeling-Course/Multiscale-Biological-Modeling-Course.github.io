@@ -8,16 +8,15 @@ toc_sticky: true
 image: "../assets/images/normal_adult_blood_smear.JPG"
 ---
 
-### Downloading Weka
+### Installing Weka
 
-To run a classifier on our shape space, we will need a software framework for running standard machine learning algorithms. There are a number of options available, but we will choose <a href="https://www.cs.waikato.ac.nz/ml/weka/" target="_blank">Weka</a>, developed at the University of Waikato in New Zealand, since it is relatively light-weight and easy to get running quickly.
+In this tutorial, we will apply the k-NN classifier to the post-PCA shape space of WBC nuclei images that we generated in the [previous tutorial](tutorial_shape_space). To do so, we will need a statistical software framework that includes classification algorithms. There are a number of popular platforms available, but we will choose <a href="https://www.cs.waikato.ac.nz/ml/weka/" target="_blank">Weka</a>, developed at the University of Waikato in New Zealand, since it is relatively light-weight and easy to get running quickly.
 
 To install Weka, follow the instructions provided at the <a href="https://waikato.github.io/weka-wiki/downloading_weka/" target="_blank">Weka wiki</a>.
 
-### Method 1: Weka for File Conversion
+### File conversion of the shape space file
 
-To convert our current PCA pipeline coordinates to a format to be used in Weka, we need to convert our `WBC_PCA.csv` file into the `arff` format used by Weka. If you did not complete the previous tutorial, or you would like to skip this section, we provide the completed file <a href="../downloads/WBC_PCA.arff">here</a>.
-
+To convert our current PCA pipeline coordinates to a format to be used in Weka, we need to convert the `WBC_PCA.csv` file that we produced in the previous tutorial and that contains the coordinates of every image in the post-PCA shape space into the `arff` format used by Weka. If you have not completed the previous tutorial, or you would like to skip to the next section of this tutorial, we provide the completed file for download <a href="../downloads/WBC_PCA.arff">here</a>.
 
 Open Weka and navigate to `Tools --> ArffViewer`.
 
@@ -53,7 +52,8 @@ Now that we have the PCA dataset in the correct format, click `Exit` to return t
 
 * Videos from Jen Golbeck -- these need to go into the tutorial
 
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/gfhGfnkypCY" frameborder="0" allowfullscreen></iframe>
+{% include video id="gfhGfnkypCY" provider="youtube" %}
 
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/V9PNyx5-kxM" frameborder="0" allowfullscreen></iframe>
+{% include video id="V9PNyx5-kxM" provider="youtube" %}
+
 -->

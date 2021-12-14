@@ -31,7 +31,7 @@ Your doctor sometimes wants to count your blood cells to ensure that they are wi
 
 The classic device for counting blood cells is the **hemocytometer**. As illustrated in the video below, a technician filters a small amount of blood onto a gridded slide and then counts the number of cells of each type in the squares on the grid. As a result, they can estimate the number of each type of cell per volume of blood.
 
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/pP0xERLUhyc#t=1m24s" frameborder="0" allowfullscreen></iframe>
+{% include video id="pP0xERLUhyc#t=1m24s" provider="youtube" %}
 
 **STOP:** Why might the size of the blood sample influence the estimate of blood cell count?
 {: .notice--primary}

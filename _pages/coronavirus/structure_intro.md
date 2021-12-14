@@ -28,7 +28,7 @@ You may be wondering why we care about protein structure. Knowing a protein's sh
 
 For a more visual example of how protein shape affects protein function, consider the following video of a ribosome (which is a complex of RNA and proteins) translating a messenger RNA into protein. For translation to succeed, the ribosome needs to have a very precise shape including a "slot" that the messenger RNA strand can fit into and be read.
 
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/TfYf_rPWUdY" frameborder="0" allowfullscreen></iframe>
+{% include video id="TfYf_rPWUdY" provider="youtube" %}
 
 As we have seen throughout this course, molecular interactions are ruled by probability. Any two molecules may *interact*, but their rate of *dissociation* will be much higher if they do not fit together well. Furthermore, two interacting molecules need to not only collide with each other but also have the correct orientation in order to fit together.
 
@@ -44,15 +44,15 @@ In this section, we will introduce two popular laboratory methods for accurately
 
 In **X-ray crystallography** (sometimes called **macromolecular crystallography**), researchers first crystallize many copies of a protein and then shining an intense x-ray beam at the crystal. Light hitting the protein is diffracted, creating patterns from which the position of every atom in the protein can be inferred.  If you are interested in learning more about X-ray crystallography, check out the following excellent two-part video series from The Royal Institution.
 
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/gLsC4wlrR2A" frameborder="0" allowfullscreen></iframe>
+{% include video id="gLsC4wlrR2A" provider="youtube" %}
 
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/WJKvDUo3KRk" frameborder="0" allowfullscreen></iframe>
+{% include video id="WJKvDUo3KRk" provider="youtube" %}
 
 X-ray crystallography is over a century old, and has been the *de facto* approach for protein structure determination for decades. Yet a newer method is now rapidly replacing X-ray crystallography.
 
 In **cryo-electron microscopy** (**cryo-EM**), researchers preserve thousands of copies of the protein in non-crystalline ice and then examine these copies with an electron microscope. Check out the following YouTube video from the University of California San Francisco for a detailed discussion of cryo-EM.
 
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/Qq8DO-4BnIY" frameborder="0" allowfullscreen></iframe>
+{% include video id="Qq8DO-4BnIY" provider="youtube" %}
 
 Unfortunately, laboratory approaches for structure determination are expensive. X-ray crystallography costs upward of $2,000 per protein; furthermore, crystallizing a protein is a challenging task, and each copy of the protein must line up in the same way, which does not work for very flexible proteins. As for cryo-EM, an electron microscope is a very complicated machine that costs hundreds of thousands or millions of dollars (one microscope housed at Lawrence Berkeley National Lab cost $27 million).
 
@@ -107,7 +107,7 @@ A polypeptide chain of multiple amino acids with the torsion angles φ and ψ in
 
 Below is an excellent video from Jacob Elmer illustrating how changing φ and ψ at a single amino acid can drastically reorient a protein's shape.
 
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/1usemtIYe_s" frameborder="0" allowfullscreen></iframe>
+{% include video id="1usemtIYe_s" provider="youtube" %}
 
 A polypeptide with *n* amino acids will have *n* - 1 peptide bonds, meaning that its shape is influenced by *n* - 1 phi angles and 99 *n* - 1 psi angles. If each bond has *k* stable conformations, then there are *k*<sup>2<em>n</em>-2</sup> total possible conformations of the polypeptide. For example, if *k* is 3 and *n* is just 100 (a short polypeptide), then the number of potential protein structures is more than the number of atoms in the universe! The ability for the protein to reliably find a single conformation using the magic algorithm despite such an enormous number of potential shapes is called **Levinthal's paradox**.[^Levinthal]
 

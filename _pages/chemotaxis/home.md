@@ -37,7 +37,8 @@ In fact, Munroe's randomized algorithm for Lost Immortals is inspired by nature;
 Like other prokaryotes, *E. coli* is tiny, with a rod-shaped body that is 2µm long and 0.25 to 1µm wide.[^Pierucci1978] In exploring a vast world with sparse resources, *E. coli* finds itself in a situation comparable to the Lost Immortals.
 
 The video below shows a collection of *E. coli* surrounding a sugar crystal. Think of this video the next time you leave a slice of cake out on the kitchen counter!
-<iframe width="640" height="360" src="https://www.youtube.com/embed/F6QMU3KD7zw" frameborder="0" allowfullscreen></iframe>
+
+{% include video id="F6QMU3KD7zw" provider="youtube" %}
 
 The movement of organisms like the bacteria in the above video in response to a chemical stimulus is called **chemotaxis**. *E. coli* and other bacteria have evolved to move toward **attractants** (e.g., glucose, electron acceptors) and away from **repellents** (e.g., Ni<sup>2+</sup>, Co<sup>2+</sup>). But how?
 

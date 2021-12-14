@@ -27,7 +27,7 @@ Turing was a genius cryptographer during World War II and helped break several G
 
 You may be shocked that a computer can ultimately be represented by such a simple machine, one that Joseph Weizenbaum called nothing more than "pebbles on toilet paper"[^weizenbaum]. Although they are not our focus here, if Turing machines interest you, then we include an excellent introductory video on Turing machines below, including a demonstration of how a Turing machine can be used to solve an example problem.
 
-<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/PLVCscCY4xI" frameborder="0" allowfullscreen></iframe>
+{% include video id="PLVCscCY4xI" provider="youtube" %}
 
 Why spend time discussing Turing's foundational work on theoretical computer science?  Because this work enforces a theme of this course that we mentioned in the introduction, in that a computing machine built upon rules that are very simple can nevertheless produce emergent behavior that seems complex. We now will visit this theme in the context of biological modeling.
 

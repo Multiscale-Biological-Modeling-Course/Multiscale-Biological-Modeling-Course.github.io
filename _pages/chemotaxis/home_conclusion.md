@@ -123,7 +123,8 @@ Average distance to the goal over time for 500 cells. Each colored line indicate
 This figure illustrates the a tradeoff between reaching the target quickly and being able to stay there. For large values of *t*<sub>0</sub> (10.0, 5.0, 2.0), distances to the goal decrease very quickly at the beginning of the simulation, but the cells don't stay there effectively. For small values of *t*<sub>0</sub> (0.1, 0.2, 0.5), the cells fail to move to the ligand efficiently. When *t*<sub>0</sub> is equal to 0.5 seconds, the cell is able to remain around the goal, but it takes about 400 seconds longer to reach the goal than when *t*<sub>0</sub> is equal to 1.0 seconds.
 
 Recall the video of *E. coli* moving towards the sugar crystal that we showed at the beginning of this module, which we reproduce below. The video shows that the behavior of real *E. coli* is reflected by our simulated bacteria. Bacteria generally move towards the crystal and then remain close to it; some bacteria run by the crystal, but they then turn around to move toward the crystal again.
-<iframe width="640" height="360" src="https://www.youtube.com/embed/F6QMU3KD7zw" frameborder="0" allowfullscreen></iframe>
+
+{% include video id="F6QMU3KD7zw" provider="youtube" %}
 
 ## Bacteria are even smarter than we thought
 
