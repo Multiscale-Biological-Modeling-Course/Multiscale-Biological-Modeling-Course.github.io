@@ -11,7 +11,7 @@ author_profile: true
 
 excerpt: "A free course in modeling biological systems at multiple scales."
 header:
-  overlay_image: "assets/images/f38_k61_high-res.jpg"
+  overlay_image: "assets/images/f38_k61_high-res.png"
   overlay_filter: 0.4
   # caption: "Photo credit: [**foo**](blah.com)"
   actions:
