@@ -6,6 +6,9 @@ sidebar:
 image: "../assets/images/repressilator_chart.png"
 ---
 
+**Note:** We are currently in the process of updating this tutorial to the latest version of MCell, CellBlender, and Blender. This tutorial works with MCell3, CellBlender 3.5.1, and Blender 2.79. Please see a [previous tutorial](tutorial-random-walk) for a link to download these versions.
+{: .notice--warning}
+
 In this tutorial, we will use CellBlender to adapt our simulation from the [tutorial](tutorial_nar) on negative autoregulation into a mathematically controlled simulation.
 
 First, open the file `NAR_comparison.blend` from the negative autoregulation tutorial and save a copy of the file as `NAR_comparison_equal.blend`. You may also download the completed tutorial files <a href="../tutorials/NAR_compare_equal.blend" download="NAR_compare_equal.blend">here</a>.

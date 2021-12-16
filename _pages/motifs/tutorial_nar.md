@@ -8,6 +8,9 @@ toc_sticky: true
 image: "../assets/images/repressilator_chart.png"
 ---
 
+**Note:** We are currently in the process of updating this tutorial to the latest version of MCell, CellBlender, and Blender. This tutorial works with MCell3, CellBlender 3.5.1, and Blender 2.79. Please see a [previous tutorial](tutorial-random-walk) for a link to download these versions.
+{: .notice--warning}
+
 ### Implementing simple regulation in CellBlender
 
 In this tutorial, we will compare simple against negative autoregulation using a particle-based simulation in CellBlender. We will start with simple regulation; if you followed the prologue, then load your `CellBlender_Tutorial_Template.blend` file; otherwise, follow the steps indicated in the prologue's [Random Walk Tutorial](../prologue/tutorial-random-walk) to produce this file. Then, save a copy of this file as `NAR_comparison.blend`. You may also download the completed tutorial files <a href="../tutorials/NAR_compare_unequal.blend" download="NAR_compare_unequal.blend">here</a>.

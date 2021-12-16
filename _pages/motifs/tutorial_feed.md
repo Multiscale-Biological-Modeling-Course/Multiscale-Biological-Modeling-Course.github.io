@@ -6,6 +6,9 @@ sidebar:
 image: "../assets/images/repressilator_chart.png"
 ---
 
+**Note:** We are currently in the process of updating this tutorial to the latest version of MCell, CellBlender, and Blender. This tutorial works with MCell3, CellBlender 3.5.1, and Blender 2.79. Please see a [previous tutorial](tutorial-random-walk) for a link to download these versions.
+{: .notice--warning}
+
 In this tutorial, we will use CellBlender to run a (mathematically controlled) comparison of simple regulation against regulation via the type-1 incoherent feed-forward loop that we saw in the main text.
 
 Load your `CellBlender_Tutorial_Template.blend` file from the [Random Walk Tutorial](../prologue/tutorial-random-walk). Save your file as `ffl.blend`. You may also download the completed tutorial file <a href="../tutorials/incoher_ffl.blend" download="incoher_ffl.blend">here</a>.
