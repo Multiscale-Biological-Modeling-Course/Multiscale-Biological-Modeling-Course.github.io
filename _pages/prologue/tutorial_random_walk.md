@@ -13,7 +13,10 @@ image: "../assets/images/gray_scott_jupyter_high-res.png"
 
 In the main text, we mentioned that we would need MCell to simulate a reaction-diffusion particle model, along with the CellBlender add-on for Blender that will integrate MCell simulations and help us visualize these simulations.
 
-You can download and install all three programs by following the installation guide at the [MCell homepage](https://mcell.org/download.html). Once you have followed the installation instructions, start Blender, and you will be ready to build and visualize a particle diffusion model.
+The current version of these tutorials is written for MCell3, CellBlender 3.5.1, and Blender 2.79. You can download and install all three programs by following the installation guide on the "Previous downloads" page at the <a href="https://mcell.org/download_previous.html" target="_blank">MCell homepage</a>. Once you have followed the installation instructions, start Blender, and you will be ready to build and visualize a particle diffusion model.
+
+**Note:** We are currently in the process of updating this tutorial to the latest version of MCell, CellBlender, and Blender.
+{: .notice--warning}
 
 ## Setting up CellBlender simulations
 
