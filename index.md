@@ -53,6 +53,12 @@ Our course contents are found below.
 
 This course was lovingly put together by a professor and a team of wonderful students in Carnegie Mellon University's <a href="https://cbd.cmu.edu" target="_blank">Computational Biology Department</a>. You can meet us on our [Meet the Team](meet-the-team) page.
 
+## Preorder the book
+
+We are hoping to produce a textbook companion to this course and have started a <a href="https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour" target="_blank">Kickstarter campaign</a> to fund its publication.
+
+If you enjoy the course, please help us meet our funding deadline before January 15, 2022.
+
 ## Course survey and contact form
 
 Please use our anonymous <a href="https://forms.gle/egmmBxGtBciDPYNS8" target="_blank">survey</a> so that we can track information about the demographics of our learners.
