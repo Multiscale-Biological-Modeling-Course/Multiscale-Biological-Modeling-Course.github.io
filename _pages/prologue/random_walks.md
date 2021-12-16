@@ -20,7 +20,7 @@ For example, your cells are full of **proteins**, complex macromolecules that pe
 
 In this prologue and throughout this course, we will often make high-level inferences about biological systems by building simple models of these systems that sometimes include randomness as a key feature of the model. We will see that even though a system is driven by randomness and simple rules does not mean that it does not have emergent behavior that can be elegant and beautiful.
 
-## The wanderlust of a single particle
+## The wanderlust of a randomly walking particle
 
 We will model the movements of a particle in the cell by a **random walk** in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction.
 
