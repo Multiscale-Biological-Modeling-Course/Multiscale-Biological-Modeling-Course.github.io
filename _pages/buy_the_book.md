@@ -11,4 +11,4 @@ We are producing a textbook companion to this course called *Biological Modeling
 
 Publication of the book is being funded via Kickstarter. You can back the campaign below. The electronic version of the book will be available internationally, and print copies will ship to North America only. If the campaign is successful, then we will offer the printed book on Amazon to international markets.
 
-<div class="iframely-embed"><div class="iframely-responsive" style="padding-bottom: 56.25%; padding-top: 120px;"><a href="https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour" data-iframely-url="//cdn.iframe.ly/uOKvkEC"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+<iframe src="https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour" width="448px" height="311px" frameborder="0"></iframe>
