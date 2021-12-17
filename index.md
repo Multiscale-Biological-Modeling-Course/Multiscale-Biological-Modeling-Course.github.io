@@ -69,10 +69,13 @@ Whether you loved our course and would like to provide a testimonial, or you're 
 
 This online course is a training and dissemination effort for the <a href="https://mmbios.pitt.edu" target="_blank">National Center for Multiscale Modeling of Biological Systems (MMBioS)</a>. It is supported by the National Institutes of Health (grant ID: P41 GM103712).
 
-The cover image on Module 4 was created by Keith Chambers.
+We would first and foremost like to thank everyone working on MMBioS software; their work allowed this project to come about.
 
 We are also very grateful to Wendy Velasquez Ebanks and Ulani Qi, who provided additional work on the course during its conception.
 
+Module 1 was inspired by Uri Alon's research and superlative book <a href="https://www.amazon.com/Introduction-Systems-Biology-Mathematical-Computational/dp/1439837171" target="_blank"><i>An Introduction to Systems Biology</i></a>, a landmark biological textbook.
+
+The cover image on Module 4 was created by Keith Chambers.
 
 ## You might also enjoy...
 
