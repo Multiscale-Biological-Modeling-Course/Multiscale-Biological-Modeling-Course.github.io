@@ -2,6 +2,7 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
+        <a class="site-logo" href="{{ '/' | relative_url }}"><img src="assets/images/200px/gray_scott_jupyter_high-res.png"></a>
         <a class="site-title" href="{{ '/' | relative_url }}">{{ site.masthead_title }}</a>
         <ul class="visible-links">
             {%- for link in site.data.navigation.main -%}
