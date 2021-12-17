@@ -129,6 +129,9 @@ A PCA plot (*d* = 2) shows clustering of individuals from Europe, Asia, Africa, 
 
 Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to use CellOrganizer to build a shape space for our WBC images and apply PCA to this shape space to produce a lower-dimensional representation of the shape space.
 
+**Note:** Before visiting this tutorial, we should point out that CellOrganizer is a much more flexible and powerful software resource than what is shown in the confines of this tutorial. For example, CellOrganizer not only infers properties from cellular images, it is able to build *generative* models that can form simulated cells in order to infer cellular properties. For more on what CellOrganizer can do, consult the <a href="http://www.cellorganizer.org/publications/" target="_blank">publications</a> page at its home page.
+{: .notice--warning}
+
 [Visit tutorial](tutorial_shape_space){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
