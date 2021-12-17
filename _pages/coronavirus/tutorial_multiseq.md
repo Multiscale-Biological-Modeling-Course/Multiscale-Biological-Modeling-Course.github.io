@@ -12,6 +12,9 @@ In this tutorial, we will get started with VMD and then calculate Qres between t
 
 Multiseq aligns two protein structures using a tool called **Structural Alignment of Multiple Proteins (STAMP)**. Much like the Kabsch algorithm considered in part 1 of the module, STAMP minimizes the distance between alpha carbons of the aligned residues for each protein or molecule by applying rotations and translations. If the structures do not have common structures, then STAMP will fail. For more details on the algorithm used by STAMP, click <a href="http://www.compbio.dundee.ac.uk/manuals/stamp.4.4/stamp.pdf" target="_blank">here</a>.
 
+**Note:** As of the current time, the STAMP alignment step used by Multiseq is not working for most users, especially Windows users. We will update this module when the software is fixed.
+{: .notice--warning}
+
 ## Getting started
 
 For this tutorial, first <a href="https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD" target="_blank">download VMD</a>. Throughout this tutorial, the program may prompt you to download additional protein database information, which you should accept.
