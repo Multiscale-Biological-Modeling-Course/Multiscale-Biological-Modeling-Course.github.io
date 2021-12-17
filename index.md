@@ -2,7 +2,7 @@
 title: <em>Biological Modeling</em>
 layout: single
 description: A free course in biological modeling at multiple scales.
-image: "assets/images/600px/f38_k61_high-res.png"
+image: "/assets/images/600px/f38_k61_high-res.png"
 toc: true
 toc_sticky: true
 related: false
@@ -69,7 +69,7 @@ Whether you loved our course and would like to provide a testimonial, or you're 
 
 This online course is a training and dissemination effort for the <a href="https://mmbios.pitt.edu" target="_blank">National Center for Multiscale Modeling of Biological Systems (MMBioS)</a>. It is supported by the National Institutes of Health (grant ID: P41 GM103712).
 
-We would first and foremost like to thank everyone working on MMBioS software; their work allowed this project to come about. Chiefly, thank you to the other members of our training and dissemination team (Alex Ropelewski, Joe Ayoob, and Rozita Laghaei) as well as the head of the MMBioS consortium, Jim Faeder. 
+We would first and foremost like to thank everyone working on MMBioS software; their work allowed this project to come about. Chiefly, thank you to the other members of our training and dissemination team (Alex Ropelewski, Joe Ayoob, and Rozita Laghaei) as well as the head of the MMBioS consortium, Jim Faeder.
 
 We are also very grateful to Wendy Velasquez Ebanks and Ulani Qi, who provided additional work on the course during its conception.
 
