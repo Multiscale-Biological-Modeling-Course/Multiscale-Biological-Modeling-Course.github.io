@@ -77,6 +77,8 @@ Module 1 was inspired by Uri Alon's research and superlative book <a href="https
 
 The cover image on Module 4 was created by Keith Chambers.
 
+Finally, the website design was built using Michael Rose's excellent <a href="https://mmistakes.github.io/minimal-mistakes/" target="_blank">Minimal Mistakes</a> theme.
+
 ## You might also enjoy...
 
 If you like this course, then we would suggest some additional resources below.
