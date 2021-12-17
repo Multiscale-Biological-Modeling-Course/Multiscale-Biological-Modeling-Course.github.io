@@ -13,8 +13,9 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: "<em>Biological Modeling:</em>"
+title: "<em>Biological Modeling</em>"
 subtitle: " A Free Online Course"
+logo: "assets/images/200px/gray_scott_jupyter_high-res.png"
 url: "https://biologicalmodeling.org"
 email:
 locale: "en-US"
