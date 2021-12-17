@@ -1,6 +1,6 @@
 ---
 permalink: /white_blood_cells/home
-title: "Module 4: Training a Computer to Count White Blood Cells Automatically"
+title: "Module 4: Training a Computer to Classify White Blood Cells"
 description: Learn how to train a computer to identify cells in images and classify these images into categories.
 sidebar:
  nav: "white_blood_cells"
