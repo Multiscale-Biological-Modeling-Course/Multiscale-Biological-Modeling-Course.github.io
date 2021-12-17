@@ -17,6 +17,8 @@ header:
   actions:
     - label: "Start learning!"
       url: "/prologue/"
+    - label: "Preorder the book!"
+      url: "/buy_the_book/"
 ---
 
 ## Welcome!
