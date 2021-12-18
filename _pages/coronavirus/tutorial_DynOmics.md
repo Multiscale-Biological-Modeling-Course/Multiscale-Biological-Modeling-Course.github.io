@@ -8,9 +8,6 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 In this tutorial, we will be using a publicly available web server, DynOmics, produced by Dr. Hongchun Li and colleagues at the University of Pittsburgh School of Medicine. This server is dedicated to performing molecular dynamics analysis by integrating the GNM and ANM models that we learned about in the [main text](conclusion_part_2).
 
-**Note:** At the current time, the DynOmics server is down. Please let us know in the comments if you find that it is back up.
-{: .notice--warning}
-
 Navigate to the <a href="http://enm.pitt.edu/index.php" target="_blank">DynOmics homepage</a>. This page contains many options that we can change to customize our analysis, but we will keep the default options for now.
 
 To choose our target molecule, we need to input the PDB ID. Since we will be performing the analysis on the SARS-CoV-2 spike protein, enter `6vxx` under `PDB ID`. Then, click `Submit`.
