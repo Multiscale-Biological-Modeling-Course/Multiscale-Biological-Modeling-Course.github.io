@@ -18,7 +18,7 @@ header:
     - label: "Start learning!"
       url: "/prologue/"
     - label: "Preorder the book!"
-      url: "/buy_the_book/"
+      url: "https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour"
 ---
 
 ## Welcome!
