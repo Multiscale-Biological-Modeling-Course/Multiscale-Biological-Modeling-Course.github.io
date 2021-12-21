@@ -1,5 +1,5 @@
 ---
-permalink: /prologue/random-walk
+permalink: /prologue/random_walk
 title: "An Introduction to Random Walks"
 sidebar:
  nav: "prologue"

@@ -75,7 +75,7 @@ And yet we have made a major omission. *E. coli* goes to great lengths to ensure
 
 After all, the direction that a bacterium is moving at any point in time is random! So why would a decrease in tumbling frequency help  *E. coli* move toward an attractant?
 
-This question is a biologically deep one and it has no intuitive answer. However, in this module's final lesson, we will build a model to explain why *E. coli*'s random-walk algorithm with a variation in tumbling frequency is in fact an extremely clever way of locating resources in a strange new land.
+This question is a biologically deep one and it has no intuitive answer. However, in this module's final lesson, we will build a model to explain why *E. coli*'s random walk algorithm with a variation in tumbling frequency is in fact an extremely clever way of locating resources in a strange new land.
 
 [Next lesson](home_conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

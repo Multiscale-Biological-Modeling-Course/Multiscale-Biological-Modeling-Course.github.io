@@ -29,7 +29,7 @@ Turing was not asking why zebras have *evolved* to have stripes --- this questio
 
 In this module, we will introduce a particle simulation model based on Turing's ideas. We will be amazed that a system built on very simple rules and even *randomness* can nevertheless produce seemingly complex emergent behavior. And we will explore how this model can be tweaked to provide a hypothesis for the source of not just the zebra's stripes but also the leopard's spots.
 
-[Next lesson](random-walk){: .btn .btn--primary .btn--large}
+[Next lesson](random_walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^numbers]: Turing, Alan M. (1936), "On Computable Numbers, with an Application to the Entscheidungsproblem", Proceedings of the London Mathematical Society, Ser. 2, Vol. 42: 230-265.
