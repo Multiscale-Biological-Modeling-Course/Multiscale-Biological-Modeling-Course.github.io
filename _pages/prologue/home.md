@@ -13,19 +13,21 @@ author_profile: true # add author to page
 
 # Introduction: Turing and the Zebra's Stripes
 
-Our story begins with an unlikely character: Alan Turing. If you have heard of Turing, then you might be surprised as to why he would appear in a course on biological modeling.
+Our story begins with an unlikely character: Alan Turing. If you have heard of Turing, then you might be surprised that he would appear in the first sentence of a course on biological modeling.
 
 [![image-center](../assets/images/600px/alan_turing_npg_cc.jpg){: .align-center}](../assets/images/alan_turing_npg_cc.jpg)
 Alan Turing in 1951. © National Portrait Gallery, London.
 {: style="font-size: medium; text-align: center;"}
 
-Turing was a genius cryptographer during World War II who helped break several German ciphers. But his most famous scientific contribution was a 1936 paper in which he introduced what has come to be known as a **Turing machine**[^numbers]. This hypothetical computer consists of an infinitely long tape of cells and a reader that can read one cell at a time. Each cell consists of only a single number, and the machine can move one cell at a time, reading and rewriting cells according to a finite collection of internal rules. Turing's major insight was that such a machine, though simple, is enormously powerful. Nearly a century after his work, any task that a computer performs, from the device you are using to read this to the world's most powerful supercomputer, could be implemented by a Turing machine, or what Joseph Weizenbaum called nothing more than "pebbles on toilet paper"[^weizenbaum].
+Turing was a genius cryptographer who helped break several German ciphers during World War II. But his most famous scientific contribution was a 1936 paper in which he introduced what has come to be known as a **Turing machine**[^numbers]. This hypothetical computer consists of an infinitely long tape of cells and a reader that can read one cell at a time. Each cell consists of only a single number, and the machine can move one cell at a time, reading and rewriting cells according to a finite collection of internal rules.
 
-Two years before his untimely demise in 1954, Turing published his only paper on biochemistry, which centered on the question that we introduced in the introduction: “Why do zebras have stripes?”[^morphogenesis]
+Turing's major insight was that this simple machine is nevertheless powerful. Nearly a century after his work, any task that can be performed by a computer --- even the world's most largest supercomputer --- could be implemented by a Turing machine, which Joseph Weizenbaum called nothing more than "pebbles on toilet paper"[^weizenbaum].
 
-Turing was not approaching this question from the perspective of why zebras have *evolved* to have stripes --- this was unsolved in Turing's time, and recent research has indicated that the stripes may be helpful in warding off flies.[^zebra] Rather, Turing reasoned that just as seemingly complicated computers can be emulated by a much simpler machine, there must be some limited set of molecular "rules" that cause stripes to appear on a zebra's coat.
+Two years before his untimely demise in 1954, Turing published his only paper on biochemistry, which addressed the question: “Why do zebras have stripes?”[^morphogenesis]
 
-In this module, we will introduce a particle simulation model based on Turing's ideas. We will be amazed that a system built on very simple rules and even *randomness* can nevertheless produce seemingly complex emergent behavior. And we will explore how this model can be tweaked to explain not just the zebra's stripes but also the leopard's spots. We hope that you will join us!
+Turing was not asking why zebras have *evolved* to have stripes --- this question was unsolved in Turing's time, and recent research has indicated that the stripes may be helpful in warding off flies.[^zebra] Rather, Turing was interested in what mechanism could produce the stripes that we see on a zebra's coat. And he reasoned that just as a simple machine can emulate a computer, some limited set of molecular "rules" could cause stripes to appear on a zebra's coat.
+
+In this module, we will introduce a particle simulation model based on Turing's ideas. We will be amazed that a system built on very simple rules and even *randomness* can nevertheless produce seemingly complex emergent behavior. And we will explore how this model can be tweaked to provide a hypothesis for the source of not just the zebra's stripes but also the leopard's spots.
 
 [Next lesson](random-walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
