@@ -114,7 +114,7 @@ We are getting a little better! If we remove `Var11` through `Var15`, you can ve
 
 In each step, our confusion matrix appears to be a little better, and the metrics that we introduced in the main text improve as well. In the `Classifier output` window, you can see that the accuracy has increased to 84.3%, while the weighted average of precision and recall over all three classes have increased to 0.857 and 0.843, respectively.
 
-All this dimension reduction may make us wonder how far we should take it -- should we reduce everything down to a single dimension? Yet if we remove `Var6` through `Var10`, we see that our confusion matrix gets a little worse:
+All this dimension reduction may make us wonder how far we should take it --- should we reduce everything down to a single dimension? Yet if we remove `Var6` through `Var10`, we see that our confusion matrix gets a little worse:
 
 | Granulocyte | Monocyte | Lymphocyte |
 | :---: |  :----: | :---: |

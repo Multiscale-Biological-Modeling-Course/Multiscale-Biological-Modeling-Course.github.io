@@ -23,7 +23,7 @@ gallery:
 
 ## Story about phone
 
-* We have been doing ML all along -- meme with cake?
+* We have been doing ML all along --- meme with cake?
 
 ## point about cellorganizer
 
@@ -147,11 +147,11 @@ o	(Murphy 2015) Cells and their nuclei and organelles change shape and behavior 
 
 * We will start with our data. Great data means that we often can obtain very positive results using just about any approach. An example of this was the iris flower data set, where the data were gathered very correctly and the features very clearly differentiated the data.
 
-* We have very low resolution images, and we don't have many of them. From this perspective, it is impressive that we were able to find any signal at all, and a natural thing to do would be to boost the size of our dataset -- especially for monocytes and lymphocytes -- with higher resolution images.
+* We have very low resolution images, and we don't have many of them. From this perspective, it is impressive that we were able to find any signal at all, and a natural thing to do would be to boost the size of our dataset --- especially for monocytes and lymphocytes --- with higher resolution images.
 
 * These drawbacks are a feature of this chapter, not a bug, as real datasets are often noisy.
 
-* The next failure point is our segmentation pipeline. We saw at the start of this module that not all of our images were perfectly segmented by our pipeline. As part of our quality assurance, perhaps we could devise a test for incorrect segmentations -- such as, if the size of the final object is not as large as what we would expect to be a nucleus, we could disregard this image as it may throw off our results.
+* The next failure point is our segmentation pipeline. We saw at the start of this module that not all of our images were perfectly segmented by our pipeline. As part of our quality assurance, perhaps we could devise a test for incorrect segmentations --- such as, if the size of the final object is not as large as what we would expect to be a nucleus, we could disregard this image as it may throw off our results.
 
 * Then, our pipeline was handed off to CellOrganizer. The low resolution of the nuclear images will mean that our vectorization of each segmented nucleus into features may have some round-off error included. We used the default number of sampled points of *n* equal to 1000, which was just one of many parameters that we encountered in this problem. Perhaps changing that default will improve the performance of our classifier as well.
 
@@ -177,9 +177,9 @@ o	(Murphy 2015) Cells and their nuclei and organelles change shape and behavior 
 
 * After a quick search, I found a paper that had advanced the state of the art for this problem. Wow! Better at diagnosing cancer than some of the best dermatologists in the United States.
 
-* And yet here is their confusion matrix. SHOW -- and this paper was on the cover of *Nature*!
+* And yet here is their confusion matrix. SHOW --- and this paper was on the cover of *Nature*!
 
-* I bet you feel a bit better about our results on WBC nuclear image analysis! So the approach does improve over a human, but we aren't any good at solving this problem either. This is the ultimate hope of machine learning algorithms -- that they not just beat us, but they do so in resounding fashion.
+* I bet you feel a bit better about our results on WBC nuclear image analysis! So the approach does improve over a human, but we aren't any good at solving this problem either. This is the ultimate hope of machine learning algorithms --- that they not just beat us, but they do so in resounding fashion.
 
 ## Wrapping up
 

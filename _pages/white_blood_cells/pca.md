@@ -107,7 +107,7 @@ Have you ever wondered how genetic testing companies  identify individuals' ethn
 
 An individual's *n* markers can be converted to an *n*-dimensional vector *v* such that *v*(*i*) is 1 if the individual possesses the variant for a marker and *v*(*i*) is 0 if the individual has the more common version of the marker. (The mathematically astute reader will notice that this vector lies on one of the many corners of an *n*-dimensional hypercube.)
 
-Because *n* is so large -- and in the early days of ancestry companies it far outnumbered the number of individual samples -- we need to be wary of the curse of dimensionality. When we apply PCA with *d* = 2 to produce a lower-dimensional projection of the data, we see some amazing results that helped launch the multi-billion dollar human ancestry industry.
+Because *n* is so large --- and in the early days of ancestry companies it far outnumbered the number of individual samples --- we need to be wary of the curse of dimensionality. When we apply PCA with *d* = 2 to produce a lower-dimensional projection of the data, we see some amazing results that helped launch the multi-billion dollar human ancestry industry.
 
 The figure below shows a two-dimensional projection for individuals of known European ancestry. Even though we have condensed hundreds of thousands of dimensions to two, the projected points reconstruct the map of Europe.
 

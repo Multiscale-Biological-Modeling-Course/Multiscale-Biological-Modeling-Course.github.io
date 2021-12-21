@@ -88,7 +88,7 @@ Statisticians have devised a collection of approaches to solve the Lost Cities p
 
 Unfortunately, if we have a large dataset, computing the distance between every pair of objects can become very time-intensive, even with a powerful computer. Instead, we will rotate all images concurrently so that the images are all aligned against each other before we begin. After this alignment, we can then vectorize all the images starting at the same position to ensure that two shape vectors have high RMSD when (and only when) they derive from dissimilar shapes.
 
-We can align a collection of images by first identifying the **major axis** of each image, which is the line segment crossing through the image's center of mass that is as long as possible. The figure below shows the major axis for a few similar shapes -- they may not look similar because they have not been aligned to reveal these similarities.
+We can align a collection of images by first identifying the **major axis** of each image, which is the line segment crossing through the image's center of mass that is as long as possible. The figure below shows the major axis for a few similar shapes --- they may not look similar because they have not been aligned to reveal these similarities.
 
 [![image-center](../assets/images/600px/three_similar_shapes_unaligned.png){: .align-center}](../assets/images/three_similar_shapes_unaligned.png)
 Three similar shapes, with their major axes highlighted in gray.

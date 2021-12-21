@@ -56,7 +56,7 @@ Running the notebook now produces the following network.
 
 [![image-center](../assets/images/600px/motifs_finding_ecoli_2.png){: .align-center}](../assets/images/motifs_finding_ecoli_2.png)
 
-Our plan is to compare this network against a random network. The following code will call a function from a package to generate a random network with 197 nodes and 477 edges and plot it. It uses a built in function called `random.seed()` that takes an integer as input and uses this function to initiate a (pseudo)random number generator that will allow us to generate a random network.  There is nothing special about the input value 42 here -- or is there?
+Our plan is to compare this network against a random network. The following code will call a function from a package to generate a random network with 197 nodes and 477 edges and plot it. It uses a built in function called `random.seed()` that takes an integer as input and uses this function to initiate a (pseudo)random number generator that will allow us to generate a random network.  There is nothing special about the input value 42 here --- or is there?
 
 ~~~ python
 random.seed(42)

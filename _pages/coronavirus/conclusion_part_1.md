@@ -40,7 +40,7 @@ By summing all of an algorithm's positive z-scores, we obtain a reasonable metri
 Sum of z-scores for every   Source: [https://predictioncenter.org/casp14/zscores_final.cgi](https://predictioncenter.org/casp14/zscores_final.cgi).
 {: style="font-size: medium;"}
 
-AlphaFold's CASP14 victory led some scientists -- and media outlets -- to declare that protein structure prediction had finally been solved [^Science]. Yet some critics remained skeptical.
+AlphaFold's CASP14 victory led some scientists --- and media outlets --- to declare that protein structure prediction had finally been solved [^Science]. Yet some critics remained skeptical.
 
 AlphaFold obtained an impressive median RMSD of 1.6 for its predicted proteins [^AlQuraishi], but to be completely trustworthy for a sensitive application like designing drug targets, a predicted protein structure would need to have an RMSD nearly an order of magnitude lower.
 

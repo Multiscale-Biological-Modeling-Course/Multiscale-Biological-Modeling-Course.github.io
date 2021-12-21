@@ -7,7 +7,7 @@ comments: false
 share: false
 ---
 
-We are producing a textbook companion to this course called *Biological Modeling: A Short Tour*, which will be available in spring 2022 in both print and electronic formats. The book will follow the "main text" of the book, while the tutorials -- which may change frequently in the future -- will be hosted here.
+We are producing a textbook companion to this course called *Biological Modeling: A Short Tour*, which will be available in spring 2022 in both print and electronic formats. The book will follow the "main text" of the book, while the tutorials --- which may change frequently in the future --- will be hosted here.
 
 Publication of the book is being funded via <a href="https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour" target="_blank">Kickstarter</a>. You can back the campaign below. The electronic version of the book will be available internationally, and print copies will ship to North America only. If the campaign is successful, then we will offer the printed book on Amazon to international markets.
 

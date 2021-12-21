@@ -22,7 +22,7 @@ d(z, w) = 10
  Answer: (4, 6).
 
 
-Exercise idea: local search and parameter estimation -- tie back to previous modules.
+Exercise idea: local search and parameter estimation --- tie back to previous modules.
 
 Exercise idea: soft classification, and breaking ties.
 

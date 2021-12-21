@@ -8,7 +8,7 @@ toc_sticky: true
 image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
-In this tutorial, we will simulate a random walk and take a look at how well this allows a bacterium to reach a goal. You might not anticipate that the random walk will do a very good job of this -- and you would not be wrong -- but it will give us a baseline simple strategy to compare against a more advanced random walk strategy.
+In this tutorial, we will simulate a random walk and take a look at how well this allows a bacterium to reach a goal. You might not anticipate that the random walk will do a very good job of this --- and you would not be wrong --- but it will give us a baseline simple strategy to compare against a more advanced random walk strategy.
 
 Specifically, we will build a Jupyter notebook to do so. You can create a blank file called `chemotaxis_std_random.ipynb` and type along, but the notebook will be quite lengthy, so feel free to download the final notebook here if you like: <a href="../downloads/downloadable/chemotaxis_std_random.ipynb" download="chemotaxis_std_random.ipynb">chemotaxis_std_random.ipynb</a>. A detailed explanation of the model and each function can be found in this completed file as well as the tutorial below.
 
