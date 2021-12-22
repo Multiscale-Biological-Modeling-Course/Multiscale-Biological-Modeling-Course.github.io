@@ -24,7 +24,7 @@ prologue:
       - title: "Introduction: Alan Turing and the zebra's stripes<br><br>"
         url: /prologue/
       - title: "An introduction to random walks<br><br>"
-        url: /prologue/random-walk
+        url: /prologue/random_walk
       - title: "A reaction-diffusion model generating Turing patterns<br><br>"
         url: /prologue/animals
       - title: "The Gray-Scott model: a cellular automaton generating Turing patterns<br><br>"
