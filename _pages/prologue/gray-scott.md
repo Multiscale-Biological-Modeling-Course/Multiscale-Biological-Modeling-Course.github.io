@@ -1,5 +1,5 @@
 ---
-permalink: /prologue/blocks
+permalink: /prologue/gray-scott
 title: "The Gray-Scott Model: A Turing Pattern Cellular Automaton"
 sidebar:
  nav: "prologue"

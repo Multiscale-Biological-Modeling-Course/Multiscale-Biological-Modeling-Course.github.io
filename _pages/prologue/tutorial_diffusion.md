@@ -124,5 +124,5 @@ Above, we used a parameter when plotting called `Spectral` that uses a **color m
 
 As we return to the main text, we will discuss this animation and extend our model to be able to handle reactions as well as diffusion.
 
-[Return to main text](blocks#adding-reactions-and-completing-the-gray-scott-model){: .btn .btn--primary .btn--large}
+[Return to main text](gray-scott#adding-reactions-and-completing-the-gray-scott-model){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

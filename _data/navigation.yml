@@ -28,7 +28,7 @@ prologue:
       - title: "A reaction-diffusion model generating Turing patterns<br><br>"
         url: /prologue/reaction-diffusion
       - title: "The Gray-Scott model: a cellular automaton generating Turing patterns<br><br>"
-        url: /prologue/blocks
+        url: /prologue/gray-scott
       - title: "Conclusion: Turing patterns are fine-tuned<br><br>"
         url: /prologue/conclusion
   - title: "Software Tutorials (featuring MCell and CellBlender)"

@@ -117,7 +117,7 @@ Despite using advanced modeling and rendering software that has undergone years 
 
 We wonder if it is possible to build a model of Turing patterns that does not require so much computational overhead. In other words, is there a simplification that we can make to our model that will run faster but still produce Turing patterns? We will turn our attention to this question in the next section.
 
-[Next lesson](blocks){: .btn .btn--primary .btn--large}
+[Next lesson](gray-scott){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^cowan]: G.B. Ermentrout and J.D. Cowan. "A Mathematical Theory of Visual Hallucination Patterns". *Biol. Cybernetics* 34, 137-150 (1979).
