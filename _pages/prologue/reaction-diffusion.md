@@ -36,7 +36,7 @@ To simulate this reaction on a particle level, if an *A* particle and two *B* pa
 
 This third reaction is why we compared *A* to prey and *B* to predators, since we may like to conceptualize the reaction as two *B* particles consuming an *A* particle and producing an offspring *B* particle.
 
-Before continuing, we call your attention to a slight difference between the feed and kill reactions. In the former, the number of *A* particles increases by a constant number in each time step. In the latter, the number of *B* particles decreases by a constant factor multiplied by the current number of *B* particles. In terms of calculus, this means that if [*A*] and [*B*] denote the concentrations of the two particle types, then in the absence of other reactions, we can write
+Before continuing, we call your attention to a slight difference between the feed and kill reactions. In the former, the number of *A* particles increases by a constant number in each time step. In the latter, the number of *B* particles decreases by a constant factor multiplied by the current number of *B* particles. If we were using calculus to model this system, then letting [*A*] and [*B*] denote the concentrations of the two particle types, we can write
 
 <p><center>
 <em>d</em>[<em>A</em>]/<em>dt</em> = <em>f</em>
