@@ -27,7 +27,7 @@ Two years before his untimely demise in 1954, Turing published his only paper on
 
 Turing was not asking why zebras have *evolved* to have stripes --- this question was unsolved in Turing's time, and recent research has indicated that the stripes may be helpful in warding off flies.[^zebra] Rather, Turing was interested in what mechanism could produce the stripes that we see on a zebra's coat. And he reasoned that just as a simple machine can emulate a computer, some limited set of molecular "rules" could cause stripes to appear on a zebra's coat.
 
-In this module, we will introduce a particle simulation model based on Turing's ideas. We will be amazed that a system built on very simple rules and even *randomness* can nevertheless produce seemingly complex emergent behavior. And we will explore how this model can be tweaked to provide a hypothesis for the source of not just the zebra's stripes but also the leopard's spots.
+In this prologue, we will introduce a particle simulation model based on Turing's ideas. We will be amazed that a system built on very simple rules and even *randomness* can nevertheless produce seemingly complex emergent behavior. And we will explore how this model can be tweaked to provide a hypothesis for the source of not just the zebra's stripes but also the leopard's spots.
 
 [Next lesson](random_walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
