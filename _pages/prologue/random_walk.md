@@ -1,6 +1,6 @@
 ---
 permalink: /prologue/random_walk
-title: "An Introduction to Random Walks"
+title: "An Overview of Random Walks"
 sidebar:
  nav: "prologue"
 toc: true
