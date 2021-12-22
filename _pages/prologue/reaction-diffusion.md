@@ -10,24 +10,35 @@ image: "../assets/images/gray_scott_jupyter_high-res.png"
 
 ## From random walks to reaction-diffusion
 
-In the previous section, we introduced the random walk model of a particle diffusing through a medium as a result of Brownian motion. But what exactly does the random movement of particles have to do with Alan Turing and zebras?
+In the [previous lesson](random_walk), we introduced the model of a particle randomly walking through a medium. But what exactly do random walks have to do with Alan Turing and zebras?
 
-Turing's insight was that remarkable patterns could emerge if we combine a simulation of diffusion with a chemical reaction, in which colliding particles interact with each other. Such a model is called a **reaction-diffusion system**, and the patterns that emerge in the simulation are called **Turing patterns** in Turing's honor.
+Turing's insight was that remarkable high-level patterns could arise if we combine particle diffusion with a chemical reaction in which colliding particles interact with each other. Such a model is called a **reaction-diffusion system**, and the emergent patterns are called **Turing patterns** in Turing's honor.
 
 ## An example reaction-diffusion system
 
-We will consider a reaction-diffusion system having two types of particles, *A* and *B*. The system is not meant to represent a predator-prey relationship, but you may like to think of the *A* particles as prey and the *B* particles as predators for reasons that will become clear soon.
+We will consider a reaction-diffusion system having two types of particles, *A* and *B*. The system is not explicitly a predator-prey relationship, but you may like to think of the *A* particles as prey and the *B* particles as predators for reasons that will become clear soon.
 
-Both types of particles diffuse randomly through the plane, but the *A* particles typically diffuse more quickly than the *B* particles.  In the simulation that follows, we will assume that *A* particles diffuse twice as quickly as *B* particles. In terms of the random walk, this faster rate of Brownian motion means that in a single "step", an *A* particle moves twice as far as a *B* particle.
+Both types of particles diffuse randomly through the plane, but the *A* particles diffuse more quickly than the *B* particles.  In the simulation that follows, we will assume that *A* particles diffuse twice as quickly as *B* particles. In terms of our random walk model, this faster rate of diffusion means that in a single "step", an *A* particle moves twice as far as a *B* particle.
 
-**STOP**: Say that we release one *A* particle and one *B* particle at the same location. If the two particles move via random walks, and the rate of diffusion of *A* is twice as fast, then how much farther from the origin will *A* be than *B* after *n* steps?
+**STOP**: Say that we release one *A* particle and one *B* particle at the same location. If the two particles move via random walks, and the rate of diffusion of *A* is twice as fast, then on average how much farther from the origin will *A* be than *B* after *n* steps?
 {: .notice--primary}
 
-We now will add some reactions to our system. The *A* particles are added into the system at some constant **feed rate** *f*, meaning that these particles are created as the result of other reactions that are not part of our model. In a three-dimensional system, the units of *f* are in mol/L/s, which means that every second, there are *f* moles of particles added to the system in every liter of volume. (Recall from your chemistry class long ago that one mole is 6.02214076 · 10<sup>23</sup> particles.) As a result, the concentration of the particles increases by a constant number in each time step.
+We now will add some reactions to our system. The *A* particles are added into the system at some constant **feed rate** *f*. As a result of the feed reaction, the concentration of the *A* particles increases by a constant number in each time step.
 
-There is also a **kill rate** constant *k* dictating the rate of removal of the *B* particles. As a result of removal, the number of *B* particles in the system will decrease by a factor of *k* in a given time step. That is, the more *B* particles that are present, the more *B* particles will be removed.
+**Note:** We will work with a two-dimensional simulation, but in a three-dimensional system, the units of *f* would be in mol/L/s, which means that every second, there are *f* moles of particles added to the system for every liter of volume. (Recall from your chemistry class long ago that one mole is 6.02214076 · 10<sup>23</sup> particles, called Avogadro's number.)
+{: .notice--warning}
 
-Note that there is a slight difference between the feed and kill reactions. In the first reaction, the number of *A* particles increases by a constant number in each time step. In the second reaction, the number of *B* particles decreases by a constant factor multiplied by the current number of *B* particles. In terms of calculus, this means that if [*A*] and [*B*] denote the concentrations of the two particle types, then in the absence of other reactions, we can write
+There is also a **kill rate** constant *k* dictating the rate of removal of *B* particles. As a result of the kill reaction, the number of *B* particles in the system will decrease by a factor of *k* in a given time step. That is, the more *B* particles that are present, the more *B* particles will be removed.
+
+Finally, our reaction-diffusion system includes the following reaction involving both particle types. The particles on the left side of this reaction are called **reactants** and the particles on the right side are called **products**.
+
+<p><center><em>A</em> + 2<em>B</em> → 3<em>B</em></center></p>
+
+To simulate this reaction on a particle level, if an *A* particle and two *B* particles collide with each other, then the *A* particle has some fixed probability of being replaced by a third *B* particle. This probability dictates the *rate* at which this reaction occurs, denoted *r*.
+
+This third reaction is why we compared *A* to prey and *B* to predators, since we may like to conceptualize the reaction as two *B* particles consuming an *A* particle and producing an offspring *B* particle.
+
+Before continuing, we call your attention to a slight difference between the feed and kill reactions. In the former, the number of *A* particles increases by a constant number in each time step. In the latter, the number of *B* particles decreases by a constant factor multiplied by the current number of *B* particles. In terms of calculus, this means that if [*A*] and [*B*] denote the concentrations of the two particle types, then in the absence of other reactions, we can write
 
 <p><center>
 <em>d</em>[<em>A</em>]/<em>dt</em> = <em>f</em>
@@ -36,33 +47,27 @@ Note that there is a slight difference between the feed and kill reactions. In t
 and
 
 <p><center>
-<em>d</em>[<em>B</em>]/<em>dt</em> = -<em>k</em> · <em>[B]</em>.
+<em>d</em>[<em>B</em>]/<em>dt</em> = -<em>k</em> · [<em>B</em>].
 </center></p>
-
-Finally, our reaction-diffusion system includes the following reaction involving both particle types. The particles on the left side of this reaction are called **reactants** and the particles on the right side are called **products**.
-
-<p><center><em>A</em> + 2<em>B</em> → 3<em>B</em></center></p>
-
-To simulate this reaction on a particle level, if an *A* particle and two *B* particles collide with each other, then the *A* particle has some fixed probability *r* of being replaced by a third *B* particle.
-
-This third reaction is why we compared *A* to prey and *B* to predators, since we may like to conceptualize the reaction as two *B* particles consuming an *A* particle and producing an offspring *B* particle.
 
 ## Parameters are omnipresent in biological modeling
 
-Our plan is to initiate the system with a uniform concentration of *A* particles spread across the grid and a tightly packed collection of *B* particles in the center of the grid.  But before we do this, we first point out that the results of our simulation may vary depending upon a few things.
+Before building a simulation corresponding to our reaction-diffusion model, we point out that the results of the simulation can vary depending upon a few things.
 
 A **parameter** is a variable quantity used as input to a model. Parameters are inevitable in biological modeling (and data science in general), and as we will see, changing parameters can cause major changes in the behavior of a system.
 
-Note that there are four parameters relevant to our reaction-diffusion system. Three of these parameters are the feed rate (*f*) of *A* particles, the kill rate of the *B* particles (*k*), and the rate of the predator-prey reaction (*r*). The final parameter of interest corresponds to the diffusion rates (i.e., speeds) of the two types of particle. We report this as a single parameter because the diffusion rates are completely dependent on each other; once the diffusion rate of the *B* particles is set, the diffusion rate of *A* particles must be twice that of the *B* particles.
+Four parameters are relevant to our reaction-diffusion system. Three of these parameters are the feed rate (*f*) of *A* particles, the kill rate of the *B* particles (*k*), and the rate of the predator-prey reaction (*r*). The final parameter of interest corresponds to the diffusion rate (i.e., speeds) of the the *B* particles. Once this diffusion rate is set, the diffusion rate of *A* particles must be twice that of the *B* particles.
 
-You can think of all these parameters as dials we can turn, observing how the system changes on the macro level. For example, if we raise the diffusion rate, then the particles will be moving around and bouncing into each other more, which means that we will see more of the reaction *A* + 2*B* → 3*B*.
+We think of all these parameters as dials that we can turn, observing how the system changes as a result. For example, if we raise the diffusion rate, then the particles will be moving around and bouncing into each other more, which means that we will see more of the reaction *A* + 2*B* → 3*B*.
 
 **STOP:** What will happen as we increase or decrease the feed rate *f*? What about the kill rate *k*?
 {: .notice--primary}
 
-A reaction like *A* + 2*B* → 3*B* is typically thought of as occurring at a **bulk reaction rate**, which is the total number of reactions occurring as a function of the concentration of reactants. In the following tutorial, CellBlender uses the software **MCell** to simulate our reaction-diffusion model; MCell is built upon some advanced probabilistic methods that allow it to use the bulk reaction rate to determine the probability that a reaction will happen if the particles needed as reactants collide. The same goes for the feed and kill reactions; new *A* particles are formed, and old *B* particles are destroyed, via probabilities that are computed from reaction rates. For now, you can think of the rate of a reaction as directly related to its probability of occurring.
+A reaction like *A* + 2*B* → 3*B* is typically thought of as occurring at a **bulk reaction rate**, which is the total number of reactions occurring as a function of the concentration of reactants. In the following tutorial, CellBlender uses the MCell software to simulate our reaction-diffusion model; MCell is built upon some advanced probabilistic methods that allow it to use the bulk reaction rate to determine the probability that a reaction will happen if the particles needed as reactants collide.
 
-When we return from this tutorial, we will examine the patterns that we are able to draw within this tutorial.
+The same goes for the feed and kill reactions; new *A* particles are formed, and old *B* particles are destroyed, via probabilities that are computed from reaction rates. For now, you can think of the rate of a reaction as directly related to its probability of occurring.
+
+In the following tutorial, we will initiate our reaction-diffusion system with a uniform concentration of *A* particles spread across the grid and a tightly packed collection of *B* particles in the center of the grid. When we return from this tutorial, we will see what patterns form, if any.
 
 [Visit tutorial](turing-cellblender){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
