@@ -65,7 +65,7 @@ If you enjoy the course, please help us meet our funding deadline before January
 
 Please use our anonymous <a href="https://forms.gle/egmmBxGtBciDPYNS8" target="_blank">survey</a> so that we can track information about the demographics of our learners.
 
-Whether you loved our course and would like to provide a testimonial, or you're an instructor interested in adopting this material in your class, or you just want to say hi, then we would love to hear from you. Please use the [Contact](contact) page to get in touch!
+Whether you loved our course and would like to provide a testimonial, or you're an instructor interested in adopting this material in your class, or you just want to say hi, then we would love to hear from you. Please use our [contact page](contact) to get in touch!
 
 ## Acknowledgements
 
