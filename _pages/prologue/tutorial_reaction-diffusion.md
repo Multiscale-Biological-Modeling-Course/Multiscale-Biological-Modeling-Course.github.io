@@ -10,7 +10,7 @@ image: "../assets/images/gray_scott_jupyter_high-res.png"
 **Note:** We are currently in the process of updating this tutorial to the latest version of MCell, CellBlender, and Blender. This tutorial works with MCell3, CellBlender 3.5.1, and Blender 2.79. Please see the [previous tutorial](tutorial-random-walk) for a link to download these versions.
 {: .notice--warning}
 
-In this tutorial, we will build the predator-prey reaction-diffusion model that we introduced in the [main text](animals). A warning that these simulations can take a long time to run.
+In this tutorial, we will build the predator-prey reaction-diffusion model that we introduced in the [main text](reaction-diffusion). A warning that these simulations can take a long time to run.
 
 Load the `CellBlender_Tutorial_Template.blend` file that you generated in the [Random Walk Tutorial](tutorial-random-walk). You may also download the complete file <a href="../tutorials/CellBlender_Tutorial_Template.blend" download="CellBlender_Tutorial_Template.blend">here</a>. Save this file as a new file named `turing_pattern.blend`. The completed tutorial is also available <a href="../tutorials/turing_pattern.blend" download="turing_pattern.blend">here</a>.
 
@@ -149,5 +149,5 @@ You may be wondering how the parameters in the above simulations were chosen. Th
 
 As we return to the main text, we will discuss how the patterns that we observe change as we make slight changes to these parameters. What biological conclusion can we draw from this phenomenon?
 
-[Return to main text](animals#tuning-reaction-diffusion-parameters-produces-different-turing-patterns){: .btn .btn--primary .btn--large}
+[Return to main text](reaction-diffusion#tuning-reaction-diffusion-parameters-produces-different-turing-patterns){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

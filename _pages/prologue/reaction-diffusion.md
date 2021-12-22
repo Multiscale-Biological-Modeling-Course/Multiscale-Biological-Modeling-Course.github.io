@@ -1,5 +1,5 @@
 ---
-permalink: /prologue/animals
+permalink: /prologue/reaction-diffusion
 title: "A Reaction-Diffusion Model Generating Turing Patterns"
 sidebar:
  nav: "prologue"

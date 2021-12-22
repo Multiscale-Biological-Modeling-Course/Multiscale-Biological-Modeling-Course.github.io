@@ -57,7 +57,7 @@ Before continuing, we will point you to a beautiful animation illustrating just 
 
 {% include video id="KQgydF-fXvc?start=370" provider="youtube" %}
 
-[Next lesson](animals){: .btn .btn--primary .btn--large}
+[Next lesson](reaction-diffusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^machinery]: Goodsell, David (2009), *The Machinery of Life*. Copernicus Books.
