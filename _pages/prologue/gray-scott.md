@@ -113,7 +113,7 @@ Note that the center of the cell becomes blue because the *A* particles diffuse 
 
 ## Adding reactions and completing the Gray-Scott model
 
-Now that we have established a cellular automaton for tracking concentrations of two types of particles as they diffuse, we will add the following three reactions to complete the model.
+Now that we have established a cellular automaton for coarse-grained particle diffusion, we will implement the  three reactions from the [previous lesson]() within the cellular automaton.
 
 1. A "feed" reaction in which new *A* particles are fed into the system at a constant rate.
 2. A "death" reaction in which *B* particles are removed from the system at a rate proportional to their current concentration.
