@@ -6,6 +6,15 @@ sidebar:
 toc: true
 toc_sticky: true
 image: "../assets/images/gray_scott_jupyter_high-res.png"
+gallery:
+  - url: ../assets/images/reaction-diffusion_three_reactions_before.png
+    image_path: ../assets/images/600px/diffusion_three_reactions_before.png
+    alt: "Before picture of reaction-diffusion system"
+    title: "A collection of particles <em>A</em> and <em>B</em> in our reaction-diffusion system."
+  - url: ../assets/images/reaction-diffusion_three_reactions_after.png
+    image_path: ../assets/images/600px/diffusion_three_reactions_after.png
+    alt: "After picture of reaction-diffusion system"
+    title: "The system after some <em>A</em> particles are fed into the system, some <em>B</em> particles are killed, and the collision of an <em>A</em> particle and two <em>B</em> particles produces a third <em>B</em> particle."
 ---
 
 ## From random walks to reaction-diffusion
@@ -35,6 +44,10 @@ Finally, our reaction-diffusion system includes the following reaction involving
 To simulate this reaction on a particle level, if an *A* particle and two *B* particles collide with each other, then the *A* particle has some fixed probability of being replaced by a third *B* particle. This probability dictates the *rate* at which this reaction occurs, denoted *r*.
 
 This third reaction is why we compared *A* to prey and *B* to predators, since we may like to conceptualize the reaction as two *B* particles consuming an *A* particle and producing an offspring *B* particle.
+
+The three reactions defining our system are summarized by the figure below.
+
+{% include gallery caption="Visualization of our reaction-diffusion system. (Left) The system contains both types of particles and two collisions. (Right) Two of the A particles are fed into the system, two of the B particles die out, and a B particle replaces an A particle after the collision of three particles." %}
 
 Before continuing, we call your attention to a slight difference between the feed and kill reactions. In the former, the number of *A* particles increases by a constant number in each time step. In the latter, the number of *B* particles decreases by a constant factor multiplied by the current number of *B* particles. If we were using calculus to model this system, then letting [*A*] and [*B*] denote the concentrations of the two particle types, we can write
 
