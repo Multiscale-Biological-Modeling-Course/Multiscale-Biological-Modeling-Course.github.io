@@ -23,10 +23,10 @@ The Turing patterns that emerged from our particle simulations are a testament t
 
 Our reaction-diffusion system is remarkable because it is so **fine-tuned**, meaning that very slight changes in parameter values can lead to significant changes in the system. These changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
 
-Robert Munafo provides a great figure, reproduced below, showing how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary.[^robert] The kill rate increases along the x-axis, and the feed rate increases along the y-axis. Notice how much the patterns change! You may like to tweak the parameters of the own Gray-Scott simulation from the [previous lesson](gray-scott) to see if you can reproduce these differing patterns.
+The figure below shows how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary. The kill rate increases along the x-axis, and the feed rate increases along the y-axis. Notice how much the patterns change! You may like to tweak the parameters of the own Gray-Scott simulation from the [previous lesson](gray-scott) to see if you can reproduce these differing patterns.
 
 [![image-center](../assets/images/600px/xmorphia-parameter-map.jpg){: .align-center width="400px"}](../assets/images/xmorphia-parameter-map.jpg)
-Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns produced in the Gray-Scott model. Note that many parameter choices do not lead to patterns.
+Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns produced in the Gray-Scott model. Note that many parameter choices do not lead to patterns. Image courtesy: Robert Munafo.[^robert]
 {: style="font-size: medium;"}
 
 Later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In a **robust** system, variation in parameters does not lead to substantive changes in the ultimate behavior of the system. Robustness is vital for processes, like your heartbeat, that must be resilient to small environmental changes.
