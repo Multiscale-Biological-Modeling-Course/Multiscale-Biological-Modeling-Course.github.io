@@ -8,11 +8,11 @@ toc_sticky: true
 image: "../assets/images/gray_scott_jupyter_high-res.png"
 gallery:
   - url: ../assets/images/reaction-diffusion_three_reactions_before.png
-    image_path: ../assets/images/600px/diffusion_three_reactions_before.png
+    image_path: ../assets/images/600px/reaction-diffusion_three_reactions_before.png
     alt: "Before picture of reaction-diffusion system"
     title: "A collection of particles <em>A</em> and <em>B</em> in our reaction-diffusion system."
   - url: ../assets/images/reaction-diffusion_three_reactions_after.png
-    image_path: ../assets/images/600px/diffusion_three_reactions_after.png
+    image_path: ../assets/images/600px/reaction-diffusion_three_reactions_after.png
     alt: "After picture of reaction-diffusion system"
     title: "The system after some <em>A</em> particles are fed into the system, some <em>B</em> particles are killed, and the collision of an <em>A</em> particle and two <em>B</em> particles produces a third <em>B</em> particle."
 ---
