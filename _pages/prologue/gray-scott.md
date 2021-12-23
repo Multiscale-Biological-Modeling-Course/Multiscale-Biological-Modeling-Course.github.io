@@ -23,7 +23,7 @@ gallery:
 
 ## A coarse-grained model of single particle diffusion
 
-Part of the modeler's work is to find simple models that capture the essence of a system while running quickly and scaling well to larger inputs.
+Part of a modeler's job is to find simple models that capture the essence of a system while running quickly and scaling well to larger inputs.
 
 In our case, we have a very "fine-grained" reaction-diffusion model illustrating Turing patterns, but it takes a huge amount of computational resources because it requires tracking the movements of hundreds of thousands of individual particles. Our goal is to build a model that will allow us to appreciate Turing patterns without significant computational overhead.
 
