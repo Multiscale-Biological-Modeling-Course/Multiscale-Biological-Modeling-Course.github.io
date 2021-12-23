@@ -41,7 +41,7 @@ Finally, our reaction-diffusion system includes the following reaction involving
 
 <p><center><em>A</em> + 2<em>B</em> → 3<em>B</em></center></p>
 
-To simulate this reaction on a particle level, if an *A* particle and two *B* particles collide with each other, then the *A* particle has some fixed probability of being replaced by a third *B* particle. This probability dictates the *rate* at which this reaction occurs, denoted *r*. This rate depends on the concentrations of both *A* and *B*, as well as their kinetic energy, the presence of a catalyst, and so on.
+To simulate this reaction on a particle level, if an *A* particle and two *B* particles collide with each other, then the *A* particle has some fixed probability of being replaced by a third *B* particle, which could vary based on the presence of a catalyst and the orientation of the particles. This probability directly relates to the *rate* at which this reaction occurs, which is denoted *r* and also depends on the concentrations of *A* and *B* as well as their kinetic energy.
 
 This third reaction is why we compared *A* to prey and *B* to predators, since we may like to conceptualize the reaction as two *B* particles consuming an *A* particle and producing an offspring *B* particle.
 
@@ -81,39 +81,39 @@ In the following tutorial, we will initiate our reaction-diffusion system with a
 [Visit tutorial](turing-cellblender){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Tuning reaction-diffusion parameters produces different Turing patterns
+## Changing reaction-diffusion parameters produces different emergent Turing patterns
 
-For some parameter values, our reaction-diffusion system is not particularly interesting.  For example, the following animation is produced when using parameter rates in CellBlender of *f* = 1000 and *k* = 500,000. It shows that if the kill rate is too high, then the *B* particles will die out more quickly than they can be replenished by the reaction with *A* particles, and so only *A* particles will be left. In this animation, *A* particles have been colored green, and *B* particles have been colored red.
+For many parameter values, our reaction-diffusion system is not very interesting.  For example, the following animation is produced when using parameter rates in CellBlender of *f* = 1000 and *k* = 500,000.  It shows that if the kill rate is too high, then the *B* particles will die out more quickly than they can be replenished by the reaction with *A* particles, and so only *A* particles will be left. In this animation, *A* particles have been colored green, and *B* particles have been colored red.
 
-**Note:** Some of the videos in this lesson are short because we can find the end result behavior of the system with only a short simulation, and the videos are very computationally intensive to generate due to the number of particles simulated.
+**Note:** Some of the videos in this section are short because they are very computationally intensive to generate due to the number of particles simulated.
 {: .notice--warning}
 
 {% include video id="MOO0fmwoz7E" provider="youtube" %}
 
-On the other hand, if *f* is too high, then there will be an increase in the concentration of *A* particles. However, there will also be more interactions between *A* particles and pairs of *B* particles, and so we will see an explosion in the number of predators. The following simulation has the parameters *f* = 1,000,000 and *k* = 100,000.
+On the other hand, if *f* is too high, then the increased feed rate will cause an increase in the concentration of *A* particles. However, the increased concentration of *A* particles will also cause more interactions between *A* particles and pairs of *B* particles, and so we will see an explosion in the number of predators. The following simulation has the parameters *f* = 1,000,000 and *k* = 100,000.
 
 {% include video id="ayvWHWBCg70" provider="youtube" %}
 
-The interesting behavior in this system lies in a sweet spot of the parameters *f* and *k*. For example, consider the following visualization when *f* is equal to 100,000 and *k* is equal to 200,000. We see a very clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where there is a critical mass of predators to interact with each other.
+The interesting behavior in this system lies in a sweet spot of the *f* and *k* parameters. For example, consider the following visualization when *f* is equal to 100,000 and *k* is equal to 200,000. We see a very clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where there is a critical mass of predators to interact with each other.
 
 {% include video id="W_eCGTlgi4k" provider="youtube" %}
 
-When we hold *k* fixed and increase *f* to 140,000, the higher feed rate increases the likelihood of *B* particles encountering *A* particles, and so we see even more waves of *A* cascades.  Note the clear red-green stripes that have appeared by the end of the movie.
+When we hold *k* fixed and increase *f* to 140,000, the higher feed rate increases the likelihood of *B* particles encountering *A* particles, and so we see even more stripes of *B* particles.
 
 {% include video id="I5wyKpIWgrE" provider="youtube" %}
 
-As *f* approaches *k*, the stripe structure becomes chaotic and breaks down because there are so many pockets of *B* particles that these particles constantly collide and mix with each other. The following animation shows the result of raising *f* to 175,000.
+As *f* approaches *k*, the stripe structure becomes chaotic and breaks down because there are now many clusters of *B* particles colliding and mix with each other. The following animation shows the result of raising *f* to 175,000.
 
 {% include video id="CM0JUzRn4X8" provider="youtube" %}
 
-Once *f* and *k* are equal, the stripes will disappear. We might expect this to mean that the *B* particles will be uniformly distributed across a background of *A* particles. But what we see is that after an initial outward explosion of *B* particles, the system produces a mottled background, with pockets having higher or lower concentration of *B*. Pay attention to the following video at a point late in the animation. Although the concentrations of the particles are still changing, there is much less large-scale change than in earlier videos. If we freeze the video, our eye cannot help but see patterns of red and green clusters that resemble spots (a more appropriate term would be mottling).
+Once *f* is equal to *k*, the stripes disappear, as shown in the video below. We might expect this to mean that the *A* and *B* particles will be uniformly mixed. Instead, we see is that after an initial outward explosion of *B* particles, the system displays a mottled background, with pockets having higher or lower concentration of *B*. Pay attention to the following video at a point late in the animation. Although the concentrations of the particles are still changing, there is much less large-scale change than in earlier videos. If we freeze the video, our eye cannot help but see patterns of red and green clusters that resemble spots, or mottling.
 
 {% include video id="Pva4e0w7i24" provider="youtube" %}
 
-You may still be skeptical, since the patterns above do not have the concrete boundaries that we would expect of animal stripes and spots. Yet when we zoom into the skin of an animal like the zebrafish, we see that the patterns we infer on a higher level are in fact the net result of many individual points, and that the colors of these points show a great deal of variety. The figure below shows an example of this effect for zebrafish skin.
+You may still be skeptical, since the patterns in the above videos do not have the concrete boundaries that we might expect of animal stripes and spots. Yet when we closely examine an animal with skin patterns, we can see that the patterns we infer on a higher level are just the net result of many individual, varied points. The figure below shows an example of this effect for zebrafish skin.
 
 [![image-center](../assets/images/600px/zebrafish_zoom.jpg){: .align-center}](../assets/images/zebrafish_zoom.jpg)
-Zooming in on the striped skin of a zebrafish shows that each stripe is formed of thousands of differently colored cells, and that the boundaries of the stripes are more variable than they seem at lower resolution. Courtesy: JenniferOwen, Wikimedia Commons (adapted by Kit Yates).
+Zooming in on the striped skin of a zebrafish shows that each stripe is formed of thousands of differently colored cells, and that the boundaries of the stripes are more variable than they may seem at lower resolution. Courtesy: JenniferOwen, Wikimedia Commons (adapted by Kit Yates).
 {: style="font-size: medium;"}
 
 
