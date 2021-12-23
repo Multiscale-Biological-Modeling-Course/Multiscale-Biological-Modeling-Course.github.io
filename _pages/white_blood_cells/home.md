@@ -25,7 +25,7 @@ gallery:
     title: "A lymphocyte with a small, round nucleus."
 ---
 
-# Introduction: how are blood cells counted?
+# Introduction: How Are Blood Cells Counted?
 
 Your doctor sometimes wants to count your blood cells to ensure that they are within healthy ranges as part of a complete blood count. Blood cells consist of **red blood cells (RBCs)**, which transport oxygen via the hemoglobin protein, and **white blood cells (WBCs)**, which help identify and attack foreign cells as part of your immune system.
 
