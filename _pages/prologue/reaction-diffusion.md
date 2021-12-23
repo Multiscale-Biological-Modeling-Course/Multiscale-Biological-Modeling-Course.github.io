@@ -41,7 +41,7 @@ Finally, our reaction-diffusion system includes the following reaction involving
 
 <p><center><em>A</em> + 2<em>B</em> → 3<em>B</em></center></p>
 
-To simulate this reaction on a particle level, if an *A* particle and two *B* particles collide with each other, then the *A* particle has some fixed probability of being replaced by a third *B* particle. This probability dictates the *rate* at which this reaction occurs, denoted *r*.
+To simulate this reaction on a particle level, if an *A* particle and two *B* particles collide with each other, then the *A* particle has some fixed probability of being replaced by a third *B* particle. This probability dictates the *rate* at which this reaction occurs, denoted *r*. This rate depends on the concentrations of both *A* and *B*, as well as their kinetic energy, the presence of a catalyst, and so on.
 
 This third reaction is why we compared *A* to prey and *B* to predators, since we may like to conceptualize the reaction as two *B* particles consuming an *A* particle and producing an offspring *B* particle.
 
@@ -74,11 +74,9 @@ We think of all these parameters as dials that we can turn, observing how the sy
 **STOP:** What will happen as we increase or decrease the feed rate *f*? What about the kill rate *k*?
 {: .notice--primary}
 
-A reaction like *A* + 2*B* → 3*B* is typically thought of as occurring at a **bulk reaction rate**, which is the total number of reactions occurring as a function of the concentration of reactants. In the following tutorial, CellBlender uses the MCell software to simulate our reaction-diffusion model; MCell is built upon some advanced probabilistic methods that allow it to use the bulk reaction rate to determine the probability that a reaction will happen if the particles needed as reactants collide.
-
 The same goes for the feed and kill reactions; new *A* particles are formed, and old *B* particles are destroyed, via probabilities that are computed from reaction rates. For now, you can think of the rate of a reaction as directly related to its probability of occurring.
 
-In the following tutorial, we will initiate our reaction-diffusion system with a uniform concentration of *A* particles spread across the grid and a tightly packed collection of *B* particles in the center of the grid. When we return from this tutorial, we will see what patterns form, if any.
+In the following tutorial, we will initiate our reaction-diffusion system with a uniform concentration of *A* particles spread across the grid and a tightly packed collection of *B* particles in the center of the grid. When we return from this tutorial, we will see if any high-level patterns form.
 
 [Visit tutorial](turing-cellblender){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
