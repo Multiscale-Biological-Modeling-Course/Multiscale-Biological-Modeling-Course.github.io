@@ -120,7 +120,7 @@ When you watched the particle simulations above, an adjective that may have come
 
 Research dating all the way back to the 1920s has studied the patterns that we see during visual hallucinations, which Heinrich Klüver named **form constants** after studying patients who had taken mescaline.[^kluver] Form constants, such as cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of their hallucinations.
 
-[![image-center](../assets/images/600px/form_constants.jpg){: .align-center}](../assets/images/form_constants.jpg)
+[![image-center](../assets/images/600px/form_constants.png){: .align-center}](../assets/images/form_constants.png)
 A few of Heinrich Klüver's form constants. Courtesy: Lisa Diez, Wikimedia Commons.
 {: style="font-size: medium;"}
 
