@@ -114,13 +114,7 @@ Diffuse(numIter, A, B, dt, dA, dB, lapl, plot_iter)
 imageio.mimsave('dif_images/diffusion_movie.gif', images)
 ~~~
 
-We now are ready to save and run our notebook. When you run the notebook, you should see the following animation in which concentrations of predators are spreading out against a field of prey. (Click to play.)
-
-[![image-center](../assets/images/600px/diffusion_movie_first_frame.png){: .align-center}](../assets/images/diffusion_movie.gif)
-
-Above, we used a parameter when plotting called `Spectral` that uses a **color map** of this name to color the images of our GIF. A color map assigns different color values to different cell values, where we are plotting a cell's color based on its value of the concentration of predators divided by the sum of the concentrations of predators and prey. If a cell has a value close to zero for this ratio (meaning very few predators compared to prey), then it will be colored red, while if it has a value close to 1 (meaning many predators), then it will be colored dark blue. The `Spectral` color map is shown in the figure below.
-
-[![image-center](../assets/images/600px/matplotlib_colormap.png){: .align-center}](../assets/images/matplotlib_colormap.png)
+We now are ready to save and run our notebook. When you run the notebook, you should see an animation in which concentrations of predators are spreading out against a field of prey.
 
 As we return to the main text, we will discuss this animation and extend our model to be able to handle reactions as well as diffusion.
 

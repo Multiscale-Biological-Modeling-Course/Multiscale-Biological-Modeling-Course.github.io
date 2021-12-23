@@ -86,10 +86,30 @@ A figure showing cellular concentrations after one time step for two particles <
 **STOP**: Update the cells in the above figure after another generation of diffusion. Use the diffusion rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1.
 {: .notice--primary}
 
-In the following tutorial, we will implement the cellular automaton using a **Jupyter notebook** and visualize how well this automaton mimics the diffusion of *A* and *B* particles. We will then continue on in the next section with adding reactions to our automaton model.
+## Visualizing particle concentrations
+
+As we move toward diffusing a large board that is hundreds of cells wide, listing the concentrations of our two particles in each cell will be too much to process. Instead, we need some way to visualize the results of our diffusion simulation.
+
+First, we will consolidate the information stored in a cell about the concentrations of two particles into a single value. In particular, let a cell's particle concentrations be denoted [*A*] and [*B*]. Then the single value [*B*]/([*A*] + [*B*]) is the ratio of the concentration of *B* particles to the total number of particles in the cell. This value ranges between 0 (no *B* particles present) and 1 (only *B* particles present).
+
+Next, we color each cell in the grid according to its value of [*B*]/([*A*] + [*B*]) using a color spectrum like those shown in the figure below. We will use the `Spectral` color map, meaning that if a cell has a value close to 0 (relatively few predators), then it will be colored red, while if it has a value close to 1 (relatively many predators), then it will be colored dark blue.
+
+[![image-center](../assets/images/600px/matplotlib_colormap.png){: .align-center}](../assets/images/matplotlib_colormap.png)
+
+When we color each cell over many time steps, we can animate the automaton to see how it changes over time. We are now ready for the following tutorial, in which we will implement and visualize our diffusion automaton using a **Jupyter notebook**.
 
 [Visit tutorial](tutorial-diffusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
+
+The video below shows an animation of a 101 x 101 board that begins with the following properties:
+* [*A*] = 1 for all cells;
+* [*B*] = 0 for all cells other than an 11 x 11 square in the middle of the grid, where [*B*] = 1;
+* <em>d</em><sub><em>A</em></sub> = 0.5;
+* <em>d</em><sub><em>B</em></sub> = 0.25.
+
+[![image-center](../assets/images/600px/diffusion_movie_first_frame.png){: .align-center}](../assets/images/diffusion_movie.gif)
+
+Note that the center of the cell becomes blue because the *A* particles diffuse twice as fast, so that they spread out more from the middle of the board, which is occupied in greater numbers by *B* particles.
 
 ## Adding reactions and completing the Gray-Scott model
 
@@ -104,7 +124,7 @@ Now that we have established a cellular automaton for tracking concentrations of
 
 We will address these reactions one at a time. First, we have the feed reaction, which takes place at a **feed rate**. It is tempting to simply add some constant value *f* to the concentration of each cell in each time step. However, we want to avoid a situation in which the concentration of *A* particles is close to 1 and the feed reaction causes the concentration of *A* particles to exceed 1.
 
-Instead, if a given cell has current concentration [*A*], then we will add *f*(1-[*A*]) to the concentration of the cell.  For example, if [*A*] is 0.01, then we will add 0.99*f* to the cell because the current concentration is low. If [*A*] is 0.8, then we will only add 0.2*f* to the concentration.
+Instead, if a cell has current concentration [*A*], then we will add *f*(1-[*A*]) to the concentration of the cell.  For example, if [*A*] is 0.01, then we will add 0.99*f* to the cell because the current concentration is low. If [*A*] is 0.8, then we will only add 0.2*f* to the concentration.
 
 Second, we consider the death reaction of *B* particles, which takes place at a **kill rate**. Recall from the previous lesson that the kill rate is proportional to the current concentration of *B* particles. As a result, if a cell has concentration [*B*], then for some constant *k* between 0 and 1, we will subtract *k* · [*B*] from the concentration of *B* particles.
 
@@ -134,10 +154,6 @@ Applying these cell-based reaction-diffusion computations over all cells in para
 ## Reflection on the Gray-Scott model
 
 In contrast to using a particle simulator, our Jupyter Notebook demo probably produced an animation of Turing patterns in under a minute on your computer.
-
-To visualize the changing concentrations in each cell, we use a color map to color each cell based on its concentrations. Specifically, we plot a cell's color based on its value of the concentration of predators divided by the sum of the concentrations of predators and prey. If a cell has a value close to zero for this ratio (meaning very few predators compared to prey), then it will be colored red, while if it has a value close to 1 (meaning many predators), then it will be colored dark blue. The `Spectral` color map that we use is shown in the figure below.
-
-[![image-center](../assets/images/600px/matplotlib_colormap.png){: .align-center}](../assets/images/matplotlib_colormap.png)
 
 Click on the following animation to see an animation of the Gray-Scott model using the parameters *f* = 0.034 and *k* = 0.095.
 
