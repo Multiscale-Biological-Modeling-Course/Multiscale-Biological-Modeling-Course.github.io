@@ -16,31 +16,31 @@ author_profile: true # add author to page
 
 In the [prologue](../prologue), we worked with a particle-based model that simulated the interactions of skin cells to produce complex Turing patterns. In this module, we will zoom into a much lower biological scale and model protein interactions, which occur on a molecular level. The scale of these interactions is tiny: a protein is typically on the order of about 10nm in diameter. (For comparison, a light microscope's highest resolution is about 2000 nm, and the diameter of a single human hair is about 100,000 nm.)
 
-In this module, we turn our attention to the question of how a cell can adjust its protein concentrations in reaction to an ever-changing environment.  We will see that the mechanisms the cell uses to make these changes are rapid, robust, and elegant.
+Our focus will be on how the cell can adjust its protein concentrations to react to an ever-changing environment.  We will see that the mechanisms a cell uses to change internal protein concentrations depend on the interactions of proteins as a sort of molecular communication that is rapid, robust, and elegant.
 
-We will also introduce the concept of a **network**, or a collection of **nodes** along with **edges** that connect pairs of nodes. Before continuing, we will take the opportunity to give a few examples of biological networks.
+Because we are considering the interactions of pairs of proteins, we will work with **networks** to explore these relationships. A network is a collection of **nodes** along with **edges** that connect pairs of nodes; the network is a simple model, but in the study of molecular biology, it is ubiquitous.
 
-When studying the functions and binding of proteins, biologists may build a **protein-protein interaction network** (figure below). Nodes correspond to proteins, and two proteins are connected with an edge if they are known to interact.
+For example, when studying the functions and binding of proteins, biologists build a **protein-protein interaction network** (figure below). Nodes correspond to proteins, and two proteins are connected with an edge if they are known to interact.
 
 [![image-center](../assets/images/600px/PPI_network.png){: .align-center}](../assets/images/PPI_network.png)
 A complete hepatitis C virus-host protein-protein interaction network in hepatoma cells.[^PPInetwork] Nodes correspond to proteins, and an edge connects two proteins if the two proteins interact.
 {: style="font-size: medium;"}
 
-When studying the more complex interactions and processes taking place within a cell, biologists form a **metabolic network** (figure below). Nodes correspond to substances in a chemical reaction, and an edge connects two nodes if there is some enzyme that catalyzes a reaction involving these substances.
+When analyzing the complex chains of chemical reactions taking place within a cell, biologists form a **metabolic network** (figure below). Nodes correspond to substances in a chemical reaction, and an edge connects two nodes if there is some enzyme that catalyzes a reaction involving these substances.
 
 [![image-center](../assets/images/600px/The-metabolic-network-of-tomato-cells-The-system-is-a-cell-with-symbolic-subcellular.png){: .align-center}](../assets/images/The-metabolic-network-of-tomato-cells-The-system-is-a-cell-with-symbolic-subcellular.png)
 The metabolic network of tomato cells.[^metabolicNetwork]
 {: style="font-size: medium; text-align:center;"}
 
-When studying the nervous system, biologists build **neuronal networks** that link neurons together according to how they are linked in the body (figure below). These networks have been studied since the 1940s but have recently exploded as a model for solving applied problems in machine learning.
+When studying the nervous system, biologists build **neuronal networks** that link neurons together according to how they are linked in the body (figure below). These networks have been studied since the 1940s but have recently exploded as a model for solving applied problems in machine learning as the foundation of what is called "deep learning" (more on this in a later module).
 
 [![image-center](../assets/images/600px/Neuron-networks-a-brain-b-neural-network-c-neuron-connecting-structure-d-neuron.png){: .align-center}](../assets/images/Neuron-networks-a-brain-b-neural-network-c-neuron-connecting-structure-d-neuron.png)
 Mapping and models of neurons.[^neuralNetwork]
 {: style="font-size: medium;"}
 
-In this module, we will introduce yet another fundamental biological network called a **transcription factor network** that involves the proteins that drive a cell's response to its environment. We will hunt for **network motifs**, or commonly occurring structures, hidden in this network. We will then use modeling to address the more challenging question of *why* these motifs have evolved in order to help the cell respond to its environment.
+In this module, we will work with yet another fundamental biological network called a **transcription factor network**, which involves the proteins that drive a cell's response to its environment. We will then hunt for frequently recurring structures hidden within this network called **network motifs**. Much like our work in the prologue, we will use modeling to address the question of *why* these motifs have evolved to help the cell respond to its environment.
 
-But before we get ahead of ourselves, let us introduce some of the molecular biology fundamentals we will need to complete our analysis. As in the prologue, you may already know this biological background, in which case you should feel free to skim the next lesson.
+We will define a transcription factor network soon. But before we get ahead of ourselves, let us introduce some of the molecular biology fundamentals we will need to complete our analysis. As in the prologue, you may already know this biological background, in which case you should feel free to skim the next lesson.
 
 [Next lesson](transcription){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
