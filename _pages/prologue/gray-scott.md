@@ -10,7 +10,7 @@ image: "../assets/images/gray_scott_jupyter_high-res.png"
 
 ## A coarse-grained model of single particle diffusion
 
-Part of the modeler's work is not only to build models but to look for simple models of a system that capture the essence of what is being modeled and that can be run quickly and scaled to large inputs.  Imagine, for example, how much computational power would be needed to build a particle-based model of your brain; the only way to study such a complicated system is by making simplifications.
+Part of the modeler's work is not only to build models but to look for simple models of a system that capture the essence of what is being modeled and that can be run quickly and scaled to large inputs.
 
 In our case, we have a very "fine-grained" reaction-diffusion model illustrating Turing patterns, and we will now present a faster "coarse-grained" model that will allow us to visualize Turing patterns. To do so, we will stop keeping track of individual particles and instead grid off two-dimensional space into blocks and store only the *concentration* of particles of the block (i.e., the number of particles in the block). To make things even simpler, we assume that there is some maximum concentration of particles possible, so that we can divide the number of particles by this maximum concentration and obtain a decimal number between 0 and 1.
 
