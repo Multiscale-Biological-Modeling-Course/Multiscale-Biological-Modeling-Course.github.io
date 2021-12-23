@@ -10,29 +10,31 @@ image: "../assets/images/gray_scott_jupyter_high-res.png"
 
 ## A coarse-grained model of single particle diffusion
 
-Part of the modeler's work is not only to build models but to look for simple models of a system that capture the essence of what is being modeled and that can be run quickly and scaled to large inputs.
+Part of the modeler's work is to find simple models that capture the essence of a system while running quickly and scaling well to larger inputs.
 
-In our case, we have a very "fine-grained" reaction-diffusion model illustrating Turing patterns, and we will now present a faster "coarse-grained" model that will allow us to visualize Turing patterns. To do so, we will stop keeping track of individual particles and instead grid off two-dimensional space into blocks and store only the *concentration* of particles of the block (i.e., the number of particles in the block). To make things even simpler, we assume that there is some maximum concentration of particles possible, so that we can divide the number of particles by this maximum concentration and obtain a decimal number between 0 and 1.
+In our case, we have a very "fine-grained" reaction-diffusion model illustrating Turing patterns, but it takes a huge amount of computational resources because it requires tracking the movements of hundreds of thousands of individual particles. Our goal is to build a model that will allow us to appreciate Turing patterns without significant computational overhead.
 
-Let us begin with a simple example of the diffusion of only *A* particles (we will later add *B* particles as well as reactions to our model). Say that the particles are at maximum concentration in the central cell of our grid, and are present nowhere else, as the following figure illustrates.
+Our idea is to grid off two-dimensional space into blocks and store only the *concentration* of each type of particle found inside the block. To make things even simpler, we assume that there is some maximum concentration of particles possible, so that we can divide the number of particles by this maximum concentration. As a result, the concentration of a particle in each block will be represented by a decimal number between 0 and 1.
+
+Let us begin with an example of the diffusion of only *A* particles; we will later add *B* particles as well as reactions to our model. Say that the particles are at maximum concentration in the central cell of our grid and are present nowhere else, as shown below.
 
 [![image-center](../assets/images/600px/initial_A_concentration.png){: .align-center width="300px"}](../assets/images/initial_A_concentration.png)
-A 5 x 5 grid showing hypothetical initial concentrations of *A* particles. Cells are labeled by numbers between 0 and 1 representing their concentration of a single particle. In this example, the central cell has maximum concentration, and no particles are contained in any other cell.
+A 5 x 5 grid showing hypothetical initial concentrations of *A* particles. Cells are labeled by numbers between 0 and 1 representing their concentration of *A* particles. The central cell has maximum concentration, and no particles are contained in any other cell.
 {: style="font-size: medium;"}
 
-We will now update the grid of cells after one time step in a way that mimics diffusion. To do so, we will spread out the concentration of particles in each square to its eight neighbors; one way of doing so is to assume that 20% of the current cell's concentration diffuses to each of its four adjacent neighbors, and that 5% of the cell's concentration diffuses to its four diagonal neighbors. Because the central square in our ongoing example is the only cell with any particles, the updated concentrations of our particle after a single time step are shown in the following figure.
+We will now update the grid of cells after one time step to mimic particle diffusion. To do so, we will spread out the concentration of particles in each square to its eight neighbors. For example, we could assume that 20% of the current cell's concentration diffuses to each of its four adjacent neighbors, and that 5% of the cell's concentration diffuses to its four diagonal neighbors. Because the central square in our ongoing example is the only cell with any particles, the updated concentrations after a single time step are shown in the following figure.
 
 [![image-center](../assets/images/600px/A_concentration_one_time_step.png){: .align-center width="300px"}](../assets/images/A_concentration_one_time_step.png)
 A grid showing an update to the system in the previous figure after diffusion of particles after a single time step.
 {: style="font-size: medium;"}
 
-After an additional time step, the particles continue to diffuse outward. For example, each diagonal neighbor of the central cell in the above figure, which has a concentration of 0.05, will lose all of its particles in the next step. This cell will also gain 20% of the particles from two of its adjacent neighbors, along with 5% of the particles from the central square (which doesn't have any particles). This makes the updated concentration of this cell equal to 0.2(0.2) + 0.2(0.2) + 0.05(0) = 0.04 + 0.04 + 0 = 0.08.
+After an additional time step, the particles continue to diffuse outward. For example, each diagonal neighbor of the central cell in the above figure, which has a concentration of 0.05 after one time step, will lose all of its particles in the following step. Each of these cells will also gain 20% of the particles from two of its adjacent neighbors, along with 5% of the particles from the central square (which doesn't have any particles). This makes the updated concentration of this cell after two time steps equal to 2(0.2)(0.2) + 0.05(0) = 0.08.
 
-Each of the four cells adjacent to the central square will receive 20% of the particles from two of its adjacent neighbors, which have a concentration of 0.05 each. Such a cell will also receive 5% of the particles from two of its diagonal neighbors, which have a concentration of 0.2. Therefore, the updated concentration of each of these cells is 2(0.2)(0.05) + 2(0.05)(0.2) = 0.02 + 0.02 = 0.04.
+The four cells directly adjacent to the central square, which have a concentration of 0.2 after one time step, will also gain particles from their neighbors. Each such cell will receive 20% of the particles from two of its adjacent neighbors and 5% of the particles from two of its diagonal neighbors, which have a concentration of 0.2. Therefore, the updated concentration of each of these cells after two time steps is 2(0.2)(0.05) + 2(0.05)(0.2) = 0.02 + 0.02 = 0.04.
 
-Finally, the central square receives 20% of the particles from each of its four adjacent neighbors, as well as 5% of the particles from each of its four diagonal neighbors. As a result, the central square's concentration is updated to be 4(0.2)(0.2) + 4(0.05)(0.05) = 0.16 + 0.01 = 0.17.
+Finally, the central square has no particles after one step, but it will receive 20% of the particles from each of its four adjacent neighbors, as well as 5% of the particles from each of its four diagonal neighbors. As a result, the central square's concentration after two time steps is 4(0.2)(0.2) + 4(0.05)(0.05) = 0.16 + 0.01 = 0.17.
 
-As a result, the central nine squares after two time steps are as shown in the following figure.
+In summary, the central nine squares after two time steps are as shown in the following figure.
 
 [![image-center](../assets/images/600px/A_concentration_two_time_steps_partial.png){: .align-center width="300px"}](../assets/images/A_concentration_two_time_steps_partial.png)
 A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled "?" are left as an exercise for the reader.
