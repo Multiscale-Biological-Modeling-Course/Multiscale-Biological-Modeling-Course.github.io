@@ -10,15 +10,18 @@ image: "../assets/images/repressilator_chart.png"
 
 ## The central dogma of molecular biology
 
-Recall that DNA is a double-stranded molecule consisting of the four nucleobases adenine, cytosine, guanine, and thymine. A gene is a region of an organism's DNA that is **transcribed** into a single-stranded RNA molecule in which thymine is converted to uracil and the other bases remain the same.
+DNA is a double-stranded molecule consisting of the four nucleobases adenine, cytosine, guanine, and thymine. A gene is a region of an organism's DNA that is **transcribed** into a single-stranded RNA molecule in which thymine is converted to uracil and the other bases remain the same.
 
 The RNA transcript is then **translated** into an amino acid sequence. Because there are four different bases but twenty amino acids available, RNA is translated in **codons**, or triplets of nucleobases. The figure below shows the way in which codons are translated into amino acids, which is called the **genetic code**.
 
 [![image-center](../assets/images/600px/genetic_code.png){: .align-center width="300px"}](../assets/images/genetic_code.png)
-The genetic code, which dictates the conversion of RNA codons into amino acids.
+The genetic code, which dictates the conversion of RNA codons into amino acids. Codons are read from the inside of the figure outward. Image courtesy J_Alves, Open Clip Art.
 {: style="font-size: medium;"}
 
-DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the **central dogma of molecular biology** (see figure below).
+DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the **central dogma of molecular biology**, illustrated in the figure below.
+
+**Note:** Like any dogma, there are times in which the central dogma of molecular biology is violated. If you are interested in an example, consider Chapter 4 of <a href="https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-4" target="_blank"><em>Bioinformatics Algorithms</em></a>.
+{: .notice--warning}
 
 [![image-center](../assets/images/600px/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg){: .align-center}](../assets/images/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg)
 The central dogma of molecular biology states that molecular information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA. Image courtesy: Dhorpool, Wikimedia commons user.

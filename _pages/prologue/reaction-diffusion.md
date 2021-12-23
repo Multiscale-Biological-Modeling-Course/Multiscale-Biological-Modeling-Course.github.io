@@ -110,7 +110,7 @@ Once *f* is equal to *k*, the stripes disappear, as shown in the video below. We
 You may still be skeptical, since the patterns in the above videos do not have the concrete boundaries that we might expect of animal stripes and spots. Yet when we closely examine an animal with skin patterns, we can see that the patterns we infer on a higher level are just the net result of many individual, varied points. The figure below shows an example of this effect for zebrafish skin.
 
 [![image-center](../assets/images/600px/zebrafish_zoom.jpg){: .align-center}](../assets/images/zebrafish_zoom.jpg)
-Zooming in on the striped skin of a zebrafish shows that each stripe is formed of thousands of differently colored cells, and that the boundaries of the stripes are more variable than they may seem at lower resolution. Courtesy: JenniferOwen, Wikimedia Commons (adapted by Kit Yates).
+Zooming in on the striped skin of a zebrafish shows that each stripe is formed of thousands of differently colored cells, and that the boundaries of the stripes are more variable than they may seem at lower resolution. Image courtesy: JenniferOwen, Wikimedia Commons (adapted by Kit Yates).
 {: style="font-size: medium;"}
 
 
@@ -121,7 +121,7 @@ When you watched the particle simulations above, an adjective that may have come
 Research dating all the way back to the 1920s has studied the patterns that we see during visual hallucinations, which Heinrich Klüver named **form constants** after studying patients who had taken mescaline.[^kluver] Form constants, such as cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of their hallucinations.
 
 [![image-center](../assets/images/600px/form_constants.png){: .align-center}](../assets/images/form_constants.png)
-A few of Heinrich Klüver's form constants. Courtesy: Lisa Diez, Wikimedia Commons.
+A few of Heinrich Klüver's form constants. Image courtesy: Lisa Diez, Wikimedia Commons.
 {: style="font-size: medium;"}
 
 Over five decades after Klüver's work, researchers would determine that form constants having different shapes originate from simpler *linear* stripes of cellular activation patterns in the retina. The retina is circular, but the brain needs to convert this cellular image into a rectangular field of view; as a result, when the linear patterns are passed to the visual cortex, the hallucinating brain contorts them into the spirals and whirls that we see.[^cowan] Some researchers[^quanta] believe that the patterns in the retina caused by hallucinations are in fact Turing patterns and can be explained by a reaction-diffusion model in which one type of neuron acts as a predator and another acts as prey.

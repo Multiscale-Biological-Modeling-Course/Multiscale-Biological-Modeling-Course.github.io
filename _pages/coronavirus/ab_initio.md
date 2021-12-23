@@ -81,7 +81,7 @@ This formulation of protein structure may not strike you as similar to anything 
 In the case of structure prediction, our search space is the collection of all possible conformations of a given protein. And each point in this search space is characterized by the energy of the conformation at the point. Just as we imagined a ball rolling down a hill to find lower energy, we can now imagine "exploring" this space of all conformations in order to find the conformation of lowest energy. This analogy is illustrated in the hypothetical figure below, in which the height of each point is the energy of the associated conformation;  our goal, then, is to find the lowest point in this space.
 
 [![image-center](../assets/images/600px/energy_landscape.png){: .align-center}](../assets/images/energy_landscape.png)
-We can imagine each conformation of a given protein as occupying a point in a landscape, in which the elevation of a point corresponds to the energy of the conformation at that point. Courtesy: David Beamish.
+We can imagine each conformation of a given protein as occupying a point in a landscape, in which the elevation of a point corresponds to the energy of the conformation at that point. Image courtesy: David Beamish.
 {: style="font-size: medium;"}
 
 ## A local search algorithm for *ab initio* structure prediction
