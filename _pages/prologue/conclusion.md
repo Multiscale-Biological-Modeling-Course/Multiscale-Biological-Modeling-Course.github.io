@@ -31,16 +31,15 @@ Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing p
 
 Later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In a **robust** system, variation in parameters does not lead to substantive changes in the ultimate behavior of the system. Robustness is vital for processes, like your heartbeat, that must be resilient to small environmental changes.
 
-It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism by which these stripes form is still an unresolved question. However, the pigmentation of *zebrafish* does follow a Turing pattern because two types of pigment cells follow a reaction-diffusion model much like the one we presented in this prologue.[^zebrafish]
+It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism causing these stripes to form is still an unresolved question. However, the skin of *zebrafish* does exhibit Turing patterns because two types of pigment cells follow a reaction-diffusion model much like the one we presented in this prologue.[^zebrafish] This prologue presented Turing particles as driven by the interactions of particles, but if the interactions occur between cells, then the resulting patterns are the same.
 
-Furthermore, note the following two photos of giant pufferfish.[^youngfish][^pufferfish] These fish are genetically very similar, but their skin patterns are very different. What may seem like a drastic change from spots to stripes is likely attributable to a small change of parameters in a fine-tuned biological system that, like all of life, is powered by randomness.
+Finally, take a look at the following two photos of giant pufferfish.[^youngfish][^pufferfish] These fish are genetically practically identical, but their skin patterns are very different. What may seem like a drastic change from spots to stripes is likely attributable to a small change of parameters in a fine-tuned biological system that, like much of life, is powered by randomness.
 
 {% include gallery caption="Two similar pufferfish with very different skin patterns. (Left) A juvenile Mbu pufferfish with a very familiar pattern. (Right) An adult Mbu pufferfish exhibiting another familiar pattern." %}
 
 ## A final note
 
 Thank you for making it this far! We hope that you are enjoying the course. You can join the next module of the course by clicking on the "next module" button below. In the meantime, we ask that you complete the <a href="https://forms.gle/egmmBxGtBciDPYNS8" target="_blank">course survey</a> if you have not done so already.
-
 
 [Next module](../motifs/home){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
