@@ -1,6 +1,6 @@
 ---
 permalink: /prologue/turing-cellblender
-title: "Software Tutorial: Generating Turing Patterns with a Reaction-Diffusion Simulation in CellBlender"
+title: "Software Tutorial: Generating Turing Patterns with a Reaction-Diffusion Simulation"
 sidebar:
  nav: "prologue"
  nav: "prologue"

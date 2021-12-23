@@ -1,6 +1,6 @@
 ---
 permalink: /prologue/gs-jupyter
-title: "Software Tutorial: Implementing the Gray-Scott Model for Coarse-Grained Reaction-Diffusion with Jupyter Notebook"
+title: "Software Tutorial: Implementing the Gray-Scott Reaction-Diffusion Automaton"
 sidebar:
  nav: "prologue"
  nav: "prologue"

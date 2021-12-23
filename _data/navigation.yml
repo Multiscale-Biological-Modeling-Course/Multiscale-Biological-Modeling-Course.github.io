@@ -33,13 +33,13 @@ prologue:
         url: /prologue/conclusion
   - title: "Software Tutorials (featuring MCell and CellBlender)"
     children:
-      - title: "Simulating particle diffusion with CellBlender<br><br>"
+      - title: "Simulating particle diffusion<br><br>"
         url: /prologue/tutorial-random-walk
-      - title: "Generating Turing patterns with a reaction-diffusion simulation in CellBlender<br><br>"
+      - title: "Generating Turing patterns with a reaction-diffusion particle simulation<br><br>"
         url: /prologue/turing-cellblender
-      - title: "Building a diffusion cellular automaton with Jupyter notebook<br><br>"
+      - title: "Building a diffusion cellular automaton<br><br>"
         url: /prologue/tutorial-diffusion
-      - title: "Implementing the Gray-Scott reaction-diffusion automaton with Jupyter notebook<br><br>"
+      - title: "Implementing the Gray-Scott reaction-diffusion automaton<br><br>"
         url: /prologue/gs-jupyter
 
 motifs:
