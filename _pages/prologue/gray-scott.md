@@ -25,7 +25,7 @@ gallery:
 
 Part of a modeler's job is to find simple models that capture the essence of a system while running quickly and scaling well to larger inputs.
 
-In our case, we have a very "fine-grained" reaction-diffusion model illustrating Turing patterns, but it takes a huge amount of computational resources because it requires tracking the movements of hundreds of thousands of individual particles. Our goal is to build a model that will allow us to appreciate Turing patterns without significant computational overhead.
+In our case, we have a very "fine-grained" reaction-diffusion model illustrating Turing patterns, but this model consumes a huge amount of computational resources because it requires tracking the movements of hundreds of thousands of individual particles. Our goal is to build a model that will allow us to appreciate Turing patterns without significant computational overhead.
 
 Our idea is to grid off two-dimensional space into blocks and store only the *concentration* of each type of particle found inside the block. To make things even simpler, we assume that there is some maximum concentration of particles possible, so that we can divide the number of particles by this maximum concentration. As a result, the concentration of a particle in each block will be represented by a decimal number between 0 and 1.
 
@@ -111,7 +111,7 @@ The video below shows an animation of a 101 x 101 board that begins with the fol
 
 Note that the center of the cell becomes blue because the *A* particles diffuse twice as fast, so that they spread out more from the middle of the board, which is occupied in greater numbers by *B* particles.
 
-## Adding reactions and completing the Gray-Scott model
+## Adding reactions to our automaton: the Gray-Scott model
 
 Now that we have established a cellular automaton for coarse-grained particle diffusion, we will add to it the three reactions that we introduced in the [previous lesson](reaction-diffusion), which are reproduced below.
 
@@ -147,7 +147,7 @@ Before continuing, let us consider an example of how a single cell might update 
 
 Furthermore, say that our cell has the concentrations ([*A*], [*B*]) = (0.7, 0.5). Then as a result of diffusion, the cell's concentration of *A* will decrease by 0.7 · <em>d</em><sub><em>A</em></sub> = 0.14, and its concentration of *B* will decrease by 0.5 · <em>d</em><sub><em>B</em></sub> = 0.05. It will also receive particles from neighboring cells; for example, say that it receives an increase to its concentration of *A* by 0.08 and an increase to its concentration of *B* by 0.06 as the result of diffusion from neighbors. Therefore, Δ*A* = 0.08 - 0.14 = -0.06, and Δ*B* = 0.06 - 0.05 = 0.01.
 
-Now let us consider the three reactions. The feed reaction will cause the cell's concentration of *A* to increase by (1 - [*A*]) · *f* = 0.09. The death reaction will cause its concentration of *B* to decrease by *k* · [*B*] = 0.2. And the reproduction reaction will mean that the concentration of *A* decreases by [*A*] · [*B*]<sup>2</sup> = 0.175, with the concentration of *B* increasing by the same amount.
+Now we will consider the three reactions. The feed reaction will cause the cell's concentration of *A* to increase by (1 - [*A*]) · *f* = 0.09. The death reaction will cause its concentration of *B* to decrease by *k* · [*B*] = 0.2. And the reproduction reaction will mean that the concentration of *A* decreases by [*A*] · [*B*]<sup>2</sup> = 0.175, with the concentration of *B* increasing by the same amount.
 
 As the result of all these processes, we update the concentrations of *A* and *B* to the following values ([*A*]<sub>new</sub>, [*B*]<sub>new</sub>) in the next time step according to our equations above.
 
@@ -161,32 +161,32 @@ We should now feel ready to implement the Gray-Scott model in the following tuto
 
 ## Reflection on the Gray-Scott model
 
-In contrast to using a particle simulator, our Jupyter Notebook demo probably produced an animation of Turing patterns in under a minute on your computer.
+In contrast to our particle-based simulator, the Gray-Scott model produced an animation of Turing patterns in under a minute on a laptop. We show the results of this model in the videos that follow; throughout these animations, we use the parameters <em>d</em><sub><em>A</em></sub> = 1.0, <em>d</em><sub><em>B</em></sub> = 0.5, and *r* = 1.
 
-Click on the following animation to see an animation of the Gray-Scott model using the parameters *f* = 0.034 and *k* = 0.095.
+Our first video shows an animation of the Gray-Scott model using the parameters *f* = 0.034 and *k* = 0.095. We use the same initial configuration of the automaton that we used in the diffusion example, in which a cluster of *B* particles are found at the middle of a board full of *A* particles.
 
 [![image-center](../assets/images/600px/gray-scott_movie_first_frame.png){: .align-center}](../assets/images/gray-scott_movie.gif)
 
-If we expand the size of the simulation and add new predator locations to the grid, then the patterns become more complex as they intersect.
+If we expand the size of the simulation and add multiple clusters of predators to the automaton, then the patterns become more complex as they intersect.
 
 [![image-center](../assets/images/600px/gray-scott_multiple_predators_first_frame.png){: .align-center}](../assets/images/gray-scott_multiple_predators.gif)
 
-If we keep the feed rate constant and tweak the kill rate ever so slightly to *k* = 0.097, then the patterns change significantly into spots.
+If we keep the feed rate constant and increase the kill rate slightly to *k* = 0.097, then the patterns change significantly into spots.
 
 [![image-center](../assets/images/600px/gray-scott_f34_k63_first_frame.png){: .align-center}](../assets/images/gray-scott_f34_k63.gif)
 {: style="font-size: medium;"}
 
-If we make the prey a little happier as well, raising  *f* to 0.038 and *k* to 0.099, then we have a different striped pattern.
+If we make the prey a little happier as well, increasing  *f* to 0.038 and *k* to 0.099, then we have a different striped pattern.
 
 [![image-center](../assets/images/600px/gray-scott_f38_k61_first_frame.png){: .align-center}](../assets/images/gray-scott_f38_k61.gif)
 {: style="font-size: medium;"}
 
-And if we raise *f* to 0.042 and *k* to 0.101, then again we see a spot pattern.
+And if we increase *f* to 0.042 and *k* to 0.101, then again we see spots.
 
 [![image-center](../assets/images/600px/gray-scott_f42_k59_first_frame.png){: .align-center}](../assets/images/gray-scott_f42_k59.gif)
 {: style="font-size: medium;"}
 
-The point that we are making here is that very slight changes in our model's parameters can produce drastically different results in terms of the patterns that we witness. In this prologue's conclusion, we will say more about this and connect this observation back to our original motivation of patterns on animals' skin.
+The point is that very slight changes in our model's parameters can produce drastically different results in terms of the patterns that we witness. In this prologue's conclusion, we will connect this observation back to our original motivation of identifying the cause for animal skin patterns.
 
 [Next lesson](conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
