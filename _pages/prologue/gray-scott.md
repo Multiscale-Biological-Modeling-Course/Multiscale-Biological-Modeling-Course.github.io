@@ -6,6 +6,19 @@ sidebar:
 toc: true
 toc_sticky: true
 image: "../assets/images/gray_scott_jupyter_high-res.png"
+gallery:
+  - url: ../assets/images/initial_A_concentration.png
+    image_path: ../assets/images/600px/initial_A_concentration.png
+    alt: "Initial diffusion automaton"
+    title: "The system contains a maximum concentration of particles in the central square."
+  - url: ../assets/images/A_concentration_one_time_step.png
+    image_path: ../assets/images/600px/A_concentration_one_time_step.png
+    alt: "Diffusion automaton after one time step"
+    title: "The system after one time step."
+  - url: ../assets/images/A_concentration_two_time_steps_complete.png
+    image_path: ../assets/images/600px/A_concentration_two_time_steps_complete.png
+    alt: "Diffusion automaton after two time steps"
+    title: "The system after two time steps."
 ---
 
 ## A coarse-grained model of single particle diffusion
@@ -48,6 +61,8 @@ The coarse-grained model of particle diffusion that we have built is a variant o
 ## Slowing down the rate of diffusion
 
 There is just one problem. Our cellular automaton model of diffusion is too volatile! In a true diffusion process, all of the particles would not rush out of the central square in a single time step.
+
+{% include gallery caption="A 5 x 5 cellular automaton model for diffusion of a single particle. (Left) The system contains a maximum concentration of particles in the central square. (Center) The system after one time step. (Right) The system after two time steps." %}
 
 Our solution is to add a parameter <em>d</em><sub><em>A</em></sub> representing the *rate* of diffusion of *A*. Instead of moving a cell's entire concentration of particles to its neighbors in a single time step, we move only the fraction <em>d</em><sub><em>A</em></sub> of them.
 
