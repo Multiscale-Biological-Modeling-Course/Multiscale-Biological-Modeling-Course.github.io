@@ -85,9 +85,6 @@ In the following tutorial, we will initiate our reaction-diffusion system with a
 
 For many parameter values, our reaction-diffusion system is not very interesting.  For example, the following animation is produced when using parameter rates in CellBlender of *f* = 1000 and *k* = 500,000.  It shows that if the kill rate is too high, then the *B* particles will die out more quickly than they can be replenished by the reaction with *A* particles, and so only *A* particles will be left. In this animation, *A* particles have been colored green, and *B* particles have been colored red.
 
-**Note:** Some of the videos in this section are short because they are very computationally intensive to generate due to the number of particles simulated.
-{: .notice--warning}
-
 {% include video id="MOO0fmwoz7E" provider="youtube" %}
 
 On the other hand, if *f* is too high, then the increased feed rate will cause an increase in the concentration of *A* particles. However, the increased concentration of *A* particles will also cause more interactions between *A* particles and pairs of *B* particles, and so we will see an explosion in the number of predators. The following simulation has the parameters *f* = 1,000,000 and *k* = 100,000.
@@ -119,17 +116,21 @@ Zooming in on the striped skin of a zebrafish shows that each stripe is formed o
 
 ## Turing's patterns and Klüver's hallucinations
 
-When you look at the simulations above, an adjective that may have come to mind is  "trippy". This is no accident. Research dating all the way back to the 1920s has studied the patterns that we see during visual hallucinations, which Heinrich Klüver named **form constants** after studying patients who had taken mescaline.[^kluver] Form constants, which include cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of the hallucinations.
+When you watched the particle simulations above, an adjective that may have come to mind is "trippy". This is no accident.
 
-Over five decades after Klüver's work, researchers would determine that form constants having different shapes originate from simpler *linear* stripes of cellular activation patterns in the retina. The retina is circular, but the brain needs to convert this cellular image into a rectangular field of view; as a result, when the linear patterns are passed to the visual cortex, the hallucinating brain contorts them into the spirals and whirls that we see.[^cowan]
+Research dating all the way back to the 1920s has studied the patterns that we see during visual hallucinations, which Heinrich Klüver named **form constants** after studying patients who had taken mescaline.[^kluver] Form constants, such as cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of their hallucinations.
 
-Yet this research had essentially replaced one question with another: why does hallucination cause *patterns* of cellular activation in the retina? This question is still unresolved, but some researchers[^quanta] believe that the linear patterns produced by hallucinations in the retina are in fact Turing patterns and can be explained by a reaction-diffusion model of firing neurons.
+[![image-center](../assets/images/600px/form_constants.jpg){: .align-center}](../assets/images/form_constants.jpg)
+A few of Heinrich Klüver's form constants. Courtesy: Lisa Diez, Wikimedia Commons.
+{: style="font-size: medium;"}
+
+Over five decades after Klüver's work, researchers would determine that form constants having different shapes originate from simpler *linear* stripes of cellular activation patterns in the retina. The retina is circular, but the brain needs to convert this cellular image into a rectangular field of view; as a result, when the linear patterns are passed to the visual cortex, the hallucinating brain contorts them into the spirals and whirls that we see.[^cowan] Some researchers[^quanta] believe that the patterns in the retina caused by hallucinations are in fact Turing patterns and can be explained by a reaction-diffusion model in which one type of neuron acts as a predator and another acts as prey.
 
 ## Streamlining our simulations
 
 Despite using advanced modeling and rendering software that has undergone years of development and optimization, each of the visualizations in this lesson took several hours to render. These simulations are computationally intensive because they require us to track the movement of tens of thousands of particles over thousands of generations.
 
-We wonder if it is possible to build a model of Turing patterns that does not require so much computational overhead. In other words, is there a simplification that we can make to our model that will run faster but still produce Turing patterns? We will turn our attention to this question in the next section.
+We wonder if it is possible to build a model of Turing patterns that does not require so much computational overhead. In other words, is there a simplification that we can make to our model that will run faster but still produce Turing patterns? We will turn our attention to this question in the next lesson.
 
 [Next lesson](gray-scott){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
