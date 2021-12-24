@@ -51,7 +51,7 @@ motifs:
         url: /motifs/transcription
       - title: "Transcription factor networks<br><br>"
         url: /motifs/networks
-      - title: "Autoregulation is surprisingly frequent<br><br>"
+      - title: "Gene autoregulation is surprisingly frequent<br><br>"
         url: /motifs/autoregulation
       - title: "The negative autoregulation motif<br><br>"
         url: /motifs/nar

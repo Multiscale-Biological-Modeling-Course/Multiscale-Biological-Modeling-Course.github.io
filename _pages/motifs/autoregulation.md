@@ -1,6 +1,6 @@
 ---
 permalink: /motifs/autoregulation
-title: "Autoregulation is Surprisingly Frequent"
+title: "Gene Autoregulation is Surprisingly Frequent"
 sidebar:
  nav: "motifs"
 toc: true
