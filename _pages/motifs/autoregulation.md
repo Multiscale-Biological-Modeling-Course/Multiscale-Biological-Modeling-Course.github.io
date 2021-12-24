@@ -1,5 +1,5 @@
 ---
-permalink: /motifs/finding
+permalink: /motifs/autoregulation
 title: "Autoregulation is Surprisingly Frequent"
 sidebar:
  nav: "motifs"

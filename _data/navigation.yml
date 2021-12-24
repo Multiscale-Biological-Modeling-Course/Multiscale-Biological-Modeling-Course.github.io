@@ -52,7 +52,7 @@ motifs:
       - title: "Transcription factor networks<br><br>"
         url: /motifs/networks
       - title: "Autoregulation is surprisingly frequent<br><br>"
-        url: /motifs/finding
+        url: /motifs/autoregulation
       - title: "The negative autoregulation motif<br><br>"
         url: /motifs/nar
       - title: "The feedforward loop motif<br><br>"

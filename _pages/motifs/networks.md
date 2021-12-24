@@ -35,7 +35,7 @@ A simplified illustration of autoregulation. "Protein" labels the transcription 
 
 Transcription factor autoregulation leads us to ask two questions. First, how can we conclude that the number of loops in a transcription factor network is "surprisingly large"? And second, if autoregulation is so common, then why would a transcription factor have evolved to regulate its *own* transcription?
 
-[Next lesson](finding){: .btn .btn--primary .btn--large}
+[Next lesson](autoregulation){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^scNetwork]: Lee, T. I., Rinaldi, N. J., Robert, F., Odom, D. T., Bar-Joseph, Z., Gerber, G. K., … Young, R. A. (2002). Transcriptional regulatory networks in Saccharomyces cerevisiae. Science, 298(5594), 799–804. https://doi.org/10.1126/science.1075090
