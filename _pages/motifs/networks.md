@@ -8,7 +8,7 @@ toc_sticky: true
 image: "../assets/images/repressilator_chart.png"
 ---
 
-## Transcription factor networks
+## The transcription factor network of *E. coli*
 
 Once we know which genes each transcription factor regulates, we can consolidate this information into a **transcription factor network**. The nodes in the network represent an organism's proteins, and we connect *X* to *Y* with an edge if *X* is a transcription factor that regulates the expression of protein *Y*. These edges are one-way connections; any node can have an edge leading into it, but only a transcription factor can have an edge leaving it.
 
@@ -23,9 +23,9 @@ A subset of the *E. coli* transcription factor network[^eColiNetwork] (click to 
 **STOP:** Select the expanded view of the transcription factor network in the figure above. Do you notice anything interesting about this network?
 {: .notice--primary}
 
-## Autoregulation
+## (Feedback) loops in the transcription factor network
 
-The *E. coli* transcription factor network seems to have a surprising number of **loops**, or edges that connect a node to itself. It is worth pausing for a moment to consider the implications of a loop in a transcription factor network. What does it even mean for a transcription factor to regulate itself?
+You may have noticed that the *E. coli* transcription factor network seems to have surprisingly many **loops**, or edges that connect a node to itself. It is worth pausing for a moment to consider the implications of a loop in a transcription factor network. What does it mean for a transcription factor to regulate itself?
 
 A transcription factor is a protein, which means that because of the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In **autoregulation**, illustrated in the figure below, the transcription factor protein then binds to the DNA in the upstream region of the gene encoding the *same* transcription factor. This type of **feedback** is a beautiful and surprising feature of a simple biological system.
 
@@ -33,7 +33,7 @@ A transcription factor is a protein, which means that because of the Central Dog
 A simplified illustration of autoregulation. "Protein" labels the transcription factor binding factor protein, which binds to the DNA encoding this transcription factor, labeled by "Gene".[^auto]
 {: style="font-size: medium;"}
 
-Transcription factor autoregulation leads us to ask two questions. First, how can we conclude that the number of loops in a transcription factor network is "surprisingly large"? And second, if autoregulation is so common, then why would a transcription factor have evolved to regulate its *own* transcription?
+Transcription factor autoregulation leads us to ask two questions. First, how can we justify that a transcription factor network has "surprisingly many" loops? And second, if autoregulation is so common, then why would a transcription factor have evolved to regulate its own transcription? We will address these questions in each of the next two lessons.
 
 [Next lesson](autoregulation){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
