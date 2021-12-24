@@ -1,6 +1,6 @@
 ---
 permalink: /motifs/finding
-title: "Using Randomness to Verify Network Motifs"
+title: "Autoregulation is Surprisingly Frequent"
 sidebar:
  nav: "motifs"
 toc: true

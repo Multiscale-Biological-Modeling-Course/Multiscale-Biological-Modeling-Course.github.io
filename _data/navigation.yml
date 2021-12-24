@@ -51,7 +51,7 @@ motifs:
         url: /motifs/transcription
       - title: "Transcription factor networks<br><br>"
         url: /motifs/networks
-      - title: "Using randomness to verify network motifs<br><br>"
+      - title: "Autoregulation is surprisingly frequent<br><br>"
         url: /motifs/finding
       - title: "The negative autoregulation motif<br><br>"
         url: /motifs/nar
