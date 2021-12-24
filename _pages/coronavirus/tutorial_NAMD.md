@@ -16,7 +16,7 @@ To get started, make sure to have installed VMD and know how to load molecules i
 
 ## Creating a protein structure file
 
-NAMD needs to utilize the information in the force field to calculate the potential energy of a protein. To do this, it needs a **protein structure file (PSF)**. A PSF, which is molecule-specific, contains all the information required to apply a force field to a molecular system.[^PSF] Fortunately, there are programs that can generate a PSF given a force field and a `.pdb` file containing a protein structure. See <a href="https://www.ks.uiuc.edu/Training/Tutorials/namd/namd-tutorial-unix-html/node23.html" target="_blank">this NAMD tutorial</a> for more information.
+NAMD needs to use the information in the force field to calculate the potential energy of a protein. To do this, it needs a **protein structure file (PSF)**. A PSF, which is molecule-specific, contains all the information required to apply a force field to a molecular system.[^PSF] Fortunately, there are programs that can generate a PSF given a force field and a `.pdb` file containing a protein structure. See <a href="https://www.ks.uiuc.edu/Training/Tutorials/namd/namd-tutorial-unix-html/node23.html" target="_blank">this NAMD tutorial</a> for more information.
 
 First, load <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a> into VMD. We then need to create a protein structure file of 6vw1 to simulate the molecule. We will be using the VMD plugin Atomatic PSF Builder to create the file. From `VMD Main`, click `Extensions > Modeling > Automatic PSF Builder`.
 
