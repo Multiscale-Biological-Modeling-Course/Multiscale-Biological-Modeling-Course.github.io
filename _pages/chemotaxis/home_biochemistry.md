@@ -79,7 +79,7 @@ Now that we have written these reactions representing the chemotaxis signal tran
 
 But does higher attractant concentration in our model really lead to a lower concentration of CheY? Let's find out by incorporating the phosphorylation pathway into our ligand-receptor model in the following BioNetGen tutorial.
 
-[Visit tutorial](tutorial_phos){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_phos){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Tumbling frequency and changing ligand concentrations

@@ -78,7 +78,7 @@ The same goes for the feed and kill reactions; new *A* particles are formed, and
 
 In the following tutorial, we will initiate our reaction-diffusion system with a uniform concentration of *A* particles spread across the grid and a tightly packed collection of *B* particles in the center of the grid. When we return from this tutorial, we will see if any high-level patterns form.
 
-[Visit tutorial](turing-cellblender){: .btn .btn--primary .btn--large}
+[Visit tutorial](turing-cellblender){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Changing reaction-diffusion parameters produces different emergent Turing patterns

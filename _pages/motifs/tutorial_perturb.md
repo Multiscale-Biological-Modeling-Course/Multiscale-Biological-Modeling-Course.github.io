@@ -174,5 +174,5 @@ Can you break the oscillator model, or is it just too robust? We recommend playi
 
 In the main text, we will discuss the robustness of the repressilator and make a larger point about robustness in biology before we complete our work in this module.
 
-[Return to main text](conclusion#the-repressilator-is-robust-to-disturbance){: .btn .btn--primary .btn--large}
+[Return to main text](conclusion#the-repressilator-is-robust-to-disturbance){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}

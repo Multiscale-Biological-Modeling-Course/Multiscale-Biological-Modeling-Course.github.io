@@ -46,7 +46,7 @@ If you are interested in seeing how to build the random walk simulation shown in
 **Note:** We have designed this course so that you can appreciate the key ideas behind the biological models that we build without following software tutorials. But we also provide these tutorials so that you can explore the modeling software that we have used to generate our conclusions.
 {: .notice--warning}
 
-[Visit tutorial](tutorial-random-walk){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial-random-walk){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Brownian motion: big numbers in small spaces

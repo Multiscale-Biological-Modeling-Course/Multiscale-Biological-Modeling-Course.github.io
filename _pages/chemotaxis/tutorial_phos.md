@@ -186,5 +186,5 @@ In the main text, we will explore the results of the above simulation. We will t
 [^Spiro1997]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
 
 
-[Return to main text](home_biochemistry#tumbling-frequency-and-changing-ligand-concentrations){: .btn .btn--primary .btn--large}
+[Return to main text](home_biochemistry#tumbling-frequency-and-changing-ligand-concentrations){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}

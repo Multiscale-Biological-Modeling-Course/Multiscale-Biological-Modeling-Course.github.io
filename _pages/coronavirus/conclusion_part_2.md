@@ -125,7 +125,7 @@ The average mode shape of the slowest ten modes for each of the four human hemog
 
 We are now ready to apply what we have learned in this lesson and use ProDy to build a GNM for the SARS-CoV and SARS-CoV-2 spike proteins. When we return from the following tutorial, we will interpret each of the analyses that we have performed.
 
-[Visit tutorial](tutorial_GNM){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_GNM){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Molecular dynamics analyses of SARS-CoV and SARS-CoV-2 spike proteins using GNM
@@ -170,7 +170,7 @@ After we produce an animation like the one in the figure above, we also should a
 
 In the tutorial linked below, we will apply ANM to produce versions of the plots that we produced above. We will also encounter <a href="http://prody.csb.pitt.edu/nmwiz/" target="_blank">NMWiz</a>, which is short for "normal mode wizard", a GUI for ProDy that is available as a plugin for VMD. We will use NMWiz to perform ANM calculations and create an animation of the SARS-CoV-2 (chimeric) RBD (PDB entry: <a href="http://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>) and the SARS-CoV RBD (PDB entry: <a href="http://www.rcsb.org/structure/2ajf" target="_blank">2ajf</a>).
 
-[Visit tutorial](tutorial_ANM){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_ANM){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## ANM analysis of the coronavirus binding domain
@@ -222,7 +222,7 @@ Recall from our work in the [previous lesson](NAMD#differences-in-interaction-en
 
 Although we have separated our discussion of GNM and ANM, the <a href="http://enm.pitt.edu/index.php" target="_blank">DynOmics 1.0</a> server is an effort to integrate these approaches on a user-friendly platform. If you are interested, the following tutorial shows how to use DynOmics to replicate some of our above analysis.
 
-[Visit tutorial](tutorial_DynOmics){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_DynOmics){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Fighting a Virus with Open Science

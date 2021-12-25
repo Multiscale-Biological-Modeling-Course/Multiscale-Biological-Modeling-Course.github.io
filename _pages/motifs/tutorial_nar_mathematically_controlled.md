@@ -33,5 +33,5 @@ Now go back to `CellBlender > Plot Output Settings` and scroll to the bottom to 
 
 Save your file before returning to the main text, where we will interpret the plot produced to see if we were able to obtain a mathematically controlled simulation and then interpret the result of this simulation from an evolutionary perspective.
 
-[Return to main text](nar#an-evolutionary-basis-for-negative-autoregulation){: .btn .btn--primary .btn--large}
+[Return to main text](nar#an-evolutionary-basis-for-negative-autoregulation){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}

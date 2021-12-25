@@ -37,7 +37,7 @@ We then iterate these two steps of tumbling and running until the total time use
 
 In the following tutorial, we simulate this naive strategy using a Jupyter notebook that will also help us visualize the results of the simulation.
 
-[Visit standard random walk tutorial](tutorial_purerandom){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_purerandom){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 
@@ -64,7 +64,7 @@ As with the first strategy, our simulated cell will alternate between tumbling a
 
 In the following tutorial, we will adapt the Jupyter notebook that we built in the previous tutorial to simulate this second strategy. We then will compare the two strategies by running many trials of simulated bacteria and taking the average of the simulated bacteria's distance to the goal for each of the two strategies.
 
-[Visit chemotactic walk tutorial](tutorial_walk){: .btn .btn--primary .btn--large}
+[Visit chemotactic walk tutorial](tutorial_walk){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Comparing the effectiveness of our two random walk strategies
@@ -91,7 +91,7 @@ We have shown that a very slight change to a simple randomized algorithm can pro
 
 To address this question, we will make changes to *t*<sub>0</sub>, the default time for a run step, and see how this affects the ability of a simulated bacterium following the chemotactic strategy to locate the goal. You may like to adjust the value of *t*<sub>0</sub> in the [chemotactic walk tutorial](tutorial_walk) before continuing on.
 
-[Visit tutorial](tutorial_tumbling_frequencies){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_tumbling_frequencies){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Why is bacterial background tumbling frequency constant across species?

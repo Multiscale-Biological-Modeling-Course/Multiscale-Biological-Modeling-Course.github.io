@@ -18,7 +18,7 @@ Furthermore, once the cell reaches a region of high attractant concentration, wi
 
 In the following tutorial, we will modify our model from the previous lesson by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of phosphorylated CheY changes. Moreover, we will examine how this concentration changes as we change the gradient's "steepness", or the rate at which attractant ligand is increasing.
 
-[Visit tutorial](tutorial_gradient){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_gradient){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Steady-state tumbling frequency is robust when traveling up an attractant gradient
@@ -50,7 +50,7 @@ To simulate a decreasing gradient, we will model a cell in a high ligand concent
 
 You may like to modify the previous tutorial on your own to account for traveling down an attractant gradient. If not, we are still happy to provide a separate tutorial below.
 
-[Visit tutorial](tutorial_removal){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_removal){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Steady-state tumbling frequency remains robust when traveling down an attractant gradient

@@ -26,5 +26,5 @@ Even though this is a short protein, it will take at least a few hours to run yo
 
 In the main text, we will show a figure of our models and compare them to the known structure of human hemoglobin subunit alpha from the PDB entry <a href="https://www.rcsb.org/structure/1sI4" target="_blank">1si4</a>. You can also <a href="../_pages/coronavirus/files/QUARK_Hemoglobin.tar.bz2" download>download</a> our completed models if you like.
 
-[Return to main text](ab_initio#toward-a-faster-approach-for-protein-structure-prediction){: .btn .btn--primary .btn--large}
+[Return to main text](ab_initio#toward-a-faster-approach-for-protein-structure-prediction){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}

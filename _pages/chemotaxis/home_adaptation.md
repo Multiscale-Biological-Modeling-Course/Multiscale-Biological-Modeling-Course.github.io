@@ -67,7 +67,7 @@ Why is one rule enough? Recall from our discussion of the [Gillespie algorithm](
 
 In the following tutorial, we will expand our BioNetGen model from the previous tutorial into one that can incorporate CheR binding as well as MCP methylation while avoiding combinatorial explosion. We will then examine whether this model allows us to learn anything about how a bacterium can adapt to changes in the relative concentration of attractant.
 
-[Visit tutorial](tutorial_adaptation){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_adaptation){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Bacterial tumbling is resilient to large sudden changes in ligand concentration

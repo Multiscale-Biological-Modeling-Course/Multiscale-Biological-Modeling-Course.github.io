@@ -30,7 +30,7 @@ As for a repression reaction like *X* + *Y* → *X*, we can update the concentra
 
 We will focus on the technical details behind such a coarse-grained "particle-free" model in the next module. In the meantime, we provide a tutorial below showing how to build a particle-free simulation replicating the repressilator motif. As part of this tutorial, we will make a major disturbance to the concentration of one of the particles and see how long the disturbance lasts and whether the particle concentrations resume their oscillations.
 
-[Visit tutorial](tutorial_perturb){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_perturb){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## The repressilator is robust to disturbance

@@ -117,5 +117,5 @@ python WBC_CellType.py
 
 As we return to the main text, we will show the labeled shape space plots and return to the problem of classification.
 
-[Return to main text](pca#visualizing-the-wbc-shape-space-after-pca){: .btn .btn--primary .btn--large}
+[Return to main text](pca#visualizing-the-wbc-shape-space-after-pca){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}

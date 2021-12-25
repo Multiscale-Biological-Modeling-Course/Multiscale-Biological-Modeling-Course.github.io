@@ -98,7 +98,7 @@ Next, we color each cell in the grid according to its value of [*B*]/([*A*] + [*
 
 When we color each cell over many time steps, we can animate the automaton to see how it changes over time. We are now ready for the following tutorial, in which we will implement and visualize our diffusion automaton using a **Jupyter notebook**.
 
-[Visit tutorial](tutorial-diffusion){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial-diffusion){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 The video below shows an animation of a 101 x 101 board that begins with the following properties:
@@ -156,7 +156,7 @@ As the result of all these processes, we update the concentrations of *A* and *B
 
 We should now feel ready to implement the Gray-Scott model in the following tutorial. The question is: even though we have built a coarser-grained simulation than the previous lesson, will we still see Turing patterns?
 
-[Visit tutorial](gs-jupyter){: .btn .btn--primary .btn--large}
+[Visit tutorial](gs-jupyter){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Reflection on the Gray-Scott model

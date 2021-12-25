@@ -145,7 +145,7 @@ This simplification allows us to compute the recall, specificity, and precision 
 
 Now that we understand more about how to quantify the performance of a classifier, we are now ready to apply k-NN to our WBC shape space (post-PCA of course!) and assess how well it performs.
 
-[Visit tutorial](tutorial_image_classification){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_image_classification){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Results of applying a classifier to the WBC shape space

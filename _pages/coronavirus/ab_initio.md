@@ -103,7 +103,7 @@ In the tutorial linked below, we will use the web interface of a software resour
 
 Despite the sophistication of software like QUARK, the search space of all conformations is so large (recall Levinthal's paradox from the previous lesson) that accurately predicting large protein structures remains very difficult. Accordingly, many *ab initio* x restrict the length of a protein sequence. This is the case for QUARK, which limits us to 200 amino acids. Since the SARS-CoV-2 spike protein contains 1281 amino acids, we will instead demonstrate how to use this software on the shorter human hemoglobin subunit alpha.
 
-[Visit tutorial](tutorial_ab_initio){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_ab_initio){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Toward a faster approach for protein structure prediction

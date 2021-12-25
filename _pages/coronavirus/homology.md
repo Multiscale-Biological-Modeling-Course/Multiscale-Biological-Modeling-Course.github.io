@@ -38,7 +38,7 @@ Some algorithms account for variable and conserved regions in homology modeling 
 
 In the following tutorial, we will use model the SARS-CoV-2 spike protein using different homology modeling software from three publicly available servers (SWISS-MODEL, Robetta, and GalaxyWEB), all of which apply a variant of the fragment assembly approach. Using three different homology approaches should give us confidence that if the results are similar, then our structure prediction is reasonably *robust* (a concept that has recurred throughout this course). Furthermore, comparing the results of multiple different approaches may give more insights into structure prediction.
 
-[Visit tutorial](tutorial_homology){: .btn .btn--primary .btn--large}
+[Visit tutorial](tutorial_homology){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Applying homology modeling to the SARS-CoV-2 spike protein

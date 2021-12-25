@@ -149,5 +149,5 @@ Then, click `Classify`, and again run k-NN with *k* = 1 and the number of folds 
 **STOP:** What are the accuracy, precision, and recall of this classifier? How does the confusion matrix compare to the one that we produced for three classes? From a biological perspective, why do you think that the algorithm is struggling?
 {: .notice--primary}
 
-[Return to main text](training#results-of-applying-a-classifier-to-the-wbc-shape-space){: .btn .btn--primary .btn--large}
+[Return to main text](training#results-of-applying-a-classifier-to-the-wbc-shape-space){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
