@@ -10,21 +10,21 @@ image: "../assets/images/repressilator_chart.png"
 
 ## Feedforward loops
 
-In the previous lesson, we saw that negative autoregulation can be used to speed up the response time of a protein to an external stimulus. The catch is that negative autoregulation can only be used if the protein is itself a transcription factor. Only about 300 out of 4,400 total *E. coli* proteins are transcription factors[^tfNumber]. Is there a simple way of speeding up a cell's ability to manufacture a protein if that protein is not a transcription factor?
+In the [previous lesson](nar), we saw that negative autoregulation can be used to lower the response time of a protein to an external stimulus. But the cell can only use negative autoregulation to respond quickly if the autoregulated protein is itself a transcription factor. Only about 300 out of 4,400 total *E. coli* proteins are transcription factors[^tfNumber]. How can the cell speed up the manufacture of a proteinif that protein is not a transcription factor?
 
-The answer will lie in another small network motif called the **feedforward loop** (**FFL**). The FFL motif, shown in the figure below, is a network substructure in which *X* is connected to both *Y* and *Z*, and *Y* is connected to *Z*. In this sense, calling the FFL motif a "loop" is a misnomer. Rather, it is a small structure in which there are two "paths" from *X* to *Z*; one via direct regulation of *Z* by *X*, and another in which there is an intermediate transcription factor *Y*. This is why this motif is called *feedforward* rather than *feedback*.
+The answer lies in another transcription factor network motif called the **feedforward loop** (**FFL**). An FFL, shown in the figure below, is a network substructure in which *X* is connected to both *Y* and *Z*, and *Y* is connected to *Z*. Calling the FFL motif a "loop" is a misnomer. Rather, it is a small structure in which there are two paths from *X* to *Z*; one via direct regulation of *Z* by *X*, and another with an intermediate transcription factor *Y*.
 
 [![image-center](../assets/images/600px/feed-forward_loop.png){: .align-center width="300px"}](../assets/images/feed-forward_loop.png)
 The FFL motif. *X* regulates both *Y* and *Z*, and *Y* regulates *Z*.
 {: style="font-size: medium;"}
 
-Note that *X* and *Y* must be transcription factors because they have edges leading out from them, but *Z* does not have to be a transcription factor (and in fact typically is not). There are 42 FFLs in the transcription factor network of *E. coli*[^ffl], and we will pass the verification that this is a significant number of FFLs as an exercise at the end of the module.
+Note that *X* and *Y* must be transcription factors because they have edges leading out from them, but *Z* does not have to be a transcription factor (and in fact typically is not). There are 42 FFLs in the transcription factor network of *E. coli*[^ffl]; we leave the verification that this number is significant as an exercise at the end of the module.
 
-Furthermore, recall that every edge of a transcription factor network is assigned a "+" or a "-" sign based on whether the interaction corresponds to activation or repression, respectively. Accordingly, there are eight different types of FFLs, depending on the labels of the three edges in this motif.
+Recall that every edge of a transcription factor network is assigned a sign based on whether the regulation represented by the edge corresponds to activation or repression, respectively. Accordingly, since an FFL involves three different regulation events, there are 2<sup>3</sup> = 8 different types of FFLs.
 
 Among the 42 total FFLs in the *E. coli* transcription factor network, five of them have the structure below, in which the edges connecting *X* to *Y* and *X* to *Z* are assigned a "+" and the edge connecting *Y* to *Z* is assigned a "-". This specific form of the FFL motif is  called a **type-1 incoherent feedforward loop**. This form of the FFL will be our focus for the rest of the module.
 
-**STOP:** How could we simulate a feedforward loop with chemical reactions akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
+**STOP:** How could we simulate a feedforward loop with a particle-based reaction-diffusion model akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
 {: .notice--primary}
 
 [![image-center](../assets/images/600px/type-1_incoherent_feed-forward_loop.png){: .align-center width="300px"}](../assets/images/type-1_incoherent_feed-forward_loop.png)
