@@ -42,7 +42,7 @@ If you followed our previous tutorials, then you may feel comfortable taking off
 
 ## Interpreting the repressilator's oscillations
 
-The figure below shows the results of our simulation by plotting the number of *X*, *Y*, and *Z* particles over time. As we can see, the system shows clear oscillatory behavior, with the concentrations of *X*, *Y*, and *Z* taking turns being at high concentration.
+The figure below shows a plot of the concentration of *X*, *Y*, and *Z* particles from our repressilator simulation. The system shows clear oscillatory behavior, with the concentrations of *X*, *Y*, and *Z* taking turns being at high concentration.
 
 **STOP:** Why do you think that the repressilator motif leads to this pattern of oscillations?
 {: .notice--primary}
@@ -51,19 +51,15 @@ The figure below shows the results of our simulation by plotting the number of *
 Modeling the repressilator's concentration of particles. *X* is shown in yellow, *Y* is shown in red, and *Z* is shown in blue.
 {: style="font-size: medium;"}
 
-We will attempt to provide a high-level explanation of why the repressilator produces oscillations from a simple set of rules.
+Because the concentration of *X* starts out high, with no *Y* or *Z* present, the concentration of *X* briefly increases because its rate of production exceeds its rate of degradation. Because no *Y* or *Z* particles are present, there are none to degrade, and the concentrations of these particles start increasing as well.
 
-Because the concentration of *X* starts out high, with no *Y* or *Z* present, the concentration of *X* briefly increases because its rate of production exceeds its rate of degradation. Because there are no *Y* or *Z* particles present, there are no *Y* or *Z* to degrade, and the concentrations of these particles start increasing as well.
-
-As soon as there are some *Z* particles present, the reaction *Z* + *X* → *Z* occurs often enough for the rate of removal of *X* to exceed its rate of production, accounting for the first peak in the figure above.
-
-Furthermore, because the concentration of *X* particles begins high, the reaction *X* + *Y* → *X* prevents the number of *Y* particles from growing initially. This is because the remaining repression reaction (*Y* + *Z* → *Y*) has very little effect initially because the concentrations of *Y* and *Z* are both low. As a result, the rate of production of *Z* is higher than its rate of removal, and so its concentration increases quickly while the concentration of *Y* stays low.
+As the concentration of *Z* rises, the repression reaction *Z* + *X* → *Z* occurs often enough for the rate of removal of *X* to equal and exceed its rate of production, accounting for the first peak in the figure above. Furthermore, because the concentration of *X* particles begins high, the repression reaction *X* + *Y* → *X* prevents the number of *Y* particles from growing initially.
 
 In summary, after an initial rise, the concentration of *X* plummets, with the concentration of *Z* rising up to replace it. The concentration of *Y* increases, but at a slower rate than that of *Z*. This situation is shown by the second (blue) peak in the figure above.
 
-As a result, *Z* and *X* in effect have switched roles. Because there is a high concentration of *Z*, the reaction *Y* + *Z* → *Y* will be frequent and cause the concentration of *Z* to decrease. Furthermore, because the concentration of *X* has decreased, and the concentration of *Y* is still relatively low, the reaction *X* + *Y* → *X* will occur less often, allowing the concentration of *Y* to continue to rise. Eventually, the decrease in *Z* and the increase in *Y* will account for the third peak (red) in the figure above.
+As a result, *Z* and *X* have switched roles. Because there is a high concentration of *Z*, and the concentration of *Y* is increasing, the reaction *Y* + *Z* → *Y* will be frequent and reduce the concentration of *Z*. Furthermore, because the concentration of *X* has decreased, and the concentration of *Y* is still relatively low, the reaction *X* + *Y* → *X* will occur less often, allowing the concentration of *Y* to continue to rise. Eventually, the decrease in *Z* and the increase in *Y* will account for the third (red) peak in the figure above.
 
-At this point, the reaction *X* + *Y* → *X* will suppress the concentration of *Y*. Because the concentration of *X* and *Z* are both lower, the reaction *Z* + *X* → *Z* will not greatly influence the concentration of *X*, which will rise to meet the following concentration of *Y*, and we have returned to our original situation, at which point the cycle will begin again.
+At this point, the reaction *X* + *Y* → *X* will suppress the concentration of *Y*. Because the concentration of *X* and *Z* are both lower than the concentration of *Z*, the reaction *Z* + *X* → *Z* will not greatly influence the concentration of *X*, which will rise to meet the following concentration of *Y*, and we have returned to our original situation, at which point the cycle will begin again.
 
 ## The power of noise
 
