@@ -59,7 +59,7 @@ We have seen that even very simple network motifs can have a powerful effect on 
 
 In the meantime, check out the exercises below to continue developing your understanding of how transcription factor network motifs have evolved.
 
-[Visit exercises](exercises){: .btn .btn--primary .btn--large}
+[Visit exercises](exercises){: .btn .btn--success .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Special acknowledgement
