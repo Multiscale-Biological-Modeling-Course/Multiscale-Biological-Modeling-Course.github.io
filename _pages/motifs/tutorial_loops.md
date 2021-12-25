@@ -11,7 +11,10 @@ In this tutorial, we will build a Jupyter Notebook to analyze loops in the *E. c
 You will also need the following helper file:
 <a href="../downloads/network_loader.py" download="network_loader.py">Python File</a>
 
-Before running this tutorial, make sure that the following software and packages are installed. **Warning:** Be careful of the igraph installation and follow the website instructions carefully. When installing via pip or conda, specify "*python-igraph*" instead of "*igraph*".
+Before running this tutorial, make sure that the following software and packages are installed.
+
+**Warning:** Be careful of the igraph installation and follow the website instructions carefully. When installing via pip or conda, specify "*python-igraph*" instead of "*igraph*".
+{: .notice--primary}
 
 | Installation Link | Version[^version] | Check Install |
 |:------|:-----:|------:|
