@@ -10,40 +10,43 @@ image: "../assets/images/repressilator_chart.png"
 
 ## Hunting for a biological motivation for negative autoregulation
 
-Theodosius Dobzhansky famously wrote that "nothing in biology makes sense except in the light of evolution."[^Dob] In the spirit of this quotation, there must be some evolutionary reason for the presence of so many negatively autoregulating transcription factors (i.e., transcription factors that slow their own transcription). Our goal is to use biological modeling to establish this justification.
+Theodosius Dobzhansky famously wrote that "nothing in biology makes sense except in the light of evolution."[^Dob] In the spirit of this quotation, there must be some evolutionary reason for the presence of the large number of negatively autoregulating *E. coli* transcription factors that we identified in the [previous lesson](autoregulation). We will use biological modeling to establish this justification.
 
 Say that a transcription factor *X* regulates another transcription factor *Y*, and consider two cells. In both cells, *X* upregulates the transcription of *Y*, but in the second cell, *Y* also negatively autoregulates.
 
-In this lesson, we will simulate a "race" to the steady state concentration of *Y* in the two cells. The premise is that the cell that reaches this steady state faster is able to respond more quickly to its environment and is therefore more fit for survival.
+In this lesson, we will simulate a "race" to the steady state concentration of *Y* in the two cells. Our premise is that the cell that reaches the steady state faster can respond more quickly to its environment and is therefore more fit for survival.
 
 ## Simulating transcriptional regulation with a reaction-diffusion model
 
-In the [prologue](../prologue/), we simulated chemical reactions to run a randomized particle-based model. In this lesson, we will apply the same model, in which the particles correspond to transcription factors *X* and *Y*.
+In the [prologue](../prologue/), we used a particle-based model to simulate a reaction-diffusion process. In this lesson, we will apply the same type of model, in which our "particles" are the two transcription factors *X* and *Y*.
 
-We will begin with a model of the first cell, in which *X* upregulates *Y* but we do not have negative autoregulation of *Y*. We start without any *Y* particles and a constant number of *X* particles. To simulate *X* upregulating the expression of *Y*, we add the reaction *X* → *X* + *Y*. This reaction ensures that in a given interval of time there is a constant underlying probability that a given *X* particle will spontaneously form a new *Y* particle.
+We will begin with a model of the first cell, in which *X* activates *Y* but we do not have negative autoregulation of *Y*. To simulate *X* activating *Y*, we use the reaction *X* → *X* + *Y* at some rate *r*. In a given interval of time, there is a constant underlying probability related to *r* that any given *X* particle will spontaneously form a new *Y* particle.
 
-We should also account for the fact that proteins are *degraded* over time by enzymes called proteases. The typical protein's concentration will be degraded by 20 to 40 percent in an hour, but transcription factors degrade even faster, only lasting for a matter of minutes.[^machinery] Degradation may seem like a bug, but it is in fact a feature, as it allows the cell to remove a protein after increasing its concentration in response to its environment.
+We should also account for the fact that proteins are *degraded* over time by enzymes called proteases. The typical protein's concentration will be degraded by 20 to 40 percent in an hour, but transcription factors degrade even faster, only lasting a matter of minutes.[^machinery] Degradation may seem like a bug of cellular design, but it is a feature, as it allows the cell to remove a protein after increasing that protein's concentration in response to some environmental change.
 
-To model the degradation of a protein, we add a "kill" reaction that removes *Y* particles. We will assume that *X* starts at steady-state, meaning that *X* is being produced at a rate that exactly balances its degradation rate, and we will therefore not need to add reactions to the model simulating the production or degradation of *X*.
+To model the degradation of a protein, we add a "kill" reaction that removes *Y* particles at a rate *k*. We will initialize our simulation with no *Y* particles and the *X* concentration at steady-state, so that *X* is being produced at a rate that exactly balances its degradation rate, and we will therefore not need to add reactions to the model simulating the production or degradation of *X*.
 
-Diffusion of the *X* and *Y* particles is not necessary because there is no reaction in which more than one particle interacts, but we will allow both *X* and *Y* particles to diffuse through the system at the same rate.
+To complete the model of the first cell, diffusion of the *X* and *Y* particles is not technically necessary because there is no reaction having more than one particle as a reactant. However, for the sake of biological correctness, we will allow both *X* and *Y* particles to diffuse through the system at the same rate.
 
-**STOP:** What chemical reaction could be used to add negative autoregulation of *Y* to this simulation?
+**STOP:** What chemical reaction could be used to simulate the negative autoregulation of *Y*?
 {: .notice--primary}
 
-We now will simulate the second cell, which will inherit the reactions for the first cell while incorporating adding negative autoregulation of *Y*. We will do so using the reaction 2*Y* → *Y*. In other words, when two *Y* particles encounter each other, there is some probability that one of the particles serves to remove the other, which mimics the process of a transcription factor turning off another copy of itself during negative autoregulation.
+We now will simulate the second cell, which will inherit all of the reactions from the first cell (with the same reaction rates) while adding negative autoregulation of *Y*. We will do so using the reaction 2*Y* → *Y*, occurring at some rate *n*. In other words, when two *Y* particles collide, there is some probability that one of the particles serves to remove the other, which mimics the process of a transcription factor turning off another copy of itself during negative autoregulation.
 
-To recap, the simulations of both cells will include diffusion of *X* and *Y*, removal of *Y*, and the reaction *X* → *X* + *Y*. The second simulation, which includes negative autoregulation of *Y*, will add the reaction 2*Y* → *Y*. All of these reactions will take place according to rate parameters. You can explore these simulations in the following tutorial, and we will reflect on these simulations in the next section.
+To recap, the simulations of both cells will include an initial concentration of *X* at steady-state, diffusion of *X* and *Y*, removal of *Y*, and the reaction *X* → *X* + *Y*. The second simulation, which includes negative autoregulation of *Y*, will add the reaction 2*Y* → *Y*. You can explore these simulations in the following tutorial.
 
 [Visit tutorial](tutorial_nar){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
+**Note:** Even though we are using a particle-based model to mimic regulation, it is not attempting to replicate specific chemical reactions. In reality, gene regulation is a complicated chemical process that involves a great deal of molecular machinery. However, this is the purpose of the model, to strip away what is not relevant and retain the essence of what is being modeled.
+{: .notice--warning}
+
 ## Ensuring a mathematically controlled comparison
 
-If you followed the above tutorial, then you were likely  disappointed in our second cell and its negative autoregulating transcription factor *Y*. The figure below shows a plot of *Y* particles for the two simulations.
+If you followed the above tutorial, then you were likely disappointed in the second cell and its negative autoregulating transcription factor *Y*. The figure below shows a plot of *Y* particles for the two simulations; the first cell is shown in red, and the second cell is shown in yellow.
 
 [![image-center](../assets/images/600px/nar_unequal_chart.png){: .align-center}](../assets/images/nar_unequal_chart.png)
-A comparison of the number of *Y* particles across two simulations. In the first cell (shown in red), we only have upregulation of *Y* by *X*, whereas in the second cell (shown in yellow), we keep all parameters fixed but add a reaction simulating negative autoregulation of *Y*.
+A comparison of the number of *Y* particles across two simulations. In the first cell (red), we only have upregulation of *Y* by *X*, whereas in the second cell (yellow), we keep all parameters fixed but add a reaction simulating negative autoregulation of *Y*.
 {: style="font-size: medium;"}
 
 By allowing *Y* to slow its own transcription, we wound up with a simulation in which the final concentration of *Y* was lower than when we only had upregulation of *Y* by *X*. It seems like we are back at square one; why in the world would negative autoregulation be so common?
@@ -76,8 +79,6 @@ In this lesson, we have seen that particle-based simulations can be powerful for
 
 [Next lesson](feed){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
-
-## Citations
 
 [^Alon]: Alon, Uri. *An Introduction to Systems Biology: Design Principles of Biological Circuits*, 2nd Edition. Chapman & Hall/CRC Mathematical and Computational Biology Series. 2019.
 
