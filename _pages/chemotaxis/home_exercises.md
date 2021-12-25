@@ -13,46 +13,46 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 Just as *E. coli* has receptors that bond to attractant ligands, it has other receptors that can bond to **repellent** ligands.
 
 **Exercise:** Based on what we have learned in this module about how *E. coli* and other bacteria act in the presence of an attractant, what do you think that the chemotaxis response is in the presence of a repellent? How do you think that the bacterium adjusts to relative changes of the repellent?
-{: .notice--info}
+{: .notice--success}
 
 In the [phosphorylation tutorial](tutorial_phos), we defined the rate constant for free CheA autophosphorylation `k_T_phos`, and specified that when the receptor complex is bound to an attractant molecule, the autophosphorylation rate constant decreases to `0.2 · k_T_phos`. To model a receptor complex bound to a repellent molecule, we will need to change the autophosphorylation rate so that it is greater than `k_T_phos`.
 
 **Exercise:** Adapt the BioNetGen model so that the autophosphorylation rate constant is `5 · k_T_phos`. then run your simulation for 3 seconds with `L0 = 5000` and `L0 = 1e5` repellent ligand molecules added at the beginning of the simulation. How does the concentration of phosphorylated CheY change? What do you conclude?
-{: .notice--info}
+{: .notice--success}
 
 ## What if *E. coli* has multiple attractant sources?
 
 Not only can *E. coli* sense both repellents and attractants, but it can detect *more than one* attractant gradient at the same time.  This function has a clear evolutionary purpose in a bacterial environment of multiple sparsely populated food sources. In this section, we will explore whether the chemotaxis mechanism allows cells to navigate through heterogeneous nutrient distributions.
 
 **Exercise:** Modify our model from the [adaptation tutorial](tutorial_adaptation) to reflect two types of receptor, each specific to its own ligand (call them *A* and *B*). Assume that we have 3500 receptor molecules of each type. (**Hint:** you will not need to have additional molecules in addition to `L` and `T`. Instead, specify additional states for the two molecules that we already have; for example `L(t,Lig~A)` should only bind with `T(l,Lig~A)`. Don't forget to update `species` as well!)
-{: .notice--info}
+{: .notice--success}
 
 In the previous exercise, the cell adapts to the presence of two different attractants at the same time. We now consider what will happen if we only add *B* molecules of *B* once the cell has already adapted to *A* molecules.
 
 **Exercise:** Change your model by assuming that after the cell adapts to `1e6` molecules of *A*, `1e6` molecules of *B* are added. Observe the concentration of phosphorylated CheY. Is the cell able to respond to *B* after adapting to the concentration of ligand *A*? Why do you think that the change in CheY phosphorylation different from the scenario in which we release the two different ligands concurrently? (The hint for the previous exercise also applies to this exercise.)
-{: .notice--info}
+{: .notice--success}
 
 In the [chemotactic walk tutorial](tutorial_walk), we used a concentration gradient that grew exponentially toward a single goal. Specifically, if *L*(*x*, *y*) was the concentration of ligand at (*x*, *y*), we set *L*(*x*,*y*) = 100 · 10<sup>6 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal (we used a goal of (1500, 1500)).
 
 To simulate an environment with more than one food source, we will include another goal at (-1500, 1500). The new ligand concentration formula will be *L*(*x*, *y*) = 100 · 10<sup>8 · (1-*d*<sub>1</sub>/*D*<sub>1</sub>)</sup> + 100 · 10<sup>8 · (1-*d*<sub>2</sub>/*D*<sub>2</sub>)</sup>, where *d*<sub>1</sub> is the distance from (*x*, *y*) to the goal at (1500, 1500), *d*<sub>2</sub> is the distance from (*x*, *y*) to the goal at (-1500, 1500), and *D*<sub>1</sub> and *D*<sub>2</sub> are the distances from the origin to the two respective goals.
 
 **Exercise:** Change the chemotactic walk simulation so that it includes the two goals, and visualize the trajectories of several cells using a background tumbling frequency of once every second. Are the cells able to find one of the goals? How long does it take them?
-{: .notice--info}
+{: .notice--success}
 
 **Exercise:** Vary the tumbling frequency according to the parameters given in the [chemotactic walk tutorial](tutorial_walk) to see how tumbling frequency influences the average distance of a cell to the closer of the two goals. As in the tutorial, run your simulation for 500 cells with tumbling frequencies `time_exp = [0.2, 0.5, 1.0, 2.0, 5.0]`.
-{: .notice--info}
+{: .notice--success}
 
 ## Changing the *E. coli* choice of direction
 
 In the [conclusion](home_conclusion), we mentioned that when *E. coli* tumbles, the degree of reorientation is not uniformly random from 0° to 360°. Rather, research has shown that it follows a normal distribution with mean of 68° (1.19 radians) and standard deviation of 36° (0.63 radians).
 
 **Exercise:** Modify your model from the [chemotactic walk tutorial](tutorial_walk) to change the random uniform sampling to this "smarter" sampling. Compare the chemotactic walk strategy and this smarter strategy by calculating the mean and standard deviation of each cell's distance to the goal for 500 simulated cells with the collection of tumbling frequencies `time_exp = [0.2, 0.5, 1.0, 2.0, 5.0]`. Do these simulated cells do a better job of finding the goal?
-{: .notice--info}
+{: .notice--success}
 
 More recent research suggests that when the bacterium is moving up an attractant gradient, the degree of reorientation may be even smaller[^Saragosti2011]. Do you think that such a reorientation strategy would improve a cell's chemotaxis response?
 
 **Exercise:** Modify your model from the previous exercise so that if the cell has just made a move of increasing ligand concentration, then its mean reorientation angle is 0.1 radians smaller to change the random uniform sampling to this "smarter" sampling. Calculate  the mean and standard deviation of each cell's distance to the goal for 500 cells with `time_exp = [0.2, 0.5, 1.0, 2.0, 5.0]`. Do the cells find the goal faster?
-{: .notice--info}
+{: .notice--success}
 
 
 ## Can't get enough BioNetGen?
@@ -106,10 +106,10 @@ simulate({method=>"nf", t_end=>100, n_steps=>1000})
 ~~~
 
 **Exercise:**Run the simulation. What happens to the concentration of shorter polymers? What about the longer polymers? You may like to play around with the lengths of the polymers that we are interested in.
-{: .notice--info}
+{: .notice--success}
 
 **Exercise:** What happens if we also tweak the reaction rates so that bonding is a little more likely than dissociation? What if dissociation is more likely? Does this reflect what you would guess?
-{: .notice--info}
+{: .notice--success}
 
 [^Saragosti2011]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2011. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)
 
