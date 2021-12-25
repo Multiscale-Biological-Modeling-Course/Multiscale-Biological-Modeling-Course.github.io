@@ -101,7 +101,7 @@ Place everything occurring above between `begin model` and `end model` tags.
 
 ## Simulating responses to attractants
 
-Before running the simulation, let's think about what will happen. If we don't add any ligand molecule into the system, then assuming that we have started the simulation at steady-state, then the concentrations of phosphorylated receptors and CheY will remain at equilibrium.
+Before running the simulation, let's think about what will happen. If we don't add any ligand molecule into the system, then assuming that we have started the simulation at steady state, then the concentrations of phosphorylated receptors and CheY will remain at equilibrium.
 
 We can now run the simulation, setting `t_end` equal to 3 in order to run the simulation for longer than we did in the ligand-receptor tutorial. Place the following code after `end model` in your BioNetGen file.
 

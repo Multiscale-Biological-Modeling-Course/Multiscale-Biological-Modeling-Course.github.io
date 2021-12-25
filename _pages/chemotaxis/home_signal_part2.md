@@ -101,7 +101,7 @@ We previously showed a worked example in which a system with 10,000 free ligand 
 * [*L*] = 5207
 * [*T*] = 2207
 
-The BioNetGen model covered in the previous tutorial uses the same number of initial molecules and the same reaction rates. The system evolves via the Gillespie algorithm, and we track the concentration of free ligand molecules, ligand molecules bound to receptor molecules, and free receptor molecules over time. Our goal is to see whether the concentrations reach a steady-state, and whether the steady-state matches our calculation.
+The BioNetGen model covered in the previous tutorial uses the same number of initial molecules and the same reaction rates. The system evolves via the Gillespie algorithm, and we track the concentration of free ligand molecules, ligand molecules bound to receptor molecules, and free receptor molecules over time. Our goal is to see whether the concentrations reach a steady state, and whether the steady state matches our calculation.
 
 The figure below demonstrates that the Gillespie algorithm quickly converges to the same values as the ones that we obtained by hand in the last lesson. As a result, we can see the power of using a particle-free stochastic simulator to quickly obtain a result without needing to perform any mathematical calculations.
 

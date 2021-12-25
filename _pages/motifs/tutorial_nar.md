@@ -87,7 +87,7 @@ Now return to `CellBlender > Plot Output Settings` and scroll to the bottom to c
 
 [![image-center](../assets/images/600px/motifs_norm9.png){: .align-center}](../assets/images/motifs_norm9.png)
 
-You should be able to see `Y` reach a steady-state, at which the number of particles essentially levels off subject to some noise.
+You should be able to see `Y` reach a steady state, at which the number of particles essentially levels off subject to some noise.
 
 Save your `.blend` file.
 

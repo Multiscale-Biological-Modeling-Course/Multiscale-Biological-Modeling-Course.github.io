@@ -26,7 +26,7 @@ Before running this notebook, make sure the following dependencies are installed
 
 ## Modeling a decreasing ligand gradient with a BioNetGen function
 
-We have simulated how the concentration of phosphorylated CheY changes when the cell moves up the attractant gradient. The concentration dips, but over time, methylation states change so that they can compensate for the increased ligand-receptor binding and restore the equilibrium of phosphorylated CheY. What if instead ligands are removed, as we would see if the bacterium is traveling *down* an attractant gradient? We might imagine that we would see an increase in phosphorylated CheY to increase tumbling and change course, followed by a return to steady-state. But is this what we will see?
+We have simulated how the concentration of phosphorylated CheY changes when the cell moves up the attractant gradient. The concentration dips, but over time, methylation states change so that they can compensate for the increased ligand-receptor binding and restore the equilibrium of phosphorylated CheY. What if instead ligands are removed, as we would see if the bacterium is traveling *down* an attractant gradient? We might imagine that we would see an increase in phosphorylated CheY to increase tumbling and change course, followed by a return to steady state. But is this what we will see?
 
 To simulate the cell traveling down an attractant gradient, we will add a kill reaction removing unbound ligand at a constant rate. To do so, we will add the following rule within the `reaction rules` section.
 
@@ -42,7 +42,7 @@ k_gone 0.3
 L0 1e7
 ~~~
 
-We will set the initial concentrations of all `species` to be the final steady-state concentrations from the result for our `adaptation.bngl` model, and see if after reducing the concentration of unbound ligand gradually, the simulation can restore these concentrations to steady-state.
+We will set the initial concentrations of all `species` to be the final steady state concentrations from the result for our `adaptation.bngl` model, and see if after reducing the concentration of unbound ligand gradually, the simulation can restore these concentrations to steady state.
 
 First, visit the `adaptation.bngl` model and add the concentration for each combination of methylation state and ligand binding state of the receptor complex to the `observables` section. Then run this simulation with `L0` equal to `1e7`.
 

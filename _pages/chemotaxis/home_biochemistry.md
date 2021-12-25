@@ -84,7 +84,7 @@ But does higher attractant concentration in our model really lead to a lower con
 
 ## Tumbling frequency and changing ligand concentrations
 
-The following figure shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, we see the concentrations of these particles remain at steady-state (with some noise in the concentrations), and we can presume that the cell stays at its background tumbling frequency.
+The following figure shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, we see the concentrations of these particles remain at steady state (with some noise in the concentrations), and we can presume that the cell stays at its background tumbling frequency.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial5.png){: .align-center}](../assets/images/chemotaxis_tutorial5.png)
 

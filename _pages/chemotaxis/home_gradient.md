@@ -14,14 +14,14 @@ In the previous lesson, we saw that *E. coli* is able to adapt its default tumbl
 
 Yet imagine a glucose cube in an aqueous solution. As the cube dissolves, a **gradient** will form, with a decreasing glucose concentration that radiates outward from the cube. How will the tumbling frequency of *E. coli* change if the bacterium is moving up a gradient of increasing attractant concentration?  Will the tumbling frequency decrease continuously as well, or will the methylation pathways mentioned in the previous lesson cause more complicated behavior?
 
-Furthermore, once the cell reaches a region of high attractant concentration, will its default tumbling frequency stabilize to the same steady-state?  And how much does this steady-state tumbling frequency change as we alter the "steepness" of the attractant gradient (i.e., how quickly the attractant concentration increases)?
+Furthermore, once the cell reaches a region of high attractant concentration, will its default tumbling frequency stabilize to the same steady state?  And how much does this steady state tumbling frequency change as we alter the "steepness" of the attractant gradient (i.e., how quickly the attractant concentration increases)?
 
 In the following tutorial, we will modify our model from the previous lesson by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of phosphorylated CheY changes. Moreover, we will examine how this concentration changes as we change the gradient's "steepness", or the rate at which attractant ligand is increasing.
 
 [Visit tutorial](tutorial_gradient){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Steady-state tumbling frequency is robust when traveling up an attractant gradient
+## Steady state tumbling frequency is robust when traveling up an attractant gradient
 
 Recall that we used the expression [*L*] to denote the concentration of ligand *L* and *l*<sub>0</sub> to denote the initial concentration of the ligand. If the concentration of the ligand is growing exponentially, then [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup>, where *t* is the time since the start and *k* is a parameter dictating exponential growth; the higher the value of *k*, the faster the growth in the ligand concentration.
 
@@ -43,7 +43,7 @@ More importantly, the above figure further illustrates the *robustness* of bacte
 
 And what if a cell is moving away from an attractant, down a concentration gradient? We would hope that the cell would be able to *increase* its tumbling frequency (i.e., increase the concentration of phosphorylated CheY), and then restore the background tumbling frequency by removing methylation.
 
-To simulate a decreasing gradient, we will model a cell in a high ligand concentration that is already at steady-state, meaning that methylation is also elevated. In this case, the ligand concentration will *decay* exponentially, meaning that the ligand concentration is still given by the equation [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup>, but *k* is negative.
+To simulate a decreasing gradient, we will model a cell in a high ligand concentration that is already at steady state, meaning that methylation is also elevated. In this case, the ligand concentration will *decay* exponentially, meaning that the ligand concentration is still given by the equation [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup>, but *k* is negative.
 
 **STOP:** If *k* is negative, what happens to the plot of [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup> for decreasing values of *k*? How do you think the value of *k* will affect the concentration of phosphorylated CheY over time?
 {: .notice--primary}
@@ -53,7 +53,7 @@ You may like to modify the previous tutorial on your own to account for travelin
 [Visit tutorial](tutorial_removal){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Steady-state tumbling frequency remains robust when traveling down an attractant gradient
+## Steady state tumbling frequency remains robust when traveling down an attractant gradient
 
 The following figure shows the plot of molecules in our model as the concentration of attractant ligand decreases exponentially with *l*<sub>0</sub> = 10<sup>7</sup> and *k* equal to -0.3. As the ligand concentration decreases, the concentration of bound ligands plummet as bound ligands dissociate and there are not enough free ligands to replace the dissociating ones. In the absence of ligand-receptor binding, CheY can readily phosphorylate, causing a spike in phosphorylated CheY. Demethylation of receptors then causes the concentration of phosphorylated CheY to steadily return back to its equilibrium.
 
@@ -61,7 +61,7 @@ The following figure shows the plot of molecules in our model as the concentrati
 Simulating a bacterium traveling down an attractant gradient with *l*<sub>0</sub> = 10<sup>7</sup> and *k* equal to -0.3. Phosphorylated CheY follows the opposite pattern to traveling up an attractant gradient, with the concentration of phosphorylated CheY rising quickly only to slowly decrease to equilibrium due to demethylation.
 {: style="font-size: medium;"}
 
-To be thorough, we should also test the robustness of our model to see whether the CheY concentration will return to the same steady-state for a variety of values of *k* when *k* is negative. As in the case of an increasing gradient, the figure below shows that the more sudden the change in the concentration of attractant, the sharper the spike. And yet regardless of the value of *k*, methylation does its work to bring the concentration back to the same steady-state. More importantly, this figure and the one above are confirmed by experimental observations.[^Krembel2015]
+To be thorough, we should also test the robustness of our model to see whether the CheY concentration will return to the same steady state for a variety of values of *k* when *k* is negative. As in the case of an increasing gradient, the figure below shows that the more sudden the change in the concentration of attractant, the sharper the spike. And yet regardless of the value of *k*, methylation does its work to bring the concentration back to the same steady state. More importantly, this figure and the one above are confirmed by experimental observations.[^Krembel2015]
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial_removal02.png){: .align-center}](../assets/images/chemotaxis_tutorial_removal02.png)
 Varying values of *k* in our exponential decrease in the concentration of attractant ligand produce the same equilibrium concentration of phosphorylated CheY. The smaller the value of *k*, the steeper the initial spike, and the faster the recovery to steady state.

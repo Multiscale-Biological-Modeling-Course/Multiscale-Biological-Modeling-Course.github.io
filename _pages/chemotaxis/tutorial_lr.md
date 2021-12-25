@@ -13,7 +13,7 @@ This collection of tutorials will gradually build up from scratch a chemotaxis s
 In this tutorial, we will:
  - set up BioNetGen;
  - explore several key aspects of BioNetGen modeling: rules, species, simulation method, and parameters
- - use BioNetGen to model ligand-receptor dynamics and compute a steady-state concentration of ligands and receptors.
+ - use BioNetGen to model ligand-receptor dynamics and compute a steady state concentration of ligands and receptors.
 
 ## What is BioNetGen?
 
@@ -32,7 +32,7 @@ In this tutorial, we will build our model from scratch. If you like instead, you
 
 In our system, there are only two types of molecules: the ligand (`L`), and the receptor (`T`). (The receptor is in fact a receptor complex because it is attached to additional molecules, which we will elaborate on later). The ligand can bind to the receptor, forming an intermediate, and the complex can also dissociate. We write this reaction as `L + T <-> L.T`, where the formation of the intermediate is called the **forward reaction**, and the dissociation is called the **reverse reaction**.
 
-In our system, which starts with a quantity of free ligands and receptors, the numbers of these free molecules should drop quickly, because free ligands and free receptors are readily to meet each other. After a while, there will be more `L.T` in the system and therefore more dissociation; at the same time, because free `L` and `T` are less abundant, less binding happens. The system will gradually reach a steady-state where the rate of `L` and `T` binding equilibrates with `L.T` dissociation.
+In our system, which starts with a quantity of free ligands and receptors, the numbers of these free molecules should drop quickly, because free ligands and free receptors are readily to meet each other. After a while, there will be more `L.T` in the system and therefore more dissociation; at the same time, because free `L` and `T` are less abundant, less binding happens. The system will gradually reach a steady state where the rate of `L` and `T` binding equilibrates with `L.T` dissociation.
 
 We will simulate reaching this steady state, which means that we will need to know the following two parameters:
 
@@ -185,7 +185,7 @@ generate_network({overwrite=>1})
 simulate({method=>"ssa", t_end=>1, n_steps=>100})
 ~~~
 
-**STOP:** Based on our results from calculating steady-state concentration by hand in the main text, predict how the concentrations will change and what the equilibrium concentrations will be.
+**STOP:** Based on our results from calculating steady state concentration by hand in the main text, predict how the concentrations will change and what the equilibrium concentrations will be.
 {: .notice--primary}
 
 ## Running our simulation
