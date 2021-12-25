@@ -20,18 +20,18 @@ In this lesson, we will simulate a "race" to the steady state concentration of *
 
 In the [prologue](../prologue/), we used a particle-based model to simulate a reaction-diffusion process. In this lesson, we will apply the same type of model, in which our "particles" are the two transcription factors *X* and *Y*.
 
-We will begin with a model of the first cell, in which *X* activates *Y* but we do not have negative autoregulation of *Y*. To simulate *X* activating *Y*, we use the reaction *X* → *X* + *Y* at some rate *r*. In a given interval of time, there is a constant underlying probability related to *r* that any given *X* particle will spontaneously form a new *Y* particle.
+We will begin with a model of the first cell, in which *X* activates *Y* but we do not have negative autoregulation of *Y*. To simulate *X* activating *Y*, we use the reaction *X* → *X* + *Y*. In a given interval of time, there is a constant underlying probability related to the reaction rate that any given *X* particle will spontaneously form a new *Y* particle.
 
 We should also account for the fact that proteins are *degraded* over time by enzymes called proteases. The typical protein's concentration will be degraded by 20 to 40 percent in an hour, but transcription factors degrade even faster, only lasting a matter of minutes.[^machinery] Degradation may seem like a bug of cellular design, but it is a feature, as it allows the cell to remove a protein after increasing that protein's concentration in response to some environmental change.
 
-To model the degradation of a protein, we add a "kill" reaction that removes *Y* particles at a rate *k*. We will initialize our simulation with no *Y* particles and the *X* concentration at steady state, so that *X* is being produced at a rate that exactly balances its degradation rate, and we will therefore not need to add reactions to the model simulating the production or degradation of *X*.
+To model the degradation of a protein, we add a "kill" reaction that removes *Y* particles at some rate. We will initialize our simulation with no *Y* particles and the *X* concentration at steady state, so that *X* is being produced at a rate that exactly balances its degradation rate, and we will therefore not need to add reactions to the model simulating the production or degradation of *X*.
 
 To complete the model of the first cell, diffusion of the *X* and *Y* particles is not technically necessary because there is no reaction having more than one particle as a reactant. However, for the sake of biological correctness, we will allow both *X* and *Y* particles to diffuse through the system at the same rate.
 
 **STOP:** What chemical reaction could be used to simulate the negative autoregulation of *Y*?
 {: .notice--primary}
 
-We now will simulate the second cell, which will inherit all of the reactions from the first cell (with the same reaction rates) while adding negative autoregulation of *Y*. We will do so using the reaction 2*Y* → *Y*, occurring at some rate *n*. In other words, when two *Y* particles collide, there is some probability that one of the particles serves to remove the other, which mimics the process of a transcription factor turning off another copy of itself during negative autoregulation.
+We now will simulate the second cell, which will inherit all of the reactions from the first cell (with the same reaction rates) while adding negative autoregulation of *Y*. We will do so using the reaction 2*Y* → *Y*. In other words, when two *Y* particles collide, there is some probability related to the reaction rate that one of the particles serves to remove the other, which mimics the process of a transcription factor turning off another copy of itself during negative autoregulation.
 
 To recap, the simulations of both cells will include an initial concentration of *X* at steady state, diffusion of *X* and *Y*, removal of *Y*, and the reaction *X* → *X* + *Y*. The second simulation, which includes negative autoregulation of *Y*, will add the reaction 2*Y* → *Y*. You can explore these simulations in the following tutorial.
 
