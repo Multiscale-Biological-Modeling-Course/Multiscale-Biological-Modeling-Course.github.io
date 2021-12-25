@@ -59,7 +59,7 @@ motifs:
         url: /motifs/feedforward
       - title: "Biological oscillators<br><br>"
         url: /motifs/oscillators
-      - title: "Conclusion: the importance of robustness in biological oscillators<br><br>"
+      - title: "Conclusion: the robustness of biological oscillators<br><br>"
         url: /motifs/conclusion
   - title: Software Tutorials (featuring MCell and CellBlender)
     children:
