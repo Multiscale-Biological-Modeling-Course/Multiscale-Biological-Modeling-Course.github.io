@@ -62,12 +62,6 @@ In the meantime, check out the exercises below to continue developing your under
 [Visit exercises](exercises){: .btn .btn--success .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Special acknowledgement
-
-This module was in part inspired by the superlative textbook on systems biology by Uri Alon[^alon], which we strongly recommend to those interested in a greater discussion of biological network motifs.
-
-[^alon]: Alon, U. An Introduction to Systems Biology: Design Principles of Biological Circuits (2019). 2nd edition. Chapman & Hall/CRC Computational Biology Series.
-
 [^ffl]: Image adapted from Mangan, S., & Alon, U. (2003). Structure and function of the feed-forward loop network motif. Proceedings of the National Academy of Sciences of the United States of America, 100(21), 11980–11985. https://doi.org/10.1073/pnas.2133841100
 
 [^oscillator]: Elowitz, M. B. & Leibler, S. A Synthetic Oscillatory Network of Transcriptional Regulators. Nature 403, 335-338 (2000).

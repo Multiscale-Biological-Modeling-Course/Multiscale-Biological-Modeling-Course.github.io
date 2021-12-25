@@ -75,7 +75,7 @@ We would first and foremost like to thank everyone working on MMBioS software; t
 
 We are also very grateful to Wendy Velasquez Ebanks and Ulani Qi, who provided additional work on the course during its conception.
 
-Module 1 was inspired by Uri Alon's research and superlative book <a href="https://www.amazon.com/Introduction-Systems-Biology-Mathematical-Computational/dp/1439837171" target="_blank"><i>An Introduction to Systems Biology</i></a>, a landmark biological textbook.
+Module 1 was in part inspired by Uri Alon's research and superlative book <a href="https://www.amazon.com/Introduction-Systems-Biology-Mathematical-Computational/dp/1439837171" target="_blank"><i>An Introduction to Systems Biology</i></a>, a landmark biological textbook that we strongly recommend if you are interested in a greater discussion of biological network motifs.
 
 The cover image on Module 4 was created by Keith Chambers.
 
