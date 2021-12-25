@@ -56,7 +56,7 @@ motifs:
       - title: "The negative autoregulation motif<br><br>"
         url: /motifs/nar
       - title: "The feedforward loop motif<br><br>"
-        url: /motifs/feed
+        url: /motifs/feedforward
       - title: "Building a biological oscillator<br><br>"
         url: /motifs/oscillators
       - title: "Conclusion: the importance of robustness in biological oscillators<br><br>"

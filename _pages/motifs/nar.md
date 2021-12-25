@@ -75,7 +75,7 @@ More importantly, this plot provides evidence of *why* negative autoregulation m
 
 In this lesson, we have seen that particle-based simulations can be powerful for justifying why a network motif is prevalent. What are some other commonly occurring network motifs in transcription factor networks? And what evolutionary purposes might they serve?
 
-[Next lesson](feed){: .btn .btn--primary .btn--large}
+[Next lesson](feedforward){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^Alon]: Alon, Uri. *An Introduction to Systems Biology: Design Principles of Biological Circuits*, 2nd Edition. Chapman & Hall/CRC Mathematical and Computational Biology Series. 2019.

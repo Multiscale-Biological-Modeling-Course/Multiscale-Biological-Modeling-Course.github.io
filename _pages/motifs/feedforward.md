@@ -1,5 +1,5 @@
 ---
-permalink: /motifs/feed
+permalink: /motifs/feedforward
 title: "The Feedforward Loop Motif"
 sidebar:
  nav: "motifs"
