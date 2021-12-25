@@ -1,6 +1,6 @@
 ---
 permalink: /motifs/oscillators
-title: "Building a Biological Oscillator"
+title: "Biological Oscillators"
 sidebar:
  nav: "motifs"
 toc: true
@@ -10,19 +10,19 @@ image: "../assets/images/repressilator_chart.png"
 
 ## Oscillators are everywhere in nature
 
-Even if placed in a bunker, humans will maintain a roughly 24-hour cycle of sleep and wakefulness[^bunker]. This **circadian rhythm** guiding our daily schedule is not unique to animals but rather is present throughout living things, including plants and even cyanobacteria[^bacteria].
+Even if placed in a bunker, humans will maintain a roughly 24-hour cycle of sleep and wakefulness[^bunker]. This **circadian rhythm** is present throughout living things, including plants and even cyanobacteria[^bacteria].
 
-Life processes like the circadian rhythm that oscillate over time are not confined to circadian rhythms. You may feel like you have some control over when you go to bed, but your heart and respiratory system both follow cyclical rhythms that are subconscious. To take a much lower level example, eukaryotic cells are governed by a strict cell cycle as the cells grow and divide.
+Life processes that oscillate over time are not confined to circadian rhythms. You may feel like you have control over when you go to bed, but your heart and respiratory system both follow subconscious cyclical rhythms, and your cells are governed by a strict cell cycle as they grow and divide.
 
-We might guess from what we have learned in this module that these cyclical processes must be built upon simple rules serving as a **pacemaker** controlling them. However, the question remains as to what these pacemakers are and how they correctly execute oscillations over and over, throughout an organism's life.
+We might guess from what we have learned in this module that cyclical biological rhythms must be governed by simple rules. However, the question remains as to what these rules are and how they can correctly execute oscillations over and over, throughout an organism's life.
 
-Researchers have identified many network motifs that facilitate oscillation, some of which are very complicated and include many components. In this lesson, we will focus on a simple three-component oscillator motif called a **repressilator**[^repress]. In this lesson, we will implement the repressilator with a particle simulator.
+Researchers have identified many network motifs that facilitate oscillation, some of which are very complicated and include many components. In this lesson, we will focus on a simple three-component oscillator motif called a **repressilator**[^repress].
 
 ## The repressilator: a synthetic biological oscillator
 
 The repressilator motif is shown in the figure below. In this motif, all three proteins are transcription factors, and they form a cycle in which *X* represses *Y*, *Y* represses *Z*, and *Z* represses *X* (hence the name). The repressilator clearly forms a feedback loop, but nothing *a priori* about this motif would indicate that it would lead to oscillation; after all, we have already seen feedback processes in this module that did not lead to oscillation.
 
-[![image-center](../assets/images/600px/repressilator.png){: .align-center width="300px"}](../assets/images/repressilator.png)
+[![image-center](../assets/images/600px/repressilator.png){: .align-center width="250px"}](../assets/images/repressilator.png)
 The repressilator motif for three particles <em>X</em>, <em>Y</em>, and <em>Z</em>. <em>X</em> represses <em>Y</em>, which represses <em>Z</em>, which in turn represses <em>X</em>, forming a feedback loop.
 {: style="font-size: medium;"}
 

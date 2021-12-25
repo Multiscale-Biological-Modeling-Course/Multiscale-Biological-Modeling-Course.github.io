@@ -57,7 +57,7 @@ motifs:
         url: /motifs/nar
       - title: "The feedforward loop motif<br><br>"
         url: /motifs/feedforward
-      - title: "Building a biological oscillator<br><br>"
+      - title: "Biological oscillators<br><br>"
         url: /motifs/oscillators
       - title: "Conclusion: the importance of robustness in biological oscillators<br><br>"
         url: /motifs/conclusion
