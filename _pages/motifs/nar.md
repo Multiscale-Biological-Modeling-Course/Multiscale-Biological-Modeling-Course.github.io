@@ -12,7 +12,11 @@ image: "../assets/images/repressilator_chart.png"
 
 Theodosius Dobzhansky famously wrote that "nothing in biology makes sense except in the light of evolution."[^Dob] In the spirit of this quotation, there must be some evolutionary reason for the presence of the large number of negatively autoregulating *E. coli* transcription factors that we identified in the [previous lesson](autoregulation). We will use biological modeling to establish this justification.
 
-Say that a transcription factor *X* regulates another transcription factor *Y*, and consider two cells. In both cells, *X* upregulates the transcription of *Y*, but in the second cell, *Y* also negatively autoregulates.
+Say that a transcription factor *X* regulates another transcription factor *Y*, and consider two cells. In both cells, *X* upregulates the transcription of *Y*, but in the second cell, *Y* also negatively autoregulates; see the figure below for an illustration.
+
+[![image-center](../assets/images/600px/two_cells.png){: .align-center}](../assets/images/two_cells.png)
+The two cells that we wish to simulate. In the first cell (left), *X* only activates *Y*; in the second cell (right), *Y* also negatively autoregulates.
+{: style="font-size: medium;"}
 
 In this lesson, we will simulate a "race" to the steady state concentration of *Y* in the two cells. Our premise is that the cell that reaches the steady state faster can respond more quickly to its environment and is therefore more fit for survival.
 
