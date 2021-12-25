@@ -64,7 +64,7 @@ As with the first strategy, our simulated cell will alternate between tumbling a
 
 In the following tutorial, we will adapt the Jupyter notebook that we built in the previous tutorial to simulate this second strategy. We then will compare the two strategies by running many trials of simulated bacteria and taking the average of the simulated bacteria's distance to the goal for each of the two strategies.
 
-[Visit chemotactic walk tutorial](tutorial_walk){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_walk){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Comparing the effectiveness of our two random walk strategies
