@@ -20,22 +20,22 @@ Researchers have identified many network motifs that facilitate oscillation, som
 
 ## The repressilator: a synthetic biological oscillator
 
-The repressilator motif is shown in the figure below. In this motif, all three proteins are transcription factors, and they form a cycle in which *X* represses *Y*, *Y* represses *Z*, and *Z* represses *X* (hence the name). The repressilator clearly forms a feedback loop, but nothing *a priori* about this motif would indicate that it would lead to oscillation; after all, we have already seen feedback processes in this module that did not lead to oscillation.
+The repressilator motif is shown in the figure below. In this motif, all three proteins are transcription factors, and they form a cycle in which *X* represses *Y*, *Y* represses *Z*, and *Z* represses *X*. The repressilator clearly forms a feedback loop, but nothing *a priori* about this motif would indicate that it would lead to oscillation.
 
 [![image-center](../assets/images/600px/repressilator.png){: .align-center width="250px"}](../assets/images/repressilator.png)
 The repressilator motif for three particles <em>X</em>, <em>Y</em>, and <em>Z</em>. <em>X</em> represses <em>Y</em>, which represses <em>Z</em>, which in turn represses <em>X</em>, forming a feedback loop.
 {: style="font-size: medium;"}
 
-**STOP:** Try building a reaction-diffusion model for the repressilator, assuming that we start with an initial concentration of *X* and no *Y* or *Z* particles.
+**STOP:** Try to devise a reaction-diffusion model representing the repressilator.
 {: .notice--primary}
 
 To build a reaction-diffusion model accompanying the repressilator, we start with a quantity of *X* particles, and no *Y* or *Z* particles. We assume that all three particles diffuse at the same rate and degrade at the same rate.
 
 Furthermore, we assume that all three particles are produced as the result of an activation process by some other transcription factor(s), which we assume happens at the same rate. We will use a **hidden particle** *I* that serves to activate the three visible particles via the three reactions *I* → *I* + *X*, *I* → *I* + *Y*, and *I* → *I* + *Z*, all taking place at the same rate.
 
-In the previous lesson on the feed-forward loop, we saw that we can use the reaction *X* + *Y* → *X* to model the repression of *Y* by *X*. To complete the repressilator model, we will add the two reactions *Y* + *Z* → *Y* and *Z* + *X* → *Z*, having the same rate as the reaction *X* + *Y* → *X*.
+In the [previous lesson](feedforward) on the feed-forward loop, we saw that we can use the reaction *X* + *Y* → *X* to model the repression of *Y* by *X*. To complete the repressilator model, we will add the two reactions *Y* + *Z* → *Y* and *Z* + *X* → *Z*, having the same rate as the reaction *X* + *Y* → *X*.
 
-If you have followed our previous tutorials, then you may feel comfortable taking off the training wheels and implementing the repressilator with your own reaction-diffusion model. We also are happy to provide the following tutorial.
+If you followed our previous tutorials, then you may feel comfortable taking off the training wheels and implementing the repressilator with your own reaction-diffusion model, which we cover in the following tutorial.
 
 [Visit tutorial](tutorial_oscillators){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
