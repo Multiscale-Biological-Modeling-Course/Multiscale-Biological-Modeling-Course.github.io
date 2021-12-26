@@ -18,9 +18,9 @@ The book <a href="https://what-if.xkcd.com/" target="_blank"><em>What If?</em></
 
 > If two immortal people were placed on opposite sides of an uninhabited Earth-like planet, how long would it take them to find each other? 100,000 years? 1,000,000 years?
 
-One could imagine many ideas for how the immortals might find each other. For example, they could avoid the interiors of continents by moving to the coastlines. If they are allowed to discuss how to find each other in advance, then they could just agree to meet at the planet's North Pole --- assuming that the planet lacks polar bears.
+One could imagine many ideas for how the immortals could reunite. For example, they could avoid the interiors of continents by moving to the coastlines. If they are allowed to discuss how to find each other in advance, then they could agree to meet at the planet's North Pole --- assuming that the planet lacks polar bears.
 
-But Munroe provides a solution to Lost Immortals that is both sophisticated and elegant. His proposed approach is quoted below.
+But Munroe provides a solution that is both sophisticated and elegant. His proposed approach is quoted below.
 
 > If you have no information, walk at random, leaving a trail of stone markers, each one pointing to the next. For every day that you walk, rest for three. Periodically mark the date alongside the cairn. It doesn’t matter how you do this, as long as it’s consistent. You could chisel the number of days into a rock, or lay out rocks to plot the number.
 >
@@ -30,11 +30,11 @@ But Munroe provides a solution to Lost Immortals that is both sophisticated and 
 >
 > And if your partner isn’t cooperating—perhaps they’re just sitting where they started and waiting for you—then you’ll get to see some neat stuff.
 
-You may be wondering what Lost Immortals has to do with biological modeling. In the previous two modules, we have already seen the power of randomness to provide answers to practical questions. Lost Immortals offers another benefit of randomness in the form of a **randomized algorithm**, or a method that employs randomness to solve a problem.
+You may be wondering what the lost immortals have to do with biological modeling. In the previous two modules, we have already seen the power of randomness to provide answers to practical questions. This problem offers another benefit of randomness in the form of a **randomized algorithm**, or a method that employs randomness to solve a problem.
 
-In fact, Munroe's randomized algorithm for Lost Immortals is inspired by nature; he calls the above approach "be an ant" because it mimics how ants explore their environment for resources. However, in this module, we will see that this algorithm is also similar to the method of exploration undertaken by a much smaller organism: our old friend *E. coli*.
+In fact, Munroe's randomized algorithm is inspired by nature; he calls the above approach "be an ant" because it mimics how ants explore their environment for resources. However, in this module, we will see that this algorithm is also similar to the method of exploration undertaken by a much smaller organism: our old friend *E. coli*.
 
-Like other prokaryotes, *E. coli* is tiny, with a rod-shaped body that is 2µm long and 0.25 to 1µm wide.[^Pierucci1978] In exploring a vast world with sparse resources, *E. coli* finds itself in a situation comparable to the Lost Immortals.
+Like other prokaryotes, *E. coli* is tiny, with a rod-shaped body that is 2µm long and 0.25 to 1µm wide.[^Pierucci1978] In exploring a vast world with sparse resources, *E. coli* finds itself in a situation comparable to the lost immortals.
 
 The video below shows a collection of *E. coli* surrounding a sugar crystal. Think of this video the next time you leave a slice of cake out on the kitchen counter!
 
