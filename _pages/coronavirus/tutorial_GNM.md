@@ -8,32 +8,33 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 In this tutorial, we will be performing GNM calculations on one of the chains in the SARS-CoV-2 spike protein (<a href="http://www.rcsb.org/structure/6VXX" target="_blank">6vxx</a>) and then visualizing the results using the plots that we discussed in the [main text](conclusion_part_2#an-introduction-to-gaussian-network-models).
 
-First, we would like to start up IPython and import the necessary functions.
+We will be using <a href="http://prody.csb.pitt.edu/" target="_blank">ProDy</a>, an open-source Python package that allows users to perform protein structural dynamics analysis. Its flexibility allows users to select specific parts or atoms of the structure for conducting normal mode analysis and structure comparison.
 
-<a href="http://prody.csb.pitt.edu/" target="_blank">ProDy</a> is an open-source Python package that allows users to perform protein structural dynamics analysis. Its flexibility allows users to select specific parts or atoms of the structure for conducting normal mode analysis and structure comparison. Please be sure to have the following installed:
+First, please install the following software:
 
-<a href="https://www.python.org/downloads/" target="_blank">Python</a> (2.7, 3.5, or later)
+* <a href="https://www.python.org/downloads/" target="_blank">Python</a> (2.7, 3.5, or later)
+* <a href="http://prody.csb.pitt.edu/downloads/" target="_blank">ProDy</a>
+* <a href="https://numpy.org/install/" target="_blank">NumPy</a>
+* <a href="https://biopython.org/" target="_blank">Biopython</a>
+* <a href="https://ipython.org/" target="_blank">IPython</a>
+* <a href="https://matplotlib.org/" target="_blank">Matplotlib</a>
 
-<a href="http://prody.csb.pitt.edu/downloads/" target="_blank">ProDy</a>
+We recommend creating a workspace for storing files when using ProDy or storing protein .pdb files. Open a terminal window and navigate to this workspace before starting IPython with the following command.
 
-<a href="https://numpy.org/install/" target="_blank">NumPy</a>
-
-<a href="https://biopython.org/" target="_blank">Biopython</a>
-
-<a href="https://ipython.org/" target="_blank">IPython</a>
-
-<a href="https://matplotlib.org/" target="_blank">Matplotlib</a>
-
-### Getting Started
-It is recommended that you create a workspace for storing created files when using ProDy or storing protein .pdb files. Make sure you are in your workspace before starting up IPython.
 ~~~ python
 ipython --pylab
 ~~~~~
 
-Import functions and turn interactive mode on (only need to do this once per session).
+You will now need to import functions that we will use in this tutorial.
 ~~~ python
 In[#]: from pylab import *
 In[#]: from prody import *
+In[#]: ion()
+~~~~~
+
+Finally, we turn on interactive mode (you only need to do this once per session).
+
+~~~ python
 In[#]: ion()
 ~~~~~
 
