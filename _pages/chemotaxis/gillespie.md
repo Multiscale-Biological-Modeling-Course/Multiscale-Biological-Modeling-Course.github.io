@@ -100,17 +100,17 @@ The following tutorial shows how to implement this rule in BioNetGen and use the
 [Visit tutorial](tutorial_lr){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Does a simulation confirm our steady state calculations?
+## Does the Gillespie algorithm confirm our steady state calculations?
 
-We previously showed a worked example in which a system with 10,000 free ligand molecules and 7,000 free receptor molecules produced the following steady state concentrations using binding rates of *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup> and *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.
+In the [previous lesson](signal), we showed an example in which a system with 10,000 free ligand molecules and 7,000 free receptor molecules produced the following steady state concentrations using the experimentally verified binding rate of *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup> and dissociation rate of *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.
 
-* [*LT*] = 4793
-* [*L*] = 5207
-* [*T*] = 2207
+* [*LT*] = 4,793 molecules/µm<sup>3</sup>
+* [*L*] = 5,207 molecules/µm<sup>3</sup>
+* [*T*] = 2,207 molecules/µm<sup>3</sup>
 
-The BioNetGen model covered in the previous tutorial uses the same number of initial molecules and the same reaction rates. The system evolves via the Gillespie algorithm, and we track the concentration of free ligand molecules, ligand molecules bound to receptor molecules, and free receptor molecules over time. Our goal is to see whether the concentrations reach a steady state, and whether the steady state matches our calculation.
+Our BioNetGen model uses the same number of initial molecules and the same reaction rates. The system evolves via the Gillespie algorithm, and we track the concentration of free ligand molecules, ligand molecules bound to receptor molecules, and free receptor molecules over time.
 
-The figure below demonstrates that the Gillespie algorithm quickly converges to the same values as the ones that we obtained by hand in the last lesson. As a result, we can see the power of using a particle-free stochastic simulator to quickly obtain a result without needing to perform any mathematical calculations.
+The figure below demonstrates that the Gillespie algorithm quickly converges to the same values as the ones that we obtained by hand in the last lesson. We are now ready to apply this algorithm to model bacterial chemotaxis, a system that will involve many different reactions.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial4_ssa.png){: .align-center}](../assets/images/chemotaxis_tutorial4_ssa.png)
 A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.
