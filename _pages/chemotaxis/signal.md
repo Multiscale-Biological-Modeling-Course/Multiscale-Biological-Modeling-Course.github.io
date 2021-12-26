@@ -10,16 +10,16 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## Cells can detect signals via bonding to receptor proteins
 
-Chemotaxis is one example of many ways in which an organism must be able to perceive a change in its environment and react accordingly. This response is governed by a process called **signal transduction**, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell in order to effect a response.
+Chemotaxis is one example of many ways in which a cell must be able to perceive a change in its environment and react accordingly. This response is governed by a process called **signal transduction**, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell in order to effect a response.
 
-Although we did not focus on the details at that time, we have already seen an example of signal transduction when we discussed the activation of transcription factors in the [previous module](../motifs/transcription). When a certain type of molecule's extracellular concentration increases, **receptor proteins** on the outside of the cell have more frequent bonding with these molecules and are therefore able to detect changes in molecular concentration. This "signal" is then "transduced" via a series of internal chemical processes that changes a transcription factor into an active state.
+When a certain molecule's extracellular concentration increases, **receptor proteins** on the outside of the cell have more frequent bonding with these molecules and are therefore able to detect changes in molecular concentration. This "signal" is then "transduced" via a series of internal chemical processes.
 
-In the case of chemotaxis, *E. coli* has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant **ligands**. The cell also contains receptors to detect repellents, but in this module, we will focus primarily on attractants.
+For example, transcription factors, which we discussed in the [previous module](../motifs/transcription), are involved in a signal transduction process. When some extracellular molecule is detected, a cascade begins that eventually changes a transcription factor into an active state, so that it is ready to activate or repress the genes that it regulates.
 
-In this lesson, we will discuss how the bacterium is able to detect this molecular signal; in the next lesson, we focus on how the bacterium can convert the detected signal into an internal sequence of reactions that lead to a change in movement. See the figure below for a high-level overview of this process.
+In the case of chemotaxis, *E. coli* has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant **ligands**. The cell also contains receptors to detect repellents, but in this module, we will focus primarily on attractants. As shown in the figure below, ligand binding forms a cascade of internal reactions that causes a change in the rotation of one or more flagella.
 
 [![image-center](../assets/images/600px/chemotaxis_signal.png){: .align-center}](../assets/images/chemotaxis_signal.png)
-An overview of the signaling pathway of chemotaxis. The red circles represent attractant ligands(L). When ligands bind to receptors, this signal is transduced via a series of enzymes, and it finally influences the rotation direction of a flagellum. We will discuss how this response is achieved in a later lesson.
+An overview of the signaling pathway of chemotaxis. The red circles labeled *L* represent attractant ligands. When these ligands bind to receptors, a signal is transduced inside the cell via a series of enzymes, which finally influences the rotation direction of a flagellum.
 {: style="font-size: medium;"}
 
 
