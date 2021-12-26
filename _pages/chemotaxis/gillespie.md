@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/gillespie
-title: "Stochastic simulation of multiple chemical reactions in a well mixed environment"
+title: "Stochastic Simulation of Chemical Reactions"
 sidebar:
  nav: "chemotaxis"
 toc: true
@@ -10,21 +10,24 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## Verifying a theoretical steady state concentration via stochastic simulation
 
-In the [previous module](../motifs/home), we saw that we could avoid keeping track of the positions of individual diffusing particles in a simulation if we assume that these particles are *well-mixed*, i.e., uniformly distributed throughout their environment. The *E. coli* cell is so small that we will assume that the concentration of any particle in its immediate surroundings is uniform. Therefore, as a proof of concept, let us see if a well-mixed simulation replicates the steady state concentrations of particles that we just found.
+In the [previous module](../motifs/home), we saw that we could avoid tracking the positions of individual particles if we assume that the particles are *well-mixed*, i.e., uniformly distributed throughout their environment. We will apply this assumption in our current work as well, in part because the *E. coli* cell is so small. As a proof of concept, let us first see if a well-mixed simulation replicates the steady state concentrations of particles that we found in the [previous lesson](signal).
 
-Even though we can calculate steady state concentrations by hand, we will find a particle-free simulation useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system like what we have done in the previous lesson will not just be tedious; it will quickly become impossible as the number of particles and reactions grows.
+Even though we can calculate steady state concentrations by hand, a particle-free simulation will be useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system like what we have done in the previous lesson will become impossible.
 
 The difficulty at hand is comparable to the famed "*n*-body problem" in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution once we add more bodies to the system.
 
-Our particle-free model will apply an approach called **Gillespie's Stochastic Simulation Algorithm**, which is often called the **Gillespie algorithm** or just **SSA** for short. Before we explain how this algorithm works, we take a short detour to provide some needed probabilistic context.
+Our particle-free model will apply an approach called **Gillespie's stochastic simulation algorithm**, which is often called the **Gillespie algorithm** or just **SSA** for short. Before we explain how this algorithm works, we take a short detour to provide some needed probabilistic context.
 
 ## The Poisson and exponential distributions
 
-Say that you own a store and have noticed that on average, there are *λ* customers entering your store in a single hour. Let *X* denote the number of customers that enter the store in the next hour; *X* is an example of a **random variable** because it may change based on random chance. If we assume that customers are independent actors and that two customers cannot arrive at the exact same time, then *X* follows a distribution called a **Poisson distribution**; it can be shown that for a Poisson distribution, the probability that exactly *n* customers arrive in the next hour is
+Say that you own a store and have noticed that on average, there are *λ* customers entering your store in a single hour. Let *X* denote the number of customers that enter the store in the next hour; *X* is an example of a **random variable** because it may change depending on random chance. If we assume that customers are independent actors arriving at a constant rate, then *X* follows a **Poisson distribution**. It can be shown that for a Poisson distribution, the probability that exactly *n* customers arrive in the next hour is
 
-$$\mathrm{Pr}(X = n) = \dfrac{\lambda^n e^{-\lambda}}{n!}\,.$$
+$$\mathrm{Pr}(X = n) = \dfrac{\lambda^n e^{-\lambda}}{n!}\,,$$
 
-A derivation of this formula is beyond the scope of our work here, but if you are interested in one, please consider [this post](https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239) by Andrew Chamberlain.
+where *e* is the mathematical constant known as Euler's number and is equal to 2.7182818284…
+
+**Note:** A derivation of this formula is beyond the scope of our work here, but if you are interested in one, please check out <a href=https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239" target="_blank">this article</a> by Andrew Chamberlain.
+{: .notice--warning}
 
 Furthermore, the probability of observing exactly *n* customers in *t* hours where *t* is an arbitrary positive number is
 
