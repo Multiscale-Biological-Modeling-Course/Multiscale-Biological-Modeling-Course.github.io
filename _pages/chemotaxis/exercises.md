@@ -108,7 +108,7 @@ simulate({method=>"nf", t_end=>100, n_steps=>1000})
 **Exercise:**Run the simulation. What happens to the concentration of shorter polymers? What about the longer polymers? You may like to play around with the lengths of the polymers that we are interested in.
 {: .notice--success}
 
-**Exercise:** What happens if we also tweak the reaction rates so that bonding is a little more likely than dissociation? What if dissociation is more likely? Does this reflect what you would guess?
+**Exercise:** What happens if we also tweak the reaction rates so that binding is a little more likely than dissociation? What if dissociation is more likely? Does this reflect what you would guess?
 {: .notice--success}
 
 [^Saragosti2011]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2011. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)

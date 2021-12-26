@@ -12,7 +12,7 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 Chemotaxis is one example of many ways in which a cell must be able to perceive a change in its environment and react accordingly. This response is governed by a process called **signal transduction**, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell in order to effect a response.
 
-When a certain molecule's extracellular concentration increases, **receptor proteins** on the outside of the cell have more frequent bonding with these molecules and are therefore able to detect changes in molecular concentration. This "signal" is then "transduced" via a series of internal chemical processes.
+When a certain molecule's extracellular concentration increases, **receptor proteins** on the outside of the cell have more frequent binding with these molecules and are therefore able to detect changes in molecular concentration. This "signal" is then "transduced" via a series of internal chemical processes.
 
 For example, transcription factors, which we discussed in the [previous module](../motifs/transcription), are involved in a signal transduction process. When some extracellular molecule is detected, a cascade begins that eventually changes a transcription factor into an active state, so that it is ready to activate or repress the genes that it regulates.
 
@@ -124,9 +124,9 @@ The only reasonable solution here is 52.5-16.008 = 36.492; the steady state conc
 **STOP**: What do you think will happen to the steady state concentration of *LT* if the initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for [*LT*].
 {: .notice--primary}
 
-## What are the units?
+## Where are the units?
 
-We have conspicuously not provided any units in the equations above for the sake of simplicity, and so we will pause to explain what these units are. The concentration of a particle (whether it is *L*, *T*, or *LT*) is measured in (molecules/µm<sup>3</sup>), the number of molecules per unit volume. But what about the binding and dissociation rates?
+We have conspicuously not provided any units in the calculations above for the sake of simplicity, and so we will pause to explain what these units are. The concentration of a particle (whether it is *L*, *T*, or *LT*) is measured in molecules/µm<sup>3</sup>, the number of molecules per unit volume. But what about the binding and dissociation rates?
 
 When we multiply the binding rate *k*<sub>bind</sub> by the concentrations [*L*] and [*T*], the resulting unit should be in molecules/µm<sup>3</sup> per second, which corresponds to the rate at which the concentration of *LT* complexes is increasing. If we let *x* denote the unknown units of *k*<sub>bind</sub>, then we should have that
 
@@ -141,22 +141,21 @@ and solving for *x* gives us that
 
 ## Steady state ligand-receptor concentrations for an experimentally verified example
 
-Let's use our formula to show how we could determine the steady state concentration of bound receptor-ligand complexes using values obtained from experimental results. We will model an *E. coli* cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. The experimentally verified binding rate is *k*<sub>bind</sub> = 0.0146 ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the dissociation rate constant is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991] Using these constants, we obtain the following constants *a*, *b*, and *c* in the quadratic equation:
+Let's use experimentally verified binding and dissociation rates to identify steady state concentrations. The experimentally verified binding rate is *k*<sub>bind</sub> = 0.0146 ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the dissociation rate constant is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991] We will model an *E. coli* cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants *a*, *b*, and *c* in the quadratic equation:
 
 * *a* = *k*<sub>bind</sub> = 0.0146
 * *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -283.2
 * *c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 1022000
 
-When we solve for [*LT*] in the quadratic equation, we obtain [*LT*] = 4793. Now that we have this value along with *l*<sub>0</sub> and *t*<sub>0</sub>, we can solve for [*L*] and [*T*] as well:
+When we solve for [*LT*] in the quadratic equation, we obtain [*LT*] = 4,793 molecules/µm<sup>3</sup>. Now that we have this value along with *l*<sub>0</sub> and *t*<sub>0</sub>, we can solve for [*L*] and [*T*] as well:
 
-[*L*] = *l*<sub>0</sub> - [*LT*] = 5207<br>
-[*T*] = *t*<sub>0</sub> - [*LT*] = 2207
+[*L*] = *l*<sub>0</sub> - [*LT*] = 5,207 molecules/µm<sup>3</sup><br>
+[*T*] = *t*<sub>0</sub> - [*LT*] = 2,207 molecules/µm<sup>3</sup>
 
-We can therefore determine the steady state concentration for a *single* reversible reaction. However, if we want to model real cellular processes, we will have *many* reactions for a variety of different particles. We will see that it quickly becomes infeasible to solve all the resulting equations exactly. Instead, we need a method of simulating many reactions without the significant computational overhead that would be required to keep track of every individual particle we wish to model.
+We can therefore determine the steady state concentration for a *single* reversible reaction. However, if we want to model real cellular processes, we will have *many* reactions for a variety of different particles. We will see that it quickly becomes infeasible to solve all of the resulting equations exactly. Instead, we need a method of simulating many reactions in parallel without incurring the significant computational overhead that would be required to keep track of every individual particle.
 
 [Next lesson](signalpart2){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
-
 
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)
 

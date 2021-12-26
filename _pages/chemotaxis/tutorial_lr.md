@@ -126,7 +126,7 @@ end parameters
 **Note:** The `parameters` section has to appear before the `reaction rules` section.
 {: .notice--warning}
 
-If you save your file, then you should see a "contact map" in the upper right corner of the window indicating the potential bonding of `L` and `T`. This contact map is currently very simplistic, but for more complicated simulations it can help visualize the interaction of species in the system.
+If you save your file, then you should see a "contact map" in the upper right corner of the window indicating the potential binding of `L` and `T`. This contact map is currently very simplistic, but for more complicated simulations it can help visualize the interaction of species in the system.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial3.png){: .align-center}](../assets/images/chemotaxis_tutorial3.png)
 
