@@ -1,5 +1,5 @@
 ---
-permalink: /chemotaxis/home_exercise
+permalink: /chemotaxis/exercise
 title: "Exercises"
 sidebar:
  nav: "chemotaxis"
@@ -44,7 +44,7 @@ To simulate an environment with more than one food source, we will include anoth
 
 ## Changing the *E. coli* choice of direction
 
-In the [conclusion](home_conclusion), we mentioned that when *E. coli* tumbles, the degree of reorientation is not uniformly random from 0° to 360°. Rather, research has shown that it follows a normal distribution with mean of 68° (1.19 radians) and standard deviation of 36° (0.63 radians).
+In the [conclusion](conclusion), we mentioned that when *E. coli* tumbles, the degree of reorientation is not uniformly random from 0° to 360°. Rather, research has shown that it follows a normal distribution with mean of 68° (1.19 radians) and standard deviation of 36° (0.63 radians).
 
 **Exercise:** Modify your model from the [chemotactic walk tutorial](tutorial_walk) to change the random uniform sampling to this "smarter" sampling. Compare the chemotactic walk strategy and this smarter strategy by calculating the mean and standard deviation of each cell's distance to the goal for 500 simulated cells with the collection of tumbling frequencies `time_exp = [0.2, 0.5, 1.0, 2.0, 5.0]`. Do these simulated cells do a better job of finding the goal?
 {: .notice--success}

@@ -1,5 +1,5 @@
 ---
-permalink: /chemotaxis/home_moreexercise
+permalink: /chemotaxis/moreexercise
 title: "Exercises"
 sidebar:
  nav: "chemotaxis"
@@ -10,7 +10,7 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## How to calculate steady state concentration in a reversible bimolecular reaction?
 
-Earlier in this chapter we learned how to calculate equilibrium concentrations of a [reversible bimolecular reaction](home_signal). It's time to get some exercise.
+Earlier in this chapter we learned how to calculate equilibrium concentrations of a [reversible bimolecular reaction](signal). It's time to get some exercise.
 
 **Exercise:** How would the concentration of molecules change before and after the system reaches the steady state?
 {: .notice--success}
@@ -23,7 +23,7 @@ Earlier in this chapter we learned how to calculate equilibrium concentrations o
 
 ## How to simulate a reaction step with the Gillespie algorithm?
 
-We learned that [Poisson distribution, exponential distribution, and Gillespie algorithm](home_signalpart2) are behind the BioNetGen simulation. Let's try to simulate step by step in this way.
+We learned that [Poisson distribution, exponential distribution, and Gillespie algorithm](signalpart2) are behind the BioNetGen simulation. Let's try to simulate step by step in this way.
 
 **Exercise:** We are interested in the "wait time" between individual reactions. Will wait time be longer or shorter if we have more molecules in the system?
 {: .notice--success}

@@ -1,5 +1,5 @@
 ---
-permalink: /chemotaxis/home_conclusion
+permalink: /chemotaxis/conclusion
 title: "Conclusion: The Beauty of *E. coli*'s Robust Randomized Exploration Algorithm"
 sidebar:
  nav: "chemotaxis"
@@ -147,5 +147,5 @@ Bacterial chemotaxis is probably the best understood biological system from the 
 [^Baker2005]: Baker MD, Wolanin PM, Stock JB. 2005. Signal transduction in bacterial chemotaxis. BioEssays 28:9-22. [Available online](https://pubmed.ncbi.nlm.nih.gov/16369945/)
 
 
-[Visit exercises](home_exercise){: .btn .btn--success .btn--large}
+[Visit exercises](exercise){: .btn .btn--success .btn--large}
 {: style="font-size: 100%; text-align: center;"}

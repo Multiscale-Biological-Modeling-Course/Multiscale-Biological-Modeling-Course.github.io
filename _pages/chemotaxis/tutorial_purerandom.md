@@ -309,5 +309,5 @@ As mentioned, you may not be surprised that this simple random walk strategy is 
 [^Baker2005]: Baker MD, Wolanin PM, Stock JB. 2005. Signal transduction in bacterial chemotaxis. BioEssays 28:9-22. [Available online](https://pubmed.ncbi.nlm.nih.gov/16369945/)
 
 
-[Return to main text](home_conclusion#strategy-2-chemotactic-random-walk){: .btn .btn--info .btn--large}
+[Return to main text](conclusion#strategy-2-chemotactic-random-walk){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -1,5 +1,5 @@
 ---
-permalink: /chemotaxis/home_walk
+permalink: /chemotaxis/walk
 title: "Bacterial Runs and Tumbles"
 sidebar:
  nav: "chemotaxis"
@@ -62,5 +62,5 @@ This question is a fundamental one, and we will return to it at the close of thi
 
 [^Yong2016]: Ed Yong. *I Contain Multitudes: The Microbes Within Us and a Grander View of Life*.
 
-[Next lesson](home_signal){: .btn .btn--primary .btn--large}
+[Next lesson](signal){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

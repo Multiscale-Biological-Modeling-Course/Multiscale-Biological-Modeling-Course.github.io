@@ -1,5 +1,5 @@
 ---
-permalink: /chemotaxis/home_gradient
+permalink: /chemotaxis/gradient
 title: "Modeling a Bacterium's Response to an Attractant Gradient"
 sidebar:
  nav: "chemotaxis"
@@ -77,7 +77,7 @@ After all, the direction that a bacterium is moving at any point in time is rand
 
 This question is a biologically deep one and it has no intuitive answer. However, in this module's final lesson, we will build a model to explain why *E. coli*'s random walk algorithm with a variation in tumbling frequency is in fact an extremely clever way of locating resources in a strange new land.
 
-[Next lesson](home_conclusion){: .btn .btn--primary .btn--large}
+[Next lesson](conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^Krembel2015]: Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)

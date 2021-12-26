@@ -44,7 +44,7 @@ The movement of organisms like the bacteria in the above video in response to a 
 
 In this module, we will delve into chemotaxis and ask a number of questions. How does a simple organism like *E. coli* sense an attractant or repellent in its environment? How does the bacterium change its internal state in response to this environment? How can we model the bacterium's response? And how does the bacterium's behavior translate into an "algorithm" that it uses to explore its environment?
 
-[Next lesson](home_walk){: .btn .btn--primary .btn--large}
+[Next lesson](walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)

@@ -1,5 +1,5 @@
 ---
-permalink: /chemotaxis/home_solutions
+permalink: /chemotaxis/solutions
 title: "Solutions"
 sidebar:
  nav: "chemotaxis"

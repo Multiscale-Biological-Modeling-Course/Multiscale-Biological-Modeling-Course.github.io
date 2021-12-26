@@ -8,7 +8,7 @@ toc_sticky: true
 image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
-In a [previous tutorial](tutorial_purerandom), we simulated the movement of a cell moving randomly throughout two-dimensional space in a sequence of steps. At each step, the next direction of the cell's movement is chosen completely randomly. We called this simple algorithm "strategy 1" in the [main text](home_conclusion).
+In a [previous tutorial](tutorial_purerandom), we simulated the movement of a cell moving randomly throughout two-dimensional space in a sequence of steps. At each step, the next direction of the cell's movement is chosen completely randomly. We called this simple algorithm "strategy 1" in the [main text](conclusion).
 
 In this tutorial, we will adapt this simulation into one that attempts to more closely mimic the real behavior of *E. coli* chemotaxis, based on what we have learned in this module. We will then be able to compare the results of these two algorithms.
 
@@ -250,7 +250,7 @@ ax.grid()
 
 You are now ready to run the code in `Part 3: Comparing performances`. Consider whether you feel confident in your hypothesis about the performance of the two cellular strategies before we discuss our analysis back in the main text.
 
-[Return to main text](home_conclusion#comparing-the-effectiveness-of-our-two-random-walk-strategies){: .btn .btn--info .btn--large}
+[Return to main text](conclusion#comparing-the-effectiveness-of-our-two-random-walk-strategies){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 

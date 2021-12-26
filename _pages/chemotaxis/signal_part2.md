@@ -1,5 +1,5 @@
 ---
-permalink: /chemotaxis/home_signalpart2
+permalink: /chemotaxis/signalpart2
 title: "Stochastic simulation of multiple chemical reactions in a well mixed environment"
 sidebar:
  nav: "chemotaxis"
@@ -149,5 +149,5 @@ Yet this simple ligand-receptor model is just the beginning of our study of chem
 
 [^Spiro1997]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
 
-[Next lesson](home_biochemistry){: .btn .btn--primary .btn--large}
+[Next lesson](biochemistry){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

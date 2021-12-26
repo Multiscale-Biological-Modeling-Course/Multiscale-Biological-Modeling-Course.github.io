@@ -1,5 +1,5 @@
 ---
-permalink: /chemotaxis/home_adaptation
+permalink: /chemotaxis/adaptation
 title: "Methylation Helps a Bacterium Adapt to Differing Concentrations"
 toc: true
 toc_sticky: true
@@ -63,7 +63,7 @@ A major benefit of using a rule-based modeling language provided by BioNetGen is
 LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 ~~~
 
-Why is one rule enough? Recall from our discussion of the [Gillespie algorithm](home_signalpart2#an-overview-of-the-gillespie-algorithm) that the wait time before the next reaction to be sampled depends only on the rate of all relevant reactions in the system. In this particular case, the rate of ligand-MCP binding depends on the total concentration of free ligands and unbound MCPs, but it does not depend on the state that an MCP is in.
+Why is one rule enough? Recall from our discussion of the [Gillespie algorithm](signalpart2#an-overview-of-the-gillespie-algorithm) that the wait time before the next reaction to be sampled depends only on the rate of all relevant reactions in the system. In this particular case, the rate of ligand-MCP binding depends on the total concentration of free ligands and unbound MCPs, but it does not depend on the state that an MCP is in.
 
 In the following tutorial, we will expand our BioNetGen model from the previous tutorial into one that can incorporate CheR binding as well as MCP methylation while avoiding combinatorial explosion. We will then examine whether this model allows us to learn anything about how a bacterium can adapt to changes in the relative concentration of attractant.
 
@@ -103,7 +103,7 @@ Aren't bacteria magnificent?
 
 However, our work is not done. We have simulated how a bacterium can adapt to a single sudden change in its environment, but life is about responding to changes all the time. So in the next lesson, we will further examine how our simulated *E. coli* responds in an environment in which the ligand concentration is changing constantly.
 
-[Next lesson](home_gradient){: .btn .btn--primary .btn--large}
+[Next lesson](gradient){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Additional resources
