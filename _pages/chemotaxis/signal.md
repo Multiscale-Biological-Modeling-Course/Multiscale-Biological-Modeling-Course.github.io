@@ -24,7 +24,7 @@ An overview of the signaling pathway of chemotaxis. The red circles labeled *L* 
 
 In this lesson, we will discuss how to model ligand-receptor binding. In later lessons, we will enter the cell and model the cascade of reactions after this binding has occurred.
 
-## Modeling ligand-receptor dynamics
+## Ligand-receptor dynamics correspond to a reversible reaction
 
 Although *E. coli* has different types of surface receptors that can sense a variety of different ligands in its environment, we will focus on how to model the binding of a single type of receptor to a single type of attractant ligand.
 
