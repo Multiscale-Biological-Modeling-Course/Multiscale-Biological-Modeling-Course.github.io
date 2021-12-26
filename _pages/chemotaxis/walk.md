@@ -10,9 +10,9 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## *E. coli* explores its world via a random walk
 
-An *E. coli* cell has between five and twelve flagella distributed on its surface.[^Sim2017] Each flagellum can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at a speed of about 20 µm per second. This speed may seem small, but it is about ten times the length of the cell per second, analogous to a car traveling at 160 kph (100 mph). When any flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates in place.[^Baker2005]
+Every *E. coli* cell has between five and twelve flagella distributed on its surface[^Sim2017] that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at a speed of about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates in place.[^Baker2005]
 
-When we multi-cellular beings examine the bacterium's movement, we see it alternate between periods of "running" in a straight line and then "tumbling" in place (see figure below). Over time, the bacterium takes what appears to be a *random walk* through its environment. Note that this **run and tumble** view of *E. coli* movement is similar to the exploration approach used by the lost immortals in the introduction.
+When we examine the bacterium's movement under a microscope, we see it alternate between periods of "running" in a straight line and then "tumbling" in place (see figure below). Over time, the bacterium's **run and tumble** exploration amounts to a *random walk* through its environment, similar to the exploration approach used by the lost immortals in this module's [introduction](home).
 
 [![image-center](../assets/images/600px/chemotaxis_intro_runtumble.png){: .align-center}](../assets/images/chemotaxis_intro_runtumble.png)
 The run and tumble mechanism of bacterial movement produces a random walk. Image from <a href="http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html">Parkinson Lab</a>.
@@ -21,16 +21,19 @@ The run and tumble mechanism of bacterial movement produces a random walk. Image
 
 ## Tumbling frequency is constant across species
 
-In the absence of an attractant or repellent, *E. coli* stops to tumble once every 1 to 1.5 seconds.[^Weis1990][^Berg2000] And it is not alone in this behavior; bacteria living in environments with similar resource distributions adopt similar movements. *Salmonella* tumbles once every second[^Achouri2015], *Enterococcus sacchrolyticus* tumbles once every 1.2 seconds, *Bacillus subtilis* tumbles once every 2 seconds[^Turner2016], and *Rhizobia* tumbles once every 1-2 seconds[^Gotz1987]. Researchers have investigated why different bacteria have different tumbling frequencies,[^Rashid2019][^Mitchell2005] but a definitive explanation for the variation in these frequencies has not been proposed.
+Bacteria are amazingly diverse. They have evolved for over three billion years to thrive in practically every environment on the planet, including hazardous human-made environments. They manufacture compounds such as antibiotics that larger organisms like ourselves cannot make. Some eukaryotes are even completely dependent upon bacteria to perform some critical task for them, from digesting their food, to camouflaging them from predators, to helping them develop organs[^Yong2016].
 
-Bacteria are amazingly diverse. They have evolved for over three billion years to thrive in practically every environment on the planet, including hazardous human-made environments. They manufacture compounds like antibiotics that larger organisms like ourselves cannot make. Some eukaryotes are even completely dependent upon bacteria to perform some critical task for them, from digesting their food, to camouflaging them from predators, to helping them develop organs[^Yong2016].
+And yet despite the diversity of the bacterial kingdom, variations in bacterial tumbling frequencies are relatively small. In the absence of an attractant or repellent, *E. coli* stops to tumble once every 1 to 1.5 seconds[^Weis1990][^Berg2000], which is in line with most other bacteria.[^Achouri2015][^Turner2016][^Gotz1987]
 
-And yet despite the diversity present within the bacterial kingdom, the variations in bacterial tumbling frequencies are relatively small. Is there some reason why, regardless of the species, a bacterium's tumbling frequency tends to hover at around one tumble every second or two? It is as if there were some invisible force compelling all of these bacteria to tumble with the same frequency.
+Is there some reason why, regardless of the species, a bacterium's tumbling frequency tends to be constant? It is as if there were some invisible force compelling all of these bacteria to tumble with the same frequency.
 
-This question is a fundamental one, and we will return to it at the close of this module after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism they use to implement chemotaxis is far more sophisticated than we might ever imagine.
+This question is a fundamental one, and we will return to it at the close of this module after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism they use to implement chemotaxis is far more sophisticated than we might expect.
 
 **STOP:** Say that a bacterium travels 20 µm in a randomly selected direction every second.  After an hour, approximately how far will it have traveled on average?  What if we allow the bacterium to travel for a week? (Hint: recall the Random Walk Theorem from the [prologue](../prologue/random_walk).)
 {: .notice--primary}
+
+[Next lesson](signal){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 [^Pierucci1978]: Pierucci O. 1978. Dimensions of *Escherichia coli* at various growth rates: Model of envelope growth. Journal of Bacteriology 135(2):559-574. [Available online](https://jb.asm.org/content/jb/135/2/559.full.pdf)
 
@@ -61,6 +64,3 @@ This question is a fundamental one, and we will return to it at the close of thi
 [^Mitchell2005]: Mitchell JG, Kogure K. 2005. Bacterial motility: links to the environment and a driving force for microbial physics. FEMS Microbiol Ecol 55(2006):3–16. [Available online](https://academic.oup.com/femsec/article/55/1/3/554107)
 
 [^Yong2016]: Ed Yong. *I Contain Multitudes: The Microbes Within Us and a Grander View of Life*.
-
-[Next lesson](signal){: .btn .btn--primary .btn--large}
-{: style="font-size: 100%; text-align: center;"}
