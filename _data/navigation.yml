@@ -87,7 +87,7 @@ chemotaxis:
         url: /chemotaxis/home
       - title: "Bacterial runs and tumbles<br><br>"
         url: /chemotaxis/walk
-      - title: "Signaling & ligand-receptor dynamics<br><br>"
+      - title: "Signaling and ligand-receptor dynamics<br><br>"
         url: /chemotaxis/signal
       - title: "Stochastic simulation of chemical reactions<br><br>"
         url: /chemotaxis/signalpart2
