@@ -86,19 +86,19 @@ chemotaxis:
       - title: "Introduction: The lost immortals<br><br>"
         url: /chemotaxis/home
       - title: "Bacterial runs and tumbles<br><br>"
-        url: /chemotaxis/home_walk
+        url: /chemotaxis/walk
       - title: "Signaling & ligand-receptor dynamics<br><br>"
-        url: /chemotaxis/home_signal
+        url: /chemotaxis/signal
       - title: "Stochastic simulation of chemical reactions<br><br>"
-        url: /chemotaxis/home_signalpart2
+        url: /chemotaxis/signalpart2
       - title: "A biochemically accurate model of bacterial chemotaxis<br><br>"
-        url: /chemotaxis/home_biochemistry
+        url: /chemotaxis/biochemistry
       - title: "Methylation helps a bacterium adapt to differing concentrations<br><br>"
-        url: /chemotaxis/home_adaptation
+        url: /chemotaxis/adaptation
       - title: "Modeling a bacterium's response to an attractant gradient<br><br>"
-        url: /chemotaxis/home_gradient
+        url: /chemotaxis/gradient
       - title: "Conclusion: the beauty of E. coli's robust randomized exploration algorithm<br><br>"
-        url: /chemotaxis/home_conclusion
+        url: /chemotaxis/conclusion
   - title: Software Tutorials (featuring BioNetGen)
     children:
       - title: "Getting started with BioNetGen and modeling ligand-receptor dynamics<br><br>"
