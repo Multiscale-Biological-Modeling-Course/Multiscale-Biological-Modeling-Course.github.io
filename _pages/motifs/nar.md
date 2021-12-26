@@ -18,7 +18,7 @@ Say that a transcription factor *X* regulates another transcription factor *Y*, 
 The two cells that we wish to simulate. In the first cell (left), *X* only activates *Y*; in the second cell (right), *Y* also negatively autoregulates.
 {: style="font-size: medium;"}
 
-In this lesson, we will simulate a "race" to the steady state concentration of *Y* in the two cells. Our premise is that the cell that reaches the steady state faster can respond more quickly to its environment and is therefore more fit for survival.
+In this lesson, we will simulate a "race" to the **steady state**, or **equilibrium**, concentration of *Y* in the two cells. Our premise is that the cell that reaches the steady state faster can respond more quickly to its environment and is therefore more fit for survival.
 
 ## Simulating transcriptional regulation with a reaction-diffusion model
 
