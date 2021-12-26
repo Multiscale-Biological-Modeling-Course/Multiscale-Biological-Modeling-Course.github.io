@@ -109,5 +109,5 @@ Now go back to `CellBlender > Plot Output Settings` and scroll to the bottom to 
 
 Save your file, and then use the link below to return to the main text, where we will interpret the outcome of our simulation.
 
-[Return to main text](feed#why-feedforward-loops-speed-up-response-times){: .btn .btn--info .btn--large}
+[Return to main text](feedforward#why-feedforward-loops-speed-up-response-times){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}

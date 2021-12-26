@@ -93,5 +93,5 @@ The number of self-loops is significantly lower in the random network compared t
 
 Regardless of what seed value we use, we can confirm that the number of self-loops expected in a random graph is significantly lower than in the real *E. coli* network. Back in the main text, we will discuss this significance and then see if we can determine why autoregulation has arisen.
 
-[Return to main text](finding#the-negative-autoregulation-motif){: .btn .btn--info .btn--large}
+[Return to main text](autoregulation#the-negative-autoregulation-motif){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
