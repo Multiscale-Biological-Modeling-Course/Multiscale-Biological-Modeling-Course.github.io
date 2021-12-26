@@ -67,25 +67,25 @@ Pr(*LT* → *L* + *T*) = *k*<sub>dissociate</sub>/(*k*<sub>bind</sub> + *k*<sub>
 
 [![image-center](../assets/images/600px/chemotaxis_visualizessa.png){: .align-center}](../assets/images/chemotaxis_visualizessa.png)
 A visualization of a single reaction event used by the Gillespie algorithm for ligand-receptor binding/dissociation. Red circles represent ligands (*L*), and orange wedges represent receptors (*T*). The wait time for the next reaction is drawn from an exponential distribution with mean 1/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>). The probability of this event corresponding to a binding or dissociation reaction is proportional to the rate of the respective reaction.
-{: style="font-size: medium
+{: style="font-size: medium;"}
 
-When we generalize the Gillespie algorithm to *n* reactions occurring at rates λ<sub>1</sub>, λ<sub>2</sub>, …, λ<sub><em>n</em></sub>, the wait time between reactions will be exponentially distributed with average 1/(λ<sub>1</sub> + λ<sub>2</sub> + … + λ<sub><em>n</em></sub>). Once we select the next reaction, the likelihood that it is the *i*-th reaction is equal to
+When we generalize the Gillespie algorithm to *n* reactions occurring at rates λ<sub>1</sub>, λ<sub>2</sub>, …, λ<sub><em>n</em></sub>, the wait time between reactions will be exponentially distributed with average 1/(λ<sub>1</sub> + λ<sub>2</sub> + … + λ<sub><em>n</em></sub>). Once we select the next reaction to occur, the likelihood that it is the *i*-th reaction is equal to
 
 λ<sub><em>i</em></sub>/(λ<sub>1</sub> + λ<sub>2</sub> + … + λ<sub><em>n</em></sub>).
 
 ## Specifying ligand-receptor binding with a single BioNetGen rule
 
-Throughout this module, we will employ <a href="http://bionetgen.org/" target="_blank">BioNetGen</a> to build particle-free simulations of chemotaxis applying the Gillespie algorithm.
+Throughout this module, we will employ <a href="http://bionetgen.org/" target="_blank">BioNetGen</a> to apply the Gillespie algorithm to well-mixed models of chemical reactions. We will use our ongoing example of ligand-receptor binding and dissociation to introduce the way in which BioNetGen represents molecules and reactions involving them.
 
-We will have two molecules corresponding to the ligand and receptor `L` and `T` that we call `L(t)` and `T(l)`, respectively. The `(t)` specifies that molecule `L` contains a binding site with `T`, and the `(l)` specifies a component binding to `L`. We will use these components later when specifying reactions. We do not have to use `t` and `l` for this purpose, but it will make our model easier to understand.
+We will have two molecules corresponding to the ligand and receptor *L* and *T* that we denote `L(t)` and `T(l)`, respectively. The `(t)` specifies that molecule `L` contains a binding site with `T`, and the `(l)` specifies a component binding to `L`. We will use these components later when specifying reactions.
 
-BioNetGen reaction rules are written similarly to chemical equations. The left side of the rule includes the reactants, which are followed by a unidirectional or bidirectional arrow, indicating the direction of the reaction, and the right side of the rule includes the products. After the reaction we indicate the rate constant of reaction; if the reaction is bi-directional, then we separate the forward and backward reaction rate constants with a comma.
+BioNetGen reaction rules are written similarly to chemical equations. The left side of the rule includes the reactants, which are followed by a unidirectional or bidirectional arrow, indicating the direction of the reaction, and the right side of the rule includes the products. After the reaction, we indicate the rate constant of reaction; if the reaction is bi-directional, then we separate the forward and backward reaction rate constants with a comma.
 
-For example, to code up the bi-directional reaction `A + B <-> C` with forward rate `k1` and reverse rate `k2`, we would write `A + B <-> C k1, k2`.
+For example, to represent the bi-directional reaction *A* + *B* ↔ *C* with forward rate *k*<sub>1</sub> and reverse rate *k*<sub>2</sub>, we would write `A + B <-> C k1, k2`.
 
-Our model consists of a single bidirectional reaction and will have only a single rule. The left side of this rule will be `L(t) + T(l)`; by specifying `L(t)` and `T(l)`, we indicate to BioNetGen that we are only interested in *unbound* ligand and receptor molecules. If we had wanted to select any ligand molecule, then we would have simply written `L + T`.
+Our model consists of one bidirectional reaction and will have a single rule. The left side of this rule will be `L(t) + T(l)`; by specifying `L(t)` and `T(l)`, we indicate to BioNetGen that we are only interested in *unbound* ligand and receptor molecules. If we had wanted to select any ligand molecule, then we would have used `L + T`.
 
-On the right side of the rule, we will have `L(t!1).T(l!1)`, which indicates the formation of the intermediate. In BioNetGen, `!` indicates formation of a bond; and a unique character specifies the possible location of this bond. In our case, we use the character `1`, so that the bond is represented by `!1`. The symbol `.` is used to indicate that the two molecules are joined into a complex.
+On the right side of the rule, we will have `L(t!1).T(l!1)`, which indicates the formation of the complex. In BioNetGen, `!` indicates formation of a bond, and a unique character specifies the possible location of this bond. In our case, we use the character `1`, so that the bond is represented by `!1`. The symbol `.` is used to indicate that the two molecules are joined into a complex.
 
 Since the reaction is bidirectional, we will use `k_lr_bind` and `k_lr_dis` to denote the rates of the forward and reverse reactions, respectively. (We will specify values for these parameters later.)
 
