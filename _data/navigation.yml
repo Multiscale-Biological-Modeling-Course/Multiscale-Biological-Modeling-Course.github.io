@@ -90,7 +90,7 @@ chemotaxis:
       - title: "Signaling and ligand-receptor dynamics<br><br>"
         url: /chemotaxis/signal
       - title: "Stochastic simulation of chemical reactions<br><br>"
-        url: /chemotaxis/signalpart2
+        url: /chemotaxis/gillespie
       - title: "A biochemically accurate model of bacterial chemotaxis<br><br>"
         url: /chemotaxis/biochemistry
       - title: "Methylation helps a bacterium adapt to differing concentrations<br><br>"

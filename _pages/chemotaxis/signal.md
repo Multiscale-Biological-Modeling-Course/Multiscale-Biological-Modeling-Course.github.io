@@ -154,7 +154,7 @@ When we solve for [*LT*] in the quadratic equation, we obtain [*LT*] = 4,793 mol
 
 We can therefore determine the steady state concentration for a *single* reversible reaction. However, if we want to model real cellular processes, we will have *many* reactions for a variety of different particles. We will see that it quickly becomes infeasible to solve all of the resulting equations exactly. Instead, we need a method of simulating many reactions in parallel without incurring the significant computational overhead that would be required to keep track of every individual particle.
 
-[Next lesson](signalpart2){: .btn .btn--primary .btn--large}
+[Next lesson](gillespie){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)

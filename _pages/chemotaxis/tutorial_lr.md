@@ -70,7 +70,7 @@ end model
 
 ## Specifying reaction rules and observables
 
-As discussed in the [main text](signalpart2), the ligand-receptor simulation will only need to apply a single bi-directional reaction.
+As discussed in the [main text](gillespie), the ligand-receptor simulation will only need to apply a single bi-directional reaction.
 
 ~~~ ruby
 begin reaction rules
@@ -205,5 +205,5 @@ Is the result you obtain what you expected? In the main text, we will return to 
 [^Schwartz17]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 17.2.
 
 
-[Return to main text](signalpart2#does-a-simulation-confirm-our-steady-state-calculations){: .btn .btn--info .btn--large}
+[Return to main text](gillespie#does-a-simulation-confirm-our-steady-state-calculations){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}

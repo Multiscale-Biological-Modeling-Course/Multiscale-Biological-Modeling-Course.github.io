@@ -1,5 +1,5 @@
 ---
-permalink: /chemotaxis/signalpart2
+permalink: /chemotaxis/gillespie
 title: "Stochastic simulation of multiple chemical reactions in a well mixed environment"
 sidebar:
  nav: "chemotaxis"
