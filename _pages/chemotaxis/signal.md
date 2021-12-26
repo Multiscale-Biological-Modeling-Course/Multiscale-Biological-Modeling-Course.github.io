@@ -38,19 +38,19 @@ We are ready to start building a model of ligand-receptor dynamics. We denote th
 
 If we start with a free floating supply of *T* and *L* molecules, then *TL* will initially be formed quickly at the expense of the free-floating *T* and *L* molecules. The reverse reaction will not occur because of the lack of *TL* complexes. However, as the concentration of *TL* grows and the concentrations of  *T* and *L* decrease, the rate of increase in *TL* will slow. Eventually, the number of *TL* complexes being formed by the forward reaction will balance the number of *TL* complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
 
-## Calculation of steady state concentration in a reversible ligand-receptor reaction
+## Calculation of equilibrium in a reversible ligand-receptor reaction
 
-In fact, we can calculate the steady state concentrations of *T* and *L* for our reversible reaction by hand.  Suppose that we begin with initial concentrations of *T* and *L* that are represented by *t*<sub>0</sub> and *l*<sub>0</sub>, respectively. Let [*L*], [*T*], and [*LT*] denote the concentrations of the three molecule types. And assume that the reaction rate constants *k*<sub>bind</sub> and *k*<sub>dissociate</sub> are fixed.
+For a single reversible reaction, if we know the rates of both the forward and reverse reactions, then we can calculate the steady state concentrations of *T*, *L*, and *TL* by hand.  Suppose that we begin with initial concentrations of *T* and *L* that are represented by *t*<sub>0</sub> and *l*<sub>0</sub>, respectively. Let [*L*], [*T*], and [*LT*] denote the concentrations of the three molecule types. And assume that the reaction rate constants *k*<sub>bind</sub> and *k*<sub>dissociate</sub> are fixed.
 
-Our goal is to find the steady state concentration of *LT*. When this occurs, we know that the rate of production of *LT* is equal to the rate of its dissociation; in other words, we know that
+When the steady state concentration of *LT* occurs, we know that the rate of production of *LT* is equal to the rate of its dissociation; in other words, we know that
 
 *k*<sub>bind</sub> · [*L*] · [*T*] = *k*<sub>dissociate</sub> · [*LT*].
 
-We also know that by the law of conservation of mass, the concentrations of *L* and *T* molecules are always constant across the system. In particular, the number of these particles is equal to their initial concentrations. That is, at any time point, we have that
+We also know that by the law of conservation of mass, the concentrations of *L* and *T* molecules are always constant across the system and are equal to their initial concentrations. That is, at any time point,
 
 [*L*] + [*LT*] = *l*<sub>0</sub>
 
-and that
+and
 
 [*T*] + [*LT*] = *t*<sub>0</sub>.
 
@@ -71,7 +71,9 @@ Finally, we subtract the right side of this equation from both sides:
 
 *k*<sub>bind</sub> · [*LT*]<sup>2</sup> - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) · [*LT*] + *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 0
 
-This equation may look daunting, but most of its components are constants. In fact, the only unknown is [*LT*], which makes this a quadratic equation, or an equation of the form *a* · *x*<sup>2</sup> + *b* · *x* + *c* = 0 for constants *a*, *b*, and *c* and a single unknown *x*. For this quadratic equation, we have the constants *a* = *k*<sub>bind</sub>, *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>), and *c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub>.
+This equation may look daunting, but most of its components are constants. In fact, the only unknown is [*LT*], which makes this a quadratic equation, with [*LT*] as the variable.
+
+In general, a quadratic equation has the form *a* · *x*<sup>2</sup> + *b* · *x* + *c* = 0 for constants *a*, *b*, and *c* and a single variable *x*. In our case, *x* = [*LT*], and the constants are *a* = *k*<sub>bind</sub>, *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>), and *c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub>.
 
 The quadratic formula --- which you may have thought you would never use again --- tells us that the equation *a* · *x*<sup>2</sup> + *b* · *x* + *c* = 0  has solutions for *x* given by the following equation:
 
@@ -98,14 +100,14 @@ That is, we are solving the equation 2 · [*LT*]<sup>2</sup> - 205 · [*LT*] + 5
 
 $$[LT] = \dfrac{205 \pm \sqrt{205^2 - 4 \cdot 2 \cdot 5000}}{2 \cdot 2} = 51.25 \pm 11.25$$.
 
-It would seem that there are *two* solutions: 51.25 + 11.25 = 62.5 and 51.25 - 11.25 = 40. However, because *l*<sub>0</sub> and *t*<sub>0</sub>, the respective initial concentrations of *L* and *T*, are both equal to 50, we cannot have that the steady state concentration of *LT* is 62.5; as a result, it must be 40.
+It would seem that there are *two* solutions: 51.25 + 11.25 = 62.5 and 51.25 - 11.25 = 40. However, because *l*<sub>0</sub> and *t*<sub>0</sub>, the respective initial concentrations of *L* and *T*, are both equal to 50, the steady state concentration of *LT* cannot be 62.5; instead, it must be 40.
 
 Now that we know the steady state concentration of *LT*, we can recover the values of [*L*] and [*T*] too:
 
 [*L*] = *l*<sub>0</sub> - [*LT*] = 10<br>
 [*T*] = *t*<sub>0</sub> - [*LT*] = 10
 
-What if the forward reaction were slower? We would imagine that the equilibrium concentration of *LT* would decrease, since the reverse reaction will occur faster than the forward reaction. For example, if we change *k* to 1, then we obtain the following adjusted parameter values:
+What if the forward reaction were slower (i.e., *k*<sub>bind</sub> was lower)? We would imagine that the equilibrium concentration of *LT* would decrease. For example, if we halve *k*<sub>bind</sub>, then we obtain the following adjusted parameter values:
 
 * *a* = *k*<sub>bind</sub> = 1
 
@@ -113,7 +115,11 @@ What if the forward reaction were slower? We would imagine that the equilibrium 
 
 * *c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 2500
 
-In this case, if we solve for [*LT*], we obtain [*LT*] = 36.492; the steady state concentration has decreased as anticipated.
+In this case, if we solve the quadratic equation for [*LT*], then we obtain
+
+$$[LT] = \dfrac{105 \pm \sqrt{105^2 - 4 \cdot 1 \cdot 2500}}{2 \cdot 1} = 52.5 \pm 16.008$$.
+
+The only reasonable solution here is 52.5-16.008 = 36.492; the steady state concentration has decreased as anticipated.
 
 **STOP**: What do you think will happen to the steady state concentration of *LT* if the initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for [*LT*].
 {: .notice--primary}
