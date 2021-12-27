@@ -98,3 +98,7 @@ We think you would love some of the other free education projects developed by t
 ### MMBioS Training Workshops
 
 If you are a biological modeling researcher and want to learn more about how the software resources presented here can be applied to your work, please check out the <a href="https://mmbios.pitt.edu/outreach/workshops" target="_blank">workshops</a> organized as part of the MMBioS project to which this course belongs.
+
+### Another textbook on biological modeling
+
+A colleague at Carnegie Mellon University, Russell Schwartz, authored a textbook called <a href="https://mitpress.mit.edu/books/biological-modeling-and-simulation" target="_blank">Biological Modeling and Simulation</a> that you may enjoy. Dr. Schwartz's book focuses on a different collection of modeling topics than this work.
