@@ -65,7 +65,7 @@ becomes the mean run length of a bacterium based on the recent relative change i
 
 As with the first strategy, our simulated cell will alternate between tumbling and running until the total time devoted to the simulation has elapsed. The only difference is that we will measure the percentage change in concentration Δ[*L*] between a cell's current point and its previous point every *t*<sub>response</sub> seconds. After determining a mean run time *t*(Δ[*L*]), we will sample a random number *p* from an exponential distribution with this mean run time, and the cell will tumble after *p* seconds if *p* is smaller than *t*<sub>response</sub>.
 
-In the following tutorial, we will adapt the Jupyter notebook that we built in the previous tutorial to simulate this second strategy. We then will compare the two strategies by running many trials of simulated bacteria and taking the average of the simulated bacteria's distance to the goal for each of the two strategies.
+In the following tutorial, we will adapt the Jupyter notebook that we built in the previous tutorial to simulate this second strategy and run it many times, taking the average of the simulated bacteria's distance to the goal.
 
 [Visit tutorial](tutorial_walk){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
