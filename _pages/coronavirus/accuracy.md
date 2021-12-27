@@ -193,7 +193,7 @@ From the scores, we can see that model SWISS1 performed the best. Even though th
 **STOP:** Which do you think performed more accurately on our predictions: SWISS-MODEL or Robetta?
 {: .notice--primary}
 
-Most of the Robetta models for a single chain beat the SWISS-Model predictions for the entire protein. This makes it difficult to say at the moment which resource has performed better.
+Most of the Robetta models for a single chain beat the SWISS-MODEL predictions for the entire protein. This makes it difficult to say at the moment which resource has performed better.
 
 #### SSGCID
 
