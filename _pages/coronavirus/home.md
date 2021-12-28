@@ -14,7 +14,7 @@ header:
 author_profile: true # add author to page
 ---
 
-# Introduction: A Tale of Two Doctors
+## Introduction: A Tale of Two Doctors
 
 > One of the world's most important warning systems for a deadly new outbreak is a doctor's or nurse's recognition that some new disease is emerging and then sounding the alarm. It takes intelligence and courage to step up and say something like that, even in the best of circumstances.
 >
@@ -28,11 +28,11 @@ On his deathbed, Dr. Liu stated that he had recently treated sick patients in Gu
 
 Consider that it took four years for the Black Death, which killed over a third of all Europeans in the 14th Century, to travel from Constantinople to Kiev. Or that HIV took two decades to circle the globe. In contrast, this mysterious new disease had crossed the Pacific Ocean within a week of entering Hong Kong.
 
-As health officials braced for the impact of the fastest-traveling virus in human history, panic set in. Businesses were closed, sick passengers were removed from airplanes, and Chinese officials threatened to execute infected patients who violated quarantine. In the process, the mysterious new disease earned a name: **Severe Acute Respiratory Syndrome**, or **SARS**.
+As health officials braced for the impact of the fastest-traveling virus in human history, panic set in. Businesses were closed, sick passengers were removed from airplanes, and Chinese officials threatened to execute anyone deliberately spreading the disease. In the process, the mysterious new illness earned a name: **Severe Acute Respiratory Syndrome**, or **SARS**.
 
 ## Finding the source of the outbreak
 
-SARS was deadly, killing close to 10% of those who became sick.[^cdc-factsheet] But it also struggled to spread much farther within the human population, and it was contained in July 2003 with fewer than 10,000 confirmed symptomatic cases worldwide.
+SARS was deadly, killing close to 10% of those who became sick.[^cdc-factsheet] But it also struggled to spread within the human population, and it was contained in July 2003 with fewer than 10,000 confirmed symptomatic cases worldwide.
 
 Scientists initially thought that humans had contracted SARS from palm civets, which are native to Guangdong. But research would later show that the disease likely originated in bats, a notorious disease carrier.[^bats]
 
@@ -46,39 +46,33 @@ On December 30, 2019, a Chinese ophthalmologist named Li Wenliang sent a WeChat 
 
 The next day, a screenshot of his post was leaked online, and local police summoned Dr. Li and forced him to sign a statement that he had "severely disturbed public order". He then returned to work, treating patients in the same Wuhan hospital.
 
-Meanwhile, the World Health Organization (WHO) received reports regarding multiple pneumonia cases from the Wuhan Municipal Health Commission and activated a support team to assess the new disease. The WHO declared on January 14 that local authorities had seen "no clear evidence of human-to-human transmission of the novel coronavirus". By this point, it was now too late.
+Meanwhile, the World Health Organization (WHO) received reports of multiple pneumonia cases from the Wuhan Municipal Health Commission and activated a support team to assess the new disease. The WHO declared on January 14 that local authorities had seen "no clear evidence of human-to-human transmission of the novel coronavirus". By this point, it was now too late.
 
-Throughout January, the virus silently raged through China, spreading to both South Korea and the United States as Lunar New Year celebrations took place within the country. By the end of the month, the disease was in 19 countries, as shown below.
-
-[![image-center](../assets/images/600px/WHOReport10.png){: .align-center}](../assets/images/WHOReport10.png)
-The number of reported confirmed cases of 2019-nCoV (COVID-19) as of January 30th, 2020. Figure courtesy World Health Organization [^10].
-{: style="font-size: medium;"}
-
-Within the next two months, the disease exploded across the planet, becoming a pandemic and earning a name in the process: **Coronavirus disease 2019 (COVID-19)**.
+Throughout January, the virus silently raged through China, spreading to both South Korea and the United States as Lunar New Year celebrations took place within the country. By the end of the month, the disease was in 19 countries, becoming a pandemic and earning a name in the process: **coronavirus disease 2019 (COVID-19)**.
 
 As for Dr. Li? Despite warning against the risk of this new virus, he contracted the disease from one of his patients on January 8. He continued working in the hospital, and entered the hospital on January 31. Within a week, he was dead, one of the first of millions of COVID-19 casualties.
 
 ## Why were the two outbreaks so different?
 
-The similarity between SARS and COVID extends well beyond their symptoms. The viruses causing these diseases, whose respective names are **SARS coronavirus (SARS-CoV)** and **SARS coronavirus 2 (SARS-CoV-2)** are both **coronaviruses**, which means that their outer membranes are covered in a layer of **spike proteins** that cause them to look like the sun's corona during an eclipse (see figure below). In fact, if we look at the two viruses under a microscope, they look virtually identical.
+The similarity between SARS and COVID-19 extends well beyond their symptoms. The respective viruses causing these diseases, **SARS coronavirus (SARS-CoV)** and **SARS coronavirus 2 (SARS-CoV-2)** are both **coronaviruses**, which means that their outer membranes are covered in a layer of **spike proteins** that cause them to look like the sun's corona during an eclipse (see figure below).
 
 [![image-center](../assets/images/600px/coronavirus.png){: .align-center}](../assets/images/coronavirus.png)
 Coronviruses as seen under a microscope. The fuzzy blobs on the cell surface are spike proteins, which the virus uses to gain entry to host cells. Figure courtesy F. Murphy and S. Whitfield, CDC[^coronaimage].
 {: style="font-size: medium;"}
 
-Both viruses not only look similar, they also use the same mechanism to infect human cells, when the spike protein on the virus surface bonds to the ACE2 enzyme on a human cell's membrane.[^16][^17] So why did SARS fizzle, but SARS-CoV-2, a disease that is on average less harmful[^11][^12] and less deadly to individuals, transform into an uncontrollable pandemic? The most likely explanation for the ability of SARS-CoV-2 to spread across far more countries and remain a public health threat even in the face of lockdowns is that it spreads more easily (i.e., it is more **infectious**.)
+Under a microscope, the two viruses look identical, and they use the same mechanism to infect human cells, when the spike protein on the virus surface bonds to the ACE2 enzyme on a human cell's membrane.[^16][^17] So why did SARS fizzle, but SARS-CoV-2, a disease that is on average less harmful[^11][^12] and less deadly to individuals who contract it, transform into a pandemic? The most likely explanation for the ability of SARS-CoV-2 to spread across far more countries and remain a public health threat even in the face of lockdowns is that it spreads more easily; that is, it is more **infectious**.
 
-Part of the reason for the spread of SARS-CoV-2 is that it can be spread by individuals that are asymptomatic,[^13] a method of transmission that was never found in SARS.[^14] But we also wonder if we can find a *biological* basis for the increased infectiousness of SARS-CoV-2.
+Part of the reason for the rapid spread of SARS-CoV-2 is that it can be spread by individuals that are asymptomatic,[^13] a method of transmission that was never found for SARS-CoV.[^14] But we also wonder if we can find a molecular explanation for the increased infectiousness of SARS-CoV-2.
 
-In this module, we will place ourselves in the shoes of early SARS-CoV-2 researchers studying the new virus in January 2020. The virus's **genome** (the 30,000 nucleotide sequence making up its DNA) was published on January 10[^Genome][^Annotation], and an annotation of this genome showing the position of the virus's genes is shown in the figure below. Upon sequence comparison, SARS-CoV-2 was found to be related to several coronaviruses isolated from bats and distantly related to SARS-CoV, the viral strain that caused the 2003 SARS outbreak. In fact, SARS-CoV-2 has a sequence identity of around 96% with bat coronavirus RaTG13, providing further evidence that the virus originated in bats.
+In this module, we will place ourselves in the shoes of early SARS-CoV-2 researchers studying the new virus in January 2020. The virus's **genome** (the 30,000 nucleotide sequence making up its DNA) was published on January 10[^Genome][^Annotation], and an annotation of this genome showing the position of the virus's genes is shown in the figure below. Upon sequence comparison, SARS-CoV-2 was found to be related to several coronaviruses isolated from bats and distantly related to SARS-CoV.
 
 [![image-center](../assets/images/600px/SARSCoV2Annotation.png){: .align-center}](../assets/images/SARSCoV2Annotation.png)
 An annotated genome of SARS-CoV-2. The Spike protein, found at the bottom of this image, is labeled "S" and begins at position 21,563. Accessed from GenBank: [https://go.usa.gov/xfzMM](https://go.usa.gov/xfzMM).
 {: style="font-size: medium;"}
 
-We now ask ourselves two questions. First, can we use the virus's genome to determine the structure of its spike protein? Second, once we know the structure of the SARS-CoV-2 spike protein, how does its structure and function differ from the same protein in SARS-CoV? These two questions are central to understanding (and therefore fighting) this deadly virus.
+We will ask ourselves two questions. First, can we use the SARS-CoV-2 genome to determine the structure of its spike protein? Second, once we know the structure of the SARS-CoV-2 spike protein, how does its structure and function differ from the same protein in SARS-CoV?
 
-We will split our work on these two questions. If you are already familiar with protein structure prediction, then you may want to skip ahead to the second part of the module, in which we discuss differences between the two viruses.
+We will split our work on these questions over two parts. If you are already familiar with protein structure prediction, then you may want to skip ahead to the second part of the module, in which we discuss differences between the spike proteins of the two viruses.
 
 [Continue to part 1: structure prediction](structure_intro){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
