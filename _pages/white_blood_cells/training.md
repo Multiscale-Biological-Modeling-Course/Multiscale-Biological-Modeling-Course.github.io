@@ -194,6 +194,30 @@ We could also try a different classifier (and in the tutorial we encouraged you 
 
 Yet ultimately, k-NN outperforms much more advanced classifiers on this dataset. It may be a relatively simple approach, but it also is a great match for classifying images within a WBC shape space, since proximity in this space indicates that two WBCs belong to the same family.
 
-This is not to say that we cannot make improvements, both to our data and to our methods. We will discuss these potential improvements in this module's conclusion. (Coming soon!)
+## Improving our approach
+
+This is not to say that we cannot make improvements to our algorithm. After all, our model requires a number of steps from the intake of data to their ultimate classification, which provides several potential failure points.
+
+We will start with data. Algorithms are beautiful, but if you have great data, then a very simple approach will probably give you a great result, and if you have bad data, then no amount of algorithmic wizardry will help you. An example of "good data" is the iris flower dataset; the flowers were studied very exactly, with no mistakes, and the features chosen very clearly differentiate the elements in the data set. Although this dataset provides a great motivating example, the pattern in the data is so obvious that it almost seems silly to run a classifier on it.
+
+In our case, we have very low resolution WBC images, and not many of them. We consider the limitations of the data to be a feature of this chapter, not a bug, as they allow us to focus on what is a very common concern in data analysis. A natural thing to do now would be to look for a larger, higher resolution dataset with less class imbalance.
+
+The next failure point in our model is our segmentation pipeline. Earlier in the module, we saw that this pipeline did not perfectly segment the nucleus from every image, sometimes capturing only a part of the nucleus. Perhaps we could devise a test for incorrect segmentations, excluding an image if the segmented nucleus is below some threshold size.
+
+Then, we handed off the segmented images to CellOrganizer to build a shape space from the vectorized boundaries of the nuclei. However, the low resolution of the nuclear images will mean that the vectorization of each nuclear image will be noisy.
+
+But even if we use higher resolution images and adjust our segmentation pipeline, we are still only building a model from the *shape* of the nucleus. We didn't even take the size of the nucleus into account! If we return to the three sample WBC images from the introduction, reproduced in the figure below, then we can see that the monocyte nucleus is much smaller than the other two nuclei, which is true in general. To address this concern, when vectorizing the images, we could devote one of the coordinates of each vector to the size (in pixels) of the segmented nucleus. This change would hopefully resolve our model's troubles with classifying monocytes.
+
+{% include gallery caption="Three images from the blood cell image dataset showing three types of WBCs. In our dataset, these cells correspond to image IDs 3, 15, and 20. (Left) A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family. (Center) A monocyte with a single, irregularly-shaped nucleus. (Right) A lymphocyte with a small, round nucleus." %}
+
+**STOP**: What other features could we extract from our images?
+{: .notice--primary}
+
+Finally, we come to the classification algorithm itself. We used k-NN because it is intuitive to newcomers, but perhaps a more complicated algorithm could peer deeper into our dataset to find hidden signals.
+
+It is a testament to the methods discussed in this module that we were able to obtain even moderately good results given the quality and size of our data, as well as the fact that we only took into account the shape of each cell's nucleus. It also leads us to wonder: how much better could we do? In this module's conclusion, we discuss the foundations of the approach that constitute the best known solution to WBC image classification.
+
+[Next lesson (coming soon!)](){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 [^Mistry]: Mistry DA, Wang JY, Moeser ME, Starkey T, Lee LYW 2021. A systematic review of the sensitivity and specificity of lateral flow devices in the detection of SARS-CoV-2. BMC Infectious Diseases 21(1):828. [Available online](https://doi.org/10.1186/s12879-021-06528-3)
