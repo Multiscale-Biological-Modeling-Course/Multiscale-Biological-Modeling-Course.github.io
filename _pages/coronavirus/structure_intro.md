@@ -10,39 +10,33 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 ## Determining protein structure is fundamental to understanding protein function
 
-Proteins are one of the most important groups of macromolecules in living organisms, contributing to essentially all functions within them. For example, they are so important that over half of all the molecules in an *E. coli* cell are devoted to protein synthesis.[^machinery]
+Proteins are one of the most important groups of macromolecules in living organisms, contributing to essentially all functions within them. Over half of all the molecules in an *E. coli* cell are devoted to protein synthesis![^machinery]
 
-Recall that in our [introduction to transcription](../motifs/transcription) in a previous module, we introduced the "central dogma" of molecular biology, in which DNA is transcribed into RNA, which is then translated into protein. This process is represented in the figure reproduced below.
+We should be a bit more precise about what we mean by "protein". Following the genetic code, the ribosome converts RNA codons (triplets) into a chain of amino acids called a **polypeptide**. The polypeptide will then "fold" into a three-dimensional shape; this folding happens without any outside influence, and the same polypeptide chain will almost always fold back into the same 3-D structure in a manner of microseconds. This means that nature is applying some "magic algorithm" that produces the folded structure of a protein from its sequence of amino acids. But how does this algorithm work?
 
-[![image-center](../assets/images/600px/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg){: .align-center}](../assets/images/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg)
-The central dogma of molecular biology states that molecular information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA. Image courtesy: Dhorpool, Wikimedia commons user.
-{: style="font-size: medium;"}
+Predicting the folded structure of a polypeptide is called the **structure prediction problem**, and this problem is simple to state but deceptively difficult to solve. In fact, it has been an active area of biological research for several decades.
 
-In this earlier module, we focused on how master regulators called transcription factors could affect the rates at which a given gene could be transcribed into RNA and translated into protein. In this module, we investigate what happens after translation.
+Why do we care about protein structure? Knowing a protein's structure is essential to determining its function and how it interacts with other proteins or molecules in its environment. (Lest you think that protein function is understood, there are still a few thousand proteins in humans alone whose function is unknown.)
 
-Before continuing, we should be a bit more precise about what we mean by "protein". The ribosome converts triplets of RNA nucleotides into a chain of amino acids called a **polypeptide**. The polypeptide will then "fold" into a three-dimensional shape; this folding happens without any outside influence as the polypeptide settles into the most stable three-dimensional structure. Even if a polypeptide chain is unfolded, it will almost always fold back into essentially the same 3-D structure in a manner of microseconds. This means that nature is applying a "magic algorithm" that produces the structure of a protein from its sequence of amino acids. But how does this algorithm work?
+Furthermore, understanding protein interactions underlies a huge amount of biological research. For example, a disease may be caused by a faulty protein, in which case researchers want to find a drug (i.e., some other chemical substance) that binds to the protein and causes some change of interest in that protein, such as inhibiting its behavior.
 
-This brings us to our first biological problem of interest: can we predict the shape of a protein from its amino acid sequence? This **structure prediction problem**, which we will focus on in the first part of this module, is simple to state but deceptively difficult. In fact, it has been an active area of biological research for several decades.
-
-You may be wondering why we care about protein structure. Knowing a protein's shape is essential to starting to determine its function and how it interacts with other proteins or molecules in its environment. (There are still a few thousand human proteins whose function is unknown.) And understanding protein interactions underlies a huge amount of biological research. For example, a disease may be caused by a faulty protein, in which case researchers want to find a drug (i.e., some other chemical substance) that binds to the protein and causes some change of interest in that protein, such as inhibiting its behavior.
-
-For a more visual example of how protein shape affects protein function, consider the following video of a ribosome (which is a complex of RNA and proteins) translating a messenger RNA into protein. For translation to succeed, the ribosome needs to have a very precise shape including a "slot" that the messenger RNA strand can fit into and be read.
+For a more visual example of how protein structure affects protein function, consider the following video of a ribosome (which is a complex of RNA and proteins) translating a messenger RNA into protein. For translation to succeed, the ribosome needs to have a very precise shape including a "slot" that the messenger RNA strand can fit into and be read.
 
 {% include video id="TfYf_rPWUdY" provider="youtube" %}
 
-As we have seen throughout this course, molecular interactions are ruled by probability. Any two molecules may *interact*, but their rate of *dissociation* will be much higher if they do not fit together well. Furthermore, two interacting molecules need to not only collide with each other but also have the correct orientation in order to fit together.
+As we have seen throughout this course, molecular interactions are ruled by probability. Any two molecules may *interact*, but their rate of *dissociation* will be much higher if they do not fit together well. Furthermore, two interacting molecules need not only to collide with each other but also have the correct orientation in order to fit together.
 
-Because structure prediction is such a fundamental problem, researchers wish to catalog the enormously varied shapes that different proteins can have. For example, the figure below shows each "protein of the month" in 2019 named by the **Protein Data Bank** (**PDB**). But the fact remains that proteins are submicroscopic; so how did researchers determine these shapes?
+Because structure prediction is such a fundamental problem, researchers wish to catalog the varied shapes of different proteins. This variety is evident in the figure below, which shows each "protein of the month" in 2020 named by the **Protein Data Bank** (**PDB**). Yet these proteins are submicroscopic, so how do we know their structures?
 
 [![image-center](../assets/images/600px/different_protein_shapes_2020.jpg){: .align-center}](../assets/images/different_protein_shapes_2020.jpg)
-Each "molecule of the month" in 2020 named by the PDB. Note how different the shapes are of all these proteins, which accomplish a wide variety of cellular tasks. Note that the SARS-CoV-2 spike protein was the molecule of the month in June 2020. Source: [https://pdb101.rcsb.org/motm/motm-by-date](https://pdb101.rcsb.org/motm/motm-by-date).
+Each "molecule of the month" in 2020 named by the PDB. These proteins have widely varying shapes and accomplish a wide variety of cellular tasks. Note that the SARS-CoV-2 spike protein was the molecule of the month in June 2020. Source: <a href="https://pdb101.rcsb.org/motm/motm-by-date" target="_blank">https://pdb101.rcsb.org/motm/motm-by-date</a>.
 {: style="font-size: medium;"}
 
 ## Laboratory methods for determining protein structure
 
-In this section, we will introduce two popular laboratory methods for accurately determining protein structure. These approaches are very sophisticated, and we appeal to high-quality videos explaining them if you are interested.
+We will introduce two popular and sophisticated laboratory methods for accurately determining protein structure. We appeal to high-quality videos explaining them if you are interested.
 
-In **X-ray crystallography** (sometimes called **macromolecular crystallography**), researchers first crystallize many copies of a protein and then shining an intense x-ray beam at the crystal. Light hitting the protein is diffracted, creating patterns from which the position of every atom in the protein can be inferred.  If you are interested in learning more about X-ray crystallography, check out the following excellent two-part video series from The Royal Institution.
+In **X-ray crystallography**, researchers crystallize many copies of a protein and then shine an intense x-ray beam at the crystal. The light hitting the protein is diffracted, creating patterns from which the position of every atom in the protein can be inferred.  If you are interested in learning more about X-ray crystallography, check out the following excellent two-part video series from The Royal Institution.
 
 {% include video id="gLsC4wlrR2A" provider="youtube" %}
 
