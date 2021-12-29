@@ -208,7 +208,7 @@ We could also try a different classifier (and in the tutorial we encouraged you 
 
 Yet ultimately, k-NN outperforms much more advanced classifiers on this dataset. It may be a relatively simple approach, but it also is a great match for classifying images within a WBC shape space, since proximity in this space indicates that two WBCs belong to the same family.
 
-## Improving our approach
+## Limitations of our WBC image classification pipeline
 
 This is not to say that we cannot make improvements to our algorithm. After all, our model requires a number of steps from the intake of data to their ultimate classification, which provides several potential failure points.
 
