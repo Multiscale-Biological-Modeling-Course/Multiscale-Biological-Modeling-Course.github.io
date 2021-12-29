@@ -95,7 +95,7 @@ KNLNESLIDLQELGKYEQYIKWPWYIWLGFIAGLIAIVMVTIMLCCMTSCCSCLKGCCSCGSCCKFDEDD
 SEPVLKGVKLHYT
 ~~~
 
-We will ask ourselves two questions. First, can we use the SARS-CoV-2 genome to determine the structure of its spike protein? Second, once we know the structure of the SARS-CoV-2 spike protein, how does its structure and function differ from the same protein in SARS-CoV?
+We will ask ourselves two questions. First, can we use this sequence of amino acids to determine the structure of its spike protein? Second, once we know the structure of the SARS-CoV-2 spike protein, how does its structure and function differ from the same protein in SARS-CoV?
 
 We will split our work on these questions over two parts. If you are already familiar with protein structure prediction, then you may want to skip ahead to the second part of the module, in which we discuss differences between the spike proteins of the two viruses.
 
