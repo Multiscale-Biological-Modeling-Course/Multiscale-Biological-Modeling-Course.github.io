@@ -129,7 +129,7 @@ coronavirus:
         url: /coronavirus/home
   - title: "Part 1: Protein Structure Prediction"
     children:
-      - title: "An introduction to protein structure prediction<br><br>"
+      - title: "Protein structure prediction is difficult<br><br>"
         url: /coronavirus/structure_intro
       - title: "Ab initio protein structure prediction<br><br>"
         url: /coronavirus/ab_initio
