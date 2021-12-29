@@ -220,9 +220,9 @@ The next failure point in our model is our segmentation pipeline. Earlier in the
 
 Then, we handed off the segmented images to CellOrganizer to build a shape space from the vectorized boundaries of the nuclei. However, the low resolution of the nuclear images will mean that the vectorization of each nuclear image will be noisy.
 
-But even if we use higher resolution images and adjust our segmentation pipeline, we are still only building a model from the *shape* of the nucleus. We didn't even take the size of the nucleus into account! If we return to the three sample WBC images from the introduction, reproduced in the figure below, then we can see that the monocyte nucleus is much smaller than the other two nuclei, which is true in general. To address this concern, when vectorizing the images, we could devote one of the coordinates of each vector to the size (in pixels) of the segmented nucleus. This change would hopefully resolve our model's troubles with classifying monocytes.
+But even if we use higher resolution images and adjust our segmentation pipeline, we are still only building a model from the *shape* of the nucleus. We didn't even take the size of the nucleus into account! If we return to the three sample WBC images from the introduction, reproduced in the figure below, then we can see that the lymphocyte nucleus is much smaller than the other two nuclei, which is true in general. To address this concern, when vectorizing the images, we could devote one of the coordinates of each vector to the size (in pixels) of the segmented nucleus. This change would hopefully help improve the accuracy of our classifier, especially on lymphocytes.
 
-{% include gallery caption="Three images from the blood cell image dataset showing three types of WBCs. In our dataset, these cells correspond to image IDs 3, 15, and 20. (Left) A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family. (Center) A monocyte with a single, irregularly-shaped nucleus. (Right) A lymphocyte with a small, round nucleus." %}
+{% include gallery caption="Three images from the blood cell image dataset showing a granulocyte (left), a monocyte (center), and a lymphocyte (right)." %}
 
 **STOP**: What other features could we extract from our images?
 {: .notice--primary}
