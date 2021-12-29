@@ -6,7 +6,6 @@ sidebar:
 toc: true
 toc_sticky: true
 image: "../assets/images/normal_adult_blood_smear.JPG"
-author_profile: true # add author to page
 gallery:
   - url: ../assets/images/600px/neutrophil.png
     image_path: ../assets/images/neutrophil.png
