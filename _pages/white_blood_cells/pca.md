@@ -1,6 +1,6 @@
 ---
 permalink: /white_blood_cells/pca
-title: "Reducing the Dimension of a Dataset with Principal Components Analysis"
+title: "Principal Components Analysis"
 sidebar:
  nav: "white_blood_cells"
 toc: true

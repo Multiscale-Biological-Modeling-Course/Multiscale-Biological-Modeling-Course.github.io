@@ -1,6 +1,6 @@
 ---
 permalink: /white_blood_cells/segmentation
-title: "Segmenting White Blood Cells"
+title: "Segmenting White Blood Cell Images"
 sidebar:
  nav: "white_blood_cells"
 toc: true
@@ -35,7 +35,7 @@ gallery3:
     title: "The binarization of this image, showing that the nucleus is not correctly identified during segmentation using the parameters from the tutorial."
 ---
 
-## Cellular image segmentation requires a tailored approach
+## Image segmentation requires a tailored approach
 
 We begin our work in this module by discussing the problem of segmenting WBCs from an image of blood cells like the one in the figure below, reproduced from the [introduction](home).
 

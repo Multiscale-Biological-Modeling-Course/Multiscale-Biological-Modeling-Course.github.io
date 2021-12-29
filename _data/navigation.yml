@@ -175,15 +175,15 @@ white_blood_cells:
     children:
       - title: "Introduction: How are blood cells counted?<br><br>"
         url: /white_blood_cells/home
-      - title: "Segmenting white blood cells<br><br>"
+      - title: "Segmenting white blood cell images<br><br>"
         url: /white_blood_cells/segmentation
       - title: "An overview of classification<br><br>"
         url: /white_blood_cells/classification
-      - title: "Building a shape space from a collection of images<br><br>"
+      - title: "Shape spaces<br><br>"
         url: /white_blood_cells/shape_space
-      - title: "Reducing the dimension of a dataset with principal components analysis<br><br>"
+      - title: "Principal components analysis<br><br>"
         url: /white_blood_cells/pca
-      - title: "Applying a classifier to a cellular shape space"
+      - title: "Classifying white blood cell images"
         url: /white_blood_cells/training
   - title: Software Tutorials (featuring CellOrganizer)
     children:

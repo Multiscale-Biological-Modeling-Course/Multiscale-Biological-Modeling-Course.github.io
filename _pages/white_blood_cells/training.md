@@ -1,6 +1,6 @@
 ---
 permalink: /white_blood_cells/training
-title: "Applying a Classifier to a Cellular Shape Space"
+title: "Classifying White Blood Cell Images"
 sidebar:
  nav: "white_blood_cells"
 toc: true
