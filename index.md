@@ -1,5 +1,5 @@
 ---
-title: <em>Biological Modeling</em>
+title: Biological Modeling
 layout: single
 description: A free course in biological modeling at multiple scales.
 image: "/assets/images/600px/f38_k61_high-res.png"
