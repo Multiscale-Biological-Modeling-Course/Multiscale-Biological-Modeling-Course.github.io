@@ -70,7 +70,9 @@ In this module, we will place ourselves in the shoes of early SARS-CoV-2 researc
 An annotated genome of SARS-CoV-2. The Spike protein, found at the bottom of this image, is labeled "S" and begins at position 21,563. Accessed from GenBank: [https://go.usa.gov/xfzMM](https://go.usa.gov/xfzMM).
 {: style="font-size: medium;"}
 
-Recall from our [discussion of transcription factors](../motifs/transcription) that by the central dogma of molecular biology, DNA is transcribed into RNA, which is then translated into a polypeptide according to the genetic code. The polypeptide comprises a chain of amino acids sampled from a collection of 20 possible amino acids that are represented according to single letters taken from the Latin alphabet (all letters except for "B", "J", "O", "U", "X", and "Z"). The polypeptide chain for the SARS-CoV-2 spike protein is shown below; this tiny chain has caused so much mayhem and been the basis for billions of doses of vaccines.
+Recall from our [discussion of transcription factors](../motifs/transcription) that by the central dogma of molecular biology, DNA is transcribed into RNA, which is then translated into protein. According to the genetic code, triplets of RNA nucleotides called codons are converted into single amino acids. The resulting chain of amino acids is called a **polypeptide**.
+
+The polypeptide chain for the SARS-CoV-2 spike protein is shown below. Each of 20 possible amino acids is represented by a letter taken from the Latin alphabet (all letters except for "B", "J", "O", "U", "X", and "Z" are used for amino acids). Consider how such a global mayhem can ultimately be caused by something so tiny.
 
 ~~~
 >YP_009724390.1 S [organism=Severe acute respiratory syndrome coronavirus 2] [GeneID=43740568]

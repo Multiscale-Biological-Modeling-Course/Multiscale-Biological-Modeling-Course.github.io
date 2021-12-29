@@ -10,9 +10,7 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 ## Determining protein structure is fundamental to understanding protein function
 
-Proteins are one of the most important groups of macromolecules in living organisms, contributing to essentially all functions within them. Over half of all the molecules in an *E. coli* cell are devoted to protein synthesis![^machinery]
-
-We should be a bit more precise about what we mean by "protein". Following the genetic code, the ribosome converts RNA codons (triplets) into a chain of amino acids called a **polypeptide**. The polypeptide will then "fold" into a three-dimensional shape; this folding happens without any outside influence, and the same polypeptide chain will almost always fold back into the same 3-D structure in a manner of microseconds. This means that nature is applying some "magic algorithm" that produces the folded structure of a protein from its sequence of amino acids. But how does this algorithm work?
+In the [introduction](home), we showed the polypeptide chain for the SARS-CoV-2 spike protein. After the polypeptide chain is formed, it will "fold" into a three-dimensional shape; this folding happens without any outside influence, and the same polypeptide chain will almost always fold back into the same 3-D structure in a manner of microseconds. This means that nature is applying some "magic algorithm" that produces the folded structure of a protein from its sequence of amino acids. But how does this algorithm work?
 
 Predicting the folded structure of a polypeptide is called the **structure prediction problem**, and this problem is simple to state but deceptively difficult to solve. In fact, it has been an active area of biological research for several decades.
 
