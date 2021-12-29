@@ -33,6 +33,11 @@ As is the case for the skin lesion research, the currently best known classifier
 
 * Explain what an artificial neuron is: cite McCullough-Pitts and perceptrons
 
+<figure>
+	<a href="../assets/images/600px/cancer_classifier.png"><img src="../assets/images/cancer_classifier.png"></a>
+	<figcaption>Our desired neural network for cancer classification of skin lesions.</figcaption>
+</figure>
+
 * Most general form of network -- explain the parameters in the network.
 
 * Convert input into a vector, and output should fall into classes.
