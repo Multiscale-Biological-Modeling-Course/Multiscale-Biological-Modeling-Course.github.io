@@ -8,7 +8,7 @@ toc_sticky: true
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
-## Energy functions measure protein bindin quality
+## Computing energy of a bound complex
 
 In part 1 of this module, we searched for the tertiary structure that best "explains" a protein's primary structure by looking for the structure with the lowest potential energy (i.e., the one that is the most chemically stable).
 
@@ -21,7 +21,7 @@ In the following tutorial, we will compute the energy of the bound spike protein
 
 ## Differences in interaction energy with ACE2 between SARS and SARS-CoV-2
 
-Using the methods described in the tutorial, we calculated the interaction energies for each of the three regions of interest as well as for the total energy of the complexes for both SARS-CoV and SARS-CoV-2. The results of this analysis are shown in the table below.
+The table below shows the interaction energies for each of our three regions of interest as well as the total energy of the complex with ACE2 for both SARS-CoV and SARS-CoV-2.
 
 [![image-center](../assets/images/600px/NAMDEnergy2.png){: .align-center}](../assets/images/NAMDEnergy2.png)
 ACE2 interaction energies of the chimeric SARS-CoV-2 RBD and SARS RBD. The PDB files contain two biological assemblies, or instances, of the corresponding structure. The first instance includes chain A (ACE2) and chain E (RBD), and the second instance includes chain B (ACE2) and chain F (RBD). The overall interactive energies between the RBD and ACE2 are shown in the first two rows (green). Then, the individual interaction energies are shown from the loop site (yellow), hotspot 31 (red), and hotspot 353 (grey). Total energy is computed as the sum of electrostatic interactions and van der Waals (vdW) forces.
@@ -31,9 +31,9 @@ We can see in the table that the overall attractive interaction energy between t
 
 Furthermore, all of the three regions of interest have a lower total energy in SARS-CoV-2 than in SARS-CoV, with hotspot 31 (red) having the greatest negative contribution. We now have quantitative evidence that the conformational changes in the three sites do indeed increase the binding affinity between the spike protein and ACE2.
 
-Nevertheless, we should be careful with making strong inferences of the infectiousness of SARS-CoV-2 based on these results. To add evidence for our case, we would need biologists to perform additional experimental work to demonstrate that the improved binding of SARS-CoV-2 translates into greater infectiousness in human cells.
+Nevertheless, we should be careful with making inferences about the infectiousness of SARS-CoV-2 based on these results. To add evidence for our case, we would need biologists to perform additional experimental work to demonstrate that the improved binding of SARS-CoV-2 translates into greater infectiousness in human cells.
 
-Another the reason for our cautiousness is that proteins are not fixed objects but rather *dynamic* structures whose shape is subject to small changes over time. In the conclusion to part 2 of this module, we will learn how to analyze the dynamics of a protein's movements within its environment.
+Another reason for our cautiousness is that proteins are not fixed objects but rather *dynamic* structures whose shape is subject to small changes over time. In the conclusion to part 2 of this module, we will learn how to analyze the dynamics of a protein's movements within its environment.
 
 [Next lesson](conclusion_part_2){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
