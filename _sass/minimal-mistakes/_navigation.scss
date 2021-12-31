@@ -471,6 +471,7 @@
     padding-left: 0.5em;
     padding-right: 0.5em;
     font-weight: bold;
+    color: #f00
   }
 
   @include breakpoint(max-width($large - 1px)) {
@@ -563,7 +564,6 @@
 
     &:hover {
       color: $text-color;
-      text-decoration: underline;
     }
   }
 
