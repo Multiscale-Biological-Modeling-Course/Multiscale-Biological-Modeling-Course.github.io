@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/structural_diff
-title: "Analyzing Structural Differences in the Bonding of SARS-CoV and SARS-CoV-2 with the ACE2 Enzyme"
+title: "Analysis of Structural Protein Differences"
 sidebar:
  nav: "coronavirus"
 toc: true

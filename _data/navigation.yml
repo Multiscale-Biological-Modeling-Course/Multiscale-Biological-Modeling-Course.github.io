@@ -141,11 +141,11 @@ coronavirus:
         url: /coronavirus/conclusion_part_1
   - title: "Part 2: Comparing SARS-CoV-2 and SARS"
     children:
-      - title: "Local differences in protein structures<br><br>"
+      - title: "Finding local differences in protein structures with Qres<br><br>"
         url: /coronavirus/multiseq
-      - title: "Analyzing structural differences in the bonding of SARS-CoV and SARS-CoV-2 with the ACE2 enzyme<br><br>"
+      - title: "Analysis of structural protein differences<br><br>"
         url: /coronavirus/structural_diff
-      - title: "Quantifying the interaction energy between the SARS-CoV-2 spike protein and ACE2<br><br>"
+      - title: "Quantification of protein interaction energy<br><br>"
         url: /coronavirus/NAMD
       - title: "Part 2 conclusion: from static protein analysis to molecular dynamics<br><br>"
         url: /coronavirus/conclusion_part_2

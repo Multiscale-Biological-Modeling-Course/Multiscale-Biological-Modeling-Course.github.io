@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/multiseq
-title: "Local Differences in Protein Structures"
+title: "Finding Local Differences in Protein Structures with Qres"
 sidebar:
  nav: "coronavirus"
 toc: true

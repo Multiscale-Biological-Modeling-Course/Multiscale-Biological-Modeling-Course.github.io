@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/NAMD
-title: "Quantifying the Interaction Energy Between the SARS-CoV-2 Spike Protein and ACE2"
+title: "Quantification of Protein Interaction Energy"
 sidebar:
  nav: "coronavirus"
 toc: true
