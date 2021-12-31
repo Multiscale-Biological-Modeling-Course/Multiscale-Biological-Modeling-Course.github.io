@@ -67,7 +67,7 @@ In SARS-CoV, the methyl group of Thr487 (colored yellow in the bottom figure abo
 
 You may be wondering how researchers can be so fastidious that they would notice all these subtle differences between the proteins, even if they know where to look. The fact is that they have help in their subjective descriptions of how protein structure affects binding. In the next lesson, we will discuss how to *quantify* the improved binding of SARS-CoV-2 to ACE2 at the three locations described above.
 
-[Next lesson](NAMD){: .btn .btn--primary .btn--large}
+[Next lesson](interaction_energy){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 
