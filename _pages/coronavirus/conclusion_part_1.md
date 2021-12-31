@@ -3,12 +3,8 @@ permalink: /coronavirus/conclusion_part_1
 title: "Part 1 Conclusion: Protein Structure Prediction is Solved! (Kind of…)"
 sidebar:
  nav: "coronavirus"
-toc: true
-toc_sticky: true
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
-
-## SARS-CoV-2 protein structure prediction and open science
 
 In 1967, the Soviets founded an entire [research insitute](https://www.protres.ru) dedicated to protein research and decoding nature's magic protein folding algorithm. Most of its founding scientists are dead now, but the institute carries on.
 
