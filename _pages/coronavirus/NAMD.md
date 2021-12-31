@@ -10,7 +10,7 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 ## Energy functions measure quality of protein binding
 
-In the previous lesson, we visualized the RBD-ACE2 complexes formed by SARS-CoV and SARS-CoV-2 and examined three regions of conformational differences (a loop site in the ACE2 binding ridge, hotspot 31, and hotspot 353). We presented *qualitative* explanations from the literature as to why these differences may help SARS-CoV-2 bind more strongly to the human ACE2 enzyme, but a theme of this course is to justify our arguments *quantitatively*. Our question, then, is how to measure the strength of protein binding in a local region of the complex.
+In the [previous lesson](structural_diff), we visualized the RBD-ACE2 complexes formed by SARS-CoV and SARS-CoV-2 and examined three regions of conformational differences (a loop site in the ACE2 binding ridge, hotspot 31, and hotspot 353). We presented *qualitative* explanations from the literature as to why these differences may help SARS-CoV-2 bind more strongly to the human ACE2 enzyme, but a theme of this course is to justify our arguments *quantitatively*. Our question, then, is how to measure the strength of protein binding in a local region of the complex.
 
 In part 1 of this module, we searched for the tertiary structure that best "explains" a protein's primary structure by looking for the structure with the lowest potential energy (i.e., the one that is the most chemically stable). In part, this means that we were looking for the structure that incorporates many attractive bonds present and few repulsive bonds.
 
