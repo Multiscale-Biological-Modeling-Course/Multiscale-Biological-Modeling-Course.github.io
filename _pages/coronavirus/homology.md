@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/homology
-title: Homology Modeling for Protein Structure Prediction
+title: Homology Modeling
 sidebar:
  nav: "coronavirus"
 toc: true
