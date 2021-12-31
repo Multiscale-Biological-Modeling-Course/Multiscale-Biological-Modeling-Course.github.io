@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/accuracy
-title: "Comparing Protein Structures to Assess Model Accuracy"
+title: "Protein Structure Comparison"
 sidebar:
  nav: "coronavirus"
 toc: true
@@ -33,23 +33,23 @@ We would like to develop a "distance function *d*(*S*, *T*) quantifies how diffe
 
 You may have noticed that the two shapes in the preceding figure are similar; in fact, they are identical. To demonstrate that this is true, we can first move the red shape to superimpose it over the blue shape, then flip the red shape, and finally rotate it so that its boundary coincides with the blue shape, as shown in the animation below.
 
-[![image-center](../assets/images/600px/shape_transformations.gif){: .align-center}](../assets/images/shape_transformations.gif)
+[![image-center](../assets/images/600px/shape_transformations_first_frame.png){: .align-center}](../assets/images/shape_transformations.gif)
 We can transform the red shape into the blue shape by translating it, flipping it, and then rotating it.
 {: style="font-size: medium;"}
 
-More generally, if *S* can be translated, flipped, and/or rotated to produce *T*, then *S* and *T* are the same shape, and so *d*(*S*, *T*) is equal to zero. The question is what *d*(*S*, *T*) should be if *S* and *T* are not the same shape.
+If *S* can be translated, flipped, and/or rotated to produce *T*, then *S* and *T* are the same shape, and so *d*(*S*, *T*) should be equal to zero. The question is what *d*(*S*, *T*) should be if *S* and *T* are not the same shape.
 
-Our idea for defining *d*(*S*, *T*) is first to translate, flip, and rotate *S* so that the resulting transformed shape resembles *T* "as much as possible". We will then determine how different the resulting shapes are to determine *d*(*S*, *T*).
+Our idea for defining *d*(*S*, *T*) is first to translate, flip, and rotate *S* so that it resembles *T* "as much as possible" to give us a fair comparison. We will then to quantify how different the shapes are to determine *d*(*S*, *T*).
 
-To this end, we first translate *S* to have the same **centroid** (or **center of mass**) as *T*. The centroid of *S* is found at the point (*x*<sub><em>S</em></sub>, *y*<sub><em>S</em></sub>) such that *x*<sub><em>S</em></sub> is the average of *x*-coordinates on the boundary of *S* and *y*<sub><em>S</em></sub> is the average of *y*-coordinates on the boundary.
+We first translate *S* to have the same **centroid** (or **center of mass**) as *T*. The centroid of *S* is found at the point (*x*<sub><em>S</em></sub>, *y*<sub><em>S</em></sub>) such that *x*<sub><em>S</em></sub> and *y*<sub><em>S</em></sub> are the respective averages of the *x*-coordinates and *y*-coordinates on the boundary of *S*.
 
-For example, suppose *S* is the semicircular arc shown in the figure below, with endpoints (-1, 0) and (1, 0).
+For example, suppose that *S* is the semicircular arc shown in the figure below, with endpoints (-1, 0) and (1, 0).
 
 [![image-center](../assets/images/600px/semicircular_arc.png){: .align-center width="300px"}](../assets/images/semicircular_arc.png)
 A semicircular arc with radius 1 corresponding to a circle whose center is at the origin.
 {: style="font-size: medium;"}
 
-The *x*-coordinate *x*<sub><em>S</em></sub> of this shape's centroid is clearly zero. But *y*<sub><em>S</em></sub> is a little trickier to compute and requires us to apply a little calculus, taking the average of the *y*-values along the entire circle:
+The *x*-coordinate *x*<sub><em>S</em></sub> is zero, but computing *y*<sub><em>S</em></sub> requires us to apply a little calculus, taking the average of the *y*-coordinates along the entire semicircle:
 
 $$\begin{align*}
 y_S & = \dfrac{\int_{0}^{\pi}{\sin{\theta}}}{\pi} \\
@@ -60,20 +60,20 @@ y_S & = \dfrac{\int_{0}^{\pi}{\sin{\theta}}}{\pi} \\
 **STOP:** Say that we connect (-1, 0) and (0, 1) to form a closed semicircle. What will be the centroid of the resulting shape?
 {: .notice--primary}
 
-The centroid of some shapes, like the semicircular arc in the preceding example, can be determined mathematically. But for irregular shapes, we can estimate the centroid of *S* by sampling *n* points from the boundary of the shape and taking the point whose coordinates are the average of the *x* and *y* coordinates of points on the boundary.
+The centroid of some shapes, like the semicircular arc in the preceding example, can be determined mathematically. But for irregular shapes, we can estimate the centroid of *S* by sampling *n* points from the boundary of the shape and taking the averages of all the *x*- and *y*-coordinates of sampled points.
 
-Returning to our desire to compute *d*(*S*, *T*) for two arbitrary shapes, once we find the centroids of *S* and *T*, we translate *S* so that the two shapes have the same centroid. We then wish to find the rotation of *S*, possibly along with a flip as well, that makes the shape resemble *T* as much as possible.
+After finding the centroids of the two shapes *S* and *T* that we wish to compare, we translate *S* so that it has the same centroid as *T*. We then wish to find the rotation of *S*, possibly along with a flip as well, that makes the shape resemble *T* as much as possible.
 
-Imagine first that we have found the desired rotation; we can then define *d*(*S*, *T*) in the following way. We sample *n* points along the boundary of each shape, converting *S* and *T* into **vectors** *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>) and *t* = (*t*<sub>1</sub>, ..., *t*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is the *i*-th point on the boundary of *S*. We then compute the **root mean square deviation (RMSD)** between the two shapes, which is the square root of the average squared distance between corresponding points in the vectors.
+Imagine that we have found the desired rotation; we can then define *d*(*S*, *T*) in the following way. We sample *n* points along the boundary of each shape, converting *S* and *T* into **vectors** *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>) and *t* = (*t*<sub>1</sub>, ..., *t*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is the *i*-th point on the boundary of *S*. The **root mean square deviation (RMSD)** between the two shapes is the square root of the average squared distance between corresponding points in the vectors,
 
-$$\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)} $$
+$$\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)} \,.$$
 
-In this formula, *d*(*s*<sub><em>i</em></sub>, *t*<sub><em>i</em></sub>) is the distance between the points *s*<sub><em>i</em></sub> and *t*<sub><em>i</em></sub> in 2-D or 3-D space as the case may be.
+In this formula, *d*(*s*<sub><em>i</em></sub>, *t*<sub><em>i</em></sub>) is the distance between the points *s*<sub><em>i</em></sub> and *t*<sub><em>i</em></sub>.
 
 **Note:** RMSD is a very commonly used approach across data science when measuring the differences between two vectors.
 {: .notice--warning}
 
-For an example RMSD calculation, consider the figure below, which shows two shapes with four points sampled from each.
+For an example two-dimensional RMSD calculation, consider the figure below, which shows two shapes with four points sampled from each.
 
 [![image-center](../assets/images/600px/rmsd_simple_shapes.png){: .align-center width="400px"}](../assets/images/rmsd_simple_shapes.png)
 Two shapes with four points sampled from each.
