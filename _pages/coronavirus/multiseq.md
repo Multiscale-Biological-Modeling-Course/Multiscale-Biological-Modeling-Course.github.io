@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/multiseq
-title: "Searching for Local Differences in the SARS-CoV and SARS-CoV-2 Spike Proteins"
+title: "Local Differences in Protein Structures"
 sidebar:
  nav: "coronavirus"
 toc: true
