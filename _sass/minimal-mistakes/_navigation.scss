@@ -48,6 +48,7 @@
 
   .current {
     font-weight: bold;
+    color: #f00;
   }
 }
 
@@ -275,7 +276,7 @@
     }
 
     .dropdown-content a:not(:last-child){
-      border-bottom: none; 
+      border-bottom: none;
     }
   }
 
