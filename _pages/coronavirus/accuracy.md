@@ -10,15 +10,16 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 ## Experiments determine the structure of the SARS-CoV-2 spike protein
 
-In the previous lesson, we saw how to predict the structure of a protein from its sequence and a database of known structures. We then used homology modeling to predict the structure of the SARS-CoV-2 spike protein using three different software resources. This mimics the work of many researchers in January 2020, which included the contributions of volunteers' computers from around the world.
+While some scientists were working to predict the structure of the SARS-CoV-2 spike protein from sequence data, others were working on verifying the structure of this protein experimentally. On February 25, 2020, researchers from the Seattle Structural Genomics Center for Infectious Disease uploaded to the PDB the result of a cryo-EM experiment for the SARS-CoV-2 spike protein, which became entry <a href="http://www.rcsb.org/structure/6VXX" target="_blank">6vxx</a>.
 
-Meanwhile, other scientists were working on verifying the structure of the protein experimentally. On February 25, 2020, researchers from the Seattle Structural Genomics Center for Infectious Disease deposited the result of a cryo-EM experiment determining the structure of the spike protein to the PDB as entry [6vxx](http://www.rcsb.org/structure/6VXX). If you would like to explore its shape a bit, check out the 3-D viewer for the protein at [http://www.rcsb.org/3d-view/6VXX/1](http://www.rcsb.org/3d-view/6VXX/1).
+**Note:** If you would like to explore the structure of the SARS-CoV-2 spike protein, check out the 3-D protein viewer at <a href="http://www.rcsb.org/3d-view/6VXX/1" target="_blank">http://www.rcsb.org/3d-view/6VXX/1</a>.
+{: .notice--warning}
 
-In this lesson, we will compare our predicted results from the previous lesson to the empirically validated structure of the SARS-CoV-2 spike protein. How well do our models approximate the real structure?
+In this lesson, we will compare the results of the SARS-CoV-2 spike protein prediction from the previous lesson against each other and against the protein's empirically validated structure. To do so, we need a method of comparing two structures.
 
 ## Comparing two shapes with the Kabsch algorithm
 
-Ultimately, the problem of comparing protein structures is intrinsically similar to the comparison of two shapes, a problem that we will discuss first.
+Ultimately, comparing protein structures is intrinsically similar to comparing two shapes, such as those shown in the figure below.
 
 **STOP:** Consider the two shapes in the figure below. How similar are they?
 {: .notice--primary}
@@ -26,11 +27,11 @@ Ultimately, the problem of comparing protein structures is intrinsically similar
 [![image-center](../assets/images/600px/two_shapes.png){: .align-center}](../assets/images/two_shapes.png)
 {: style="font-size: medium;"}
 
-Even if you think you have a good handle on comparing the above two shapes, it is because humans have very highly evolved eyes and brains that help us quickly cluster and classify the objects that we see in the world. Training a computer to see objects as well as we can is more difficult than you think!
+If you think you have a good handle on comparing the above two shapes, then it is because humans have very highly evolved eyes and brains. As we will see in the next module, training a computer to see objects as well as we can is more difficult than you think!
 
-Our goal is to develop a "distance function *d*(*S*, *T*) that takes two shapes *S* and *T* as input and that quantifies how different these shapes are. If the two shapes are the same, then the distance between them should be equal to zero; the more different the shapes, the larger *d* should become.
+We would like to develop a "distance function *d*(*S*, *T*) quantifies how different two shapes *S* and *T* are. If *S* and *T* are the same, then *d*(*S*, *T*) should be equal to zero; the more different the shapes, the larger *d* should become.
 
-You may have noticed that the two shapes in the preceding figure are similar; in fact, they are the same. To demonstrate that this is true, we can first move the red shape to superimpose it over the blue shape, then flip the red shape, and finally rotate it so that its boundary coincides with the blue shape, as shown below.
+You may have noticed that the two shapes in the preceding figure are similar; in fact, they are identical. To demonstrate that this is true, we can first move the red shape to superimpose it over the blue shape, then flip the red shape, and finally rotate it so that its boundary coincides with the blue shape, as shown in the animation below.
 
 [![image-center](../assets/images/600px/shape_transformations.gif){: .align-center}](../assets/images/shape_transformations.gif)
 We can transform the red shape into the blue shape by translating it, flipping it, and then rotating it.
