@@ -8,9 +8,7 @@ toc_sticky: true
 image: "../assets/images/normal_adult_blood_smear.JPG"
 ---
 
-## Interlude: Talking monkeys, stone tablets, and lost cities
-
-If you have not yet found the time to watch the 1968 movie *Planet of the Apes*, we will spoil its <a href="https://www.youtube.com/watch?v=XvuM3DjvYf0" class="popup-youtube" target="_blank">ending</a> for you. Charlton Heston's character finds the Statue of Liberty protruding from the sand and has the epiphany that the mysterious planet he has come across was just Earth all along.
+## Interlude: Stone tablets and lost cities
 
 Imagine that you are a traveler to Earth and come across the ruins of New York. You find an old road atlas that has driving distances between cities (in miles), shown in the table below. Can you use this atlas to find the other cities in the table? In an [earlier module](../chemotaxis/home), we encountered a "Lost Immortals" problem; this problem, of inferring the locations of cities given the distance between them, we call "Lost Cities".
 
