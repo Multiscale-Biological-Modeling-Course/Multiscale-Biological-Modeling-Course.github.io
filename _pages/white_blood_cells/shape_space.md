@@ -10,7 +10,7 @@ image: "../assets/images/normal_adult_blood_smear.JPG"
 
 ## Interlude: Stone tablets and lost cities
 
-Imagine that you are a traveler to Earth and come across the ruins of New York. You find an old road atlas that has driving distances between cities (in miles), shown in the table below. Can you use this atlas to find the other cities in the table? In an [earlier module](../chemotaxis/home), we encountered a "Lost Immortals" problem; this problem, of inferring the locations of cities given the distance between them, we call "Lost Cities".
+Imagine that you are a traveler to Earth and come across the ruins of New York City. You find an old road atlas that has driving distances between cities (in miles), shown in the table below. Can you use this atlas to find the other cities in the table? In an [earlier module](../chemotaxis/home), we encountered a "Lost Immortals" problem; this problem, of inferring the locations of cities given the distance between them, we call "Lost Cities".
 
 | | New York | Los Angeles | Pittsburgh | Miami | Houston | Seattle |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
@@ -24,15 +24,15 @@ Imagine that you are a traveler to Earth and come across the ruins of New York. 
 **STOP:** If you know the location of New York, how could you use the information in the table above to find the other cities?
 {: .notice--primary}
 
-This seemingly contrived example has a real archaeological counterpart. In 2019, researchers used commercial records on 19th Century BCE stone tablets compiled by Assyrian merchants to estimate distances between pairs of lost Bronze age cities in present-day Turkey. Using these approximated "atlas" of sorts, they predicted the location of the lost cities[^Barjamovich2019].
+This seemingly contrived example has a real archaeological counterpart. In 2019, researchers used commercial records that had been engraved by Assyrian merchants onto 19th Century BCE stone tablets in order to estimate distances between pairs of lost Bronze age cities in present-day Turkey. Using this "atlas" of sorts, they estimated the locations of the lost cities.[^Barjamovich2019]
 
-You may be confused as to why stone tablets and lost cities  matter to biologists. Let us therefore return to our central problem of classifying segmented WBC images by family.
+You may be confused as to why biologists should care about stone tablets and lost cities. Let us therefore return to our problem of classifying segmented WBC images by family.
 
 ## Vectorizing a segmented image
 
-In the [previous lesson](classification), we discussed the k-nearest neighbors algorithm (k-NN) for classifying an object with unknown class given a collection of objects with known classes. We would like to apply this approach to our example of segmented WBC images. Yet k-NN first requires each object to be represented by a feature vector, and so we need some way of converting an image of a WBC into a feature vector. In this way, we can produce a **shape space**, or an assignment of (cellular image) shapes to points in multi-dimensional space.
+As we mentioned in the [previous lesson](classification), we would like to apply k-NN approach to our example of segmented WBC images. Yet k-NN first requires each object to be represented by a feature vector, and so we need some way of converting a WBC image into a feature vector. In this way, we can produce a **shape space**, or an assignment of (cellular image) shapes to points in multi-dimensional space.
 
-If you have followed the rest of this course, then you may notice that the problem of "vectorizing" a WBC image is similar to one that we have already encountered in our [module on protein structures](../coronavirus/accuracy). In that module, we vectorized a protein structure as the collection of locations of its alpha carbons. Specifically, given a protein structure *S*, we sampled the *n* alpha carbons from *S*, producing a vector  *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is the position of the *i*-th alpha carbon of *S*.
+You may notice that the problem of "vectorizing" a WBC image is similar to one that we have already encountered in our [module on protein structures](../coronavirus/accuracy). In that module, we vectorized a protein structure as the collection of locations of its alpha carbons. Specifically, given a protein structure *S*, we sampled the *n* alpha carbons from *S*, producing a vector  *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is the position of the *i*-th alpha carbon of *S*.
 
 We will apply the same idea to vectorize our segmented WBCs. Specifically, given a binarized image *I*, we will first center the image so that its center of mass is at the origin, and then sample *n* points from the boundary of the cell nucleus to produce a **shape vector** *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is a point with coordinates (*x*(*i*), *y*(*i*)).
 
