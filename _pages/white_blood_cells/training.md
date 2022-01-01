@@ -132,7 +132,7 @@ You may find all these terms confusing and difficult to keep straight. You are n
 
 As we return to our example of classifying images of WBC nuclei, we need to extend the ideas discussed in the previous section to handle the case of multiple classes. To do so, we consider each class individually and treat this class as the "positive" case.
 
-To see how this works, we return to our iris flower data set. Say that we wish to compute the recall, specificity, and precision for *Iris virginica* using the k-NN confusion matrix that we generated, reproduced below.
+To see how this works, we return to our iris flower dataset. Say that we wish to compute the recall, specificity, and precision for *Iris virginica* using the k-NN confusion matrix that we generated, reproduced below.
 
 | *Iris setosa* | *Iris versicolor* | *Iris virginica* |
 | :---: |  :----: | :---: |
@@ -211,7 +211,7 @@ Yet ultimately, k-NN outperforms much more advanced classifiers on this dataset.
 
 This is not to say that we cannot make improvements to our algorithm. After all, our model requires a number of steps from the intake of data to their ultimate classification, which provides several potential failure points.
 
-We will start with data. Algorithms are beautiful, but if you have great data, then a very simple approach will probably give you a great result, and if you have bad data, then no amount of algorithmic wizardry will help you. An example of "good data" is the iris flower dataset; the flowers were studied very exactly, with no mistakes, and the features chosen very clearly differentiate the elements in the data set. Although this dataset provides a great motivating example, the pattern in the data is so obvious that it almost seems silly to run a classifier on it.
+We will start with data. Algorithms are beautiful, but if you have great data, then a very simple approach will probably give you a great result, and if you have bad data, then no amount of algorithmic wizardry will help you. An example of "good data" is the iris flower dataset; the flowers were studied very exactly, with no mistakes, and the features chosen very clearly differentiate the elements in the dataset. Although this dataset provides a great motivating example, the pattern in the data is so obvious that it almost seems silly to run a classifier on it.
 
 In our case, we have very low resolution WBC images, and not many of them. We consider the limitations of the data to be a feature of this chapter, not a bug, as they allow us to focus on what is a very common concern in data analysis. A natural thing to do now would be to look for a larger, higher resolution dataset with less class imbalance.
 

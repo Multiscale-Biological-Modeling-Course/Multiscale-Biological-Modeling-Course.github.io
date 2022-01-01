@@ -36,10 +36,10 @@ Instead, we will reduce the number of dimensions of the space without removing a
 
 ## Dimension reduction with principal components analysis
 
-We will introduce dimension reduction with the low-dimensional example of the iris flower data set that we introduced in a [previous lesson](classification) when discussing classification. In the figure below, we reproduce the plot of iris petal width against petal width, ignoring the species from which each flower derives.
+We will introduce dimension reduction with the low-dimensional example of the iris flower dataset that we introduced in a [previous lesson](classification) when discussing classification. In the figure below, we reproduce the plot of iris petal width against petal width, ignoring the species from which each flower derives.
 
 [![image-center](../assets/images/600px/iris_petal_data_unlabeled.png){: .align-center}](../assets/images/iris_petal_data_unlabeled.png)
-Petal width (x-axis) plotted against petal width (y-axis) for all flowers in the iris flower data set, not labeled according to species.
+Petal width (x-axis) plotted against petal width (y-axis) for all flowers in the iris flower dataset, not labeled according to species.
 {: style="font-size: medium;"}
 
 We can once again trust our eyes to notice the clear pattern: as iris petal width increases, petal length tends to increase as well.
@@ -149,7 +149,7 @@ As we mentioned in the tutorial, we can also subdivide granulocytes into basophi
 The reduced dimension shape space from the previous figure, with granulocytes further subdivided into three classes.
 {: style="font-size: medium;"}
 
-Although images from the same family do not cluster as tightly as the iris data set --- which could be criticized as an unrealistic representation of the noise inherent in most real datasets --- we do see that images appear to be near other images of the same type. This fact should give us hope that proximity in the dimension-reduced space may help us correctly classify images of unknown type, which we will attempt to do in the next lesson.
+Although images from the same family do not cluster as tightly as the iris flower dataset --- which could be criticized as an unrealistic representation of the noise inherent in most real datasets --- we do see that images appear to be near other images of the same type. This fact should give us hope that proximity in the dimension-reduced space may help us correctly classify images of unknown type, which we will attempt to do in the next lesson.
 
 [Next lesson](training){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
