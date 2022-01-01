@@ -12,27 +12,29 @@ image: "../assets/images/normal_adult_blood_smear.JPG"
 
 Things get weird in multi-dimensional space.
 
-Consider a circle inscribed in a square, and a sphere inscribed in a cube, as shown in the figure below. The ratio of the area of the circle to the area of the square is π/4 ≈ 0.785, regardless of the side length. As for three dimensions, the ratio of the volume of the sphere to the volume of the cube is (4π/3)/8 ≈ 0.524.
+Consider a circle inscribed in a square, as shown in the figure below. The ratio of the area of the circle to the area of the square is π/4 ≈ 0.785, regardless of the side length. When we move to three dimensions and have a sphere inscribed in a cube, the ratio of the volume of the sphere to that of the cube is (4π/3)/8 ≈ 0.524.
 
 [![image-center](../assets/images/600px/inscribed_circle_and_sphere.png){: .align-center}](../assets/images/inscribed_circle_and_sphere.png)
-A circle inscribed in a square takes up more of the square than a sphere inscribed in a cube.
+A circle inscribed in a square takes up more of the square (78.5 percent) than a sphere inscribed in a cube (52.4 percent).
 {: style="font-size: medium;"}
 
-As we increase the number of dimensions, the volume of a sphere takes up less and less of the volume of the cube in which it is inscribed. We define an *n*-dimensional unit sphere as the set of points in *n*-dimensional space whose (Euclidean) distance from the origin is at most 1, and an *n*-dimensional cube as the set of points whose coordinates are all between 0 and 1. A precise definition of the volume of a multi-dimensional object is beyond the scope of our work, but as *n* increases, the ratio of the volume of the *n*-dimensional unit sphere to the volume of the *n*-dimensional unit cube approaches zero!
+We define an *n*-dimensional unit sphere as the set of points in *n*-dimensional space whose (Euclidean) distance from the origin is at most 1, and an *n*-dimensional cube as the set of points whose coordinates are all between 0 and 1. A precise definition of the volume of a multi-dimensional object is beyond the scope of our work, but as *n* increases, the sphere takes up less and less of the cube. As *n* tends toward infinity, the ratio of the volume of the *n*-dimensional unit sphere to the volume of the *n*-dimensional unit cube approaches zero!
 
-One way of interpreting this phenomenon is that the cube has more corners than a square does, and so the more dimensions that we have, the more corners in which there are to hide away from the sphere. In other words, as we increase the number of dimensions, most of the volume of an object winds up scattering outward from the object's center.
+One way of interpreting the vanishing of the sphere's volume is that the cube has more corners than a square does, and so the more dimensions that we have, the more corners in which there are to hide away from the sphere. In other words, as we increase the number of dimensions, most of the volume of an object winds up scattering outward from the object's center.
 
-The vanishing of a sphere's volume inside of a cube in multiple dimensions may seem like an arcane fact reserved for mathematicians toiling in fluorescently lit academic offices at strange hours[^author]. Yet this observation is just one manifestation of a very deep paradigm in data science called the **curse of dimensionality**, which is a collection of properties that arise in higher dimensions that run counter to our intuition in three dimensions.
+The vanishing sphere seem like an arcane triviality holding interest only for mathematicians toiling in fluorescently lit academic offices at strange hours. Yet this little story is just one manifestation of a very deep paradigm in data science called the **curse of dimensionality**, a collection of principles that arise in higher dimensions that run counter to our intuition about our three-dimensional existence.
 
 ## How the curse of dimensionality affects classification
 
 In the [previous lesson](shape_space), we discussed sampling *n* points from the boundary of an image, thus converting the image into a vector in a space with 2*n* dimensions. We argued that *n* needs to be sufficiently large to ensure that comparing the vectors of two images will give an accurate representation of how similar their shapes are. And yet the size of *n* means that we need to be careful about the curse of dimensionality.
 
-In particular, say that we sample *k* points randomly from the interior of an *n*-dimensional unit hypercube. Let *d*<sub>min</sub> and *d*<sub>max</sub> denote the minimum and maximum distance from any of our points to the origin, respectively. As *n* grows, the ratio *d*<sub>min</sub>/*d*<sub>max</sub> heads toward 1. This mathematical result is another manifestation of points flying away from each other in multi-dimensional space, and it means that algorithms like k-NN, which classify points with unknown classes based on nearby points with known classes, may not perform well in higher-dimensional spaces in which points tend to spread out from each other.
+Say that we sample *k* points randomly from the interior of an *n*-dimensional unit hypercube. Let *d*<sub>min</sub> and *d*<sub>max</sub> denote the minimum and maximum distance from any of our points to the origin, respectively. As *n* grows, the ratio *d*<sub>min</sub>/*d*<sub>max</sub> heads toward 1; in other words, the minimum distance between points becomes indistinguishable from the maximum distance between points.
+
+This other facet of the curse of dimensionality means that algorithms like k-NN, which classify points with unknown classes based on nearby points with known classes, may not perform well in higher-dimensional spaces in which even similar points tend to fly away from each other.
 
 Because of the curse of dimensionality, it makes sense to reduce the number of dimensions before performing any further analysis. We could reduce the number of features used for generating a vector, especially if we have reason to believe that some features are more informative than others. This approach will likely not work for our WBC image example, since it is not clear why one point on the boundary of our images would be inherently better than another.
 
-Instead, we will reduce the number of dimensions of the space without removing any features from the data. As perplexing as multi-dimensional space may already seem, it may be totally unclear how we could reduce the dimensions of a space. We will therefore explain how dimension reduction can work in the context of three-dimensional space; you may be surprised that our approach is similar to something that you may already be familiar with.
+Instead, we will reduce the number of dimensions of our shape space without removing any features from the data. As perplexing as multi-dimensional space may already seem, it may be totally unclear how we could reduce the dimensions of a space. We will therefore explain dimension reduction in the context of three-dimensional space; our approach may seem more familiar than you think.
 
 ## Dimension reduction with principal components analysis
 
@@ -160,8 +162,6 @@ Although images from the same family do not cluster as tightly as the iris flowe
 -->
 
 [^amoeba]: [Amoeba](https://stats.stackexchange.com/users/28666/amoeba), Stack Exchange user. Making sense of principal component analysis, eigenvectors & eigenvalues, Stack exchange URL (version: 2021-08-05): [https://stats.stackexchange.com/q/140579](https://stats.stackexchange.com/q/140579)
-
-[^author]: Much like your author.
 
 [^Fisher1936]: Fisher RA (1936) The Use of Multiple Measurements in Taxonomic Problems. Annals of Eugenics 7(2):179-188. [Available online](https://doi.org/10.1111/j.1469-1809.1936.tb02137.x)
 
