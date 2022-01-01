@@ -34,7 +34,7 @@ This other facet of the curse of dimensionality means that algorithms like k-NN,
 
 Because of the curse of dimensionality, it makes sense to reduce the number of dimensions before performing any further analysis. We could reduce the number of features used for generating a vector, especially if we have reason to believe that some features are more informative than others. This approach will likely not work for our WBC image example, since it is not clear why one point on the boundary of our images would be inherently better than another.
 
-Instead, we will reduce the number of dimensions of our shape space without removing any features from the data. As perplexing as multi-dimensional space may already seem, it may be totally unclear how we could reduce the dimensions of a space. We will therefore explain dimension reduction in the context of three-dimensional space; our approach may seem more familiar than you think.
+Instead, we will reduce the number of dimensions of our shape space without removing any features from the data. As perplexing as multi-dimensional space may already seem, it may be totally unclear how we could reduce the dimensions of a space. We will therefore explain dimension reduction in the context of three-dimensional space; our approach may be more familiar than you think.
 
 ## Dimension reduction with principal components analysis
 
