@@ -1,6 +1,6 @@
 ---
 permalink: /white_blood_cells/classification
-title: "An Overview of Classification"
+title: "An Overview of Classification and k-Nearest Neighbors"
 sidebar:
  nav: "white_blood_cells"
 toc: true

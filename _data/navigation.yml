@@ -177,7 +177,7 @@ white_blood_cells:
         url: /white_blood_cells/home
       - title: "Segmenting white blood cell images<br><br>"
         url: /white_blood_cells/segmentation
-      - title: "An overview of classification<br><br>"
+      - title: "An overview of classification and k-nearest neighbors<br><br>"
         url: /white_blood_cells/classification
       - title: "Shape spaces<br><br>"
         url: /white_blood_cells/shape_space
