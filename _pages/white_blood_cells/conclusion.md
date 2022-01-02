@@ -31,13 +31,17 @@ As is the case for the skin lesion research, the currently best known classifier
 
 ## A brief introduction to neural networks
 
-The foundations of deep learning were laid in 1943, with the
+The foundations of deep learning were laid in 1943, with the (CITE)
 
 [![image-center](../assets/images/600px/components_of_neuron.png){: .align-center}](../assets/images/components_of_neuron.png)
 The components of a neuron. Electrical signals are passed down axons and exchanged at terminal boundaries between neurons. Image courtesy: Jennifer Walinga.
 {: style="font-size: medium;"}
 
 * Explain what an artificial neuron is: cite McCullough-Pitts and perceptrons
+
+[![image-center](../assets/images/600px/components_of_neuron.png){: .align-center}](../assets/images/components_of_neuron.png)
+A McCullough-Pitts neuron with *n* = 2 and θ = 2. 
+{: style="font-size: medium;"}
 
 <figure>
 	<a href="../assets/images/600px/cancer_classifier.png"><img src="../assets/images/cancer_classifier.png"></a>
