@@ -23,13 +23,19 @@ gallery:
 
 A professor's phone never rings. And yet here was the phone in my office, on a cold spring afternoon, ringing away. "Nothing good can come of this", I thought. Nervously, I answered.
 
-On the other end of the line was a local dermatologist. He asked me if I knew of anyone working on diagnosing cancer from images of skin lesions. He had noticed that he and his colleagues weren't very accurate at this task when they compared their initial impressions against a biopsy.
+On the other end of the line was a local dermatologist. He asked me if I knew of anyone working on diagnosing cancer from images of skin lesions. He had noticed that he and his colleagues weren't very accurate at this task when they compared their initial impressions of patient lesions against a biopsy.
 
-I told him that I was unaware of any colleagues working on such a project, but an internet search took me to an article (CITE) that had recently attained a landmark result and has since been cited thousands of times. This article devised an algorithm that beat 21 certified U.S. dermatologists at classifying images of skin lesions into one of three classes: **malignant** (i.e., cancerous and at risk of spread), **benign** (a non-cancerous tumor with no risk of spread), and **non-neoplastic** (not a tumor).
+I was unaware of any colleagues working on such a project, but an internet search took me to an article (CITE) that had recently attained a landmark result and has since been cited thousands of times. This article devised an algorithm that beat 21 certified U.S. dermatologists at classifying images of skin lesions into one of three classes: **malignant** (i.e., cancerous and at risk of spread), **benign** (a non-cancerous tumor with no risk of spread), and **non-neoplastic** (not a tumor).
 
-As is the case for the skin lesion research, the currently best known classifier for WBC image classification (CITE) uses a technique called **deep learning**. You may have seen this term wielded with mystical reverence, but you may very well not know what it means; let's take a moment to explain it.
+As is the case for the skin lesion research, the currently best known classifier for WBC image classification (CITE) uses a technique called **deep learning**. You may have seen this term wielded with mystical reverence, but you may very well not know what it means, and so let's take explain it.
 
 ## A brief introduction to neural networks
+
+The foundations of deep learning were laid in 1943, with the
+
+[![image-center](../assets/images/600px/components_of_neuron.png){: .align-center}](../assets/images/components_of_neuron.png)
+The components of a neuron. Electrical signals are passed down axons and exchanged at terminal boundaries between neurons. Image courtesy: Jennifer Walinga.
+{: style="font-size: medium;"}
 
 * Explain what an artificial neuron is: cite McCullough-Pitts and perceptrons
 
