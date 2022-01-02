@@ -38,39 +38,35 @@ Instead, we will reduce the number of dimensions of our shape space without remo
 
 ## Dimension reduction with principal components analysis
 
-We will introduce dimension reduction with the low-dimensional example of the iris flower dataset that we introduced in a [previous lesson](classification) when discussing classification. In the figure below, we reproduce the plot of iris petal width against petal width, ignoring the species from which each flower derives.
+We will introduce dimension reduction using the iris flower dataset that we introduced when discussing [classification](classification). Although this dataset has four features, we will focus again on only petal length and width, which we plot against each other in the figure below. We can trust our eyes to notice the clear pattern: as iris petal width increases, petal length tends to increase as well.
 
 [![image-center](../assets/images/600px/iris_petal_data_unlabeled.png){: .align-center}](../assets/images/iris_petal_data_unlabeled.png)
 Petal width (x-axis) plotted against petal width (y-axis) for all flowers in the iris flower dataset, not labeled according to species.
 {: style="font-size: medium;"}
 
-We can once again trust our eyes to notice the clear pattern: as iris petal width increases, petal length tends to increase as well.
-
-You may surmise where this discussion is headed. If we draw a line through the center of the data (see figure below), then that line provides a reasonable estimate of a flower's petal width from its length, and vice-versa. The line, a one-dimensional object, therefore approximates a collection of two-dimensional points.
+If we draw a line through the center of the data (see figure below), then the line provides a reasonable estimate of a flower's petal width given its length, and vice-versa. This line, a one-dimensional object, therefore approximates a collection of points in two dimensions.
 
 [![image-center](../assets/images/600px/iris_flowers_regression_line.png){: .align-center}](../assets/images/iris_flowers_regression_line.png)
-A line passing through the plot of iris petal length against petal width. The line tells us approximately how wide we can expect an iris petal to be given the petal's width.
+A line passing through the plot of iris petal length against petal width. The line tells us approximately how wide we can expect an iris petal to be given the petal's width, and vice-versa.
 {: style="font-size: medium;"}
 
-**STOP:** How can we determine the best line to approximate a collection of two-dimensional data points?
+**STOP:** How could we have determined the line in the figure above?
 {: .notice--primary}
 
-Long ago in math class, you may have learned about how to choose a line to best approximate a two-dimensional dataset using **linear regression**, which we will describe in what follows.
-
-We first establish one variable as the *dependent* variable, which is typically plotted on the y-axis. In our iris flower example, the dependent variable is petal width.
+Long ago in math class, you may have learned how to choose a line to best approximate a two-dimensional dataset using **linear regression**, which we will now briefly describe. In regression, we first establish one variable as the *dependent* variable, which is typically plotted on the y-axis. In our iris flower example, the dependent variable is petal width.
 
 Given a line, we use *L*(*x*) to denote the *y*-coordinate of the point on the line corresponding to a given *x*-coordinate. For this line, we can then define the **residual** of a data point (*x*, *y*) as the difference *y* - *L*(*x*) between its *y*-coordinate and the *y*-coordinate that the line estimates as corresponding to *x*. If a residual is positive, then the data point lies "above" the line, and if the residual is negative, then the point lies "below" the line (see figure below).
 
 [![image-center](../assets/images/600px/residuals_y_coordinates.png){: .align-center width="300px"}](../assets/images/residuals_y_coordinates.png)
-An example line with a visual depiction of residuals; the absolute value of a residual is the length of its dashed line, and the sign of a residual corresponds to whether it lies above or below the line.
+An example line and data points with a visual depiction of the points' residuals. The absolute value of a residual is the length of its dashed line, and the sign of a residual corresponds to whether it lies above or below the line.
 {: style="font-size: medium;"}
 
-As the line changes, so will the points' residuals. In linear regression, since we are looking for the line that best fits the data, we want the line that *minimizes* the sum of squared residuals. In other words, this line will minimize the variation between data points and the line in the *y*-direction.
+As the line changes, so will the points' residuals. The smaller the residuals become, the better the line fits the points. In linear regression, we are looking for the line that the line that minimizes the sum of squared residuals.
 
-However, this is not the only way to fit a line to a collection of data. Choosing petal width as the dependent variable makes sense if we want to explain petal width as a function of petal length, but it is not clear why this dependence would exist. If we were to make petal length the dependent variable instead, then linear regression would minimize the squared differences between residuals in the *x*-direction, as illustrated in the figure below.
+Linear regression is a common approach, but it is not the only way to fit a line to a collection of data. Choosing petal width as the dependent variable makes sense if we want to explain petal width as a function of petal length, but if we were to make petal length the dependent variable instead, then linear regression would minimize the squared differences between residuals in the *x*-direction, as illustrated in the figure below.
 
 [![image-center](../assets/images/600px/residuals_x_coordinates.png){: .align-center width="300px"}](../assets/images/residuals_x_coordinates.png)
-If *x* is the dependent variable, then the residuals for a line become the horizontal distances between points and the line, and linear regression finds the line that minimizes these horizontal residuals.
+If *x* is the dependent variable, then the residuals with respect to a line become the horizontal distances between points and the line, and linear regression finds the line that minimizes these horizontal residuals.
 {: style="font-size: medium;"}
 
 **Note:** The linear regression line will likely differ according to which variable we choose as the dependent variable, since the quantity that we are minimizing changes. However, if there is a linear pattern in our data, then the two regression lines will be similar.
@@ -79,9 +75,9 @@ If *x* is the dependent variable, then the residuals for a line become the horiz
 **STOP:** For the iris flower dataset, which of the two choices for dependent variable do you think is better?
 {: .notice--primary}
 
-The preceding question is implying that it is not clear whether petal width or petal length should be the dependent variable, because it is not clear at all how we might have any *causality* underlying the correlation between these variables. Because this causality is most likely absent, it does not make sense to prioritize one variable over the other as the dependent variable, and we should revisit how we are finding the line that best fits the data.
+The preceding question is implying that no clear *causality* underlies the correlation between petal width and petal length, which makes it difficult to prioritize one variable over the other as the dependent variable. For this reason, we will revisit how we are defining the line that best fits the data.
 
-In particular, instead of considering residuals based on distances to the line in only the *x*-direction or the *y*-direction, we can instead examine the distances from our data points to the line, as shown in the figure below. Minimizing the sum of the squares of these distances will give us a third line fitting a dataset that treats each of the two variables equally and is called the **first principal component** of the data.
+Instead of considering residuals based on distances to the line in only the *x*-direction or the *y*-direction, we can instead examine the distances from our data points to the line, as shown in the figure below. The line minimizing the sum of the squares of these distances treats each of the two variables equally and is called the **first principal component** of the data.
 
 [![image-center](../assets/images/600px/residuals_projections.png){: .align-center width="300px"}](../assets/images/residuals_projections.png)
 A line along with a collection of points; dashed lines show the shortest segments connecting each point to the line.
@@ -89,47 +85,55 @@ A line along with a collection of points; dashed lines show the shortest segment
 
 The first principal component is often said to be the line that "explains the most variance in the data". If there is indeed a correspondence between lily petal width and length, then the distances from each point to the first principal component correspond to variation due to randomness. By minimizing the sum of squares of these distances, we limit the amount of variation in our data that we cannot explain.
 
-The following animated GIF shows a line rotating through a collection of data points, with the distance of each point onto the line shown in red. As the line rotates, we can see the distances to the lines become larger and smaller.
+The following animated GIF shows a line rotating through a collection of data points, with the distance from each point to the line shown in red. As the line rotates, we can see the distances from the points to the line change.
 
 [![image-center](../assets/images/600px/pca_rotating_line_first_frame.png){: .align-center}](../assets/images/pca_rotating_line.gif)
-An animated GIF showing that distances of points to their projections on a line change as the line rotates. The line of best fit is the one in which the sum of the square of these distances is minimized.  Source: amoeba, StackExchange user.[^amoeba]
+An animated GIF showing that the distances from points to their projections onto a line change as the line rotates. The line of best fit is the one in which the sum of the square of these distances is minimized.  Source: amoeba, StackExchange user.[^amoeba]
 {: style="font-size: medium;"}
 
-Another benefit of finding the first principal component of a dataset is that it allows us to *reduce* the dimensionality of our dataset from two dimensions to one. We call the point on a line that is nearest to a given point the **projection** of that point onto the line; in the figure above, the projection of each point onto the line is shown in red. As a result, the collection of projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
+Another benefit of finding the first principal component of a dataset is that it allows us to *reduce* the dimensionality of our dataset from two dimensions to one. We call the point on a line that is nearest to a given point the **projection** of that point onto the line; in the figure above, the projection of each point onto the line is shown in red. As a result, the projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
 
-Dimension reduction may not seem useful at all, but it becomes more powerful as we increase the number of dimensions. With that in mind, say that we wanted to generalize the ideas above to three-dimensional space. The first principal component would offer a one-dimensional explanation of the variance in the data, but perhaps a line is insufficient to this end. Maybe the points all lie very near to a plane (a two-dimensional object), and projecting these points onto the plane would reduce the dataset to two dimensions.
+Say that we wanted to generalize the ideas above to three-dimensional space. The first principal component would offer a one-dimensional explanation of the variance in the data, but perhaps a line is insufficient to this end. Maybe the points all lie very near to a plane (a two-dimensional object), and projecting these points onto the nearest plane would effectively reduce the dataset to two dimensions.
 
-Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but it is possible to generalize these concepts mathematically. Given a collection of *m* data points (vectors) in *n*-dimensional space, we are looking for a *d*-dimensional **hyperplane**, or an embedding of *d*-dimensional space inside *n*-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on the hyperplane, we reduce the dimension of the dataset from *n* to *d*. This approach, which is over 100 years old, is called **principal component analysis (PCA)**; a closely related concept called **singular value decomposition** was developed in the 19th century.
+Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but it is possible to generalize these concepts mathematically. Given a collection of *m* data points (vectors) in *n*-dimensional space, we are looking for a *d*-dimensional **hyperplane**, or an embedding of *d*-dimensional space inside *n*-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on this hyperplane, we reduce the dimension of the dataset from *n* to *d*.
 
-Although PCA is old, it is one of the fundamental tools of statistical analysis in an era defined by growing datasets. We will soon apply this approach to reduce the dimensions of our shape space; first, we make a brief aside to discuss a different biological problem in which the application of PCA provided amazing insights.
+This approach, which is over 100 years old, is called **principal component analysis (PCA)**; a closely related concept called **singular value decomposition** was developed in the 19th century.
+
+**Note:** It can be shown that if *d*<sub>1</sub> is smaller than *d*<sub>2</sub>, then the hyperplane provided by PCA of dimension *d*<sub>1</sub> is a subset of the hyperplane of dimension *d*<sub>2</sub>. For example, the first principal component provided by PCA when *d* = 1 is always found within the plane of dimension 2 when *d* = 2.
+{: .notice--warning}
+
+PCA may be old, but it is one of the fundamental tools of statistical analysis in an era defined by growing datasets. We will soon apply it to reduce the dimensions of our shape space; first, we make a brief aside to discuss a different biological problem in which the application of PCA has provided amazing insights.
 
 ## Genotyping: PCA is more powerful than you think
 
-Have you ever wondered how genetic testing companies  identify individuals' ethnicity from a saliva sample? After isolating the DNA in a sample, researchers identify hundreds of thousands of **markers** within the DNA, or locations in the DNA that are common sources of variation in humans. The most commonly type of marker is a single nucleotide (A, C, G, or T).
+Biologists have identify hundreds of thousands of **markers**, locations within human DNA that that are common sources of human variation. The most commonly type of marker is a single nucleotide (A, C, G, or T). In the process of **genotyping**, a service provided by companies as part of the booming ancestry industry, an individual's markers are determined from a DNA sample.
 
-An individual's *n* markers can be converted to an *n*-dimensional vector *v* such that *v*(*i*) is 1 if the individual possesses the variant for a marker and *v*(*i*) is 0 if the individual has the more common version of the marker. (The mathematically astute reader will notice that this vector lies on one of the many corners of an *n*-dimensional hypercube.)
+An individual's *n* markers can be converted to an *n*-dimensional vector *v* such that *v*(*i*) is 1 if the individual possesses the variant for a marker and *v*(*i*) is 0 if the individual has the more common version of the marker.
 
-Because *n* is so large --- and in the early days of ancestry companies it far outnumbered the number of individual samples --- we need to be wary of the curse of dimensionality. When we apply PCA with *d* = 2 to produce a lower-dimensional projection of the data, we see some amazing results that helped launch the multi-billion dollar human ancestry industry.
+**Note:** The mathematically astute reader will notice that this vector lies on one of the many corners of an *n*-dimensional hypercube.
+{: .notice--warning}
 
-The figure below shows a two-dimensional projection for individuals of known European ancestry. Even though we have condensed hundreds of thousands of dimensions to two, the projected points reconstruct the map of Europe.
+Because *n* is so large --- and in the early days of genotyping studies it far outnumbered the number of individual samples --- we need to be wary of the curse of dimensionality. When we apply PCA with *d* = 2 to produce a lower-dimensional projection of the data, we will see some amazing results that helped launch a multi-billion dollar industry.
+
+The figure below shows a two-dimensional projection for individuals of known European ancestry. Even though we have condensed hundreds of thousands of dimensions to just two, and even though we are not capturing any information about the ancestry of the individuals other than their DNA, the projected data points reconstruct the map of Europe.
 
 [![image-center](../assets/images/600px/genotyping_europe.png){: .align-center width="500px"}](../assets/images/genotyping_europe.png)
-The projection of a collection of marker vectors sampled from individuals of known European ethnicity onto the plane produced by PCA with *d* = 2. Individuals cluster by country, and neighboring countries remain nearby in the projected plane.[^Novembre2008]
+The projection of a collection of marker vectors sampled from individuals of known European ethnicity onto the plane produced by PCA with *d* = 2. Individuals cluster by country, and neighboring European countries remain nearby in the projected dataset.[^Novembre2008]
 {: style="font-size: medium;"}
 
-If we zoom in on Switzerland, we can see that the countries around Switzerland tend to pull individuals toward them based on language spoken.
+If we zoom in on Switzerland, we can see that the countries around Switzerland tend to pull individuals toward them based on language spoken (see figure below).
 
 [![image-center](../assets/images/600px/genotyping_switzerland.png){: .align-center width="400px"}](../assets/images/genotyping_switzerland.png)
-A PCA plot (*d* = 2) of individuals from Switzerland as well as nearby countries shows that an individual's mother tongue correlates with the individual's genetic similarity to representatives from a neighboring country where that language is spoken.[^Novembre2008]
+A PCA plot (*d* = 2) of individuals from Switzerland as well as neighboring countries shows that an individual's mother tongue correlates with the individual's genetic similarity to representatives from the neighboring country where that language is spoken.[^Novembre2008]
 {: style="font-size: medium;"}
 
-And when we zoom farther out, we can see continental patterns emerge as well, with India standing out as its own entity. What is particularly remarkable about all these figures is that humans on the whole are genetically very similar, and yet PCA is able to find evidence of human migrations lurking within the small differences we do have.
+And if we zoom farther out, then we can see continental patterns emerge, with India standing out as its own entity. What is particularly remarkable about all these figures is that humans on the whole are genetically very similar, and yet PCA is able to find evidence of human migrations and separation lurking within our DNA.
 
 [![image-center](../assets/images/600px/genotyping_continents.png){: .align-center width="400px"}](../assets/images/genotyping_continents.png)
 A PCA plot (*d* = 2) shows clustering of individuals from Europe, Asia, Africa, and India.[^Xing2009]
 {: style="font-size: medium;"}
 
-Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to use CellOrganizer to build a shape space for our WBC images and apply PCA to this shape space to produce a lower-dimensional representation of the shape space.
+Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to use CellOrganizer to build a shape space for our WBC images and apply PCA to this shape space to produce a lower-dimensional representation of the space that we can visualize.
 
 **Note:** Before visiting this tutorial, we should point out that CellOrganizer is a much more flexible and powerful software resource than what is shown in the confines of this tutorial. For example, CellOrganizer not only infers properties from cellular images, it is able to build *generative* models that can form simulated cells in order to infer cellular properties. For more on what CellOrganizer can do, consult the <a href="http://www.cellorganizer.org/publications/" target="_blank">publications</a> page at its homepage.
 {: .notice--warning}
@@ -139,19 +143,19 @@ Now that we have established the power of PCA to help us see patterns in high-di
 
 ## Visualizing the WBC shape space after PCA
 
-The figures below show the shape space of WBC images, reduced to three dimensions by PCA, and in which each image is represented by a point that is color-coded according to its cell family.
+The figures below show the shape space of WBC images, reduced to three dimensions by PCA, in which each image is represented by a point that is color-coded according to its cell family.
 
 [![image-center](../assets/images/600px/cellorg_pca_graph.png){: .align-center}](../assets/images/cellorg_pca_graph.png)
-The projection of each WBC shape vector onto a three-dimensional hyperplane produces this three-dimensional space, in which each image is assigned a point and color-coded according to cell family.
+The projection of each WBC shape vector onto a three-dimensional PCA hyperplane produces the above three-dimensional space. Granulocytes are shown in blue, lymphocytes are shown in orange, and monocytes are shown in green.
 {: style="font-size: medium;"}
 
-As we mentioned in the tutorial, we can also subdivide granulocytes into basophils, eosinophils, and neutrophils. Updating our labels according to this subdivision produces the following figure.
+We can also subdivide granulocytes into basophils, eosinophils, and neutrophils. Updating our labels according to this subdivision produces the following figure.
 
 [![image-center](../assets/images/600px/cellorg_pca_graph_cell.png){: .align-center}](../assets/images/cellorg_pca_graph_cell.png)
-The reduced dimension shape space from the previous figure, with granulocytes further subdivided into three classes.
+The reduced dimension shape space from the previous figure, with granulocytes subdivided into basophils, eosinophils, and neutrophils.
 {: style="font-size: medium;"}
 
-Although images from the same family do not cluster as tightly as the iris flower dataset --- which could be criticized as an unrealistic representation of the noise inherent in most real datasets --- we do see that images appear to be near other images of the same type. This fact should give us hope that proximity in the dimension-reduced space may help us correctly classify images of unknown type, which we will attempt to do in the next lesson.
+Although images from the same family do not cluster as tightly as the iris flower dataset --- which could be criticized as an unrealistic representation of the noise inherent in most real datasets --- images from the same type do appear to be nearby. This fact should give us hope that proximity in a dimension-reduced space may help us correctly classify images of unknown type.
 
 [Next lesson](training){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
