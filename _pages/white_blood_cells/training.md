@@ -100,11 +100,11 @@ A hypothetical COVID test confusion matrix.
 
 Once again, this test has lower accuracy than one that returns negative for all individuals, but we will now show metrics for which it is superior.
 
-The **recall** (a.k.a. **sensitivity**) of a two-class classifier is the percentage of positive cases that the test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives (found by summing the top row of the confusion matrix). For our hypothetical COVID confusion matrix in the table above, the recall is 1,000/(1,000 + 500) = 0.667. Recall ranges from 0 to 1, with larger values indicating that the test is "sensitive", meaning that it can identify true positives out of patients who actually are positive.
+The **recall** (a.k.a. **sensitivity**) of a two-class classifier is the percentage of positive cases that the test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives (found by summing the top row of the confusion matrix). For our hypothetical COVID confusion matrix in the table above, the recall is 1,000/(1,000 + 500) = 66.7%. Recall ranges from 0 to 1, with larger values indicating that the test is "sensitive", meaning that it can identify true positives out of patients who actually are positive.
 
-The **specificity** of a test is an analogous metric for patients whose actual status is negative. It measures the ratio of true negatives to the sum of true negatives and false positives (found by summing the second row of the confusion matrix). For the hypothetical COVID test confusion matrix, the test specificity is 198,000/(198,000 + 2,000) = 0.99.
+The **specificity** of a test is an analogous metric for patients whose actual status is negative. It measures the ratio of true negatives to the sum of true negatives and false positives (found by summing the second row of the confusion matrix). For the hypothetical COVID test confusion matrix, the test specificity is 198,000/(198,000 + 2,000) = 99%.
 
-Finally, the **precision** of a test is the percentage of positive tests that are correct, formed by taking the ratio of true positives to the sum of true positives and false positives (found by summing the first column of the confusion matrix). For example, the precision of our hypothetical COVID test is 1,000/(1,000 + 2,000) = 0.333.
+Finally, the **precision** of a test is the percentage of positive tests that are correct, formed by taking the ratio of true positives to the sum of true positives and false positives (found by summing the first column of the confusion matrix). For example, the precision of our hypothetical COVID test is 1,000/(1,000 + 2,000) = 33.3%.
 
 **STOP:** How could we trick a test to have recall close to 1? What about specificity? Precision?
 {: .notice--primary}
@@ -124,9 +124,9 @@ You may find all these terms confusing and difficult to keep straight. You are n
 
 ## Extending classification metrics to multiple classes
 
-As we return to our example of classifying images of WBC nuclei, we need to extend the ideas discussed in the previous section to handle more than two classes. To do so, we consider each class individually and treat this class as the "positive" case.
+To return to our example of classifying images of WBC nuclei, we need to extend the ideas discussed in the preceding section to handle more than two classes. To do so, we consider each class individually and treat this class as the "positive" case.
 
-To see how this works, we return to our iris flower dataset. Say that we wish to compute the recall, specificity, and precision for *Iris virginica* using the k-NN confusion matrix that we generated, reproduced below.
+We use the iris flower dataset to show how this works. Say that we wish to compute the recall, specificity, and precision for *Iris virginica* using the k-NN confusion matrix that we generated, reproduced below.
 
 | *Iris setosa* | *Iris versicolor* | *Iris virginica* |
 | :---: |  :----: | :---: |
@@ -143,21 +143,21 @@ We can simplify this confusion matrix into a two-class confusion matrix that com
 
 This simplification allows us to compute the recall, specificity, and precision for ths classifier with respect to *Iris virginica*.
 
-* recall: 46/(46+4) = 0.92
-* specificity: 47/(3+47) = 0.94
-* precision: 46/(46+3) = 0.939
+* recall: 46/(46+4) = 92%
+* specificity: 47/(3+47) = 94%
+* precision: 46/(46+3) = 93.9%
 
 **STOP:** Compute the recall, specificity, and precision for each of the other two iris species using the above confusion matrix.
 {: .notice--primary}
 
-Now that we understand more about how to quantify the performance of a classifier, we are now ready to apply k-NN to our WBC shape space (post-PCA of course!) and assess how well it performs.
+Now that we understand more about how to quantify the performance of a classifier, we are ready to apply k-NN to our WBC shape space (post-PCA of course!) and assess its performance.
 
 [Visit tutorial](tutorial_image_classification){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-## Results of applying a classifier to the WBC shape space
+## Applying a classifier to the WBC shape space
 
-If we run k-NN on our shape space, with *d* (the number of dimensions to use for PCA) equal to 10, *k* (the number of nearest neighbors to consider when assigning a class) equal to 1, and *f* (the number of folds) equal to 10, then we obtain the confusion matrix shown below, which has an accuracy of 84.3% and a weighted average of precision and recall over all three classes of 0.857 and 0.843, respectively.
+If we run k-NN on our shape space, using *d* (the number of dimensions in the PCA hyperplane) equal to 10, *k* (the number of nearest neighbors to consider when assigning a class) equal to 1, and *f* (the number of folds) equal to 10, then we obtain the confusion matrix shown below. For this dataset, k-NN has an accuracy of 84.3% and a weighted average of precision and recall over all three classes of 85.7% and 84.3%, respectively.
 
 | Granulocyte | Monocyte | Lymphocyte |
 | :---: |  :----: | :---: |
@@ -165,9 +165,9 @@ If we run k-NN on our shape space, with *d* (the number of dimensions to use for
 | 14 | 6 | 1 |
 | 5 | 2 | 26 |
 
-These three values of *d*, *k*, and *f* appear to be close to optimal, and a natural question is to ask why this is the case.
+These three values of *d*, *k*, and *f* appear to be close to optimal, meaning that changing them does not improve our classification metrics. We should ask why this is the case.
 
-We start with *d*, the dimension of the hyperplane used by PCA to reduce the dimension of the data. If we set *d* too large, then once again the curse of dimension strikes. Using *d* = 344 produces the baffling confusion matrix below, in which every element in the space is closest to a lymphocyte.
+We start with *d*. If we set *d* too large, then once again the curse of dimension strikes. Using *d* equal to 344 (with *k* equal to 1 and *f* equal to 10) produces the baffling confusion matrix below, in which every element in the space is somehow closest to a lymphocyte.
 
 | Granulocyte | Monocyte | Lymphocyte |
 | :---: |  :----: | :---: |
@@ -175,7 +175,7 @@ We start with *d*, the dimension of the hyperplane used by PCA to reduce the dim
 | 0 | 0 | 21 |
 | 0 | 0 | 33 |
 
-And using *d* = 3, we obtain better results, but we have reduced the dimension so much that we start to lose the signal in the data.
+Using *d* = 3, we obtain better results, but we have reduced the dimension so much that we start to lose the signal in the data.
 
 | Granulocyte | Monocyte | Lymphocyte |
 | :---: |  :----: | :---: |
@@ -183,7 +183,7 @@ And using *d* = 3, we obtain better results, but we have reduced the dimension s
 | 16 | 5 | 0 |
 | 20 | 0 | 13 |
 
-As for *k*, it may seem that taking more neighbors into account would be helpful. But because there are so many granulocytes in the data, the effects of random noise will mean that as we increase *k*, we threaten to start incorporating granulocytes that just happen to be nearby in the dataset. For example, when *k* is equal to 5, every monocyte is assigned as a granulocyte, as shown below.
+We next consider *k*. It might seem that taking more neighbors into account would be helpful. But because of the class imbalance toward granulocytes, the effects of random noise will mean that as we increase *k*, we will start considering granulocytes that just happen to be lurking nearby. For example, when *k* is equal to 5, every monocyte is classified as a granulocyte, as shown in the confusion matrix below (with *d* equal to 10 and *f* equal to 10).
 
 | Granulocyte | Monocyte | Lymphocyte |
 | :---: |  :----: | :---: |
@@ -193,36 +193,36 @@ As for *k*, it may seem that taking more neighbors into account would be helpful
 
 The question of the number of folds, *f*, is trickier. Increasing this parameter does not change the confusion matrix much, but if *f* is too small, then we ignore too many known classes of our data.
 
-However, we still have a problem, which is that although k-NN can identify granulocytes and lymphocytes quite well, it performs poorly on monocytes because of the **class imbalance** in our data. We have so few monocytes that it is rare to encounter another one in the shape space.
+However, we still have a problem. Although k-NN can identify granulocytes and lymphocytes quite well, it performs poorly on monocytes because of the class imbalance in our data. We have so few monocytes that it is rare to encounter another one in the shape space.
 
-Statisticians have devised a variety of approaches to address class imbalance. We could **undersample** our data by excluding a random sample of the granulocytes. Undersampling works better when we have a huge amount of data, and in this case, it would risk plummeting the classifier's performance on granulocytes.
+Statisticians have devised a variety of approaches to address class imbalance. We could **undersample** our data by excluding a random sample of the granulocytes. Undersampling works better when we have a large amount of data, so that throwing out some of the data does not cause problems. In our case, our dataset is small to begin with, and undersampling would risk plummeting the classifier's performance on granulocytes.
 
-We could also try a different classifier (and in the tutorial we encouraged you to do so). One idea is to use a **cost-sensitive classifier** that charges a variable penalty for assigning an element to the wrong class, and then minimizes the total cost over all elements. For example, classifying a monocyte as a granulocyte would receive a greater penalty than classifying a granulocyte as a monocyte. Such a classifier would help increase the number of images that are classified as monocytes, although it would also incorporate incorrectly classified monocytes as well.
+We could also try a different classifier. One idea is to use a **cost-sensitive classifier** that charges a variable penalty for assigning an element to the wrong class, and then minimizes the total cost over all elements. For example, classifying a monocyte as a granulocyte would receive a greater penalty than classifying a granulocyte as a monocyte. A cost-sensitive classifier would help increase the number of images that are classified as monocytes, although it would also incorporate incorrectly classified monocytes as well.
 
-Yet ultimately, k-NN outperforms much more advanced classifiers on this dataset. It may be a relatively simple approach, but it also is a great match for classifying images within a WBC shape space, since proximity in this space indicates that two WBCs belong to the same family.
+Yet ultimately, k-NN outperforms much more advanced classifiers on this dataset. It may be a relatively simple approach, but k-NN is also a great match for classifying images within a WBC shape space, since proximity in this space indicates that two WBCs belong to the same family.
 
 ## Limitations of our WBC image classification pipeline
 
-This is not to say that we cannot make improvements to our algorithm. After all, our model requires a number of steps from the intake of data to their ultimate classification, which provides several potential failure points.
+Even though k-NN has performed reasonably well, we can still make improvements to our algorithm. After all, our model requires a number of steps from the intake of data to their ultimate classification, which means that several potential failure points could arise.
 
-We will start with data. Algorithms are beautiful, but if you have great data, then a very simple approach will probably give you a great result, and if you have bad data, then no amount of algorithmic wizardry will help you. An example of "good data" is the iris flower dataset; the flowers were studied very exactly, with no mistakes, and the features chosen very clearly differentiate the elements in the dataset. Although this dataset provides a great motivating example, the pattern in the data is so obvious that it almost seems silly to run a classifier on it.
+We will start with data. Algorithms are beautiful, but if we have great data, then a relatively simple approach will probably give a great result; if we have bad data, then no amount of algorithmic wizardry will save us. An example of "good data" is the iris flower dataset; the features chosen were measured precisely and differentiate the data so clearly that it almost seems silly to run a classifier.
 
-In our case, we have very low resolution WBC images, and not many of them. We consider the limitations of the data to be a feature of this chapter, not a bug, as they allow us to focus on what is a very common concern in data analysis. A natural thing to do now would be to look for a larger, higher resolution dataset with less class imbalance.
+In our case, we have a small collection of very low resolution WBC images, which limits the performance of any classifier before we begin. Yet these data limitations are a feature of this chapter, not a bug, as they allow us to highlight a very common issue in data analysis. Now that we have built a classification pipeline, we should look for a larger dataset with higher-resolution images less class imbalance.
 
-The next failure point in our model is our segmentation pipeline. Earlier in the module, we saw that this pipeline did not perfectly segment the nucleus from every image, sometimes capturing only a part of the nucleus. Perhaps we could devise a test for incorrect segmentations, excluding an image if the segmented nucleus is below some threshold size.
+The next failure point in our model is our segmentation pipeline. Earlier in the module, we saw that this pipeline did not perfectly segment the nucleus from every image, sometimes capturing only a fragment of the nucleus. Perhaps we could devise a test for incorrect segmentations, excluding an image from downstream analysis if the segmented nucleus is below some threshold size.
 
-Then, we handed off the segmented images to CellOrganizer to build a shape space from the vectorized boundaries of the nuclei. However, the low resolution of the nuclear images will mean that the vectorization of each nuclear image will be noisy.
+We then handed off the segmented images to CellOrganizer to build a shape space from the vectorized boundaries of the nuclei. Even though CellOrganizer does what we tell it to do, the low resolution of the nuclear images will mean that the vectorization of each nuclear image will be noisy.
 
-But even if we use higher resolution images and adjust our segmentation pipeline, we are still only building a model from the *shape* of the nucleus. We didn't even take the size of the nucleus into account! If we return to the three sample WBC images from the introduction, reproduced in the figure below, then we can see that the lymphocyte nucleus is much smaller than the other two nuclei, which is true in general. To address this concern, when vectorizing the images, we could devote one of the coordinates of each vector to the size (in pixels) of the segmented nucleus. This change would hopefully help improve the accuracy of our classifier, especially on lymphocytes.
+But even if we use higher resolution images and adjust our segmentation pipeline, we are still only building a model from the *shape* of the nucleus. We didn't even take the size of the nucleus into account! If we return to the three sample WBC images from the introduction, reproduced in the figure below, then we can see that the lymphocyte nucleus is much smaller than the other two nuclei, which on average is true in general. To address this concern, when vectorizing the images, we could devote one of the coordinates of each vector to the size (in pixels) of the segmented nucleus. This change would hopefully help improve the performance of our classifier, especially on lymphocytes.
 
 {% include gallery caption="Three images from the blood cell image dataset showing a granulocyte (left), a monocyte (center), and a lymphocyte (right)." %}
 
-**STOP**: What other features could we extract from our images?
+**STOP**: What other quantitative features could we extract from our images?
 {: .notice--primary}
 
-Finally, we come to the classification algorithm itself. We used k-NN because it is intuitive to newcomers, but perhaps a more complicated algorithm could peer deeper into our dataset to find hidden signals.
+Finally, we discuss the classification algorithm itself. We used k-NN because it is intuitive to newcomers, but perhaps a more complicated algorithm could peer deeper into our dataset to find hidden signals.
 
-It is a testament to the methods discussed in this module that we were able to obtain even moderately good results given the quality and size of our data, as well as the fact that we only took into account the shape of each cell's nucleus. It also leads us to wonder: how much better could we do? In this module's conclusion, we discuss the foundations of the approach that constitute the best known solution to WBC image classification.
+Ultimately, obtaining even moderate classification performance is impressive given the quality and size of our data, and the fact that we only modeled the shape of each cell's nucleus. It also leads us to wonder how much better we could do. In this module's conclusion, we discuss the foundations of the approach that constitute the best known solution for WBC image classification.
 
 [Next lesson (coming soon!)](){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
