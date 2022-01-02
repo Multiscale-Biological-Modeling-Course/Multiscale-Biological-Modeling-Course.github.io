@@ -24,7 +24,7 @@ The most variable region between the two viruses in the spike protein is the **r
 
 {% include video id="e2Qi-hAXdJo" provider="youtube" %}
 
-The fact that the region bonding to the target human enzyme has mutated so much makes it a fascinating region of study. Do the mutations that SARS-CoV-2 has accumulated somehow make it easier for the virus to infect human cells?
+The fact that the region binding to the target human enzyme has mutated so much makes it a fascinating region of study. Do the mutations that SARS-CoV-2 has accumulated somehow make it easier for the virus to infect human cells?
 
 As we hone in on the RBM, the figure below shows an alignment of the 70 amino acid long RBM region from SARS-CoV and SARS-CoV-2 (as well as two animal viruses).
 

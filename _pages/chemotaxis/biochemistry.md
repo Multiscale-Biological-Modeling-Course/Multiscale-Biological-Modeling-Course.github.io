@@ -10,7 +10,7 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## Transducing a signal to a cell's interior
 
-In the previous two lessons, we discussed how a cell recognizes an extracellular signal when receptor proteins on the cell's surface bond to ligands, and how to model the reversible ligand-receptor reaction using stochastic simulation via the Gillespie algorithm. We now turn to the question of how the cell conveys the extracellular signal it has detected via the process of signal transduction to the cell's interior and produces an action.
+In the previous two lessons, we discussed how a cell recognizes an extracellular signal when receptor proteins on the cell's surface bind to ligands, and how to model the reversible ligand-receptor reaction using stochastic simulation via the Gillespie algorithm. We now turn to the question of how the cell conveys the extracellular signal it has detected via the process of signal transduction to the cell's interior and produces an action.
 
 For example, if *E. coli* senses an increase in the concentration of glucose, meaning that more ligand-receptor binding is taking place at the receptor that recognizes glucose, how does the bacterium *E. coli* change its behavior as a result of this increased binding?
 

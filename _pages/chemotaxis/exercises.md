@@ -10,7 +10,7 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## How does *E. coli* respond to repellents?
 
-Just as *E. coli* has receptors that bond to attractant ligands, it has other receptors that can bond to **repellent** ligands.
+Just as *E. coli* has receptors that bind to attractant ligands, it has other receptors that can bind to **repellent** ligands.
 
 **Exercise:** Based on what we have learned in this module about how *E. coli* and other bacteria act in the presence of an attractant, what do you think that the chemotaxis response is in the presence of a repellent? How do you think that the bacterium adjusts to relative changes of the repellent?
 {: .notice--success}
