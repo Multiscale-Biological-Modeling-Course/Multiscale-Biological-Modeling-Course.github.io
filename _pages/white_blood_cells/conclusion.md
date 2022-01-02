@@ -37,11 +37,16 @@ The foundations of deep learning were laid in 1943, with the (CITE)
 The components of a neuron. Electrical signals are passed down axons and exchanged at terminal boundaries between neurons. Image courtesy: Jennifer Walinga.
 {: style="font-size: medium;"}
 
-* Explain what an artificial neuron is: cite McCullough-Pitts and perceptrons
+* Explain what an artificial neuron is: cite McCullough-Pitts
 
 [![image-center](../assets/images/600px/components_of_neuron.png){: .align-center}](../assets/images/components_of_neuron.png)
-A McCullough-Pitts neuron with *n* = 2 and θ = 2. 
+A McCullough-Pitts neuron with *n* = 2 and θ = 2.
 {: style="font-size: medium;"}
+
+* perceptrons
+
+Perceptron: A neuron having a threshold θ and constants *w*<sub>1</sub>, *w*<sub>2</sub>, …, *w*<sub><em>n</em></sub>, which fires if and only if *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub> ≥ θ.
+
 
 <figure>
 	<a href="../assets/images/600px/cancer_classifier.png"><img src="../assets/images/cancer_classifier.png"></a>
