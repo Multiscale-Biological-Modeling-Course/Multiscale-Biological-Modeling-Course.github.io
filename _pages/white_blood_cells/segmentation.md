@@ -45,7 +45,7 @@ The granulocyte presented in the introduction (having ID 3 in our dataset).
 
 Researchers have developed many algorithms for cellular image segmentation, but no single approach can be used in all contexts. We therefore will identify the key attributes that make this dataset special and then use these features to develop our own segmentation algorithm.
 
-We therefore ask what makes the WBC nucleus so easy for a human to spot in the above blood cell. You may be screaming, “It is dark blue! How hard could it be?” But to train a computer to segment images by color, we should first understand how the computer represents color in images.
+We ask what makes the WBC nucleus so easy for a human to spot in the above blood cell. You may be screaming, “It is dark blue! How hard could it be?” But to train a computer to segment images by color, we should first understand how the computer represents color in images.
 
 ## The RGB color model
 
