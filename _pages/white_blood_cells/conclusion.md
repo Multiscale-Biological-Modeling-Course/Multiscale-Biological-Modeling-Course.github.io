@@ -31,29 +31,57 @@ As is the case for the skin lesion research, the currently best known classifier
 
 ## A brief introduction to neural networks
 
-The foundations of deep learning were laid in 1943, with the (CITE)
+**Neurons** are cells in the nervous system that are electrically charge and that use this charge as a method of communication to other cells. As you are reading this text, huge numbers of neurons are firing in your brain as it processes the visual information that it receives. The basic structure of a neuron is shown in the figure below.
 
 [![image-center](../assets/images/600px/components_of_neuron.png){: .align-center}](../assets/images/components_of_neuron.png)
 The components of a neuron. Electrical signals are passed down axons and exchanged at terminal boundaries between neurons. Image courtesy: Jennifer Walinga.
 {: style="font-size: medium;"}
 
-* Explain what an artificial neuron is: cite McCullough-Pitts
+In 1943, Warren McCulloch, a neuroscientist, and Walter Pitts, a logician, devised a small network modeling a neuron called a **McCulloch-Pitts neuron**. (CITE) A McCulloch-Pitts neuron has a fixed threshold θ  and takes as input *n* **binary variables** *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>, where each of these variables is equal to either 0 or 1. The MP neuron outputs 1 if *x*<sub>1</sub> + … + *x*<sub><em>n</em></sub> ≥ θ; otherwise, it returns 0. If an MP neuron outputs 1, then we say that it **fires**.
+
+The McCulloch-Pitts neuron with *n* equal to 2 and θ equal to 2 is shown in the figure below. The only way that this neuron will fire is if both inputs *x*<sub>1</sub> and *x*<sub>2</sub> are equal to 1.
 
 [![image-center](../assets/images/600px/components_of_neuron.png){: .align-center}](../assets/images/components_of_neuron.png)
-A McCullough-Pitts neuron with *n* = 2 and θ = 2.
+A McCullough-Pitts neuron with *n* = 2 and θ = 2. The neuron will fire precisely when both input variables are equal to 1; if either is equal to 0, then *x*<sub>1</sub> + *x*<sub>2</sub> will be less than θ and the neuron will not fire.
 {: style="font-size: medium;"}
 
-* perceptrons
+In 1957, Frank Rosenblatt generalized the McCulloch-Pitts neuron into a **perceptron**. A perceptron also has a threshold constant θ and *n* binary input variables *x*<sub><em>i</em></sub>, but it also includes a collection of real-valued constant weights *w*<sub><em>i</em></sub> that are applied to each input variable. That is, the neuron will output 1 (fire) precisely when *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub> ≥ θ.
 
-Perceptron: A neuron having a threshold θ and constants *w*<sub>1</sub>, *w*<sub>2</sub>, …, *w*<sub><em>n</em></sub>, which fires if and only if *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub> ≥ θ.
+**Note:** A McCulloch-Pitts neuron is a perceptron for which all of the *w*<sub><em>i</em></sub> are equal to 1.
+{: .notice--warning}
 
+For example, consider the perceptron shown in the figure below. We assign the weight *w*<sub><em>i</em></sub> to the edge connecting input variable *x*<sub><em>i</em></sub> to the neuron.
+
+[![image-center](../assets/images/600px/perceptron.png){: .align-center}](../assets/images/perceptron.png)
+A perceptron with two input variables. The perceptron includes a constant threshold and constant weights *w*<sub>1</sub> and *w*<sub>2</sub>. The perceptron outputs 1 precisely when the
+{: style="font-size: medium;"}
+
+We can generalize the perceptron even further. by allowing the input variables *x*<sub><em>i</em></sub> to have arbitrary real values (often, these inputs are constrained to be between 0 and 1). Then, rather than the neuron rigidly firing when *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub> is greater than or equal to θ, we pass this weighted sum into a function *f* called an **activation function**, so that the neuron's output is not 1 or 0 but rather *f*(*w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub>).
+
+A commonly used activation function is the **logistic function**, *f*(*x*) = 1/(1 + *e*<sup>-<em>x</em></sup>), shown in the figure below. Note that the output of this function ranges between 0 (when its input is very negative) and 1 (when its input is very positive).
+
+INSERT FIGURE
+
+**STOP:** What is the activation function used by a perceptron?
+{: .notice--primary}
+
+The figure below shows the most general form of an artificial neuron for two inputs.
+
+[![image-center](../assets/images/600px/activation_function.png){: .align-center}](../assets/images/activation_function.png)
+INSERT CAPTION
+{: style="font-size: medium;"}
+
+
+* Need general figure?
+
+* Most general form of network -- explain the parameters in the network.
 
 <figure>
 	<a href="../assets/images/600px/cancer_classifier.png"><img src="../assets/images/cancer_classifier.png"></a>
 	<figcaption>Our desired neural network for cancer classification of skin lesions.</figcaption>
 </figure>
 
-* Most general form of network -- explain the parameters in the network.
+
 
 * Convert input into a vector, and output should fall into classes.
 
