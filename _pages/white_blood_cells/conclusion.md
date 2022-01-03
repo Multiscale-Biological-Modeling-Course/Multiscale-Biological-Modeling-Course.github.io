@@ -33,9 +33,12 @@ As is the case for the skin lesion research, the currently best known classifier
 
 **Neurons** are cells in the nervous system that are electrically charge and that use this charge as a method of communication to other cells. As you are reading this text, huge numbers of neurons are firing in your brain as it processes the visual information that it receives. The basic structure of a neuron is shown in the figure below.
 
-[![image-center](../assets/images/600px/components_of_neuron.png){: .align-center}](../assets/images/components_of_neuron.png)
-The components of a neuron. Electrical signals are passed down axons and exchanged at terminal boundaries between neurons. Image courtesy: Jennifer Walinga.
-{: style="font-size: medium;"}
+* Updated figure:
+
+<figure>
+	<a href="../assets/images/components_of_neuron.png"><img src="../assets/images/600px/components_of_neuron.png"></a>
+	<figcaption>The components of a neuron. Electrical signals are passed down axons and exchanged at terminal boundaries between neurons. Image courtesy: Jennifer Walinga.</figcaption>
+</figure>
 
 In 1943, Warren McCulloch, a neuroscientist, and Walter Pitts, a logician, devised a small network modeling a neuron called a **McCulloch-Pitts neuron**. (CITE) A McCulloch-Pitts neuron has a fixed threshold θ  and takes as input *n* **binary variables** *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>, where each of these variables is equal to either 0 or 1. The MP neuron outputs 1 if *x*<sub>1</sub> + … + *x*<sub><em>n</em></sub> ≥ θ; otherwise, it returns 0. If an MP neuron outputs 1, then we say that it **fires**.
 
