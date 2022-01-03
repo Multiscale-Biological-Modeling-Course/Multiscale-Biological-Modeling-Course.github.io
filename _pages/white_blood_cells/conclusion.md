@@ -42,9 +42,10 @@ In 1943, Warren McCulloch, a neuroscientist, and Walter Pitts, a logician, devis
 
 The McCulloch-Pitts neuron with *n* equal to 2 and θ equal to 2 is shown in the figure below. The only way that this neuron will fire is if both inputs *x*<sub>1</sub> and *x*<sub>2</sub> are equal to 1.
 
-[![image-center](../assets/images/600px/MP_neuron.png){: .align-center}](../assets/images/MP_neuron.png)
-A McCullough-Pitts neuron with *n* = 2 and θ = 2. The neuron will fire precisely when both input variables are equal to 1; if either is equal to 0, then *x*<sub>1</sub> + *x*<sub>2</sub> will be less than θ and the neuron will not fire.
-{: style="font-size: medium;"}
+<figure>
+	<a href="../assets/images/MP_neuron.png"><img src="../assets/images/600px/MP_neuron.png"></a>
+	<figcaption>A McCullough-Pitts neuron with *n* = 2 and θ = 2. The neuron will fire precisely when both input variables are equal to 1; if either is equal to 0, then *x*<sub>1</sub> + *x*<sub>2</sub> will be less than θ and the neuron will not fire.</figcaption>
+</figure>
 
 In 1957, Frank Rosenblatt generalized the McCulloch-Pitts neuron into a **perceptron**. A perceptron also has a threshold constant θ and *n* binary input variables *x*<sub><em>i</em></sub>, but it also includes a collection of real-valued constant weights *w*<sub><em>i</em></sub> that are applied to each input variable. That is, the neuron will output 1 (fire) precisely when *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub> ≥ θ.
 
@@ -53,9 +54,10 @@ In 1957, Frank Rosenblatt generalized the McCulloch-Pitts neuron into a **percep
 
 For example, consider the perceptron shown in the figure below. We assign the weight *w*<sub><em>i</em></sub> to the edge connecting input variable *x*<sub><em>i</em></sub> to the neuron.
 
-[![image-center](../assets/images/600px/perceptron.png){: .align-center}](../assets/images/perceptron.png)
-A perceptron with two input variables. The perceptron includes a constant threshold and constant weights *w*<sub>1</sub> and *w*<sub>2</sub>. The perceptron outputs 1 precisely when the
-{: style="font-size: medium;"}
+<figure>
+	<a href="../assets/images/perceptron.png"><img src="../assets/images/600px/perceptron.png"></a>
+	<figcaption>A perceptron with two input variables. The perceptron includes a constant threshold and constant weights *w*<sub>1</sub> and *w*<sub>2</sub>. The perceptron outputs 1 precisely when the FILL IN</figcaption>
+</figure>
 
 We can generalize the perceptron even further. by allowing the input variables *x*<sub><em>i</em></sub> to have arbitrary real values (often, these inputs are constrained to be between 0 and 1). Then, rather than the neuron rigidly firing when *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub> is greater than or equal to θ, we pass this weighted sum into a function *f* called an **activation function**, so that the neuron's output is not 1 or 0 but rather *f*(*w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub>).
 
@@ -68,10 +70,10 @@ INSERT FIGURE
 
 The figure below shows the most general form of an artificial neuron for two inputs.
 
-[![image-center](../assets/images/600px/activation_function.png){: .align-center}](../assets/images/activation_function.png)
-INSERT CAPTION
-{: style="font-size: medium;"}
-
+<figure>
+	<a href="../assets/images/activation_function.png"><img src="../assets/images/600px/activation_function.png"></a>
+	<figcaption>INSERT CAPTION</figcaption>
+</figure>
 
 * Need general figure?
 
