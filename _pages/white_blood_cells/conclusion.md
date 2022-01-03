@@ -44,7 +44,7 @@ In 1943, Warren McCulloch, a neuroscientist, and Walter Pitts, a logician, devis
 
 The McCulloch-Pitts neuron with *n* equal to 2 and θ equal to 2 is shown in the figure below. The only way that this neuron will fire is if both inputs *x*<sub>1</sub> and *x*<sub>2</sub> are equal to 1.
 
-[![image-center](../assets/images/600px/components_of_neuron.png){: .align-center}](../assets/images/components_of_neuron.png)
+[![image-center](../assets/images/600px/MP_neuron.png){: .align-center}](../assets/images/MP_neuron.png)
 A McCullough-Pitts neuron with *n* = 2 and θ = 2. The neuron will fire precisely when both input variables are equal to 1; if either is equal to 0, then *x*<sub>1</sub> + *x*<sub>2</sub> will be less than θ and the neuron will not fire.
 {: style="font-size: medium;"}
 
