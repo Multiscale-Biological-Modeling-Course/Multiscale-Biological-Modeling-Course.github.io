@@ -14,7 +14,7 @@ That day has come. Kind of.
 
 Every two years since 1994, a global effort called **Critical Assessment of protein Structure Prediction (CASP)** has allowed modelers to test their protein structure prediction algorithms against each other. The contest organizers compile a (secret) collection of experimentally verified protein structures and then run all submitted algorithms against these proteins.
 
-The 14th iteration of this contest, held in 2020, was won in a landslide. The second version of <a href="https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology" target="_blank">AlphaFold</a>, one of the projects of DeepMind (an Alphabet subsidiary), vastly outperformed the world's foremost structure prediction approaches, including those that we discussed in this module.
+The 14th iteration of this contest, held in 2020, was won in a landslide. The second version of <a href="https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology" target="_blank">AlphaFold</a>,[^Jumper2021] one of the projects of DeepMind (an Alphabet subsidiary), vastly outperformed the world's foremost structure prediction approaches, including those that we discussed in this module.
 
 The algorithm powering AlphaFold is an extremely involved method based on deep learning, a topic that we will discuss in this work's final module. If you're interested in learning more about this algorithm, consult the AlphaFold website or this excellent blog post by Mohammed al Quraishi: <a href="https://bit.ly/39Mnym3" target="_blank">https://bit.ly/39Mnym3</a>.
 
@@ -46,7 +46,7 @@ AlphaFold obtained an impressive median RMSD of 1.6 angstroms for its predicted 
 
 Furthermore, about a third of AlphaFold's CASP14 predictions have an RMSD over 2.0 angstroms, which we mentioned in the previous lesson is often used as a threshold for whether a predicted structure is reliable. And there is no way of knowing in advance whether AlphaFold will perform well on a given protein, unless we validate the protein's structure. For example, AlphaFold published their predictions of the structures of other SARS-CoV-2 proteins[^DeepMind], none of which had validated structures in 2020. Most of these predictions are probably accurate, but we cannot know for sure without experimentation.
 
-Finally, because AlphaFold applies a deep learning approach, the algorithm is "trained" using a database of known protein structures, which makes it more likely to succeed if a protein is similar to a known structure. But it is the proteins with structures *dissimilar* to any known structure that possess some of the greatest scientific interest.
+Finally, the AlphaFold algorithm is "trained" using a database of known protein structures, which makes it more likely to succeed if a protein is similar to a known structure. But it is the proteins with structures *dissimilar* to any known structure that possess some of the greatest scientific interest.
 
 Pronouncing protein structure prediction to be solved may be hasty, but we will likely never again see such a clear improvement to the state of the art for structure prediction. AlphaFold is probably the final great innovation in a research problem that has puzzled biologists for fifty years.
 
@@ -58,6 +58,10 @@ Thus ends part 1 of this module, but there is still much for us to discuss. We h
 [^AlQuraishi]: AlQuraishi, M. 2020, December 8. AlphaFold2 @ CASP14: “It feels like one’s child has left." Retrieved January 20, 2021, from <a href="https://bit.ly/39Mnym3" target="_blank">https://bit.ly/39Mnym3</a>
 
 [^Curry]: Curry, S. 2020, December 12. No, DeepMind has not solved protein folding. Retrieved January 20, 2021, from <a href="http://occamstypewriter.org/scurry/2020/12/02/no-deepmind-has-not-solved-protein-folding/" target="_blank">http://occamstypewriter.org/scurry/2020/12/02/no-deepmind-has-not-solved-protein-folding/</a>
+
+[^Jumper2021]: Jumper, J et al. 2021. Highly accurate protein structure prediction with AlphaFold. Nature 596: 583–58. [Available online](https://www.nature.com/articles/s41586-021-03819-2)
+
+[^Sim2017]: Sim M, Koirala S, Picton D, Strahl H, Hoskisson PA, Rao CV, Gillespie CS, Aldridge PD. 2017. Growth rate control of flagellar assembly in *Escherichia coli* strain RP437. Scientific Reports 7:41189. [Available online](https://www.nature.com/articles/srep41189#:~:text=Escherichia%20coli%20is%20a%20prominent,distributed%20across%20the%20cell%20surface.)
 
 [^Science]: Service, R. F. (2020, November 30). ‘The game has changed.’ AI triumphs at solving protein structures. Science. doi:10.1126/science.abf9367
 
