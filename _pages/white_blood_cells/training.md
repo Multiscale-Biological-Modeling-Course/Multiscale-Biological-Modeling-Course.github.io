@@ -165,7 +165,7 @@ If we run k-NN on our shape space, using *d* (the number of dimensions in the PC
 | 14 | 6 | 1 |
 | 5 | 2 | 26 |
 
-These three values of *d*, *k*, and *f* appear to be close to optimal, meaning that changing them does not improve our classification metrics. We should ask why this is the case.
+These three values of *d*, *k*, and *f* appear to be close to optimal, in that changing them does not improve our classification metrics. We should ask why this is the case.
 
 We start with *d*. If we set *d* too large, then once again the curse of dimension strikes. Using *d* equal to 344 (with *k* equal to 1 and *f* equal to 10) produces the baffling confusion matrix below, in which every element in the space is somehow closest to a lymphocyte.
 
