@@ -24,7 +24,7 @@ Your doctor sometimes counts your blood cells to ensure that they are within hea
 
 The classic device used for counting blood cells is the \textdef{hemocytometer}{hemocytometer}{FILL IN}. In this device, a technician filters a small amount of blood onto a gridded slide and then counts the number of cells of each type in the squares on the grid. As a result, the technician can estimate the number of each type of cell per volume of blood.
 
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}
+\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
 \begin{qbox}[%
 Why might the size of the blood sample influence the estimate of blood cell count?
@@ -38,7 +38,7 @@ WBCs divide into families based on their structure and function, and some diseas
 
 We will work with a publicly available dataset (hosted at \url{https://github.com/Shenggan/BCCD_Dataset}) containing blood cell images that depict both RBCs and WBCs, as shown in \autoref{fig:three_families}. The cells have been applied with a stain in which a red-orange dye bonds to hemoglobin and a blue dye bonds to DNA and RNA. The red-orange dye will make the RBCs (which do not have DNA or RNA) look red, and the blue dye will make the WBC nuclei look purple.
 
-\autoref{fig:three_families} also illustrates the three main families of WBCs: \textdef{granulocytes}{granulocytes}{FILL IN}, \textdef{lymphocytes}{lymphocytes}{FILL IN}, and \textdef{monocytes}{monocytes}{}.  Granulocytes have a \textdef{multilobular nucleus}{multilobular nucleus}{FILL IN}, which consists of several round “lobes” that are linked by thin strands of nuclear material. Monocyte and lymphocyte nuclei only have a single lobe, but the shapes of the nuclei are quite different: lymphocyte nuclei tend to have a more rounded shape (taking up a greater fraction of the cell’s volume), whereas monocyte nuclei have a more irregular shape.
+\autoref{fig:three_families} also illustrates the three main families of WBCs: \textdef{granulocytes}{granulocytes}{FILL IN}, \textdef{lymphocytes}{lymphocytes}{FILL IN}, and \textdef{monocytes}{monocytes}{}.  Granulocytes have a \textdef{multilobular nucleus}{multilobular nucleus}{FILL IN}, which consists of several round “lobes” that are linked by thin strands of nuclear material. Monocyte and lymphocyte nuclei only have a single lobe, but the shapes of the nuclei are quite different: lymphocyte nuclei tend to have a more rounded shape (taking up a greater fraction of the cell’s volume), whereas monocyte nuclei have a more irregular shape.\\
 
 \begin{figure}[h]
 \centering
@@ -78,12 +78,12 @@ A few colors are shown in \autoref{fig:RGB_color_chart} along with their RGB equ
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.444\textwidth]{../images/RGB_color_chart.png}
+\includegraphics[width = 0.6\textwidth]{../images/RGB_color_chart.png}
 \caption{A collection of colors along with their RGB codes. This table corresponds to mixing colors of light instead of pigment, which causes some non-intuitive effects; for example, yellow is formed by mixing equal parts red and green. The last six colors appear muted because they only receive half of a given color value compared to a color that receives 256 units. If all three colors are mixed in equal proportions, then we obtain a color on the gray scale between white (maximum amount of all three colors) and black (no color). Source: https://excelatfinance.com/xlf/xlf-colors-1.php; Excel at Finance.}
 \label{fig:RGB_color_chart}
 \end{figure}
 
-The RGB model gives us an idea for finding a WBC nucleus. If we scan through the pixels in a blood cell image, we can “turn off” any pixels whose RGB color values are not sufficiently blue.
+The RGB model gives us an idea for finding a WBC nucleus. If we scan through the pixels in a blood cell image, we can “turn off” any pixels whose RGB color values are not sufficiently blue.\\
 
 \begin{qbox}[%
 You can find a color picker in \texttt{Utilities > Digital Color Meter} (Mac OS X) or by using ShareX for Windows. Open your color picker, and hover the picker over different parts of the the granulocyte image above. What are the typical RGB values for the WBC nucleus, and how do these RGB values differ from both the RBCs and the background of the image?
@@ -95,12 +95,12 @@ You can find a color picker in \texttt{Utilities > Digital Color Meter} (Mac OS 
 
 Using a color picker, we find (unsurprisingly) that the blue values for pixels inside a stained WBC nucleus are higher than those of the surrounding RBCs. We will therefore \textdef{binarize}{binarize}{FILL IN} our image by coloring a pixel white (RGB: (256, 256, 256)) if its blue value is above some threshold, and turning a pixel black (RGB: (0, 0, 0)) if its blue value is beneath some threshold.
 
-The binarized version of the cellular image from INSERT --- NEUTROPHIL for the threshold value of 153 is shown in \autoref{neutrophil_binarized_blue}. Unfortunately, we cannot clearly see the WBC nucleus in this binarized image because although the nucleus has high blue values, so does the image's background, since light colors are formed by mixing high percentages of red, green, and blue.
+The binarized version of the cellular image from \autoref{fig:three_families} (left) for the threshold value of 153 is shown in \autoref{neutrophil_binarized_blue}. Unfortunately, we cannot clearly see the WBC nucleus in this binarized image because although the nucleus has high blue values, so does the image's background, since light colors are formed by mixing high percentages of red, green, and blue.
 
-\begin{figure}[p]
+\begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.444\textwidth]{../images/neutrophil_binarized_blue.png}
+\includegraphics[width = 0.25\textwidth]{../images/neutrophil_binarized_blue.png}
 \caption{A binarized version of the granulocyte from \autoref{fig:three_families} (left) (having image ID 3 in our dataset). A pixel is colored white if it has a blue value of 153 or greater, and the pixel is colored black otherwise. The region with the nucleus is not clearly visible because much of the background of the image, which is very light, also has a high blue value.}
 \label{fig:neutrophil_binarized_blue}
 \end{figure}
@@ -122,7 +122,7 @@ We were unable to distinguish between the image background and the WBC nucleus u
 \label{fig:neutrophil_binarized_other_colors}
 \end{figure}
 
-It would seem that we should work with the binarized image based on the red threshold, which contains the clearest image of the nucleus among the three binarized images. However, note that each threshold was successful in eliminating some of the non-nuclear parts of the image. For example, consider the white blob in the top left of the binarized image based on the red threshold. (CITE FIGURE)
+It would seem that we should work with the binarized image based on the red threshold, which contains the clearest image of the nucleus among the three binarized images. However, note that each threshold was successful in eliminating some of the non-nuclear parts of the image. For example, consider the white blob in the top left of the binarized image based on the red threshold in \autoref{fig:neutrophil_binarized_other_colors} (right).
 
 This insight gives us an idea: if each of the three images is successful at excluding some part of the image, then let us produce a fourth image such that a pixel is white if it is white in all three binarized images. In the following tutorial, we will build an R pipeline that implements this approach to produce binarized WBC nuclei for all our blood cell images.
 
@@ -211,7 +211,7 @@ Anderson measured four attributes, or \textdef{features}{features}{FILL IN}, of 
 7.1 & 3.0 & 5.9 & 2.1 & \textit{I. virginica} \\
 6.3 & 2.9 & 5.6 & 1.8 & \textit{I. virginica} \\
 \end{tabular}
-\caption{A table containing values of the four features for twelve members of the iris flower dataset. Distances are in centimeters. The complete dataset was accessed from the University of California, Irvine Machine Learning Repository.}
+\caption{A table containing values of the four features for twelve members of the iris flower dataset, along with each flower's species. Distances are in centimeters. The complete dataset was accessed from the University of California, Irvine Machine Learning Repository.}
 \label{fig:iris_feature_table}
 \end{figure}
 
@@ -233,7 +233,7 @@ If we were to use only two features in the Iris flower dataset, then a flower's 
 \label{fig:iris_petal_data}
 \end{figure}
 
-Note how stark the pattern in \autoref{fig:iris_petal_data} is. Even though we chose only two features from the Iris flowers, the points associated with the flowers can be divided into three main clusters by species. In other words, nearby points tend to correspond to flowers from the same species.
+Note how stark the pattern is in \autoref{fig:iris_petal_data}. Even though we chose only two features from the iris flowers, the points associated with the flowers can be divided into three main clusters by species. In other words, nearby points tend to correspond to flowers from the same species.
 
 If we were to use all four features for the iris dataset, then every flower would be represented by a point in four-dimensional space. For example, the first flower in our initial table of iris features would be represented by the point $(5.1, 3.5, 1.4, 0.2)$. In general, when classifying a collection of data with \textvar{n} features, each element in the dataset can be represented by a \textdef{feature vector}{feature vector}{FILL IN} of length \textvar{n}, whose \textvar{i}-th value corresponds to its value for the \textvar{i}-th feature.
 
@@ -304,9 +304,9 @@ Imagine that you are a traveler to Earth and come across the ruins of New York C
 \centering
 \tabcolsep = 1 em
 \mySfFamily
-\begin{tabular}{c c c c c c c}
-& \textbf{New York} & \textbf{Los Angeles} & \textbf{Pittsburgh} & \textbf{Miami} & \textbf{Houston} & \textbf{Seattle} \\
-\textbf{New York} & 0 & 2805 & 371 & 1283 & 1628 & 2852 \\
+\begin{tabular}{r c c c c c c}
+& \textbf{NYC} & \textbf{LA} & \textbf{Pitt.} & \textbf{Miami} & \textbf{Houston} & \textbf{Seattle} \\
+\textbf{New York City} & 0 & 2805 & 371 & 1283 & 1628 & 2852 \\
 \textbf{Los Angeles} & 2805 & 0 & 2427 & 2733 & 1547 & 1135 \\
 \textbf{Pittsburgh} & 371 & 2427 & 0 & 1181 & 1388 & 2502 \\
 \textbf{Miami} & 1283 & 2733 & 1181 & 0 & 1189 & 3300 \\
@@ -333,7 +333,7 @@ As we mentioned in the previous section, we would like to apply k-NN to our exam
 
 You may notice that the problem of ``vectorizing'' a WBC image is similar to one that we have already encountered in \autoref{chapter:coronavirus}, when we vectorized a protein structure as the collection of locations of its alpha carbons. Given a protein structure \textvar{S}, we sampled the \textvar{n} alpha carbons from \textvar{S}, producing a vector $s = (s_1, \ldots, s_n)$, where $s_i$ is the position of the \textvar{i}-th alpha carbon of \textvar{S}.
 
-We will apply the same idea to vectorize our segmented WBCs. Given a binarized image, we will first center the image so that its centroid is at the origin, and then sample \textvar{n} points from the boundary of the cell nucleus to produce a \textdef{shape vector}{shape vector}{FILL IN} $s = (s_1, \ldots, s_n)$, where $s_i$ is a point with coordinates $(x(i), y(i))$.
+We will apply the same idea to vectorize our segmented WBCs. Given a binarized image, we will first center the image so that its centroid is at the origin, and then sample \textvar{n} points from the boundary of the cell nucleus to produce a \textdef{shape vector}{shape vector}{FILL IN} $s = (s_1, \ldots, s_n)$, where $s_i$ is a point with coordinates $(x(i), y(i))$.\\
 
 \begin{note}[%
 Both isolating the boundary of a binarized image, and sampling points from this boundary to ensure that points are similarly spaced, are challenging tasks that are outside the scope of our work here, and which we will let CellOrganizer handle for us.
@@ -388,7 +388,7 @@ One way of aligning a collection of images is to first identify the \textdef{maj
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/three_similar_shapes_unaligned.png}
+\includegraphics[width = 0.8\textwidth]{../images/three_similar_shapes_unaligned.png}
 \caption{Three similar shapes, with their major axes highlighted in gray.}
 \label{fig:three_similar_shapes_unaligned}
 \end{figure}
@@ -426,7 +426,7 @@ Consider a circle inscribed in a square, as shown in \autoref{fig:inscribed_circ
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/inscribed_circle_and_sphere.png}
+\includegraphics[width = 0.8\textwidth]{../images/inscribed_circle_and_sphere.png}
 \caption{A circle inscribed in a square takes up more of the square (78.5 percent) than a sphere inscribed in a cube (52.4 percent).}
 \label{fig:inscribed_circle_and_sphere}
 \end{figure}
@@ -507,6 +507,8 @@ Linear regression is a common approach, but it is not the only way to fit a line
 The linear regression line will likely differ according to which variable we choose as the dependent variable, since the quantity that we are minimizing changes. However, if there is a linear pattern in our data, then the two regression lines will be similar.
 ]\end{note}
 
+\fudgespace
+
 \begin{qbox}[%
 For the iris flower dataset, which of the two choices for dependent variable do you think is better?
 ]\end{qbox}
@@ -549,7 +551,7 @@ PCA may be old, but it is one of the fundamental tools of statistical analysis i
 
 Biologists have identified hundreds of thousands of \textdef{markers}{markers}{FILL IN}, locations within human DNA that that are common sources of human variation. The most commonly type of marker is a single nucleotide (A, C, G, or T). In the process of \textdef{genotyping}{genotyping}{FILL IN}, a service provided by companies as part of the booming ancestry industry, an individual's markers are determined from a DNA sample.
 
-An individual's \textvar{n} markers can be converted to an \textvar{n}-dimensional vector \textvar{v} such that $v(i)$ is 1 if the individual possesses the variant for a marker and $v(i)$ is 0 if the individual has the more common version of the marker.
+An individual's \textvar{n} markers can be converted to an \textvar{n}-dimensional vector \textvar{v} such that $v(i)$ is 1 if the individual possesses the variant for a marker and $v(i)$ is 0 if the individual has the more common version of the marker.\\
 
 \begin{note}[%
 The mathematically astute reader will notice that this vector lies on one of the many corners of an \textvar{n}-dimensional hypercube.
@@ -572,7 +574,7 @@ If we zoom in on Switzerland, we can see that the countries around Switzerland t
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.5\textwidth]{../images/genotyping_switzerland.png}
+\includegraphics[width = 0.7\textwidth]{../images/genotyping_switzerland.png}
 \caption{A PCA plot (\textvar{d} = 2) of individuals from Switzerland as well as neighboring countries shows that an individual's mother tongue correlates with the individual's genetic similarity to representatives from the neighboring country where that language is spoken. NEED courtesy}
 \label{fig:genotyping_switzerland}
 \end{figure}
@@ -582,7 +584,7 @@ And if we zoom farther out, then we can see continental patterns emerge, with In
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.5\textwidth]{../images/genotyping_continents.png}
+\includegraphics[width = 0.7\textwidth]{../images/genotyping_continents.png}
 \caption{A PCA plot (\textvar{d} = 2) shows clustering of individuals from Europe, Asia, Africa, and India. NEED courtesy}
 \label{fig:genotyping_continents}
 \end{figure}
@@ -604,7 +606,7 @@ Before visiting this tutorial, we should point out that CellOrganizer is a much 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.5\textwidth]{../images/cellorg_pca_graph.png}
+\includegraphics[width = 0.7\textwidth]{../images/cellorg_pca_graph.png}
 \caption{The projection of each WBC shape vector onto a three-dimensional PCA hyperplane produces the above three-dimensional space. Granulocytes are shown in blue, lymphocytes are shown in orange, and monocytes are shown in green.}
 \label{fig:cellorg_pca_graph}
 \end{figure}
@@ -614,7 +616,7 @@ We can also subdivide granulocytes into basophils, eosinophils, and neutrophils.
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.5\textwidth]{../images/cellorg_pca_graph_cell.png}
+\includegraphics[width = 0.7\textwidth]{../images/cellorg_pca_graph_cell.png}
 \caption{The reduced dimension shape space from the previous figure, with granulocytes subdivided into basophils, eosinophils, and neutrophils.}
 \label{fig:cellorg_pca_graph_cell}
 \end{figure}
@@ -648,7 +650,7 @@ The case in which \textvar{f} is equal to the number of points in our dataset is
 
 Before we can apply cross validation to WBC images, we should know how to quantify the performance of the classifier. This task may seem easy, but we will see that pitfalls are lurking.
 
-\autoref{fig:iris_confusion_matrix} shows the result of applying k-NN to the iris flower dataset, using $k = 1$ and cross-validation with $f = 10$ (meaning that since there are 150 flowers, each fold contains 15 flowers). This table is called a \textdef{confusion matrix}{confusion matrix}{FILL IN}, because it helps us visualize whether we are ``confusing'' the assignment of a flower to the wrong class.\\
+\autoref{fig:iris_confusion_matrix} shows the result of applying k-NN to the iris flower dataset, using \textvar{k} equal to 1 and cross-validation with \textvar{f} equal to 10 (meaning that since there are 150 flowers, each fold contains 15 flowers). This table is called a \textdef{confusion matrix}{confusion matrix}{FILL IN}, because it helps us visualize whether we are ``confusing'' the assignment of a flower to the wrong class.\\
 
 \begin{figure}[h]
 \centering
@@ -672,7 +674,7 @@ We did not apply dimension reduction to the iris flower dataset because it has o
 
 We define the \textdef{accuracy}{accuracy}{FILL IN} of a classifier as the fraction of objects that it correctly identifies out of the total. For the above iris flower example, the confusion matrix indicates that k-NN has an accuracy of $(50 + 47 + 46)/150 = 95.3\%$.
 
-It may seem that accuracy is the only metric that we need. But if you were in a smarmy mood, then you might design a classifier that produces the confusion matrix in \autoref{fig:wbc_clown_matrix} for our WBC dataset.
+It may seem that accuracy is the only metric that we need. But if you were in a smarmy mood, then you might design a classifier that produces the confusion matrix in \autoref{fig:wbc_clown_matrix} for our WBC dataset.\\
 
 \begin{figure}[h]
 \centering
@@ -727,7 +729,7 @@ First, we define some terms. A \textdef{true positive}{true positive}{FILL IN} i
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.5\textwidth]{../images/medical_test_confusion_matrix.png}
+\includegraphics[width = 0.7\textwidth]{../images/medical_test_confusion_matrix.png}
 \caption{The locations of true positives, true positives, true negatives, and false negatives in the confusion matrix associated with a medical test. Correct predictions are shown in green, and incorrect predictions are shown in red.}
 \label{fig:medical_test_confusion_matrix}
 \end{figure}
@@ -737,7 +739,7 @@ In what follows, we will use the hypothetical confusion matrix for a COVID test 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.5\textwidth]{../images/medical_test_confusion_matrix_hypothetical.png}
+\includegraphics[width = 0.7\textwidth]{../images/medical_test_confusion_matrix_hypothetical.png}
 \caption{A hypothetical COVID test confusion matrix.}
 \label{fig:medical_test_confusion_matrix_hypothetical}
 \end{figure}
@@ -752,13 +754,13 @@ The \textdef{recall}{recall}{FILL IN} (a.k.a. \textdefnogloss{sensitivity}) of a
 
 The \textdef{specificity}{specificity}{FILL IN} of a test is an analogous metric for patients whose actual status is negative. It measures the ratio of true negatives to the sum of true negatives and false positives (found by summing the second row of the confusion matrix). For the test with confusion matrix in \autoref{fig:medical_test_confusion_matrix_hypothetical}, the test specificity is $198,000/(198,000 + 2,000) = 99\%$.
 
-Finally, the \textdef{precision}{precision}{FILL IN} of a test is the percentage of positive tests that are correct, formed by taking the ratio of true positives to the sum of true positives and false positives (found by summing the first column of the confusion matrix). For example, the  test whose confusion matrix is shown in \autoref{fig:medical_test_confusion_matrix_hypothetical} is $1,000/(1,000 + 2,000) = 33.3\%$.
+Finally, the \textdef{precision}{precision}{FILL IN} of a test is the percentage of positive tests that are correct, formed by taking the ratio of true positives to the sum of true positives and false positives (found by summing the first column of the confusion matrix). For example, the  test whose confusion matrix is shown in \autoref{fig:medical_test_confusion_matrix_hypothetical} is $1,000/(1,000 + 2,000) = 33.3\%$.\\
 
 \begin{qbox}[%
 How could we trick a test to have recall close to 1? What about specificity or precision?
 ]\end{qbox}
 
-Just like accuracy, all three of the metrics we have just introduced are imperfect and can be fooled by frivolous tests that always return positive or negative. However, it is not possible for such a test to score well on all of these metrics at the same time. Therefore, in practice we will examine all of these metrics, as well as accuracy, when assessing the quality of a classifier.
+Just like accuracy, all three of the metrics we have just introduced are imperfect and can be fooled by frivolous tests that always return positive or negative. However, it is not possible for such a test to score well on all of these metrics at the same time. Therefore, in practice we will examine all of these metrics, as well as accuracy, when assessing the quality of a classifier.\\
 
 \begin{qbox}[%
 Compute the recall, specificity, and precision of a hypothetical COVID test that always returns negative.
@@ -773,7 +775,7 @@ You may find all these terms confusing and difficult to keep straight. You are n
 To return to our example of classifying images of WBC nuclei, we need to extend the ideas discussed in the preceding section to handle more than two classes. To do so, we consider each class individually and treat this class as the ``positive'' case.
 
 We use the iris flower dataset to show how this works. Say that we wish to compute the recall, specificity, and precision for \textit{Iris virginica} using the k-NN confusion matrix in \autoref{fig:iris_confusion_matrix}. We can simplify this confusion matrix into a two-class confusion matrix that combines the two classes corresponding to the other two species. \autoref{fig:iris_confusion_matrix_compressed}
- shows this smaller confusion matrix, with \textit{Iris virginica} moved to the first row and column.
+ shows this smaller confusion matrix, with \textit{Iris virginica} moved to the first row and column.\\
  
  \begin{figure}[h]
 \centering
@@ -796,6 +798,8 @@ This simplification allows us to compute the recall, specificity, and precision 
 \item precision: $46/(46+3) = 93.9\%$
 \end{itemize}
 
+\fudgespace
+
 \begin{qbox}[%
 Compute the recall, specificity, and precision for each of the other two iris species using the confusion matrix in \autoref{fig:iris_confusion_matrix}.
 ]\end{qbox}
@@ -808,7 +812,7 @@ TUTORIAL LINK
 \phantomsection
 \subsection{Applying a classifier to the WBC shape space}
 
-If we run k-NN on our shape space, using \textvar{d} (the number of dimensions in the PCA hyperplane) equal to 10, \textvar{k} (the number of nearest neighbors to consider when assigning a class) equal to 1, and \textvar{f} (the number of folds) equal to 10, then we obtain the confusion matrix shown in \autoref{fig:wbc_knn_1}. For this dataset, k-NN has an accuracy of 84.3\% and a weighted average of precision and recall over all three classes of 85.7\% and 84.3\%, respectively.\\
+If we run k-NN on our shape space, using \textvar{d} (the number of dimensions in the PCA hyperplane) equal to 10, \textvar{k} (the number of nearest neighbors to consider when assigning a class) equal to 1, and \textvar{f} (the number of folds) equal to 10, then we obtain the confusion matrix shown in \autoref{fig:wbc_better_confusion_matrix}. For this dataset, k-NN has an accuracy of 84.3\% and a weighted average of precision and recall over all three classes of 85.7\% and 84.3\%, respectively.\\
 
 \begin{figure}[h]
 \centering

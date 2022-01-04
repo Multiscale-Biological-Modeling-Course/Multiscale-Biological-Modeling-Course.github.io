@@ -64,7 +64,7 @@ If we were to use only two features in the Iris flower dataset, then a flower's 
 Petal width (x-axis) plotted against width (y-axis) for each of the flowers in the iris flower dataset, colored by species. There are not fifty points corresponding to every species because some flowers have the same petal length and width.
 {: style="font-size: medium;"}
 
-Note how stark the pattern in the above figure is. Even though we chose only two features from the Iris flowers, the points associated with the flowers can be divided into three main clusters by species. In other words, nearby points tend to correspond to flowers from the same species.
+Note how stark the pattern in the above figure is. Even though we chose only two features from the iris flowers, the points associated with the flowers can be divided into three main clusters by species. In other words, nearby points tend to correspond to flowers from the same species.
 
 If we were to use all four features for the iris dataset, then every flower would be represented by a point in four-dimensional space. For example, the first flower in our initial table of iris features would be represented by the point (5.1, 3.5, 1.4, 0.2). In general, when classifying a collection of data with *n* features, each element in the dataset can be represented by a **feature vector** of length *n*, whose *i*-th value corresponds to its value for the *i*-th feature.
 
