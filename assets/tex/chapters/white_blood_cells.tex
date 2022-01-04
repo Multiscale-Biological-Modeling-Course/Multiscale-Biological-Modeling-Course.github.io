@@ -195,24 +195,24 @@ Anderson measured four attributes, or \textdef{features}{features}{FILL IN}, of 
 
 \begin{figure}[h]
 \centering
-\tabcolsep = 2.5em
+\tabcolsep = 1 em
 \mySfFamily
 \begin{tabular}{c c c c c}
-Sepal length (cm) & Sepal width (cm) & Petal length (cm) & Petal width (cm) & Species \\
-5.1 & 3.5 & 1.4 & 0.2 & \textit{Iris setosa} \\
-4.9 & 3.0 & 1.4 & 0.2 & \textit{Iris setosa} \\
-4.7 & 3.2 & 1.3 & 0.2 & \textit{Iris setosa} \\
-4.6 & 3.1 & 1.5 & 0.2 & \textit{Iris setosa} \\
-7.0 & 3.2 & 4.7 & 1.4 & \textit{Iris versicolor} \\
-6.4 & 3.2 & 4.5 & 1.5 & \textit{Iris versicolor} \\
-6.9 & 3.1 & 4.9 & 1.5 & \textit{Iris versicolor} \\
-5.5 & 2.3 & 4.0 & 1.3 & \textit{Iris versicolor} \\
-6.3 & 3.3 & 6.0 & 2.5 & \textit{Iris virginica} \\
-5.8 & 2.7 & 5.1 & 1.9 & \textit{Iris virginica} \\
-7.1 & 3.0 & 5.9 & 2.1 & \textit{Iris virginica} \\
-6.3 & 2.9 & 5.6 & 1.8 & \textit{Iris virginica} \\
+\textbf{Sepal length} & \textbf{Sepal width} & \textbf{Petal length} & \textbf{Petal width} & \textbf{Species} \\
+5.1 & 3.5 & 1.4 & 0.2 & \textit{I. setosa} \\
+4.9 & 3.0 & 1.4 & 0.2 & \textit{I. setosa} \\
+4.7 & 3.2 & 1.3 & 0.2 & \textit{I. setosa} \\
+4.6 & 3.1 & 1.5 & 0.2 & \textit{I. setosa} \\
+7.0 & 3.2 & 4.7 & 1.4 & \textit{I. versicolor} \\
+6.4 & 3.2 & 4.5 & 1.5 & \textit{I. versicolor} \\
+6.9 & 3.1 & 4.9 & 1.5 & \textit{I. versicolor} \\
+5.5 & 2.3 & 4.0 & 1.3 & \textit{I. versicolor} \\
+6.3 & 3.3 & 6.0 & 2.5 & \textit{I. virginica} \\
+5.8 & 2.7 & 5.1 & 1.9 & \textit{I. virginica} \\
+7.1 & 3.0 & 5.9 & 2.1 & \textit{I. virginica} \\
+6.3 & 2.9 & 5.6 & 1.8 & \textit{I. virginica} \\
 \end{tabular}
-\caption{A table containing values of the four features for twelve members of the iris flower dataset. The complete dataset was accessed from the University of California, Irvine Machine Learning Repository.}
+\caption{A table containing values of the four features for twelve members of the iris flower dataset. Distances are in centimeters. The complete dataset was accessed from the University of California, Irvine Machine Learning Repository.}
 \label{fig:iris_feature_table}
 \end{figure}
 
@@ -229,7 +229,7 @@ If we were to use only two features in the Iris flower dataset, then a flower's 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.444\textwidth]{../images/iris_petal_data.png}
+\includegraphics[width = 0.7\textwidth]{../images/iris_petal_data.png}
 \caption{Petal width (x-axis) plotted against width (y-axis) for each of the flowers in the iris flower dataset, colored by species. There are not fifty points corresponding to every species because some flowers have the same petal length and width.}
 \label{fig:iris_petal_data}
 \end{figure}
@@ -251,7 +251,7 @@ Consider the point with unknown class (gray) in \autoref{fig:knn_neighborhood}. 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.444\textwidth]{../images/knn_neighborhood.png}
+\includegraphics[width = 0.6\textwidth]{../images/knn_neighborhood.png}
 \caption{An unknown point (gray) along with a collection of nearby points belonging to two classes, colored green and blue.}
 \label{fig:knn_neighborhood}
 \end{figure}
@@ -265,7 +265,7 @@ In the ongoing example, if we were using \textvar{k} equal to 1, then we would a
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.444\textwidth]{../images/knn_neighborhood_k=1.png}
+\includegraphics[width = 0.6\textwidth]{../images/knn_neighborhood_k=1.png}
 \caption{When using k-NN with \textvar{k} equal to 1, we classify an unknown point according to the point of known class that is nearest; for this reason, the unknown point above would be assigned to the green class.}
 \label{fig:knn_neighborhood_k=1}
 \end{figure}
@@ -275,7 +275,7 @@ However, with the same data and \textvar{k} equal to 4, \autoref{fig:knn_neighbo
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.444\textwidth]{../images/knn_neighborhood_k=4.png}
+\includegraphics[width = 0.6\textwidth]{../images/knn_neighborhood_k=4.png}
 \caption{When using k-NN with \textvar{k} equal to 4, k-NN will classify the unknown point as blue, since three of its four closest neighbors are blue.}
 \label{fig:knn_neighborhood_k=4}
 \end{figure}
@@ -289,3 +289,511 @@ In the more general case in which feature vectors have length \textvar{n}, we ca
 $$d(x, y) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n-y_n)^2}$$
 
 We now have learned how to use k-NN to classify feature vectors with unknown classes given vectors with known classes. There is just one problem: how can we convert an image of a WBC into a vector?
+
+\FloatBarrier
+\phantomsection
+
+\section{Shape Spaces}
+\label{sec:shape_spaces}
+\phantomsection
+
+\subsection{Interlude: Stone tablets and lost cities}
+
+Imagine that you are a traveler to Earth and come across the ruins of New York City. You find an old road atlas that has driving distances between cities (in miles), shown in \autoref{fig:atlas}. Can you use this atlas to find the other cities? In \autoref{chapter:chemotaxis}, we encountered a ``Lost Immortals'' problem; we call the problem of inferring the locations of cities given the distance between them the ``Lost Cities'' problem.
+
+\begin{figure}[h]
+\centering
+\tabcolsep = 1 em
+\mySfFamily
+\begin{tabular}{c c c c c c c}
+& \textbf{New York} & \textbf{Los Angeles} & \textbf{Pittsburgh} & \textbf{Miami} & \textbf{Houston} & \textbf{Seattle} \\
+\textbf{New York} & 0 & 2805 & 371 & 1283 & 1628 & 2852 \\
+\textbf{Los Angeles} & 2805 & 0 & 2427 & 2733 & 1547 & 1135 \\
+\textbf{Pittsburgh} & 371 & 2427 & 0 & 1181 & 1388 & 2502 \\
+\textbf{Miami} & 1283 & 2733 & 1181 & 0 & 1189 & 3300 \\
+\textbf{Houston} & 1628 & 1547 & 1388 & 1189 & 0 & 2340 \\
+\textbf{Seattle} & 2852 & 1135 & 2502 & 3300 & 2340 & 0 \\
+\end{tabular}
+\caption{All pairwise distances between six cities in the United States.}
+\label{fig:atlas}
+\end{figure}
+
+\begin{qbox}[%
+If you know the location of New York, how could you use the information in the table above to find the other cities?
+]\end{qbox}
+
+This seemingly contrived example has a real archaeological counterpart. In 2019, researchers used commercial records that had been engraved by Assyrian merchants onto 19th Century BCE stone tablets in order to estimate distances between pairs of lost Bronze age cities in present-day Turkey. Using this ``atlas'' of sorts, they estimated the locations of the lost cities.
+
+You may be confused as to why biologists should care about stone tablets and lost cities. Let us therefore return to our problem of classifying segmented WBC images by family.
+
+\FloatBarrier
+\phantomsection
+\subsection{Vectorizing a segmented image}
+
+As we mentioned in the previous section, we would like to apply k-NN to our example of segmented WBC images. Yet k-NN first requires each object to be represented by a feature vector, and so we need some way of converting a WBC image into a feature vector. In this way, we can produce a \textdef{shape space}{shape space}{FILL IN}, or an assignment of (cellular image) shapes to points in multi-dimensional space.
+
+You may notice that the problem of ``vectorizing'' a WBC image is similar to one that we have already encountered in \autoref{chapter:coronavirus}, when we vectorized a protein structure as the collection of locations of its alpha carbons. Given a protein structure \textvar{S}, we sampled the \textvar{n} alpha carbons from \textvar{S}, producing a vector $s = (s_1, \ldots, s_n)$, where $s_i$ is the position of the \textvar{i}-th alpha carbon of \textvar{S}.
+
+We will apply the same idea to vectorize our segmented WBCs. Given a binarized image, we will first center the image so that its centroid is at the origin, and then sample \textvar{n} points from the boundary of the cell nucleus to produce a \textdef{shape vector}{shape vector}{FILL IN} $s = (s_1, \ldots, s_n)$, where $s_i$ is a point with coordinates $(x(i), y(i))$.
+
+\begin{note}[%
+Both isolating the boundary of a binarized image, and sampling points from this boundary to ensure that points are similarly spaced, are challenging tasks that are outside the scope of our work here, and which we will let CellOrganizer handle for us.
+]\end{note}
+
+The feature vector of a binarized image has $2n$ elements, two corresponding to each of the coordinates of its \textvar{n} sampled points. However, it will be more intuitive to think of the shape vector as having length \textvar{n}, with each element having two coordinates.
+
+Furthermore, to determine the ``distance'' between two images' shape vectors, we will use our old friend root mean square deviation (RMSD), which is very similar to the Euclidean distance. Given shape vectors \textvar{s} and \textvar{t}, the RMSD between these vectors is
+
+$$\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)}\,. $$
+
+\FloatBarrier
+\phantomsection
+\subsection{Ensuring that image vectorization preserves (dis)similarity}
+
+It is tempting to take the vectorization of every shape as our desired shape space. If this were the case, then we would hope that images of similarly shaped nuclei will have low RMSD and that the more dissimilar two nuclei become, the higher the RMSD of their shape vectors. The potential issues with this assumption are the same as those encountered when discussing protein structures, which we now review.
+
+On the one hand, we need to ensure that the number of points that we sample from the object boundary is sufficiently high to avoid dissimilar shapes from having low RMSD. For this reason, CellOrganizer samples $n = 1000$ points by default for cell nuclei.
+
+On the other hand, we could have very similar shapes whose RMSD winds up being high. For example, recall the shapes in the figure below, which are identical, but one has been flipped and rotated. If we were to vectorize these shapes as they are now in the same way (say, by starting at the top of the shape and proceeding clockwise), then we would obtain two vectors with high RMSD.
+
+REPLACE THIS WITH A LINK TO PREVIOUS IMAGE
+
+We handled this issue in our work on protein structure comparison by introducing the Kabsch algorithm, which identified the best rotation of one shape into another that would minimize the RMSD of the resulting vectors. And yet what makes our work here more complicated is that we are not comparing just two shape vectors in our example of WBC images, we are comparing hundreds.
+
+\FloatBarrier
+\phantomsection
+\subsection{Inferring a shape space from pairwise distances}
+
+One way to build a shape space for a collection of binarized images is to apply the Kabsch algorithm, which includes a step in which the best rotation is found, to every pair of images. As a result, we would obtain the RMSD between every pair of images, and we would then need to build a shape space from all these distances between pairs of shapes.\\
+
+\begin{note}[%
+CellOrganizer has one applies an alternative approach to the Kabsch algorithm for computing a cellular distance, called the \textdef{diffeomorphic distance}{diffeomorphic distance}{FILL IN}, which can be thought of intuitively as determining the amount of energy required to deform one shape into another.
+]\end{note}
+
+We hope that this problem sounds familiar, as it is the Lost Cities problem in disguise. The pairs of distances between images correspond to a road atlas, and placing images into a shape space corresponds to locating cities.
+
+Statisticians have devised a collection of approaches to solve the Lost Cities problem, the most common of which are called multi-dimensional scaling. The fundamental idea of multi-dimensional scaling is to assign points to \textvar{n}-dimensional space such that the distances between points in this space approximately resemble a collection of distances between pairs of objects in some dataset (which in our case is cellular images).\\
+
+\begin{qbox}[%
+If we have \textvar{m} cellular images, then how many times will we need to compute the distance between a pair of images?
+]\end{qbox}
+
+\FloatBarrier
+\phantomsection
+\subsection{Aligning many images concurrently}
+
+Unfortunately, if we have a large dataset, then computing the distance between every pair of objects can become very time-intensive, even with a powerful computer. Instead, we will rotate all images \textit{concurrently}. After this alignment, we can then center and vectorize all the images starting at the same position.
+
+One way of aligning a collection of images is to first identify the \textdef{major axis}{major axis}{FILL IN} of each image, which is the line segment crossing through the image's center of mass that is as long as possible. \autoref{fig:three_similar_shapes_unaligned} shows the major axis for a few shapes that may not immediately look similar.
+
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../images/three_similar_shapes_unaligned.png}
+\caption{Three similar shapes, with their major axes highlighted in gray.}
+\label{fig:three_similar_shapes_unaligned}
+\end{figure}
+
+When we align the major axes of similar shapes, their similarities will overlap (\autoref{fig:three_similar_shapes_aligned}). These images are ready to be vectorized (say, starting from the point on the right side of an image's major axis and proceeding counterclockwise). The resulting vectors will have low RMSD because corresponding points on the shapes will be nearby.
+
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.4\textwidth]{../images/three_similar_shapes_aligned.png}
+\caption{Aligning the three images from \autoref{fig:three_similar_shapes_unaligned} so that their major axes overlap allows us to see similarities between the shapes as well as build consistent shape vectors for them.}
+\label{fig:three_similar_shapes_aligned}
+\end{figure}
+
+\begin{note}[%
+When we align images along their major axes, we need to ensure that a shape's mirror image is not a better alignment. Handling this issue is beyond the scope of our work here but is discussed in the literature.
+]\end{note}
+
+By vectorizing a collection of binarized cellular images after alignment, the resulting vectors form our desired shape space. To review, each vector correspond to a sampling of \textvar{n} points from the boundary of each image, which can be translated into a vector of $2n$ coordinates. Yet one more pitfall remains.
+
+
+\FloatBarrier
+\phantomsection
+
+\section{Principal Components Analysis}
+\label{sec:pca}
+
+\phantomsection
+\subsection{The curse of dimensionality}
+
+Things get weird in multi-dimensional space.
+
+Consider a circle inscribed in a square, as shown in \autoref{fig:inscribed_circle_and_sphere}. The ratio of the area of the circle to the area of the square is $π/4 \approx 0.785$, regardless of the side length. When we move to three dimensions and have a sphere inscribed in a cube, the ratio of the volume of the sphere to that of the cube is $(4π/3)/8 \approx 0.524$.\\
+
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../images/inscribed_circle_and_sphere.png}
+\caption{A circle inscribed in a square takes up more of the square (78.5 percent) than a sphere inscribed in a cube (52.4 percent).}
+\label{fig:inscribed_circle_and_sphere}
+\end{figure}
+
+We define an \textvar{n}-dimensional unit sphere as the set of points in \textvar{n}-dimensional space whose (Euclidean) distance from the origin is at most 1, and an \textvar{n}-dimensional cube as the set of points whose coordinates are all between 0 and 1. A precise definition of the volume of a multi-dimensional object is beyond the scope of our work, but as \textvar{n} increases, the sphere takes up less and less of the cube. As \textvar{n} tends toward infinity, the ratio of the volume of the \textvar{n}-dimensional unit sphere to the volume of the \textvar{n}-dimensional unit cube approaches zero!
+
+One way of interpreting the vanishing of the sphere's volume is that the cube has more corners than a square does, and so the more dimensions that we have, the more corners in which there are to hide away from the sphere. In other words, as we increase the number of dimensions, most of the volume of an object winds up scattering outward from the object's center.
+
+The vanishing sphere seem like an arcane triviality holding interest only for mathematicians toiling in fluorescently lit academic offices at strange hours. Yet this little story is just one manifestation of a very deep paradigm in data science called the \textdef{curse of dimensionality}{curse of dimensionality}{FILL IN}, a collection of principles that arise in higher dimensions that run counter to our intuition about our three-dimensional existence.
+
+\FloatBarrier
+\phantomsection
+\subsection{How the curse of dimensionality affects classification}
+
+In the previous section, we discussed sampling \textvar{n} points from the boundary of an image, thus converting the image into a vector in a space with $2n$ dimensions. We argued that \textvar{n} needs to be sufficiently large to ensure that comparing the vectors of two images will give an accurate representation of how similar their shapes are. And yet the size of \textvar{n} means that we need to be careful about the curse of dimensionality.
+
+Say that we sample \textvar{k} points randomly from the interior of an \textvar{n}-dimensional unit hypercube. Let $d_{\text{min}}$ and $d_{\text{max}}$ denote the minimum and maximum distance from any of our points to the origin, respectively. As \textvar{n} grows, the ratio $d_{\text{min}}d_{\text{max}}$ heads toward 1; in other words, the minimum distance between points becomes indistinguishable from the maximum distance between points.
+
+This other facet of the curse of dimensionality means that algorithms like k-NN, which classify points with unknown classes based on nearby points with known classes, may not perform well in higher-dimensional spaces in which even similar points tend to fly away from each other.
+
+Because of the curse of dimensionality, it makes sense to reduce the number of dimensions before performing any further analysis. We could reduce the number of features used for generating a vector, especially if we have reason to believe that some features are more informative than others. This approach will likely not work for our WBC image example, since it is not clear why one point on the boundary of our images would be inherently better than another.
+
+Instead, we will reduce the number of dimensions of our shape space without removing any features from the data. As perplexing as multi-dimensional space may already seem, it may be totally unclear how we could reduce the dimensions of a space. We will therefore explain dimension reduction in the context of three-dimensional space; our approach may be more familiar than you think.
+
+\FloatBarrier
+\phantomsection
+\subsection{Dimension reduction with principal components analysis}
+
+We will introduce dimension reduction using the iris flower dataset that we introduced when discussing classification. Although this dataset has four features, we will focus again on only petal length and width, which we plot against each other in \autoref{fig:iris_petal_data_unlabeled}. We can trust our eyes to notice the clear pattern: as iris petal width increases, petal length tends to increase as well.
+
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.7\textwidth]{../images/iris_petal_data_unlabeled.png}
+\caption{Petal width (x-axis) plotted against petal width (y-axis) for all flowers in the iris flower dataset, not labeled according to species.}
+\label{fig:iris_petal_data_unlabeled}
+\end{figure}
+
+If we draw a line through the center of the data (\autoref{fig:iris_flowers_regression_line}), then the line provides a reasonable estimate of a flower's petal width given its length, and vice-versa. This line, a one-dimensional object, therefore approximates a collection of points in two dimensions.\\
+
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.7\textwidth]{../images/iris_flowers_regression_line.png}
+\caption{A line passing through the plot of iris petal length against petal width. The line tells us approximately how wide we can expect an iris petal to be given the petal's width, and vice-versa.}
+\label{fig:iris_flowers_regression_line}
+\end{figure}
+
+\begin{qbox}[%
+How could we have determined the line in \autoref{fig:iris_flowers_regression_line}?
+]\end{qbox}
+
+Long ago in math class, you may have learned how to choose a line to best approximate a two-dimensional dataset using \textdef{linear regression}{linear regression}{FILL IN}, which we will now briefly describe. In regression, we first establish one variable as the \textit{dependent} variable, which is typically plotted on the y-axis. In our iris flower example, the dependent variable is petal width.
+
+Given a line, we use $L(x)$ to denote the y-coordinate of the point on the line corresponding to a given x-coordinate. For this line, we can then define the \textdef{residual}{residual}{FILL IN} of a data point $(x, y)$ as the difference $y - L(x)$ between its y-coordinate and the y-coordinate that the line estimates as corresponding to \textvar{x}. If a residual is positive, then the data point lies ``above'' the line, and if the residual is negative, then the point lies ``below'' the line (\autoref{fig:residuals_y_coordinates}).\\
+
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.5\textwidth]{../images/residuals_y_coordinates.png}
+\caption{An example line and data points with a visual depiction of the points' residuals. The absolute value of a residual is the length of its dashed line, and the sign of a residual corresponds to whether it lies above or below the line.}
+\label{fig:residuals_y_coordinates}
+\end{figure}
+
+As the line changes, so will the points' residuals. The smaller the residuals become, the better the line fits the points. In linear regression, we are looking for the line that the line that minimizes the sum of squared residuals.
+
+%Linear regression is a common approach, but it is not the only way to fit a line to a collection of data. Choosing petal width as the dependent variable makes sense if we want to explain petal width as a function of petal length, but if we were to make petal length the dependent variable instead, then linear regression would minimize the squared differences between residuals in the *x*-direction, as illustrated in the figure below.
+%
+%[![image-center](../assets/images/600px/residuals_x_coordinates.png){: .align-center width="300px"}](../assets/images/residuals_x_coordinates.png)
+%If *x* is the dependent variable, then the residuals with respect to a line become the horizontal distances between points and the line, and linear regression finds the line that minimizes these horizontal residuals.
+%{: style="font-size: medium;"}
+%
+%**Note:** The linear regression line will likely differ according to which variable we choose as the dependent variable, since the quantity that we are minimizing changes. However, if there is a linear pattern in our data, then the two regression lines will be similar.
+%{: .notice--warning}
+%
+%**STOP:** For the iris flower dataset, which of the two choices for dependent variable do you think is better?
+%{: .notice--primary}
+%
+%The preceding question is implying that no clear *causality* underlies the correlation between petal width and petal length, which makes it difficult to prioritize one variable over the other as the dependent variable. For this reason, we will revisit how we are defining the line that best fits the data.
+%
+%Instead of considering residuals based on distances to the line in only the *x*-direction or the *y*-direction, we can instead examine the distances from our data points to the line, as shown in the figure below. The line minimizing the sum of the squares of these distances treats each of the two variables equally and is called the **first principal component** of the data.
+%
+%[![image-center](../assets/images/600px/residuals_projections.png){: .align-center width="300px"}](../assets/images/residuals_projections.png)
+%A line along with a collection of points; dashed lines show the shortest segments connecting each point to the line.
+%{: style="font-size: medium;"}
+%
+%The first principal component is often said to be the line that "explains the most variance in the data". If there is indeed a correspondence between lily petal width and length, then the distances from each point to the first principal component correspond to variation due to randomness. By minimizing the sum of squares of these distances, we limit the amount of variation in our data that we cannot explain.
+%
+%The following animated GIF shows a line rotating through a collection of data points, with the distance from each point to the line shown in red. As the line rotates, we can see the distances from the points to the line change.
+%
+%[![image-center](../assets/images/600px/pca_rotating_line_first_frame.png){: .align-center}](../assets/images/pca_rotating_line.gif)
+%An animated GIF showing that the distances from points to their projections onto a line change as the line rotates. The line of best fit is the one in which the sum of the square of these distances is minimized.  Source: amoeba, StackExchange user.[^amoeba]
+%{: style="font-size: medium;"}
+%
+%Another benefit of finding the first principal component of a dataset is that it allows us to *reduce* the dimensionality of our dataset from two dimensions to one. We call the point on a line that is nearest to a given point the **projection** of that point onto the line; in the figure above, the projection of each point onto the line is shown in red. As a result, the projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
+%
+%Say that we wanted to generalize the ideas above to three-dimensional space. The first principal component would offer a one-dimensional explanation of the variance in the data, but perhaps a line is insufficient to this end. Maybe the points all lie very near to a plane (a two-dimensional object), and projecting these points onto the nearest plane would effectively reduce the dataset to two dimensions.
+%
+%Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but it is possible to generalize these concepts mathematically. Given a collection of *m* data points (vectors) in *n*-dimensional space, we are looking for a *d*-dimensional **hyperplane**, or an embedding of *d*-dimensional space inside *n*-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on this hyperplane, we reduce the dimension of the dataset from *n* to *d*.
+%
+%This approach, which is over 100 years old, is called **principal component analysis (PCA)**; a closely related concept called **singular value decomposition** was developed in the 19th century.
+%
+%**Note:** It can be shown that if *d*<sub>1</sub> is smaller than *d*<sub>2</sub>, then the hyperplane provided by PCA of dimension *d*<sub>1</sub> is a subset of the hyperplane of dimension *d*<sub>2</sub>. For example, the first principal component provided by PCA when *d* = 1 is always found within the plane of dimension 2 when *d* = 2.
+%{: .notice--warning}
+%
+%PCA may be old, but it is one of the fundamental tools of statistical analysis in an era defined by growing datasets. We will soon apply it to reduce the dimensions of our shape space; first, we make a brief aside to discuss a different biological problem in which the application of PCA has provided amazing insights.
+%
+%## Genotyping: PCA is more powerful than you think
+%
+%Biologists have identify hundreds of thousands of **markers**, locations within human DNA that that are common sources of human variation. The most commonly type of marker is a single nucleotide (A, C, G, or T). In the process of **genotyping**, a service provided by companies as part of the booming ancestry industry, an individual's markers are determined from a DNA sample.
+%
+%An individual's *n* markers can be converted to an *n*-dimensional vector *v* such that *v*(*i*) is 1 if the individual possesses the variant for a marker and *v*(*i*) is 0 if the individual has the more common version of the marker.
+%
+%**Note:** The mathematically astute reader will notice that this vector lies on one of the many corners of an *n*-dimensional hypercube.
+%{: .notice--warning}
+%
+%Because *n* is so large --- and in the early days of genotyping studies it far outnumbered the number of individual samples --- we need to be wary of the curse of dimensionality. When we apply PCA with *d* = 2 to produce a lower-dimensional projection of the data, we will see some amazing results that helped launch a multi-billion dollar industry.
+%
+%The figure below shows a two-dimensional projection for individuals of known European ancestry. Even though we have condensed hundreds of thousands of dimensions to just two, and even though we are not capturing any information about the ancestry of the individuals other than their DNA, the projected data points reconstruct the map of Europe.
+%
+%[![image-center](../assets/images/600px/genotyping_europe.png){: .align-center width="500px"}](../assets/images/genotyping_europe.png)
+%The projection of a collection of marker vectors sampled from individuals of known European ethnicity onto the plane produced by PCA with *d* = 2. Individuals cluster by country, and neighboring European countries remain nearby in the projected dataset.[^Novembre2008]
+%{: style="font-size: medium;"}
+%
+%If we zoom in on Switzerland, we can see that the countries around Switzerland tend to pull individuals toward them based on language spoken (see figure below).
+%
+%[![image-center](../assets/images/600px/genotyping_switzerland.png){: .align-center width="400px"}](../assets/images/genotyping_switzerland.png)
+%A PCA plot (*d* = 2) of individuals from Switzerland as well as neighboring countries shows that an individual's mother tongue correlates with the individual's genetic similarity to representatives from the neighboring country where that language is spoken.[^Novembre2008]
+%{: style="font-size: medium;"}
+%
+%And if we zoom farther out, then we can see continental patterns emerge, with India standing out as its own entity. What is particularly remarkable about all these figures is that humans on the whole are genetically very similar, and yet PCA is able to find evidence of human migrations and separation lurking within our DNA.
+%
+%[![image-center](../assets/images/600px/genotyping_continents.png){: .align-center width="400px"}](../assets/images/genotyping_continents.png)
+%A PCA plot (*d* = 2) shows clustering of individuals from Europe, Asia, Africa, and India.[^Xing2009]
+%{: style="font-size: medium;"}
+%
+%Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to use CellOrganizer to build a shape space for our WBC images and apply PCA to this shape space to produce a lower-dimensional representation of the space that we can visualize.
+%
+%**Note:** Before visiting this tutorial, we should point out that CellOrganizer is a much more flexible and powerful software resource than what is shown in the confines of this tutorial. For example, CellOrganizer not only infers properties from cellular images, it is able to build *generative* models that can form simulated cells in order to infer cellular properties. For more on what CellOrganizer can do, consult the <a href="http://www.cellorganizer.org/publications/" target="_blank">publications</a> page at its homepage.
+%{: .notice--warning}
+%
+%[Visit tutorial](tutorial_shape_space){: .btn .btn--info .btn--large}
+%{: style="font-size: 100%; text-align: center;"}
+%
+%## Visualizing the WBC shape space after PCA
+%
+%The figures below show the shape space of WBC images, reduced to three dimensions by PCA, in which each image is represented by a point that is color-coded according to its cell family.
+%
+%[![image-center](../assets/images/600px/cellorg_pca_graph.png){: .align-center}](../assets/images/cellorg_pca_graph.png)
+%The projection of each WBC shape vector onto a three-dimensional PCA hyperplane produces the above three-dimensional space. Granulocytes are shown in blue, lymphocytes are shown in orange, and monocytes are shown in green.
+%{: style="font-size: medium;"}
+%
+%We can also subdivide granulocytes into basophils, eosinophils, and neutrophils. Updating our labels according to this subdivision produces the following figure.
+%
+%[![image-center](../assets/images/600px/cellorg_pca_graph_cell.png){: .align-center}](../assets/images/cellorg_pca_graph_cell.png)
+%The reduced dimension shape space from the previous figure, with granulocytes subdivided into basophils, eosinophils, and neutrophils.
+%{: style="font-size: medium;"}
+%
+%Although images from the same family do not cluster as tightly as the iris flower dataset --- which could be criticized as an unrealistic representation of the noise inherent in most real datasets --- images from the same type do appear to be nearby. This fact should give us hope that proximity in a dimension-reduced space may help us correctly classify images of unknown type.
+%
+%\FloatBarrier
+%\phantomsection
+%
+%\section{Classifying White Blood Cell Images}
+%\label{sec:training}
+%
+%\phantomsection
+%\subsection{Cross validation}
+%
+%We would like to apply k-NN to a dimension-reduced shape space WBC images to see how often it assigns an image to the correct class. The tricky part is that we already know the correct class for every image in our dataset. To get around this issue, we could exclude some *subset* of the data, called the **validation set**. After pretending that we don't know the correct classes for elements of the validation set, we will see how often our classification algorithm correctly identifies the class of each object in this set.
+%
+%**STOP:** What issues do you see with using a validation set?
+%{: .notice--primary}
+%
+%Unfortunately, it is unclear which subset of the data we should use as a validation set. Random variation could mean that the reported accuracy will change depending on which subset we choose. And what makes the elements of the validation set so special as to be chosen? Ideally, we would use a more democratic approach that is not subject to random variation and that uses *all* of the data for validation.
+%
+%In **cross validation**, we divide our data into a collection of *f* (approximately) equally sized groups called **folds**. We use one of these folds as a validation set, keeping track of how many objects are correctly classified, and then we start over with a different fold as our validation set. Cross validation is democratic, since every element in our dataset will get used as a member of a validation set exactly once.
+%
+%The case in which *f* is equal to the number of points in our dataset is called **leave one out cross validation**. This approach amounts to, for every point in the dataset, pretending that we do not know its label, using the classification algorithm to assign it a class, and then comparing this prediction against the known class.
+%
+%## A first attempt at quantifying the success of a classifier
+%
+%Before we can apply cross validation to WBC images, we should know how to quantify the performance of the classifier. This task may seem easy, but we will see that pitfalls are lurking.
+%
+%The table below shows the result of applying k-NN to the iris flower dataset, using *k* = 1 and cross-validation with *f* = 10 (meaning that since there are 150 flowers, each fold contains 15 flowers). This table is called a **confusion matrix**, because it visualizes whether we are "confusing" the assignment of a flower to the wrong class.
+%
+%In the confusion matrix, rows correspond to true classes, and columns correspond to predicted classes. For example, consider the second row, which corresponds to the flowers that we know are *Iris versicolor*. Our classifier predicted that none of these flowers were *Iris setosa*, that 47 of these flowers were *Iris versicolor*, and that three of the flowers were *Iris virginica*. Therefore, it correctly predicted the class of 47 of the 50 total *Iris versicolor* flowers.
+%
+%| *Iris setosa* | *Iris versicolor* | *Iris virginica* |
+%| :---: |  :----: | :---: |
+%| 50 | 0 | 0 |
+%| 0 | 47 | 3 |
+%| 0 | 4 | 46 |
+%
+%**Note:** We did not apply dimension reduction to the iris flower dataset because it has only four dimensions.
+%{: .notice--warning}
+%
+%We define the **accuracy** of a classifier as the fraction of objects that it correctly identifies out of the total. For the above iris flower example, the confusion matrix indicates that k-NN has an accuracy of (50 + 47 + 46)/150 = 95.3%.
+%
+%It may seem that accuracy is the only metric that we need. But if you were in a smarmy mood, then you might design a classifier that produces the following confusion matrix for our WBC dataset.
+%
+%| Granulocyte | Monocyte | Lymphocyte |
+%| :---: |  :----: | :---: |
+%| 291 | 0 | 0 |
+%| 21 | 0 | 0 |
+%| 33 | 0 | 0 |
+%
+%**STOP:** What is the accuracy of this classifier?
+%{: .notice--primary}
+%
+%The clown classifier blindly assigned every image in the dataset to be a granulocyte. And yet its accuracy is 291/345 = 84.3%! To make matters worse, below is a confusion matrix for a hypothetical classifier on the same dataset that is clearly better. And yet its accuracy would be only (232 + 17 + 26)/345 = 79.7%.
+%
+%| Granulocyte | Monocyte | Lymphocyte |
+%| :---: |  :----: | :---: |
+%| 232 | 25 | 34 |
+%| 2 | 17 | 2 |
+%| 6 | 1 | 26 |
+%
+%The failure of this classifier to attain the same accuracy as the one assigning the majority class to each element owes to the WBC dataset having *imbalanced* classes, a common issue in data science. Imbalanced classes mean that only reporting a classifier's accuracy may be misleading.
+%
+%For another example, say that we design a sham COVID test that always comes back negative. If 1% of the population at a given point in time is COVID-positive, then we could report that our test is 99% accurate. But we would fail to get this test approved for widespread use because it performs horribly on COVID-positive individuals.
+%
+%**STOP:** What other metrics could we design for measuring the success of a classifier?
+%{: .notice--primary}
+%
+%## Recall, specificity, and precision
+%
+%To motivate our discussion of other classifier metrics, we will continue discussing medical tests, which can be thought of as classifiers with two classes (positive or negative).
+%
+%First, we define some terms. A **true positive** is a positive test in a patient that has the disease; a **false positive** is a positive test in a patient that does not have the disease; a **true negative** is a negative test in a patient that does not have the disease; and a **false negative** is a negative test in a patient that does have the disease. The table below shows the locations of these four terms in a two-class confusion matrix.
+%
+%[![image-center](../assets/images/600px/medical_test_confusion_matrix.png){: .align-center}](../assets/images/medical_test_confusion_matrix.png)
+%The locations of true positives, true positives, true negatives, and false negatives in the confusion matrix associated with a medical test. Correct predictions are shown in green, and incorrect predictions are shown in red.
+%{: style="font-size: medium;"}
+%
+%In what follows, we will use the hypothetical confusion matrix for a COVID test shown in the figure below. We used a hypothetical confusion matrix because results for COVID tests, even the same type of test, can vary widely.[^Mistry]
+%
+%[![image-center](../assets/images/600px/medical_test_confusion_matrix_hypothetical.png){: .align-center}](../assets/images/medical_test_confusion_matrix_hypothetical.png)
+%A hypothetical COVID test confusion matrix.
+%{: style="font-size: medium;"}
+%
+%**STOP:** What is the accuracy of this test? How does it compare to the accuracy of a test that returns negative for everyone in the population?
+%{: .notice--primary}
+%
+%Once again, this test has lower accuracy than one that returns negative for all individuals, but we will now show metrics for which it is superior.
+%
+%The **recall** (a.k.a. **sensitivity**) of a two-class classifier is the percentage of positive cases that the test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives (found by summing the top row of the confusion matrix). For our hypothetical COVID confusion matrix in the table above, the recall is 1,000/(1,000 + 500) = 66.7%. Recall ranges from 0 to 1, with larger values indicating that the test is "sensitive", meaning that it can identify true positives out of patients who actually are positive.
+%
+%The **specificity** of a test is an analogous metric for patients whose actual status is negative. It measures the ratio of true negatives to the sum of true negatives and false positives (found by summing the second row of the confusion matrix). For the hypothetical COVID test confusion matrix, the test specificity is 198,000/(198,000 + 2,000) = 99%.
+%
+%Finally, the **precision** of a test is the percentage of positive tests that are correct, formed by taking the ratio of true positives to the sum of true positives and false positives (found by summing the first column of the confusion matrix). For example, the precision of our hypothetical COVID test is 1,000/(1,000 + 2,000) = 33.3%.
+%
+%**STOP:** How could we trick a test to have recall close to 1? What about specificity? Precision?
+%{: .notice--primary}
+%
+%Just like accuracy, all three of the metrics introduced in this section are not perfect and can be fooled by frivolous tests that always return positive or negative. However, it is not possible for such a test to score well on all of these metrics at the same time. Therefore, in practice we will examine all of these metrics, as well as accuracy, when assessing the quality of a classifier.
+%
+%**STOP:** Compute the recall, specificity, and precision of the hypothetical COVID test that always returns negative.
+%{: .notice--primary}
+%
+%You may find all these terms confusing and difficult to keep straight. You are not alone! An entire generation of scientists make copious trips to the <a href="https://en.wikipedia.org/wiki/Precision_and_recall#Definition_(classification_context)" target="_blank">Wikipedia page</a> describing these metrics as well as others used for analyzing classifiers. After all, it's called a confusion matrix for a reason…
+%
+%{% include video id="6gJdf7LyGpg" provider="youtube" %}
+%
+%{% include video id="bv26dLnbi9g" provider="youtube" %}
+%
+%{% include video id="1G1dfLF8-jo" provider="youtube" %}
+%
+%## Extending classification metrics to multiple classes
+%
+%To return to our example of classifying images of WBC nuclei, we need to extend the ideas discussed in the preceding section to handle more than two classes. To do so, we consider each class individually and treat this class as the "positive" case.
+%
+%We use the iris flower dataset to show how this works. Say that we wish to compute the recall, specificity, and precision for *Iris virginica* using the k-NN confusion matrix that we generated, reproduced below.
+%
+%| *Iris setosa* | *Iris versicolor* | *Iris virginica* |
+%| :---: |  :----: | :---: |
+%| 50 | 0 | 0 |
+%| 0 | 47 | 3 |
+%| 0 | 4 | 46 |
+%
+%We can simplify this confusion matrix into a two-class confusion matrix that combines the two classes corresponding to the other two species. The figure below shows this smaller confusion matrix, with *Iris virginica* moved to the first row and column.
+%
+%| *Iris virginica* | *Iris setosa* and *Iris versicolor* |
+%| :---: |  :----: |
+%| 46 | 4 |
+%| 3 | 47 |
+%
+%This simplification allows us to compute the recall, specificity, and precision for ths classifier with respect to *Iris virginica*.
+%
+%* recall: 46/(46+4) = 92%
+%* specificity: 47/(3+47) = 94%
+%* precision: 46/(46+3) = 93.9%
+%
+%**STOP:** Compute the recall, specificity, and precision for each of the other two iris species using the above confusion matrix.
+%{: .notice--primary}
+%
+%Now that we understand more about how to quantify the performance of a classifier, we are ready to apply k-NN to our WBC shape space (post-PCA of course!) and assess its performance.
+%
+%[Visit tutorial](tutorial_image_classification){: .btn .btn--info .btn--large}
+%{: style="font-size: 100%; text-align: center;"}
+%
+%## Applying a classifier to the WBC shape space
+%
+%If we run k-NN on our shape space, using *d* (the number of dimensions in the PCA hyperplane) equal to 10, *k* (the number of nearest neighbors to consider when assigning a class) equal to 1, and *f* (the number of folds) equal to 10, then we obtain the confusion matrix shown below. For this dataset, k-NN has an accuracy of 84.3% and a weighted average of precision and recall over all three classes of 85.7% and 84.3%, respectively.
+%
+%| Granulocyte | Monocyte | Lymphocyte |
+%| :---: |  :----: | :---: |
+%| 259 | 9 | 23 |
+%| 14 | 6 | 1 |
+%| 5 | 2 | 26 |
+%
+%These three values of *d*, *k*, and *f* appear to be close to optimal, meaning that changing them does not improve our classification metrics. We should ask why this is the case.
+%
+%We start with *d*. If we set *d* too large, then once again the curse of dimension strikes. Using *d* equal to 344 (with *k* equal to 1 and *f* equal to 10) produces the baffling confusion matrix below, in which every element in the space is somehow closest to a lymphocyte.
+%
+%| Granulocyte | Monocyte | Lymphocyte |
+%| :---: |  :----: | :---: |
+%| 0 | 0 | 291 |
+%| 0 | 0 | 21 |
+%| 0 | 0 | 33 |
+%
+%Using *d* = 3, we obtain better results, but we have reduced the dimension so much that we start to lose the signal in the data.
+%
+%| Granulocyte | Monocyte | Lymphocyte |
+%| :---: |  :----: | :---: |
+%| 257 | 15 | 19 |
+%| 16 | 5 | 0 |
+%| 20 | 0 | 13 |
+%
+%We next consider *k*. It might seem that taking more neighbors into account would be helpful. But because of the class imbalance toward granulocytes, the effects of random noise will mean that as we increase *k*, we will start considering granulocytes that just happen to be lurking nearby. For example, when *k* is equal to 5, every monocyte is classified as a granulocyte, as shown in the confusion matrix below (with *d* equal to 10 and *f* equal to 10).
+%
+%| Granulocyte | Monocyte | Lymphocyte |
+%| :---: |  :----: | :---: |
+%| 264 | 1 | 26 |
+%| 21 | 0 | 0 |
+%| 7 | 0 | 26 |
+%
+%The question of the number of folds, *f*, is trickier. Increasing this parameter does not change the confusion matrix much, but if *f* is too small, then we ignore too many known classes of our data.
+%
+%However, we still have a problem. Although k-NN can identify granulocytes and lymphocytes quite well, it performs poorly on monocytes because of the class imbalance in our data. We have so few monocytes that it is rare to encounter another one in the shape space.
+%
+%Statisticians have devised a variety of approaches to address class imbalance. We could **undersample** our data by excluding a random sample of the granulocytes. Undersampling works better when we have a large amount of data, so that throwing out some of the data does not cause problems. In our case, our dataset is small to begin with, and undersampling would risk plummeting the classifier's performance on granulocytes.
+%
+%We could also try a different classifier. One idea is to use a **cost-sensitive classifier** that charges a variable penalty for assigning an element to the wrong class, and then minimizes the total cost over all elements. For example, classifying a monocyte as a granulocyte would receive a greater penalty than classifying a granulocyte as a monocyte. A cost-sensitive classifier would help increase the number of images that are classified as monocytes, although it would also incorporate incorrectly classified monocytes as well.
+%
+%Yet ultimately, k-NN outperforms much more advanced classifiers on this dataset. It may be a relatively simple approach, but k-NN is also a great match for classifying images within a WBC shape space, since proximity in this space indicates that two WBCs belong to the same family.
+%
+%## Limitations of our WBC image classification pipeline
+%
+%Even though k-NN has performed reasonably well, we can still make improvements to our algorithm. After all, our model requires a number of steps from the intake of data to their ultimate classification, which means that several potential failure points could arise.
+%
+%We will start with data. Algorithms are beautiful, but if we have great data, then a relatively simple approach will probably give a great result; if we have bad data, then no amount of algorithmic wizardry will save us. An example of "good data" is the iris flower dataset; the features chosen were measured precisely and differentiate the data so clearly that it almost seems silly to run a classifier.
+%
+%In our case, we have a small collection of very low resolution WBC images, which limits the performance of any classifier before we begin. Yet these data limitations are a feature of this chapter, not a bug, as they allow us to highlight a very common issue in data analysis. Now that we have built a classification pipeline, we should look for a larger dataset with higher-resolution images less class imbalance.
+%
+%The next failure point in our model is our segmentation pipeline. Earlier in the module, we saw that this pipeline did not perfectly segment the nucleus from every image, sometimes capturing only a fragment of the nucleus. Perhaps we could devise a test for incorrect segmentations, excluding an image from downstream analysis if the segmented nucleus is below some threshold size.
+%
+%We then handed off the segmented images to CellOrganizer to build a shape space from the vectorized boundaries of the nuclei. Even though CellOrganizer does what we tell it to do, the low resolution of the nuclear images will mean that the vectorization of each nuclear image will be noisy.
+%
+%But even if we use higher resolution images and adjust our segmentation pipeline, we are still only building a model from the *shape* of the nucleus. We didn't even take the size of the nucleus into account! If we return to the three sample WBC images from the introduction, reproduced in the figure below, then we can see that the lymphocyte nucleus is much smaller than the other two nuclei, which on average is true in general. To address this concern, when vectorizing the images, we could devote one of the coordinates of each vector to the size (in pixels) of the segmented nucleus. This change would hopefully help improve the performance of our classifier, especially on lymphocytes.
+%
+%{% include gallery caption="Three images from the blood cell image dataset showing a granulocyte (left), a monocyte (center), and a lymphocyte (right)." %}
+%
+%**STOP**: What other quantitative features could we extract from our images?
+%{: .notice--primary}
+%
+%Finally, we discuss the classification algorithm itself. We used k-NN because it is intuitive to newcomers, but perhaps a more complicated algorithm could peer deeper into our dataset to find hidden signals.
+%
+%Ultimately, obtaining even moderate classification performance is impressive given the quality and size of our data, and the fact that we only modeled the shape of each cell's nucleus. It also leads us to wonder how much better we could do. In this module's conclusion, we discuss the foundations of the approach that constitute the best known solution for WBC image classification.
