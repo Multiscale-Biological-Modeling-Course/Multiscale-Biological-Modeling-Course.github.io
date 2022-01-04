@@ -99,14 +99,14 @@ Our three-dimensional minds will not permit us the intuition needed to visualize
 
 This approach, which is over 100 years old, is called **principal component analysis (PCA)**; a closely related concept called **singular value decomposition** was developed in the 19th century.
 
-**Note:** It can be shown that if *d*<sub>1</sub> is smaller than *d*<sub>2</sub>, then the hyperplane provided by PCA of dimension *d*<sub>1</sub> is a subset of the hyperplane of dimension *d*<sub>2</sub>. For example, the first principal component provided by PCA when *d* = 1 is always found within the plane of dimension 2 when *d* = 2.
+**Note:** It can be shown that if *d*<sub>1</sub> is smaller than *d*<sub>2</sub>, then the hyperplane provided by PCA of dimension *d*<sub>1</sub> is a subset of the hyperplane of dimension *d*<sub>2</sub>. For example, the first principal component is always found within the plane (*d* = 2) provided by PCA.
 {: .notice--warning}
 
 PCA may be old, but it is one of the fundamental tools of statistical analysis in an era defined by growing datasets. We will soon apply it to reduce the dimensions of our shape space; first, we make a brief aside to discuss a different biological problem in which the application of PCA has provided amazing insights.
 
 ## Genotyping: PCA is more powerful than you think
 
-Biologists have identify hundreds of thousands of **markers**, locations within human DNA that that are common sources of human variation. The most commonly type of marker is a single nucleotide (A, C, G, or T). In the process of **genotyping**, a service provided by companies as part of the booming ancestry industry, an individual's markers are determined from a DNA sample.
+Biologists have identified hundreds of thousands of **markers**, locations within human DNA that that are common sources of human variation. The most commonly type of marker is a single nucleotide (A, C, G, or T). In the process of **genotyping**, a service provided by companies as part of the booming ancestry industry, an individual's markers are determined from a DNA sample.
 
 An individual's *n* markers can be converted to an *n*-dimensional vector *v* such that *v*(*i*) is 1 if the individual possesses the variant for a marker and *v*(*i*) is 0 if the individual has the more common version of the marker.
 
@@ -143,7 +143,7 @@ Now that we have established the power of PCA to help us see patterns in high-di
 
 ## Visualizing the WBC shape space after PCA
 
-The figures below show the shape space of WBC images, reduced to three dimensions by PCA, in which each image is represented by a point that is color-coded according to its cell family.
+The figure below shows the shape space of WBC images, reduced to three dimensions by PCA, in which each image is represented by a point that is color-coded according to its cell family.
 
 [![image-center](../assets/images/600px/cellorg_pca_graph.png){: .align-center}](../assets/images/cellorg_pca_graph.png)
 The projection of each WBC shape vector onto a three-dimensional PCA hyperplane produces the above three-dimensional space. Granulocytes are shown in blue, lymphocytes are shown in orange, and monocytes are shown in green.

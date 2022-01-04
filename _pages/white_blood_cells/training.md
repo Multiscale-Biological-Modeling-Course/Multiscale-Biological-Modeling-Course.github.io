@@ -32,13 +32,13 @@ Unfortunately, it is unclear which subset of the data we should use as a validat
 
 In **cross validation**, we divide our data into a collection of *f* (approximately) equally sized groups called **folds**. We use one of these folds as a validation set, keeping track of how many objects are correctly classified, and then we start over with a different fold as our validation set. Cross validation is democratic, since every element in our dataset will get used as a member of a validation set exactly once.
 
-The case in which *f* is equal to the number of points in our dataset is called **leave one out cross validation**. This approach amounts to, for every point in the dataset, pretending that we do not know its label, using the classification algorithm to assign it a class, and then comparing this prediction against the known class.
+The case in which *f* is equal to the number of points in our dataset is called **leave one out cross validation**.  For every point in the dataset, we pretend that we do not know its label, use the classification algorithm to assign it a class, and then compare this prediction against the known class.
 
 ## A first attempt at quantifying the success of a classifier
 
 Before we can apply cross validation to WBC images, we should know how to quantify the performance of the classifier. This task may seem easy, but we will see that pitfalls are lurking.
 
-The table below shows the result of applying k-NN to the iris flower dataset, using *k* = 1 and cross-validation with *f* = 10 (meaning that since there are 150 flowers, each fold contains 15 flowers). This table is called a **confusion matrix**, because it visualizes whether we are "confusing" the assignment of a flower to the wrong class.
+The table below shows the result of applying k-NN to the iris flower dataset, using *k* = 1 and cross-validation with *f* = 10 (meaning that since there are 150 flowers, each fold contains 15 flowers). This table is called a **confusion matrix**, because it helps us visualize whether we are "confusing" the assignment of a flower to the wrong class.
 
 In the confusion matrix, rows correspond to true classes, and columns correspond to predicted classes. For example, consider the second row, which corresponds to the flowers that we know are *Iris versicolor*. Our classifier predicted that none of these flowers were *Iris setosa*, that 47 of these flowers were *Iris versicolor*, and that three of the flowers were *Iris virginica*. Therefore, it correctly predicted the class of 47 of the 50 total *Iris versicolor* flowers.
 
