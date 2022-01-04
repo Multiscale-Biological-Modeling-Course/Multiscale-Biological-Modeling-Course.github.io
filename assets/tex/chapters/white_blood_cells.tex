@@ -40,11 +40,12 @@ We will work with a publicly available dataset (hosted at \url{https://github.co
 
 \autoref{fig:three_families} also illustrates the three main families of WBCs: \textdef{granulocytes}{granulocytes}{FILL IN}, \textdef{lymphocytes}{lymphocytes}{FILL IN}, and \textdef{monocytes}{monocytes}{}.  Granulocytes have a \textdef{multilobular nucleus}{multilobular nucleus}{FILL IN}, which consists of several round “lobes” that are linked by thin strands of nuclear material. Monocyte and lymphocyte nuclei only have a single lobe, but the shapes of the nuclei are quite different: lymphocyte nuclei tend to have a more rounded shape (taking up a greater fraction of the cell’s volume), whereas monocyte nuclei have a more irregular shape.
 
-\begin{figure}[p]
+\begin{figure}[h]
 \centering
-\tabcolsep = 2.5em
+\tabcolsep = 1em
 \mySfFamily
 \begin{tabular}{c c c}
+\includegraphics[width = 0.25\textwidth]{../images/neutrophil.png} & \includegraphics[width = 0.25\textwidth]{../images/monocyte.png} & \includegraphics[width = 0.25\textwidth]{../images/lymphocyte.png}
 \end{tabular}
 \caption{Three images from the blood cell image dataset showing three types of WBCs. In our dataset, these cells correspond to image IDs 3, 15, and 20. (Left) A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family. (Center) A monocyte with a single, irregularly-shaped nucleus. (Right) A lymphocyte with a small, round nucleus.}
 \label{fig:three_families}
@@ -62,14 +63,9 @@ When you look at the cells in the figure above, you may think that our two tasks
 \phantomsection
 \subsection{Image segmentation requires a tailored approach}
 
+We begin our work by discussing how to segment WBCs from an image of blood cells like the ones in \autoref{fig:three_families}. Researchers have developed many algorithms for cellular image segmentation, but no single approach can be used in all contexts. We therefore will identify the key attributes that make this dataset special and then use these features to develop our own segmentation algorithm.
 
-We begin our work by discussing how to segment WBCs from an image of blood cells like the one in the figure below, reproduced from the introduction.
-
-BETTER CITATION OF NEUTROPHIL IMAGE 3
-
-Researchers have developed many algorithms for cellular image segmentation, but no single approach can be used in all contexts. We therefore will identify the key attributes that make this dataset special and then use these features to develop our own segmentation algorithm.
-
-We ask what makes the WBC nucleus so easy for a human to spot in the above blood cell. You may be screaming, ``It is dark blue! How hard could it be?'' But to train a computer to segment images by color, we should first understand how the computer represents color in images.
+We ask what makes the WBC nucleus so easy for a human to spot in the images in \autoref{fig:three_families}. You may be screaming, ``The nucleus is dark blue! How hard could it be?'' But to train a computer to segment images by color, we should first understand how the computer represents color in images.
 
 \FloatBarrier
 \phantomsection
@@ -105,7 +101,7 @@ The binarized version of the cellular image from INSERT --- NEUTROPHIL for the t
 \centering
 \mySfFamily
 \includegraphics[width = 0.444\textwidth]{../images/neutrophil_binarized_blue.png}
-\caption{A binarized version of the granulocyte from the previous figure (having image ID 3 in our dataset). A pixel is colored white if it has a blue value of 153 or greater, and the pixel is colored black otherwise. The region with the nucleus is not clearly visible because much of the background of the image, which is very light, also has a high blue value.}
+\caption{A binarized version of the granulocyte from \autoref{fig:three_families} (left) (having image ID 3 in our dataset). A pixel is colored white if it has a blue value of 153 or greater, and the pixel is colored black otherwise. The region with the nucleus is not clearly visible because much of the background of the image, which is very light, also has a high blue value.}
 \label{fig:neutrophil_binarized_blue}
 \end{figure}
 
@@ -113,16 +109,16 @@ The binarized version of the cellular image from INSERT --- NEUTROPHIL for the t
 How might we modify our segmentation approach to perform a binarization that identifies the WBC nucleus more effectively?
 ]\end{qbox}
 
-
 We were unable to distinguish between the image background and the WBC nucleus using blue color values, but a color picker verifies that WBC nuclear pixels have a green content that is much lower than the background and a red content that is lower than every other part of the image. \autoref{fig:neutrophil_binarized_other_colors} shows two binarizations of the original image using a green threshold of 153 and a red threshold of 166.
 
-\begin{figure}[p]
+\begin{figure}[h]
 \centering
-\tabcolsep = 2.5em
+ \tabcolsep = 1em
 \mySfFamily
- FILL IN TWO IMAGES
-
-\caption{Two more binarized versions of the neutrophil image from the figure above, based on the green and red channels. For both of these colors, the WBC nucleus tends to have lower values than other parts of the original image. (Left) A binarization in which a pixel is turned white if it has a green value less than or equal to 153. (Right) A binarization in which a pixel is turned white if it has a red value less than or equal to 166.}
+\begin{tabular}{c c}
+\includegraphics[width = 0.25\textwidth]{../images/neutrophil_binarized_green.png} & \includegraphics[width = 0.25\textwidth]{../images/neutrophil_binarized_red.png}
+\end{tabular}
+\caption{Two more binarized versions of the neutrophil image from \autoref{fig:three_families} (left), based on the green and red channels. For both of these colors, the WBC nucleus tends to have lower values than other parts of the original image. (Left) A binarization in which a pixel is turned white if it has a green value less than or equal to 153. (Right) A binarization in which a pixel is turned white if it has a red value less than or equal to 166.}
 \label{fig:neutrophil_binarized_other_colors}
 \end{figure}
 
@@ -140,10 +136,11 @@ If we segment all of the images in the dataset via the same process, then we typ
 
 \begin{figure}[h]
 \centering
-\tabcolsep = 2.5em
+\tabcolsep = 1em
 \mySfFamily
- FILL IN TWO IMAGES
-
+\begin{tabular}{c c}
+\includegraphics[width = 0.25\textwidth]{../images/monocyte_binarized.png} & \includegraphics[width = 0.25\textwidth]{../images/lymphocyte_binarized.png}
+\end{tabular}
 \caption{Image segmentation of the monocyte (left) and lymphocyte (right) corresponding to IDs 15 and 20 in the provided dataset.}
 \label{fig:segmentation}
 \end{figure}
@@ -152,11 +149,12 @@ This is not to say that our segmentation pipeline is perfect. \autoref{fig:segme
 
 \begin{figure}[h]
 \centering
-\tabcolsep = 2.5em
+\tabcolsep = 1em
 \mySfFamily
- FILL IN TWO IMAGES
-
-\caption{(Left) An image of a WBC (ID: 167). (Right) The binarization of this image, showing that the nucleus is not correctly identified during segmentation using the parameters described in this lesson}
+\begin{tabular}{c c}
+\includegraphics[width = 0.25\textwidth]{../images/WBC_167.png} & \includegraphics[width = 0.25\textwidth]{../images/WBC_167_segmentation.png}
+\end{tabular}
+\caption{(Left) An image of a WBC (ID: 167). (Right) The binarization of this image, showing that the nucleus is not correctly identified during segmentation using the parameters described in this section.}
 \label{fig:segmentation_imperfect}
 \end{figure}
 
@@ -183,10 +181,11 @@ A classical dataset commonly used for motivating classification is the \textdef{
 
 \begin{figure}[h]
 \centering
-\tabcolsep = 2.5em
+\tabcolsep = 1em
 \mySfFamily
- FILL IN IMAGES
-
+\begin{tabular}{c c c}
+\includegraphics[width = 0.25\textwidth]{../images/Iris_setosa_2.jpg} & \includegraphics[width = 0.25\textwidth]{../images/Iris_versicolor.jpg} & \includegraphics[width = 0.25\textwidth]{../images/Iris_virginica.jpg}
+\end{tabular}
 \caption{Representative images of the three species of iris included in Anderson's iris flower dataset. (Left) \textit{Iris setosa}. (Center)  \textit{Iris versicolor}. (Right) \textit{Iris virginica}. Image courtesies, from left to right: Emma Forsberg, unknown author, Robert H. Mohlenbrock.}
 \label{fig:iris_flowers}
 \end{figure}
@@ -899,7 +898,7 @@ The next failure point in our model is our segmentation pipeline. Earlier in the
 
 We then handed off the segmented images to CellOrganizer to build a shape space from the vectorized boundaries of the nuclei. Even though CellOrganizer does what we tell it to do, the low resolution of the nuclear images will mean that the vectorization of each nuclear image will be noisy.
 
-But even if we use higher resolution images and adjust our segmentation pipeline, we are still only building a model from the \textit{shape} of the nucleus. We didn't even take the size of the nucleus into account! If we return to the three sample WBC images from \autoref{fig:three_families}, then we can see that the lymphocyte nucleus is much smaller than the other two nuclei, which on average is true in general. To address this concern, when vectorizing the images, we could devote one of the coordinates of each vector to the size (in pixels) of the segmented nucleus. This change would hopefully help improve the performance of our classifier, especially on lymphocytes.
+But even if we use higher resolution images and adjust our segmentation pipeline, we are still only building a model from the \textit{shape} of the nucleus. We didn't even take the size of the nucleus into account! If we return to the three sample WBC images from \autoref{fig:three_families}, then we can see that the lymphocyte nucleus is much smaller than the other two nuclei, which on average is true in general. To address this concern, when vectorizing the images, we could devote one of the coordinates of each vector to the size (in pixels) of the segmented nucleus. This change would hopefully help improve the performance of our classifier, especially on lymphocytes.\\
 
 \begin{qbox}[%
 What other quantitative features could we extract from our images?
