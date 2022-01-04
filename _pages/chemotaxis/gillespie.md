@@ -26,7 +26,7 @@ $$\mathrm{Pr}(X = n) = \dfrac{\lambda^n e^{-\lambda}}{n!}\,,$$
 
 where *e* is the mathematical constant known as Euler's number and is equal to 2.7182818284…
 
-**Note:** A derivation of this formula is beyond the scope of our work here, but if you are interested in one, please check out <a href=https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239" target="_blank">this article</a> by Andrew Chamberlain.
+**Note:** A derivation of this formula is beyond the scope of our work here, but if you are interested in one, please check out <a href="https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239" target="_blank">this article</a> by Andrew Chamberlain.
 {: .notice--warning}
 
 Furthermore, the probability of observing exactly *n* customers in *t* hours where *t* is an arbitrary positive number is
