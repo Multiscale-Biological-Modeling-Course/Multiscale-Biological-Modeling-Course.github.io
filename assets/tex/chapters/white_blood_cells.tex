@@ -124,10 +124,7 @@ We were unable to distinguish between the image background and the WBC nucleus u
 
 It would seem that we should work with the binarized image based on the red threshold, which contains the clearest image of the nucleus among the three binarized images. However, note that each threshold was successful in eliminating some of the non-nuclear parts of the image. For example, consider the white blob in the top left of the binarized image based on the red threshold in \autoref{fig:neutrophil_binarized_other_colors} (right).
 
-This insight gives us an idea: if each of the three images is successful at excluding some part of the image, then let us produce a fourth image such that a pixel is white if it is white in all three binarized images. In the following tutorial, we will build an R pipeline that implements this approach to produce binarized WBC nuclei for all our blood cell images.
-
-TUTORIAL POINTER
-
+This insight gives us an idea:\tutorial[https://biologicalmodeling.org/white_blood_cells/tutorial_nuclear_segmentation] if each of the three images is successful at excluding some part of the image, then let us produce a fourth image such that a pixel is white if it is white in all three binarized images. In the following tutorial, we will build an R pipeline that implements this approach to produce binarized WBC nuclei for all our blood cell images.
 \FloatBarrier
 \phantomsection
 \subsection{Successful segmentation is subject to parameters}
@@ -589,13 +586,7 @@ And if we zoom farther out, then we can see continental patterns emerge, with In
 \label{fig:genotyping_continents}
 \end{figure}
 
-Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to use CellOrganizer to build a shape space for our WBC images and apply PCA to this shape space to produce a lower-dimensional representation of the space that we can visualize.
-
-LINK TO TUTORIAL
-
-\begin{note}[%
-Before visiting this tutorial, we should point out that CellOrganizer is a much more flexible and powerful software resource than what is shown in the confines of this tutorial. For example, CellOrganizer not only infers properties from cellular images, it is able to build *generative* models that can form simulated cells in order to infer cellular properties. For more on what CellOrganizer can do, consult its publications page: \url{http://www.cellorganizer.org/publications/}.
-]\end{note}
+Now that we have established the power of PCA to help us see patterns in high-dimensional biological data,\tutorial[https://biologicalmodeling.org/white_blood_cells/tutorial_shape_space] we are ready to use CellOrganizer to build a shape space for our WBC images and apply PCA to this shape space to produce a lower-dimensional representation of the space that we can visualize.
 
 \FloatBarrier
 \phantomsection
@@ -804,9 +795,7 @@ This simplification allows us to compute the recall, specificity, and precision 
 Compute the recall, specificity, and precision for each of the other two iris species using the confusion matrix in \autoref{fig:iris_confusion_matrix}.
 ]\end{qbox}
 
-Now that we understand more about how to quantify the performance of a classifier, we are ready to apply k-NN to our WBC shape space --- post-PCA of course! --- and assess its performance.
-
-TUTORIAL LINK
+Now that we understand more about how to quantify the performance of a classifier, we are ready to apply k-NN to our WBC shape space\tutorial[https://biologicalmodeling.org/white_blood_cells/] --- post-PCA of course! --- and assess its performance.
 
 \FloatBarrier
 \phantomsection
