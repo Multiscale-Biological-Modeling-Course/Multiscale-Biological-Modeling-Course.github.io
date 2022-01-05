@@ -30,7 +30,7 @@ The classic device used for counting blood cells is the \textdef{hemocytometer}{
 Why might the size of the blood sample influence the estimate of blood cell count?
 ]\end{qbox}
 
-If the hemocytometer seems old-fashioned, you are not wrong; it was invented by Louis-Charles Malassez 150 years ago. To reduce the human error inherent in using this device, what if we train a computer to count blood cells for us?
+You would not be wrong to think that the hemocytometer seems old-fashioned; it was invented by Louis-Charles Malassez 150 years ago. To reduce the human error inherent in using this device, what if we train a computer to count blood cells for us?
 
 We will focus specifically on WBCs. A low WBC count may indicate a host of diseases that leave the immune system susceptible to attack; a high WBC count may indicate that an infection is present, or that a disease like leukemia has caused overproduction of WBCs.
 
@@ -95,7 +95,7 @@ You can find a color picker in \texttt{Utilities > Digital Color Meter} (Mac OS 
 
 Using a color picker, we find (unsurprisingly) that the blue values for pixels inside a stained WBC nucleus are higher than those of the surrounding RBCs. We will therefore \textdef{binarize}{binarize}{FILL IN} our image by coloring a pixel white (RGB: (256, 256, 256)) if its blue value is above some threshold, and turning a pixel black (RGB: (0, 0, 0)) if its blue value is beneath some threshold.
 
-The binarized version of the cellular image from \autoref{fig:three_families} (left) for the threshold value of 153 is shown in \autoref{neutrophil_binarized_blue}. Unfortunately, we cannot clearly see the WBC nucleus in this binarized image because although the nucleus has high blue values, so does the image's background, since light colors are formed by mixing high percentages of red, green, and blue.
+The binarized version of the cellular image from \autoref{fig:three_families} (left) for the threshold value of 153 is shown in \autoref{fig:neutrophil_binarized_blue}. Unfortunately, we cannot clearly see the WBC nucleus in this binarized image because although the nucleus has high blue values, so does the image's background, since light colors are formed by mixing high percentages of red, green, and blue.
 
 \begin{figure}[h]
 \centering

@@ -36,7 +36,7 @@ The classic device used for counting blood cells is the **hemocytometer**. As il
 **STOP:** Why might the size of the blood sample influence the estimate of blood cell count?
 {: .notice--primary}
 
-If the hemocytometer seems old-fashioned, you are not wrong; it was invented by Louis-Charles Malassez 150 years ago. To reduce the human error inherent in using this device, what if we train a computer to count blood cells for us?
+You would not be wrong to think that the hemocytometer seems old-fashioned; it was invented by Louis-Charles Malassez 150 years ago. To reduce the human error inherent in using this device, what if we train a computer to count blood cells for us?
 
 We will focus specifically on WBCs. A low WBC count may indicate a host of diseases that leave the immune system susceptible to attack; a high WBC count may indicate that an infection is present, or that a disease like leukemia has caused overproduction of WBCs.
 
