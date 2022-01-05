@@ -7,7 +7,7 @@ image: "../assets/images/repressilator_chart.png"
 ---
 
 **Note:** We are currently in the process of updating this tutorial to the latest version of MCell, CellBlender, and Blender. This tutorial works with MCell3, CellBlender 3.5.1, and Blender 2.79. Please see a [previous tutorial](../prologue/tutorial-random-walk) for a link to download these versions.
-{: .notice--warning}
+{: .notice--info}
 
 In this tutorial, we will use CellBlender to build a particle-based simulation implementing a repressilator. First, load the `CellBlender_Tutorial_Template.blend` file from the [Random Walk Tutorial](../prologue/tutorial-random-walk) and save a copy of the file as `repressilator.blend`. You may also download the completed tutorial file <a href="../tutorials/repressilator.blend" download="repressilator.blend">here</a>.
 
@@ -66,7 +66,7 @@ Next go to `CellBlender > Reactions` to create the following reactions:
 Repeat the above steps for the following reactions, ensuring that you have the appropriate parameters for each reaction.
 
 **Note:** Some molecules require an apostrophe or a comma. This represents the orientation of the molecule in space and is very important to the reactions!
-{: .notice--warning}
+{: .notice--info}
 
 | Reactants |Products|Forward Rate|
 |:--------|:-------:|--------:|

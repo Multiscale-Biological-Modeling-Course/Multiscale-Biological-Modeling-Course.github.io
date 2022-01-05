@@ -72,7 +72,7 @@ Under `Test Options`, we see `Cross-validation` is selected, which is what we wa
 Finally, beneath `More options`, we will see `(Num) Var344`. This is the variable that Weka will use to assign classes; rather, we would like Weka to classify objects by family. So, select this field, scroll up to the top, and select `(Nom) FAMILY`.
 
 **Note:** Here, `Num` indicates a numeric variable, and `Nom` indicates a nominal variable (meaning that it corresponds to a name).
-{: .notice--warning}
+{: .notice--info}
 
 Now for the magic moment. Click `Start`. The classifier should run very quickly, and the results will show in the main window to the right and are reproduced below.
 
@@ -133,7 +133,7 @@ And if we take the number of dimensions down to three, it gets a little worse st
 We have therefore replicated an instance of a very deep fact in data science, which is that there is typically a "Goldilocks" value in the number of dimensions we should use for our PCA hyperplane, at which the algorithm is performing optimally. In the case of this WBC image dataset, that sweet spot value is around 10.
 
 **Note:** If anything is still unclear about using Weka and exploring its output, Jen Golbeck made an excellent <a href="https://www.youtube.com/watch?v=gfhGfnkypCY" target="_blank">Youtube video</a> that you may like to check out.
-{: .notice--warning}
+{: .notice--info}
 
 **STOP:** There are two other considerations that we should take into account: the value of *k* in our k-nearest neighbors approach (which has defaulted to 1) and the number of folds *f* used (which has defaulted to 10). We encourage you to continue running the k-NN classifier for a few different values of *k* and *f* (which can range from 2 to 365). What do you find? Does it match your intuition? And what happens if we try a different classifier entirely?
 {: .notice--primary}

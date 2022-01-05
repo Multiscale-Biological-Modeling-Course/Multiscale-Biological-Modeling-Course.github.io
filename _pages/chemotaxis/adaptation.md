@@ -74,7 +74,7 @@ In the figures below, we show plots of the concentration of each molecule of int
 Below, we show simulation results for some different concentrations of ligand molecules added at the beginning of the simulation. First we add a relatively small amount of attractant, setting *l*<sub>0</sub> equal to 10,000. The system returns so quickly to an equilibrium in phosphorylated CheY that it is difficult to imagine that the attractant has had any effect on tumbling frequency.
 
 **Note:** Time is shown in seconds on the x-axis in the following figures.
-{: .notice--warning}
+{: .notice--info}
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e4.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd1e4.png)
 

@@ -20,7 +20,7 @@ Select `blank_file.bngl` and name your project `oscillators`.
 [![image-center](../assets/images/600px/nfsim_new_file.png){: .align-center}](../assets/images/nfsim_new_file.png)
 
 **Note:** Occasionally the following error will pop up to inform the user: “There was a failure during the copy of the sample”. The folder will be created, but no files will be loaded. Select `File > New > File` to create a new blank file.
-{: .notice--warning}
+{: .notice--info}
 
 Rename your file `oscillator_copy.bngl` and double-click the file in the navigator to open the editor window. Once in the editor window, add the following parameters:
 

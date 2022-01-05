@@ -9,7 +9,7 @@ image: "../assets/images/repressilator_chart.png"
 ---
 
 **Note:** We are currently in the process of updating this tutorial to the latest version of MCell, CellBlender, and Blender. This tutorial works with MCell3, CellBlender 3.5.1, and Blender 2.79. Please see a [previous tutorial](../prologue/tutorial-random-walk) for a link to download these versions.
-{: .notice--warning}
+{: .notice--info}
 
 ### Implementing simple regulation in CellBlender
 

@@ -37,7 +37,7 @@ You may notice that the problem of "vectorizing" a WBC image is similar to one t
 We will apply the same idea to vectorize our segmented WBCs. Given a binarized image, we will first center the image so that its centroid is at the origin, and then sample *n* points from the boundary of the cell nucleus to produce a **shape vector** *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is a point with coordinates (*x*(*i*), *y*(*i*)).
 
 **Note:** Both isolating the boundary of a binarized image, and sampling points from this boundary to ensure that points are similarly spaced, are challenging tasks that are outside the scope of our work here, and which we will let CellOrganizer handle for us.
-{: .notice--warning}
+{: .notice--info}
 
 The feature vector of a binarized image has 2*n* elements, two corresponding to each of the coordinates of its *n* sampled points. However, it will be more intuitive to think of the shape vector as having length *n*, with each element having two coordinates.
 
@@ -66,7 +66,7 @@ And yet what makes our work here more complicated is that we are not comparing j
 One way to build a shape space for a collection of binarized images is to apply the Kabsch algorithm, which includes a step in which the best rotation is found, to every pair of images. As a result, we would obtain the RMSD between every pair of images, and we would then need to build a shape space from all these distances between pairs of shapes.
 
 **Note:** CellOrganizer has one applies an alternative approach to the Kabsch algorithm for computing a cellular distance, called the **diffeomorphic distance**[^Rohde2008], which can be thought of intuitively as determining the amount of energy required to deform one shape into another.
-{: .notice--warning}
+{: .notice--info}
 
 We hope that this problem sounds familiar, as it is the Lost Cities problem in disguise. The pairs of distances between images correspond to a road atlas, and placing images into a shape space corresponds to locating cities.
 
@@ -92,7 +92,7 @@ Aligning the three images from the previous figure so that their major axes over
 {: style="font-size: medium;"}
 
 **Note:** When we align images along their major axes, we need to ensure that a shape's mirror image is not a better alignment. Handling this issue is beyond the scope of our work here but is discussed in the literature.[^Pincus2007]
-{: .notice--warning}
+{: .notice--info}
 
 By vectorizing a collection of binarized cellular images after alignment, the resulting vectors form our desired shape space. To review, each vector correspond to a sampling of *n* points from the boundary of each image, which can be translated into a vector of 2*n* coordinates. Yet one more pitfall remains.
 

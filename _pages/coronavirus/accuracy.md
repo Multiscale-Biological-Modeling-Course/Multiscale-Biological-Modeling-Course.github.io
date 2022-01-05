@@ -13,7 +13,7 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 While some scientists were working to predict the structure of the SARS-CoV-2 spike protein from sequence data, others were working on verifying the structure of this protein experimentally. On February 25, 2020, researchers from the Seattle Structural Genomics Center for Infectious Disease uploaded to the PDB the result of a cryo-EM experiment for the SARS-CoV-2 spike protein, which became entry <a href="http://www.rcsb.org/structure/6VXX" target="_blank">6vxx</a>.
 
 **Note:** If you would like to explore the structure of the SARS-CoV-2 spike protein, check out the 3-D protein viewer at <a href="http://www.rcsb.org/3d-view/6VXX/1" target="_blank">http://www.rcsb.org/3d-view/6VXX/1</a>.
-{: .notice--warning}
+{: .notice--info}
 
 In this lesson, we will compare the results of the SARS-CoV-2 spike protein prediction from the previous lesson against each other and against the protein's empirically validated structure. To do so, we need a method of comparing two structures.
 
@@ -71,7 +71,7 @@ $$\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + 
 In this formula, *d*(*s*<sub><em>i</em></sub>, *t*<sub><em>i</em></sub>) is the distance between the points *s*<sub><em>i</em></sub> and *t*<sub><em>i</em></sub>.
 
 **Note:** RMSD is a very commonly used approach across data science when measuring the differences between two vectors.
-{: .notice--warning}
+{: .notice--info}
 
 For an example two-dimensional RMSD calculation, consider the figure below, which shows two shapes with four points sampled from each.
 

@@ -33,7 +33,7 @@ Both types of particles diffuse randomly through the plane, but the *A* particle
 We now will add some reactions to our system. The *A* particles are added into the system at some constant **feed rate** *f*. As a result of the feed reaction, the concentration of the *A* particles increases by a constant number in each time step.
 
 **Note:** We will work with a two-dimensional simulation, but in a three-dimensional system, the units of *f* would be in mol/L/s, which means that every second, there are *f* moles of particles added to the system for every liter of volume. (Recall from your chemistry class long ago that one mole is 6.02214076 · 10<sup>23</sup> particles, called Avogadro's number.)
-{: .notice--warning}
+{: .notice--info}
 
 There is also a **kill rate** constant *k* dictating the rate of removal of *B* particles. As a result of the kill reaction, the number of *B* particles in the system will decrease by a factor of *k* in a given time step. That is, the more *B* particles that are present, the more *B* particles will be removed.
 

@@ -17,7 +17,7 @@ In the introduction, we briefly referenced the notion of a network motif, a stru
 To argue that a loop is indeed a motif in the *E. coli* transcription factor network, we will apply a paradigm that occurs throughout computational biology (and science in general) when determining whether an observation is statistically significant. We will compare our observation against a  *randomly generated* dataset. Without getting into the statistical details, if an observation is frequent in a real dataset, and rare in a random dataset, then it is likely to be statistically significant. Randomness saves the day again!
 
 **Note:** A seminal biological example of this paradigm is the search tool <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" target="_blank">BLAST</a>, which allows researchers to compare a sequence query against a database (e.g., comparing the DNA sequence of a newly sequenced gene against a collection of many known proteins). Once BLAST finds a "hit", or a location in the database where the query occurs with minimal modifications, it asks, "What is the *probability* that we would find a hit of the same quality of the query against a randomly generated 'decoy' database?" If this probability is low, then we can feel confident that the hit is statistically significant.
-{: .notice--warning}
+{: .notice--info}
 
 **STOP:** How can we apply this paradigm of a randomly generated dataset to determine whether a transcription factor network contains a significant number of loops?
 {: .notice--primary}
@@ -29,7 +29,7 @@ To determine whether the number of loops in the transcription factor network of 
 There are multiple ways to generate a random network, but we will use an approach developed by Edgar Gilbert in 1959[^Gilbert]. Given an integer *n* and a probability *p* (between 0 and 1), we form *n* nodes. Then, for every possible pair of nodes *X* and *Y*, we connect *X* to *Y* via a directed edge with probability *p*; that is, we simulate the process of flipping a weighted coin that has probability *p* of coming up "heads".
 
 **Note:** If you are interested in the technical details of how this can be simulated computationally, see <a href="https://compeau.cbd.cmu.edu/programming-for-lovers/chapter-2-forecasting-a-presidential-election-with-monte-carlo-simulation/" target="_blank">Programming for Lovers/a>).
-{: .notice--warning}
+{: .notice--info}
 
 **STOP:** What should *n* and *p* be if we are generating a random network to compare against the *E. coli* transcription factor network?
 {: .notice--primary}

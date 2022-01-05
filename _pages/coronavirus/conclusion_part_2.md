@@ -54,7 +54,7 @@ To answer this question, we compute the **inner product**, or **dot product**, o
 The inner product is also useful for representing  the **mean-square fluctuation** of an alpha carbon, or the expected squared distance of node *i* from equilibrium. The fluctuation of node *i* from equilibrium is just $$\Delta R_i$$. If this vector is represented by the coordinates (*x*, *y*, *z*), then its square distance from equilibrium is *x*<sup>2</sup> + *y*<sup>2</sup> + *z*<sup>2</sup>, which is the inner product of the fluctuation vector with itself, $$ \langle \Delta R_i, \Delta R_i \rangle $$.
 
 **Note:** In practice, we will not know the exact values for the $$ \Delta R_i $$ and must compute the inner products of fluctuation vectors indirectly using linear algebra, which is beyond the scope of this work. A full treatment of the mathematics of GNMs can be found in the chapter at <a href="https://www.csb.pitt.edu/Faculty/bahar/publications/b14.pdf" target="_blank">https://www.csb.pitt.edu/Faculty/bahar/publications/b14.pdf</a>
-{: .notice--warning}
+{: .notice--info}
 
 Long vectors pointing in the same direction will have a larger inner product than short vectors pointing in the same direction. As a result, we can normalize the inner product so that we can have a sense of the correlation of these vectors, independent of their length. To be precise, the cross-correlation of nodes *i* and *j* is given by
 
@@ -242,7 +242,7 @@ Thus concludes the third module of this course. In the course's final module, we
 We hope you will join us to find out!
 
 **Note:** Although we have covered a great deal in this chapter, there is still much more to say about SARS-CoV-2. What happens after the spike protein binds to ACE2? How does the virus enter the cell and replicate? How does it fight our immune systems, and how should we design a vaccine to fight back? If you are interested in an online course covering some of these questions, then check out the free online course *<a href="https://sites.google.com/view/sarswars/home" target="_blank">SARS Wars: A New Hope</a>* by <a href="https://www.cs.cmu.edu/~cjl/" target="_blank">Christopher Langmead</a>.
-{: .notice--warning}
+{: .notice--info}
 
 [Next module](../white_blood_cells/home){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -43,7 +43,7 @@ To recap, the simulations of both cells will include an initial concentration of
 {: style="font-size: 100%; text-align: center;"}
 
 **Note:** Even though we are using a particle-based model to mimic regulation, it is not attempting to replicate specific chemical reactions. In reality, gene regulation is a complicated chemical process that involves a great deal of molecular machinery. However, this is the purpose of the model, to strip away what is not relevant and retain the essence of what is being modeled.
-{: .notice--warning}
+{: .notice--info}
 
 ## Ensuring a mathematically controlled comparison
 

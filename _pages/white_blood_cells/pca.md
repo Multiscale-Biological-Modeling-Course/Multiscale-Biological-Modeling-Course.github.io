@@ -70,7 +70,7 @@ If *x* is the dependent variable, then the residuals with respect to a line beco
 {: style="font-size: medium;"}
 
 **Note:** The linear regression line will likely differ according to which variable we choose as the dependent variable, since the quantity that we are minimizing changes. However, if there is a linear pattern in our data, then the two regression lines will be similar.
-{: .notice--warning}
+{: .notice--info}
 
 **STOP:** For the iris flower dataset, which of the two choices for dependent variable do you think is better?
 {: .notice--primary}
@@ -100,7 +100,7 @@ Our three-dimensional minds will not permit us the intuition needed to visualize
 This approach, which is over 100 years old, is called **principal component analysis (PCA)**; a closely related concept called **singular value decomposition** was developed in the 19th century.
 
 **Note:** It can be shown that if *d*<sub>1</sub> is smaller than *d*<sub>2</sub>, then the hyperplane provided by PCA of dimension *d*<sub>1</sub> is a subset of the hyperplane of dimension *d*<sub>2</sub>. For example, the first principal component is always found within the plane (*d* = 2) provided by PCA.
-{: .notice--warning}
+{: .notice--info}
 
 PCA may be old, but it is one of the fundamental tools of statistical analysis in an era defined by growing datasets. We will soon apply it to reduce the dimensions of our shape space; first, we make a brief aside to discuss a different biological problem in which the application of PCA has provided amazing insights.
 
@@ -111,7 +111,7 @@ Biologists have identified hundreds of thousands of **markers**, locations withi
 An individual's *n* markers can be converted to an *n*-dimensional vector *v* such that *v*(*i*) is 1 if the individual possesses the variant for a marker and *v*(*i*) is 0 if the individual has the more common version of the marker.
 
 **Note:** The mathematically astute reader will notice that this vector lies on one of the many corners of an *n*-dimensional hypercube.
-{: .notice--warning}
+{: .notice--info}
 
 Because *n* is so large --- and in the early days of genotyping studies it far outnumbered the number of individual samples --- we need to be wary of the curse of dimensionality. When we apply PCA with *d* = 2 to produce a lower-dimensional projection of the data, we will see some amazing results that helped launch a multi-billion dollar industry.
 
@@ -136,7 +136,7 @@ A PCA plot (*d* = 2) shows clustering of individuals from Europe, Asia, Africa, 
 Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to use CellOrganizer to build a shape space for our WBC images and apply PCA to this shape space to produce a lower-dimensional representation of the space that we can visualize.
 
 **Note:** Before visiting this tutorial, we should point out that CellOrganizer is a much more flexible and powerful software resource than what is shown in the confines of this tutorial. For example, CellOrganizer not only infers properties from cellular images, it is able to build *generative* models that can form simulated cells in order to infer cellular properties. For more on what CellOrganizer can do, consult the <a href="http://www.cellorganizer.org/publications/" target="_blank">publications</a> page at its homepage.
-{: .notice--warning}
+{: .notice--info}
 
 [Visit tutorial](tutorial_shape_space){: .btn .btn--info .btn--large}
 {: style="font-size: 100%; text-align: center;"}

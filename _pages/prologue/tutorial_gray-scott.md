@@ -12,7 +12,7 @@ The following tutorial will use a Jupyter Notebook to implement the Gray-Scott m
 Assuming you have Jupyter notebook, create a new file called `gray-scott.ipynb` (you may instead want to duplicate and modify your `diffusion_automaton.ipynb` file from the diffusion tutorial).
 
 **Note**: You should make sure to save this notebook on the same level as another folder named `/dif_images`. ImageIO will not always create this folder automatically, so you may need to create it manually.
-{: .notice--warning}
+{: .notice--info}
 
 At the top of the notebook, we need the following imports and declarations along with a specification of the `simulate` function that will drive our Gray-Scott simulation.
 

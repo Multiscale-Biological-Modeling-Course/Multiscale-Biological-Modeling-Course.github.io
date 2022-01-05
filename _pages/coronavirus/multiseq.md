@@ -39,7 +39,7 @@ We know from our work in structure prediction that just because the sequence of 
 In addition to verifying the structure of the spike protein in both SARS-CoV and SARS-CoV-2, researchers also determined the structure of the RBD complexed with ACE2 in both SARS-CoV (PDB entry: <a href="https://www.rcsb.org/structure/2AJF" target="_blank">2ajf</a>) and SARS-CoV-2 (PDB entry: <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>).
 
 **Note:** The experimentally verified SARS-CoV-2 structure is a *chimeric* protein formed of the SARS-CoV RBD in which the RBM has the sequence from SARS-CoV-2 [^Shang]. A chimeric RBD was used for complex technical reasons to ensure that the crystallization process during X-ray crystallography could be borrowed from that used for SARS-CoV.
-{: .notice--warning}
+{: .notice--info}
 
 Because we know the structures of the bound complexes, we can produce 3-D visualizations of the two different complexes and look for structural differences involving the RBM. We will use VMD to produce this visualization, rotating the structures around to examine potential differences. However, we should be wary of only trusting our eyes to guide us; can we use a computational approach to tell us where to look for structural differences between the two RBMs?
 
@@ -74,7 +74,7 @@ The following figure shows the contact maps for the SARS-CoV-2 and SARS-CoV spik
 We note two things in the contact maps below. First, many black values cluster around the main diagonal of the matrix, since amino acids that are nearby in the protein sequence will remain near each other in the 3-D structure. Second, the contact maps for the two proteins are very similar, reinforcing that the two proteins have similar structures.
 
 **Note:** Interested in learning how to make contact maps? We will use ProDy to do so in a later section.
-{: .notice--warning}
+{: .notice--info}
 
 [![image-center](../assets/images/600px/Contact.png){: .align-center}](../assets/images/Contact.png)
 The contact maps of the SARS-CoV-2 spike protein (top left), SARS-CoV spike protein (top right), single chain of the SARS-CoV-2 spike protein (bottom left), and single chain of the SARS-CoV spike protein (bottom right). If the distance between the *i*-th and *j*-th amino acids in a protein structure is 20.0 angstroms or less, then the (*i*, *j*)-th cell of the figure is colored black. The SARS-CoV-2 and SARS spike proteins have very similar contact maps, indicating similar global structures.
@@ -95,7 +95,7 @@ In this equation, *exp(x)* means *e*<sup><em>x</em></sup>. This equation also in
 * The variance term $$\sigma_{ij}^2$$ is equal to $$\left\lvert{i-j}\right\rvert ^{0.15}$$, which corresponds to the sequence separation between the *i*-th and *j*-th alpha carbons.
 
 **Note:** The above definition assumes that the two proteins have the same length or have been pre-processed by removing amino acids that only occur in one protein. Generalizations of Qres for proteins of non-equal length exist that first align proteins and retain only those amino acids for structural comparison that are shared by the two proteins.
-{: .notice--warning}
+{: .notice--info}
 
 If two proteins are very similar at the *i*-th alpha carbon, then for every *j*, *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) - *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) will be close to zero, making term inside the summation in the Qres equation will be close to 1. The sum will be equal to approximately *N* - *k*, and so Qres will be close to 1. As two proteins become more different at the *i*-th alpha carbon, then the term inside the summation will head toward zero, and so will the Qres value as well.
 
@@ -125,7 +125,7 @@ A visualization showing the superposed structures of SARS-CoV-2 chimeric RBD [^S
 {: style="font-size: medium;"}
 
 **Note:** Although the rest of the proteins are similar, there are other parts of the RBD at the top of the protein that show dissimilarities in the two proteins, which may be attributable to an experimental artifact. The authors of the work in which the comparison was published have pointed out that the highlighted region is unlikely to be an artifact of the experimentation because it is "buried at the RBD–ACE2 interface and did not affect crystallization".
-{: .notice--warning}
+{: .notice--info}
 
 Finding this highlighted region in the RBM where the structures of the SARS-CoV and SARS-CoV-2 spike proteins differ is an exciting development. We will next explore this region of the protein structure to determine whether the mutations acquired by SARS-CoV-2 may have influenced the binding affinity of the virus spike protein with the human ACE2 enzyme.
 

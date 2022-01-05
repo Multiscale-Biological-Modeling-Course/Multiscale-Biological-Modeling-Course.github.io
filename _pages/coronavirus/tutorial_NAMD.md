@@ -58,7 +58,7 @@ The output file will be created in your current working directory and can be ope
 {: style="font-size: medium;"}
 
 **Note:** You may be wondering why the interaction energy comes out to be a negative number. In physics, a negative value indicates an attractive force between two molecules, and a positive value indicates a repulsive force.
-{: .notice--warning}
+{: .notice--info}
 
 We will now focus on the interaction energy between the SARS-CoV-2 RBD loop site (residues 482 to 486) and ACE2. In the `NAMDEnergy` window, enter `protein and chain B` for `Selection 1` and `protein and chain F and (resid 482 to 486)` for `Selection 2`. Keep all other settings the same. You should see output results similar to the following.
 
@@ -71,7 +71,7 @@ The above results seem to indicate that the interaction between SARS-CoV-2 RBD a
 {: .notice--primary}
 
 **Note:** In the table below, "chain B" is part of the ACE2 enzyme, and "chain F" is part of the viral spike protein RBD for the virus indicated.
-{: .notice--warning}
+{: .notice--info}
 
 |Model|Region|Selection 1|Selection 2|
 |:----|:-----|:----------|:----------|

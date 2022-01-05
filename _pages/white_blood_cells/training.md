@@ -49,7 +49,7 @@ In the confusion matrix, rows correspond to true classes, and columns correspond
 | 0 | 4 | 46 |
 
 **Note:** We did not apply dimension reduction to the iris flower dataset because it has only four dimensions.
-{: .notice--warning}
+{: .notice--info}
 
 We define the **accuracy** of a classifier as the fraction of objects that it correctly identifies out of the total. For the above iris flower example, the confusion matrix indicates that k-NN has an accuracy of (50 + 47 + 46)/150 = 95.3%.
 

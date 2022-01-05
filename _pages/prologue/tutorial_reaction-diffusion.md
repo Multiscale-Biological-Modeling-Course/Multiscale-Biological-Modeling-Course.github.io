@@ -8,7 +8,7 @@ image: "../assets/images/gray_scott_jupyter_high-res.png"
 ---
 
 **Note:** We are currently in the process of updating this tutorial to the latest version of MCell, CellBlender, and Blender. This tutorial works with MCell3, CellBlender 3.5.1, and Blender 2.79. Please see the [previous tutorial](tutorial-random-walk) for a link to download these versions.
-{: .notice--warning}
+{: .notice--info}
 
 In this tutorial, we will build the predator-prey reaction-diffusion model that we introduced in the [main text](reaction-diffusion). A warning that these simulations can take a long time to run.
 

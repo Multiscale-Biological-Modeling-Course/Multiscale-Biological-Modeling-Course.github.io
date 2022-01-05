@@ -38,7 +38,7 @@ As we have observed earlier in this module, when the ligand concentration is ver
 We can cap our ligand concentration by defining the rate of the dummy reaction using a function `add_Rate()`. This function requires another observable, `AllLigand`. By adding the line `Molecules AllLigand L` in the `observables` section, `AllLigand` will record the total concentration of ligand in the system at each time step (both bound and unbound). As for our reaction, if `AllLigand` is less than `1e8`, then the dummy reaction should take place at some given rate `k_add`. Otherwise, `AllLigand` exceeds`1e8`, and we will set the rate of the dummy reaction to zero. This can be achieved with a `functions` section in BioNetGen using the following `if` statement to branch based on the value of `AllLigand`.
 
 **Note:** Please ensure that the `functions` section occurs before the `reaction rules` section in your BioNetGen file.
-{: .notice--warning}
+{: .notice--info}
 
 ~~~ ruby
 begin functions
@@ -201,7 +201,7 @@ simulate({method=>"ssa", t_end=>1000, n_steps=>500})
 Save your file, then go to `simulation` and click `Run`. What happens to the concentration of phosphorylated CheY?
 
 **Note:** You can deselect `AllLigand` to make the plot of the concentration of phosphorylated CheY easier to see.
-{: .notice--warning}
+{: .notice--info}
 
 Try the following few different values for `k_add`: 0.01, 0.03, 0.05, 0.1, 0.3, 0.5. What do these changing `k_add` values represent in the simulation? How does the system respond to the different values?
 

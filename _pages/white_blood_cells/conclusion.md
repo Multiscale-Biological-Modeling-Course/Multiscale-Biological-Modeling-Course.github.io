@@ -50,7 +50,7 @@ The McCulloch-Pitts neuron with *n* equal to 2 and θ equal to 2 is shown in the
 In 1957, Frank Rosenblatt generalized the McCulloch-Pitts neuron into a **perceptron**. A perceptron also has a threshold constant θ and *n* binary input variables *x*<sub><em>i</em></sub>, but it also includes a collection of real-valued constant weights *w*<sub><em>i</em></sub> that are applied to each input variable. That is, the neuron will output 1 (fire) precisely when *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub> ≥ θ.
 
 **Note:** A McCulloch-Pitts neuron is a perceptron for which all of the *w*<sub><em>i</em></sub> are equal to 1.
-{: .notice--warning}
+{: .notice--info}
 
 For example, consider the perceptron shown in the figure below. We assign the weight *w*<sub><em>i</em></sub> to the edge connecting input variable *x*<sub><em>i</em></sub> to the neuron.
 

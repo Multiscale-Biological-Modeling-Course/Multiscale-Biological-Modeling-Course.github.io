@@ -42,7 +42,7 @@ A grid showing an update to the system in the previous figure after diffusion of
 {: style="font-size: medium;"}
 
 **Note:** The sum of the values in the grid in the figure above is 1, which is the same as the sum of the values in our original figure. Regardless of how many times we update the grid, the sum of the values should be 1 to ensure the conservation of total mass in the system.
-{: .notice--warning}
+{: .notice--info}
 
 After an additional time step, the particles continue to diffuse outward. For example, each diagonal neighbor of the central cell in the above figure, which has a concentration of 0.05 after one time step, will lose all of its particles in the following step. Each of these cells will also gain 20% of the particles from two of its adjacent neighbors, along with 5% of the particles from the central square (which doesn't have any particles). This makes the updated concentration of this cell after two time steps equal to 2(0.2)(0.2) + 0.05(0) = 0.08.
 

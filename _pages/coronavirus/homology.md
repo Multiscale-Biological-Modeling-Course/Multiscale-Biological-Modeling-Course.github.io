@@ -58,7 +58,7 @@ A simplified diagram showing how the `.pdb` format encodes the 3D coordinates of
 {: style="font-size: medium;"}
 
 **Note:** The above figure shows just part of the information needed to fully represent a protein structure. For example, a `.pdb` file will also contain information about the disulfide bonds between amino acids. For more information, check out the <a href="http://www.wwpdb.org/documentation/file-format" target="_blank">official PDB documentation</a>).
-{: .notice--warning}
+{: .notice--info}
 
 Now that we can represent protein structures, we wish to compare two protein structures. How similar are the three predicted structures of the SARS-CoV-2 spike protein to each other, and how similar are they to the structure of the SARS-CoV spike protein? This is a simple question, but it has a complicated answer, to which we will devote an entire lesson.
 

@@ -42,7 +42,7 @@ WBC_PCAPipeline
 ~~~
 
 **Note:** Asking you to place this directory of files onto your desktop is unconventional. If you place it elsewhere, then you will have to manually change all file paths in the tutorials that follow in order to point to the appropriate directory. However, we have noticed occasional software glitches with using `setwd()` or `pwd()` if not specifying a universal location.
-{: .notice--warning}
+{: .notice--info}
 
 You may like to take a look at the `Data` folder, which contains the WBC images that we will work with in `RawImgs`. The other folders contain files that we will use to run different aspects of our analysis, starting with segmentation of the nuclei from the WBC images.
 
@@ -66,7 +66,7 @@ Place your cursor on the first line of the file, and click `Run`, which will ins
 You can then click `Run` three more times to install each of the other three packages.
 
 **Note:** Should you be asked in the RStudio console about upgrading dependencies during the EBImage library installation, type `a` and hit `enter`. Also, after you run this file once, should you decide to run this file again, you will not need to run the package installations and can comment them out using `#`.
-{: .notice--warning}
+{: .notice--info}
 
 Now that we have installed the required packages, we indicate to R that we want to use each of the three packages that we just installed in this file. Run each of the following three lines.
 
@@ -179,7 +179,7 @@ print(noquote("DONE!"))
 ~~~
 
 **Note:** If you run the file multiple times, three directories are created each time within the Data folder with the form of `SegImgs_i`, `ColNuc_i`, and `BWImgs_i`, where *i* is an integer. The images are only segmented into the most recently created directories (those with the largest value of *i*). Should you run into trouble and need to run this file multiple times, ensure that future file paths are pointing to the right folders!
-{: .notice--warning}
+{: .notice--info}
 
 After we have run our R file, you will notice the creation of three directories of the form: `SegImgs_1`, `ColNuc_1`, and `BWImgs_1` within the `Data` folder. If the run completed correctly, then you should see the segmented images in `SegImgs_1`, like the image shown in the figure below. However, these images are not technically *binarized* because they exist in grayscale, in which each pixel receives a value between 0 (black) and 255 (white).
 
@@ -192,7 +192,7 @@ The greyscale segmented nucleus of `BloodImage_00001.jpg`.
 We have successfully segmented our images, but we would like to ensure that these images are truly binarized, so that each pixel is either 0 (black) or 1 (white). Furthermore, the CellOrganizer approach that we will consider in a future tutorial requires all images to be in TIFF format, and this step will handle that file conversion as well by running a MATLAB pipeline.
 
 **Note:** The current version of CellOrganizer that we will use in future tutorials is a free distribution provided as an add-on to MATLAB, which is paid software. We felt that MATLAB was the easiest way to run the binarization pipeline below as well. We are in the process of investigating a way to run all of the tutorials in this module without needing paid software.
-{: .notice--warning}
+{: .notice--info}
 
 First, you will need the latest version of <a href="https://www.mathworks.com/products/matlab.html" target="_blank">MATLAB</a>. Then, open MATLAB and run the following commands in the MATLAB command window:
 

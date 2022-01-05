@@ -57,7 +57,7 @@ WBC_PCAModel
 ~~~
 
 **Note:** These runs will generate a large amount of console output. You may want to go make a cup of coffee.
-{: .notice--warning}
+{: .notice--info}
 
 The run will be complete when you see output analogous to the following.
 
@@ -73,7 +73,7 @@ Number of objects: 345
 As a result, the `Step3_PCAModel` and `Step4_Visualization` directories have been updated. The principal components along with the assigned label to each cell are captured in the `WBC_PCA.csv` file within the `Step4` directory. Information about the images used and the shape space that CellOrganizer generated can be found in `Step3_PCAModel/report/index.html`.
 
 **Note:** If you run the `WBC_PCAModel.m` file more than once, make sure to delete any log and param files that have been created from a previous run. All other files will be overwritten unless preemptively removed from the `WBC_PCAModel` file’s access. Saving the files can be done by either compressing the files into a zip folder or removing them from the directory.
-{: .notice--warning}
+{: .notice--info}
 
 Now that CellOrganizer has vectorized the images and applied PCA to the resulting shape vectors, we would like to explore the resulting vectors for each image. (Recall from the main text that these vectors are the original shape vectors projected onto the "nearest" hyperplane.)
 
@@ -106,7 +106,7 @@ python WBC_CellFamily.py
 You can click, drag, and rotate the resulting plot to see the clusters of cell classes by color (a legend can be found in the upper right corner). Furthermore, an image file of this visualization is saved within `WBC_PCAPipeline/Step4_Visualization` as `WBC_ShapeSpace_CF.png`.
 
 **Note:** You may need to close the window containing the shape space in order to be able to run additional commands in your terminal window.
-{: .notice--warning}
+{: .notice--info}
 
 Next, we will classify images by cell type. In a terminal window, run the following commands to label the shape space according to each of the five cell types. An image of this visualization will be saved within `WBC_PCAPipeline/Step4_Visualization` as `WBC_ShapeSpace_CT.png`.
 
