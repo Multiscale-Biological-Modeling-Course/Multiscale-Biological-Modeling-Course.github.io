@@ -1,5 +1,5 @@
 ---
-permalink: /coronavirus/structural_diff
+permalink: /coronavirus/structural_differences
 title: "Analysis of Structural Protein Differences"
 sidebar:
  nav: "coronavirus"
