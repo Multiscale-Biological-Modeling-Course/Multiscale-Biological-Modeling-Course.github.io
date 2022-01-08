@@ -112,7 +112,7 @@ def tumble_move():
     #Length of the tumbling sampled from exponential distribution with mean=0.1, float
     tumble_time = np.random.exponential(tumble_time_mu)
 
-    return projection_h, projection_v, tumble_time
+    return new_dir, projection_h, projection_v, tumble_time
 ~~~
 
 In a given run of the simulation, we keep track of the total time `t`, and we only continue our simulation if `t` < `duration`, where `duration` is a parameter indicating how long to run the simulation. If `t` < `duration`, then we apply the following steps to a given cell.
