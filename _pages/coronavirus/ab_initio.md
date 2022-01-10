@@ -49,7 +49,7 @@ Now that we know a bit more about how protein structure is defined, we will disc
 Amino acids' variety of side chains causes the amino acids to have different chemical properties, which can lead to different conformations being more chemically "preferable" than others. For example, the table below shows the twenty standard amino acids occurring in proteins grouped by chemical properties. Nine of these amino acids are **hydrophobic** (also called **non-polar**), meaning that their side chains tend to be repelled by water, and as a result we tend to find these amino acids sheltered from the environment on the interior of the protein.
 
 [![image-center](../assets/images/600px/AminoAcidChart.png){: .align-center}](../assets/images/AminoAcidChart.png)
-A chart of the twenty amino acid grouped by chemical properties. The side chain of each amino acid is highlighted in blue. Source: <a href="http://cnx.org/contents/185cbf87-c72e-48f5-b51e-f14f21b5eabd@14.1" target="_blank">OpenStax Biology</a>.
+A chart of the twenty amino acid grouped by chemical properties. The side chain of each amino acid is highlighted in blue. Image courtesy: <a href="https://openstax.org/books/biology/pages/1-introduction" target="_blank">OpenStax Biology</a>.
 {: style="font-size: medium;"}
 
 We can therefore view protein folding as finding the tertiary structure that is the most *stable* given a polypeptide's primary structure. A central theme of the previous module on bacterial chemotaxis was that a system of chemical reactions moves toward equilibrium. The same principle is true of the magic folding algorithm; when a protein folds into its final structure, it is obtaining a conformation that is as chemically stable as possible.
