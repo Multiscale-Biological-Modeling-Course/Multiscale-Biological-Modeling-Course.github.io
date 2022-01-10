@@ -27,7 +27,7 @@ As we have seen throughout this course, molecular interactions are ruled by prob
 Because structure prediction is such a fundamental problem, researchers wish to catalog the varied shapes of different proteins. This variety is evident in the figure below, which shows the "proteins of the month" in 2020 named by the **Protein Data Bank** (**PDB**). Yet the question remains: how do we know these protein structures?
 
 [![image-center](../assets/images/600px/different_protein_shapes_2020.jpg){: .align-center}](../assets/images/different_protein_shapes_2020.jpg)
-Each "molecule of the month" in 2020 named by the PDB. These proteins have widely varying shapes and accomplish a wide variety of cellular tasks. Note that the SARS-CoV-2 spike protein was the molecule of the month in June 2020. Source: <a href="https://pdb101.rcsb.org/motm/motm-by-date" target="_blank">https://pdb101.rcsb.org/motm/motm-by-date</a>.
+Each "molecule of the month" in 2020 named by the PDB. These proteins have widely varying shapes and accomplish a wide variety of cellular tasks. Note that the SARS-CoV-2 spike protein was the molecule of the month in June 2020. Image courtesy: David Goodsell.
 {: style="font-size: medium;"}
 
 ## Laboratory methods for determining protein structure
