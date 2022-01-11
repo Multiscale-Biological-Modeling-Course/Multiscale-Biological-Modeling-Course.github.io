@@ -89,16 +89,22 @@ But does higher attractant concentration in our model really lead to a lower con
 The following figure shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial5.png){: .align-center}](../assets/images/chemotaxis_tutorial5.png)
+Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation in which no ligand is present.
+{: style="font-size: medium;"}
 
 The sudden addition of 5,000 attractant ligand molecules increases the concentration of bound receptors, therefore leading to less CheA autophosphorylation, and less phosphorylated CheY.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial6.png){: .align-center}](../assets/images/chemotaxis_tutorial6.png)
+Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 5,000 initial attractant ligand particles.
+{: style="font-size: medium;"}
 
 If we instead add 100,000 attractant molecules, then we see an even more drastic decrease in phosphorylated CheA and CheY.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial7.png){: .align-center}](../assets/images/chemotaxis_tutorial7.png)
+Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100,000 initial attractant ligand particles.
+{: style="font-size: medium;"}
 
-In other words, the BNG simulation is confirming that an increase in attractant reduces the concentration of phosphorylated CheY, which therefore lowers the tumbling frequency. What is remarkable about this is how quickly it takes place, with the cell attaining a new equilibrium in a fraction of a second.
+In other words, the BioNetGen simulation is confirming that an increase in attractant reduces the concentration of phosphorylated CheY, which therefore lowers the tumbling frequency. What is remarkable about this is how quickly it takes place, with the cell attaining a new equilibrium in a fraction of a second.
 
 ## So … what's the big deal?
 
