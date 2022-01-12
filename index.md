@@ -21,9 +21,7 @@ header:
       url: "https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour"
 ---
 
-## Welcome!
-
-Welcome to *Biological Modeling*!
+## Welcome to Biological Modeling!
 
 Have you ever wondered why zebras have stripes? Have you ever wondered how your cells can quickly react to their environment and perform complex tasks without intelligence? Have you ever wondered why the original SARS coronavirus fizzled out but SARS-CoV-2 has spread like wildfire around the planet? Have you ever wondered how  algorithms can be trained to “see” cells as well as a human?
 
