@@ -10,6 +10,9 @@ In this software tutorial, we will use the popular *ab initio* modeling software
 
 Before beginning, if you have not used QUARK before, then you will need to <a href="https://zhanglab.ccmb.med.umich.edu/QUARK2/registration/" target="_blank">register for a QUARK account</a> to use this software. After registering, you will receive an email containing a temporary password.
 
+**Note:** At the current time, QUARK only accepts registrations from university E-mail accounts. If you do not have such an account, please send an E-mail to  <a href = "mailto: yangzhanglab@umich.edu">yangzhanglab@umich.edu</a> and mention that you are a *Biological Modeling* learner with Phillip Compeau to receive access.
+{: .notice--info}
+
 Then, [download the primary sequence](../_pages/coronavirus/files/Human_Hemoglobin_subunit_alpha_Seq.txt) of human hemoglobin subunit alpha. Visit <a href="https://zhanglab.ccmb.med.umich.edu/QUARK2/" target="_blank">QUARK</a> to find the submission page for QUARK, where you should take the following steps as shown in the figure below.
 
 1. Copy and paste the sequence into the first box.

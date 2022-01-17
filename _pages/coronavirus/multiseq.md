@@ -29,7 +29,7 @@ The fact that the region binding to the target human enzyme has mutated so much 
 As we hone in on the RBM, the figure below shows an alignment of the 70 amino acid long RBM region from SARS-CoV and SARS-CoV-2 (as well as two animal viruses).
 
 [![image-center](../assets/images/600px/RBM_alignment.png){: .align-center}](../assets/images/RBM_alignment.png)
-A multiple alignment of the RBM (shown as colored amino acids) across the human SARS-CoV virus (first row), a SARS-CoV virus isolated in a palm civet (second row), a virus isolated in a bat in 2013 (third row), and the SARS-CoV-2 virus (fourth row). Beneath each column, an asterisk denotes full conservation, a period denotes a slight mutation, and a colon indicates high variability [^Wan].
+An alignment of the RBM of the human SARS-CoV virus (first row) and the SARS-CoV-2 virus (second row). Amino acids that are highlighted in green represents matches between the two sequence. Beneath each column is the conservation between the two sequences, where full conservation indicates a match and partial conservation indicates a mismatch.
 {: style="font-size: medium;"}
 
 We know from our work in structure prediction that just because the sequence of a protein has been greatly mutated does not mean that the structure of that protein has changed much. Therefore, in this lesson, we will start a structural comparison of the SARS-CoV and SARS-CoV-2 spike proteins. All of this analysis will be performed using the software resources ProDy and VMD.
@@ -142,4 +142,4 @@ Finding this highlighted region in the RBM where the structures of the SARS-CoV 
 
 [^Shang]: Shang, J., Ye, G., Shi, K., Wan, Y., Luo, C., Aijara, H., Geng, Q., Auerbach, A., Li, F. 2020. Structural basis of receptor recognition by SARS-CoV-2. Nature 581, 221–224. https://doi.org/10.1038/s41586-020-2179-y
 
-[^Wan]: Wan Y., Shang, J., Graham, R., Baric, R. S., Li, Fang. 2020. Receptor Recognition by the Novel Coronavirus from Wuhan: an Analysis Based on Decade-Long Structural Studies of SARS Coronavirus. Journal of Virology, 94(7), e00127-20.
+
