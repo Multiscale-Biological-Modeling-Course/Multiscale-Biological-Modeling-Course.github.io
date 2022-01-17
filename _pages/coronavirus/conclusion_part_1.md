@@ -23,13 +23,13 @@ Instead of using RMSD, CASP scores a predicted structure against a known structu
 We will show a few plots to illustrate the decisiveness of AlphaFold's CASP victory. The first graph, which is shown in the figure below, compares the scores of AlphaFold against the second-place algorithm (a product of David Baker's laboratory, which developed the Robetta and Rosetta@Home software that we used in this module).
 
 [![image-center](../assets/images/600px/AlphaFold2_BAKER.png){: .align-center}](../assets/images/AlphaFold2_BAKER.png)
-A plot of GDT scores for the 1st place (AlphaFold2) and 2nd place (Baker lab) submissions over all proteins in the CASP14 contest. Source: <a href="https://bit.ly/39Mnym3" target="_blank">https://bit.ly/39Mnym3</a>.
+A plot of GDT scores for AlphaFold2 (shown in blue) and Baker lab (shown in orange) submissions over all proteins in the CASP14 contest. AlphaFold2 finished first in CASP14, and Baker lab finished second. Source: <a href="https://bit.ly/39Mnym3" target="_blank">https://bit.ly/39Mnym3</a>.
 {: style="font-size: medium;"}
 
 We can appreciate the margin of victory in the above figure if we compare it against the margin between the second- and third-place competitors, shown in the figure below.
 
 [![image-center](../assets/images/600px/BAKER_Zhang.png){: .align-center}](../assets/images/BAKER_Zhang.png)
-A plot of GDT scores for the 2nd place (Baker lab) and 3rd place (Zhang lab) submissions for all proteins in the CASP14 contest. Source: <a href="https://bit.ly/39Mnym3" target="_blank">https://bit.ly/39Mnym3</a>.
+A plot of GDT scores for the Baker lab (shown in blue) and Zhang lab (shown in orange) submissions for all proteins in the CASP14 contest. Baker lab finished second in CASP14, and Zhang lab finished third. Source: <a href="https://bit.ly/39Mnym3" target="_blank">https://bit.ly/39Mnym3</a>.
 {: style="font-size: medium;"}
 
 For each protein in the CASP14 contest, we can also compute each algorithm's **z-score**, defined as the number of standard deviations that the algorithm's GDT score falls from the mean GDT score over all competitors. For example, a z-score of 1.4 would imply that the approach performed 1.4 standard deviations above the mean, and a z-score of -0.9 would imply that the approach performed 0.9 standard deviations below the mean.
