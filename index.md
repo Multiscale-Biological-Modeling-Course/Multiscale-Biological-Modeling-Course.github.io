@@ -18,7 +18,7 @@ header:
     - label: "Start learning!"
       url: "/prologue/"
     - label: "Preorder the book!"
-      url: "https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour"
+      url: "https://www.indiegogo.com/projects/biological-modeling-a-short-tour/x/28195870#/"
 ---
 
 ## Welcome to Biological Modeling!
@@ -55,9 +55,7 @@ This course was lovingly put together by a professor and a team of wonderful stu
 
 ## Preorder the book
 
-We are hoping to produce a textbook companion to this course and have started a <a href="https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour" target="_blank">Kickstarter campaign</a> to fund its publication.
-
-If you enjoy the course, please help us meet our funding deadline before January 15, 2022.
+We are producing a textbook companion to this course, called <em>Biological Modeling: A Short Tour</em>. Its pending publication in spring 2022 was graciously funded by the community at <a href="https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour" target="_blank">Kickstarter</a>; if you would still like to preorder the book at its introductory price (and receive a complementary E-book), we are continuing to take pre-orders during winter 2022 on <a href="https://www.indiegogo.com/projects/biological-modeling-a-short-tour/x/28195870#/" target="_blank">Indiegogo</a>.
 
 ## Course survey and contact form
 
