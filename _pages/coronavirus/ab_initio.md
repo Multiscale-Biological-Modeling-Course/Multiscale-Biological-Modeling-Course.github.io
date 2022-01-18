@@ -60,10 +60,16 @@ Bonded energy derives from the protein's covalent bonds, as well as the angles o
 
 Non-bonded energy comprises **electrostatic interactions** and **van der Waals interactions**. Electrostatic interactions refer to the attraction and repulsion force from the electric charge between pairs of atoms. For example, some amino acids are **hydrophobic**, meaning that they are repelled by water. If a folded protein structure were to have many hydrophobic amino acids on the outside of the protein, then these amino acids would be in constant contact with water molecules, which would repel them. Such a conformation would greatly increase the free energy of the molecule, as the nonpolar protein exterior would be forced inward.
 
-As for van der Waals interactions, atoms are dynamic systems, with electrons constantly buzzing around the nucleus. At any given moment, these electrons could, due to random chance, be unevenly distributed on one side of the nucleus. Because electrons are negatively charged, this uneven distribution will cause the atom to have a temporary negative charge on the side with the excess electrons (and a temporary positive charge on the opposite side). These temporary charges are called  **induced dipoles** (shown in the figure below), and van der Waals interactions refer to the attraction and repulsion between atoms because of induced dipoles.
+As for van der Waals interactions, atoms are dynamic systems, with electrons constantly buzzing around the nucleus, as shown in the figure below.
+
+[![image-center](../assets/images/600px/van_der_waals_normal.png){: .align-center width="300px"}](../assets/images/van_der_waals_normal.png)
+A carbon-12 atom showing six positively charged protons (green), six neutrally charged neutrons (blue), and six negatively charged electrons (red). Under typical circumstances, the electrons will most likely be distributed uniformly around the nucleus.
+{: style="font-size: medium;"}
+
+However, due to random chance, the electrons in an atom could momentarily be unevenly distributed on one side of the nucleus. Because electrons are negatively charged, this uneven distribution will cause the atom to have a temporary negative charge on the side with the excess electrons and a temporary positive charge on the opposite side. As a result of this charge, one side of the atom may attract only the oppositely charged components of another atom, creating an **induced dipole** in that atom in turn as shown in the figure below. Van der Waals forces refer to the attraction and repulsion between atoms because of induced dipoles.
 
 [![image-center](../assets/images/600px/van_der_waals.png){: .align-center}](../assets/images/van_der_waals.png)
-An illustration of how induced dipoles and therefore van der Waals forces arise from random fluctuations in the positions of electrons. Source: <a href="http://universe-review.ca/F12-molecule12.htm" target="_blank">http://universe-review.ca/F12-molecule12.htm</a>.
+Due to random chance, the electrons in the atom on the left have clustered on the left side of the atom, creating a net negative charge on this side of the atom, and therefore a net positive charge on the right side of the atom. This polarity induces a dipole in the atom on the right, whose electrons are attracted because of van der Waals forces.
 {: style="font-size: medium;"}
 
 As the protein folds, it seeks a conformation of *lowest* total potential energy based on all these forces. For a simple analogy, imagine a ball on a slope, as shown in the following figure. Even if the ball bounces around, it will tend to move down the slope. In this analogy, the lower points on the slope correspond to lower energy conformations of a polypeptide.
