@@ -68,7 +68,7 @@ A carbon-12 atom showing six positively charged protons (green), six neutrally c
 
 However, due to random chance, the electrons in an atom could momentarily be unevenly distributed on one side of the nucleus. Because electrons are negatively charged, this uneven distribution will cause the atom to have a temporary negative charge on the side with the excess electrons and a temporary positive charge on the opposite side. As a result of this charge, one side of the atom may attract only the oppositely charged components of another atom, creating an **induced dipole** in that atom in turn as shown in the figure below. Van der Waals forces refer to the attraction and repulsion between atoms because of induced dipoles.
 
-[![image-center](../assets/images/600px/van_der_waals.png){: .align-center}](../assets/images/van_der_waals.png)
+[![image-center](../assets/images/600px/van_der_waals.png){: .align-center width="300px"}](../assets/images/van_der_waals.png)
 Due to random chance, the electrons in the atom on the left have clustered on the left side of the atom, creating a net negative charge on this side of the atom, and therefore a net positive charge on the right side of the atom. This polarity induces a dipole in the atom on the right, whose electrons are attracted because of van der Waals forces.
 {: style="font-size: medium;"}
 
