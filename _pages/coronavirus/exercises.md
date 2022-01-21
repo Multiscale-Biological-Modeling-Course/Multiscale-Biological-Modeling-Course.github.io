@@ -8,6 +8,61 @@ toc_sticky: true
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
+## Calculating RMSD
+
+Imagine that this plot depicts a 2D protein structure where each point represents an alpha carbon. 
+
+[![image-center](../assets/images/600px/rmsd_exercise1.png){: .align-center}](../assets/images/coronavirus_exercise1.png)
+Simple 2D structure A.
+{: style="text-align: center; font-size: medium;"}
+
+**Exercise:** From what we have learned in this module about how to compare protein structures, calculate the centroid of this protein structure.
+{: .notice--success}
+
+Imagine that we have a second 2D protein structure and wanted to compare it with our first protein structure from the previous exercise. 
+
+[![image-center](../assets/images/600px/rmsd_exercise2.png){: .align-center}](../assets/images/coronavirus_exercise2.png)
+Simple 2D structure B.
+{: style="text-align: center; font-size: medium;"}
+
+**Exercise:** Assume that we do not need to rotate either structure and calculate the RMSD between the two proteins. (**Hint:** calculate the centroid and translate each point such that the new centroid matches the centroid of the previous protein. You can also translate both proteins such that their centroids lie on the origin).
+{: .notice--success}
+
+## *Ab initio* and homology modeling
+
+In this exercise, we will perform ab initio and homology structure prediction on a simple protein, the human hemoglobin subunit alpha we saw in part 1 of this module. First, go to the <a href="https://www.rcsb.org/" target="_blank">protein data bank</a> and search for the protein “1SI4”. Download the PDB file by clicking on “Download Files” and then “PDB Format”. We will use this file for structure comparisons later. Next, go to the “Sequence” tab and click “Display Files” and then “FASTA Sequence”. Copy the first sequence corresponding to the alpha subunit and submit it to the ab initio structure prediction software, <a href="https://zhanggroup.org/QUARK/" target="_blank">QUARK</a>, and your choice of homology modeling software: <a href="https://swissmodel.expasy.org/" target="_blank">SWISS-MODEL</a>, <a href="https://robetta.bakerlab.org/" target="_blank">Robetta</a>, or <a href="https://galaxy.seoklab.org/cgi-bin/submit.cgi?type=TBM" target="_blank">GalaxyWEB</a>. Once you get the results, use ProDy to calculate the RMSD between the predicted structures and the actual structure (1SI4). 
+
+**Exercise:** Which type of modeling resulted in the most accurate prediction? Is this what you expected? (Hint: Use “Chain A” to focus on subunit alpha)
+{: .notice--success}
+
+## Qres Comparison
+
+In part 2 of the module, we computed Qres between SARS and SARS-CoV-2 RBD to find local differences between the two structures. Here, we will try repeating this while using the hemoglobin subunit alpha protein. Using the PDB files of the human hemoglobin 1SI4 and mako shark hemoglobin 3MKB, upload the protein structures into VMD. Align the structures using “Multiseq” and visualize the structures using Qres as the coloring parameter.
+
+**Exercise:**  Use the visualizations to determine where the protein structures vary the most? Why do you think this makes sense?
+{: .notice--success}
+
+** Optional:** Take the best performing predicted model from the previous exercise perform the Qres visual analysis with the actual human hemoglobin subunit alpha structure 1SI4. Where do the protein structures vary the most? Compare the predicted model with the mako shark hemoglobin 3MKB. Where do the structures vary the most, and are the results similar to the comparison between 1SI4 and 3MKB?
+{: .notice--success}
+
+## Calculating Interaction Energy with NAMD Energy
+
+In this exercise, we will be performing a short analysis of SARS-CoV-2 Spike protein interaction energy with the human receptor ACE2 using NAMD. Go to the protein databank and download 6VW1.pdb. Upload the structure into VMD and go to Extension/Analysis/NAMD Energy. Calculate the energy types “VDW” and “Elec” using the following selections:
+
+|   |Selection 1|Selection 2|
+|:--|:----------|:----------|
+| A | protein and chain B| protein and chain F and resid 482 to 486|
+| B | protein and chain B| protein and chain F and resid 383 to 394|
+
+**Exercise:** How do the results of part A compare with that of part B? Can you justify the results? (Hint: Visualize the specific residues).
+{: .notice--success}
+
+**Note:** For help, visit the module tutorials for VMD visualization and NAMD Energy. For additional troubleshooting/workaround, download [NamdEnergyAssignment.zip](../_pages/coronavirus/files/NamdEnergyAssignment.zip) and follow the README.txt.
+{: .notice--info}
+
+
+
+
 * Good exercise: find centroid of a given shape.
 
 * exercise: compute RMSD.
