@@ -157,7 +157,7 @@ $$k_{bind} \times (l_0 - \text{[}LT\text{]}) \times (t_0 - \text{[}LT\text{]}) =
 
 Expanding the left side of this equation gives us the following updated equation:
 
-$$k_{bind} \times \text{[}LT\text{]}^2 - (k_{bind} \times l_0 + k_{bind} \times t_0) \times \text{[}LT\text{]} +  = k_{dissociate} \times \text{[}LT\text{]} + k_{bind} \times l_0 \times t_0$$
+$$k_{bind} \times \text{[}LT\text{]}^2 - (k_{bind} \times l_0 + k_{bind} \times t_0) \times \text{[}LT\text{]}  = k_{dissociate} \times \text{[}LT\text{]} + k_{bind} \times l_0 \times t_0$$
 
 Finally, we subtract the right side of this equation from both sides:
 
@@ -165,7 +165,7 @@ $$k_{bind} \times \text{[}LT\text{]}^2 - (k_{bind} \times l_0 + k_{bind} \times 
 
 This equation may look daunting, but most of its components are constants. In fact, the only unknown is $\text{[}LT\text{]}$, which makes this a quadratic equation, with $\text{[}LT\text{]}$ as the variable.
 
-In general, a quadratic equation has the form $a \cdot x^2 + b \cdot x + c = 0$ for constants $a$, $b$, and $c$ and a single variable $c$. In our case, $x$ = $\text{[}LT\text{]}$, and the constants are $a = k_{bind}$, $b = - (k_{bind} \times l_0 + k_{bind} · t_0 + k_{dissociate})$, and $c = k_{bind} \times l_0 \times t_0$.
+In general, a quadratic equation has the form $a \cdot x^2 + b \cdot x + c = 0$ for constants $a$, $b$, and $c$ and a single variable $c$. In our case, $x$ = $\text{[}LT\text{]}$, and the constants are $a = k_{bind}$, $b = - (k_{bind} \times l_0 + k_{bind} \times t_0 + k_{dissociate})$, and $c = k_{bind} \times l_0 \times t_0$.
 
 The quadratic formula --- which you may have thought you would never use again --- tells us that the equation $a \cdot x^2 + b \cdot x + c = 0$  has solutions for $x$ given by the following equation:
 
@@ -202,8 +202,8 @@ It would seem that there are \textit{two} solutions: $51.25 + 11.25 = 62.5$ and 
 Now that we know the steady state concentration of $LT$, we can recover the values of $\text{[}L\text{]}$ and $\text{[}T\text{]}$ too:
 
 \begin{itemize}
- \item $\text{[}L\text{]} = L_0 - \text{[}LT\text{]} = 10$;
- \item $\text{[}t\text{]} = t_0 - \text{[}LT\text{]} = 10$.
+ \item $\text{[}L\text{]} = l_0 - \text{[}LT\text{]} = 10$;
+ \item $\text{[}T\text{]} = t_0 - \text{[}LT\text{]} = 10$.
 \end{itemize}
 
 What if the forward reaction were slower (i.e., \textvar{k\textsubscript{bind}} was lower)? We would imagine that the equilibrium concentration of \text{[}LT\text{]} would decrease. For example, if we halve \textvar{k\textsubscript{bind}}, then we obtain the following adjusted parameter values:
@@ -214,11 +214,11 @@ What if the forward reaction were slower (i.e., \textvar{k\textsubscript{bind}} 
  \item $c = k_{bind} \times l_0 \times t_0 = 2500$.
 \end{itemize}
 
-In this case, if we solve the quadratic equation for [*LT*], then we obtain
+In this case, if we solve the quadratic equation for $\text{[}LT\text{]}$, then we obtain
 
 $$\text{[}LT\text{]} = \frac{105 \pm \sqrt{105^2 - 4 \cdot 1 \cdot 2500}}{2 \cdot 1} = 52.5 \pm 16.008$$
 
-The only reasonable solution here is $52.5-16.008 = 36.492$; the steady state concentration has decreased as anticipated.
+The only reasonable solution here is $52.5-16.008 = 36.492$; the steady state concentration has decreased as anticipated.\\
 
 \begin{qbox}[
 What do you think will happen to the steady state concentration of $\text{[}L\text{]}$ if the initial concentration ($l_0$) increases or decreases? What if the dissociation rate (\textvar{k\textsubscript{dissociate}}) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for $\text{[}L\text{]}$.
@@ -236,7 +236,7 @@ $$x \cdot (molecules\mathbin{/}µm^3) \cdot (molecules\mathbin{/}µm^3) = (molec
 
 and solving for \textvar{x} gives us that
 
-$$x = ((molecules\mathbin{/}µm^3)^{-1})s^{-1}$$
+$$x = ((molecules\mathbin{/}µm^3)^{-1})s^{-1}$$\\
 
 \begin{qbox}[
 Use a similar argument to show that the units of the dissociation constant \textvar{k\textsubscript{dissociate}} should be $s^{-1}$.
@@ -250,8 +250,8 @@ Let's use experimentally verified binding and dissociation rates to identify ste
 
 \begin{itemize}
  \item $a = k_{bind} = 0.0146$
- \item $b = - (k_{bind} \times l_0 + k_{bind} \times t_0 + k_{dissociate}) = -283.2$
- \item $c = k_{bind} · l_0 · t_0 = 1022000$
+ \item $b = - (k_{bind} \cdot l_0 + k_{bind} \cdot t_0 + k_{dissociate}) = -283.2$
+ \item $c = k_{bind} \cdot l_0 \cdot t_0 = 1022000$
 \end{itemize}
 
 When we solve for $\text{[}LT\text{]}$ in the quadratic equation, we obtain $\text{[}LT\text{]} = 4,793 molecules\mathbin{/}µm^3$. Now that we have this value along with $l_0$ and $t_0$, we can solve for $\text{[}L\text{]}$ and $\text{[}T\text{]}$ as well:
@@ -260,7 +260,7 @@ $\text{[}L\text{]} = l_0 - \text{[}LT\text{]} = 5,207 molecules\mathbin{/}µm^3$
 
 $\text{[}T\text{]} = t_0 - \text{[}LT\text{]} = 2,207 molecules\mathbin{/}µm^3$
 
-We can therefore determine the steady state concentration for a *single* reversible reaction. However, if we want to model real cellular processes, we will have \textit{many} reactions for a variety of different particles. We will see that it quickly becomes infeasible to solve all of the resulting equations exactly. Instead, we need a method of simulating many reactions in parallel without incurring the significant computational overhead that would be required to keep track of every individual particle.
+We can therefore determine the steady state concentration for a \textit{single} reversible reaction. However, if we want to model real cellular processes, we will have \textit{many} reactions for a variety of different particles. We will see that it quickly becomes infeasible to solve all of the resulting equations exactly. Instead, we need a method of simulating many reactions in parallel without incurring the significant computational overhead that would be required to keep track of every individual particle.
 
 \FloatBarrier
 \phantomsection
@@ -282,11 +282,11 @@ Our particle-free model will apply an approach called \textdef{Gillespie's stoch
 \phantomsection
 \subsection{The Poisson and exponential distributions}
 
-Say that you own a store and have noticed that on average, there are \textvar{λ} customers entering your store in a single hour. Let *X* denote the number of customers that enter the store in the next hour; \textvar{X} is an example of a \textdef{random variable}{random variable}{FILL IN} because it may change depending on random chance. If we assume that customers are independent actors arriving at a constant rate, then \textvar{X} follows a \textdef{Poisson distribution}{Poisson distribution}{FILL IN}. It can be shown that for a Poisson distribution, the probability that exactly $n$ customers arrive in the next hour is
+Say that you own a store and have noticed that on average, there are \textvar{λ} customers entering your store in a single hour. Let \textvar{X} denote the number of customers that enter the store in the next hour; \textvar{X} is an example of a \textdef{random variable}{random variable}{FILL IN} because it may change depending on random chance. If we assume that customers are independent actors arriving at a constant rate, then \textvar{X} follows a \textdef{Poisson distribution}{Poisson distribution}{FILL IN}. It can be shown that for a Poisson distribution, the probability that exactly $n$ customers arrive in the next hour is
 
 $$\mathrm{Pr}(X = n) = \frac{\lambda^n e^{-\lambda}}{n!}\,,$$
 
-where $e$ is the mathematical constant known as Euler's number and is equal to 2.7182818284…
+where $e$ is the mathematical constant known as Euler's number and is equal to 2.7182818284…\\
 
 \begin{note}[
 A derivation of this formula is beyond the scope of our work here, but if you are interested in one, please check out \href{https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239} by Andrew Chamberlain.
@@ -300,7 +300,7 @@ We can also ask how long we will typically have to wait for the next customer to
 
 $$\mathrm{Pr}(T > t) = \mathrm{Pr}(X = 0) = \frac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}\,.$$
 
-In other words, the probability $$\mathrm{Pr}(T > t)$$ decays exponentially over time as $t$ increases. For this reason, the random variable \textvar{T} is said to follow an \textdef{exponential distribution}{exponential distribution}{FILL IN}. It can be shown that the expected value of the exponential distribution (i.e., the average amount of time we will need to wait for the next event to occur) is $\frac{1}{\lambda}$.
+In other words, the probability $$\mathrm{Pr}(T > t)$$ decays exponentially over time as $t$ increases. For this reason, the random variable \textvar{T} is said to follow an \textdef{exponential distribution}{exponential distribution}{FILL IN}. It can be shown that the expected value of the exponential distribution (i.e., the average amount of time we will need to wait for the next event to occur) is $1\mathbin{/}\lambda$.\\
 
 \begin{qbox}[
 What is the probability $\mathrm{Pr}(T < t)$?
@@ -313,13 +313,13 @@ What is the probability $\mathrm{Pr}(T < t)$?
 
 The engine of the Gillespie algorithm runs on a single question: given a well-mixed environment of particles and a reaction involving those particles taking place at some average rate, how long should we expect to wait before this reaction occurs somewhere in the environment?
 
-This is the same question we asked in the previous section; we have simply replaced customers entering a store with instances of a chemical reaction. The average number λ of occurrences of the reaction in a unit time period is the rate at which the reaction occurs. Therefore, an exponential distribution with average wait time $1\mathbin{/}λ$ can be used to model the time between instances of the reaction.
+This is the same question we asked in the previous section; we have simply replaced customers entering a store with instances of a chemical reaction. The average number λ of occurrences of the reaction in a unit time period is the rate at which the reaction occurs. Therefore, an exponential distribution with average wait time $1\mathbin{/}\lambda$ can be used to model the time between instances of the reaction.
 
-Next, say that we have two reactions proceeding independently of each other and occurring at average rates $λ_1$ and $λ_2$. Then the average rate of the two reactions together is $λ_1 + λ_2$, which is also a Poisson distribution. Therefore, the wait time for either of the two reactions is exponentially distributed, with an average wait time equal to $1\mathbin{/}(λ_1 + λ_2)$.
+Next, say that we have two reactions proceeding independently of each other and occurring at average rates $\lambda_1$ and $\lambda_2$. Then the average rate of the two reactions together is $\lambda_1 + \lambda_2$, which is also a Poisson distribution. Therefore, the wait time for either of the two reactions is exponentially distributed, with an average wait time equal to $1\mathbin{/}(\lambda_1 + \lambda_2)$.
 
 Numerical methods allow us to generate a random number simulating the wait time of an exponential distribution. By repeatedly generating these numbers, we can obtain a series of wait times between consecutive reaction occurrences.
 
-Once a wait time is selected, we should determine to which of the two reactions it corresponds. If the rates of the two reactions are equal, then we simply choose one of the two reactions randomly with equal probability. But if the rates of these reactions are different, then we should choose one of the reactions via a probability that is \textit{weighted} in direct proportion to the rate of the reaction; that is, the larger the rate of the reaction, the more likely that this reaction corresponds to the current event.\citep{Schwartz_2008} To do so, we select the first reaction with probability $λ_1\mathbin{/}(λ_1 + λ_2)$ and the second reaction with probability $λ_2\mathbin{/}(λ_1 + λ_2)$.
+Once a wait time is selected, we should determine to which of the two reactions it corresponds. If the rates of the two reactions are equal, then we simply choose one of the two reactions randomly with equal probability. But if the rates of these reactions are different, then we should choose one of the reactions via a probability that is \textit{weighted} in direct proportion to the rate of the reaction; that is, the larger the rate of the reaction, the more likely that this reaction corresponds to the current event.\citep{Schwartz_2008} To do so, we select the first reaction with probability $\lambda_1\mathbin{/}(\lambda_1 + \lambda_2)$ and the second reaction with probability $\lambda_2\mathbin{/}(\lambda_1 + \lambda_2)$.
 
 \begin{qbox}[
 Verify that these two probabilities sum to 1.
@@ -381,9 +381,9 @@ The tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial\_lr] s
 In the \autoref{sec:sig}, we showed an example in which a system with 10,000 free ligand molecules and 7,000 free receptor molecules produced the following steady state concentrations using the experimentally verified binding rate of $k_{bind} = 0.0146 ((molecules\mathbin{/}µm^3)^{-1})s^{-1}$ and dissociation rate of $k_{dissociate} = 35s^{-1}$.
 
 \begin{itemize}
-\item $\text{[}LT\text{]} = 4,793 ((molecules\mathbin{/}µm^3)$
-\item $\text{[}L\text{]} = 5,207 ((molecules\mathbin{/}µm^3)$
-\item $\text{[}T\text{]} = 2,207 ((molecules\mathbin{/}µm^3)$
+\item $\text{[}LT\text{]} = 4,793 ((molecules\mathbin{/}\mu m^3)$
+\item $\text{[}L\text{]} = 5,207 ((molecules\mathbin{/}\mu m^3)$
+\item $\text{[}T\text{]} = 2,207 ((molecules\mathbin{/}\mu m^3)$
 \end{itemize}
 
 Our BioNetGen model uses the same number of initial molecules and the same reaction rates. The system evolves via the Gillespie algorithm, and we track the concentration of free ligand molecules, ligand molecules bound to receptor molecules, and free receptor molecules over time.
@@ -394,7 +394,7 @@ The figure below demonstrates that the Gillespie algorithm quickly converges to 
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial4_ssa.png}
-\caption{A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in $molecules\mathbin{/}µm^3$) on the y-axis. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.}
+\caption{A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in $molecules\mathbin{/}\mu m^3$) on the y-axis. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.}
 \label{fig:chemotaxis_tutorial4_ssa}
 \end{figure}
 
