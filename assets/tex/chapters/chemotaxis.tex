@@ -13,9 +13,9 @@
 
 The book \textit{What If?}\citep{Munroe_2014}, by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these situations occurred. Here is an example, called "Lost Immortals".
 
-\begin{displayquote}
+\begin{quote}
 If two immortal people were placed on opposite sides of an uninhabited Earth-like planet, how long would it take them to find each other? 100,000 years? 1,000,000 years?
-\end{displayquote}
+\end{quote}
 
 One could imagine many ideas for how the immortals could reunite. For example, they could avoid the interiors of continents by moving to the coastlines. If they are allowed to discuss how to find each other in advance, then they could agree to meet at the planet's North Pole --- assuming that the planet lacks polar bears.
 
@@ -367,8 +367,9 @@ Since the reaction is bidirectional, we will use \texttt{k\_lr\_bind} and \textt
 As a result, this reaction is shown below. We name our rule specifying the ligand-receptor reaction \texttt{LR}.
 
 
-\texttt{LR: L(t) + T(l) <-> L(t!1).T(l!1) k\_lr\_bind, k\_lr\_dis}
-
+\begin{verbatim}
+LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
+\end{verbatim}
 
 The tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial\_lr] shows how to implement this rule in BioNetGen and use the Gillespie algorithm to determine the equilibrium of a reversible ligand-receptor binding reaction.
 
@@ -461,30 +462,32 @@ Say that we were to specify all reactions using the style of modeling reactions 
 
 Instead, the BioNetGen language will allow us to conceptualize this system much more concisely using rules that apply to particles that are in a variety of states. The BioNetGen representation of the four particles in our model is shown below. The notation \texttt{Phos\texttildelow U\texttildelow P} indicates that a given molecule type can be either phosphorylated or unphosphorylated, so that we do not need multiple different expressions to represent the molecule.
 
-\texttt{L(t)             \#ligand molecule \\
-    T(l,Phos\texttildelow U\texttildelow P)    \#receptor complex   \\
-		CheY(Phos\texttildelow U\texttildelow P) \\
-		CheZ()}
+\begin{verbatim}
+L(t)             #ligand molecule
+T(l,Phos~U~P)    #receptor complex
+CheY(Phos~U~P) 
+CheZ()
+\end{verbatim}
 
 The conciseness of BioNetGen's molecule representation helps us represent our reactions concisely as well. We first reproduce the reversible binding and dissociation reaction from the previous section.
 
-\texttt{
-LR: L(t) + T(l) <-> L(t!1).T(l!1) k\_lr\_bind, k\_lr\_dis
-}
+\begin{verbatim}
+LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
+\end{verbatim}
 
 Next, we represent the phosphorylation of the MCP complex. Recall that the phosphorylation of CheA can occur at different rates depending on whether the MCP is bound, and so we will need two different reactions to model these different rates. In our model, the phosphorylation of the MCP will occur at one fifth the rate when it is bound to the attractant ligand.
 
-\texttt{
-FreeTP: T(l,Phos\texttildelow U) -> T(l,Phos\texttildelow P) k\_T\_phos   \\
-BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos\texttildelow P) k\_T\_phos*0.2
-}
+\begin{verbatim}
+FreeTP: T(l,Phos~U) -> T(l,Phos~P) k_T_phos   
+BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
+\end{verbatim}
 
 Finally, we represent the phosphorylation and dephosphorylation of CheY. The former requires a phosphorylated MCP receptor, while the latter is done with the help of a CheZ molecule that can be in any state.
 
-\texttt{
-YP: T(Phos\texttildelow P) + CheY(Phos\texttildelow U) -> T(Phos\texttildelow U) + CheY(Phos\texttildelow P) k\_Y\_phos \\
-YDep: CheZ() + CheY(Phos\texttildelow P) -> CheZ() + CheY(Phos\texttildelow U) k\_Y\_dephos
-}
+\begin{verbatim}
+YP: T(Phos~P) + CheY(Phos~U) -> T(Phos~U) + CheY(Phos~P) k_Y_phos
+YDep: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
+\end{verbatim}
 
 Now that we have converted the reactions from the chemotaxis signal transduction pathway into BioNetGen's rule\-based language, we would like to see what happens when we \textit{change} the concentrations of the ligand. Ideally, the bacterium should be able to distinguish different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY, and the lower the tumbling frequency of the bacterium.
 
