@@ -183,8 +183,7 @@ The same goes for the feed and kill reactions; new *A* particles are formed, and
 
 In the following tutorial, we will initiate our reaction-diffusion system with a uniform concentration of *A* particles spread across the grid and a tightly packed collection of *B* particles in the center of the grid. When we return from this tutorial, we will see if any high-level patterns form.
 
-[Visit tutorial](turing-cellblender){: .btn .btn--info .btn--large}
-{: style="font-size: 100%; text-align: center;"}
+\tutorial[https://biologicalmodeling.org/prologue/turing-cellblender]
 
 \FloatBarrier
 \phantomsection
@@ -192,33 +191,37 @@ In the following tutorial, we will initiate our reaction-diffusion system with a
 
 For many parameter values, our reaction-diffusion system is not very interesting.  For example, the following animation is produced when using parameter rates in CellBlender of *f* = 1000 and *k* = 500,000.  It shows that if the kill rate is too high, then the *B* particles will die out more quickly than they can be replenished by the reaction with *A* particles, and so only *A* particles will be left. In this animation, *A* particles have been colored green, and *B* particles have been colored red.
 
-{% include video id="MOO0fmwoz7E" provider="youtube" %}
+\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
 On the other hand, if *f* is too high, then the increased feed rate will cause an increase in the concentration of *A* particles. However, the increased concentration of *A* particles will also cause more interactions between *A* particles and pairs of *B* particles, and so we will see an explosion in the number of predators. The following simulation has the parameters *f* = 1,000,000 and *k* = 100,000.
 
-{% include video id="ayvWHWBCg70" provider="youtube" %}
+\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
 The interesting behavior in this system lies in a sweet spot of the *f* and *k* parameters. For example, consider the following visualization when *f* is equal to 100,000 and *k* is equal to 200,000. We see a very clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where there is a critical mass of predators to interact with each other.
 
-{% include video id="W_eCGTlgi4k" provider="youtube" %}
+\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
 When we hold *k* fixed and increase *f* to 140,000, the higher feed rate increases the likelihood of *B* particles encountering *A* particles, and so we see even more stripes of *B* particles.
 
-{% include video id="I5wyKpIWgrE" provider="youtube" %}
+\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
 As *f* approaches *k*, the stripe structure becomes chaotic and breaks down because there are now many clusters of *B* particles colliding and mix with each other. The following animation shows the result of raising *f* to 175,000.
 
-{% include video id="CM0JUzRn4X8" provider="youtube" %}
+\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
 Once *f* is equal to *k*, the stripes disappear, as shown in the video below. We might expect this to mean that the *A* and *B* particles will be uniformly mixed. Instead, we see is that after an initial outward explosion of *B* particles, the system displays a mottled background, with pockets having higher or lower concentration of *B*. Pay attention to the following video at a point late in the animation. Although the concentrations of the particles are still changing, there is much less large-scale change than in earlier videos. If we freeze the video, our eye cannot help but see patterns of red and green clusters that resemble spots, or mottling.
 
-{% include video id="Pva4e0w7i24" provider="youtube" %}
+\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
 You may still be skeptical, since the patterns in the above videos do not have the concrete boundaries that we might expect of animal stripes and spots. Yet when we closely examine an animal with skin patterns, we can see that the patterns we infer on a higher level are just the net result of many individual, varied points. The figure below shows an example of this effect for zebrafish skin.
 
-[![image-center](../assets/images/600px/zebrafish_zoom.jpg){: .align-center}](../assets/images/zebrafish_zoom.jpg)
-Zooming in on the striped skin of a zebrafish shows that each stripe is formed of thousands of differently colored cells, and that the boundaries of the stripes are more variable than they may seem at lower resolution. Image courtesy: JenniferOwen, Wikimedia Commons (adapted by Kit Yates).
-{: style="font-size: medium;"}
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../assets/images/600px/zebrafish_zoom.jpg}
+\caption{Zooming in on the striped skin of a zebrafish shows that each stripe is formed of thousands of differently colored cells, and that the boundaries of the stripes are more variable than they may seem at lower resolution. Image courtesy: JenniferOwen, Wikimedia Commons (adapted by Kit Yates).}
+\label{fig:zebrafish_zoom}
+\end{figure}
 
 \FloatBarrier
 \phantomsection
@@ -226,13 +229,17 @@ Zooming in on the striped skin of a zebrafish shows that each stripe is formed o
 
 When you watched the particle simulations above, an adjective that may have come to mind is "trippy". This is no accident.
 
-Research dating all the way back to the 1920s has studied the patterns that we see during visual hallucinations, which Heinrich Klüver named \textdef{form constants}{form constants}{FILL IN} after studying patients who had taken mescaline.[^kluver] Form constants, such as cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of their hallucinations.
+Research dating all the way back to the 1920s has studied the patterns that we see during visual hallucinations, which Heinrich Klüver named \textdef{form constants}{form constants}{FILL IN} after studying patients who had taken mescaline. Form constants, such as cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of their hallucinations.
 
-[![image-center](../assets/images/600px/form_constants.png){: .align-center}](../assets/images/form_constants.png)
-A few of Heinrich Klüver's form constants. Image courtesy: Lisa Diez, Wikimedia Commons.
-{: style="font-size: medium;"}
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../assets/images/600px/form_constants.png}
+\caption{A few of Heinrich Klüver's form constants. Image courtesy: Lisa Diez, Wikimedia Commons.}
+\label{fig:form_constants}
+\end{figure}
 
-Over five decades after Klüver's work, researchers would determine that form constants having different shapes originate from simpler *linear* stripes of cellular activation patterns in the retina. The retina is circular, but the brain needs to convert this cellular image into a rectangular field of view; as a result, when the linear patterns are passed to the visual cortex, the hallucinating brain contorts them into the spirals and whirls that we see.[^cowan] Some researchers[^quanta] believe that the patterns in the retina caused by hallucinations are in fact Turing patterns and can be explained by a reaction-diffusion model in which one type of neuron acts as a predator and another acts as prey.
+Over five decades after Klüver's work, researchers would determine that form constants having different shapes originate from simpler *linear* stripes of cellular activation patterns in the retina. The retina is circular, but the brain needs to convert this cellular image into a rectangular field of view; as a result, when the linear patterns are passed to the visual cortex, the hallucinating brain contorts them into the spirals and whirls that we see. Some researchers believe that the patterns in the retina caused by hallucinations are in fact Turing patterns and can be explained by a reaction-diffusion model in which one type of neuron acts as a predator and another acts as prey.
 
 \FloatBarrier
 \phantomsection
@@ -280,15 +287,23 @@ Our idea is to grid off two-dimensional space into blocks and store only the *co
 
 Let us begin with an example of the diffusion of only *A* particles; we will later add *B* particles as well as reactions to our model. Say that the particles are at maximum concentration in the central cell of our grid and are present nowhere else, as shown below.
 
-[![image-center](../assets/images/600px/initial_A_concentration.png){: .align-center width="300px"}](../assets/images/initial_A_concentration.png)
-A 5 x 5 grid showing hypothetical initial concentrations of *A* particles. Cells are labeled by numbers between 0 and 1 representing their concentration of *A* particles. The central cell has maximum concentration, and no particles are contained in any other cell.
-{: style="font-size: medium;"}
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../assets/images/600px/initial_A_concentration.png}
+\caption{A 5 x 5 grid showing hypothetical initial concentrations of *A* particles. Cells are labeled by numbers between 0 and 1 representing their concentration of *A* particles. The central cell has maximum concentration, and no particles are contained in any other cell.}
+\label{fig:initial_A_concentration}
+\end{figure}
 
 We will now update the grid of cells after one time step to mimic particle diffusion. To do so, we will spread out the concentration of particles in each square to its eight neighbors. For example, we could assume that 20% of the current cell's concentration diffuses to each of its four adjacent neighbors, and that 5% of the cell's concentration diffuses to its four diagonal neighbors. Because the central square in our ongoing example is the only cell with any particles, the updated concentrations after a single time step are shown in the following figure.
 
-[![image-center](../assets/images/600px/A_concentration_one_time_step.png){: .align-center width="300px"}](../assets/images/A_concentration_one_time_step.png)
-A grid showing an update to the system in the previous figure after diffusion of particles after a single time step.
-{: style="font-size: medium;"}
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../assets/images/600px/A_concentration_one_time_step.png}
+\caption{A grid showing an update to the system in the previous figure after diffusion of particles after a single time step.}
+\label{fig:A_concentration_one_time_step}
+\end{figure}
 
 \begin{note}[%
 The sum of the values in the grid in the figure above is 1, which is the same as the sum of the values in our original figure. Regardless of how many times we update the grid, the sum of the values should be 1 to ensure the conservation of total mass in the system.
@@ -302,9 +317,13 @@ Finally, the central square has no particles after one step, but it will receive
 
 In summary, the central nine squares after two time steps are as shown in the following figure.
 
-[![image-center](../assets/images/600px/A_concentration_two_time_steps_partial.png){: .align-center width="300px"}](../assets/images/A_concentration_two_time_steps_partial.png)
-A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled "?" are left as an exercise for the reader.
-{: style="font-size: medium;"}
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../assets/images/600px/A_concentration_two_time_steps_partial.png}
+\caption{A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled "?" are left as an exercise for the reader.}
+\label{fig:A_concentration_two_time_steps_partial}
+\end{figure}
 
 \begin{qbox}[%
 What should the values of the "?" cells be in the above figure? Note that these cells are neighbors of cells with positive concentrations after one time step, so their concentrations should be positive after two time steps.
@@ -325,9 +344,13 @@ Our solution is to slow down the diffusion process by adding a parameter <em>d</
 
 Revisiting our original example, say that <em>d</em><sub><em>A</em></sub> is equal to 0.2. After the first time step, only 20% of the central cell's particles will be spread to its neighbors. Of these particles, 5% will be spread to diagonal neighbors, and 20% will be spread to adjacent neighbors. The figure below illustrates that after one time step, the central square has concentration 0.8, its adjacent neighbors have concentration 0.2<em>d</em><sub><em>A</em></sub> = 0.04, and its diagonal neighbors have concentration 0.05<em>d</em><sub><em>A</em></sub> = 0.01.
 
-[![image-center](../assets/images/600px/A_concentration_slower_diffusion.png){: .align-center width="300px"}](../assets/images/A_concentration_slower_diffusion.png)
-An updated grid of cells showing the concentration of <em>A</em> particles after one time step if <em>d</em><sub><em>A</em></sub> = 0.2.
-{: style="font-size: medium;"}
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../assets/images/600px/A_concentration_slower_diffusion.png}
+\caption{An updated grid of cells showing the concentration of <em>A</em> particles after one time step if <em>d</em><sub><em>A</em></sub> = 0.2.}
+\label{fig:A_concentration_slower_diffusion}
+\end{figure}
 
 \FloatBarrier
 \phantomsection
@@ -335,9 +358,13 @@ An updated grid of cells showing the concentration of <em>A</em> particles after
 
 We now will add particle *B* to the simulation, which also starts with 100% concentration in the central square. Recall that *B*, our "predator" molecule, diffuses half as fast as *A*, the "prey" molecule. If we set the diffusion rate <em>d</em><sub><em>B</em></sub> equal to 0.1, then our cells after a time step will be updated as shown in the figure below. This figure represents the concentration of the two particles in each cell as an ordered pair ([*A*], [*B*]).
 
-[![image-center](../assets/images/600px/two_particle_concentration_diffusion.png){: .align-center width="300px"}](../assets/images/two_particle_concentration_diffusion.png)
-A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> diffusing at rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by the ordered pair ([<em>A</em>], [<em>B</em>]).
-{: style="font-size: medium;"}
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../assets/images/600px/two_particle_concentration_diffusion.png}
+\caption{A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> diffusing at rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by the ordered pair ([<em>A</em>], [<em>B</em>]).}
+\label{fig:two_particle_concentration_diffusion}
+\end{figure}
 
 \begin{qbox}[%
 Update the cells in the above figure after another generation of diffusion. Use the diffusion rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1.
@@ -353,12 +380,17 @@ First, we will consolidate the information stored in a cell about the concentrat
 
 Next, we color each cell in the grid according to its value of [*B*]/([*A*] + [*B*]) using a color spectrum like those shown in the figure below. We will use the `Spectral` color map, meaning that if a cell has a value close to 0 (relatively few predators), then it will be colored red, while if it has a value close to 1 (relatively many predators), then it will be colored dark blue.
 
-[![image-center](../assets/images/600px/matplotlib_colormap.png){: .align-center}](../assets/images/matplotlib_colormap.png)
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../assets/images/600px/matplotlib_colormap.png}
+\caption{}
+\label{fig:matplotlib_colormap}
+\end{figure}
 
 When we color each cell over many time steps, we can animate the automaton to see how it changes over time. We are now ready for the following tutorial, in which we will implement and visualize our diffusion automaton using a \textdef{Jupyter notebook}{Jupyter notebook}{FILL IN}.
 
-[Visit tutorial](tutorial-diffusion){: .btn .btn--info .btn--large}
-{: style="font-size: 100%; text-align: center;"}
+\tutorial[https://biologicalmodeling.org/prologue/tutorial-diffusion]
 
 The video below shows an animation of a 101 x 101 board that begins with the following properties:
 * [*A*] = 1 for all cells;
@@ -366,7 +398,13 @@ The video below shows an animation of a 101 x 101 board that begins with the fol
 * <em>d</em><sub><em>A</em></sub> = 0.5;
 * <em>d</em><sub><em>B</em></sub> = 0.25.
 
-[![image-center](../assets/images/600px/diffusion_movie_first_frame.png){: .align-center}](../assets/images/diffusion_movie.gif)
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../assets/images/600px/diffusion_movie_first_frame.png}
+\caption{}
+\label{fig:diffusion_movie_first_frame}
+\end{figure}
 
 Note that the center of the cell becomes blue because the *A* particles diffuse twice as fast, so that they spread out more from the middle of the board, which is occupied in greater numbers by *B* particles.
 
@@ -397,7 +435,7 @@ In summary, say that a cell has current concentrations [*A*] and [*B*]. Say also
 [*A*]<sub>new</sub> = [*A*] + Δ*A* +  *f*(1-[*A*]) - *r* · [*A*] · [*B*]<sup>2</sup>
 [*B*]<sub>new</sub> = [*B*] + Δ*B* - *k* · [*B*] + *r* · [*A*] · [*B*]<sup>2</sup>
 
-Applying these reaction-diffusion computations over all cells in parallel and over many generations forms a cellular automaton called the \textdef{Gray-Scott}{Gray-Scott}{FILL IN} model.[^gs]
+Applying these reaction-diffusion computations over all cells in parallel and over many generations forms a cellular automaton called the \textdef{Gray-Scott}{Gray-Scott}{FILL IN} model.
 
 Before continuing, let us consider an example of how a single cell might update its concentration of both particle types as a result of reaction and diffusion.  Say that we have the following hypothetical parameter values:
 
@@ -418,8 +456,7 @@ As the result of all these processes, we update the concentrations of *A* and *B
 
 We should now feel ready to implement the Gray-Scott model in the following tutorial. The question is: even though we have built a coarser-grained simulation than the previous lesson, will we still see Turing patterns?
 
-[Visit tutorial](gs-jupyter){: .btn .btn--info .btn--large}
-{: style="font-size: 100%; text-align: center;"}
+\tutorial[https://biologicalmodeling.org/prologue/gs-jupyter]
 
 \FloatBarrier
 \phantomsection
@@ -429,26 +466,53 @@ In contrast to our particle-based simulator, the Gray-Scott model produced an an
 
 Our first video shows an animation of the Gray-Scott model using the parameters *f* = 0.034 and *k* = 0.095. We use the same initial configuration of the automaton that we used in the diffusion example, in which a cluster of *B* particles are found at the middle of a board full of *A* particles.
 
-[![image-center](../assets/images/600px/gray-scott_movie_first_frame.png){: .align-center}](../assets/images/gray-scott_movie.gif)
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../assets/images/600px/gray-scott_movie_first_frame.png}
+\caption{}
+\label{fig:gray-scott_movie_first_frame}
+\end{figure}
 
 If we expand the size of the simulation and add multiple clusters of predators to the automaton, then the patterns become more complex as they intersect.
 
-[![image-center](../assets/images/600px/gray-scott_multiple_predators_first_frame.png){: .align-center}](../assets/images/gray-scott_multiple_predators.gif)
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../assets/images/600px/gray-scott_multiple_predators_first_frame.png}
+\caption{}
+\label{fig:gray-scott_multiple_predators_first_frame}
+\end{figure}
 
 If we keep the feed rate constant and increase the kill rate slightly to *k* = 0.097, then the patterns change significantly into spots.
 
-[![image-center](../assets/images/600px/gray-scott_f34_k63_first_frame.png){: .align-center}](../assets/images/gray-scott_f34_k63.gif)
-{: style="font-size: medium;"}
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../assets/images/600px/gray-scott_f34_k63_first_frame.png}
+\caption{}
+\label{fig:gray-scott_f34_k63_first_frame}
+\end{figure}
 
 If we make the prey a little happier as well, increasing  *f* to 0.038 and *k* to 0.099, then we have a different striped pattern.
 
-[![image-center](../assets/images/600px/gray-scott_f38_k61_first_frame.png){: .align-center}](../assets/images/gray-scott_f38_k61.gif)
-{: style="font-size: medium;"}
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../assets/images/600px/gray-scott_f38_k61_first_frame.png}
+\caption{}
+\label{fig:gray-scott_f38_k61_first_frame}
+\end{figure}
 
 And if we increase *f* to 0.042 and *k* to 0.101, then again we see spots.
 
-[![image-center](../assets/images/600px/gray-scott_f42_k59_first_frame.png){: .align-center}](../assets/images/gray-scott_f42_k59.gif)
-{: style="font-size: medium;"}
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../assets/images/600px/gray-scott_f42_k59_first_frame.png}
+\caption{}
+\label{fig:gray-scott_f42_k59_first_frame}
+\end{figure}
 
 The point is that very slight changes in our model's parameters can produce drastically different results in terms of the patterns that we witness. In this prologue's conclusion, we will connect this observation back to our original motivation of identifying the cause for animal skin patterns.
 
@@ -480,23 +544,30 @@ The point is that very slight changes in our model's parameters can produce dras
 
 The Turing patterns that emerged from our particle simulations are a testament to the human eye's ability to find organization within the net behavior of tens of thousands of particles. For example, take another look at the video we produced that showed mottling in our particle simulator. Patterns are present, but they are also noisy --- even in the dark red regions we will have quite a few green particles, and vice-versa. The rapid inference of large-scale patterns from small-scale visual phenomena is one of the tasks that our brains have evolved to perform well.
 
-{% include video id="Pva4e0w7i24" provider="youtube" %}
+\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
 Our reaction-diffusion system is remarkable because it is so \textdef{fine-tuned}{fine-tuned}{FILL IN}, meaning that very slight changes in parameter values can lead to significant changes in the system. These changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
 
 The figure below shows how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary. The kill rate increases along the x-axis, and the feed rate increases along the y-axis. Notice how much the patterns change! You may like to tweak the parameters of the own Gray-Scott simulation from the [previous lesson](gray-scott) to see if you can reproduce these differing patterns.
 
-[![image-center](../assets/images/600px/xmorphia-parameter-map.jpg){: .align-center width="400px"}](../assets/images/xmorphia-parameter-map.jpg)
-Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns produced in the Gray-Scott model. Note that many parameter choices do not lead to patterns. Image courtesy: Robert Munafo.[^robert]
-{: style="font-size: medium;"}
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../assets/images/600px/xmorphia-parameter-map.jpg}
+\caption{Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns produced in the Gray-Scott model. Note that many parameter choices do not lead to patterns. Image courtesy: Robert Munafo.}
+\label{fig:xmorphia-parameter-map}
+\end{figure}
 
 Later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In a \textdef{robust}{robust}{FILL IN} system, variation in parameters does not lead to substantive changes in the ultimate behavior of the system. Robustness is vital for processes, like your heartbeat, that must be resilient to small environmental changes.
 
-It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism causing these stripes to form is still an unresolved question. However, the skin of *zebrafish* does exhibit Turing patterns because two types of pigment cells follow a reaction-diffusion model much like the one we presented in this prologue.[^zebrafish] This prologue presented Turing particles as driven by the interactions of particles, but if the interactions occur between cells, then the resulting patterns are the same.
+It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism causing these stripes to form is still an unresolved question. However, the skin of *zebrafish* does exhibit Turing patterns because two types of pigment cells follow a reaction-diffusion model much like the one we presented in this prologue. This prologue presented Turing particles as driven by the interactions of particles, but if the interactions occur between cells, then the resulting patterns are the same.
 
-Finally, take a look at the following two photos of giant pufferfish.[^youngfish][^pufferfish] These fish are genetically practically identical, but their skin patterns are very different. What may seem like a drastic change from spots to stripes is likely attributable to a small change of parameters in a fine-tuned biological system that, like much of life, is powered by randomness.
+Finally, take a look at the following two photos of giant pufferfish. These fish are genetically practically identical, but their skin patterns are very different. What may seem like a drastic change from spots to stripes is likely attributable to a small change of parameters in a fine-tuned biological system that, like much of life, is powered by randomness.
 
 {% include gallery caption="Two similar pufferfish with very different skin patterns. (Left) A juvenile Mbu pufferfish with a very familiar pattern. (Right) An adult Mbu pufferfish exhibiting another familiar pattern." %}
+
+
+
 
 
 
