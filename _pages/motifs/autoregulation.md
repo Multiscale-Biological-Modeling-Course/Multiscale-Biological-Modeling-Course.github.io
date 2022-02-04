@@ -28,7 +28,7 @@ To determine whether the number of loops in the transcription factor network of 
 
 There are multiple ways to generate a random network, but we will use an approach developed by Edgar Gilbert in 1959[^Gilbert]. Given an integer *n* and a probability *p* (between 0 and 1), we form *n* nodes. Then, for every possible pair of nodes *X* and *Y*, we connect *X* to *Y* via a directed edge with probability *p*; that is, we simulate the process of flipping a weighted coin that has probability *p* of coming up "heads".
 
-**Note:** If you are interested in the technical details of how this can be simulated computationally, see <a href="https://compeau.cbd.cmu.edu/programming-for-lovers/chapter-2-forecasting-a-presidential-election-with-monte-carlo-simulation/" target="_blank">Programming for Lovers/a>).
+**Note:** If you are interested in the technical details of how this can be simulated computationally, see <a href="https://compeau.cbd.cmu.edu/programming-for-lovers/chapter-2-forecasting-a-presidential-election-with-monte-carlo-simulation/" target="_blank">Programming for Lovers</a>).
 {: .notice--info}
 
 **STOP:** What should *n* and *p* be if we are generating a random network to compare against the *E. coli* transcription factor network?
