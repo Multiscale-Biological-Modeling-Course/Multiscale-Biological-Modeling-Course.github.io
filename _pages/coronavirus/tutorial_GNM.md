@@ -75,7 +75,7 @@ For normal mode analysis with ProDy, the default is 20 non-zero modes. In additi
 
 ~~~ python
 In[#]: gnm.calcModes()
-In[#]: hinges = gnm.getHinges()
+In[#]: hinges = calcHinges(gnm)
 ~~~~
 
 For advanced users, information of the GNM and Kirchhoff matrix can be accessed with the following commands.
