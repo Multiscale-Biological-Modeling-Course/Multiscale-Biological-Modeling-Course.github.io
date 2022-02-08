@@ -17,6 +17,7 @@
 	Tom Inglesby, Director of the Center for Health Security at Johns Hopkins Bloomberg School of Public Health
 \end{displayquote}
 
+\FloatBarrier
 \phantomsection
 \subsection{The world's fastest outbreak}
 
@@ -28,6 +29,7 @@ Consider that it took four years for the Black Death, which killed over a third 
 
 As health officials braced for the impact of the fastest-traveling virus in human history, panic set in. Businesses were closed, sick passengers were removed from airplanes, and Chinese officials threatened to execute anyone deliberately spreading the disease. In the process, the mysterious new illness earned a name: \textdef{Severe Acute Respiratory Syndrome}{Severe Acute Respiratory Syndrome}{FILL IN}, or \textdef{SARS}{SARS}{FILL IN}.
 
+\FloatBarrier
 \phantomsection
 \subsection{Finding the source of the outbreak}
 
@@ -41,6 +43,7 @@ In 2017, researchers published the result of five years of sampling horseshoe ba
 	We have also revealed that various [viruses] ... are still circulating among bats in this region. Thus, the risk of spillover into people and emergence of a disease similar to SARS is possible. This is particularly important given that the nearest village to the bat cave we surveyed is only 1.1 km away, which indicates a potential risk of exposure to bats for the local residents. Thus, we propose that monitoring of SARSr-CoV evolution at this and other sites should continue, as well as examination of human behavioral risk for infection and serological surveys of people, to determine if spillover is already occurring at these sites and to design intervention strategies to avoid future disease emergence.
 \end{displayquote}
 
+\FloatBarrier
 \phantomsection
 \subsection{A new threat emerges}
 
@@ -54,6 +57,7 @@ Throughout January, the virus silently raged through China, spreading to both So
 
 As for Dr. Li? Despite warning against the risk of this new virus, he contracted the disease from one of his patients on January 8. He continued working in the hospital, and entered the hospital on January 31. Within a week, he was dead, one of the first of millions of COVID-19 casualties.
 
+\FloatBarrier
 \phantomsection
 \subsection{Why were the two outbreaks so different?}
 
@@ -143,6 +147,7 @@ Because structure prediction is such a fundamental problem, researchers wish to 
 	\label{fig:different_protein_shapes_2020}
 \end{figure}
 
+\FloatBarrier
 \phantomsection
 \subsection{Laboratory methods for determining protein structure}
 
@@ -169,6 +174,7 @@ Protein structures that have been determined experimentally are typically stored
 
 This number may seem large, but a recent study estimated that humans have between 620,000 and 6.13 million protein isoforms (i.e., differently-shaped protein variants). If we hope to catalog the proteins of all living things, then our work on structure determination is just beginning.
 
+\FloatBarrier
 \phantomsection
 \subsection{What makes protein structure prediction so difficult?}
 
@@ -235,6 +241,10 @@ A polypeptide with $$n$$ amino acids will have $$n - 1$$ peptide bonds, meaning 
 
 Although protein structure prediction is difficult, it is not impossible; nature's algorithm is not, after all, magic. Furthermore, researchers have spent decades cataloging the genomes of thousands of species. As a result, biologists know the \textit{sequence} of amino acids for many proteins whose structures have not been validated experimentally. In our case, although the SARS-CoV-2 genome was sequenced in January 2020, the structure of its spike protein was unknown at that time.  In the next section, we will place ourselves in the shoes of early SARS-CoV-2 researchers working before the structure of the virus's spike protein had been experimentally determined to see if we can predict its structure and give biologists a head start on fighting the pandemic.
 
+
+\FloatBarrier
+\phantomsection
+
 \section{Ab initio Protein Structure Prediction}
 \label{sec:ab_initio}
 \phantomsection
@@ -246,6 +256,7 @@ Predicting a protein’s structure using only its amino acid sequence is called 
 
 As we dive into structure prediction, we should be more precise about two things. First, we will specify what we mean by the "structure" of a protein. Second, although we know that a polypeptide always folds into the same final three-dimensional shape, we have not said anything about \textit{why} a protein folds in a certain way. We will therefore need a better understanding of how the physicochemical properties of amino acids affect a protein's final structure.
 
+\FloatBarrier
 \phantomsection
 \subsection{The four levels of protein structure}
 
@@ -285,6 +296,7 @@ As for SARS-CoV and SARS-CoV-2, the spike protein is a \textdef{homotrimer}{homo
 
 The structural units making up proteins are often hierarchical, and the spike protein is no exception. Each spike protein chain is a \textdef{dimer}{dimer}{FILL IN}, consisting of two subunits called \textdef{S1}{S1}{FILL IN} and \textdef{S2}{S2}{FILL IN}. Each of these subunits further divides into \textdef{protein domains}{protein domains}{FILL IN}, distinct structural units within the protein that fold independently and are typically responsible for a specific interaction or function. For example, the SARS-CoV-2 spike protein has a \textdef{receptor binding domain (RBD)}{receptor binding domain (RBD)}{FILL IN} located on the S1 subunit of the spike protein that is responsible for interacting with the human ACE2 enzyme; the rest of the protein does not come into contact with ACE2. We will say more about the RBD soon.
 
+\FloatBarrier
 \phantomsection
 \subsection{Proteins seek the lowest energy conformation}
 
@@ -338,6 +350,7 @@ As the protein folds, it seeks a conformation of \textit{lowest} total potential
 	\label{fig:EnergyCartoon}
 \end{figure}
 
+\FloatBarrier
 \phantomsection
 \subsection{Modeling \textit{ab initio} structure prediction as an exploration problem}
 
@@ -357,6 +370,7 @@ In the case of structure prediction, our search space is the collection of all p
 	\label{fig:energy_landscape}
 \end{figure}
 
+\FloatBarrier
 \phantomsection
 \subsection{A local search algorithm for \textit{ab initio} structure prediction}
 
@@ -374,6 +388,7 @@ Fortunately, we can modify our local search algorithm in a variety of ways. Firs
 
 Second, every time we reach a local minimum, we could allow ourselves to change the structure with some probability, thus giving our local search algorithm the chance to "bounce" out of the local minimum. In an approach called \textdef{simulated annealing}{simulated annealing}{FILL IN}, we start our local search with this probability high and reduce it over time, so that eventually we will settle into some local minimum that serves as our predicted structure. Once again, randomness helps us solve our problems!
 
+\FloatBarrier
 \phantomsection
 \subsection{Applying an \textit{ab initio} algorithm to a protein sequence}
 
@@ -381,6 +396,7 @@ To run an \textit{ab initio} structure prediction algorithm on a real protein, w
 
 Despite the sophistication of software like QUARK, Levinthal's paradox means that the search space of all possible structures for a protein is so large that accurately predicting large protein structures with \textit{ab initio} modeling remains very difficult, and QUARK limits us to proteins with at most 200 amino acids. Since the SARS-CoV-2 spike protein contains 1281 amino acids, we will instead apply this software to the shorter human hemoglobin subunit alpha. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_ab_initio]
 
+\FloatBarrier
 \phantomsection
 \subsection{Toward a faster approach for protein structure prediction}
 
@@ -400,6 +416,9 @@ Yet we also wonder whether we can speed up our structure prediction algorithms s
 What known protein structure(s) would you first want to consult when studying the SARS-CoV-2 spike protein?
 ]\end{qbox}
 
+\FloatBarrier
+\phantomsection
+
 \section{Homology Modeling}
 \label{sec:homology}
 \phantomsection
@@ -411,6 +430,7 @@ The structure of the SARS-CoV spike protein was determined in 2003 and entered i
 
 In the case of the SARS-CoV-2 spike protein, we already know that we want to use the SARS-CoV spike protein as a template. However, if we do not know which template to use before we begin, then we can use a search algorithm such as BLAST to find a protein with known structure that has similar sequence to our protein of interest.
 
+\FloatBarrier
 \phantomsection
 \subsection{A similar structure reduces the size of the search space}
 
@@ -432,6 +452,7 @@ Some homology modeling algorithms account for variable and conserved regions by 
 
 We will model the SARS-CoV-2 spike protein using homology modeling software from three publicly available servers (SWISS-MODEL, Robetta, and GalaxyWEB), all of which apply a variant of fragment assembly. If the results are similar, then we have faith in the \textit{robustness} of our predictions to using different approaches. Furthermore, comparing the results of multiple different approaches may give us more insights into structure prediction. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_homology]
 
+\FloatBarrier
 \phantomsection
 \subsection{Applying homology modeling to the SARS-CoV-2 spike protein}
 
@@ -473,6 +494,9 @@ The above figure shows just part of the information needed to fully represent a 
 
 Now that we can represent protein structures, we wish to compare two protein structures. How similar are the three predicted structures of the SARS-CoV-2 spike protein to each other, and how similar are they to the structure of the SARS-CoV spike protein? This is a simple question, but it has a complicated answer, to which we will devote an entire section.
 
+\FloatBarrier
+\phantomsection
+
 \section{Ab initio Protein Structure Prediction}
 \label{sec:accuracy}
 \phantomsection
@@ -486,6 +510,7 @@ If you would like to explore the structure of the SARS-CoV-2 spike protein, chec
 
 In this section, we will compare the results of the SARS-CoV-2 spike protein prediction from the previous section against each other and against the protein's empirically validated structure. To do so, we need a method of comparing two structures.
 
+\FloatBarrier
 \phantomsection
 \subsection{Comparing two shapes with the Kabsch algorithm}
 
@@ -588,6 +613,7 @@ However, we have still assumed that we already rotated (and possibly flipped) $S
 
 The best way of rotating and flipping $S$ so as to minimize the RMSD between the resulting vectors $s$ and $t$ can be found with a method called the \textdef{Kabsch algorithm}{Kabsch algorithm}{FILL IN}. Explaining this algorithm requires some advanced linear algebra and is beyond the scope of our work but is described at \url{https://en.wikipedia.org/wiki/Kabsch_algorithm}.
 
+\FloatBarrier
 \phantomsection
 \subsection{Applying the Kabsch algorithm to protein structure comparison}
 
@@ -623,6 +649,7 @@ In short, if the RMSD of two proteins is \textit{large}, then we should be wary 
 
 We are now ready to apply the Kabsch algorithm to compare the structures that we predicted for human hemoglobin subunit alpha and the SARS-CoV-2 spike protein against their experimentally validated structures. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_rmsd]
 
+\FloatBarrier
 \phantomsection
 \subsection{Assessing the accuracy of our structure prediction models}
 
@@ -630,6 +657,7 @@ In the tutorials occurring earlier in this module, we used publicly available pr
 
 Let's see how well our models performed by showing the values of RMSD produced by the Kabsch algorithm when comparing each of these models against the validated structures.
 
+\FloatBarrier
 \phantomsection
 \subsection{\textit{Ab initio} (QUARK) models of Human Hemoglobin Subunit Alpha}
 
@@ -655,6 +683,7 @@ It is tempting to conclude that our \textit{ab initio} prediction was a success.
 
 We know that homology modeling will be faster than \textit{ab initio} modeling. But will it be more accurate as well?
 
+\FloatBarrier
 \phantomsection
 \subsection{Homology models of SARS-CoV-2 spike protein}
 
@@ -662,6 +691,7 @@ In \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_homology], we u
 
 Because the work needed to generate these models was distributed over many users' machines, comparing the RMSD scores obtained by the Rosetta@Home models against our own may provide insights on the effect of computational power on the accuracy of predictions. The SSGCID models are publically available on their website (\url{https://www.ssgcid.org/cttdb/molecularmodel_list/?target__icontains=BewuA}).
 
+\FloatBarrier
 \phantomsection
 \subsection{GalaxyWEB}
 
@@ -685,6 +715,7 @@ Galaxy5 & 0.1202 \\
 
 All of these models have an excellent RMSD score and can be considered very accurate. Note that their RMSD is more than an order of magnitude lower than the RMSD computed for our \textit{ab initio} model of hemoglobin subunit alpha, despite the fact that the RBD is longer (229 amino acids).
 
+\FloatBarrier
 \phantomsection
 \subsection{SWISS-MODEL}
 
@@ -706,6 +737,7 @@ SWISS3 & 11.3432 \\
 
 The first structure has a lowest RMSD over the three models, and even though its RMSD (5.818) is significantly higher than what we saw for the GalaxyWEB prediction for the RBD, keep in mind that the spike protein is 1281 amino acids long, and so the sensitivity of RMSD to slight changes should give us confidence that our models are on the right track.
 
+\FloatBarrier
 \phantomsection
 \subsection{Robetta}
 
@@ -731,6 +763,7 @@ Robetta5 & 0.1202 \\
 Which do you think performed more accurately on our predictions: SWISS-MODEL or Robetta?
 ]\end{qbox}
 
+\FloatBarrier
 \phantomsection
 \subsection{SSGCID}
 
@@ -755,6 +788,9 @@ SSGCID5  & 4.9636 & 4.6443 \\
 As we might expect due to their access to the resources of thousands of users' computers, the SSGCID models outperform our SWISS-MODEL models. Yet a typical threshold for whether a predicted structure is accurate is if its RMSD compared to a validated structure is smaller than 2.0 angstroms, and the SSGCID models are not quite this accurate, even with access to hundreds of contributors' machines.
 
 The inability of the SSGCID models to attain a very accurate predicted structure may make it seem that protein structure prediction is a lost cause. Perhaps biochemists should head back to expensive experimental validations and ignore the musings of computational scientists. In the conclusion to part 1, we will find hope.
+
+\FloatBarrier
+\phantomsection
 
 \section{Part 1 Conclusion: Protein Structure Prediction is Solved! (Kind of…)}
 \label{sec:conclusion_part_1}
@@ -817,3 +853,174 @@ Finally, the AlphaFold algorithm is "trained" using a database of known protein 
 Pronouncing protein structure prediction to be solved may be hasty, but we will likely never again see such a clear improvement to the state of the art for structure prediction. AlphaFold is probably the final great innovation in a research problem that has puzzled biologists for fifty years.
 
 Thus ends part 1 of this chapter, but there is still much for us to discuss. We hope that you will join us for part 2, in which we will delve further into measuring the differences between the spike proteins of SARS-CoV and SARS-CoV-2 using the validated protein structures published to PDB early in the pandemic.
+
+\FloatBarrier
+\phantomsection
+
+\section{Finding Local Differences in Protein Structures with Qres}
+\label{sec:multiseq}
+\phantomsection
+
+In part 1 of this chapter, we used a variety of existing software resources to predict the structure of the SARS-CoV-2 spike protein from its amino acid sequence. We then discussed how to compare our predicted structures against the experimentally confirmed structure of the protein.
+
+Now begins part 2, in which we examine how the structure of the SARS-CoV-2 spike protein compares against the SARS-CoV spike protein. In keeping with the biological maxim that the \textit{structure} of a protein informs the \textit{function} of that protein, can we find any clues lurking in the spike proteins' structure that would indicate why the two viruses had different fates?
+
+\FloatBarrier
+\phantomsection
+\subsection{Focusing on a variable region of interest in the spike protein}
+
+In part 1, we saw that the spike protein is much more variable than other regions of the viral genomes. We even see variable and conserved regions within the spike protein, as \autoref{fig:spike_protein_similarity} (reproduced from \autoref{sec:homology} indicates.
+
+\begin{figure}[h]
+	\centering
+	\mySfFamily
+	\includegraphics[width = 0.7\textwidth]{../images/spike_protein_similarity.png}
+	\caption{Variable and conserved regions in the SARS-CoV and SARS-CoV-2 spike proteins. The S1 domain tends to be more variable, whereas the S2 domain is more conserved (and even has a small region of 100\% similarity). In this figure, "NTD" stands for "N-terminal domain" and "RBD" stands for "receptor binding domain", two subunits of the S1 domain. Source: Jaimes et al. 2020.}
+	\label{}
+\end{figure}
+
+The most variable region between the two viruses in the spike protein is the \textdef{receptor binding motif (RBM)}{receptor binding motif (RBM)}{FILL IN}, part of the receptor binding domain (RBD) whose structure we predicted using GalaxyWEB in the \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_homology]. The RBM is the component of the RBD that mediates contact with ACE2, as the following simplified animation of the process illustrates.
+
+\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
+% include video id="e2Qi-hAXdJo" provider="youtube" %
+
+The fact that the region binding to the target human enzyme has mutated so much makes it a fascinating region of study. Do the mutations that SARS-CoV-2 has accumulated somehow make it easier for the virus to infect human cells?
+
+As we hone in on the RBM, \autoref{fig:RBM_alignment} shows an alignment of the 70 amino acid long RBM region from SARS-CoV and SARS-CoV-2.
+
+\begin{figure}[h]
+	\centering
+	\mySfFamily
+	\includegraphics[width = 0.7\textwidth]{../images/RBM_alignment.png}
+	\caption{An alignment of the RBM of the human SARS-CoV virus (first row) and the SARS-CoV-2 virus (second row). Amino acids that are highlighted in green represents matches between the two sequence. Beneath each column is the conservation between the two sequences, where full conservation indicates a match and partial conservation indicates a mismatch.}
+	\label{fig:RBM_alignment}
+\end{figure}
+
+We know from our work in structure prediction that just because the sequence of a protein has been greatly mutated does not mean that the structure of that protein has changed much. Therefore, in this lesson, we will start a structural comparison of the SARS-CoV and SARS-CoV-2 spike proteins. All of this analysis will be performed using the software resources ProDy and VMD.
+
+\FloatBarrier
+\phantomsection
+\subsection{Using bound spike-ACE2 enzymes}
+
+In addition to verifying the structure of the spike protein in both SARS-CoV and SARS-CoV-2, researchers also determined the structure of the RBD complexed with ACE2 in both SARS-CoV (PDB entry: 2ajf and SARS-CoV-2 (PDB entry: 6vw1).
+
+\begin{note}[%
+	The experimentally verified SARS-CoV-2 structure is a \textit{chimeric} protein formed of the SARS-CoV RBD in which the RBM has the sequence from SARS-CoV-2 (Shang et al. 2020). A chimeric RBD was used for complex technical reasons to ensure that the crystallization process during X-ray crystallography could be borrowed from that used for SARS-CoV.
+]\end{note}
+
+Because we know the structures of the bound complexes, we can produce 3-D visualizations of the two different complexes and look for structural differences involving the RBM. We will use VMD to produce this visualization, rotating the structures around to examine potential differences. However, we should be wary of only trusting our eyes to guide us; can we use a computational approach to tell us where to look for structural differences between the two RBMs?
+
+\FloatBarrier
+\phantomsection
+\subsection{A first attempt at identifying local dissimilarities between protein structures}
+
+To assess the accuracy of a predicted structure, we introduced a metric called root mean square deviation (RMSD) for quantifying the difference between two protein structures. RMSD offered an excellent method for a \textit{global} comparison (i.e., a comparison across all structures), but we are interested in the \textit{local} regions where the SARS-CoV and SARS-CoV-2 complexes differ. To this end, we will need an approach that considers individual amino acids in similar protein structures.
+
+\begin{qbox}[%
+	How could we compare individual amino acid differences of two protein structures?
+]\end{qbox}
+
+Recall the following definition of RMSD for two protein structures $s$ and $t$, in which each structure is represented by the positions of its $n$ alpha carbons $(s_{1}, \cdots, s_{n})$ and $(t_{1}, \cdots, t_{n})$.
+
+$$\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)}\,. $$
+
+If two similar protein structures differ in a few locations, then the corresponding alpha carbon distances $d(s_{i}, t_{i})$ will likely be higher at these locations. However, we will introduce a more sophisticated approach for
+comparing the local structure of $s_{i}$ against $t_{i}$. First, however, we will discuss an alternative to RMSD for computing global structure.
+
+\FloatBarrier
+\phantomsection
+\subsection{Contact maps and Qres}
+
+One of the weaknesses of RMSD that we pointed out in part 1 of this module is that a change to a single bond angle at the $i$-th position may cause $d(s_{j}, t_{j})$ to be nonzero when $j > i$, even though the structure of the protein downstream of this bond angle has not changed. For example, when we discussed the Kabsch algorithm in \autoref{sec:accuracy}, we showed \autoref{fig:single_bond_angle} of two protein structures that are identical except for a single bond angle. All of the alpha carbon distances $d(s_{i}, t_{i})$ for $i$ at least equal to 4 will be thrown off by this changed angle.
+
+\begin{figure}[h]
+	\centering
+	\mySfFamily
+	\includegraphics[width = 0.7\textwidth]{../images/single_bond_angle.png}
+	\caption{Two toy protein structures in which the bond angle between the third and fourth alpha carbon has been changed. This change does not affect the distance between the \textit{i}-th and \textit{j}-th alpha carbons when \textit{i} and \textit{j} are both at least equal to 4.}
+	\label{fig:single_bond_angle}
+\end{figure}
+
+However, note that when $i$ and $j$ are both at least equal to 4, the distance $d(s_{i}, s_{j})$ between the $i$-th and $j$-th alpha carbons in $S$ will still be similar to the distance $d(t_{i}, t_{j})$ between the same alpha carbons in $T$. This observation leads us to a more robust approach for measuring differences in two protein structures, which compares \textit{all} pairwise distances $d(s_{i}, s_{j})$ in one protein structure against the corresponding distances $d(t_{i}, t_{j})$ in the other structure.
+
+To help us visualize all these pairwise distances, we will introduce the \textdef{contact map}{contact map}{FILL IN} of a protein structure, which is a binary matrix indicating whether two alpha carbons are near each other. After setting a threshold distance, for a given structure $s$, we set $M(i, j) = 1$ if the distance $d(s_{i}, s_{j})$ is less than the threshold, and $M(i, j) = 0$ if $d(s_{i}, s_{j})$ is greater than or equal to the threshold.
+
+\autoref{fig:Contact} shows the contact maps for the SARS-CoV-2 and SARS-CoV spike proteins (both full proteins and single chains) with a threshold distance of twenty angstroms. In this map, we color contact map values black if they are equal to 1 (close amino acid pairs) and white if they are equal to 0 (distant amino acid pairs).
+
+We note two things in the contact maps in \autoref{fig:Contact}. First, many black values cluster around the main diagonal of the matrix, since amino acids that are nearby in the protein sequence will remain near each other in the 3-D structure. Second, the contact maps for the two proteins are very similar, reinforcing that the two proteins have similar structures.
+
+\begin{note}[%
+	Interested in learning how to make contact maps? We will use ProDy to do so in a later section.
+]\end{note}
+
+\begin{figure}[h]
+	\centering
+	\mySfFamily
+	\includegraphics[width = 0.7\textwidth]{../images/Contact.png}
+	\caption{The contact maps of the SARS-CoV-2 spike protein (top left), SARS-CoV spike protein (top right), single chain of the SARS-CoV-2 spike protein (bottom left), and single chain of the SARS-CoV spike protein (bottom right). If the distance between the \textit{i}-th and \textit{j}-th amino acids in a protein structure is 20.0 angstroms or less, then the (\textit{i}, \textit{j})-th cell of the figure is colored black. The SARS-CoV-2 and SARS spike proteins have very similar contact maps, indicating similar global structures.}
+	\label{fig:Contact}
+\end{figure}
+
+\begin{qbox}[%
+	How do you think the contact map will change as we increase or lower the threshold distance?
+]\end{qbox}
+
+We obtain some insight into how two proteins differ structurally at the $i$-th amino acid if we look at all of the $i$-th row's values; that is, if we compare all of the $d(s_{i}, s_{j})$ values to all of the $d(t_{i}, t_{j})$ values.
+
+We will use pairwise distances between alpha carbons to determine how different two proteins are at the $i$-th alpha carbon, using a metric called \textdef{Q per residue (Qres)}{Q per residue (Qres)}{FILL IN}.  The formal definition of Qres for two structures $s$ and $t$ having $N$ residues is
+
+$$Q_{\text{res}}^{(i)} = \dfrac{1}{N-k} \sum^{\text{residues}}_{j\neq i-1,i,i+1} \textrm{exp}[-\dfrac{[d(s_i,s_j)-d(t_i,t_j)]^2}{2\sigma^2_{i,j}}]\, .$$
+
+In this equation, \testit{exp(x)} means $e^{x}$. This equation also includes the following parameters.
+
+\begin{itemize}
+	\item $k$ is equal to 2 at either the start or the end of the protein (i.e., $i$ is equal to 1 or $N$), and $k$ is equal to 3 otherwise.
+	\item The variance term $\sigma_{ij}^2$ is equal to $\left\lvert{i-j}\right\rvert ^{0.15}$, which corresponds to the sequence separation between the $i$-th and $j$-th alpha carbons.
+\end{itemize}
+
+\begin{note}[%
+	The above definition assumes that the two proteins have the same length or have been pre-processed by removing amino acids that only occur in one protein. Generalizations of Qres for proteins of non-equal length exist that first align proteins and retain only those amino acids for structural comparison that are shared by the two proteins.
+]\end{note}
+
+If two proteins are very similar at the $i$-th alpha carbon, then for every $j$, $d(s_{i}, s_{j}) - d(t_{i}, t_{j})$ will be close to zero, making term inside the summation in the Qres equation will be close to 1. The sum will be equal to approximately $N - k$, and so Qres will be close to 1. As two proteins become more different at the $i$-th alpha carbon, then the term inside the summation will head toward zero, and so will the Qres value as well.
+
+As a result, we think of Qres as a similarity metric ranging between 0 and 1, with low scores representing low similarity between two proteins at the $i$-th position, and higher scores representing high similarity at this position.
+
+We now will compute Qres for the SARS-CoV and SARS-CoV-2 spike proteins using the VMD plugin \textit{Multiseq} \url{https://www.ks.uiuc.edu/Research/vmd/plugins/multiseq/}, a bioinformatics analysis environment. After determining Qres, we will visualize the individual locations where the two RBD regions differ. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_multiseq]
+
+\FloatBarrier
+\phantomsection
+\subsection{Local comparison of spike proteins leads us to a region of interest}
+
+By computing Qres at every position of the two coronavirus RBD regions, we can form a "structural" alignment of the two regions, as shown in the figure below. Blue columns correspond to amino acids with high Qres (meaning high structural similarity), and red columns correspond to amino acids with low Qres (meaning low structural similarity).
+
+If we zoom in on the region around position 150 of the alignment, we find a 13-column region of the alignment within the RBD region for which Qres values are significantly lower than they are elsewhere. This region corresponds to positions 476 to 485 in the SARS-CoV-2 spike protein and is shown in \autoref{fig:QresResult}.
+
+\begin{figure}[h]
+	\centering
+	\tabcolsep = 1em
+	\mySfFamily
+	\begin{tabular}{c}
+		\includegraphics[width = 0.7\textwidth]{../images/QresResult.png} \\
+		\includegraphics[width = 0.7\textwidth]{../images/QresResult_cropped.png} \\
+	\end{tabular}
+	\caption{(Top) A snapshot of the sequence alignment between the SARS-CoV RBD (first row) and the SARS-CoV-2 chimeric RBD (Shang et al. 2020) (second row). Columns are colored along a spectrum from blue (high Qres) to red (low Qres), with positions that correspond to an inserted or deleted amino acid colored red. (Bottom) A region of the alignment with low Qres, which corresponds to amino acids at positions 476 to 485 in the SARS-CoV-2 spike protein.}
+	\label{fig:QresResult}
+\end{figure}
+
+We also can create a 3-D visualization of the structures. \autoref{QresVMD} shows the superimposed structures of both the SARS and SARS-CoV-2 RBD bound with ACE2, shown in green. The same color-coding of columns of the multiple alignment in the figure above is used to highlight differences between the SARS-CoV and SARS-CoV-2 structures. The low-Qres region of the RBM alignment that we highlighted in the above figure is outlined in \autoref{QresVMD}.
+
+\begin{figure}[h]
+	\centering
+	\mySfFamily
+	\includegraphics[width = 0.7\textwidth]{../images/QresVMD.png}
+	\caption{A visualization showing the superposed structures of SARS-CoV-2 chimeric RBD (Shang et al. 2020) and SARS RBD in blue and red based on Qres. Blue indicates regions of high Qres, and red indicates regions of low Qres. ACE2 is shown in green. The highlighted region corresponds to the part of the RBM with a potential structural difference. Because it is adjacent to ACE2, it is likely that the structural difference here will affect ACE2 interactions.}
+	\label{fig:QresVMD}
+\end{figure}
+
+\begin{note}[%
+	Although the rest of the proteins are similar, there are other parts of the RBD at the top of the protein that show dissimilarities in the two proteins, which may be attributable to an experimental artifact. The authors of the work in which the comparison was published have pointed out that the highlighted region is unlikely to be an artifact of the experimentation because it is "buried at the RBD–ACE2 interface and did not affect crystallization".
+]\end{note}
+
+Finding this highlighted region in the RBM where the structures of the SARS-CoV and SARS-CoV-2 spike proteins differ is an exciting development. We will next explore this region of the protein structure to determine whether the mutations acquired by SARS-CoV-2 may have influenced the binding affinity of the virus spike protein with the human ACE2 enzyme.
+
