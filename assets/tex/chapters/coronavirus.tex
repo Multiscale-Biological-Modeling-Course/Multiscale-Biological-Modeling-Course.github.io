@@ -8,7 +8,7 @@
 \FloatBarrier
 
 \section{A Tale of Two Doctors}
-\label{sec:introduction}
+\label{sec:coronavirus_introduction}
 \phantomsection
 
 \begin{displayquote}
@@ -33,7 +33,7 @@ As health officials braced for the impact of the fastest-traveling virus in huma
 \phantomsection
 \subsection{Finding the source of the outbreak}
 
-SARS was deadly, killing close to 10\% of those who became sick.[^cdc-factsheet] But it also struggled to spread within the human population, and it was contained in July 2003 with fewer than 10,000 confirmed symptomatic cases worldwide.
+SARS was deadly, killing close to 10\% of those who became sick. But it also struggled to spread within the human population, and it was contained in July 2003 with fewer than 10,000 confirmed symptomatic cases worldwide.
 
 Scientists initially thought that humans had contracted SARS from palm civets, which are native to Guangdong. But research would later show that the disease likely originated in bats, a notorious disease carrier.
 
@@ -122,7 +122,7 @@ We will split our work on these questions over two parts. If you are already fam
 \phantomsection
 \subsection{Determining protein structure is fundamental to understanding protein function}
 
-In the \autoref{sec:introduction}, we showed the polypeptide chain for the SARS-CoV-2 spike protein. After this polypeptide chain is formed, it will "fold" into a three-dimensional shape and attach to the exterior of the virus. The folding process occurs spontaneously and without any outside influence, and the same polypeptide chain will almost always fold into the same 3-D structure in a manner of microseconds. This means that nature is applying some "magic algorithm" that produces the folded structure of a protein from its sequence of amino acids. But how does this algorithm work?
+In the \autoref{sec:coronavirus_introduction}, we showed the polypeptide chain for the SARS-CoV-2 spike protein. After this polypeptide chain is formed, it will "fold" into a three-dimensional shape and attach to the exterior of the virus. The folding process occurs spontaneously and without any outside influence, and the same polypeptide chain will almost always fold into the same 3-D structure in a manner of microseconds. This means that nature is applying some "magic algorithm" that produces the folded structure of a protein from its sequence of amino acids. But how does this algorithm work?
 
 Predicting the folded structure of a polypeptide is called the \textdef{structure prediction problem}{structure prediction problem}{FILL IN}, and this problem is simple to state but deceptively difficult to solve. In fact, it has been an active area of biological research for several decades.
 
@@ -663,7 +663,7 @@ We are now ready to apply the Kabsch algorithm to compare the structures that we
 \phantomsection
 \subsection{Assessing the accuracy of our structure prediction models}
 
-In the tutorials occurring earlier in this module, we used publicly available protein structure prediction servers to predict the structure of human hemoglobin subunit alpha (using \textit{ab initio} modeling) and the SARS-CoV-2 spike protein (using homology modeling).
+Earlier in this chapter, we used publicly available protein structure prediction servers to predict the structure of human hemoglobin subunit alpha (using \textit{ab initio} modeling) and the SARS-CoV-2 spike protein (using homology modeling).
 
 Let's see how well our models performed by showing the values of RMSD produced by the Kabsch algorithm when comparing each of these models against the validated structures.
 
@@ -814,13 +814,13 @@ That day has come. Kind of.
 
 Every two years since 1994, a global effort called \textdef{Critical Assessment of protein Structure Prediction (CASP)}{Critical Assessment of protein Structure Prediction (CASP)}{FILL IN} has allowed modelers to test their protein structure prediction algorithms against each other. The contest organizers compile a (secret) collection of experimentally verified protein structures and then run all submitted algorithms against these proteins.
 
-The 14th iteration of this contest, held in 2020, was won in a landslide. The second version of AlphaFold (\url{https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology}), one of the projects of DeepMind (an Alphabet subsidiary), vastly outperformed the world's foremost structure prediction approaches, including those that we discussed in this module.
+The 14th iteration of this contest, held in 2020, was won in a landslide. The second version of AlphaFold (\url{https://deepmind.com/blog/article/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology}), one of the projects of DeepMind (an Alphabet subsidiary), vastly outperformed the world's foremost structure prediction approaches, including those that we discussed in this chapter.
 
-The algorithm powering AlphaFold is an extremely involved method based on deep learning, a topic that we will discuss in this work's final module. If you're interested in learning more about this algorithm, consult the AlphaFold website or this excellent blog post by Mohammed al Quraishi: \url{https://bit.ly/39Mnym3}.
+The algorithm powering AlphaFold is an extremely involved method based on deep learning, a topic that we will discuss in this work's final chapter. If you're interested in learning more about this algorithm, consult the AlphaFold website or this excellent blog post by Mohammed al Quraishi: \url{https://bit.ly/39Mnym3}.
 
 Instead of using RMSD, CASP scores a predicted structure against a known structure using the \textdef{global distance test (GDT)}{global distance test (GDT)}{FILL IN}. For some threshold \textit{t}, we first take the percentage of alpha carbon positions for which the distance between corresponding alpha carbons in the two structures is at most \textit{t}. The GDT score that CASP uses then averages the percentages obtained when \textit{t} is equal to each of 1, 2, 4, and 8 angstroms. A GDT score of 90\% is considered good, and a score of 95\% is considered excellent (i.e., comparable to minor errors resulting from experimentation).
 
-We will show a few plots to illustrate the decisiveness of AlphaFold's CASP victory. The first graph, which is shown in \autoref{fig:AlphaFold2_BAKER}, compares the scores of AlphaFold against the second-place algorithm (a product of David Baker's laboratory, which developed the Robetta and Rosetta@Home software that we used in this module).
+We will show a few plots to illustrate the decisiveness of AlphaFold's CASP victory. The first graph, which is shown in \autoref{fig:AlphaFold2_BAKER}, compares the scores of AlphaFold against the second-place algorithm (a product of David Baker's laboratory, which developed the Robetta and Rosetta@Home software that we used in this chapter).
 
 \begin{figure}[h]
 	\centering
@@ -830,7 +830,7 @@ We will show a few plots to illustrate the decisiveness of AlphaFold's CASP vict
 	\label{fig:AlphaFold2_BAKER}
 \end{figure}
 
-We can appreciate the margin of victory in the above figure if we compare it against the margin between the second- and third-place competitors, shown in \autoref{fig:BAKER_Zhang}
+We can appreciate the margin of victory in \autoref{fig:AlphaFold2_BAKER} if we compare it against the margin between the second- and third-place competitors, shown in \autoref{fig:BAKER_Zhang}
 
 \begin{figure}[h]
 	\centering
@@ -885,7 +885,7 @@ In part 1, we saw that the spike protein is much more variable than other region
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.7\textwidth]{../images/spike_protein_similarity.png}
-	\caption{Variable and conserved regions in the SARS-CoV and SARS-CoV-2 spike proteins. The S1 domain tends to be more variable, whereas the S2 domain is more conserved (and even has a small region of 100\% similarity). In this figure, "NTD" stands for "N-terminal domain" and "RBD" stands for "receptor binding domain", two subunits of the S1 domain. Source: Jaimes et al. 2020.}
+	\caption{Variable and conserved regions in the SARS-CoV and SARS-CoV-2 spike proteins. The S1 domain tends to be more variable, whereas the S2 domain is more conserved (and even has a small region of 100\% similarity). Here, "NTD" stands for "N-terminal domain" and "RBD" stands for "receptor binding domain", two subunits of the S1 domain. Source: Jaimes et al. 2020.}
 	\label{}
 \end{figure}
 
@@ -941,7 +941,7 @@ comparing the local structure of $s_{i}$ against $t_{i}$. First, however, we wil
 \phantomsection
 \subsection{Contact maps and Qres}
 
-One of the weaknesses of RMSD that we pointed out in part 1 of this module is that a change to a single bond angle at the \textit{i}-th position may cause $d(s_{j}, t_{j})$ to be nonzero when $j > i$, even though the structure of the protein downstream of this bond angle has not changed. For example, when we discussed the Kabsch algorithm in \autoref{sec:accuracy}, we showed \autoref{fig:single_bond_angle} of two protein structures that are identical except for a single bond angle. All of the alpha carbon distances $d(s_{i}, t_{i})$ for \textit{i} at least equal to 4 will be thrown off by this changed angle.
+One of the weaknesses of RMSD that we pointed out in part 1 of this chapter is that a change to a single bond angle at the \textit{i}-th position may cause $d(s_{j}, t_{j})$ to be nonzero when $j > i$, even though the structure of the protein downstream of this bond angle has not changed. For example, when we discussed the Kabsch algorithm in \autoref{sec:accuracy}, we showed \autoref{fig:single_bond_angle} of two protein structures that are identical except for a single bond angle. All of the alpha carbon distances $d(s_{i}, t_{i})$ for \textit{i} at least equal to 4 will be thrown off by this changed angle.
 
 \begin{figure}[h]
 	\centering
@@ -1002,7 +1002,7 @@ We now will compute Qres for the SARS-CoV and SARS-CoV-2 spike proteins using th
 \phantomsection
 \subsection{Local comparison of spike proteins leads us to a region of interest}
 
-By computing Qres at every position of the two coronavirus RBD regions, we can form a "structural" alignment of the two regions, as shown in the figure below. Blue columns correspond to amino acids with high Qres (meaning high structural similarity), and red columns correspond to amino acids with low Qres (meaning low structural similarity).
+By computing Qres at every position of the two coronavirus RBD regions, we can form a "structural" alignment of the two regions, as shown in \autoref{fig:QresResult}. Blue columns correspond to amino acids with high Qres (meaning high structural similarity), and red columns correspond to amino acids with low Qres (meaning low structural similarity).
 
 If we zoom in on the region around position 150 of the alignment, we find a 13-column region of the alignment within the RBD region for which Qres values are significantly lower than they are elsewhere. This region corresponds to positions 476 to 485 in the SARS-CoV-2 spike protein and is shown in \autoref{fig:QresResult}.
 
@@ -1018,7 +1018,7 @@ If we zoom in on the region around position 150 of the alignment, we find a 13-c
 	\label{fig:QresResult}
 \end{figure}
 
-We also can create a 3-D visualization of the structures. \autoref{QresVMD} shows the superimposed structures of both the SARS and SARS-CoV-2 RBD bound with ACE2, shown in green. The same color-coding of columns of the multiple alignment in the figure above is used to highlight differences between the SARS-CoV and SARS-CoV-2 structures. The low-Qres region of the RBM alignment that we highlighted in the above figure is outlined in \autoref{QresVMD}.
+We also can create a 3-D visualization of the structures. \autoref{QresVMD} shows the superimposed structures of both the SARS and SARS-CoV-2 RBD bound with ACE2, shown in green. The same color-coding of columns of the multiple alignment in \autoref{fig:QresResult} is used to highlight differences between the SARS-CoV and SARS-CoV-2 structures. The low-Qres region of the RBM alignment that we highlighted in \autoref{fig:QresResult} is outlined in \autoref{fig:QresVMD}.
 
 \begin{figure}[h]
 	\centering
@@ -1058,7 +1058,7 @@ Shang et al. identified three sites showing significant conformational differenc
 \phantomsection
 \subsection{Site 1: loop in ACE2-binding ridge}
 
-The first location is our region of interest from the previous section and is found on a loop in a region called the ACE2 binding ridge. This region is shown in the figure below, in which SARS-CoV-2 is on left and SARS-CoV is on the right.
+The first location is our region of interest from the previous section and is found on a loop in a region called the ACE2 binding ridge. This region is shown in \autoref{fig:Ridge}, in which SARS-CoV-2 is on left and SARS-CoV is on the right.
 
 Structural differences are challenging to show with a 2-D image,so we encourage you to use VMD to view the 3-D representation of the protein. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_multiseq]
 
@@ -1074,17 +1074,17 @@ Structural differences are challenging to show with a 2-D image,so we encourage 
 	\label{fig:Ridge}
 \end{figure}
 
-The most noticeable difference between SARS-CoV-2 and SARS-CoV in this region relates to a "hydrophobic pocket" of three hydrophobic ACE2 residues at positions 82, 79, and 83 (methionine, leucine, and tyrosine). This pocket, which is colored silver in the above figure, is hidden away from the outside of the ACE2 enzyme to keep these amino acids away from water. In SARS-CoV-2, the RBD phenylalanine residue at position 486 (yellow) inserts itself into the pocket, favorably interacting with ACE2. These interactions do not happen with SARS-CoV, and its corresponding RBD residue, a leucine at position 472 (yellow), is not inserted into the pocket.
+The most noticeable difference between SARS-CoV-2 and SARS-CoV in this region relates to a "hydrophobic pocket" of three hydrophobic ACE2 residues at positions 82, 79, and 83 (methionine, leucine, and tyrosine). This pocket, which is colored silver in \autoref{fig:Ridge}, is hidden away from the outside of the ACE2 enzyme to keep these amino acids away from water. In SARS-CoV-2, the RBD phenylalanine residue at position 486 (yellow) inserts itself into the pocket, favorably interacting with ACE2. These interactions do not happen with SARS-CoV, and its corresponding RBD residue, a leucine at position 472 (yellow), is not inserted into the pocket.
 
 In what follows, we use a three-letter identifier for an amino acid followed by a number to indicate the identity of that amino acid followed by its position within the protein sequence. For example, the phenylalanine at position 486 of the SARS-CoV-2 spike protein would be called Phe486.
 
-Although the interaction with the hydrophobic pocket is the most critical difference between SARS-CoV-2 and SARS-CoV, we highlight two other key differences. First, in SARS-CoV-2, a main-chain hydrogen bond forms between Asn487 and Ala475 (shown in red in \autoref{fig:Ridge}), which creates a more compact ridge conformation, pushing the loop containing Ala475 closer to ACE2. This repositioning allows for the N-terminal residue Ser19 of ACE2 (colored cyan in the above figure) to form a hydrogen bond with the main chain of Ala475. Second, Gln24 in ACE2 (colored orange in the above figure) forms a new contact with the RBM.
+Although the interaction with the hydrophobic pocket is the most critical difference between SARS-CoV-2 and SARS-CoV, we highlight two other key differences. First, in SARS-CoV-2, a main-chain hydrogen bond forms between Asn487 and Ala475 (shown in red in \autoref{fig:Ridge}), which creates a more compact ridge conformation, pushing the loop containing Ala475 closer to ACE2. This repositioning allows for the N-terminal residue Ser19 of ACE2 (colored cyan in \autoref{fig:Ridge}) to form a hydrogen bond with the main chain of Ala475. Second, Gln24 in ACE2 (colored orange in \autoref{fig:Ridge}) forms a new contact with the RBM.
 
 \FloatBarrier
 \phantomsection
 \subsection{Site 2: hotspot 31}
 
-\textbf{Hotspot 31} is not a failed Los Angeles nightclub but rather our second region of notable conformational differences between SARS-CoV-2 and SARS-CoV, which was studied in SARS-CoV as early as 2008. This location earns its name because it involves a "salt bridge", or a combination of hydrogen and ionic bonding between two amino acids, that takes place between Lys31 and Glu35. Hotspot 31 is colored red in the figure below.
+\textbf{Hotspot 31} is not a failed Los Angeles nightclub but rather our second region of notable conformational differences between SARS-CoV-2 and SARS-CoV, which was studied in SARS-CoV as early as 2008. This location earns its name because it involves a "salt bridge", or a combination of hydrogen and ionic bonding between two amino acids, that takes place between Lys31 and Glu35. Hotspot 31 is colored red in \autoref{fig:Hotspot31}.
 
 \begin{qbox}[%
 	Once again, see if you can spot the differences between SARS-CoV-2 and SARS-CoV.
@@ -1098,7 +1098,7 @@ Although the interaction with the hydrophobic pocket is the most critical differ
 	\label{fig:Hotspot31}
 \end{figure}
 
-The figure above shows how the salt bridge is radically different in the two viruses. In SARS-CoV, the two residues appear to point towards each other because in the SARS-CoV RBM, Tyr442 (colored yellow in right figure) supports the salt bridge between Lys31 and Glu35 on ACE2. In contrast to Tyr442 in SARS-CoV, the corresponding amino acid in SARS-CoV-2 is the less bulky Leu455 (colored yellow in left figure), which provides less support to Lys31. This causes the salt bridge to break, so that Lys31 and Glu35 of ACE2 point in parallel toward the RBD residue Gln493 (colored blue). This change allows Lys31 and Glu35 to form hydrogen bonds with Gln493 in SARS-CoV-2.
+\autoref{fig:Hotspot31} shows how the salt bridge is radically different in the two viruses. In SARS-CoV, the two residues appear to point towards each other because in the SARS-CoV RBM, Tyr442 (colored yellow in right figure) supports the salt bridge between Lys31 and Glu35 on ACE2. In contrast to Tyr442 in SARS-CoV, the corresponding amino acid in SARS-CoV-2 is the less bulky Leu455 (colored yellow in left figure), which provides less support to Lys31. This causes the salt bridge to break, so that Lys31 and Glu35 of ACE2 point in parallel toward the RBD residue Gln493 (colored blue). This change allows Lys31 and Glu35 to form hydrogen bonds with Gln493 in SARS-CoV-2.
 
 \FloatBarrier
 \phantomsection
@@ -1282,7 +1282,7 @@ In other words, once we can estimate the mean-square fluctuations $$\langle \Del
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.7\textwidth]{../images/hemoglobin_b_factors.png}
-	\caption{(Top): Human hemoglobin colored according to theoretical B-factors calculated from GNM (left) and experimental B-factors (right). Subunit α<sub>1</sub> is located at the top left quarter of the protein figure. (Bottom): A 2-D plot comparing the theoretical (blue) and experimental (black) B-factors of subunit α<sub>1</sub>.  The theoretical and experimental B-factors are correlated with a coefficient of 0.63.}
+	\caption{(Top): Human hemoglobin colored according to theoretical B-factors calculated from GNM (left) and experimental B-factors (right). Subunit $α_1$ is located at the top left quarter of the protein figure. (Bottom): A 2-D plot comparing the theoretical (blue) and experimental (black) B-factors of subunit $α_1$.  The theoretical and experimental B-factors are correlated with a coefficient of 0.63.}
 	\label{fig:hemoglobin_b_factors}
 \end{figure}
 
@@ -1306,7 +1306,7 @@ Just as a piece of music can have one instrument that is much louder than anothe
 	\label{fig:hemoglobin_mode_shape}
 \end{figure}
 
-Similar to cross-correlation, analyzing a protein's mode shapes will give insights into the structure of the protein, and comparing mode shapes for two proteins can reveal structural differences. For example, the mode shape plots in the figure above show that the slowest mode shape for the four subunits of hemoglobin are quite similar.
+Similar to cross-correlation, analyzing a protein's mode shapes will give insights into the structure of the protein, and comparing mode shapes for two proteins can reveal structural differences. For example, the mode shape plots in \autoref{fig:hemoglobin_mode_shape} show that the slowest mode shape for the four subunits of hemoglobin are quite similar.
 
 We should consult more than just a single mode when completing a full analysis of a protein's molecular dynamics. \autoref{fig:hemoglobin_mode_shape_avg} is the slow mode plot averaging the "slowest" ten modes of hemoglobin, meaning the modes that have the greatest affect on mean fluctuation. Unlike when we examined only the slowest mode, we can now see a stark difference between the two groups of subunits/chains; the plots for α subunits (chains A and C) are very similar, whereas the plots for β subunits (chains B and D) share a slightly less similar average slow mode shape.
 
@@ -1382,7 +1382,7 @@ We will not delve into the mathematical intricacies of ANM calculations, but we 
 \end{figure}
 
 
-After we produce an animation like the one in the figure above, we also should attempt to explain it biologically. Human hemoglobin exists in two states: the tense state (T), in which it is not bound to an oxygen molecule, and the relaxed state (R), in which it is oxygenated. Hemoglobin's mobility shown in the above animation corresponds to its ability to transition between these two states, in which salt-bridges and contacts can shift by up to seven angstroms. This significant molecular flexibility exemplifies why we need to study protein dynamics as well as structure.
+After we produce an animation like the one in \autoref{fig:hemoglobin_anm_2}, we also should attempt to explain it biologically. Human hemoglobin exists in two states: the tense state (T), in which it is not bound to an oxygen molecule, and the relaxed state (R), in which it is oxygenated. Hemoglobin's mobility shown in the above animation corresponds to its ability to transition between these two states, in which salt-bridges and contacts can shift by up to seven angstroms. This significant molecular flexibility exemplifies why we need to study protein dynamics as well as structure.
 
 We will now apply ANM to the SARS-CoV and SARS-CoV-2 spike proteins. We will also use NMWiz (\url{http://prody.csb.pitt.edu/nmwiz/}), which is short for "normal mode wizard", to perform ANM calculations and create an animation of the SARS-CoV-2 (chimeric) RBD and the SARS-CoV RBD. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_ANM]
 
@@ -1459,7 +1459,7 @@ To predict spike protein movements based on ANM, we used NMWiz and VMD to create
 	\label{fig:6vw1_animation}
 \end{figure}
 
-Recall from \autoref{sec:interaction_energy} that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called "hotspot 31". This region is highlighted in blue and orange in the above figures. If you look very closely, as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This animation provides one more piece of evidence that SARS-CoV-2 is more effective at binding to the ACE2 enzyme.
+Recall from \autoref{sec:interaction_energy} that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called "hotspot 31". This region is highlighted in blue and orange in \autoref{fig:6vw1_animation}. If you look very closely, as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This animation provides one more piece of evidence that SARS-CoV-2 is more effective at binding to the ACE2 enzyme.
 
 \FloatBarrier
 \phantomsection
@@ -1471,7 +1471,7 @@ Although we have separated our discussion of GNM and ANM, the DynOmics 1.0 serve
 \phantomsection
 \subsection{Fighting a Virus with Open Science}
 
-In this module, we began with a discussion of the fundamental problem of determining a protein's structure. Because experimental methods for identifying protein structure are costly and time consuming, we transitioned to discuss algorithmic approaches that do a good job of predicting a protein's structure from its sequence of amino acids.
+In this chapter, we began with a discussion of the fundamental problem of determining a protein's structure. Because experimental methods for identifying protein structure are costly and time consuming, we transitioned to discuss algorithmic approaches that do a good job of predicting a protein's structure from its sequence of amino acids.
 
 We then discussed how to compare protein structures, with a lengthy case study comparing the SARS-CoV and SARS-CoV-2 spike proteins. The problem of quantifying how different two structures is can be challenging, and we established both global and local structure comparison metrics. We applied these approaches to isolate three candidate regions of interest of the SARS-CoV-2 spike protein that differ from the SARS-CoV spike protein when complexed with the ACE2 enzyme, and we quantified this binding using a localized energy function.
 
