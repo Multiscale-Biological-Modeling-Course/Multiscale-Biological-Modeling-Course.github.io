@@ -532,11 +532,21 @@ If you think you have a good handle on comparing the two shapes in \autoref{fig:
 
 We would like to develop a "distance function $d(S, T)$ quantifies how different two shapes \textit{S} and \textit{T} are. If \textit{S} and \textit{T} are the same, then $d(S, T)$ should be equal to zero; the more different the shapes, the larger \textit{d} should become.
 
-You may have noticed that the two shapes in the preceding figure are similar; in fact, they are identical. To demonstrate that this is true, we can first move the red shape to superimpose it over the blue shape, then flip the red shape, and finally rotate it so that its boundary coincides with the blue shape.
+You may have noticed that the two shapes in \autoref{fig:two_shapes} are similar; in fact, they are identical. To demonstrate that this is true, we can first move the red shape to superimpose it over the blue shape, then flip the red shape, and finally rotate it so that its boundary coincides with the blue shape.
 
 \texttt{NEED FIGURE HERE -- TO REPLACE GIF}\\
 % (../assets/images/shape_transformations.gif)
 % We can transform the red shape into the blue shape by translating it, flipping it, and then rotating it.
+\begin{figure}[h]
+	\centering
+	\tabcolsep = 1em
+	\mySfFamily
+	\begin{tabular}{c c c c}
+		\includegraphics[width = 0.1875\textwidth]{../images/shape_transformation1.png} & \includegraphics[width = 0.1875\textwidth]{../images/shape_transformation2.png} & \includegraphics[width = 0.1875\textwidth]{../images/shape_transformation3.png} & \includegraphics[width = 0.1875\textwidth]{../images/shape_transformation4.png}
+	\end{tabular}
+	\caption{We can transform the red shape into the blue shape by translating it, flipping it, and then rotating it.}
+	\label{fig:shape_transformation}
+\end{figure}
 
 If \textit{S} can be translated, flipped, and/or rotated to produce \textit{T}, then \textit{S} and \textit{T} are the same shape, and so $d(S, T)$ should be equal to zero. The question is what $d(S, T)$ should be if \textit{S} and \textit{T} are not the same shape.
 
@@ -1160,13 +1170,15 @@ A protein's molecular bonds are constantly vibrating, stretching and compressing
 
 \begin{figure}[h]
 	\centering
+	\tabcolsep = 1em
 	\mySfFamily
-	\includegraphics[width = 0.7\textwidth]{../images/mass-spring.gif}
+	\begin{tabular}{c c c}
+		\includegraphics[width = 0.25\textwidth]{../images/mass-spring1.png} & \includegraphics[width = 0.25\textwidth]{../images/mass-spring2.png} & \includegraphics[width = 0.25\textwidth]{../images/mass-spring3.png}
+	\end{tabular}
 	\caption{A mass-spring system in which a mass is attached to the end of a spring. The more we move the mass from its equilibrium, the greater its resistance and the more it will be repelled back toward equilibrium. Image courtesy: [flippingphysics.com]}
 	\label{fig:mass-spring}
 \end{figure}
-%Need snapshots%
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
+
 
 In an \textdef{elastic network model (ENM)}{elastic network model (ENM)}{FILL IN}, we imagine nearby alpha carbons of a protein structure to be connected by springs. Because distant atoms will not influence each other, we will only connect two alpha carbons if they are within some threshold distance of each other. In the following section, we will describe a \textdef{Gaussian network model (GNM)}{Gaussian network model (GNM)}{FILL IN}, an ENM for molecular dynamics.
 
@@ -1360,13 +1372,14 @@ We will not delve into the mathematical intricacies of ANM calculations, but we 
 
 \begin{figure}[h]
 	\centering
+	\tabcolsep = 1em
 	\mySfFamily
-	\includegraphics[width = 0.7\textwidth]{../images/hemoglobin_anm_2.gif}
+	\begin{tabular}{c c c}
+		\includegraphics[width = 0.25\textwidth]{../images/hemoglobin_animation1.png} & \includegraphics[width = 0.25\textwidth]{../images/hemoglobin_animation2.png} & \includegraphics[width = 0.25\textwidth]{../images/hemoglobin_animation3.png}
+	\end{tabular}
 	\caption{Collective motions of the slowest mode in human hemoglobin from ANM calculations using DynOmics.}
 	\label{fig:hemoglobin_anm_2}
 \end{figure}
-%Need snapshots%
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
 
 After we produce an animation like the one in the figure above, we also should attempt to explain it biologically. Human hemoglobin exists in two states: the tense state (T), in which it is not bound to an oxygen molecule, and the relaxed state (R), in which it is oxygenated. Hemoglobin's mobility shown in the above animation corresponds to its ability to transition between these two states, in which salt-bridges and contacts can shift by up to seven angstroms. This significant molecular flexibility exemplifies why we need to study protein dynamics as well as structure.
@@ -1377,7 +1390,7 @@ We will now apply ANM to the SARS-CoV and SARS-CoV-2 spike proteins. We will als
 \phantomsection
 \subsection{ANM accounts for the direction of protein fluctuations}
 
-To predict spike protein movements based on ANM, we used NMWiz and VMD to create animations of the protein fluctuations over time as calculated via ANM analysis. The following two animations show the complex of each virus's RBD (purple) bound with ACE2 (green). Important residues from the three sites of conformational differences from \autoref{sec:structural_differences} are also highlighted.
+To predict spike protein movements based on ANM, we used NMWiz and VMD to create animations of the protein fluctuations over time as calculated via ANM analysis. \autoref{fig:2ajf_animation} and \autoref{fig:6vw1_animation} show the complex of each virus's RBD (purple) bound with ACE2 (green). Important residues from the three sites of conformational differences from \autoref{sec:structural_differences} are also highlighted.
 
 \FloatBarrier
 \phantomsection
@@ -1401,8 +1414,16 @@ To predict spike protein movements based on ANM, we used NMWiz and VMD to create
 	\label{fig:2ajf_B&F_table}
 \end{figure}
 
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
-
+\begin{figure}[h]
+	\centering
+	\tabcolsep = 1em
+	\mySfFamily
+	\begin{tabular}{c c c}
+		\includegraphics[width = 0.25\textwidth]{../images/2ajf_animation1.png} & \includegraphics[width = 0.25\textwidth]{../images/2ajf_animation2.png} & \includegraphics[width = 0.25\textwidth]{../images/2ajf_animation3.png}
+	\end{tabular}
+	\caption{Snapshots of ANM analysis animation of SARS-CoV-2 spike RBD and ACE2 (PDB entry: 2ajf)}
+	\label{fig:2ajf_animation}
+\end{figure}
 
 \FloatBarrier
 \phantomsection
@@ -1427,7 +1448,16 @@ To predict spike protein movements based on ANM, we used NMWiz and VMD to create
 	\label{fig:6vw1_B&F_table}
 \end{figure}
 
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
+\begin{figure}[h]
+	\centering
+	\tabcolsep = 1em
+	\mySfFamily
+	\begin{tabular}{c c c}
+		\includegraphics[width = 0.25\textwidth]{../images/6vw1_animation1.png} & \includegraphics[width = 0.25\textwidth]{../images/6vw1_animation2.png} & \includegraphics[width = 0.25\textwidth]{../images/6vw1_animation3.png}
+	\end{tabular}
+	\caption{Snapshots of ANM analysis animation of SARS-CoV-2 spike chimeric RBD and ACE2 (PDB entry: 6vw1)}
+	\label{fig:6vw1_animation}
+\end{figure}
 
 Recall from \autoref{sec:interaction_energy} that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called "hotspot 31". This region is highlighted in blue and orange in the above figures. If you look very closely, as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This animation provides one more piece of evidence that SARS-CoV-2 is more effective at binding to the ACE2 enzyme.
 
