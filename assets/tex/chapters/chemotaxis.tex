@@ -54,9 +54,9 @@ In this chapter, we will delve into chemotaxis and ask a number of questions. Ho
 \subsection{Bacterial runs and tumbles}
 
 
-Every \textit{E. coli} cell has between five and twelve flagella distributed on its surface that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at a speed of about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates in place.
+Every \textit{E. coli} cell has between five and twelve flagella distributed on its surface that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates in place.
 
-When we examine the bacterium's movement under a microscope, we see it alternate between periods of ``running'' in a straight line and then ``tumbling'' in place (see figure below). Over time, the bacterium's \textdef{run and tumble}{run and tumble}{FILL IN} exploration amounts to a \textit{random walk} through its environment, similar to the exploration approach used by the lost immortals in \autoref{sec:introduction}.
+When we examine the bacterium's movement under a microscope, we see it alternate between periods of ``running'' in a straight line and then ``tumbling'' in place (\autoref{fig:chemotaxis_intro_runtumble}). Over time, the bacterium's \textdef{run and tumble}{run and tumble}{FILL IN} exploration amounts to a \textit{random walk} through its environment, similar to the exploration approach used by the lost immortals in \autoref{sec:introduction}.
 
 \begin{figure}[h]
 \centering
@@ -97,7 +97,7 @@ When a certain molecule's extracellular concentration increases, \textdef{recept
 
 For example, transcription factors, which we discussed in the \autoref{chapter:motifs}, are involved in a signal transduction process. When some extracellular molecule is detected, a cascade begins that eventually changes a transcription factor into an active state, so that it is ready to activate or repress the genes that it regulates.
 
-In the case of chemotaxis, \textit{E. coli} has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant \textdef{ligands}{ligands}{FILL IN}. The cell also contains receptors to detect repellents, but in this chapter, we will focus primarily on attractants. As shown in the figure below, ligand binding forms a cascade of internal reactions that causes a change in the rotation of one or more flagella.
+In the case of chemotaxis, \textit{E. coli} has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant \textdef{ligands}{ligands}{FILL IN}. The cell also contains receptors to detect repellents, but in this chapter, we will focus primarily on attractants. As shown in \autoref{fig:chemotaxis_signal}, ligand binding forms a cascade of internal reactions that causes a change in the rotation of one or more flagella.
 
 \begin{figure}[h]
 \centering
@@ -323,7 +323,7 @@ Once a wait time is selected, we should determine to which of the two reactions 
 Verify that these two probabilities sum to 1.
 ]\end{qbox}
 
-As illustrated in the figure below, we will demonstrate the Gillespie algorithm by returning to our ongoing example, in which we are modeling the forward and reverse reactions of ligand-receptor binding and dissociation. First, we choose a wait time according to an exponential distribution with mean value $1\mathbin{/}(k_{bind} + k_{dissociate})$. The probability that the event corresponds to a binding reaction is given by
+As illustrated in \autoref{fig:chemotaxis_visualizessa}, we will demonstrate the Gillespie algorithm by returning to our ongoing example, in which we are modeling the forward and reverse reactions of ligand-receptor binding and dissociation. First, we choose a wait time according to an exponential distribution with mean value $1\mathbin{/}(k_{bind} + k_{dissociate})$. The probability that the event corresponds to a binding reaction is given by
 
 $$\mathrm{Pr}(L + T \rightarrow LT) = k_{bind}\mathbin{/}(k_{bind} + k_{dissociate})\,,$$
 
@@ -387,7 +387,7 @@ In the \autoref{sec:signal}, we showed an example in which a system with 10,000 
 
 Our BioNetGen model uses the same number of initial molecules and the same reaction rates. The system evolves via the Gillespie algorithm, and we track the concentration of free ligand molecules, ligand molecules bound to receptor molecules, and free receptor molecules over time.
 
-The figure below demonstrates that the Gillespie algorithm quickly converges to the same values as the ones that we obtained by hand in the last section. We are now ready to apply this algorithm to model bacterial chemotaxis, a system that will involve many different reactions.
+\autoref{fig:chemotaxis_tutorial4_ssa} demonstrates that the Gillespie algorithm quickly converges to the same values as the ones that we obtained by hand in the last section. We are now ready to apply this algorithm to model bacterial chemotaxis, a system that will involve many different reactions.
 
 \begin{figure}[h]
 \centering
@@ -423,14 +423,14 @@ For many cellular responses, including bacterial chemotaxis, a sequence of phosp
 \phantomsection
 \subsection{Chemotaxis pathway}
 
-A high-level view of the transduction pathway for chemotaxis is shown in the figure below. The cell membrane contains receptors called \textdef{methyl-accepting chemotaxis proteins (MCPs)}{methyl-accepting chemotaxis proteins (MCPs)}{FILL IN} that bridge the cellular membrane, binding both to ligand stimuli in the cell exterior and to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix \textit{Che} (short for ``chemotaxis'').
+A high-level view of the transduction pathway for chemotaxis is shown in \autoref{fig:chemotaxisphosnew}. The cell membrane contains receptors called \textdef{methyl-accepting chemotaxis proteins (MCPs)}{methyl-accepting chemotaxis proteins (MCPs)}{FILL IN} that bridge the cellular membrane, binding both to ligand stimuli in the cell exterior and to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix \textit{Che} (short for ``chemotaxis'').
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/chemotaxisphosnew.png}
 \caption{A summary of the chemotaxis transduction pathway. A ligand binding signal is propagated through CheA and CheY phosphorylation, which leads to a response of clockwise flagellar rotation. The blue curved arrow denotes phosphorylation, the grey curved arrow denotes dephosphorylation, and the blue dashed arrow denotes a chemical interaction. Our figure is a simplified view of \href{http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html} illustrations.}
-\label{fig:chemotaxisphosnew.png}
+\label{fig:chemotaxisphosnew}
 \end{figure}
 
 
@@ -498,7 +498,7 @@ But does higher attractant concentration in our model really lead to a lower con
 \phantomsection
 \subsection{Changing ligand concentrations leads to a change in internal molecular concentrations}
 
-The following figure shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency.
+\autoref{fig:chemotaxis_tutorial5} shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency.
 
 \begin{figure}[h]
 \centering
@@ -580,7 +580,7 @@ Say that \textit{E. coli} encounters an increase in attractant concentration. Th
 
 Just as the phosphorylation of CheY can be reversed, MCP methylation can be undone to prevent methylation from being permanent. In particular, an enzyme called \textbf{CheB}, which like CheY is phosphorylated by CheA, demethylates MCPs (as well as autodephosphorylates). The rate of an MCP's demethylation is dependent on the extent to which the MCP is methylated. In other words, the rate of MCP methylation is higher when the MCP is in a low methylation state, and the rate of demethylation is faster when the MCP is in a high methylation state.
 
-The figure below adds CheR and CheB to provide a complete picture of the core pathways influencing chemotaxis. To model these pathways, we will need to add quite a few molecules and reactions to our current model.
+\autoref{fig:chemotaxis_wholestory} adds CheR and CheB to provide a complete picture of the core pathways influencing chemotaxis. To model these pathways, we will need to add quite a few molecules and reactions to our current model.
 
 \begin{figure}[h]
 \centering
@@ -618,7 +618,7 @@ We will not bog down the text with a full specification of all the rules needed 
 \phantomsection
 \subsection{Bacterial tumbling is robust to large sudden changes in attractant concentration}
 
-In the figures below, we show plots of the concentration of each molecule of interest in our system for a few different cases. In each case, we suddenly change the concentration of the attractant ligand $l_0$ and examine how this affects the concentration of phosphorylated CheY. The attractant concentration will then level off; how will our model respond?
+In the figures that follow, we show plots of the concentration of each molecule of interest in our system for a few different cases. In each case, we suddenly change the concentration of the attractant ligand $l_0$ and examine how this affects the concentration of phosphorylated CheY. The attractant concentration will then level off; how will our model respond?
 
 Below, we show simulation results for some different concentrations of ligand molecules added at the beginning of the simulation. First we add a relatively small amount of attractant, setting $l_0$ equal to 10,000. The system returns so quickly to an equilibrium in phosphorylated CheY that it is difficult to imagine that the attractant has had any effect on tumbling frequency.
 
@@ -631,7 +631,7 @@ Below, we show simulation results for some different concentrations of ligand mo
 \end{figure}
 
 
-If instead $l_0$ is equal to 100,000, then we obtain the figure below. After an initial drop in the concentration of phosphorylated CheY, it returns to equilibrium after a few minutes.
+If instead $l_0$ is equal to 100,000, then we obtain the result in \autoref{fig:chemotaxis_tutorial_oneadd1e5}. After an initial drop in the concentration of phosphorylated CheY, it returns to equilibrium after a few minutes.
 
 \begin{figure}[h]
 \centering
@@ -642,7 +642,7 @@ If instead $l_0$ is equal to 100,000, then we obtain the figure below. After an 
 \end{figure}
 
 
-When we increase $l_0$ by another factor of ten to 1 million, the initial drop is more pronounced, but the system returns just as quickly to equilibrium. Note how much higher the concentration of methylated receptors are in this figure compared to the previous figure; however, there are still a significant concentration of receptors with low methylation, indicating that the system may be able to handle an even larger jolt of attractant.
+When we increase $l_0$ by another factor of ten to 1 million, the initial drop is more pronounced, but the system returns just as quickly to equilibrium. Note how much higher the concentration of methylated receptors are in \autoref{fig:chemotaxis_tutorial_oneadd16} compared to \autoref{fig:chemotaxis_tutorial_oneadd1e5}; however, there are still a significant concentration of receptors with low methylation, indicating that the system may be able to handle an even larger jolt of attractant.
 
 \begin{figure}[h]
 \centering
@@ -652,7 +652,7 @@ When we increase $l_0$ by another factor of ten to 1 million, the initial drop i
 \label{fig:chemotaxis_tutorial_oneadd16}
 \end{figure}
 
-When we set $l_0$ equal to 10 million, we give the system this bigger jolt. Once again, the model returns to its previous CheY equilibrium after a few minutes.
+When we set $l_0$ equal to 10 million, we give the system this bigger jolt. Once again, the model returns to its previous CheY equilibrium after a few minutes (\autoref{fig:chemotaxis_tutorial_oneadd1e7}).
 
 \begin{figure}[h]
 \centering
@@ -662,7 +662,7 @@ When we set $l_0$ equal to 10 million, we give the system this bigger jolt. Once
 \label{fig:chemotaxis_tutorial_oneadd1e7}
 \end{figure}
 
-Finally, with $l_0$ equal to 100 million, we see what we might expect: the steepest drop in phosphorylated CheY yet, but a system that is able to return to equilibrium.
+Finally, with $l_0$ equal to 100 million, we see what we might expect: the steepest drop in phosphorylated CheY yet, but a system that is able to return to equilibrium (\autoref{fig:chemotaxis_tutorial_oneadd1e8}).
 
 \begin{figure}[h]
 \centering
@@ -714,7 +714,7 @@ In this section, we will modify our model from the previous section by increasin
 
 Recall that we used the expression $\text{[}L\text{]}$ to denote the concentration of ligand $L$ and $l_0$ to denote the initial concentration of the ligand. To model a ligand concentration that is increasing exponentially, we will use the function $\text{[}L\text{]} = l_0 \cdot e^{k \cdot t}$, where $t$ is the time and $k$ is a parameter dictating exponential growth. The parameter $k$ represents the steepness of the gradient, since the higher the value of $k$, the faster the growth in the ligand concentration.
 
-For example, the following figure shows the concentration over time of phosphorylated CheY (shown in blue) when $l_0 = 1000$ and $k = 0.1$. The concentration of phosphorylated CheY, and therefore the tumbling frequency, still decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (shown by the plateau in the red curve), the methylation of receptors causes the concentration of phosphorylated CheY to return to its equilibrium. In other words, for these values of $l_0$ and $k$, the outcome is similar to when we provided an instantaneous increase in ligand, although the cell takes longer to reach its minimum concentration of phosphorylated CheY because the attractant concentration is increasing gradually.
+For example, \autoref{fig:chemotaxis_tutorial_addition01} shows the concentration over time of phosphorylated CheY (shown in blue) when $l_0 = 1000$ and $k = 0.1$. The concentration of phosphorylated CheY, and therefore the tumbling frequency, still decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (shown by the plateau in the red curve), the methylation of receptors causes the concentration of phosphorylated CheY to return to its equilibrium. In other words, for these values of $l_0$ and $k$, the outcome is similar to when we provided an instantaneous increase in ligand, although the cell takes longer to reach its minimum concentration of phosphorylated CheY because the attractant concentration is increasing gradually.
 
 \begin{figure}[h]
 \centering
@@ -725,7 +725,7 @@ For example, the following figure shows the concentration over time of phosphory
 \end{figure}
 
 
-Our next question is what happens as we change $k$, the growth rate of the ligand concentration. The following figure shows the results of multiple simulations in which we vary the growth parameter $k$ and plot the concentration of phosphorylated CheY over time. The larger the value of $k$, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.
+Our next question is what happens as we change $k$, the growth rate of the ligand concentration. \autoref{fig:chemotaxis_tutorial_addition03} shows the results of multiple simulations in which we vary the growth parameter $k$ and plot the concentration of phosphorylated CheY over time. The larger the value of $k$, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.
 
 \begin{figure}[h]
 \centering
@@ -735,7 +735,7 @@ Our next question is what happens as we change $k$, the growth rate of the ligan
 \label{fig:chemotaxis_tutorial_addition03}
 \end{figure}
 
-More importantly, the above figure further illustrates the \textit{robustness} of bacterial chemotaxis to the rate of growth in ligand concentration. Whether the growth of the attractant is slow or fast, methylation will always bring the cell back to the same equilibrium concentration of phosphorylated CheY, and therefore the same background tumbling frequency.
+More importantly, \autoref{fig:chemotaxis_tutorial_addition03} further illustrates the \textit{robustness} of bacterial chemotaxis to the rate of growth in ligand concentration. Whether the growth of the attractant is slow or fast, methylation will always bring the cell back to the same equilibrium concentration of phosphorylated CheY, and therefore the same background tumbling frequency.
 
 \FloatBarrier
 \phantomsection
@@ -756,7 +756,7 @@ You may like to modify the previous tutorial on your own to account for travelin
 \phantomsection
 \subsection{Steady state tumbling frequency remains robust when traveling down an attractant gradient}
 
-The following figure plots the concentrations of molecules in our model as the concentration of attractant ligand decreases exponentially with $l_0$ equal to $10^7$ and $k$ equal to $-0.3$. As the ligand concentration decreases, the concentration of bound ligands plummet as bound ligands dissociate and there are not enough free ligands to replace the dissociating ones. In the absence of ligand-receptor binding, CheY is free to phosphorylate, causing a spike in phosphorylated CheY. Demethylation of receptors then causes the concentration of phosphorylated CheY to steadily return back to its equilibrium.
+\autoref{fig:chemotaxis_tutorial_removal01} plots the concentrations of molecules in our model as the concentration of attractant ligand decreases exponentially with $l_0$ equal to $10^7$ and $k$ equal to $-0.3$. As the ligand concentration decreases, the concentration of bound ligands plummet as bound ligands dissociate and there are not enough free ligands to replace the dissociating ones. In the absence of ligand-receptor binding, CheY is free to phosphorylate, causing a spike in phosphorylated CheY. Demethylation of receptors then causes the concentration of phosphorylated CheY to steadily return back to its equilibrium.
 
 
 \begin{figure}[h]
@@ -768,7 +768,7 @@ The following figure plots the concentrations of molecules in our model as the c
 \end{figure}
 
 
-To be thorough, we should also test the robustness of our model to see whether the CheY concentration will return to the same steady state for a variety of values of $k$ when $k$ is negative. As in the case of an increasing gradient, the figure below shows that the more sudden the change in the concentration of attractant (i.e., the more negative the value of $k$), the sharper the spike. And yet regardless of the value of $k$, methylation does its work to bring the concentration back to the same steady state, which has been confirmed by experimental observations.\citep{Krembel_2015}.
+To be thorough, we should also test the robustness of our model to see whether the CheY concentration will return to the same steady state for a variety of values of $k$ when $k$ is negative. As in the case of an increasing gradient, \autoref{fig:chemotaxis_tutorial_removal02} shows that the more sudden the change in the concentration of attractant (i.e., the more negative the value of $k$), the sharper the spike. And yet regardless of the value of $k$, methylation does its work to bring the concentration back to the same steady state, which has been confirmed by experimental observations.\citep{Krembel_2015}.
 
 \begin{figure}[h]
 \centering
@@ -873,7 +873,7 @@ In the tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_wal
 \phantomsection
 \subsection{Comparing the effectiveness of our two random walk strategies}
 
-The following figure visualizes the trajectories of three cells using each of the two strategies. After 500 seconds, cells using strategy 1 have traveled away from the origin, and some of them are found in locations with higher concentrations. The cells using strategy 2, however, quickly hone in on the goal and remain near it.
+\autoref{fig:chemotaxis_traj_compare_uniform} visualizes the trajectories of three cells using each of the two strategies. After 500 seconds, cells using strategy 1 have traveled away from the origin, and some of them are found in locations with higher concentrations. The cells using strategy 2, however, quickly hone in on the goal and remain near it.
 
 \begin{figure}[h]
 \centering
@@ -884,7 +884,7 @@ The following figure visualizes the trajectories of three cells using each of th
 \end{figure}
 
 
-Of course, we should be wary of such a small sample size. To confirm that what we observed in these trajectories is true in general, we will compare the two strategies over many simulations. The following figure plots the cell's average final distance to the goal over 500 simulations for both strategies.
+Of course, we should be wary of such a small sample size. To confirm that what we observed in these trajectories is true in general, we will compare the two strategies over many simulations. \autoref{fig:chemotaxis_performance_compare_uniform} plots the cell's average final distance to the goal over 500 simulations for both strategies.
 
 \begin{figure}[h]
 \centering
@@ -912,7 +912,7 @@ To address this question, we will see how changing $t_0$, the default time for a
 \subsection{Why is background tumbling frequency constant across bacterial species?}
 
 
-The following figures show three trajectories for a few different values of $t_0$ and a simulation that lasts for 800 seconds. First, we set $t_0$ equal to 0.2 seconds and see that the bacteria are not able to walk far enough in a single step to head toward the goal.
+The following figures show three trajectories for a few different values of $t_0$ and a simulation that lasts for 800 seconds. First, we set $t_0$ equal to 0.2 seconds and see that the bacteria are not able to walk far enough in a single step to head toward the goal (\autoref{fig:chemotaxis_traj_0.2_uniform}).
 
 \begin{figure}[h]
 \centering
@@ -922,8 +922,7 @@ The following figures show three trajectories for a few different values of $t_0
 \label{fig:chemotaxis_traj_0.2_uniform}
 \end{figure}
 
-
-If we increase $t_0$ to 5.0 seconds, then cells can run for so long that they may carry on past the goal without being able to apply the brakes by tumbling.
+If we increase $t_0$ to 5.0 seconds, then cells can run for so long that they may carry on past the goal without being able to apply the brakes by tumbling (\autoref{fig:chemotaxis_traj_5.0_uniform}).
 
 \begin{figure}[h]
 \centering
@@ -934,7 +933,7 @@ If we increase $t_0$ to 5.0 seconds, then cells can run for so long that they ma
 \end{figure}
 
 
-When we set $t_0$ equal to 1.0, then the figure below shows a ``Goldilocks'' effect in which the default tumbling time is just right. The simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it there.
+When we set $t_0$ equal to 1.0, then \autoref{fig:chemotaxis_traj_1.0_uniform} shows a ``Goldilocks'' effect in which the default tumbling time is just right (\autoref{fig:chemotaxis_traj_1.0_uniform}). The simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it there.
 
 \begin{figure}[h]
 \centering
@@ -945,7 +944,7 @@ When we set $t_0$ equal to 1.0, then the figure below shows a ``Goldilocks'' eff
 \end{figure}
 
 
-The figure below shows a plot of average distance to the goal over time for 500 simulated cells following the chemotactic strategy for a variety of choices of $t_0$, and confirms that a $t_0$ value of approximately one second is ideal for finding an attractant.
+\autoref{fig:chemotaxis_performance_uniform} shows a plot of average distance to the goal over time for 500 simulated cells following the chemotactic strategy for a variety of choices of $t_0$, and confirms that a $t_0$ value of approximately one second is ideal for finding an attractant.
 
 
 \begin{figure}[h]

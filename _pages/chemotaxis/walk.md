@@ -10,7 +10,7 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## Bacterial runs and tumbles
 
-Every *E. coli* cell has between five and twelve flagella distributed on its surface[^Sim2017] that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at a speed of about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates in place.[^Baker2005]
+Every *E. coli* cell has between five and twelve flagella distributed on its surface[^Sim2017] that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates in place.[^Baker2005]
 
 When we examine the bacterium's movement under a microscope, we see it alternate between periods of "running" in a straight line and then "tumbling" in place (see figure below). Over time, the bacterium's **run and tumble** exploration amounts to a *random walk* through its environment, similar to the exploration approach used by the lost immortals in this module's [introduction](home).
 
