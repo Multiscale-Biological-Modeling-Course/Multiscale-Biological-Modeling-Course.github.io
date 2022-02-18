@@ -35,23 +35,23 @@ In the previous two chapters, we have harnessed the power of randomness to answe
 
 In fact, Munroe's randomized algorithm for Lost Immortals is inspired by nature; he calls his approach ``be an ant'' because it mimics how ants explore their environment for resources. In this chapter, we will see that this algorithm is also similar to the method of exploration undertaken by a much smaller organism: our old friend \textit{E. coli}.
 
-Like other prokaryotes, \textit{E. coli} is tiny, with a rod-shaped body that is 2µm long and 0.25 to 1µm wide. In exploring a vast world with sparse resources, \textit{E. coli} finds itself in a vast, forbidding landscape comparable to the lost immortals.
+Like other prokaryotes, \textit{E. coli} is tiny, with a rod-shaped body that is 2 µm long and 0.25 to 1 µm wide. In exploring a vast world with sparse resources, \textit{E. coli} finds itself in a situation comparable to the Munroe's immortals.
 
-The video below shows a collection of \textit{E. coli} surrounding a sugar crystal. Think of this video the next time you leave a slice of cake out on the kitchen counter!
+%The video below shows a collection of \textit{E. coli} surrounding a sugar crystal. Think of this video the next time you leave a slice of cake out overnight on the kitchen counter!
+%
+%\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
+The movement of organisms like \textit{E. coli} in response to a chemical stimulus is called \textdef{chemotaxis}{chemotaxis}{FILL IN}. \textit{E. coli} and other bacteria have evolved to move toward \textdef{attractants}{attractants}{FILL IN} like glucose and electron acceptors and move away from \textdef{repellents}{repellents}{FILL IN} like Ni\textsuperscript{2+} and Co\textsuperscript{2+}. But how?
 
-The movement of organisms like the bacteria in the above video in response to a chemical stimulus is called \textdef{chemotaxis}{chemotaxis}{FILL IN}. \textit{E. coli} and other bacteria have evolved to move toward \textdef{attractants}{attractants}{FILL IN} (e.g., glucose, electron acceptors) and away from \textdef{repellents}{repellents}{FILL IN} (e.g., Ni\textsuperscript{2+}, Co\textsuperscript{2+}). But how?
-
-In this chapter, we will delve into chemotaxis and ask a number of questions. How does a simple organism like \textit{E. coli} sense an attractant or repellent in its environment? How does the bacterium change its internal state in response to this environment? How can we model the bacterium's response? And how does the bacterium's behavior translate into an ``algorithm'' that it uses to explore its environment?
+In this chapter, we will delve into chemotaxis and ask a number of questions. How does a simple organism like \textit{E. coli} sense an attractant or repellent in its environment? How does the bacterium change its internal state in response to this environment? How can we model the bacterium's response? And how does the bacterium's behavior translate into an ``algorithm'' that it uses to explore its environment?\\
 
 \FloatBarrier
 \phantomsection
-\section{Bacterial Runs and Tumbles}
-\label{sec:bacterial_runs_and_tumbles}
+\section{\textit{E. coli} Explores Its World Via a Random Walk}
+\label{sec:e_coli_explores_its_world_via_a_random_walk}
 
 \phantomsection
-\subsection{\textit{E. coli} explores its world via a random walk}
+\subsection{Bacterial runs and tumbles}
 
 
 Every \textit{E. coli} cell has between five and twelve flagella distributed on its surface that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at a speed of about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates in place.

@@ -1,6 +1,6 @@
 ---
 permalink: /chemotaxis/walk
-title: "Bacterial Runs and Tumbles"
+title: "E. coli Explores its World Via a Random Walk"
 sidebar:
  nav: "chemotaxis"
 toc: true
@@ -8,7 +8,7 @@ toc_sticky: true
 image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
-## *E. coli* explores its world via a random walk
+## Bacterial runs and tumbles
 
 Every *E. coli* cell has between five and twelve flagella distributed on its surface[^Sim2017] that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at a speed of about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates in place.[^Baker2005]
 

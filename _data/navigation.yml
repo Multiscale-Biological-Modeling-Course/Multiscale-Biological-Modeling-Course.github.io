@@ -85,7 +85,7 @@ chemotaxis:
     children:
       - title: "Introduction: The lost immortals<br><br>"
         url: /chemotaxis/home
-      - title: "Bacterial runs and tumbles<br><br>"
+      - title: "E. coli explores its world via a random walk<br><br>"
         url: /chemotaxis/walk
       - title: "Signaling and ligand-receptor dynamics<br><br>"
         url: /chemotaxis/signal
