@@ -11,40 +11,39 @@
 \label{sec:introduction}
 \phantomsection
 
-The book \textit{What If?}\citep{Munroe_2014}, by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these situations occurred. Here is an example, called "Lost Immortals".
+The book \textit{What If?}, by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these situations occurred. Here is an example, called ``Lost Immortals''.
 
-\begin{quote}
+\begin{itquote}
 If two immortal people were placed on opposite sides of an uninhabited Earth-like planet, how long would it take them to find each other? 100,000 years? 1,000,000 years?
-\end{quote}
+\end{itquote}
 
 One could imagine many ideas for how the immortals could reunite. For example, they could avoid the interiors of continents by moving to the coastlines. If they are allowed to discuss how to find each other in advance, then they could agree to meet at the planet's North Pole --- assuming that the planet lacks polar bears.
 
 But Munroe provides a solution that is both sophisticated and elegant. His proposed approach is quoted below.
 
-\begin{displayquote}
+\begin{itquote}
 If you have no information, walk at random, leaving a trail of stone markers, each one pointing to the next. For every day that you walk, rest for three. Periodically mark the date alongside the cairn. It doesn’t matter how you do this, as long as it’s consistent. You could chisel the number of days into a rock, or lay out rocks to plot the number.
 
 If you come across a trail that’s newer than any you’ve seen before, start following it as fast as you can. If you lose the trail and can’t recover it, resume leaving your own trail.
 
 You don’t have to come across the other player’s current location; you simply have to come across a location where they’ve been. You can still chase one another in circles, but as long as you move more quickly when you’re following a trail than when you’re leaving one, you’ll find each other in a matter of years or decades.
 
-And if your partner isn’t cooperating—perhaps they’re just sitting where they started and waiting for you—then you’ll get to see some neat stuff.
-\end{displayquote}
+And if your partner isn’t cooperating --- perhaps they’re just sitting where they started and waiting for you --- then you’ll get to see some neat stuff.
+\end{itquote}
 
-In the previous two chapters, we have already seen the power of randomness to provide answers to practical questions. Munroe's approach offers another benefit of randomness in the form of a \textdef{randomized algorithm}{random algorithm}{FILL IN}, or a method that uses randomness to solve a problem.
+In the previous two chapters, we have harnessed the power of randomness to answer practical questions. Munroe's approach exemplifies a \textdef{randomized algorithm}{random algorithm}{FILL IN}, or a method that uses randomness to solve a problem.
 
-In fact, the randomized algorithm outlined above is inspired by nature; Munroe calls the above approach "be an ant" because it mimics how ants explore their environment for resources. However, in this chapter, we will see that this algorithm is also similar to the method of exploration undertaken by a much smaller organism: our old friend \textit{E. coli}.
+In fact, Munroe's randomized algorithm for Lost Immortals is inspired by nature; he calls his approach ``be an ant'' because it mimics how ants explore their environment for resources. In this chapter, we will see that this algorithm is also similar to the method of exploration undertaken by a much smaller organism: our old friend \textit{E. coli}.
 
-Like other prokaryotes, \textit{E. coli} is tiny, with a rod-shaped body that is 2µm long and 0.25 to 1µm wide.\citep{Pierucci_1978} In exploring a vast world with sparse resources, \textit{E. coli} finds itself in a vast, forbidding landscape comparable to the lost immortals.
+Like other prokaryotes, \textit{E. coli} is tiny, with a rod-shaped body that is 2µm long and 0.25 to 1µm wide. In exploring a vast world with sparse resources, \textit{E. coli} finds itself in a vast, forbidding landscape comparable to the lost immortals.
 
 The video below shows a collection of \textit{E. coli} surrounding a sugar crystal. Think of this video the next time you leave a slice of cake out on the kitchen counter!
 
 \texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
-% include video id="F6QMU3KD7zw" provider="youtube" %
 
 The movement of organisms like the bacteria in the above video in response to a chemical stimulus is called \textdef{chemotaxis}{chemotaxis}{FILL IN}. \textit{E. coli} and other bacteria have evolved to move toward \textdef{attractants}{attractants}{FILL IN} (e.g., glucose, electron acceptors) and away from \textdef{repellents}{repellents}{FILL IN} (e.g., Ni\textsuperscript{2+}, Co\textsuperscript{2+}). But how?
 
-In this chapter, we will delve into chemotaxis and ask a number of questions. How does a simple organism like \textit{E. coli} sense an attractant or repellent in its environment? How does the bacterium change its internal state in response to this environment? How can we model the bacterium's response? And how does the bacterium's behavior translate into an "algorithm" that it uses to explore its environment?
+In this chapter, we will delve into chemotaxis and ask a number of questions. How does a simple organism like \textit{E. coli} sense an attractant or repellent in its environment? How does the bacterium change its internal state in response to this environment? How can we model the bacterium's response? And how does the bacterium's behavior translate into an ``algorithm'' that it uses to explore its environment?
 
 \FloatBarrier
 \phantomsection
@@ -55,9 +54,9 @@ In this chapter, we will delve into chemotaxis and ask a number of questions. Ho
 \subsection{\textit{E. coli} explores its world via a random walk}
 
 
-Every \textit{E. coli} cell has between five and twelve flagella distributed on its surface \citep{Sim_2017} that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at a speed of about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates in place.\citep{Baker_2005}
+Every \textit{E. coli} cell has between five and twelve flagella distributed on its surface that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at a speed of about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates in place.
 
-When we examine the bacterium's movement under a microscope, we see it alternate between periods of "running" in a straight line and then "tumbling" in place (see figure below). Over time, the bacterium's \textdef{run and tumble}{run and tumble}{FILL IN} exploration amounts to a \textit{random walk} through its environment, similar to the exploration approach used by the lost immortals in \autoref{sec:introduction}.
+When we examine the bacterium's movement under a microscope, we see it alternate between periods of ``running'' in a straight line and then ``tumbling'' in place (see figure below). Over time, the bacterium's \textdef{run and tumble}{run and tumble}{FILL IN} exploration amounts to a \textit{random walk} through its environment, similar to the exploration approach used by the lost immortals in \autoref{sec:introduction}.
 
 \begin{figure}[h]
 \centering
@@ -71,9 +70,9 @@ When we examine the bacterium's movement under a microscope, we see it alternate
 \phantomsection
 \subsection{Tumbling frequency is constant across species}
 
-Bacteria are amazingly diverse. They have evolved for over three billion years to thrive in practically every environment on the planet, including hazardous human-made environments. They manufacture compounds such as antibiotics that larger organisms like ourselves cannot make. Some eukaryotes are even completely dependent upon bacteria to perform some critical task for them, from digesting their food, to camouflaging them from predators, to helping them develop organs \citep{Yong_2016}.
+Bacteria are amazingly diverse. They have evolved for over three billion years to thrive in practically every environment on the planet, including hazardous human-made environments. They manufacture compounds such as antibiotics that larger organisms like ourselves cannot make. Some eukaryotes are even completely dependent upon bacteria to perform some critical task for them, from digesting their food, to camouflaging them from predators, to helping them develop organs.
 
-And yet despite the diversity of the bacterial kingdom, variations in bacterial tumbling frequencies are relatively small. In the absence of an attractant or repellent, \textit{E. coli} stops to tumble once every 1 to 1.5 seconds \citep{Weis_1990, Berg_2000}, which is in line with most other bacteria. \citep{Achouri_2015, Turner_2016, Gotz_1987}
+And yet despite the diversity of the bacterial kingdom, variations in bacterial tumbling frequencies are relatively small. In the absence of an attractant or repellent, \textit{E. coli} stops to tumble once every 1 to 1.5 seconds, which is in line with most other bacteria.
 
 Is there some reason why, regardless of the species, a bacterium's tumbling frequency tends to be constant? It is as if there were some invisible force compelling all of these bacteria to tumble with the same frequency.
 
@@ -94,7 +93,7 @@ Say that a bacterium travels 20 µm in a randomly selected direction every secon
 
 Chemotaxis is one example of many ways in which a cell must be able to perceive a change in its environment and react accordingly. This response is governed by a process called \textdef{signal transduction}{signal transduction}{FILL IN}, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell in order to effect a response.
 
-When a certain molecule's extracellular concentration increases, \textdef{receptor proteins}{receptor proteins}{FILL IN} on the outside of the cell have more frequent binding with these molecules and are therefore able to detect changes in molecular concentration. This "signal" is then "transduced" via a series of internal chemical processes.
+When a certain molecule's extracellular concentration increases, \textdef{receptor proteins}{receptor proteins}{FILL IN} on the outside of the cell have more frequent binding with these molecules and are therefore able to detect changes in molecular concentration. This ``signal'' is then ``transduced'' via a series of internal chemical processes.
 
 For example, transcription factors, which we discussed in the \autoref{chapter:motifs}, are involved in a signal transduction process. When some extracellular molecule is detected, a cascade begins that eventually changes a transcription factor into an active state, so that it is ready to activate or repress the genes that it regulates.
 
@@ -245,7 +244,7 @@ Use a similar argument to show that the units of the dissociation constant \text
 \phantomsection
 \subsection{Steady state ligand-receptor concentrations for an experimentally verified example}
 
-Let's use experimentally verified binding and dissociation rates to identify steady state concentrations. The experimentally verified binding rate is $k_{bind} = 0.0146 ((molecules\mathbin{/}\mu m^3)^{-1})s^{-1}$, and the dissociation rate constant is $k_{dissociate} = 35s^{-1}$.\citep{Li_2004, Spiro_1997, Stock_1991} We will model an \textit{E. coli} cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants $a$, $b$, and $c$ in the quadratic equation:
+Let's use experimentally verified binding and dissociation rates to identify steady state concentrations. The experimentally verified binding rate is $k_{bind} = 0.0146 ((molecules\mathbin{/}\mu m^3)^{-1})s^{-1}$, and the dissociation rate constant is $k_{dissociate} = 35s^{-1}$. We will model an \textit{E. coli} cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants $a$, $b$, and $c$ in the quadratic equation:
 
 \begin{itemize}
  \item $a = k_{bind} = 0.0146$
@@ -273,7 +272,7 @@ In the \autoref{chapter:motifs}, we saw that we could avoid tracking the positio
 
 Even though we can calculate steady state concentrations by hand, a particle-free simulation will be useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system like what we have done in the previous section will become impossible.
 
-The difficulty at hand is comparable to the famed "\textit{n}-body problem" in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution once we add more bodies to the system.
+The difficulty at hand is comparable to the famed ``\textit{n}-body problem'' in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution once we add more bodies to the system.
 
 Our particle-free model will apply an approach called \textdef{Gillespie's stochastic simulation algorithm}{Gillespie's stochastic simulation algorithm}{FILL IN}, which is often called the \textbf{Gillespie algorithm} or just \textbf{SSA} for short. Before we explain how this algorithm works, we take a short detour to provide some needed probabilistic context.
 
@@ -318,7 +317,7 @@ Next, say that we have two reactions proceeding independently of each other and 
 
 Numerical methods allow us to generate a random number simulating the wait time of an exponential distribution. By repeatedly generating these numbers, we can obtain a series of wait times between consecutive reaction occurrences.
 
-Once a wait time is selected, we should determine to which of the two reactions it corresponds. If the rates of the two reactions are equal, then we simply choose one of the two reactions randomly with equal probability. But if the rates of these reactions are different, then we should choose one of the reactions via a probability that is \textit{weighted} in direct proportion to the rate of the reaction; that is, the larger the rate of the reaction, the more likely that this reaction corresponds to the current event.\citep{Schwartz_2008} To do so, we select the first reaction with probability $\lambda_1\mathbin{/}(\lambda_1 + \lambda_2)$ and the second reaction with probability $\lambda_2\mathbin{/}(\lambda_1 + \lambda_2)$.\\
+Once a wait time is selected, we should determine to which of the two reactions it corresponds. If the rates of the two reactions are equal, then we simply choose one of the two reactions randomly with equal probability. But if the rates of these reactions are different, then we should choose one of the reactions via a probability that is \textit{weighted} in direct proportion to the rate of the reaction; that is, the larger the rate of the reaction, the more likely that this reaction corresponds to the current event. To do so, we select the first reaction with probability $\lambda_1\mathbin{/}(\lambda_1 + \lambda_2)$ and the second reaction with probability $\lambda_2\mathbin{/}(\lambda_1 + \lambda_2)$.\\
 
 \begin{qbox}[
 Verify that these two probabilities sum to 1.
@@ -415,7 +414,7 @@ For example, if \textit{E. coli} senses an increase in the concentration of gluc
 
 The engine of signal transduction is \textdef{phosphorylation}{phosphorylation}{FILL IN}, a chemical reaction that attaches a phosphoryl group (PO\textsubscript{3}\textsuperscript{-}) to an organic molecule.  Phosphoryl modifications serve as an information exchange of sorts because they activate or deactivate certain enzymes.
 
-A phosphoryl group usually comes from one of two sources. First, the phosphoryl can be broken off of an \textdef{adenosine triphosphate (ATP)}{adenosine triphosphate (ATP)}{FILL IN} molecule, the "energy currency" of the cell, producing \textdef{adenosine diphosphate (ADP)}{adenosine diphosphate (ADP)}{FILL IN}. Second, the phosphoryl can be exchanged from a phosphorylated molecule that has had its phosphoryl group removed in a \textdef{dephosphorylation}{dephosphorylation}{FILL IN} reaction.
+A phosphoryl group usually comes from one of two sources. First, the phosphoryl can be broken off of an \textdef{adenosine triphosphate (ATP)}{adenosine triphosphate (ATP)}{FILL IN} molecule, the ``energy currency'' of the cell, producing \textdef{adenosine diphosphate (ADP)}{adenosine diphosphate (ADP)}{FILL IN}. Second, the phosphoryl can be exchanged from a phosphorylated molecule that has had its phosphoryl group removed in a \textdef{dephosphorylation}{dephosphorylation}{FILL IN} reaction.
 
 For many cellular responses, including bacterial chemotaxis, a sequence of phosphorylation and dephosphorylation events called a \textdef{phosphorylation cascade}{phosphorylation cascade}{FILL IN} serves to transmit information within the cell about the amount of ligand binding being detected on the cell's exterior. In this section, we discuss how this cascade of chemical reactions leads to a change in bacterial movement.
 
@@ -424,13 +423,13 @@ For many cellular responses, including bacterial chemotaxis, a sequence of phosp
 \phantomsection
 \subsection{Chemotaxis pathway}
 
-A high-level view of the transduction pathway for chemotaxis is shown in the figure below. The cell membrane contains receptors called \textdef{methyl-accepting chemotaxis proteins (MCPs)}{methyl-accepting chemotaxis proteins (MCPs)}{FILL IN} that bridge the cellular membrane, binding both to ligand stimuli in the cell exterior and to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix \textit{Che} (short for "chemotaxis").
+A high-level view of the transduction pathway for chemotaxis is shown in the figure below. The cell membrane contains receptors called \textdef{methyl-accepting chemotaxis proteins (MCPs)}{methyl-accepting chemotaxis proteins (MCPs)}{FILL IN} that bridge the cellular membrane, binding both to ligand stimuli in the cell exterior and to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix \textit{Che} (short for ``chemotaxis'').
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/chemotaxisphosnew.png}
-\caption{A summary of the chemotaxis transduction pathway. A ligand binding signal is propagated through CheA and CheY phosphorylation, which leads to a response of clockwise flagellar rotation. The blue curved arrow denotes phosphorylation, the grey curved arrow denotes dephosphorylation, and the blue dashed arrow denotes a chemical interaction. Our figure is a simplified view of \href{http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html"} illustrations.}
+\caption{A summary of the chemotaxis transduction pathway. A ligand binding signal is propagated through CheA and CheY phosphorylation, which leads to a response of clockwise flagellar rotation. The blue curved arrow denotes phosphorylation, the grey curved arrow denotes dephosphorylation, and the blue dashed arrow denotes a chemical interaction. Our figure is a simplified view of \href{http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html} illustrations.}
 \label{fig:chemotaxisphosnew.png}
 \end{figure}
 
@@ -452,7 +451,7 @@ A critical part of the process is that if a ligand is detected, and the cell has
 \subsection{Adding phosphorylation events to our model of chemotaxis}
 
 
-We would like to simulate the reactions driving chemotaxis signal transduction and see what happens if the bacterium "senses an attractant", meaning that the attractant ligand's concentration increases and leads to more receptor\-ligand binding. To do so, we will use the Gillespie algorithm that we introduced in the \autoref{sec:stochastic_simulation_of_chemical_reactions}.
+We would like to simulate the reactions driving chemotaxis signal transduction and see what happens if the bacterium ``senses an attractant'', meaning that the attractant ligand's concentration increases and leads to more receptor\-ligand binding. To do so, we will use the Gillespie algorithm that we introduced in the \autoref{sec:stochastic_simulation_of_chemical_reactions}.
 
 This model will be more complicated than any we have introduced thus far. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model phosphorylation reactions of CheA, which depend on the current concentrations of bound and unbound MCP molecules. We will at least make a simplifying assumption that the MCP receptor includes CheA and CheW, so that we do not need to represent these molecules individually.
 
@@ -569,17 +568,17 @@ In this section, we will investigate the biochemical mechanism that \textit{E. c
 
 Recall that in the absence of an attractant, CheW and CheA readily bind to an MCP, leading to greater autophosphorylation of CheA, which in turn phosphorylates CheY. The greater the concentration of phosphorylated CheY, the more frequently the bacterium tumbles.
 
-Signal transduction is achieved through phosphorylation, but \textit{E. coli} maintains a "memory" of past environmental concentrations through a chemical process called \textdef{methylation}{methylation}{FILL IN}. In this  reaction, a \textdef{methyl group}{methyl group}{FILL IN} (-CH\textsubscript{3}) is added to an organic molecule; the removal of a methyl group is called \textdef{demethylation}{demethylation}{FILL IN}.
+Signal transduction is achieved through phosphorylation, but \textit{E. coli} maintains a ``memory'' of past environmental concentrations through a chemical process called \textdef{methylation}{methylation}{FILL IN}. In this  reaction, a \textdef{methyl group}{methyl group}{FILL IN} (-CH\textsubscript{3}) is added to an organic molecule; the removal of a methyl group is called \textdef{demethylation}{demethylation}{FILL IN}.
 
 Every MCP receptor contains four methylation sites, meaning that between zero and four methyl groups can be added to the receptor. On the plasma membrane, many MCPs, CheW, and CheA molecules form an array structure. Methylation reduces the negative charge on the receptors, stabilizing the array and facilitating CheA autophosphorylation. The more sites that are methylated, the higher the autophosphorylation rate of CheA, which means that CheY has a higher phosphorylation rate, and tumbling frequency increases.
 
 We now have two different ways that tumbling frequency can be elevated. First, if the concentration of an attractant is low, then CheW and CheA freely form a complex with the MCP, and the phosphorylation cascade passes phosphoryl groups to CheY, which interacts with the flagella and keeps tumbling frequency high. Second, an increase in MCP methylation can also boost CheA autophosphorylation and lead to an increased tumbling frequency.
 
-Methylation of MCPs is achieved by an additional protein called \textbf{CheR}. When bound to MCPs, CheR methylates ligand-bound MCPs faster \citep{Amin_2010, Terwilliger_1986}, and so the rate of MCP methylation by CheR is higher if the MCP is bound to a ligand.\citep{Spiro_1997}. Let's consider how this fact affects a bacterium's behavior.
+Methylation of MCPs is achieved by an additional protein called \textbf{CheR}. When bound to MCPs, CheR methylates ligand-bound MCPs faster, and so the rate of MCP methylation by CheR is higher if the MCP is bound to a ligand. Let's consider how this fact affects a bacterium's behavior.
 
 Say that \textit{E. coli} encounters an increase in attractant concentration. Then the lack of a phosphorylation cascade will mean less phosphorylated CheY, and so the tumbling frequency will decrease. However, if the attractant concentration levels off, then the tumbling frequency will flatten, while CheR starts methylating the MCP. Over time, the rising methylation will increase CheA autophosphorylation, bringing back the phosphorylation cascade and raising tumbling frequency back to default levels.
 
-Just as the phosphorylation of CheY can be reversed, MCP methylation can be undone to prevent methylation from being permanent. In particular, an enzyme called \textbf{CheB}, which like CheY is phosphorylated by CheA, demethylates MCPs (as well as autodephosphorylates). The rate of an MCP's demethylation is dependent on the extent to which the MCP is methylated. In other words, the rate of MCP methylation is higher when the MCP is in a low methylation state, and the rate of demethylation is faster when the MCP is in a high methylation state.\citep{Spiro_1997}
+Just as the phosphorylation of CheY can be reversed, MCP methylation can be undone to prevent methylation from being permanent. In particular, an enzyme called \textbf{CheB}, which like CheY is phosphorylated by CheA, demethylates MCPs (as well as autodephosphorylates). The rate of an MCP's demethylation is dependent on the extent to which the MCP is methylated. In other words, the rate of MCP methylation is higher when the MCP is in a low methylation state, and the rate of demethylation is faster when the MCP is in a high methylation state.
 
 The figure below adds CheR and CheB to provide a complete picture of the core pathways influencing chemotaxis. To model these pathways, we will need to add quite a few molecules and reactions to our current model.
 
@@ -608,7 +607,7 @@ Say that we are simulating the simple reaction of a ligand binding to an MCP, wh
 
 In other words, as our model grows, with multiple different states for each molecule involved in each reaction, the number of reactions we need to represent the system grows very fast; this phenomenon is called \textdef{combinatorial explosion}{combinatorial explosion}{FILL IN}. Our model of chemotaxis is ultimately relatively straightforward, but combinatorial explosion means that building realistic models of biochemical systems at scale can be daunting.
 
-A major benefit of using a rule-based modeling language such as the one developed by BioNetGen is that it circumvents combinatorial explosion by consolidating many reactions into a single rule. For example, when modeling ligand-MCP binding, we can summarize the 12 different reactions with the rule "a free ligand molecule binds to an MCP that is not bound to a ligand molecule." In the BioNetGen language, this rule is represented by the same one-line expression as it was in the previous section:
+A major benefit of using a rule-based modeling language such as the one developed by BioNetGen is that it circumvents combinatorial explosion by consolidating many reactions into a single rule. For example, when modeling ligand-MCP binding, we can summarize the 12 different reactions with the rule ``a free ligand molecule binds to an MCP that is not bound to a ligand molecule.'' In the BioNetGen language, this rule is represented by the same one-line expression as it was in the previous section:
 
 \texttt{LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k\_lr\_bind, k\_lr\_dis}
 
@@ -708,7 +707,7 @@ In the section \autoref{sec:methylation}, we saw that \textit{E. coli} is able t
 
 Yet imagine a glucose cube in an aqueous solution. As the cube dissolves, a \textdef{gradient}{gradient}{FILL IN} will form, with a decreasing glucose concentration that radiates outward from the cube. How will the tumbling frequency of \textit{E. coli} change if the bacterium finds itself in an environment of an attractant gradient?  Will the tumbling frequency decrease continuously as well, or will the methylation pathways mentioned in the previous section cause more complicated behavior? And once the cell reaches a region of high attractant concentration, will its default tumbling frequency stabilize to the same steady state?
 
-In this section, we will modify our model from the previous section by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of phosphorylated CheY changes. This model will simulate a bacterium traveling up an attractant gradient toward an attractant. Moreover, we will examine how the concentration of phosphorylated CheY changes as we change the gradient's "steepness", or the rate at which attractant ligand is increasing. Visit the following tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_gradient] if you're interested in following our adjustments for yourself.
+In this section, we will modify our model from the previous section by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of phosphorylated CheY changes. This model will simulate a bacterium traveling up an attractant gradient toward an attractant. Moreover, we will examine how the concentration of phosphorylated CheY changes as we change the gradient's ``steepness'', or the rate at which attractant ligand is increasing. Visit the following tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_gradient] if you're interested in following our adjustments for yourself.
 
 \phantomsection
 \subsection{Steady state tumbling frequency is robust}
@@ -829,7 +828,7 @@ We will now implement each of the two exploration strategies that we wish to mod
 \phantomsection
 \subsection{Strategy 1: Standard random walk}
 
-To model our "unintelligent" random walk strategy, we first select a random direction of movement along with a duration of tumble. The degree of reorientation follows a uniform distribution from 0° to 360°. The duration of each tumble follows an exponential distribution with mean 0.1s \citep{Saragosti_2012}. As the result of a tumble, the cell only changes its orientation, not its position.
+To model our ``unintelligent'' random walk strategy, we first select a random direction of movement along with a duration of tumble. The degree of reorientation follows a uniform distribution from 0° to 360°. The duration of each tumble follows an exponential distribution with mean 0.1s \citep{Saragosti_2012}. As the result of a tumble, the cell only changes its orientation, not its position.
 
 We then select a random duration to run and let the bacterium run in that direction for the specified amount of time. The duration of each run follows an exponential distribution with mean equal to the experimentally verified value of 1 second.
 
@@ -847,7 +846,7 @@ In our second strategy, we mimic the real response of \textit{E. coli} to its en
 
 To ensure a mathematically controlled comparison, we will use the same approach for determining the duration of a tumble and the resulting direction of a run as in the first strategy.
 
-Say that the "response time" of a bacterium, $t_{response}$, is the time in seconds that it takes for the bacterium to change its internal behavior in response to its change in environment. (We saw earlier in this chapter that the response time for \textit{E. coli} in chemotaxis is about half a second.) To model chemotaxis, we will check the attractant concentration at a simulated bacterium's current location every $t_{response}$ seconds.
+Say that the ``response time'' of a bacterium, $t_{response}$, is the time in seconds that it takes for the bacterium to change its internal behavior in response to its change in environment. (We saw earlier in this chapter that the response time for \textit{E. coli} in chemotaxis is about half a second.) To model chemotaxis, we will check the attractant concentration at a simulated bacterium's current location every $t_{response}$ seconds.
 
 We will then measure the percentage difference between the attractant concentration $L$($x$, $y$) at the cell's current point and the attractant concentration at the cell's previous point; we denote this difference as $\Delta\text{[}L{]}$. If $\Delta\text{[}L{]}$ is equal to zero, then the probability of a tumble in the next $t_{response}$ should be the same as the likelihood of a tumble in strategy 1 over the same time period. If $\Delta\text{[}L{]}$ is positive, then the probability of a tumble should be greater than it was in strategy 1; if $\Delta\text{[}L{]}$ is negative, then the probability of a tumble should be less than it was in strategy 1.
 
@@ -900,7 +899,7 @@ Using strategy 1, cells have some chance of reaching the goal because they tend 
 
 Strategy 2 amounts to a very slight change in strategy 1 in which we allow the cell to run for a greater distance if it senses an increase in the attractant concentration. After all, the direction of travel is still \textit{random}. So why would this strategy be so much better than a pure random walk?
 
-The answer to this quandary is that the attractant detection provides a "rubber band" effect. If the bacterium is traveling down an attractant gradient (i.e., away from an attractant), then it is not allowed to travel very far in a single step before it is forced to tumble. If an increase of attractant is detected, however, then the cell can travel farther before tumbling. On average, then, this effect helps to pull the bacterium in the direction of increasing attractant, even though each of its steps is taken in a random direction.
+The answer to this quandary is that the attractant detection provides a ``rubber band'' effect. If the bacterium is traveling down an attractant gradient (i.e., away from an attractant), then it is not allowed to travel very far in a single step before it is forced to tumble. If an increase of attractant is detected, however, then the cell can travel farther before tumbling. On average, then, this effect helps to pull the bacterium in the direction of increasing attractant, even though each of its steps is taken in a random direction.
 
 A very small change to a simple, unsuccessful randomized algorithm can produce an elegant approach for exploring an unknown environment. But we left one question unanswered. Why is it that a default tumbling frequency of one tumble per second appears to be stable across a wide range of bacteria?
 
@@ -935,7 +934,7 @@ If we increase $t_0$ to 5.0 seconds, then cells can run for so long that they ma
 \end{figure}
 
 
-When we set $t_0$ equal to 1.0, then the figure below shows a "Goldilocks" effect in which the default tumbling time is just right. The simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it there.
+When we set $t_0$ equal to 1.0, then the figure below shows a ``Goldilocks'' effect in which the default tumbling time is just right. The simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it there.
 
 \begin{figure}[h]
 \centering
@@ -960,7 +959,6 @@ The figure below shows a plot of average distance to the goal over time for 500 
 
 Below, we reproduce the video from earlier in this chapter showing \textit{E. coli} moving towards a sugar crystal. This video shows that the behavior of real \textit{E. coli} is similar to that of our simulated bacteria. Bacteria generally move towards the crystal and then remain close to it; some bacteria run by the crystal, but they turn around to move toward the crystal again.
 
-%{% include video id="F6QMU3KD7zw" provider="youtube" %}
 \texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
 
@@ -971,8 +969,26 @@ Below, we reproduce the video from earlier in this chapter showing \textit{E. co
 
 If you closely examine the video above, then you may be curious about the way that bacteria turn around and head back toward the attractant. When they reorient, their behavior appears more intelligent than simply walking in a random direction. The reason for this behavior of the bacteria is that like most things in biology, the reality of the system that we are studying turns out to be more complex than we might imagine.
 
-Researchers have showed that the direction of bacterial reorientation is not completely random, but rather follows a normal distribution with mean of 68° and standard deviation of 36°\citep{Berg_1972}. That is, the bacterium typically does not tend to make as drastic of a change to its orientation as it would in a pure random walk, which would on average have a change in orientation of 90°.
+Researchers have showed that the direction of bacterial reorientation is not completely random, but rather follows a normal distribution with mean of 68° and standard deviation of 36°. That is, the bacterium typically does not tend to make as drastic of a change to its orientation as it would in a pure random walk, which would on average have a change in orientation of 90°.
 
-Yet recent research has shown that the direction of the bacterium's reorientation also depends on whether the cell is traveling in the correct direction.\citep{Saragosti_2011} If the bacterium is moving up an attractant gradient, then it makes much smaller changes in its reorientation angle. This allows the cell to stay straight if it is moving in the correct direction but also turn around quickly if it starts heading in the wrong direction. We can even see this behavior in the video above, in which bacteria traveling toward the attractant make only very slight changes in their direction of travel, but reorient themselves more drastically if they overshoot the target.
+Yet recent research has shown that the direction of the bacterium's reorientation also depends on whether the cell is traveling in the correct direction. If the bacterium is moving up an attractant gradient, then it makes much smaller changes in its reorientation angle. This allows the cell to stay straight if it is moving in the correct direction but also turn around quickly if it starts heading in the wrong direction. We can even see this behavior in the video above, in which bacteria traveling toward the attractant make only very slight changes in their direction of travel, but reorient themselves more drastically if they overshoot the target.
 
 Bacterial chemotaxis is probably the most studied biological system from the perspective of connecting chemical reactions to the emergent behavior that these reactions cause. Yet for many other systems, this thread connecting a reductionist view of a system to its holistic behavior is still a mystery that will continue inspiring the work of biological modelers for a very long time.
+
+
+\FloatBarrier
+\phantomsection
+\section{Citations}
+\citep{Munroe_2014}
+\citep{Pierucci_1978}
+\citep{Sim_2017}
+\citep{Baker_2005}
+\citep{Yong_2016}
+\citep{Weis_1990, Berg_2000}
+\citep{Achouri_2015, Turner_2016, Gotz_1987}
+\citep{Li_2004, Spiro_1997, Stock_1991}
+\citep{Schwartz_2008}
+ \citep{Amin_2010, Terwilliger_1986}
+ \citep{Spiro_1997}
+ \citep{Spiro_1997}
+ 

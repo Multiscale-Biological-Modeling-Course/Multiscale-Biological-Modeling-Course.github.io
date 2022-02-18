@@ -30,9 +30,9 @@ But Munroe provides a solution that is both sophisticated and elegant. His propo
 >
 > And if your partner isn’t cooperating—perhaps they’re just sitting where they started and waiting for you—then you’ll get to see some neat stuff.
 
-In the previous two modules, we have already seen the power of randomness to provide answers to practical questions. Munroe's approach offers another benefit of randomness in the form of a **randomized algorithm**, or a method that uses randomness to solve a problem.
+In the previous two modules, we have harnessed the power of randomness to answer to practical questions. Munroe's approach exemplifies a **randomized algorithm**, or a method that uses randomness to solve a problem.
 
-In fact, the randomized algorithm outlined above is inspired by nature; Munroe calls the above approach "be an ant" because it mimics how ants explore their environment for resources. However, in this module, we will see that this algorithm is also similar to the method of exploration undertaken by a much smaller organism: our old friend *E. coli*.
+In fact, Munroe's randomized algorithm for Lost Immortals is inspired by nature; he calls his approach "be an ant" because it mimics how ants explore their environment for resources.  However, in this module, we will see that this algorithm is also similar to the method of exploration undertaken by a much smaller organism: our old friend *E. coli*.
 
 Like other prokaryotes, *E. coli* is tiny, with a rod-shaped body that is 2µm long and 0.25 to 1µm wide.[^Pierucci1978] In exploring a vast world with sparse resources, *E. coli* finds itself in a vast, forbidding landscape comparable to the lost immortals.
 
