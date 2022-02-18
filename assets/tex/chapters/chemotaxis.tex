@@ -56,7 +56,7 @@ In this chapter, we will delve into chemotaxis and ask a number of questions. Ho
 
 Every \textit{E. coli} cell has between five and twelve flagella distributed on its surface that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, which is analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates in place.
 
-When we examine the bacterium's movement under a microscope, we see it alternate between periods of ``running'' in a straight line and then ``tumbling'' in place (\autoref{fig:chemotaxis_intro_runtumble}). Over time, the bacterium's \textdef{run and tumble}{run and tumble}{FILL IN} exploration amounts to a \textit{random walk} through its environment, similar to the exploration approach used by the lost immortals.
+When we examine the bacterium's movement under a microscope, we see it alternate between periods of ``running'' in a straight line and then ``tumbling'' in place (\autoref{fig:chemotaxis_intro_runtumble}). Over time, the bacterium's \textdef{run and tumble}{run and tumble}{FILL IN} exploration amounts to a \textit{random walk} through its environment, similar to the exploration approach used by the lost immortals.\\
 
 \begin{figure}[h]
 \centering
@@ -79,7 +79,7 @@ It is as if there were some invisible force compelling all of these bacteria to 
 This question is a fundamental one, and we will return to it at the close of this chapter after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism they use to implement chemotaxis is far more sophisticated than we might expect.\\
 
 \begin{qbox}[%
-Say that a bacterium travels 20 µm in a randomly selected direction every second.  After an hour, approximately how far will it have traveled on average? What if we allow the bacterium to travel for a week? (Hint: recall the Random Walk Theorem from \autoref{chapter:turing}.)
+Say that a bacterium travels 20 µm per second, and every second it chooses a random direction in which to travel.  After an hour, approximately how far will it have traveled on average? What if we allow the bacterium to travel for a week? (Hint: recall the Random Walk Theorem from \autoref{chapter:turing}.)
 ]\end{qbox}
 
 
@@ -91,165 +91,185 @@ Say that a bacterium travels 20 µm in a randomly selected direction every secon
 \phantomsection
 \subsection{Cells detect and transduce signals via receptor proteins}
 
-Chemotaxis is one example of many ways in which a cell must be able to perceive a change in its environment and react accordingly. This response is governed by a process called \textdef{signal transduction}{signal transduction}{FILL IN}, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell in order to effect a response.
+Chemotaxis is one example of many ways in which a cell must perceive a change in its environment and react accordingly. This response is governed by a process called \textdef{signal transduction}{signal transduction}{FILL IN}, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell in order to effect a response. When a certain molecule's extracellular concentration increases, \textdef{receptor proteins}{receptor proteins}{FILL IN} on the outside of the cell have more frequent binding with these molecules and are therefore able to detect changes in molecular concentration. This ``signal is then ``transduced'' via a series of internal chemical processes.
 
-When a certain molecule's extracellular concentration increases, \textdef{receptor proteins}{receptor proteins}{FILL IN} on the outside of the cell have more frequent binding with these molecules and are therefore able to detect changes in molecular concentration. This ``signal'' is then ``transduced'' via a series of internal chemical processes.
+For example, transcription factors, which we discussed in \autoref{chapter:motifs}, are involved in a signal transduction process. When some extracellular molecule is detected, a cascade begins that eventually changes a transcription factor into an active state, so that it is ready to activate or repress the genes that it regulates.
 
-For example, transcription factors, which we discussed in the \autoref{chapter:motifs}, are involved in a signal transduction process. When some extracellular molecule is detected, a cascade begins that eventually changes a transcription factor into an active state, so that it is ready to activate or repress the genes that it regulates.
-
-In the case of chemotaxis, \textit{E. coli} has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant \textdef{ligands}{ligands}{FILL IN}. The cell also contains receptors to detect repellents, but in this chapter, we will focus primarily on attractants. As shown in \autoref{fig:chemotaxis_signal}, ligand binding forms a cascade of internal reactions that causes a change in the rotation of one or more flagella.
+In the case of chemotaxis, \textit{E. coli} has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant \textdef{ligands}{ligands}{FILL IN}. The bacterium also contains receptors to detect repellents, but we will focus on modeling the binding of a single type of receptor to a single type of attractant ligand. Later in the chapter, we will enter the cell and model the cascade of reactions after this binding has occurred, as shown in the \autoref{fig:chemotaxis_signal}, which cause a change in the rotation of one or more flagella.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_signal.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_signal.png}
 \caption{An overview of the signaling pathway of chemotaxis. The red circles labeled \textit{L} represent attractant ligands. When these ligands bind to receptors, a signal is transduced inside the cell via a series of enzymes, which finally influences the rotation direction of a flagellum.}
 \label{fig:chemotaxis_signal}
 \end{figure}
 
-In this section, we will discuss how to model ligand-receptor binding. In later sections, we will enter the cell and model the cascade of reactions after this binding has occurred.
-
 \FloatBarrier
+\nopagebreak
 \phantomsection
 \subsection{Ligand-receptor dynamics correspond to a reversible reaction}
 
-Although \textit{E. coli} has different types of surface receptors that can sense a variety of different ligands in its environment, we will focus on how to model the binding of a single type of receptor to a single type of attractant ligand.
+The chemical reactions that we have considered earlier in this book are \textdef{irreversible}{irreversible reaction}{FILL IN}, meaning they can only proceed in one direction. For example, in \autoref{chapter:turning}'s reaction-diffusion model, we modeled the reaction $A + 2B \rightarrow 3B$, but we did not consider the reverse reaction $3B \rightarrow A + 2B$.
 
-The chemical reactions that we have considered earlier in this book are \textdef{irreversible}{irreversible}{FILL IN}, meaning they can only proceed in one direction. For example, in the \autoref{chapter:turning}'s reaction-diffusion model, we had the reaction $A + 2B \rightarrow 3B$. But we did not have the reverse reaction $3B \rightarrow A + 2B$.
+To model ligand-receptor dynamics, we will use a \textdef{reversible reaction}{reversible reaction}{FILL IN} that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bind into a complex. But at the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will \textdef{dissociate}{dissociate}{FILL IN} into two separate molecules. In a future chapter, we will discuss the biochemical details underlying what makes two molecules more or less likely to bind, but for now, we assert that the more suited a receptor is to a ligand, the higher the binding rate and the lower the dissociation rate.\\
 
-To model ligand-receptor dynamics, we will use a \textdef{reversible}{reversible}{FILL IN} reaction that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bind into a complex. But at the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will \textdef{dissociate}{dissociate}{FILL IN} into two separate molecules. In a future chapter, we will discuss the biochemical details underlying what makes two molecules more or less likely to bind, but for now, we assert that the more suited a receptor is to a ligand, the higher the binding rate and the lower the dissociation rate.
+\begin{note}[%
+Why should ligand-receptor binding be reversible? If complexes did not dissociate, then a brief increase in ligand concentration would be detected indefinitely by the surface receptors. Without releasing the bound ligands, the cell would need to manufacture more receptors, which are complicated molecules.
+]\end{note}
 
-Why should ligand-receptor binding be reversible? If complexes did not dissociate, then a brief increase in ligand concentration would be detected indefinitely by the surface receptors. Without releasing the bound ligands, the cell would need to manufacture more receptors, which are complex molecules.
+We denote the receptor molecule by $T$, the ligand molecule by $L$, and the bound complex as $TL$. The reversible reaction is $T + L \longleftrightarrow TL$ and consists of two reactions. The \textdef{forward reaction}{forward reaction}{FILL IN} is $T + L \rightarrow TL$, which takes place at some rate $k_\text{bind}$, and the \textdef{reverse reaction}{reverse reaction}{FILL IN} is $TL \rightarrow T + L$, which takes place at some rate $k_\text{dissociate}$.
 
-We are ready to start building a model of ligand-receptor dynamics. We denote the receptor molecule by $T$, the ligand molecule by $L$, and the bound complex as $TL$. The \textdef{forward reaction}{forward reaction}{FILL IN} is $T + L \rightarrow TL$, which takes place at some rate \textvar{k\textsubscript{bind}}, and the \textdef{reverse reaction}{reverse reaction}{FILL IN} is $TL \rightarrow T + L$, which takes place at some rate \textvar{k\textsubscript{dissociate}}.
-
-If we start with a free floating supply of $T$ and $L$ molecules, then $TL$ will initially be formed quickly at the expense of the free-floating $T$ and $L$ molecules. The reverse reaction will not occur because of the lack of $TL$ complexes. However, as the concentration of $TL$ grows and the concentrations of  $T$ and $L$ decrease, the rate of increase in $TL$ will slow. Eventually, the number of $T$ complexes being formed by the forward reaction will balance the number of $TL$ complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
+If we start with a free floating supply of $T$ and $L$ molecules, then $TL$ complexes will initially be formed quickly at the expense of the free-floating $T$ and $L$ molecules. The reverse reaction will not occur because of the lack of $TL$ complexes. However, as the concentration of $TL$ grows and the concentrations of $T$ and $L$ decrease, the rate of increase in $TL$ will slow. Eventually, the number of $T$ complexes being formed by the forward reaction will balance the number of $TL$ complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
 
 \FloatBarrier
 \phantomsection
 \subsection{Calculation of equilibrium in a reversible ligand-receptor reaction}
 
-For a single reversible reaction, if we know the rates of both the forward and reverse reactions, then we can calculate the steady state concentrations of $T$, $L$, and $TL$ by hand.  Suppose that we begin with initial concentrations of $T$ and $L$ that are represented by \textvar{t\textsubscript0} and \textvar{l\textsubscript0}, respectively. Let $\text{[}L\text{]}$, $\text{[}T\text{]}$, and $\text{[}LT\text{]}$ denote the concentrations of the three molecule types. And assume that the reaction rate constants \textvar{k\textsubscript{bind}} and \textvar{k\textsubscript{dissociate}} are fixed.
+For a single reversible reaction, if we know the rates of both the forward and reverse reactions, then we can calculate the steady state concentrations of $T$, $L$, and $TL$ by hand.  Suppose that we begin with initial concentrations of $T$ and $L$ that are represented by $t_0$ and $l_0$, respectively. Let $[L]$, $[T]$, and $[LT]$ denote the concentrations of the three molecule types. And assume that the reaction rate constants $k_\text{bind}$ and $k_\text{dissociate}$ are fixed.
 
-When the steady state concentration of $LT$ occurs, we know that the rate of production of $LT$ is equal to the rate of its dissociation; in other words, we know that
+When the steady state concentration of $LT$ occurs, the rate of production of $LT$ is equal to the rate of its dissociation; in other words, we know that
 
-$$k_{bind} \times \text{[}L\text{]} \times \text{[}T\text{]} = k_{dissociate} \times \text{[}LT\text{]} \,.$$
+\begin{center}
+$k_\text{bind} \times [L] \times [T] = k_\text{dissociate} \times [LT] \,.$
+
+\end{center}
 
 We also know that by the law of conservation of mass, the concentrations of $L$ and $T$ molecules are always constant across the system and are equal to their initial concentrations. That is, at any time point,
 
-$$\text{[}L\text{]} + \text{[}LT\text{]} = l_0$$
+\begin{center}
+$[L] + [LT] = l_0$
+\end{center}
 
-and
+\noindent and
 
-$$\text{[}T\text{]} + \text{[}LT\text{]} = t_0 \,.$$
+\begin{center}
+$[T] + [LT] = t_0 \,.$
+\end{center}
 
-Solving these equations for $\text{[}L\text{]}$ and $\text{[}T\text{]}$ yields the following two equations:
+\noindent Solving these equations for $[L]$ and $[T]$ yields the following two equations:
+\begin{align*}
+[L] & = l_0 - [LT]\\
+[T] & = t_0 - [LT]\,.
+\end{align*}
 
-$$\text{[}L\text{]} = l_0 - \text{[}LT\text{]}$$
-$$\text{[}T\text{]} = t_0 - \text{[}LT\text{]}$$
+We will now substitute the expressions on the right for $[L]$ and $[T]$ into our original steady state equation:
 
+\begin{center}
+$k_\text{bind} (l_0 - [LT]) (t_0 - [LT]) = k_\text{dissociate} [LT]\,.$
+\end{center}
 
-We will now substitute the expressions on the right for $\text{[}L\text{]}$ and $\text{[}T\text{]}$ into our original steady state equation:
+\noindent Expanding the left side of this equation gives
 
-$$k_{bind} \times (l_0 - \text{[}LT\text{]}) \times (t_0 - \text{[}LT\text{]}) = k_{dissociate}\times \text{[}LT\text{]}$$
+\begin{center}
+$k_\text{bind} [LT]^2 - (k_\text{bind} \cdot l_0 + k_\text{bind} \cdot t_0) [LT]  = k_\text{dissociate} [LT] + k_\text{bind} \cdot l_0 \cdot t_0\,.$
+\end{center}
 
-Expanding the left side of this equation gives us the following updated equation:
+\noindent Finally, we subtract the right side of this equation from both sides to give
 
-$$k_{bind} \times \text{[}LT\text{]}^2 - (k_{bind} \times l_0 + k_{bind} \times t_0) \times \text{[}LT\text{]}  = k_{dissociate} \times \text{[}LT\text{]} + k_{bind} \times l_0 \times t_0$$
+\begin{center}
+$k_\text{bind} [LT]^2 - (k_\text{bind} \cdot l_0 + k_\text{bind} \cdot t_0 + k_\text{dissociate}) [LT] + k_\text{bind} \cdot l_0 \cdot t_0 = 0\,.$
+\end{center}
 
-Finally, we subtract the right side of this equation from both sides:
+\noindent This equation may look daunting, but most of its components are constants. In fact, the only unknown is $[LT]$, which makes this a quadratic equation, with $[LT]$ as the variable.
 
-$$k_{bind} \times \text{[}LT\text{]}^2 - (k_{bind} \times l_0 + k_{bind} \times t_0 + k_{dissociate}) \times \text{[}LT\text{]} + k_{bind} \times l_0 \times t_0 = 0$$
+In general, a quadratic equation has the form $a \cdot x^2 + b \cdot x + c = 0$ for constants $a$, $b$, and $c$ and a single variable $x$. In our case, $x$ = $\text{[}LT\text{]}$, and the constants are $a = k_\text{bind}$, $b = - (k_\text{bind} \times l_0 + k_\text{bind} \times t_0 + k_\text{dissociate})$, and $c = k_\text{bind} \times l_0 \times t_0$. The quadratic formula --- which you may have thought you would never use again --- tells us that the equation $a \cdot x^2 + b \cdot x + c = 0$  has solutions for $x$ given by
 
-This equation may look daunting, but most of its components are constants. In fact, the only unknown is $\text{[}LT\text{]}$, which makes this a quadratic equation, with $\text{[}LT\text{]}$ as the variable.
+\begin{center}
+$x = \dfrac{-b \pm \sqrt{b^2 - 4 \cdot a \cdot c}}{2 \cdot a}\,.$
+\end{center}
 
-In general, a quadratic equation has the form $a \cdot x^2 + b \cdot x + c = 0$ for constants $a$, $b$, and $c$ and a single variable $c$. In our case, $x$ = $\text{[}LT\text{]}$, and the constants are $a = k_{bind}$, $b = - (k_{bind} \times l_0 + k_{bind} \times t_0 + k_{dissociate})$, and $c = k_{bind} \times l_0 \times t_0$.
-
-The quadratic formula --- which you may have thought you would never use again --- tells us that the equation $a \cdot x^2 + b \cdot x + c = 0$  has solutions for $x$ given by the following equation:
-
-$$x = \frac{-b \pm \sqrt{b^2 - 4 \cdot a \cdot c}}{2 \cdot a}$$
+\fudgespace
 
 \begin{qbox}[
-Use the quadratic formula to solve for $\text{[}LT\text{]}$ in our previous equation and find the steady state concentration of $\text{[}LT\text{]}$. How can we use this solution to find the steady state concentrations of $\text{[}L\text{]}$ and $\text{[}T\text{]}$ as well?
+Use the quadratic formula to find the steady state concentration of $LT$. How can we use this solution to find the steady state concentrations of $L$ and $T$ as well?
 ]\end{qbox}
 
-Now that we have reduced the computation of the steady state concentration of $\text{[}LT\text{]}$ to the solution of a quadratic equation, let's compute this steady state concentration for a sample collection of parameters. We will then change the parameters and see how the steady state concentration changes.
+Now that we have reduced the computation of the steady state concentration of $LT$ to the solution of a quadratic equation, let's compute this steady state concentration for a sample collection of parameters. We will then change the parameters and see how the steady state concentration changes.
 
 Say that we are given the following parameter values (the units of these parameters are not important for this toy example):
 \begin{itemize}
- \item $ k_{bind}= 2$;
- \item $k_{dissociate} = 5$;
+ \item $ k_\text{bind}= 2$;
+ \item $k_\text{dissociate} = 5$;
  \item $l_0 = 50$;
  \item $t_0 = 50$.
 \end{itemize}
 
-Substituting these values into the quadratic equation, we obtain the following:
+\noindent Substituting these values into the quadratic equation, we obtain
+\begin{align*}
+a & = k_\text{bind} = 2;\\
+b & = - (k_\text{bind} \times l_0 + k_\text{bind} \times t_0 + k_\text{dissociate}) = -205;\\
+c & = k_\text{bind} \times l_0 \times t_0 = 5000\,.
+\end{align*}
 
-\begin{itemize}
- \item $a = k_{bind} = 2$;
- \item $b = - (k_{bind} \times l_0 + k_{bind} \times t_0 + k_{dissociate}) = -205$;
- \item $c = k_{bind} \times l_0 \times t_0 = 5000$.
-\end{itemize}
+\noindent That is, we are solving the equation $2 \times [LT]^2 - 205 [LT] + 5000 = 0$. Using the quadratic formula to solve for $[LT]$ gives
 
-That is, we are solving the equation $2 \times \text{[}LT\text{]}^2 - 205 \times \text{[}LT\text{]} + 5000 = 0$. Using the quadratic formula to solve for $\text{[}LT\text{]}$ gives
+\begin{center}
+$[LT] = \dfrac{205 \pm \sqrt{205^2 - 4 \cdot 2 \cdot 5000}}{2 \cdot 2} = 51.25 \pm 11.25\,.$
+\end{center}
 
-$$\text{[}LT\text{]} = \frac{205 \pm \sqrt{205^2 - 4 \cdot 2 \cdot 5000}}{2 \cdot 2} = 51.25 \pm 11.25$$.
+It would seem that this equation has \textit{two} solutions: $51.25 + 11.25 = 62.5$ and $51.25 - 11.25 = 40$. However, because $l_0$ and $t_0$, the respective initial concentrations of $L$ and $T$, are both equal to 50, the steady state concentration of $LT$ cannot be 62.5; instead, it must be 40.
 
-It would seem that there are \textit{two} solutions: $51.25 + 11.25 = 62.5$ and $51.25 - 11.25 = 40$. However, because $l_0$ and $t_0$, the respective initial concentrations of $L$ and $T$, are both equal to 50, the steady state concentration of $LT$ cannot be $62.5$; instead, it must be $40$.
+Now that we know the steady state concentration of $LT$, we can recover the values of $[L]$ and $[T]$ too:
+\begin{align*}
+\text{[}L\text{]} & = l_0 - \text{[}LT\text{]} = 10;\\
+\text{[}T\text{]} & = t_0 - \text{[}LT\text{]} = 10\,.
+\end{align*}
 
-Now that we know the steady state concentration of $LT$, we can recover the values of $\text{[}L\text{]}$ and $\text{[}T\text{]}$ too:
+What if the forward reaction were slower (i.e., $k_\text{bind}$ was lower)? We would imagine that the equilibrium concentration of $[LT]$ would decrease. For example, if we halve $k_\text{bind}$, then we obtain the following adjusted parameter values:
 
-\begin{itemize}
- \item $\text{[}L\text{]} = l_0 - \text{[}LT\text{]} = 10$;
- \item $\text{[}T\text{]} = t_0 - \text{[}LT\text{]} = 10$.
-\end{itemize}
+\begin{align*}
+a & = k_\text{bind} = 1;\\
+b & = - (k_\text{bind} \times l_0 + k_\text{bind} \times t_0 + k_\text{dissociate}) = -105;\\
+c & = k_\text{bind} \times l_0 \times t_0 = 2500\,.
+\end{align*}
 
-What if the forward reaction were slower (i.e., \textvar{k\textsubscript{bind}} was lower)? We would imagine that the equilibrium concentration of \text{[}LT\text{]} would decrease. For example, if we halve \textvar{k\textsubscript{bind}}, then we obtain the following adjusted parameter values:
+In this case, if we solve the quadratic equation for $[LT]$, then we obtain
 
-\begin{itemize}
- \item $a = k_{bind} = 1$;
- \item $b = - (k_{bind} \times l_0 + k_{bind} \times t_0 + k_{dissociate}) = -105$;
- \item $c = k_{bind} \times l_0 \times t_0 = 2500$.
-\end{itemize}
-
-In this case, if we solve the quadratic equation for $\text{[}LT\text{]}$, then we obtain
-
-$$\text{[}LT\text{]} = \frac{105 \pm \sqrt{105^2 - 4 \cdot 1 \cdot 2500}}{2 \cdot 1} = 52.5 \pm 16.008$$
+\begin{center}
+$[LT] = \frac{105 \pm \sqrt{105^2 - 4 \cdot 1 \cdot 2500}}{2 \cdot 1} = 52.5 \pm 16.008\,.$
+\end{center}
 
 The only reasonable solution here is $52.5-16.008 = 36.492$; the steady state concentration has decreased as anticipated.\\
 
 \begin{qbox}[
-What do you think will happen to the steady state concentration of $\text{[}L\text{]}$ if the initial concentration ($l_0$) increases or decreases? What if the dissociation rate (\textvar{k\textsubscript{dissociate}}) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for $\text{[}L\text{]}$.
+What do you think will happen to the steady state concentration of $L$ if the initial concentration ($l_0$) increases or decreases? What if the dissociation rate ($k_\text{dissociate}$) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for $[L]$.
 ]\end{qbox}
 
 \FloatBarrier
 \phantomsection
 \subsection{Where are the units?}
 
-We have conspicuously not provided any units in the calculations above for the sake of simplicity, and so we will pause to explain what these units are. The concentration of a particle (whether it is $\text{[}L\text{]}$, $\text{[}T\text{]}$, or $\text{[}LT\text{]}$) is measured in molecules/µm\textsuperscript{3}, the number of molecules per unit volume. But what about the binding and dissociation rates?
+We have conspicuously not provided any units in the calculations above for the sake of simplicity, and so we will pause to explain what these units are. The concentration of a particle (whether it is $[L]$, $[T]$, or $[LT]$) is measured in $\text{molecules}/\text{µm}^3$, the number of molecules per unit volume. But what about the binding and dissociation rates?
 
-When we multiply the binding rate \textvar{k\textsubscript{bind}} by the concentrations $\text{[}L\text{]}$ and $\text{[}T\text{]}$, the resulting unit should be in molecules/µm\textsuperscript{3} per second, which corresponds to the rate at which the concentration of $\text{[}LT\text{]}$ complexes is increasing. If we let \textvar{x} denote the unknown units of \textvar{k\textsubscript{bind}}, then we should have that
+When we multiply the binding rate $k_\text{bind}$ by the concentrations $[L]$ and $[T]$, the resulting unit should be in $\text{molecules}/\text{µm}^3$ per second, which corresponds to the rate at which the concentration of $LT$ complexes is increasing. If we let \textvar{x} denote the unknown units of $k_\text{bind}$, then we should have that
 
-$$x \cdot (molecules\mathbin{/}\mu m^3) \cdot (molecules\mathbin{/}\mu m^3) = (molecules\mathbin{/}\mu m^3)s^{-1}$$
+\begin{center}
+$x \cdot (molecules\mathbin{/}\mu m^3) \cdot (molecules\mathbin{/}\mu m^3) = (molecules\mathbin{/}\mu m^3)s^{-1}\,,$
+\end{center}
 
-and solving for \textvar{x} gives us that
+\noindent and solving for \textvar{x} gives us that
 
-$$x = ((molecules\mathbin{/}\mu m^3)^{-1})s^{-1}$$
+\begin{center}
+$x = ((molecules\mathbin{/}\mu m^3)^{-1})s^{-1}\,.$
+\end{center}
+
+\fudgespace
 
 \begin{qbox}[
-Use a similar argument to show that the units of the dissociation constant \textvar{k\textsubscript{dissociate}} should be $s^{-1}$.
+Use a similar argument to show that the units of the dissociation constant $k_\text{dissociate}$ should be $s^{-1}$.
 ]\end{qbox}
 
 \FloatBarrier
 \phantomsection
 \subsection{Steady state ligand-receptor concentrations for an experimentally verified example}
 
-Let's use experimentally verified binding and dissociation rates to identify steady state concentrations. The experimentally verified binding rate is $k_{bind} = 0.0146 ((molecules\mathbin{/}\mu m^3)^{-1})s^{-1}$, and the dissociation rate constant is $k_{dissociate} = 35s^{-1}$. We will model an \textit{E. coli} cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants $a$, $b$, and $c$ in the quadratic equation:
+Let's use experimentally verified binding and dissociation rates to identify steady state concentrations. The experimentally verified binding rate is $k_\text{bind} = 0.0146 ((molecules\mathbin{/}\mu m^3)^{-1})s^{-1}$, and the dissociation rate constant is $k_\text{dissociate} = 35s^{-1}$. We will model an \textit{E. coli} cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants $a$, $b$, and $c$ in the quadratic equation:
 
 \begin{itemize}
- \item $a = k_{bind} = 0.0146$
- \item $b = - (k_{bind} \cdot l_0 + k_{bind} \cdot t_0 + k_{dissociate}) = -283.2$
- \item $c = k_{bind} \cdot l_0 \cdot t_0 = 1022000$
+ \item $a = k_\text{bind} = 0.0146$
+ \item $b = - (k_\text{bind} \cdot l_0 + k_\text{bind} \cdot t_0 + k_\text{dissociate}) = -283.2$
+ \item $c = k_\text{bind} \cdot l_0 \cdot t_0 = 1022000$
 \end{itemize}
 
 When we solve for $\text{[}LT\text{]}$ in the quadratic equation, we obtain $\text{[}LT\text{]} = 4,793 molecules\mathbin{/}\mu m^3$. Now that we have this value along with $l_0$ and $t_0$, we can solve for $\text{[}L\text{]}$ and $\text{[}T\text{]}$ as well:
@@ -282,7 +302,9 @@ Our particle-free model will apply an approach called \textdef{Gillespie's stoch
 
 Say that you own a store and have noticed that on average, there are \textvar{λ} customers entering your store in a single hour. Let \textvar{X} denote the number of customers that enter the store in the next hour; \textvar{X} is an example of a \textdef{random variable}{random variable}{FILL IN} because it may change depending on random chance. If we assume that customers are independent actors arriving at a constant rate, then \textvar{X} follows a \textdef{Poisson distribution}{Poisson distribution}{FILL IN}. It can be shown that for a Poisson distribution, the probability that exactly $n$ customers arrive in the next hour is
 
-$$\mathrm{Pr}(X = n) = \frac{\lambda^n e^{-\lambda}}{n!}\,,$$
+\begin{center}
+$\mathrm{Pr}(X = n) = \frac{\lambda^n e^{-\lambda}}{n!}\,,$
+\end{center}
 
 where $e$ is the mathematical constant known as Euler's number and is equal to 2.7182818284…\\
 
@@ -292,13 +314,17 @@ A derivation of this formula is beyond the scope of our work here, but if you ar
 
 Furthermore, the probability of observing exactly $n$ customers in $t$ hours where $t$ is an arbitrary positive number is
 
-$$\frac{(\lambda t)^n e^{-\lambda t}}{n!}\,.$$
+\begin{center}
+$\frac{(\lambda t)^n e^{-\lambda t}}{n!}\,.$
+\end{center}
 
 We can also ask how long we will typically have to wait for the next customer to arrive. Specifically, what are the chances that this customer will arrive after $t$ hours? If we let \textvar{T} be the random variable corresponding to the wait time on the next customer, then the probability of \textvar{T} being at least $t$ is the probability of seeing zero customers in $t$ hours:
 
-$$\mathrm{Pr}(T > t) = \mathrm{Pr}(X = 0) = \frac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}\,.$$
+\begin{center}
+$\mathrm{Pr}(T > t) = \mathrm{Pr}(X = 0) = \frac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}\,.$
+\end{center}
 
-In other words, the probability $$\mathrm{Pr}(T > t)$$ decays exponentially over time as $t$ increases. For this reason, the random variable \textvar{T} is said to follow an \textdef{exponential distribution}{exponential distribution}{FILL IN}. It can be shown that the expected value of the exponential distribution (i.e., the average amount of time we will need to wait for the next event to occur) is $1\mathbin{/}\lambda$.\\
+In other words, the probability $\mathrm{Pr}(T > t)$ decays exponentially over time as \textvar{t} increases. For this reason, the random variable \textvar{T} is said to follow an \textdef{exponential distribution}{exponential distribution}{FILL IN}. It can be shown that the expected value of the exponential distribution (i.e., the average amount of time we will need to wait for the next event to occur) is $1\mathbin{/}\lambda$.\\
 
 \begin{qbox}[
 What is the probability $\mathrm{Pr}(T < t)$?
@@ -323,27 +349,32 @@ Once a wait time is selected, we should determine to which of the two reactions 
 Verify that these two probabilities sum to 1.
 ]\end{qbox}
 
-As illustrated in \autoref{fig:chemotaxis_visualizessa}, we will demonstrate the Gillespie algorithm by returning to our ongoing example, in which we are modeling the forward and reverse reactions of ligand-receptor binding and dissociation. First, we choose a wait time according to an exponential distribution with mean value $1\mathbin{/}(k_{bind} + k_{dissociate})$. The probability that the event corresponds to a binding reaction is given by
+As illustrated in \autoref{fig:chemotaxis_visualizessa}, we will demonstrate the Gillespie algorithm by returning to our ongoing example, in which we are modeling the forward and reverse reactions of ligand-receptor binding and dissociation. First, we choose a wait time according to an exponential distribution with mean value $1\mathbin{/}(k_\text{bind} + k_\text{dissociate})$. The probability that the event corresponds to a binding reaction is given by
 
-$$\mathrm{Pr}(L + T \rightarrow LT) = k_{bind}\mathbin{/}(k_{bind} + k_{dissociate})\,,$$
+\begin{center}
+$\mathrm{Pr}(L + T \rightarrow LT) = k_\text{bind}\mathbin{/}(k_\text{bind} + k_\text{dissociate})\,,$
+\end{center}
 
 and the probability that it corresponds to a dissociation reaction is
 
-$$\mathrm{Pr}(L + T \rightarrow LT) = k_{dissociate}\mathbin{/}(k_{bind} + k_{dissociate}).$$
+\begin{center}
+$\mathrm{Pr}(L + T \rightarrow LT) = k_\text{dissociate}\mathbin{/}(k_\text{bind} + k_\text{dissociate})\,.$
+\end{center}
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/chemotaxis_visualizessa.png}
-\caption{A visualization of a single reaction event used by the Gillespie algorithm for ligand-receptor binding/dissociation. Red circles represent ligands ($\text{[}L\text{]}$), and orange wedges represent receptors ($\text{[}T\text{]}$). The wait time for the next reaction is drawn from an exponential distribution with mean $1\mathbin{/}(k_{bind} + k_{dissociate})$. The probability of this event corresponding to a binding or dissociation reaction is proportional to the rate of the respective reaction.}
+\caption{A visualization of a single reaction event used by the Gillespie algorithm for ligand-receptor binding/dissociation. Red circles represent ligands ($\text{[}L\text{]}$), and orange wedges represent receptors ($\text{[}T\text{]}$). The wait time for the next reaction is drawn from an exponential distribution with mean $1\mathbin{/}(k_\text{bind} + k_\text{dissociate})$. The probability of this event corresponding to a binding or dissociation reaction is proportional to the rate of the respective reaction.}
 \label{fig:chemotaxis_visualizessa}
 \end{figure}
 
 
 When we generalize the Gillespie algorithm to \textvar{n} reactions occurring at rates $λ_1$, $λ_2$, …, $λ_n$, the wait time between reactions will be exponentially distributed with average $1\mathbin{/}(λ_1 + λ_2> + … + λ_n)$. Once we select the next reaction to occur, the likelihood that it is the $i$-th reaction is equal to
 
-$$λ_i/(λ<_1 + λ_2 + … + λ_n).$$
-
+\begin{center}
+$λ_i/(λ<_1 + λ_2 + … + λ_n)\,.$
+\end{center}
 
 \FloatBarrier
 \phantomsection
@@ -377,7 +408,7 @@ The tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial\_lr] s
 \phantomsection
 \subsection{Does the Gillespie algorithm confirm our steady state calculations?}
 
-In the \autoref{sec:signal}, we showed an example in which a system with 10,000 free ligand molecules and 7,000 free receptor molecules produced the following steady state concentrations using the experimentally verified binding rate of $k_{bind} = 0.0146 ((molecules\mathbin{/}\mu m^3)^{-1})s^{-1}$ and dissociation rate of $k_{dissociate} = 35s^{-1}$.
+In the \autoref{sec:signal}, we showed an example in which a system with 10,000 free ligand molecules and 7,000 free receptor molecules produced the following steady state concentrations using the experimentally verified binding rate of $k_\text{bind} = 0.0146 ((molecules\mathbin{/}\mu m^3)^{-1})s^{-1}$ and dissociation rate of $k_\text{dissociate} = 35s^{-1}$.
 
 \begin{itemize}
 \item $\text{[}LT\text{]} = 4,793 ((molecules\mathbin{/}\mu m^3)$
@@ -856,7 +887,9 @@ Unfortunately, there are two issues with this formula. First, if $\Delta\text{[}
 
 To prevent the run duration from being negative, we will first take the maximum of $t_0 \times (1 + 10 · \Delta\text{[}L{]})$ and some small positive number (we will use 0.000001). To prevent the run length from being too large, we will then take the minimum of the resulting value and $4 \cdot t_0$. This resulting value,
 
-$$min(max(t_0 * (1 + 10 \cdot \Delta\text{[}L{]}), 0.000001), 4 \cdot t_0),$$
+\begin{center}
+$\min(\max(t_0 * (1 + 10 \cdot \Delta\text{[}L{]}), 0.000001), 4 \cdot t_0)\,,$
+\end{center}
 
 becomes the mean run length of a bacterium based on the recent relative change in concentration given its previous two points.\\
 

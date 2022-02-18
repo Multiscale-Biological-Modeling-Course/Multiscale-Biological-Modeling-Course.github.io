@@ -29,7 +29,7 @@ Ultimately, comparing protein structures is intrinsically similar to comparing t
 
 If you think you have a good handle on comparing the above two shapes, then it is because humans have very highly evolved eyes and brains. As we will see in the next module, training a computer to see objects as well as we can is more difficult than you think!
 
-We would like to develop a "distance function *d*(*S*, *T*) quantifies how different two shapes *S* and *T* are. If *S* and *T* are the same, then *d*(*S*, *T*) should be equal to zero; the more different the shapes, the larger *d* should become.
+We would like to develop a "distance" function *d*(*S*, *T*) quantifying how different two shapes *S* and *T* are. If *S* and *T* are the same, then *d*(*S*, *T*) should be equal to zero; the more different the shapes, the larger *d* should become.
 
 You may have noticed that the two shapes in the preceding figure are similar; in fact, they are identical. To demonstrate that this is true, we can first move the red shape to superimpose it over the blue shape, then flip the red shape, and finally rotate it so that its boundary coincides with the blue shape, as shown in the animation below.
 

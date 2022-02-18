@@ -29,7 +29,7 @@ It is as if there were some invisible force compelling all of these bacteria to 
 
 This question is a fundamental one, and we will return to it at the close of this module after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism they use to implement chemotaxis is far more sophisticated than we might expect.
 
-**STOP:** Say that a bacterium travels 20 µm in a randomly selected direction every second.  After an hour, approximately how far will it have traveled on average?  What if we allow the bacterium to travel for a week? (Hint: recall the Random Walk Theorem from the [prologue](../prologue/random_walk).)
+**STOP:** Say that a bacterium travels 20 µm per second, and every second it chooses a random direction in which to travel.  After an hour, approximately how far will it have traveled on average?  What if we allow the bacterium to travel for a week? (Hint: recall the Random Walk Theorem from the [prologue](../prologue/random_walk).)
 {: .notice--primary}
 
 [Next lesson](signal){: .btn .btn--primary .btn--large}
