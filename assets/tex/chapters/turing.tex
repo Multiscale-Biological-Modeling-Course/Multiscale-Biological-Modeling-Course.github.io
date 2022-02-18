@@ -23,11 +23,11 @@ Our story begins with an unlikely character: Alan Turing. If you have heard of T
 
 Turing was a genius cryptographer who helped break several German ciphers during World War II. But his most famous scientific contribution was a 1936 paper in which he introduced what has come to be known as a \textdef{Turing machine}{Turing machine}{FILL IN}. This hypothetical computer consists of an infinitely long tape of cells and a reader that can read one cell at a time. Each cell consists of only a single number, and the machine can move one cell at a time, reading and rewriting cells according to a finite collection of internal rules.
 
-Turing's major insight was that this simple machine is nevertheless powerful. Nearly a century after his work, any task that can be performed by a computer --- even the world's most largest supercomputer --- could be implemented by a Turing machine, which Joseph Weizenbaum called nothing more than "pebbles on toilet paper".
+Turing's major insight was that this simple machine is nevertheless powerful. Nearly a century after his work, any task that can be performed by a computer --- even the world's most largest supercomputer --- could be implemented by a Turing machine, which Joseph Weizenbaum called nothing more than ``pebbles on toilet paper''.
 
 Two years before his untimely demise in 1954, Turing published his only paper on biochemistry, which addressed the question: “Why do zebras have stripes?”
 
-Turing was not asking why zebras have \textit{evolved} to have stripes --- this question was unsolved in Turing's time, and recent research has indicated that the stripes may be helpful in warding off flies. Rather, Turing was interested in what mechanism could produce the stripes that we see on a zebra's coat. And he reasoned that just as a simple machine can emulate a computer, some limited set of molecular "rules" could cause stripes to appear on a zebra's coat.
+Turing was not asking why zebras have \textit{evolved} to have stripes --- this question was unsolved in Turing's time, and recent research has indicated that the stripes may be helpful in warding off flies. Rather, Turing was interested in what mechanism could produce the stripes that we see on a zebra's coat. And he reasoned that just as a simple machine can emulate a computer, some limited set of molecular ``rules'' could cause stripes to appear on a zebra's coat.
 
 In this prologue, we will introduce a particle simulation model based on Turing's ideas. We will be amazed that a system built on very simple rules and even \textit{randomness} can nevertheless produce seemingly complex emergent behavior. And we will explore how this model can be tweaked to provide a hypothesis for the source of not just the zebra's stripes but also the leopard's spots.
 
@@ -40,7 +40,7 @@ In this prologue, we will introduce a particle simulation model based on Turing'
 
 \subsection{Life is random}
 
-Everything in the universe ultimately depends on the interaction of tiny particles. Yet this fundamental truth is difficult to process when our experience of existence is guided by "macro" phenomena.
+Everything in the universe ultimately depends on the interaction of tiny particles. Yet this fundamental truth is difficult to process when our experience of existence is guided by ``macro'' phenomena.
 
 You may feel like a single, coherent being, but you are just a skin-covered bag of trillions of cells that act largely independently. Over half of these cells aren't even yours! They correspond to bacteria that make up a couple of kilograms of your mass. What makes the whole affair even crueler is that your cellular symphony depends on the \textit{random} movement of particles.
 
@@ -125,7 +125,7 @@ Turing's insight was that remarkable high-level patterns could arise if we combi
 
 We will consider a reaction-diffusion system having two types of particles, \textvar{A} and \textvar{B}. The system is not explicitly a predator-prey relationship, but you may like to think of the \textvar{A} particles as prey and the \textvar{B} particles as predators for reasons that will become clear soon.
 
-Both types of particles diffuse randomly through the plane, but the \textvar{A} particles diffuse more quickly than the \textvar{B} particles.  In the simulation that follows, we will assume that \textvar{A} particles diffuse twice as quickly as \textvar{B} particles. In terms of our random walk model, this faster rate of diffusion means that in a single "step", an \textvar{A} particle moves twice as far as a \textvar{B} particle.
+Both types of particles diffuse randomly through the plane, but the \textvar{A} particles diffuse more quickly than the \textvar{B} particles.  In the simulation that follows, we will assume that \textvar{A} particles diffuse twice as quickly as \textvar{B} particles. In terms of our random walk model, this faster rate of diffusion means that in a single ``step'', an \textvar{A} particle moves twice as far as a \textvar{B} particle.
 
 \begin{qbox}[%
 Say that we release one \textvar{A} particle and one \textvar{B} particle at the same location. If the two particles move via random walks, and the rate of diffusion of \textvar{A} is twice as fast, then on average how much farther from the origin will \textvar{A} be than \textvar{B} after \textvar{n} steps?
@@ -227,7 +227,7 @@ You may still be skeptical, since the patterns in the above videos do not have t
 \phantomsection
 \subsection{Turing's patterns and Klüver's hallucinations}
 
-When you watched the particle simulations above, an adjective that may have come to mind is "trippy". This is no accident.
+When you watched the particle simulations above, an adjective that may have come to mind is ``trippy''. This is no accident.
 
 Research dating all the way back to the 1920s has studied the patterns that we see during visual hallucinations, which Heinrich Klüver named \textdef{form constants}{form constants}{FILL IN} after studying patients who had taken mescaline. Form constants, such as cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of their hallucinations.
 
@@ -281,7 +281,7 @@ We wonder if it is possible to build a model of Turing patterns that does not re
 
 Part of a modeler's job is to find simple models that capture the essence of a system while running quickly and scaling well to larger inputs.
 
-In our case, we have a very "fine-grained" reaction-diffusion model illustrating Turing patterns, but this model consumes a huge amount of computational resources because it requires tracking the movements of hundreds of thousands of individual particles. Our goal is to build a model that will allow us to appreciate Turing patterns without significant computational overhead.
+In our case, we have a very ``fine-grained'' reaction-diffusion model illustrating Turing patterns, but this model consumes a huge amount of computational resources because it requires tracking the movements of hundreds of thousands of individual particles. Our goal is to build a model that will allow us to appreciate Turing patterns without significant computational overhead.
 
 Our idea is to grid off two-dimensional space into blocks and store only the \textit{concentration} of each type of particle found inside the block. To make things even simpler, we assume that there is some maximum concentration of particles possible, so that we can divide the number of particles by this maximum concentration. As a result, the concentration of a particle in each block will be represented by a decimal number between 0 and 1.
 
@@ -321,12 +321,12 @@ In summary, the central nine squares after two time steps are as shown in the fo
 \centering
 \mySfFamily
 \includegraphics[width = 0.6\textwidth]{../images/A_concentration_two_time_steps_partial.png}
-\caption{A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled "?" are left as an exercise for the reader.}
+\caption{A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled ``?'' are left as an exercise for the reader.}
 \label{fig:A_concentration_two_time_steps_partial}
 \end{figure}
 
 \begin{qbox}[%
-What should the values of the "?" cells be in the above figure? Note that these cells are neighbors of cells with positive concentrations after one time step, so their concentrations should be positive after two time steps.
+What should the values of the ``?'' cells be in the above figure? Note that these cells are neighbors of cells with positive concentrations after one time step, so their concentrations should be positive after two time steps.
 ]\end{qbox}
 
 
@@ -416,9 +416,11 @@ Note that the center of the cell becomes blue because the \textvar{A} particles 
 
 Now that we have established a cellular automaton for coarse-grained particle diffusion, we will add to it the three reactions that we introduced in the [previous lesson](reaction-diffusion), which are reproduced below.
 
-1. A "feed" reaction in which new \textvar{A} particles are fed into the system at a constant rate.
-2. A "death" reaction in which \textvar{B} particles are removed from the system at a rate proportional to their current concentration.
-3. A "reproduction" reaction \textvar{A} + 2\textvar{B} → 3\textvar{B}.
+\begin{enumerate}
+\item A ``feed'' reaction in which new \textvar{A} particles are fed into the system at a constant rate.
+\item A ``death'' reaction in which \textvar{B} particles are removed from the system at a rate proportional to their current concentration.
+\item A ``reproduction'' reaction \textvar{A} + 2\textvar{B} → 3\textvar{B}.
+\end{enumerate}
 
 \begin{qbox}[%
 How might we incorporate these reactions into our automaton?

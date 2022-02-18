@@ -49,9 +49,9 @@ In 2017, researchers published the result of five years of sampling horseshoe ba
 
 On December 30, 2019, a Chinese ophthalmologist named Li Wenliang sent a WeChat message to fellow doctors at Wuhan Central Hospital, warning them that he had seen several patients with symptoms resembling SARS. He urged his colleagues to wear protective clothing and masks to shield them from this new potential threat.
 
-The next day, a screenshot of his post was leaked online, and local police summoned Dr. Li and forced him to sign a statement that he had "severely disturbed public order". He then returned to work, treating patients in the same Wuhan hospital.
+The next day, a screenshot of his post was leaked online, and local police summoned Dr. Li and forced him to sign a statement that he had ``severely disturbed public order''. He then returned to work, treating patients in the same Wuhan hospital.
 
-Meanwhile, the World Health Organization (WHO) received reports of multiple pneumonia cases from the Wuhan Municipal Health Commission and activated a support team to assess the new disease. The WHO declared on January 14 that local authorities had seen "no clear evidence of human-to-human transmission of the novel coronavirus". By this point, it was now too late.
+Meanwhile, the World Health Organization (WHO) received reports of multiple pneumonia cases from the Wuhan Municipal Health Commission and activated a support team to assess the new disease. The WHO declared on January 14 that local authorities had seen ``no clear evidence of human-to-human transmission of the novel coronavirus''. By this point, it was now too late.
 
 Throughout January, the virus silently raged through China, spreading to both South Korea and the United States as Lunar New Year celebrations took place within the country. By the end of the month, the disease was in 19 countries, becoming a pandemic and earning a name in the process: \textdef{coronavirus disease 2019}{coronavirus disease 2019}{FILL IN} \textbf{(COVID-19)}.
 
@@ -81,13 +81,13 @@ In this chapter, we will place ourselves in the shoes of early SARS-CoV-2 resear
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.7\textwidth]{../images/SARSCoV2Annotation.png}
-	\caption{An annotated genome of SARS-CoV-2. The Spike protein, found at the bottom of this image, is labeled "S" and begins at position 21,563. Accessed from GenBank: \url{https://go.usa.gov/xfzMM}}
+	\caption{An annotated genome of SARS-CoV-2. The Spike protein, found at the bottom of this image, is labeled ``S'' and begins at position 21,563. Accessed from GenBank: \url{https://go.usa.gov/xfzMM}}
 	\label{fig:SARSCoV2Annotation}
 \end{figure}
 
 Recall from our discussion of transcription factors in \autoref{chapter:motifs} that by the central dogma of molecular biology, DNA is transcribed into RNA, which is then translated into protein. According to the genetic code, triplets of RNA nucleotides called codons are converted into single amino acids. The resulting chain of amino acids is called a \textdef{polypeptide}{polypeptide}{FILL IN}.
 
-The polypeptide chain for the SARS-CoV-2 spike protein is shown below. Each of 20 possible amino acids is represented by a letter taken from the Latin alphabet (all letters except for "B", "J", "O", "U", "X", and "Z" are used for amino acids). Consider how such a global mayhem can ultimately be caused by something so tiny.
+The polypeptide chain for the SARS-CoV-2 spike protein is shown below. Each of 20 possible amino acids is represented by a letter taken from the Latin alphabet (all letters except for ``B'', ``J'', ``O'', ``U'', ``X'', and ``Z'' are used for amino acids). Consider how such a global mayhem can ultimately be caused by something so tiny.
 
 \texttt{>YP\_009724390.1 S [organism=Severe acute respiratory syndrome coronavirus 2] [GeneID=43740568] \\
 	MFVFLVLLPLVSSQCVNLTTRTQLPPAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHAIHV \\
@@ -123,7 +123,7 @@ We will split our work on these questions over two parts. If you are already fam
 \phantomsection
 \subsection{Determining protein structure is fundamental to understanding protein function}
 
-In the \autoref{sec:coronavirus_introduction}, we showed the polypeptide chain for the SARS-CoV-2 spike protein. After this polypeptide chain is formed, it will "fold" into a three-dimensional shape and attach to the exterior of the virus. The folding process occurs spontaneously and without any outside influence, and the same polypeptide chain will almost always fold into the same 3-D structure in a manner of microseconds. This means that nature is applying some "magic algorithm" that produces the folded structure of a protein from its sequence of amino acids. But how does this algorithm work?
+In the \autoref{sec:coronavirus_introduction}, we showed the polypeptide chain for the SARS-CoV-2 spike protein. After this polypeptide chain is formed, it will ``fold'' into a three-dimensional shape and attach to the exterior of the virus. The folding process occurs spontaneously and without any outside influence, and the same polypeptide chain will almost always fold into the same 3-D structure in a manner of microseconds. This means that nature is applying some ``magic algorithm'' that produces the folded structure of a protein from its sequence of amino acids. But how does this algorithm work?
 
 Predicting the folded structure of a polypeptide is called the \textdef{structure prediction problem}{structure prediction problem}{FILL IN}, and this problem is simple to state but deceptively difficult to solve. In fact, it has been an active area of biological research for several decades.
 
@@ -131,20 +131,19 @@ Why do we care about protein structure? Knowing a protein's structure is essenti
 
 Furthermore,  a huge amount of biological research is devoted to understanding protein interactions. For example, a disease may be caused by a faulty protein, in which case researchers want to find a drug that binds to the protein and causes some change of interest in that protein, such as inhibiting its behavior.
 
-For a more visual example of how protein structure affects protein function, consider the following video of a ribosome (which is a complex of RNA and proteins) translating a messenger RNA into protein. For translation to succeed, the ribosome needs to have a very precise shape, including a "slot" into which the messenger RNA strand can fit.
+For a more visual example of how protein structure affects protein function, consider the following video of a ribosome (which is a complex of RNA and proteins) translating a messenger RNA into protein. For translation to succeed, the ribosome needs to have a very precise shape, including a ``slot'' into which the messenger RNA strand can fit.
 
 \texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
-% include video id="TfYf_rPWUdY" provider="youtube" %
 
 As we have seen throughout this course, molecular interactions are ruled by probability. Any two molecules may \textit{interact}, but their rate of \textit{dissociation} will be much higher if they do not fit together well. Furthermore, two colliding molecules need to have the correct orientation in order to produce an interaction
 
-Because structure prediction is such a fundamental problem, researchers wish to catalog the varied shapes of different proteins. This variety is evident in \autoref{fig:different_protein_shapes_2020}, which shows the "proteins of the month" in 2020 named by the \textdef{Protein Data Bank}{Protein Data Bank}{FILL IN} \textbf{(PDB)}. Yet the question remains: how do we know these protein structures?
+Because structure prediction is such a fundamental problem, researchers wish to catalog the varied shapes of different proteins. This variety is evident in \autoref{fig:different_protein_shapes_2020}, which shows the ``proteins of the month'' in 2020 named by the \textdef{Protein Data Bank}{Protein Data Bank}{FILL IN} \textbf{(PDB)}. Yet the question remains: how do we know these protein structures?
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.7\textwidth]{../images/different_protein_shapes_2020.jpg}
-	\caption{Each "molecule of the month" in 2020 named by the PDB. These proteins have widely varying shapes and accomplish a wide variety of cellular tasks. Note that the SARS-CoV-2 spike protein was the molecule of the month in June 2020. Image courtesy: David Goodsell.}
+	\caption{Each ``molecule of the month'' in 2020 named by the PDB. These proteins have widely varying shapes and accomplish a wide variety of cellular tasks. Note that the SARS-CoV-2 spike protein was the molecule of the month in June 2020. Image courtesy: David Goodsell.}
 	\label{fig:different_protein_shapes_2020}
 \end{figure}
 
@@ -157,17 +156,14 @@ We will introduce two popular and sophisticated laboratory methods for accuratel
 In \textdef{X-ray crystallography}{X-ray crystallography}{FILL IN}, researchers crystallize many copies of a protein and then shine an intense beam of X-rays at the crystal. The light hitting the protein is diffracted, creating patterns from which the position of every atom in the protein can be inferred. If you are interested in learning more about X-ray crystallography, check out the following excellent two-part video series from The Royal Institution.
 
 \texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
-% include video id="gLsC4wlrR2A" provider="youtube" %
 
 \texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
-% include video id="WJKvDUo3KRk" provider="youtube" %
 
 X-ray crystallography is over a century old and has been the \textit{de facto} approach for protein structure determination for decades. Yet a newer method is now rapidly replacing X-ray crystallography.
 
 In \textdef{cryo-electron microscopy}{cryo-electron microscopy}{FILL IN} \textbf{(cryo-EM)}, researchers preserve thousands of copies of a protein in non-crystalline ice and then examine these copies with an electron microscope. Check out the following YouTube video from the University of California San Francisco for a detailed discussion of cryo-EM.
 
 \texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
-% include video id="WJKvDUo3KRk" provider="youtube" %
 
 Unfortunately, laboratory approaches for structure determination are expensive and cannot be used on all proteins. X-ray crystallography costs upward of \$2,000 per protein; furthermore, crystallizing a protein is a challenging task, and each copy of the protein must line up in the same way, which does not work for very flexible proteins. As for cryo-EM, an electron microscope costs upwards of millions of dollars. And to study bacterial proteins, we need to culture the bacteria in the lab, but microbiologists have estimated that less than 2\% of bacteria can currently be cultured.
 
@@ -181,7 +177,7 @@ This number may seem large, but a recent study estimated that humans have betwee
 
 Predicting protein structure from amino acid sequence is very challenging. On the one hand, small perturbations in the sequence of a protein can drastically change the protein's shape and even render it useless. On the other, different amino acids can have similar chemical properties, and so some mutations will hardly change the shape of the protein. As a result, two very different amino acid sequences can fold into proteins with similar structure and comparable function.
 
-For example, \autoref{fig:SequenceStructureExample} compares the sequences and structures of hemoglobin subunit alpha taken from three species: humans (PDB: 1si4), shortfin mako sharks (PDB: 3mkb), and emus (PDB: 3wtg). Hemoglobin is the oxygen-transport protein in the blood, consisting of two alpha "subunit" proteins and two beta subunit proteins that combine into a protein complex; because hemoglobin is well-studied and much shorter than the SARS-CoV-2 spike protein, we will use it as an example throughout this chapter. The alpha subunits for the three species are markedly different in terms of amino acid sequence, and yet their 3-D structures are essentially identical.
+For example, \autoref{fig:SequenceStructureExample} compares the sequences and structures of hemoglobin subunit alpha taken from three species: humans (PDB: 1si4), shortfin mako sharks (PDB: 3mkb), and emus (PDB: 3wtg). Hemoglobin is the oxygen-transport protein in the blood, consisting of two alpha ``subunit'' proteins and two beta subunit proteins that combine into a protein complex; because hemoglobin is well-studied and much shorter than the SARS-CoV-2 spike protein, we will use it as an example throughout this chapter. The alpha subunits for the three species are markedly different in terms of amino acid sequence, and yet their 3-D structures are essentially identical.
 
 \begin{figure}[h]
 	\centering
@@ -191,7 +187,7 @@ For example, \autoref{fig:SequenceStructureExample} compares the sequences and s
 	\label{fig:SequenceStructureExample}
 \end{figure}
 
-Another reason why protein structure prediction is so difficult is because a polypeptide is very flexible, with the ability to rotate in multiple ways at each amino acid, which means that the polypeptide is able to fold into a staggering number of different shapes. A good analogy for polypeptide flexibility is the "Rubik's Twist" puzzle, shown in \autoref{fig:rubiks_twist_four_panel}, which consists of a linear chain of flexible blocks that can form a huge number of different shapes.
+Another reason why protein structure prediction is so difficult is because a polypeptide is very flexible, with the ability to rotate in multiple ways at each amino acid, which means that the polypeptide is able to fold into a staggering number of different shapes. A good analogy for polypeptide flexibility is the ``Rubik's Twist'' puzzle, shown in \autoref{fig:rubiks_twist_four_panel}, which consists of a linear chain of flexible blocks that can form a huge number of different shapes.
 
 \begin{figure}[h]
 	\centering
@@ -201,7 +197,7 @@ Another reason why protein structure prediction is so difficult is because a pol
 	\label{fig:rubiks_twist_four_panel}
 \end{figure}
 
-The flexibility of a polypeptide owes to the molecular structure of amino acids. As shown in \autoref{fig:AminoAcid}, an amino acid comprises four parts. In the center, a carbon atom (called the \textdef{alpha carbon}{alpha carbon}{FILL IN}) is connected to four different molecules: a hydrogen atom (H), a \textdef{carboxyl group}{carboxyl group}{FILL IN} (–COOH), an \textdef{amino group}{amino group}{FILL IN} (-NH\textsubscript{2}), and a \textdef{side chain}{side chain}{FILL IN} (denoted "R" and often called an \textbf{R group}). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) up to -C\textsubscript{8}H\textsubscript{7}N (tryptophan).
+The flexibility of a polypeptide owes to the molecular structure of amino acids. As shown in \autoref{fig:AminoAcid}, an amino acid comprises four parts. In the center, a carbon atom (called the \textdef{alpha carbon}{alpha carbon}{FILL IN}) is connected to four different molecules: a hydrogen atom (H), a \textdef{carboxyl group}{carboxyl group}{FILL IN} (–COOH), an \textdef{amino group}{amino group}{FILL IN} (-NH\textsubscript{2}), and a \textdef{side chain}{side chain}{FILL IN} (denoted ``R'' and often called an \textbf{R group}). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) up to -C\textsubscript{8}H\textsubscript{7}N (tryptophan).
 
 \begin{figure}[h]
 	\centering
@@ -217,7 +213,7 @@ To form a polypeptide chain, consecutive amino acids are linked together during 
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.7\textwidth]{../images/dipeptide_reaction.png}
-	\caption{A condensation reaction joins two amino acids into a "dipeptide" by joining the amino group of one amino acid to the carboxyl group of the other. A water molecule is expelled, which is why the reaction is a condensation reaction. Source: \url{https://bit.ly/3q0Ph8V}}
+	\caption{A condensation reaction joins two amino acids into a ``dipeptide'' by joining the amino group of one amino acid to the carboxyl group of the other. A water molecule is expelled, which is why the reaction is a condensation reaction. Source: \url{https://bit.ly/3q0Ph8V}}
 	\label{fig:dipeptide_reaction}
 \end{figure}
 
@@ -260,7 +256,7 @@ The determination of the SARS-CoV-2 spike protein structure was remarkable becau
 
 Predicting a protein’s structure using only its amino acid sequence is called \textdef{\textit{ab initio} structure prediction}{ab initio structure prediction}{FILL IN} (\textit{ab initio} means “from the beginning” in Latin). In this section, we will explain a little about how \textit{ab initio} structure prediction algorithms work.
 
-As we dive into structure prediction, we should be more precise about two things. First, we will specify what we mean by the "structure" of a protein. Second, although we know that a polypeptide always folds into the same final three-dimensional shape, we have not said anything about \textit{why} a protein folds in a certain way. We will therefore need a better understanding of how the physicochemical properties of amino acids affect a protein's final structure.
+As we dive into structure prediction, we should be more precise about two things. First, we will specify what we mean by the ``structure'' of a protein. Second, although we know that a polypeptide always folds into the same final three-dimensional shape, we have not said anything about \textit{why} a protein folds in a certain way. We will therefore need a better understanding of how the physicochemical properties of amino acids affect a protein's final structure.
 
 \FloatBarrier
 \phantomsection
@@ -278,7 +274,7 @@ A protein's \textdef{secondary structure}{secondary structure}{FILL IN} describe
 	\label{fig:hemoglobin_secondary_structure}
 \end{figure}
 
-A protein's \textdef{tertiary structure}{tertiary structure}{FILL IN} describes its final 3D shape after the polypeptide chain has folded and is stable. Throughout this chapter, when discussing the "shape" or "structure" of a protein, we are almost exclusively referring to its tertiary structure. \autoref{fig:hemoglobin_tertiary_structure} shows the tertiary structure of human hemoglobin subunit alpha. For the sake of simplicity, \autoref{fig:hemoglobin_tertiary_structure} does not show the position of every atom in the protein but rather represents the protein shape as a composition of secondary structures.
+A protein's \textdef{tertiary structure}{tertiary structure}{FILL IN} describes its final 3D shape after the polypeptide chain has folded and is stable. Throughout this chapter, when discussing the ``shape'' or ``structure'' of a protein, we are almost exclusively referring to its tertiary structure. \autoref{fig:hemoglobin_tertiary_structure} shows the tertiary structure of human hemoglobin subunit alpha. For the sake of simplicity, \autoref{fig:hemoglobin_tertiary_structure} does not show the position of every atom in the protein but rather represents the protein shape as a composition of secondary structures.
 
 \begin{figure}[h]
 	\centering
@@ -308,7 +304,7 @@ The structural units making up proteins are often hierarchical, and the spike pr
 
 Now that we know a bit more about how protein structure is defined, we will discuss why proteins fold in a certain way every time. In other words, what are the factors driving nature's magic protein folding algorithm?
 
-Amino acids' variety of side chains causes the amino acids to have different chemical properties, which can lead to different conformations being more chemically "preferable" than others. For example, \autoref{fig:AminoAcidChart} shows the twenty standard amino acids occurring in proteins grouped by chemical properties. Nine of these amino acids are \textdef{hydrophobic}{hydrophobic}{FILL IN} (also called \textdef{non-polar}{non-polar}{FILL IN}), meaning that their side chains tend to be repelled by water, and as a result we tend to find these amino acids sheltered from the environment on the interior of the protein.
+Amino acids' variety of side chains causes the amino acids to have different chemical properties, which can lead to different conformations being more chemically ``preferable'' than others. For example, \autoref{fig:AminoAcidChart} shows the twenty standard amino acids occurring in proteins grouped by chemical properties. Nine of these amino acids are \textdef{hydrophobic}{hydrophobic}{FILL IN} (also called \textdef{non-polar}{non-polar}{FILL IN}), meaning that their side chains tend to be repelled by water, and as a result we tend to find these amino acids sheltered from the environment on the interior of the protein.
 
 \begin{figure}[h]
 	\centering
@@ -364,9 +360,9 @@ Although a host of different algorithms have been developed for \textit{ab initi
 
 Biochemical research has contributed to the development of scoring functions called \textdef{force fields}{force fields}{FILL IN} that compute the potential energy of a candidate protein shape. As a result, for a given choice of force field, we can think of \textit{ab initio} structure prediction as solving the following problem: given a primary structure of a polypeptide, find its tertiary structure having minimum energy. This problem exemplifies an \textdef{optimization problem}{optimization problem}{FILL IN}, in which we look for an object maximizing or minimizing some function subject to constraints.
 
-This formulation of protein structure may not strike you as similar to anything that we have done before in this course. However, consider once more a bacterium exploring an environment for food. Every point in the bacterium's "search space" is characterized by a concentration of attractant at that point, and the bacterium's goal is to reach the point of greatest attractant concentration.
+This formulation of protein structure may not strike you as similar to anything that we have done before in this course. However, consider once more a bacterium exploring an environment for food. Every point in the bacterium's ``search space'' is characterized by a concentration of attractant at that point, and the bacterium's goal is to reach the point of greatest attractant concentration.
 
-In the case of structure prediction, our search space is the collection of all possible conformations of a given protein. And each point in this search space is characterized by the energy of the conformation at the point. Just as we imagined a ball rolling down a hill to find lower energy, we can now imagine "exploring" the space of all conformations of a polypeptide to find the conformation having lowest energy. This situation is illustrated in \autoref{fig:energy_landscape}, in which the height of each point represents the energy of the associated conformation; our goal, then, is to find the lowest point in this space.
+In the case of structure prediction, our search space is the collection of all possible conformations of a given protein. And each point in this search space is characterized by the energy of the conformation at the point. Just as we imagined a ball rolling down a hill to find lower energy, we can now imagine ``exploring'' the space of all conformations of a polypeptide to find the conformation having lowest energy. This situation is illustrated in \autoref{fig:energy_landscape}, in which the height of each point represents the energy of the associated conformation; our goal, then, is to find the lowest point in this space.
 
 \begin{figure}[h]
 	\centering
@@ -380,11 +376,11 @@ In the case of structure prediction, our search space is the collection of all p
 \phantomsection
 \subsection{A local search algorithm for \textit{ab initio} structure prediction}
 
-Now that we have conceptualized finding the most stable protein structure as exploring a search space, our next question is how to develop an algorithm to explore this space. Our idea is to adapt \textit{E. coli}'s clever exploration algorithm from \autoref{chapter:chemotaxis} to our purposes. That is, at every step, we need to sense the "direction" in which the energy function decreases by the most, and then move in this direction.
+Now that we have conceptualized finding the most stable protein structure as exploring a search space, our next question is how to develop an algorithm to explore this space. Our idea is to adapt \textit{E. coli}'s clever exploration algorithm from \autoref{chapter:chemotaxis} to our purposes. That is, at every step, we need to sense the ``direction'' in which the energy function decreases by the most, and then move in this direction.
 
-Adapting this exploration algorithm to protein structure prediction requires us to develop a notion of what it means to consider the points "near" a given conformation in a protein search space. Many \textit{ab initio} algorithms will start at an arbitrary initial conformation and then make a variety of minor modifications to that structure (i.e., nearby points in the space), updating the current conformation to the modification that produces the greatest decrease in free energy. These algorithms then iterate the process of changing the protein structure to have greatest decrease in potential energy. We terminate our search when we reach a structure for which no changes to the structure reduce the free energy. Such an approach for structure prediction falls into a broad category of optimization algorithms called \textdef{local search algorithms}{local search algorithms}{FILL IN}.
+Adapting this exploration algorithm to protein structure prediction requires us to develop a notion of what it means to consider the points ``near'' a given conformation in a protein search space. Many \textit{ab initio} algorithms will start at an arbitrary initial conformation and then make a variety of minor modifications to that structure (i.e., nearby points in the space), updating the current conformation to the modification that produces the greatest decrease in free energy. These algorithms then iterate the process of changing the protein structure to have greatest decrease in potential energy. We terminate our search when we reach a structure for which no changes to the structure reduce the free energy. Such an approach for structure prediction falls into a broad category of optimization algorithms called \textdef{local search algorithms}{local search algorithms}{FILL IN}.
 
-Yet returning to the chemotaxis analogy, imagine what happens if we were to place many small sugar cubes and one large sugar cube into the bacterium's environment. The bacterium will sense the gradient not of the large sugar cube but of its \textit{nearest} attractant. Because the smaller food sources outnumber the larger food source, the bacterium will likely not reach the point of greatest attractant concentration. In terms of bacterial exploration, this is a feature, not a bug; if the bacterium exhausts one food source, then it will just move to another. But in terms of protein structure prediction, we should be worried of winding up in such a \textdef{local minimum}{local minimum}{FILL IN}, or a protein structure that does not have minimum free energy but does have  the property that no "neighboring" structures have lower energy.
+Yet returning to the chemotaxis analogy, imagine what happens if we were to place many small sugar cubes and one large sugar cube into the bacterium's environment. The bacterium will sense the gradient not of the large sugar cube but of its \textit{nearest} attractant. Because the smaller food sources outnumber the larger food source, the bacterium will likely not reach the point of greatest attractant concentration. In terms of bacterial exploration, this is a feature, not a bug; if the bacterium exhausts one food source, then it will just move to another. But in terms of protein structure prediction, we should be worried of winding up in such a \textdef{local minimum}{local minimum}{FILL IN}, or a protein structure that does not have minimum free energy but does have  the property that no ``neighboring'' structures have lower energy.
 
 \begin{qbox}[%
 	Do you see any ways in which we could improve our local search approach for structure prediction?
@@ -392,7 +388,7 @@ Yet returning to the chemotaxis analogy, imagine what happens if we were to plac
 
 Fortunately, we can modify our local search algorithm in a variety of ways. First, because the initial conformation has a huge influence on the final conformation, we could run the algorithm multiple times with different starting conformations. This is analogous to allowing multiple bacteria to explore their environment at different starting points.
 
-Second, every time we reach a local minimum, we could allow ourselves to change the structure with some probability, thus giving our local search algorithm the chance to "bounce" out of the local minimum. In an approach called \textdef{simulated annealing}{simulated annealing}{FILL IN}, we start our local search with this probability high and reduce it over time, so that eventually we will settle into some local minimum that serves as our predicted structure. Once again, randomness helps us solve our problems!
+Second, every time we reach a local minimum, we could allow ourselves to change the structure with some probability, thus giving our local search algorithm the chance to ``bounce'' out of the local minimum. In an approach called \textdef{simulated annealing}{simulated annealing}{FILL IN}, we start our local search with this probability high and reduce it over time, so that eventually we will settle into some local minimum that serves as our predicted structure. Once again, randomness helps us solve our problems!
 
 \FloatBarrier
 \phantomsection
@@ -440,7 +436,7 @@ In the case of the SARS-CoV-2 spike protein, we already know that we want to use
 \phantomsection
 \subsection{A similar structure reduces the size of the search space}
 
-Once we have found a similar protein, we need to use it to help us predict the structure of our protein. One way of doing so is to include a "similarity term" that subtracts a structure's similarity to the template structure from the structure's total energy. That is, the more similar that a candidate structure is to the template, the more negative the contribution of this similarity term. To continue our search space analogy, the template protein "pulls down" the energy values of nearby structures.
+Once we have found a similar protein, we need to use it to help us predict the structure of our protein. One way of doing so is to include a ``similarity term'' that subtracts a structure's similarity to the template structure from the structure's total energy. That is, the more similar that a candidate structure is to the template, the more negative the contribution of this similarity term. To continue our search space analogy, the template protein ``pulls down'' the energy values of nearby structures.
 
 Another way to perform homology modeling is to account for variance in similarity across different regions of the two proteins. For example, even though the SARS-CoV and SARS-CoV-2 genomes are 96\% similar, this does not mean that all of their proteins are 96\% similar. When we look at genomes from related species, we expect to see \textdef{conserved regions}{conserved regions}{FILL IN} where the species are very similar and other \textdef{variable regions}{variable regions}{FILL IN} where the species are more different than the average. For example, the spike proteins of SARS-CoV and SARS-CoV-2 are only 76\% similar.
 
@@ -450,7 +446,7 @@ The phenomenon of conserved and variable regions even occurs within individual g
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.7\textwidth]{../images/spike_protein_similarity.png}
-	\caption{Variable and conserved regions in the SARS-CoV and SARS-CoV-2 spike proteins. The S1 domain tends to be more variable, whereas the S2 domain is more conserved (and even has a small region of 100\% similarity). In this figure, "NTD" stands for "N-terminal domain" and "RBD" stands for "receptor binding domain", two subunits of the S1 domain. Source: Jaimes et al. 2020.}
+	\caption{Variable and conserved regions in the SARS-CoV and SARS-CoV-2 spike proteins. The S1 domain tends to be more variable, whereas the S2 domain is more conserved (and even has a small region of 100\% similarity). In this figure, ``NTD'' stands for ``N-terminal domain'' and ``RBD'' stands for ``receptor binding domain'', two subunits of the S1 domain. Source: Jaimes et al. 2020.}
 	\label{fig:spike_protein_similarity}
 \end{figure}
 
@@ -538,7 +534,7 @@ Ultimately, comparing protein structures is intrinsically similar to comparing t
 
 If you think you have a good handle on comparing the two shapes in \autoref{fig:two_shapes}, then it is because humans have very highly evolved eyes and brains. As we will see in the next chapter, training a computer to see objects as well as we can is more difficult than you think!
 
-We would like to develop a "distance function $d(S, T)$ quantifies how different two shapes \textit{S} and \textit{T} are. If \textit{S} and \textit{T} are the same, then $d(S, T)$ should be equal to zero; the more different the shapes, the larger \textit{d} should become.
+We would like to develop a ``distance function'' $d(S, T)$ quantifying how different two shapes \textit{S} and \textit{T} are. If \textit{S} and \textit{T} are the same, then $d(S, T)$ should be equal to zero; the more different the shapes, the larger \textit{d} should become.
 
 You may have noticed that the two shapes in \autoref{fig:two_shapes} are similar; in fact, they are identical. To demonstrate that this is true, we can first move the red shape to superimpose it over the blue shape, then flip the red shape, and finally rotate it so that its boundary coincides with the blue shape.
 
@@ -557,7 +553,7 @@ You may have noticed that the two shapes in \autoref{fig:two_shapes} are similar
 
 If \textit{S} can be translated, flipped, and/or rotated to produce \textit{T}, then \textit{S} and \textit{T} are the same shape, and so $d(S, T)$ should be equal to zero. The question is what $d(S, T)$ should be if \textit{S} and \textit{T} are not the same shape.
 
-Our idea for defining $d(S, T)$ is first to translate, flip, and rotate \textit{S} so that it resembles \textit{T} "as much as possible" to give us a fair comparison. We will then to quantify how different the shapes are to determine $d(S, T)$.
+Our idea for defining $d(S, T)$ is first to translate, flip, and rotate \textit{S} so that it resembles \textit{T} ``as much as possible'' to give us a fair comparison. We will then to quantify how different the shapes are to determine $d(S, T)$.
 
 We first translate \textit{S} to have the same \textdef{centroid}{centroid}{FILL IN} (or \textbf{center of mass}) as \textit{T}. The centroid of \textit{S} is found at the point $(x_{S}, y_{S})$ such that $x_{S}$ and $y_{S}$ are the respective averages of the \textit{x}-coordinates and \textit{y}-coordinates on the boundary of \textit{S}.
 
@@ -633,7 +629,7 @@ Even if we assume that the shapes have already been overlapped and rotated appro
 	\label{fig:circle_square_undersampling}
 \end{figure}
 
-However, we have still assumed that we already rotated (and possibly flipped) \textit{S} to be as "similar" to \textit{T} as possible. In practice, after superimposing \textit{S} and \textit{T} to have the same centroid, we will find the flip and/or rotation of \textit{S} that \textit{minimizes} the RMSD between our vectorizations of \textit{S} and \textit{T} over all possible ways of flipping and rotating \textit{S}. It is this minimum RMSD that we define as $d(S, T)$.
+However, we have still assumed that we already rotated (and possibly flipped) \textit{S} to be as ``similar'' to \textit{T} as possible. In practice, after superimposing \textit{S} and \textit{T} to have the same centroid, we will find the flip and/or rotation of \textit{S} that \textit{minimizes} the RMSD between our vectorizations of \textit{S} and \textit{T} over all possible ways of flipping and rotating \textit{S}. It is this minimum RMSD that we define as $d(S, T)$.
 
 The best way of rotating and flipping \textit{S} so as to minimize the RMSD between the resulting vectors \textit{s} and \textit{t} can be found with a method called the \textdef{Kabsch algorithm}{Kabsch algorithm}{FILL IN}. Explaining this algorithm requires some advanced linear algebra and is beyond the scope of our work but is described at \url{https://en.wikipedia.org/wiki/Kabsch_algorithm}.
 
@@ -872,7 +868,7 @@ AlphaFold obtained an impressive median RMSD of 1.6 angstroms for its predicted 
 
 Furthermore, about a third of AlphaFold's CASP14 predictions have an RMSD over 2.0 angstroms, which we mentioned in the previous section is often used as a threshold for whether a predicted structure is reliable. And there is no way of knowing in advance whether AlphaFold will perform well on a given protein, unless we validate the protein's structure. For example, AlphaFold published their predictions of the structures of other SARS-CoV-2 proteins, none of which had validated structures in 2020. Most of these predictions are probably accurate, but we cannot know for sure without experimentation.
 
-Finally, the AlphaFold algorithm is "trained" using a database of known protein structures, which makes it more likely to succeed if a protein is similar to a known structure. But it is the proteins with structures \textit{dissimilar} to any known structure that possess some of the greatest scientific interest.
+Finally, the AlphaFold algorithm is ``trained'' using a database of known protein structures, which makes it more likely to succeed if a protein is similar to a known structure. But it is the proteins with structures \textit{dissimilar} to any known structure that possess some of the greatest scientific interest.
 
 Pronouncing protein structure prediction to be solved may be hasty, but we will likely never again see such a clear improvement to the state of the art for structure prediction. AlphaFold is probably the final great innovation in a research problem that has puzzled biologists for fifty years.
 
@@ -898,7 +894,6 @@ In part 1, we saw that the spike protein is much more variable than other region
 The most variable region between the two viruses in the spike protein is the \textdef{receptor binding motif (RBM)}{receptor binding motif (RBM)}{FILL IN}, part of the receptor binding domain (RBD) whose structure we predicted using GalaxyWEB in the \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_homology]. The RBM is the component of the RBD that mediates contact with ACE2, as the following simplified animation of the process illustrates.
 
 \texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
-% include video id="e2Qi-hAXdJo" provider="youtube" %
 
 The fact that the region binding to the target human enzyme has mutated so much makes it a fascinating region of study. Do the mutations that SARS-CoV-2 has accumulated somehow make it easier for the virus to infect human cells?
 
@@ -1008,7 +1003,7 @@ We now will compute Qres for the SARS-CoV and SARS-CoV-2 spike proteins using th
 \phantomsection
 \subsection{Local comparison of spike proteins leads us to a region of interest}
 
-By computing Qres at every position of the two coronavirus RBD regions, we can form a "structural" alignment of the two regions, as shown in \autoref{fig:QresResult}. Blue columns correspond to amino acids with high Qres (meaning high structural similarity), and red columns correspond to amino acids with low Qres (meaning low structural similarity).
+By computing Qres at every position of the two coronavirus RBD regions, we can form a ``structural'' alignment of the two regions, as shown in \autoref{fig:QresResult}. Blue columns correspond to amino acids with high Qres (meaning high structural similarity), and red columns correspond to amino acids with low Qres (meaning low structural similarity).
 
 If we zoom in on the region around position 150 of the alignment, we find a 13-column region of the alignment within the RBD region for which Qres values are significantly lower than they are elsewhere. This region corresponds to positions 476 to 485 in the SARS-CoV-2 spike protein and is shown in \autoref{fig:QresResult}.
 
@@ -1035,7 +1030,7 @@ We also can create a 3-D visualization of the structures. \autoref{fig:QresVMD} 
 \end{figure}
 
 \begin{note}[%
-	Although the rest of the proteins are similar, there are other parts of the RBD at the top of the protein that show dissimilarities in the two proteins, which may be attributable to an experimental artifact. The authors of the work in which the comparison was published have pointed out that the highlighted region is unlikely to be an artifact of the experimentation because it is "buried at the RBD–ACE2 interface and did not affect crystallization".
+	Although the rest of the proteins are similar, there are other parts of the RBD at the top of the protein that show dissimilarities in the two proteins, which may be attributable to an experimental artifact. The authors of the work in which the comparison was published have pointed out that the highlighted region is unlikely to be an artifact of the experimentation because it is ``buried at the RBD–ACE2 interface and did not affect crystallization''.
 	]\end{note}
 
 Finding this highlighted region in the RBM where the structures of the SARS-CoV and SARS-CoV-2 spike proteins differ is an exciting development. We will next explore this region of the protein structure to determine whether the mutations acquired by SARS-CoV-2 may have influenced the binding affinity of the virus spike protein with the human ACE2 enzyme.
@@ -1080,7 +1075,7 @@ Structural differences are challenging to show with a 2-D image,so we encourage 
 	\label{fig:Ridge}
 \end{figure}
 
-The most noticeable difference between SARS-CoV-2 and SARS-CoV in this region relates to a "hydrophobic pocket" of three hydrophobic ACE2 residues at positions 82, 79, and 83 (methionine, leucine, and tyrosine). This pocket, which is colored silver in \autoref{fig:Ridge}, is hidden away from the outside of the ACE2 enzyme to keep these amino acids away from water. In SARS-CoV-2, the RBD phenylalanine residue at position 486 (yellow) inserts itself into the pocket, favorably interacting with ACE2. These interactions do not happen with SARS-CoV, and its corresponding RBD residue, a leucine at position 472 (yellow), is not inserted into the pocket.
+The most noticeable difference between SARS-CoV-2 and SARS-CoV in this region relates to a ``hydrophobic pocket'' of three hydrophobic ACE2 residues at positions 82, 79, and 83 (methionine, leucine, and tyrosine). This pocket, which is colored silver in \autoref{fig:Ridge}, is hidden away from the outside of the ACE2 enzyme to keep these amino acids away from water. In SARS-CoV-2, the RBD phenylalanine residue at position 486 (yellow) inserts itself into the pocket, favorably interacting with ACE2. These interactions do not happen with SARS-CoV, and its corresponding RBD residue, a leucine at position 472 (yellow), is not inserted into the pocket.
 
 In what follows, we use a three-letter identifier for an amino acid followed by a number to indicate the identity of that amino acid followed by its position within the protein sequence. For example, the phenylalanine at position 486 of the SARS-CoV-2 spike protein would be called Phe486.
 
@@ -1090,7 +1085,7 @@ Although the interaction with the hydrophobic pocket is the most critical differ
 \phantomsection
 \subsection{Site 2: hotspot 31}
 
-\textbf{Hotspot 31} is not a failed Los Angeles nightclub but rather our second region of notable conformational differences between SARS-CoV-2 and SARS-CoV, which was studied in SARS-CoV as early as 2008. This location earns its name because it involves a "salt bridge", or a combination of hydrogen and ionic bonding between two amino acids, that takes place between Lys31 and Glu35. Hotspot 31 is colored red in \autoref{fig:Hotspot31}.
+\textbf{Hotspot 31} is not a failed Los Angeles nightclub but rather our second region of notable conformational differences between SARS-CoV-2 and SARS-CoV, which was studied in SARS-CoV as early as 2008. This location earns its name because it involves a ``salt bridge'', or a combination of hydrogen and ionic bonding between two amino acids, that takes place between Lys31 and Glu35. Hotspot 31 is colored red in \autoref{fig:Hotspot31}.
 
 \begin{qbox}[%
 	Once again, see if you can spot the differences between SARS-CoV-2 and SARS-CoV.
@@ -1132,7 +1127,7 @@ You may be wondering how researchers can be so fastidious that they would notice
 \phantomsection
 \subsection{Computing energy of a bound complex}
 
-In part 1 of this chapter, we searched for the tertiary structure that best "explains" a protein's primary structure by looking for the structure with the lowest potential energy (i.e., the one that is the most chemically stable).
+In part 1 of this chapter, we searched for the tertiary structure that best ``explains'' a protein's primary structure by looking for the structure with the lowest potential energy (i.e., the one that is the most chemically stable).
 
 To quantify whether two molecules bind well, we will borrow this idea and compute the potential energy of the complex formed by the viral spike protein and ACE2. If two molecules bind well, then the complex will have a very low potential energy. In turn, if we compare the SARS-CoV-2 RBD-ACE2 complex against the SARS-CoV RBD-ACE2 complex, and we find that the potential energy of the former is significantly smaller, then we can conclude that it is more stable, providing evidence for the increased infectiousness of SARS-CoV-2.
 
@@ -1172,7 +1167,7 @@ We now transition from the static study of proteins to the field of \textdef{mol
 
 You may think that simulating the movements of proteins with hundreds of amino acids will be a hopeless task. After all, predicting the static structure of a protein has occupied biologists for decades! Yet part of what makes structure prediction so challenging is that the search space of potential structures is so enormous. Once we have established the static structure of a protein, its dynamic behavior will not allow it to deviate greatly from this static structure, and so the space of potential dynamic structures is narrowed down to those that are similar to the static structure.
 
-A protein's molecular bonds are constantly vibrating, stretching and compressing, much like that of the oscillating mass-spring system shown in \autoref{fig:mass-spring}. Bonded atoms are held together by sharing electrons and are held at specific bond length due to the attraction and repulsion of the negatively charged electrons and positively charged nucleus. If you push the atoms closer together or pull them farther apart, then they will "bounce back" to their equilibrium.
+A protein's molecular bonds are constantly vibrating, stretching and compressing, much like that of the oscillating mass-spring system shown in \autoref{fig:mass-spring}. Bonded atoms are held together by sharing electrons and are held at specific bond length due to the attraction and repulsion of the negatively charged electrons and positively charged nucleus. If you push the atoms closer together or pull them farther apart, then they will ``bounce back'' to their equilibrium.
 
 \begin{figure}[h]
 	\centering
@@ -1254,7 +1249,7 @@ After computing the cross-correlation of every pair of alpha carbons in a protei
 	\label{fig:hemoglobin_cc}
 \end{figure}
 
-The cross-correlation map of a protein contains complex patterns of correlated and anti-correlated movement of the protein's atoms. Much like the contact map that we showed in an earlier section, it serves as a "fingerprint" of sorts for the protein and can give useful insights into the protein's structure.
+The cross-correlation map of a protein contains complex patterns of correlated and anti-correlated movement of the protein's atoms. Much like the contact map that we showed in an earlier section, it serves as a ``fingerprint'' of sorts for the protein and can give useful insights into the protein's structure.
 
 For example, we should not be surprised that the main diagonal of the cross-correlation map is colored red, since alpha carbons that are near each other in a polypeptide chain will likely have correlated movements.
 
@@ -1298,7 +1293,7 @@ In other words, once we can estimate the mean-square fluctuations $\langle \Delt
 
 When listening to your favorite song, you probably do not think of the individual notes that it comprises. Yet a talented musician can dissect the song into the set of notes that each instrument contributes to the whole. Just because the music combines a number of individual sound waves does not mean that we cannot deconvolve the music into its substituent waves.
 
-All objects, from colossal skyscrapers to tiny proteins, vibrate. And, just like in our musical example, these oscillations are the net result of individual waves passing through the object. The paradigm of breaking down a collection of vibrations into the comparatively small number of "modes" that summarize them is called \textdef{normal mode analysis}{normal mode analysis}{FILL IN} \textbf{(NMA)}and is at the heart of elastic network models.
+All objects, from colossal skyscrapers to tiny proteins, vibrate. And, just like in our musical example, these oscillations are the net result of individual waves passing through the object. The paradigm of breaking down a collection of vibrations into the comparatively small number of ``modes'' that summarize them is called \textdef{normal mode analysis}{normal mode analysis}{FILL IN} \textbf{(NMA)}and is at the heart of elastic network models.
 
 The mathematical details are complicated, but by deconvolving a protein's movement into individual normal modes, we can observe how each mode affects individual amino acids. As we did with B-factors, for a given mode, we can visualize the results of a mode with a line graph, called the \textdef{mode shape plot}{mode shape plot}{FILL IN}. The x-axis of this plot corresponds to the amino acid sequence of the protein, and the height of the \textit{i}-th position on the x-axis corresponds to the magnitude of the square fluctuation caused by the mode on the protein's \textit{i}-th residue.
 
@@ -1314,7 +1309,7 @@ Just as a piece of music can have one instrument that is much louder than anothe
 
 Similar to cross-correlation, analyzing a protein's mode shapes will give insights into the structure of the protein, and comparing mode shapes for two proteins can reveal structural differences. For example, the mode shape plots in \autoref{fig:hemoglobin_mode_shape} show that the slowest mode shape for the four subunits of hemoglobin are quite similar.
 
-We should consult more than just a single mode when completing a full analysis of a protein's molecular dynamics. \autoref{fig:hemoglobin_mode_shape_avg} is the slow mode plot averaging the "slowest" ten modes of hemoglobin, meaning the modes that have the greatest affect on mean fluctuation. Unlike when we examined only the slowest mode, we can now see a stark difference between the two groups of subunits/chains; the plots for α subunits (chains A and C) are very similar, whereas the plots for β subunits (chains B and D) share a slightly less similar average slow mode shape.
+We should consult more than just a single mode when completing a full analysis of a protein's molecular dynamics. \autoref{fig:hemoglobin_mode_shape_avg} is the slow mode plot averaging the ``slowest'' ten modes of hemoglobin, meaning the modes that have the greatest affect on mean fluctuation. Unlike when we examined only the slowest mode, we can now see a stark difference between the two groups of subunits/chains; the plots for α subunits (chains A and C) are very similar, whereas the plots for β subunits (chains B and D) share a slightly less similar average slow mode shape.
 
 \begin{figure}[h]
 	\centering
@@ -1360,7 +1355,7 @@ We can also examine the mode shape plot for the average of the slowest ten modes
 	\label{fig:spike_slowmode_comparison}
 \end{figure}
 
-The mode shape plots show that the RBD of both spike proteins are highly flexible, which agrees with the biological functions of these regions. When the RBD interacts with the ACE2 enzyme on human cells, the RBD of one of the three chains "opens up", exposing itself to more easily bind with ACE2.
+The mode shape plots show that the RBD of both spike proteins are highly flexible, which agrees with the biological functions of these regions. When the RBD interacts with the ACE2 enzyme on human cells, the RBD of one of the three chains ``opens up'', exposing itself to more easily bind with ACE2.
 
 The figure above highlights another flexible region, the spike protein's \textdef{non-terminal domain}{non-terminal domain}{FILL IN} \textbf{(NTD)}. Similar to the RBD, the NTD of the Spike proteins also mediates viral infection, but by interacting with DC-SIGN and L-SIGN receptors rather than ACE2. These receptors are present on macrophages and dendritic cells, allowing SARS-CoV-2 to infect different tissues such as the lungs, where ACE2 expression levels are low. The ability to infect lung cells attributes to pneumonia, the main symptom of severe COVID-19 cases. As with the RBD, the high flexibility in this domain allows the spike protein to more easily interact with these receptors.
 
@@ -1390,7 +1385,7 @@ We will not delve into the mathematical intricacies of ANM calculations, but we 
 
 After we produce an animation like the one in \autoref{fig:hemoglobin_anm_2}, we also should attempt to explain it biologically. Human hemoglobin exists in two states: the tense state (T), in which it is not bound to an oxygen molecule, and the relaxed state (R), in which it is oxygenated. Hemoglobin's mobility shown in the above animation corresponds to its ability to transition between these two states, in which salt-bridges and contacts can shift by up to seven angstroms. This significant molecular flexibility exemplifies why we need to study protein dynamics as well as structure.
 
-We will now apply ANM to the SARS-CoV and SARS-CoV-2 spike proteins. We will also use NMWiz (\url{http://prody.csb.pitt.edu/nmwiz/}), which is short for "normal mode wizard", to perform ANM calculations and create an animation of the SARS-CoV-2 (chimeric) RBD and the SARS-CoV RBD. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_ANM]
+We will now apply ANM to the SARS-CoV and SARS-CoV-2 spike proteins. We will also use NMWiz (\url{http://prody.csb.pitt.edu/nmwiz/}), which is short for ``normal mode wizard'', to perform ANM calculations and create an animation of the SARS-CoV-2 (chimeric) RBD and the SARS-CoV RBD. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_ANM]
 
 \FloatBarrier
 \phantomsection
@@ -1465,7 +1460,7 @@ To predict spike protein movements based on ANM, we used NMWiz and VMD to create
 	\label{fig:6vw1_animation}
 \end{figure}
 
-Recall from \autoref{sec:interaction_energy} that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called "hotspot 31". This region is highlighted in blue and orange in \autoref{fig:6vw1_animation}. If you look very closely, as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This animation provides one more piece of evidence that SARS-CoV-2 is more effective at binding to the ACE2 enzyme.
+Recall from \autoref{sec:interaction_energy} that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called ``hotspot 31''. This region is highlighted in blue and orange in \autoref{fig:6vw1_animation}. If you look very closely, as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This animation provides one more piece of evidence that SARS-CoV-2 is more effective at binding to the ACE2 enzyme.
 
 \FloatBarrier
 \phantomsection
@@ -1483,7 +1478,7 @@ We then discussed how to compare protein structures, with a lengthy case study c
 
 We concluded with a transition from the study of structure to the structure of molecular dynamics. If we hope to fully understand a protein's function, then we need to know how it flexes and bends within its environment, sometimes in order to interact with other molecules.
 
-Despite covering a great deal of ground, we have left just as much unstudied. For one example, the surface of viruses and host cells are "fuzzy" because they are covered by structures called \textdef{glycans}{glycans}{FILL IN}, or numerous monosaccharides linked together. SARS-CoV and SARS-CoV-2 have a “glycan shield”, in which glycosylation of surface antigens allows the virus to hide from antibody detection. Researchers have found that the SARS-CoV-2 spike protein is heavily glycosylated, shielding around 40\% of the protein from antibody recognition; we will save a comparative analysis of the two virus's glycan shields for another time.
+Despite covering a great deal of ground, we have left just as much unstudied. For one example, the surface of viruses and host cells are ``fuzzy'' because they are covered by structures called \textdef{glycans}{glycans}{FILL IN}, or numerous monosaccharides linked together. SARS-CoV and SARS-CoV-2 have a “glycan shield”, in which glycosylation of surface antigens allows the virus to hide from antibody detection. Researchers have found that the SARS-CoV-2 spike protein is heavily glycosylated, shielding around 40\% of the protein from antibody recognition; we will save a comparative analysis of the two virus's glycan shields for another time.
 
 Finally, we would point out that although scientific research has often historically been siloed away from the public, the COVID-19 pandemic exemplifies how global citizens can get involved in real research. GISAID (\url{https://www.gisaid.org}) published their first publicly available SARS-CoV-2 genome on December 24, 2019. Within six months, this database had grown to contain over 50,000 entries, and after two years, it would contain nearly 7 million.
 
