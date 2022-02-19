@@ -19,7 +19,7 @@ To explore the interactions between proteins, we will introduce \textdef{network
 
 In this section, we will work with a fundamental biological network called a \textdef{transcription factor network}{transcription factor network}{FILL IN}, which involves the proteins that drive a cell's response to its environment. We will then hunt for frequently recurring structures hidden within this network called \textdef{network motifs}{network motifs}{FILL IN}. Much like our work in \autoref{chapter:turing}, we will use modeling to address the question of \textit{why} these motifs have evolved to help the cell respond to its environment.
 
-We will define a transcription factor network soon, but before we get ahead of ourselves, let us introduce some of the molecular biology fundamentals we will need to complete our analysis. As in \autoref{chapter:turing}, you may already know this biological background, in which case you should feel free to skim the next section.
+We will define a transcription factor network soon, but before we get ahead of ourselves, let us introduce some of the molecular biology fundamentals we will need to complete our analysis. As in \autoref{chapter:turing}, you may already know this biological background, in which case you should feel free to skim the next section.\\
 
 \FloatBarrier
 \phantomsection
@@ -102,7 +102,7 @@ In a final step, we unlink the protein from the DNA, leaving a collection of DNA
 \label{fig:ChIP-seq_workflow}
 \end{figure}
 
-If you would like a different explanation of  may also like to check out the following excellent video on identifying genes regulated by a transcription factor. This video was produced by students in the 2020 PreCollege Program in Computational Biology at Carnegie Mellon. The presenters won an award from their peers for their work, and for good reason! http://www.cbd.cmu.edu/education/pre-college-program-in-computational-biology
+If you would like a different explanation of  may also like to check out the following excellent video on identifying genes regulated by a transcription factor. This video was produced by students in the 2020 PreCollege Program in Computational Biology at Carnegie Mellon. The presenters won an award from their peers for their work, and for good reason! http://www.cbd.cmu.edu/education/pre-college-program-in-computational-biology\\
 
 \begin{qbox}[%  
 How do you think that researchers could determine whether a transcription factor activates or inhibits a given gene?
@@ -136,7 +136,7 @@ Note that the edges in the \textit{E. coli} transcription factor network below a
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/e_coli_tf_network.jpeg}
+\includegraphics[width = 0.85\textwidth]{../images/e_coli_tf_network.jpeg}
 \caption{A subset of the \textit{E. coli} transcription factor network. An edge from \textvar{X} to \textvar{Y} denotes that \textvar{X} is a transcription factor that regulates \textvar{Y}. Edges corresponding to upregulation are colored green, and edges corresponding to downregulation are colored red.}
 \label{fig:e_coli_tf_network}
 \end{figure}
@@ -463,7 +463,7 @@ If you followed our previous tutorials, then you may feel comfortable taking off
 \phantomsection
 \subsection{Interpreting the repressilator's oscillations}
 
-The figure below shows a plot of the concentration of \textvar{X}, \textvar{Y}, and \textvar{Z} particles from our repressilator simulation. The system shows clear oscillatory behavior, with the concentrations of \textvar{X}, \textvar{Y}, and \textvar{Z} taking turns being at high concentration.
+The figure below shows a plot of the concentration of \textvar{X}, \textvar{Y}, and \textvar{Z} particles from our repressilator simulation. The system shows clear oscillatory behavior, with the concentrations of \textvar{X}, \textvar{Y}, and \textvar{Z} taking turns being at high concentration.\\
 
 \begin{qbox}[% 
 Why do you think that the repressilator motif leads to this pattern of oscillations?
@@ -472,7 +472,7 @@ Why do you think that the repressilator motif leads to this pattern of oscillati
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/repressilator_chart.png}
+\includegraphics[width = 0.85\textwidth]{../images/repressilator_chart.png}
 \caption{Modeling the repressilator's concentration of particles. \textvar{X} is shown in yellow, \textvar{Y} is shown in red, and \textvar{Z} is shown in blue}
 \label{fig:repressilator_chart}
 \end{figure}
@@ -497,8 +497,7 @@ This noise in the repressilator's oscillations is due to random variation as the
 
 Yet the noise that appears in the repressilator's oscillations is a feature, not a bug. As we have discussed previously, the cell's molecular interactions are inherently random. So if we see oscillations in a simulation that includes noise arising from random chance, then we can be confident that this simulation is \textit{robust} to a certain amount of variation.
 
-In this section's conclusion, we will further explore the concept of robustness as it pertains to the repressilator. What happens if our simulation experiences a much greater disturbance to the concentration of one of the particles?  Will it still be able to recover and return to the same oscillatory pattern?
-
+In this section's conclusion, we will further explore the concept of robustness as it pertains to the repressilator. What happens if our simulation experiences a much greater disturbance to the concentration of one of the particles?  Will it still be able to recover and return to the same oscillatory pattern?\\
 
 \FloatBarrier
 \phantomsection
@@ -540,7 +539,7 @@ The figure below shows a plot of concentrations of each particle in our well-mix
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/nf_sim_interrupted_chart.png}
+\includegraphics[width = 0.85\textwidth]{../images/nf_sim_interrupted_chart.png}
 \caption{A plot of particle concentrations in the well-mixed repressilator model over time. Adding a significant number of \textvar{Y} particles to our simulation (the second blue peak) produces little ultimate disturbance to the concentrations of the three particles, which return to normal oscillations within a single cycle.}
 \label{fig:nf_sim_interrupted_chart}
 \end{figure}
@@ -549,12 +548,12 @@ Because of the spike in the concentration of \textvar{Y}, the reaction $\textvar
 
 We might hypothesize that this process would continue, with a tall peak in the concentration of \textvar{Z}. However, the peak in the concentration of \textvar{Z} is no taller than normal, and the next peak shows a normal concentration of \textvar{X}. In other words, the system has very quickly absorbed the blow of an increase in concentration of \textvar{Y} and returned to normal within one cycle.
 
-Even with a much larger jolt to the concentration of \textvar{Y}, the concentrations of the three particles return to normal oscillations very quickly, as shown below.
+Even with a much larger jolt to the concentration of \textvar{Y}, the concentrations of the three particles return to normal oscillations very quickly, as shown below.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/nf_sim_interrupted_chart_spike.png}
+\includegraphics[width = 0.85\textwidth]{../images/nf_sim_interrupted_chart_spike.png}
 \caption{A larger increase in the concentration of \textvar{Y} particles than in the previous figure does not produce a substantive change in the system.}
 \label{fig:nf_sim_interrupted_chart_spike}
 \end{figure}
