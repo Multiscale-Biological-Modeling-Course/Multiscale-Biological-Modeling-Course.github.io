@@ -33,13 +33,13 @@ To model ligand-receptor dynamics, we will use a **reversible reaction** that pr
 **Note:** Why should ligand-receptor binding be reversible? If complexes did not dissociate, then a brief increase in ligand concentration would be detected indefinitely by the surface receptors. Without releasing the bound ligands, the cell would need to manufacture more receptors, which are complicated molecules.
 {: .notice--info}
 
-We are ready to start building a model of ligand-receptor dynamics. We denote the receptor molecule by *T*, the ligand molecule by *L*, and the bound complex as *TL*. The **forward reaction** is *T* + *L* → *TL*, which takes place at some rate *k*<sub>bind</sub>, and the **reverse reaction** is *TL* → *T* + *L*, which takes place at some rate *k*<sub>dissociate</sub>.
+We are ready to start building a model of ligand-receptor dynamics. We denote the ligand molecule by *L*, the receptor molecule by *T*, and the bound complex as *LT*. The **forward reaction** is *L* + *T* → *LT*, which takes place at some rate *k*<sub>bind</sub>, and the **reverse reaction** is *LT* → *L* + *T*, which takes place at some rate *k*<sub>dissociate</sub>.
 
-If we start with a free floating supply of *T* and *L* molecules, then *TL* complexes will initially be formed quickly at the expense of the free-floating *T* and *L* molecules. The reverse reaction will not occur because of the lack of *TL* complexes. However, as the concentration of *TL* grows and the concentrations of  *T* and *L* decrease, the rate of increase in *TL* will slow. Eventually, the number of *TL* complexes being formed by the forward reaction will balance the number of *TL* complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
+If we start with a free floating supply of *L* and *T* molecules, then *LT* complexes will initially be formed quickly at the expense of the free-floating *L* and *T* molecules. The reverse reaction will not occur because of the lack of *LT* complexes. However, as the concentration of *LT* grows and the concentrations of  *L* and *T* decrease, the rate of increase in *LT* will slow. Eventually, the number of *LT* complexes being formed by the forward reaction will balance the number of *LT* complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
 
 ## Calculation of equilibrium in a reversible ligand-receptor reaction
 
-For a single reversible reaction, if we know the rates of both the forward and reverse reactions, then we can calculate the steady state concentrations of *T*, *L*, and *TL* by hand.  Suppose that we begin with initial concentrations of *T* and *L* that are represented by *t*<sub>0</sub> and *l*<sub>0</sub>, respectively. Let [*L*], [*T*], and [*LT*] denote the concentrations of the three molecule types. And assume that the reaction rate constants *k*<sub>bind</sub> and *k*<sub>dissociate</sub> are fixed.
+For a single reversible reaction, if we know the rates of both the forward and reverse reactions, then we can calculate the steady state concentrations of *L*, *T*, and *LT* by hand.  Suppose that we begin with initial concentrations of *L* and *T* that are represented by *l*<sub>0</sub> and *t*<sub>0</sub>, respectively. Let [*L*], [*T*], and [*LT*] denote the concentrations of the three molecule types. And assume that the reaction rate constants *k*<sub>bind</sub> and *k*<sub>dissociate</sub> are fixed.
 
 When the steady state concentration of *LT* occurs, the rate of production of *LT* is equal to the rate of its dissociation; in other words, we know that
 
@@ -118,7 +118,7 @@ $$[LT] = \dfrac{105 \pm \sqrt{105^2 - 4 \cdot 1 \cdot 2500}}{2 \cdot 1} = 52.5 \
 
 The only reasonable solution here is 52.5-16.008 = 36.492; the steady state concentration has decreased as anticipated.
 
-**STOP**: What do you think will happen to the steady state concentration of *LT* if the initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for [*LT*].
+**STOP**: What do you think will happen to the steady state concentration of *LT* if its initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for [*LT*].
 {: .notice--primary}
 
 ## Where are the units?
@@ -133,7 +133,7 @@ and solving for *x* gives us that
 
 *x* = ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>.
 
-**STOP:** Use a similar argument to show that the units of the dissociation constant *k*<sub>dissociate</sub> should be s<sup>-1</sup>.
+**STOP:** Use a similar argument to show that the units of the dissociation rate *k*<sub>dissociate</sub> should be s<sup>-1</sup>.
 {: .notice--primary}
 
 ## Steady state ligand-receptor concentrations for an experimentally verified example
