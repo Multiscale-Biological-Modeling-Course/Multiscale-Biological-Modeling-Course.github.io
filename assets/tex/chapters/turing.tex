@@ -68,10 +68,10 @@ If we animate the action of many independent particles following random walks, t
 
 In fact, although the movements of a single particle are random, we can draw conclusions about the \textit{average-case} behavior of many particles can be predicted, as the following theorem indicates.
 
-\textdef{Random Walk Theorem}{Random Walk Theorem}{FILL IN} After \textvar{n} steps of unit length in a random walk, a particle will on average find itself a distance of approximately $\sqrt{n}$ from its origin.
+\textdef{Random Walk Theorem}{Random Walk Theorem}{FILL IN} After \textvar{n} steps of unit length in a random walk, a particle will on average find itself a distance of approximately $\sqrt{n}$ from its origin.\\
 
 \begin{note}[%
-If you love mathematics and are interested in seeing a proof of this theorem, check out https://biologicalmodeling.org/assets/tex/random_walk_theorem.pdf 
+If you love mathematics and are interested in seeing a proof of this theorem, check out our website (link).
 ]\end{note}
 
 Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less macabre example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
@@ -119,7 +119,7 @@ Before continuing, we will point you to a beautiful animation illustrating just 
 
 \subsection{From random walks to reaction-diffusion}
 
-In the [previous lesson](random_walk), we introduced the model of a particle randomly walking through a medium. But what exactly do random walks have to do with Alan Turing and zebras?
+In the previous section, we introduced the model of a particle randomly walking through a medium. But what exactly do random walks have to do with Alan Turing and zebras?
 
 Turing's insight was that remarkable high-level patterns could arise if we combine particle diffusion with a chemical reaction in which colliding particles interact with each other. Such a model is called a \textdef{reaction-diffusion system}{reaction-diffusion system}{FILL IN}, and the emergent patterns are called \textdef{Turing patterns}{Turing patterns}{FILL IN} in Turing's honor.
 
@@ -330,7 +330,7 @@ What should the values of the ``?'' cells be in the above figure? Note that thes
 ]\end{qbox}
 
 
-The coarse-grained model of particle diffusion that we have built is a variant of a \textdef{cellular automaton}{cellular automaton}{FILL IN}, or a grid of cells in which we use fixed rules to update the status of a cell based on its current status and those of its neighbors. Cellular automata form a rich area of research applied to a wide variety of fields dating back to the middle of the 20th Century; if you are interested in learning more about them from the perspective of programming, then you might like to check out the <a href="http://compeau.cbd.cmu.edu/programming-for-lovers/chapter-3-building-a-self-replicating-cellular-automaton-with-top-down-programming/" target="_blank">Programming for Lovers</a> project.
+The coarse-grained model of particle diffusion that we have built is a variant of a \textdef{cellular automaton}{cellular automaton}{FILL IN}, or a grid of cells in which we use fixed rules to update the status of a cell based on its current status and those of its neighbors. Cellular automata form a rich area of research applied to a wide variety of fields dating back to the middle of the 20th Century; if you are interested in learning more about them from the perspective of programming, then you might like to check out the Programming for Lovers project (link).
 
 \FloatBarrier
 \phantomsection
@@ -414,7 +414,7 @@ Note that the center of the cell becomes blue because the \textvar{A} particles 
 \phantomsection
 \subsection{Adding reactions to our automaton: the Gray-Scott model}
 
-Now that we have established a cellular automaton for coarse-grained particle diffusion, we will add to it the three reactions that we introduced in the [previous lesson](reaction-diffusion), which are reproduced below.
+Now that we have established a cellular automaton for coarse-grained particle diffusion, we will add to it the three reactions that we introduced in the previous section, which are reproduced below.
 
 \begin{enumerate}
 \item A ``feed'' reaction in which new \textvar{A} particles are fed into the system at a constant rate.
@@ -430,7 +430,7 @@ We will address these reactions one at a time. First, we have the feed reaction,
 
 Instead, if a cell has current concentration [\textvar{A}], then we will add \textvar{f}(1-[\textvar{A}]) to this cell's concentration of \textvar{A} particles. For example, if [\textvar{A}] is 0.01, then we will add 0.99\textvar{f} to the cell because the current concentration is low. If [\textvar{A}] is 0.8, then we will only add 0.2\textvar{f} to the concentration.
 
-Second, we consider the death reaction of \textvar{B} particles, which takes place at rate \textvar{k}. Recall from the previous lesson that \textvar{k} is proportional to the current concentration of \textvar{B} particles. As a result, if a cell has concentration [\textvar{B}], then for some constant \textvar{k} between 0 and 1, we will subtract \textvar{k} · [\textvar{B}] from the current concentration of \textvar{B} particles.
+Second, we consider the death reaction of \textvar{B} particles, which takes place at rate \textvar{k}. Recall from the previous section that \textvar{k} is proportional to the current concentration of \textvar{B} particles. As a result, if a cell has concentration [\textvar{B}], then for some constant \textvar{k} between 0 and 1, we will subtract \textvar{k} · [\textvar{B}] from the current concentration of \textvar{B} particles.
 
 Third, we have the reproduction reaction \textvar{A} + 2\textvar{B} → 3\textvar{B}, which takes place at a rate \textvar{r}. The higher the concentration of \textvar{A} and \textvar{B}, the more this reaction will take place. Furthermore, because we need \textit{two} \textvar{B} particles in order for the collision to occur, the reaction should be even more rare if we have a low concentration of \textvar{B} than if we have a low concentration of \textvar{A}. To model this situation, if a given cell is represented by the concentrations ([\textvar{A}], [\textvar{B}]), then we will subtract \textvar{r} · [\textvar{A}] · [\textvar{B}]<sup>2</sup> from the concentration of \textvar{A} and add \textvar{r} · [\textvar{A}] · [\textvar{B}]<sup>2</sup> to the concentration of \textvar{B} in the next time step.
 
@@ -460,7 +460,7 @@ As the result of all these processes, we update the concentrations of \textvar{A
 [\textvar{A}]<sub>new</sub> = 0.7 - 0.06 + 0.09 - 0.175 = 0.555<br>
 [\textvar{B}]<sub>new</sub> = 0.5 + 0.01 - 0.2 + 0.175 = 0.485
 
-We should now feel ready to implement the Gray-Scott model in the following tutorial. The question is: even though we have built a coarser-grained simulation than the previous lesson, will we still see Turing patterns?
+We should now feel ready to implement the Gray-Scott model in the following tutorial. The question is: even though we have built a coarser-grained simulation than the previous section, will we still see Turing patterns?
 
 \tutorial[https://biologicalmodeling.org/prologue/gs-jupyter]
 
@@ -554,7 +554,7 @@ The Turing patterns that emerged from our particle simulations are a testament t
 
 Our reaction-diffusion system is remarkable because it is so \textdef{fine-tuned}{fine-tuned}{FILL IN}, meaning that very slight changes in parameter values can lead to significant changes in the system. These changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
 
-The figure below shows how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary. The kill rate increases along the x-axis, and the feed rate increases along the y-axis. Notice how much the patterns change! You may like to tweak the parameters of the own Gray-Scott simulation from the [previous lesson](gray-scott) to see if you can reproduce these differing patterns.
+The figure below shows how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary. The kill rate increases along the x-axis, and the feed rate increases along the y-axis. Notice how much the patterns change! You may like to tweak the parameters of the own Gray-Scott simulation from the previous section to see if you can reproduce these differing patterns.
 
 \begin{figure}[h]
 \centering
