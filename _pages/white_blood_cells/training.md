@@ -120,8 +120,6 @@ You may find all these terms confusing and difficult to keep straight. You are n
 
 {% include video id="bv26dLnbi9g" provider="youtube" %}
 
-{% include video id="1G1dfLF8-jo" provider="youtube" %}
-
 ## Extending classification metrics to multiple classes
 
 To return to our example of classifying images of WBC nuclei, we need to extend the ideas discussed in the preceding section to handle more than two classes. To do so, we consider each class individually and treat this class as the "positive" case.

@@ -40,19 +40,19 @@ The RNA transcript is then \textdef{translated}{translated}{FILL IN} into an ami
 \label{fig:genetic_code}
 \end{figure}
 
-DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the \textdef{central dogma of molecular biology}{central dogma of molecular biology}{FILL IN}, illustrated in \autoref{fig:Central_Dogma_of_Molecular_Biochemistry_with_Enzymes}.
-
-\begin{note}[%
-Like any dogma, there are times in which the central dogma of molecular biology is violated. If you are interested in an example, consider Chapter 4 of Bioinformatics Algorithms, https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-4.
-]\end{note}
+DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the \textdef{central dogma of molecular biology}{central dogma of molecular biology}{FILL IN}, illustrated in \autoref{fig:Central_Dogma_of_Molecular_Biochemistry_with_Enzymes}.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg}
+\includegraphics[width = 0.4\textwidth]{../images/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg}
 \caption{The central dogma of molecular biology states that molecular information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA. Image courtesy: Dhorpool, Wikimedia commons user.}
 \label{fig:Central_Dogma_of_Molecular_Biochemistry_with_Enzymes}
 \end{figure}
+
+\begin{note}[%
+Like any dogma, there are times in which the central dogma of molecular biology is violated. If you are interested in an example, consider Chapter 4 of Bioinformatics Algorithms, https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-4.
+]\end{note}
 
 \FloatBarrier
 \phantomsection
@@ -277,7 +277,7 @@ Even though we are using a particle-based model to mimic regulation, it is not a
 \phantomsection
 \subsection{Ensuring a mathematically controlled comparison}
 
-If you followed the previous tutorial, then you were likely disappointed in the second cell and its negative autoregulating transcription factor \textvar{Y}. \autoref{fig:nar_unequal_chart} shows a plot of the concentration of \textvar{Y} particles for the two simulations; the first cell is shown in red, and the second cell is shown in yellow.
+If you followed the previous tutorial, then you were likely disappointed in the second cell and its negative autoregulating transcription factor \textvar{Y}. \autoref{fig:nar_unequal_chart} shows a plot of the concentration of \textvar{Y} particles for the two simulations; the first cell is shown in red, and the second cell is shown in yellow.\\
 
 \begin{figure}[h]
 \centering
@@ -336,7 +336,7 @@ The answer lies in another transcription factor network motif called the \textde
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/feed-forward_loop.png}
+\includegraphics[width = 0.5\textwidth]{../images/feed-forward_loop.png}
 \caption{The FFL motif. \textvar{X} regulates both \textvar{Y} and \textvar{Z}, and \textvar{Y} regulates \textvar{Z}.}
 \label{fig:feed-forward_loop}
 \end{figure}
@@ -354,7 +354,7 @@ How could we simulate a feedforward loop with a particle-based reaction-diffusio
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/type-1_incoherent_feed-forward_loop.png}
+\includegraphics[width = 0.5\textwidth]{../images/type-1_incoherent_feed-forward_loop.png}
 \caption{The incoherent feed-forward loop network motif. Note that \textvar{X} upregulates \textvar{Y} and \textvar{Z}, while \textvar{Y} downregulates \textvar{Z}.}
 \label{fig:type-1_incoherent_feed-forward_loop}
 \end{figure}
@@ -438,7 +438,7 @@ The repressilator motif is shown in \autoref{fig:repressilator}. In this motif, 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.4\textwidth]{../images/repressilator.png}
+\includegraphics[width = 0.3\textwidth]{../images/repressilator.png}
 \caption{The repressilator motif for three particles \textvar{X}, \textvar{Y}, and \textvar{Z}. \textvar{X} represses \textvar{Y}, which represses \textvar{Z}, which in turn represses \textvar{X}, forming a feedback loop.}
 \label{fig:repressilator}
 \end{figure}
