@@ -11,15 +11,13 @@
 \label{sec:introduction}
 \phantomsection
 
-In \autoref{chapter:turing}, we worked with a particle-based model that simulated the interactions of skin cells to produce complex Turing patterns. In this chapter, we will zoom into a much lower biological scale and model protein interactions, which occur on a molecular level. The scale of these interactions is tiny: a protein is typically on the order of about 10nm in diameter. (For comparison, a light microscope's highest resolution is about 2000 nm, and the diameter of a single human hair is about 100,000 nm.)
+In \autoref{chapter:turing}, we worked with a particle-based model that simulated the interactions of skin cells to produce complex Turing patterns. In this chapter, we will zoom into a much lower biological scale and model protein interactions, which occur on a molecular level. The scale of these interactions is tiny: a protein is typically on the order of about 10nm in diameter. (For comparison, the diameter of a single human hair is about 100,000 nm, and a light microscope's highest resolution is about 2,000 nm.) We will see that the cell has evolved a form of molecular communication based on protein interactions that is rapid, robust, and elegant.
 
-We will focus on how a cell adjusts its internal protein concentrations to react to an ever-changing environment.  We will see that the cell has evolved a sort of molecular communication based on the interactions of proteins that is rapid, robust, and elegant.
+To model protein interactions, we will use a  \textdef{network}{network}{FILL IN}, which is a collection of \textdef{nodes}{nodes}{FILL IN} along with \textdef{edges}{edges}{FILL IN} that connect pairs of nodes. Whether we are studying the interactions of proteins, the complex chains of chemical reactions underlying cellular metabolism, the tangled webs of neurons in the human nervous system, or an evolutionary tree of life, networks are critical to our understanding of biological processes.
 
-To explore the interactions between proteins, we will introduce \textdef{networks}{networks}{FILL IN}; a network is a collection of \textdef{nodes}{nodes}{FILL IN} along with \textdef{edges}{edges}{FILL IN} that connect pairs of nodes. The network is a simple but ubiquitous model. Whether we are studying the interactions of proteins, the complex chains of chemical reactions underlying cellular metabolism, the tangled webs of neurons in the human nervous system, or an evolutionary tree of life, networks are critical to our understanding of biological processes.
+Our interest lies in the frequently recurring structures hidden within biological networks called \textdef{network motifs}{network motifs}{FILL IN}. Similarly to our work \autoref{chapter:turing}, we will use modeling to answer \textit{why} these motifs have evolved to help the cell respond to its environment.
 
-In this section, we will work with a fundamental biological network called a \textdef{transcription factor network}{transcription factor network}{FILL IN}, which involves the proteins that drive a cell's response to its environment. We will then hunt for frequently recurring structures hidden within this network called \textdef{network motifs}{network motifs}{FILL IN}. Much like our work in \autoref{chapter:turing}, we will use modeling to address the question of \textit{why} these motifs have evolved to help the cell respond to its environment.
-
-We will define a transcription factor network soon, but before we get ahead of ourselves, let us introduce some of the molecular biology fundamentals we will need to complete our analysis. As in \autoref{chapter:turing}, you may already know this biological background, in which case you should feel free to skim the next section.\\
+We will soon define our specific network of study, but before we get ahead of ourselves, we will introduce some of the molecular biology fundamentals we will need to complete our analysis. You may already know this biological background, in which case you should feel free to skim the next section.\\
 
 \FloatBarrier
 \phantomsection
@@ -32,7 +30,7 @@ We will define a transcription factor network soon, but before we get ahead of o
 
 DNA is a double-stranded molecule consisting of the four nucleobases adenine, cytosine, guanine, and thymine. A gene is a region of an organism's DNA that is \textdef{transcribed}{transcribed}{FILL IN} into a single-stranded RNA molecule in which thymine is converted to uracil and the other bases remain the same.
 
-The RNA transcript is then \textdef{translated}{translated}{FILL IN} into an amino acid sequence. Because there are four different bases but twenty amino acids available, RNA is translated in \textdef{codons}{codons}{FILL IN}, or triplets of nucleobases. The figure below shows the way in which codons are translated into amino acids, which is called the \textdef{genetic code}{genetic code}{FILL IN}.
+The RNA transcript is then \textdef{translated}{translated}{FILL IN} into an amino acid sequence. Because there are four different bases but twenty amino acids available, RNA is translated in \textdef{codons}{codons}{FILL IN}, or triplets of nucleobases. \autoref{fig:genetic_code} shows the way in which codons are translated into amino acids, which is called the \textdef{genetic code}{genetic code}{FILL IN}.
 
 \begin{figure}[h]
 \centering
@@ -42,7 +40,7 @@ The RNA transcript is then \textdef{translated}{translated}{FILL IN} into an ami
 \label{fig:genetic_code}
 \end{figure}
 
-DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the \textdef{central dogma of molecular biology}{central dogma of molecular biology}{FILL IN}, illustrated in the figure below.
+DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the \textdef{central dogma of molecular biology}{central dogma of molecular biology}{FILL IN}, illustrated in \autoref{fig:Central_Dogma_of_Molecular_Biochemistry_with_Enzymes}.
 
 \begin{note}[%
 Like any dogma, there are times in which the central dogma of molecular biology is violated. If you are interested in an example, consider Chapter 4 of Bioinformatics Algorithms, https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-4.
@@ -66,7 +64,7 @@ Gene regulation typically occurs at either the DNA or protein level. At the DNA 
 
 Because of the central dogma, transcription factors are involved in a sort of feedback loop. DNA is transcribed into RNA, which is translated into the protein sequence of a transcription factor, which then binds to the upstream region of some other gene and changes its rate of transcription.
 
-Transcription factors are vital for the cell's response to its environment because extracellular stimuli can serve to activate a transcription factor via a system of signaling molecules that convey a signal through relay molecules to the transcription factor (see figure below). Only when the transcription factor is activated will it regulate its target protein(s).
+Transcription factors are vital for the cell's response to its environment because extracellular stimuli can serve to activate a transcription factor via a system of signaling molecules that convey a signal through relay molecules to the transcription factor (\autoref{fig:genetic_code}). Only when the transcription factor is activated will it regulate its target protein(s).
 
 \begin{figure}[h]
 \centering
@@ -86,7 +84,7 @@ Over the years, a number of both computational and experimental approaches have 
 
 A transcription factor has a weak binding affinity to DNA in general, but it has a very strong binding affinity for a single specific short sequence of nucleotides called a \textdef{motif}{motif}{FILL IN}. Think of a transcription factor as latching onto DNA and then ``sliding'' up and down the DNA molecule until it finds its target motif, where it clamps down. If this motif occurs immediately before a gene, then the transcription factor will regulate this gene.
 
-A natural question, then, is to find the set of genes to which a transcription factor binds. A widespread experimental practice for determining where a protein bonds in an organism's genome (i.e., its total collection of DNA) is called \textdef{ChIP-seq}{ChIP-seq}{FILL IN}, which is short for \textdef{chromatin immunoprecipitation sequencing}{chromatin immunoprecipitation sequencing}{FILL IN}. This approach, which is illustrated in the figure below, combines an organism's DNA with a collection of proteins that bond to DNA (which in this case would be transcription factors). After allowing for the proteins to bond naturally to the DNA, the DNA (with proteins attached) is cleaved into much smaller fragments of a few hundred base pairs. As a result of this process, we obtain a collection of DNA fragments, some of which are attached to protein.
+A natural question, then, is to find the set of genes to which a transcription factor binds. A widespread experimental practice for determining where a protein bonds in an organism's genome (i.e., its total collection of DNA) is called \textdef{ChIP-seq}{ChIP-seq}{FILL IN}, which is short for \textdef{chromatin immunoprecipitation sequencing}{chromatin immunoprecipitation sequencing}{FILL IN}. This approach, which is illustrated in \autoref{fig:ChIP-seq_workflow}, combines an organism's DNA with a collection of proteins that bond to DNA (which in this case would be transcription factors). After allowing for the proteins to bond naturally to the DNA, the DNA (with proteins attached) is cleaved into much smaller fragments of a few hundred base pairs. As a result of this process, we obtain a collection of DNA fragments, some of which are attached to protein.
 
 The question is how to isolate the fragments of DNA that are bound to a single transcription factor of interest so that we can infer the fragments of DNA to which that transcription factor binds.
 
@@ -129,7 +127,7 @@ We would like to organize the relationships between transcription factors and th
 
 Once we know which genes each transcription factor regulates, we can consolidate this information into a \textdef{transcription factor network}{transcription factor network}{FILL IN}. The nodes in the network represent an organism's proteins, and we connect \textvar{X} to \textvar{Y} with an edge if \textvar{X} is a transcription factor that regulates the expression of protein \textvar{Y}. These edges are one-way connections; any node can have an edge leading into it, but only a transcription factor can have an edge leaving it.
 
-The figure below shows a portion of the transcription factor network for \textit{Escherichia coli}, the workhorse model organism of bacterial studies. Even though \textit{E. coli} is a bacterium, we will be able to draw powerful conclusions about gene regulation from its transcription factor network. The true network, the sum of over two decades of biological research, consists of thousands of genes and around 300 transcription factors. Because of the size of this network, it forms what computational biologists affectionally call a ``hairball'', or a network with so many connections that it is functionally impossible to analyze visually. For this reason, we will need to use computational approaches to study our hairball.
+\autoref{fig:e_coli_tf_network} shows a portion of the transcription factor network for \textit{Escherichia coli}, the workhorse model organism of bacterial studies. Even though \textit{E. coli} is a bacterium, we will be able to draw powerful conclusions about gene regulation from its transcription factor network. The true network, the sum of over two decades of biological research, consists of thousands of genes and around 300 transcription factors. Because of the size of this network, it forms what computational biologists affectionally call a ``hairball'', or a network with so many connections that it is functionally impossible to analyze visually. For this reason, we will need to use computational approaches to study our hairball.
 
 Note that the edges in the \textit{E. coli} transcription factor network below are colored red or green. An edge connecting \textvar{X} to \textvar{Y} is colored green if \textvar{X} upregulates \textvar{Y}, and it is colored red if \textvar{X} downregulates \textvar{Y}. (Alternatively, we could label the edges with a ``+'' or ``-''.)
 
@@ -142,7 +140,7 @@ Note that the edges in the \textit{E. coli} transcription factor network below a
 \end{figure}
 
 \begin{qbox}[% 
-Select the expanded view of the transcription factor network in the figure above. Do you notice anything interesting about this network?
+Select the expanded view of the transcription factor network in \autoref{fig:e_coli_tf_network}. Do you notice anything interesting about this network?
 ]\end{qbox} 
 
 \FloatBarrier
@@ -151,7 +149,7 @@ Select the expanded view of the transcription factor network in the figure above
 
 You may have noticed that the \textit{E. coli} transcription factor network seems to have surprisingly many \textdef{loops}{loops}{FILL IN}, or edges that connect a node to itself. It is worth pausing for a moment to consider the implications of a loop in a transcription factor network. What does it mean for a transcription factor to regulate itself?
 
-A transcription factor is a protein, which means that because of the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In \textdef{autoregulation}{autoregulation}{FILL IN}, illustrated in the figure below, the transcription factor protein then binds to the DNA in the upstream region of the gene encoding the \textit{same} transcription factor. This type of \textdef{feedback}{feedback}{FILL IN} is a beautiful and surprising feature of a simple biological system.\\
+A transcription factor is a protein, which means that because of the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In \textdef{autoregulation}{autoregulation}{FILL IN}, illustrated in \autoref{fig:autoregulation_example}, the transcription factor protein then binds to the DNA in the upstream region of the gene encoding the \textit{same} transcription factor. This type of \textdef{feedback}{feedback}{FILL IN} is a beautiful and surprising feature of a simple biological system.\\
 
 \begin{figure}[h]
 \centering
@@ -237,7 +235,7 @@ Not only is autoregulation an important feature of transcription factors, but th
 
 Theodosius Dobzhansky famously wrote that ``nothing in biology makes sense except in the light of evolution.'' In the spirit of this quotation, there must be some evolutionary reason for the presence of the large number of negatively autoregulating \textit{E. coli} transcription factors that we identified in the section. We will use biological modeling to establish this justification.
 
-Say that a transcription factor \textvar{X} regulates another transcription factor \textvar{Y}, and consider two cells. In both cells, \textvar{X} upregulates the transcription of \textvar{Y}, but in the second cell, \textvar{Y} also negatively autoregulates; see the figure below for an illustration.
+Say that a transcription factor \textvar{X} regulates another transcription factor \textvar{Y}, and consider two cells. In both cells, \textvar{X} upregulates the transcription of \textvar{Y}, but in the second cell, \textvar{Y} also negatively autoregulates; see \autoref{fig:two_cells} for an illustration.
 
 \begin{figure}[h]
 \centering
@@ -279,7 +277,7 @@ Even though we are using a particle-based model to mimic regulation, it is not a
 \phantomsection
 \subsection{Ensuring a mathematically controlled comparison}
 
-If you followed the previous tutorial, then you were likely disappointed in the second cell and its negative autoregulating transcription factor \textvar{Y}. The figure below shows a plot of the concentration of \textvar{Y} particles for the two simulations; the first cell is shown in red, and the second cell is shown in yellow.
+If you followed the previous tutorial, then you were likely disappointed in the second cell and its negative autoregulating transcription factor \textvar{Y}. \autoref{fig:nar_unequal_chart} shows a plot of the concentration of \textvar{Y} particles for the two simulations; the first cell is shown in red, and the second cell is shown in yellow.
 
 \begin{figure}[h]
 \centering
@@ -307,13 +305,13 @@ With these parameters fixed, the only way that the steady state concentration of
 \phantomsection
 \subsection{An evolutionary basis for negative autoregulation}
 
-The figure below plots the number of \textvar{Y} particles for the two simulations on the same chart over time, with the rate of the $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ reaction increased in the simulation involving negative autoregulation. Both  simulations now have approximately the same steady state concentration of \textvar{Y}. However, the second simulation reaches this concentration faster; that is, its \textdef{response time}{response time}{FILL IN} to the external stimulus causing an increase in the production of \textvar{Y} is shorter.\\
+\autoref{fig:nar_equal_chart} plots the number of \textvar{Y} particles for the two simulations on the same chart over time, with the rate of the $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ reaction increased in the simulation involving negative autoregulation. Both  simulations now have approximately the same steady state concentration of \textvar{Y}. However, the second simulation reaches this concentration faster; that is, its \textdef{response time}{response time}{FILL IN} to the external stimulus causing an increase in the production of \textvar{Y} is shorter.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.85\textwidth]{../images/nar_equal_chart.png}
-\caption{A comparison of the concentration of \textvar{Y} particles across the same two simulations from the previous figure. This time, in the second simulation (yellow), we increase the rate of the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$.  As a result, the two simulations have approximately the same steady state concentration of \textvar{Y}, and the simulation that includes negative autoregulation reaches steady state more quickly.}
+\caption{A comparison of the concentration of \textvar{Y} particles across the same two simulations from \autoref{fig:nar_unequal_chart}. This time, in the second simulation (yellow), we increase the rate of the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$.  As a result, the two simulations have approximately the same steady state concentration of \textvar{Y}, and the simulation that includes negative autoregulation reaches steady state more quickly.}
 \label{fig:nar_equal_chart}
 \end{figure}
 
@@ -333,7 +331,7 @@ In this section, we have seen that particle-based simulations can be powerful fo
 
 In the previous section, we saw that negative autoregulation can be used to lower the response time of a protein to an external stimulus. But the cell can only use negative autoregulation to respond quickly if the autoregulated protein is itself a transcription factor. Only about 300 out of 4,400 total \textit{E. coli} proteins are transcription factors. How can the cell speed up the manufacture of a protein if that protein is not a transcription factor?
 
-The answer lies in another transcription factor network motif called the \textdef{feedforward loop}{feedforward loop}{FILL IN} (\textdef{FFL}{FFL}{FILL IN}). An FFL, shown in the figure below, is a network substructure in which \textvar{X} is connected to both \textvar{Y} and \textvar{Z}, and \textvar{Y} is connected to \textvar{Z}. Calling the FFL motif a ``loop'' is a misnomer. Rather, it is a small structure in which there are two paths from \textvar{X} to \textvar{Z}; one via direct regulation of \textvar{Z} by \textvar{X}, and another with an intermediate transcription factor \textvar{Y}.\\
+The answer lies in another transcription factor network motif called the \textdef{feedforward loop}{feedforward loop}{FILL IN} (\textdef{FFL}{FFL}{FILL IN}). An FFL, shown in \autoref{fig:feed-forward_loop}, is a network substructure in which \textvar{X} is connected to both \textvar{Y} and \textvar{Z}, and \textvar{Y} is connected to \textvar{Z}. Calling the FFL motif a ``loop'' is a misnomer. Rather, it is a small structure in which there are two paths from \textvar{X} to \textvar{Z}; one via direct regulation of \textvar{Z} by \textvar{X}, and another with an intermediate transcription factor \textvar{Y}.\\
 
 \begin{figure}[h]
 \centering
@@ -379,7 +377,7 @@ If you are feeling adventurous, then you may like to adapt the code from the pre
 \phantomsection
 \subsection{Why feedforward loops speed up response times}
 
-The figure below shows a plot visualizing the amount of \textvar{Z} across the two simulations. As with negative autoregulation, the type-1 incoherent FFL allows the cell to ramp up production of a gene \textvar{Z} much faster than it would under simple regulation.\\
+\autoref{fig:ffl_chart} shows a plot visualizing the amount of \textvar{Z} across the two simulations. As with negative autoregulation, the type-1 incoherent FFL allows the cell to ramp up production of a gene \textvar{Z} much faster than it would under simple regulation.\\
 
 \begin{figure}[h]
 \centering
@@ -403,7 +401,7 @@ Unlike negative autoregulation of a single transcription factor, the FFL require
 
 We only considered one of the eight types of FFL in this section. You might wonder whether any of the other seven FFLs serve as network motifs.  For example, what happens if \textvar{X} activates \textvar{Z}, \textvar{X} represses \textvar{Y}, and \textvar{Y} activates \textvar{Z}? We will explore these additional FFL motifs in the exercises at the end of the section.
 
-Finally, recall that in our FFL model, the concentration of \textvar{Z} increased dramatically before decreasing to the steady state. This figure is reminiscent of a \textdef{damped oscillation}{damped oscillation}{FILL IN} process like the one in the figure below, in which the concentration of a particle oscillates above and below a steady state, while the amplitude of the wave gets smaller and smaller. Is it possible for a network motif to produce more of a true ``wave'' without dampening?\\
+Finally, recall that in our FFL model, the concentration of \textvar{Z} increased dramatically before decreasing to the steady state. \autoref{fig:ffl_chart} is reminiscent of a \textdef{damped oscillation}{damped oscillation}{FILL IN} process like the one in \autoref{fig:damped_oscillator}, in which the concentration of a particle oscillates above and below a steady state, while the amplitude of the wave gets smaller and smaller. Is it possible for a network motif to produce more of a true ``wave'' without dampening?\\
 
 \begin{figure}[h]
 \centering
@@ -435,7 +433,7 @@ Researchers have identified many network motifs that facilitate oscillation, som
 \phantomsection
 \subsection{The repressilator: a synthetic biological oscillator}
 
-The repressilator motif is shown in the figure below. In this motif, all three proteins are transcription factors, and they form a cycle in which \textvar{X} represses \textvar{Y}, \textvar{Y} represses \textvar{Z}, and \textvar{Z} represses \textvar{X}. The repressilator clearly forms a feedback loop, but nothing \textit{a priori} about this motif would indicate that it would lead to oscillation.\\
+The repressilator motif is shown in \autoref{fig:repressilator}. In this motif, all three proteins are transcription factors, and they form a cycle in which \textvar{X} represses \textvar{Y}, \textvar{Y} represses \textvar{Z}, and \textvar{Z} represses \textvar{X}. The repressilator clearly forms a feedback loop, but nothing \textit{a priori} about this motif would indicate that it would lead to oscillation.\\
 
 \begin{figure}[h]
 \centering
@@ -463,7 +461,7 @@ If you followed our previous tutorials, then you may feel comfortable taking off
 \phantomsection
 \subsection{Interpreting the repressilator's oscillations}
 
-The figure below shows a plot of the concentration of \textvar{X}, \textvar{Y}, and \textvar{Z} particles from our repressilator simulation. The system shows clear oscillatory behavior, with the concentrations of \textvar{X}, \textvar{Y}, and \textvar{Z} taking turns being at high concentration.\\
+\autoref{fig:repressilator_chart} shows a plot of the concentration of \textvar{X}, \textvar{Y}, and \textvar{Z} particles from our repressilator simulation. The system shows clear oscillatory behavior, with the concentrations of \textvar{X}, \textvar{Y}, and \textvar{Z} taking turns being at high concentration.\\
 
 \begin{qbox}[% 
 Why do you think that the repressilator motif leads to this pattern of oscillations?
@@ -479,11 +477,11 @@ Why do you think that the repressilator motif leads to this pattern of oscillati
 
 Because the concentration of \textvar{X} starts out high, with no \textvar{Y} or \textvar{Z} present, the concentration of \textvar{X} briefly increases because its rate of production exceeds its rate of degradation. Because no \textvar{Y} or \textvar{Z} particles are present, there are none to degrade, and the concentrations of these particles start increasing as well.
 
-As the concentration of \textvar{Z} rises, the repression reaction $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$ occurs often enough for the rate of removal of \textvar{X} to equal and exceed its rate of production, accounting for the first peak in the figure above. Furthermore, because the concentration of \textvar{X} particles begins high, the repression reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ prevents the number of \textvar{Y} particles from growing initially.
+As the concentration of \textvar{Z} rises, the repression reaction $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$ occurs often enough for the rate of removal of \textvar{X} to equal and exceed its rate of production, accounting for the first peak in \autoref{fig:repressilator_chart}. Furthermore, because the concentration of \textvar{X} particles begins high, the repression reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ prevents the number of \textvar{Y} particles from growing initially.
 
-In summary, after an initial rise, the concentration of \textvar{X} plummets, with the concentration of \textvar{Z} rising up to replace it. The concentration of \textvar{Y} increases, but at a slower rate than that of \textvar{Z}. This situation is shown by the second (blue) peak in the figure above.
+In summary, after an initial rise, the concentration of \textvar{X} plummets, with the concentration of \textvar{Z} rising up to replace it. The concentration of \textvar{Y} increases, but at a slower rate than that of \textvar{Z}. This situation is shown by the second (blue) peak in \autoref{fig:repressilator_chart}.
 
-As a result, \textvar{Z} and \textvar{X} have switched roles. Because there is a high concentration of \textvar{Z}, and the concentration of \textvar{Y} is increasing, the reaction $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ will be frequent and reduce the concentration of \textvar{Z}. Furthermore, because the concentration of \textvar{X} has decreased, and the concentration of \textvar{Y} is still relatively low, the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ will occur less often, allowing the concentration of \textvar{Y} to continue to rise. Eventually, the decrease in \textvar{Z} and the increase in \textvar{Y} will account for the third (red) peak in the figure above.
+As a result, \textvar{Z} and \textvar{X} have switched roles. Because there is a high concentration of \textvar{Z}, and the concentration of \textvar{Y} is increasing, the reaction $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ will be frequent and reduce the concentration of \textvar{Z}. Furthermore, because the concentration of \textvar{X} has decreased, and the concentration of \textvar{Y} is still relatively low, the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ will occur less often, allowing the concentration of \textvar{Y} to continue to rise. Eventually, the decrease in \textvar{Z} and the increase in \textvar{Y} will account for the third (red) peak in \autoref{fig:repressilator_chart}.
 
 At this point, the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ will suppress the concentration of \textvar{Y}. Because the concentration of \textvar{X} and \textvar{Z} are both lower than the concentration of \textvar{Z}, the reaction $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$ will not greatly influence the concentration of \textvar{X}, which will rise to meet the following concentration of \textvar{Y}, and we have returned to our original situation, at which point the cycle will begin again.
 
@@ -491,9 +489,9 @@ At this point, the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ 
 \phantomsection
 \subsection{The power of noise}
 
-Take another look at the figure showing the oscillations of the repressilator. You will notice that the concentrations zigzag as they travel up or down, and that they peak at slightly different levels each time.
+Take another look at the oscillations of the repressilator in \autoref{fig:repressilator_chart}. You will notice that the concentrations zigzag as they travel up or down, and that they peak at slightly different levels each time.
 
-This noise in the repressilator's oscillations is due to random variation as the particles bounce around due to diffusion. The repression reactions require two particles to collide in order for the reaction to take place. Due to random chance, these collisions may occur more or less often than expected because of random chance. Much of this noise is due to low sample size: we have around 150 molecules at each peak in the above figure, but a given cell may have on the order of 1,000 to 10,000 molecules of a single protein.
+This noise in the repressilator's oscillations is due to random variation as the particles bounce around due to diffusion. The repression reactions require two particles to collide in order for the reaction to take place. Due to random chance, these collisions may occur more or less often than expected because of random chance. Much of this noise is due to low sample size: we have around 150 molecules at each peak in the \autoref{fig:repressilator_chart}, but a given cell may have on the order of 1,000 to 10,000 molecules of a single protein.
 
 Yet the noise that appears in the repressilator's oscillations is a feature, not a bug. As we have discussed previously, the cell's molecular interactions are inherently random. So if we see oscillations in a simulation that includes noise arising from random chance, then we can be confident that this simulation is \textit{robust} to a certain amount of variation.
 
@@ -534,7 +532,7 @@ We will discuss the technical details behind our well-mixed model in the next se
 \phantomsection
 \subsection{The repressilator is robust to disturbance}
 
-The figure below shows a plot of concentrations of each particle in our well-mixed simulation of the repressilator.  Midway through this simulation, we greatly increase the concentration of \textvar{Y} particles.
+\autoref{fig:nf_sim_interrupted_chart} shows a plot of concentrations of each particle in our well-mixed simulation of the repressilator.  Midway through this simulation, we greatly increase the concentration of \textvar{Y} particles.
 
 \begin{figure}[h]
 \centering
@@ -554,7 +552,7 @@ Even with a much larger jolt to the concentration of \textvar{Y}, the concentrat
 \centering
 \mySfFamily
 \includegraphics[width = 0.85\textwidth]{../images/nf_sim_interrupted_chart_spike.png}
-\caption{A larger increase in the concentration of \textvar{Y} particles than in the previous figure does not produce a substantive change in the system.}
+\caption{A larger increase in the concentration of \textvar{Y} particles than in \autoref{fig:nf_sim_interrupted_chart} does not produce a substantive change in the system.}
 \label{fig:nf_sim_interrupted_chart_spike}
 \end{figure}
 
