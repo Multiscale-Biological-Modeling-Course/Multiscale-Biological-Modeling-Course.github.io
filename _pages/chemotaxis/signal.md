@@ -10,39 +10,38 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## Cells detect and transduce signals via receptor proteins
 
-Chemotaxis is one example of many ways in which a cell must be able to perceive a change in its environment and react accordingly. This response is governed by a process called **signal transduction**, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell in order to effect a response.
+Chemotaxis is one example of many ways in which a cell must perceive a change in its environment and react accordingly. This response is governed by a process called **signal transduction**, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell in order to effect a response.
 
 When a certain molecule's extracellular concentration increases, **receptor proteins** on the outside of the cell have more frequent binding with these molecules and are therefore able to detect changes in molecular concentration. This "signal" is then "transduced" via a series of internal chemical processes.
 
 For example, transcription factors, which we discussed in the [previous module](../motifs/transcription), are involved in a signal transduction process. When some extracellular molecule is detected, a cascade begins that eventually changes a transcription factor into an active state, so that it is ready to activate or repress the genes that it regulates.
 
-In the case of chemotaxis, *E. coli* has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant **ligands**. The cell also contains receptors to detect repellents, but in this module, we will focus primarily on attractants. As shown in the figure below, ligand binding forms a cascade of internal reactions that causes a change in the rotation of one or more flagella.
+In the case of chemotaxis, *E. coli* has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant **ligands**. The bacterium also contains receptors to detect repellents, but we will focus on modeling the binding of a single type of receptor to a single type of attractant ligand.  In later lessons, we will enter the cell and model the cascade of reactions after this binding has occurred, as shown in the figure below, which cause a change in the rotation of one or more flagella.
 
 [![image-center](../assets/images/600px/chemotaxis_signal.png){: .align-center}](../assets/images/chemotaxis_signal.png)
 An overview of the signaling pathway of chemotaxis. The red circles labeled *L* represent attractant ligands. When these ligands bind to receptors, a signal is transduced inside the cell via a series of enzymes, which finally influences the rotation direction of a flagellum.
 {: style="font-size: medium;"}
 
-In this lesson, we will discuss how to model ligand-receptor binding. In later lessons, we will enter the cell and model the cascade of reactions after this binding has occurred.
+In this lesson, we will discuss how to model ligand-receptor binding.
 
 ## Ligand-receptor dynamics correspond to a reversible reaction
 
-Although *E. coli* has different types of surface receptors that can sense a variety of different ligands in its environment, we will focus on how to model the binding of a single type of receptor to a single type of attractant ligand.
+The chemical reactions that we have considered earlier in this course are **irreversible**, meaning they can only proceed in one direction. For example, in the prologue's [reaction-diffusion model](../prologue/reaction-diffusion), we modeled the reaction *A* + 2*B* → 3*B*, but we did not consider the reverse reaction 3*B* → *A* + 2*B*.
 
-The chemical reactions that we have considered earlier in this course are **irreversible**, meaning they can only proceed in one direction. For example, in the prologue's [reaction-diffusion model](../prologue/reaction-diffusion), we had the reaction *A* + 2*B* → 3*B*. But we did not have the reverse reaction 3*B* → *A* + 2*B*.
+To model ligand-receptor dynamics, we will use a **reversible reaction** that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bind into a complex. But at the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will **dissociate** into two separate molecules. In a future module, we will discuss the biochemical details underlying what makes two molecules more or less likely to bind, but for now, we assert that the more suited a receptor is to a ligand, the higher the binding rate and the lower the dissociation rate.
 
-To model ligand-receptor dynamics, we will use a **reversible** reaction that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bind into a complex. But at the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will **dissociate** into two separate molecules. In a future module, we will discuss the biochemical details underlying what makes two molecules more or less likely to bind, but for now, we assert that the more suited a receptor is to a ligand, the higher the binding rate and the lower the dissociation rate.
+**Note:** Why should ligand-receptor binding be reversible? If complexes did not dissociate, then a brief increase in ligand concentration would be detected indefinitely by the surface receptors. Without releasing the bound ligands, the cell would need to manufacture more receptors, which are complicated molecules.
+{: .notice--info}
 
-Why should ligand-receptor binding be reversible? If complexes did not dissociate, then a brief increase in ligand concentration would be detected indefinitely by the surface receptors. Without releasing the bound ligands, the cell would need to manufacture more receptors, which are complex molecules.
+We are ready to start building a model of ligand-receptor dynamics. We denote the ligand molecule by *L*, the receptor molecule by *T*, and the bound complex as *LT*. The **forward reaction** is *L* + *T* → *LT*, which takes place at some rate *k*<sub>bind</sub>, and the **reverse reaction** is *LT* → *L* + *T*, which takes place at some rate *k*<sub>dissociate</sub>.
 
-We are ready to start building a model of ligand-receptor dynamics. We denote the receptor molecule by *T*, the ligand molecule by *L*, and the bound complex as *TL*. The **forward reaction** is *T* + *L* → *TL*, which takes place at some rate *k*<sub>bind</sub>, and the **reverse reaction** is *TL* → *T* + *L*, which takes place at some rate *k*<sub>dissociate</sub>.
-
-If we start with a free floating supply of *T* and *L* molecules, then *TL* will initially be formed quickly at the expense of the free-floating *T* and *L* molecules. The reverse reaction will not occur because of the lack of *TL* complexes. However, as the concentration of *TL* grows and the concentrations of  *T* and *L* decrease, the rate of increase in *TL* will slow. Eventually, the number of *TL* complexes being formed by the forward reaction will balance the number of *TL* complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
+If we start with a free floating supply of *L* and *T* molecules, then *LT* complexes will initially be formed quickly at the expense of the free-floating *L* and *T* molecules. The reverse reaction will not occur because of the lack of *LT* complexes. However, as the concentration of *LT* grows and the concentrations of  *L* and *T* decrease, the rate of increase in *LT* will slow. Eventually, the number of *LT* complexes being formed by the forward reaction will balance the number of *LT* complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
 
 ## Calculation of equilibrium in a reversible ligand-receptor reaction
 
-For a single reversible reaction, if we know the rates of both the forward and reverse reactions, then we can calculate the steady state concentrations of *T*, *L*, and *TL* by hand.  Suppose that we begin with initial concentrations of *T* and *L* that are represented by *t*<sub>0</sub> and *l*<sub>0</sub>, respectively. Let [*L*], [*T*], and [*LT*] denote the concentrations of the three molecule types. And assume that the reaction rate constants *k*<sub>bind</sub> and *k*<sub>dissociate</sub> are fixed.
+For a single reversible reaction, if we know the rates of both the forward and reverse reactions, then we can calculate the steady state concentrations of *L*, *T*, and *LT* by hand.  Suppose that we begin with initial concentrations of *L* and *T* that are represented by *l*<sub>0</sub> and *t*<sub>0</sub>, respectively. Let [*L*], [*T*], and [*LT*] denote the concentrations of the three molecule types. And assume that the reaction rate constants *k*<sub>bind</sub> and *k*<sub>dissociate</sub> are fixed.
 
-When the steady state concentration of *LT* occurs, we know that the rate of production of *LT* is equal to the rate of its dissociation; in other words, we know that
+When the steady state concentration of *LT* occurs, the rate of production of *LT* is equal to the rate of its dissociation; in other words, we know that
 
 *k*<sub>bind</sub> · [*L*] · [*T*] = *k*<sub>dissociate</sub> · [*LT*].
 
@@ -73,9 +72,7 @@ Finally, we subtract the right side of this equation from both sides:
 
 This equation may look daunting, but most of its components are constants. In fact, the only unknown is [*LT*], which makes this a quadratic equation, with [*LT*] as the variable.
 
-In general, a quadratic equation has the form *a* · *x*<sup>2</sup> + *b* · *x* + *c* = 0 for constants *a*, *b*, and *c* and a single variable *x*. In our case, *x* = [*LT*], and the constants are *a* = *k*<sub>bind</sub>, *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>), and *c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub>.
-
-The quadratic formula --- which you may have thought you would never use again --- tells us that the equation *a* · *x*<sup>2</sup> + *b* · *x* + *c* = 0  has solutions for *x* given by the following equation:
+In general, a quadratic equation has the form *a* · *x*<sup>2</sup> + *b* · *x* + *c* = 0 for constants *a*, *b*, and *c* and a single variable *x*. In our case, *x* = [*LT*], and the constants are *a* = *k*<sub>bind</sub>, *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>), and *c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub>. The quadratic formula --- which you may have thought you would never use again --- tells us that the equation *a* · *x*<sup>2</sup> + *b* · *x* + *c* = 0  has solutions for *x* given by the following equation:
 
 $$x = \dfrac{-b \pm \sqrt{b^2 - 4 \cdot a \cdot c}}{2 \cdot a}$$
 
@@ -100,7 +97,7 @@ That is, we are solving the equation 2 · [*LT*]<sup>2</sup> - 205 · [*LT*] + 5
 
 $$[LT] = \dfrac{205 \pm \sqrt{205^2 - 4 \cdot 2 \cdot 5000}}{2 \cdot 2} = 51.25 \pm 11.25$$.
 
-It would seem that there are *two* solutions: 51.25 + 11.25 = 62.5 and 51.25 - 11.25 = 40. However, because *l*<sub>0</sub> and *t*<sub>0</sub>, the respective initial concentrations of *L* and *T*, are both equal to 50, the steady state concentration of *LT* cannot be 62.5; instead, it must be 40.
+It would seem that this equation has *two* solutions: 51.25 + 11.25 = 62.5 and 51.25 - 11.25 = 40. However, because *l*<sub>0</sub> and *t*<sub>0</sub>, the respective initial concentrations of *L* and *T*, are both equal to 50, the steady state concentration of *LT* cannot be 62.5; instead, it must be 40.
 
 Now that we know the steady state concentration of *LT*, we can recover the values of [*L*] and [*T*] too:
 
@@ -121,7 +118,7 @@ $$[LT] = \dfrac{105 \pm \sqrt{105^2 - 4 \cdot 1 \cdot 2500}}{2 \cdot 1} = 52.5 \
 
 The only reasonable solution here is 52.5-16.008 = 36.492; the steady state concentration has decreased as anticipated.
 
-**STOP**: What do you think will happen to the steady state concentration of *LT* if the initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for [*LT*].
+**STOP**: What do you think will happen to the steady state concentration of *LT* if its initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for [*LT*].
 {: .notice--primary}
 
 ## Where are the units?
@@ -136,7 +133,7 @@ and solving for *x* gives us that
 
 *x* = ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>.
 
-**STOP:** Use a similar argument to show that the units of the dissociation constant *k*<sub>dissociate</sub> should be s<sup>-1</sup>.
+**STOP:** Use a similar argument to show that the units of the dissociation rate *k*<sub>dissociate</sub> should be s<sup>-1</sup>.
 {: .notice--primary}
 
 ## Steady state ligand-receptor concentrations for an experimentally verified example

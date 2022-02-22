@@ -16,18 +16,18 @@ Our story begins with an unlikely character: Alan Turing. If you have heard of T
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/alan_turing_npg_cc.jpg}
+\includegraphics[width = 0.6\textwidth]{../images/alan_turing_npg_cc.jpg}
 \caption{Alan Turing in 1951. © National Portrait Gallery, London.}
 \label{fig:alan_turing_npg_cc}
 \end{figure}
 
 Turing was a genius cryptographer who helped break several German ciphers during World War II. But his most famous scientific contribution was a 1936 paper in which he introduced what has come to be known as a \textdef{Turing machine}{Turing machine}{FILL IN}. This hypothetical computer consists of an infinitely long tape of cells and a reader that can read one cell at a time. Each cell consists of only a single number, and the machine can move one cell at a time, reading and rewriting cells according to a finite collection of internal rules.
 
-Turing's major insight was that this simple machine is nevertheless powerful. Nearly a century after his work, any task that can be performed by a computer --- even the world's most largest supercomputer --- could be implemented by a Turing machine, which Joseph Weizenbaum called nothing more than "pebbles on toilet paper".
+Turing's major insight was that this simple machine is nevertheless powerful. Nearly a century after his work, any task that can be performed by a computer --- even the world's most largest supercomputer --- could be implemented by a Turing machine, which Joseph Weizenbaum called nothing more than ``pebbles on toilet paper''.
 
 Two years before his untimely demise in 1954, Turing published his only paper on biochemistry, which addressed the question: “Why do zebras have stripes?”
 
-Turing was not asking why zebras have \textit{evolved} to have stripes --- this question was unsolved in Turing's time, and recent research has indicated that the stripes may be helpful in warding off flies. Rather, Turing was interested in what mechanism could produce the stripes that we see on a zebra's coat. And he reasoned that just as a simple machine can emulate a computer, some limited set of molecular "rules" could cause stripes to appear on a zebra's coat.
+Turing was not asking why zebras have \textit{evolved} to have stripes --- this question was unsolved in Turing's time, and recent research has indicated that the stripes may be helpful in warding off flies. Rather, Turing was interested in what mechanism could produce the stripes that we see on a zebra's coat. And he reasoned that just as a simple machine can emulate a computer, some limited set of molecular ``rules'' could cause stripes to appear on a zebra's coat.
 
 In this prologue, we will introduce a particle simulation model based on Turing's ideas. We will be amazed that a system built on very simple rules and even \textit{randomness} can nevertheless produce seemingly complex emergent behavior. And we will explore how this model can be tweaked to provide a hypothesis for the source of not just the zebra's stripes but also the leopard's spots.
 
@@ -40,7 +40,7 @@ In this prologue, we will introduce a particle simulation model based on Turing'
 
 \subsection{Life is random}
 
-Everything in the universe ultimately depends on the interaction of tiny particles. Yet this fundamental truth is difficult to process when our experience of existence is guided by "macro" phenomena.
+Everything in the universe ultimately depends on the interaction of tiny particles. Yet this fundamental truth is difficult to process when our experience of existence is guided by ``macro'' phenomena.
 
 You may feel like a single, coherent being, but you are just a skin-covered bag of trillions of cells that act largely independently. Over half of these cells aren't even yours! They correspond to bacteria that make up a couple of kilograms of your mass. What makes the whole affair even crueler is that your cellular symphony depends on the \textit{random} movement of particles.
 
@@ -68,10 +68,10 @@ If we animate the action of many independent particles following random walks, t
 
 In fact, although the movements of a single particle are random, we can draw conclusions about the \textit{average-case} behavior of many particles can be predicted, as the following theorem indicates.
 
-\textdef{Random Walk Theorem}{Random Walk Theorem}{FILL IN} After \textvar{n} steps of unit length in a random walk, a particle will on average find itself a distance of approximately $\sqrt{n}$ from its origin.
+\textdef{Random Walk Theorem}{Random Walk Theorem}{FILL IN} After \textvar{n} steps of unit length in a random walk, a particle will on average find itself a distance of approximately $\sqrt{n}$ from its origin.\\
 
 \begin{note}[%
-If you love mathematics and are interested in seeing a proof of this theorem, check out https://biologicalmodeling.org/assets/tex/random_walk_theorem.pdf 
+If you love mathematics and are interested in seeing a proof of this theorem, check out our website (link).
 ]\end{note}
 
 Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less macabre example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
@@ -119,13 +119,13 @@ Before continuing, we will point you to a beautiful animation illustrating just 
 
 \subsection{From random walks to reaction-diffusion}
 
-In the [previous lesson](random_walk), we introduced the model of a particle randomly walking through a medium. But what exactly do random walks have to do with Alan Turing and zebras?
+In the previous section, we introduced the model of a particle randomly walking through a medium. But what exactly do random walks have to do with Alan Turing and zebras?
 
 Turing's insight was that remarkable high-level patterns could arise if we combine particle diffusion with a chemical reaction in which colliding particles interact with each other. Such a model is called a \textdef{reaction-diffusion system}{reaction-diffusion system}{FILL IN}, and the emergent patterns are called \textdef{Turing patterns}{Turing patterns}{FILL IN} in Turing's honor.
 
 We will consider a reaction-diffusion system having two types of particles, \textvar{A} and \textvar{B}. The system is not explicitly a predator-prey relationship, but you may like to think of the \textvar{A} particles as prey and the \textvar{B} particles as predators for reasons that will become clear soon.
 
-Both types of particles diffuse randomly through the plane, but the \textvar{A} particles diffuse more quickly than the \textvar{B} particles.  In the simulation that follows, we will assume that \textvar{A} particles diffuse twice as quickly as \textvar{B} particles. In terms of our random walk model, this faster rate of diffusion means that in a single "step", an \textvar{A} particle moves twice as far as a \textvar{B} particle.
+Both types of particles diffuse randomly through the plane, but the \textvar{A} particles diffuse more quickly than the \textvar{B} particles.  In the simulation that follows, we will assume that \textvar{A} particles diffuse twice as quickly as \textvar{B} particles. In terms of our random walk model, this faster rate of diffusion means that in a single ``step'', an \textvar{A} particle moves twice as far as a \textvar{B} particle.
 
 \begin{qbox}[%
 Say that we release one \textvar{A} particle and one \textvar{B} particle at the same location. If the two particles move via random walks, and the rate of diffusion of \textvar{A} is twice as fast, then on average how much farther from the origin will \textvar{A} be than \textvar{B} after \textvar{n} steps?
@@ -218,7 +218,7 @@ You may still be skeptical, since the patterns in the above videos do not have t
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/zebrafish_zoom.jpg}
+\includegraphics[width = 0.6\textwidth]{../images/zebrafish_zoom.jpg}
 \caption{Zooming in on the striped skin of a zebrafish shows that each stripe is formed of thousands of differently colored cells, and that the boundaries of the stripes are more variable than they may seem at lower resolution. Image courtesy: JenniferOwen, Wikimedia Commons (adapted by Kit Yates).}
 \label{fig:zebrafish_zoom}
 \end{figure}
@@ -227,14 +227,14 @@ You may still be skeptical, since the patterns in the above videos do not have t
 \phantomsection
 \subsection{Turing's patterns and Klüver's hallucinations}
 
-When you watched the particle simulations above, an adjective that may have come to mind is "trippy". This is no accident.
+When you watched the particle simulations above, an adjective that may have come to mind is ``trippy''. This is no accident.
 
 Research dating all the way back to the 1920s has studied the patterns that we see during visual hallucinations, which Heinrich Klüver named \textdef{form constants}{form constants}{FILL IN} after studying patients who had taken mescaline. Form constants, such as cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of their hallucinations.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/form_constants.png}
+\includegraphics[width = 0.6\textwidth]{../images/form_constants.png}
 \caption{A few of Heinrich Klüver's form constants. Image courtesy: Lisa Diez, Wikimedia Commons.}
 \label{fig:form_constants}
 \end{figure}
@@ -281,7 +281,7 @@ We wonder if it is possible to build a model of Turing patterns that does not re
 
 Part of a modeler's job is to find simple models that capture the essence of a system while running quickly and scaling well to larger inputs.
 
-In our case, we have a very "fine-grained" reaction-diffusion model illustrating Turing patterns, but this model consumes a huge amount of computational resources because it requires tracking the movements of hundreds of thousands of individual particles. Our goal is to build a model that will allow us to appreciate Turing patterns without significant computational overhead.
+In our case, we have a very ``fine-grained'' reaction-diffusion model illustrating Turing patterns, but this model consumes a huge amount of computational resources because it requires tracking the movements of hundreds of thousands of individual particles. Our goal is to build a model that will allow us to appreciate Turing patterns without significant computational overhead.
 
 Our idea is to grid off two-dimensional space into blocks and store only the \textit{concentration} of each type of particle found inside the block. To make things even simpler, we assume that there is some maximum concentration of particles possible, so that we can divide the number of particles by this maximum concentration. As a result, the concentration of a particle in each block will be represented by a decimal number between 0 and 1.
 
@@ -290,7 +290,7 @@ Let us begin with an example of the diffusion of only \textvar{A} particles; we 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/initial_A_concentration.png}
+\includegraphics[width = 0.6\textwidth]{../images/initial_A_concentration.png}
 \caption{A 5 x 5 grid showing hypothetical initial concentrations of \textvar{A} particles. Cells are labeled by numbers between 0 and 1 representing their concentration of \textvar{A} particles. The central cell has maximum concentration, and no particles are contained in any other cell.}
 \label{fig:initial_A_concentration}
 \end{figure}
@@ -300,7 +300,7 @@ We will now update the grid of cells after one time step to mimic particle diffu
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/A_concentration_one_time_step.png}
+\includegraphics[width = 0.6\textwidth]{../images/A_concentration_one_time_step.png}
 \caption{A grid showing an update to the system in the previous figure after diffusion of particles after a single time step.}
 \label{fig:A_concentration_one_time_step}
 \end{figure}
@@ -320,17 +320,17 @@ In summary, the central nine squares after two time steps are as shown in the fo
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/A_concentration_two_time_steps_partial.png}
-\caption{A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled "?" are left as an exercise for the reader.}
+\includegraphics[width = 0.6\textwidth]{../images/A_concentration_two_time_steps_partial.png}
+\caption{A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled ``?'' are left as an exercise for the reader.}
 \label{fig:A_concentration_two_time_steps_partial}
 \end{figure}
 
 \begin{qbox}[%
-What should the values of the "?" cells be in the above figure? Note that these cells are neighbors of cells with positive concentrations after one time step, so their concentrations should be positive after two time steps.
+What should the values of the ``?'' cells be in the above figure? Note that these cells are neighbors of cells with positive concentrations after one time step, so their concentrations should be positive after two time steps.
 ]\end{qbox}
 
 
-The coarse-grained model of particle diffusion that we have built is a variant of a \textdef{cellular automaton}{cellular automaton}{FILL IN}, or a grid of cells in which we use fixed rules to update the status of a cell based on its current status and those of its neighbors. Cellular automata form a rich area of research applied to a wide variety of fields dating back to the middle of the 20th Century; if you are interested in learning more about them from the perspective of programming, then you might like to check out the <a href="http://compeau.cbd.cmu.edu/programming-for-lovers/chapter-3-building-a-self-replicating-cellular-automaton-with-top-down-programming/" target="_blank">Programming for Lovers</a> project.
+The coarse-grained model of particle diffusion that we have built is a variant of a \textdef{cellular automaton}{cellular automaton}{FILL IN}, or a grid of cells in which we use fixed rules to update the status of a cell based on its current status and those of its neighbors. Cellular automata form a rich area of research applied to a wide variety of fields dating back to the middle of the 20th Century; if you are interested in learning more about them from the perspective of programming, then you might like to check out the Programming for Lovers project (link).
 
 \FloatBarrier
 \phantomsection
@@ -347,7 +347,7 @@ Revisiting our original example, say that <em>d</em><sub><em>A</em></sub> is equ
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/A_concentration_slower_diffusion.png}
+\includegraphics[width = 0.6\textwidth]{../images/A_concentration_slower_diffusion.png}
 \caption{An updated grid of cells showing the concentration of <em>A</em> particles after one time step if <em>d</em><sub><em>A</em></sub> = 0.2.}
 \label{fig:A_concentration_slower_diffusion}
 \end{figure}
@@ -361,7 +361,7 @@ We now will add particle \textvar{B} to the simulation, which also starts with 1
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/two_particle_concentration_diffusion.png}
+\includegraphics[width = 0.6\textwidth]{../images/two_particle_concentration_diffusion.png}
 \caption{A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> diffusing at rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by the ordered pair ([<em>A</em>], [<em>B</em>]).}
 \label{fig:two_particle_concentration_diffusion}
 \end{figure}
@@ -383,7 +383,7 @@ Next, we color each cell in the grid according to its value of [\textvar{B}]/([\
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/matplotlib_colormap.png}
+\includegraphics[width = 0.6\textwidth]{../images/matplotlib_colormap.png}
 \caption{}
 \label{fig:matplotlib_colormap}
 \end{figure}
@@ -403,7 +403,7 @@ The video below shows an animation of a 101 x 101 board that begins with the fol
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/diffusion_movie_first_frame.png}
+\includegraphics[width = 0.6\textwidth]{../images/diffusion_movie_first_frame.png}
 \caption{}
 \label{fig:diffusion_movie_first_frame}
 \end{figure}
@@ -414,11 +414,13 @@ Note that the center of the cell becomes blue because the \textvar{A} particles 
 \phantomsection
 \subsection{Adding reactions to our automaton: the Gray-Scott model}
 
-Now that we have established a cellular automaton for coarse-grained particle diffusion, we will add to it the three reactions that we introduced in the [previous lesson](reaction-diffusion), which are reproduced below.
+Now that we have established a cellular automaton for coarse-grained particle diffusion, we will add to it the three reactions that we introduced in the previous section, which are reproduced below.
 
-1. A "feed" reaction in which new \textvar{A} particles are fed into the system at a constant rate.
-2. A "death" reaction in which \textvar{B} particles are removed from the system at a rate proportional to their current concentration.
-3. A "reproduction" reaction \textvar{A} + 2\textvar{B} → 3\textvar{B}.
+\begin{enumerate}
+\item A ``feed'' reaction in which new \textvar{A} particles are fed into the system at a constant rate.
+\item A ``death'' reaction in which \textvar{B} particles are removed from the system at a rate proportional to their current concentration.
+\item A ``reproduction'' reaction \textvar{A} + 2\textvar{B} → 3\textvar{B}.
+\end{enumerate}
 
 \begin{qbox}[%
 How might we incorporate these reactions into our automaton?
@@ -428,7 +430,7 @@ We will address these reactions one at a time. First, we have the feed reaction,
 
 Instead, if a cell has current concentration [\textvar{A}], then we will add \textvar{f}(1-[\textvar{A}]) to this cell's concentration of \textvar{A} particles. For example, if [\textvar{A}] is 0.01, then we will add 0.99\textvar{f} to the cell because the current concentration is low. If [\textvar{A}] is 0.8, then we will only add 0.2\textvar{f} to the concentration.
 
-Second, we consider the death reaction of \textvar{B} particles, which takes place at rate \textvar{k}. Recall from the previous lesson that \textvar{k} is proportional to the current concentration of \textvar{B} particles. As a result, if a cell has concentration [\textvar{B}], then for some constant \textvar{k} between 0 and 1, we will subtract \textvar{k} · [\textvar{B}] from the current concentration of \textvar{B} particles.
+Second, we consider the death reaction of \textvar{B} particles, which takes place at rate \textvar{k}. Recall from the previous section that \textvar{k} is proportional to the current concentration of \textvar{B} particles. As a result, if a cell has concentration [\textvar{B}], then for some constant \textvar{k} between 0 and 1, we will subtract \textvar{k} · [\textvar{B}] from the current concentration of \textvar{B} particles.
 
 Third, we have the reproduction reaction \textvar{A} + 2\textvar{B} → 3\textvar{B}, which takes place at a rate \textvar{r}. The higher the concentration of \textvar{A} and \textvar{B}, the more this reaction will take place. Furthermore, because we need \textit{two} \textvar{B} particles in order for the collision to occur, the reaction should be even more rare if we have a low concentration of \textvar{B} than if we have a low concentration of \textvar{A}. To model this situation, if a given cell is represented by the concentrations ([\textvar{A}], [\textvar{B}]), then we will subtract \textvar{r} · [\textvar{A}] · [\textvar{B}]<sup>2</sup> from the concentration of \textvar{A} and add \textvar{r} · [\textvar{A}] · [\textvar{B}]<sup>2</sup> to the concentration of \textvar{B} in the next time step.
 
@@ -458,7 +460,7 @@ As the result of all these processes, we update the concentrations of \textvar{A
 [\textvar{A}]<sub>new</sub> = 0.7 - 0.06 + 0.09 - 0.175 = 0.555<br>
 [\textvar{B}]<sub>new</sub> = 0.5 + 0.01 - 0.2 + 0.175 = 0.485
 
-We should now feel ready to implement the Gray-Scott model in the following tutorial. The question is: even though we have built a coarser-grained simulation than the previous lesson, will we still see Turing patterns?
+We should now feel ready to implement the Gray-Scott model in the following tutorial. The question is: even though we have built a coarser-grained simulation than the previous section, will we still see Turing patterns?
 
 \tutorial[https://biologicalmodeling.org/prologue/gs-jupyter]
 
@@ -473,7 +475,7 @@ Our first video shows an animation of the Gray-Scott model using the parameters 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/gray-scott_movie_first_frame.png}
+\includegraphics[width = 0.6\textwidth]{../images/gray-scott_movie_first_frame.png}
 \caption{}
 \label{fig:gray-scott_movie_first_frame}
 \end{figure}
@@ -483,7 +485,7 @@ If we expand the size of the simulation and add multiple clusters of predators t
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/gray-scott_multiple_predators_first_frame.png}
+\includegraphics[width = 0.6\textwidth]{../images/gray-scott_multiple_predators_first_frame.png}
 \caption{}
 \label{fig:gray-scott_multiple_predators_first_frame}
 \end{figure}
@@ -493,7 +495,7 @@ If we keep the feed rate constant and increase the kill rate slightly to \textva
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/gray-scott_f34_k63_first_frame.png}
+\includegraphics[width = 0.6\textwidth]{../images/gray-scott_f34_k63_first_frame.png}
 \caption{}
 \label{fig:gray-scott_f34_k63_first_frame}
 \end{figure}
@@ -503,7 +505,7 @@ If we make the prey a little happier as well, increasing  \textvar{f} to 0.038 a
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/gray-scott_f38_k61_first_frame.png}
+\includegraphics[width = 0.6\textwidth]{../images/gray-scott_f38_k61_first_frame.png}
 \caption{}
 \label{fig:gray-scott_f38_k61_first_frame}
 \end{figure}
@@ -513,7 +515,7 @@ And if we increase \textvar{f} to 0.042 and \textvar{k} to 0.101, then again we 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/gray-scott_f42_k59_first_frame.png}
+\includegraphics[width = 0.6\textwidth]{../images/gray-scott_f42_k59_first_frame.png}
 \caption{}
 \label{fig:gray-scott_f42_k59_first_frame}
 \end{figure}
@@ -552,12 +554,12 @@ The Turing patterns that emerged from our particle simulations are a testament t
 
 Our reaction-diffusion system is remarkable because it is so \textdef{fine-tuned}{fine-tuned}{FILL IN}, meaning that very slight changes in parameter values can lead to significant changes in the system. These changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
 
-The figure below shows how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary. The kill rate increases along the x-axis, and the feed rate increases along the y-axis. Notice how much the patterns change! You may like to tweak the parameters of the own Gray-Scott simulation from the [previous lesson](gray-scott) to see if you can reproduce these differing patterns.
+The figure below shows how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary. The kill rate increases along the x-axis, and the feed rate increases along the y-axis. Notice how much the patterns change! You may like to tweak the parameters of the own Gray-Scott simulation from the previous section to see if you can reproduce these differing patterns.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../assets/images/600px/xmorphia-parameter-map.jpg}
+\includegraphics[width = 0.6\textwidth]{../images/xmorphia-parameter-map.jpg}
 \caption{Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns produced in the Gray-Scott model. Note that many parameter choices do not lead to patterns. Image courtesy: Robert Munafo.}
 \label{fig:xmorphia-parameter-map}
 \end{figure}

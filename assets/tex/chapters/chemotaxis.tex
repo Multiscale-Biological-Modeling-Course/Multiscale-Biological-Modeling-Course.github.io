@@ -11,58 +11,57 @@
 \label{sec:introduction}
 \phantomsection
 
-The book \textit{What If?}\citep{Munroe_2014}, by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these situations occurred. Here is an example, called "Lost Immortals".
+The book \textit{What If?}, by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these situations occurred. Here is an example, called ``Lost Immortals''.
 
-\begin{quote}
+\begin{itquote}
 If two immortal people were placed on opposite sides of an uninhabited Earth-like planet, how long would it take them to find each other? 100,000 years? 1,000,000 years?
-\end{quote}
+\end{itquote}
 
 One could imagine many ideas for how the immortals could reunite. For example, they could avoid the interiors of continents by moving to the coastlines. If they are allowed to discuss how to find each other in advance, then they could agree to meet at the planet's North Pole --- assuming that the planet lacks polar bears.
 
 But Munroe provides a solution that is both sophisticated and elegant. His proposed approach is quoted below.
 
-\begin{displayquote}
+\begin{itquote}
 If you have no information, walk at random, leaving a trail of stone markers, each one pointing to the next. For every day that you walk, rest for three. Periodically mark the date alongside the cairn. It doesn’t matter how you do this, as long as it’s consistent. You could chisel the number of days into a rock, or lay out rocks to plot the number.
 
 If you come across a trail that’s newer than any you’ve seen before, start following it as fast as you can. If you lose the trail and can’t recover it, resume leaving your own trail.
 
 You don’t have to come across the other player’s current location; you simply have to come across a location where they’ve been. You can still chase one another in circles, but as long as you move more quickly when you’re following a trail than when you’re leaving one, you’ll find each other in a matter of years or decades.
 
-And if your partner isn’t cooperating—perhaps they’re just sitting where they started and waiting for you—then you’ll get to see some neat stuff.
-\end{displayquote}
+And if your partner isn’t cooperating --- perhaps they’re just sitting where they started and waiting for you --- then you’ll get to see some neat stuff.
+\end{itquote}
 
-In the previous two chapters, we have already seen the power of randomness to provide answers to practical questions. Munroe's approach offers another benefit of randomness in the form of a \textdef{randomized algorithm}{random algorithm}{FILL IN}, or a method that uses randomness to solve a problem.
+In the previous two chapters, we have harnessed the power of randomness to answer practical questions. Munroe's approach exemplifies a \textdef{randomized algorithm}{random algorithm}{FILL IN}, or a method that uses randomness to solve a problem.
 
-In fact, the randomized algorithm outlined above is inspired by nature; Munroe calls the above approach "be an ant" because it mimics how ants explore their environment for resources. However, in this chapter, we will see that this algorithm is also similar to the method of exploration undertaken by a much smaller organism: our old friend \textit{E. coli}.
+In fact, Munroe's randomized algorithm for Lost Immortals is inspired by nature; he calls his approach ``be an ant'' because it mimics how ants explore their environment for resources. In this chapter, we will see that this algorithm is also similar to the method of exploration undertaken by a much smaller organism: our old friend \textit{E. coli}.
 
-Like other prokaryotes, \textit{E. coli} is tiny, with a rod-shaped body that is 2µm long and 0.25 to 1µm wide.\citep{Pierucci_1978} In exploring a vast world with sparse resources, \textit{E. coli} finds itself in a vast, forbidding landscape comparable to the lost immortals.
+Like other prokaryotes, \textit{E. coli} is tiny, with a rod-shaped body that is 2 µm long and 0.25 to 1 µm wide. In exploring a vast world with sparse resources, \textit{E. coli} finds itself in a situation comparable to the Munroe's immortals.
 
-The video below shows a collection of \textit{E. coli} surrounding a sugar crystal. Think of this video the next time you leave a slice of cake out on the kitchen counter!
+%The video below shows a collection of \textit{E. coli} surrounding a sugar crystal. Think of this video the next time you leave a slice of cake out overnight on the kitchen counter!
+%
+%\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
-% include video id="F6QMU3KD7zw" provider="youtube" %
+The movement of organisms like \textit{E. coli} in response to a chemical stimulus is called \textdef{chemotaxis}{chemotaxis}{FILL IN}. \textit{E. coli} and other bacteria have evolved to move toward \textdef{attractants}{attractants}{FILL IN} like glucose and electron acceptors and move away from \textdef{repellents}{repellents}{FILL IN} like Ni\textsuperscript{2+} and Co\textsuperscript{2+}. But how?
 
-The movement of organisms like the bacteria in the above video in response to a chemical stimulus is called \textdef{chemotaxis}{chemotaxis}{FILL IN}. \textit{E. coli} and other bacteria have evolved to move toward \textdef{attractants}{attractants}{FILL IN} (e.g., glucose, electron acceptors) and away from \textdef{repellents}{repellents}{FILL IN} (e.g., Ni\textsuperscript{2+}, Co\textsuperscript{2+}). But how?
-
-In this chapter, we will delve into chemotaxis and ask a number of questions. How does a simple organism like \textit{E. coli} sense an attractant or repellent in its environment? How does the bacterium change its internal state in response to this environment? How can we model the bacterium's response? And how does the bacterium's behavior translate into an "algorithm" that it uses to explore its environment?
+In this chapter, we will delve into chemotaxis and ask a number of questions. How does a simple organism like \textit{E. coli} sense an attractant or repellent in its environment? How does the bacterium change its internal state in response to this environment? How can we model the bacterium's response? And how does the bacterium's behavior translate into an ``algorithm'' that it uses to explore its environment?\\
 
 \FloatBarrier
 \phantomsection
-\section{Bacterial Runs and Tumbles}
-\label{sec:bacterial_runs_and_tumbles}
+\section{\textit{E. coli} Explores Its World Via a Random Walk}
+\label{sec:e_coli_explores_its_world_via_a_random_walk}
 
 \phantomsection
-\subsection{\textit{E. coli} explores its world via a random walk}
+\subsection{Bacterial runs and tumbles}
 
 
-Every \textit{E. coli} cell has between five and twelve flagella distributed on its surface \citep{Sim_2017} that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at a speed of about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates in place.\citep{Baker_2005}
+Every \textit{E. coli} cell has between five and twelve flagella distributed on its surface that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, which is analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates in place.
 
-When we examine the bacterium's movement under a microscope, we see it alternate between periods of "running" in a straight line and then "tumbling" in place (see figure below). Over time, the bacterium's \textdef{run and tumble}{run and tumble}{FILL IN} exploration amounts to a \textit{random walk} through its environment, similar to the exploration approach used by the lost immortals in \autoref{sec:introduction}.
+When we examine the bacterium's movement under a microscope, we see it alternate between periods of ``running'' in a straight line and then ``tumbling'' in place (\autoref{fig:chemotaxis_intro_runtumble}). Over time, the bacterium's \textdef{run and tumble}{run and tumble}{FILL IN} exploration amounts to a \textit{random walk} through its environment, similar to the exploration approach used by the lost immortals.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_intro_runtumble.png}
+\includegraphics[width = 0.6\textwidth]{../images/chemotaxis_intro_runtumble.png}
 \caption{The run and tumble mechanism of bacterial movement produces a random walk. Image courtesy: Sandy Parkinson.}
 \label{fig:chemotaxis_intro_runtumble}
 \end{figure}
@@ -71,16 +70,16 @@ When we examine the bacterium's movement under a microscope, we see it alternate
 \phantomsection
 \subsection{Tumbling frequency is constant across species}
 
-Bacteria are amazingly diverse. They have evolved for over three billion years to thrive in practically every environment on the planet, including hazardous human-made environments. They manufacture compounds such as antibiotics that larger organisms like ourselves cannot make. Some eukaryotes are even completely dependent upon bacteria to perform some critical task for them, from digesting their food, to camouflaging them from predators, to helping them develop organs \citep{Yong_2016}.
+Bacteria are amazingly diverse. They have evolved for over three billion years to thrive in practically every environment on the planet, including hazardous human-made environments. They manufacture compounds such as antibiotics that larger organisms like ourselves cannot make. Some eukaryotes are even completely dependent upon bacteria to perform some critical task for them, from digesting their food, to camouflaging them from predators, to helping them develop organs.
 
-And yet despite the diversity of the bacterial kingdom, variations in bacterial tumbling frequencies are relatively small. In the absence of an attractant or repellent, \textit{E. coli} stops to tumble once every 1 to 1.5 seconds \citep{Weis_1990, Berg_2000}, which is in line with most other bacteria. \citep{Achouri_2015, Turner_2016, Gotz_1987}
+And yet despite the diversity of the bacterial kingdom, variations in bacterial tumbling frequencies are relatively small. In the absence of an attractant or repellent, \textit{E. coli} stops to tumble once every 1 to 1.5 seconds, which is similar to most other bacteria.
 
-Is there some reason why, regardless of the species, a bacterium's tumbling frequency tends to be constant? It is as if there were some invisible force compelling all of these bacteria to tumble with the same frequency.
+It is as if there were some invisible force compelling all of these bacteria to tumble with the same frequency. Recalling Dobzhansky's quotation from \autoref{chapter:motifs} that ``nothing in biology makes sense except in the light of evolution'', we wonder how and why evolution might hold tumbling frequency constant across species.
 
 This question is a fundamental one, and we will return to it at the close of this chapter after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism they use to implement chemotaxis is far more sophisticated than we might expect.\\
 
 \begin{qbox}[%
-Say that a bacterium travels 20 µm in a randomly selected direction every second.  After an hour, approximately how far will it have traveled on average?  What if we allow the bacterium to travel for a week? (Hint: recall the Random Walk Theorem from the \autoref{chapter:turing}.)
+Say that a bacterium travels 20 µm per second, and every second it chooses a random direction in which to travel.  After an hour, approximately how far will it have traveled on average? What if we allow the bacterium to travel for a week? (Hint: recall the Random Walk Theorem from \autoref{chapter:turing}.)
 ]\end{qbox}
 
 
@@ -92,174 +91,193 @@ Say that a bacterium travels 20 µm in a randomly selected direction every secon
 \phantomsection
 \subsection{Cells detect and transduce signals via receptor proteins}
 
-Chemotaxis is one example of many ways in which a cell must be able to perceive a change in its environment and react accordingly. This response is governed by a process called \textdef{signal transduction}{signal transduction}{FILL IN}, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell in order to effect a response.
+Chemotaxis is one example of many ways in which a cell must perceive a change in its environment and react accordingly. This response is governed by a process called \textdef{signal transduction}{signal transduction}{FILL IN}, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell in order to effect a response. When a certain molecule's extracellular concentration increases, \textdef{receptor proteins}{receptor proteins}{FILL IN} on the outside of the cell have more frequent binding with these molecules and are therefore able to detect changes in molecular concentration. This ``signal is then ``transduced'' via a series of internal chemical processes.
 
-When a certain molecule's extracellular concentration increases, \textdef{receptor proteins}{receptor proteins}{FILL IN} on the outside of the cell have more frequent binding with these molecules and are therefore able to detect changes in molecular concentration. This "signal" is then "transduced" via a series of internal chemical processes.
+For example, transcription factors, which we discussed in \autoref{chapter:motifs}, are involved in a signal transduction process. When some extracellular molecule is detected, a cascade begins that eventually changes a transcription factor into an active state, so that it is ready to activate or repress the genes that it regulates.
 
-For example, transcription factors, which we discussed in the \autoref{chapter:motifs}, are involved in a signal transduction process. When some extracellular molecule is detected, a cascade begins that eventually changes a transcription factor into an active state, so that it is ready to activate or repress the genes that it regulates.
-
-In the case of chemotaxis, \textit{E. coli} has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant \textdef{ligands}{ligands}{FILL IN}. The cell also contains receptors to detect repellents, but in this chapter, we will focus primarily on attractants. As shown in the figure below, ligand binding forms a cascade of internal reactions that causes a change in the rotation of one or more flagella.
+In the case of chemotaxis, \textit{E. coli} has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant \textdef{ligands}{ligands}{FILL IN}. The bacterium also contains receptors to detect repellents, but we will focus on modeling the binding of a single type of receptor to a single type of attractant ligand. Later in the chapter, we will enter the cell and model the cascade of reactions after this binding has occurred, as shown in \autoref{fig:chemotaxis_signal}, which cause a change in the rotation of one or more flagella.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_signal.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_signal.png}
 \caption{An overview of the signaling pathway of chemotaxis. The red circles labeled \textit{L} represent attractant ligands. When these ligands bind to receptors, a signal is transduced inside the cell via a series of enzymes, which finally influences the rotation direction of a flagellum.}
 \label{fig:chemotaxis_signal}
 \end{figure}
 
-In this section, we will discuss how to model ligand-receptor binding. In later sections, we will enter the cell and model the cascade of reactions after this binding has occurred.
-
 \FloatBarrier
+\nopagebreak
 \phantomsection
 \subsection{Ligand-receptor dynamics correspond to a reversible reaction}
 
-Although \textit{E. coli} has different types of surface receptors that can sense a variety of different ligands in its environment, we will focus on how to model the binding of a single type of receptor to a single type of attractant ligand.
+The chemical reactions that we have considered earlier in this book are \textdef{irreversible}{irreversible reaction}{FILL IN}, meaning they can only proceed in one direction. For example, in \autoref{chapter:turning}'s reaction-diffusion model, we modeled the reaction $A + 2B \rightarrow 3B$, but we did not consider the reverse reaction $3B \rightarrow A + 2B$.
 
-The chemical reactions that we have considered earlier in this book are \textdef{irreversible}{irreversible}{FILL IN}, meaning they can only proceed in one direction. For example, in the \autoref{chapter:turning}'s reaction-diffusion model, we had the reaction $A + 2B \rightarrow 3B$. But we did not have the reverse reaction $3B \rightarrow A + 2B$.
+To model ligand-receptor dynamics, we will use a \textdef{reversible reaction}{reversible reaction}{FILL IN} that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bind into a complex. But at the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will \textdef{dissociate}{dissociate}{FILL IN} into two separate molecules. In a future chapter, we will discuss the biochemical details underlying what makes two molecules more or less likely to bind, but for now, we assert that the more suited a receptor is to a ligand, the higher the binding rate and the lower the dissociation rate.\\
 
-To model ligand-receptor dynamics, we will use a \textdef{reversible}{reversible}{FILL IN} reaction that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bind into a complex. But at the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will \textdef{dissociate}{dissociate}{FILL IN} into two separate molecules. In a future chapter, we will discuss the biochemical details underlying what makes two molecules more or less likely to bind, but for now, we assert that the more suited a receptor is to a ligand, the higher the binding rate and the lower the dissociation rate.
+\begin{note}[%
+Why should ligand-receptor binding be reversible? If complexes did not dissociate, then a brief increase in ligand concentration would be detected indefinitely by the surface receptors. Without releasing the bound ligands, the cell would need to manufacture more receptors, which are complicated molecules.
+]\end{note}
 
-Why should ligand-receptor binding be reversible? If complexes did not dissociate, then a brief increase in ligand concentration would be detected indefinitely by the surface receptors. Without releasing the bound ligands, the cell would need to manufacture more receptors, which are complex molecules.
+We denote the ligand molecule by $L$, the receptor molecule by $T$, and the bound complex as $LT$. The reversible reaction is $L + T \longleftrightarrow LT$ and consists of two reactions. The \textdef{forward reaction}{forward reaction}{FILL IN} is $L + T \rightarrow LT$, which takes place at some rate $k_\text{bind}$, and the \textdef{reverse reaction}{reverse reaction}{FILL IN} is $LT \rightarrow L + T$, which takes place at some rate $k_\text{dissociate}$.
 
-We are ready to start building a model of ligand-receptor dynamics. We denote the receptor molecule by $T$, the ligand molecule by $L$, and the bound complex as $TL$. The \textdef{forward reaction}{forward reaction}{FILL IN} is $T + L \rightarrow TL$, which takes place at some rate \textvar{k\textsubscript{bind}}, and the \textdef{reverse reaction}{reverse reaction}{FILL IN} is $TL \rightarrow T + L$, which takes place at some rate \textvar{k\textsubscript{dissociate}}.
-
-If we start with a free floating supply of $T$ and $L$ molecules, then $TL$ will initially be formed quickly at the expense of the free-floating $T$ and $L$ molecules. The reverse reaction will not occur because of the lack of $TL$ complexes. However, as the concentration of $TL$ grows and the concentrations of  $T$ and $L$ decrease, the rate of increase in $TL$ will slow. Eventually, the number of $T$ complexes being formed by the forward reaction will balance the number of $TL$ complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
+If we start with a free floating supply of $L$ and $T$ molecules, then $LT$ complexes will initially be formed quickly at the expense of the free-floating $L$ and $T$ molecules. The reverse reaction will not occur because of the lack of $LT$ complexes. However, as the concentration of $LT$ grows and the concentrations of $L$ and $T$ decrease, the rate of increase in $LT$ will slow. Eventually, the number of $T$ complexes being formed by the forward reaction will balance the number of $LT$ complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
 
 \FloatBarrier
 \phantomsection
 \subsection{Calculation of equilibrium in a reversible ligand-receptor reaction}
 
-For a single reversible reaction, if we know the rates of both the forward and reverse reactions, then we can calculate the steady state concentrations of $T$, $L$, and $TL$ by hand.  Suppose that we begin with initial concentrations of $T$ and $L$ that are represented by \textvar{t\textsubscript0} and \textvar{l\textsubscript0}, respectively. Let $\text{[}L\text{]}$, $\text{[}T\text{]}$, and $\text{[}LT\text{]}$ denote the concentrations of the three molecule types. And assume that the reaction rate constants \textvar{k\textsubscript{bind}} and \textvar{k\textsubscript{dissociate}} are fixed.
+For a single reversible reaction, if we know the rates of both the forward and reverse reactions, then we can calculate the steady state concentrations of $T$, $L$, and $LT$ by hand.  Suppose that we begin with initial concentrations of $L$ and $T$ that are represented by $l_0$ and $t_0$, respectively. Let $[L]$, $[T]$, and $[LT]$ denote the concentrations of the three molecule types. And assume that the reaction rate constants $k_\text{bind}$ and $k_\text{dissociate}$ are fixed.
 
-When the steady state concentration of $LT$ occurs, we know that the rate of production of $LT$ is equal to the rate of its dissociation; in other words, we know that
+When the steady state concentration of $LT$ occurs, the rate of production of $LT$ is equal to the rate of its dissociation; in other words, we know that
 
-$$k_{bind} \times \text{[}L\text{]} \times \text{[}T\text{]} = k_{dissociate} \times \text{[}LT\text{]} \,.$$
+\begin{center}
+$k_\text{bind} \times [L] \times [T] = k_\text{dissociate} \times [LT] \,.$
+
+\end{center}
 
 We also know that by the law of conservation of mass, the concentrations of $L$ and $T$ molecules are always constant across the system and are equal to their initial concentrations. That is, at any time point,
 
-$$\text{[}L\text{]} + \text{[}LT\text{]} = l_0$$
+\begin{center}
+$[L] + [LT] = l_0$
+\end{center}
 
-and
+\noindent and
 
-$$\text{[}T\text{]} + \text{[}LT\text{]} = t_0 \,.$$
+\begin{center}
+$[T] + [LT] = t_0 \,.$
+\end{center}
 
-Solving these equations for $\text{[}L\text{]}$ and $\text{[}T\text{]}$ yields the following two equations:
+\noindent Solving these equations for $[L]$ and $[T]$ yields the following two equations:
+\begin{align*}
+[L] & = l_0 - [LT]\\
+[T] & = t_0 - [LT]\,.
+\end{align*}
 
-$$\text{[}L\text{]} = l_0 - \text{[}LT\text{]}$$
-$$\text{[}T\text{]} = t_0 - \text{[}LT\text{]}$$
+We will now substitute the expressions on the right for $[L]$ and $[T]$ into our original steady state equation:
 
+\begin{center}
+$k_\text{bind} (l_0 - [LT]) (t_0 - [LT]) = k_\text{dissociate} [LT]\,.$
+\end{center}
 
-We will now substitute the expressions on the right for $\text{[}L\text{]}$ and $\text{[}T\text{]}$ into our original steady state equation:
+\noindent Expanding the left side of this equation gives
 
-$$k_{bind} \times (l_0 - \text{[}LT\text{]}) \times (t_0 - \text{[}LT\text{]}) = k_{dissociate}\times \text{[}LT\text{]}$$
+\begin{center}
+$k_\text{bind} [LT]^2 - (k_\text{bind} \cdot l_0 + k_\text{bind} \cdot t_0) [LT]  = k_\text{dissociate} [LT] + k_\text{bind} \cdot l_0 \cdot t_0\,.$
+\end{center}
 
-Expanding the left side of this equation gives us the following updated equation:
+\noindent Finally, we subtract the right side of this equation from both sides to give
 
-$$k_{bind} \times \text{[}LT\text{]}^2 - (k_{bind} \times l_0 + k_{bind} \times t_0) \times \text{[}LT\text{]}  = k_{dissociate} \times \text{[}LT\text{]} + k_{bind} \times l_0 \times t_0$$
+\begin{center}
+$k_\text{bind} [LT]^2 - (k_\text{bind} \cdot l_0 + k_\text{bind} \cdot t_0 + k_\text{dissociate}) [LT] + k_\text{bind} \cdot l_0 \cdot t_0 = 0\,.$
+\end{center}
 
-Finally, we subtract the right side of this equation from both sides:
+\noindent This equation may look daunting, but most of its components are constants. In fact, the only unknown is $[LT]$, which makes this a quadratic equation, with $[LT]$ as the variable.
 
-$$k_{bind} \times \text{[}LT\text{]}^2 - (k_{bind} \times l_0 + k_{bind} \times t_0 + k_{dissociate}) \times \text{[}LT\text{]} + k_{bind} \times l_0 \times t_0 = 0$$
+In general, a quadratic equation has the form $a \cdot x^2 + b \cdot x + c = 0$ for constants $a$, $b$, and $c$ and a single variable $x$. In our case, $x$ = $[LT]$, and the constants are $a = k_\text{bind}$, $b = - (k_\text{bind} \times l_0 + k_\text{bind} \times t_0 + k_\text{dissociate})$, and $c = k_\text{bind} \times l_0 \times t_0$. The quadratic formula --- which you may have thought you would never use again --- tells us that the equation $a \cdot x^2 + b \cdot x + c = 0$  has solutions for $x$ given by
 
-This equation may look daunting, but most of its components are constants. In fact, the only unknown is $\text{[}LT\text{]}$, which makes this a quadratic equation, with $\text{[}LT\text{]}$ as the variable.
+\begin{center}
+$x = \dfrac{-b \pm \sqrt{b^2 - 4 \cdot a \cdot c}}{2 \cdot a}\,.$
+\end{center}
 
-In general, a quadratic equation has the form $a \cdot x^2 + b \cdot x + c = 0$ for constants $a$, $b$, and $c$ and a single variable $c$. In our case, $x$ = $\text{[}LT\text{]}$, and the constants are $a = k_{bind}$, $b = - (k_{bind} \times l_0 + k_{bind} \times t_0 + k_{dissociate})$, and $c = k_{bind} \times l_0 \times t_0$.
-
-The quadratic formula --- which you may have thought you would never use again --- tells us that the equation $a \cdot x^2 + b \cdot x + c = 0$  has solutions for $x$ given by the following equation:
-
-$$x = \frac{-b \pm \sqrt{b^2 - 4 \cdot a \cdot c}}{2 \cdot a}$$
+\fudgespace
 
 \begin{qbox}[
-Use the quadratic formula to solve for $\text{[}LT\text{]}$ in our previous equation and find the steady state concentration of $\text{[}LT\text{]}$. How can we use this solution to find the steady state concentrations of $\text{[}L\text{]}$ and $\text{[}T\text{]}$ as well?
+Use the quadratic formula to find the steady state concentration of $LT$. How can we use this solution to find the steady state concentrations of $L$ and $T$ as well?
 ]\end{qbox}
 
-Now that we have reduced the computation of the steady state concentration of $\text{[}LT\text{]}$ to the solution of a quadratic equation, let's compute this steady state concentration for a sample collection of parameters. We will then change the parameters and see how the steady state concentration changes.
+Now that we have reduced the computation of the steady state concentration of $LT$ to the solution of a quadratic equation, let's compute this steady state concentration for a sample collection of parameters. We will then change the parameters and see how the steady state concentration changes.
 
 Say that we are given the following parameter values (the units of these parameters are not important for this toy example):
 \begin{itemize}
- \item $ k_{bind}= 2$;
- \item $k_{dissociate} = 5$;
+ \item $ k_\text{bind}= 2$;
+ \item $k_\text{dissociate} = 5$;
  \item $l_0 = 50$;
  \item $t_0 = 50$.
 \end{itemize}
 
-Substituting these values into the quadratic equation, we obtain the following:
+\noindent Substituting these values into the quadratic equation, we obtain
+\begin{align*}
+a & = k_\text{bind} = 2;\\
+b & = - (k_\text{bind} \times l_0 + k_\text{bind} \times t_0 + k_\text{dissociate}) = -205;\\
+c & = k_\text{bind} \times l_0 \times t_0 = 5000\,.
+\end{align*}
 
-\begin{itemize}
- \item $a = k_{bind} = 2$;
- \item $b = - (k_{bind} \times l_0 + k_{bind} \times t_0 + k_{dissociate}) = -205$;
- \item $c = k_{bind} \times l_0 \times t_0 = 5000$.
-\end{itemize}
+\noindent That is, we are solving the equation $2 \times [LT]^2 - 205 [LT] + 5000 = 0$. Using the quadratic formula to solve for $[LT]$ gives
 
-That is, we are solving the equation $2 \times \text{[}LT\text{]}^2 - 205 \times \text{[}LT\text{]} + 5000 = 0$. Using the quadratic formula to solve for $\text{[}LT\text{]}$ gives
+\begin{center}
+$[LT] = \dfrac{205 \pm \sqrt{205^2 - 4 \cdot 2 \cdot 5000}}{2 \cdot 2} = 51.25 \pm 11.25\,.$
+\end{center}
 
-$$\text{[}LT\text{]} = \frac{205 \pm \sqrt{205^2 - 4 \cdot 2 \cdot 5000}}{2 \cdot 2} = 51.25 \pm 11.25$$.
+It would seem that this equation has \textit{two} solutions: $51.25 + 11.25 = 62.5$ and $51.25 - 11.25 = 40$. However, because $l_0$ and $t_0$, the respective initial concentrations of $L$ and $T$, are both equal to 50, the steady state concentration of $LT$ cannot be 62.5; instead, it must be 40.
 
-It would seem that there are \textit{two} solutions: $51.25 + 11.25 = 62.5$ and $51.25 - 11.25 = 40$. However, because $l_0$ and $t_0$, the respective initial concentrations of $L$ and $T$, are both equal to 50, the steady state concentration of $LT$ cannot be $62.5$; instead, it must be $40$.
+Now that we know the steady state concentration of $LT$, we can recover the values of $[L]$ and $[T]$ too:
+\begin{align*}
+\text{[}L\text{]} & = l_0 - [LT] = 10;\\
+\text{[}T\text{]} & = t_0 - [LT] = 10\,.
+\end{align*}
 
-Now that we know the steady state concentration of $LT$, we can recover the values of $\text{[}L\text{]}$ and $\text{[}T\text{]}$ too:
+What if the forward reaction were slower (i.e., $k_\text{bind}$ was lower)? We would imagine that the equilibrium concentration of $[LT]$ would decrease. For example, if we halve $k_\text{bind}$, then we obtain the following adjusted parameter values:
+\begin{align*}
+a & = k_\text{bind} = 1;\\
+b & = - (k_\text{bind} \times l_0 + k_\text{bind} \times t_0 + k_\text{dissociate}) = -105;\\
+c & = k_\text{bind} \times l_0 \times t_0 = 2500\,.
+\end{align*}
 
-\begin{itemize}
- \item $\text{[}L\text{]} = l_0 - \text{[}LT\text{]} = 10$;
- \item $\text{[}T\text{]} = t_0 - \text{[}LT\text{]} = 10$.
-\end{itemize}
+\noindent In this case, if we solve the quadratic equation for $[LT]$, then we obtain
 
-What if the forward reaction were slower (i.e., \textvar{k\textsubscript{bind}} was lower)? We would imagine that the equilibrium concentration of \text{[}LT\text{]} would decrease. For example, if we halve \textvar{k\textsubscript{bind}}, then we obtain the following adjusted parameter values:
+\begin{center}
+$[LT] = \dfrac{105 \pm \sqrt{105^2 - 4 \cdot 1 \cdot 2500}}{2 \cdot 1} = 52.5 \pm 16.008\,.$
+\end{center}
 
-\begin{itemize}
- \item $a = k_{bind} = 1$;
- \item $b = - (k_{bind} \times l_0 + k_{bind} \times t_0 + k_{dissociate}) = -105$;
- \item $c = k_{bind} \times l_0 \times t_0 = 2500$.
-\end{itemize}
-
-In this case, if we solve the quadratic equation for $\text{[}LT\text{]}$, then we obtain
-
-$$\text{[}LT\text{]} = \frac{105 \pm \sqrt{105^2 - 4 \cdot 1 \cdot 2500}}{2 \cdot 1} = 52.5 \pm 16.008$$
-
-The only reasonable solution here is $52.5-16.008 = 36.492$; the steady state concentration has decreased as anticipated.\\
+\noindent The only reasonable solution here is $52.5-16.008 = 36.492$; the steady state concentration has decreased as anticipated.\\
 
 \begin{qbox}[
-What do you think will happen to the steady state concentration of $\text{[}L\text{]}$ if the initial concentration ($l_0$) increases or decreases? What if the dissociation rate (\textvar{k\textsubscript{dissociate}}) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for $\text{[}L\text{]}$.
+What do you think will happen to the steady state concentration of $L$ if its initial concentration ($l_0$) increases or decreases? What if the dissociation rate ($k_\text{dissociate}$) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for the concentration of $L$.
 ]\end{qbox}
 
 \FloatBarrier
 \phantomsection
 \subsection{Where are the units?}
 
-We have conspicuously not provided any units in the calculations above for the sake of simplicity, and so we will pause to explain what these units are. The concentration of a particle (whether it is $\text{[}L\text{]}$, $\text{[}T\text{]}$, or $\text{[}LT\text{]}$) is measured in molecules/µm\textsuperscript{3}, the number of molecules per unit volume. But what about the binding and dissociation rates?
+We have conspicuously not provided any units in the calculations above for the sake of simplicity, and so we will pause to explain what these units are. The concentration of a particle (whether it is $[L]$, $[T]$, or $[LT]$) is measured in $\text{molecules}/\text{µm}^3$, the number of molecules per unit volume. But what about the binding and dissociation rates?
 
-When we multiply the binding rate \textvar{k\textsubscript{bind}} by the concentrations $\text{[}L\text{]}$ and $\text{[}T\text{]}$, the resulting unit should be in molecules/µm\textsuperscript{3} per second, which corresponds to the rate at which the concentration of $\text{[}LT\text{]}$ complexes is increasing. If we let \textvar{x} denote the unknown units of \textvar{k\textsubscript{bind}}, then we should have that
+When we multiply the binding rate $k_\text{bind}$ by the concentrations $[L]$ and $[T]$, the resulting unit should be in $\text{molecules}/\text{µm}^3$ per second, which corresponds to the rate at which the concentration of $LT$ complexes is increasing. If we let \textvar{x} denote the unknown units of $k_\text{bind}$, then we should have that
 
-$$x \cdot (molecules\mathbin{/}\mu m^3) \cdot (molecules\mathbin{/}\mu m^3) = (molecules\mathbin{/}\mu m^3)s^{-1}$$
+\begin{center}
+$x \cdot (\text{molecules}/\text{µm}^3) \cdot (\text{molecules}/\text{µm}^3) = (\text{molecules}/\text{µm}^3) \cdot s^{-1}\,,$
+\end{center}
 
-and solving for \textvar{x} gives us that
+\noindent and solving for \textvar{x} gives us that
 
-$$x = ((molecules\mathbin{/}\mu m^3)^{-1})s^{-1}$$
+\begin{center}
+$x = (\text{µm}^3/\text{molecule}) \cdot s^{-1}\,.$
+\end{center}
+
+\fudgespace
 
 \begin{qbox}[
-Use a similar argument to show that the units of the dissociation constant \textvar{k\textsubscript{dissociate}} should be $s^{-1}$.
+Use a similar argument to show that the units of the dissociation rate $k_\text{dissociate}$ should be $s^{-1}$.
 ]\end{qbox}
 
 \FloatBarrier
 \phantomsection
 \subsection{Steady state ligand-receptor concentrations for an experimentally verified example}
 
-Let's use experimentally verified binding and dissociation rates to identify steady state concentrations. The experimentally verified binding rate is $k_{bind} = 0.0146 ((molecules\mathbin{/}\mu m^3)^{-1})s^{-1}$, and the dissociation rate constant is $k_{dissociate} = 35s^{-1}$.\citep{Li_2004, Spiro_1997, Stock_1991} We will model an \textit{E. coli} cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants $a$, $b$, and $c$ in the quadratic equation:
+Let's use experimentally verified binding and dissociation rates to identify steady state concentrations. The experimentally verified binding rate is $k_\text{bind} = 0.0146 (\text{µm}^3/\text{molecule}) \cdot s^{-1}$, and the dissociation rate constant is $k_\text{dissociate} = 35s^{-1}$. We will model an \textit{E. coli} cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants $a$, $b$, and $c$ in the quadratic equation:
+\begin{align*}
+a & = k_\text{bind} = 0.0146;\\
+b & = - (k_\text{bind} \cdot l_0 + k_\text{bind} \cdot t_0 + k_\text{dissociate}) = -283.2;\\
+c & = k_\text{bind} \cdot l_0 \cdot t_0 = 1022000\,.
+\end{align*}
 
-\begin{itemize}
- \item $a = k_{bind} = 0.0146$
- \item $b = - (k_{bind} \cdot l_0 + k_{bind} \cdot t_0 + k_{dissociate}) = -283.2$
- \item $c = k_{bind} \cdot l_0 \cdot t_0 = 1022000$
-\end{itemize}
+When we solve for $[LT]$ in the quadratic equation, we obtain $[LT]$ equal to 4,793 $\text{molecules}/\text{µm}^3$. Now that we have this value along with $l_0$ and $t_0$, we can solve for $[L]$ and $[T]$ as well:
 
-When we solve for $\text{[}LT\text{]}$ in the quadratic equation, we obtain $\text{[}LT\text{]} = 4,793 molecules\mathbin{/}\mu m^3$. Now that we have this value along with $l_0$ and $t_0$, we can solve for $\text{[}L\text{]}$ and $\text{[}T\text{]}$ as well:
+\begin{align*}
+[L] & = l_0 - [LT] = 5207 \text{molecules}/\text{µm}^3\\
+[T] & = t_0 - [LT] = 2207 \text{molecules}/\text{µm}^3
+\end{align*}
 
-$\text{[}L\text{]} = l_0 - \text{[}LT\text{]} = 5,207 molecules\mathbin{/}\mu m^3$
-
-$\text{[}T\text{]} = t_0 - \text{[}LT\text{]} = 2,207 molecules\mathbin{/}\mu m^3$
-
-We can therefore determine the steady state concentration for a \textit{single} reversible reaction. However, if we want to model real cellular processes, we will have \textit{many} reactions for a variety of different particles. We will see that it quickly becomes infeasible to solve all of the resulting equations exactly. Instead, we need a method of simulating many reactions in parallel without incurring the significant computational overhead that would be required to keep track of every individual particle.
+We can therefore determine the steady state concentration for a \textit{single} reversible reaction. However, if we want to model real cellular processes, we will have \textit{many} reactions for a variety of different particles. We will see that it quickly becomes infeasible to solve all of the resulting equations exactly. Instead, we need a method of simulating many reactions in parallel without incurring the significant computational overhead that would be required to keep track of every individual particle.\\
 
 \FloatBarrier
 \phantomsection
@@ -269,11 +287,11 @@ We can therefore determine the steady state concentration for a \textit{single} 
 \phantomsection
 \subsection{Verifying a theoretical steady state concentration via stochastic simulation}
 
-In the \autoref{chapter:motifs}, we saw that we could avoid tracking the positions of individual particles if we assume that the particles are \textit{well-mixed}, i.e., uniformly distributed throughout their environment. We will apply this assumption in our current work as well, in part because the \textit{E. coli} cell is so small. As a proof of concept, let us first see if a well-mixed simulation replicates the steady state concentrations of particles that we found in the \autoref{sec:signal}.
+In \autoref{chapter:motifs}, we saw that we could avoid tracking the positions of individual particles if we assume that the particles are \textit{well-mixed}, i.e., uniformly distributed throughout their environment. We will apply this assumption in our current work as well, in part because the \textit{E. coli} cell is so small. As a proof of concept, let us first see if a well-mixed simulation replicates the steady state concentrations of particles that we found in \autoref{sec:signal}.
 
 Even though we can calculate steady state concentrations by hand, a particle-free simulation will be useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system like what we have done in the previous section will become impossible.
 
-The difficulty at hand is comparable to the famed "\textit{n}-body problem" in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution once we add more bodies to the system.
+The difficulty at hand is comparable to the famed ``\textit{n}-body problem'' in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution once we add more bodies to the system.
 
 Our particle-free model will apply an approach called \textdef{Gillespie's stochastic simulation algorithm}{Gillespie's stochastic simulation algorithm}{FILL IN}, which is often called the \textbf{Gillespie algorithm} or just \textbf{SSA} for short. Before we explain how this algorithm works, we take a short detour to provide some needed probabilistic context.
 
@@ -281,11 +299,13 @@ Our particle-free model will apply an approach called \textdef{Gillespie's stoch
 \phantomsection
 \subsection{The Poisson and exponential distributions}
 
-Say that you own a store and have noticed that on average, there are \textvar{λ} customers entering your store in a single hour. Let \textvar{X} denote the number of customers that enter the store in the next hour; \textvar{X} is an example of a \textdef{random variable}{random variable}{FILL IN} because it may change depending on random chance. If we assume that customers are independent actors arriving at a constant rate, then \textvar{X} follows a \textdef{Poisson distribution}{Poisson distribution}{FILL IN}. It can be shown that for a Poisson distribution, the probability that exactly $n$ customers arrive in the next hour is
+Say that you own a store and have noticed that on average, there are $\lambda$ customers entering your store in a single hour. Let \textvar{X} denote the number of customers that enter the store in the next hour; \textvar{X} is an example of a \textdef{random variable}{random variable}{FILL IN} because it may change depending on random chance. If we assume that customers are independent actors arriving at a constant rate, then \textvar{X} follows a \textdef{Poisson distribution}{Poisson distribution}{FILL IN}. It can be shown that for a Poisson distribution, the probability that exactly $n$ customers arrive in the next hour is
 
-$$\mathrm{Pr}(X = n) = \frac{\lambda^n e^{-\lambda}}{n!}\,,$$
+\begin{center}
+$\mathrm{Pr}(X = n) = \dfrac{\lambda^n e^{-\lambda}}{n!}\,,$
+\end{center}
 
-where $e$ is the mathematical constant known as Euler's number and is equal to 2.7182818284…\\
+\noindent where $e$ is the mathematical constant known as Euler's number and is equal to 2.7182818284\ldots\\
 
 \begin{note}[
 A derivation of this formula is beyond the scope of our work here, but if you are interested in one, please check out \href{https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239} by Andrew Chamberlain.
@@ -293,13 +313,17 @@ A derivation of this formula is beyond the scope of our work here, but if you ar
 
 Furthermore, the probability of observing exactly $n$ customers in $t$ hours where $t$ is an arbitrary positive number is
 
-$$\frac{(\lambda t)^n e^{-\lambda t}}{n!}\,.$$
+\begin{center}
+$\dfrac{(\lambda t)^n e^{-\lambda t}}{n!}\,.$
+\end{center}
 
 We can also ask how long we will typically have to wait for the next customer to arrive. Specifically, what are the chances that this customer will arrive after $t$ hours? If we let \textvar{T} be the random variable corresponding to the wait time on the next customer, then the probability of \textvar{T} being at least $t$ is the probability of seeing zero customers in $t$ hours:
 
-$$\mathrm{Pr}(T > t) = \mathrm{Pr}(X = 0) = \frac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}\,.$$
+\begin{center}
+$\mathrm{Pr}(T > t) = \mathrm{Pr}(X = 0) = \dfrac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}\,.$
+\end{center}
 
-In other words, the probability $$\mathrm{Pr}(T > t)$$ decays exponentially over time as $t$ increases. For this reason, the random variable \textvar{T} is said to follow an \textdef{exponential distribution}{exponential distribution}{FILL IN}. It can be shown that the expected value of the exponential distribution (i.e., the average amount of time we will need to wait for the next event to occur) is $1\mathbin{/}\lambda$.\\
+In other words, the probability $\mathrm{Pr}(T > t)$ decays exponentially over time as \textvar{t} increases. For this reason, the random variable \textvar{T} is said to follow an \textdef{exponential distribution}{exponential distribution}{FILL IN}. It can be shown that the expected value of the exponential distribution (i.e., the average amount of time we will need to wait for the next event to occur) is $1/\lambda$.\\
 
 \begin{qbox}[
 What is the probability $\mathrm{Pr}(T < t)$?
@@ -312,39 +336,43 @@ What is the probability $\mathrm{Pr}(T < t)$?
 
 The engine of the Gillespie algorithm runs on a single question: given a well-mixed environment of particles and a reaction involving those particles taking place at some average rate, how long should we expect to wait before this reaction occurs somewhere in the environment?
 
-This is the same question we asked in the previous section; we have simply replaced customers entering a store with instances of a chemical reaction. The average number λ of occurrences of the reaction in a unit time period is the rate at which the reaction occurs. Therefore, an exponential distribution with average wait time $1\mathbin{/}\lambda$ can be used to model the time between instances of the reaction.
+This is the same question we asked in the previous section; we have simply replaced customers entering a store with instances of a chemical reaction. The average number $\lambda$ of occurrences of the reaction in a unit time period is the rate at which the reaction occurs. Therefore, an exponential distribution with average wait time $1/\lambda$ can be used to model the time between instances of the reaction.
 
-Next, say that we have two reactions proceeding independently of each other and occurring at average rates $\lambda_1$ and $\lambda_2$. Then the average rate of the two reactions together is $\lambda_1 + \lambda_2$, which is also a Poisson distribution. Therefore, the wait time for either of the two reactions is exponentially distributed, with an average wait time equal to $1\mathbin{/}(\lambda_1 + \lambda_2)$.
+Next, say that we have two reactions proceeding independently of each other and occurring at average rates $\lambda_1$ and $\lambda_2$. Then the average rate of the two reactions together is $\lambda_1 + \lambda_2$, which is also a Poisson distribution. Therefore, the wait time for either of the two reactions is exponentially distributed, with an average wait time equal to $1/(\lambda_1 + \lambda_2)$.
 
 Numerical methods allow us to generate a random number simulating the wait time of an exponential distribution. By repeatedly generating these numbers, we can obtain a series of wait times between consecutive reaction occurrences.
 
-Once a wait time is selected, we should determine to which of the two reactions it corresponds. If the rates of the two reactions are equal, then we simply choose one of the two reactions randomly with equal probability. But if the rates of these reactions are different, then we should choose one of the reactions via a probability that is \textit{weighted} in direct proportion to the rate of the reaction; that is, the larger the rate of the reaction, the more likely that this reaction corresponds to the current event.\citep{Schwartz_2008} To do so, we select the first reaction with probability $\lambda_1\mathbin{/}(\lambda_1 + \lambda_2)$ and the second reaction with probability $\lambda_2\mathbin{/}(\lambda_1 + \lambda_2)$.\\
+Once a wait time is selected, we should determine to which of the two reactions it corresponds. If the rates of the two reactions are equal, then we simply choose one of the two reactions randomly with equal probability. But if the rates of these reactions are different, then we should choose one of the reactions via a probability that is \textit{weighted} in direct proportion to the rate of the reaction; that is, the larger the rate of the reaction, the more likely that this reaction corresponds to the current event. To do so, we select the first reaction with probability $\lambda_1/(\lambda_1 + \lambda_2)$ and the second reaction with probability $\lambda_2/(\lambda_1 + \lambda_2)$.\\
 
 \begin{qbox}[
 Verify that these two probabilities sum to 1.
 ]\end{qbox}
 
-As illustrated in the figure below, we will demonstrate the Gillespie algorithm by returning to our ongoing example, in which we are modeling the forward and reverse reactions of ligand-receptor binding and dissociation. First, we choose a wait time according to an exponential distribution with mean value $1\mathbin{/}(k_{bind} + k_{dissociate})$. The probability that the event corresponds to a binding reaction is given by
+As illustrated in \autoref{fig:chemotaxis_visualizessa}, we will demonstrate the Gillespie algorithm by returning to our ongoing example, in which we are modeling the forward and reverse reactions of ligand-receptor binding and dissociation. First, we choose a wait time according to an exponential distribution with mean value $1/(k_\text{bind} + k_\text{dissociate})$. The probability that the event corresponds to a binding reaction is given by
 
-$$\mathrm{Pr}(L + T \rightarrow LT) = k_{bind}\mathbin{/}(k_{bind} + k_{dissociate})\,,$$
+\begin{center}
+$\mathrm{Pr}(L + T \rightarrow LT) = \dfrac{k_\text{bind}}{k_\text{bind} + k_\text{dissociate}}\,,$
+\end{center}
 
-and the probability that it corresponds to a dissociation reaction is
+\noindent and the probability that it corresponds to a dissociation reaction is
 
-$$\mathrm{Pr}(L + T \rightarrow LT) = k_{dissociate}\mathbin{/}(k_{bind} + k_{dissociate}).$$
+\begin{center}
+$\mathrm{Pr}(L + T \rightarrow LT) = \dfrac{k_\text{dissociate}}{k_\text{bind} + k_\text{dissociate}}\,.$
+\end{center}
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_visualizessa.png}
-\caption{A visualization of a single reaction event used by the Gillespie algorithm for ligand-receptor binding/dissociation. Red circles represent ligands ($\text{[}L\text{]}$), and orange wedges represent receptors ($\text{[}T\text{]}$). The wait time for the next reaction is drawn from an exponential distribution with mean $1\mathbin{/}(k_{bind} + k_{dissociate})$. The probability of this event corresponding to a binding or dissociation reaction is proportional to the rate of the respective reaction.}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_visualizessa.png}
+\caption{A visualization of a single reaction event used by the Gillespie algorithm for ligand-receptor binding and dissociation. Red circles represent ligands (\textvar{L}), and orange wedges represent receptors (\textvar{T}). The wait time for the next reaction is drawn from an exponential distribution with mean $\text{1}/(\textvar{k}_\text{bind} + \textvar{k}_\text{dissociate})$. The probability of this event corresponding to a binding or dissociation reaction is proportional to the rate of the respective reaction.}
 \label{fig:chemotaxis_visualizessa}
 \end{figure}
 
+When we generalize the Gillespie algorithm to \textvar{n} reactions occurring at rates $\lambda_1$, $\lambda_2$, \ldots, $\lambda_n$, the wait time between reactions will be exponentially distributed with average $1 / (\lambda_1 + \lambda_2 + \cdots + \lambda_n)$. Once we select the next reaction to occur, the likelihood that it is the \textvar{i}-th reaction is equal to
 
-When we generalize the Gillespie algorithm to \textvar{n} reactions occurring at rates $λ_1$, $λ_2$, …, $λ_n$, the wait time between reactions will be exponentially distributed with average $1\mathbin{/}(λ_1 + λ_2> + … + λ_n)$. Once we select the next reaction to occur, the likelihood that it is the $i$-th reaction is equal to
-
-$$λ_i/(λ<_1 + λ_2 + … + λ_n).$$
-
+\begin{center}
+$\lambda_i/(\lambda_1 + \lambda_2 + \cdots + \lambda_n)\,.$
+\end{center}
 
 \FloatBarrier
 \phantomsection
@@ -378,23 +406,22 @@ The tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial\_lr] s
 \phantomsection
 \subsection{Does the Gillespie algorithm confirm our steady state calculations?}
 
-In the \autoref{sec:signal}, we showed an example in which a system with 10,000 free ligand molecules and 7,000 free receptor molecules produced the following steady state concentrations using the experimentally verified binding rate of $k_{bind} = 0.0146 ((molecules\mathbin{/}\mu m^3)^{-1})s^{-1}$ and dissociation rate of $k_{dissociate} = 35s^{-1}$.
-
-\begin{itemize}
-\item $\text{[}LT\text{]} = 4,793 ((molecules\mathbin{/}\mu m^3)$
-\item $\text{[}L\text{]} = 5,207 ((molecules\mathbin{/}\mu m^3)$
-\item $\text{[}T\text{]} = 2,207 ((molecules\mathbin{/}\mu m^3)$
-\end{itemize}
+Earlier in this chapter, we showed an example in which a system with 10,000 free ligand molecules and 7,000 free receptor molecules produced the following steady state concentrations using the experimentally verified binding rate of $k_\text{bind} = 0.0146 (\text{µm}^3/\text{molecule}) \cdot s^{-1}$ and dissociation rate of $k_\text{dissociate} = 35s^{-1}$.
+\begin{align*}
+[LT] & = 4793 \text{molecules}/\text{µm}^3\\
+[L] & = 5207 \text{molecules}/\text{µm}^3\\
+[T] & = 2207 \text{molecules}/\text{µm}^3
+\end{align*}
 
 Our BioNetGen model uses the same number of initial molecules and the same reaction rates. The system evolves via the Gillespie algorithm, and we track the concentration of free ligand molecules, ligand molecules bound to receptor molecules, and free receptor molecules over time.
 
-The figure below demonstrates that the Gillespie algorithm quickly converges to the same values as the ones that we obtained by hand in the last section. We are now ready to apply this algorithm to model bacterial chemotaxis, a system that will involve many different reactions.
+\autoref{fig:chemotaxis_tutorial4_ssa} demonstrates that the Gillespie algorithm quickly converges to the same values as the ones that we obtained by hand in the last section. We are now ready to apply this algorithm to model bacterial chemotaxis, a system that will involve many different reactions.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial4_ssa.png}
-\caption{A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in $molecules\mathbin{/}\mu m^3$) on the y-axis. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial4_ssa.png}
+\caption{A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in $\text{molecules}/\text{µm}^\text{3}$) on the y-axis. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.}
 \label{fig:chemotaxis_tutorial4_ssa}
 \end{figure}
 
@@ -413,9 +440,9 @@ In the previous two sections, we discussed how a cell recognizes an extracellula
 
 For example, if \textit{E. coli} senses an increase in the concentration of glucose, meaning that more ligand-receptor binding is taking place at the receptor that recognizes glucose, how does the bacterium \textit{E. coli} change its behavior as a result of this increased binding?
 
-The engine of signal transduction is \textdef{phosphorylation}{phosphorylation}{FILL IN}, a chemical reaction that attaches a phosphoryl group (PO\textsubscript{3}\textsuperscript{-}) to an organic molecule.  Phosphoryl modifications serve as an information exchange of sorts because they activate or deactivate certain enzymes.
+The engine of signal transduction is \textdef{phosphorylation}{phosphorylation}{FILL IN}, a chemical reaction that attaches a phosphoryl group ($\text{PO}_3^{-}$) to an organic molecule.  Phosphoryl modifications serve as an information exchange of sorts because they activate or deactivate certain enzymes.
 
-A phosphoryl group usually comes from one of two sources. First, the phosphoryl can be broken off of an \textdef{adenosine triphosphate (ATP)}{adenosine triphosphate (ATP)}{FILL IN} molecule, the "energy currency" of the cell, producing \textdef{adenosine diphosphate (ADP)}{adenosine diphosphate (ADP)}{FILL IN}. Second, the phosphoryl can be exchanged from a phosphorylated molecule that has had its phosphoryl group removed in a \textdef{dephosphorylation}{dephosphorylation}{FILL IN} reaction.
+A phosphoryl group usually comes from one of two sources. First, the phosphoryl can be broken off of an \textdef{adenosine triphosphate (ATP)}{adenosine triphosphate (ATP)}{FILL IN} molecule, the ``energy currency'' of the cell, producing \textdef{adenosine diphosphate (ADP)}{adenosine diphosphate (ADP)}{FILL IN}. Second, the phosphoryl can be exchanged from a phosphorylated molecule that has had its phosphoryl group removed in a \textdef{dephosphorylation}{dephosphorylation}{FILL IN} reaction.
 
 For many cellular responses, including bacterial chemotaxis, a sequence of phosphorylation and dephosphorylation events called a \textdef{phosphorylation cascade}{phosphorylation cascade}{FILL IN} serves to transmit information within the cell about the amount of ligand binding being detected on the cell's exterior. In this section, we discuss how this cascade of chemical reactions leads to a change in bacterial movement.
 
@@ -424,18 +451,18 @@ For many cellular responses, including bacterial chemotaxis, a sequence of phosp
 \phantomsection
 \subsection{Chemotaxis pathway}
 
-A high-level view of the transduction pathway for chemotaxis is shown in the figure below. The cell membrane contains receptors called \textdef{methyl-accepting chemotaxis proteins (MCPs)}{methyl-accepting chemotaxis proteins (MCPs)}{FILL IN} that bridge the cellular membrane, binding both to ligand stimuli in the cell exterior and to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix \textit{Che} (short for "chemotaxis").
+A high-level view of the transduction pathway for chemotaxis is shown in \autoref{fig:chemotaxisphosnew}. The cell membrane contains receptors called \textdef{methyl-accepting chemotaxis proteins (MCPs)}{methyl-accepting chemotaxis proteins (MCPs)}{FILL IN} that bridge the cellular membrane, binding both to ligand stimuli in the cell exterior and to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix \textit{Che} (short for ``chemotaxis'').
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxisphosnew.png}
-\caption{A summary of the chemotaxis transduction pathway. A ligand binding signal is propagated through CheA and CheY phosphorylation, which leads to a response of clockwise flagellar rotation. The blue curved arrow denotes phosphorylation, the grey curved arrow denotes dephosphorylation, and the blue dashed arrow denotes a chemical interaction. Our figure is a simplified view of \href{http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html"} illustrations.}
-\label{fig:chemotaxisphosnew.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxisphosnew.png}
+\caption{A summary of the chemotaxis transduction pathway. A ligand binding signal is propagated through CheA and CheY phosphorylation, which leads to a response of clockwise flagellar rotation. The blue curved arrow denotes phosphorylation, the grey curved arrow denotes dephosphorylation, and the blue dashed arrow denotes a chemical interaction. Our figure is a simplified view of \href{http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html} illustrations.}
+\label{fig:chemotaxisphosnew}
 \end{figure}
 
 
-On the interior of the cellular membrane, MCPs form complexes with two proteins called \textbf{CheW} and \textbf{CheA}. In the absence of MCP\-ligand binding, this complex is more stable, and the CheA molecule \textdef{autophosphorylates}{autophosphorylate}{FILL IN}, meaning that it adds a phosphoryl group taken from ATP to \textit{itself} -- a concept that might seem mystical if you have not already followed our discussion of autoregulation in the \autoref{chapter:motifs}.
+On the interior of the cellular membrane, MCPs form complexes with two proteins called \textbf{CheW} and \textbf{CheA}. In the absence of MCP\-ligand binding, this complex is more stable, and the CheA molecule \textdef{autophosphorylates}{autophosphorylate}{FILL IN}, meaning that it adds a phosphoryl group taken from ATP to \textit{itself} --- a concept that might seem mystical if you have not already followed our discussion of autoregulation in \autoref{chapter:motifs}.
 
 Phosphorylated CheA can pass on its phosphoryl group to a molecule called \textbf{CheY}, which interacts with the flagellum in the following way. Each flagellum has a protein complex called the \textdef{flagellar motor switch}{flagellar motor switch}{FILL IN} that is responsible for controlling the direction of flagellar rotation. The interaction of this protein complex with phosphorylated CheY induces a change of flagellar rotation from counter\-clockwise to clockwise. As we discussed earlier in the chapter, this change in flagellar rotation causes the bacterium to tumble, which in the absence of an increase in attractant occurs every 1 to 1.5 seconds.
 
@@ -452,7 +479,7 @@ A critical part of the process is that if a ligand is detected, and the cell has
 \subsection{Adding phosphorylation events to our model of chemotaxis}
 
 
-We would like to simulate the reactions driving chemotaxis signal transduction and see what happens if the bacterium "senses an attractant", meaning that the attractant ligand's concentration increases and leads to more receptor\-ligand binding. To do so, we will use the Gillespie algorithm that we introduced in the \autoref{sec:stochastic_simulation_of_chemical_reactions}.
+We would like to simulate the reactions driving chemotaxis signal transduction and see what happens if the bacterium ``senses an attractant'', meaning that the attractant ligand's concentration increases and leads to more receptor\-ligand binding. To do so, we will use the Gillespie algorithm that we introduced in \autoref{sec:stochastic_simulation_of_chemical_reactions}.
 
 This model will be more complicated than any we have introduced thus far. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model phosphorylation reactions of CheA, which depend on the current concentrations of bound and unbound MCP molecules. We will at least make a simplifying assumption that the MCP receptor includes CheA and CheW, so that we do not need to represent these molecules individually.
 
@@ -499,12 +526,12 @@ But does higher attractant concentration in our model really lead to a lower con
 \phantomsection
 \subsection{Changing ligand concentrations leads to a change in internal molecular concentrations}
 
-The following figure shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency.
+\autoref{fig:chemotaxis_tutorial5} shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial5.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial5.png}
 \caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation in which no ligand is present.}
 \label{fig:chemotaxis_tutorial5}
 \end{figure}
@@ -514,7 +541,7 @@ The sudden addition of 5,000 attractant ligand molecules increases the concentra
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial6.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial6.png}
 \caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 5,000 initial attractant ligand particles.}
 \label{fig:chemotaxis_tutorial6}
 \end{figure}
@@ -525,7 +552,7 @@ If we instead add 100,000 attractant molecules, then we see an even more drastic
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial7.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial7.png}
 \caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100,000 initial attractant ligand particles.}
 \label{fig:chemotaxis_tutorial7}
 \end{figure}
@@ -537,13 +564,11 @@ In other words, the BioNetGen simulation is confirming that an increase in attra
 \FloatBarrier
 \phantomsection
 \phantomsection
-\subsection{So … what's the big deal?}
+\subsection{So \ldots what's the big deal?}
 
 You may not be surprised that we have been able to build a simple model of the response of \textit{E. coli} to an attractant ligand. After all, the biochemistry presented here may be elegant, but it is also simple.
 
-But what we have shown in this section is just part of the story. In the next section, we will see that the biochemical realities of chemotaxis are even more complicated, and for good reason --- this added complexity will allow \textit{E. coli} to react to a dynamic world with surprising sophistication.
-
-
+But what we have shown in this section is just part of the story. In the next section, we will see that the biochemical realities of chemotaxis are even more complicated, and for good reason --- this added complexity will allow \textit{E. coli} to react to a dynamic world with surprising sophistication.\\
 
 \FloatBarrier
 \phantomsection
@@ -552,10 +577,9 @@ But what we have shown in this section is just part of the story. In the next se
 \label{sec:methylation}
 
 \phantomsection
-\subsection{Bacterial tumbling frequencies remain constant despite background attractant concentrations}
+\subsection{Bacterial tumbling frequencies remain constant for different attractant concentrations}
 
-
-In \autoref{sec:signal}, we explored the signal transduction pathway by which \textit{E. coli} can change its tumbling frequency in response to a change in the concentration of an attractant. But the reality of cellular environments is that the concentration of an attractant can vary across several orders of magnitude. The cell therefore needs to detect not \textit{absolute} concentrations of an attractant but rather \textit{relative} changes.
+Earlier in this chapter, we explored the signal transduction pathway by which \textit{E. coli} can change its tumbling frequency in response to a change in the concentration of an attractant. But the reality of cellular environments is that the concentration of an attractant can vary across several orders of magnitude. The cell therefore needs to detect not \textit{absolute} concentrations of an attractant but rather \textit{relative} changes.
 
 \textit{E. coli} detects relative changes in its concentration via \textdef{adaptation}{adaptation}{FILL IN} to the signal concentration. If the concentration of attractant remains constant for a period of time, then regardless of the absolute value of the concentration, the cell returns to the same background tumbling frequency. In other words, \textit{E. coli} demonstrates \textdef{robustness}{robustness}{FILL IN} to the background concentration of attractant in maintaining its default tumbling behavior.
 
@@ -569,24 +593,24 @@ In this section, we will investigate the biochemical mechanism that \textit{E. c
 
 Recall that in the absence of an attractant, CheW and CheA readily bind to an MCP, leading to greater autophosphorylation of CheA, which in turn phosphorylates CheY. The greater the concentration of phosphorylated CheY, the more frequently the bacterium tumbles.
 
-Signal transduction is achieved through phosphorylation, but \textit{E. coli} maintains a "memory" of past environmental concentrations through a chemical process called \textdef{methylation}{methylation}{FILL IN}. In this  reaction, a \textdef{methyl group}{methyl group}{FILL IN} (-CH\textsubscript{3}) is added to an organic molecule; the removal of a methyl group is called \textdef{demethylation}{demethylation}{FILL IN}.
+Signal transduction is achieved through phosphorylation, but \textit{E. coli} maintains a ``memory'' of past environmental concentrations through a chemical process called \textdef{methylation}{methylation}{FILL IN}. In this reaction, a \textdef{methyl group}{methyl group}{FILL IN} ($-\text{CH}_3$) is added to an organic molecule; the removal of a methyl group is called \textdef{demethylation}{demethylation}{FILL IN}.
 
 Every MCP receptor contains four methylation sites, meaning that between zero and four methyl groups can be added to the receptor. On the plasma membrane, many MCPs, CheW, and CheA molecules form an array structure. Methylation reduces the negative charge on the receptors, stabilizing the array and facilitating CheA autophosphorylation. The more sites that are methylated, the higher the autophosphorylation rate of CheA, which means that CheY has a higher phosphorylation rate, and tumbling frequency increases.
 
 We now have two different ways that tumbling frequency can be elevated. First, if the concentration of an attractant is low, then CheW and CheA freely form a complex with the MCP, and the phosphorylation cascade passes phosphoryl groups to CheY, which interacts with the flagella and keeps tumbling frequency high. Second, an increase in MCP methylation can also boost CheA autophosphorylation and lead to an increased tumbling frequency.
 
-Methylation of MCPs is achieved by an additional protein called \textbf{CheR}. When bound to MCPs, CheR methylates ligand-bound MCPs faster \citep{Amin_2010, Terwilliger_1986}, and so the rate of MCP methylation by CheR is higher if the MCP is bound to a ligand.\citep{Spiro_1997}. Let's consider how this fact affects a bacterium's behavior.
+Methylation of MCPs is achieved by an additional protein called \textbf{CheR}. When bound to MCPs, CheR methylates ligand-bound MCPs faster, and so the rate of MCP methylation by CheR is higher if the MCP is bound to a ligand. Let's consider how this fact affects a bacterium's behavior.
 
 Say that \textit{E. coli} encounters an increase in attractant concentration. Then the lack of a phosphorylation cascade will mean less phosphorylated CheY, and so the tumbling frequency will decrease. However, if the attractant concentration levels off, then the tumbling frequency will flatten, while CheR starts methylating the MCP. Over time, the rising methylation will increase CheA autophosphorylation, bringing back the phosphorylation cascade and raising tumbling frequency back to default levels.
 
-Just as the phosphorylation of CheY can be reversed, MCP methylation can be undone to prevent methylation from being permanent. In particular, an enzyme called \textbf{CheB}, which like CheY is phosphorylated by CheA, demethylates MCPs (as well as autodephosphorylates). The rate of an MCP's demethylation is dependent on the extent to which the MCP is methylated. In other words, the rate of MCP methylation is higher when the MCP is in a low methylation state, and the rate of demethylation is faster when the MCP is in a high methylation state.\citep{Spiro_1997}
+Just as the phosphorylation of CheY can be reversed, MCP methylation can be undone to prevent methylation from being permanent. In particular, an enzyme called \textbf{CheB}, which like CheY is phosphorylated by CheA, demethylates MCPs (as well as autodephosphorylates). The rate of an MCP's demethylation is dependent on the extent to which the MCP is methylated. In other words, the rate of MCP methylation is higher when the MCP is in a low methylation state, and the rate of demethylation is faster when the MCP is in a high methylation state.
 
-The figure below adds CheR and CheB to provide a complete picture of the core pathways influencing chemotaxis. To model these pathways, we will need to add quite a few molecules and reactions to our current model.
+\autoref{fig:chemotaxis_wholestory} adds CheR and CheB to provide a complete picture of the core pathways influencing chemotaxis. To model these pathways, we will need to add quite a few molecules and reactions to our current model.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_wholestory.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_wholestory.png}
 \caption{The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates MCPs while CheR demethylates MCPs. Blue lines denote phosphorylation, grey lines denote dephosphorylation, green arrows denote methylation, and red arrows denote demethlyation. Image modified from \href{http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html}'s illustrations.}
 \label{fig:chemotaxis_wholestory}
 \end{figure}
@@ -598,9 +622,9 @@ The figure below adds CheR and CheB to provide a complete picture of the core pa
 
 We would like to add the methylation reactions discussed above to the model that we built in the previous section and see if this model can replicate the adaptation behavior of \textit{E. coli} in the presence of a changing attractant concentration. Before incorporating the adaptation mechanisms in our BioNetGen model, we will first describe the reactions that BioNetGen will need.
 
-We begin with considering the MCP complexes. In the \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_phos], we identified two components relevant for reactions involving MCPs: a ligand-binding component \texttt{;} and a phosphorylation component \texttt{Phos}. The adaptation mechanism introduces two additional reactions: methylation of the MCP by CheR, and demethylation of the MCP by CheB.
+We begin with considering the MCP complexes. In a tutorial, \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_phos] we identified two components relevant for reactions involving MCPs: a ligand-binding component \texttt{;} and a phosphorylation component \texttt{Phos}. The adaptation mechanism introduces two additional reactions: methylation of the MCP by CheR, and demethylation of the MCP by CheB.
 
-We also need to include binding and dissociation reactions between the MCP and CheR because under normal conditions, most CheR are bound to MCP complexes.\citep{Lupas_1989} We will therefore introduce two additional components to the MCP molecules in addition to their phosphorylation components: \texttt{r} (denoting CheR-binding) and \texttt{Meth} (denoting methylation states). In our simulation, we will use three methylation levels (low, medium, and high) rather than five because these three states are most involved in the chemotaxis response to attractants.\citep{Boyd_1980}
+We also need to include binding and dissociation reactions between the MCP and CheR because under normal conditions, most CheR are bound to MCP complexes. We will therefore introduce two additional components to the MCP molecules in addition to their phosphorylation components: \texttt{r} (denoting CheR-binding) and \texttt{Meth} (denoting methylation states). In our simulation, we will use three methylation levels (low, medium, and high) rather than five because these three states are most involved in the chemotaxis response to attractants.
 
 Imagine for a moment that we were attempting to specify every reaction that could take place in our model. To specify an MCP, we would need to tell the program whether it is bound to a ligand (two possible states), whether it is bound to CheR (two possible states), whether it is phosphorylated (two possible states), and which methylation state it is in (three possible states). Therefore, a given MCP has $2 \cdot 2 \cdot 2 \cdot 3 = 24$ total states.
 
@@ -608,7 +632,7 @@ Say that we are simulating the simple reaction of a ligand binding to an MCP, wh
 
 In other words, as our model grows, with multiple different states for each molecule involved in each reaction, the number of reactions we need to represent the system grows very fast; this phenomenon is called \textdef{combinatorial explosion}{combinatorial explosion}{FILL IN}. Our model of chemotaxis is ultimately relatively straightforward, but combinatorial explosion means that building realistic models of biochemical systems at scale can be daunting.
 
-A major benefit of using a rule-based modeling language such as the one developed by BioNetGen is that it circumvents combinatorial explosion by consolidating many reactions into a single rule. For example, when modeling ligand-MCP binding, we can summarize the 12 different reactions with the rule "a free ligand molecule binds to an MCP that is not bound to a ligand molecule." In the BioNetGen language, this rule is represented by the same one-line expression as it was in the previous section:
+A major benefit of using a rule-based modeling language such as the one developed by BioNetGen is that it circumvents combinatorial explosion by consolidating many reactions into a single rule. For example, when modeling ligand-MCP binding, we can summarize the 12 different reactions with the rule ``a free ligand molecule binds to an MCP that is not bound to a ligand molecule.'' In the BioNetGen language, this rule is represented by the same one-line expression as it was in the previous section:
 
 \texttt{LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k\_lr\_bind, k\_lr\_dis}
 
@@ -619,61 +643,61 @@ We will not bog down the text with a full specification of all the rules needed 
 \phantomsection
 \subsection{Bacterial tumbling is robust to large sudden changes in attractant concentration}
 
-In the figures below, we show plots of the concentration of each molecule of interest in our system for a few different cases. In each case, we suddenly change the concentration of the attractant ligand $l_0$ and examine how this affects the concentration of phosphorylated CheY. The attractant concentration will then level off; how will our model respond?
+In the figures that follow, we show plots of the concentration of each molecule of interest in our system for a few different cases. In each case, we suddenly change the concentration of the attractant ligand $l_0$ and examine how this affects the concentration of phosphorylated CheY. The attractant concentration will then level off; how will our model respond?
 
 Below, we show simulation results for some different concentrations of ligand molecules added at the beginning of the simulation. First we add a relatively small amount of attractant, setting $l_0$ equal to 10,000. The system returns so quickly to an equilibrium in phosphorylated CheY that it is difficult to imagine that the attractant has had any effect on tumbling frequency.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_oneadd1e4.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_oneadd1e4.png}
 \caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 10,000 initial attractant ligand particles.}
 \label{fig:chemotaxis_tutorial_oneadd1e4}
 \end{figure}
 
 
-If instead $l_0$ is equal to 100,000, then we obtain the figure below. After an initial drop in the concentration of phosphorylated CheY, it returns to equilibrium after a few minutes.
+If instead $l_0$ is equal to 100,000, then we obtain the result in \autoref{fig:chemotaxis_tutorial_oneadd1e5}. After an initial drop in the concentration of phosphorylated CheY, it returns to equilibrium after a few minutes.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_oneadd1e5.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_oneadd1e5.png}
 \caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100,000 initial attractant ligand particles.}
 \label{fig:chemotaxis_tutorial_oneadd1e5}
 \end{figure}
 
 
-When we increase $l_0$ by another factor of ten to 1 million, the initial drop is more pronounced, but the system returns just as quickly to equilibrium. Note how much higher the concentration of methylated receptors are in this figure compared to the previous figure; however, there are still a significant concentration of receptors with low methylation, indicating that the system may be able to handle an even larger jolt of attractant.
+When we increase $l_0$ by another factor of ten to 1 million, the initial drop is more pronounced, but the system returns just as quickly to equilibrium. Note how much higher the concentration of methylated receptors are in \autoref{fig:chemotaxis_tutorial_oneadd16} compared to \autoref{fig:chemotaxis_tutorial_oneadd1e5}; however, there are still a significant concentration of receptors with low methylation, indicating that the system may be able to handle an even larger jolt of attractant.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_oneadd1e6.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_oneadd1e6.png}
 \caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with one million initial attractant ligand particles.}
 \label{fig:chemotaxis_tutorial_oneadd16}
 \end{figure}
 
-When we set $l_0$ equal to 10 million, we give the system this bigger jolt. Once again, the model returns to its previous CheY equilibrium after a few minutes.
+When we set $l_0$ equal to 10 million, we give the system this bigger jolt. Once again, the model returns to its previous CheY equilibrium after a few minutes (\autoref{fig:chemotaxis_tutorial_oneadd1e7}).
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_oneadd1e7.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_oneadd1e7.png}
 \caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with ten million initial attractant ligand particles.}
 \label{fig:chemotaxis_tutorial_oneadd1e7}
 \end{figure}
 
-Finally, with $l_0$ equal to 100 million, we see what we might expect: the steepest drop in phosphorylated CheY yet, but a system that is able to return to equilibrium.
+Finally, with $l_0$ equal to 100 million, we see what we might expect: the steepest drop in phosphorylated CheY yet, but a system that is able to return to equilibrium (\autoref{fig:chemotaxis_tutorial_oneadd1e8}).
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_oneadd1e8.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_oneadd1e8.png}
 \caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100 million initial attractant ligand particles.}
 \label{fig:chemotaxis_tutorial_oneadd1e8}
 \end{figure}
 
-Our model, which is built on real reaction rate parameters, provides compelling evidence that the \textit{E. coli} chemotaxis system is very robust to changes in its environment. Our simulated bacterium can make a very rapid change in response to a sudden change in its environment, but even if this change is significant, the system will return to its default state. This robustness in our simulation has been observed in real bacteria \citep{Shimizu_2005, Krembel_2015}, as well as replicated by other computational simulations \citep{Bray_1993}.
+Our model, which is built on real reaction rate parameters, provides compelling evidence that the \textit{E. coli} chemotaxis system is very robust to changes in its environment. Our simulated bacterium can make a very rapid change in response to a sudden change in its environment, but even if this change is significant, the system will return to its default state. This robustness in our simulation has been observed in real bacteria , as well as replicated by other computational simulations.
 
 Aren't bacteria magnificent?
 
@@ -708,35 +732,35 @@ In the section \autoref{sec:methylation}, we saw that \textit{E. coli} is able t
 
 Yet imagine a glucose cube in an aqueous solution. As the cube dissolves, a \textdef{gradient}{gradient}{FILL IN} will form, with a decreasing glucose concentration that radiates outward from the cube. How will the tumbling frequency of \textit{E. coli} change if the bacterium finds itself in an environment of an attractant gradient?  Will the tumbling frequency decrease continuously as well, or will the methylation pathways mentioned in the previous section cause more complicated behavior? And once the cell reaches a region of high attractant concentration, will its default tumbling frequency stabilize to the same steady state?
 
-In this section, we will modify our model from the previous section by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of phosphorylated CheY changes. This model will simulate a bacterium traveling up an attractant gradient toward an attractant. Moreover, we will examine how the concentration of phosphorylated CheY changes as we change the gradient's "steepness", or the rate at which attractant ligand is increasing. Visit the following tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_gradient] if you're interested in following our adjustments for yourself.
+In this section, we will modify our model from the previous section by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of phosphorylated CheY changes. This model will simulate a bacterium traveling up an attractant gradient toward an attractant. Moreover, we will examine how the concentration of phosphorylated CheY changes as we change the gradient's ``steepness'', or the rate at which attractant ligand is increasing. Visit the following tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_gradient] if you're interested in following our adjustments for yourself.
 
 \phantomsection
 \subsection{Steady state tumbling frequency is robust}
 
 Recall that we used the expression $\text{[}L\text{]}$ to denote the concentration of ligand $L$ and $l_0$ to denote the initial concentration of the ligand. To model a ligand concentration that is increasing exponentially, we will use the function $\text{[}L\text{]} = l_0 \cdot e^{k \cdot t}$, where $t$ is the time and $k$ is a parameter dictating exponential growth. The parameter $k$ represents the steepness of the gradient, since the higher the value of $k$, the faster the growth in the ligand concentration.
 
-For example, the following figure shows the concentration over time of phosphorylated CheY (shown in blue) when $l_0 = 1000$ and $k = 0.1$. The concentration of phosphorylated CheY, and therefore the tumbling frequency, still decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (shown by the plateau in the red curve), the methylation of receptors causes the concentration of phosphorylated CheY to return to its equilibrium. In other words, for these values of $l_0$ and $k$, the outcome is similar to when we provided an instantaneous increase in ligand, although the cell takes longer to reach its minimum concentration of phosphorylated CheY because the attractant concentration is increasing gradually.
+For example, \autoref{fig:chemotaxis_tutorial_addition01} shows the concentration over time of phosphorylated CheY (shown in blue) when $l_0 = 1000$ and $k = 0.1$. The concentration of phosphorylated CheY, and therefore the tumbling frequency, still decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (shown by the plateau in the red curve), the methylation of receptors causes the concentration of phosphorylated CheY to return to its equilibrium. In other words, for these values of $l_0$ and $k$, the outcome is similar to when we provided an instantaneous increase in ligand, although the cell takes longer to reach its minimum concentration of phosphorylated CheY because the attractant concentration is increasing gradually.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_addition01.png}
-\caption{Plots of relevant molecule concentrations in our model (in number of molecules in the cell) over time (in seconds) when the concentration of ligand grows exponentially with $l_0 = 1000$ and $k = 0.1$. The concentration of bound ligand (shown in red) quickly hits saturation, which causes a minimum in phosphorylated CheY (and therefore a low tumbling frequency). To respond, the cell increases the methylation of receptors, which boosts the concentration of phosphorylated CheY back to equilibrium.}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_addition01.png}
+\caption{Plots of relevant molecule concentrations in our model (in number of molecules in the cell) over time (in seconds) when the concentration of ligand grows exponentially with $\textvar{l}_\text{0} = \text{1000}$ and $\textvar{k} = \text{0.1}$. The concentration of bound ligand (shown in red) quickly hits saturation, which causes a minimum in phosphorylated CheY (and therefore a low tumbling frequency). To respond, the cell increases the methylation of receptors, which boosts the concentration of phosphorylated CheY back to equilibrium.}
 \label{fig:chemotaxis_tutorial_addition01}
 \end{figure}
 
 
-Our next question is what happens as we change $k$, the growth rate of the ligand concentration. The following figure shows the results of multiple simulations in which we vary the growth parameter $k$ and plot the concentration of phosphorylated CheY over time. The larger the value of $k$, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.
+Our next question is what happens as we change $k$, the growth rate of the ligand concentration. \autoref{fig:chemotaxis_tutorial_addition03} shows the results of multiple simulations in which we vary the growth parameter $k$ and plot the concentration of phosphorylated CheY over time. The larger the value of $k$, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_addition03.png}
-\caption{Plots of phosphorylated CheY for different growth rates $k$ of the concentration of ligand. The larger the value of $k$, the steeper the initial drop as the concentration of bound ligand becomes saturated, and the faster the concentration of phosphorylated CheY returns to equilibrium.}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_addition03.png}
+\caption{Plots of phosphorylated CheY for different growth rates \textvar{k} of the concentration of ligand. The larger the value of \textvar{k}, the steeper the initial drop as the concentration of bound ligand becomes saturated, and the faster the concentration of phosphorylated CheY returns to equilibrium.}
 \label{fig:chemotaxis_tutorial_addition03}
 \end{figure}
 
-More importantly, the above figure further illustrates the \textit{robustness} of bacterial chemotaxis to the rate of growth in ligand concentration. Whether the growth of the attractant is slow or fast, methylation will always bring the cell back to the same equilibrium concentration of phosphorylated CheY, and therefore the same background tumbling frequency.
+More importantly, \autoref{fig:chemotaxis_tutorial_addition03} further illustrates the \textit{robustness} of bacterial chemotaxis to the rate of growth in ligand concentration. Whether the growth of the attractant is slow or fast, methylation will always bring the cell back to the same equilibrium concentration of phosphorylated CheY, and therefore the same background tumbling frequency.
 
 \FloatBarrier
 \phantomsection
@@ -757,25 +781,24 @@ You may like to modify the previous tutorial on your own to account for travelin
 \phantomsection
 \subsection{Steady state tumbling frequency remains robust when traveling down an attractant gradient}
 
-The following figure plots the concentrations of molecules in our model as the concentration of attractant ligand decreases exponentially with $l_0$ equal to $10^7$ and $k$ equal to $-0.3$. As the ligand concentration decreases, the concentration of bound ligands plummet as bound ligands dissociate and there are not enough free ligands to replace the dissociating ones. In the absence of ligand-receptor binding, CheY is free to phosphorylate, causing a spike in phosphorylated CheY. Demethylation of receptors then causes the concentration of phosphorylated CheY to steadily return back to its equilibrium.
-
+\autoref{fig:chemotaxis_tutorial_removal01} plots the concentrations of molecules in our model as the concentration of attractant ligand decreases exponentially with $l_0$ equal to $10^7$ and $k$ equal to $-0.3$. As the ligand concentration decreases, the concentration of bound ligands plummet as bound ligands dissociate and there are not enough free ligands to replace the dissociating ones. In the absence of ligand-receptor binding, CheY is free to phosphorylate, causing a spike in phosphorylated CheY. Demethylation of receptors then causes the concentration of phosphorylated CheY to steadily return back to its equilibrium.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_removal01.png}
-\caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) for a simulated bacterium traveling down an attractant gradient with $l_0 = 10^7$ and $k$ equal to -0.3. Phosphorylated CheY follows the opposite pattern to traveling up an attractant gradient, with the concentration of phosphorylated CheY rising quickly only to slowly decrease to equilibrium due to demethylation.}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_removal01.png}
+\caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) for a simulated bacterium traveling down an attractant gradient with $\textvar{l}_\text{0} = \text{10}^\text{7}$ and \textvar{k} equal to $-\text{0.3}$. Phosphorylated CheY follows the opposite pattern to traveling up an attractant gradient, with the concentration of phosphorylated CheY rising quickly only to slowly decrease to equilibrium due to demethylation.}
 \label{fig:chemotaxis_tutorial_removal01}
 \end{figure}
 
 
-To be thorough, we should also test the robustness of our model to see whether the CheY concentration will return to the same steady state for a variety of values of $k$ when $k$ is negative. As in the case of an increasing gradient, the figure below shows that the more sudden the change in the concentration of attractant (i.e., the more negative the value of $k$), the sharper the spike. And yet regardless of the value of $k$, methylation does its work to bring the concentration back to the same steady state, which has been confirmed by experimental observations.\citep{Krembel_2015}.
+To be thorough, we should also test the robustness of our model to see whether the CheY concentration will return to the same steady state for a variety of values of $k$ when $k$ is negative. As in the case of an increasing gradient, \autoref{fig:chemotaxis_tutorial_removal02} shows that the more sudden the change in the concentration of attractant (i.e., the more negative the value of $k$), the sharper the spike. And yet regardless of the value of $k$, methylation does its work to bring the concentration back to the same steady state, which has been confirmed by experimental observations.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_removal02.png}
-\caption{Varying values of $k$ in our exponential decrease in the concentration of attractant ligand produce the same equilibrium concentration of phosphorylated CheY. The smaller the value of $k$, the steeper the initial spike, and the faster the recovery to steady state.dient, with the concentration of phosphorylated CheY rising quickly only to slowly decrease to equilibrium due to demethylation.}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_removal02.png}
+\caption{Varying values of \textvar{k} in our exponential decrease in the concentration of attractant ligand produce the same equilibrium concentration of phosphorylated CheY. The smaller the value of \textvar{k}, the steeper the initial spike, and the faster the recovery to steady state.}
 \label{fig:chemotaxis_tutorial_removal02}
 \end{figure}
 
@@ -802,7 +825,7 @@ This question is biologically deep and has no immediate intuitive answer. Howeve
 \subsection{Two randomized exploration strategies}
 
 
-In the \autoref{chapter:turning}, we saw that a particle taking a collection of \textit{n} unit steps in random directions will wind up on average $\sqrt{n}$ distance away from its starting position. We now would like to compare this random walk against a modified version of the walk that emulates the behavior of \textit{E. coli} that we have learned about in this chapter.
+In \autoref{chapter:turning}, we saw that a particle taking a collection of \textit{n} unit steps in random directions will wind up on average $\sqrt{n}$ distance away from its starting position. We now would like to compare this random walk against a modified version of the walk that emulates the behavior of \textit{E. coli} that we have learned about in this chapter.
 
 Specifically, we will place a particle against a background containing a variable concentration of attractant. The bacterium will reorient itself randomly, but it will be able to change its tumbling frequency based on the relative concentration of attractant at its current location. Does this realistic exploration algorithm allow the bacterium to find attractant faster than a pure random walk strategy?
 
@@ -810,7 +833,7 @@ We will represent a bacterium as a point in two-dimensional space. Units in our 
 
 We will use $L$($x$, $y$) to denote the ligand concentration at ($x$, $y$); furthermore, we simulate an attractant gradient by ensuring that there is a point (called the \textbf{goal}) at which $L$($x$, $y$) is maximized. We will set the concentration at the goal equal to 10\textsuperscript{8} molecules/µm\textsuperscript{3}, and we will place the goal at (1500, 1500), so that the bacterium must travel a significant distance to find the attractant.
 
-We would like the ligand concentration $L$($x$, $y$) to decrease exponentially the farther we travel from the goal. We therefore set $L$($x$, $y$) = $100 \cdot 10^{6 \cdot (1-d\mathbin{/}D)}$, where $d$ is the distance from ($x$, $y$) to the goal, and $D$ is the distance from the origin to the goal, which in this case is $1500\sqrt{2} \approx 2121$ µm.\\
+We would like the ligand concentration $L$($x$, $y$) to decrease exponentially the farther we travel from the goal. We therefore set $L$($x$, $y$) = $100 \cdot 10^{6 \cdot (1-d/D)}$, where $d$ is the distance from ($x$, $y$) to the goal, and $D$ is the distance from the origin to the goal, which in this case is $1500\sqrt{2} \approx 2121$ µm.\\
 
 \begin{qbox}[
 How can we quantify how well a bacterium has done at finding the attractant?
@@ -818,18 +841,14 @@ How can we quantify how well a bacterium has done at finding the attractant?
 
 For each of our two strategies, we will simulate many random walks of a given bacterium throughout this space for a fixed time. (The total time needed by our simulation should be large enough to allow the bacterium to have enough time to reach the goal.) To compare the two strategies, we will then measure how far \textit{on average} a bacterium with each strategy is from the goal at the end of the simulation.
 
-We will now implement each of the two exploration strategies that we wish to model.
+We will now implement each of the two exploration strategies that we wish to model.\\
 
 \FloatBarrier
 \phantomsection
-
-\section{Conclusion: The Beauty of \textit{E. coli}'s Robust Randomized Exploration Algorithm}
-\label{sec:conclusion}
-
 \phantomsection
-\subsection{Strategy 1: Standard random walk}
+\subsubsection{Strategy 1: Standard random walk}
 
-To model our "unintelligent" random walk strategy, we first select a random direction of movement along with a duration of tumble. The degree of reorientation follows a uniform distribution from 0° to 360°. The duration of each tumble follows an exponential distribution with mean 0.1s \citep{Saragosti_2012}. As the result of a tumble, the cell only changes its orientation, not its position.
+To model our ``unintelligent'' random walk strategy, we first select a random direction of movement along with a duration of tumble. The degree of reorientation follows a uniform distribution from 0° to 360°. The duration of each tumble follows an exponential distribution with mean 0.1\textvar{s}. As the result of a tumble, the cell only changes its orientation, not its position.
 
 We then select a random duration to run and let the bacterium run in that direction for the specified amount of time. The duration of each run follows an exponential distribution with mean equal to the experimentally verified value of 1 second.
 
@@ -840,14 +859,14 @@ In the tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_pur
 \FloatBarrier
 \phantomsection
 \phantomsection
-\subsection{Strategy 2: Chemotactic random walk}
+\subsubsection{Strategy 2: Chemotactic random walk}
 
 
 In our second strategy, we mimic the real response of \textit{E. coli} to its environment based on what we have learned about chemotaxis throughout this chapter. The simulated bacterium will still follow a run and tumble model, but the duration of each run (which is a function of its tumbling frequency) will depend on the relative change in attractant concentration that it detects.
 
 To ensure a mathematically controlled comparison, we will use the same approach for determining the duration of a tumble and the resulting direction of a run as in the first strategy.
 
-Say that the "response time" of a bacterium, $t_{response}$, is the time in seconds that it takes for the bacterium to change its internal behavior in response to its change in environment. (We saw earlier in this chapter that the response time for \textit{E. coli} in chemotaxis is about half a second.) To model chemotaxis, we will check the attractant concentration at a simulated bacterium's current location every $t_{response}$ seconds.
+Say that the ``response time'' of a bacterium, $t_{response}$, is the time in seconds that it takes for the bacterium to change its internal behavior in response to its change in environment. (We saw earlier in this chapter that the response time for \textit{E. coli} in chemotaxis is about half a second.) To model chemotaxis, we will check the attractant concentration at a simulated bacterium's current location every $t_{response}$ seconds.
 
 We will then measure the percentage difference between the attractant concentration $L$($x$, $y$) at the cell's current point and the attractant concentration at the cell's previous point; we denote this difference as $\Delta\text{[}L{]}$. If $\Delta\text{[}L{]}$ is equal to zero, then the probability of a tumble in the next $t_{response}$ should be the same as the likelihood of a tumble in strategy 1 over the same time period. If $\Delta\text{[}L{]}$ is positive, then the probability of a tumble should be greater than it was in strategy 1; if $\Delta\text{[}L{]}$ is negative, then the probability of a tumble should be less than it was in strategy 1.
 
@@ -857,7 +876,9 @@ Unfortunately, there are two issues with this formula. First, if $\Delta\text{[}
 
 To prevent the run duration from being negative, we will first take the maximum of $t_0 \times (1 + 10 · \Delta\text{[}L{]})$ and some small positive number (we will use 0.000001). To prevent the run length from being too large, we will then take the minimum of the resulting value and $4 \cdot t_0$. This resulting value,
 
-$$min(max(t_0 * (1 + 10 \cdot \Delta\text{[}L{]}), 0.000001), 4 \cdot t_0),$$
+\begin{center}
+$\min(\max(t_0 * (1 + 10 \cdot \Delta\text{[}L{]}), 0.000001), 4 \cdot t_0)\,,$
+\end{center}
 
 becomes the mean run length of a bacterium based on the recent relative change in concentration given its previous two points.\\
 
@@ -874,23 +895,23 @@ In the tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_wal
 \phantomsection
 \subsection{Comparing the effectiveness of our two random walk strategies}
 
-The following figure visualizes the trajectories of three cells using each of the two strategies. After 500 seconds, cells using strategy 1 have traveled away from the origin, and some of them are found in locations with higher concentrations. The cells using strategy 2, however, quickly hone in on the goal and remain near it.
+\autoref{fig:chemotaxis_traj_compare_uniform} visualizes the trajectories of three cells using each of the two strategies. After 500 seconds, cells using strategy 1 have traveled away from the origin, and some of them are found in locations with higher concentrations. The cells using strategy 2, however, quickly hone in on the goal and remain near it.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.8\textwidth]{../images/chemotaxis_traj_compare_uniform.png}
-\caption{Three sample trajectories for each of the two exploration strategies. The standard random walk strategy is shown on the left, and the chemotactic random walk is shown on the right. Regions that are more heavily colored red correspond to higher concentrations of ligand, with a goal having maximum concentration at the point (1500, 1500), which is highlighted using a blue square. A single cell's walk is colored from darker to lighter colors across the time frame of the trajectory.}
+\caption{Three sample trajectories for each of the two exploration strategies. The standard random walk strategy is shown on the left, and the chemotactic random walk is shown on the right. Regions that are more heavily colored red correspond to higher concentrations of ligand, with a goal having maximum concentration at the point $(\text{1500}, \text{1500})$, which is highlighted using a blue square. A single cell's walk is colored from darker to lighter colors across the time frame of the trajectory.}
 \label{fig:chemotaxis_traj_compare_uniform}
 \end{figure}
 
 
-Of course, we should be wary of such a small sample size. To confirm that what we observed in these trajectories is true in general, we will compare the two strategies over many simulations. The following figure plots the cell's average final distance to the goal over 500 simulations for both strategies.
+Of course, we should be wary of such a small sample size. To confirm that what we observed in these trajectories is true in general, we will compare the two strategies over many simulations. \autoref{fig:chemotaxis_performance_compare_uniform} plots the cell's average final distance to the goal over 500 simulations for both strategies.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_performance_compare_uniform.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_performance_compare_uniform.png}
 \caption{Average distance to the goal plotted over time for 500 cellular simulations following each of the two strategies; the standard random walk is shown in red, and the chemotactic random walk is shown in blue. The shaded area around each strategy's plot represents one standard deviation from the average.}
 \label{fig:chemotaxis_performance_compare_uniform}
 \end{figure}
@@ -900,7 +921,7 @@ Using strategy 1, cells have some chance of reaching the goal because they tend 
 
 Strategy 2 amounts to a very slight change in strategy 1 in which we allow the cell to run for a greater distance if it senses an increase in the attractant concentration. After all, the direction of travel is still \textit{random}. So why would this strategy be so much better than a pure random walk?
 
-The answer to this quandary is that the attractant detection provides a "rubber band" effect. If the bacterium is traveling down an attractant gradient (i.e., away from an attractant), then it is not allowed to travel very far in a single step before it is forced to tumble. If an increase of attractant is detected, however, then the cell can travel farther before tumbling. On average, then, this effect helps to pull the bacterium in the direction of increasing attractant, even though each of its steps is taken in a random direction.
+The answer to this quandary is that the attractant detection provides a ``rubber band'' effect. If the bacterium is traveling down an attractant gradient (i.e., away from an attractant), then it is not allowed to travel very far in a single step before it is forced to tumble. If an increase of attractant is detected, however, then the cell can travel farther before tumbling. On average, then, this effect helps to pull the bacterium in the direction of increasing attractant, even though each of its steps is taken in a random direction.
 
 A very small change to a simple, unsuccessful randomized algorithm can produce an elegant approach for exploring an unknown environment. But we left one question unanswered. Why is it that a default tumbling frequency of one tumble per second appears to be stable across a wide range of bacteria?
 
@@ -913,7 +934,7 @@ To address this question, we will see how changing $t_0$, the default time for a
 \subsection{Why is background tumbling frequency constant across bacterial species?}
 
 
-The following figures show three trajectories for a few different values of $t_0$ and a simulation that lasts for 800 seconds. First, we set $t_0$ equal to 0.2 seconds and see that the bacteria are not able to walk far enough in a single step to head toward the goal.
+The following figures show three trajectories for a few different values of $t_0$ and a simulation that lasts for 800 seconds. First, we set $t_0$ equal to 0.2 seconds and see that the bacteria are not able to walk far enough in a single step to head toward the goal (\autoref{fig:chemotaxis_traj_0.2_uniform}).
 
 \begin{figure}[h]
 \centering
@@ -923,8 +944,7 @@ The following figures show three trajectories for a few different values of $t_0
 \label{fig:chemotaxis_traj_0.2_uniform}
 \end{figure}
 
-
-If we increase $t_0$ to 5.0 seconds, then cells can run for so long that they may carry on past the goal without being able to apply the brakes by tumbling.
+If we increase $t_0$ to 5.0 seconds, then cells can run for so long that they may carry on past the goal without being able to apply the brakes by tumbling (\autoref{fig:chemotaxis_traj_5.0_uniform}).
 
 \begin{figure}[h]
 \centering
@@ -935,7 +955,7 @@ If we increase $t_0$ to 5.0 seconds, then cells can run for so long that they ma
 \end{figure}
 
 
-When we set $t_0$ equal to 1.0, then the figure below shows a "Goldilocks" effect in which the default tumbling time is just right. The simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it there.
+When we set $t_0$ equal to 1.0, then \autoref{fig:chemotaxis_traj_1.0_uniform} shows a ``Goldilocks'' effect in which the default tumbling time is just right (\autoref{fig:chemotaxis_traj_1.0_uniform}). The simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it there.
 
 \begin{figure}[h]
 \centering
@@ -946,21 +966,20 @@ When we set $t_0$ equal to 1.0, then the figure below shows a "Goldilocks" effec
 \end{figure}
 
 
-The figure below shows a plot of average distance to the goal over time for 500 simulated cells following the chemotactic strategy for a variety of choices of $t_0$, and confirms that a $t_0$ value of approximately one second is ideal for finding an attractant.
+\autoref{fig:chemotaxis_performance_uniform} shows a plot of average distance to the goal over time for 500 simulated cells following the chemotactic strategy for a variety of choices of $t_0$, and confirms that a $t_0$ value of approximately one second is ideal for finding an attractant.
 
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_performance_uniform.png}
-\caption{Average distance to the goal over time for 500 cells. Each colored line indicates the average distance to the goal over time a different value of $t_0$; the shaded area represents one standard deviation.}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_performance_uniform.png}
+\caption{Average distance to the goal over time for 500 cells. Each colored line indicates the average distance to the goal over time for a different value of $\textvar{t}_\text{0}$; the shaded area represents one standard deviation.}
 \label{fig:chemotaxis_performance_uniform}
 \end{figure}
 
 
 Below, we reproduce the video from earlier in this chapter showing \textit{E. coli} moving towards a sugar crystal. This video shows that the behavior of real \textit{E. coli} is similar to that of our simulated bacteria. Bacteria generally move towards the crystal and then remain close to it; some bacteria run by the crystal, but they turn around to move toward the crystal again.
 
-%{% include video id="F6QMU3KD7zw" provider="youtube" %}
 \texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
 
@@ -971,8 +990,32 @@ Below, we reproduce the video from earlier in this chapter showing \textit{E. co
 
 If you closely examine the video above, then you may be curious about the way that bacteria turn around and head back toward the attractant. When they reorient, their behavior appears more intelligent than simply walking in a random direction. The reason for this behavior of the bacteria is that like most things in biology, the reality of the system that we are studying turns out to be more complex than we might imagine.
 
-Researchers have showed that the direction of bacterial reorientation is not completely random, but rather follows a normal distribution with mean of 68° and standard deviation of 36°\citep{Berg_1972}. That is, the bacterium typically does not tend to make as drastic of a change to its orientation as it would in a pure random walk, which would on average have a change in orientation of 90°.
+Researchers have showed that the direction of bacterial reorientation is not completely random, but rather follows a normal distribution with mean of 68° and standard deviation of 36°. That is, the bacterium typically does not tend to make as drastic of a change to its orientation as it would in a pure random walk, which would on average have a change in orientation of 90°.
 
-Yet recent research has shown that the direction of the bacterium's reorientation also depends on whether the cell is traveling in the correct direction.\citep{Saragosti_2011} If the bacterium is moving up an attractant gradient, then it makes much smaller changes in its reorientation angle. This allows the cell to stay straight if it is moving in the correct direction but also turn around quickly if it starts heading in the wrong direction. We can even see this behavior in the video above, in which bacteria traveling toward the attractant make only very slight changes in their direction of travel, but reorient themselves more drastically if they overshoot the target.
+Yet recent research has shown that the direction of the bacterium's reorientation also depends on whether the cell is traveling in the correct direction. If the bacterium is moving up an attractant gradient, then it makes much smaller changes in its reorientation angle. This allows the cell to stay straight if it is moving in the correct direction but also turn around quickly if it starts heading in the wrong direction. We can even see this behavior in the video above, in which bacteria traveling toward the attractant make only very slight changes in their direction of travel, but reorient themselves more drastically if they overshoot the target.
 
 Bacterial chemotaxis is probably the most studied biological system from the perspective of connecting chemical reactions to the emergent behavior that these reactions cause. Yet for many other systems, this thread connecting a reductionist view of a system to its holistic behavior is still a mystery that will continue inspiring the work of biological modelers for a very long time.
+
+
+\FloatBarrier
+\phantomsection
+\section{Citations}
+\citep{Munroe_2014}
+\citep{Pierucci_1978}
+\citep{Sim_2017}
+\citep{Baker_2005}
+\citep{Yong_2016}
+\citep{Weis_1990, Berg_2000}
+\citep{Achouri_2015, Turner_2016, Gotz_1987}
+\citep{Li_2004, Spiro_1997, Stock_1991}
+\citep{Schwartz_2008}
+ \citep{Amin_2010, Terwilliger_1986}
+ \citep{Spiro_1997}
+ \citep{Spiro_1997}
+ \citep{Lupas_1989}
+\citep{Boyd_1980}
+\citep{Shimizu_2005, Krembel_2015}
+\citep{Bray_1993}
+\citep{Krembel_2015}.
+\citep{Saragosti_2012}
+ 

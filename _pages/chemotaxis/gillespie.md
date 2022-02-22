@@ -66,7 +66,7 @@ and the probability that it corresponds to a dissociation reaction is
 Pr(*LT* → *L* + *T*) = *k*<sub>dissociate</sub>/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>).
 
 [![image-center](../assets/images/600px/chemotaxis_visualizessa.png){: .align-center}](../assets/images/chemotaxis_visualizessa.png)
-A visualization of a single reaction event used by the Gillespie algorithm for ligand-receptor binding/dissociation. Red circles represent ligands (*L*), and orange wedges represent receptors (*T*). The wait time for the next reaction is drawn from an exponential distribution with mean 1/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>). The probability of this event corresponding to a binding or dissociation reaction is proportional to the rate of the respective reaction.
+A visualization of a single reaction event used by the Gillespie algorithm for ligand-receptor binding and dissociation. Red circles represent ligands (*L*), and orange wedges represent receptors (*T*). The wait time for the next reaction is drawn from an exponential distribution with mean 1/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>). The probability of this event corresponding to a binding or dissociation reaction is proportional to the rate of the respective reaction.
 {: style="font-size: medium;"}
 
 When we generalize the Gillespie algorithm to *n* reactions occurring at rates λ<sub>1</sub>, λ<sub>2</sub>, …, λ<sub><em>n</em></sub>, the wait time between reactions will be exponentially distributed with average 1/(λ<sub>1</sub> + λ<sub>2</sub> + … + λ<sub><em>n</em></sub>). Once we select the next reaction to occur, the likelihood that it is the *i*-th reaction is equal to

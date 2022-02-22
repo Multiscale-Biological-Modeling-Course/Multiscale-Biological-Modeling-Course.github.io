@@ -10,7 +10,7 @@ toc_sticky: true
 image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
-## Bacterial tumbling frequencies remain constant despite background attractant concentrations
+## Bacterial tumbling frequencies remain constant for different attractant concentrations
 
 In the [previous lesson](biochemistry), we explored the signal transduction pathway by which *E. coli* can change its tumbling frequency in response to a change in the concentration of an attractant. But the reality of cellular environments is that the concentration of an attractant can vary across several orders of magnitude. The cell therefore needs to detect not *absolute* concentrations of an attractant but rather *relative* changes.
 

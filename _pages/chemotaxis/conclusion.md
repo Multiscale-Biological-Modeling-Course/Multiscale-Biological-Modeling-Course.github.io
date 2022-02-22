@@ -120,7 +120,7 @@ Three sample trajectories of a simulated cell following the chemotactic random w
 The figure below shows a plot of average distance to the goal over time for 500 simulated cells following the chemotactic strategy for a variety of choices of *t*<sub>0</sub>, and confirms that a *t*<sub>0</sub> value of approximately one second is ideal for finding an attractant.
 
 [![image-center](../assets/images/600px/chemotaxis_performance_uniform.png){: .align-center}](../assets/images/chemotaxis_performance_uniform.png)
-Average distance to the goal over time for 500 cells. Each colored line indicates the average distance to the goal over time a different value of *t*<sub>0</sub>; the shaded area represents one standard deviation.
+Average distance to the goal over time for 500 cells. Each colored line indicates the average distance to the goal over time for a different value of *t*<sub>0</sub>; the shaded area represents one standard deviation.
 {: style="font-size: medium;"}
 
 Below, we reproduce the video from earlier in this module showing *E. coli* moving towards a sugar crystal. This video shows that the behavior of real *E. coli* is similar to that of our simulated bacteria. Bacteria generally move towards the crystal and then remain close to it; some bacteria run by the crystal, but they turn around to move toward the crystal again.

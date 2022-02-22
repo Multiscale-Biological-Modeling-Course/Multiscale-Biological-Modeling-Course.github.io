@@ -14,15 +14,13 @@ author_profile: true # add author to page
 
 # Introduction: Networks Rule (Biology)
 
-In the [prologue](../prologue), we worked with a particle-based model that simulated the interactions of skin cells to produce complex Turing patterns. In this module, we will zoom into a much lower biological scale and model protein interactions, which occur on a molecular level. The scale of these interactions is tiny: a protein is typically on the order of about 10nm in diameter. (For comparison, a light microscope's highest resolution is about 2000 nm, and the diameter of a single human hair is about 100,000 nm.)
+In the [prologue](../prologue), we worked with a particle-based model that simulated the interactions of skin cells to produce complex Turing patterns. In this module, we will zoom into a much lower biological scale and model protein interactions, which occur on a molecular level. The scale of these interactions is tiny: a protein is typically on the order of about 10nm in diameter. (For comparison, the diameter of a single human hair is about 100,000 nm, and a light microscope's highest resolution is about 2,000 nm.) We will see that the cell has evolved a form of molecular communication based on protein interactions that is rapid, robust, and elegant.
 
-We will focus on how a cell adjusts its internal protein concentrations to react to an ever-changing environment.  We will see that the cell has evolved a sort of molecular communication based on the interactions of proteins that is rapid, robust, and elegant.
+To model protein interactions, we will use a  **network**, which is a collection of **nodes** along with **edges** that connect pairs of nodes. Whether we are studying the interactions of proteins, the complex chains of chemical reactions underlying cellular metabolism, the tangled webs of neurons in the human nervous system, or an evolutionary tree of life, networks are critical to our understanding of biological processes.
 
-To explore the interactions between proteins, we will introduce **networks**; a network is a collection of **nodes** along with **edges** that connect pairs of nodes. The network is a simple but ubiquitous model. Whether we are studying the interactions of proteins, the complex chains of chemical reactions underlying cellular metabolism, the tangled webs of neurons in the human nervous system, or an evolutionary tree of life, networks are critical to our understanding of biological processes.
+Our interest lies in the frequently recurring structures hidden within biological networks called **network motifs**. Similarly to our work in the prologue, we will use modeling to answer of *why* these motifs have evolved to help the cell respond to its environment.
 
-In this module, we will work with a fundamental biological network called a **transcription factor network**, which involves the proteins that drive a cell's response to its environment. We will then hunt for frequently recurring structures hidden within this network called **network motifs**. Much like our work in the prologue, we will use modeling to address the question of *why* these motifs have evolved to help the cell respond to its environment.
-
-We will define a transcription factor network soon, but before we get ahead of ourselves, let us introduce some of the molecular biology fundamentals we will need to complete our analysis. As in the prologue, you may already know this biological background, in which case you should feel free to skim the next lesson.
+We will soon define our specific network of study, but before we get ahead of ourselves, we will introduce some of the molecular biology fundamentals we will need to complete our analysis. You may already know this biological background, in which case you should feel free to skim the next lesson.
 
 [Next lesson](transcription){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

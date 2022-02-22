@@ -30,10 +30,18 @@ Simple 2D structure B.
 
 ## *Ab initio* and homology modeling
 
-In this exercise, we will perform ab initio and homology structure prediction on a simple protein, the human hemoglobin subunit alpha we saw in part 1 of this module. First, go to the <a href="https://www.rcsb.org/" target="_blank">protein data bank</a> and search for the protein “1SI4”. Download the PDB file by clicking on “Download Files” and then “PDB Format”. We will use this file for structure comparisons later. Next, go to the “Sequence” tab and click “Display Files” and then “FASTA Sequence”. Copy the first sequence corresponding to the alpha subunit and submit it to the ab initio structure prediction software, <a href="https://zhanggroup.org/QUARK/" target="_blank">QUARK</a>, and your choice of homology modeling software: <a href="https://swissmodel.expasy.org/" target="_blank">SWISS-MODEL</a>, <a href="https://robetta.bakerlab.org/" target="_blank">Robetta</a>, or <a href="https://galaxy.seoklab.org/cgi-bin/submit.cgi?type=TBM" target="_blank">GalaxyWEB</a>. Once you get the results, use ProDy to calculate the RMSD between the predicted structures and the actual structure (1SI4). 
+In this exercise, we will perform *ab initio* and homology structure prediction on a simple protein, the human hemoglobin subunit alpha we saw in part 1 of this module. First, go to the <a href="https://www.rcsb.org/" target="_blank">protein data bank</a> and search for the protein “1SI4”. Download the PDB file by clicking on “Download Files” and then “PDB Format”. We will use this file for structure comparisons later. Next, go to the “Sequence” tab and click “Display Files” and then “FASTA Sequence”. Copy the first sequence corresponding to the alpha subunit and submit it to the ab initio structure prediction software, <a href="https://zhanggroup.org/QUARK/" target="_blank">QUARK</a>, and your choice of homology modeling software: <a href="https://swissmodel.expasy.org/" target="_blank">SWISS-MODEL</a>, <a href="https://robetta.bakerlab.org/" target="_blank">Robetta</a>, or <a href="https://galaxy.seoklab.org/cgi-bin/submit.cgi?type=TBM" target="_blank">GalaxyWEB</a>. Once you get the results, use ProDy to calculate the RMSD between the predicted structures and the actual structure (1SI4). 
 
 **Exercise:** Which type of modeling resulted in the most accurate prediction? Is this what you expected? (Hint: Use “Chain A” to focus on subunit alpha)
 {: .notice--success}
+
+## Trying out AlphaFold
+
+In the conclusion of part 1 of this module, we introduced AlphaFold from DeepMind that won the 14th CASP contest in 2020 by a wide margine. A simplified version of AlphaFold is available on Colab. This version currently does not work with the entire spike protein, so we will use the human hemoglobin subunit alpha once again. Following the directions from the previous exercise, grab the protein sequence of the alpha subunit. Next, open the <a href="https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb#scrollTo=woIxeCPygt7K" target="_blank">simplified version of AlphaFold</a>. Read the documentation and follow the directions in each step to generate the predicted structure. 
+
+**Exercise:** Use ProDy to calculate the RMSD between the predicted structure and the actual structure (1SI4). Did this simplified version of AlphaFold perform better than your *Ab initio* and homology modeling results from the previous exercise?
+{: .notice--success}
+
 
 ## Qres Comparison
 
@@ -42,7 +50,7 @@ In part 2 of the module, we computed Qres between SARS and SARS-CoV-2 RBD to fin
 **Exercise:**  Use the visualizations to determine where the protein structures vary the most? Why do you think this makes sense?
 {: .notice--success}
 
-** Optional:** Take the best performing predicted model from the previous exercise perform the Qres visual analysis with the actual human hemoglobin subunit alpha structure 1SI4. Where do the protein structures vary the most? Compare the predicted model with the mako shark hemoglobin 3MKB. Where do the structures vary the most, and are the results similar to the comparison between 1SI4 and 3MKB?
+**Optional:** Take the best performing predicted model from the previous exercise perform the Qres visual analysis with the actual human hemoglobin subunit alpha structure 1SI4. Where do the protein structures vary the most? Compare the predicted model with the mako shark hemoglobin 3MKB. Where do the structures vary the most, and are the results similar to the comparison between 1SI4 and 3MKB?
 {: .notice--success}
 
 ## Calculating Interaction Energy with NAMD Energy
@@ -60,7 +68,9 @@ In this exercise, we will be performing a short analysis of SARS-CoV-2 Spike pro
 **Note:** For help, visit the module tutorials for VMD visualization and NAMD Energy. For additional troubleshooting/workaround, download [NamdEnergyAssignment.zip](../_pages/coronavirus/files/NamdEnergyAssignment.zip) and follow the README.txt.
 {: .notice--info}
 
+## Visualizing Glycans with VMD
 
+In the conclusion of part 2 of this module, we mentioned that the surface of the surface of viruses and host cells are “fuzzy” because they are covered by structures called glycans. As you may expect, SARS-CoV and SARS-CoV-2 are also covered by this "glycan shield", where glycosylation of surface antigens allows the virus to hide from antibody detection. In this simple exercise, we will use VMD to visualize glycans on the spike protein of both viruses. First, we will need to download the protein sturctures of the SARS-CoV spike protein (PDB entry: <a href="https://www.rcsb.org/structure/5XLR" target="_blank">5xlr</a> and the SARS-CoV-2 spike protein (PDB entry: <a href="https://www.rcsb.org/structure/6VXX" target="_blank">6vxx</a>. Load each structure into VMD and go to *Graphics>Representations*. For VMD, there is no specific keyword to select glycans, so we will use a workaround using the keywords: "not protein and not water". Create the representation and play around with the visualization. Assuming that all the non-proteins are glycans, which structure contains the most number of glycans? Do you think this supports SARS-CoV-2's higher infectivity compared to SARS-CoV? 
 
 
 * Good exercise: find centroid of a given shape.

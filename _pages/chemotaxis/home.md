@@ -30,17 +30,17 @@ But Munroe provides a solution that is both sophisticated and elegant. His propo
 >
 > And if your partner isn’t cooperating—perhaps they’re just sitting where they started and waiting for you—then you’ll get to see some neat stuff.
 
-In the previous two modules, we have already seen the power of randomness to provide answers to practical questions. Munroe's approach offers another benefit of randomness in the form of a **randomized algorithm**, or a method that uses randomness to solve a problem.
+In the previous two modules, we have harnessed the power of randomness to answer to practical questions. Munroe's approach exemplifies a **randomized algorithm**, or a method that uses randomness to solve a problem.
 
-In fact, the randomized algorithm outlined above is inspired by nature; Munroe calls the above approach "be an ant" because it mimics how ants explore their environment for resources. However, in this module, we will see that this algorithm is also similar to the method of exploration undertaken by a much smaller organism: our old friend *E. coli*.
+In fact, Munroe's randomized algorithm for Lost Immortals is inspired by nature; he calls his approach "be an ant" because it mimics how ants explore their environment for resources.  However, in this module, we will see that this algorithm is also similar to the method of exploration undertaken by a much smaller organism: our old friend *E. coli*.
 
-Like other prokaryotes, *E. coli* is tiny, with a rod-shaped body that is 2µm long and 0.25 to 1µm wide.[^Pierucci1978] In exploring a vast world with sparse resources, *E. coli* finds itself in a vast, forbidding landscape comparable to the lost immortals.
+Like other prokaryotes, *E. coli* is tiny, with a rod-shaped body that is 2µm long and 0.25 to 1µm wide.[^Pierucci1978] In exploring a vast world with sparse resources, *E. coli* finds itself in a situation comparable to Munroe's immortals.
 
-The video below shows a collection of *E. coli* surrounding a sugar crystal. Think of this video the next time you leave a slice of cake out on the kitchen counter!
+The video below shows a collection of *E. coli* surrounding a sugar crystal. Think of this video the next time you leave a slice of cake out overnight on the kitchen counter!
 
 {% include video id="F6QMU3KD7zw" provider="youtube" %}
 
-The movement of organisms like the bacteria in the above video in response to a chemical stimulus is called **chemotaxis**. *E. coli* and other bacteria have evolved to move toward **attractants** (e.g., glucose, electron acceptors) and away from **repellents** (e.g., Ni<sup>2+</sup>, Co<sup>2+</sup>). But how?
+The movement of organisms like the bacteria in the above video in response to a chemical stimulus is called **chemotaxis**. *E. coli* and other bacteria have evolved to move toward **attractants** like glucose and electron acceptors and move away from **repellents** like Ni<sup>2+</sup> and Co<sup>2+</sup>. But how?
 
 In this module, we will delve into chemotaxis and ask a number of questions. How does a simple organism like *E. coli* sense an attractant or repellent in its environment? How does the bacterium change its internal state in response to this environment? How can we model the bacterium's response? And how does the bacterium's behavior translate into an "algorithm" that it uses to explore its environment?
 
