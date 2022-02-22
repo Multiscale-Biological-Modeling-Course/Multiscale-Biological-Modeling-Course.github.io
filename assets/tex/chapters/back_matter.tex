@@ -1,0 +1,39 @@
+% To prevent the back matter from containing a "Chapter X" header, we must rename "Chapter" and \thechapter to null, as well as the Chapter title.
+\renewcommand{\chaptervariable}{}
+\renewcommand{\chapternumber}{}
+\renewcommand{\chaptertitle}{}
+
+\clearpage
+\thispagestyle{empty}
+\phantom{}
+
+%Appendix
+\appendix
+\input{3rd_edition_chapters/Appendix.tex}
+
+\clearpage
+\thispagestyle{empty}
+\phantom{}
+
+% Print the glossary
+\printglossaries
+
+%\bibliographystyle{plain}
+%\bibliography{BA_bibliography}
+
+\clearpage
+%\nocite{*} %Will add all references, even if they aren't cited.
+\printbibliography
+
+\clearpage
+\thispagestyle{empty}
+\phantom{}
+
+\phantomsection
+\chapter{Image Courtesies}
+%\textbf{\autoref{fig:hanoi_puzzle}:} AEvar Anfj\"{o}rd Bjarmason\\
+
+
+\clearpage
+\thispagestyle{empty}
+\phantom{}

@@ -15,9 +15,9 @@ In the \autoref{chapter:turing}, we worked with a particle-based model that simu
 
 We will focus on how a cell adjusts its internal protein concentrations to react to an ever-changing environment.  We will see that the cell has evolved a sort of molecular communication based on the interactions of proteins that is rapid, robust, and elegant.
 
-To explore the interactions between proteins, we will introduce \textdef{networks}{networks}{FILL IN}; a network is a collection of \textdef{nodes}{nodes}{FILL IN} along with \textdef{edges}{edges}{FILL IN} that connect pairs of nodes. The network is a simple but ubiquitous model. Whether we are studying the interactions of proteins, the complex chains of chemical reactions underlying cellular metabolism, the tangled webs of neurons in the human nervous system, or an evolutionary tree of life, networks are critical to our understanding of biological processes.
+To explore the interactions between proteins, we will introduce \textdef{networks}{network}{a collection of nodes in addition to edges, which connect pairs of nodes}; a network is a collection of \textdefnogloss{nodes} along with \textdefnogloss{edges} that connect pairs of nodes. The network is a simple but ubiquitous model. Whether we are studying the interactions of proteins, the complex chains of chemical reactions underlying cellular metabolism, the tangled webs of neurons in the human nervous system, or an evolutionary tree of life, networks are critical to our understanding of biological processes.
 
-In this section, we will work with a fundamental biological network called a \textdef{transcription factor network}{transcription factor network}{FILL IN}, which involves the proteins that drive a cell's response to its environment. We will then hunt for frequently recurring structures hidden within this network called \textdef{network motifs}{network motifs}{FILL IN}. Much like our work in \autoref{chapter:turing}, we will use modeling to address the question of \textit{why} these motifs have evolved to help the cell respond to its environment.
+In this section, we will work with a fundamental biological network called a transcription factor network, which involves the proteins that drive a cell's response to its environment. We will then hunt for frequently recurring structures hidden within this network called \textdef{network motifs}{network motif}{a substructure that occurs frequently in a network}. Much like our work in \autoref{chapter:turing}, we will use modeling to address the question of \textit{why} these motifs have evolved to help the cell respond to its environment.
 
 We will define a transcription factor network soon, but before we get ahead of ourselves, let us introduce some of the molecular biology fundamentals we will need to complete our analysis. As in \autoref{chapter:turing}, you may already know this biological background, in which case you should feel free to skim the next section.
 
@@ -30,9 +30,9 @@ We will define a transcription factor network soon, but before we get ahead of o
 
 \subsection{The central dogma of molecular biology}
 
-DNA is a double-stranded molecule consisting of the four nucleobases adenine, cytosine, guanine, and thymine. A gene is a region of an organism's DNA that is \textdef{transcribed}{transcribed}{FILL IN} into a single-stranded RNA molecule in which thymine is converted to uracil and the other bases remain the same.
+DNA is a double-stranded molecule consisting of the four nucleobases adenine, cytosine, guanine, and thymine. A gene is a region of an organism's DNA that is \textdef{transcribed}{transcription}{the process by which one strand of a double-stranded DNA molecule is used as a blueprint for the production of a single strand of RNA} into a single-stranded RNA molecule in which thymine is converted to uracil and the other bases remain the same.
 
-The RNA transcript is then \textdef{translated}{translated}{FILL IN} into an amino acid sequence. Because there are four different bases but twenty amino acids available, RNA is translated in \textdef{codons}{codons}{FILL IN}, or triplets of nucleobases. The figure below shows the way in which codons are translated into amino acids, which is called the \textdef{genetic code}{genetic code}{FILL IN}.
+The RNA transcript is then \textdef{translated}{translation}{the process by which a single-stranded RNA molecule is converted into a polypeptide chain of amino acids} into an amino acid sequence. Because there are four different bases but twenty amino acids available, RNA is translated in \textdef{codons}{codon}{a triplet of nucleotide bases, which encodes a single amino acid via the genetic code}, or triplets of nucleobases. The figure below shows the way in which codons are translated into amino acids, which is called the \textdef{genetic code}{genetic code}{the set of rules according to which each RNA codon corresponds to a single amino acid in the formation of a polypeptide chain during translation}.
 
 \begin{figure}[h]
 \centering
@@ -42,7 +42,7 @@ The RNA transcript is then \textdef{translated}{translated}{FILL IN} into an ami
 \label{fig:genetic_code}
 \end{figure}
 
-DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the \textdef{central dogma of molecular biology}{central dogma of molecular biology}{FILL IN}, illustrated in the figure below.
+DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the \textdef{central dogma of molecular biology}{central dogma of molecular biology}{the flow of information within the cell, from DNA to RNA to protein, facilitated by transcription and translation}, illustrated in the figure below.
 
 \begin{note}[%
 Like any dogma, there are times in which the central dogma of molecular biology is violated. If you are interested in an example, consider Chapter 4 of Bioinformatics Algorithms, https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-4.
@@ -60,9 +60,9 @@ Like any dogma, there are times in which the central dogma of molecular biology 
 \phantomsection
 \subsection{Transcription factors control gene regulation}
 
-All of your cells have essentially the same DNA, and yet your liver cells, heart cells, and brain cells are able to serve different functions. This is because the rates at which these genes are \textdef{regulated}{regulated}{FILL IN}, or converted into RNA and then protein, vary between genes in different tissues.
+All of your cells have essentially the same DNA, and yet your liver cells, heart cells, and brain cells are able to serve different functions. This is because the rates at which these genes are \textdef{regulated}{gene regulation}{the process by which a gene can be activated or repressed (i.e., turned ``on'' or ``off'' via molecular mechanisms}, or converted into RNA and then protein, vary between genes in different tissues.
 
-Gene regulation typically occurs at either the DNA or protein level. At the DNA level, regulation is modulated by \textdef{transcription factors}{transcription factors}{FILL IN}, master regulator proteins that bind upstream of genes and serve to either \textdef{activate}{activate}{FILL IN} or \textdef{repress}{repress}{FILL IN} a gene's rate of transcription, turning that rate up or down, respectively.
+Gene regulation typically occurs at either the DNA or protein level. At the DNA level, regulation is modulated by \textdef{transcription factors}{transcription factor}{FILL IN}, master regulator proteins that bind upstream of genes and serve to either \textdef{activate}{gene activation}{the process by which the production of a gene is increased} or \textdef{repress}{gene repression}{the process by which the production of a gene is decreased} a gene's rate of transcription, turning that rate up or down, respectively.
 
 Because of the central dogma, transcription factors are involved in a sort of feedback loop. DNA is transcribed into RNA, which is translated into the protein sequence of a transcription factor, which then binds to the upstream region of some other gene and changes its rate of transcription.
 
