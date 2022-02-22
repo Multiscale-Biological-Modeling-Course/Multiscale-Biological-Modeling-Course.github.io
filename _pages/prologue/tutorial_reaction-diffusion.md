@@ -49,7 +49,7 @@ Then, repeat the above steps to release an initial quantity of *A* molecules as 
 | Hidden  | Plane | 1000 |
 | A | Plane | 6000 |
 
-We are going to release an initial collection of *B* particles in a cluster in the center of the plane. To do so, we will need a very specific initial release of these particles, and so we will not be able to use the `Molecule Placement` tab. For this reason, we need to write a Python script to place these molecules, shown below. (Don't worry if you are not comfortable with Python.)
+We are going to release an initial collection of *B* particles in a cluster in the center of the plane. To do so, we will need a very specific initial release of these particles, and so we will not be able to use the `Molecule Placement` tab. For this reason, we need to write a Python script to place these molecules, shown below. You can download this script <a href="../tutorials/pred_center.py" download="pred_center.py">here</a>. (Don't worry if you are not comfortable with Python.)
 
 ~~~ python
 import cellblender as cb
@@ -94,9 +94,9 @@ cb.replace_data_model ( dm )
 
 Locate the `Outliner` pane on the top-right of the Blender screen. On the left of the view button in the Outliner pane, there is a code tree icon.
 
-Click this icon and choose `Text Editor`. To create a new file for our code, click the `+` button. Copy and paste the code into the text editor and save it with the name `pred-center.py`.
+Click this icon and choose `Text Editor`. To create a new file for our code, click the `+` button. Copy and paste the code above (or from your downloaded file) into the text editor and save it with the name `pred-center.py`.
 
-Next visit `CellBlender > Scripting > Data-Model Scripting > Run Script`, as shown in the following screenshot. Select `Internal` from the Data-Model Scripting menu and click the refresh button. Click the filename entry area next to `File` and enter `pred_center.py`. Click `Run Script` to execute
+Next visit `CellBlender > Scripting > Data-Model Scripting > Run Script`, as shown in the following screenshot. Select `Internal` from the Data-Model Scripting menu and click the refresh button. Click the filename entry area next to `File` and enter `pred_center.py`. Click `Run Script` to execute.
 
 [![image-center](../assets/images/600px/outliner_run_script.png){: .align-center}](../assets/images/outliner_run_script.png)
 
