@@ -52,44 +52,44 @@ Then, repeat the above steps to release an initial quantity of *A* molecules as 
 We are going to release an initial collection of *B* particles in a cluster in the center of the plane. To do so, we will need a very specific initial release of these particles, and so we will not be able to use the `Molecule Placement` tab. For this reason, we need to write a Python script to place these molecules, shown below. (Don't worry if you are not comfortable with Python.)
 
 ~~~ python
-   import cellblender as cb
-   dm = cb.get_data_model()
-   mcell = dm['mcell']
-   rels = mcell['release_sites']
-   rlist = rels['release_site_list']
-   point_list = []
-   for x in range(10):
-     for y in range(10):
-         point_list.append([x/100,y/100,0.0])
-   for x in range(10):
-     for y in range(10):
-         point_list.append([x/100 - 0.5,y/100 - 0.5,0.0])
-   for x in range(10):
-     for y in range(10):
-         point_list.append([x/100 - 0.8,y/100,0.0])
-   for x in range(10):
-     for y in range(10):
-         point_list.append([x/100 + 0.8,y/100 - 0.8,0.0])
-   new_rel = {
-     'data_model_version' : "DM_2015_11_11_1717",
-     'location_x' : "0",
-     'location_y' : "0",
-     'location_z' : "0",
-     'molecule' : "B",
-     'name' : "pred_rel",
-     'object_expr' : "arena",
-     'orient' : "'",
-     'pattern' : "",
-     'points_list' : point_list,
-     'quantity' : "400",
-     'quantity_type' : "NUMBER_TO_RELEASE",
-     'release_probability' : "1",
-     'shape' : "LIST",
-     'site_diameter' : "0.01",
-     'stddev' : "0"
-   }
-   rlist.append ( new_rel )
-   cb.replace_data_model ( dm )
+import cellblender as cb
+dm = cb.get_data_model()
+mcell = dm['mcell']
+rels = mcell['release_sites']
+rlist = rels['release_site_list']
+point_list = []
+for x in range(10):
+    for y in range(10):
+        point_list.append([x/100,y/100,0.0])
+for x in range(10):
+    for y in range(10):
+        point_list.append([x/100 - 0.5,y/100 - 0.5,0.0])
+for x in range(10):
+    for y in range(10):
+        point_list.append([x/100 - 0.8,y/100,0.0])
+for x in range(10):
+    for y in range(10):
+        point_list.append([x/100 + 0.8,y/100 - 0.8,0.0])
+new_rel = {
+    'data_model_version' : "DM_2015_11_11_1717",
+    'location_x' : "0",
+    'location_y' : "0",
+    'location_z' : "0",
+    'molecule' : "B",
+    'name' : "pred_rel",
+    'object_expr' : "arena",
+    'orient' : "'",
+    'pattern' : "",
+    'points_list' : point_list,
+    'quantity' : "400",
+    'quantity_type' : "NUMBER_TO_RELEASE",
+    'release_probability' : "1",
+    'shape' : "LIST",
+    'site_diameter' : "0.01",
+    'stddev' : "0"
+}
+rlist.append ( new_rel )
+cb.replace_data_model ( dm )
 ~~~
 
 Locate the `Outliner` pane on the top-right of the Blender screen. On the left of the view button in the Outliner pane, there is a code tree icon.
