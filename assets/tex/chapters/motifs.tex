@@ -28,33 +28,27 @@ We will soon define our specific network of study, but before we get ahead of ou
 
 \subsection{The central dogma of molecular biology}
 
-DNA is a double-stranded molecule consisting of the four nucleobases adenine, cytosine, guanine, and thymine. A gene is a region of an organism's DNA that is \textdef{transcribed}{transcription}{the process by which one strand of a double-stranded DNA molecule is used as a blueprint for the production of a single strand of RNA} into a single-stranded RNA molecule in which thymine is converted to uracil and the other bases remain the same.
+DNA is a double-stranded molecule consisting of the four nucleobases adenine, cytosine, guanine, and thymine. A \textdef{gene}{gene}{a sequence of DNA nucleotides that serves as a template for the production of RNA, which may then be translated into protein} is a region of an organism's DNA that is \textdef{transcribed}{transcription}{the process by which one strand of a double-stranded DNA molecule is used as a blueprint for the production of a single strand of RNA} into a single-stranded RNA molecule, in which thymine is converted to uracil and the other bases remain the same.
 
-The RNA transcript is then \textdef{translated}{translated}{FILL IN} into an amino acid sequence. Because there are four different bases but twenty amino acids available, RNA is translated in \textdef{codons}{codons}{FILL IN}, or triplets of nucleobases. \autoref{fig:genetic_code} shows the way in which codons are translated into amino acids, which is called the \textdef{genetic code}{genetic code}{FILL IN}.
+The RNA transcript is then \textdef{translated}{translation}{the process by which a single-stranded RNA molecule is used as a template for the production of a polypeptide chain of amino acids} into an amino acid sequence. Because there are four different bases but twenty amino acids available, RNA is translated in \textdef{codons}{codons}{FILL IN}, or triplets of nucleobases. \autoref{fig:central_dogma}(top) shows the way in which codons are translated into amino acids, which is called the \textdef{genetic code}{genetic code}{FILL IN}.
 
-\begin{figure}[h]
-\centering
-\mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/genetic_code.png}
-\caption{The genetic code, which dictates the conversion of RNA codons into amino acids. Codons are read from the inside of the figure outward. Image courtesy: J Alves, Open Clip Art.}
-\label{fig:genetic_code}
-\end{figure}
-
-DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the \textdef{central dogma of molecular biology}{central dogma of molecular biology}{FILL IN}, illustrated in \autoref{fig:Central_Dogma_of_Molecular_Biochemistry_with_Enzymes}.\\
+DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the \textdef{central dogma of molecular biology}{central dogma of molecular biology}{FILL IN} and is illustrated in \autoref{fig:central_dogma} (bottom).\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
+\begin{tabular}{c}
+\includegraphics[width = 0.6\textwidth]{../images/genetic_code.png}\\[3ex]
 \includegraphics[width = 0.4\textwidth]{../images/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg}
-\caption{The central dogma of molecular biology states that molecular information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA. Image courtesy: Dhorpool, Wikimedia commons user.}
-\label{fig:Central_Dogma_of_Molecular_Biochemistry_with_Enzymes}
+\end{tabular}
+\caption{(Top) The genetic code, which dictates the conversion of RNA codons into amino acids. Codons are read from the inside of the figure outward. (Bottom) The central dogma of molecular biology states that molecular information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA.}
+\label{fig:central_dogma}
 \end{figure}
 
-\begin{note}[%
-Like any dogma, there are times in which the central dogma of molecular biology is violated. If you are interested in an example, consider Chapter 4 of Bioinformatics Algorithms, https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-4.
-]\end{note}
+%\begin{note}[%
+%Like any dogma, there are times in which the central dogma of molecular biology is violated. If you are interested in an example, consider Chapter 4 of Bioinformatics Algorithms, https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-4.
+%]\end{note}
 
-\FloatBarrier
 \phantomsection
 \subsection{Transcription factors control gene regulation}
 
@@ -64,14 +58,14 @@ Gene regulation typically occurs at either the DNA or protein level. At the DNA 
 
 Because of the central dogma, transcription factors are involved in a sort of feedback loop. DNA is transcribed into RNA, which is translated into the protein sequence of a transcription factor, which then binds to the upstream region of some other gene and changes its rate of transcription.
 
-Transcription factors are vital for the cell's response to its environment because extracellular stimuli can serve to activate a transcription factor via a system of signaling molecules that convey a signal through relay molecules to the transcription factor (\autoref{fig:genetic_code}). Only when the transcription factor is activated will it regulate its target protein(s).
+Transcription factors are vital for the cell's response to its environment because extracellular stimuli can serve to activate a transcription factor via a system of signaling molecules that convey a signal through relay molecules to the transcription factor (\autoref{fig:transduction}). Only when the transcription factor is activated will it regulate its target protein(s).
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.6\textwidth]{../images/signal_pathway.jpg}
 \caption{A cell receiving a signal which triggers a response in which this signal is ``transduced'' into the cell, resulting in transcription of a gene. We will discuss signal transduction in greater detail in a future section.}
-\label{fig:genetic_code}
+\label{fig:transduction}
 \end{figure}
 
 In \autoref{chapter:chemotaxis}, we will discuss the details of how the cell detects an extracellular signal and conveys it as a response within the cell. For now, we will focus on the relationship between transcription factors and the genes they regulate.
@@ -96,7 +90,7 @@ In a final step, we unlink the protein from the DNA, leaving a collection of DNA
 \centering
 \mySfFamily
 \includegraphics[width = 0.6\textwidth]{../images/ChIP-seq_workflow.png}
-\caption{An overview of ChIP-seq. Figure courtesy Jkwchui, Wikimedia Commons user.}
+\caption{An overview of ChIP-seq.}
 \label{fig:ChIP-seq_workflow}
 \end{figure}
 

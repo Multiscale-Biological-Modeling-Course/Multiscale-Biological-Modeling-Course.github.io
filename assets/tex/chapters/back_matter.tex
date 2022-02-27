@@ -7,22 +7,18 @@
 \thispagestyle{empty}
 \phantom{}
 
-%Appendix
-\appendix
-\input{3rd_edition_chapters/Appendix.tex}
-
 \clearpage
 \thispagestyle{empty}
 \phantom{}
 
-% Print the glossary
+% Print the glossary.
+% In order for this to work, compile first and then run
+% makeglossaries master_file_name
 \printglossaries
 
-%\bibliographystyle{plain}
-%\bibliography{BA_bibliography}
-
+% Now for the bibliography
 \clearpage
-%\nocite{*} %Will add all references, even if they aren't cited.
+\nocite{*} %Will add all references, even if they aren't cited.
 \printbibliography
 
 \clearpage
@@ -31,7 +27,32 @@
 
 \phantomsection
 \chapter{Image Courtesies}
-%\textbf{\autoref{fig:hanoi_puzzle}:} AEvar Anfj\"{o}rd Bjarmason\\
+
+%Turing
+\textbf{\autoref{fig:zebrafish_zoom}:} JenniferOwen, Wikimedia Commons (adapted by Kit Yates)\\
+\textbf{\autoref{fig:form_constants}:} Lisa Diez, Wikimedia Commons\\
+\textbf{\autoref{fig:xmorphia-parameter-map}:} Robert Munafo\\
+%Motifs
+\textbf{\autoref{fig:central_dogma} (top):} J.~Alves, Open Clip Art\\
+\textbf{\autoref{fig:central_dogma} (bottom):} Dhorpool, Wikimedia commons\\
+\textbf{\autoref{fig:ChIP-seq_workflow}:} Jkwchui, Wikimedia Commons\\
+%Chemotaxis
+\textbf{\autoref{fig:chemotaxis_intro_runtumble}:} Sandy Parkinson\\
+%Coronavirus
+\textbf{\autoref{fig:coronavirus}:} F.~Murphy and S.~Whitfield, CDC\\
+\textbf{\autoref{fig:different_protein_shapes_2020}:} David Goodsell\\
+\textbf{\autoref{fig:rubiks_twist_four_panel}:} Bence Tipary\\
+\textbf{\autoref{fig:torsion_angles}:} Adam Rędzikowski.\\
+\textbf{\autoref{fig:hemoglobin_quaternary_structure}:} Richard Wheeler.\\
+\textbf{\autoref{fig:AminoAcidChart}:} OpenStax Biology; \url{https://openstax.org/books/biology/pages/1-introduction}\\
+\textbf{\autoref{fig:energy_landscape}:} David Beamish\\
+\textbf{\autoref{fig:AlphaFold2_BAKER}:} Mohammed al Quraishi (\url{https://bit.ly/39Mnym3})\\
+\textbf{\autoref{fig:BAKER_Zhang}:} Mohammed al Quraishi (\url{https://bit.ly/39Mnym3})\\
+\textbf{\autoref{fig:mass-spring}:} Flipping Physics (\url{flippingphysics.com})\\
+\textbf{\autoref{fig:gaussian_fluctuations}:} Ahmet Bakan\\
+%White blood cells
+\textbf{\autoref{fig:iris_flowers}:} from left to right: Emma Forsberg, unknown author, Robert H. Mohlenbrock.\\
+
 
 
 \clearpage
