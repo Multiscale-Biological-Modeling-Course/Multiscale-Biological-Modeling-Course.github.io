@@ -34,7 +34,7 @@ The RNA transcript is then \textdef{translated}{translation}{the process by whic
 
 DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the \textdef{central dogma of molecular biology}{central dogma of molecular biology}{FILL IN} and is illustrated in \autoref{fig:central_dogma} (bottom).\\
 
-\begin{figure}[h]
+\begin{figure}[hp]
 \centering
 \mySfFamily
 \begin{tabular}{c}
@@ -58,19 +58,18 @@ Gene regulation typically occurs at either the DNA or protein level. At the DNA 
 
 Because of the central dogma, transcription factors are involved in a sort of feedback loop. DNA is transcribed into RNA, which is translated into the protein sequence of a transcription factor, which then binds to the upstream region of some other gene and changes its rate of transcription.
 
-Transcription factors are vital for the cell's response to its environment because extracellular stimuli can serve to activate a transcription factor via a system of signaling molecules that convey a signal through relay molecules to the transcription factor (\autoref{fig:transduction}). Only when the transcription factor is activated will it regulate its target protein(s).
+Transcription factors are vital for the cell's response to its environment because extracellular stimuli can serve to activate a transcription factor via a system of signaling molecules that convey a signal through relay molecules to the transcription factor (\autoref{fig:transduction}). Only when the transcription factor is activated will it regulate its target protein(s).\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.6\textwidth]{../images/signal_pathway.jpg}
-\caption{A cell receiving a signal which triggers a response in which this signal is ``transduced'' into the cell, resulting in transcription of a gene. We will discuss signal transduction in greater detail in a future section.}
+\caption{A cell receiving a signal which triggers a response in which this signal is ``transduced'' into the cell, resulting in transcription of a gene. We will discuss signal transduction in greater detail in a future chapter.}
 \label{fig:transduction}
 \end{figure}
 
 In \autoref{chapter:chemotaxis}, we will discuss the details of how the cell detects an extracellular signal and conveys it as a response within the cell. For now, we will focus on the relationship between transcription factors and the genes they regulate.
 
-\FloatBarrier
 \phantomsection
 \subsection{Determining if a given transcription factor regulates the expression of a given gene}
 
@@ -84,12 +83,12 @@ The question is how to isolate the fragments of DNA that are bound to a single t
 
 The clever trick is to use an \textdef{antibody}{antibody}{FILL IN}. Normally, antibodies are produced by the immune system to bond to foreign pathogens. The antibody used by ChIP-seq is designed to identify a single protein of interest, and the antibody is attached to a bead. Once the antibody attaches to the protein target, a single complex is formed consisting of the DNA fragment, the transcription factor bonded to the DNA, the antibody that recognized the transcription factor, and the bead bonded to the antibody. Because the bead weighs down these complexes, they can be filtered out as ``precipitate'' from the solution, and we are left with just the DNA fragments that are bound to our transcription factor.
 
-In a final step, we unlink the protein from the DNA, leaving a collection of DNA fragments that were previously bonded to a single transcription factor. These fragments are read using DNA sequencing to determine the order of nucleotides on each fragment. Once we have read the fragments, we can then scan through the genome to determine the genes that these fragments precede. We can then postulate that these are the genes regulated by the transcription factor!
+In a final step, we unlink the protein from the DNA, leaving a collection of DNA fragments that were previously bonded to a single transcription factor. These fragments are read using DNA sequencing to determine the order of nucleotides on each fragment. Once we have read the fragments, we can then scan through the genome to determine the genes that these fragments precede. We can then postulate that these are the genes regulated by the transcription factor!\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/ChIP-seq_workflow.png}
+\includegraphics[width = 0.48\textwidth]{../images/ChIP-seq_workflow.png}
 \caption{An overview of ChIP-seq.}
 \label{fig:ChIP-seq_workflow}
 \end{figure}
@@ -99,13 +98,12 @@ How do you think that researchers could determine whether a transcription factor
 ]\end{qbox}
 
 
-\FloatBarrier
 \phantomsection
 \subsection{Organizing transcription factor information}
 
 As a result of techniques like ChIP-seq, researchers have learned a great deal about which transcription factors regulate which genes. But what can we do with this information?
 
-We would like to organize the relationships between transcription factors and the genes they regulate in a way that will help us identify patterns in these relationships. In the next section, we will see that consolidating gene regulatory information into a \textit{network} will allow us to infer how cells have evolved to quickly change the expression of their genes in response to a dynamic environment.
+We would like to organize the relationships between transcription factors and the genes they regulate in a way that will help us identify patterns in these relationships. In the next section, we will see that consolidating gene regulatory information into a \textit{network} will allow us to infer how cells have evolved to quickly change the expression of their genes in response to a dynamic environment.\\
 
 
 \FloatBarrier
@@ -121,7 +119,7 @@ Once we know which genes each transcription factor regulates, we can consolidate
 
 \autoref{fig:e_coli_tf_network} shows a portion of the transcription factor network for \textit{Escherichia coli}, the workhorse model organism of bacterial studies. Even though \textit{E. coli} is a bacterium, we will be able to draw powerful conclusions about gene regulation from its transcription factor network. The true network, the sum of over two decades of biological research, consists of thousands of genes and around 300 transcription factors. Because of the size of this network, it forms what computational biologists affectionally call a ``hairball'', or a network with so many connections that it is functionally impossible to analyze visually. For this reason, we will need to use computational approaches to study our hairball.
 
-Note that the edges in the \textit{E. coli} transcription factor network below are colored red or green. An edge connecting \textvar{X} to \textvar{Y} is colored green if \textvar{X} upregulates \textvar{Y}, and it is colored red if \textvar{X} downregulates \textvar{Y}. (Alternatively, we could label the edges with a ``+'' or ``-''.)
+Note that the edges in the \textit{E. coli} transcription factor network below are colored red or green. An edge connecting \textvar{X} to \textvar{Y} is colored green if \textvar{X} upregulates \textvar{Y}, and it is colored red if \textvar{X} downregulates \textvar{Y}. (Alternatively, we could label the edges with a ``+'' or ``-''.)\\
 
 \begin{figure}[h]
 \centering
@@ -197,6 +195,8 @@ There are multiple ways to generate a random network, but we will use an approac
 What should \textvar{n} and \textvar{p} be if we are generating a random network to compare against the \textit{E. coli} transcription factor network?
 ]\end{qbox}
 
+\fudgespace
+
 The full \textit{E. coli} transcription factor network contains thousands of genes, most of which are not transcription factors. As a result, the approach described above may form a random network that connects non-transcription factors to other nodes, which we should avoid.
 
 Instead, we will focus on the network comprising only those \textit{E. coli} transcription factors that regulate each other. This network has 197 nodes and 477 edges, and so we will begin by forming a random network with $\textvar{n} = 197$ nodes.
@@ -227,12 +227,12 @@ Not only is autoregulation an important feature of transcription factors, but th
 
 Theodosius Dobzhansky famously wrote that ``nothing in biology makes sense except in the light of evolution.'' In the spirit of this quotation, there must be some evolutionary reason for the presence of the large number of negatively autoregulating \textit{E. coli} transcription factors that we identified in the section. We will use biological modeling to establish this justification.
 
-Say that a transcription factor \textvar{X} regulates another transcription factor \textvar{Y}, and consider two cells. In both cells, \textvar{X} upregulates the transcription of \textvar{Y}, but in the second cell, \textvar{Y} also negatively autoregulates; see \autoref{fig:two_cells} for an illustration.
+Say that a transcription factor \textvar{X} regulates another transcription factor \textvar{Y}, and consider two cells. In both cells, \textvar{X} upregulates the transcription of \textvar{Y}, but in the second cell, \textvar{Y} also negatively autoregulates; see \autoref{fig:two_cells} for an illustration.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/two_cells.png}
+\includegraphics[width = 0.7\textwidth]{../images/two_cells.png}
 \caption{The two cells that we wish to simulate. In the first cell (left), \textvar{X} only activates \textvar{Y}; in the second cell (right), \textvar{Y} also negatively autoregulates.}
 \label{fig:two_cells}
 \end{figure}
@@ -398,7 +398,7 @@ Finally, recall that in our FFL model, the concentration of \textvar{Z} increase
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/damped_oscillator.png}
+\includegraphics[width = 0.8\textwidth]{../images/damped_oscillator.png}
 \caption{In a damped oscillation, the value of some variable (shown on the y-axis) oscillates back and forth around an asymptotic value while the amplitude decreases over time.}
 \label{fig:damped_oscillator}
 \end{figure}
