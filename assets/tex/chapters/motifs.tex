@@ -13,9 +13,9 @@
 
 In \autoref{chapter:turing}, we worked with a particle-based model that simulated the interactions of skin cells to produce complex Turing patterns. In this chapter, we will zoom into a much lower biological scale and model protein interactions, which occur on a molecular level. The scale of these interactions is tiny: a protein is typically on the order of about 10nm in diameter. (For comparison, the diameter of a single human hair is about 100,000 nm, and a light microscope's highest resolution is about 2,000 nm.) We will see that the cell has evolved a form of molecular communication based on protein interactions that is rapid, robust, and elegant.
 
-To model protein interactions, we will use a  \textdef{network}{network}{FILL IN}, which is a collection of \textdef{nodes}{nodes}{FILL IN} along with \textdef{edges}{edges}{FILL IN} that connect pairs of nodes. Whether we are studying the interactions of proteins, the complex chains of chemical reactions underlying cellular metabolism, the tangled webs of neurons in the human nervous system, or an evolutionary tree of life, networks are critical to our understanding of biological processes.
+To model protein interactions, we will use a  \textdef{network}{network}{a collection of nodes, pairs of which are connected by one- or two-directional segments or arcs called edges}, which is a collection of \textdefnogloss{nodes} along with \textdefnogloss{edges} that connect pairs of nodes. Whether we are studying the interactions of proteins, the complex chains of chemical reactions underlying cellular metabolism, the tangled webs of neurons in the human nervous system, or an evolutionary tree of life, networks are critical to our understanding of biological processes.
 
-Our interest lies in the frequently recurring structures hidden within biological networks called \textdef{network motifs}{network motifs}{FILL IN}. Similarly to our work \autoref{chapter:turing}, we will use modeling to answer \textit{why} these motifs have evolved to help the cell respond to its environment.
+Our interest lies in the frequently recurring structures hidden within biological networks called \textdef{network motifs}{network motif}{a recurring substructure in a network}. Similarly to our work \autoref{chapter:turing}, we will use modeling to answer \textit{why} these motifs have evolved to help the cell respond to its environment.
 
 We will soon define our specific network of study, but before we get ahead of ourselves, we will introduce some of the molecular biology fundamentals we will need to complete our analysis. You may already know this biological background, in which case you should feel free to skim the next section.\\
 
@@ -28,11 +28,11 @@ We will soon define our specific network of study, but before we get ahead of ou
 
 \subsection{The central dogma of molecular biology}
 
-DNA is a double-stranded molecule consisting of the four nucleobases adenine, cytosine, guanine, and thymine. A \textdef{gene}{gene}{a sequence of DNA nucleotides that serves as a template for the production of RNA, which may then be translated into protein} is a region of an organism's DNA that is \textdef{transcribed}{transcription}{the process by which one strand of a double-stranded DNA molecule is used as a blueprint for the production of a single strand of RNA} into a single-stranded RNA molecule, in which thymine is converted to uracil and the other bases remain the same.
+DNA is a double-stranded molecule consisting of the four nucleobases adenine, cytosine, guanine, and thymine; the sum total of a cell's DNA constitutes its \textdef{genome}{genome}{the total of a cell's DNA}. A \textdef{gene}{gene}{a sequence of DNA nucleotides that serves as a template for the production of RNA, which may then be translated into protein} is a region of an organism's DNA that is \textdef{transcribed}{transcription}{the process by which one strand of a double-stranded DNA molecule is used as a blueprint for the production of a single strand of RNA} into a single-stranded RNA molecule, in which thymine is converted to uracil and the other bases remain the same.
 
-The RNA transcript is then \textdef{translated}{translation}{the process by which a single-stranded RNA molecule is used as a template for the production of a polypeptide chain of amino acids} into an amino acid sequence. Because there are four different bases but twenty amino acids available, RNA is translated in \textdef{codons}{codons}{FILL IN}, or triplets of nucleobases. \autoref{fig:central_dogma}(top) shows the way in which codons are translated into amino acids, which is called the \textdef{genetic code}{genetic code}{FILL IN}.
+The RNA transcript is then \textdef{translated}{translation}{the process by which a single-stranded RNA molecule is used as a template for the production of a polypeptide chain of amino acids} into an amino acid sequence. Because there are four different bases but twenty amino acids available, RNA is translated in \textdef{codons}{codon}{a triplet of RNA nucleotides, which encodes a single amino acid during translation}, or triplets of nucleobases. \autoref{fig:central_dogma}(top) shows the way in which codons are translated into amino acids, which is called the \textdef{genetic code}{genetic code}{the set of rules according to which each of the 64 possible triplets of RNA nucleotides, called codons, are converted into one of the 20 standard amino acids (two codons do not correspond to any amino acid and are called stop codons, as they halt translation)}.
 
-DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the \textdef{central dogma of molecular biology}{central dogma of molecular biology}{FILL IN} and is illustrated in \autoref{fig:central_dogma} (bottom).\\
+DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the \textdef{central dogma of molecular biology}{central dogma of molecular biology}{the paradigm that genetic information in the cell flows from DNA to RNA via transcription and from RNA to protein via translation} and is illustrated in \autoref{fig:central_dogma} (bottom).\\
 
 \begin{figure}[hp]
 \centering
@@ -52,9 +52,9 @@ DNA can be thought of as a blueprint for storing information that flows from DNA
 \phantomsection
 \subsection{Transcription factors control gene regulation}
 
-All of your cells have essentially the same DNA, and yet your liver cells, heart cells, and brain cells are able to serve different functions. This is because the rates at which these genes are \textdef{regulated}{gene regulation}{the process by which a gene can be activated or repressed (i.e., turned ``on'' or ``off'' via molecular mechanisms}, or converted into RNA and then protein, vary between genes in different tissues.
+All of your cells have essentially the same DNA, and yet your liver cells, heart cells, and brain cells are able to serve different functions. This is because the rates at which these genes are \textdef{regulated}{gene regulation}{the process by which a gene can be activated or repressed (i.e., turned ``on'' or ``off'') via molecular mechanisms}, or converted into RNA and then protein, vary between genes in different tissues.
 
-Gene regulation typically occurs at either the DNA or protein level. At the DNA level, regulation is modulated by \textdef{transcription factors}{transcription factor}{FILL IN}, master regulator proteins that bind upstream of genes and serve to either \textdef{activate}{gene activation}{the process by which the production of a gene is increased} or \textdef{repress}{gene repression}{the process by which the production of a gene is decreased} a gene's rate of transcription, turning that rate up or down, respectively.
+Gene regulation typically occurs at either the DNA or protein level. At the DNA level, regulation is modulated by \textdef{transcription factors}{transcription factor}{a protein serving to regulate genes by binding to DNA}, master regulator proteins that bind upstream of genes and serve to either \textdef{activate}{gene activation}{the process by which the production of a gene is increased} or \textdef{repress}{gene repression}{the process by which the production of a gene is decreased} a gene's rate of transcription, turning that rate up or down, respectively.
 
 Because of the central dogma, transcription factors are involved in a sort of feedback loop. DNA is transcribed into RNA, which is translated into the protein sequence of a transcription factor, which then binds to the upstream region of some other gene and changes its rate of transcription.
 
@@ -75,15 +75,19 @@ In \autoref{chapter:chemotaxis}, we will discuss the details of how the cell det
 
 Over the years, a number of both computational and experimental approaches have been developed to identify the collection of genes that a given transcription factor regulates.
 
-A transcription factor has a weak binding affinity to DNA in general, but it has a very strong binding affinity for a single specific short sequence of nucleotides called a \textdef{motif}{motif}{FILL IN}. Think of a transcription factor as latching onto DNA and then ``sliding'' up and down the DNA molecule until it finds its target motif, where it clamps down. If this motif occurs immediately before a gene, then the transcription factor will regulate this gene.
+A transcription factor has a weak binding affinity to DNA in general, but it has a very strong binding affinity for a single specific short sequence of nucleotides called a \textdef{sequence motif}{sequence motif}{a repeated collection of nucleotides, which may serve as a binding site for a protein such as a transcription factor}. Think of a transcription factor as latching onto DNA and then ``sliding'' up and down the DNA molecule until it finds its target motif, where it clamps down. If this motif occurs immediately before a gene, then the transcription factor will regulate this gene.\\
 
-A natural question, then, is to find the set of genes to which a transcription factor binds. A widespread experimental practice for determining where a protein bonds in an organism's genome (i.e., its total collection of DNA) is called \textdef{ChIP-seq}{ChIP-seq}{FILL IN}, which is short for \textdef{chromatin immunoprecipitation sequencing}{chromatin immunoprecipitation sequencing}{FILL IN}. This approach, which is illustrated in \autoref{fig:ChIP-seq_workflow}, combines an organism's DNA with a collection of proteins that bond to DNA (which in this case would be transcription factors). After allowing for the proteins to bond naturally to the DNA, the DNA (with proteins attached) is cleaved into much smaller fragments of a few hundred base pairs. As a result of this process, we obtain a collection of DNA fragments, some of which are attached to protein.
+\begin{note}[%
+The astute reader will notice that we have already used the term ``motif'' in two different contexts, to mean both a recurring network substructure and now a sequence of nucleotides to which a transcription factor binds. This sequence is called a ``motif'' because the transcription factor may regulate multiple different genes, so that the binding sequence may occur upstream of all these genes.
+]\end{note}
+
+A natural question, then, is to find the set of genes to which a transcription factor binds. A widespread experimental practice for determining where a protein binds in an organism's genome is called \textdef{ChIP-seq}{ChIP-seq}{short for ``chromatin immunoprecipitation sequencing'', an approach that }, which is short for \textdefnogloss{chromatin immunoprecipitation sequencing}. This approach, which is illustrated in \autoref{fig:ChIP-seq_workflow}, combines an organism's DNA with multiple copies of a protein of interest that binds to DNA (which in this case would be a transcription factor). After allowing for the proteins to bind naturally to the DNA, the DNA is cleaved into much smaller fragments of a few hundred base pairs. As a result of this process, we obtain a collection of DNA fragments, some of which are attached to a copy of our protein of interest.
 
 The question is how to isolate the fragments of DNA that are bound to a single transcription factor of interest so that we can infer the fragments of DNA to which that transcription factor binds.
 
-The clever trick is to use an \textdef{antibody}{antibody}{FILL IN}. Normally, antibodies are produced by the immune system to bond to foreign pathogens. The antibody used by ChIP-seq is designed to identify a single protein of interest, and the antibody is attached to a bead. Once the antibody attaches to the protein target, a single complex is formed consisting of the DNA fragment, the transcription factor bonded to the DNA, the antibody that recognized the transcription factor, and the bead bonded to the antibody. Because the bead weighs down these complexes, they can be filtered out as ``precipitate'' from the solution, and we are left with just the DNA fragments that are bound to our transcription factor.
+The clever trick is to use an \textdef{antibody}{antibody}{a blood protein that binds to a specific foreign substance in the body}. Normally, antibodies are produced by the immune system to target foreign pathogens. The antibody used by ChIP-seq is designed to identify a single protein of interest, and the antibody is attached to a bead. Once the antibody attaches to the protein target, a single complex is formed consisting of the DNA fragment, the transcription factor bound to the DNA, the antibody that recognized the transcription factor, and the bead bound to the antibody. Because the bead weighs down these complexes, they can be filtered out as ``precipitate'' from the solution, and we are left with just the DNA fragments that are bound to our transcription factor.
 
-In a final step, we unlink the protein from the DNA, leaving a collection of DNA fragments that were previously bonded to a single transcription factor. These fragments are read using DNA sequencing to determine the order of nucleotides on each fragment. Once we have read the fragments, we can then scan through the genome to determine the genes that these fragments precede. We can then postulate that these are the genes regulated by the transcription factor!\\
+In a final step, we unlink the protein from the DNA, leaving a collection of DNA fragments that were previously bound to a single transcription factor. These fragments are read using DNA sequencing to determine the order of nucleotides on each fragment. Once we have read the fragments, we can then scan through the genome to determine the genes that these fragments precede. We can then postulate that these are the genes regulated by the transcription factor!\\
 
 \begin{figure}[h]
 \centering
@@ -115,7 +119,7 @@ We would like to organize the relationships between transcription factors and th
 
 \subsection{The transcription factor network of \textit{E. coli}}
 
-Once we know which genes each transcription factor regulates, we can consolidate this information into a \textdef{transcription factor network}{transcription factor network}{FILL IN}. The nodes in the network represent an organism's proteins, and we connect \textvar{X} to \textvar{Y} with an edge if \textvar{X} is a transcription factor that regulates the expression of protein \textvar{Y}. These edges are one-way connections; any node can have an edge leading into it, but only a transcription factor can have an edge leaving it.
+Once we know which genes each transcription factor regulates, we can consolidate this information into a \textdef{transcription factor network}{transcription factor network}{a network whose nodes represent an organism's proteins, and such that a ``one-way'' directed edge connects one protein \textvar{X} to protein \textvar{Y} if \textvar{X} is a transcription factor that regulates \textvar{Y}}. The nodes in the network represent an organism's proteins, and we connect \textvar{X} to \textvar{Y} with an edge if \textvar{X} is a transcription factor that regulates the expression of protein \textvar{Y}. These edges are one-way connections; any node can have an edge leading into it, but only a transcription factor can have an edge leaving it.
 
 \autoref{fig:e_coli_tf_network} shows a portion of the transcription factor network for \textit{Escherichia coli}, the workhorse model organism of bacterial studies. Even though \textit{E. coli} is a bacterium, we will be able to draw powerful conclusions about gene regulation from its transcription factor network. The true network, the sum of over two decades of biological research, consists of thousands of genes and around 300 transcription factors. Because of the size of this network, it forms what computational biologists affectionally call a ``hairball'', or a network with so many connections that it is functionally impossible to analyze visually. For this reason, we will need to use computational approaches to study our hairball.
 
@@ -137,9 +141,9 @@ Select the expanded view of the transcription factor network in \autoref{fig:e_c
 \phantomsection
 \subsection{(Feedback) loops in the transcription factor network}
 
-You may have noticed that the \textit{E. coli} transcription factor network seems to have surprisingly many \textdef{loops}{loops}{FILL IN}, or edges that connect a node to itself. It is worth pausing for a moment to consider the implications of a loop in a transcription factor network. What does it mean for a transcription factor to regulate itself?
+You may have noticed that the \textit{E. coli} transcription factor network seems to have surprisingly many \textdef{loops}{loop}{an edge in a network connecting a node to itself}, or edges that connect a node to itself. It is worth pausing for a moment to consider the implications of a loop in a transcription factor network. What does it mean for a transcription factor to regulate itself?
 
-A transcription factor is a protein, which means that because of the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In \textdef{autoregulation}{autoregulation}{FILL IN}, illustrated in \autoref{fig:autoregulation_example}, the transcription factor protein then binds to the DNA in the upstream region of the gene encoding the \textit{same} transcription factor. This type of \textdef{feedback}{feedback}{FILL IN} is a beautiful and surprising feature of a simple biological system.\\
+A transcription factor is a protein, which means that because of the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In \textdef{autoregulation}{autoregulation}{the process by which a transcription factor regulates its own production}, illustrated in \autoref{fig:autoregulation_example}, the transcription factor protein then binds to the DNA in the upstream region of the gene encoding the \textit{same} transcription factor. This type of \textit{feedback} is a beautiful and surprising feature of a simple biological system.\\
 
 \begin{figure}[h]
 \centering
@@ -237,7 +241,7 @@ Say that a transcription factor \textvar{X} regulates another transcription fact
 \label{fig:two_cells}
 \end{figure}
 
-In this section, we will simulate a ``race'' to the \textdef{steady state}{steady state}{FILL IN}, or \textdef{equilibrium}{equilibrium}{FILL IN}, concentration of \textvar{Y} in the two cells. Our premise is that the cell that reaches the steady state faster can respond more quickly to its environment and is therefore more fit for survival.
+In this section, we will simulate a ``race'' to the \textdef{steady state}{steady state}{also called equilibrium, a state in which potentially conflicting chemical forces are balanced}, or \textdefnogloss{equilibrium}, concentration of \textvar{Y} in the two cells. Our premise is that the cell that reaches the steady state faster can respond more quickly to its environment and is therefore more fit for survival.
 
 \FloatBarrier
 \phantomsection
@@ -281,7 +285,7 @@ If you followed the previous tutorial, then you were likely disappointed in the 
 
 By allowing \textvar{Y} to slow its own transcription, we wound up with a simulation in which the final concentration of \textvar{Y} was \textit{lower}. It seems like we are back where we started!
 
-The solution to our quandary is that the model we built was not a fair comparison between the two systems. In particular, the two simulations should be controlled so that they have approximately the \textit{same} steady state concentration of \textvar{Y}, since this concentration represents the cell's response to some stimulus. Ensuring this equal footing for the two simulations is called a \textdef{mathematically controlled comparison}{mathematically controlled comparison}{FILL IN}.\\
+The solution to our quandary is that the model we built was not a fair comparison between the two systems. In particular, the two simulations should be controlled so that they have approximately the \textit{same} steady state concentration of \textvar{Y}, since this concentration represents the cell's response to some stimulus. Ensuring this equal footing for the two simulations is called a \textdef{mathematically controlled comparison}{mathematically controlled comparison}{two models in which as many variables as possible are preserved between the two systems in an effort to preserve a fair comparison}.\\
 
 \begin{qbox}[%
 How can we change the parameters of our models to obtain a mathematically controlled comparison?
@@ -297,7 +301,7 @@ With these parameters fixed, the only way that the steady state concentration of
 \phantomsection
 \subsection{An evolutionary basis for negative autoregulation}
 
-\autoref{fig:nar_equal_chart} plots the number of \textvar{Y} particles for the two simulations on the same chart over time, with the rate of the $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ reaction increased in the simulation involving negative autoregulation. Both  simulations now have approximately the same steady state concentration of \textvar{Y}. However, the second simulation reaches this concentration faster; that is, its \textdef{response time}{response time}{FILL IN} to the external stimulus causing an increase in the production of \textvar{Y} is shorter.\\
+\autoref{fig:nar_equal_chart} plots the number of \textvar{Y} particles for the two simulations on the same chart over time, with the rate of the $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ reaction increased in the simulation involving negative autoregulation. Both  simulations now have approximately the same steady state concentration of \textvar{Y}. However, the second simulation reaches this concentration faster; that is, its \textdef{response time}{response time}{the time required for a biological system to respond to a stimulus (e.g., reaching a steady state concentration of a specific particle)} to the external stimulus causing an increase in the production of \textvar{Y} is shorter.\\
 
 \begin{figure}[h]
 \centering
@@ -323,7 +327,7 @@ In this section, we have seen that particle-based simulations can be powerful fo
 
 In the previous section, we saw that negative autoregulation can be used to lower the response time of a protein to an external stimulus. But the cell can only use negative autoregulation to respond quickly if the autoregulated protein is itself a transcription factor. Only about 300 out of 4,400 total \textit{E. coli} proteins are transcription factors. How can the cell speed up the manufacture of a protein if that protein is not a transcription factor?
 
-The answer lies in another transcription factor network motif called the \textdef{feedforward loop}{feedforward loop}{FILL IN} (\textdef{FFL}{FFL}{FILL IN}). An FFL, shown in \autoref{fig:feed-forward_loop}, is a network substructure in which \textvar{X} is connected to both \textvar{Y} and \textvar{Z}, and \textvar{Y} is connected to \textvar{Z}. Calling the FFL motif a ``loop'' is a misnomer. Rather, it is a small structure in which there are two paths from \textvar{X} to \textvar{Z}; one via direct regulation of \textvar{Z} by \textvar{X}, and another with an intermediate transcription factor \textvar{Y}.\\
+The answer lies in another transcription factor network motif called the \textdef{feedforward loop (FFL)}{feedforward loop (FFL)}{a network substructure in which \textvar{X} is connected to both \textvar{Y} and \textvar{Z}, and \textvar{Y} is connected to \textvar{Z}}. An FFL, shown in \autoref{fig:feed-forward_loop}, is a network substructure in which \textvar{X} is connected to both \textvar{Y} and \textvar{Z}, and \textvar{Y} is connected to \textvar{Z}. Calling the FFL motif a ``loop'' is a misnomer. Rather, it is a small structure in which there are two paths from \textvar{X} to \textvar{Z}; one via direct regulation of \textvar{Z} by \textvar{X}, and another with an intermediate transcription factor \textvar{Y}.\\
 
 \begin{figure}[h]
 \centering
@@ -337,7 +341,7 @@ Note that \textvar{X} and \textvar{Y} must be transcription factors because they
 
 Recall that every edge of a transcription factor network is assigned a sign based on whether the regulation represented by the edge corresponds to activation or repression, respectively. Accordingly, since an FFL involves three different regulation events, there are $2^3$ = 8 different types of FFLs.
 
-Among the 42 total FFLs in the \textit{E. coli} transcription factor network, five of them have the structure below, in which the edges connecting \textvar{X} to \textvar{Y} and \textvar{X} to \textvar{Z} are assigned a ``+'' and the edge connecting \textvar{Y} to \textvar{Z} is assigned a ``-''. This specific form of the FFL motif is  called a \textdef{type-1 incoherent feedforward loop}{type-1 incoherent feedforward loop}{FILL IN}. This form of the FFL will be our focus for the rest of the section.\\
+Among the 42 total FFLs in the \textit{E. coli} transcription factor network, five of them have the structure below, in which the edges connecting \textvar{X} to \textvar{Y} and \textvar{X} to \textvar{Z} are assigned a ``+'' and the edge connecting \textvar{Y} to \textvar{Z} is assigned a ``-''. This specific form of the FFL motif is  called a \textdefnogloss{type-1 incoherent feedforward loop}. This form of the FFL will be our focus for the rest of the section.\\
 
 \begin{qbox}[%
 How could we simulate a feedforward loop with a particle-based reaction-diffusion model akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
@@ -393,7 +397,7 @@ Unlike negative autoregulation of a single transcription factor, the FFL require
 
 We only considered one of the eight types of FFL in this section. You might wonder whether any of the other seven FFLs serve as network motifs.  For example, what happens if \textvar{X} activates \textvar{Z}, \textvar{X} represses \textvar{Y}, and \textvar{Y} activates \textvar{Z}? We will explore these additional FFL motifs in the exercises at the end of the section.
 
-Finally, recall that in our FFL model, the concentration of \textvar{Z} increased dramatically before decreasing to the steady state. \autoref{fig:ffl_chart} is reminiscent of a \textdef{damped oscillation}{damped oscillation}{FILL IN} process like the one in \autoref{fig:damped_oscillator}, in which the concentration of a particle oscillates above and below a steady state, while the amplitude of the wave gets smaller and smaller. Is it possible for a network motif to produce more of a true ``wave'' without dampening?\\
+Finally, recall that in our FFL model, the concentration of \textvar{Z} increased dramatically before decreasing to the steady state. \autoref{fig:ffl_chart} is reminiscent of a \textdefnogloss{damped oscillation} process like the one in \autoref{fig:damped_oscillator}, in which the concentration of a particle oscillates above and below a steady state, while the amplitude of the wave gets smaller and smaller. Is it possible for a network motif to produce more of a true ``wave'' without dampening?\\
 
 \begin{figure}[h]
 \centering
@@ -413,13 +417,13 @@ Finally, recall that in our FFL model, the concentration of \textvar{Z} increase
 
 \subsection{Oscillators are everywhere in nature}
 
-Even if placed in a bunker, humans will maintain a roughly 24-hour cycle of sleep and wakefulness. This \textdef{circadian rhythm}{circadian rhythm}{FILL IN} is present throughout living things, including plants and even cyanobacteria.
+Even if placed in a bunker, humans will maintain a roughly 24-hour cycle of sleep and wakefulness. This \textdef{circadian rhythm}{circadian rhythm}{a collection of internal changes in living things that follow a roughly 24-hour cycle} is present throughout living things, including plants and even cyanobacteria.
 
 Life processes that oscillate over time are not confined to circadian rhythms. You may feel like you have control over when you go to bed, but your heart and respiratory system both follow subconscious cyclical rhythms, and your cells are governed by a strict cell cycle as they grow and divide.
 
 We might guess from what we have learned in this section that cyclical biological rhythms must be governed by simple rules. However, the question remains as to what these rules are and how they can correctly execute oscillations over and over, throughout an organism's life.
 
-Researchers have identified many network motifs that facilitate oscillation, some of which are very complicated and include many components. In this section, we will focus on a simple three-component oscillator motif called a \textdef{repressilator}{repressilator}{FILL IN}.
+Researchers have identified many network motifs that facilitate oscillation, some of which are very complicated and include many components. In this section, we will focus on a simple three-component oscillator motif called a \textdef{repressilator}{repressilator}{a transcription factor network motif in which \textvar{X} represses \textvar{Y}, \textvar{Y} represses \textvar{Z}, and \textvar{Z} represses \textvar{X}}.
 
 \FloatBarrier
 \phantomsection
@@ -441,7 +445,7 @@ Try to devise a reaction-diffusion model representing the repressilator.
 
 To build a reaction-diffusion model accompanying the repressilator, we start with a quantity of \textvar{X} particles, and no \textvar{Y} or \textvar{Z} particles. We assume that all three particles diffuse at the same rate and degrade at the same rate.
 
-Furthermore, we assume that all three particles are produced as the result of an activation process by some other transcription factor(s), which we assume happens at the same rate. We will use a \textdef{hidden particle}{hidden particle}{FILL IN} \textvar{I} that serves to activate the three visible particles via the three reactions $\textvar{I} \rightarrow \textvar{I} + \textvar{X}$, $\textvar{I} \rightarrow \textvar{I} + \textvar{Y}$, and $\textvar{I} \rightarrow \textvar{I} + \textvar{Z}$, all taking place at the same rate.
+Furthermore, we assume that all three particles are produced as the result of an activation process by some other transcription factor(s), which we assume happens at the same rate. We will use a \textdefnogloss{hidden particle} \textvar{I} that serves to activate the three visible particles via the three reactions $\textvar{I} \rightarrow \textvar{I} + \textvar{X}$, $\textvar{I} \rightarrow \textvar{I} + \textvar{Y}$, and $\textvar{I} \rightarrow \textvar{I} + \textvar{Z}$, all taking place at the same rate.
 
 In the [previous section](feedforward) on the feed-forward loop, we saw that we can use the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ to model the repression of \textvar{Y} by \textvar{X}. To complete the repressilator model, we will add the two reactions $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ and $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$, having the same rate as the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$.
 
@@ -510,7 +514,7 @@ In the previous section, we saw that the repressilator, a three-element motif, c
 
 As we saw in \autoref{chapter:turing} with our work on Turing patterns, tracking the movements of many individual particles led to a slow simulation that did not scale well given more particles or reactions. This observation led us to devise a coarse-grained reaction-diffusion model that was still able to produce Turing patterns. We used a cellular automaton because the concentrations of particles varied in different locations and were diffusing at different rates.
 
-We would like to devise a coarse-grained model of the repressilator. However, the particles diffuse at the same rate and are \textit{uniform} across the simulation, and so there is no need to track concentrations in individual locations. As a result, we will need a simulation that assumes that the particles are \textdef{well-mixed}{well-mixed}{FILL IN}.
+We would like to devise a coarse-grained model of the repressilator. However, the particles diffuse at the same rate and are \textit{uniform} across the simulation, and so there is no need to track concentrations in individual locations. As a result, we will need a simulation that assumes that the particles are \textdefnogloss{well-mixed}.
 
 For example, say that we are modeling a degradation reaction. If we start with 10,000 \textvar{X} particles, then after a single time step, we will simply multiply the number of \textvar{X} particles by (1-\textit{k}), where \textit{k} is a parameter related to the rate of the degradation reaction.
 
