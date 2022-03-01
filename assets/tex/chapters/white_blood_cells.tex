@@ -4,7 +4,6 @@
 \renewcommand{\chaptertitle}{Training a Computer to Classify White Blood Cells}
 \addcontentsline{cc}{chapter}{Chapter \thechapter} % Adds chapter number to table of contents
 
-
 %\clearpage \null
 %\thispagestyle{empty}
 %\AddToShipoutPictureBG*{% Add picture to current page
@@ -188,7 +187,7 @@ A classical dataset commonly used for motivating classification is the \textdef{
 \label{fig:iris_flowers}
 \end{figure}
 
-Anderson measured four attributes, or \textdef{features}{features}{FILL IN}, of each of the flowers in his dataset: both the width and height of the flower's petal, and both the width and height of the flower's sepal (a green offshoot beneath the petals). The features and species labels for twelve of the flowers in the iris flower dataset are shown in \autoref{fig:iris_feature_table}. Fisher considered whether it was possible to classify each flower according to its species using only the features Anderson had measured.\\
+Anderson measured four attributes, or \textdef{features}{feature}{a measurable characteristic of a data point; multiple features are grouped together to form a feature vector in which the \textvar{i}-th element is the data point's value for the \textvar{i}-th feature}, of each of the flowers in his dataset: both the width and height of the flower's petal, and both the width and height of the flower's sepal (a green offshoot beneath the petals). The features and species labels for twelve of the flowers in the iris flower dataset are shown in \autoref{fig:iris_feature_table}. Fisher considered whether it was possible to classify each flower according to its species using only the features Anderson had measured.\\
 
 \begin{figure}[h]
 \centering
@@ -233,7 +232,7 @@ If we were to use only two features in the Iris flower dataset, then a flower's 
 
 Note how stark the pattern is in \autoref{fig:iris_petal_data}. Even though we chose only two features from the iris flowers, the points associated with the flowers can be divided into three main clusters by species. In other words, nearby points tend to correspond to flowers from the same species.
 
-If we were to use all four features for the iris dataset, then every flower would be represented by a point in four-dimensional space. For example, the first flower in our initial table of iris features would be represented by the point $(5.1, 3.5, 1.4, 0.2)$. In general, when classifying a collection of data with \textvar{n} features, each element in the dataset can be represented by a \textdef{feature vector}{feature vector}{FILL IN} of length \textvar{n}, whose \textvar{i}-th value corresponds to its value for the \textvar{i}-th feature.
+If we were to use all four features for the iris dataset, then every flower would be represented by a point in four-dimensional space. For example, the first flower in our initial table of iris features would be represented by the point $(5.1, 3.5, 1.4, 0.2)$. In general, when classifying a collection of data with \textvar{n} features, each element in the dataset can be represented by a \textdefnogloss{feature vector} of length \textvar{n}, whose \textvar{i}-th value corresponds to its value for the \textvar{i}-th feature.
 
 \FloatBarrier
 \phantomsection
@@ -255,7 +254,7 @@ Consider the point with unknown class (gray) in \autoref{fig:knn_neighborhood}. 
 
 The preceding question indicates that classifying points can be surprisingly open-ended. Because of this freedom, researchers have devised a variety of different approaches for classifying data given data with known classes.
 
-We will discuss a simple but powerful classification algorithm called \textdef{k-nearest neighbors (k-NN)}{k-nearest neighbors (k-NN)}{FILL IN}. In k-NN, we fix a positive integer \textvar{k} in advance, which will be used for classification of all points. Then, for each point with unknown class, we assign it the class possessed by the largest number of its \textvar{k} closest neighbors.
+We will discuss a simple but powerful classification algorithm called \textdef{k-nearest neighbors (k-NN)}{k-nearest neighbors (k-NN)}{a classification algorithm that assigns each point with unknown class to have the class possessed by the largest number of its \textvar{k} closest neighbors with known class.}. In k-NN, we fix a positive integer \textvar{k} in advance, which will be used for classification of all points. Then, for each point with unknown class, we assign it the class possessed by the largest number of its \textvar{k} closest neighbors.
 
 In the ongoing example, if we were using \textvar{k} equal to 1, then we would assign the unknown point from \autoref{fig:knn_neighborhood} to the green class (\autoref{fig:knn_neighborhood_k=1}).\\
 
@@ -281,7 +280,7 @@ However, with the same data and \textvar{k} equal to 4, \autoref{fig:knn_neighbo
 When \textvar{k} = 2 or \textvar{k} = 6 for the classification of the point in \autoref{fig:knn_neighborhood}, note that we obtain a tie in the number of points from each known class belonging to the \textvar{k} nearest neighbors of a point with unknown class. How could we break ties in k-NN?
 ]\end{qbox}
 
-In the more general case in which feature vectors have length \textvar{n}, we can determine which points are nearest to a given point by using the \textdef{Euclidean distance}{Euclidean distance}{FILL IN}, which generalizes the distance between two points in two-dimensional space to vectors in \textvar{n}-dimensional space. Say that we have the vectors $x = (x_1, x_2, \ldots, x_n)$ and $y = (y_1, y_2, \ldots, y_n)$. Then the Euclidean distance between them is given by the sum of squares of differences between corresponding vector elements:
+In the more general case in which feature vectors have length \textvar{n}, we can determine which points are nearest to a given point by using the \textdefnogloss{Euclidean distance}, which generalizes the distance between two points in two-dimensional space to vectors in \textvar{n}-dimensional space. Say that we have the vectors $x = (x_1, x_2, \ldots, x_n)$ and $y = (y_1, y_2, \ldots, y_n)$. Then the Euclidean distance between them is given by the sum of squares of differences between corresponding vector elements:
 
 $$d(x, y) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n-y_n)^2}$$
 
@@ -327,11 +326,11 @@ You may be confused as to why biologists should care about stone tablets and los
 \phantomsection
 \subsection{Vectorizing a segmented image}
 
-As we mentioned in the previous section, we would like to apply k-NN to our example of segmented WBC images. Yet k-NN first requires each object to be represented by a feature vector, and so we need some way of converting a WBC image into a feature vector. In this way, we can produce a \textdef{shape space}{shape space}{FILL IN}, or an assignment of (cellular image) shapes to points in multi-dimensional space.
+As we mentioned in the previous section, we would like to apply k-NN to our example of segmented WBC images. Yet k-NN first requires each object to be represented by a feature vector, and so we need some way of converting a WBC image into a feature vector. In this way, we can produce a \textdef{shape space}{shape space}{an assignment of shapes to points in multi-dimensional space}, or an assignment of (cellular image) shapes to points in multi-dimensional space.
 
 You may notice that the problem of ``vectorizing'' a WBC image is similar to one that we have already encountered in \autoref{chapter:coronavirus}, when we vectorized a protein structure as the collection of locations of its alpha carbons. Given a protein structure \textvar{S}, we sampled the \textvar{n} alpha carbons from \textvar{S}, producing a vector $s = (s_1, \ldots, s_n)$, where $s_i$ is the position of the \textvar{i}-th alpha carbon of \textvar{S}.
 
-We will apply the same idea to vectorize our segmented WBCs. Given a binarized image, we will first center the image so that its center of mass is at the origin, and then sample \textvar{n} points from the boundary of the cell nucleus to produce a \textdef{shape vector}{shape vector}{FILL IN} $s = (s_1, \ldots, s_n)$, where $s_i$ is a point with coordinates $(x(i), y(i))$.\\
+We will apply the same idea to vectorize our segmented WBCs. Given a binarized image, we will first center the image so that its center of mass is at the origin, and then sample \textvar{n} points from the boundary of the cell nucleus to produce a \textdef{shape vector}{shape vector}{a feature vector for a shape whose features are points on the boundary of the shape} $s = (s_1, \ldots, s_n)$, where $s_i$ is a point with coordinates $(x(i), y(i))$.\\
 
 \begin{note}[%
 Both isolating the boundary of a binarized image, and sampling points from this boundary to ensure that points are similarly spaced, are challenging tasks that are outside the scope of our work here, and which we will let CellOrganizer handle for us.
@@ -364,7 +363,7 @@ We handled this issue in our work on protein structure comparison by introducing
 One way to build a shape space for a collection of binarized images is to apply the Kabsch algorithm, which includes a step in which the best rotation is found, to every pair of images. As a result, we would obtain the RMSD between every pair of images, and we would then need to build a shape space from all these distances between pairs of shapes.\\
 
 \begin{note}[%
-CellOrganizer has one applies an alternative approach to the Kabsch algorithm for computing a cellular distance, called the \textdef{diffeomorphic distance}{diffeomorphic distance}{FILL IN}, which can be thought of intuitively as determining the amount of energy required to deform one shape into another.
+CellOrganizer has one applies an alternative approach to the Kabsch algorithm for computing a cellular distance, called the \textdefnogloss{diffeomorphic distance}, which can be thought of intuitively as determining the amount of energy required to deform one shape into another.
 ]\end{note}
 
 We hope that this problem sounds familiar, as it is the Lost Cities problem in disguise. The pairs of distances between images correspond to a road atlas, and placing images into a shape space corresponds to locating cities.
@@ -381,7 +380,7 @@ If we have \textvar{m} cellular images, then how many times will we need to comp
 
 Unfortunately, if we have a large dataset, then computing the distance between every pair of objects can become very time-intensive, even with a powerful computer. Instead, we will rotate all images \textit{concurrently}. After this alignment, we can then center and vectorize all the images starting at the same position.
 
-One way of aligning a collection of images is to first identify the \textdef{major axis}{major axis}{FILL IN} of each image, which is the line segment crossing through the image's center of mass that is as long as possible. \autoref{fig:three_similar_shapes_unaligned} shows the major axis for a few shapes that may not immediately look similar.
+One way of aligning a collection of images is to first identify the \textdef{major axis}{major axis}{the line segment crossing through an object's center of mass that is as long as possible} of each image, which is the line segment crossing through the image's center of mass that is as long as possible. \autoref{fig:three_similar_shapes_unaligned} shows the major axis for a few shapes that may not immediately look similar.
 
 \begin{figure}[h]
 \centering
@@ -433,7 +432,7 @@ We define an \textvar{n}-dimensional unit sphere as the set of points in \textva
 
 One way of interpreting the vanishing of the sphere's volume is that the cube has more corners than a square does, and so the more dimensions that we have, the more corners in which there are to hide away from the sphere. In other words, as we increase the number of dimensions, most of the volume of an object winds up scattering outward from the object's center.
 
-The vanishing sphere seem like an arcane triviality holding interest only for mathematicians toiling in fluorescently lit academic offices at strange hours. Yet this little story is just one manifestation of a very deep paradigm in data science called the \textdef{curse of dimensionality}{curse of dimensionality}{FILL IN}, a collection of principles that arise in higher dimensions that run counter to our intuition about our three-dimensional existence.
+The vanishing sphere seem like an arcane triviality holding interest only for mathematicians toiling in fluorescently lit academic offices at strange hours. Yet this little story is just one manifestation of a very deep paradigm in data science called the \textdef{curse of dimensionality}{curse of dimensionality}{a collection of principles that arise in higher dimensions that run counter to our intuition about our three-dimensional existence}, a collection of principles that arise in higher dimensions that run counter to our intuition about our three-dimensional existence.
 
 \FloatBarrier
 \phantomsection
@@ -477,9 +476,9 @@ If we draw a line through the center of the data (\autoref{fig:iris_flowers_regr
 How could we have determined the line in \autoref{fig:iris_flowers_regression_line}?
 ]\end{qbox}
 
-Long ago in math class, you may have learned how to choose a line to best approximate a two-dimensional dataset using \textdef{linear regression}{linear regression}{FILL IN}, which we will now briefly describe. In regression, we first establish one variable as the \textit{dependent} variable, which is typically plotted on the y-axis. In our iris flower example, the dependent variable is petal width.
+Long ago in math class, you may have learned how to choose a line to best approximate a two-dimensional dataset using \textdefnogloss{linear regression}, which we will now briefly describe. In regression, we first establish one variable as the \textit{dependent} variable, which is typically plotted on the y-axis. In our iris flower example, the dependent variable is petal width.
 
-Given a line, we use $L(x)$ to denote the y-coordinate of the point on the line corresponding to a given x-coordinate. For this line, we can then define the \textdef{residual}{residual}{FILL IN} of a data point $(x, y)$ as the difference $y - L(x)$ between its y-coordinate and the y-coordinate that the line estimates as corresponding to \textvar{x}. If a residual is positive, then the data point lies ``above'' the line, and if the residual is negative, then the point lies ``below'' the line (\autoref{fig:residuals_y_coordinates}).\\
+Given a line, we use $L(x)$ to denote the y-coordinate of the point on the line corresponding to a given x-coordinate. For this line, we can then define the \textdefnogloss{residual} of a data point $(x, y)$ as the difference $y - L(x)$ between its y-coordinate and the y-coordinate that the line estimates as corresponding to \textvar{x}. If a residual is positive, then the data point lies ``above'' the line, and if the residual is negative, then the point lies ``below'' the line (\autoref{fig:residuals_y_coordinates}).\\
 
 \begin{figure}[h]
 \centering
@@ -513,7 +512,7 @@ For the iris flower dataset, which of the two choices for dependent variable do 
 
 The preceding question is implying that no clear \textit{causality} underlies the correlation between petal width and petal length, which makes it difficult to prioritize one variable over the other as the dependent variable. For this reason, we will revisit how we are defining the line that best fits the data.
 
-Instead of considering residuals based on distances to the line in only the x-direction or the y-direction, we can instead examine the distances from our data points to the line (\autoref{fig:residuals_projections}). The line minimizing the sum of the squares of these distances treats each of the two variables equally and is called the \textdef{first principal component}{first principal component}{FILL IN} of the data.\\
+Instead of considering residuals based on distances to the line in only the x-direction or the y-direction, we can instead examine the distances from our data points to the line (\autoref{fig:residuals_projections}). The line minimizing the sum of the squares of these distances treats each of the two variables equally and is called the \textdefnogloss{first principal component} of the data.\\
 
 \begin{figure}[h]
 \centering
@@ -531,11 +530,11 @@ The first principal component is often said to be the line that ``explains the m
 %An animated GIF showing that the distances from points to their projections onto a line change as the line rotates. The line of best fit is the one in which the sum of the square of these distances is minimized.  Source: amoeba, StackExchange user.[^amoeba]
 %{: style="font-size: medium;"}
 
-Another benefit of finding the first principal component of a dataset is that it allows us to \textit{reduce} the dimensionality of our dataset from two dimensions to one. We call the point on a line that is nearest to a given point the \textdef{projection}{projection}{FILL IN} of that point onto the line. As a result, the projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
+Another benefit of finding the first principal component of a dataset is that it allows us to \textit{reduce} the dimensionality of our dataset from two dimensions to one. We call the point on a line that is nearest to a given point the \textdefnogloss{projection} of that point onto the line. As a result, the projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
 
 Say that we wanted to generalize the ideas above to three-dimensional space. The first principal component would offer a one-dimensional explanation of the variance in the data, but perhaps a line is insufficient to this end. Maybe the points all lie very near to a plane (a two-dimensional object), and projecting these points onto the nearest plane would effectively reduce the dataset to two dimensions.
 
-Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but it is possible to generalize these concepts mathematically. Given a collection of \textvar{m} data points (vectors) in \textvar{n}-dimensional space, we are looking for a \textvar{d}-dimensional \textdef{hyperplane}{hyperplane}{}, or an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on this hyperplane, we reduce the dimension of the dataset from \textvar{n} to \textvar{d}. This approach, which is over 100 years old, is called \textdef{principal component analysis (PCA)}{principal component analysis (PCA)}{FILL IN}; a closely related concept called \textdefnogloss{singular value decomposition} was developed in the \nth{19} century.\\
+Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but it is possible to generalize these concepts mathematically. Given a collection of \textvar{m} data points (vectors) in \textvar{n}-dimensional space, we are looking for a \textvar{d}-dimensional \textdef{hyperplane}{hyperplane}{an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space}, or an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on this hyperplane, we reduce the dimension of the dataset from \textvar{n} to \textvar{d}. This approach, which is over 100 years old, is called \textdef{principal component analysis (PCA)}{principal component analysis (PCA)}{an approach used for finding the lower-dimensional hyperplane through a collection of data minimizing the distances of the points to the hyperplane}; a closely related concept called \textdefnogloss{singular value decomposition} was developed in the \nth{19} century.\\
 
 \begin{note}[%
 It can be shown that if $d_1$ is smaller than $d_2$, then the hyperplane provided by PCA of dimension $d_1$ is a subset of the hyperplane of dimension $d_2$. For example, the first principal component is always found within the plane ($d = 2$) provided by PCA.
@@ -547,7 +546,7 @@ PCA may be old, but it is one of the fundamental tools of statistical analysis i
 \phantomsection
 \subsection{Genotyping: PCA is more powerful than you think}
 
-Biologists have identified hundreds of thousands of \textdef{markers}{markers}{FILL IN}, locations within human DNA that that are common sources of human variation. The most commonly type of marker is a single nucleotide (A, C, G, or T). In the process of \textdef{genotyping}{genotyping}{FILL IN}, a service provided by companies as part of the booming ancestry industry, an individual's markers are determined from a DNA sample.
+Biologists have identified hundreds of thousands of \textdefnogloss{markers}, locations within human DNA that that are common sources of human variation. The most commonly type of marker is a single nucleotide (A, C, G, or T). In the process of \textdef{genotyping}{genotyping}{a process in which an individual's genetic markers are identified and compared to those sampled from others}, a service provided by companies as part of the booming ancestry industry, an individual's markers are determined from a DNA sample.
 
 An individual's \textvar{n} markers can be converted to an \textvar{n}-dimensional vector \textvar{v} such that $v(i)$ is 1 if the individual possesses the variant for a marker and $v(i)$ is 0 if the individual has the more common version of the marker.\\
 
@@ -624,7 +623,7 @@ Although images from the same family do not cluster as tightly as the iris flowe
 \phantomsection
 \subsection{Cross validation}
 
-We would like to apply k-NN to a dimension-reduced shape space WBC images to see how often it assigns an image to the correct class. The tricky part is that we already know the correct class for every image in our dataset. To get around this issue, we could exclude some \textit{subset} of the data, called the \textdef{validation set}{validation set}{FILL IN}. After pretending that we don't know the correct classes for elements of the validation set, we will see how often our classification algorithm correctly identifies the class of each object in this set.\\
+We would like to apply k-NN to a dimension-reduced shape space WBC images to see how often it assigns an image to the correct class. The tricky part is that we already know the correct class for every image in our dataset. To get around this issue, we could exclude some \textit{subset} of the data, called the \textdefnogloss{validation set}. After pretending that we don't know the correct classes for elements of the validation set, we will see how often our classification algorithm correctly identifies the class of each object in this set.\\
 
 \begin{qbox}[%
 What issues do you see with using a validation set?
@@ -632,9 +631,9 @@ What issues do you see with using a validation set?
 
 Unfortunately, it is unclear which subset of the data we should use as a validation set. Random variation could mean that the reported accuracy will change depending on which subset we choose. And what makes the elements of the validation set so special as to be chosen? Ideally, we would use a more democratic approach that is not subject to random variation and that uses \textit{all} of the data for validation.
 
-In \textdef{cross validation}{cross validation}{FILL IN}, we divide our data into a collection of \textvar{f} (approximately) equally sized groups called \textdef{folds}{folds}{FILL IN}. We use one of these folds as a validation set, keeping track of how many objects are correctly classified, and then we start over with a different fold as our validation set. Cross validation is democratic, since every element in our dataset will get used as a member of a validation set exactly once.
+In \textdef{cross validation}{cross validation}{an approach used in classification (or other machine learning approaches) in which we divide the data into approximately equally sized groups called folds; over multiple rounds, one fold is used as a validation set, pretending that we do not know the correct class of these data points, and we measure the correctness of the approach at identifying the class of each point}, we divide our data into a collection of \textvar{f} (approximately) equally sized groups called \textdefnogloss{folds}. We use one of these folds as a validation set, keeping track of how many objects are correctly classified, and then we start over with a different fold as our validation set. Cross validation is democratic, since every element in our dataset will get used as a member of a validation set exactly once.
 
-The case in which \textvar{f} is equal to the number of points in our dataset is called \textdef{leave one out cross validation}{leave one out cross validation}{FILL IN}. For every point in the dataset, we pretend that we do not know its label, use the classification algorithm to assign it a class, and then compare this prediction against the known class.
+The case in which \textvar{f} is equal to the number of points in our dataset is called \textdefnogloss{leave one out cross validation}. For every point in the dataset, we pretend that we do not know its label, use the classification algorithm to assign it a class, and then compare this prediction against the known class.
 
 \FloatBarrier
 \phantomsection
@@ -642,7 +641,7 @@ The case in which \textvar{f} is equal to the number of points in our dataset is
 
 Before we can apply cross validation to WBC images, we should know how to quantify the performance of the classifier. This task may seem easy, but we will see that pitfalls are lurking.
 
-\autoref{fig:iris_confusion_matrix} shows the result of applying k-NN to the iris flower dataset, using \textvar{k} equal to 1 and cross-validation with \textvar{f} equal to 10 (meaning that since there are 150 flowers, each fold contains 15 flowers). This table is called a \textdef{confusion matrix}{confusion matrix}{FILL IN}, because it helps us visualize whether we are ``confusing'' the assignment of a flower to the wrong class.\\
+\autoref{fig:iris_confusion_matrix} shows the result of applying k-NN to the iris flower dataset, using \textvar{k} equal to 1 and cross-validation with \textvar{f} equal to 10 (meaning that since there are 150 flowers, each fold contains 15 flowers). This table is called a \textdef{confusion matrix}{a table used to measure the results of a classification algorithm, identifying how many items from each known class were assigned to each class by the algorithm}, because it helps us visualize whether we are ``confusing'' the assignment of a flower to the wrong class.\\
 
 \begin{figure}[h]
 \centering
@@ -664,7 +663,7 @@ In the confusion matrix, rows correspond to true classes, and columns correspond
 We did not apply dimension reduction to the iris flower dataset because it has only four dimensions.
 ]\end{note}
 
-We define the \textdef{accuracy}{accuracy}{FILL IN} of a classifier as the fraction of objects that it correctly identifies out of the total. For the above iris flower example, the confusion matrix indicates that k-NN has an accuracy of $(50 + 47 + 46)/150 = 95.3\%$.
+We define the \textdef{accuracy}{accuracy}{the fraction of data points that a classification algorithm correctly classifies out of the total number of data points} of a classifier as the fraction of objects that it correctly identifies out of the total. For the above iris flower example, the confusion matrix indicates that k-NN has an accuracy of $(50 + 47 + 46)/150 = 95.3\%$.
 
 It may seem that accuracy is the only metric that we need. But if you were in a smarmy mood, then you might design a classifier that produces the confusion matrix in \autoref{fig:wbc_clown_matrix} for our WBC dataset.\\
 
@@ -716,7 +715,7 @@ What other metrics could we design for measuring the success of a classifier?
 
 To motivate our discussion of other classifier metrics, we will continue discussing medical tests, which can be thought of as classifiers with two classes (positive or negative).
 
-First, we define some terms. A \textdef{true positive}{true positive}{FILL IN} is a positive test in a patient that has the disease; a \textdef{false positive}{false positive}{FILL IN} is a positive test in a patient that does not have the disease; a \textdef{true negative}{true negative}{FILL IN} is a negative test in a patient that does not have the disease; and a \textdef{false negative}{false negative}{FILL IN} is a negative test in a patient that does have the disease. \autoref{fig:medical_test_confusion_matrix} shows the locations of these four terms in a two-class confusion matrix.\\
+First, we define some terms. A \textdef{true positive}{true positive}{a positive test in an individual that is positive for the condition} is a positive test in a patient that has the disease; a \textdef{false positive}{false positive}{a positive test in an individual that is negative for the condition} is a positive test in a patient that does not have the disease; a \textdef{true negative}{true negative}{a negative test in an individual that is negative for the condition} is a negative test in a patient that does not have the disease; and a \textdef{false negative}{false negative}{a negative test in an individual that is positive for the condition} is a negative test in a patient that does have the disease. \autoref{fig:medical_test_confusion_matrix} shows the locations of these four terms in a two-class confusion matrix.\\
 
 \begin{figure}[h]
 \centering
@@ -742,11 +741,11 @@ What is the accuracy of this test? How does it compare to the accuracy of a test
 
 Once again, this test has lower accuracy than one that returns negative for all individuals, but we will now show metrics for which it is superior.
 
-The \textdef{recall}{recall}{FILL IN} (a.k.a. \textdefnogloss{sensitivity}) of a two-class classifier is the percentage of positive cases that the test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives (found by summing the top row of the confusion matrix). For our hypothetical COVID confusion matrix in \autoref{fig:medical_test_confusion_matrix_hypothetical}, the recall is $1,000/(1,000 + 500) = 66.7\%$. Recall ranges from 0 to 1, with larger values indicating that the test is ``sensitive'', meaning that it can identify true positives out of patients who actually are positive.
+The \textdef{recall}{recall (a.k.a.~sensitivity)}{the percentage of positive cases that a two-class classifier such as a medical test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives} (a.k.a. \textdefnogloss{sensitivity}) of a two-class classifier is the percentage of positive cases that the test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives (found by summing the top row of the confusion matrix). For our hypothetical COVID confusion matrix in \autoref{fig:medical_test_confusion_matrix_hypothetical}, the recall is $1,000/(1,000 + 500) = 66.7\%$. Recall ranges from 0 to 1, with larger values indicating that the test is ``sensitive'', meaning that it can identify true positives out of patients who actually are positive.
 
-The \textdef{specificity}{specificity}{FILL IN} of a test is an analogous metric for patients whose actual status is negative. It measures the ratio of true negatives to the sum of true negatives and false positives (found by summing the second row of the confusion matrix). For the test with confusion matrix in \autoref{fig:medical_test_confusion_matrix_hypothetical}, the test specificity is $198,000/(198,000 + 2,000) = 99\%$.
+The \textdef{specificity}{specificity}{the ratio of true negatives to the sum of true negatives and false positives for a two-class classifier such as a medical test} of a test is an analogous metric for patients whose actual status is negative. It measures the ratio of true negatives to the sum of true negatives and false positives (found by summing the second row of the confusion matrix). For the test with confusion matrix in \autoref{fig:medical_test_confusion_matrix_hypothetical}, the test specificity is $198,000/(198,000 + 2,000) = 99\%$.
 
-Finally, the \textdef{precision}{precision}{FILL IN} of a test is the percentage of positive tests that are correct, formed by taking the ratio of true positives to the sum of true positives and false positives (found by summing the first column of the confusion matrix). For example, the  test whose confusion matrix is shown in \autoref{fig:medical_test_confusion_matrix_hypothetical} is $1,000/(1,000 + 2,000) = 33.3\%$.\\
+Finally, the \textdef{precision}{precision}{the percentage of positive tests that are correct for a two-class classifier such as a medical test, formed by taking the ratio of true positives to the sum of true positives and false positives} of a test is the percentage of positive tests that are correct, formed by taking the ratio of true positives to the sum of true positives and false positives (found by summing the first column of the confusion matrix). For example, the  test whose confusion matrix is shown in \autoref{fig:medical_test_confusion_matrix_hypothetical} is $1,000/(1,000 + 2,000) = 33.3\%$.\\
 
 \begin{qbox}[%
 How could we trick a test to have recall close to 1? What about specificity or precision?
@@ -872,9 +871,9 @@ The question of the number of folds, \textvar{f}, is trickier. Increasing this p
 
 However, we still have a problem. Although k-NN can identify granulocytes and lymphocytes quite well, it performs poorly on monocytes because of the class imbalance in our data. We have so few monocytes that it is rare to encounter another one in the shape space.
 
-Statisticians have devised a variety of approaches to address class imbalance. We could \textdef{undersample}{undersample}{FILL IN} our data by excluding a random sample of the granulocytes. Undersampling works better when we have a large amount of data, so that throwing out some of the data does not cause problems. In our case, our dataset is small to begin with, and undersampling would risk plummeting the classifier's performance on granulocytes.
+Statisticians have devised a variety of approaches to address class imbalance. We could \textdefnogloss{undersample} our data by excluding a random sample of the granulocytes. Undersampling works better when we have a large amount of data, so that throwing out some of the data does not cause problems. In our case, our dataset is small to begin with, and undersampling would risk plummeting the classifier's performance on granulocytes.
 
-We could also try a different classifier. One idea is to use a \textdef{cost-sensitive classifier}{cost-sensitive classifier}{FILL IN} that charges a variable penalty for assigning an element to the wrong class, and then minimizes the total cost over all elements. For example, classifying a monocyte as a granulocyte would receive a greater penalty than classifying a granulocyte as a monocyte. A cost-sensitive classifier would help increase the number of images that are classified as monocytes, although it would also incorporate incorrectly classified monocytes as well.
+We could also try a different classifier. One idea is to use a \textdefnogloss{cost-sensitive classifier} that charges a variable penalty for assigning an element to the wrong class, and then minimizes the total cost over all elements. For example, classifying a monocyte as a granulocyte would receive a greater penalty than classifying a granulocyte as a monocyte. A cost-sensitive classifier would help increase the number of images that are classified as monocytes, although it would also incorporate incorrectly classified monocytes as well.
 
 Yet ultimately, k-NN outperforms much more advanced classifiers on this dataset. It may be a relatively simple approach, but k-NN is also a great match for classifying images within a WBC shape space, since proximity in this space indicates that two WBCs belong to the same family.
 
