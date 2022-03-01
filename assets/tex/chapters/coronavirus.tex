@@ -254,7 +254,7 @@ Although protein structure prediction is difficult, it is not impossible; nature
 
 The determination of the SARS-CoV-2 spike protein structure was remarkable because in many senses it was a community effort, dividing the computational heavy lifting over thousands of volunteers' computers around the world. Two leading structure prediction projects, Rosetta@home (\url{https://boinc.bakerlab.org}) and Folding@home (\url{https://foldingathome.org}), encourage volunteers to download their software and contribute to a gigantic \textit{distributed} effort to predict protein shape. Even with a modest laptop, a user can donate some of their computer's idle resources to contribute to the problem of protein structure prediction. But how does this software work?
 
-Predicting a protein’s structure using only its amino acid sequence is called \textdef{\textit{ab initio} structure prediction}{\textit{ab initio} structure prediction}{the prediction of a protein's structure using only its amino acid sequence} (\textit{ab initio} means “from the beginning” in Latin). In this section, we will explain a little about how \textit{ab initio} structure prediction algorithms work.
+Predicting a protein’s structure using only its amino acid sequence is called \textdef{\textit{ab initio} structure prediction}{ab initio structure prediction}{the prediction of a protein's structure using only its amino acid sequence} (\textit{ab initio} means “from the beginning” in Latin). In this section, we will explain a little about how \textit{ab initio} structure prediction algorithms work.
 
 As we dive into structure prediction, we should be more precise about two things. First, we will specify what we mean by the ``structure'' of a protein. Second, although we know that a polypeptide always folds into the same final three-dimensional shape, we have not said anything about \textit{why} a protein folds in a certain way. We will therefore need a better understanding of how the physicochemical properties of amino acids affect a protein's final structure.
 
@@ -316,7 +316,7 @@ Amino acids' variety of side chains causes the amino acids to have different che
 
 We can therefore view protein folding as finding the tertiary structure that is the most \textit{stable} given a polypeptide's primary structure. A central theme of the previous chapter on bacterial chemotaxis was that a system of chemical reactions moves toward equilibrium. The same principle is true of the magic folding algorithm; when a protein folds into its final structure, it is obtaining a conformation that is as chemically stable as possible.
 
-To be more precise, the \textdef{potential energy}{potential energy}{the energy stored within a molecule due to its position, state, and arrangement, sometimes called free energy} (sometimes called \textbdefnogloss{free energy}) of a molecule is the energy stored within an object due to its position, state, and arrangement. In molecular mechanics, the potential energy is made up of the sum of \textdef{bonded energy}{bonded energy}{the potential energy of a molecule deriving from the molecule's covalent bonds} and \textdef{non-bonded energy}{non-bonded energy}{the potential energy of a molecule deriving from electrostatic interactions and van der Waals interactions}.
+To be more precise, the \textdef{potential energy}{potential energy}{the energy stored within a molecule due to its position, state, and arrangement, sometimes called free energy} (sometimes called \textdefnogloss{free energy}) of a molecule is the energy stored within an object due to its position, state, and arrangement. In molecular mechanics, the potential energy is made up of the sum of \textdef{bonded energy}{bonded energy}{the potential energy of a molecule deriving from the molecule's covalent bonds} and \textdef{non-bonded energy}{non-bonded energy}{the potential energy of a molecule deriving from electrostatic interactions and van der Waals interactions}.
 
 Bonded energy derives from the protein's covalent bonds, as well as the angles of bonds between adjacent amino acids, and the torsion angles that we saw in the \autoref{sec:structure_intro}, as the protein bends and twists.
 
@@ -438,7 +438,7 @@ In the case of the SARS-CoV-2 spike protein, we already know that we want to use
 
 Once we have found a similar protein, we need to use it to help us predict the structure of our protein. One way of doing so is to include a ``similarity term'' that subtracts a structure's similarity to the template structure from the structure's total energy. That is, the more similar that a candidate structure is to the template, the more negative the contribution of this similarity term. To continue our search space analogy, the template protein ``pulls down'' the energy values of nearby structures.
 
-Another way to perform homology modeling is to account for variance in similarity across different regions of the two proteins. For example, even though the SARS-CoV and SARS-CoV-2 genomes are 96\% similar, this does not mean that all of their proteins are 96\% similar. When we look at genomes from related species, we expect to see \textdef{conserved regions}{conserved regions}{FILL IN} where the species are very similar and other \textdef{variable regions}{variable regions}{FILL IN} where the species are more different than the average. For example, the spike proteins of SARS-CoV and SARS-CoV-2 are only 76\% similar.
+Another way to perform homology modeling is to account for variance in similarity across different regions of the two proteins. For example, even though the SARS-CoV and SARS-CoV-2 genomes are 96\% similar, this does not mean that all of their proteins are 96\% similar. When we look at genomes from related species, we expect to see \textdefnogloss{conserved regions} where the species are very similar and other \textdefnogloss{variable regions} where the species are more different than the average. For example, the spike proteins of SARS-CoV and SARS-CoV-2 are only 76\% similar.
 
 The phenomenon of conserved and variable regions even occurs within individual genes. For example, \autoref{fig:spike_protein_similarity} shows that within a spike protein subunit, the S2 domain is 90\% similar between the two viruses, whereas the S1 domain is only 64\% similar. Furthermore, there are nested subregions of greater or less variability within each of the two domains.\\
 
@@ -450,7 +450,7 @@ The phenomenon of conserved and variable regions even occurs within individual g
 	\label{fig:spike_protein_similarity}
 \end{figure}
 
-Some homology modeling algorithms account for variable and conserved regions by assuming that very conserved regions in the two genes correspond to essentially identical structures in the proteins. That is, the structure of our protein of interest in these regions will be the same as those of the template protein. We can then use a \textdef{fragment library}{fragment library}{FILL IN}, a catalog of known substructures from many proteins, to fill in the structure of non-conserved regions based on structures of fragments whose sequence is similar to these regions. This approach is called \textdef{fragment assembly}{fragment assembly}{FILL IN}.
+Some homology modeling algorithms account for variable and conserved regions by assuming that very conserved regions in the two genes correspond to essentially identical structures in the proteins. That is, the structure of our protein of interest in these regions will be the same as those of the template protein. We can then use a \textdefnogloss{fragment library}{fragment library}, a catalog of known substructures from many proteins, to fill in the structure of non-conserved regions based on structures of fragments whose sequence is similar to these regions. This approach is called \textdef{fragment assembly}{fragment assembly}{the process of using a library of known substructures from many proteins to fill in the structure of non-conserved regions when predicting a protein's structure}.
 
 We will model the SARS-CoV-2 spike protein using homology modeling software from three publicly available servers (SWISS-MODEL, Robetta, and GalaxyWEB), all of which apply a variant of fragment assembly. If the results are similar, then we have faith in the \textit{robustness} of our predictions to using different approaches. Furthermore, comparing the results of multiple different approaches may give us more insights into structure prediction. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_homology]
 
@@ -553,7 +553,7 @@ If \textit{S} can be translated, flipped, and/or rotated to produce \textit{T}, 
 
 Our idea for defining $d(S, T)$ is first to translate, flip, and rotate \textit{S} so that it resembles \textit{T} ``as much as possible'' to give us a fair comparison. We will then to quantify how different the shapes are to determine $d(S, T)$.
 
-We first translate \textit{S} to have the same \textdef{centroid}{centroid}{FILL IN} (or \textbf{center of mass}) as \textit{T}. The centroid of \textit{S} is found at the point $(x_{S}, y_{S})$ such that $x_{S}$ and $y_{S}$ are the respective averages of the \textit{x}-coordinates and \textit{y}-coordinates on the boundary of \textit{S}.
+We first translate \textit{S} to have the same \textdef{center of mass}{center of mass}{the point corresponding to a shape whose coordinates are the averages of respective coordinates of points on the shape} as \textit{T}. The center of mass of \textit{S} is found at the point $(x_{S}, y_{S})$ such that $x_{S}$ and $y_{S}$ are the respective averages of the \textit{x}-coordinates and \textit{y}-coordinates on the boundary of \textit{S}.
 
 For example, suppose that \textit{S} is the semicircular arc shown in \autoref{fig:semicircular_arc}, with endpoints $(-1, 0)$ and $(1, 0)$.
 
@@ -576,14 +576,14 @@ The \textit{x}-coordinate $x_{S}$ is zero, but computing $y_{S}$ requires us to 
 
 
 \begin{qbox}[%
-	Say that we connect $(-1, 0)$ and $(0, 1)$ to form a closed semicircle. What will be the centroid of the resulting shape?
+	Say that we connect $(-1, 0)$ and $(0, 1)$ to form a closed semicircle. What will be the center of mass of the resulting shape?
 	]\end{qbox}
 
-The centroid of some shapes, like the semicircular arc in the preceding example, can be determined mathematically. But for irregular shapes, we can estimate the centroid of \textit{S} by sampling \textit{n} points from the boundary of the shape and taking the averages of all the \textit{x}- and \textit{y}-coordinates of sampled points.
+The center of mass of some shapes, like the semicircular arc in the preceding example, can be determined mathematically. But for irregular shapes, we can estimate the center of mass of \textit{S} by sampling \textit{n} points from the boundary of the shape and taking the averages of all the \textit{x}- and \textit{y}-coordinates of sampled points.
 
-After finding the centroids of the two shapes \textit{S} and \textit{T} that we wish to compare, we translate \textit{S} so that it has the same centroid as \textit{T}. We then wish to find the rotation of \textit{S}, possibly along with a flip as well, that makes the shape resemble \textit{T} as much as possible.
+After finding the centers of mass of the two shapes \textit{S} and \textit{T} that we wish to compare, we translate \textit{S} so that it has the same center of mass as \textit{T}. We then wish to find the rotation of \textit{S}, possibly along with a flip as well, that makes the shape resemble \textit{T} as much as possible.
 
-Imagine that we have found the desired rotation; we can then define $d(S, T)$ in the following way. We sample \textit{n} points along the boundary of each shape, converting \textit{S} and \textit{T} into \textdef{vectors}{vectors}{FILL IN} $s = (s_{1}, \ldots, s_{n})$ and $t = (t_{1}, \ldots, t_{n})$, where $s_{i}$ is the \textit{i}-th point on the boundary of \textit{S}. The \textdef{root mean square deviation}{root mean square deviation}{FILL IN} \textbf{(RMSD)} between the two shapes is the square root of the average squared distance between corresponding points in the vectors,
+Imagine that we have found the desired rotation; we can then define $d(S, T)$ in the following way. We sample \textit{n} points along the boundary of each shape, converting \textit{S} and \textit{T} into \textdefnogloss{vectors} $s = (s_{1}, \ldots, s_{n})$ and $t = (t_{1}, \ldots, t_{n})$, where $s_{i}$ is the \textit{i}-th point on the boundary of \textit{S}. The \textdef{root mean square deviation (RMSD)}{root mean square deviation (RMSD)}{the square root of the average squared distance between corresponding points in two vectors} between the two shapes is the square root of the average squared distance between corresponding points in the vectors,
 
 \begin{center}
 $\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot \left(d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2\right)}\,. $
@@ -629,9 +629,9 @@ Even if we assume that the shapes have already been overlapped and rotated appro
 	\label{fig:circle_square_undersampling}
 \end{figure}
 
-However, we have still assumed that we already rotated (and possibly flipped) \textit{S} to be as ``similar'' to \textit{T} as possible. In practice, after superimposing \textit{S} and \textit{T} to have the same centroid, we will find the flip and/or rotation of \textit{S} that \textit{minimizes} the RMSD between our vectorizations of \textit{S} and \textit{T} over all possible ways of flipping and rotating \textit{S}. It is this minimum RMSD that we define as $d(S, T)$.
+However, we have still assumed that we already rotated (and possibly flipped) \textit{S} to be as ``similar'' to \textit{T} as possible. In practice, after superimposing \textit{S} and \textit{T} to have the same center of mass, we will find the flip and/or rotation of \textit{S} that \textit{minimizes} the RMSD between our vectorizations of \textit{S} and \textit{T} over all possible ways of flipping and rotating \textit{S}. It is this minimum RMSD that we define as $d(S, T)$.
 
-The best way of rotating and flipping \textit{S} so as to minimize the RMSD between the resulting vectors \textit{s} and \textit{t} can be found with a method called the \textdef{Kabsch algorithm}{Kabsch algorithm}{FILL IN}. Explaining this algorithm requires some advanced linear algebra and is beyond the scope of our work but is described at \url{https://en.wikipedia.org/wiki/Kabsch_algorithm}.
+The best way of rotating and flipping \textit{S} so as to minimize the RMSD between the resulting vectors \textit{s} and \textit{t} can be found with a method called the \textdef{Kabsch algorithm}{Kabsch algorithm}{an algorithm that identifies the best alignment of two shapes}. Explaining this algorithm requires some advanced linear algebra and is beyond the scope of our work but is described at \url{https://en.wikipedia.org/wiki/Kabsch_algorithm}.
 
 \FloatBarrier
 \phantomsection
@@ -822,13 +822,13 @@ Protein structure prediction is an old problem, but continual algorithmic improv
 
 That day has come. Kind of.
 
-Every two years since 1994, a global effort called \textdef{Critical Assessment of protein Structure Prediction}{Critical Assessment of protein Structure Prediction}{FILL IN} \textbf{(CASP)} has allowed modelers to test their protein structure prediction algorithms against each other. The contest organizers compile a (secret) collection of experimentally verified protein structures and then run all submitted algorithms against these proteins.
+Every two years since 1994, a global effort called \textdefnogloss{Critical Assessment of protein Structure Prediction}{Critical Assessment of protein Structure Prediction (CASP)} has allowed modelers to test their protein structure prediction algorithms against each other. The contest organizers compile a (secret) collection of experimentally verified protein structures and then run all submitted algorithms against these proteins.
 
 The 14th iteration of this contest, held in 2020, was won in a landslide. The second version of AlphaFold (\url{https://bit.ly/3sKl6pH}), one of the projects of DeepMind (an Alphabet subsidiary), vastly outperformed the world's foremost structure prediction approaches, including those that we discussed in this chapter.
 
 The algorithm powering AlphaFold is an extremely involved method based on deep learning, a topic that we will discuss in this work's final chapter. If you're interested in learning more about this algorithm, consult the AlphaFold website or this excellent blog post by Mohammed al Quraishi: \url{https://bit.ly/39Mnym3}.
 
-Instead of using RMSD, CASP scores a predicted structure against a known structure using the \textdef{global distance test}{global distance test}{FILL IN} \textbf{(GDT)}. For some threshold \textit{t}, we first take the percentage of alpha carbon positions for which the distance between corresponding alpha carbons in the two structures is at most \textit{t}. The GDT score that CASP uses then averages the percentages obtained when \textit{t} is equal to each of 1, 2, 4, and 8 angstroms. A GDT score of 90\% is considered good, and a score of 95\% is considered excellent (i.e., comparable to minor errors resulting from experimentation).
+Instead of using RMSD, CASP scores a predicted structure against a known structure using the \textdefnogloss{global distance test (GDT)}. For some threshold \textit{t}, we first take the percentage of alpha carbon positions for which the distance between corresponding alpha carbons in the two structures is at most \textit{t}. The GDT score that CASP uses then averages the percentages obtained when \textit{t} is equal to each of 1, 2, 4, and 8 angstroms. A GDT score of 90\% is considered good, and a score of 95\% is considered excellent (i.e., comparable to minor errors resulting from experimentation).
 
 We will show a few plots to illustrate the decisiveness of AlphaFold's CASP victory. The first graph, which is shown in \autoref{fig:AlphaFold2_BAKER}, compares the scores of AlphaFold against the second-place algorithm (a product of David Baker's laboratory, which developed the Robetta and Rosetta@Home software that we used in this chapter).\\
 
@@ -850,7 +850,7 @@ We can appreciate the margin of victory in \autoref{fig:AlphaFold2_BAKER} if we 
 	\label{fig:BAKER_Zhang}
 \end{figure}
 
-For each protein in the CASP14 contest, we can also compute each algorithm's \textdef{z-score}{z-score}{FILL IN}, defined as the number of standard deviations that the algorithm's GDT score falls from the mean GDT score over all competitors. For example, a z-score of 1.4 would imply that the approach performed 1.4 standard deviations above the mean, and a z-score of -0.9 would imply that the approach performed 0.9 standard deviations below the mean.
+For each protein in the CASP14 contest, we can also compute each algorithm's \textdefnogloss{z-score}, defined as the number of standard deviations that the algorithm's GDT score falls from the mean GDT score over all competitors. For example, a z-score of 1.4 would imply that the approach performed 1.4 standard deviations above the mean, and a z-score of -0.9 would imply that the approach performed 0.9 standard deviations below the mean.
 
 By summing all of an algorithm's positive z-scores, we obtain a reasonable metric for the relative quality of an algorithm compared to its competitors. If an algorithm's sum of z-scores is large, then the algorithm racked up lots of positive z-scores, and we can conclude that it performed well. \autoref{fig:CASP14_overall_results} shows the sum of z-scores for all CASP14 participants and reiterates the margin of AlphaFold's victory.\\
 
@@ -891,7 +891,7 @@ Now begins part 2, in which we examine how the structure of the SARS-CoV-2 spike
 
 In part 1, we saw that the spike protein is much more variable than other regions of the viral genomes. We even see variable and conserved regions within the spike protein, as \autoref{fig:spike_protein_similarity} from \autoref{sec:homology} indicates.
 
-The most variable region between the two viruses in the spike protein is the \textdef{receptor binding motif (RBM)}{receptor binding motif (RBM)}{FILL IN}, part of the receptor binding domain (RBD) whose structure we predicted using GalaxyWEB in the \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_homology]. The RBM is the component of the RBD that mediates contact with ACE2, as the following simplified animation of the process illustrates.
+The most variable region between the two viruses in the spike protein is the \textdefnogloss{receptor binding motif (RBM)}, part of the receptor binding domain (RBD) whose structure we predicted using GalaxyWEB in the \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_homology]. The RBM is the component of the RBD that mediates contact with ACE2, as the following simplified animation of the process illustrates.
 
 \texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
@@ -956,7 +956,7 @@ One of the weaknesses of RMSD that we pointed out in part 1 of this chapter is t
 
 However, note that when \textit{i} and \textit{j} are both at least equal to 4, the distance $d(s_{i}, s_{j})$ between the \textit{i}-th and \textit{j}-th alpha carbons in \textit{S} will still be similar to the distance $d(t_{i}, t_{j})$ between the same alpha carbons in \textit{T}. This observation leads us to a more robust approach for measuring differences in two protein structures, which compares \textit{all} pairwise distances $d(s_{i}, s_{j})$ in one protein structure against the corresponding distances $d(t_{i}, t_{j})$ in the other structure.
 
-To help us visualize all these pairwise distances, we will introduce the \textdef{contact map}{contact map}{FILL IN} of a protein structure, which is a binary matrix indicating whether two alpha carbons are near each other. After setting a threshold distance, for a given structure \textit{s}, we set $M(i, j) = 1$ if the distance $d(s_{i}, s_{j})$ is less than the threshold, and $M(i, j) = 0$ if $d(s_{i}, s_{j})$ is greater than or equal to the threshold.
+To help us visualize all these pairwise distances, we will introduce the \textdef{contact map}{contact map}{a binary matrix used to determine which pairs of alpha carbons in two proteins are close to each other} of a protein structure, which is a binary matrix indicating whether two alpha carbons are near each other. After setting a threshold distance, for a given structure \textit{s}, we set $M(i, j) = 1$ if the distance $d(s_{i}, s_{j})$ is less than the threshold, and $M(i, j) = 0$ if $d(s_{i}, s_{j})$ is greater than or equal to the threshold.
 
 \autoref{fig:Contact} shows the contact maps for the SARS-CoV-2 and SARS-CoV spike proteins (both full proteins and single chains) with a threshold distance of twenty angstroms. In this map, we color contact map values black if they are equal to 1 (close amino acid pairs) and white if they are equal to 0 (distant amino acid pairs).
 
@@ -980,7 +980,7 @@ We note two things in the contact maps in \autoref{fig:Contact}. First, many bla
 
 We obtain some insight into how two proteins differ structurally at the \textit{i}-th amino acid if we look at all of the \textit{i}-th row's values; that is, if we compare all of the $d(s_{i}, s_{j})$ values to all of the $d(t_{i}, t_{j})$ values.
 
-We will use pairwise distances between alpha carbons to determine how different two proteins are at the \textit{i}-th alpha carbon, using a metric called \textdef{Q per residue (Qres)}{Q per residue (Qres)}{FILL IN}.  The formal definition of Qres for two structures \textit{s} and \textit{t} having \textit{N} residues is
+We will use pairwise distances between alpha carbons to determine how different two proteins are at the \textit{i}-th alpha carbon, using a metric called \textdefnogloss{Q per residue (Qres)}.  The formal definition of Qres for two structures \textit{s} and \textit{t} having \textit{N} residues is
 
 \begin{center}
 $Q_{\text{res}}^{(i)} = \dfrac{1}{N-k} \sum^{\text{residues}}_{j\neq i-1,i,i+1} \textrm{exp}[-\dfrac{[d(s_i,s_j)-d(t_i,t_j)]^2}{2\sigma^2_{i,j}}]\, .$
@@ -1167,7 +1167,7 @@ Another reason for our cautiousness is that proteins are not fixed objects but r
 \phantomsection
 \subsection{Modeling proteins using tiny springs}
 
-We now transition from the static study of proteins to the field of \textdef{molecular dynamics}{molecular dynamics}{FILL IN} \textbf{(MD)}, in which we simulate the movement of proteins' atoms, along with their interactions as they move.
+We now transition from the static study of proteins to the field of \textdef{molecular dynamics}{molecular dynamics}{a method of simulation that accounts for the movements of individual atoms and their interactions} \textbf{(MD)}, in which we simulate the movement of proteins' atoms, along with their interactions as they move.
 
 You may think that simulating the movements of proteins with hundreds of amino acids will be a hopeless task. After all, predicting the static structure of a protein has occupied biologists for decades! Yet part of what makes structure prediction so challenging is that the search space of potential structures is so enormous. Once we have established the static structure of a protein, its dynamic behavior will not allow it to deviate greatly from this static structure, and so the space of potential dynamic structures is narrowed down to those that are similar to the static structure.
 
@@ -1185,7 +1185,7 @@ A protein's molecular bonds are constantly vibrating, stretching and compressing
 \end{figure}
 
 
-In an \textdef{elastic network model}{elastic network model}{FILL IN} \textbf{(ENM)}, we imagine nearby alpha carbons of a protein structure to be connected by springs. Because distant atoms will not influence each other, we will only connect two alpha carbons if they are within some threshold distance of each other. In the following section, we will describe a \textdef{Gaussian network model}{Gaussian network model}{FILL IN} \textbf{(GNM)}, an ENM for molecular dynamics.
+In an \textdef{elastic network model (ENM)}{elastic network model (ENM)}{a model in which we consider nearby alpha carbons to be connected by springs}, we imagine nearby alpha carbons of a protein structure to be connected by springs. Because distant atoms will not influence each other, we will only connect two alpha carbons if they are within some threshold distance of each other. In the following section, we will describe a \textdef{Gaussian network model}{Gaussian network model}{an elastic network model used for molecular dynamics in which alpha carbons are subject to normally distributed fluctuations} \textbf{(GNM)}, an ENM for molecular dynamics.
 
 \FloatBarrier
 \phantomsection
@@ -1217,7 +1217,7 @@ The equilibrium position of node \textit{i} is represented by the vector $ R_i^0
 	\label{fig:gaussian_fluctuations}
 \end{figure}
 
-Yet although atomic fluctuations are powered by randomness, the movements of protein atoms are in fact heavily correlated. For example, imagine the simple case in which all of a protein's alpha carbons are connected in a straight line. If we pull the first alpha carbon away from the second node, then the second alpha carbon will be pulled toward the first alpha carbon, and the movements of these two alpha carbons will be directly correlated. Our goal is to understand how the movements of \textit{every} pair of alpha carbons, called the \textdef{cross-correlation}{cross-correlation}{FILL IN} of these atoms, may be related. We will see how using vectors to represent these movements can be helpful.
+Yet although atomic fluctuations are powered by randomness, the movements of protein atoms are in fact heavily correlated. For example, imagine the simple case in which all of a protein's alpha carbons are connected in a straight line. If we pull the first alpha carbon away from the second node, then the second alpha carbon will be pulled toward the first alpha carbon, and the movements of these two alpha carbons will be directly correlated. Our goal is to understand how the movements of \textit{every} pair of alpha carbons, called the \textdefnogloss{cross-correlation} of these atoms, may be related. We will see how using vectors to represent these movements can be helpful.
 
 \FloatBarrier
 \phantomsection
@@ -1225,13 +1225,13 @@ Yet although atomic fluctuations are powered by randomness, the movements of pro
 
 To determine how the movements of nodes \textit{i} and \textit{j} are related, we need to study the fluctuation vectors $ \Delta R_i $ and $ \Delta R_j $. Do these vectors point in similar or opposing directions?
 
-To answer this question, we compute the \textdef{inner product}{inner product}{FILL IN}, or \textdef{dot product}{dot product}{FILL IN}, of the two vectors, $ \langle \Delta R_i, \Delta R_j \rangle $. The inner product of two vectors $x = (x_1, x_2, x_3)$ and $y = (y_1, y_2, y_3)$ is given by $ \langle x, y \rangle = x_1 \cdot y_1 + x_2 \cdot y_2 + x_3 \cdot y_3$. If \textit{x} and \textbf{y} are at right angles, then $ \langle \textit{x}, \textit{y} \rangle $ is equal to zero. The more that the two vectors point in the same direction, the larger the value of $\langle \textit{x}, \textit{y} \rangle $. And the more that the two vectors point in opposite directions, the smaller the value of $\langle \textit{x}, \textit{y} \rangle $.\\
+To answer this question, we compute the \textdefnogloss{inner product}, or \textdefnogloss{dot product}, of the two vectors, $ \langle \Delta R_i, \Delta R_j \rangle $. The inner product of two vectors $x = (x_1, x_2, x_3)$ and $y = (y_1, y_2, y_3)$ is given by $ \langle x, y \rangle = x_1 \cdot y_1 + x_2 \cdot y_2 + x_3 \cdot y_3$. If \textit{x} and \textbf{y} are at right angles, then $ \langle \textit{x}, \textit{y} \rangle $ is equal to zero. The more that the two vectors point in the same direction, the larger the value of $\langle \textit{x}, \textit{y} \rangle $. And the more that the two vectors point in opposite directions, the smaller the value of $\langle \textit{x}, \textit{y} \rangle $.\\
 
 \begin{qbox}[%
 	Say that $x = (1, -2, 3)$,$y = (2, -3, 5)$, and  $z = (-1, 3, -4)$. Compute the inner products $\langle x, y \rangle$ and $\langle x, z \rangle$  and ensure that your answers match the preceding observation.
 	]\end{qbox}
 
-The inner product is also useful for representing  the \textdef{mean-square fluctuation}{mean-square fluctuation}{FILL IN} of an alpha carbon, or the expected squared distance of node \textit{i} from equilibrium. The fluctuation of node \textit{i} from equilibrium is just $\Delta R_i$. If this vector is represented by the coordinates (\textit{x}, \textit{y}, \textit{z}), then its square distance from equilibrium is $x_2 + y_2 + z_2$, which is the inner product of the fluctuation vector with itself, $ \langle \Delta R_i, \Delta R_i \rangle $.\\
+The inner product is also useful for representing  the \textdefnogloss{mean-square fluctuation} of an alpha carbon, or the expected squared distance of node \textit{i} from equilibrium. The fluctuation of node \textit{i} from equilibrium is just $\Delta R_i$. If this vector is represented by the coordinates (\textit{x}, \textit{y}, \textit{z}), then its square distance from equilibrium is $x_2 + y_2 + z_2$, which is the inner product of the fluctuation vector with itself, $ \langle \Delta R_i, \Delta R_i \rangle $.\\
 
 \begin{note}[%
 	In practice, we will not know the exact values for the $ \Delta R_i $ and must compute the inner products of fluctuation vectors indirectly using linear algebra, which is beyond the scope of this work. A full treatment of the mathematics of GNMs can be found in the chapter at \url{https://www.csb.pitt.edu/Faculty/bahar/publications/b14.pdf}
@@ -1245,7 +1245,7 @@ $ C_{ij} = \dfrac{\langle \Delta R_i, \Delta R_j \rangle}{\sqrt{\langle \Delta R
 
 After normalization, the cross-correlation ranges from -1 to 1. A cross-correlation of -1 means that the two alpha carbons' movements are completely anti-correlated, and a cross-correlation of 1 means that their movements are completely correlated.
 
-After computing the cross-correlation of every pair of alpha carbons in a protein structure with \textit{n} residues, we obtain an \textit{n} × \textit{n} \textdef{cross-correlation matrix}{cross-correlation matrix}{FILL IN} \textit{C} such that \textit{C}(\textit{i}, \textit{j}) is the cross-correlation between amino acids \textit{i} and \textit{j}. We can visualize this matrix using a \textdef{heat map}{heat map}{FILL IN}, in which we color matrix values along a spectrum from blue (-1) to red (1). The heat map for the cross-correlation matrix of human hemoglobin is shown in \autoref{fig:hemoglobin_cc}.\\
+After computing the cross-correlation of every pair of alpha carbons in a protein structure with \textit{n} residues, we obtain an \textit{n} × \textit{n} \textdefnogloss{cross-correlation matrix} \textit{C} such that \textit{C}(\textit{i}, \textit{j}) is the cross-correlation between amino acids \textit{i} and \textit{j}. We can visualize this matrix using a \textdefnogloss{heat map}, in which we color matrix values along a spectrum from blue (-1) to red (1). The heat map for the cross-correlation matrix of human hemoglobin is shown in \autoref{fig:hemoglobin_cc}.\\
 
 \begin{figure}[h]
 	\centering
@@ -1275,7 +1275,7 @@ Consider again the cross-correlation map of human hemoglobin in \autoref{fig:hem
 
 Just as we can visualize cross-correlation, we could also plot the mean-square fluctuations of residues using a line graph, where the x-axis represents the order of alpha carbons, and the y-axis represents the mean-square fluctuation $ \langle \Delta R_i, \Delta R_i \rangle $ of the \textit{i}-th alpha carbon. Large \textit{y}-values in this plot would correspond to mobile alpha carbons, whereas lower values would correspond to static alpha carbons.
 
-We also would like to compare these predicted mean-square fluctuations against what we can infer from experimental results. During X-ray crystallography, the displacement of atoms within the protein crystal decreases the intensity of the scattered X-ray, creating uncertainty in the positions of atoms. \textdef{B-factor}{B-factor}{FILL IN}, also known as \textbf{temperature factor} or \textbf{Debye-Waller factor}, is a measure of this uncertainty, which includes noise from positional variance of thermal protein motion, model errors, and lattice defects.
+We also would like to compare these predicted mean-square fluctuations against what we can infer from experimental results. During X-ray crystallography, the displacement of atoms within the protein crystal decreases the intensity of the scattered X-ray, creating uncertainty in the positions of atoms. \textdefnogloss{B-factor}, also known as \textbf{temperature factor} or \textbf{Debye-Waller factor}, is a measure of this uncertainty, which includes noise from positional variance of thermal protein motion, model errors, and lattice defects.
 
 We can then compare these \textit{experimental} B-factors against a \textit{theoretical} estimate of their value. It is beyond the scope of this work, but the theoretical B-factors are given by
 
@@ -1301,11 +1301,11 @@ In other words, once we can estimate the mean-square fluctuations $\langle \Delt
 
 When listening to your favorite song, you probably do not think of the individual notes that it comprises. Yet a talented musician can dissect the song into the set of notes that each instrument contributes to the whole. Just because the music combines a number of individual sound waves does not mean that we cannot deconvolve the music into its substituent waves.
 
-All objects, from colossal skyscrapers to tiny proteins, vibrate. And, just like in our musical example, these oscillations are the net result of individual waves passing through the object. The paradigm of breaking down a collection of vibrations into the comparatively small number of ``modes'' that summarize them is called \textdef{normal mode analysis}{normal mode analysis}{FILL IN} \textbf{(NMA)}and is at the heart of elastic network models.
+All objects, from colossal skyscrapers to tiny proteins, vibrate. And, just like in our musical example, these oscillations are the net result of individual waves passing through the object. The paradigm of breaking down a collection of vibrations into the comparatively small number of ``modes'' that summarize them is called \textdef{normal mode analysis (NMA)}{normal mode analysis (NMA)}{the paradigm of breaking down a collection of vibrations into the comparatively small number of ``modes'' that summarize them} and is at the heart of elastic network models.
 
-The mathematical details are complicated, but by deconvolving a protein's movement into individual normal modes, we can observe how each mode affects individual amino acids. As we did with B-factors, for a given mode, we can visualize the results of a mode with a line graph, called the \textdef{mode shape plot}{mode shape plot}{FILL IN}. The x-axis of this plot corresponds to the amino acid sequence of the protein, and the height of the \textit{i}-th position on the x-axis corresponds to the magnitude of the square fluctuation caused by the mode on the protein's \textit{i}-th residue.
+The mathematical details are complicated, but by deconvolving a protein's movement into individual normal modes, we can observe how each mode affects individual amino acids. As we did with B-factors, for a given mode, we can visualize the results of a mode with a line graph, called the \textdefnogloss{mode shape plot}. The x-axis of this plot corresponds to the amino acid sequence of the protein, and the height of the \textit{i}-th position on the x-axis corresponds to the magnitude of the square fluctuation caused by the mode on the protein's \textit{i}-th residue.
 
-Just as a piece of music can have one instrument that is much louder than another, some of the oscillations contributing to an object's vibrations may be more significant than others. NMA also determines the degree to which each mode contributes to the overall fluctuations of a protein; the mode contributing the most is called the \textdef{slowest mode}{slowest mode}{FILL IN} of the protein. \autoref{fig:hemoglobin_mode_shape} shows a mode shape plot of the slowest mode for each of the four subunits of human hemoglobin.
+Just as a piece of music can have one instrument that is much louder than another, some of the oscillations contributing to an object's vibrations may be more significant than others. NMA also determines the degree to which each mode contributes to the overall fluctuations of a protein; the mode contributing the most is called the \textdefnogloss{slowest mode} of the protein. \autoref{fig:hemoglobin_mode_shape} shows a mode shape plot of the slowest mode for each of the four subunits of human hemoglobin.
 
 \begin{figure}[h]
 	\centering
@@ -1365,7 +1365,7 @@ We can also examine the mode shape plot for the average of the slowest ten modes
 
 The mode shape plots show that the RBD of both spike proteins are highly flexible, which agrees with the biological functions of these regions. When the RBD interacts with the ACE2 enzyme on human cells, the RBD of one of the three chains ``opens up'', exposing itself to more easily bind with ACE2.
 
-\autoref{fig:spike_slowmode_comparison} highlights another flexible region, the spike protein's \textdef{non-terminal domain}{non-terminal domain}{FILL IN} \textbf{(NTD)}. Similar to the RBD, the NTD of the Spike proteins also mediates viral infection, but by interacting with DC-SIGN and L-SIGN receptors rather than ACE2. These receptors are present on macrophages and dendritic cells, allowing SARS-CoV-2 to infect different tissues such as the lungs, where ACE2 expression levels are low. The ability to infect lung cells attributes to pneumonia, the main symptom of severe COVID-19 cases. As with the RBD, the high flexibility in this domain allows the spike protein to more easily interact with these receptors.
+\autoref{fig:spike_slowmode_comparison} highlights another flexible region, the spike protein's \textdefnogloss{non-terminal domain (NTD)}. Similar to the RBD, the NTD of the Spike proteins also mediates viral infection, but by interacting with DC-SIGN and L-SIGN receptors rather than ACE2. These receptors are present on macrophages and dendritic cells, allowing SARS-CoV-2 to infect different tissues such as the lungs, where ACE2 expression levels are low. The ability to infect lung cells attributes to pneumonia, the main symptom of severe COVID-19 cases. As with the RBD, the high flexibility in this domain allows the spike protein to more easily interact with these receptors.
 
 We should perhaps not be surprised that these plots point to SARS-CoV-2 and SARS-CoV having similar dynamics, since their structures were similar, and both viral proteins target the ACE2 enzyme. To help provide more evidence for their similarity, we will learn about another aspect of molecular dynamics.
 
@@ -1373,9 +1373,9 @@ We should perhaps not be surprised that these plots point to SARS-CoV-2 and SARS
 \phantomsection
 \subsection{ANM accounts for the direction of protein fluctuations}
 
-All of the analysis provided by GNM, from cross-correlation plots to B-factors and NMA, depend on the estimation of inner products $ \langle \Delta R_i, \Delta R_i \rangle $ or $ \langle \Delta R_i, \Delta R_j \rangle $ as the case may be. Although the $ \Delta R_i $ are vectors, meaning that they have a \textit{direction} as well as a magnitude, the inner products have only a value, and we therefore are not able to infer anything about the direction of a protein's movements. For this reason, GNM is said to be \textdef{isotropic}{isotropic}{FILL IN}, meaning that it only considers the magnitude of force exerted on the springs between nearby molecules and ignores any global effect on the directions of these forces.
+All of the analysis provided by GNM, from cross-correlation plots to B-factors and NMA, depend on the estimation of inner products $ \langle \Delta R_i, \Delta R_i \rangle $ or $ \langle \Delta R_i, \Delta R_j \rangle $ as the case may be. Although the $ \Delta R_i $ are vectors, meaning that they have a \textit{direction} as well as a magnitude, the inner products have only a value, and we therefore are not able to infer anything about the direction of a protein's movements. For this reason, GNM is said to be \textdefnogloss{isotropic}, meaning that it only considers the magnitude of force exerted on the springs between nearby molecules and ignores any global effect on the directions of these forces.
 
-The generalization of GNM in which we attempt to determine the directions of these forces is called an \textdef{anisotropic network model}{anisotropic network model}{FILL IN} \textbf{(ANM)}. Although ANM includes directionality, it typically performs worse than GNM when compared with experimental data. However, this model offers the benefit that it can be used to create animations depicting the range of motions and fluctuations of the protein, as well as to estimate the directions of movement caused by each of a protein's modes.
+The generalization of GNM in which we attempt to determine the directions of these forces is called an \textdef{anisotropic network model (ANM)}{anisotropic network model (ANM)}{a generalization of a Gaussian network model accounting for the directions of the forces acting on atoms}. Although ANM includes directionality, it typically performs worse than GNM when compared with experimental data. However, this model offers the benefit that it can be used to create animations depicting the range of motions and fluctuations of the protein, as well as to estimate the directions of movement caused by each of a protein's modes.
 
 We will not delve into the mathematical intricacies of ANM calculations, but we will use ANM to create animations visualizing protein fluctuations. For example, \autoref{fig:hemoglobin_anm_2} shows the estimated hemoglobin fluctuations produced from ANM. We can see that the left and right side of the protein are more flexible than the rest of the protein and twist in opposite directions.
 
@@ -1486,7 +1486,7 @@ We then discussed how to compare protein structures, with a lengthy case study c
 
 We concluded with a transition from the study of structure to the structure of molecular dynamics. If we hope to fully understand a protein's function, then we need to know how it flexes and bends within its environment, sometimes in order to interact with other molecules.
 
-Despite covering a great deal of ground, we have left just as much unstudied. For one example, the surface of viruses and host cells are ``fuzzy'' because they are covered by structures called \textdef{glycans}{glycans}{FILL IN}, or numerous monosaccharides linked together. SARS-CoV and SARS-CoV-2 have a “glycan shield”, in which glycosylation of surface antigens allows the virus to hide from antibody detection. Researchers have found that the SARS-CoV-2 spike protein is heavily glycosylated, shielding around 40\% of the protein from antibody recognition; we will save a comparative analysis of the two virus's glycan shields for another time.
+Despite covering a great deal of ground, we have left just as much unstudied. For one example, the surface of viruses and host cells are ``fuzzy'' because they are covered by structures called \textdef{glycans}{glycans}{numerous monosaccharides linked together on the surface of viruses and host cells}, or numerous monosaccharides linked together. SARS-CoV and SARS-CoV-2 have a “glycan shield”, in which glycosylation of surface antigens allows the virus to hide from antibody detection. Researchers have found that the SARS-CoV-2 spike protein is heavily glycosylated, shielding around 40\% of the protein from antibody recognition; we will save a comparative analysis of the two virus's glycan shields for another time.
 
 Finally, we would point out that although scientific research has often historically been siloed away from the public, the COVID-19 pandemic exemplifies how global citizens can get involved in real research. GISAID (\url{https://www.gisaid.org}) published their first publicly available SARS-CoV-2 genome on December 24, 2019. Within six months, this database had grown to contain over 50,000 entries, and after two years, it would contain nearly 7 million.
 

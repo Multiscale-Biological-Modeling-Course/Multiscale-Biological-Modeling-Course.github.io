@@ -41,7 +41,7 @@ If *S* can be translated, flipped, and/or rotated to produce *T*, then *S* and *
 
 Our idea for defining *d*(*S*, *T*) is first to translate, flip, and rotate *S* so that it resembles *T* "as much as possible" to give us a fair comparison. We will then to quantify how different the shapes are to determine *d*(*S*, *T*).
 
-We first translate *S* to have the same **centroid** (or **center of mass**) as *T*. The centroid of *S* is found at the point (*x*<sub><em>S</em></sub>, *y*<sub><em>S</em></sub>) such that *x*<sub><em>S</em></sub> and *y*<sub><em>S</em></sub> are the respective averages of the *x*-coordinates and *y*-coordinates on the boundary of *S*.
+We first translate *S* to have the same **center of mass** (or **center of mass**) as *T*. The center of mass of *S* is found at the point (*x*<sub><em>S</em></sub>, *y*<sub><em>S</em></sub>) such that *x*<sub><em>S</em></sub> and *y*<sub><em>S</em></sub> are the respective averages of the *x*-coordinates and *y*-coordinates on the boundary of *S*.
 
 For example, suppose that *S* is the semicircular arc shown in the figure below, with endpoints (-1, 0) and (1, 0).
 
@@ -57,12 +57,12 @@ y_S & = \dfrac{\int_{0}^{\pi}{\sin{\theta}}}{\pi} \\
 & = \dfrac{2}{\pi}
 \end{align*}$$
 
-**STOP:** Say that we connect (-1, 0) and (0, 1) to form a closed semicircle. What will be the centroid of the resulting shape?
+**STOP:** Say that we connect (-1, 0) and (0, 1) to form a closed semicircle. What will be the center of mass of the resulting shape?
 {: .notice--primary}
 
-The centroid of some shapes, like the semicircular arc in the preceding example, can be determined mathematically. But for irregular shapes, we can estimate the centroid of *S* by sampling *n* points from the boundary of the shape and taking the averages of all the *x*- and *y*-coordinates of sampled points.
+The center of mass of some shapes, like the semicircular arc in the preceding example, can be determined mathematically. But for irregular shapes, we can estimate the center of mass of *S* by sampling *n* points from the boundary of the shape and taking the averages of all the *x*- and *y*-coordinates of sampled points.
 
-After finding the centroids of the two shapes *S* and *T* that we wish to compare, we translate *S* so that it has the same centroid as *T*. We then wish to find the rotation of *S*, possibly along with a flip as well, that makes the shape resemble *T* as much as possible.
+After finding the center of masss of the two shapes *S* and *T* that we wish to compare, we translate *S* so that it has the same center of mass as *T*. We then wish to find the rotation of *S*, possibly along with a flip as well, that makes the shape resemble *T* as much as possible.
 
 Imagine that we have found the desired rotation; we can then define *d*(*S*, *T*) in the following way. We sample *n* points along the boundary of each shape, converting *S* and *T* into **vectors** *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>) and *t* = (*t*<sub>1</sub>, ..., *t*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is the *i*-th point on the boundary of *S*. The **root mean square deviation (RMSD)** between the two shapes is the square root of the average squared distance between corresponding points in the vectors,
 
@@ -97,7 +97,7 @@ Even if we assume that the shapes have already been overlapped and rotated appro
 A circle inscribed within a square. Sampling of the four points where the shapes intersect will give a flawed estimate of zero for RMSD.
 {: style="font-size: medium;"}
 
-However, we have still assumed that we already rotated (and possibly flipped) *S* to be as "similar" to *T* as possible. In practice, after superimposing *S* and *T* to have the same centroid, we will find the flip and/or rotation of *S* that *minimizes* the RMSD between our vectorizations of *S* and *T* over all possible ways of flipping and rotating *S*. It is this minimum RMSD that we define as *d*(*S*, *T*).
+However, we have still assumed that we already rotated (and possibly flipped) *S* to be as "similar" to *T* as possible. In practice, after superimposing *S* and *T* to have the same center of mass, we will find the flip and/or rotation of *S* that *minimizes* the RMSD between our vectorizations of *S* and *T* over all possible ways of flipping and rotating *S*. It is this minimum RMSD that we define as *d*(*S*, *T*).
 
 The best way of rotating and flipping *S* so as to minimize the RMSD between the resulting vectors *s* and *t* can be found with a method called the **Kabsch algorithm**. Explaining this algorithm requires some advanced linear algebra and is beyond the scope of our work but is described <a href="https://en.wikipedia.org/wiki/Kabsch_algorithm" target="_blank">here</a>.
 

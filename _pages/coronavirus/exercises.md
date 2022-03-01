@@ -16,7 +16,7 @@ Imagine that this plot depicts a 2D protein structure where each point represent
 Simple 2D structure A.
 {: style="text-align: center; font-size: medium;"}
 
-**Exercise:** From what we have learned in this module about how to compare protein structures, calculate the centroid of this protein structure.
+**Exercise:** From what we have learned in this module about how to compare protein structures, calculate the center of mass of this protein structure.
 {: .notice--success}
 
 Imagine that we have a second 2D protein structure and wanted to compare it with our first protein structure from the previous exercise. 
@@ -25,7 +25,7 @@ Imagine that we have a second 2D protein structure and wanted to compare it with
 Simple 2D structure B.
 {: style="text-align: center; font-size: medium;"}
 
-**Exercise:** Assume that we do not need to rotate either structure and calculate the RMSD between the two proteins. (**Hint:** calculate the centroid and translate each point such that the new centroid matches the centroid of the previous protein. You can also translate both proteins such that their centroids lie on the origin).
+**Exercise:** Assume that we do not need to rotate either structure and calculate the RMSD between the two proteins. (**Hint:** calculate the center of mass and translate each point such that the new center of mass matches the center of mass of the previous protein. You can also translate both proteins such that their center of masss lie on the origin).
 {: .notice--success}
 
 ## *Ab initio* and homology modeling
@@ -73,7 +73,7 @@ In this exercise, we will be performing a short analysis of SARS-CoV-2 Spike pro
 In the conclusion of part 2 of this module, we mentioned that the surface of the surface of viruses and host cells are “fuzzy” because they are covered by structures called glycans. As you may expect, SARS-CoV and SARS-CoV-2 are also covered by this "glycan shield", where glycosylation of surface antigens allows the virus to hide from antibody detection. In this simple exercise, we will use VMD to visualize glycans on the spike protein of both viruses. First, we will need to download the protein sturctures of the SARS-CoV spike protein (PDB entry: <a href="https://www.rcsb.org/structure/5XLR" target="_blank">5xlr</a> and the SARS-CoV-2 spike protein (PDB entry: <a href="https://www.rcsb.org/structure/6VXX" target="_blank">6vxx</a>. Load each structure into VMD and go to *Graphics>Representations*. For VMD, there is no specific keyword to select glycans, so we will use a workaround using the keywords: "not protein and not water". Create the representation and play around with the visualization. Assuming that all the non-proteins are glycans, which structure contains the most number of glycans? Do you think this supports SARS-CoV-2's higher infectivity compared to SARS-CoV? 
 
 
-* Good exercise: find centroid of a given shape.
+* Good exercise: find center of mass of a given shape.
 
 * exercise: compute RMSD.
 

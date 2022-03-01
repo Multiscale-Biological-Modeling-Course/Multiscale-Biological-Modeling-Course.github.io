@@ -34,7 +34,7 @@ As we mentioned in the [previous lesson](classification), we would like to apply
 
 You may notice that the problem of "vectorizing" a WBC image is similar to one that we have already encountered in our [module on protein structures](../coronavirus/accuracy). In that module, we vectorized a protein structure as the collection of locations of its alpha carbons. Given a protein structure *S*, we sampled the *n* alpha carbons from *S*, producing a vector  *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is the position of the *i*-th alpha carbon of *S*.
 
-We will apply the same idea to vectorize our segmented WBCs. Given a binarized image, we will first center the image so that its centroid is at the origin, and then sample *n* points from the boundary of the cell nucleus to produce a **shape vector** *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is a point with coordinates (*x*(*i*), *y*(*i*)).
+We will apply the same idea to vectorize our segmented WBCs. Given a binarized image, we will first center the image so that its center of mass is at the origin, and then sample *n* points from the boundary of the cell nucleus to produce a **shape vector** *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is a point with coordinates (*x*(*i*), *y*(*i*)).
 
 **Note:** Both isolating the boundary of a binarized image, and sampling points from this boundary to ensure that points are similarly spaced, are challenging tasks that are outside the scope of our work here, and which we will let CellOrganizer handle for us.
 {: .notice--info}

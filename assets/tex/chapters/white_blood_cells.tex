@@ -331,7 +331,7 @@ As we mentioned in the previous section, we would like to apply k-NN to our exam
 
 You may notice that the problem of ``vectorizing'' a WBC image is similar to one that we have already encountered in \autoref{chapter:coronavirus}, when we vectorized a protein structure as the collection of locations of its alpha carbons. Given a protein structure \textvar{S}, we sampled the \textvar{n} alpha carbons from \textvar{S}, producing a vector $s = (s_1, \ldots, s_n)$, where $s_i$ is the position of the \textvar{i}-th alpha carbon of \textvar{S}.
 
-We will apply the same idea to vectorize our segmented WBCs. Given a binarized image, we will first center the image so that its centroid is at the origin, and then sample \textvar{n} points from the boundary of the cell nucleus to produce a \textdef{shape vector}{shape vector}{FILL IN} $s = (s_1, \ldots, s_n)$, where $s_i$ is a point with coordinates $(x(i), y(i))$.\\
+We will apply the same idea to vectorize our segmented WBCs. Given a binarized image, we will first center the image so that its center of mass is at the origin, and then sample \textvar{n} points from the boundary of the cell nucleus to produce a \textdef{shape vector}{shape vector}{FILL IN} $s = (s_1, \ldots, s_n)$, where $s_i$ is a point with coordinates $(x(i), y(i))$.\\
 
 \begin{note}[%
 Both isolating the boundary of a binarized image, and sampling points from this boundary to ensure that points are similarly spaced, are challenging tasks that are outside the scope of our work here, and which we will let CellOrganizer handle for us.
