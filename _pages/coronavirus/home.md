@@ -64,7 +64,7 @@ Under a microscope, the two viruses look identical, and they use the same mechan
 
 Part of the reason for the rapid spread of SARS-CoV-2 is that it can be spread by individuals that are asymptomatic,[^13] a method of transmission that was never found for SARS-CoV.[^14] But we also wonder if we can find a molecular explanation for the increased infectiousness of SARS-CoV-2.
 
-In this module, we will place ourselves in the shoes of early SARS-CoV-2 researchers studying the new virus in January 2020. The virus's **genome** (the 30,000 nucleotide sequence making up its DNA) was published on January 10[^Genome][^Annotation], and an annotation of this genome showing the position of the virus's genes is shown in the figure below. Upon sequence comparison, SARS-CoV-2 was found to be related to several coronaviruses isolated from bats and distantly related to SARS-CoV.
+In this module, we will place ourselves in the shoes of early SARS-CoV-2 researchers studying the new virus in January 2020. The virus's genome, consisting of nearly 30,000 nucleotides, was published on January 10[^Genome][^Annotation], and an annotation of this genome showing the position of the virus's genes is shown in the figure below. Upon sequence comparison, SARS-CoV-2 was found to be related to several coronaviruses isolated from bats and distantly related to SARS-CoV.
 
 [![image-center](../assets/images/600px/SARSCoV2Annotation.png){: .align-center}](../assets/images/SARSCoV2Annotation.png)
 An annotated genome of SARS-CoV-2. The Spike protein, found at the bottom of this image, is labeled "S" and begins at position 21,563. Accessed from GenBank: [https://go.usa.gov/xfzMM](https://go.usa.gov/xfzMM).

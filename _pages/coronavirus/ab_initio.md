@@ -46,7 +46,7 @@ The structural units making up proteins are often hierarchical, and the spike pr
 
 Now that we know a bit more about how protein structure is defined, we will discuss why proteins fold in a certain way every time. In other words, what are the factors driving nature's magic protein folding algorithm?
 
-Amino acids' variety of side chains causes the amino acids to have different chemical properties, which can lead to different conformations being more chemically "preferable" than others. For example, the table below shows the twenty standard amino acids occurring in proteins grouped by chemical properties. Nine of these amino acids are **hydrophobic** (also called **non-polar**), meaning that their side chains tend to be repelled by water, and as a result we tend to find these amino acids sheltered from the environment on the interior of the protein.
+Amino acids' variety of side chains causes the amino acids to have different chemical properties, which can lead to different conformations being more chemically "preferable" than others. For example, the table below shows the twenty standard amino acids occurring in proteins grouped by chemical properties. Nine of these amino acids are **hydrophobic** (also called **nonpolar**), meaning that their side chains tend to be repelled by water, and as a result we tend to find these amino acids sheltered from the environment on the interior of the protein.
 
 [![image-center](../assets/images/600px/AminoAcidChart.png){: .align-center}](../assets/images/AminoAcidChart.png)
 A chart of the twenty amino acid grouped by chemical properties. The side chain of each amino acid is highlighted in blue. Image courtesy: <a href="https://openstax.org/books/biology/pages/1-introduction" target="_blank">OpenStax Biology</a>.
@@ -58,7 +58,7 @@ To be more precise, the **potential energy** (sometimes called **free energy**) 
 
 Bonded energy derives from the protein's covalent bonds, as well as the angles of bonds between adjacent amino acids, and the torsion angles that we saw in the [previous lesson](structure_intro), as the protein bends and twists.
 
-Non-bonded energy comprises **electrostatic interactions** and **van der Waals interactions**. Electrostatic interactions refer to the attraction and repulsion force from the electric charge between pairs of atoms. For example, some amino acids are **hydrophobic**, meaning that they are repelled by water. If a folded protein structure were to have many hydrophobic amino acids on the outside of the protein, then these amino acids would be in constant contact with water molecules, which would repel them. Such a conformation would greatly increase the free energy of the molecule, as the nonpolar protein exterior would be forced inward.
+Non-bonded energy comprises **electrostatic interactions** and **van der Waals interactions**. Electrostatic interactions refer to the attraction and repulsion force from the electric charge between pairs of atoms. For example, if a folded protein structure were to have many hydrophobic amino acids on the outside of the protein, then these amino acids would be in constant contact with water molecules, which would repel them. Such a conformation would greatly increase the free energy of the molecule, as the nonpolar protein exterior would be forced inward.
 
 As for van der Waals interactions, atoms are dynamic systems, with electrons constantly buzzing around the nucleus, as shown in the figure below.
 
