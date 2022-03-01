@@ -135,7 +135,7 @@ In summary, say that a cell has current concentrations [*A*] and [*B*]. Say also
 [*A*]<sub>new</sub> = [*A*] + Δ*A* +  *f*(1-[*A*]) - *r* · [*A*] · [*B*]<sup>2</sup>
 [*B*]<sub>new</sub> = [*B*] + Δ*B* - *k* · [*B*] + *r* · [*A*] · [*B*]<sup>2</sup>
 
-Applying these reaction-diffusion computations over all cells in parallel and over many generations forms a cellular automaton called the **Gray-Scott** model.[^gs]
+Applying these reaction-diffusion computations over all cells in parallel and over many generations forms a cellular automaton called the **Gray-Scott model**.[^gs]
 
 Before continuing, let us consider an example of how a single cell might update its concentration of both particle types as a result of reaction and diffusion.  Say that we have the following hypothetical parameter values:
 

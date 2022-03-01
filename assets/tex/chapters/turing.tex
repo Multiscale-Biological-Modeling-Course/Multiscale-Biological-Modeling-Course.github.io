@@ -11,7 +11,7 @@
 \label{sec:introduction}
 \phantomsection
 
-Our story begins with an unlikely character: Alan Turing. If you have heard of Turing, then you might be surprised that he would appear in the first sentence of a course on biological modeling.
+Our story begins with an unlikely character: Alan Turing. If you have heard of Turing, then you might be surprised that he would appear in the first sentence of a book on biological modeling.
 
 \begin{figure}[h]
 \centering
@@ -21,7 +21,7 @@ Our story begins with an unlikely character: Alan Turing. If you have heard of T
 \label{fig:alan_turing_npg_cc}
 \end{figure}
 
-Turing was a genius cryptographer who helped break several German ciphers during World War II. But his most famous scientific contribution was a 1936 paper in which he introduced what has come to be known as a \textdef{Turing machine}{Turing machine}{FILL IN}. This hypothetical computer consists of an infinitely long tape of cells and a reader that can read one cell at a time. Each cell consists of only a single number, and the machine can move one cell at a time, reading and rewriting cells according to a finite collection of internal rules.
+Turing was a genius cryptographer who helped break several German ciphers during World War II. But his most famous scientific contribution was a 1936 paper in which he introduced what has come to be known as a \textdef{Turing machine}{Turing machine}{a hypothetical computer devised by Alan Turing in 1936 consisting of an infinitely long tape of cells and a reader that can read one cell at a time; each cell consists of only a single number, and the machine can move one cell at a time, reading and rewriting cells according to a finite collection of internal rules}. This hypothetical computer consists of an infinitely long tape of cells and a reader that can read one cell at a time. Each cell consists of only a single number, and the machine can move one cell at a time, reading and rewriting cells according to a finite collection of internal rules.
 
 Turing's major insight was that this simple machine is nevertheless powerful. Nearly a century after his work, any task that can be performed by a computer --- even the world's most largest supercomputer --- could be implemented by a Turing machine, which Joseph Weizenbaum called nothing more than ``pebbles on toilet paper''.
 
@@ -44,15 +44,15 @@ Everything in the universe ultimately depends on the interaction of tiny particl
 
 You may feel like a single, coherent being, but you are just a skin-covered bag of trillions of cells that act largely independently. Over half of these cells aren't even yours! They correspond to bacteria that make up a couple of kilograms of your mass. What makes the whole affair even crueler is that your cellular symphony depends on the \textit{random} movement of particles.
 
-Throughout this course, we will see that just because a system is driven by randomness and simple rules does not mean that it cannot have emergent behavior that is complex and elegant. Just like you.
+Throughout this book, we will see that just because a system is driven by randomness and simple rules does not mean that it cannot have emergent behavior that is complex and elegant. Just like you.
 
 \FloatBarrier
 \phantomsection
 \subsection{The wanderlust of a randomly walking particle}
 
-Cells are full of \textdef{proteins}{proteins}{FILL IN}, complex macromolecules that perform nearly every cellular function. If a protein could move in a straight line, then it would move at 20 kph or faster, but the cytoplasm that fills the cell is so densely packed with water molecules that the protein ping-pongs off them, frequently changing direction.
+Cells are full of \textdef{protein}{protein}{a complex macromolecule formed of chain(s) of amino acids that perform nearly every cellular function}, complex macromolecules that perform nearly every cellular function. If a protein could move in a straight line, then it would move at 20 kph or faster, but the cytoplasm that fills the cell is so densely packed with water molecules that the protein ping-pongs off them, frequently changing direction.
 
-We will model the movements of a cellular particle such as a protein by a \textdef{random walk}{random walk}{FILL IN} in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction. The video below shows a randomly walking particle taking 1000 steps.
+We will model the movements of a cellular particle such as a protein by a \textdef{random walk}{random walk}{a model consisting of a sequence of steps in randomly chosen directions} in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction. The video below shows a randomly walking particle taking 1000 steps.
 
 \texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
@@ -68,7 +68,7 @@ If we animate the action of many independent particles following random walks, t
 
 In fact, although the movements of a single particle are random, we can draw conclusions about the \textit{average-case} behavior of many particles can be predicted, as the following theorem indicates.
 
-\textdef{Random Walk Theorem}{Random Walk Theorem}{FILL IN} After \textvar{n} steps of unit length in a random walk, a particle will on average find itself a distance of approximately $\sqrt{n}$ from its origin.\\
+\textbf{Random Walk Theorem:} After \textvar{n} steps of unit length in a random walk, a particle will on average find itself a distance of approximately $\sqrt{n}$ from its origin.\\
 
 \begin{note}[%
 If you love mathematics and are interested in seeing a proof of this theorem, check out our website (link).
@@ -76,10 +76,10 @@ If you love mathematics and are interested in seeing a proof of this theorem, ch
 
 Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less macabre example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
 
-If you are interested in seeing how to build the random walk simulation shown in the video above, then please visit the following software tutorial. This tutorial uses \textdef{CellBlender}{CellBlender}{FILL IN}, an add-on to the popular open graphics software program  \textdef{Blender}{Blender}{FILL IN}, which allows us to create and visualize biological models. These models rely on particle-based reaction-diffusion simulations that are implemented by the program  \textdef{MCell}{MCell}{FILL IN}. We will use this software for our work in biological modeling in this prologue as well as \autoref{chapter:motifs}.
+If you are interested in seeing how to build the random walk simulation shown in the video above, then please visit the following software tutorial. This tutorial uses \textdefnogloss{CellBlender}, an add-on to the popular open graphics software program  \textdefnogloss{Blender}, which allows us to create and visualize biological models. These models rely on particle-based reaction-diffusion simulations that are implemented by the program  \textdefnogloss{MCell}. We will use this software for our work in biological modeling in this prologue as well as \autoref{chapter:motifs}.
 
 \begin{note}[%
-We have designed this course so that you can appreciate the key ideas behind the biological models that we build without following software tutorials. But we also provide these tutorials so that you can explore the modeling software that we have used to generate our conclusions.
+We have designed this book so that you can appreciate the key ideas behind the biological models that we build without following software tutorials. But we also provide these tutorials so that you can explore the modeling software that we have used to generate our conclusions.
 ]\end{note}
 
 \tutorial[https://biologicalmodeling.org/prologue/tutorial-random-walk]
@@ -121,7 +121,7 @@ Before continuing, we will point you to a beautiful animation illustrating just 
 
 In the previous section, we introduced the model of a particle randomly walking through a medium. But what exactly do random walks have to do with Alan Turing and zebras?
 
-Turing's insight was that remarkable high-level patterns could arise if we combine particle diffusion with a chemical reaction in which colliding particles interact with each other. Such a model is called a \textdef{reaction-diffusion system}{reaction-diffusion system}{FILL IN}, and the emergent patterns are called \textdef{Turing patterns}{Turing patterns}{FILL IN} in Turing's honor.
+Turing's insight was that remarkable high-level patterns could arise if we combine particle diffusion with a chemical reaction in which colliding particles interact with each other. Such a model is called a \textdef{reaction-diffusion system}{reaction-diffusion system}{a model incorporating the diffusion of particles with chemical reactions involving these particles}, and the emergent patterns are called \textdef{Turing patterns}{Turing patterns}{patterns, such as stripes and spots, that emerge from certain reaction-diffusion systems} in Turing's honor.
 
 We will consider a reaction-diffusion system having two types of particles, \textvar{A} and \textvar{B}. The system is not explicitly a predator-prey relationship, but you may like to think of the \textvar{A} particles as prey and the \textvar{B} particles as predators for reasons that will become clear soon.
 
@@ -131,15 +131,15 @@ Both types of particles diffuse randomly through the plane, but the \textvar{A} 
 Say that we release one \textvar{A} particle and one \textvar{B} particle at the same location. If the two particles move via random walks, and the rate of diffusion of \textvar{A} is twice as fast, then on average how much farther from the origin will \textvar{A} be than \textvar{B} after \textvar{n} steps?
 ]\end{qbox}
 
-We now will add some reactions to our system. The \textvar{A} particles are added into the system at some constant \textdef{feed rate}{feed rate}{FILL IN} \textvar{f}. As a result of the feed reaction, the concentration of the \textvar{A} particles increases by a constant number in each time step.
+We now will add some reactions to our system. The \textvar{A} particles are added into the system at some constant \textdefnogloss{feed rate} \textvar{f}. As a result of the feed reaction, the concentration of the \textvar{A} particles increases by a constant number in each time step.
 
 \begin{note}[%
 We will work with a two-dimensional simulation, but in a three-dimensional system, the units of \textvar{f} would be in mol/L/s, which means that every second, there are \textvar{f} moles of particles added to the system for every liter of volume. (Recall from your chemistry class long ago that one mole is 6.02214076 · 10<sup>23</sup> particles, called Avogadro's number.)
 ]\end{note}
 
-There is also a \textdef{kill rate}{kill rate}{FILL IN} constant \textvar{k} dictating the rate of removal of \textvar{B} particles. As a result of the kill reaction, the number of \textvar{B} particles in the system will decrease by a factor of \textvar{k} in a given time step. That is, the more \textvar{B} particles that are present, the more \textvar{B} particles will be removed.
+There is also a \textdefnogloss{kill rate} constant \textvar{k} dictating the rate of removal of \textvar{B} particles. As a result of the kill reaction, the number of \textvar{B} particles in the system will decrease by a factor of \textvar{k} in a given time step. That is, the more \textvar{B} particles that are present, the more \textvar{B} particles will be removed.
 
-Finally, our reaction-diffusion system includes the following reaction involving both particle types. The particles on the left side of this reaction are called \textdef{reactants}{reactants}{FILL IN} and the particles on the right side are called \textdef{products}{products}{FILL IN}.
+Finally, our reaction-diffusion system includes the following reaction involving both particle types. The particles on the left side of this reaction are called \textdef{reactants}{reactants}{substances taking part in a reaction} and the particles on the right side are called \textdef{products}{products}{substances resulting from a reaction}.
 
 <p><center><em>A</em> + 2<em>B</em> → 3<em>B</em></center></p>
 
@@ -169,7 +169,7 @@ and
 
 Before building a simulation corresponding to our reaction-diffusion model, we point out that the results of the simulation can vary depending upon a few things.
 
-A \textdef{parameter}{parameter}{FILL IN} is a variable quantity used as input to a model. Parameters are inevitable in biological modeling (and data science in general), and as we will see, changing parameters can cause major changes in the behavior of a system.
+A \textdef{parameter}{parameter}{a variable used as input to a model} is a variable quantity used as input to a model. Parameters are inevitable in biological modeling (and data science in general), and as we will see, changing parameters can cause major changes in the behavior of a system.
 
 Four parameters are relevant to our reaction-diffusion system. Three of these parameters are the feed rate (\textvar{f}) of \textvar{A} particles, the kill rate of the \textvar{B} particles (\textvar{k}), and the rate of the predator-prey reaction (\textvar{r}). The final parameter of interest corresponds to the diffusion rate (i.e., speeds) of the the \textvar{B} particles. Once this diffusion rate is set, the diffusion rate of \textvar{A} particles must be twice that of the \textvar{B} particles.
 
@@ -229,7 +229,7 @@ You may still be skeptical, since the patterns in the above videos do not have t
 
 When you watched the particle simulations above, an adjective that may have come to mind is ``trippy''. This is no accident.
 
-Research dating all the way back to the 1920s has studied the patterns that we see during visual hallucinations, which Heinrich Klüver named \textdef{form constants}{form constants}{FILL IN} after studying patients who had taken mescaline. Form constants, such as cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of their hallucinations.
+Research dating all the way back to the 1920s has studied the patterns that we see during visual hallucinations, which Heinrich Klüver named \textdef{form constants}{form constants}{patterns seen during visual hallucinations, which recur across patients and were first studied by Heinrich Klüver in the 1920s} after studying patients who had taken mescaline. Form constants, such as cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of their hallucinations.
 
 \begin{figure}[h]
 \centering
@@ -330,7 +330,7 @@ What should the values of the ``?'' cells be in the above figure? Note that thes
 ]\end{qbox}
 
 
-The coarse-grained model of particle diffusion that we have built is a variant of a \textdef{cellular automaton}{cellular automaton}{FILL IN}, or a grid of cells in which we use fixed rules to update the status of a cell based on its current status and those of its neighbors. Cellular automata form a rich area of research applied to a wide variety of fields dating back to the middle of the 20th Century; if you are interested in learning more about them from the perspective of programming, then you might like to check out the Programming for Lovers project (link).
+The coarse-grained model of particle diffusion that we have built is a variant of a \textdef{cellular automaton}{cellular automaton}{a grid of cells in which we use fixed rules to update the status of a cell based on its current status and those of its neighbors}, or a grid of cells in which we use fixed rules to update the status of a cell based on its current status and those of its neighbors. Cellular automata form a rich area of research applied to a wide variety of fields dating back to the middle of the 20th Century; if you are interested in learning more about them from the perspective of programming, then you might like to check out the Programming for Lovers project (link).
 
 \FloatBarrier
 \phantomsection
@@ -388,7 +388,7 @@ Next, we color each cell in the grid according to its value of [\textvar{B}]/([\
 \label{fig:matplotlib_colormap}
 \end{figure}
 
-When we color each cell over many time steps, we can animate the automaton to see how it changes over time. We are now ready for the following tutorial, in which we will implement and visualize our diffusion automaton using a \textdef{Jupyter notebook}{Jupyter notebook}{FILL IN}.
+When we color each cell over many time steps, we can animate the automaton to see how it changes over time. We are now ready for the following tutorial, in which we will implement and visualize our diffusion automaton using a \textdefnogloss{Jupyter notebook}.
 
 \tutorial[https://biologicalmodeling.org/prologue/tutorial-diffusion]
 
@@ -439,7 +439,7 @@ In summary, say that a cell has current concentrations [\textvar{A}] and [\textv
 [\textvar{A}]<sub>new</sub> = [\textvar{A}] + Δ\textvar{A} +  \textvar{f}(1-[\textvar{A}]) - \textvar{r} · [\textvar{A}] · [\textvar{B}]<sup>2</sup>
 [\textvar{B}]<sub>new</sub> = [\textvar{B}] + Δ\textvar{B} - \textvar{k} · [\textvar{B}] + \textvar{r} · [\textvar{A}] · [\textvar{B}]<sup>2</sup>
 
-Applying these reaction-diffusion computations over all cells in parallel and over many generations forms a cellular automaton called the \textdef{Gray-Scott}{Gray-Scott}{FILL IN} model.
+Applying these reaction-diffusion computations over all cells in parallel and over many generations forms a cellular automaton called the \textdef{Gray-Scott model}{Gray-Scott model}{a cellular automaton model generating Turing patterns without needing to track individual particles}.
 
 Before continuing, let us consider an example of how a single cell might update its concentration of both particle types as a result of reaction and diffusion.  Say that we have the following hypothetical parameter values:
 
@@ -552,7 +552,7 @@ The Turing patterns that emerged from our particle simulations are a testament t
 
 \texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
-Our reaction-diffusion system is remarkable because it is so \textdef{fine-tuned}{fine-tuned}{FILL IN}, meaning that very slight changes in parameter values can lead to significant changes in the system. These changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
+Our reaction-diffusion system is remarkable because it is so \textdef{fine-tuned}{fine-tuned}{a property of a system in which small disturbances can lead to large changes in the system}, meaning that very slight changes in parameter values can lead to significant changes in the system. These changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
 
 The figure below shows how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary. The kill rate increases along the x-axis, and the feed rate increases along the y-axis. Notice how much the patterns change! You may like to tweak the parameters of the own Gray-Scott simulation from the previous section to see if you can reproduce these differing patterns.
 
@@ -564,7 +564,7 @@ The figure below shows how the Turing patterns produced by the Gray-Scott model 
 \label{fig:xmorphia-parameter-map}
 \end{figure}
 
-Later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In a \textdef{robust}{robust}{FILL IN} system, variation in parameters does not lead to substantive changes in the ultimate behavior of the system. Robustness is vital for processes, like your heartbeat, that must be resilient to small environmental changes.
+Later in this book, we will see an example of a biological system that is the opposite of fine-tuned. In a \textdef{robust}{robustness}{the ability of a system to retain a desired behavior despite perturbations such as changes to parameters} system, perturbations such as variations in parameters do not lead to substantive changes in the ultimate behavior of the system. Robustness is vital for processes, like your heartbeat, that must be resilient to small environmental changes.
 
 It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism causing these stripes to form is still an unresolved question. However, the skin of \textit{zebrafish} does exhibit Turing patterns because two types of pigment cells follow a reaction-diffusion model much like the one we presented in this prologue. This prologue presented Turing particles as driven by the interactions of particles, but if the interactions occur between cells, then the resulting patterns are the same.
 

@@ -29,7 +29,7 @@ The figure below shows how the Turing patterns produced by the Gray-Scott model 
 Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns produced in the Gray-Scott model. Note that many parameter choices do not lead to patterns. Image courtesy: Robert Munafo.[^robert]
 {: style="font-size: medium;"}
 
-Later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In a **robust** system, variation in parameters does not lead to substantive changes in the ultimate behavior of the system. Robustness is vital for processes, like your heartbeat, that must be resilient to small environmental changes.
+Later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In a **robust** system, perturbations such as variations in parameters do not lead to substantive changes in the ultimate behavior of the system.  Robustness is vital for processes, like your heartbeat, that must be resilient to small environmental changes.
 
 It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism causing these stripes to form is still an unresolved question. However, the skin of *zebrafish* does exhibit Turing patterns because two types of pigment cells follow a reaction-diffusion model much like the one we presented in this prologue.[^zebrafish] This prologue presented Turing particles as driven by the interactions of particles, but if the interactions occur between cells, then the resulting patterns are the same.
 
