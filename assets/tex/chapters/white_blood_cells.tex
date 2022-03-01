@@ -20,9 +20,9 @@
 \label{sec:introduction}
 \phantomsection
 
-Your doctor sometimes counts your blood cells to ensure that they are within healthy ranges as part of a complete blood count. Blood cells consist of \textdef{red blood cells (RBCs)}{red blood cells (RBCs)}{FILL IN}, which transport oxygen via the hemoglobin protein, and \textdef{white blood cells (WBCs)}{white blood cells (WBCs)}{FILL IN}, which help identify and attack foreign cells as part of your immune system.
+Your doctor sometimes counts your blood cells to ensure that they are within healthy ranges as part of a complete blood count. Blood cells consist of \textdef{red blood cells (RBCs)}{red blood cells (RBCs)}{cells in blood that transport oxygen via the hemoglobin protein}, which transport oxygen via the hemoglobin protein, and \textdef{white blood cells (WBCs)}{cells that help identify and attack foreign cells as part of the immune system}{FILL IN}, which help identify and attack foreign cells as part of your immune system.
 
-The classic device used for counting blood cells is the \textdef{hemocytometer}{hemocytometer}{FILL IN}. In this device, a technician filters a small amount of blood onto a gridded slide and then counts the number of cells of each type in the squares on the grid. As a result, the technician can estimate the number of each type of cell per volume of blood.
+The classic device used for counting blood cells is the \textdefnogloss{hemocytometer}. In this device, a technician filters a small amount of blood onto a gridded slide and then counts the number of cells of each type in the squares on the grid. As a result, the technician can estimate the number of each type of cell per volume of blood.
 
 \texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
 
@@ -34,11 +34,11 @@ You would not be wrong to think that the hemocytometer seems old-fashioned; it w
 
 We will focus specifically on WBCs. A low WBC count may indicate a host of diseases that leave the immune system susceptible to attack; a high WBC count may indicate that an infection is present, or that a disease like leukemia has caused overproduction of WBCs.
 
-WBCs divide into families based on their structure and function, and some diseases may cause an abnormally low or high count of a specific WBC classes. We therefore wish not only to identify WBCs in cellular images but also to \textdef{classify}{classify}{FILL IN} WBCs into their appropriate types.
+WBCs divide into families based on their structure and function, and some diseases may cause an abnormally low or high count of a specific WBC classes. We therefore wish not only to identify WBCs in cellular images but also to \textdef{classify}{classification}{the seminal problem of (correctly) categorizing a collection of data} WBCs into their appropriate types.
 
 We will work with a publicly available dataset (hosted at \url{https://github.com/Shenggan/BCCD_Dataset}) containing blood cell images that depict both RBCs and WBCs, as shown in \autoref{fig:three_families}. The cells have been applied with a stain in which a red-orange dye bonds to hemoglobin and a blue dye bonds to DNA and RNA. The red-orange dye will make the RBCs (which do not have DNA or RNA) look red, and the blue dye will make the WBC nuclei look purple.
 
-\autoref{fig:three_families} also illustrates the three main families of WBCs: \textdef{granulocytes}{granulocytes}{FILL IN}, \textdef{lymphocytes}{lymphocytes}{FILL IN}, and \textdef{monocytes}{monocytes}{}.  Granulocytes have a \textdef{multilobular nucleus}{multilobular nucleus}{FILL IN}, which consists of several round “lobes” that are linked by thin strands of nuclear material. Monocyte and lymphocyte nuclei only have a single lobe, but the shapes of the nuclei are quite different: lymphocyte nuclei tend to have a more rounded shape (taking up a greater fraction of the cell’s volume), whereas monocyte nuclei have a more irregular shape.\\
+\autoref{fig:three_families} also illustrates the three main families of WBCs: \textdefnogloss{granulocytes}, \textdefnogloss{lymphocytes}, and \textdefnogloss{monocytes}.  Granulocytes have a \textdef{multilobular nucleus}{multilobular nucleus}{a nucleus consisting of several round ``lobes'' that are linked by thin strands of nuclear material}, which consists of several round ``lobes'' that are linked by thin strands of nuclear material. Monocyte and lymphocyte nuclei only have a single lobe, but the shapes of the nuclei are quite different: lymphocyte nuclei tend to have a more rounded shape (taking up a greater fraction of the cell’s volume), whereas monocyte nuclei have a more irregular shape.\\
 
 \begin{figure}[h]
 \centering
@@ -51,7 +51,7 @@ We will work with a publicly available dataset (hosted at \url{https://github.co
 \label{fig:three_families}
 \end{figure}
 
-In this module, our goal is twofold. First, can we excise, or \textdef{segment}{segment}{FILL IN}, WBCs from these cellular images? Second, can we train a computer to classify WBCs by family? To perform these tasks, we will enlist CellOrganizer (\url{http://www.cellorganizer.org}), a powerful software resource that can perform a wide variety of automated analyses on cellular images.
+In this module, our goal is twofold. First, can we excise, or \textdef{segment}{segmentation}{the process of partitioning an image in order to excise objects of interest}, WBCs from these cellular images? Second, can we train a computer to classify WBCs by family? To perform these tasks, we will enlist CellOrganizer (\url{http://www.cellorganizer.org}), a powerful software resource that can perform a wide variety of automated analyses on cellular images.
 
 When you look at the cells in the figure above, you may think that our two tasks will be easy. Identifying WBCs only requires identifying the large purplish regions, and classifying them is just a matter of categorizing them according to the differences in shape that we described above. Yet even after decades of research into computer vision, researchers struggle to attain the precision of the human eye.
 
@@ -71,7 +71,7 @@ We ask what makes the WBC nucleus so easy for a human to spot in the images in \
 \phantomsection
 \subsection{The RGB color model}
 
-In the \textdef{RGB color model}{RGM color model}{FILL IN}, every rectangular pixel on a computer screen receives a solid color formed as a mixture of the three primary colors of light: red, green, and blue (hence the acronym ``RGB''). The amount of each color in a pixel is expressed as an integer between 0 and 255, inclusively, where larger integers correspond to larger amounts of the color.
+In the \textdef{RGB color model}{RGB color model}{a model in which every rectangular pixel on a computer screen receives a solid color formed as a mixture of red, green, and blue}, every rectangular pixel on a computer screen receives a solid color formed as a mixture of the three primary colors of light: red, green, and blue (hence the acronym ``RGB''). The amount of each color in a pixel is expressed as an integer between 0 and 255, inclusively, where larger integers correspond to larger amounts of the color.
 
 A few colors are shown in \autoref{fig:RGB_color_chart} along with their RGB equivalents; for example, magenta corresponds to equal parts red and blue. Note that a color like (128, 0, 0) contains only red but appears duskier than (256, 0, 0) because the red has not been “turned on” fully.
 
@@ -93,7 +93,7 @@ You can find a color picker in \texttt{Utilities > Digital Color Meter} (Mac OS 
 \phantomsection
 \subsection{Binarizing an image based on a color threshold}
 
-Using a color picker, we find (unsurprisingly) that the blue values for pixels inside a stained WBC nucleus are higher than those of the surrounding RBCs. We will therefore \textdef{binarize}{binarize}{FILL IN} our image by coloring a pixel white (RGB: (256, 256, 256)) if its blue value is above some threshold, and turning a pixel black (RGB: (0, 0, 0)) if its blue value is beneath some threshold.
+Using a color picker, we find (unsurprisingly) that the blue values for pixels inside a stained WBC nucleus are higher than those of the surrounding RBCs. We will therefore \textdefnogloss{binarize} our image by coloring a pixel white (RGB: (256, 256, 256)) if its blue value is above some threshold, and turning a pixel black (RGB: (0, 0, 0)) if its blue value is beneath some threshold.
 
 The binarized version of the cellular image from \autoref{fig:three_families} (left) for the threshold value of 153 is shown in \autoref{fig:neutrophil_binarized_blue}. Unfortunately, we cannot clearly see the WBC nucleus in this binarized image because although the nucleus has high blue values, so does the image's background, since light colors are formed by mixing high percentages of red, green, and blue.
 
@@ -175,7 +175,7 @@ In our ongoing example, the data are images of WBCs, and the classes are the thr
 \phantomsection
 \subsection{The iris flower dataset}
 
-A classical dataset commonly used for motivating classification is the \textdef{iris flower dataset}{iris flower dataset}{FILL IN}, which was compiled by Edgar Anderson, and which Ronald Fisher used in a seminal paper on classification in 1936. Anderson took measurements from 150 iris flowers, equally divided among three species (\autoref{fig:iris_flowers}).\\
+A classical dataset commonly used for motivating classification is the \textdef{iris flower dataset}{iris flower dataset}{a dataset commonly used for motivating classification, which was compiled by Edgar Anderson, and which Ronald Fisher used in a seminal paper on classification in 1936}, which was compiled by Edgar Anderson, and which Ronald Fisher used in a seminal paper on classification in 1936. Anderson took measurements from 150 iris flowers, equally divided among three species (\autoref{fig:iris_flowers}).\\
 
 \begin{figure}[h]
 \centering
