@@ -48,23 +48,35 @@ Throughout this book, we will see that just because a system is driven by random
 
 \FloatBarrier
 \phantomsection
-\subsection{The wanderlust of a randomly walking particle}
+\subsection{The wanderlust of randomly walking particles}
 
-Cells are full of \textdef{protein}{protein}{a complex macromolecule formed of chain(s) of amino acids that perform nearly every cellular function}, complex macromolecules that perform nearly every cellular function. If a protein could move in a straight line, then it would move at 20 kph or faster, but the cytoplasm that fills the cell is so densely packed with water molecules that the protein ping-pongs off them, frequently changing direction.
+Cells are full of \textdef{proteins}{protein}{a complex macromolecule formed of chain(s) of amino acids that perform nearly every cellular function}, complex macromolecules that perform nearly every cellular function. If a protein could move in a straight line, then it would move at 20 kph or faster, but the cytoplasm that fills the cell is so densely packed with water molecules that the protein ping-pongs off them, frequently changing direction.
 
-We will model the movements of a cellular particle such as a protein by a \textdef{random walk}{random walk}{a model consisting of a sequence of steps in randomly chosen directions} in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction. The video below shows a randomly walking particle taking 1000 steps.\\
+We will model the movements of a cellular particle such as a protein by a \textdef{random walk}{random walk}{a model consisting of a sequence of steps in randomly chosen directions} in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction. \autoref{fig:random_walk_one_particle} shows a randomly walking particle taking 1000 steps.\\
 
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
+\begin{figure}[h]
+\centering
+\mySfFamily
+FIGURE HERE
+\caption{Phillip will fill in.}
+\label{fig:random_walk_one_particle}
+\end{figure}
 
-The distance that the particle wanders from its starting point may surprise you. And yet perhaps this particle is just an outlier, and the typical particle would be much more of a homebody.
+The distance that the particle wanders from its starting point in \autoref{fig:random_walk_one_particle} may surprise you. And yet perhaps this particle is just an outlier, and the typical particle would be much more of a homebody.
 
-\FloatBarrier
-\phantomsection
-\subsection{From one particle to many}
+%\FloatBarrier
+%\phantomsection
+%\subsection{From one particle to many}
 
-If we animate the action of many independent particles following random walks, then although some particles hug the starting point and some wind up far away, most particles steadily drift outward. The following video shows a simulation of 200 randomly walking particles.\\
+If we animate the action of many independent particles following random walks, then although some particles hug the starting point and some wind up far away, most particles steadily drift outward. \autoref{fig:random_walk_multiple_particles} shows a simulation of 200 randomly walking particles.\\
 
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
+\begin{figure}[h]
+\centering
+\mySfFamily
+NEED FIGURE HERE
+\caption{Phillip will fill in.}
+\label{fig:random_walk_multiple_particles}
+\end{figure}
 
 In fact, although the movements of a single particle are random, we can draw conclusions about the \textit{average-case} behavior of many particles can be predicted, as the following theorem indicates.
 
@@ -76,7 +88,7 @@ If you love mathematics and are interested in seeing a proof of this theorem, ch
 
 Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less macabre example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
 
-If you are interested in seeing how to build the random walk simulation shown in the video above, then please visit the following software tutorial. This tutorial uses \textdefnogloss{CellBlender}, an add-on to the popular open graphics software program  \textdefnogloss{Blender}, which allows us to create and visualize biological models. These models rely on particle-based reaction-diffusion simulations that are implemented by the program  \textdefnogloss{MCell}. We will use this software for our work in biological modeling in this chapter as well as \autoref{chapter:motifs}.
+If you are interested in seeing how to build the random walk simulation shown in the video above, then please visit the following software tutorial. This tutorial uses \textdefnogloss{CellBlender}, an add-on to the popular open graphics software program  \textdefnogloss{Blender}, which allows us to create and visualize biological models. These models rely on particle-based reaction-diffusion simulations that are implemented by the program  \textdefnogloss{MCell}. We will use this software for our work in biological modeling in this chapter as well as \autoref{chapter:motifs}.\\
 
 \begin{note}[%
 We have designed this book so that you can appreciate the key ideas behind the biological models that we build without following software tutorials. But we also provide these tutorials so that you can explore the modeling software that we have used to generate our conclusions.
