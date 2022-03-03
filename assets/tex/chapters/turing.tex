@@ -96,10 +96,6 @@ We have designed this book so that you can appreciate the key ideas behind the b
 
 \tutorial[https://biologicalmodeling.org/prologue/tutorial-random-walk]
 
-\FloatBarrier
-\phantomsection
-\subsection{Brownian motion: big numbers in small spaces}
-
 Why should scientists care about random walks? Later in this book, we will see that random walks power a simple but powerful approach that bacteria like \textit{E. coli} use to explore their environment in the hunt for food. In the next section, we will see that randomly moving particles serve can produce high-level patterns if the particles interact when they collide.\\
 
 \FloatBarrier
@@ -141,7 +137,7 @@ To simulate this reaction on a particle level, if an \textvar{A} particle and tw
 
 This third reaction is why we compared \textvar{A} to prey and \textvar{B} to predators, since we may like to conceptualize the reaction as two \textvar{B} particles consuming an \textvar{A} particle and producing an offspring \textvar{B} particle.
 
-The three reactions defining our system are summarized by \autoref{fig:three_reactions}.
+The three reactions defining our system are summarized by \autoref{fig:three_reactions}.\\
 
 \begin{figure}[h]
 \centering
@@ -154,13 +150,13 @@ FIGURE HERE
 Before continuing, we call your attention to a slight difference between the feed and kill reactions. In the former, the number of \textvar{A} particles increases by a constant number in each time step. In the latter, the number of \textvar{B} particles decreases by a constant factor multiplied by the current number of \textvar{B} particles. If we were using calculus to model this system, then letting [\textvar{A}] and [\textvar{B}] denote the concentrations of the two particle types, we can write
 
 \begin{center}
-$d[A]/dt = f$
+$\dfrac{\mathrm{d}[A]}{\mathrm{d}t} = f$
 \end{center}
 
 \noindent and
 
 \begin{center}
-$d[B]/dt = k \cdot [B]$
+$\dfrac{\mathrm{d}[B]}{\mathrm{d}t} = k \cdot [B]$\,.
 \end{center}
 
 \FloatBarrier
