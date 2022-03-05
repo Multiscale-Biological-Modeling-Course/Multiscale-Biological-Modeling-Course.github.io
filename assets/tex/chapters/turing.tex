@@ -58,7 +58,7 @@ We will model the movements of a cellular particle such as a protein by a \textd
 \centering
 \mySfFamily
 FIGURE HERE
-\caption{Phillip will fill in.}
+\caption{Phillip will fill in caption.}
 \label{fig:random_walk_one_particle}
 \end{figure}
 
@@ -74,7 +74,7 @@ If we animate the action of many independent particles following random walks, t
 \centering
 \mySfFamily
 NEED FIGURE HERE
-\caption{Phillip will fill in.}
+\caption{Phillip will fill in caption.}
 \label{fig:random_walk_multiple_particles}
 \end{figure}
 
@@ -185,31 +185,67 @@ In the following tutorial, we will initiate our reaction-diffusion system with a
 \phantomsection
 \subsection{Changing reaction-diffusion parameters produces different emergent Turing patterns}
 
-For many parameter values, our reaction-diffusion system is not very interesting.  For example, the following animation is produced when using parameter rates in CellBlender of \textvar{f} = 1000 and \textvar{k} = 500,000.  It shows that if the kill rate is too high, then the \textvar{B} particles will die out more quickly than they can be replenished by the reaction with \textvar{A} particles, and so only \textvar{A} particles will be left. In this animation, \textvar{A} particles have been colored green, and \textvar{B} particles have been colored red.\\
+For many parameter values, our reaction-diffusion system is not very interesting.  For example, \autoref{fig:k=500000_f=1000} illustrates the result of a simulation using parameter rates in CellBlender of \textvar{f} = 1000 and \textvar{k} = 500,000.  It shows that if the kill rate is too high, then the \textvar{B} particles (colored red) will die out more quickly than they can be replenished by the reaction with \textvar{A} particles (colored green), and so only \textvar{A} particles will be left.\\
 
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
+\begin{figure}[h]
+\centering
+\mySfFamily
+FIGURE HERE
+\caption{CAPTION NEEDED}
+\label{fig:k=500000_f=1000}
+\end{figure}
 
-On the other hand, if \textvar{f} is too high, then the increased feed rate will cause an increase in the concentration of \textvar{A} particles. However, the increased concentration of \textvar{A} particles will also cause more interactions between \textvar{A} particles and pairs of \textvar{B} particles, and so we will see an explosion in the number of predators. The following simulation has the parameters \textvar{f} = 1,000,000 and \textvar{k} = 100,000.\\
+On the other hand, if \textvar{f} is too high, then the increased feed rate will cause an increase in the concentration of \textvar{A} particles. However, the increased concentration of \textvar{A} particles will also cause more interactions between \textvar{A} particles and pairs of \textvar{B} particles, and so we will see an explosion in the number of predators. \autoref{fig:k=100000_f=1000000} has the parameters \textvar{f} = 1,000,000 and \textvar{k} = 100,000.\\
 
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
+\begin{figure}[h]
+\centering
+\mySfFamily
+FIGURE HERE
+\caption{CAPTION NEEDED}
+\label{fig:k=100000_f=1000000}
+\end{figure}
 
-The interesting behavior in this system lies in a sweet spot of the \textvar{f} and \textvar{k} parameters. For example, consider the following visualization when \textvar{f} is equal to 100,000 and \textvar{k} is equal to 200,000. We see a very clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where there is a critical mass of predators to interact with each other.\\
+The interesting behavior in this system lies in a sweet spot of the \textvar{f} and \textvar{k} parameters. For example, consider \autoref{fig:k=200000_f=100000}, which shows \textvar{f} is equal to 100,000 and \textvar{k} is equal to 200,000. We see a very clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where there is a critical mass of predators to interact with each other.\\
 
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
+\begin{figure}[h]
+\centering
+\mySfFamily
+FIGURE HERE
+\caption{CAPTION NEEDED}
+\label{fig:k=200000_f=100000}
+\end{figure}
 
-When we hold \textvar{k} fixed and increase \textvar{f} to 140,000, the higher feed rate increases the likelihood of \textvar{B} particles encountering \textvar{A} particles, and so we see even more stripes of \textvar{B} particles.\\
+When we hold \textvar{k} fixed and increase \textvar{f} to 140,000, the higher feed rate increases the likelihood of \textvar{B} particles encountering \textvar{A} particles, and so we see even more stripes of \textvar{B} particles (\autoref{fig:k=200000_f=140000}).\\
 
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
+\begin{figure}[h]
+\centering
+\mySfFamily
+FIGURE HERE
+\caption{CAPTION NEEDED}
+\label{fig:k=200000_f=140000}
+\end{figure}
 
-As \textvar{f} approaches \textvar{k}, the stripe structure becomes chaotic and breaks down because there are now many clusters of \textvar{B} particles colliding and mix with each other. The following animation shows the result of raising \textvar{f} to 175,000.\\
+As \textvar{f} approaches \textvar{k}, the stripe structure becomes chaotic and breaks down because there are now many clusters of \textvar{B} particles colliding and mix with each other. \autoref{fig:k=200000_f=175000} shows the result of raising \textvar{f} to 175,000.\\
 
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
+\begin{figure}[h]
+\centering
+\mySfFamily
+FIGURE HERE
+\caption{CAPTION NEEDED}
+\label{fig:k=200000_f=175000}
+\end{figure}
 
-Once \textvar{f} is equal to \textvar{k}, the stripes disappear, as shown in the video below. We might expect this to mean that the \textvar{A} and \textvar{B} particles will be uniformly mixed. Instead, we see is that after an initial outward explosion of \textvar{B} particles, the system displays a mottled background, with pockets having higher or lower concentration of \textvar{B}. Pay attention to the following video at a point late in the animation. Although the concentrations of the particles are still changing, there is much less large-scale change than in earlier videos. If we freeze the video, our eye cannot help but see patterns of red and green clusters that resemble spots, or mottling.\\
+Once \textvar{f} is equal to \textvar{k}, the stripes disappear (\autoref{fig:k=200000_f=200000}). We might expect this to mean that the \textvar{A} and \textvar{B} particles will be uniformly mixed. Instead, we see is that after an initial outward explosion of \textvar{B} particles, the system displays a mottled background, with pockets having higher or lower concentration of \textvar{B}. Our eye cannot help but see patterns of red and green clusters that resemble spots, or mottling.\\
 
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
+\begin{figure}[h]
+\centering
+\mySfFamily
+FIGURE HERE
+\caption{CAPTION NEEDED}
+\label{fig:k=200000_f=200000}
+\end{figure}
 
-You may still be skeptical, since the patterns in the above videos do not have the concrete boundaries that we might expect of animal stripes and spots. Yet when we closely examine an animal with skin patterns, we can see that the patterns we infer on a higher level are just the net result of many individual, varied points.  \autoref{fig:zebrafish_zoom} shows an example of this effect for zebrafish skin.\\
+You may still be skeptical, since the patterns in the above videos do not have the concrete boundaries that we might expect of animal stripes and spots. Yet when we closely examine an animal with skin patterns, we can see that the patterns we infer on a higher level are just the net result of many individual, varied points.  \autoref{fig:zebrafish_zoom} illustrates this effect for zebrafish skin.\\
 
 \begin{figure}[h]
 \centering
@@ -254,14 +290,13 @@ We wonder if it is possible to build a model of Turing patterns that does not re
 
 \subsection{A coarse-grained model of single particle diffusion}
 
-
 Part of a modeler's job is to find simple models that capture the essence of a system while running quickly and scaling well to larger inputs.
 
 In our case, we have a very ``fine-grained'' reaction-diffusion model illustrating Turing patterns, but this model consumes a huge amount of computational resources because it requires tracking the movements of hundreds of thousands of individual particles. Our goal is to build a model that will allow us to appreciate Turing patterns without significant computational overhead.
 
 Our idea is to grid off two-dimensional space into blocks and store only the \textit{concentration} of each type of particle found inside the block. To make things even simpler, we assume that there is some maximum concentration of particles possible, so that we can divide the number of particles by this maximum concentration. As a result, the concentration of a particle in each block will be represented by a decimal number between 0 and 1.
 
-Let us begin with an example of the diffusion of only \textvar{A} particles; we will later add \textvar{B} particles as well as reactions to our model. Say that the particles are at maximum concentration in the central cell of our grid and are present nowhere else, as shown below.
+Let us begin with an example of the diffusion of only \textvar{A} particles; we will later add \textvar{B} particles as well as reactions to our model. Say that the particles are at maximum concentration in the central cell of our grid and are present nowhere else, as shown in \autoref{fig:initial_A_concentration}.\\
 
 \begin{figure}[h]
 \centering
@@ -277,12 +312,12 @@ We will now update the grid of cells after one time step to mimic particle diffu
 \centering
 \mySfFamily
 \includegraphics[width = 0.4\textwidth]{../images/A_concentration_one_time_step.png}
-\caption{A grid showing an update to the system in the previous figure after diffusion of particles after a single time step.}
+\caption{A grid showing an update to the system in \autoref{fig:initial_A_concentration} after diffusion of particles after a single time step.}
 \label{fig:A_concentration_one_time_step}
 \end{figure}
 
 \begin{note}[%
-The sum of the values in the grid in the figure above is 1, which is the same as the sum of the values in our original figure. Regardless of how many times we update the grid, the sum of the values should be 1 to ensure the conservation of total mass in the system.
+The sum of the values in the grid in \autoref{fig:A_concentration_one_time_step} is 1, which is the same as the sum of the values in our original figure. Regardless of how many times we update the grid, the sum of the values should be 1 to ensure the conservation of total mass in the system.
 ]\end{note}
 
 After an additional time step, the particles continue to diffuse outward. For example, each diagonal neighbor of the central cell in the above figure, which has a concentration of 0.05 after one time step, will lose all of its particles in the following step. Each of these cells will also gain 20\% of the particles from two of its adjacent neighbors, along with 5\% of the particles from the central square (which doesn't have any particles). This makes the updated concentration of this cell after two time steps equal to 2(0.2)(0.2) + 0.05(0) = 0.08.
@@ -297,14 +332,13 @@ In summary, the central nine squares after two time steps are as shown in \autor
 \centering
 \mySfFamily
 \includegraphics[width = 0.4\textwidth]{../images/A_concentration_two_time_steps_partial.png}
-\caption{A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled ``?'' are left as an exercise for the reader.}
+\caption{A grid showing an update to the central nine squares of the diffusion system in \autoref{fig:A_concentration_one_time_step} after an additional time step. The cells labeled ``?'' are left as an exercise for the reader.}
 \label{fig:A_concentration_two_time_steps_partial}
 \end{figure}
 
 \begin{qbox}[%
 What should the values of the ``?'' cells be in \autoref{fig:A_concentration_two_time_steps_partial}? Note that these cells are neighbors of cells with positive concentrations after one time step, so their concentrations should be positive after two time steps.
 ]\end{qbox}
-
 
 The coarse-grained model of particle diffusion that we have built is a variant of a \textdef{cellular automaton}{cellular automaton}{a grid of cells in which we use fixed rules to update the status of a cell based on its current status and those of its neighbors}, or a grid of cells in which we use fixed rules to update the status of a cell based on its current status and those of its neighbors.\\
 
@@ -316,25 +350,19 @@ Cellular automata form a rich area of research applied to a wide variety of fiel
 \phantomsection
 \subsection{Slowing down the rate of diffusion}
 
-There is just one problem. Our cellular automaton model of diffusion is too volatile! \autoref{fig:automaton_volatile} shows the initial automaton as well as its updates after each of two time steps. In a true diffusion process, all of the particles would not rush out of the central square in a single time step, only for some of them to return in the next step.\\
-
-\begin{figure}[h]
-\centering
-\mySfFamily
-FIGURE HERE
-\caption{A $\text{5} \times \text{5}$ cellular automaton model for diffusion of a single particle. (Left) The system contains a maximum concentration of particles in the central square. (Center) The system after one time step. (Right) The system after two time steps.}
-\label{fig:automaton_volatile}
-\end{figure}
+There is just one problem. Our cellular automaton model of diffusion is too volatile! 
+Recall that \autoref{fig:initial_A_concentration}, \autoref{fig:A_concentration_one_time_step}, and
+\autoref{fig:A_concentration_two_time_steps_partial} showed an initial automaton as well as its updates after each of two time steps. In a true diffusion process, all of the particles would not rush out of the central square in a single time step, only for some of them to return in the next step.
 
 Our solution is to slow down the diffusion process by adding a parameter $d_A$ between 0 and 1 that represents the \textit{rate} of diffusion of \textvar{A} particles. Instead of moving a cell's entire concentration of particles to its neighbors in a single time step, we move only a fraction $d_A$ of them.
 
-Revisiting our original example, say that $d_A$ is equal to 0.2. After the first time step, only 20\% of the central cell's particles will be spread to its neighbors. Of these particles, 5\% will be spread to diagonal neighbors, and 20\% will be spread to adjacent neighbors. \autoref{fig:A_concentration_slower_diffusion} illustrates that after one time step, the central square has concentration 0.8, its adjacent neighbors have concentration $0.2 \cdot d_A = 0.04$, and its diagonal neighbors have concentration $0.05 \cdot d_A = 0.01$.\\
+Revisiting our original example from \autoref{fig:initial_A_concentration}, say that $d_A$ is equal to 0.2. After the first time step, only 20\% of the central cell's particles will be spread to its neighbors. Of these particles, 5\% will be spread to diagonal neighbors, and 20\% will be spread to adjacent neighbors. \autoref{fig:A_concentration_slower_diffusion} illustrates that after one time step, the central square has concentration 0.8, its adjacent neighbors have concentration $0.2 \cdot d_A = 0.04$, and its diagonal neighbors have concentration $0.05 \cdot d_A = 0.01$.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.4\textwidth]{../images/A_concentration_slower_diffusion.png}
-\caption{An updated grid of cells showing the concentration of \textvar{A} particles after one time step if $\textvar{d}_\textvar{A} = \text{0.2}$.}
+\caption{An updated grid of cells for the initial grid in \autoref{fig:initial_A_concentration} showing the concentration of \textvar{A} particles after one time step if $\textvar{d}_\textvar{A} = \text{0.2}$.}
 \label{fig:A_concentration_slower_diffusion}
 \end{figure}
 
@@ -348,7 +376,7 @@ We now will add particle \textvar{B} to the simulation, which also starts with 1
 \centering
 \mySfFamily
 \includegraphics[width = 0.4\textwidth]{../images/two_particle_concentration_diffusion.png}
-\caption{A figure showing cellular concentrations after one time step for two particles \textvar{A} and \textvar{B}  diffusing at rates $\textvar{d}_\textvar{A} = \text{0.2}$ and $\textvar{d}_\textvar{B} = \text{0.1}$. Each cell is labeled by the ordered pair $([\textvar{A}], [\textvar{B}])$.}
+\caption{The cellular concentrations after one time step for two particles \textvar{A} and \textvar{B} that start at maximum concentration in the central square and diffuse at rates $\textvar{d}_\textvar{A} = \text{0.2}$ and $\textvar{d}_\textvar{B} = \text{0.1}$. Each cell is labeled by the ordered pair $([\textvar{A}], [\textvar{B}])$.}
 \label{fig:two_particle_concentration_diffusion}
 \end{figure}
 
@@ -369,8 +397,8 @@ Next, we color each cell in the grid according to its value of $[\textvar{B}]/([
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/matplotlib_colormap.png}
-\caption{}
+\includegraphics[width = 0.8\textwidth]{../images/matplotlib_colormap.png}
+\caption{Phillip will fill in caption.}
 \label{fig:matplotlib_colormap}
 \end{figure}
 
@@ -378,7 +406,7 @@ When we color each cell over many time steps, we can animate the automaton to se
 
 \tutorial[https://biologicalmodeling.org/prologue/tutorial-diffusion]
 
-The video below shows an animation of a 101 x 101 board that begins with the following properties:
+\autoref{fig:diffusion_movie_still} shows an animation of a 101 x 101 board that begins with the following properties:
 \begin{itemize}
 \item $[\textvar{A}] = 1$ for all cells;
 \item $[\textvar{B}] = 0$ for all cells other than an $11 \times 11$ square in the middle of the grid, where $[\textvar{B}] = 1$;
@@ -389,9 +417,9 @@ The video below shows an animation of a 101 x 101 board that begins with the fol
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/diffusion_movie_first_frame.png}
-\caption{INSERT CAPTION}
-\label{fig:diffusion_movie_first_frame}
+INSERT FIGURE
+\caption{Phillip will fill in caption.}
+\label{fig:diffusion_movie_still}
 \end{figure}
 
 Note that the center of the cell becomes blue because the \textvar{A} particles diffuse twice as fast, so that they spread out more from the middle of the board, which is occupied in greater numbers by \textvar{B} particles.
@@ -458,13 +486,13 @@ We should now feel ready to implement the Gray-Scott model in the following tuto
 
 In contrast to our particle-based simulator, the Gray-Scott model produced an animation of Turing patterns in under a minute on a laptop. We show the results of this model in the videos that follow; throughout these animations, we use the parameters $d_A = 1.0$, $d_B = 0.5$, and $r = 1$.
 
-Our first figure (\autoref{fig:gray-scott_movie_first_frame}) shows an animation of the Gray-Scott model using the parameters  $f = 0.034$ and $k = 0.095$. We use the same initial configuration of the automaton that we used in the diffusion example, in which a cluster of \textvar{B} particles are found at the middle of a board full of \textvar{A} particles.\\
+\autoref{fig:gray-scott_movie_first_frame} shows an animation of the Gray-Scott model using the parameters  $f = 0.034$ and $k = 0.095$. We use the same initial configuration of the automaton that we used in the diffusion example, in which a cluster of \textvar{B} particles are found at the middle of a board full of \textvar{A} particles.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/gray-scott_movie_first_frame.png}
-\caption{}
+INSERT FIGURE
+\caption{Phillip will fill in caption.}
 \label{fig:gray-scott_movie_first_frame}
 \end{figure}
 
@@ -473,8 +501,8 @@ If we expand the size of the simulation and add multiple clusters of predators t
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/gray-scott_multiple_predators_first_frame.png}
-\caption{}
+INSERT FIGURE
+\caption{Phillip will fill in caption.}
 \label{fig:gray-scott_multiple_predators_first_frame}
 \end{figure}
 
@@ -483,8 +511,8 @@ If we keep the feed rate constant and increase the kill rate slightly to \textva
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/gray-scott_f34_k63_first_frame.png}
-\caption{}
+INSERT FIGURE
+\caption{Phillip will fill in caption.}
 \label{fig:gray-scott_f34_k63_first_frame}
 \end{figure}
 
@@ -493,8 +521,8 @@ If we make the prey a little happier as well, increasing  \textvar{f} to 0.038 a
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/gray-scott_f38_k61_first_frame.png}
-\caption{}
+INSERT FIGURE
+\caption{Phillip will fill in caption.}
 \label{fig:gray-scott_f38_k61_first_frame}
 \end{figure}
 
@@ -503,8 +531,8 @@ And if we increase \textvar{f} to 0.042 and \textvar{k} to 0.101, then again we 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/gray-scott_f42_k59_first_frame.png}
-\caption{}
+INSERT FIGURE
+\caption{Phillip will fill in caption.}
 \label{fig:gray-scott_f42_k59_first_frame}
 \end{figure}
 
@@ -518,9 +546,7 @@ The point is that very slight changes in our model's parameters can produce dras
 \phantomsection
 
 
-The Turing patterns that emerged from our particle simulations are a testament to the human eye's ability to find organization within the net behavior of tens of thousands of particles. For example, take another look at the video we produced that showed mottling in our particle simulator. Patterns are present, but they are also noisy --- even in the dark red regions we will have quite a few green particles, and vice-versa. The rapid inference of large-scale patterns from small-scale visual phenomena is one of the tasks that our brains have evolved to perform well.\\
-
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
+The Turing patterns that emerged from our particle simulations are a testament to the human eye's ability to find organization within the net behavior of tens of thousands of particles. For example, take another look at the results of the simulation in \autoref{fig:k=200000_f=200000}, which showed mottling in our particle simulator. Patterns are present, but they are also noisy --- even in the dark red regions we will have quite a few green particles, and vice-versa. The rapid inference of large-scale patterns from small-scale visual phenomena is one of the tasks that our brains have evolved to perform well.
 
 Our reaction-diffusion system is remarkable because it is so \textdef{fine-tuned}{fine-tuned}{a property of a system in which small disturbances can lead to large changes in the system}, meaning that very slight changes in parameter values can lead to significant changes in the system. These changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
 
@@ -543,7 +569,10 @@ Finally, take a look at the following two photos of giant pufferfish in \autoref
 \begin{figure}[h]
 \centering
 \mySfFamily
-INSERT FIGURE
-\caption{Two similar pufferfish with very different skin patterns. (Left) A juvenile Mbu pufferfish with a very familiar pattern. (Right) An adult Mbu pufferfish exhibiting another familiar pattern}
+\tabcolsep = 1em
+\begin{tabular}{c c}
+\includegraphics[width = 0.4\textwidth]{../images/Juvenile_Mbu_pufferfish.jpg} & \includegraphics[width = 0.4\textwidth]{../images/Giant_Puffer_fish_skin_pattern.jpg}
+\end{tabular}
+\caption{Two similar pufferfish with very different skin patterns. (Left) A juvenile Mbu pufferfish with a very familiar pattern. (Right) An adult Mbu pufferfish exhibiting another familiar pattern.}
 \label{fig:pufferfish}
 \end{figure}
