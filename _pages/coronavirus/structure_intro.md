@@ -27,7 +27,7 @@ As we have seen throughout this course, molecular interactions are ruled by prob
 Because structure prediction is such a fundamental problem, researchers wish to catalog the varied shapes of different proteins. This variety is evident in the figure below, which shows the "proteins of the month" in 2020 named by the **Protein Data Bank** (**PDB**). Yet the question remains: how do we know these protein structures?
 
 [![image-center](../assets/images/600px/different_protein_shapes_2020.jpg){: .align-center}](../assets/images/different_protein_shapes_2020.jpg)
-Each "molecule of the month" in 2020 named by the PDB. These proteins have widely varying shapes and accomplish a wide variety of cellular tasks. Note that the SARS-CoV-2 spike protein was the molecule of the month in June 2020. Image courtesy: David Goodsell.
+Each "molecule of the month" in 2020 named by the PDB. These proteins have widely varying shapes and accomplish a wide variety of cellular tasks. Note that the SARS-CoV-2 spike protein was the molecule of the month in June. Image courtesy: David Goodsell.
 {: style="font-size: medium;"}
 
 ## Laboratory methods for determining protein structure
@@ -48,9 +48,7 @@ In **cryo-electron microscopy** (**cryo-EM**), researchers preserve thousands of
 
 Unfortunately, laboratory approaches for structure determination are expensive and cannot be used on all proteins. X-ray crystallography costs upward of $2,000 per protein; furthermore, crystallizing a protein is a challenging task, and each copy of the protein must line up in the same way, which does not work for very flexible proteins. As for cryo-EM, an electron microscope costs upwards of millions of dollars. And to study bacterial proteins, we need to culture the bacteria in the lab, but microbiologists have estimated that less than 2% of bacteria can currently be cultured.[^Wade]
 
-Protein structures that have been determined experimentally are typically stored in the PDB. This database contains over 160,000 proteins, most of which have been added this century.
-
-This number may seem large, but a recent study estimated that humans have between 620,000 and 6.13 million protein isoforms (i.e., differently-shaped protein variants) [^Ponomarenko]. If we hope to catalog the proteins of all living things, then our work on structure determination is just beginning.
+Protein structures that have been determined experimentally are typically stored in the PDB. This database contains over 160,000 proteins, most of which have been added this century. This number may seem large, but a recent study estimated that humans have between 620,000 and 6.13 million protein isoforms (i.e., differently-shaped protein variants) [^Ponomarenko]. If we hope to catalog the proteins of all living things, then our work on structure determination is just beginning.
 
 ## What makes protein structure prediction so difficult?
 
@@ -94,7 +92,7 @@ Below is an excellent video from Jacob Elmer illustrating how changing φ and ψ
 
 {% include video id="1usemtIYe_s" provider="youtube" %}
 
-A polypeptide with *n* amino acids will have *n* - 1 peptide bonds, meaning that its shape is influenced by *n* - 1 phi angles and 99 *n* - 1 psi angles. If each bond has *k* stable conformations, then there are *k*<sup>2<em>n</em>-2</sup> total possible conformations of the polypeptide. For example, if *k* is 3 and *n* is just 100 (a short polypeptide), then the number of potential protein structures is more than the number of atoms in the universe! (The concept of combinatorial explosion, introduced in module 2, appears again.) The ability for the protein to reliably find a single conformation using the magic algorithm despite such an enormous number of potential shapes is called **Levinthal's paradox**.[^Levinthal]
+A polypeptide with *n* amino acids will have *n* - 1 peptide bonds, meaning that its shape is influenced by *n* - 1 phi angles and *n* - 1 psi angles. If each bond has *k* stable conformations, then there are *k*<sup>2<em>n</em>-2</sup> total possible conformations of the polypeptide. For example, if *k* is equal to 3 and *n* is equal to only 100 (representing a short polypeptide), then the number of potential protein structures is more than the number of atoms in the universe! (The concept of combinatorial explosion, introduced in module 2, appears again.) The ability for the protein to reliably find a single conformation using the magic algorithm despite such an enormous number of potential shapes is called **Levinthal's paradox**.[^Levinthal]
 
 Although protein structure prediction is difficult, it is not impossible; nature's algorithm is not, after all, magic. Furthermore, researchers have spent decades cataloging the genomes of thousands of species. As a result, biologists know the *sequence* of amino acids for many proteins whose structures have not been validated experimentally. In our case, although the SARS-CoV-2 genome was sequenced in January 2020, the structure of its spike protein was unknown at that time.  In the next lesson, we will place ourselves in the shoes of early SARS-CoV-2 researchers working before the structure of the virus's spike protein had been experimentally determined to see if we can predict its structure and give biologists a head start on fighting the pandemic.
 
