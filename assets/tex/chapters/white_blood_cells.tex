@@ -328,7 +328,7 @@ You may be confused as to why biologists should care about stone tablets and los
 
 As we mentioned in the previous section, we would like to apply k-NN to our example of segmented WBC images. Yet k-NN first requires each object to be represented by a feature vector, and so we need some way of converting a WBC image into a feature vector. In this way, we can produce a \textdef{shape space}{shape space}{an assignment of shapes to points in multi-dimensional space}, or an assignment of (cellular image) shapes to points in multi-dimensional space.
 
-You may notice that the problem of ``vectorizing'' a WBC image is similar to one that we have already encountered in \autoref{chapter:coronavirus}, when we vectorized a protein structure as the collection of locations of its alpha carbons. Given a protein structure \textvar{S}, we sampled the \textvar{n} alpha carbons from \textvar{S}, producing a vector $s = (s_1, \ldots, s_n)$, where $s_i$ is the position of the \textvar{i}-th alpha carbon of \textvar{S}.
+You may notice that the problem of ``vectorizing'' a WBC image is similar to one that we have already encountered in \autoref{chapter:coronavirus_1}, when we vectorized a protein structure as the collection of locations of its alpha carbons. Given a protein structure \textvar{S}, we sampled the \textvar{n} alpha carbons from \textvar{S}, producing a vector $s = (s_1, \ldots, s_n)$, where $s_i$ is the position of the \textvar{i}-th alpha carbon of \textvar{S}.
 
 We will apply the same idea to vectorize our segmented WBCs. Given a binarized image, we will first center the image so that its center of mass is at the origin, and then sample \textvar{n} points from the boundary of the cell nucleus to produce a \textdef{shape vector}{shape vector}{a feature vector for a shape whose features are points on the boundary of the shape} $s = (s_1, \ldots, s_n)$, where $s_i$ is a point with coordinates $(x(i), y(i))$.\\
 
@@ -767,7 +767,7 @@ To return to our example of classifying images of WBC nuclei, we need to extend 
 
 We use the iris flower dataset to show how this works. Say that we wish to compute the recall, specificity, and precision for \textit{Iris virginica} using the k-NN confusion matrix in \autoref{fig:iris_confusion_matrix}. We can simplify this confusion matrix into a two-class confusion matrix that combines the two classes corresponding to the other two species. \autoref{fig:iris_confusion_matrix_compressed}
  shows this smaller confusion matrix, with \textit{Iris virginica} moved to the first row and column.\\
- 
+
  \begin{figure}[h]
 \centering
 \tabcolsep = 1 em
