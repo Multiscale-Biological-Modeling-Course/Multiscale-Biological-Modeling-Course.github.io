@@ -80,7 +80,7 @@ We note two things in the contact maps below. First, many black values cluster a
 The contact maps of the SARS-CoV-2 spike protein (top left), SARS-CoV spike protein (top right), single chain of the SARS-CoV-2 spike protein (bottom left), and single chain of the SARS-CoV spike protein (bottom right). If the distance between the *i*-th and *j*-th amino acids in a protein structure is 20.0 angstroms or less, then the (*i*, *j*)-th cell of the figure is colored black. The SARS-CoV-2 and SARS spike proteins have very similar contact maps, indicating similar global structures.
 {: style="font-size: medium;"}
 
-**STOP:** How do you think the contact map will change as we increase or lower the threshold distance?
+**STOP:** How do you think the contact map will change as we increase or decrease the threshold distance?
 {: .notice--primary}
 
 We obtain some insight into how two proteins differ structurally at the *i*-th amino acid if we look at all of the *i*-th row's values; that is, if we compare all of the *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) values to all of the *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) values.
@@ -141,5 +141,3 @@ Finding this highlighted region in the RBM where the structures of the SARS-CoV 
 [^Jaimes]: Jaimes, J. A., André, N. M., Chappie, J. S., Millet, J. K., & Whittaker, G. R. 2020. Phylogenetic Analysis and Structural Modeling of SARS-CoV-2 Spike Protein Reveals an Evolutionary Distinct and Proteolytically Sensitive Activation Loop. Journal of molecular biology, 432(10), 3309–3325. https://doi.org/10.1016/j.jmb.2020.04.009
 
 [^Shang]: Shang, J., Ye, G., Shi, K., Wan, Y., Luo, C., Aijara, H., Geng, Q., Auerbach, A., Li, F. 2020. Structural basis of receptor recognition by SARS-CoV-2. Nature 581, 221–224. https://doi.org/10.1038/s41586-020-2179-y
-
-

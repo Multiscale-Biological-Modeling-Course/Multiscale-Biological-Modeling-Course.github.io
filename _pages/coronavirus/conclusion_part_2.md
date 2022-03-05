@@ -10,7 +10,7 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 ## Modeling proteins using tiny springs
 
-We now transition from the static study of proteins to the field of **molecular dynamics (MD)**, in which we simulate the movement of proteins' atoms, along with their interactions as they move.
+We now transition from the static study of proteins to the field of **molecular dynamics**, in which we simulate the movement of proteins' atoms, along with their interactions as they move.
 
 You may think that simulating the movements of proteins with hundreds of amino acids will be a hopeless task. After all, predicting the static structure of a protein has occupied biologists for decades! Yet part of what makes structure prediction so challenging is that the search space of potential structures is so enormous. Once we have established the static structure of a protein, its dynamic behavior will not allow it to deviate greatly from this static structure, and so the space of potential dynamic structures is narrowed down to those that are similar to the static structure.
 
@@ -128,7 +128,7 @@ We are now ready to apply what we have learned in this lesson and use ProDy to b
 
 ## Molecular dynamics analyses of SARS-CoV and SARS-CoV-2 spike proteins using GNM
 
-The figure below shows the similar cross-correlation heat maps of SARS-CoV and SARS-CoV-2 spike proteins, indicating that these proteins may have similar dynamics.
+The figure below shows the cross-correlation heat maps of SARS-CoV and SARS-CoV-2 spike proteins, indicating that these proteins may have similar dynamics.
 
 [![image-center](../assets/images/600px/CrossCorr.png){: .align-center}](../assets/images/CrossCorr.png)
 The cross-correlation heat maps of the SARS-CoV-2 spike protein (top-left), SARS-CoV spike protein (top-right), single chain of the SARS-CoV-2 spike protein (bottom-left), and single-chain of the SARS-CoV spike protein (bottom-right).
