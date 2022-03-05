@@ -83,19 +83,19 @@ The astute reader will notice that we have already used the term ``motif'' in tw
 
 A natural question, then, is to find the set of genes to which a transcription factor binds. A widespread experimental practice for determining where a protein binds in an organism's genome is called \textdef{ChIP-seq}{ChIP-seq}{short for ``chromatin immunoprecipitation sequencing'', an approach that }, which is short for \textdefnogloss{chromatin immunoprecipitation sequencing}. This approach, which is illustrated in \autoref{fig:ChIP-seq_workflow}, combines an organism's DNA with multiple copies of a protein of interest that binds to DNA (which in this case would be a transcription factor). After allowing for the proteins to bind naturally to the DNA, the DNA is cleaved into much smaller fragments of a few hundred base pairs. As a result of this process, we obtain a collection of DNA fragments, some of which are attached to a copy of our protein of interest.
 
+\begin{figure}[hp]
+\centering
+\mySfFamily
+\includegraphics[width = 0.56\textwidth]{../images/ChIP-seq_workflow.png}
+\caption{An overview of ChIP-seq.}
+\label{fig:ChIP-seq_workflow}
+\end{figure}
+
 The question is how to isolate the fragments of DNA that are bound to a single transcription factor of interest so that we can infer the fragments of DNA to which that transcription factor binds.
 
 The clever trick is to use an \textdef{antibody}{antibody}{a blood protein that binds to a specific foreign substance in the body}. Normally, antibodies are produced by the immune system to target foreign pathogens. The antibody used by ChIP-seq is designed to identify a single protein of interest, and the antibody is attached to a bead. Once the antibody attaches to the protein target, a single complex is formed consisting of the DNA fragment, the transcription factor bound to the DNA, the antibody that recognized the transcription factor, and the bead bound to the antibody. Because the bead weighs down these complexes, they can be filtered out as ``precipitate'' from the solution, and we are left with just the DNA fragments that are bound to our transcription factor.
 
 In a final step, we unlink the protein from the DNA, leaving a collection of DNA fragments that were previously bound to a single transcription factor. These fragments are read using DNA sequencing to determine the order of nucleotides on each fragment. Once we have read the fragments, we can then scan through the genome to determine the genes that these fragments precede. We can then postulate that these are the genes regulated by the transcription factor!\\
-
-\begin{figure}[h]
-\centering
-\mySfFamily
-\includegraphics[width = 0.48\textwidth]{../images/ChIP-seq_workflow.png}
-\caption{An overview of ChIP-seq.}
-\label{fig:ChIP-seq_workflow}
-\end{figure}
 
 \begin{qbox}[%
 How do you think that researchers could determine whether a transcription factor activates or inhibits a given gene?
@@ -134,7 +134,7 @@ Note that the edges in the \textit{E. coli} transcription factor network below a
 \end{figure}
 
 \begin{qbox}[%
-Select the expanded view of the transcription factor network in \autoref{fig:e_coli_tf_network}. Do you notice anything interesting about this network?
+Do you notice anything interesting about the network in \autoref{fig:e_coli_tf_network}?
 ]\end{qbox}
 
 \FloatBarrier
@@ -175,8 +175,6 @@ To argue that a loop is indeed a motif in the \textit{E. coli} transcription fac
 A seminal biological example of this paradigm is the search tool BLAST, which allows researchers to compare a sequence query against a database (e.g., comparing the DNA sequence of a newly sequenced gene against a collection of many known proteins). Once BLAST finds a ``hit'', or a location in the database where the query occurs with minimal modifications, it asks, ``What is the \textit{probability} that we would find a hit of the same quality of the query against a randomly generated 'decoy' database?'' If this probability is low, then we can feel confident that the hit is statistically significant.
 ]\end{note}
 
-\fudgespace
-
  \begin{qbox}[%
  How can we apply this paradigm of a randomly generated dataset to determine whether a transcription factor network contains a significant number of loops?
  ]\end{qbox}
@@ -193,19 +191,15 @@ There are multiple ways to generate a random network, but we will use an approac
  If you are interested in the technical details of how this can be simulated computationally, see https://compeau.cbd.cmu.edu/programming-for-lovers/chapter-2-forecasting-a-presidential-election-with-monte-carlo-simulation/
 ]\end{note}
 
-\fudgespace
-
 \begin{qbox}[%
 What should \textvar{n} and \textvar{p} be if we are generating a random network to compare against the \textit{E. coli} transcription factor network?
 ]\end{qbox}
-
-\fudgespace
 
 The full \textit{E. coli} transcription factor network contains thousands of genes, most of which are not transcription factors. As a result, the approach described above may form a random network that connects non-transcription factors to other nodes, which we should avoid.
 
 Instead, we will focus on the network comprising only those \textit{E. coli} transcription factors that regulate each other. This network has 197 nodes and 477 edges, and so we will begin by forming a random network with $\textvar{n} = 197$ nodes.
 
-We then select \textvar{p} to ensure that our random network will on average have 477 edges. To do so, we note that there are $\textvar{n}^2$ pairs of nodes that could have an edge connecting them (\textvar{n} choices for the starting node and \textvar{n} for the ending node). If we were to set \textvar{p} equal to $1/n^2$, then we would expect on average only to see a single edge in the random network. We therefore scale this value by 477 and set \textvar{p} equal to $477n/2 \approx 0.0123$ so that we will see, on average, 477 edges in our random network.
+We then select \textvar{p} to ensure that our random network will on average have 477 edges. To do so, we note that there are $\textvar{n}^2$ pairs of nodes that could have an edge connecting them (\textvar{n} choices for the starting node and \textvar{n} for the ending node). If we were to set \textvar{p} equal to $1/n^2$, then we would expect on average only to see a single edge in the random network. We therefore scale this value by 477 and set \textvar{p} equal to $477/n^2 \approx 0.0123$ so that we will see, on average, 477 edges in our random network.
 
 In the following tutorial, we write some code to count the number of loops in the real \textit{E. coli} transcription factor network. We then build a random network and compare the number of loops found in this network against the number of loops in the real network.
 
@@ -341,7 +335,7 @@ Note that \textvar{X} and \textvar{Y} must be transcription factors because they
 
 Recall that every edge of a transcription factor network is assigned a sign based on whether the regulation represented by the edge corresponds to activation or repression, respectively. Accordingly, since an FFL involves three different regulation events, there are $2^3$ = 8 different types of FFLs.
 
-Among the 42 total FFLs in the \textit{E. coli} transcription factor network, five of them have the structure below, in which the edges connecting \textvar{X} to \textvar{Y} and \textvar{X} to \textvar{Z} are assigned a ``+'' and the edge connecting \textvar{Y} to \textvar{Z} is assigned a ``-''. This specific form of the FFL motif is  called a \textdefnogloss{type-1 incoherent feedforward loop}. This form of the FFL will be our focus for the rest of the section.\\
+Among the 42 total FFLs in the \textit{E. coli} transcription factor network, five of them have the structure in \autoref{fig:type-1_incoherent_feed-forward_loop}, in which the edges connecting \textvar{X} to \textvar{Y} and \textvar{X} to \textvar{Z} are assigned a ``+'' and the edge connecting \textvar{Y} to \textvar{Z} is assigned a ``$-$''. This specific form of the FFL motif is  called a \textdefnogloss{type-1 incoherent feedforward loop}. This form of the FFL will be our focus for the rest of the section.\\
 
 \begin{qbox}[%
 How could we simulate a feedforward loop with a particle-based reaction-diffusion model akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
@@ -447,7 +441,7 @@ To build a reaction-diffusion model accompanying the repressilator, we start wit
 
 Furthermore, we assume that all three particles are produced as the result of an activation process by some other transcription factor(s), which we assume happens at the same rate. We will use a \textdefnogloss{hidden particle} \textvar{I} that serves to activate the three visible particles via the three reactions $\textvar{I} \rightarrow \textvar{I} + \textvar{X}$, $\textvar{I} \rightarrow \textvar{I} + \textvar{Y}$, and $\textvar{I} \rightarrow \textvar{I} + \textvar{Z}$, all taking place at the same rate.
 
-In the [previous section](feedforward) on the feed-forward loop, we saw that we can use the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ to model the repression of \textvar{Y} by \textvar{X}. To complete the repressilator model, we will add the two reactions $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ and $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$, having the same rate as the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$.
+When discussing the feed-forward loop, we saw that we can use the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ to model the repression of \textvar{Y} by \textvar{X}. To complete the repressilator model, we will add the two reactions $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ and $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$, having the same rate as the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$.
 
 If you followed our previous tutorials, then you may feel comfortable taking off the training wheels and implementing the repressilator with your own reaction-diffusion model, which we cover in the following tutorial.
 
@@ -516,7 +510,7 @@ As we saw in \autoref{chapter:turing} with our work on Turing patterns, tracking
 
 We would like to devise a coarse-grained model of the repressilator. However, the particles diffuse at the same rate and are \textit{uniform} across the simulation, and so there is no need to track concentrations in individual locations. As a result, we will need a simulation that assumes that the particles are \textdefnogloss{well-mixed}.
 
-For example, say that we are modeling a degradation reaction. If we start with 10,000 \textvar{X} particles, then after a single time step, we will simply multiply the number of \textvar{X} particles by (1-\textit{k}), where \textit{k} is a parameter related to the rate of the degradation reaction.
+For example, say that we are modeling a degradation reaction. If we start with 10,000 \textvar{X} particles, then after a single time step, we will simply multiply the number of \textvar{X} particles by $(1-k)$, where \textit{k} is a parameter related to the rate of the degradation reaction.
 
 As for a repression reaction like $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$, we can update the concentration of \textvar{Y} particles by subtracting some factor \textit{r} times the current concentration of \textvar{Y} particles. This factor should be directly correlated with the current concentrations of both \textvar{X} and \textvar{Y}.
 
@@ -542,7 +536,7 @@ Because of the spike in the concentration of \textvar{Y}, the reaction $\textvar
 
 We might hypothesize that this process would continue, with a tall peak in the concentration of \textvar{Z}. However, the peak in the concentration of \textvar{Z} is no taller than normal, and the next peak shows a normal concentration of \textvar{X}. In other words, the system has very quickly absorbed the blow of an increase in concentration of \textvar{Y} and returned to normal within one cycle.
 
-Even with a much larger jolt to the concentration of \textvar{Y}, the concentrations of the three particles return to normal oscillations very quickly, as shown below.\\
+Even with a much larger jolt to the concentration of \textvar{Y}, the concentrations of the three particles return to normal oscillations very quickly (\autoref{fig:nf_sim_interrupted_chart_spike}).\\
 
 \begin{figure}[h]
 \centering
