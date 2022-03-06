@@ -79,7 +79,7 @@ The outputs of mathematical functions can be used as inputs to other functions v
 
 INSERT FIGURE
 
-We have a huge amount of freedom when building neural networks, since we can link up neurons however we like, and since the weights of all incoming edges at each neuron are allowed to vary, as well as the activation function used at each neuron. This freedom will mean that the number of possible neural networks is incomprehensibly large, making neural networks both a powerful model and also often difficult to understand.
+We have a huge amount of freedom when building neural networks, since we can link up neurons however we like, and since the weights of all incoming edges at each neuron are allowed to vary, as well as the activation function used at each neuron. This freedom will mean that the number of possible neural networks is incomprehensibly large, so that neural networks are very powerful, but they can also be difficult to interpret.
 
 ## Framing a classification problem using neural networks
 
@@ -118,37 +118,25 @@ However, because the typical neural network has many parameters, we should be wa
 
 All of this discussion, however, assumes that we have already determined our network's choice of parameters to produce a low mean RMSD for our training set. But how can we find this best choice of parameters in the first place?
 
-* All of this, however, assumes that we have already determined our choice of parameters. We would like these parameters to minimize the mean RMSD on the training dataset. But how do we find these parameters to begin with?
-
 ## Exploring a parameter space
 
-* We can think of every parameter in a neural network as a coordinate of a vector, so that every choice of parameters in such a network corresponds to a point in an enormous dimensional space.
+Every neural network contains a collection of hundreds of thousands or more input weights. We can think of each of these weight parameters as the coordinate of a very long vector in a very high-dimensional space.
 
-* Most of the points in this space, from the perspective of classifying data, are garbage. A tiny number of the vast infinitude of these points will provide a good result on our training set.
+From the perspective of producing low mean RMSD between output and classification vectors for a collection of training data, the vast majority of the points in this space (i.e., choices of weight parameters) are worthless. Among this vast infinitude, a tiny number of these points will provide a good result on our training set. Even with substantial computational resources, finding one of these points is daunting.
 
-* The situation in which we find ourselves is remarkably similar to that of a bacterium in a sparse landscape with isolated food sources.
+The situation in which we find ourselves is remarkably similar to that of a bacterium exploring an environment with sparse food resources. Or identifying the conformation of a protein having the lowest potential energy.
 
-* Figure?
+Our idea, then, is to borrow what we have learned in this course, and apply a *local search* algorithm to explore the parameter space. As with *ab initio* structure prediction, we could make a variety of small changes to the parameter values, and then update our current parameters to the ones producing the greatest decrease in mean RMSD between output and classification vectors. We continue this process until this mean RMSD stops decreasing. This idea serves as the foundation for the most popular approach for determining parameters for a neural network, called **gradient descent**.
 
-* One idea, then, is to simply mimic a random walk algorithm, changing parameters randomly by a little bit each time, and seeing how the new parameters perform on the training set.
+**STOP:** How can we avoid getting stuck in a local minimum? What does a local minimum mean in the context of parameter search?
 
-* However, we saw in the module on bacterial exploration (link) that this is a bad way of searching a space with a goal. Instead, bacteria have evolved to move in the direction of best improvement.
+To avoid getting stuck in a *local minimum*, we then run this local search algorithm for many different randomly chosen initial parameters. In the end, we take the choice of parameters minimizing mean RMSD over all of the different runs of gradient descent.
 
-* This idea inspires the most common approach for determining parameters in a neural network, called **gradient descent**. For a given choice of parameters, we make a small change to these parameters "moving in the best direction" -- i.e., which produces the greatest decrease in mean RMSD between the object vectors and their true vectors. (Need terms for this.)
-
-* This approach is analogous to a bacterium constantly reorienting itself in the direction of greatest increase in attractant concentration to swim toward a goal.
-
-* But what parameters should we start with? We will choose them randomly and then run our gradient descent algorithm until we stop being able to make improvements to the mean RMSD on our training data.
-
-* Then, we continue to re-run gradient descent using a variety of different randomly chosen parameters. This is akin to spreading multiple bacteria across a space to explore.
-
-* In the end, we simply take the choice of parameters minimizing mean RMSD over all of the different runs of gradient descent.  There are modifications of gradient descent used in practice, but none make great improvements over this idea.
+Many modifications of gradient descent have been developed, but all are based on the core idea of local search.
 
 ## A reflection on deep learning
 
 * Deep learning is, without a doubt, a great idea.
-
-* But at the same time, it has its drawbacks. Interpretability and energy resources.
 
 * Sometimes, DL has produced a landmark development that wipes away the competition, like with Alphafold that we mentioned in a previous module (link). The hope is that there will be more developments like it.
 
@@ -166,4 +154,4 @@ All of this discussion, however, assumes that we have already determined our net
 
 ## Thank you!
 
-* If you are reading this, and you've made it through our entire course, **thank you** for joining us on this journey! We are grateful that you gave your time to us, and we wish you the best on your educational journey. Please don't hesitate to [contact us](../contact) if you have any feedback or questions; we would love to hear from you.
+If you are reading this, and you've made it through our entire course, **thank you** for joining us on this journey! We are grateful that you gave your time to us, and we wish you the best on your educational journey. Please don't hesitate to [contact us](../contact) if you have any questions, feedback, or would like to leave us a testimonial; we would love to hear from you.
