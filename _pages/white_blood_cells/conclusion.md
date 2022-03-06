@@ -21,11 +21,11 @@ gallery:
     title: "A lymphocyte with a small, round nucleus."
 ---
 
-The currently best known classifier for WBC image classification (CITE) uses a technique called **deep learning**. You may have seen this term wielded with mystical reverence, but you may very well not know what it means, and so let's take explain it.
-
 ## A brief introduction to neural networks
 
-**Neurons** are cells in the nervous system that are electrically charge and that use this charge as a method of communication to other cells. As you are reading this text, huge numbers of neurons are firing in your brain as it processes the visual information that it receives. The basic structure of a neuron is shown in the figure below.
+You may be wondering what the state of the art is for WBC image classification. The best known classifier (CITE) uses high-resolution images in addition to a technique called **deep learning**. You may have seen this term wielded with mystical reverence, but you may very well not know what it means, and so in this module's conclusion, we will make an aside to explain the basics of this method.
+
+**Neurons** are cells in the nervous system that are electrically charged and that use this charge as a method of communication to other cells. As you are reading this text, huge numbers of neurons are firing in your brain as it processes the visual information that it receives. The basic structure of a neuron is shown in the figure below.
 
 <figure>
 	<a href="../assets/images/components_of_neuron.png"><img src="../assets/images/600px/components_of_neuron.png"></a>
@@ -83,11 +83,11 @@ The most typical design of a neural network for classification is then to connec
 
 The remaining question is what the output of our neural network should be. If we are classifying our data into *k* classes, then we typically would like to connect the final hidden layer of neurons to *k* **output neurons**. Ideally, if we plug in the values of the feature vector for a given data point *x* that we know belongs to the *i*-th class, then we would like for the *i*-th output neuron to output a value close to 1, and all other output neurons to output a value close to 0.
 
-A potential neural network model is illustrated in the figure below for our example of categorizing skin lesion images into three classes. Because the number of nodes and edges in a real network is enormous, this figure uses gray boxes to indicate layers containing potentially many hidden neurons, as well as dashed edges to represent connecting many (if not all) nodes in one layer to each of the nodes in the next layer.
+A potential neural network model is illustrated in the figure below for our example of categorizing WBC images into three classes. Because the number of nodes and edges in a real network is enormous, this figure uses gray boxes to indicate layers containing potentially many hidden neurons, as well as dashed edges to represent connecting many (if not all) nodes in one layer to each of the nodes in the next layer.
 
 <figure>
 	<a href="../assets/images/600px/cancer_classifier.png"><img src="../assets/images/cancer_classifier.png"></a>
-	<figcaption>Our desired neural network for cancer classification of skin lesions. FIX THIS so that it doesn't just have theta1, theta2, theta3. Should also just have *x*<sub>*n*</sub> instead of 3n.</figcaption>
+	<figcaption>FIX THIS so that it isn't skin lesion specific and so it doesn't just have theta1, theta2, theta3. Should also just have *x*<sub>*n*</sub> instead of 3n.</figcaption>
 </figure>
 
 In order for such a neural network to classify objects in our dataset, we must find the "best" choices for the weights assigned to input variables at each neuron, assuming that we have decided on which activation function(s) to use for the network's neurons. A network may have hundreds of thousands of these input weights, and for a given application it will be initially unclear which weights to use to produce the magic output in which an object belonging to the *i*-th class produces an output close to 1 for the *i*-th output neuron (and an output close to 0) for other neurons.
@@ -123,6 +123,7 @@ The situation in which we find ourselves is remarkably similar to that of a bact
 Our idea, then, is to borrow what we have learned in this course, and apply a *local search* algorithm to explore the parameter space. As with *ab initio* structure prediction, we could make a variety of small changes to the parameter values, and then update our current parameters to the ones producing the greatest decrease in mean RMSD between output and classification vectors. We continue this process until this mean RMSD stops decreasing. This idea serves as the foundation for the most popular approach for determining parameters for a neural network, called **gradient descent**.
 
 **STOP:** How can we avoid getting stuck in a local minimum? What does a local minimum mean in the context of parameter search?
+{: .notice--primary}
 
 To avoid getting stuck in a *local minimum*, we then run this local search algorithm for many different randomly chosen initial parameters. In the end, we take the choice of parameters minimizing mean RMSD over all of the different runs of gradient descent.
 
