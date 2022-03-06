@@ -98,25 +98,26 @@ A potential neural network model is illustrated in the figure below for our exam
 
 In order for such a neural network to classify objects in our dataset, we must find the "best" choices for the weights assigned to input variables at each neuron, assuming that we have decided on which activation function(s) to use for the network's neurons. A network may have hundreds of thousands of these input weights, and for a given application it will be initially unclear which weights to use to produce the magic output in which an object belonging to the *i*-th class produces an output close to 1 for the *i*-th output neuron (and an output close to 0) for other neurons.
 
-
-
-* This is what we would hope would happen, but it means finding the "best" collection of parameters for the network.
-
-* Most general form of network -- explain the parameters in the network.
-
-
-
-
-
-
-
 ## Finding the best choice of parameters
 
-* To do so, we divide our pre-labeled data into a training set and a test set.
+It is tempting to try many different choices for the parameters of a neural network, and simply take the parameter values that produce the best end results. Yet recall from our previous discussion (CITE) of the curse of dimensionality that strange things can happen in multi-dimensional space. In this case, our multi-dimensional space corresponds to the choice of all possible parameter values, and because we have such enormous freedom, it will be possible to choose parameter values that produce a perfect result on our dataset.
 
-* For the training set, we should find the choice of network parameters that performs the best on this set.
+The question is what happens when we sample *new* data and plug them into the same neural network. Will the correct output neurons fire for each of our data, or will we run into the curse of dimensionality?
 
-* What does it mean for something to perform well on this test set?
+In a previous lesson (CITE), we discussed how to assess the results of a classification algorithm like k-NN on a collection of data with known classes. To this end, we established a subset of our data called the *validation set* and asked how well the classification algorithm performed on these data, pretending that we did not know the correct class for each data point.
+
+To generalize this idea to our neural network classifier, we divide our data with known classes into a **training set** and a **test set**. We then seek the choice of parameters that "performs the best" on the training set, ignoring the test set for the moment.
+
+Of course, we should specify what it means for a neural network with established parameters to perform well on the training set. Each data point *x* in the training set has a ground truth classification vector *c*(*x*) = (*c*<sub>1</sub>, *c*<sub>2</sub>, ..., *c*<sub>*k*</sub>), where exactly one of the *c*<sub>*i*</sub> is equal to 1 corresponding to the correct class of *x*, and the other *c*<sub>*i*</sub> are equal to 0. The data point *x* also has an output vector *o*(*x*) = (*o*<sub>1</sub>, *o*<sub>2</sub>, ..., *o*<sub>*k*</sub>), where *o*<sub>*i*</sub> is the output of the *i*-th output vector in the network when *x* is used as the input data.
+
+Fortunately, we have been using a method of comparing two vectors throughout this course, namely RMSD. The RMSD between an object's classification vector and its output vector for a given neural network measures how well the network classified this data point, with a value close to 0 representing a good fit.
+
+Therefore, we can obtain a good measure of how well a neural network performs on a training set by taking the mean RMSD between classification and output vectors for every element in the training set. As a result, we have a clear problem to solve: select the input weights of each neuron in a neural net minimizing this mean RMSD for objects in the training set.
+
+Once we have chosen a collection of weight parameters for our network performing well on the training set, we then assess how well this choice of parameters 
+
+NEEDS EXAMPLE
+
 
 * For each data element, it has a true vector and an output vector. We could take the mean RMSD of every element's true and output vector. Now we have a function that we wish to minimize. (Needs example.)
 
