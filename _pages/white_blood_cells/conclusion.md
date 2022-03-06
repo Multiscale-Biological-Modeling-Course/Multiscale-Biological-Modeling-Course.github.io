@@ -28,9 +28,7 @@ You may be wondering what the state of the art is for WBC image classification. 
 **Neurons** are cells in the nervous system that are electrically charged and that use this charge as a method of communication to other cells. As you are reading this text, huge numbers of neurons are firing in your brain as it processes the visual information that it receives. The basic structure of a neuron is shown in the figure below.
 
 <figure>
-  <center>
 	<a href="../assets/images/components_of_neuron.png"><img src="../assets/images/600px/components_of_neuron.png"></a>
-  </center>
 	<figcaption>The components of a neuron. Electrical signals are passed down axons and exchanged at terminal boundaries between neurons. Image courtesy: Jennifer Walinga.</figcaption>
 </figure>
 
@@ -68,7 +66,7 @@ The figure below shows the most general form of an artificial neuron for two inp
 
 <figure>
 	<a href="../assets/images/activation_function.png"><img src="../assets/images/600px/activation_function.png"></a>
-	<figcaption>A general form of an artificial neuron for two input variables *x*<sub>1</sub> and *x*<sub>2</sub>, two fixed weights *w*<sub>1</sub> and *w*<sub>2</sub>, and an activation function *f*. The output of the neuron, rather than being strictly 0 or 1, is *f*(*w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub>).</figcaption>
+	<figcaption>A general form of an artificial neuron for two input variables <em>x</em><sub>1</sub> and <em>x</em><sub>2</sub>, two fixed weights <em>w</em><sub>1</sub> and <em>w</em><sub>2</sub>, and an activation function <em>f</em>. The output of the neuron, rather than being strictly 0 or 1, is <em>f</em>(<em>w</em><sub>1</sub> · <em>x</em><sub>1</sub> + <em>w</em><sub>2</sub> · <em>x</em><sub>2</sub>).</figcaption>
 </figure>
 
 The outputs of mathematical functions can be used as inputs to other functions via function composition. For example, if *f*(*x*) = 2*x*-1, *g*(*x*) = *e*<sup>*x*</sup>, and *h*(*x*) = cos(*x*), then *h*(*g*(*f*(*x*))) = cos(*e*<sup>2*x*-1</sup>). Similarly, the outputs of artificial neurons can be used as inputs to other neurons with (possibly) different weights and activation functions. Linking neurons together in this way produces a **neural network** such as the one shown in the figure below.
