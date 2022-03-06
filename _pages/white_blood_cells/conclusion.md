@@ -100,10 +100,6 @@ In order for such a neural network to classify objects in our dataset, we must f
 
 ## Finding the best choice of parameters
 
-It is tempting to try many different choices for the parameters of a neural network, and simply take the parameter values that produce the best end results. Yet recall from our previous discussion (CITE) of the curse of dimensionality that strange things can happen in multi-dimensional space. In this case, our multi-dimensional space corresponds to the choice of all possible parameter values, and because we have such enormous freedom, it will be possible to choose parameter values that produce a perfect result on our dataset.
-
-The question is what happens when we sample *new* data and plug them into the same neural network. Will the correct output neurons fire for each of our data, or will we run into the curse of dimensionality?
-
 In a previous lesson (CITE), we discussed how to assess the results of a classification algorithm like k-NN on a collection of data with known classes. To this end, we established a subset of our data called the *validation set* and asked how well the classification algorithm performed on these data, pretending that we did not know the correct class for each data point.
 
 To generalize this idea to our neural network classifier, we divide our data with known classes into a **training set** and a **test set**. We then seek the choice of parameters that "performs the best" on the training set, ignoring the test set for the moment.
@@ -114,16 +110,13 @@ Fortunately, we have been using a method of comparing two vectors throughout thi
 
 Therefore, we can obtain a good measure of how well a neural network performs on a training set by taking the mean RMSD between classification and output vectors for every element in the training set. As a result, we have a clear problem to solve: select the input weights of each neuron in a neural net minimizing this mean RMSD for objects in the training set.
 
-Once we have chosen a collection of weight parameters for our network performing well on the training set, we then assess how well this choice of parameters 
-
 NEEDS EXAMPLE
 
+Once we have chosen a collection of weight parameters for our network that perform well on the training set, we then assess how well this choice of parameters performs on the test set that we left out initially. To this end, we can insert the feature vector of each test set object *x* as input into the network, and then consult the output vector *o*(*x*) = (*o*<sub>1</sub>, *o*<sub>2</sub>, ..., *o*<sub>*k*</sub>) for this object. Whichever *i* maximizes *o*<sub>*i*</sub> for this output vector is the assigned class of *x*. Now we are ready to apply what we have learned earlier in this module for quantifying the quality of a classifier, using metrics such as accuracy, recall, specificity, and precision, to determine how well the neural network is performing as a classifier.
 
-* For each data element, it has a true vector and an output vector. We could take the mean RMSD of every element's true and output vector. Now we have a function that we wish to minimize. (Needs example.)
+However, because the typical neural network has many parameters, we should be wary of the curse of dimensionality. As many a student completing a deep learning project has learned, it may be very difficult to obtain a network and parameters that perform well on the training set, and even if a model has a low mean RMSD for the training set, it may perform horribly on the test set. (The former situation is called "underfitting" and the latter is called "overfitting".)
 
-* Once we have done so, for each item in the test set, we simply take the element *i* maximizing *v*(*i*) where *v* is the vector corresponding to this data point. Then we are ready to apply what we have learned in this module, using metrics like accuracy, recall, specificity, and precision, to determine how well the model does on our test dataset.
-
-* Because there are many parameters, we should be careful of the curse of dimensionality. As many a student completing a deep learning project has learned, a choice of parameters producing good results on the test data may not perform well on the training set at all -- perform worse than random choice.
+All of this discussion, however, assumes that we have already determined our network's choice of parameters to produce a low mean RMSD for our training set. But how can we find this best choice of parameters in the first place?
 
 * All of this, however, assumes that we have already determined our choice of parameters. We would like these parameters to minimize the mean RMSD on the training dataset. But how do we find these parameters to begin with?
 
@@ -168,6 +161,8 @@ NEEDS EXAMPLE
 ## Other
 
 * We have been doing ML all along --- meme with cake?
+
+* Insert suggestion for more DL -- Michael Nielsen project?
 
 ## Thank you!
 
