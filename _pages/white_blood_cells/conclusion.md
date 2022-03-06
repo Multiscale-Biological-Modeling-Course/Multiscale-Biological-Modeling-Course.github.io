@@ -89,14 +89,16 @@ The most typical design of a neural network for classification is then to connec
 
 The remaining question is what the output of our neural network should be. If we are classifying our data into *k* classes, then we typically would like to connect the final hidden layer of neurons to *k* **output neurons**. Ideally, if we plug in the values of the feature vector for a given data point *x* that we know belongs to the *i*-th class, then we would like for the *i*-th output neuron to output a value close to 1, and all other output neurons to output a value close to 0.
 
-This situation is illustrated in the figure below for our example of classifying skin lesion images into three classes. In whatever way we 
+A potential neural network model is illustrated in the figure below for our example of categorizing skin lesion images into three classes. Because the number of nodes and edges in a real network is enormous, this figure uses gray boxes to indicate layers containing potentially many hidden neurons, as well as dashed edges to represent connecting many (if not all) nodes in one layer to each of the nodes in the next layer.
 
 <figure>
 	<a href="../assets/images/600px/cancer_classifier.png"><img src="../assets/images/cancer_classifier.png"></a>
 	<figcaption>Our desired neural network for cancer classification of skin lesions. FIX THIS so that it doesn't just have theta1, theta2, theta3. Should also just have *x*<sub>*n*</sub> instead of 3n.</figcaption>
 </figure>
 
-In order for this desired outcome to occur,
+In order for such a neural network to classify objects in our dataset, we must find the "best" choices for the weights assigned to input variables at each neuron, assuming that we have decided on which activation function(s) to use for the network's neurons. A network may have hundreds of thousands of these input weights, and for a given application it will be initially unclear which weights to use to produce the magic output in which an object belonging to the *i*-th class produces an output close to 1 for the *i*-th output neuron (and an output close to 0) for other neurons.
+
+
 
 * This is what we would hope would happen, but it means finding the "best" collection of parameters for the network.
 
