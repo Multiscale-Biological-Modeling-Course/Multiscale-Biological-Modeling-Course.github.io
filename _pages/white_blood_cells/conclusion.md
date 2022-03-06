@@ -21,13 +21,7 @@ gallery:
     title: "A lymphocyte with a small, round nucleus."
 ---
 
-A professor's phone never rings. And yet here was the phone in my office, on a cold spring afternoon, ringing away. "Nothing good can come of this", I thought. Nervously, I answered.
-
-On the other end of the line was a local dermatologist. He asked me if I knew of anyone working on diagnosing cancer from images of skin lesions. He had noticed that he and his colleagues weren't very accurate at this task when they compared their initial impressions of patient lesions against a biopsy.
-
-I accessed my millennial superpowers and performed an internet search, which led me to an article (CITE) that had recently attained a landmark result and has since received thousands of citations. This article devised an algorithm that beat 21 certified U.S. dermatologists at classifying images of skin lesions into one of three classes: **malignant** (i.e., cancerous and at risk of spread), **benign** (a non-cancerous tumor with no risk of spread), and **non-neoplastic** (not a tumor).
-
-As is the case for the skin lesion research, the currently best known classifier for WBC image classification (CITE) uses a technique called **deep learning**. You may have seen this term wielded with mystical reverence, but you may very well not know what it means, and so let's take explain it.
+The currently best known classifier for WBC image classification (CITE) uses a technique called **deep learning**. You may have seen this term wielded with mystical reverence, but you may very well not know what it means, and so let's take explain it.
 
 ## A brief introduction to neural networks
 
