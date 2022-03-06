@@ -75,9 +75,13 @@ The figure below shows the most general form of an artificial neuron for two inp
 	<figcaption>A general form of an artificial neuron for two input variables *x*<sub>1</sub> and *x*<sub>2</sub>, two fixed weights *w*<sub>1</sub> and *w*<sub>2</sub>, and an activation function *f*. The output of the neuron, rather than being strictly 0 or 1, is *f*(*w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub>).</figcaption>
 </figure>
 
-The outputs of mathematical functions can be used as inputs to other functions via function composition. For example, if *f*(*x*) = 2*x*-1, *g*(*x*) = *e*<sup>*x*</sup>, and *h*(*x*) = cos(*x*), then *h*(*g*(*f*(*x*))) = cos(*e*<sup>2*x*-1<sup>).
+The outputs of mathematical functions can be used as inputs to other functions via function composition. For example, if *f*(*x*) = 2*x*-1, *g*(*x*) = *e*<sup>*x*</sup>, and *h*(*x*) = cos(*x*), then *h*(*g*(*f*(*x*))) = cos(*e*<sup>2*x*-1</sup>). Similarly, the outputs of artificial neurons can be used as inputs to other neurons with (possibly) different weights and activation functions. Linking neurons together in this way produces a **neural network** such as the one shown in the figure below.
 
-* Need general figure?
+INSERT FIGURE
+
+We have a huge amount of freedom when building neural networks, since we can link up neurons however we like, and since the weights of all incoming edges at each neuron are allowed to vary, as well as the activation function used at each neuron. This freedom will mean that the number of possible neural networks is incomprehensibly large, making neural networks both a powerful model and also often difficult to understand.
+
+
 
 * Most general form of network -- explain the parameters in the network.
 
