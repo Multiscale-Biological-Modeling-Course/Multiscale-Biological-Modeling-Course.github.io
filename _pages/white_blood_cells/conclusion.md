@@ -132,25 +132,10 @@ Our idea, then, is to borrow what we have learned in this course, and apply a *l
 
 To avoid getting stuck in a *local minimum*, we then run this local search algorithm for many different randomly chosen initial parameters. In the end, we take the choice of parameters minimizing mean RMSD over all of the different runs of gradient descent.
 
-Many modifications of gradient descent have been developed, but all are based on the core idea of local search.
+Many modifications of gradient descent have been developed, but all are based on the core idea of local search. Whether we are classifying cellular images, predicting the structure of a protein, or modeling the exploration of a humble bacterium, local search can prove powerful. And yet despite these three problems demonstrating how biological problems can be solved with modeling, biology on the whole largely remains an untouched universe just waiting to be explored.
 
-## A reflection on deep learning
-
-* Deep learning is, without a doubt, a great idea.
-
-* Sometimes, DL has produced a landmark development that wipes away the competition, like with Alphafold that we mentioned in a previous module (link). The hope is that there will be more developments like it.
-
-* More often than not, DL for classification winds up causing a great deal of time to set up and only provides a slight improvement (if any) over a much simpler, more interpretable approach like k-NN.
-
-* Let us consider the DL project for skin lesion image classification. Beating humans at any task, whether it is chess or cancer diagnosis, is amazing! But at the same time, the accuracy of this approach was only 72%. (I bet you now feel better about our WBC image classifier!) Their approach beat doctors because doctors, like the dermatologist on the other end of the line, are simply not very good at making this diagnosis because it's a hard problem. The ultimate hope of designing all these algorithms is to not just beat us, but do so in resounding fashion.
-
-* Skin lesion classification offers just one of many hard problems still to solve in biology. Compared to other scientific disciplines, it is still a largely untouched universe just waiting to be explored.
-
-## Other
-
-* We have been doing ML all along --- meme with cake?
-
-* Insert suggestion for more DL -- Michael Nielsen project?
+**Note:** If you find yourself interested in deep learning and would like to learn more, check out the excellent <a href="http://neuralnetworksanddeeplearning.com" target="_blank"><em>Neural Networks and Deep Learning</em> online book by Michael Nielsen.
+{: .notice--info}
 
 ## Thank you!
 
