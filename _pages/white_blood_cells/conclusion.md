@@ -81,22 +81,30 @@ INSERT FIGURE
 
 We have a huge amount of freedom when building neural networks, since we can link up neurons however we like, and since the weights of all incoming edges at each neuron are allowed to vary, as well as the activation function used at each neuron. This freedom will mean that the number of possible neural networks is incomprehensibly large, making neural networks both a powerful model and also often difficult to understand.
 
+## Framing a classification problem using neural networks
 
+The question is how to use neural networks to solve a classification problem involving real data. Earlier in this module, we discussed converting each data point *x* into a *feature vector* (*x*<sub>1</sub>, *x*<sub>2</sub>, …, *x*<sub>*n*</sub>) representing each of the *n* feature values of *x*. As a result, these *n* variables of the data's feature vectors become the *n* input variables of a neural network.
+
+The most typical design of a neural network for classification is then to connect all of the input variables into each one of a collection of (possibly many) artificial neurons, called a **hidden layer**. These neurons may then be connected in some combination to neurons in another layer, which are connected to neurons in another layer, and so on. As a result, many practical neural networks may have several hidden layers amounting to thousands of neurons, each with their own input weights and possibly different activation functions. The most common usage of the term **deep learning** refers to solving problems using many hidden layers of neurons; the discussion of the many pitfalls in designing neural networks for deep learning would cover an entire course much longer than this one.
+
+The remaining question is what the output of our neural network should be. If we are classifying our data into *k* classes, then we typically would like to connect the final hidden layer of neurons to *k* **output neurons**. Ideally, if we plug in the values of the feature vector for a given data point *x* that we know belongs to the *i*-th class, then we would like for the *i*-th output neuron to output a value close to 1, and all other output neurons to output a value close to 0.
+
+This situation is illustrated in the figure below for our example of classifying skin lesion images into three classes. The 
+
+In order for this desired outcome to occur,
+
+* This is what we would hope would happen, but it means finding the "best" collection of parameters for the network.
 
 * Most general form of network -- explain the parameters in the network.
 
 <figure>
 	<a href="../assets/images/600px/cancer_classifier.png"><img src="../assets/images/cancer_classifier.png"></a>
-	<figcaption>Our desired neural network for cancer classification of skin lesions.</figcaption>
+	<figcaption>Our desired neural network for cancer classification of skin lesions. FIX THIS so that it doesn't just have theta1, theta2, theta3.</figcaption>
 </figure>
 
 
 
-* Convert input into a vector, and output should fall into classes.
 
-* "Depth" in DL means many layers of neurons, often connected in elaborate ways that could constitute an entire course. (Show a few from wikimedia commons?)
-
-* This is what we would hope would happen, but it means finding the "best" collection of parameters for the network.
 
 ## Finding the best choice of parameters
 
