@@ -25,7 +25,7 @@ A professor's phone never rings. And yet here was the phone in my office, on a c
 
 On the other end of the line was a local dermatologist. He asked me if I knew of anyone working on diagnosing cancer from images of skin lesions. He had noticed that he and his colleagues weren't very accurate at this task when they compared their initial impressions of patient lesions against a biopsy.
 
-I was unaware of any colleagues working on such a project, but an internet search took me to an article (CITE) that had recently attained a landmark result and has since been cited thousands of times. This article devised an algorithm that beat 21 certified U.S. dermatologists at classifying images of skin lesions into one of three classes: **malignant** (i.e., cancerous and at risk of spread), **benign** (a non-cancerous tumor with no risk of spread), and **non-neoplastic** (not a tumor).
+I accessed my millennial superpowers and performed an internet search, which led me to an article (CITE) that had recently attained a landmark result and has since received thousands of citations. This article devised an algorithm that beat 21 certified U.S. dermatologists at classifying images of skin lesions into one of three classes: **malignant** (i.e., cancerous and at risk of spread), **benign** (a non-cancerous tumor with no risk of spread), and **non-neoplastic** (not a tumor).
 
 As is the case for the skin lesion research, the currently best known classifier for WBC image classification (CITE) uses a technique called **deep learning**. You may have seen this term wielded with mystical reverence, but you may very well not know what it means, and so let's take explain it.
 
@@ -38,7 +38,7 @@ As is the case for the skin lesion research, the currently best known classifier
 	<figcaption>The components of a neuron. Electrical signals are passed down axons and exchanged at terminal boundaries between neurons. Image courtesy: Jennifer Walinga.</figcaption>
 </figure>
 
-In 1943, Warren McCulloch, a neuroscientist, and Walter Pitts, a logician, devised a small network modeling a neuron called a **McCulloch-Pitts neuron**. (CITE) A McCulloch-Pitts neuron has a fixed threshold θ  and takes as input *n* **binary variables** *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>, where each of these variables is equal to either 0 or 1. The MP neuron outputs 1 if *x*<sub>1</sub> + … + *x*<sub><em>n</em></sub> ≥ θ; otherwise, it returns 0. If an MP neuron outputs 1, then we say that it **fires**.
+In 1943, Warren McCulloch, a neuroscientist, and Walter Pitts, a logician, devised a small network modeling a neuron called a **McCulloch-Pitts neuron**. (CITE) A McCulloch-Pitts neuron has a fixed threshold θ and takes as input *n* **binary variables** *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>, where each of these variables is equal to either 0 or 1. The MP neuron outputs 1 if *x*<sub>1</sub> + … + *x*<sub><em>n</em></sub> ≥ θ; otherwise, it returns 0. If an MP neuron outputs 1, then we say that it **fires**.
 
 The McCulloch-Pitts neuron with *n* equal to 2 and θ equal to 2 is shown in the figure below. The only way that this neuron will fire is if both inputs *x*<sub>1</sub> and *x*<sub>2</sub> are equal to 1.
 
