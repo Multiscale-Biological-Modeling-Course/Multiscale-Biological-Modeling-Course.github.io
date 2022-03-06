@@ -89,7 +89,12 @@ The most typical design of a neural network for classification is then to connec
 
 The remaining question is what the output of our neural network should be. If we are classifying our data into *k* classes, then we typically would like to connect the final hidden layer of neurons to *k* **output neurons**. Ideally, if we plug in the values of the feature vector for a given data point *x* that we know belongs to the *i*-th class, then we would like for the *i*-th output neuron to output a value close to 1, and all other output neurons to output a value close to 0.
 
-This situation is illustrated in the figure below for our example of classifying skin lesion images into three classes. The 
+This situation is illustrated in the figure below for our example of classifying skin lesion images into three classes. In whatever way we 
+
+<figure>
+	<a href="../assets/images/600px/cancer_classifier.png"><img src="../assets/images/cancer_classifier.png"></a>
+	<figcaption>Our desired neural network for cancer classification of skin lesions. FIX THIS so that it doesn't just have theta1, theta2, theta3. Should also just have *x*<sub>*n*</sub> instead of 3n.</figcaption>
+</figure>
 
 In order for this desired outcome to occur,
 
@@ -97,10 +102,7 @@ In order for this desired outcome to occur,
 
 * Most general form of network -- explain the parameters in the network.
 
-<figure>
-	<a href="../assets/images/600px/cancer_classifier.png"><img src="../assets/images/cancer_classifier.png"></a>
-	<figcaption>Our desired neural network for cancer classification of skin lesions. FIX THIS so that it doesn't just have theta1, theta2, theta3.</figcaption>
-</figure>
+
 
 
 
