@@ -64,7 +64,7 @@ A commonly used activation function is the **logistic function**, *f*(*x*) = 1/(
 
 <figure>
 	<a href="../assets/images/logistic_function.png"><img src="../assets/images/600px/logistic_function.png"></a>
-	<figcaption>INSERT CAPTION</figcaption>
+	<figcaption>A plot of the logistic function <em>f</em>(<em>x</em>) = 1/(1 + <em>e</em><sup>-<em>x</em></sup>), an increasing function whose values range between 0 and 1.</figcaption>
 </figure>
 
 **STOP:** What is the activation function used by a perceptron?
