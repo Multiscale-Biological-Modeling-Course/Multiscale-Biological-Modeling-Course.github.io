@@ -89,8 +89,8 @@ The remaining question is what the output of our neural network should be. If we
 A potential neural network model is illustrated in the figure below for our example of categorizing WBC images into three classes. Because the number of nodes and edges in a real network is enormous, this figure uses gray boxes to indicate layers containing potentially many hidden neurons, as well as dashed edges to represent connecting many (if not all) nodes in one layer to each of the nodes in the next layer.
 
 <figure>
-	<a href="../assets/images/600px/cancer_classifier.png"><img src="../assets/images/cancer_classifier.png"></a>
-	<figcaption>FIX THIS so that it isn't skin lesion specific and so it doesn't just have theta1, theta2, theta3. Should also just have *x*<sub>*n*</sub> instead of 3n.</figcaption>
+	<a href="../assets/images/600px/neural_network_wbc.png"><img src="../assets/images/neural_network_wbc.png"></a>
+	<figcaption>An illustration of a potential neural network used for WBC image classification. This network assumes that each WBC is represented by <em>n</em> features, which serve as the input variables for the network. A number of hidden layers of additional neurons may be used, with connections between some of the neurons in adjacent layers. A final output layer of three neurons corresponds to each of the three WBC classes; our hope is that the weights of the neurons in the network are chosen so that the appropriate neuron outputs a value close to 1 corresponding to an image's class, and that the other two neurons output values close to 0.</figcaption>
 </figure>
 
 In order for such a neural network to classify objects in our dataset, we must find the "best" choices for the weights assigned to input variables at each neuron, assuming that we have decided on which activation function(s) to use for the network's neurons. A network may have hundreds of thousands of these input weights, and for a given application it will be initially unclear which weights to use to produce the magic output in which an object belonging to the *i*-th class produces an output close to 1 for the *i*-th output neuron (and an output close to 0) for other neurons.
