@@ -1,19 +1,12 @@
-\documentclass{article}
-\usepackage{fancyhdr}
-\usepackage{lipsum}% just to generate some text
-\usepackage{amsmath}
-\usepackage{amsfonts}
-
-\fancyhf{}
-\fancyhead[C]{\textbf{Proof of Random Walk Theorem\\Phillip Compeau}}
-\renewcommand\headrulewidth{0pt}
-\pagestyle{fancy}
-
-\begin{document}
+\phantomsection
+\chapter[Proof of the Random Walk Theorem]{Proof of the Random Walk Theorem}
+\label{chapter:random_walk_theorem}
+\renewcommand{\chaptertitle}{Proof of the Random Walk Theorem}
+\addcontentsline{cc}{chapter}{Chapter \thechapter} % Adds chapter number to table of contents
 
 The Random Walk Theorem states that the average distance that a randomly walking particle will find itself from its starting point after taking $n$ steps of unit length is $\sqrt{n}$. Below, we provide a justification for why this is true for interested readers who are familiar with probability.
 
-Let $\mathbf{x_i}$ denote the (random) vector corresponding to the particle's \textit{i}-th step. The particle's position $\mathbf{x}$ after \textit{n} steps is the sum of the $\mathbf{x_i}$,
+Let $\mathbf{x_i}$ denote the (random) vector corresponding to the particle's \textvar{i}-th step. The particle's position $\mathbf{x}$ after \textvar{n} steps is the sum of the $\mathbf{x_i}$,
 
 \begin{center}
 $\mathbf{x} = \mathbf{x_1} + \mathbf{x_2} + \cdots + \mathbf{x_n}$\,.
@@ -49,5 +42,3 @@ We make a couple of notes about the above proof. First, we did not use anything 
 Second, we technically did not show that the expected value of $d$ is $\sqrt{n}$, but rather that the expected value of $d^2$ is $n$. It is not true that $\mathbb{E}(d)$ is equal to $\sqrt{n}$, but rather that as $n$ grows, $\mathbb{E}(d)$ grows like $c \cdot \sqrt{n}$ for some constant factor $c$. A proof of this fact is beyond the scope of this work, but it can be shown that as $n$ tends toward infinity, $\mathbb{E}(d)$ tends toward $\sqrt{(2/\pi)} \cdot \sqrt{n}$.
 
 Who knew that the mathematics of random walks could be so complicated!
-
-\end{document}
