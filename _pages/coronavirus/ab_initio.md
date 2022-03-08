@@ -58,7 +58,7 @@ To be more precise, the **potential energy** (sometimes called **free energy**) 
 
 Bonded energy derives from the protein's covalent bonds, as well as the angles of bonds between adjacent amino acids, and the torsion angles that we saw in the [previous lesson](structure_intro), as the protein bends and twists.
 
-Non-bonded energy comprises **electrostatic interactions** and **van der Waals interactions**. Electrostatic interactions refer to the attraction and repulsion force from the electric charge between pairs of atoms. For example, if a folded protein structure were to have many hydrophobic amino acids on the outside of the protein, then these amino acids would be in constant contact with water molecules, which would repel them. Such a conformation would greatly increase the free energy of the molecule, as the nonpolar protein exterior would be forced inward.
+Non-bonded energy comprises **electrostatic interactions** and **van der Waals interactions**. Electrostatic interactions refer to the attraction and repulsion force from the electric charge between pairs of charged amino acids. Two of the twenty standard amino acids (arginine and lysine) are positively charged, and two (aspartic acid and glutamic acid) are negatively charged. Two nearby amino acids of opposite charge may interact to form a **salt bridge**. Conformations containing salt bridges, and keeping apart similarly charged amino acids are kept apart, will therefore have lower free energy contributed by electrostatic interactions.
 
 As for van der Waals interactions, atoms are dynamic systems, with electrons constantly buzzing around the nucleus, as shown in the figure below.
 
