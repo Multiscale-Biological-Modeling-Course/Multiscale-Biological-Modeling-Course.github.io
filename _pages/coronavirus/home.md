@@ -57,7 +57,7 @@ As for Dr. Li? Despite warning against the risk of this new virus, he contracted
 The similarity between SARS and COVID-19 extends well beyond their symptoms. The respective viruses causing these diseases, **SARS coronavirus (SARS-CoV)** and **SARS coronavirus 2 (SARS-CoV-2)** are both **coronaviruses**, which means that their outer membranes are covered in a layer of **spike proteins** that cause them to look like the sun's corona during an eclipse (see figure below).
 
 [![image-center](../assets/images/600px/coronavirus.png){: .align-center}](../assets/images/coronavirus.png)
-Coronviruses as seen under a microscope. The fuzzy blobs on the cell surface are spike proteins, which the virus uses to gain entry to host cells. Figure courtesy F. Murphy and S. Whitfield, CDC[^coronaimage].
+Coronaviruses as seen under a microscope. The fuzzy blobs on the cell surface are spike proteins, which the virus uses to gain entry to host cells. Figure courtesy F. Murphy and S. Whitfield, CDC[^coronaimage].
 {: style="font-size: medium;"}
 
 Under a microscope, the two viruses look identical, and they use the same mechanism to infect human cells, when the spike protein on the virus surface bonds to the ACE2 enzyme on a human cell's membrane.[^16][^17] So why did SARS fizzle, but SARS-CoV-2, a disease that is on average less harmful[^11][^12] and less deadly to individuals who contract it, transform into a pandemic? The most likely explanation for the ability of SARS-CoV-2 to spread across far more countries and remain a public health threat even in the face of lockdowns is that it spreads more easily; that is, it is more **infectious**.
