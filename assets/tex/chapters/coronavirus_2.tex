@@ -333,13 +333,13 @@ We will introduce GNMs using our old friend human hemoglobin protein (PDB: 1A3N)
 
 The alpha carbons in a protein are subject to random fluctuations that cause them to deviate from their equilibrium positions. These fluctuations are \textit{Gaussian}, which give the model its name. Gaussian fluctuations mean that the alpha carbon can deviate randomly from its equilibrium position according to a normal (bell-shaped) distribution, meaning that it is more likely to be near the equilibrium than far away.
 
-The equilibrium position of node \textvar{i} is represented by the vector $ R_i^0 $, and its position at a given point in time is denoted by the (variable) vector $ \Delta R_i $. The distance between node \textvar{i} and node \textvar{j} at equilibrium is denoted by the vector $ R_{ij}^0 $, which is equal to $ R_j^0 - R_i^0 $ (as illustrated in \autoref{fig:gaussian_fluctuations}); at a given point in time, this distance becomes the vector $ R_{ij} $.
+The equilibrium position of node \textvar{i} is represented by the vector $\mathbf{R_i^0}$, and its position at a given point in time is denoted by the (variable) vector $ \mathbf{\Delta R_i}$. The distance between node \textvar{i} and node \textvar{j} at equilibrium is denoted by the vector $\mathbf{R_{ij}^0}$, which is equal to $\mathbf{R_j^0} - \mathbf{R_i^0}$ (as illustrated in \autoref{fig:gaussian_fluctuations}); at a given point in time, this distance becomes the vector $\mathbf{R_{ij}}$.
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.7\textwidth]{../images/gaussian_fluctuations.png}
-	\caption{(Left) A small network of nodes connected by springs deriving from a protein structure. The distance between two nodes \textvar{i} and \textvar{j} is denoted by the variable $\textvar{R}_{\textvar{ij}} $. (Right) Zooming in on two nodes \textvar{i} and \textvar{j} that are within the threshold distance. The equilibrium positions of node \textvar{i} and node \textvar{j} are represented by the distance vectors $ \textvar{R}_\textvar{i}^\text{0} $ and $\textvar{R}_\textvar{j}^\text{0}$, with the distance between them denoted $\textvar{R}_{\textvar{ij}}^\text{0}$, which is equal to $\textvar{R}_\textvar{j}^\text{0} - \textvar{R}_\textvar{i}^\text{0}$. The vectors $ \Delta \textvar{R}_\textvar{i} $ and $ \Delta \textvar{R}_\textvar{j}$ represent the nodes' respective changes from equilibrium.}
+	\caption{(Left) A small network of nodes connected by springs deriving from a protein structure. The distance between two nodes \textvar{i} and \textvar{j} is denoted by the variable $\textbf{R}_\textbf{ij}$. (Right) Zooming in on two nodes \textvar{i} and \textvar{j} that are within the threshold distance. The equilibrium positions of node \textvar{i} and node \textvar{j} are represented by the distance vectors $ \textbf{R}_\textbf{i}^\textbf{0} $ and $\textbf{R}_\textbf{j}^\textbf{0}$, with the distance between them denoted $\textbf{R}_{\textbf{ij}}^\textbf{0}$, which is equal to $\textbf{R}_\textbf{j}^\textbf{0} - \textbf{R}_\textbf{i}^\textbf{0}$. The vectors $\mathbf{\Delta} \textbf{R}_\textbf{i} $ and $ \mathbf{\Delta} \textbf{R}_\textbf{j}$ represent the nodes' respective changes from equilibrium.}
 	\label{fig:gaussian_fluctuations}
 \end{figure}
 
@@ -349,24 +349,24 @@ Yet although atomic fluctuations are powered by randomness, the movements of pro
 \phantomsection
 \subsubsection{Inner products and cross-correlations}
 
-To determine how the movements of nodes \textvar{i} and \textvar{j} are related, we need to study the fluctuation vectors $ \Delta R_i $ and $ \Delta R_j $. Do these vectors point in similar or opposing directions?
+To determine how the movements of nodes \textvar{i} and \textvar{j} are related, we need to study the fluctuation vectors $ \mathbf{\Delta R_i} $ and $\mathbf{\Delta R_j}$. Do these vectors point in similar or opposing directions?
 
-To answer this question, we compute the \textdefnogloss{inner product}, or \textdefnogloss{dot product}, of the two vectors, $ \langle \Delta R_i, \Delta R_j \rangle $. The inner product of two vectors $x = (x_1, x_2, x_3)$ and $y = (y_1, y_2, y_3)$ is given by $ \langle x, y \rangle = x_1 \cdot y_1 + x_2 \cdot y_2 + x_3 \cdot y_3$. If \textvar{x} and \textvar{y} are at right angles, then $ \langle \textvar{x}, \textvar{y} \rangle $ is equal to zero. The more that the two vectors point in the same direction, the larger the value of $\langle \textvar{x}, \textvar{y} \rangle $. And the more that the two vectors point in opposite directions, the smaller the value of $\langle \textvar{x}, \textvar{y} \rangle $.\\
+To answer this question, we compute the \textdefnogloss{inner product}, or \textdefnogloss{dot product}, of the two vectors, $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_j} \rangle $. The inner product of two vectors $\mathbf{x} = (x_1, x_2, x_3)$ and $\mathbf{y} = (y_1, y_2, y_3)$ is given by $ \langle \mathbf{x}, \mathbf{y} \rangle = x_1 \cdot y_1 + x_2 \cdot y_2 + x_3 \cdot y_3$. If $\mathbf{x}$ and $\mathbf{y}$ are perpendicular, then $ \langle \mathbf{x}, \mathbf{y} \rangle $ is equal to zero. The more that the two vectors point in the same direction, the larger the value of $\langle \mathbf{x}, \mathbf{y} \rangle $. And the more that the two vectors point in opposite directions, the smaller the value of $\langle \mathbf{x}, \mathbf{y} \rangle $.\\
 
 \begin{qbox}[%
-	Say that $x = (1, -2, 3)$, $y = (2, -3, 5)$, and  $z = (-1, 3, -4)$. Compute the inner products $\langle x, y \rangle$ and $\langle x, z \rangle$  and ensure that your answers match the preceding observation.
+	Say that $\mathbf{x} = (1, -2, 3)$, $\mathbf{y} = (2, -3, 5)$, and  $\mathbf{z} = (-1, 3, -4)$. Compute the inner products $\langle \mathbf{x}, \mathbf{y} \rangle$ and $\langle \mathbf{x}, \mathbf{z} \rangle$  and ensure that your answers match the preceding observation.
 	]\end{qbox}
 
-The inner product is also useful for representing  the \textdefnogloss{mean-square fluctuation} of an alpha carbon, or the expected squared distance of node \textvar{i} from equilibrium. The fluctuation of node \textvar{i} from equilibrium is just $\Delta R_i$. If this vector is represented by the coordinates (\textvar{x}, \textvar{y}, \textvar{z}), then its square distance from equilibrium is $x^2 + y^2 + z^2$, which is the inner product of the fluctuation vector with itself, $ \langle \Delta R_i, \Delta R_i \rangle $.\\
+The inner product is also useful for representing  the \textdefnogloss{mean-square fluctuation} of an alpha carbon, or the expected squared distance of node \textvar{i} from equilibrium. The fluctuation of node \textvar{i} from equilibrium is just $\mathbf{\Delta R_i}$. If this vector is represented by the coordinates (\textvar{x}, \textvar{y}, \textvar{z}), then its square distance from equilibrium is $x^2 + y^2 + z^2$, which is the inner product of the fluctuation vector with itself, $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $.\\
 
 \begin{note}[%
-	In practice, we will not know the exact values for the $ \Delta R_i $ and must compute the inner products of fluctuation vectors indirectly using linear algebra, which is beyond the scope of this work. A full treatment of the mathematics of GNMs can be found in the chapter at \url{https://www.csb.pitt.edu/Faculty/bahar/publications/b14.pdf}.
+	In practice, we will not know the exact values for the $ \mathbf{\Delta R_i} $ and must compute the inner products of fluctuation vectors indirectly using linear algebra, which is beyond the scope of this work. A full treatment of the mathematics of GNMs can be found in the chapter at \url{https://www.csb.pitt.edu/Faculty/bahar/publications/b14.pdf}.
 	]\end{note}
 
 Long vectors pointing in the same direction will have a larger inner product than short vectors pointing in the same direction. As a result, we can normalize the inner product so that we can have a sense of the correlation of these vectors, independent of their length. To be precise, the cross-correlation of nodes \textvar{i} and \textvar{j} is given by
 
 \begin{center}
-$ C_{ij} = \dfrac{\langle \Delta R_i, \Delta R_j \rangle}{\sqrt{\langle \Delta R_i, \Delta R_i \rangle \langle \Delta R_j, \Delta R_j \rangle}}$\,.
+$ C_{ij} = \dfrac{\langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle}{\sqrt{\langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle}}$\,.
 \end{center}
 
 After normalization, the cross-correlation ranges from -1 to 1. A cross-correlation of -1 means that the two alpha carbons' movements are completely anti-correlated, and a cross-correlation of 1 means that their movements are completely correlated.
@@ -399,17 +399,17 @@ Consider again the cross-correlation map of human hemoglobin in \autoref{fig:hem
 \phantomsection
 \subsubsection{Mean-square fluctuations and B-factors}
 
-Just as we can visualize cross-correlation, we could also plot the mean-square fluctuations of residues using a line graph, where the x-axis represents the order of alpha carbons, and the y-axis represents the mean-square fluctuation $ \langle \Delta R_i, \Delta R_i \rangle $ of the \textvar{i}-th alpha carbon. Large \textvar{y}-values in this plot would correspond to mobile alpha carbons, whereas lower values would correspond to static alpha carbons.
+Just as we can visualize cross-correlation, we could also plot the mean-square fluctuations of residues using a line graph, where the x-axis represents the order of alpha carbons, and the y-axis represents the mean-square fluctuation $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $ of the \textvar{i}-th alpha carbon. Large \textvar{y}-values in this plot would correspond to mobile alpha carbons, whereas lower values would correspond to static alpha carbons.
 
 We also would like to compare these predicted mean-square fluctuations against what we can infer from experimental results. During X-ray crystallography, the displacement of atoms within the protein crystal decreases the intensity of the scattered X-ray, creating uncertainty in the positions of atoms. \textdefnogloss{B-factor}, also known as \textbf{temperature factor} or \textbf{Debye-Waller factor}, is a measure of this uncertainty, which includes noise from positional variance of thermal protein motion, model errors, and lattice defects.
 
 We can then compare these \textit{experimental} B-factors against a \textit{theoretical} estimate of their value. It is beyond the scope of this work, but the theoretical B-factors are given by
 
 \begin{center}
-$ B_i = \dfrac{8 \pi^2}{3} \langle \Delta R_i, \Delta R_i \rangle$\,.
+$ B_i = \dfrac{8 \pi^2}{3} \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle$\,.
 \end{center}
 
-In other words, once we can estimate the mean-square fluctuations $\langle \Delta R_i, \Delta R_i \rangle$, the theoretical B-factor of the \textvar{i}-th alpha carbon is equal to a constant times this inner product. This theoretical B-factor tends to correlate well with theoretical B-factors in practice.
+In other words, once we can estimate the mean-square fluctuations $\langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle$, the theoretical B-factor of the \textvar{i}-th alpha carbon is equal to a constant times this inner product. This theoretical B-factor tends to correlate well with theoretical B-factors in practice.
 
 \autoref{fig:hemoglobin_b_factors} shows a plot of the B-factor of the α\textsubscript{1} subunit of human hemoglobin. We also show a 3-D structure of the hemoglobin protein, with amino acids colored along a spectrum according to both theoretical and experimental B-factors for the sake of comparison. In these structures, red indicates large B-factors (mobile amino acids), and blue indicates small B-factors (static amino acids). Note that the mobile amino acids are generally found at the ends of secondary structures in the outer edges of the protein, which is expected because the boundaries between secondary structures typically contain highly fluctuating residues.\\
 
@@ -499,7 +499,7 @@ We should perhaps not be surprised that these plots point to SARS-CoV-2 and SARS
 \phantomsection
 \subsection{ANM accounts for the direction of protein fluctuations}
 
-All of the analysis provided by GNM, from cross-correlation plots to B-factors and NMA, depend on the estimation of inner products $ \langle \Delta R_i, \Delta R_i \rangle $ or $ \langle \Delta R_i, \Delta R_j \rangle $ as the case may be. Although the $ \Delta R_i $ are vectors, meaning that they have a \textvar{direction} as well as a magnitude, the inner products have only a value, and we therefore are not able to infer anything about the direction of a protein's movements. For this reason, GNM is said to be \textdefnogloss{isotropic}, meaning that it only considers the magnitude of force exerted on the springs between nearby molecules and ignores any global effect on the directions of these forces.
+All of the analysis provided by GNM, from cross-correlation plots to B-factors and NMA, depend on the estimation of inner products $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $ or $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $ as the case may be. Although the $ \mathbf{\Delta R_i} $ are vectors, meaning that they have a \textvar{direction} as well as a magnitude, the inner products have only a value, and we therefore are not able to infer anything about the direction of a protein's movements. For this reason, GNM is said to be \textdefnogloss{isotropic}, meaning that it only considers the magnitude of force exerted on the springs between nearby molecules and ignores any global effect on the directions of these forces.
 
 The generalization of GNM in which we attempt to determine the directions of these forces is called an \textdef{anisotropic network model (ANM)}{anisotropic network model (ANM)}{a generalization of a Gaussian network model accounting for the directions of the forces acting on atoms}. Although ANM includes directionality, it typically performs worse than GNM when compared with experimental data. However, this model offers the benefit that it can be used to create animations depicting the range of motions and fluctuations of the protein, as well as to estimate the directions of movement caused by each of a protein's modes.
 
