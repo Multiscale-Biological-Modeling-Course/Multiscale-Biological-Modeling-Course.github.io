@@ -64,7 +64,7 @@ The center of mass of some shapes, like the semicircular arc in the preceding ex
 
 After finding the center of masss of the two shapes *S* and *T* that we wish to compare, we translate *S* so that it has the same center of mass as *T*. We then wish to find the rotation of *S*, possibly along with a flip as well, that makes the shape resemble *T* as much as possible.
 
-Imagine that we have found the desired rotation; we can then define *d*(*S*, *T*) in the following way. We sample *n* points along the boundary of each shape, converting *S* and *T* into **vectors** *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>) and *t* = (*t*<sub>1</sub>, ..., *t*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is the *i*-th point on the boundary of *S*. The **root mean square deviation (RMSD)** between the two shapes is the square root of the average squared distance between corresponding points in the vectors,
+Imagine that we have found the desired rotation; we can then define *d*(*S*, *T*) in the following way. We sample *n* points along the boundary of each shape, converting *S* and *T* into **vectors** **s** = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>) and **t** = (*t*<sub>1</sub>, ..., *t*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is the *i*-th point on the boundary of *S*. The **root mean square deviation (RMSD)** between the two shapes is the square root of the average squared distance between corresponding points in the vectors,
 
 $$\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)} \,.$$
 

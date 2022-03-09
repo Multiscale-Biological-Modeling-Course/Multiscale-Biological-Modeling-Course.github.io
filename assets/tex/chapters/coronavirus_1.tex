@@ -570,10 +570,10 @@ The center of mass of some shapes, like the semicircular arc in the preceding ex
 
 After finding the centers of mass of the two shapes \textit{S} and \textit{T} that we wish to compare, we translate \textit{S} so that it has the same center of mass as \textit{T}. We then wish to find the rotation of \textit{S}, possibly along with a flip as well, that makes the shape resemble \textit{T} as much as possible.
 
-Imagine that we have found the desired rotation; we can then define $d(S, T)$ in the following way. We sample \textit{n} points along the boundary of each shape, converting \textit{S} and \textit{T} into \textdefnogloss{vectors} $s = (s_{1}, \ldots, s_{n})$ and $t = (t_{1}, \ldots, t_{n})$, where $s_{i}$ is the \textit{i}-th point on the boundary of \textit{S}. The \textdef{root mean square deviation (RMSD)}{root mean square deviation (RMSD)}{the square root of the average squared distance between corresponding points in two vectors} between the two shapes is the square root of the average squared distance between corresponding points in the vectors,
+Imagine that we have found the desired rotation; we can then define $d(S, T)$ in the following way. We sample \textit{n} points along the boundary of each shape, converting \textit{S} and \textit{T} into \textdefnogloss{vectors} $\mathbf{s} = (s_{1}, \ldots, s_{n})$ and $\mathbf{t} = (t_{1}, \ldots, t_{n})$, where $s_{i}$ is the \textit{i}-th point on the boundary of \textit{S}. The \textdef{root mean square deviation (RMSD)}{root mean square deviation (RMSD)}{the square root of the average squared distance between corresponding points in two vectors} between the two shapes is the square root of the average squared distance between corresponding points in the vectors,
 
 \begin{center}
-$\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot \left(d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2\right)}$\,.
+$\text{RMSD}(\mathbf{s}, \mathbf{t}) = \sqrt{\dfrac{1}{n} \cdot \left(d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2\right)}$\,.
 \end{center}
 
 \noindent In this formula, $d(s_{i}, t_{i})$ is the distance between the points $s_{i}$ and $t_{i}$.\\
@@ -594,7 +594,7 @@ For an example two-dimensional RMSD calculation, consider \autoref{fig:rmsd_simp
 
 The distances between corresponding points in this figure are equal to $\sqrt{2}$, 1, 4, and $\sqrt{2}$. As a result, we compute the RMSD as follows:
 \begin{align*}
-	\text{RMSD}(s, t) &= \sqrt{\dfrac{1}{4} \cdot (\sqrt{2}^2 + 1^2 + 2^2 + \sqrt{2}^2)} \\
+	\text{RMSD}(\mathbf{s}, \mathbf{t}) &= \sqrt{\dfrac{1}{4} \cdot (\sqrt{2}^2 + 1^2 + 2^2 + \sqrt{2}^2)} \\
 	&= \sqrt{\dfrac{1}{4} \cdot 9}\\
 	&= \sqrt{\dfrac{9}{4}}\\
 	&= \dfrac{3}{2}
