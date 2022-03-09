@@ -32,7 +32,7 @@ You may be confused as to why biologists should care about stone tablets and los
 
 As we mentioned in the [previous lesson](classification), we would like to apply k-NN to our example of segmented WBC images. Yet k-NN first requires each object to be represented by a feature vector, and so we need some way of converting a WBC image into a feature vector. In this way, we can produce a **shape space**, or an assignment of (cellular image) shapes to points in multi-dimensional space.
 
-You may notice that the problem of "vectorizing" a WBC image is similar to one that we have already encountered in our [module on protein structures](../coronavirus/accuracy). In that module, we vectorized a protein structure as the collection of locations of its alpha carbons. Given a protein structure *S*, we sampled the *n* alpha carbons from *S*, producing a vector  *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is the position of the *i*-th alpha carbon of *S*.
+You may notice that the problem of "vectorizing" a WBC image is similar to one that we have already encountered in our [module on protein structures](../coronavirus/accuracy). In that module, we vectorized a protein structure as the collection of locations of its alpha carbons. Given a protein structure *S*, we sampled the *n* alpha carbons from *S*, producing a vector  **s** = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is the position of the *i*-th alpha carbon of *S*.
 
 We will apply the same idea to vectorize our segmented WBCs. Given a binarized image, we will first center the image so that its center of mass is at the origin, and then sample *n* points from the boundary of the cell nucleus to produce a **shape vector** *s* = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is a point with coordinates (*x*(*i*), *y*(*i*)).
 
@@ -41,9 +41,9 @@ We will apply the same idea to vectorize our segmented WBCs. Given a binarized i
 
 The feature vector of a binarized image has 2*n* elements, two corresponding to each of the coordinates of its *n* sampled points. However, it will be more intuitive to think of the shape vector as having length *n*, with each element having two coordinates.
 
-Furthermore, to determine the "distance" between two images' shape vectors, we will use our old friend root mean square deviation (RMSD), which is very similar to the Euclidean distance. Given shape vectors *s* and *t*, the RMSD between these vectors is
+Furthermore, to determine the "distance" between two images' shape vectors, we will use our old friend root mean square deviation (RMSD), which is very similar to the Euclidean distance. Given shape vectors **s** and **t**, the RMSD between these vectors is
 
-$$\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)}\,. $$
+$$\text{RMSD}(\mathbf{s}, \mathbf{t}) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)}\,. $$
 
 ## Ensuring that image vectorization preserves (dis)similarity
 

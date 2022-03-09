@@ -98,9 +98,9 @@ When using k-NN with *k* equal to 4, k-NN will classify the unknown point as blu
 **STOP:** When *k* = 2 or *k* = 6 for the above figure, note that we obtain a tie in the number of points from each known class belonging to the *k* nearest neighbors of a point with unknown class. How could we break ties in k-NN?
 {: .notice--primary}
 
-In the more general case in which feature vectors have length *n*, we can determine which points are nearest to a given point by using the **Euclidean distance**, which generalizes the distance between two points in two-dimensional space to vectors in *n*-dimensional space. Say that we have the vectors *x* = (*x*<sub>1</sub>, *x*<sub>2</sub>, ..., *x*<sub>*n*</sub>) and *y* = (*y*<sub>1</sub>, *y*<sub>2</sub>, ..., *y*<sub>*n*</sub>). Then the Euclidean distance between them is given by the sum of squares of differences between corresponding vector elements:
+In the more general case in which feature vectors have length *n*, we can determine which points are nearest to a given point by using the **Euclidean distance**, which generalizes the distance between two points in two-dimensional space to vectors in *n*-dimensional space. Say that we have the vectors **x** = (*x*<sub>1</sub>, *x*<sub>2</sub>, ..., *x*<sub>*n*</sub>) and **y** = (*y*<sub>1</sub>, *y*<sub>2</sub>, ..., *y*<sub>*n*</sub>). Then the Euclidean distance between them is given by the sum of squares of differences between corresponding vector elements:
 
-$$d(x, y) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n-y_n)^2}$$
+$$d(\mathbf{x}, \mathbf{y}) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n-y_n)^2}$$
 
 We now have learned how to use k-NN to classify feature vectors with unknown classes given vectors with known classes. There is just one problem: how can we convert an image of a WBC into a vector?
 

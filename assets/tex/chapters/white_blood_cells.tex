@@ -19,7 +19,7 @@
 \label{sec:introduction}
 \phantomsection
 
-Your doctor sometimes counts your blood cells to ensure that they are within healthy ranges as part of a complete blood count. Blood cells consist of \textdef{red blood cells (RBCs)}{red blood cells (RBCs)}{cells in blood that transport oxygen via the hemoglobin protein}, which transport oxygen via the hemoglobin protein, and \textdef{white blood cells (WBCs)}{cells that help identify and attack foreign cells as part of the immune system}{FILL IN}, which help identify and attack foreign cells as part of your immune system.
+Your doctor sometimes counts your blood cells to ensure that they are within healthy ranges as part of a complete blood count. Blood cells consist of \textdef{red blood cells (RBCs)}{red blood cells (RBCs)}{cells in blood that transport oxygen via the hemoglobin protein}, which transport oxygen via the hemoglobin protein, and \textdef{white blood cells (WBCs)}{white blood cells (WBCs)}{cells that help identify and attack foreign cells as part of the immune system}, which help identify and attack foreign cells as part of your immune system.
 
 The classic device used for counting blood cells is the \textdefnogloss{hemocytometer}. In this device, a technician filters a small amount of blood onto a gridded slide and then counts the number of cells of each type in the squares on the grid. As a result, the technician can estimate the number of each type of cell per volume of blood.
 
@@ -280,9 +280,9 @@ However, with the same data and \textvar{k} equal to 4, \autoref{fig:knn_neighbo
 When \textvar{k} = 2 or \textvar{k} = 6 for the classification of the point in \autoref{fig:knn_neighborhood}, note that we obtain a tie in the number of points from each known class belonging to the \textvar{k} nearest neighbors of a point with unknown class. How could we break ties in k-NN?
 ]\end{qbox}
 
-In the more general case in which feature vectors have length \textvar{n}, we can determine which points are nearest to a given point by using the \textdefnogloss{Euclidean distance}, which generalizes the distance between two points in two-dimensional space to vectors in \textvar{n}-dimensional space. Say that we have the vectors $x = (x_1, x_2, \ldots, x_n)$ and $y = (y_1, y_2, \ldots, y_n)$. Then the Euclidean distance between them is given by the sum of squares of differences between corresponding vector elements:
+In the more general case in which feature vectors have length \textvar{n}, we can determine which points are nearest to a given point by using the \textdefnogloss{Euclidean distance}, which generalizes the distance between two points in two-dimensional space to vectors in \textvar{n}-dimensional space. Say that we have the vectors $\mathbf{x} = (x_1, x_2, \ldots, x_n)$ and $\mathbf{y} = (y_1, y_2, \ldots, y_n)$. Then the Euclidean distance between them is given by the sum of squares of differences between corresponding vector elements:
 
-$$d(x, y) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n-y_n)^2}$$
+$$d(\mathbf{x}, \mathbf{y}) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n-y_n)^2}$$
 
 We now have learned how to use k-NN to classify feature vectors with unknown classes given vectors with known classes. There is just one problem: how can we convert an image of a WBC into a vector?
 
@@ -328,7 +328,7 @@ You may be confused as to why biologists should care about stone tablets and los
 
 As we mentioned in the previous section, we would like to apply k-NN to our example of segmented WBC images. Yet k-NN first requires each object to be represented by a feature vector, and so we need some way of converting a WBC image into a feature vector. In this way, we can produce a \textdef{shape space}{shape space}{an assignment of shapes to points in multi-dimensional space}, or an assignment of (cellular image) shapes to points in multi-dimensional space.
 
-You may notice that the problem of ``vectorizing'' a WBC image is similar to one that we have already encountered in \autoref{chapter:coronavirus_1}, when we vectorized a protein structure as the collection of locations of its alpha carbons. Given a protein structure \textvar{S}, we sampled the \textvar{n} alpha carbons from \textvar{S}, producing a vector $s = (s_1, \ldots, s_n)$, where $s_i$ is the position of the \textvar{i}-th alpha carbon of \textvar{S}.
+You may notice that the problem of ``vectorizing'' a WBC image is similar to one that we have already encountered in \autoref{chapter:coronavirus_1}, when we vectorized a protein structure as the collection of locations of its alpha carbons. Given a protein structure \textvar{S}, we sampled the \textvar{n} alpha carbons from \textvar{S}, producing a vector $\mathbf{s} = (s_1, \ldots, s_n)$, where $s_i$ is the position of the \textvar{i}-th alpha carbon of \textvar{S}.
 
 We will apply the same idea to vectorize our segmented WBCs. Given a binarized image, we will first center the image so that its center of mass is at the origin, and then sample \textvar{n} points from the boundary of the cell nucleus to produce a \textdef{shape vector}{shape vector}{a feature vector for a shape whose features are points on the boundary of the shape} $s = (s_1, \ldots, s_n)$, where $s_i$ is a point with coordinates $(x(i), y(i))$.\\
 
@@ -338,9 +338,9 @@ Both isolating the boundary of a binarized image, and sampling points from this 
 
 The feature vector of a binarized image has $2n$ elements, two corresponding to each of the coordinates of its \textvar{n} sampled points. However, it will be more intuitive to think of the shape vector as having length \textvar{n}, with each element having two coordinates.
 
-Furthermore, to determine the ``distance'' between two images' shape vectors, we will use our old friend root mean square deviation (RMSD), which is very similar to the Euclidean distance. Given shape vectors \textvar{s} and \textvar{t}, the RMSD between these vectors is
+Furthermore, to determine the ``distance'' between two images' shape vectors, we will use our old friend root mean square deviation (RMSD), which is very similar to the Euclidean distance. Given shape vectors $\mathbf{s}$ and $\mathbf{t}$, the RMSD between these vectors is
 
-$$\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)}\,. $$
+$$\text{RMSD}(\mathbf{s}, \mathbf{t}) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)}\,. $$
 
 \FloatBarrier
 \phantomsection
@@ -548,7 +548,7 @@ PCA may be old, but it is one of the fundamental tools of statistical analysis i
 
 Biologists have identified hundreds of thousands of \textdefnogloss{markers}, locations within human DNA that that are common sources of human variation. The most commonly type of marker is a single nucleotide (A, C, G, or T). In the process of \textdef{genotyping}{genotyping}{a process in which an individual's genetic markers are identified and compared to those sampled from others}, a service provided by companies as part of the booming ancestry industry, an individual's markers are determined from a DNA sample.
 
-An individual's \textvar{n} markers can be converted to an \textvar{n}-dimensional vector \textvar{v} such that $v(i)$ is 1 if the individual possesses the variant for a marker and $v(i)$ is 0 if the individual has the more common version of the marker.\\
+An individual's \textvar{n} markers can be converted to an \textvar{n}-dimensional vector $\mathbf{v} = (v_1, v_2, \ldots, v_n)$ such that $v_i$ is 1 if the individual possesses the variant for a marker and $v_i$ is 0 if the individual has the more common version of the marker.\\
 
 \begin{note}[%
 The mathematically astute reader will notice that this vector lies on one of the many corners of an \textvar{n}-dimensional hypercube.

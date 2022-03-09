@@ -108,7 +108,7 @@ PCA may be old, but it is one of the fundamental tools of statistical analysis i
 
 Biologists have identified hundreds of thousands of **markers**, locations within human DNA that that are common sources of human variation. The most commonly type of marker is a single nucleotide (A, C, G, or T). In the process of **genotyping**, a service provided by companies as part of the booming ancestry industry, an individual's markers are determined from a DNA sample.
 
-An individual's *n* markers can be converted to an *n*-dimensional vector *v* such that *v*(*i*) is 1 if the individual possesses the variant for a marker and *v*(*i*) is 0 if the individual has the more common version of the marker.
+An individual's *n* markers can be converted to an *n*-dimensional vector **v** = (*v*<sub>1</sub>, *v*<sub>2</sub>, ..., *v*<sub><em>n</em></sub>) such that *v*<sub><em>i</em></sub> is 1 if the individual possesses the variant for a marker and *v*<sub><em>i</em></sub> is 0 if the individual has the more common version of the marker.
 
 **Note:** The mathematically astute reader will notice that this vector lies on one of the many corners of an *n*-dimensional hypercube.
 {: .notice--info}
