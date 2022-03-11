@@ -629,7 +629,7 @@ The Kabsch algorithm offers a compelling way to determine the similarity of two 
 	Can you think of an example in which a small difference between protein structures can cause a large inflation in RMSD score?
 	]\end{qbox}
 
-Unfortunately, the Kabsch algorithm can be flawed. Consider \autoref{fig:RMSD_weakness_mutation} showing two toy protein structures. The orange structure (\textit{S}) is identical to the blue structure (\textit{T}) except for a change in a single bond angle between the third and fourth amino acids. And yet this tiny change in the protein's structure causes a significant increase in $d(s_{i}, t_{i})$ for every \textit{i} greater than 3, which inflates the RMSD.
+Unfortunately, the Kabsch algorithm can be fooled. Consider \autoref{fig:RMSD_weakness_mutation} showing two toy protein structures. The orange structure (\textit{S}) is identical to the blue structure (\textit{T}) except for a change in a single bond angle between the third and fourth amino acids. And yet this tiny change in the protein's structure causes a significant increase in $d(s_{i}, t_{i})$ for every \textit{i} greater than 3, which inflates the RMSD.
 
 \begin{figure}[p]
 	\centering
