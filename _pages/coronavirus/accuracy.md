@@ -108,7 +108,7 @@ The Kabsch algorithm offers a compelling way to determine the similarity of two 
 **STOP:** Can you think of an example in which a small difference between protein structures can cause a large inflation in RMSD score?
 {: .notice--primary}
 
-Unfortunately, the Kabsch algorithm can be flawed. Consider the figure below showing two toy protein structures. The orange structure (*S*) is identical to the blue structure (*T*) except for a change in a single bond angle between the third and fourth amino acids. And yet this tiny change in the protein's structure causes a significant increase in *d*(*s*<sub><em>i</em></sub>, *t*<sub><em>i</em></sub>) for every *i* greater than 3, which inflates the RMSD.
+Unfortunately, the Kabsch algorithm can be fooled. Consider the figure below showing two toy protein structures. The orange structure (*S*) is identical to the blue structure (*T*) except for a change in a single bond angle between the third and fourth amino acids. And yet this tiny change in the protein's structure causes a significant increase in *d*(*s*<sub><em>i</em></sub>, *t*<sub><em>i</em></sub>) for every *i* greater than 3, which inflates the RMSD.
 
 [![image-center](../assets/images/600px/RMSD_weakness_mutation.png){: .align-center}](../assets/images/RMSD_weakness_mutation.png)
 (Top) Two hypothetical protein structures that differ in only a single bond angle between the third and fourth amino acids, shown in red. Each circle represents an alpha carbon. (Bottom left) Superimposing the first three amino acids shows how much the change in the bond angle throws off the computation of RMSD by increasing the distances between corresponding alpha carbons. (Bottom right) The Kabsch algorithm would align the centers of gravity of the two structures in order to minimize RMSD between corresponding alpha carbons. This alignment belies the similarity in the structures and makes it difficult for the untrained observer to notice that the two proteins only really differ in a single bond angle.
@@ -120,7 +120,7 @@ Another way in which the Kabsch algorithm can be fooled is in the case of an app
 A simplification of two protein structures, one of which includes a loop of three amino acids. After the loop, each amino acid in the orange structure will be compared against an amino acid that occurs farther long in the blue structure, thus increasing *d*(*s*<sub><em>i</em></sub>, *t*<sub><em>i</em></sub>)<sup>2</sup> for each such amino acid.
 {: style="font-size: medium;"}
 
-To address these shortcomings, biologists will often align the sequences of two proteins first, discarding any positions that do not align well when it comes time to perform the RMSD calculation. We will soon see an example of a protein sequence alignment soon when comparing the coronavirus spike proteins.
+To address this shortcoming, biologists will often align the sequences of two proteins first, discarding any positions that do not align well when it comes time to perform the RMSD calculation. We will soon see an example of a protein sequence alignment soon when comparing the coronavirus spike proteins.
 
 In short, if the RMSD of two proteins is *large*, then we should be wary of concluding that the proteins are very different, and we may need to combine RMSD with other methods of structure comparison. But if the RMSD is *small* (e.g., just a few angstroms), then we can have confidence that the proteins are indeed similar.
 
