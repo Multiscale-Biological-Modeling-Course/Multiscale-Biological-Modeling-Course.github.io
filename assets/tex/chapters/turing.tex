@@ -417,7 +417,10 @@ When we color each cell over many time steps, we can animate the automaton to se
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/diffusion__Moment_1.png}
+\begin{tabular}{c c}
+\includegraphics[width = 0.3\textwidth]{../images/diffusion__Moment_1.png} & \includegraphics[width = 0.3\textwidth]{../images/diffusion__Moment_2.png} \\[2ex]
+\includegraphics[width = 0.3\textwidth]{../images/diffusion__Moment_3.png} & \includegraphics[width = 0.3\textwidth]{../images/diffusion__Moment_4.png}
+\end{tabular}
 \caption{Phillip will fill in caption.}
 \label{fig:diffusion_movie_still}
 \end{figure}
@@ -491,7 +494,10 @@ In contrast to our particle-based simulator, the Gray-Scott model produced an an
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/gs_f038_k100_Moment_1.png}
+\begin{tabular}{c c}
+\includegraphics[width = 0.3\textwidth]{../images/gs_f038_k100_Moment_1.png} & \includegraphics[width = 0.3\textwidth]{../images/gs_f038_k100_Moment_2.png} \\[2ex]
+\includegraphics[width = 0.3\textwidth]{../images/gs_f038_k100_Moment_3.png} & \includegraphics[width = 0.3\textwidth]{../images/gs_f038_k100_Moment_4.png}
+\end{tabular}
 \caption{Phillip will fill in caption.}
 \label{fig:gray-scott_movie_first_frame}
 \end{figure}
@@ -501,7 +507,10 @@ If we expand the size of the simulation and add multiple clusters of predators t
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/f038_100_multi_Moment_1.jpg}
+\begin{tabular}{c c}
+\includegraphics[width = 0.3\textwidth]{../images/f038_100_multi_Moment_1.jpg} & \includegraphics[width = 0.3\textwidth]{../images/f038_100_multi_Moment_2.jpg} \\[2ex]
+\includegraphics[width = 0.3\textwidth]{../images/f038_100_multi_Moment_3.jpg} & \includegraphics[width = 0.3\textwidth]{../images/f038_100_multi_Moment_4.jpg}
+\end{tabular}
 \caption{Phillip will fill in caption.}
 \label{fig:gray-scott_multiple_predators_first_frame}
 \end{figure}
@@ -511,7 +520,10 @@ If we keep the feed rate constant and increase the kill rate slightly to \textva
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/f038_k102_multi_Moment_1.jpg}
+\begin{tabular}{c c}
+\includegraphics[width = 0.3\textwidth]{../images/f038_102_multi_Moment_1.jpg} & \includegraphics[width = 0.3\textwidth]{../images/f038_102_multi_Moment_2.jpg} \\[2ex]
+\includegraphics[width = 0.3\textwidth]{../images/f038_102_multi_Moment_3.jpg} & \includegraphics[width = 0.3\textwidth]{../images/f038_102_multi_Moment_4.jpg}
+\end{tabular}
 \caption{Phillip will fill in caption.}
 \label{fig:gray-scott_f34_k63_first_frame}
 \end{figure}
@@ -521,7 +533,10 @@ If we make the prey a little happier as well, increasing  \textvar{f} to 0.038 a
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/f044_k102_multi_Moment_1.jpg}
+\begin{tabular}{c c}
+\includegraphics[width = 0.3\textwidth]{../images/f044_102_multi_Moment_1.jpg} & \includegraphics[width = 0.3\textwidth]{../images/f044_102_multi_Moment_2.jpg} \\[2ex]
+\includegraphics[width = 0.3\textwidth]{../images/f044_102_multi_Moment_3.jpg} & \includegraphics[width = 0.3\textwidth]{../images/f044_102_multi_Moment_4.jpg}
+\end{tabular}
 \caption{Phillip will fill in caption.}
 \label{fig:gray-scott_f38_k61_first_frame}
 \end{figure}
@@ -534,7 +549,6 @@ The point is that very slight changes in our model's parameters can produce dras
 \section{Conclusion: Turing Patterns are Fine-Tuned}
 \label{sec:conclusion:_turing_patterns_are_fine-tuned}
 \phantomsection
-
 
 The Turing patterns that emerged from our particle simulations are a testament to the human eye's ability to find organization within the net behavior of tens of thousands of particles. For example, take another look at the results of the simulation in \autoref{fig:k=200000_f=200000}, which showed mottling in our particle simulator. Patterns are present, but they are also noisy --- even in the dark red regions we will have quite a few green particles, and vice-versa. The rapid inference of large-scale patterns from small-scale visual phenomena is one of the tasks that our brains have evolved to perform well.
 
