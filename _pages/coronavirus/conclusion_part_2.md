@@ -123,7 +123,7 @@ The average mode shape of the slowest ten modes for each of the four human hemog
 
 We are now ready to apply what we have learned in this lesson and use ProDy to build a GNM for the SARS-CoV and SARS-CoV-2 spike proteins.
 
-[Visit tutorial](tutorial_GNM){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_GNM){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Molecular dynamics analyses of SARS-CoV and SARS-CoV-2 spike proteins using GNM
@@ -168,7 +168,7 @@ After we produce an animation like the one in the figure above, we also should a
 
 We will now apply ANM to the SARS-CoV and SARS-CoV-2 spike proteins. We will also use <a href="http://prody.csb.pitt.edu/nmwiz/" target="_blank">NMWiz</a>, which is short for "normal mode wizard", to perform ANM calculations and create an animation of the SARS-CoV-2 (chimeric) RBD and the SARS-CoV RBD.
 
-[Visit tutorial](tutorial_ANM){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_ANM){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## ANM analysis of the coronavirus binding domain
@@ -220,7 +220,7 @@ Recall from the [previous lesson](NAMD#differences-in-interaction-energy-with-ac
 
 Although we have separated our discussion of GNM and ANM, the <a href="http://enm.pitt.edu/index.php" target="_blank">DynOmics 1.0</a> server is an effort to integrate these approaches on a user-friendly platform. If you are interested, the following tutorial shows how to use DynOmics to replicate some of our above analysis.
 
-[Visit tutorial](tutorial_DynOmics){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_DynOmics){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Fighting a Virus with Open Science

@@ -114,5 +114,5 @@ When you run your simulation, you should see an image analogous to the one in th
 
 In the main text, we will discuss how much as we saw with the particle-based reaction-diffusion model, slight changes to the critical parameters in our model can produce vast differences in the beautiful patterns that emerge.
 
-[Return to main text](gray-scott#reflection-on-the-gray-scott-model){: .btn .btn--info .btn--large}
+[Return to main text](gray-scott#reflection-on-the-gray-scott-model){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

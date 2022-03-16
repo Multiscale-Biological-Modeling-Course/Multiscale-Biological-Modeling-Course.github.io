@@ -85,7 +85,7 @@ It would seem that we should work with the binarized image based on the red thre
 
 This insight gives us an idea: if each of the three images is successful at excluding some part of the image, then let us produce a fourth image such that a pixel is white if it is white in all three binarized images. In the following tutorial, we will build an R pipeline that implements this approach to produce binarized WBC nuclei for all our blood cell images.
 
-[Visit tutorial](tutorial_nuclear_segmentation){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_nuclear_segmentation){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Successful segmentation is subject to parameters

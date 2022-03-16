@@ -41,7 +41,7 @@ Furthermore, to obtain a mathematically controlled comparison, the reaction *X* 
 
 If you are feeling adventurous, then you may like to adapt the [negative autoregulation tutorial](tutorial_nar) to run the above two simulations and tweak the rate of the *X* → *X* + *Z* reaction to see if you can obtain the same steady state concentration of *Z* in the two simulations. We also provide the following tutorial guiding you through setting up these simulations, which we will interpret in the next section.
 
-[Visit tutorial](tutorial_feed){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_feed){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Why feedforward loops speed up response times

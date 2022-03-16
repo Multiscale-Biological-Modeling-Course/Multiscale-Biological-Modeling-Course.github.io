@@ -42,7 +42,7 @@ We then select *p* to ensure that our random network will on average have 477 ed
 
 In the following tutorial, we write some code to count the number of loops in the real *E. coli* transcription factor network. We then build a random network and compare the number of loops found in this network against the number of loops in the real network.
 
-[Visit tutorial](tutorial_loops){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_loops){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## The negative autoregulation motif

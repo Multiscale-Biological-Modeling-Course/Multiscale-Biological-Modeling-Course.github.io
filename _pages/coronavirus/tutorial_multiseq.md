@@ -88,5 +88,5 @@ The `OpenGL Display` window will now color the superimposed structures according
 
 We are looking for regions of consecutive amino acids having low Qres, which correspond to locations in which the coronavirus RBDs differ structurally. You may like to explore the alignments yourself to look for regions of interest before we head back to the main text and discuss our results.
 
-[Return to main text](multiseq#local-comparison-of-spike-proteins-leads-us-to-a-region-of-interest){: .btn .btn--info .btn--large}
+[Return to main text](multiseq#local-comparison-of-spike-proteins-leads-us-to-a-region-of-interest){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

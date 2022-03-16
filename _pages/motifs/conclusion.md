@@ -28,7 +28,7 @@ As for a repression reaction like *X* + *Y* → *X*, we can update the concentra
 
 We will discuss the technical details behind our well-mixed model in the next module. In the meantime, we would like to see what happens when we make a major disturbance to the concentration of one of the particles in the well-mixed module to see whether the particle concentrations resume their oscillations. To build this model of the repressilator, check out the following tutorial.
 
-[Visit tutorial](tutorial_perturb){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_perturb){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## The repressilator is robust to disturbance

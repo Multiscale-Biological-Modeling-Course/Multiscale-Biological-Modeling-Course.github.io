@@ -19,7 +19,7 @@ Nonetheless, basic visualizations of the Spike protein with its glycans can be m
 
 To see how to visualize glycans in VMD, go to the following tutorial.
 
-[Visit tutorial](tutorial_glycans){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_glycans){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 <hr>
@@ -34,7 +34,7 @@ The surface of viruses and host cells are not smooth, but rather “fuzzy”. Th
 
 In our last tutorial, we will use VMD to try to visualize the glycans of SARS-CoV-2 S protein.
 
-[Visit tutorial](tutorial_glycans){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_glycans){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 From the visualization we created in the tutorial, we can see that glycans are present all around the S protein. In fact, the glycans cover around 40% of the Spike protein[^Grant]! This raises an important question: If the glycans on the S protein can hide from antibodies, won't it get in the way of binding with ACE2? Such glycosylation does not hinder the Spike protein’s ability to interact with human ACE2 because the Spike protein is able to adopt an open conformation, allowing a large portion of the RBD being exposed. In the figure below, we compared the SARS-CoV-2 Spike in its closed conformation (PDB entry: <a href="https://www.rcsb.org/structure/6vxx" target="_blank">6vxx)</a>) and SARS-CoV-2 Spike in its open conformation (PDB entry: <a href="https://www.rcsb.org/structure/6VYB" target="_blank">6vyb</a>). The presumed glycans are shown in red. Notice how the RBD in the orange chain is much more exposed in the open conformation.

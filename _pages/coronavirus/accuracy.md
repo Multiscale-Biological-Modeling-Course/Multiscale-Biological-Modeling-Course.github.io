@@ -126,7 +126,7 @@ In short, if the RMSD of two proteins is *large*, then we should be wary of conc
 
 We are now ready to apply the Kabsch algorithm to compare the structures that we predicted for human hemoglobin subunit alpha and the SARS-CoV-2 spike protein against their experimentally validated structures.
 
-[Visit tutorial](tutorial_rmsd){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_rmsd){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Assessing the accuracy of our structure prediction models

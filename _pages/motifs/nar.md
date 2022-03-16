@@ -39,7 +39,7 @@ We now will simulate the second cell, which will inherit all of the reactions fr
 
 To recap, the simulations of both cells will include an initial concentration of *X* at steady state, diffusion of *X* and *Y*, removal of *Y*, and the reaction *X* → *X* + *Y*. The second simulation, which includes negative autoregulation of *Y*, will add the reaction 2*Y* → *Y*. You can explore these simulations in the following tutorial.
 
-[Visit tutorial](tutorial_nar){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_nar){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 **Note:** Even though we are using a particle-based model to mimic regulation, it is not attempting to replicate specific chemical reactions. In reality, gene regulation is a complicated chemical process that involves a great deal of molecular machinery. However, this is the purpose of the model, to strip away what is not relevant and retain the essence of what is being modeled.
@@ -64,7 +64,7 @@ There are a number of parameters that we should keep constant across the two sim
 
 With these parameters fixed, the only way that the steady state concentration of *Y* can be the same in the two simulations is if we *increase* the rate at which the reaction *X* → *X* + *Y* takes place in the simulation of the second cell. The following tutorial adjusts this rate parameter to ensure a mathematically controlled comparison.
 
-[Visit tutorial](tutorial_nar_mathematically_controlled){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_nar_mathematically_controlled){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## An evolutionary basis for negative autoregulation

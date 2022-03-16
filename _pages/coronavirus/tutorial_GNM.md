@@ -128,5 +128,5 @@ This mode shape plot is shown in the figure below.
 
 Now that we have produced our plots, we are ready to head back to the main text and analyze our results.
 
-[Return to main text](conclusion_part_2#molecular-dynamics-analyses-of-sars-cov-and-sars-cov-2-spike-proteins-using-gnm){: .btn .btn--info .btn--large}
+[Return to main text](conclusion_part_2#molecular-dynamics-analyses-of-sars-cov-and-sars-cov-2-spike-proteins-using-gnm){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

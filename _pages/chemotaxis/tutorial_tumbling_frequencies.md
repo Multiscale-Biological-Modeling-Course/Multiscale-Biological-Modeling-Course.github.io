@@ -133,5 +133,5 @@ ax.grid()
 
 As we return to the main text, we interpret the results of this final tutorial. It turns out that there are significant differences in our chemotaxis algorithm's ability to find (and remain at) the goal for differing default tumbling frequencies. It hopefully will not surprise you to learn that the frequency that evolution has bestowed upon *E. coli* turns out to be optimal.
 
-[Return to main text](conclusion#why-is-background-tumbling-frequency-constant-across-bacterial-species){: .btn .btn--info .btn--large}
+[Return to main text](conclusion#why-is-background-tumbling-frequency-constant-across-bacterial-species){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -205,5 +205,5 @@ Is the result you obtain what you expected? In the main text, we will return to 
 [^Schwartz17]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 17.2.
 
 
-[Return to main text](gillespie#does-a-simulation-confirm-our-steady-state-calculations){: .btn .btn--info .btn--large}
+[Return to main text](gillespie#does-a-simulation-confirm-our-steady-state-calculations){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

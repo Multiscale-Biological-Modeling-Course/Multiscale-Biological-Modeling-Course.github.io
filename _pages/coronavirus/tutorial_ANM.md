@@ -70,5 +70,5 @@ You should now be able to see the animation of the ANM fluctuations of 6vw1, as 
 
 We now will return to the main text and interpret our results.
 
-[Return to main text](conclusion_part_2#anm-analysis-of-the-coronavirus-binding-domain){: .btn .btn--info .btn--large}
+[Return to main text](conclusion_part_2#anm-analysis-of-the-coronavirus-binding-domain){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

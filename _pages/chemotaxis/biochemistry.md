@@ -81,7 +81,7 @@ Now that we have converted the reactions from the chemotaxis signal transduction
 
 But does higher attractant concentration in our model really lead to a lower concentration of CheY? Let's find out by incorporating the phosphorylation pathway into our ligand-receptor model in the following tutorial.
 
-[Visit tutorial](tutorial_phos){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_phos){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Changing ligand concentrations leads to a change in internal molecular concentrations

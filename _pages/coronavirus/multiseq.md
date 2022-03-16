@@ -103,7 +103,7 @@ As a result, we think of Qres as a similarity metric ranging between 0 and 1, wi
 
 We now will compute Qres for the SARS-CoV and SARS-CoV-2 spike proteins using the VMD plugin *<a href="https://www.ks.uiuc.edu/Research/vmd/plugins/multiseq/" target="_blank">Multiseq</a>*, a bioinformatics analysis environment. After determining Qres, we will visualize the individual locations where the two RBD regions differ.
 
-[Visit tutorial](tutorial_multiseq){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_multiseq){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Local comparison of spike proteins leads us to a region of interest

@@ -250,7 +250,7 @@ ax.grid()
 
 You are now ready to run the code in `Part 3: Comparing performances`. Consider whether you feel confident in your hypothesis about the performance of the two cellular strategies before we discuss our analysis back in the main text.
 
-[Return to main text](conclusion#comparing-the-effectiveness-of-our-two-random-walk-strategies){: .btn .btn--info .btn--large}
+[Return to main text](conclusion#comparing-the-effectiveness-of-our-two-random-walk-strategies){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 

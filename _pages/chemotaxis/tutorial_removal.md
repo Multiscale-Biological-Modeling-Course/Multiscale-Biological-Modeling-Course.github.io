@@ -276,5 +276,5 @@ Run the notebook. How does the value of `k_gone` impact the concentration of pho
 [^Krembel2015]: Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)
 
 
-[Return to main text](gradient#steady-state-tumbling-frequency-remains-robust-when-traveling-down-an-attractant-gradient){: .btn .btn--info .btn--large}
+[Return to main text](gradient#steady-state-tumbling-frequency-remains-robust-when-traveling-down-an-attractant-gradient){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -139,5 +139,5 @@ We will leave the RMSD computation for the other models we produced as an exerci
 
 We are now ready to head back to the main text, where we will discuss the RMSD calculations for all models. Were we successful in predicting the structure of the SARS-CoV-2 spike protein?
 
-[Return to main text](accuracy#assessing-the-accuracy-of-our-structure-prediction-models){: .btn .btn--info .btn--large}
+[Return to main text](accuracy#assessing-the-accuracy-of-our-structure-prediction-models){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

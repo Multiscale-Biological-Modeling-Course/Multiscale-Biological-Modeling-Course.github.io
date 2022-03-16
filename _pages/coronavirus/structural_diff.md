@@ -16,7 +16,7 @@ We know from our work in this course that a tiny change can produce a big differ
 
 We will first use VMD to highlight the amino acids in the region of interest of the SARS-CoV-2 spike protein's structure.
 
-[Visit tutorial](tutorial_visualization){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_visualization){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Analyzing three sites of conformational differences

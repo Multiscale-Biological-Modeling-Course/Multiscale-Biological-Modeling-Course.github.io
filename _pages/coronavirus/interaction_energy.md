@@ -16,7 +16,7 @@ To quantify whether two molecules bind well, we will borrow this idea and comput
 
 In the following tutorial, we will compute the energy of the bound spike protein-ACE2 complex for the two viruses and see how the three regions that we identified in the [previous lesson](structural_differences) contribute to the total energy of the complex. To do so, we will employ <a href="https://www.ks.uiuc.edu/Research/namd/" target="_blank">NAMD</a>, a program that was designed for high-performance large system simulations of biological molecules and is most commonly used with VMD via a plugin called <a href="https://www.ks.uiuc.edu/Research/vmd/plugins/namdenergy/" target="_blank">NAMD Energy</a>. This plugin will allow us to isolate a specific region to evaluate how much this local region contributes to the overall energy of the complex.
 
-[Visit tutorial](tutorial_NAMD){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_NAMD){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Differences in interaction energy with ACE2 between SARS and SARS-CoV-2

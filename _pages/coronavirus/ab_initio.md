@@ -113,7 +113,7 @@ To run an *ab initio* structure prediction algorithm on a real protein, we will 
 
 Despite the sophistication of software like QUARK, Levinthal's paradox means that the search space of all possible structures for a protein is so large that accurately predicting large protein structures with *ab initio* modeling remains very difficult, and QUARK limits us to proteins with at most 200 amino acids. Since the SARS-CoV-2 spike protein contains 1281 amino acids, we will instead apply this software to the shorter human hemoglobin subunit alpha.
 
-[Visit tutorial](tutorial_ab_initio){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_ab_initio){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Toward a faster approach for protein structure prediction

@@ -389,5 +389,5 @@ Back in the main text, we will examine how a sudden change in the concentration 
 [^Krembel2015]: Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)
 
 
-[Return to main text](adaptation#bacterial-tumbling-is-resilient-to-large-sudden-changes-in-ligand-concentration){: .btn .btn--info .btn--large}
+[Return to main text](adaptation#bacterial-tumbling-is-resilient-to-large-sudden-changes-in-ligand-concentration){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -37,7 +37,7 @@ In the [previous lesson](feedforward) on the feed-forward loop, we saw that we c
 
 If you followed our previous tutorials, then you may feel comfortable taking off the training wheels and implementing the repressilator with your own reaction-diffusion model, which we cover in the following tutorial.
 
-[Visit tutorial](tutorial_oscillators){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_oscillators){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Interpreting the repressilator's oscillations

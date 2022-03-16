@@ -149,5 +149,5 @@ You may be wondering how the parameters in the above simulations were chosen. Th
 
 As we return to the main text, we will discuss how the patterns that we observe change as we make slight changes to these parameters. What biological conclusion can we draw from this phenomenon?
 
-[Return to main text](reaction-diffusion#tuning-reaction-diffusion-parameters-produces-different-turing-patterns){: .btn .btn--info .btn--large}
+[Return to main text](reaction-diffusion#tuning-reaction-diffusion-parameters-produces-different-turing-patterns){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

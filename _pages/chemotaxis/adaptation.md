@@ -64,7 +64,7 @@ LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 
 We will not bog down the text with a full specification of all the rules needed to add methylation to our model while avoiding combinatorial explosion. If you're interested in the details, please follow our tutorial.
 
-[Visit tutorial](tutorial_adaptation){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_adaptation){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Bacterial tumbling is robust to large sudden changes in attractant concentration

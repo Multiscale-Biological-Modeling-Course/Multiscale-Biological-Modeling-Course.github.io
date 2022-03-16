@@ -82,5 +82,5 @@ Congratulations! You have now created a detailed visualization of the RBD-ACE2 c
 |ACE2| Licorice| ColorID 10| chain B and resid 19|
 |ACE2| Licorice| ColorID 3| chain B and resid 24|
 
-[Return to main text](structural_diff#analyzing-three-sites-of-conformational-differences){: .btn .btn--info .btn--large}
+[Return to main text](structural_diff#analyzing-three-sites-of-conformational-differences){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

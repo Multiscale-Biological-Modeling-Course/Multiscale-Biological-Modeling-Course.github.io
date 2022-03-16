@@ -102,5 +102,5 @@ The movie will begin playing, and when the animation is complete, the movie file
 
 Now that we have run and visualized our diffusion, we will head back to the main text, where we will continue on with our discussion of how the diffusion of particles can help us find Turing patterns.
 
-[Return to main text](random_walk#brownian-motion-big-numbers-in-small-spaces){: .btn .btn--info .btn--large}
+[Return to main text](random_walk#brownian-motion-big-numbers-in-small-spaces){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

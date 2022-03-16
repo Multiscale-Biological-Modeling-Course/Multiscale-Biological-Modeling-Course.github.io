@@ -97,7 +97,7 @@ LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 
 The following tutorial shows how to implement this rule in BioNetGen and use the Gillespie algorithm to determine the equilibrium of a reversible ligand-receptor binding reaction.
 
-[Visit tutorial](tutorial_lr){: .btn .btn--info .btn--large}
+[Visit tutorial](tutorial_lr){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Does the Gillespie algorithm confirm our steady state calculations?

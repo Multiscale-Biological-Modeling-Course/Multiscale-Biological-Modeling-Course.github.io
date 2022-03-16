@@ -197,5 +197,5 @@ Save your file.
 
 If you find the outcome of the simulation in this tutorial confusion, don't be concerned. In the main text, we will interpret this outcome and see if it allows us to start making conclusions about why negative autoregulation has evolved, or if we will need to further tweak our model.
 
-[Return to main text](nar#ensuring-a-mathematically-controlled-comparison){: .btn .btn--info .btn--large}
+[Return to main text](nar#ensuring-a-mathematically-controlled-comparison){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -62,5 +62,5 @@ There is plenty more to say about the additional results produced by DynOmics; i
 
 If you have made it this far, congratulations! You have become an expert in protein analysis. We will now head back to the main text to wrap up this module with some concluding thoughts.
 
-[Return to main text](conclusion_part_2#fighting-a-virus-with-open-science){: .btn .btn--info .btn--large}
+[Return to main text](conclusion_part_2#fighting-a-virus-with-open-science){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
