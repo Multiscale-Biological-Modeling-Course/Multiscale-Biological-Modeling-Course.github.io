@@ -4,10 +4,10 @@ title: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
 description: Learn how to model the complete set of reactions that drive a bacterium's exploration of its environment in chemotaxis.
 sidebar:
  nav: "chemotaxis"
-image: "../assets/images/chemotaxis_traj_1.0.png"
+image: "../assets/images/chemotaxis_traj_1.0_uniform.png"
 excerpt: "by Shuanger Li and Phillip Compeau"
 header:
-  overlay_image: "../assets/images/chemotaxis_traj_1.0.png"
+  overlay_image: "../assets/images/chemotaxis_traj_1.0_uniform.png"
   overlay_filter: 0.3
 author_profile: true # add author to page
 ---
