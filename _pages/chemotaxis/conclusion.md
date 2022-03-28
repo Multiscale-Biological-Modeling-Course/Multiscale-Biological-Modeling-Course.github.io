@@ -146,5 +146,5 @@ Bacterial chemotaxis is probably the most studied biological system from the per
 [^Baker2005]: Baker MD, Wolanin PM, Stock JB. 2005. Signal transduction in bacterial chemotaxis. BioEssays 28:9-22. [Available online](https://pubmed.ncbi.nlm.nih.gov/16369945/)
 
 
-[Visit exercises](exercise){: .btn .btn--success .btn--large}
+[Visit exercises](exercises){: .btn .btn--success .btn--large}
 {: style="font-size: 100%; text-align: center;"}

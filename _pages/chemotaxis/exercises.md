@@ -1,5 +1,5 @@
 ---
-permalink: /chemotaxis/exercise
+permalink: /chemotaxis/exercises
 title: "Exercises"
 sidebar:
  nav: "chemotaxis"

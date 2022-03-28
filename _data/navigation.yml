@@ -120,7 +120,7 @@ chemotaxis:
   - title: Exercises
     children:
       - title: "Exercises on Chemotaxis<br><br>"
-        url: /chemotaxis/exercise
+        url: /chemotaxis/exercises
 
 coronavirus:
   - title: Analyzing the coronavirus spike protein

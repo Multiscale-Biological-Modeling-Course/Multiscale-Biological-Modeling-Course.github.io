@@ -488,14 +488,14 @@ This model will be more complicated than any we have introduced thus far. We wil
 
 In the previous section, we very briefly introduced BioNetGen as a way to convert reactions into a software package applying the Gillespie algorithm. However, BioNetGen is useful not only for running particle-free simulations, but also because it implements its own language for \textdef{rule-based modeling}{rule-based modeling}{an approach to modeling that uses a collection of ``rules'' to indirectly specify the model, often as a way of specifying an enormous number of possible reactions}.
 
-Say that we were to specify all reactions using the style of modeling reactions used in previous chapters. We would need one particle type to represent bound MCP molecules, another particle type to represent ligands, and a third to represent bound complexes. A bound complex molecule binds with CheA and CheW and can be either phosphorylated or unphosphorylated, necessitating two different molecule types. In turn, CheY can be phosphorylated or unphosphorylated as well, requiring two more particles.
+Say that we were to specify all reactions using the style of modeling reactions used in previous chapters. We would need one particle type to represent MCP molecules, another particle type to represent ligands, and a third to represent bound complexes. A bound complex molecule binds with CheA and CheW and can be either phosphorylated or unphosphorylated, necessitating two different molecule types. In turn, CheY can be phosphorylated or unphosphorylated as well, requiring two more particles.
 
 Instead, the BioNetGen language will allow us to conceptualize this system much more concisely using rules that apply to particles that are in a variety of states. The BioNetGen representation of the four particles in our model is shown below. The notation \texttt{Phos\texttildelow U\texttildelow P} indicates that a given molecule type can be either phosphorylated or unphosphorylated, so that we do not need multiple different expressions to represent the molecule.
 
 \begin{verbatim}
 L(t)             #ligand molecule
 T(l,Phos~U~P)    #receptor complex
-CheY(Phos~U~P) 
+CheY(Phos~U~P)
 CheZ()
 \end{verbatim}
 
@@ -508,7 +508,7 @@ LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 Next, we represent the phosphorylation of the MCP complex. Recall that the phosphorylation of CheA can occur at different rates depending on whether the MCP is bound, and so we will need two different reactions to model these different rates. In our model, the phosphorylation of the MCP will occur at one fifth the rate when it is bound to the attractant ligand.
 
 \begin{verbatim}
-FreeTP: T(l,Phos~U) -> T(l,Phos~P) k_T_phos   
+FreeTP: T(l,Phos~U) -> T(l,Phos~P) k_T_phos
 BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
 \end{verbatim}
 
@@ -996,4 +996,3 @@ Bacterial chemotaxis is probably the most studied biological system from the per
 %\citep{Bray_1993}
 %\citep{Krembel_2015}.
 %\citep{Saragosti_2012}
- 
