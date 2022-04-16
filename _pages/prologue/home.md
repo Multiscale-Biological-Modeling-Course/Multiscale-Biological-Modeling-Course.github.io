@@ -11,23 +11,17 @@ header:
 author_profile: true # add author to page
 ---
 
-# Introduction: Turing and the Zebra's Stripes
+# Introduction: Alan Turing and the Zebra's Stripes
 
-Our story begins with an unlikely character: Alan Turing. If you have heard of Turing, then you might be surprised that he would appear in the first sentence of a course on biological modeling.
+If you are familiar with Alan Turing, then you might be surprised that a famous computer scientist would appear in the first sentence of a book on biological modeling, since he is most famous for two other acts. In 1936, he theorized a computer (which came to be known as a "Turing machine"[^numbers]) consisting of a tape of cells along with a machine that writes symbols on the tape according to a set of predetermined set of rules, a machine that is simple but nevertheless has been shown to be capable of solving any problem that a modern computer can solve. And during World War II, he worked at Bletchley Park to devise machines that would be used to break several German ciphers.
 
 [![image-center](../assets/images/600px/alan_turing_npg_cc.jpg){: .align-center}](../assets/images/alan_turing_npg_cc.jpg)
 Alan Turing in 1951. © National Portrait Gallery, London.
 {: style="font-size: medium; text-align: center;"}
 
-Turing was a genius cryptographer who helped break several German ciphers during World War II. But his most famous scientific contribution was a 1936 paper in which he introduced what has come to be known as a **Turing machine**[^numbers]. This hypothetical computer consists of an infinitely long tape of cells and a reader that can read one cell at a time. Each cell consists of only a single number, and the machine can move one cell at a time, reading and rewriting cells according to a finite collection of internal rules.
+In 1952, two years before his untimely demise, Turing published his only paper on biochemistry, which addressed the question: "Why do zebras have stripes?"[^morphogenesis] He was not asking why zebras have *evolved* to have stripes — this question was unsolved in Turing’s time, and recent research has indicated that the stripes may be helpful in warding off flies. Rather, Turing was interested in what biochemical mechanism could produce the stripes that we see on a zebra’s coat. And he reasoned that just as a simple machine can emulate a computer, some limited set of molecular "rules" could cause stripes to appear on a zebra’s coat.
 
-Turing's major insight was that this simple machine is nevertheless powerful. Nearly a century after his work, any task that can be performed by a computer --- even the world's most largest supercomputer --- could be implemented by a Turing machine, which Joseph Weizenbaum called nothing more than "pebbles on toilet paper"[^weizenbaum].
-
-Two years before his untimely demise in 1954, Turing published his only paper on biochemistry, which addressed the question: “Why do zebras have stripes?”[^morphogenesis]
-
-Turing was not asking why zebras have *evolved* to have stripes --- this question was unsolved in Turing's time, and recent research has indicated that the stripes may be helpful in warding off flies.[^zebra] Rather, Turing was interested in what mechanism could produce the stripes that we see on a zebra's coat. And he reasoned that just as a simple machine can emulate a computer, some limited set of molecular "rules" could cause stripes to appear on a zebra's coat.
-
-In this prologue, we will introduce a particle simulation model based on Turing's ideas. We will be amazed that a system built on very simple rules and even *randomness* can nevertheless produce seemingly complex emergent behavior. And we will explore how this model can be tweaked to provide a hypothesis for the source of not just the zebra's stripes but also the leopard's spots.
+In this prologue, we will introduce a particle simulation model based on Turing's ideas. We will be see that a system built on very simple rules and even *randomness* can nevertheless produce emergent behavior that is complex and elegant. And we will explore how this model can be tweaked to provide a hypothesis for the origin of not just the zebra's stripes but also the leopard's spots.
 
 [Next lesson](random_walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

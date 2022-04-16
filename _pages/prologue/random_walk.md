@@ -8,17 +8,9 @@ toc_sticky: true
 image: "../assets/images/gray_scott_jupyter_high-res.png"
 ---
 
-## Life is random
-
-Everything in the universe ultimately depends on the interaction of tiny particles. Yet this fundamental truth is difficult to process when our experience of existence is guided by "macro" phenomena.
-
-You may feel like a single, coherent being, but you are just a skin-covered bag of trillions of cells that act largely independently. Over half of these cells aren't even yours! They correspond to bacteria that make up a couple of kilograms of your mass. What makes the whole affair even crueler is that your cellular symphony depends on the *random* movement of particles.
-
-Throughout this course, we will see that just because a system is driven by randomness and simple rules does not mean that it cannot have emergent behavior that is complex and elegant. Just like you.
-
 ## The wanderlust of a randomly walking particle
 
-Cells are full of **proteins**, complex macromolecules that perform nearly every cellular function. If a protein could move in a straight line, then it would move at 20 kph or faster[^machinery], but the cytoplasm that fills the cell is so densely packed with water molecules that the protein ping-pongs off them, frequently changing direction.
+You may feel like a single, coherent being, but you are in fact just a skin-covered bag of trillions of cells that act largely independently. Cells are full of **proteins**, complex macromolecules that perform nearly every cellular function. If a protein could move in a straight line, then it would move at 20 kph or faster[^machinery], meaning that the protein would cover a distance 1 billion times its length every second (analogous to a car traveling at 20 billion kph). However, the cytoplasm filling the cell is so densely packed with water molecules that the protein ping-pongs off them, frequently changing direction.
 
 We will model the movements of a cellular particle such as a protein by a **random walk** in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction. The video below shows a randomly walking particle taking 1000 steps.
 
@@ -28,18 +20,18 @@ The distance that the particle wanders from its starting point may surprise you.
 
 ## From one particle to many
 
-If we animate the action of many independent particles following random walks, then although some particles hug the starting point and some wind up far away, most particles steadily drift outward. The following video shows a simulation of 200 randomly walking particles.
+If we animate the action of many independent particles following random walks, then although some particles hug the starting point and some wind up far away, most particles steadily drift outward. The following video shows a simulation of multiple randomly walking particles that all begin their walk at the same point.
 
 {% include video id="U9uPFDBc0VY" provider="youtube" %}
 
-In fact, although the movements of a single particle are random, we can draw conclusions about the *average-case* behavior of many particles can be predicted, as the following theorem indicates.
+Although the movements of a single particle are random, we can draw conclusions about the *average-case* behavior of many particles can be predicted, as the following theorem indicates.
 
-**Random Walk Theorem:** After *n* steps of unit length in a random walk, a particle will on average find itself a distance of approximately $$\sqrt{n}$$ from its origin.
+**Random Walk Theorem:** After *n* steps of unit length in a random walk, a particle will on average find itself a distance from its origin that is proportional to $$\sqrt{n}$$.
 
 **Note:** If you love mathematics and are interested in seeing a proof of this theorem, click <a href="../assets/tex/random_walk_theorem.pdf" download>here</a>.
 {: .notice--info}
 
-Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less macabre example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
+Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less morbid example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
 
 If you are interested in seeing how to build the random walk simulation shown in the video above, then please visit the following software tutorial. This tutorial uses **CellBlender**, an add-on to the popular open graphics software program **Blender**, which allows us to create and visualize biological models. These models rely on particle-based reaction-diffusion simulations that are implemented by the program **MCell**. We will use this software for our work in biological modeling in this prologue as well as module 1.
 

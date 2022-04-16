@@ -4,32 +4,25 @@
 \renewcommand{\chaptertitle}{Finding Motifs in Transcription Factor Networks}
 \addcontentsline{cc}{chapter}{Chapter \thechapter} % Adds chapter number to table of contents
 
-
 \FloatBarrier
 
-\section{Turing and the Zebra’s Stripes}
+\section{Alan Turing and the Zebra’s Stripes}
 \label{sec:introduction}
 \phantomsection
 
-Our story begins with an unlikely character: Alan Turing. If you have heard of Turing, then you might be surprised that he would appear in the first sentence of a book on biological modeling.\\
+If you are familiar with Alan Turing, then you might be surprised that a famous computer scientist would appear in the first sentence of a book on biological modeling, since he is most famous for two other acts. In 1936, he theorized a computer (which came to be known as a ``Turing machine'') consisting of a tape of cells along with a machine that writes symbols on the tape according to a set of predetermined set of rules, a machine that is simple but nevertheless has been shown to be capable of solving any problem that a modern computer can solve.  And during World War II, he worked at Bletchley Park to devise machines that would be used to break several German ciphers.
 
-\begin{figure}[h]
-\centering
-\mySfFamily
-\includegraphics[width = 0.4\textwidth]{../images/alan_turing_npg_cc.jpg}
-\caption{Alan Turing in 1951. © National Portrait Gallery, London.}
-\label{fig:alan_turing_npg_cc}
-\end{figure}
+%\begin{figure}[h]
+%\centering
+%\mySfFamily
+%\includegraphics[width = 0.4\textwidth]{../images/alan_turing_npg_cc.jpg}
+%\caption{Alan Turing in 1951. © National Portrait Gallery, London.}
+%\label{fig:alan_turing_npg_cc}
+%\end{figure}
 
-Turing was a genius cryptographer who helped break several German ciphers during World War II. But his most famous scientific contribution was a 1936 paper in which he introduced what has come to be known as a \textdef{Turing machine}{Turing machine}{a hypothetical computer devised by Alan Turing in 1936 consisting of an infinitely long tape of cells and a reader that can read one cell at a time; each cell consists of only a single number, and the machine can move one cell at a time, reading and rewriting cells according to a finite collection of internal rules}. This hypothetical computer consists of an infinitely long tape of cells and a reader that can read one cell at a time. Each cell consists of only a single number, and the machine can move one cell at a time, reading and rewriting cells according to a finite collection of internal rules.
+In 1952, two years before his untimely demise, Turing published his only paper on biochemistry, which addressed the question: “Why do zebras have stripes?” He was not asking why zebras have \textit{evolved} to have stripes --- this question was unsolved in Turing's time, and recent research has indicated that the stripes may be helpful in warding off flies. Rather, Turing was interested in what biochemical mechanism could produce the stripes that we see on a zebra's coat. And he reasoned that just as a simple machine can emulate a computer, some limited set of molecular ``rules'' could cause stripes to appear on a zebra's coat.
 
-Turing's major insight was that this simple machine is nevertheless powerful. Nearly a century after his work, any task that can be performed by a computer --- even the world's most largest supercomputer --- could be implemented by a Turing machine, which Joseph Weizenbaum called nothing more than ``pebbles on toilet paper''.
-
-Two years before his untimely demise in 1954, Turing published his only paper on biochemistry, which addressed the question: “Why do zebras have stripes?”
-
-Turing was not asking why zebras have \textit{evolved} to have stripes --- this question was unsolved in Turing's time, and recent research has indicated that the stripes may be helpful in warding off flies. Rather, Turing was interested in what mechanism could produce the stripes that we see on a zebra's coat. And he reasoned that just as a simple machine can emulate a computer, some limited set of molecular ``rules'' could cause stripes to appear on a zebra's coat.
-
-In this chapter, we will introduce a particle simulation model based on Turing's ideas. We will be amazed that a system built on very simple rules and even \textit{randomness} can nevertheless produce seemingly complex emergent behavior. And we will explore how this model can be tweaked to provide a hypothesis for the source of not just the zebra's stripes but also the leopard's spots.\\
+In this chapter, we will introduce a particle simulation model based on Turing's ideas. We will see that a system built on very simple rules and even \textit{randomness} can nevertheless produce emergent behavior that is complex and elegant. And we will explore how this model can be tweaked to provide a hypothesis for the origin of not just the zebra's stripes but also the leopard's spots.\\
 
 \FloatBarrier
 \phantomsection
@@ -38,55 +31,32 @@ In this chapter, we will introduce a particle simulation model based on Turing's
 \label{sec:an_overview_of_random_walks}
 \phantomsection
 
-\subsection{Life is random}
+You may feel like a single, coherent being, but you are in fact just a skin-covered bag of trillions of cells --- about half of which are bacteria --- that act largely independently. These cells are full of \textdef{proteins}{protein}{a complex macromolecule formed of chain(s) of amino acids that perform nearly every cellular function}, complex macromolecules that perform nearly every cellular function. If a protein could move in a straight line, then it would move at 20 kph or faster, meaning that the protein would cover a distance 1 billion times its length every second (analogous to a car traveling at 20 billion kph). However, the cytoplasm filling the cell is so densely packed with water molecules that the protein ping-pongs off them, frequently changing direction.
 
-Everything in the universe ultimately depends on the interaction of tiny particles. Yet this fundamental truth is difficult to process when our experience of existence is guided by ``macro'' phenomena.
+We will model the movements of a cellular particle such as a protein by a \textdef{random walk}{random walk}{a model consisting of a sequence of steps in randomly chosen directions} in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction.
 
-You may feel like a single, coherent being, but you are just a skin-covered bag of trillions of cells that act largely independently. Over half of these cells aren't even yours! They correspond to bacteria that make up a couple of kilograms of your mass. What makes the whole affair even crueler is that your cellular symphony depends on the \textit{random} movement of particles.
-
-Throughout this book, we will see that just because a system is driven by randomness and simple rules does not mean that it cannot have emergent behavior that is complex and elegant. Just like you.
-
-\FloatBarrier
-\phantomsection
-\subsection{The wanderlust of randomly walking particles}
-
-Cells are full of \textdef{proteins}{protein}{a complex macromolecule formed of chain(s) of amino acids that perform nearly every cellular function}, complex macromolecules that perform nearly every cellular function. If a protein could move in a straight line, then it would move at 20 kph or faster, but the cytoplasm that fills the cell is so densely packed with water molecules that the protein ping-pongs off them, frequently changing direction.
-
-We will model the movements of a cellular particle such as a protein by a \textdef{random walk}{random walk}{a model consisting of a sequence of steps in randomly chosen directions} in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction. \autoref{fig:random_walk_one_particle} shows a randomly walking particle taking 1000 steps.\\
+If we animate the action of many independent particles following random walks, then although some particles hug the starting point and some wind up far away, most particles steadily drift outward. \autoref{fig:random_walk_multiple_particles} shows a simulation of multiple randomly walking particles that all begin their walk at the same point.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-FIGURE HERE
-\caption{Phillip will fill in caption.}
-\label{fig:random_walk_one_particle}
-\end{figure}
-
-The distance that the particle wanders from its starting point in \autoref{fig:random_walk_one_particle} may surprise you. And yet perhaps this particle is just an outlier, and the typical particle would be much more of a homebody.
-
-%\FloatBarrier
-%\phantomsection
-%\subsection{From one particle to many}
-
-If we animate the action of many independent particles following random walks, then although some particles hug the starting point and some wind up far away, most particles steadily drift outward. \autoref{fig:random_walk_multiple_particles} shows a simulation of 200 randomly walking particles.\\
-
-\begin{figure}[h]
-\centering
-\mySfFamily
-NEED FIGURE HERE
-\caption{Phillip will fill in caption.}
+\tabcolsep=1em
+\begin{tabular}{c c c c}
+\includegraphics[width=0.25\textwidth]{../images/random_walk_particles_1} & \includegraphics[width=0.25\textwidth]{../images/random_walk_particles_2} & \includegraphics[width=0.25\textwidth]{../images/random_walk_particles_4}\\
+\end{tabular}
+\caption{Three time points captured from an animation of randomly walking particles all starting at the origin. As time advances from left to right, the points tend to drift outward.}
 \label{fig:random_walk_multiple_particles}
 \end{figure}
 
-In fact, although the movements of a single particle are random, we can draw conclusions about the \textit{average-case} behavior of many particles can be predicted, as the following theorem indicates.
+Although the movements of a single particle are random, we can draw conclusions about the \textit{average-case} behavior of many particles can be predicted, as the following theorem indicates.
 
-\textbf{Random Walk Theorem:} After \textvar{n} steps of unit length in a random walk, a particle will on average find itself a distance of approximately $\sqrt{n}$ from its origin.\\
+\textbf{Random Walk Theorem:} After \textvar{n} steps of unit length in a random walk, a particle will on average find itself a distance from its origin that is proportional to $\sqrt{n}$.\\
 
 \begin{note}[%
-If you love mathematics and are interested in seeing a proof of this theorem, check out our website (link).
+For those who love mathematics, we provide a proof of this theorem in an appendix.
 ]\end{note}
 
-Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less macabre example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
+Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less morbid example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
 
 If you are interested in seeing how to build the random walk simulation shown in the video above, then please visit the following software tutorial. This tutorial uses \textdefnogloss{CellBlender}, an add-on to the popular open graphics software program  \textdefnogloss{Blender}, which allows us to create and visualize biological models. These models rely on particle-based reaction-diffusion simulations that are implemented by the program  \textdefnogloss{MCell}. We will use this software for our work in biological modeling in this chapter as well as \autoref{chapter:motifs}.\\
 
@@ -142,8 +112,11 @@ The three reactions defining our system are summarized by \autoref{fig:three_rea
 \begin{figure}[h]
 \centering
 \mySfFamily
-FIGURE HERE
-\caption{Visualization of our reaction-diffusion system. (Left) The system contains both types of particles and two collisions. (Right) Two of the A particles are fed into the system, two of the B particles die out, and a B particle replaces an A particle after the collision of three particles.}
+\tabcolsep=2em
+\begin{tabular}{c c}
+\includegraphics[width=0.35\textwidth]{../images/reaction-diffusion_three_reactions_before} & \includegraphics[width=0.35\textwidth]{../images/reaction-diffusion_three_reactions_after}\\
+\end{tabular}
+\caption{Visualization of our reaction-diffusion system. (Left) The system contains both types of particles and two collisions of particles. (Right) Two \textvar{A} particles are fed into the system, two of the \textvar{B} particles die out, and a \textvar{B} particle replaces an \textvar{A} particle after the collision of three particles.}
 \label{fig:three_reactions}
 \end{figure}
 
