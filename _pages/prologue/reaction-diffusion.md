@@ -81,11 +81,11 @@ For many parameter values, our reaction-diffusion system is not very interesting
 
 {% include video id="MOO0fmwoz7E" provider="youtube" %}
 
-On the other hand, if *f* is too high, then the increased feed rate will cause an increase in the concentration of *A* particles. However, the increased concentration of *A* particles will also cause more interactions between *A* particles and pairs of *B* particles, and so we will see an explosion in the number of predators. The following simulation has the parameters *f* = 1,000,000 and *k* = 100,000.
+On the other hand, if *f* is too high, then the increased feed rate will cause an increase in the concentration of *A* particles. However, the increased concentration of *A* particles will also cause more interactions between *A* particles and pairs of *B* particles, causing the concentration of *B* particles to explode. The following simulation has the parameters *f* = 1,000,000 and *k* = 100,000.
 
 {% include video id="ayvWHWBCg70" provider="youtube" %}
 
-The interesting behavior in this system lies in a sweet spot of the *f* and *k* parameters. For example, consider the following visualization when *f* is equal to 100,000 and *k* is equal to 200,000. We see a very clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where there is a critical mass of predators to interact with each other.
+The interesting behavior in this system lies in a sweet spot of the *f* and *k* parameters. For example, consider the following visualization when *f* is equal to 100,000 and *k* is equal to 200,000. We see a clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where a critical mass of predators can interact with each other.
 
 {% include video id="W_eCGTlgi4k" provider="youtube" %}
 
@@ -97,22 +97,22 @@ As *f* approaches *k*, the stripe structure becomes chaotic and breaks down beca
 
 {% include video id="CM0JUzRn4X8" provider="youtube" %}
 
-Once *f* is equal to *k*, the stripes disappear, as shown in the video below. We might expect this to mean that the *A* and *B* particles will be uniformly mixed. Instead, we see is that after an initial outward explosion of *B* particles, the system displays a mottled background, with pockets having higher or lower concentration of *B*. Pay attention to the following video at a point late in the animation. Although the concentrations of the particles are still changing, there is much less large-scale change than in earlier videos. If we freeze the video, our eye cannot help but see patterns of red and green clusters that resemble spots, or mottling.
+Once *f* is equal to *k*, the stripes disappear, as shown in the video below. We might expect this to mean that the *A* and *B* particles will be uniformly mixed. Instead, we see that after an initial outward explosion of *B* particles, the system displays a *mottled* background, with pockets having higher or lower concentration of *B*. Pay attention to the following video at a point late in the animation. Although the concentrations of the particles are still changing, there is much less large-scale change than in earlier videos. If we freeze the video, our eye cannot help but see patterns of red and green clusters that resemble mottling.
 
 {% include video id="Pva4e0w7i24" provider="youtube" %}
 
-You may still be skeptical, since the patterns in the above videos do not have the concrete boundaries that we might expect of animal stripes and spots. Yet when we closely examine an animal with skin patterns, we can see that the patterns we infer on a higher level are just the net result of many individual, varied points. The figure below shows an example of this effect for zebrafish skin.
+You may still be skeptical, since the patterns in the above videos do not have the concrete boundaries that we might expect of animal stripes and spots. Yet when we closely examine an animal with skin patterns, we can see that, like a pointillist painting, the patterns we infer on a higher level are just the net result of varied individual points. The figure below shows an example of this effect for zebrafish skin.
 
 [![image-center](../assets/images/600px/zebrafish_zoom.jpg){: .align-center}](../assets/images/zebrafish_zoom.jpg)
-Zooming in on the striped skin of a zebrafish shows that each stripe is formed of thousands of differently colored cells, and that the boundaries of the stripes are more variable than they may seem at lower resolution. Image courtesy: JenniferOwen, Wikimedia Commons (adapted by Kit Yates).
+Zooming in on the striped skin of a zebrafish shows that each stripe is formed of many differently colored cells, and that the boundaries of the stripes are more variable than they may seem at lower resolution. Image courtesy: JenniferOwen, Wikimedia Commons (adapted by Kit Yates).
 {: style="font-size: medium;"}
 
 
-## Turing's patterns and Klüver's hallucinations
+## Turing's patterns and Klüver's form constants
 
-When you watched the particle simulations above, an adjective that may have come to mind is "trippy". This is no accident.
+The particle simulations in the previous subsection may evoke the adjective "trippy". This is no accident.
 
-Research dating all the way back to the 1920s has studied the patterns that we see during visual hallucinations, which Heinrich Klüver named **form constants** after studying patients who had taken mescaline.[^kluver] Form constants, such as cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of their hallucinations.
+Research dating to the 1920s has studied the patterns that we see during visual hallucinations, which Heinrich Klüver named **form constants** after studying patients who had taken mescaline.[^kluver] Form constants, such as cobwebs, tunnels, and spirals, occur across many individuals, regardless of the cause of their hallucinations.
 
 [![image-center](../assets/images/600px/form_constants.png){: .align-center}](../assets/images/form_constants.png)
 A few of Heinrich Klüver's form constants. Image courtesy: Lisa Diez, Wikimedia Commons.
@@ -122,9 +122,9 @@ Over five decades after Klüver's work, researchers would determine that form co
 
 ## Streamlining our simulations
 
-Despite using advanced modeling and rendering software that has undergone years of development and optimization, each of the visualizations in this lesson took several hours to render. These simulations are computationally intensive because they require us to track the movement of tens of thousands of particles over thousands of generations.
+Despite using advanced modeling software that has undergone years of development and optimization, each of the simulations in this lesson took several hours to render because they require us to track the movement of tens of thousands of particles over thousands of generations.
 
-We wonder if it is possible to build a model of Turing patterns that does not require so much computational overhead. In other words, is there a simplification that we can make to our model that will run faster but still produce Turing patterns? We will turn our attention to this question in the next lesson.
+We wonder if it is possible to build a model of Turing patterns that does not require so much computational overhead. In other words, is there a simplifying speed-up that we can make to our model that will still produce Turing patterns? We will turn our attention to this question in the next lesson.
 
 [Next lesson](gray-scott){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

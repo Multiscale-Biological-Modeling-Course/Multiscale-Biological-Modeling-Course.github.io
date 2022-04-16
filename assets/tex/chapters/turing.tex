@@ -135,7 +135,7 @@ What will happen as we increase or decrease \textvar{f} or \textvar{k}?
 
 We will initiate our reaction-diffusion system with a uniform concentration of \textvar{A} particles spread across the grid and a tightly packed collection of \textvar{B} particles in the center of the grid. As the \textvar{B} particles diffuse, what will we see?\tutorial[https://biologicalmodeling.org/prologue/turing-cellblender]
 
-For many parameter values, our reaction-diffusion system is not very interesting. \autoref{fig:k=500000_f=1000} illustrates the result of a simulation using parameter rates in CellBlender of \textvar{f} = 1,000 and \textvar{k} = 500,000.  It shows that if the kill rate is too high, then the \textvar{B} particles (colored red) will die out more quickly than they can be replenished by the reaction with \textvar{A} particles (colored green), and so only \textvar{A} particles will remain.
+For many parameter values, our reaction-diffusion system is not very interesting. \autoref{fig:k=500000_f=1000} shows that if the kill rate is too high, then the \textvar{B} particles (colored red) will die out more quickly than they can be replenished by the reaction with \textvar{A} particles (colored green), and so only \textvar{A} particles will remain.
 
 \begin{figure}[h]
 \centering
@@ -144,11 +144,11 @@ For many parameter values, our reaction-diffusion system is not very interesting
 \includegraphics[width = 0.2\textwidth]{../images/predator_prey_predator_dies_f1e1_r5e5.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_predator_dies_f1e1_r5e5_i1.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_predator_dies_f1e1_r5e5_i2.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_predator_dies_f1e1_r5e5_i3.png}\\[2ex]
 \includegraphics[width = 0.2\textwidth]{../images/predator_prey_predator_dies_f1e1_r5e5_i4.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_predator_dies_f1e1_r5e5_i5.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_predator_dies_f1e1_r5e5_i6.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_predator_dies_f1e1_r5e5_i7.png}
 \end{tabular}
-\caption{CAPTION NEEDED}
+\caption{An eight-panel animation of a CellBlender simulation of our reaction-diffusion system using the parameter rates \textvar{f} = 1,000 and \textvar{k} = 500,000. As the animation proceeds (from top left to bottom right), small pockets of \textvar{B} particles form, but they die out more quickly than they can be replenished, leaving only \textvar{A} particles.}
 \label{fig:k=500000_f=1000}
 \end{figure}
 
-On the other hand, if \textvar{f} is too high, then the increased feed rate will cause an increase in the concentration of \textvar{A} particles. However, the increased concentration of \textvar{A} particles will also cause more interactions between \textvar{A} particles and pairs of \textvar{B} particles, and so we will see an explosion in the number of predators. \autoref{fig:k=100000_f=1000000} has the parameters \textvar{f} = 1,000,000 and \textvar{k} = 100,000.
+On the other hand, \autoref{fig:k=100000_f=1000000} shows that if \textvar{f} is too high, then the increased feed rate will cause an increase in the concentration of \textvar{A} particles. However, the increased concentration of \textvar{A} particles will also cause more interactions between \textvar{A} particles and pairs of \textvar{B} particles, causing the concentration of \textvar{B} particles to explode.
 
 \begin{figure}[h]
 \centering
@@ -157,11 +157,11 @@ On the other hand, if \textvar{f} is too high, then the increased feed rate will
 \includegraphics[width = 0.2\textwidth]{../images/predator_prey_f1e6_d1e5.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_f1e6_d1e5_i1.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_f1e6_d1e5_i2.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_f1e6_d1e5_i3.png}\\[2ex]
 \includegraphics[width = 0.2\textwidth]{../images/predator_prey_f1e6_d1e5_i4.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_f1e6_d1e5_i5.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_f1e6_d1e5_i6.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_f1e6_d1e5_i7.png}
 \end{tabular}
-\caption{CAPTION NEEDED}
+\caption{An animation of a CellBlender simulation of our reaction-diffusion system using the parameter rates \textvar{f} = 1,000,000 and \textvar{k} = 100,000. Because of the high feed rate and low kill rate, the ``predator'' \textvar{B} particles expand rapidly and achieve higher concentration than the \textvar{A} particles across the system.}
 \label{fig:k=100000_f=1000000}
 \end{figure}
 
-The interesting behavior in this system lies in a sweet spot of the \textvar{f} and \textvar{k} parameters. For example, consider \autoref{fig:k=200000_f=100000}, which shows \textvar{f} is equal to 100,000 and \textvar{k} is equal to 200,000. We see a very clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where there is a critical mass of predators to interact with each other.
+The interesting behavior in this system lies in a sweet spot in which the \textvar{f} and \textvar{k} parameters are closer to each other. With such a simulation, \autoref{fig:k=200000_f=100000} shows a clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where a critical mass of predators can interact with each other.
 
 \begin{figure}[h]
 \centering
@@ -170,11 +170,11 @@ The interesting behavior in this system lies in a sweet spot of the \textvar{f} 
 \includegraphics[width = 0.2\textwidth]{../images/predator_prey_11_by_11_f_1_k_2.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_2_i1.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_2_i2.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_2_i3.png}\\[2ex]
 \includegraphics[width = 0.2\textwidth]{../images/predator_prey_11_by_11_f_1_k_2_i4.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_2_i5.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_2_i6.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_2_i7.png}
 \end{tabular}
-\caption{CAPTION NEEDED}
+\caption{An animation of a CellBlender simulation of our reaction-diffusion system using the parameter rates \textvar{f} = 100,000 and \textvar{k} = 200,000. For these ``sweet spot'' parameters, we see expanding stripes of \textvar{B} particles.}
 \label{fig:k=200000_f=100000}
 \end{figure}
 
-When we hold \textvar{k} fixed and increase \textvar{f} to 140,000, the higher feed rate increases the likelihood of \textvar{B} particles encountering \textvar{A} particles, and so we see even more stripes of \textvar{B} particles (\autoref{fig:k=200000_f=140000}).
+When we hold \textvar{k} fixed and start to increase \textvar{f}, the higher feed rate increases the likelihood of \textvar{B} particles encountering \textvar{A} particles, and so we see even more stripes of \textvar{B} particles (\autoref{fig:k=200000_f=140000}).
 
 \begin{figure}[h]
 \centering
@@ -183,11 +183,11 @@ When we hold \textvar{k} fixed and increase \textvar{f} to 140,000, the higher f
 \includegraphics[width = 0.2\textwidth]{../images/predator_prey_11_by_11_f_1.4_k_2.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1.4_k_2_i1.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1.4_k_2_i2.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1.4_k_2_i3.png}\\[2ex]
 \includegraphics[width = 0.2\textwidth]{../images/predator_prey_11_by_11_f_1.4_k_2_i4.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1.4_k_2_i5.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1.4_k_2_i6.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1.4_k_2_i7.png}
 \end{tabular}
-\caption{CAPTION NEEDED}
+\caption{An animation of a CellBlender simulation of our reaction-diffusion system using the parameter rates \textvar{f} = 140,000 and \textvar{k} = 200,000. Because \textvar{f} has increased relative to \textvar{k} compared to \autoref{fig:k=200000_f=100000}, we see even more stripes of \textvar{B} particles.}
 \label{fig:k=200000_f=140000}
 \end{figure}
 
-As \textvar{f} approaches \textvar{k}, the stripe structure becomes chaotic and breaks down because there are now many clusters of \textvar{B} particles colliding and mix with each other. \autoref{fig:k=200000_f=175000} shows the result of raising \textvar{f} to 175,000.\\
+As \textvar{f} continues to increase, the stripe structure becomes chaotic and breaks down because there are now many clusters of \textvar{B} particles colliding and mix with each other (\autoref{fig:k=200000_f=175000}).
 
 \begin{figure}[h]
 \centering
@@ -196,11 +196,11 @@ As \textvar{f} approaches \textvar{k}, the stripe structure becomes chaotic and 
 \includegraphics[width = 0.2\textwidth]{../images/predator_prey_11_by_11_f_1.75_k_2_new.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1.75_k_2_new_i1.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1.75_k_2_new_i2.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1.75_k_2_new_i3.png}\\[2ex]
 \includegraphics[width = 0.2\textwidth]{../images/predator_prey_11_by_11_f_1.75_k_2_new_i4.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1.75_k_2_new_i5.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1.75_k_2_new_i6.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1.75_k_2_new_i7.png}
 \end{tabular}
-\caption{CAPTION NEEDED}
+\caption{An animation of a CellBlender simulation of our reaction-diffusion system using the parameter rates \textvar{f} = 175,000 and \textvar{k} = 200,000. There are so many pockets of \textvar{B} particles that the stripe patterns start to break down.}
 \label{fig:k=200000_f=175000}
 \end{figure}
 
-Once \textvar{f} is equal to \textvar{k}, the stripes disappear (\autoref{fig:k=100000_f=100000}). We might expect this to mean that the \textvar{A} and \textvar{B} particles will be uniformly mixed. Instead, we see is that after an initial outward explosion of \textvar{B} particles, the system displays a mottled background, with pockets having higher or lower concentration of \textvar{B}. Our eye cannot help but see patterns of red and green clusters that resemble spots, or mottling.\\
+A subsequent increase in \textvar{f} causes the stripes to disappear (\autoref{fig:k=100000_f=100000}). We might expect this to mean that the \textvar{A} and \textvar{B} particles will be uniformly mixed. Instead, we see that after an initial outward explosion of \textvar{B} particles, the system displays a \textit{mottled} background, with clusters having higher or lower concentration of \textvar{B}.
 
 \begin{figure}[h]
 \centering
@@ -209,27 +209,27 @@ Once \textvar{f} is equal to \textvar{k}, the stripes disappear (\autoref{fig:k=
 \includegraphics[width = 0.2\textwidth]{../images/predator_prey_11_by_11_f_1_k_1.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_1_i1.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_1_i2.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_1_i3.png}\\[2ex]
 \includegraphics[width = 0.2\textwidth]{../images/predator_prey_11_by_11_f_1_k_1_i4.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_1_i5.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_1_i6.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_1_i7.png}
 \end{tabular}
-\caption{CAPTION NEEDED}
+\caption{An animation of a CellBlender simulation of our reaction-diffusion system using the parameter rates \textvar{f} = 100,000 and \textvar{k} = 100,000. Now that the feed rate is equal to the kill rate, after an initial wave of \textvar{B} particles, the \textvar{B} particles form so many clusters that they produce a mottling effect.}
 \label{fig:k=100000_f=100000}
 \end{figure}
 
-You may still be skeptical, since the patterns in the above videos do not have the concrete boundaries that we might expect of animal stripes and spots. Yet when we closely examine an animal with skin patterns, we can see that the patterns we infer on a higher level are just the net result of many individual, varied points.  \autoref{fig:zebrafish_zoom} illustrates this effect for zebrafish skin.\\
+You may still be skeptical, since the patterns in these figures do not have the concrete boundaries that we might expect of animal stripes and spots. Yet when we closely examine an animal with skin patterns, we can see that, like a pointillist painting, the patterns we infer on a higher level are just the net result of varied individual points (\autoref{fig:zebrafish_zoom}).\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.6\textwidth]{../images/zebrafish_zoom.jpg}
-\caption{Zooming in on the striped skin of a zebrafish shows that each stripe is formed of thousands of differently colored cells, and that the boundaries of the stripes are more variable than they may seem at lower resolution.}
+\caption{Zooming in on the striped skin of a zebrafish shows that each stripe is formed of many differently colored cells, and that the boundaries of the stripes are more variable than they may seem at lower resolution.}
 \label{fig:zebrafish_zoom}
 \end{figure}
 
 \FloatBarrier
 \phantomsection
-\subsection{Turing's patterns and Klüver's hallucinations}
+\subsection{Turing's patterns and Klüver's form constants}
 
-When you see the particle simulations in the previous section, an adjective that may have come to mind is ``trippy''. This is no accident.
+The particle simulations in the previous subsection may evoke the adjective ``trippy''. This is no accident.
 
-Research dating all the way back to the 1920s has studied the patterns that we see during visual hallucinations, which Heinrich Klüver named \textdef{form constants}{form constants}{patterns seen during visual hallucinations, which recur across patients and were first studied by Heinrich Klüver in the 1920s} after studying patients who had taken mescaline. Form constants, such as cobwebs, tunnels, and spirals, occur across many individuals regardless of the cause of their hallucinations (\autoref{fig:form_constants}).\\
+Research dating to the 1920s has studied the patterns that we see during visual hallucinations, which Heinrich Klüver named \textdef{form constants}{form constants}{patterns seen during visual hallucinations, which recur across patients and were first studied by Heinrich Klüver in the 1920s} after studying patients who had taken mescaline. Form constants, such as cobwebs, tunnels, and spirals, occur across many individuals, regardless of the cause of their hallucinations (\autoref{fig:form_constants}).\\
 
 \begin{figure}[h]
 \centering
@@ -239,98 +239,82 @@ Research dating all the way back to the 1920s has studied the patterns that we s
 \label{fig:form_constants}
 \end{figure}
 
-Over five decades after Klüver's work, researchers would determine that form constants having different shapes originate from simpler \textit{linear} stripes of cellular activation patterns in the retina. The retina is circular, but the brain needs to convert this cellular image into a rectangular field of view; as a result, when the linear patterns are passed to the visual cortex, the hallucinating brain contorts them into the spirals and whirls that we see. Some researchers believe that the patterns in the retina caused by hallucinations are in fact Turing patterns and can be explained by a reaction-diffusion model in which one type of neuron acts as a predator and another acts as prey.
+Over five decades after Klüver's work, researchers would determine that form constants having different shapes originate from simpler \textit{linear} stripes of cellular activation patterns in the retina. The retina is circular, but the brain needs to convert this cellular image into a rectangular field of view; as a result, when the linear patterns are passed to the visual cortex, the hallucinating brain contorts them into the spirals and whirls that we see. Some researchers believe that the patterns in the retina caused by hallucinations are in fact Turing patterns and can be explained by a reaction-diffusion model in which one type of neuron acts as a predator and another acts as prey.\\
 
 \FloatBarrier
 \phantomsection
-\subsection{Streamlining our simulations}
+\section{A Coarse-Grained Model of Particle Diffusion}
+\label{sec:coarse_grained_diffusion}
 
-Despite using advanced modeling and rendering software that has undergone years of development and optimization, each of the visualizations in this section took several hours to render. These simulations are computationally intensive because they require us to track the movement of tens of thousands of particles over thousands of generations.
-
-We wonder if it is possible to build a model of Turing patterns that does not require so much computational overhead. In other words, is there a simplification that we can make to our model that will run faster but still produce Turing patterns? We will turn our attention to this question in the next section.\\
-
-\FloatBarrier
 \phantomsection
+\subsection{Diffusion of a single particle}
 
-\section{The Gray-Scott Model: A Turing Pattern Cellular Automaton}
-\label{sec:the_gray-scott_model:_a_turing_pattern_cellular_automaton}
-\phantomsection
+Despite using advanced modeling software that has undergone years of development and optimization, each of the simulations in the previous section took several hours to render. Part of a modeler's job is to find simple models that capture the essence of a system while running quickly and scaling well to larger inputs. Is there a simplifying speed-up that we can make to our model that will still produce Turing patterns?
 
-\subsection{A coarse-grained model of single particle diffusion}
+We have a very ``fine-grained'' reaction-diffusion model illustrating Turing patterns, but this model consumes a huge amount of computational resources because it requires tracking the movements of hundreds of thousands of individual particles. Our goal is to build a ``coarse-grained'' model that will allow us to appreciate Turing patterns without the computational overhead required to track particles.
 
-Part of a modeler's job is to find simple models that capture the essence of a system while running quickly and scaling well to larger inputs.
+Our idea is to grid off two-dimensional space into blocks and store only the \textit{concentration} of each type of particle found inside the block. To simplify things further, we assume that there is some maximum concentration of particles possible, so that we can divide the number of particles by this maximum concentration. As a result, the concentration of a particle in each block will be represented by a decimal number between 0 and 1.
 
-In our case, we have a very ``fine-grained'' reaction-diffusion model illustrating Turing patterns, but this model consumes a huge amount of computational resources because it requires tracking the movements of hundreds of thousands of individual particles. Our goal is to build a model that will allow us to appreciate Turing patterns without significant computational overhead.
-
-Our idea is to grid off two-dimensional space into blocks and store only the \textit{concentration} of each type of particle found inside the block. To make things even simpler, we assume that there is some maximum concentration of particles possible, so that we can divide the number of particles by this maximum concentration. As a result, the concentration of a particle in each block will be represented by a decimal number between 0 and 1.
-
-Let us begin with an example of the diffusion of only \textvar{A} particles; we will later add \textvar{B} particles as well as reactions to our model. Say that the particles are at maximum concentration in the central cell of our grid and are present nowhere else, as shown in \autoref{fig:initial_A_concentration}.\\
+Let us begin with an example of the diffusion of only \textvar{A} particles; we will later add \textvar{B} particles as well as reactions to our model. Say that the particles are at maximum concentration in the central cell of our grid and are present nowhere else (\autoref{fig:initial_A_concentration_one_time_step} (left)).\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.4\textwidth]{../images/initial_A_concentration.png}
-\caption{A $\text{5} \times \text{5}$ grid showing hypothetical initial concentrations of \textvar{A} particles. Cells are labeled by numbers between 0 and 1 representing their concentration of \textvar{A} particles. The central cell has maximum concentration, and no particles are contained in any other cell.}
-\label{fig:initial_A_concentration}
+\tabcolsep = 2em
+\begin{tabular}{c c}
+\includegraphics[width = 0.35\textwidth]{../images/initial_A_concentration.png} & \includegraphics[width = 0.35\textwidth]{../images/A_concentration_one_time_step.png}
+\end{tabular}
+\caption{(Left) A $\text{5} \times \text{5}$ grid showing hypothetical initial concentrations of \textvar{A} particles. Cells are labeled by numbers between 0 and 1 representing their concentration of \textvar{A} particles. The central cell has maximum concentration, and no particles are contained in any other cell. (Right) An updated grid following diffusion of particles after a single time step.}
+\label{fig:initial_A_concentration_one_time_step}
 \end{figure}
 
-We will now update the grid of cells after one time step to mimic particle diffusion. To do so, we will spread out the concentration of particles in each square to its eight neighbors. For example, we could assume that 20\% of the current cell's concentration diffuses to each of its four adjacent neighbors, and that 5\% of the cell's concentration diffuses to its four diagonal neighbors. Because the central square in our ongoing example is the only cell with any particles, the updated concentrations after a single time step are shown in \autoref{fig:A_concentration_one_time_step}.\\
-
-\begin{figure}[h]
-\centering
-\mySfFamily
-\includegraphics[width = 0.4\textwidth]{../images/A_concentration_one_time_step.png}
-\caption{A grid showing an update to the system in \autoref{fig:initial_A_concentration} after diffusion of particles after a single time step.}
-\label{fig:A_concentration_one_time_step}
-\end{figure}
+We will now update the grid of cells after one time step to mimic particle diffusion. To do so, we will spread out the concentration of particles in each square to its eight neighbors. For example, we could assume that 20\% of the current cell's concentration diffuses to each of its four adjacent neighbors, and that 5\% of the cell's concentration diffuses to its four diagonal neighbors. Because the central square in our ongoing example is the only cell with any particles, only its neighbors will receive any particles after a single time step (\autoref{fig:initial_A_concentration_one_time_step} (right)).\\
 
 \begin{note}[%
-The sum of the values in the grid in \autoref{fig:A_concentration_one_time_step} is 1, which is the same as the sum of the values in our original figure. Regardless of how many times we update the grid, the sum of the values should be 1 to ensure the conservation of total mass in the system.
+The sum of the values in each grid in \autoref{fig:initial_A_concentration_one_time_step} is 1. Regardless of how many times we update the grid, the sum of the values should be 1 to ensure the conservation of total mass in the system.
 ]\end{note}
 
-After an additional time step, the particles continue to diffuse outward. For example, each diagonal neighbor of the central cell in the above figure, which has a concentration of 0.05 after one time step, will lose all of its particles in the following step. Each of these cells will also gain 20\% of the particles from two of its adjacent neighbors, along with 5\% of the particles from the central square (which doesn't have any particles). This makes the updated concentration of this cell after two time steps equal to 2(0.2)(0.2) + 0.05(0) = 0.08.
+After an additional time step (\autoref{fig:A_concentration_two_time_steps_partial}), the particles continue to diffuse outward. For example, each diagonal neighbor of the central cell in the above figure, which has a concentration of 0.05 after one time step, will lose all of its particles in the following step. Each of these cells will also gain 20\% of the particles from two of its adjacent neighbors, along with 5\% of the particles from the central square (which doesn't have any particles). This makes the updated concentration of this cell after two time steps equal to $2 \cdot 0.2 \cdot 0.2 + 0.05 \cdot 0 = 0.08$.
 
-The four cells directly adjacent to the central square, which have a concentration of 0.2 after one time step, will also gain particles from their neighbors. Each such cell will receive 20\% of the particles from two of its adjacent neighbors and 5\% of the particles from two of its diagonal neighbors, which have a concentration of 0.2. Therefore, the updated concentration of each of these cells after two time steps is 2(0.2)(0.05) + 2(0.05)(0.2) = 0.02 + 0.02 = 0.04.
+The four cells directly adjacent to the central square, which have a concentration of 0.2 after one time step, will also gain particles from their neighbors. Each such cell will receive 20\% of the particles from two of its adjacent neighbors and 5\% of the particles from two of its diagonal neighbors, which have a concentration of 0.2. Therefore, the updated concentration of each of these cells after two time steps is $2 \cdot 0.2 \cdot 0.05 + 2 \cdot 0.05 \cdot 0.2 = 0.04$.
 
-Finally, the central square has no particles after one step, but it will receive 20\% of the particles from each of its four adjacent neighbors, as well as 5\% of the particles from each of its four diagonal neighbors. As a result, the central square's concentration after two time steps is 4(0.2)(0.2) + 4(0.05)(0.05) = 0.16 + 0.01 = 0.17.
-
-In summary, the central nine squares after two time steps are as shown in \autoref{fig:A_concentration_two_time_steps_partial}.\\
+Finally, the central square has no particles after one step, but it will receive 20\% of the particles from each of its four adjacent neighbors, as well as 5\% of the particles from each of its four diagonal neighbors. As a result, the central square's concentration after two time steps is $4 \cdot 0.2 \cdot 0.2 + 4 \cdot 0.05 \cdot 0.05 = 0.16 + 0.01 = 0.17$.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.4\textwidth]{../images/A_concentration_two_time_steps_partial.png}
-\caption{A grid showing an update to the central nine squares of the diffusion system in \autoref{fig:A_concentration_one_time_step} after an additional time step. The cells labeled ``?'' are left as an exercise for the reader.}
+\includegraphics[width = 0.35\textwidth]{../images/A_concentration_two_time_steps_partial.png}
+\caption{A grid showing an update to the central nine squares of the diffusion system in \autoref{fig:initial_A_concentration_one_time_step} after an additional time step. The cells labeled ``?'' are left as an exercise for the reader.}
 \label{fig:A_concentration_two_time_steps_partial}
 \end{figure}
 
 \begin{qbox}[%
-What should the values of the ``?'' cells be in \autoref{fig:A_concentration_two_time_steps_partial}? Note that these cells are neighbors of cells with positive concentrations after one time step, so their concentrations should be positive after two time steps.
+What should the values of the ``?'' cells be in \autoref{fig:A_concentration_two_time_steps_partial}? Note that these cells are neighbors of cells with positive concentrations after one time step, and so their concentrations should be positive after two time steps.
 ]\end{qbox}
 
 The coarse-grained model of particle diffusion that we have built is a variant of a \textdef{cellular automaton}{cellular automaton}{a grid of cells in which we use fixed rules to update the status of a cell based on its current status and those of its neighbors}, or a grid of cells in which we use fixed rules to update the status of a cell based on its current status and those of its neighbors.\\
 
 \begin{note}[%
-Cellular automata form a rich area of research applied to a wide variety of fields dating back to the middle of the 20th Century; if you are interested in learning more about them from the perspective of programming, then you might like to check out the Programming for Lovers project (link).
+Cellular automata form a rich area of research applied to a wide variety of fields dating back to the middle of the 20th Century; if you are interested in learning more about them from the perspective of programming, then you might like to check out the Programming for Lovers project (\url{http://programmingforlovers.com}).
 ]\end{note}
 
 \FloatBarrier
 \phantomsection
-\subsection{Slowing down the rate of diffusion}
+\subsection{Slowing down the diffusion rate}
 
-There is just one problem. Our cellular automaton model of diffusion is too volatile! 
-Recall that \autoref{fig:initial_A_concentration}, \autoref{fig:A_concentration_one_time_step}, and
+There is just one problem: our cellular automaton model of diffusion is too volatile! 
+\autoref{fig:initial_A_concentration_one_time_step}, and
 \autoref{fig:A_concentration_two_time_steps_partial} showed an initial automaton as well as its updates after each of two time steps. In a true diffusion process, all of the particles would not rush out of the central square in a single time step, only for some of them to return in the next step.
 
 Our solution is to slow down the diffusion process by adding a parameter $d_A$ between 0 and 1 that represents the \textit{rate} of diffusion of \textvar{A} particles. Instead of moving a cell's entire concentration of particles to its neighbors in a single time step, we move only a fraction $d_A$ of them.
 
-Revisiting our original example from \autoref{fig:initial_A_concentration}, say that $d_A$ is equal to 0.2. After the first time step, only 20\% of the central cell's particles will be spread to its neighbors. Of these particles, 5\% will be spread to diagonal neighbors, and 20\% will be spread to adjacent neighbors. \autoref{fig:A_concentration_slower_diffusion} illustrates that after one time step, the central square has concentration 0.8, its adjacent neighbors have concentration $0.2 \cdot d_A = 0.04$, and its diagonal neighbors have concentration $0.05 \cdot d_A = 0.01$.\\
+Revisiting our original example of a single central cell containing a maximum concentration of $A$ particles, say that $d_A$ is equal to 0.2. After the first time step, only 20\% of the central cell's particles will be spread to its neighbors. Of these particles, 5\% will be spread to diagonal neighbors, and 20\% will be spread to adjacent neighbors. \autoref{fig:A_concentration_slower_diffusion} illustrates that after one time step, the central square has concentration 0.8, its adjacent neighbors have concentration $0.2 \cdot d_A = 0.04$, and its diagonal neighbors have concentration $0.05 \cdot d_A = 0.01$.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.4\textwidth]{../images/A_concentration_slower_diffusion.png}
-\caption{An updated grid of cells for the initial grid in \autoref{fig:initial_A_concentration} showing the concentration of \textvar{A} particles after one time step if $\textvar{d}_\textvar{A} = \text{0.2}$.}
+\includegraphics[width = 0.35\textwidth]{../images/A_concentration_slower_diffusion.png}
+\caption{An updated grid of cells for the initial grid in \autoref{fig:initial_A_concentration_one_time_step} (left) showing the concentration of \textvar{A} particles after one time step if $\textvar{d}_\textvar{A} = \text{0.2}$.}
 \label{fig:A_concentration_slower_diffusion}
 \end{figure}
 
@@ -343,7 +327,7 @@ We now will add particle \textvar{B} to the simulation, which also starts with 1
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.4\textwidth]{../images/two_particle_concentration_diffusion.png}
+\includegraphics[width = 0.35\textwidth]{../images/two_particle_concentration_diffusion.png}
 \caption{The cellular concentrations after one time step for two particles \textvar{A} and \textvar{B} that start at maximum concentration in the central square and diffuse at rates $\textvar{d}_\textvar{A} = \text{0.2}$ and $\textvar{d}_\textvar{B} = \text{0.1}$. Each cell is labeled by the ordered pair $([\textvar{A}], [\textvar{B}])$.}
 \label{fig:two_particle_concentration_diffusion}
 \end{figure}
@@ -354,7 +338,7 @@ Update the cells in \autoref{fig:two_particle_concentration_diffusion} after ano
 
 \FloatBarrier
 \phantomsection
-\subsection{Visualizing particle concentrations}
+\subsection{Visualizing particle concentrations in an automaton}
 
 As we move toward diffusing a large board that is hundreds of cells wide, listing the concentrations of our two particles in each cell will be too much to process. Instead, we need some way to visualize the results of our diffusion simulation.
 
@@ -370,9 +354,9 @@ Next, we color each cell in the grid according to its value of $[\textvar{B}]/([
 \label{fig:matplotlib_colormap}
 \end{figure}
 
-When we color each cell over many time steps, we can animate the automaton to see how it changes over time. We are now ready for the following tutorial, in which we will implement and visualize our diffusion automaton using a \textdefnogloss{Jupyter notebook}.
+When we color each cell over many time steps, we can animate the automaton to see how it changes over time.\tutorial[https://biologicalmodeling.org/prologue/tutorial-diffusion]
 
-\tutorial[https://biologicalmodeling.org/prologue/tutorial-diffusion]
+
 
 \autoref{fig:diffusion_movie_still} shows an animation of a 101 x 101 board that begins with the following properties:
 \begin{itemize}
@@ -393,7 +377,12 @@ When we color each cell over many time steps, we can animate the automaton to se
 \label{fig:diffusion_movie_still}
 \end{figure}
 
-Note that the center of the cell becomes blue because the \textvar{A} particles diffuse twice as fast, so that they spread out more from the middle of the board, which is occupied in greater numbers by \textvar{B} particles.
+Note that the center of the cell becomes blue because the \textvar{A} particles diffuse twice as fast, so that they spread out more from the middle of the board, which is occupied in greater numbers by \textvar{B} particles.\\
+
+\FloatBarrier
+\phantomsection
+\section{The Gray-Scott Model: A Turing Pattern Cellular Automaton}
+\label{sec:the_gray-scott_model:_a_turing_pattern_cellular_automaton}
 
 \FloatBarrier
 \phantomsection
@@ -447,15 +436,13 @@ As the result of all these processes, we update the concentrations of \textvar{A
 [B]_{\text{new}} & = 0.5 + 0.01 - 0.2 + 0.175 = 0.485
 \end{align*}
 
-We should now feel ready to implement the Gray-Scott model in the following tutorial. The question is: even though we have built a coarser-grained simulation than the previous section, will we still see Turing patterns?
-
-\tutorial[https://biologicalmodeling.org/prologue/gs-jupyter]
+We should now feel ready to implement the Gray-Scott model. The question is: even though we have built a coarser-grained simulation than the previous section, will we still see Turing patterns?
 
 \FloatBarrier
 \phantomsection
 \subsection{Reflection on the Gray-Scott model}
 
-In contrast to our particle-based simulator, the Gray-Scott model produced an animation of Turing patterns in under a minute on a laptop. We show the results of this model in the videos that follow; throughout these animations, we use the parameters $d_A = 0.5$, $d_B = 0.25$, and $r = 1$.
+In contrast to our particle-based simulator, the Gray-Scott model produced an animation of Turing patterns in under a minute on a laptop. We show the results of this model in the videos that follow; throughout these animations, we use the parameters $d_A = 0.5$, $d_B = 0.25$, and $r = 1$.\tutorial[https://biologicalmodeling.org/prologue/gs-jupyter]
 
 \autoref{fig:gray-scott_movie_first_frame} shows an animation of the Gray-Scott model using the parameters  $f = 0.034$ and $k = 0.100$. We use the same initial configuration of the automaton that we used in the diffusion example, in which a cluster of \textvar{B} particles are found at the middle of a board full of \textvar{A} particles.\\
 
