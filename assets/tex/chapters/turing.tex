@@ -35,7 +35,8 @@ You may feel like a single, coherent being, but you are in fact just a skin-cove
 
 We will model the movements of a cellular particle such as a protein by a \textdef{random walk}{random walk}{a model consisting of a sequence of steps in randomly chosen directions} in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction.
 
-If we animate the action of many independent particles following random walks, then although some particles hug the starting point and some wind up far away, most particles steadily drift outward. \autoref{fig:random_walk_multiple_particles} shows a simulation of multiple randomly walking particles that all begin their walk at the same point.\\
+If we animate the action of many independent particles following random walks, then although some particles hug the starting point and some wind up far away, most particles steadily drift outward. \autoref{fig:random_walk_multiple_particles} shows a simulation of multiple randomly walking particles that all begin their walk at the same point and that \textdef{diffuse}{diffusion}{the movement of particles due to random motion from an area of higher concentration to lower concentration as the particles spread out} throughout their environment.\tutorial[https://biologicalmodeling.org/prologue/tutorial-random-walk]
+\\
 
 \begin{figure}[h]
 \centering
@@ -50,23 +51,17 @@ If we animate the action of many independent particles following random walks, t
 
 Although the movements of a single particle are random, we can draw conclusions about the \textit{average-case} behavior of many particles can be predicted, as the following theorem indicates.
 
-\textbf{Random Walk Theorem:} After \textvar{n} steps of unit length in a random walk, a particle will on average find itself a distance from its origin that is proportional to $\sqrt{n}$.\\
+\begin{namedtheorem}[Random Walk]
+After \textvar{n} steps of unit length in a random walk, a particle will on average find itself a distance from its origin that is proportional to $\sqrt{n}$.
+\end{namedtheorem}
+
+\fudgespace
 
 \begin{note}[%
-For those who love mathematics, we provide a proof of the Random Walk Theorem in an appendix.
+For readers who love mathematics, we provide a proof of the Random Walk Theorem in an appendix.
 ]\end{note}
 
-Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less morbid example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
-
-If you are interested in seeing how to build the random walk simulation shown in the video above, then please visit the following software tutorial. This tutorial uses \textdefnogloss{CellBlender}, an add-on to the popular open graphics software program  \textdefnogloss{Blender}, which allows us to create and visualize biological models. These models rely on particle-based reaction-diffusion simulations that are implemented by the program  \textdefnogloss{MCell}. We will use this software for our work in biological modeling in this chapter as well as \autoref{chapter:motifs}.\\
-
-\begin{note}[%
-We have designed this book so that you can appreciate the key ideas behind the biological models that we build without following software tutorials. But we also provide these tutorials so that you can explore the modeling software that we have used to generate our conclusions.
-]\end{note}
-
-\tutorial[https://biologicalmodeling.org/prologue/tutorial-random-walk]
-
-Why should scientists care about random walks? Later in this book, we will see that random walks power a simple but powerful approach that bacteria like \textit{E. coli} use to explore their environment in the hunt for food. In the next section, we will see that randomly moving particles serve can produce high-level patterns if the particles interact when they collide.\\
+Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that someone who has a respiratory virus can infect many others in an enclosed space in a short time frame. To take a less morbid example, we also know that when a cake is baking in the oven, we will not need to wait long for delicious smells to waft outward from the kitchen. But what does all this have to do with Alan Turing and Zebra stripes?\\
 
 \FloatBarrier
 \phantomsection
@@ -77,37 +72,31 @@ Why should scientists care about random walks? Later in this book, we will see t
 
 \subsection{From random walks to reaction-diffusion}
 
-In the previous section, we introduced the model of a particle randomly walking through a medium. But what exactly do random walks have to do with Alan Turing and zebras?
-
-Turing's insight was that remarkable high-level patterns could arise if we combine particle diffusion with a chemical reaction in which colliding particles interact with each other. Such a model is called a \textdef{reaction-diffusion system}{reaction-diffusion system}{a model incorporating the diffusion of particles with chemical reactions involving these particles}, and the emergent patterns are called \textdef{Turing patterns}{Turing patterns}{patterns, such as stripes and spots, that emerge from certain reaction-diffusion systems} in Turing's honor.
+Turing's insight was that remarkable high-level patterns could arise if we combine particle diffusion with chemical reactions, in which colliding particles interact with each other. Such a model is called a \textdef{reaction-diffusion system}{reaction-diffusion system}{a model incorporating the diffusion of particles with chemical reactions involving these particles}, and the emergent patterns are called \textdef{Turing patterns}{Turing patterns}{patterns, such as stripes and spots, that emerge from certain reaction-diffusion systems} in Turing's honor.
 
 We will consider a reaction-diffusion system having two types of particles, \textvar{A} and \textvar{B}. The system is not explicitly a predator-prey relationship, but you may like to think of the \textvar{A} particles as prey and the \textvar{B} particles as predators for reasons that will become clear soon.
 
 Both types of particles diffuse randomly through the plane, but the \textvar{A} particles diffuse more quickly than the \textvar{B} particles.  In the simulation that follows, we will assume that \textvar{A} particles diffuse twice as quickly as \textvar{B} particles. In terms of our random walk model, this faster rate of diffusion means that in a single ``step'', an \textvar{A} particle moves twice as far as a \textvar{B} particle.\\
 
 \begin{qbox}[%
-Say that we release one \textvar{A} particle and one \textvar{B} particle at the same location. If the two particles move via random walks, and the rate of diffusion of \textvar{A} is twice as fast, then on average how much farther from the origin will \textvar{A} be than \textvar{B} after \textvar{n} steps?
+Say that we release a collection of \textvar{A} and \textvar{B} particles at the same location. If the particles move via random walks, and the \textvar{A} particles diffuse twice as fast as the \textvar{B} particles, then on average, how much farther from the origin will the \textvar{A} particles be than the \textvar{B} particles after \textvar{n} steps?
 ]\end{qbox}
 
-We now will add some reactions to our system. The \textvar{A} particles are added into the system at some constant \textdefnogloss{feed rate} \textvar{f}. As a result of the feed reaction, the concentration of the \textvar{A} particles increases by a constant number in each time step.\\
+We now will add three reactions to our system, which are illustrated in \autoref{fig:three_reactions}. First, \textvar{A} particles are added into the system at some constant \textdefnogloss{feed rate} \textvar{f}. As a result of the feed reaction, the concentration of the \textvar{A} particles increases by a constant in each time step.\\
 
 \begin{note}[%
 We will work with a two-dimensional simulation, but in a three-dimensional system, the units of \textvar{f} would be in mol/L/s, which means that every second, there are \textvar{f} moles of particles added to the system for every liter of volume. (Recall from your chemistry class long ago that one mole is $6.02214076 \cdot 10^{23}$ particles, called Avogadro's number.)
 ]\end{note}
 
-There is also a \textdefnogloss{kill rate} constant \textvar{k} dictating the rate of removal of \textvar{B} particles. As a result of the kill reaction, the number of \textvar{B} particles in the system will decrease by a factor of \textvar{k} in a given time step. That is, the more \textvar{B} particles that are present, the more \textvar{B} particles will be removed.
+Second, \textvar{B} particles are removed from the system at a constant \textdefnogloss{kill rate} \textvar{k}. As a result of the kill reaction, the number of \textvar{B} particles in the system will decrease by a factor of \textvar{k} in a given time step. That is, the more \textvar{B} particles that are present, the more \textvar{B} particles will be removed.
 
-Finally, our reaction-diffusion system includes the following reaction involving both particle types. The particles on the left side of this reaction are called \textdef{reactants}{reactants}{substances taking part in a reaction} and the particles on the right side are called \textdef{products}{products}{substances resulting from a reaction}.
+Third, our reaction-diffusion system includes the following reaction involving both particle types. The particles on the left side of this reaction are called \textdef{reactants}{reactants}{substances taking part in a reaction} and the particles on the right side are called \textdef{products}{products}{substances resulting from a reaction}.
 
 \begin{center}
 $A + 2B \rightarrow 3B$
 \end{center}
 
-To simulate this reaction on a particle level, if an \textvar{A} particle and two \textvar{B} particles collide with each other, then the \textvar{A} particle has some fixed probability of being replaced by a third \textvar{B} particle, which could vary based on the presence of a catalyst and the orientation of the particles. This probability directly relates to the \textit{rate} at which this reaction occurs, which is denoted \textvar{r} and also depends on the concentrations of \textvar{A} and \textvar{B} as well as their kinetic energy.
-
-This third reaction is why we compared \textvar{A} to prey and \textvar{B} to predators, since we may like to conceptualize the reaction as two \textvar{B} particles consuming an \textvar{A} particle and producing an offspring \textvar{B} particle.
-
-The three reactions defining our system are summarized by \autoref{fig:three_reactions}.\\
+To simulate this reaction on a particle level, if an \textvar{A} particle and two \textvar{B} particles collide with each other, then the \textvar{A} particle has some fixed probability of being replaced by a third \textvar{B} particle, which could vary based on the presence of a catalyst and the orientation of the particles. This probability directly relates to the \textit{rate} at which this reaction occurs. This third reaction is why we compared \textvar{A} to prey and \textvar{B} to predators, since we may like to conceptualize the reaction as two \textvar{B} particles consuming an \textvar{A} particle and producing an offspring \textvar{B} particle.\\
 
 \begin{figure}[h]
 \centering
@@ -116,49 +105,37 @@ The three reactions defining our system are summarized by \autoref{fig:three_rea
 \begin{tabular}{c c}
 \includegraphics[width=0.35\textwidth]{../images/reaction-diffusion_three_reactions_before} & \includegraphics[width=0.35\textwidth]{../images/reaction-diffusion_three_reactions_after}\\
 \end{tabular}
-\caption{Visualization of our reaction-diffusion system. (Left) The system contains both types of particles and two collisions of particles. (Right) Two \textvar{A} particles are fed into the system, two of the \textvar{B} particles die out, and a \textvar{B} particle replaces an \textvar{A} particle after the collision of three particles.}
+\caption{A visualization of our reaction-diffusion system. (Left) The system contains both types of particles and two collisions of particles. The two \textvar{A} particles shown with dashed lines are not yet present.  (Right) Two \textvar{A} particles are fed into the system, two of the \textvar{B} particles die out, and a \textvar{B} particle replaces an \textvar{A} particle after the collision of two \textvar{B} particles and an \textvar{A} particle.}
 \label{fig:three_reactions}
 \end{figure}
 
-Before continuing, we call your attention to a slight difference between the feed and kill reactions. In the former, the number of \textvar{A} particles increases by a constant number in each time step. In the latter, the number of \textvar{B} particles decreases by a constant factor multiplied by the current number of \textvar{B} particles. If we were using calculus to model this system, then letting [\textvar{A}] and [\textvar{B}] denote the concentrations of the two particle types, we can write
-
-\begin{center}
-$\dfrac{\mathrm{d}[A]}{\mathrm{d}t} = f$
-\end{center}
-
-\noindent and
-
-\begin{center}
-$\dfrac{\mathrm{d}[B]}{\mathrm{d}t} = k \cdot [B]$\,.
-\end{center}
+Before continuing, we call your attention to a slight difference between the feed and kill reactions. In the former, the concentration of \textvar{A} particles increases by a constant in each time step. In the latter, the concentration of \textvar{B} particles decreases by a constant factor multiplied by the current concentration of \textvar{B} particles. If we were using calculus to model this system, then letting [\textvar{A}] and [\textvar{B}] denote the concentrations of the two particle types, we would represent the feed and kill reactions by the following two differential equations:
+\begin{align*}
+\dfrac{\mathrm{d}[A]}{\mathrm{d}t} & = f\\[1ex]
+\dfrac{\mathrm{d}[B]}{\mathrm{d}t} & = k \cdot [B]\,.
+\end{align*}
 
 \FloatBarrier
 \phantomsection
 \subsection{Parameters are omnipresent in biological modeling}
 
-Before building a simulation corresponding to our reaction-diffusion model, we point out that the results of the simulation can vary depending upon a few things.
-
 A \textdef{parameter}{parameter}{a variable used as input to a model} is a variable quantity used as input to a model. Parameters are inevitable in biological modeling (and data science in general), and as we will see, changing parameters can cause major changes in the behavior of a system.
 
-Four parameters are relevant to our reaction-diffusion system. Three of these parameters are the feed rate (\textvar{f}) of \textvar{A} particles, the kill rate of the \textvar{B} particles (\textvar{k}), and the rate of the predator-prey reaction (\textvar{r}). The final parameter of interest corresponds to the diffusion rate (i.e., speeds) of the the \textvar{B} particles. Once this diffusion rate is set, the diffusion rate of \textvar{A} particles must be twice that of the \textvar{B} particles.
+Four parameters are relevant to our reaction-diffusion system: the feed rate (\textvar{f}) of \textvar{A} particles, the kill rate (\textvar{k}) of the \textvar{B} particles, the predator-prey reaction rate (\textvar{r}), and the diffusion rate (i.e., speed) of the the \textvar{B} particles. We do not need to set the diffusion rate of the \textvar{A} particles, since we know that their diffusion is twice that of the \textvar{B} particles.
 
-We think of all these parameters as dials that we can turn, observing how the system changes as a result. For example, if we raise the diffusion rate, then the particles will be moving around and bouncing into each other more, which means that we will see more of the reaction $\textvar{A} + 2\textvar{B} \rightarrow 3\textvar{B}$.\\
+We think of all these parameters as dials that we can turn, observing how the system changes as a result. For example, if we raise the diffusion rate, then the particles will be moving around and colliding with each other more, which means that we will see more of the reaction $\textvar{A} + 2\textvar{B} \rightarrow 3\textvar{B}$.\\
 
 \begin{qbox}[%
-What will happen as we increase or decrease the feed rate \textvar{f}? What about the kill rate \textvar{k}?
+What will happen as we increase or decrease \textvar{f} or \textvar{k}?
 ]\end{qbox}
-
-The same goes for the feed and kill reactions; new \textvar{A} particles are formed, and old \textvar{B} particles are destroyed, via probabilities that are computed from reaction rates. For now, you can think of the rate of a reaction as directly related to its probability of occurring.
-
-In the following tutorial, we will initiate our reaction-diffusion system with a uniform concentration of \textvar{A} particles spread across the grid and a tightly packed collection of \textvar{B} particles in the center of the grid. When we return from this tutorial, we will see if any high-level patterns form.
-
-\tutorial[https://biologicalmodeling.org/prologue/turing-cellblender]
 
 \FloatBarrier
 \phantomsection
 \subsection{Changing reaction-diffusion parameters produces different emergent Turing patterns}
 
-For many parameter values, our reaction-diffusion system is not very interesting.  For example, \autoref{fig:k=500000_f=1000} illustrates the result of a simulation using parameter rates in CellBlender of \textvar{f} = 1000 and \textvar{k} = 500,000.  It shows that if the kill rate is too high, then the \textvar{B} particles (colored red) will die out more quickly than they can be replenished by the reaction with \textvar{A} particles (colored green), and so only \textvar{A} particles will be left.\\
+We will initiate our reaction-diffusion system with a uniform concentration of \textvar{A} particles spread across the grid and a tightly packed collection of \textvar{B} particles in the center of the grid. As the \textvar{B} particles diffuse, what will we see?\tutorial[https://biologicalmodeling.org/prologue/turing-cellblender]
+
+For many parameter values, our reaction-diffusion system is not very interesting. \autoref{fig:k=500000_f=1000} illustrates the result of a simulation using parameter rates in CellBlender of \textvar{f} = 1,000 and \textvar{k} = 500,000.  It shows that if the kill rate is too high, then the \textvar{B} particles (colored red) will die out more quickly than they can be replenished by the reaction with \textvar{A} particles (colored green), and so only \textvar{A} particles will remain.
 
 \begin{figure}[h]
 \centering
@@ -171,7 +148,7 @@ For many parameter values, our reaction-diffusion system is not very interesting
 \label{fig:k=500000_f=1000}
 \end{figure}
 
-On the other hand, if \textvar{f} is too high, then the increased feed rate will cause an increase in the concentration of \textvar{A} particles. However, the increased concentration of \textvar{A} particles will also cause more interactions between \textvar{A} particles and pairs of \textvar{B} particles, and so we will see an explosion in the number of predators. \autoref{fig:k=100000_f=1000000} has the parameters \textvar{f} = 1,000,000 and \textvar{k} = 100,000.\\
+On the other hand, if \textvar{f} is too high, then the increased feed rate will cause an increase in the concentration of \textvar{A} particles. However, the increased concentration of \textvar{A} particles will also cause more interactions between \textvar{A} particles and pairs of \textvar{B} particles, and so we will see an explosion in the number of predators. \autoref{fig:k=100000_f=1000000} has the parameters \textvar{f} = 1,000,000 and \textvar{k} = 100,000.
 
 \begin{figure}[h]
 \centering
@@ -184,7 +161,7 @@ On the other hand, if \textvar{f} is too high, then the increased feed rate will
 \label{fig:k=100000_f=1000000}
 \end{figure}
 
-The interesting behavior in this system lies in a sweet spot of the \textvar{f} and \textvar{k} parameters. For example, consider \autoref{fig:k=200000_f=100000}, which shows \textvar{f} is equal to 100,000 and \textvar{k} is equal to 200,000. We see a very clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where there is a critical mass of predators to interact with each other.\\
+The interesting behavior in this system lies in a sweet spot of the \textvar{f} and \textvar{k} parameters. For example, consider \autoref{fig:k=200000_f=100000}, which shows \textvar{f} is equal to 100,000 and \textvar{k} is equal to 200,000. We see a very clear stripe of predators expanding outward against a background of prey, with subsequent stripes appearing at locations where there is a critical mass of predators to interact with each other.
 
 \begin{figure}[h]
 \centering
@@ -197,7 +174,7 @@ The interesting behavior in this system lies in a sweet spot of the \textvar{f} 
 \label{fig:k=200000_f=100000}
 \end{figure}
 
-When we hold \textvar{k} fixed and increase \textvar{f} to 140,000, the higher feed rate increases the likelihood of \textvar{B} particles encountering \textvar{A} particles, and so we see even more stripes of \textvar{B} particles (\autoref{fig:k=200000_f=140000}).\\
+When we hold \textvar{k} fixed and increase \textvar{f} to 140,000, the higher feed rate increases the likelihood of \textvar{B} particles encountering \textvar{A} particles, and so we see even more stripes of \textvar{B} particles (\autoref{fig:k=200000_f=140000}).
 
 \begin{figure}[h]
 \centering
@@ -229,7 +206,7 @@ Once \textvar{f} is equal to \textvar{k}, the stripes disappear (\autoref{fig:k=
 \centering
 \mySfFamily
 \begin{tabular}{c c c c}
-\includegraphics[width = 0.2\textwidth]{../images/predator_prey_11_by_11_f_1_k_1.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_1_i1.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_1_i2.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_1i3.png}\\[2ex]
+\includegraphics[width = 0.2\textwidth]{../images/predator_prey_11_by_11_f_1_k_1.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_1_i1.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_1_i2.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_1_i3.png}\\[2ex]
 \includegraphics[width = 0.2\textwidth]{../images/predator_prey_11_by_11_f_1_k_1_i4.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_1_i5.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_1_i6.png} & \includegraphics[width = 0.2\textwidth]{../images/../images/predator_prey_11_by_11_f_1_k_1_i7.png}
 \end{tabular}
 \caption{CAPTION NEEDED}
@@ -495,6 +472,7 @@ In contrast to our particle-based simulator, the Gray-Scott model produced an an
 
 If we expand the size of the simulation and add multiple clusters of predators to the automaton, then the patterns become more complex as they intersect (\autoref{fig:gray-scott_multiple_predators_first_frame}).\\
 
+
 \begin{figure}[h]
 \centering
 \mySfFamily
@@ -512,8 +490,8 @@ If we keep the feed rate constant and increase the kill rate slightly to \textva
 \centering
 \mySfFamily
 \begin{tabular}{c c}
-\includegraphics[width = 0.3\textwidth]{../images/f038_102_multi_Moment_1.jpg} & \includegraphics[width = 0.3\textwidth]{../images/f038_102_multi_Moment_2.jpg} \\[2ex]
-\includegraphics[width = 0.3\textwidth]{../images/f038_102_multi_Moment_3.jpg} & \includegraphics[width = 0.3\textwidth]{../images/f038_102_multi_Moment_4.jpg}
+\includegraphics[width = 0.3\textwidth]{../images/f038_k102_multi_Moment_1.jpg} & \includegraphics[width = 0.3\textwidth]{../images/f038_k102_multi_Moment_2.jpg} \\[2ex]
+\includegraphics[width = 0.3\textwidth]{../images/f038_k102_multi_Moment_3.jpg} & \includegraphics[width = 0.3\textwidth]{../images/f038_k102_multi_Moment_4.jpg}
 \end{tabular}
 \caption{Phillip will fill in caption.}
 \label{fig:gray-scott_f38_k102_first_frame}
@@ -525,8 +503,8 @@ If we make the prey a little happier as well, increasing  \textvar{f} to 0.044 a
 \centering
 \mySfFamily
 \begin{tabular}{c c}
-\includegraphics[width = 0.3\textwidth]{../images/f044_102_multi_Moment_1.jpg} & \includegraphics[width = 0.3\textwidth]{../images/f044_102_multi_Moment_2.jpg} \\[2ex]
-\includegraphics[width = 0.3\textwidth]{../images/f044_102_multi_Moment_3.jpg} & \includegraphics[width = 0.3\textwidth]{../images/f044_102_multi_Moment_4.jpg}
+\includegraphics[width = 0.3\textwidth]{../images/f044_k102_multi_Moment_1.jpg} & \includegraphics[width = 0.3\textwidth]{../images/f044_k102_multi_Moment_2.jpg} \\[2ex]
+\includegraphics[width = 0.3\textwidth]{../images/f044_k102_multi_Moment_3.jpg} & \includegraphics[width = 0.3\textwidth]{../images/f044_k102_multi_Moment_4.jpg}
 \end{tabular}
 \caption{Phillip will fill in caption.}
 \label{fig:gray-scott_f44_k102_first_frame}

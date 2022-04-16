@@ -20,7 +20,7 @@ The distance that the particle wanders from its starting point may surprise you.
 
 ## From one particle to many
 
-If we animate the action of many independent particles following random walks, then although some particles hug the starting point and some wind up far away, most particles steadily drift outward. The following video shows a simulation of multiple randomly walking particles that all begin their walk at the same point.
+If we animate the action of many independent particles following random walks, then although some particles hug the starting point and some wind up far away, most particles steadily drift outward. The following video shows a simulation of multiple randomly walking particles that all begin their walk at the same point and that **diffuse** throughout their environment.
 
 {% include video id="U9uPFDBc0VY" provider="youtube" %}
 
@@ -31,7 +31,7 @@ Although the movements of a single particle are random, we can draw conclusions 
 **Note:** If you love mathematics and are interested in seeing a proof of this theorem, click <a href="../assets/tex/random_walk_theorem.pdf" download>here</a>.
 {: .notice--info}
 
-Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that an infected COVID-19 patient can infect many others in an enclosed space in a short time frame. To take a less morbid example, we also know that when a cake is baking in the oven at home, we will not need to wait long for wonderful smells to waft outward from the kitchen.
+Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that someone who has a respiratory virus can infect many others in an enclosed space in a short time frame. To take a less morbid example, we also know that when a cake is baking in the oven, we will not need to wait long for delicious smells to waft outward from the kitchen.
 
 If you are interested in seeing how to build the random walk simulation shown in the video above, then please visit the following software tutorial. This tutorial uses **CellBlender**, an add-on to the popular open graphics software program **Blender**, which allows us to create and visualize biological models. These models rely on particle-based reaction-diffusion simulations that are implemented by the program **MCell**. We will use this software for our work in biological modeling in this prologue as well as module 1.
 
@@ -43,7 +43,7 @@ If you are interested in seeing how to build the random walk simulation shown in
 
 ## Brownian motion: big numbers in small spaces
 
-Why should scientists care about random walks? Later in this course, we will see that random walks power a simple but powerful approach that bacteria like *E. coli* use to explore their environment in the hunt for food. In the next lesson, we will see that randomly moving particles serve can produce high-level patterns if the particles interact when they collide.
+Later in this course, we will see that random walks power a simple but powerful approach that bacteria like *E. coli* use to explore their environment in the hunt for food. In the next lesson, we will see that randomly moving particles can produce high-level patterns if the particles interact when they collide.
 
 Before continuing, we will point you to a beautiful animation illustrating just how far a single randomly moving particle can travel in a relatively small amount of time. This animation, which shows a simulation of the path taken by a glucose molecule as the result of Brownian motion, starts at 6:10 of the following excellent video developed by the late Joel Stiles.
 
