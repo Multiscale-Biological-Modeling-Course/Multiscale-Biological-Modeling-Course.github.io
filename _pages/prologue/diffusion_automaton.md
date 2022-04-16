@@ -63,7 +63,7 @@ The coarse-grained model of particle diffusion that we have built is a variant o
 
 ## Slowing down the diffusion rate
 
-There is just one problem: our cellular automaton model of diffusion is too volatile! The figure below shows the initial automaton as well as its updates after each of two time steps. In a true diffusion process, all of the particles would not rush out of the central square in a single time step, only for some of them to return in the next step.
+There is just one problem: our diffusion model is too volatile! The figure below shows the initial automaton as well as its updates after each of two time steps. In a true diffusion process, all of the particles would not rush out of the central square in a single time step, only for some of them to return in the next step.
 
 {% include gallery caption="A 5 x 5 cellular automaton model for diffusion of a single particle. (Left) The system contains a maximum concentration of particles in the central square. (Center) The system after one time step. (Right) The system after two time steps." %}
 
@@ -77,7 +77,7 @@ An updated grid of cells showing the concentration of <em>A</em> particles after
 
 ## Adding a second particle to our diffusion simulation
 
-We now will add particle *B* to the simulation, which also starts with 100% concentration in the central square. Recall that *B*, our "predator" molecule, diffuses half as fast as *A*, the "prey" molecule. If we set the diffusion rate <em>d</em><sub><em>B</em></sub> equal to 0.1, then our cells after a time step will be updated as shown in the figure below. This figure represents the concentration of the two particles in each cell as an ordered pair ([*A*], [*B*]).
+We now will add *B* particles to the simulation, which we assume also start with 100% concentration in the central square. Recall that *B*, our "predator" molecule, diffuses half as fast as *A*, the "prey" molecule. If we set the diffusion rate <em>d</em><sub><em>B</em></sub> equal to 0.1, then our cells after a time step will be updated as shown in the figure below. This figure represents the concentration of the two particles in each cell as an ordered pair ([*A*], [*B*]).
 
 [![image-center](../assets/images/600px/two_particle_concentration_diffusion.png){: .align-center width="300px"}](../assets/images/two_particle_concentration_diffusion.png)
 A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> diffusing at rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by the ordered pair ([<em>A</em>], [<em>B</em>]).
@@ -88,11 +88,14 @@ A figure showing cellular concentrations after one time step for two particles <
 
 ## Visualizing particle concentrations in an automaton
 
-As we move toward diffusing a large board that is hundreds of cells wide, listing the concentrations of our two particles in each cell will be too much to process. Instead, we need some way to visualize the results of our diffusion simulation.
+As we move toward diffusing a large board that is hundreds of cells wide, listing the concentrations of our two particles in each cell will be difficult to analyze. Instead, we need some way to visualize the results of our diffusion simulation.
 
 First, we will consolidate the information stored in a cell about the concentrations of two particles into a single value. In particular, let a cell's particle concentrations be denoted [*A*] and [*B*]. Then the single value [*B*]/([*A*] + [*B*]) is the ratio of the concentration of *B* particles to the total number of particles in the cell. This value ranges between 0 (no *B* particles present) and 1 (only *B* particles present).
 
-Next, we color each cell in the grid according to its value of [*B*]/([*A*] + [*B*]) using a color spectrum like those shown in the figure below. We will use the `Spectral` color map, meaning that if a cell has a value close to 0 (relatively few predators), then it will be colored red, while if it has a value close to 1 (relatively many predators), then it will be colored dark blue.
+**STOP**: What should be the value of [*B*]/([*A*] + [*B*]) if both [*A*] and [*B*] are equal to zero?
+{: .notice--primary}
+
+Next, we color each cell according to its value of [*B*]/([*A*] + [*B*]) using a color spectrum like those shown in the figure below. We will use the `Spectral` color map, meaning that if a cell has a value close to 0 (relatively few predators), then it will be colored red, while if it has a value close to 1 (relatively many predators), then it will be colored dark blue.
 
 [![image-center](../assets/images/600px/matplotlib_colormap.png){: .align-center}](../assets/images/matplotlib_colormap.png)
 
@@ -101,15 +104,9 @@ When we color each cell over many time steps, we can animate the automaton to se
 [Visit tutorial](tutorial-diffusion){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-The video below shows an animation of a 101 x 101 board that begins with the following properties:
-* [*A*] = 1 for all cells;
-* [*B*] = 0 for all cells other than an 11 x 11 square in the middle of the grid, where [*B*] = 1;
-* <em>d</em><sub><em>A</em></sub> = 0.5;
-* <em>d</em><sub><em>B</em></sub> = 0.25.
+The video below shows an animation of a 101 x 101 board with <em>d</em><sub><em>A</em></sub> = 0.5 and <em>d</em><sub><em>B</em></sub> = 0.25 that begins with [*A*] = 1 for all cells. All cells have [*B*] = 0 except for an 11 x 11 square in the middle of the grid, where [*B*] = 1. Without looking at individual concentration values, this animation allows us to see immediately that the *A* particles are remaining in the corners, while a band of *B* particles expands outward from the center.
 
 [![image-center](../assets/images/600px/diffusion_movie_first_frame.png){: .align-center}](../assets/images/diffusion_movie.gif)
-
-Note that the center of the cell becomes blue because the *A* particles diffuse twice as fast, so that they spread out more from the middle of the board, which is occupied in greater numbers by *B* particles.
 
 [Next lesson](gray-scott){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

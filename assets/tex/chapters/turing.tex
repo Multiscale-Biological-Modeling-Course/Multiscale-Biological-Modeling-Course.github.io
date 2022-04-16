@@ -302,9 +302,8 @@ Cellular automata form a rich area of research applied to a wide variety of fiel
 \phantomsection
 \subsection{Slowing down the diffusion rate}
 
-There is just one problem: our cellular automaton model of diffusion is too volatile! 
-\autoref{fig:initial_A_concentration_one_time_step}, and
-\autoref{fig:A_concentration_two_time_steps_partial} showed an initial automaton as well as its updates after each of two time steps. In a true diffusion process, all of the particles would not rush out of the central square in a single time step, only for some of them to return in the next step.
+There is just one problem: our cellular automaton model of diffusion is too volatile! In 
+\autoref{fig:initial_A_concentration_one_time_step} and \autoref{fig:A_concentration_two_time_steps_partial}, we see that all of the particles rush out of the central cell in the first time step, only for some of them to return in the next step.
 
 Our solution is to slow down the diffusion process by adding a parameter $d_A$ between 0 and 1 that represents the \textit{rate} of diffusion of \textvar{A} particles. Instead of moving a cell's entire concentration of particles to its neighbors in a single time step, we move only a fraction $d_A$ of them.
 
@@ -322,7 +321,7 @@ Revisiting our original example of a single central cell containing a maximum co
 \phantomsection
 \subsection{Adding a second particle to our diffusion simulation}
 
-We now will add particle \textvar{B} to the simulation, which also starts with 100\% concentration in the central square. Recall that \textvar{B}, our ``predator'' molecule, diffuses half as fast as \textvar{A}, the ``prey'' molecule. If we set the diffusion rate $d_B$ equal to 0.1, then our cells after a time step will be updated as shown in \autoref{fig:two_particle_concentration_diffusion}, which represents the concentration of the two particles in each cell as an ordered pair $([\textvar{A}], [\textvar{B}])$.\\
+We now will add \textvar{B} particles to the simulation, which we assume also start with 100\% concentration in the central square. Recall that \textvar{B}, our ``predator'' molecule, diffuses half as fast as \textvar{A}, the ``prey'' molecule. If we set the diffusion rate $d_B$ equal to 0.1, then our cells after a time step will be updated as shown in \autoref{fig:two_particle_concentration_diffusion}, which represents the concentration of the two particles in each cell as an ordered pair $([\textvar{A}], [\textvar{B}])$.\\
 
 \begin{figure}[h]
 \centering
@@ -340,44 +339,36 @@ Update the cells in \autoref{fig:two_particle_concentration_diffusion} after ano
 \phantomsection
 \subsection{Visualizing particle concentrations in an automaton}
 
-As we move toward diffusing a large board that is hundreds of cells wide, listing the concentrations of our two particles in each cell will be too much to process. Instead, we need some way to visualize the results of our diffusion simulation.
+As we move toward diffusing a large board that is hundreds of cells wide, listing the concentrations of our two particles in each cell will be difficult to analyze. Instead, we need some way to visualize the results of our diffusion simulation.
 
-First, we will consolidate the information stored in a cell about the concentrations of two particles into a single value. In particular, let a cell's particle concentrations be denoted [\textvar{A}] and [\textvar{B}]. Then the single value $[\textvar{B}]/([\textvar{A}] + [\textvar{B}])$ is the ratio of the concentration of \textvar{B} particles to the total number of particles in the cell. This value ranges between 0 (no \textvar{B} particles present) and 1 (only \textvar{B} particles present).
+First, we will consolidate the information stored in a cell about the concentrations of two particles into a single value $[\textvar{B}]/([\textvar{A}] + [\textvar{B}])$, the ratio of the concentration of \textvar{B} particles to the total number of particles in the cell. This value ranges between 0 (no \textvar{B} particles present) and 1 (only \textvar{B} particles present).\\
 
-Next, we color each cell in the grid according to its value of $[\textvar{B}]/([\textvar{A}] + [\textvar{B}])$ using a color spectrum like those shown in \autoref{fig:matplotlib_colormap}. We will use the `Spectral` color map, meaning that if a cell has a value close to 0 (relatively few predators), then it will be colored red, while if it has a value close to 1 (relatively many predators), then it will be colored dark blue.\\
+\begin{qbox}[%
+What should be the value of this ratio if a cell's concentration of both \textvar{A} and \textvar{B} are equal to zero?
+]\end{qbox}
+
+Next, we color each cell according to its value of $[\textvar{B}]/([\textvar{A}] + [\textvar{B}])$ using a color spectrum like those shown in \autoref{fig:matplotlib_colormap}. We will use the ``Spectral'' color map, meaning that if a cell has a value close to 0 (relatively few predators), then it will be colored red, while if it has a value close to 1 (relatively many predators), then it will be colored dark blue. When we color each cell over many time steps, we can animate the automaton to see how it changes over time.\tutorial[https://biologicalmodeling.org/prologue/tutorial-diffusion]\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.8\textwidth]{../images/matplotlib_colormap.png}
-\caption{Phillip will fill in caption.}
+\caption{A collection of different color maps that are used to indicate a cell's value. The animations in this chapter use the ``Spectral'' color map.}
 \label{fig:matplotlib_colormap}
 \end{figure}
 
-When we color each cell over many time steps, we can animate the automaton to see how it changes over time.\tutorial[https://biologicalmodeling.org/prologue/tutorial-diffusion]
-
-
-
-\autoref{fig:diffusion_movie_still} shows an animation of a 101 x 101 board that begins with the following properties:
-\begin{itemize}
-\item $[\textvar{A}] = 1$ for all cells;
-\item $[\textvar{B}] = 0$ for all cells other than an $11 \times 11$ square in the middle of the grid, where $[\textvar{B}] = 1$;
-\item $d_A = 0.5$;
-\item $d_A = 0.25$;
-\end{itemize}
+\autoref{fig:diffusion_movie_still} shows an animation of a 101 x 101 board with $d_A = 0.5$ and $d_A = 0.25$ that begins with $[\textvar{A}] = 1$ for all cells. All cells have $[\textvar{B}] = 0$ except for an $11 \times 11$ square in the middle of the grid, where $[\textvar{B}] = 1$. Without looking at individual concentration values, this animation allows us to see immediately that the \textvar{A} particles are remaining in the corners, while a band of \textvar{B} particles expands outward from the center.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\begin{tabular}{c c}
-\includegraphics[width = 0.3\textwidth]{../images/diffusion__Moment_1.png} & \includegraphics[width = 0.3\textwidth]{../images/diffusion__Moment_2.png} \\[2ex]
-\includegraphics[width = 0.3\textwidth]{../images/diffusion__Moment_3.png} & \includegraphics[width = 0.3\textwidth]{../images/diffusion__Moment_4.png}
+\begin{tabular}{c c c c}
+\includegraphics[width = 0.2\textwidth]{../images/diffusion__Moment_1.png} & \includegraphics[width = 0.2\textwidth]{../images/diffusion__Moment_2.png} &
+\includegraphics[width = 0.2\textwidth]{../images/diffusion__Moment_3.png} & \includegraphics[width = 0.2\textwidth]{../images/diffusion__Moment_4.png}
 \end{tabular}
-\caption{Phillip will fill in caption.}
+\caption{A collection of stills from an animation of a two-particle diffusion automaton in which a central square of \textvar{B} particles expand outward within a uniform field of \textvar{A} particles.}
 \label{fig:diffusion_movie_still}
 \end{figure}
-
-Note that the center of the cell becomes blue because the \textvar{A} particles diffuse twice as fast, so that they spread out more from the middle of the board, which is occupied in greater numbers by \textvar{B} particles.\\
 
 \FloatBarrier
 \phantomsection
