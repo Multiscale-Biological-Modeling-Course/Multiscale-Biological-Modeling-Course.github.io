@@ -27,7 +27,9 @@ prologue:
         url: /prologue/random_walk
       - title: "A reaction-diffusion model generating Turing patterns<br><br>"
         url: /prologue/reaction-diffusion
-      - title: "The Gray-Scott model: a cellular automaton generating Turing patterns<br><br>"
+      - title: "A coarse-grained model of particle diffusion<br><br>"
+        url: /prologue/diffusion_automaton
+      - title: "The Gray-Scott model: a Turing pattern cellular automaton<br><br>"
         url: /prologue/gray-scott
       - title: "Conclusion: Turing patterns are fine-tuned<br><br>"
         url: /prologue/conclusion

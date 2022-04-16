@@ -119,5 +119,5 @@ We now are ready to save and run our notebook. When you run the notebook, you sh
 
 As we return to the main text, we will discuss this animation and extend our model to be able to handle reactions as well as diffusion.
 
-[Return to main text](gray-scott#adding-reactions-and-completing-the-gray-scott-model){: .btn .btn--warning .btn--large}
+[Return to main text](diffusion_automaton#visualizing-particle-concentrations-in-an-automaton){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
