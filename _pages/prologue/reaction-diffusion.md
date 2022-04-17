@@ -99,6 +99,8 @@ As *f* approaches *k*, the stripe structure becomes chaotic and breaks down beca
 
 Once *f* is equal to *k*, the stripes disappear, as shown in the video below. We might expect this to mean that the *A* and *B* particles will be uniformly mixed. Instead, we see that after an initial outward explosion of *B* particles, the system displays a *mottled* background, with pockets having higher or lower concentration of *B*. Pay attention to the following video at a point late in the animation. Although the concentrations of the particles are still changing, there is much less large-scale change than in earlier videos. If we freeze the video, our eye cannot help but see patterns of red and green clusters that resemble mottling.
 
+The Turing patterns that emerged from our particle simulations are a testament to the human eye's ability to find organization within the net behavior of tens of thousands of particles. For example, take another look at the video we produced that showed mottling in our particle simulator. Patterns in this simulation are noisy — even in the dark red regions we will have quite a few green particles, and vice-versa. The rapid inference of large-scale patterns from small-scale visual phenomena is one of the tasks that our brains have evolved to perform well.
+
 {% include video id="Pva4e0w7i24" provider="youtube" %}
 
 You may still be skeptical, since the patterns in the above videos do not have the concrete boundaries that we might expect of animal stripes and spots. Yet when we closely examine an animal with skin patterns, we can see that, like a pointillist painting, the patterns we infer on a higher level are just the net result of varied individual points. The figure below shows an example of this effect for zebrafish skin.

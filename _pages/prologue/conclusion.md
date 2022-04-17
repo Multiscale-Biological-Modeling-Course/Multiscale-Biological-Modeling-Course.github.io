@@ -17,23 +17,19 @@ gallery:
     title: "An adult Mbu Pufferfish exhibiting another familiar pattern."
 ---
 
-The Turing patterns that emerged from our particle simulations are a testament to the human eye's ability to find organization within the net behavior of tens of thousands of particles. For example, take another look at the video we produced that showed mottling in our particle simulator. Patterns are present, but they are also noisy --- even in the dark red regions we will have quite a few green particles, and vice-versa. The rapid inference of large-scale patterns from small-scale visual phenomena is one of the tasks that our brains have evolved to perform well.
+In both the particle-based and automaton model for Turing patterns, we observed that the model is **fine-tuned**, meaning that very slight changes in parameter values can lead to significant changes in the system. These changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
 
-{% include video id="Pva4e0w7i24" provider="youtube" %}
-
-Our reaction-diffusion system is remarkable because it is so **fine-tuned**, meaning that very slight changes in parameter values can lead to significant changes in the system. These changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
-
-The figure below shows how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary. The kill rate increases along the x-axis, and the feed rate increases along the y-axis. Notice how much the patterns change! You may like to tweak the parameters of the own Gray-Scott simulation from the [previous lesson](gray-scott) to see if you can reproduce these differing patterns.
+The figure below shows how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary. The kill rate increases along the x-axis, and the feed rate increases along the y-axis. Notice how much the patterns change! You may like to tweak the parameters of the Gray-Scott simulation from the [previous lesson](gray-scott) to see if you can reproduce these differing patterns.
 
 [![image-center](../assets/images/600px/xmorphia-parameter-map.jpg){: .align-center width="400px"}](../assets/images/xmorphia-parameter-map.jpg)
-Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns produced in the Gray-Scott model. Note that many parameter choices do not lead to patterns. Image courtesy: Robert Munafo.[^robert]
+Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns produced in the Gray-Scott model. Note that Turing patterns are only produced in a narrow "sweet spot" band of parameter choices. Image courtesy: Robert Munafo.[^robert]
 {: style="font-size: medium;"}
 
 Later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In a **robust** system, perturbations such as variations in parameters do not lead to substantive changes in the ultimate behavior of the system.  Robustness is vital for processes, like your heartbeat, that must be resilient to small environmental changes.
 
-It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism causing these stripes to form is still an unresolved question. However, the skin of *zebrafish* does exhibit Turing patterns because two types of pigment cells follow a reaction-diffusion model much like the one we presented in this prologue.[^zebrafish] This prologue presented Turing particles as driven by the interactions of particles, but if the interactions occur between cells, then the resulting patterns are the same.
+It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism causing these stripes to form is still an unresolved question. However, researchers have shown that the skin of *zebrafish* does exhibit Turing patterns because two types of pigment cells serve as "particles" following a reaction-diffusion model much like the one we presented in this prologue.[^zebrafish]
 
-Finally, take a look at the following two photos of giant pufferfish.[^youngfish][^pufferfish] These fish are genetically practically identical, but their skin patterns are very different. What may seem like a drastic change from spots to stripes is likely attributable to a small change of parameters in a fine-tuned biological system that, like much of life, is powered by randomness.
+Finally, take a look at the following two photos of giant pufferfish.[^youngfish][^pufferfish] Genetically, these fish are practically identical, but their skin patterns are very different. What may seem like a drastic change from spots to stripes is likely attributable to a small change of parameters in a fine-tuned biological system that, like much of life, is powered by randomness.
 
 {% include gallery caption="Two similar pufferfish with very different skin patterns. (Left) A juvenile Mbu pufferfish with a very familiar pattern. (Right) An adult Mbu pufferfish exhibiting another familiar pattern." %}
 
