@@ -64,7 +64,7 @@ If you would like a different explanation of  may also like to check out the fol
 
 {% include video id="voEDurUgz_4" provider="youtube" %}
 
-**STOP:** How do you think that researchers could determine whether a transcription factor activates or inhibits a given gene?
+**STOP:** How do you think that researchers could determine whether a transcription factor activates or represses a given gene?
 {: .notice--primary}
 
 As a result of techniques like ChIP-seq, researchers have learned a great deal about which transcription factors regulate which genes. The key is to organize the relationships between transcription factors and the genes that they regulate in a way that will help us identify patterns in these relationships.
