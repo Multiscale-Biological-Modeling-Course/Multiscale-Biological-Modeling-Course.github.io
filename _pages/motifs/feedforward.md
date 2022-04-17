@@ -28,7 +28,7 @@ Among the 42 total FFLs in the *E. coli* transcription factor network, five of t
 {: .notice--primary}
 
 [![image-center](../assets/images/600px/type-1_incoherent_feed-forward_loop.png){: .align-center width="300px"}](../assets/images/type-1_incoherent_feed-forward_loop.png)
-The incoherent feed-forward loop network motif. Note that *X* upregulates *Y* and *Z*, while *Y* downregulates *Z*.
+The incoherent feed-forward loop network motif. Note that *X* activates *Y* and *Z*, while *Y* represses *Z*.
 {: style="font-size: medium;"}
 
 ## Modeling a type-1 incoherent feedforward loop

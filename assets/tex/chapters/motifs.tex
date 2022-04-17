@@ -111,15 +111,15 @@ As a result of techniques like ChIP-seq, researchers have learned a great deal a
 
 Once we know which genes each transcription factor regulates, we can consolidate this information into a \textdef{transcription factor network}{transcription factor network}{a network whose nodes represent an organism's proteins, and such that a ``one-way'' directed edge connects one protein \textvar{X} to protein \textvar{Y} if \textvar{X} is a transcription factor that regulates \textvar{Y}}. The nodes in the network represent an organism's proteins, and we connect \textvar{X} to \textvar{Y} with an edge if \textvar{X} is a transcription factor that regulates the expression of protein \textvar{Y}. These edges are one-way connections; any node can have an edge leading into it, but only a transcription factor can have an edge leaving it.
 
-\autoref{fig:e_coli_tf_network} shows a portion of the transcription factor network for \textit{Escherichia coli}, the workhorse model organism of bacterial studies. Even though \textit{E. coli} is a bacterium, we will be able to draw powerful conclusions about gene regulation from its transcription factor network. The true network, the sum of over two decades of biological research, consists of thousands of genes and around 300 transcription factors. Because of the size of this network, it forms what computational biologists affectionally call a ``hairball'', or a network with so many connections that it is functionally impossible to analyze visually. For this reason, we will need to use computational approaches to study our hairball.
+\autoref{fig:e_coli_tf_network} shows a portion of the transcription factor network for \textit{Escherichia coli}, the workhorse model organism of bacterial study. The complete network, which is the sum of over two decades of biological research, consists of thousands of genes and around 300 transcription factors. Because of the size of this network, it forms what computational biologists affectionally call a ``hairball'', or a network with so many connections that it is functionally impossible to analyze visually. For this reason, we will need to use computational approaches to study this network.
 
-Note that the edges in the \textit{E. coli} transcription factor network below are colored red or green. An edge connecting \textvar{X} to \textvar{Y} is colored green if \textvar{X} upregulates \textvar{Y}, and it is colored red if \textvar{X} downregulates \textvar{Y}. (Alternatively, we could label the edges with a ``+'' or ``-''.)\\
+Note that the edges in the \textit{E. coli} transcription factor network below are colored red or green. An edge connecting \textvar{X} to \textvar{Y} is colored green if \textvar{X} activates \textvar{Y}, and it is colored red if \textvar{X} represses \textvar{Y}. (Alternatively, we could label the edges with a ``+'' or ``$-$''.)\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.85\textwidth]{../images/e_coli_tf_network.jpeg}
-\caption{A subset of the \textit{E. coli} transcription factor network. An edge from \textvar{X} to \textvar{Y} denotes that \textvar{X} is a transcription factor that regulates \textvar{Y}. Edges corresponding to upregulation are colored green, and edges corresponding to downregulation are colored red.}
+\caption{A subset of the \textit{E. coli} transcription factor network. An edge from \textvar{X} to \textvar{Y} denotes that \textvar{X} is a transcription factor that regulates \textvar{Y}. Edges corresponding to activation are colored green, and edges corresponding to repression are colored red.}
 \label{fig:e_coli_tf_network}
 \end{figure}
 
@@ -129,7 +129,7 @@ Do you notice anything interesting about the network in \autoref{fig:e_coli_tf_n
 
 \FloatBarrier
 \phantomsection
-\subsection{(Feedback) loops in the transcription factor network}
+\subsection{Loops in the transcription factor network}
 
 You may have noticed that the \textit{E. coli} transcription factor network seems to have surprisingly many \textdef{loops}{loop}{an edge in a network connecting a node to itself}, or edges that connect a node to itself. It is worth pausing for a moment to consider the implications of a loop in a transcription factor network. What does it mean for a transcription factor to regulate itself?
 
@@ -199,7 +199,7 @@ In the following tutorial, we write some code to count the number of loops in th
 
 In a random network containing \textvar{n} nodes, the probability that a given edge is a loop is 1/\textvar{n}. Therefore, if the network has \textit{e} edges, then we would on average see \textit{e}/\textvar{n} loops in the network. In our case, \textvar{n} is 197, and \textit{e} is 477; therefore, on average, we will only see approximately $197/497 \approx 2.42$ loops in a random network. Yet the real \textit{E. coli} network of transcription factors that regulate each other contains 130 loops!
 
-Furthermore, in a random network, we would expect about half of the edges correspond to activation, and the other half correspond to repression. But if you followed the preceding tutorial, then you know that of the 130 loops in the \textit{E. coli} network, 35 correspond to upregulation and 95 correspond to downregulation. If this observation were not significant, then you should not be surprised to flip a coin 130 times and see ``heads'' come up 95 times.
+Furthermore, in a random network, we would expect about half of the edges correspond to activation, and the other half correspond to repression. But if you followed the preceding tutorial, then you know that of the 130 loops in the \textit{E. coli} network, 35 correspond to activation and 95 correspond to repression. If this observation were not significant, then you should not be surprised to flip a coin 130 times and see ``heads'' come up 95 times.
 
 Not only is autoregulation an important feature of transcription factors, but these transcription factors tend to \textit{negatively} autoregulate. Why in the world would organisms have evolved the process of autoregulation only for a transcription factor to \textit{slow down} its own transcription? In the next section, we will begin to unravel the mystery.\\
 
@@ -215,7 +215,7 @@ Not only is autoregulation an important feature of transcription factors, but th
 
 Theodosius Dobzhansky famously wrote that ``nothing in biology makes sense except in the light of evolution.'' In the spirit of this quotation, there must be some evolutionary reason for the presence of the large number of negatively autoregulating \textit{E. coli} transcription factors that we identified in the section. We will use biological modeling to establish this justification.
 
-Say that a transcription factor \textvar{X} regulates another transcription factor \textvar{Y}, and consider two cells. In both cells, \textvar{X} upregulates the transcription of \textvar{Y}, but in the second cell, \textvar{Y} also negatively autoregulates; see \autoref{fig:two_cells} for an illustration.\\
+Say that a transcription factor \textvar{X} regulates another transcription factor \textvar{Y}, and consider two cells. In both cells, \textvar{X} activates the transcription of \textvar{Y}, but in the second cell, \textvar{Y} also negatively autoregulates; see \autoref{fig:two_cells} for an illustration.\\
 
 \begin{figure}[h]
 \centering
@@ -335,7 +335,7 @@ How could we simulate a feedforward loop with a particle-based reaction-diffusio
 \centering
 \mySfFamily
 \includegraphics[width = 0.5\textwidth]{../images/type-1_incoherent_feed-forward_loop.png}
-\caption{The incoherent feed-forward loop network motif. Note that \textvar{X} upregulates \textvar{Y} and \textvar{Z}, while \textvar{Y} downregulates \textvar{Z}.}
+\caption{The incoherent feed-forward loop network motif. Note that \textvar{X} activates \textvar{Y} and \textvar{Z}, while \textvar{Y} represses \textvar{Z}.}
 \label{fig:type-1_incoherent_feed-forward_loop}
 \end{figure}
 

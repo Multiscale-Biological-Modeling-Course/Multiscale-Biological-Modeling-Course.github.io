@@ -11,7 +11,7 @@ image: "../assets/images/repressilator_chart.png"
 **Exercise:** Modify the Jupyter notebook provided in the [tutorial on loops](tutorial_loops) to count the number of feed-forward loops in the transcription factor network for *E. coli.*
 {: .notice--success}
 
-There are eight types of feed-forward loops based on the eight different ways in which we can label the edges in the network with a "+" or a "-" based on upregulation or downregulation.
+There are eight types of feed-forward loops based on the eight different ways in which we can label the edges in the network with a "+" or a "-" based on activation or repression.
 
 [![image-center](../assets/images/600px/ffl_types.png){: .align-center}](../assets/images/ffl_types.png)
 The eight types of feed-forward loops.[^ffl]

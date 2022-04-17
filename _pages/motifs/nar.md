@@ -12,7 +12,7 @@ image: "../assets/images/repressilator_chart.png"
 
 Theodosius Dobzhansky famously wrote that "nothing in biology makes sense except in the light of evolution."[^Dob] In the spirit of this quotation, there must be some evolutionary reason for the presence of the large number of negatively autoregulating *E. coli* transcription factors that we identified in the [previous lesson](autoregulation). We will use biological modeling to establish this justification.
 
-Say that a transcription factor *X* regulates another transcription factor *Y*, and consider two cells. In both cells, *X* upregulates the transcription of *Y*, but in the second cell, *Y* also negatively autoregulates; see the figure below for an illustration.
+Say that a transcription factor *X* regulates another transcription factor *Y*, and consider two cells. In both cells, *X* activates *Y*, but in the second cell, *Y* also negatively autoregulates; see the figure below for an illustration.
 
 [![image-center](../assets/images/600px/two_cells.png){: .align-center}](../assets/images/two_cells.png)
 The two cells that we wish to simulate. In the first cell (left), *X* only activates *Y*; in the second cell (right), *Y* also negatively autoregulates.
@@ -50,7 +50,7 @@ To recap, the simulations of both cells will include an initial concentration of
 If you followed the above tutorial, then you were likely disappointed in the second cell and its negative autoregulating transcription factor *Y*. The figure below shows a plot of the concentration of *Y* particles for the two simulations; the first cell is shown in red, and the second cell is shown in yellow.
 
 [![image-center](../assets/images/600px/nar_unequal_chart.png){: .align-center}](../assets/images/nar_unequal_chart.png)
-A comparison of the number of *Y* particles across two simulations. In the first cell (red), we only have upregulation of *Y* by *X*, whereas in the second cell (yellow), we keep all parameters fixed but add a reaction simulating negative autoregulation of *Y*.
+A comparison of the number of *Y* particles across two simulations. In the first cell (red), we only have activation of *Y* by *X*, whereas in the second cell (yellow), we keep all parameters fixed but add a reaction simulating negative autoregulation of *Y*.
 {: style="font-size: medium;"}
 
 By allowing *Y* to slow its own transcription, we wound up with a simulation in which the final concentration of *Y* was *lower*. It seems like we are back where we started!

@@ -12,18 +12,18 @@ image: "../assets/images/repressilator_chart.png"
 
 Once we know which genes each transcription factor regulates, we can consolidate this information into a **transcription factor network**. The nodes in the network represent an organism's proteins, and we connect *X* to *Y* with an edge if *X* is a transcription factor that regulates the expression of protein *Y*. These edges are one-way connections; any node can have an edge leading into it, but only a transcription factor can have an edge leaving it.
 
-The figure below shows a portion of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial studies. Even though *E. coli* is a bacterium, we will be able to draw powerful conclusions about gene regulation from its transcription factor network. The true network, the sum of over two decades of biological research, consists of thousands of genes and around 300 transcription factors[^tfNumber]. Because of the size of this network, it forms what computational biologists affectionally call a "hairball", or a network with so many connections that it is functionally impossible to analyze visually. For this reason, we will need to use computational approaches to study our hairball.
+The figure below shows a portion of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial study. The complete network, which is the sum of over two decades of biological research, consists of thousands of genes and around 300 transcription factors[^tfNumber]. Because of the size of this network, it forms what computational biologists affectionally call a "hairball", or a network with so many connections that it is functionally impossible to analyze visually. For this reason, we will need to use computational approaches to study this network.
 
-Note that the edges in the *E. coli* transcription factor network below are colored red or green. An edge connecting *X* to *Y* is colored green if *X* upregulates *Y*, and it is colored red if *X* downregulates *Y*. (Alternatively, we could label the edges with a "+" or "-".)
+Note that the edges in the *E. coli* transcription factor network below are colored red or green. An edge connecting *X* to *Y* is colored green if *X* activates *Y*, and it is colored red if *X* represses *Y*. (Alternatively, we could label the edges with a "+" or "-".)
 
 [![image-center](../assets/images/600px/e_coli_tf_network.jpeg){: .align-center}](../assets/images/e_coli_tf_network.jpeg)
-A subset of the *E. coli* transcription factor network[^eColiNetwork] (click to enlarge). An edge from *X* to *Y* denotes that *X* is a transcription factor that regulates *Y*. Edges corresponding to upregulation are colored green, and edges corresponding to downregulation are colored red.
+A subset of the *E. coli* transcription factor network[^eColiNetwork] (click to enlarge). An edge from *X* to *Y* denotes that *X* is a transcription factor that regulates *Y*. Edges corresponding to activation are colored green, and edges corresponding to repression are colored red.
 {: style="font-size: medium;"}
 
 **STOP:** Select the expanded view of the transcription factor network in the figure above. Do you notice anything interesting about this network?
 {: .notice--primary}
 
-## (Feedback) loops in the transcription factor network
+## Loops in the transcription factor network
 
 You may have noticed that the *E. coli* transcription factor network seems to have surprisingly many **loops**, or edges that connect a node to itself. It is worth pausing for a moment to consider the implications of a loop in a transcription factor network. What does it mean for a transcription factor to regulate itself?
 
