@@ -153,32 +153,20 @@ Transcription factor autoregulation leads us to ask two questions. First, how ca
 \label{sec:gene_autoregulation_is_surprisingly_frequent}
 \phantomsection
 
-\subsection{Using randomness to determine statistical significance}
-
-In the previous section, we introduced the transcription factor network, in which a protein \textvar{X} is connected to a protein \textvar{Y} if \textvar{X} is a transcription factor that regulates the production of \textvar{Y}. We also saw that in the \textit{E. coli} transcription factor network, there seemed to be a large number of loops, or edges connecting some transcription factor \textvar{X} to itself, and which indicate the autoregulation of \textvar{X}.
-
-In the introduction, we briefly referenced the notion of a network motif, a structure occurring often throughout a network. Our assertion is that the loop is a motif in the transcription factor network; how can we defend this claim?
-
-To argue that a loop is indeed a motif in the \textit{E. coli} transcription factor network, we will apply a paradigm that occurs throughout computational biology (and science in general) when determining whether an observation is statistically significant. We will compare our observation against a  \textit{randomly generated} dataset. Without getting into the statistical details, if an observation is frequent in a real dataset, and rare in a random dataset, then it is likely to be statistically significant. Randomness saves the day again!\\
-
-\begin{note}[%
-A seminal biological example of this paradigm is the search tool BLAST, which allows researchers to compare a sequence query against a database (e.g., comparing the DNA sequence of a newly sequenced gene against a collection of many known proteins). Once BLAST finds a ``hit'', or a location in the database where the query occurs with minimal modifications, it asks, ``What is the \textit{probability} that we would find a hit of the same quality of the query against a randomly generated 'decoy' database?'' If this probability is low, then we can feel confident that the hit is statistically significant.
-]\end{note}
-
- \begin{qbox}[%
- How can we apply this paradigm of a randomly generated dataset to determine whether a transcription factor network contains a significant number of loops?
- ]\end{qbox}
-
-\FloatBarrier
-\phantomsection
 \subsection{Comparing a real transcription factor network against a random network}
 
-To determine whether the number of loops in the transcription factor network of \textit{E. coli} is statistically significant, we will compare this number of loops against the expected number of loops we would find in a randomly generated transcription factor network. If the number of loops in the real network is much higher than the number of loops in the random network, then we have strong evidence that some selective force is causing gene autoregulation.
+To argue that a loop is indeed a motif in the \textit{E. coli} transcription factor network, we will apply a paradigm that occurs throughout computational biology (and science in general) when determining whether an observation is statistically significant. We will compare our observation against a  \textit{randomly generated} dataset; if the observation is frequent in a real dataset and rare in a random dataset, then it is likely to be statistically significant. Randomness saves the day again!\\
+
+ \begin{qbox}[%
+ How can we apply this paradigm of forming a randomly generated dataset to determine whether a transcription factor network contains a significant number of loops?
+ ]\end{qbox}
+
+To determine whether the number of loops in the transcription factor network of \textit{E. coli} is statistically significant, we will compare this number against the expected number of loops we would find in a randomly generated transcription factor network. If the former is much higher than the latter, then we have strong evidence that some selective force is causing gene autoregulation.
 
 There are multiple ways to generate a random network, but we will use an approach developed by Edgar Gilbert in 1959. Given an integer \textvar{n} and a probability \textvar{p} (between 0 and 1), we form \textvar{n} nodes. Then, for every possible pair of nodes \textvar{X} and \textvar{Y}, we connect \textvar{X} to \textvar{Y} via a directed edge with probability \textvar{p}; that is, we simulate the process of flipping a weighted coin that has probability \textvar{p} of coming up ``heads''.\\
 
 \begin{note}[%
- If you are interested in the technical details of how this can be simulated computationally, see https://compeau.cbd.cmu.edu/programming-for-lovers/chapter-2-forecasting-a-presidential-election-with-monte-carlo-simulation/
+Simulating a weighted coin flip amounts to generating a ``random'' number $x$ between 0 and 1, and considering it ``heads'' if $x$ is less than $p$ and ``tails'' otherwise. For more details on random number generation, consult Programming for Lovers (\url{http://programmingforlovers.com}).
 ]\end{note}
 
 \begin{qbox}[%
@@ -189,19 +177,17 @@ The full \textit{E. coli} transcription factor network contains thousands of gen
 
 Instead, we will focus on the network comprising only those \textit{E. coli} transcription factors that regulate each other. This network has 197 nodes and 477 edges, and so we will begin by forming a random network with $\textvar{n} = 197$ nodes.
 
-We then select \textvar{p} to ensure that our random network will on average have 477 edges. To do so, we note that there are $\textvar{n}^2$ pairs of nodes that could have an edge connecting them (\textvar{n} choices for the starting node and \textvar{n} for the ending node). If we were to set \textvar{p} equal to $1/n^2$, then we would expect on average only to see a single edge in the random network. We therefore scale this value by 477 and set \textvar{p} equal to $477/n^2 \approx 0.0123$ so that we will see, on average, 477 edges in our random network.
-
-In the following tutorial, we write some code to count the number of loops in the real \textit{E. coli} transcription factor network. We then build a random network and compare the number of loops found in this network against the number of loops in the real network.
+We then select \textvar{p} to ensure that our random network will on average have 477 edges. To do so, we note that there are $\textvar{n}^2$ pairs of nodes that could have an edge connecting them (\textvar{n} choices for the starting node and \textvar{n} for the ending node). If we were to set \textvar{p} equal to $1/n^2$, then we would expect on average only to see a single edge in the random network. We therefore scale this value by 477 and set \textvar{p} equal to $477/n^2 \approx 0.0123$ so that we will see, on average, 477 edges in our random network.\tutorial[https://biologicalmodeling.org/motifs/tutorial_loops]
 
 \FloatBarrier
 \phantomsection
 \subsection{The negative autoregulation motif}
 
-In a random network containing \textvar{n} nodes, the probability that a given edge is a loop is 1/\textvar{n}. Therefore, if the network has \textit{e} edges, then we would on average see \textit{e}/\textvar{n} loops in the network. In our case, \textvar{n} is 197, and \textit{e} is 477; therefore, on average, we will only see approximately $197/497 \approx 2.42$ loops in a random network. Yet the real \textit{E. coli} network of transcription factors that regulate each other contains 130 loops!
+In a random network containing \textvar{n} nodes, the probability that a given edge is a loop is 1/\textvar{n}. Therefore, if the network has \textit{e} edges, then we would on average see \textit{e}/\textvar{n} loops in the network. In our case, \textvar{n} is 197, and \textit{e} is 477; therefore, on average, we expect to see $197/497 \approx 2.42$ loops in a random network. Yet the real \textit{E. coli} network of transcription factors that regulate each other contains 130 loops!
 
-Furthermore, in a random network, we would expect about half of the edges correspond to activation, and the other half correspond to repression. But if you followed the preceding tutorial, then you know that of the 130 loops in the \textit{E. coli} network, 35 correspond to activation and 95 correspond to repression. If this observation were not significant, then you should not be surprised to flip a coin 130 times and see ``heads'' come up 95 times.
+Furthermore, in a random network, we would expect about half of the edges correspond to activation, and the other half correspond to repression. But of the 130 loops in the \textit{E. coli} network, 35 correspond to activation and 95 correspond to repression. Just as you would be surprised to flip a coin 130 times and see ``heads'' come up 95 times, the cell must be \textdef{negatively autoregulating}{negative autoregulation}{the process in which a transcription factor represses itself} for some reason.
 
-Not only is autoregulation an important feature of transcription factors, but these transcription factors tend to \textit{negatively} autoregulate. Why in the world would organisms have evolved the process of autoregulation only for a transcription factor to \textit{slow down} its own transcription? In the next section, we will begin to unravel the mystery.\\
+Why in the world would organisms have evolved the process of autoregulation only for a transcription factor to \textit{slow down} its own transcription? In the next section, we will begin to unravel the mystery.\\
 
 
 \FloatBarrier
@@ -277,9 +263,7 @@ How can we change the parameters of our models to obtain a mathematically contro
 
 There are a number of parameters that we should keep constant across the two simulations because they are unrelated to regulation: the diffusion rates of \textvar{X} and \textvar{Y}, the number of initial particles \textvar{X} and \textvar{Y}, and the degradation rate of \textvar{Y}.
 
-With these parameters fixed, the only way that the steady state concentration of \textvar{Y} can be the same in the two simulations is if we \textit{increase} the rate at which the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ takes place in the simulation of the second cell. The following tutorial adjusts this rate parameter to ensure a mathematically controlled comparison.
-
-\tutorial[https://biologicalmodeling.org/motifs/tutorial_nar_mathematically_controlled]
+With these parameters fixed, the only way that the steady state concentration of \textvar{Y} can be the same in the two simulations is if we \textit{increase} the rate at which the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ takes place in the simulation of the second cell.\tutorial[https://biologicalmodeling.org/motifs/tutorial_nar_mathematically_controlled]
 
 \FloatBarrier
 \phantomsection
@@ -349,9 +333,7 @@ The second simulation will include both of these reactions, but we will also hav
 
 Furthermore, to obtain a mathematically controlled comparison, the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Z}$ should have a higher rate in the second simulation modeling the FFL. If we do not raise the rate of this reaction, then the repression of \textvar{Z} by \textvar{Y} will cause the steady state concentration of \textvar{Z} to be lower in the second simulation.
 
-If you are feeling adventurous, then you may like to adapt the code from the previous tutorial to run the above two simulations and tweak the rate of the $\textvar{X} \rightarrow \textvar{X} + \textvar{Z}$ reaction to see if you can obtain the same steady state concentration of \textvar{Z} in the two simulations. We also provide the following tutorial guiding you through setting up these simulations, which we will interpret in the next section.
-
-\tutorial[https://biologicalmodeling.org/motifs/tutorial_feed]
+If you are feeling adventurous, then you may like to adapt the code from the previous tutorial to run the above two simulations and tweak the rate of the $\textvar{X} \rightarrow \textvar{X} + \textvar{Z}$ reaction to see if you can obtain the same steady state concentration of \textvar{Z} in the two simulations.\tutorial[https://biologicalmodeling.org/motifs/tutorial_feed]
 
 \FloatBarrier
 \phantomsection
@@ -433,9 +415,7 @@ Furthermore, we assume that all three particles are produced as the result of an
 
 When discussing the feed-forward loop, we saw that we can use the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ to model the repression of \textvar{Y} by \textvar{X}. To complete the repressilator model, we will add the two reactions $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ and $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$, having the same rate as the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$.
 
-If you followed our previous tutorials, then you may feel comfortable taking off the training wheels and implementing the repressilator with your own reaction-diffusion model, which we cover in the following tutorial.
-
-\tutorial[https://biologicalmodeling.org/motifs/tutorial_oscillators]
+If you followed our previous tutorials, then you may feel comfortable taking off the training wheels and implementing the repressilator with your own reaction-diffusion model.\tutorial[https://biologicalmodeling.org/motifs/tutorial_oscillators]
 
 \FloatBarrier
 \phantomsection
@@ -504,9 +484,7 @@ For example, say that we are modeling a degradation reaction. If we start with 1
 
 As for a repression reaction like $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$, we can update the concentration of \textvar{Y} particles by subtracting some factor \textit{r} times the current concentration of \textvar{Y} particles. This factor should be directly correlated with the current concentrations of both \textvar{X} and \textvar{Y}.
 
-We will discuss the technical details behind our well-mixed model in the next section. In the meantime, we would like to see what happens when we make a major disturbance to the concentration of one of the particles in the well-mixed model to see whether the particle concentrations resume their oscillations.
-
-\tutorial[https://biologicalmodeling.org/motifs/tutorial_perturb]
+We will discuss the technical details behind our well-mixed model in the next section. In the meantime, we would like to see what happens when we make a major disturbance to the concentration of one of the particles in the well-mixed model to see whether the particle concentrations resume their oscillations.\tutorial[https://biologicalmodeling.org/motifs/tutorial_perturb]
 
 \FloatBarrier
 \phantomsection
