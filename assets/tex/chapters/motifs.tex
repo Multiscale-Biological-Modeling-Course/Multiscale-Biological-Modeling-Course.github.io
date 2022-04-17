@@ -17,7 +17,7 @@ To model protein interactions, we will use a  \textdef{network}{network}{a colle
 
 Our interest lies in the frequently recurring structures hidden within biological networks called \textdef{network motifs}{network motif}{a recurring substructure in a network}. Similarly to our work in \autoref{chapter:turing}, we will use modeling to answer \textit{why} these motifs have evolved to help the cell respond to its environment.
 
-We will soon define our specific network of study, but before we get ahead of ourselves, we will introduce some of the molecular biology fundamentals we will need to complete our analysis. You may already know this biological background, in which case you should feel free to skim the next section.\\
+We will soon define our specific network of study, but before we get ahead of ourselves, we will introduce some molecular biology fundamentals that we will need to complete our analysis. You may already know this biological background, in which case you should feel free to skim the next section.\\
 
 \FloatBarrier
 \phantomsection
@@ -32,7 +32,7 @@ DNA is a double-stranded molecule consisting of the four nucleobases adenine, cy
 
 The RNA transcript is then \textdef{translated}{translation}{the process by which a single-stranded RNA molecule is used as a template for the production of a polypeptide chain of amino acids} into an amino acid sequence. Because there are four different bases but twenty amino acids available, RNA is translated in \textdef{codons}{codon}{a triplet of RNA nucleotides, which encodes a single amino acid during translation}, or triplets of nucleobases. \autoref{fig:central_dogma}(top) shows the way in which codons are translated into amino acids, which is called the \textdef{genetic code}{genetic code}{the set of rules according to which each of the 64 possible triplets of RNA nucleotides, called codons, are converted into one of the 20 standard amino acids (two codons do not correspond to any amino acid and are called stop codons, as they halt translation)}.
 
-DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the \textdef{central dogma of molecular biology}{central dogma of molecular biology}{the paradigm that genetic information in the cell flows from DNA to RNA via transcription and from RNA to protein via translation} and is illustrated in \autoref{fig:central_dogma} (bottom).\\
+DNA can therefore be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the \textdef{central dogma of molecular biology}{central dogma of molecular biology}{the paradigm that genetic information in the cell flows from DNA to RNA via transcription and from RNA to protein via translation} and is illustrated in \autoref{fig:central_dogma} (bottom).\\
 
 \begin{figure}[hp]
 \centering
@@ -52,11 +52,11 @@ DNA can be thought of as a blueprint for storing information that flows from DNA
 \phantomsection
 \subsection{Transcription factors control gene regulation}
 
-All of your cells have essentially the same DNA, and yet your liver cells, heart cells, and brain cells are able to serve different functions. This is because the rates at which these genes are \textdef{regulated}{gene regulation}{the process by which a gene can be activated or repressed (i.e., turned ``on'' or ``off'') via molecular mechanisms}, or converted into RNA and then protein, vary between genes in different tissues.
+All of your cells have essentially the same DNA, and yet your liver cells, heart cells, and brain cells are able to serve different functions. This is because the rates at which these genes are \textdef{regulated}{gene regulation}{the process by which a gene can be activated or repressed (i.e., turned ``on'' or ``off'') via molecular mechanisms}, or converted into RNA and then protein, vary for different cell types and in response to different stimuli.
 
-Gene regulation typically occurs at either the DNA or protein level. At the DNA level, regulation is modulated by \textdef{transcription factors}{transcription factor}{a protein serving to regulate genes by binding to DNA}, master regulator proteins that bind upstream of genes and serve to either \textdef{activate}{gene activation}{the process by which the production of a gene is increased} or \textdef{repress}{gene repression}{the process by which the production of a gene is decreased} a gene's rate of transcription, turning that rate up or down, respectively.
+Gene regulation typically occurs at either the DNA or protein level. At the DNA level, regulation is modulated by \textdef{transcription factors}{transcription factor}{a protein serving to regulate genes by binding to DNA}, master regulator proteins that typically bind to the DNA immediately preceding a gene and serve to either \textdef{activate}{gene activation}{the process by which the production of a gene is increased} or \textdef{repress}{gene repression}{the process by which the production of a gene is decreased} the gene's rate of transcription, turning that rate up or down, respectively.
 
-Because of the central dogma, transcription factors are involved in a sort of feedback loop. DNA is transcribed into RNA, which is translated into the protein sequence of a transcription factor, which then binds to the upstream region of some other gene and changes its rate of transcription.
+Because of the central dogma, transcription factors are involved in a feedback loop. DNA is transcribed into RNA, which is translated into the protein sequence of a transcription factor, which then binds to the region preceding a gene and changes its rate of transcription.
 
 Transcription factors are vital for the cell's response to its environment because extracellular stimuli can serve to activate a transcription factor via a system of signaling molecules that convey a signal through relay molecules to the transcription factor (\autoref{fig:transduction}). Only when the transcription factor is activated will it regulate its target protein(s).\\
 
@@ -64,24 +64,22 @@ Transcription factors are vital for the cell's response to its environment becau
 \centering
 \mySfFamily
 \includegraphics[width = 0.6\textwidth]{../images/signal_pathway.jpg}
-\caption{A cell receiving a signal which triggers a response in which this signal is ``transduced'' into the cell, resulting in transcription of a gene. We will discuss signal transduction in greater detail in a future chapter.}
+\caption{A cell receiving a signal which triggers a response in which this signal is ``transduced'' into the cell, resulting in transcription of a gene.}
 \label{fig:transduction}
 \end{figure}
 
-In \autoref{chapter:chemotaxis}, we will discuss the details of how the cell detects an extracellular signal and conveys it as a response within the cell. For now, we will focus on the relationship between transcription factors and the genes they regulate.
+In \autoref{chapter:chemotaxis}, we will discuss the details of how the cell detects an extracellular signal and conveys it as a response within the cell. For now, we will focus on the relationship between transcription factors and the genes that they regulate.
 
 \phantomsection
-\subsection{Determining if a given transcription factor regulates the expression of a given gene}
-
-Over the years, a number of both computational and experimental approaches have been developed to identify the collection of genes that a given transcription factor regulates.
+\subsection{Determining if a transcription factor regulates a given gene}
 
 A transcription factor has a weak binding affinity to DNA in general, but it has a very strong binding affinity for a single specific short sequence of nucleotides called a \textdef{sequence motif}{sequence motif}{a repeated collection of nucleotides, which may serve as a binding site for a protein such as a transcription factor}. Think of a transcription factor as latching onto DNA and then ``sliding'' up and down the DNA molecule until it finds its target motif, where it clamps down. If this motif occurs immediately before a gene, then the transcription factor will regulate this gene.\\
 
 \begin{note}[%
-The astute reader will notice that we have already used the term ``motif'' in two different contexts, to mean both a recurring network substructure and now a sequence of nucleotides to which a transcription factor binds. This sequence is called a ``motif'' because the transcription factor may regulate multiple different genes, so that the binding sequence may occur upstream of all these genes.
+The astute reader will notice that we have already used the term ``motif'' in two different contexts, to mean both a recurring network substructure and (now) a sequence of nucleotides to which a transcription factor binds. This sequence is called a ``motif'' because the transcription factor may regulate multiple different genes, so that the binding sequence may occur immediately before all of these genes.
 ]\end{note}
 
-A natural question, then, is to find the set of genes to which a transcription factor binds. A widespread experimental practice for determining where a protein binds in an organism's genome is called \textdef{ChIP-seq}{ChIP-seq}{short for ``chromatin immunoprecipitation sequencing'', an approach that }, which is short for \textdefnogloss{chromatin immunoprecipitation sequencing}. This approach, which is illustrated in \autoref{fig:ChIP-seq_workflow}, combines an organism's DNA with multiple copies of a protein of interest that binds to DNA (which in this case would be a transcription factor). After allowing for the proteins to bind naturally to the DNA, the DNA is cleaved into much smaller fragments of a few hundred base pairs. As a result of this process, we obtain a collection of DNA fragments, some of which are attached to a copy of our protein of interest.
+A natural question, then, is to find the set of genes to which a transcription factor binds. A widespread experimental approach answering this question is called \textdef{ChIP-seq}{ChIP-seq}{short for ``chromatin immunoprecipitation sequencing'', an approach that }, which is short for \textdefnogloss{chromatin immunoprecipitation sequencing}. This approach, illustrated in \autoref{fig:ChIP-seq_workflow}, combines an organism's DNA with multiple copies of a protein of interest that binds to DNA (which in this case would be the transcription factor). After allowing for the proteins to bind naturally to the DNA, the DNA is cleaved into much smaller fragments of a few hundred base pairs. As a result, we obtain a collection of DNA fragments, some of which are attached to a copy of our protein of interest.
 
 \begin{figure}[hp]
 \centering
@@ -91,23 +89,15 @@ A natural question, then, is to find the set of genes to which a transcription f
 \label{fig:ChIP-seq_workflow}
 \end{figure}
 
-The question is how to isolate the fragments of DNA that are bound to a single transcription factor of interest so that we can infer the fragments of DNA to which that transcription factor binds.
+The question is how to isolate the fragments of DNA that are bound to a single transcription factor of interest, and the clever trick is to use an \textdef{antibody}{antibody}{a blood protein that binds to a specific foreign substance in the body}. Normally, antibodies are produced by the immune system to target foreign pathogens. The antibody used by ChIP-seq is designed to identify a single protein of interest, and the antibody is attached to a bead. Once the antibody attaches to the protein target, a single complex is formed consisting of the DNA fragment, the transcription factor bound to the DNA, the antibody that recognized the transcription factor, and the bead bound to the antibody. Because the bead weighs down these complexes, they can be filtered out as preciptate from the solution, and we are left with just the DNA fragments that are bound to our transcription factor.
 
-The clever trick is to use an \textdef{antibody}{antibody}{a blood protein that binds to a specific foreign substance in the body}. Normally, antibodies are produced by the immune system to target foreign pathogens. The antibody used by ChIP-seq is designed to identify a single protein of interest, and the antibody is attached to a bead. Once the antibody attaches to the protein target, a single complex is formed consisting of the DNA fragment, the transcription factor bound to the DNA, the antibody that recognized the transcription factor, and the bead bound to the antibody. Because the bead weighs down these complexes, they can be filtered out as ``precipitate'' from the solution, and we are left with just the DNA fragments that are bound to our transcription factor.
-
-In a final step, we unlink the protein from the DNA, leaving a collection of DNA fragments that were previously bound to a single transcription factor. These fragments are read using DNA sequencing to determine the order of nucleotides on each fragment. Once we have read the fragments, we can then scan through the genome to determine the genes that these fragments precede. We can then postulate that these are the genes regulated by the transcription factor!\\
+In a final step, the protein is unlinked from the DNA, leaving a collection of DNA fragments that were previously bound to a single transcription factor. Each fragments is read using DNA sequencing to determine its order of nucleotides and then queried against the genome to determine the gene(s) that the fragment precedes. We can therefore postulate that these are the genes that the transcription factor regulates!\\
 
 \begin{qbox}[%
 How do you think that researchers could determine whether a transcription factor activates or inhibits a given gene?
 ]\end{qbox}
 
-
-\phantomsection
-\subsection{Organizing transcription factor information}
-
-As a result of techniques like ChIP-seq, researchers have learned a great deal about which transcription factors regulate which genes. But what can we do with this information?
-
-We would like to organize the relationships between transcription factors and the genes they regulate in a way that will help us identify patterns in these relationships. In the next section, we will see that consolidating gene regulatory information into a \textit{network} will allow us to infer how cells have evolved to quickly change the expression of their genes in response to a dynamic environment.\\
+As a result of techniques like ChIP-seq, researchers have learned a great deal about which transcription factors regulate which genes. The key is to organize the relationships between transcription factors and the genes that they regulate in a way that will help us identify patterns in these relationships.\\
 
 
 \FloatBarrier
@@ -143,7 +133,7 @@ Do you notice anything interesting about the network in \autoref{fig:e_coli_tf_n
 
 You may have noticed that the \textit{E. coli} transcription factor network seems to have surprisingly many \textdef{loops}{loop}{an edge in a network connecting a node to itself}, or edges that connect a node to itself. It is worth pausing for a moment to consider the implications of a loop in a transcription factor network. What does it mean for a transcription factor to regulate itself?
 
-A transcription factor is a protein, which means that because of the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In \textdef{autoregulation}{autoregulation}{the process by which a transcription factor regulates its own production}, illustrated in \autoref{fig:autoregulation_example}, the transcription factor protein then binds to the DNA in the upstream region of the gene encoding the \textit{same} transcription factor. This type of \textit{feedback} is a beautiful and surprising feature of a simple biological system.\\
+A transcription factor is a protein, which means that because of the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In \textdef{autoregulation}{autoregulation}{the process by which a transcription factor regulates its own production}, illustrated in \autoref{fig:autoregulation_example}, the transcription factor protein then binds to the DNA in the region preceding the gene that encodes the very \textit{same} transcription factor. This type of \textit{feedback} is a beautiful and surprising feature of a simple biological system.\\
 
 \begin{figure}[h]
 \centering

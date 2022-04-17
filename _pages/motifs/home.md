@@ -20,7 +20,7 @@ To model protein interactions, we will use a  **network**, which is a collection
 
 Our interest lies in the frequently recurring structures hidden within biological networks called **network motifs**. Similarly to our work in the prologue, we will use modeling to answer of *why* these motifs have evolved to help the cell respond to its environment.
 
-We will soon define our specific network of study, but before we get ahead of ourselves, we will introduce some of the molecular biology fundamentals we will need to complete our analysis. You may already know this biological background, in which case you should feel free to skim the next lesson.
+We will soon define our specific network of study, but before we get ahead of ourselves, we will introduce some molecular biology fundamentals that we will need to complete our analysis. You may already know this biological background, in which case you should feel free to skim the next lesson.
 
 [Next lesson](transcription){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

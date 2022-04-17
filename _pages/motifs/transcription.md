@@ -18,7 +18,7 @@ The RNA transcript is then **translated** into an amino acid sequence. Because t
 The genetic code, which dictates the conversion of RNA codons into amino acids. Codons are read from the inside of the figure outward. Image courtesy J_Alves, Open Clip Art.
 {: style="font-size: medium;"}
 
-DNA can be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the **central dogma of molecular biology**, illustrated in the figure below.
+DNA can therefore be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the **central dogma of molecular biology**, illustrated in the figure below.
 
 **Note:** Like any dogma, there are times in which the central dogma of molecular biology is violated. If you are interested in an example, consider Chapter 4 of <a href="https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-4" target="_blank"><em>Bioinformatics Algorithms</em></a>.
 {: .notice--info}
@@ -29,11 +29,11 @@ The central dogma of molecular biology states that molecular information flows f
 
 ## Transcription factors control gene regulation
 
-All of your cells have essentially the same DNA, and yet your liver cells, heart cells, and brain cells are able to serve different functions. This is because the rates at which these genes are **regulated**, or converted into RNA and then protein, vary between genes in different tissues.
+All of your cells have essentially the same DNA, and yet your liver cells, heart cells, and brain cells are able to serve different functions. This is because the rates at which these genes are **regulated**, or converted into RNA and then protein, vary for different cell types and in response to different stimuli.
 
-Gene regulation typically occurs at either the DNA or protein level. At the DNA level, regulation is modulated by **transcription factors**, master regulator proteins that bind upstream of genes and serve to either **activate** or **repress** a gene's rate of transcription, turning that rate up or down, respectively.
+Gene regulation typically occurs at either the DNA or protein level. At the DNA level, regulation is modulated by **transcription factors**, master regulator proteins that typically bind to the DNA immediately preceding a gene and serve to either **activate** or **repress** the gene's rate of transcription, turning that rate up or down, respectively.
 
-Because of the central dogma, transcription factors are involved in a sort of feedback loop. DNA is transcribed into RNA, which is translated into the protein sequence of a transcription factor, which then binds to the upstream region of some other gene and changes its rate of transcription.
+Because of the central dogma, transcription factors are involved in a feedback loop. DNA is transcribed into RNA, which is translated into the protein sequence of a transcription factor, which then binds to the upstream region of a gene and changes its rate of transcription.
 
 Transcription factors are vital for the cell's response to its environment because extracellular stimuli can serve to activate a transcription factor via a system of signaling molecules that convey a signal through relay molecules to the transcription factor (see figure below). Only when the transcription factor is activated will it regulate its target protein(s).
 
@@ -41,24 +41,20 @@ Transcription factors are vital for the cell's response to its environment becau
 A cell receiving a signal which triggers a response in which this signal is "transduced" into the cell, resulting in transcription of a gene. We will discuss signal transduction in greater detail in a future module.[^signalResponse]
 {: style="font-size: medium;"}
 
-In module 2, we will discuss the details of how the cell detects an extracellular signal and conveys it as a response within the cell. For now, we will focus on the relationship between transcription factors and the genes they regulate.
+In module 2, we will discuss the details of how the cell detects an extracellular signal and conveys it as a response within the cell. For now, we will focus on the relationship between transcription factors and the genes that they regulate.
 
-## Determining if a given transcription factor regulates the expression of a given gene
-
-Over the years, a number of both computational and experimental approaches have been developed to identify the collection of genes that a given transcription factor regulates.
+## Determining if a transcription factor regulates a given gene
 
 A transcription factor has a weak binding affinity to DNA in general, but it has a very strong binding affinity for a single specific short sequence of nucleotides[^machinery] called a **sequence motif**. Think of a transcription factor as latching onto DNA and then "sliding" up and down the DNA molecule until it finds its target motif, where it clamps down. If this motif occurs immediately before a gene, then the transcription factor will regulate this gene.
 
-**Note:** The astute reader will notice that we have already used the term "motif" in two different contexts, to mean both a recurring network substructure and now a sequence of nucleotides to which a transcription factor binds. This sequence is called a "motif" because the transcription factor may regulate multiple different genes, so that the binding sequence may occur upstream of all these genes.
+**Note:** The astute reader will notice that we have already used the term "motif" in two different contexts, to mean both a recurring network substructure and (now) a sequence of nucleotides to which a transcription factor binds. This sequence is called a "motif" because the transcription factor may regulate multiple different genes, so that the binding sequence may occur immediately before all of these genes.
 {: .notice--info}
 
-A natural question, then, is to find the set of genes to which a transcription factor binds. A widespread experimental practice for determining where a protein binds in an organism's genome is called **ChIP-seq**[^chip], which is short for **chromatin immunoprecipitation sequencing**. This approach, which is illustrated in the figure below, combines an organism's DNA with multiple copies of a protein of interest that binds to DNA (which in this case would be a transcription factor). After allowing for the proteins to bind naturally to the DNA, the DNA is cleaved into much smaller fragments of a few hundred base pairs. As a result of this process, we obtain a collection of DNA fragments, some of which are attached to a copy of our protein of interest.
+A natural question, then, is to find the set of genes to which a transcription factor binds. A common experimental approach answering this question is called **ChIP-seq**[^chip], which is short for **chromatin immunoprecipitation sequencing**. This approach, which is illustrated in the figure below, combines an organism's DNA with multiple copies of a protein of interest that binds to DNA (which in this case would be a transcription factor). After allowing for the proteins to bind naturally to the DNA, the DNA is cleaved into much smaller fragments of a few hundred base pairs. As a result, we obtain a collection of DNA fragments, some of which are attached to a copy of our protein of interest.
 
-The question is how to isolate the fragments of DNA that are bound to a single transcription factor of interest so that we can infer the fragments of DNA to which that transcription factor binds.
+The question is how to isolate the fragments of DNA that are bound to a transcription factor of interest, and the clever trick is to use an **antibody**. Normally, antibodies are produced by the immune system to target foreign pathogens. The antibody used by ChIP-seq is designed to identify a single protein of interest, and the antibody is attached to a bead. Once the antibody attaches to the protein target, a single complex is formed consisting of the DNA fragment, the transcription factor bound to the DNA, the antibody that recognized the transcription factor, and the bead bound to the antibody. Because the bead weighs down these complexes, they can be filtered out as precipitate from the solution, and we are left with just the DNA fragments that are bound to our transcription factor.
 
-The clever trick is to use an **antibody**. Normally, antibodies are produced by the immune system to target foreign pathogens. The antibody used by ChIP-seq is designed to identify a single protein of interest, and the antibody is attached to a bead. Once the antibody attaches to the protein target, a single complex is formed consisting of the DNA fragment, the transcription factor bound to the DNA, the antibody that recognized the transcription factor, and the bead bound to the antibody. Because the bead weighs down these complexes, they can be filtered out as "precipitate" from the solution, and we are left with just the DNA fragments that are bound to our transcription factor.
-
-In a final step, we unlink the protein from the DNA, leaving a collection of DNA fragments that were previously bound to a single transcription factor. These fragments are read using DNA sequencing to determine the order of nucleotides on each fragment. Once we have read the fragments, we can then scan through the genome to determine the genes that these fragments precede. We can then postulate that these are the genes regulated by the transcription factor!
+In a final step, the protein is unlinked from the DNA, leaving a collection of DNA fragments that were previously bound to a single transcription factor. Each fragments is read using DNA sequencing to determine its order of nucleotides and then queried against the genome to determine the gene(s) that the fragment precedes. We can therefore postulate that these are the genes that the transcription factor regulates!
 
 [![image-center](../assets/images/600px/ChIP-seq_workflow.png){: .align-center width="400px"}](../assets/images/ChIP-seq_workflow.png)
 An overview of ChIP-seq. Figure courtesy Jkwchui, Wikimedia Commons user.
@@ -71,11 +67,7 @@ If you would like a different explanation of  may also like to check out the fol
 **STOP:** How do you think that researchers could determine whether a transcription factor activates or inhibits a given gene?
 {: .notice--primary}
 
-## Organizing transcription factor information
-
-As a result of techniques like ChIP-seq, researchers have learned a great deal about which transcription factors regulate which genes. But what can we do with this information?
-
-We would like to organize the relationships between transcription factors and the genes they regulate in a way that will help us identify patterns in these relationships. In the next lesson, we will see that consolidating gene regulatory information into a *network* will allow us to infer how cells have evolved to quickly change the expression of their genes in response to a dynamic environment.
+As a result of techniques like ChIP-seq, researchers have learned a great deal about which transcription factors regulate which genes. The key is to organize the relationships between transcription factors and the genes that they regulate in a way that will help us identify patterns in these relationships.
 
 [Next lesson](networks){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
