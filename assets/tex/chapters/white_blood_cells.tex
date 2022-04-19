@@ -540,59 +540,61 @@ Our three-dimensional minds will not permit us the intuition needed to visualize
 It can be shown that if $d_1$ is smaller than $d_2$, then the hyperplane provided by PCA of dimension $d_1$ is a subset of the hyperplane of dimension $d_2$. For example, the first principal component is always found within the plane ($d = 2$) provided by PCA.
 ]\end{note}
 
-PCA may be old, but it is one of the fundamental tools of statistical analysis in an era defined by growing datasets. We will soon apply it to reduce the dimensions of our shape space; first, we make a brief aside to discuss a different biological problem in which the application of PCA has provided amazing insights.
+PCA may be old, but it is one of the fundamental tools of statistical analysis in an era defined by growing datasets.
 
-\FloatBarrier
-\phantomsection
-\subsection{Genotyping: PCA is more powerful than you think}
-
-Biologists have identified hundreds of thousands of \textdefnogloss{markers}, locations within human DNA that that are common sources of human variation. The most commonly type of marker is a single nucleotide (A, C, G, or T). In the process of \textdef{genotyping}{genotyping}{a process in which an individual's genetic markers are identified and compared to those sampled from others}, a service provided by companies as part of the booming ancestry industry, an individual's markers are determined from a DNA sample.
-
-An individual's \textvar{n} markers can be converted to an \textvar{n}-dimensional vector $\mathbf{v} = (v_1, v_2, \ldots, v_n)$ such that $v_i$ is 1 if the individual possesses the variant for a marker and $v_i$ is 0 if the individual has the more common version of the marker.\\
-
-\begin{note}[%
-The mathematically astute reader will notice that this vector lies on one of the many corners of an \textvar{n}-dimensional hypercube.
-]\end{note}
-
-Because \textvar{n} is so large --- and in the early days of genotyping studies it far outnumbered the number of individual samples --- we need to be wary of the curse of dimensionality. When we apply PCA with $d = 2$ to produce a lower-dimensional projection of the data, we will see some amazing results that helped launch a multi-billion dollar industry.
-
-\autoref{fig:genotyping_europe} shows a two-dimensional projection for individuals of known European ancestry. Even though we have condensed hundreds of thousands of dimensions to just two, and even though we are not capturing any information about the ancestry of the individuals other than their DNA, the projected data points reconstruct the map of Europe.\\
-
-\begin{figure}[h]
-\centering
-\mySfFamily
-\includegraphics[width = 0.5\textwidth]{../images/genotyping_europe.png}
-\caption{The projection of a collection of marker vectors sampled from individuals of known European ethnicity onto the plane produced by PCA with \textvar{d} = 2. Individuals cluster by country, and neighboring European countries remain nearby in the projected dataset. NEED courtesy}
-\label{fig:genotyping_europe}
-\end{figure}
-
-If we zoom in on Switzerland, we can see that the countries around Switzerland tend to pull individuals toward them based on language spoken (\autoref{fig:genotyping_switzerland}).
-
-\begin{figure}[h]
-\centering
-\mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/genotyping_switzerland.png}
-\caption{A PCA plot (\textvar{d} = 2) of individuals from Switzerland as well as neighboring countries shows that an individual's mother tongue correlates with the individual's genetic similarity to representatives from the neighboring country where that language is spoken. NEED courtesy}
-\label{fig:genotyping_switzerland}
-\end{figure}
-
-And if we zoom farther out, then we can see continental patterns emerge, with India standing out as its own entity (\autoref{fig:genotyping_continents}). What is particularly remarkable about all these figures is that humans on the whole are genetically very similar, and yet PCA is able to find evidence of human migrations and separation lurking within our DNA.
-
-\begin{figure}[h]
-\centering
-\mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/genotyping_continents.png}
-\caption{A PCA plot (\textvar{d} = 2) shows clustering of individuals from Europe, Asia, Africa, and India. NEED courtesy}
-\label{fig:genotyping_continents}
-\end{figure}
-
-Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to use CellOrganizer to build a shape space for our WBC images and apply PCA to this shape space to produce a lower-dimensional representation of the space that we can visualize.\tutorial[https://biologicalmodeling.org/white_blood_cells/tutorial_shape_space]
+%We will soon apply it to reduce the dimensions of our shape space; first, we make a brief aside to discuss a different biological problem in which the application of PCA has provided amazing insights.
+%
+%\FloatBarrier
+%\phantomsection
+%\subsection{Genotyping: PCA is more powerful than you think}
+%
+%Biologists have identified hundreds of thousands of \textdefnogloss{markers}, locations within human DNA that that are common sources of human variation. The most commonly type of marker is a single nucleotide (A, C, G, or T). In the process of \textdef{genotyping}{genotyping}{a process in which an individual's genetic markers are identified and compared to those sampled from others}, a service provided by companies as part of the booming ancestry industry, an individual's markers are determined from a DNA sample.
+%
+%An individual's \textvar{n} markers can be converted to an \textvar{n}-dimensional vector $\mathbf{v} = (v_1, v_2, \ldots, v_n)$ such that $v_i$ is 1 if the individual possesses the variant for a marker and $v_i$ is 0 if the individual has the more common version of the marker.\\
+%
+%\begin{note}[%
+%The mathematically astute reader will notice that this vector lies on one of the many corners of an \textvar{n}-dimensional hypercube.
+%]\end{note}
+%
+%Because \textvar{n} is so large --- and in the early days of genotyping studies it far outnumbered the number of individual samples --- we need to be wary of the curse of dimensionality. When we apply PCA with $d = 2$ to produce a lower-dimensional projection of the data, we will see some amazing results that helped launch a multi-billion dollar industry.
+%
+%\autoref{fig:genotyping_europe} shows a two-dimensional projection for individuals of known European ancestry. Even though we have condensed hundreds of thousands of dimensions to just two, and even though we are not capturing any information about the ancestry of the individuals other than their DNA, the projected data points reconstruct the map of Europe.\\
+%
+%\begin{figure}[h]
+%\centering
+%\mySfFamily
+%\includegraphics[width = 0.5\textwidth]{../images/genotyping_europe.png}
+%\caption{The projection of a collection of marker vectors sampled from individuals of known European ethnicity onto the plane produced by PCA with \textvar{d} = 2. Individuals cluster by country, and neighboring European countries remain nearby in the projected dataset. NEED courtesy}
+%\label{fig:genotyping_europe}
+%\end{figure}
+%
+%If we zoom in on Switzerland, we can see that the countries around Switzerland tend to pull individuals toward them based on language spoken (\autoref{fig:genotyping_switzerland}).
+%
+%\begin{figure}[h]
+%\centering
+%\mySfFamily
+%\includegraphics[width = 0.7\textwidth]{../images/genotyping_switzerland.png}
+%\caption{A PCA plot (\textvar{d} = 2) of individuals from Switzerland as well as neighboring countries shows that an individual's mother tongue correlates with the individual's genetic similarity to representatives from the neighboring country where that language is spoken. NEED courtesy}
+%\label{fig:genotyping_switzerland}
+%\end{figure}
+%
+%And if we zoom farther out, then we can see continental patterns emerge, with India standing out as its own entity (\autoref{fig:genotyping_continents}). What is particularly remarkable about all these figures is that humans on the whole are genetically very similar, and yet PCA is able to find evidence of human migrations and separation lurking within our DNA.
+%
+%\begin{figure}[h]
+%\centering
+%\mySfFamily
+%\includegraphics[width = 0.7\textwidth]{../images/genotyping_continents.png}
+%\caption{A PCA plot (\textvar{d} = 2) shows clustering of individuals from Europe, Asia, Africa, and India. NEED courtesy}
+%\label{fig:genotyping_continents}
+%\end{figure}
+%
+%Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to use CellOrganizer to build a shape space for our WBC images and apply PCA to this shape space to produce a lower-dimensional representation of the space that we can visualize.\tutorial[https://biologicalmodeling.org/white_blood_cells/tutorial_shape_space]
 
 \FloatBarrier
 \phantomsection
 \subsection{Visualizing the WBC shape space after PCA}
 
-\autoref{fig:cellorg_pca_graph} shows the shape space of WBC images, reduced to three dimensions by PCA, in which each image is represented by a point that is color-coded according to its cell family.\\
+\autoref{fig:cellorg_pca_graph} shows the shape space of WBC images, reduced to three dimensions by PCA, in which each image is represented by a point that is color-coded according to its cell family.\tutorial[https://biologicalmodeling.org/white_blood_cells/tutorial_shape_space]\\
 
 \begin{figure}[h]
 \centering
