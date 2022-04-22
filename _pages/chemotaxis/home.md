@@ -20,7 +20,7 @@ The book <a href="https://what-if.xkcd.com/" target="_blank"><em>What If?</em></
 
 One could imagine many ideas for how the immortals could reunite. For example, they could avoid the interiors of continents by moving to the coastlines. If they are allowed to discuss how to find each other in advance, then they could agree to meet at the planet's North Pole --- assuming that the planet lacks polar bears.
 
-But Munroe provides a solution that is both sophisticated and elegant. His proposed approach is quoted below.
+But Munroe provides a solution that is both sophisticated and elegant, quoted below.
 
 > If you have no information, walk at random, leaving a trail of stone markers, each one pointing to the next. For every day that you walk, rest for three. Periodically mark the date alongside the cairn. It doesn’t matter how you do this, as long as it’s consistent. You could chisel the number of days into a rock, or lay out rocks to plot the number.
 >
@@ -32,7 +32,7 @@ But Munroe provides a solution that is both sophisticated and elegant. His propo
 
 In the previous two modules, we have harnessed the power of randomness to answer to practical questions. Munroe's approach exemplifies a **randomized algorithm**, or a method that uses randomness to solve a problem.
 
-In fact, Munroe's randomized algorithm for Lost Immortals is inspired by nature; he calls his approach "be an ant" because it mimics how ants explore their environment for resources.  However, in this module, we will see that this algorithm is also similar to the method of exploration undertaken by a much smaller organism: our old friend *E. coli*.
+In fact, Munroe's randomized algorithm for Lost Immortals is inspired by nature; he calls his approach "be an ant" because it mimics how ants explore their environment for resources.  However, in this module, we will see that this algorithm is also similar to the method of exploration taken by a much smaller organism: our old friend *E. coli*.
 
 Like other prokaryotes, *E. coli* is tiny, with a rod-shaped body that is 2µm long and 0.25 to 1µm wide.[^Pierucci1978] In exploring a vast world with sparse resources, *E. coli* finds itself in a situation comparable to Munroe's immortals.
 
@@ -40,9 +40,9 @@ The video below shows a collection of *E. coli* surrounding a sugar crystal. Thi
 
 {% include video id="F6QMU3KD7zw" provider="youtube" %}
 
-The movement of organisms like the bacteria in the above video in response to a chemical stimulus is called **chemotaxis**. *E. coli* and other bacteria have evolved to move toward **attractants** like glucose and electron acceptors and move away from **repellents** like Ni<sup>2+</sup> and Co<sup>2+</sup>. But how?
+The movement of organisms like the bacteria in the above video in response to a chemical stimulus is called **chemotaxis**. *E. coli* and other bacteria have evolved to move toward **attractants** like glucose and electron acceptors and move away from **repellents** like Ni<sup>2+</sup> and Co<sup>2+</sup>.
 
-In this module, we will delve into chemotaxis and ask a number of questions. How does a simple organism like *E. coli* sense an attractant or repellent in its environment? How does the bacterium change its internal state in response to this environment? How can we model the bacterium's response? And how does the bacterium's behavior translate into an "algorithm" that it uses to explore its environment?
+In this module, we will delve into chemotaxis and ask a number of questions. How does a simple organism like *E. coli* sense an attractant or repellent in its environment? How does the bacterium change its internal state accordingly? How can we model the bacterium's response? And how does the bacterium's behavior translate into an "algorithm" that it uses to explore its environment?
 
 [Next lesson](walk){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

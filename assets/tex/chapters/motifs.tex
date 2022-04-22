@@ -391,7 +391,7 @@ Why do you think that the repressilator motif leads to this pattern of oscillati
 \centering
 \mySfFamily
 \includegraphics[width = 0.85\textwidth]{../images/repressilator_chart.png}
-\caption{Modeling the repressilator's concentration of particles. \textvar{X} is shown in yellow, \textvar{Y} is shown in red, and \textvar{Z} is shown in blue}
+\caption{Modeling the repressilator's concentration of particles over time; \textvar{X} is shown in yellow, \textvar{Y} is shown in red, and \textvar{Z} is shown in blue}
 \label{fig:repressilator_chart}
 \end{figure}
 
@@ -422,31 +422,31 @@ The noise in the repressilator's oscillations is a feature, not a bug. As we hav
 
 \subsection{Biological oscillators must be robust}
 
-Nothing exemplifies the need for robustness in biological systems better than oscillators. If your heart skips a beat when you are watching a horror movie, then it should return quickly to its natural rhythm. When you hold your breath to dive underwater, your normal breathing resumes at the surface. And regardless of what functions your cells perform or what disturbances they find in their environment, they should be able to maintain a normal cell cycle.
+If your heart skips a beat when you are watching a horror movie, then it should return quickly to its natural rhythm. When you hold your breath to dive underwater, your normal breathing resumes at the surface. And regardless of what functions your cells perform or what disturbances they find in their environment, they should be able to maintain a normal cell cycle.
 
-An excellent illustration of oscillator robustness is the body's ability to handle jet lag. There is no apparent reason why humans would have evolved to be resilient to flying halfway around the world. And yet our circadian clock is so resilient that after a few days of fatigue and crankiness, our circadian clock returns to a normal daily cycle.
+An excellent illustration of oscillator robustness is the body's ability to handle jet lag. There is no apparent reason why humans would have evolved to be able to fly halfway around the world. And yet our circadian clock is so resilient that after a few days of fatigue and crankiness, our circadian clock returns to a normal daily cycle.
 
-In the previous section, we saw that the repressilator, a three-element motif, can exhibit oscillations even in a noisy environment of randomly moving particles. The repressilator's resilience makes us wonder how well the repressilator can respond to a disturbance in the concentrations of its particles.
+In the previous section, we saw that the repressilator, a three-element motif, can exhibit oscillations even in a noisy environment of randomly moving particles. The repressilator's resilience makes us wonder how well it can respond to a disturbance in the concentrations of its particles.
 
 \FloatBarrier
 \phantomsection
 \subsection{A coarse-grained repressilator model}
 
-As we saw in \autoref{chapter:turing} with our work on Turing patterns, tracking the movements of many individual particles led to a slow simulation that did not scale well given more particles or reactions. This observation led us to devise a coarse-grained reaction-diffusion model that was still able to produce Turing patterns. We used a cellular automaton because the concentrations of particles varied in different locations and were diffusing at different rates.
+With our work on Turing patterns in \autoref{chapter:turing}, we saw that tracking the movements of many individual particles led to a slow simulation that did not scale well given more particles or reactions. This observation led us to devise a coarse-grained reaction-diffusion model that was still able to produce Turing patterns. We used a cellular automaton because the concentrations of particles varied in different locations and were diffusing at different rates.
 
-We would like to devise a coarse-grained model of the repressilator. However, the particles diffuse at the same rate and are \textit{uniform} across the simulation, and so there is no need to track concentrations in individual locations. As a result, we will need a simulation that assumes that the particles are \textdefnogloss{well-mixed}.
+We would like to devise a coarse-grained model of the repressilator. However, the particles diffuse at the same rate and are \textit{uniform} across the simulation, and so there is no need to track concentrations in individual locations. As a result, we will use a simulation that assumes that the particles are \textdefnogloss{well-mixed}.
 
-For example, say that we are modeling a degradation reaction. If we start with 10,000 \textvar{X} particles, then after a single time step, we will simply multiply the number of \textvar{X} particles by $(1-k)$, where \textit{k} is a parameter related to the rate of the degradation reaction.
+For example, say that we are modeling a degradation reaction. If we start with a concentration of 10,000 \textvar{X} particles, then after a single time step, we will simply multiply the number of \textvar{X} particles by $(1-k)$, where \textit{k} is a parameter related to the rate of the degradation reaction.
 
-As for a repression reaction like $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$, we can update the concentration of \textvar{Y} particles by subtracting some factor \textit{r} times the current concentration of \textvar{Y} particles. This factor should be directly correlated with the current concentrations of both \textvar{X} and \textvar{Y}.
+As for a repression reaction like $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$, we can update the concentration of \textvar{Y} particles by subtracting some factor \textit{r} times the current concentrations of \textvar{X} and \textvar{Y} particles.
 
-We will discuss the technical details behind our well-mixed model in the next section. In the meantime, we would like to see what happens when we make a major disturbance to the concentration of one of the particles in the well-mixed model to see whether the particle concentrations resume their oscillations.\tutorial[https://biologicalmodeling.org/motifs/tutorial_perturb]
+We will further discuss the technical details behind a well-mixed reaction-diffusion model in \autoref{chapter:chemotaxis}. In the meantime, we would like to see what happens when we make a major disturbance to the concentration of one of the particles in the well-mixed model. Do the particle concentrations resume their oscillations?\tutorial[https://biologicalmodeling.org/motifs/tutorial_perturb]
 
 \FloatBarrier
 \phantomsection
 \subsection{The repressilator is robust to disturbance}
 
-\autoref{fig:nf_sim_interrupted_chart} shows plots of concentrations of each particle in our well-mixed simulation of the repressilator.  Midway through this simulation, we greatly increase the concentration of \textvar{Y} particles.
+\autoref{fig:nf_sim_interrupted_chart} shows plots over time of concentrations of each particle in our well-mixed simulation of the repressilator.  Midway through this simulation, we greatly increase the concentration of \textvar{Y} particles.
 
 \begin{figure}[h]
 \centering
@@ -466,19 +466,15 @@ Even with a much larger jolt to the concentration of \textvar{Y}, the concentrat
 \centering
 \mySfFamily
 \includegraphics[width = 0.85\textwidth]{../images/nf_sim_interrupted_chart_spike.png}
-\caption{A larger increase in the concentration of \textvar{Y} particles than in \autoref{fig:nf_sim_interrupted_chart} does not produce a substantive change in the system.}
+\caption{A larger sudden increase in the concentration of \textvar{Y} particles than in \autoref{fig:nf_sim_interrupted_chart} still does not produce a substantive change in the system over time.}
 \label{fig:nf_sim_interrupted_chart_spike}
 \end{figure}
 
-The repressilator is not the only network motif that leads to oscillations of particle concentrations, but robustness to disturbance is a shared feature of all these motifs. Furthermore, the repressilator is not the most robust oscillator that we can build. Real oscillators tend to have more than three components, and part of the reason why may be that researchers have shown that at least five reactions are typically needed to build a very robust oscillator.
+The repressilator is not the only network motif that leads to oscillations of particle concentrations, but robustness to disturbance is a shared feature of all these motifs. Furthermore, the repressilator is not the most robust oscillator that we can build. Researchers have shown that at least five components are typically needed to build a very robust oscillator, which may help explain why real oscillators tend to have more than three components.
 
-The repressilator's robustness implies a bigger picture moral of biological modeling. If an underlying biological system demonstrates robustness to change, then any model of that system should also be able to withstand this change. Conversely, in biology and in life, we should be skeptical of any non-robust model of a robust system.
+%The repressilator's robustness implies a bigger picture moral of biological modeling. If an underlying biological system demonstrates robustness to change, then any model of that system should also be able to withstand this change. Conversely, in biology and in life, we should be skeptical of any non-robust model of a robust system.
 
-\FloatBarrier
-\phantomsection
-\subsection{Toward more complicated models of biochemical processes}
-
-We have seen that even very simple network motifs can have a powerful effect on a cell's ability to implement elegant behavior. In the next section, we will encounter a much more involved biochemical process, with far more molecules and reactions, that is used by bacteria to cleverly (and robustly) explore their environment. In fact, we will have so many particles and so many reactions that we will need to completely rethink how we formulate our model.
+In the next chapter, we will an even more involved biochemical process that is used by bacteria to cleverly (and robustly) explore their environment. In fact, replicating this system will require so many particles and so many reactions that we will need to rethink how we formulate our model.\\
 
 \FloatBarrier
 \section{Exercises}

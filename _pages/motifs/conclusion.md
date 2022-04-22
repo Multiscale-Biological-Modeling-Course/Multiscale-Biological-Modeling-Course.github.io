@@ -10,30 +10,30 @@ image: "../assets/images/repressilator_chart.png"
 
 ## Biological oscillators must be robust
 
-Nothing exemplifies the need for robustness in biological systems better than oscillators. If your heart skips a beat when you are watching a horror movie, then it should return quickly to its natural rhythm. When you hold your breath to dive underwater, your normal breathing resumes at the surface. And regardless of what functions your cells perform or what disturbances they find in their environment, they should be able to maintain a normal cell cycle.
+If your heart skips a beat when you are watching a horror movie, then it should return quickly to its natural rhythm. When you hold your breath to dive underwater, your normal breathing resumes at the surface. And regardless of what functions your cells perform or what disturbances they find in their environment, they should be able to maintain a normal cell cycle.
 
-An excellent illustration of oscillator robustness is the body's ability to handle jet lag. There is no apparent reason why humans would have evolved to be resilient to flying halfway around the world. And yet our circadian clock is so resilient that after a few days of fatigue and crankiness, our circadian clock returns to a normal daily cycle.
+An excellent illustration of oscillator robustness is the body's ability to handle jet lag. There is no apparent reason why humans would have evolved to be able to fly halfway around the world. And yet our circadian clock is so resilient that after a few days of fatigue and crankiness, our circadian clock returns to a normal daily cycle.
 
-In the [previous lesson](oscillators), we saw that the repressilator, a three-element motif, can exhibit oscillations even in a noisy environment of randomly moving particles. The repressilator's resilience makes us wonder how well the repressilator can respond to a disturbance in the concentrations of its particles.
+In the [previous lesson](oscillators), we saw that the repressilator, a three-element motif, can exhibit oscillations even in a noisy environment of randomly moving particles. The repressilator's resilience makes us wonder how well it can respond to a disturbance in the concentrations of its particles.
 
 ## A coarse-grained repressilator model
 
-As we saw in the [prologue](../prologue/) with our work on Turing patterns, tracking the movements of many individual particles led to a slow simulation that did not scale well given more particles or reactions. This observation led us to devise a coarse-grained reaction-diffusion model that was still able to produce Turing patterns. We used a cellular automaton because the concentrations of particles varied in different locations and were diffusing at different rates.
+With our work on Turing patterns in the [prologue](../prologue/), tracking the movements of many individual particles led to a slow simulation that did not scale well given more particles or reactions. This observation led us to devise a coarse-grained reaction-diffusion model that was still able to produce Turing patterns. We used a cellular automaton because the concentrations of particles varied in different locations and were diffusing at different rates.
 
-We would like to devise a coarse-grained model of the repressilator. However, the particles diffuse at the same rate and are *uniform* across the simulation, and so there is no need to track concentrations in individual locations. As a result, we will need a simulation that assumes that the particles are **well-mixed**.
+We would like to devise a coarse-grained model of the repressilator. However, the particles diffuse at the same rate and are *uniform* across the simulation, and so there is no need to track concentrations in individual locations. As a result, we will use a simulation that assumes that the particles are **well-mixed**.
 
-For example, say that we are modeling a degradation reaction. If we start with 10,000 *X* particles, then after a single time step, we will simply multiply the number of *X* particles by (1-*k*), where *k* is a parameter related to the rate of the degradation reaction.
+For example, say that we are modeling a degradation reaction. If we start with a concentration of 10,000 *X* particles, then after a single time step, we will simply multiply the number of *X* particles by (1-*k*), where *k* is a parameter related to the rate of the degradation reaction.
 
-As for a repression reaction like *X* + *Y* → *X*, we can update the concentration of *Y* particles by subtracting some factor *r* times the current concentration of *Y* particles. This factor should be directly correlated with the current concentrations of both *X* and *Y*.
+As for a repression reaction like *X* + *Y* → *X*, we can update the concentration of *Y* particles by subtracting some factor *r* times the current concentrations of *X* and *Y* particles.
 
-We will discuss the technical details behind our well-mixed model in the next module. In the meantime, we would like to see what happens when we make a major disturbance to the concentration of one of the particles in the well-mixed module to see whether the particle concentrations resume their oscillations. To build this model of the repressilator, check out the following tutorial.
+We will further discuss the technical details behind a well-mixed reaction-diffusion model in the next module. In the meantime, we would like to see what happens when we make a major disturbance to the concentration of one of the particles in the well-mixed model. Do the particle concentrations resume their oscillations? To build this model of the repressilator, check out the following tutorial.
 
 [Visit tutorial](tutorial_perturb){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## The repressilator is robust to disturbance
 
-The figure below shows a plot of concentrations of each particle in our well-mixed simulation of the repressilator.  Midway through this simulation, we greatly increase the concentration of *Y* particles.
+The figure below shows plots over time of concentrations of each particle in our well-mixed simulation of the repressilator.  Midway through this simulation, we greatly increase the concentration of *Y* particles.
 
 [![image-center](../assets/images/600px/nf_sim_interrupted_chart.png){: .align-center}](../assets/images/nf_sim_interrupted_chart.png)
 A plot of particle concentrations in the well-mixed repressilator model over time. Adding a significant number of *Y* particles to our simulation (the second blue peak) produces little ultimate disturbance to the concentrations of the three particles, which return to normal oscillations within a single cycle.
@@ -49,13 +49,9 @@ Even with a much larger jolt to the concentration of *Y*, the concentrations of 
 A larger increase in the concentration of *Y* particles than in the previous figure does not produce a substantive change in the system.
 {: style="font-size: medium;"}
 
-The repressilator is not the only network motif that leads to oscillations of particle concentrations, but robustness to disturbance is a shared feature of all these motifs. Furthermore, the repressilator is not the most robust oscillator that we can build. Real oscillators tend to have more than three components, and part of the reason why may be that researchers have shown that at least five reactions are typically needed to build a very robust oscillator[^repress].
+The repressilator is not the only network motif that leads to oscillations of particle concentrations, but robustness to disturbance is a shared feature of all these motifs. Furthermore, the repressilator is not the most robust oscillator that we can build. Researchers have shown that at least five components are typically needed to build a very robust oscillator,[^repress] which may help explain why real oscillators tend to have more than three components.
 
-The repressilator's robustness implies a bigger picture moral of biological modeling. If an underlying biological system demonstrates robustness to change, then any model of that system should also be able to withstand this change. Conversely, in biology and in life, we should be skeptical of any non-robust model of a robust system.
-
-## Toward more complicated models of biochemical processes
-
-We have seen that even very simple network motifs can have a powerful effect on a cell's ability to implement elegant behavior. In the next module, we will encounter a much more involved biochemical process, with far more molecules and reactions, that is used by bacteria to cleverly (and robustly) explore their environment. In fact, we will have so many particles and so many reactions that we will need to completely rethink how we formulate our model.
+In the next module, we will encounter a much more involved biochemical process, with far more molecules and reactions, that is used by bacteria to cleverly (and robustly) explore their environment. In fact, we will have so many particles and so many reactions that we will need to completely rethink how we formulate our model.
 
 In the meantime, check out the exercises below to continue building your understanding of transcription factor networks and network motifs.
 
