@@ -237,44 +237,35 @@ Although we are using a particle-based model to mimic regulation, it is not atte
 \phantomsection
 \subsection{Ensuring a mathematically controlled comparison}
 
-\autoref{fig:nar_unequal_chart} shows a plot of the concentration of \textvar{Y} particles for the two simulations; the first cell is shown in red, and the second cell is shown in yellow. By allowing \textvar{Y} to slow its own transcription, we wound up with a simulation in which the final concentration of \textvar{Y} was \textit{lower}. It seems like we are back where we started!
+\autoref{fig:nar_unequal_chart} shows a plot over time of the concentration of \textvar{Y} particles in the two simulated cells, using red for the first cell and yellow for the second cell. By allowing \textvar{Y} to slow its own transcription, we wound up with a simulation in which the final concentration of \textvar{Y} was \textit{lower}. How could negative autoregulation possibly be useful?
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.85\textwidth]{../images/cellblender_nar_unequal_chart.png}
-\caption{A comparison of the number of \textvar{Y} particles across two simulations. In the first cell (red), we only have upregulation of \textvar{Y} by \textvar{X}, whereas in the second cell (yellow), we keep all parameters fixed but add a reaction simulating negative autoregulation of \textvar{Y}.}
+\caption{A plot of the concentration of \textvar{Y} particles over time across two simulations. In the first cell (red), we only have activation of \textvar{Y} by \textvar{X}, whereas in the second cell (yellow), we keep all parameters fixed but add a reaction simulating the negative autoregulation of \textvar{Y}.}
 \label{fig:nar_unequal_chart}
 \end{figure}
 
-The solution to our quandary is that the model we built was not a fair comparison between the two systems. In particular, the two simulations should be controlled so that they have approximately the \textit{same} steady state concentration of \textvar{Y}, since this concentration represents the cell's response to some stimulus. Ensuring this equal footing for the two simulations is called a \textdef{mathematically controlled comparison}{mathematically controlled comparison}{two models in which as many variables as possible are preserved between the two systems in an effort to preserve a fair comparison}.\\
+The solution to this quandary is that the model we built was not a fair comparison between the two systems. In particular, the two simulations should converge to approximately the \textit{same} steady state concentration of \textvar{Y}, since achieving this concentration represents the cell's response to some stimulus. Ensuring this equal footing for the two simulations is called a \textdef{mathematically controlled comparison}{mathematically controlled comparison}{two models in which as many variables as possible are preserved between the two systems in an effort to preserve a fair comparison}.\\
 
 \begin{qbox}[%
-How can we change the parameters of our models to obtain a mathematically controlled comparison?
+How can we change the parameters of our models to obtain a mathematically controlled comparison of the two simulated cells?
 ]\end{qbox}
 
-There are a number of parameters that we should keep constant across the two simulations because they are unrelated to regulation: the diffusion rates of \textvar{X} and \textvar{Y}, the number of initial particles \textvar{X} and \textvar{Y}, and the degradation rate of \textvar{Y}.
+We should keep a number of parameters constant across the two simulations because they are unrelated to regulation: the diffusion rates of \textvar{X} and \textvar{Y}, the number of initial particles \textvar{X} and \textvar{Y}, and the degradation rate of \textvar{Y}. With these parameters fixed, the only way that the final steady state concentration of \textvar{Y} can be the same in the two simulations is if we \textit{increase} the rate at which the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ takes place in the simulation of the second cell.\tutorial[https://biologicalmodeling.org/motifs/tutorial_nar_mathematically_controlled]
 
-With these parameters fixed, the only way that the steady state concentration of \textvar{Y} can be the same in the two simulations is if we \textit{increase} the rate at which the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ takes place in the simulation of the second cell.\tutorial[https://biologicalmodeling.org/motifs/tutorial_nar_mathematically_controlled]
-
-\FloatBarrier
-\phantomsection
-\subsection{An evolutionary basis for negative autoregulation}
-
-\autoref{fig:nar_equal_chart} plots the number of \textvar{Y} particles for the two simulations on the same chart over time, with the rate of the $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ reaction increased in the simulation involving negative autoregulation. Both  simulations now have approximately the same steady state concentration of \textvar{Y}. However, the second simulation reaches this concentration faster; that is, its \textdef{response time}{response time}{the time required for a biological system to respond to a stimulus (e.g., reaching a steady state concentration of a specific particle)} to the external stimulus causing an increase in the production of \textvar{Y} is shorter.\\
+\autoref{fig:nar_equal_chart} plots the concentration of \textvar{Y} particles for the two simulated cells after ensuring a mathematically controlled comparison, in which the rate of the $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ reaction has been increased in the second cell. This figure shows that the two simulated cells now have approximately the same steady state concentration of \textvar{Y}. However, the second cell reaches this concentration faster; that is, its \textdef{response time}{response time}{the time required for a biological system to respond to a stimulus (e.g., reaching a steady state concentration of a specific particle)} to the external stimulus causing an increase in the production of \textvar{Y} is shorter.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.85\textwidth]{../images/cellblender_nar_equal_chart.png}
-\caption{A comparison of the concentration of \textvar{Y} particles across the same two simulations from \autoref{fig:nar_unequal_chart}. This time, in the second simulation (yellow), we increase the rate of the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$.  As a result, the two simulations have approximately the same steady state concentration of \textvar{Y}, and the simulation that includes negative autoregulation reaches steady state more quickly.}
+\caption{A plot of the concentration of \textvar{Y} particles across the same two simulations from \autoref{fig:nar_unequal_chart}. This time, in the second simulation (yellow), we increase the rate of the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$.  As a result, the two simulations have approximately the same steady state concentration of \textvar{Y}, and the simulation that includes negative autoregulation reaches steady state more quickly.}
 \label{fig:nar_equal_chart}
 \end{figure}
 
-More importantly, this plot provides evidence of \textit{why} negative autoregulation may have evolved. The simulation involving negative autoregulation wins the ``race'' to a steady state concentration of \textvar{Y}, and so we can conclude that a cell in which this transcription factor is negatively autoregulated is more fit for survival than one that does not. Uri Alon has proposed an excellent analogy of a negatively autoregulating transcription factor as a sports car that has both a powerful engine (corresponding to the higher rate of the reaction producing \textvar{Y}) and sensitive brakes (corresponding to the negative autoregulation reaction slowing the production of \textvar{Y}).
-
-In this section, we have seen that particle-based simulations can be powerful for justifying why a network motif is prevalent. What are some other commonly occurring network motifs in transcription factor networks? And what evolutionary purposes might they serve?\\
-
+The plots in \autoref{fig:nar_equal_chart} also provide evidence of \textit{why} negative autoregulation may have evolved. The simulated cell including negative autoregulation wins the ``race'' to a steady state concentration of \textvar{Y}, and so we can conclude that a cell in which this transcription factor is negatively autoregulated is more fit for survival than one that does not. Uri Alon has proposed an excellent analogy of a negatively autoregulating transcription factor as a sports car that has both a powerful engine (corresponding to the higher rate of the reaction producing \textvar{Y}) and sensitive brakes (corresponding to negative autoregulation slowing the production of \textvar{Y} to reach equilibrium quickly).\\
 
 \FloatBarrier
 \phantomsection
@@ -285,33 +276,31 @@ In this section, we have seen that particle-based simulations can be powerful fo
 
 \subsection{Feedforward loops}
 
-In the previous section, we saw that negative autoregulation can be used to lower the response time of a protein to an external stimulus. But the cell can only use negative autoregulation to respond quickly if the autoregulated protein is itself a transcription factor. Only about 300 out of 4,400 total \textit{E. coli} proteins are transcription factors. How can the cell speed up the manufacture of a protein if that protein is not a transcription factor?
+In the previous section, we saw that negative autoregulation can be used to lower the response time of a protein to an external stimulus. But the cell can only use autoregulation to respond quickly if the autoregulated protein is itself a transcription factor. Only about 300 out of 4,400 total \textit{E. coli} proteins are transcription factors. How can the cell speed up the manufacture of a protein if that protein is not a transcription factor?
 
-The answer lies in another transcription factor network motif called the \textdef{feedforward loop (FFL)}{feedforward loop (FFL)}{a network substructure in which \textvar{X} is connected to both \textvar{Y} and \textvar{Z}, and \textvar{Y} is connected to \textvar{Z}}. An FFL, shown in \autoref{fig:feed-forward_loop}, is a network substructure in which \textvar{X} is connected to both \textvar{Y} and \textvar{Z}, and \textvar{Y} is connected to \textvar{Z}. Calling the FFL motif a ``loop'' is a misnomer. Rather, it is a small structure in which there are two paths from \textvar{X} to \textvar{Z}; one via direct regulation of \textvar{Z} by \textvar{X}, and another with an intermediate transcription factor \textvar{Y}.\\
+The answer lies in another transcription factor network motif called the \textdef{feedforward loop (FFL)}{feedforward loop (FFL)}{a network substructure in which \textvar{X} is connected to both \textvar{Y} and \textvar{Z}, and \textvar{Y} is connected to \textvar{Z}}. Shown in \autoref{fig:feed-forward_loop}, an FFL is a network substructure in which \textvar{X} is connected to both \textvar{Y} and \textvar{Z}, and \textvar{Y} is connected to \textvar{Z}. Calling the FFL motif a ``loop'' is a misnomer. Rather, it is a small structure in which there are two paths from \textvar{X} to \textvar{Z}; one via direct regulation of \textvar{Z} by \textvar{X}, and another with an intermediate transcription factor \textvar{Y}.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.5\textwidth]{../images/feed-forward_loop.png}
-\caption{The FFL motif. \textvar{X} regulates both \textvar{Y} and \textvar{Z}, and \textvar{Y} regulates \textvar{Z}.}
+\caption{The feedforward loop (FFL) motif. \textvar{X} regulates both \textvar{Y} and \textvar{Z}, and \textvar{Y} regulates \textvar{Z}.}
 \label{fig:feed-forward_loop}
 \end{figure}
 
-Note that \textvar{X} and \textvar{Y} must be transcription factors because they have edges leading out from them, but \textvar{Z} does not have to be a transcription factor (and in fact typically is not). There are 42 FFLs in the transcription factor network of \textit{E. coli}; we leave the verification that this number is significant as an exercise at the end of the section.
+Note that \textvar{X} and \textvar{Y} must be transcription factors because they have edges leading out from them, but \textvar{Z} does not have to be a transcription factor (and in fact typically is not). There are 42 FFLs in the transcription factor network of \textit{E. coli}; we leave the verification that this number is significant as an exercise.
 
-Recall that every edge of a transcription factor network is assigned a sign based on whether the regulation represented by the edge corresponds to activation or repression, respectively. Accordingly, since an FFL involves three different regulation events, there are $2^3$ = 8 different types of FFLs.
-
-Among the 42 total FFLs in the \textit{E. coli} transcription factor network, five of them have the structure in \autoref{fig:type-1_incoherent_feed-forward_loop}, in which the edges connecting \textvar{X} to \textvar{Y} and \textvar{X} to \textvar{Z} are assigned a ``+'' and the edge connecting \textvar{Y} to \textvar{Z} is assigned a ``$-$''. This specific form of the FFL motif is  called a \textdefnogloss{type-1 incoherent feedforward loop}. This form of the FFL will be our focus for the rest of the section.\\
+Among the 42 total FFLs in the \textit{E. coli} transcription factor network, five of them have the structure in \autoref{fig:type-1_incoherent_feed-forward_loop}, in which the edges connecting \textvar{X} to \textvar{Y} and \textvar{X} to \textvar{Z} are assigned a ``+'' (activation) and the edge connecting \textvar{Y} to \textvar{Z} is assigned a ``$-$'' (repression). This specific form of the FFL motif is  called a \textdefnogloss{type-1 incoherent feedforward loop} and will be our focus for the rest of the section.\\
 
 \begin{qbox}[%
-How could we simulate a feedforward loop with a particle-based reaction-diffusion model akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
+How could we simulate a type-1 incoherent feedforward loop with a particle-based reaction-diffusion model akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
 ]\end{qbox}
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.5\textwidth]{../images/type-1_incoherent_feed-forward_loop.png}
-\caption{The incoherent feed-forward loop network motif. Note that \textvar{X} activates \textvar{Y} and \textvar{Z}, while \textvar{Y} represses \textvar{Z}.}
+\caption{The incoherent feed-forward loop network motif. \textvar{X} activates \textvar{Y} and \textvar{Z}, while \textvar{Y} represses \textvar{Z}.}
 \label{fig:type-1_incoherent_feed-forward_loop}
 \end{figure}
 
@@ -319,19 +308,13 @@ How could we simulate a feedforward loop with a particle-based reaction-diffusio
 \phantomsection
 \subsection{Modeling a type-1 incoherent feedforward loop}
 
-As we did in the last section, we will run two simulations. In the first, we will have a simple activation of \textvar{Z} by \textvar{X}, meaning that we will assume \textvar{X} is at its steady state concentration and that \textvar{Z} is produced by the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Z}$ and removed by a degradation reaction.
+As we did for negative autoregulation, we will simulate two cells and examine the concentration of a particle of interest, which in this case will be \textvar{Z}. The first cell will have a simple activation of \textvar{Z} by \textvar{X}, meaning that we will assume \textvar{X} starts at its steady state concentration and that \textvar{Z} is produced by the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Z}$ and removed by a degradation reaction.
 
-The second simulation will include both of these reactions, but we will also have the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ to model the activation of \textvar{Y} by \textvar{X}, along with the new reaction $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ to model the repression of \textvar{Z} by \textvar{Y}. Because \textvar{Y} and \textvar{Z} are being produced from a reaction, we will also have degradation reactions for \textvar{Y} and \textvar{Z}. For the sake of fairness, we will use the same kill rates for both \textvar{Y} and \textvar{Z}.
+The second cell will include both of these reactions in addition to the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ to model the activation of \textvar{Y} by \textvar{X}, along with the new reaction $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ to model the repression of \textvar{Z} by \textvar{Y}. Because \textvar{Y} and \textvar{Z} are being produced from a reaction, we will also have degradation reactions for \textvar{Y} and \textvar{Z}. For the sake of fairness, we will use the same kill rates for both \textvar{Y} and \textvar{Z}.
 
-Furthermore, to obtain a mathematically controlled comparison, the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Z}$ should have a higher rate in the second simulation modeling the FFL. If we do not raise the rate of this reaction, then the repression of \textvar{Z} by \textvar{Y} will cause the steady state concentration of \textvar{Z} to be lower in the second simulation.
+Furthermore, to obtain a mathematically controlled comparison, the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Z}$ should have a higher rate in the second simulation modeling the FFL. If we do not raise the rate of this reaction, then the repression of \textvar{Z} by \textvar{Y} will cause the steady state concentration of \textvar{Z} to be lower in the second simulation.\tutorial[https://biologicalmodeling.org/motifs/tutorial_feed]
 
-If you are feeling adventurous, then you may like to adapt the code from the previous tutorial to run the above two simulations and tweak the rate of the $\textvar{X} \rightarrow \textvar{X} + \textvar{Z}$ reaction to see if you can obtain the same steady state concentration of \textvar{Z} in the two simulations.\tutorial[https://biologicalmodeling.org/motifs/tutorial_feed]
-
-\FloatBarrier
-\phantomsection
-\subsection{Why feedforward loops speed up response times}
-
-\autoref{fig:ffl_chart} shows a plot visualizing the amount of \textvar{Z} across the two simulations. As with negative autoregulation, the type-1 incoherent FFL allows the cell to ramp up production of a gene \textvar{Z} much faster than it would under simple regulation.\\
+\autoref{fig:ffl_chart} shows a plot visualizing the concentration of \textvar{Z} across the two simulations. As with negative autoregulation, the type-1 incoherent FFL allows the cell to ramp up production of a gene \textvar{Z} much faster than it would under simple regulation.\\
 
 \begin{figure}[h]
 \centering
@@ -341,21 +324,11 @@ If you are feeling adventurous, then you may like to adapt the code from the pre
 \label{fig:ffl_chart}
 \end{figure}
 
-However, you will note a slightly different pattern to the growth of \textvar{Z} than we saw under negative autoregulation. In negative autoregulation, the concentration of the protein approached steady state from below. In the case of the FFL, the concentration of \textvar{Z} grows so quickly that it passes its eventual steady state concentration and then returns to this steady state from above.
+However, you will note a slightly different pattern to the growth of \textvar{Z} than we saw under negative autoregulation. When modeling negative autoregulation, the concentration of the protein approached steady state from below. In the case of the FFL, the concentration of \textvar{Z} grows so quickly that it passes its eventual steady state concentration and then returns to this steady state from above.
 
 We can interpret from the model why the FFL allows for a fast response time as well as why it initially passes the steady state concentration. At the start of the simulation, \textvar{Z} is activated by \textvar{X} very quickly. \textvar{X} regulates the production of \textvar{Y} as well, but at a lower rate than the regulation of \textvar{Z} because \textvar{Y} only has its own degradation to slow this process. Therefore, more \textvar{Z} is initially produced than \textvar{Y}, which causes the concentration of \textvar{Z} to shoot past its eventual steady state.
 
-The more \textvar{Y} we have, and the more \textvar{Z} that we have, the more often the repression reaction $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ will occur. Because the concentrations of both \textvar{Y} and \textvar{Z} increase over time, this reaction serves as the ``brakes'' for the concentration of \textvar{Z}. These brakes need to be very powerful, meaning that the rate of the reaction $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ needs to be very high, to decrease the concentration of \textvar{Z} to its steady state.
-
-\FloatBarrier
-\phantomsection
-\subsection{Damped oscillations give us hope of building a biological oscillator}
-
-Unlike negative autoregulation of a single transcription factor, the FFL requires \textit{two} separate transcription factors working together to increase the production of our target gene. This higher evolutionary cost of implementation may help account for why FFLs are more rare as a network motif than loops.
-
-We only considered one of the eight types of FFL in this section. You might wonder whether any of the other seven FFLs serve as network motifs.  For example, what happens if \textvar{X} activates \textvar{Z}, \textvar{X} represses \textvar{Y}, and \textvar{Y} activates \textvar{Z}? We will explore these additional FFL motifs in the exercises at the end of the section.
-
-Finally, recall that in our FFL model, the concentration of \textvar{Z} increased dramatically before decreasing to the steady state. \autoref{fig:ffl_chart} is reminiscent of a \textdefnogloss{damped oscillation} process like the one in \autoref{fig:damped_oscillator}, in which the concentration of a particle oscillates above and below a steady state, while the amplitude of the wave gets smaller and smaller. Is it possible for a network motif to produce more of a true ``wave'' without dampening?\\
+\autoref{fig:ffl_chart} is reminiscent of a \textdefnogloss{damped oscillation} process like the one in \autoref{fig:damped_oscillator}, in which the concentration of a particle oscillates above and below a steady state, while the amplitude of the wave gets smaller and smaller. Is it possible for a network motif to produce more of a true ``wave'' without dampening?\\
 
 \begin{figure}[h]
 \centering
@@ -364,7 +337,6 @@ Finally, recall that in our FFL model, the concentration of \textvar{Z} increase
 \caption{In a damped oscillation, the value of some variable (shown on the y-axis) oscillates back and forth around an asymptotic value while the amplitude decreases over time.}
 \label{fig:damped_oscillator}
 \end{figure}
-
 
 \FloatBarrier
 \phantomsection
@@ -521,6 +493,13 @@ We have seen that even very simple network motifs can have a powerful effect on 
 \label{sec:exercises}
 \phantomsection
 
+
+
 \begin{exercise}[%
-Test of exercise environment.
+42 FFLs is significant.
+]\end{exercise}
+
+
+\begin{exercise}[%
+Other FFL structures?
 ]\end{exercise}

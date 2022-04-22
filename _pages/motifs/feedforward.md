@@ -10,7 +10,7 @@ image: "../assets/images/repressilator_chart.png"
 
 ## Feedforward loops
 
-In the [previous lesson](nar), we saw that negative autoregulation can be used to lower the response time of a protein to an external stimulus. But the cell can only use negative autoregulation to respond quickly if the autoregulated protein is itself a transcription factor. Only about 300 out of 4,400 total *E. coli* proteins are transcription factors[^tfNumber]. How can the cell speed up the manufacture of a protein if that protein is not a transcription factor?
+In the [previous lesson](nar), we saw that negative autoregulation can be used to lower the response time of a protein to an external stimulus. But the cell can only use autoregulation to respond quickly if the autoregulated protein is itself a transcription factor. Only about 300 out of 4,400 total *E. coli* proteins are transcription factors[^tfNumber]. How can the cell speed up the manufacture of a protein if that protein is not a transcription factor?
 
 The answer lies in another transcription factor network motif called the **feedforward loop** (**FFL**). An FFL, shown in the figure below, is a network substructure in which *X* is connected to both *Y* and *Z*, and *Y* is connected to *Z*. Calling the FFL motif a "loop" is a misnomer. Rather, it is a small structure in which there are two paths from *X* to *Z*; one via direct regulation of *Z* by *X*, and another with an intermediate transcription factor *Y*.
 
@@ -20,11 +20,9 @@ The FFL motif. *X* regulates both *Y* and *Z*, and *Y* regulates *Z*.
 
 Note that *X* and *Y* must be transcription factors because they have edges leading out from them, but *Z* does not have to be a transcription factor (and in fact typically is not). There are 42 FFLs in the transcription factor network of *E. coli*[^ffl]; we leave the verification that this number is significant as an exercise at the end of the module.
 
-Recall that every edge of a transcription factor network is assigned a sign based on whether the regulation represented by the edge corresponds to activation or repression, respectively. Accordingly, since an FFL involves three different regulation events, there are 2<sup>3</sup> = 8 different types of FFLs.
+Among the 42 total FFLs in the *E. coli* transcription factor network, five of them have the structure below, in which the edges connecting *X* to *Y* and *X* to *Z* are assigned a "+" (activation) and the edge connecting *Y* to *Z* is assigned a "-" (repression). This specific form of the FFL motif is  called a **type-1 incoherent feedforward loop** and will be our focus for the rest of the module.
 
-Among the 42 total FFLs in the *E. coli* transcription factor network, five of them have the structure below, in which the edges connecting *X* to *Y* and *X* to *Z* are assigned a "+" and the edge connecting *Y* to *Z* is assigned a "-". This specific form of the FFL motif is  called a **type-1 incoherent feedforward loop**. This form of the FFL will be our focus for the rest of the module.
-
-**STOP:** How could we simulate a feedforward loop with a particle-based reaction-diffusion model akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
+**STOP:** How could we simulate a type-1 incoherent feedforward loop with a particle-based reaction-diffusion model akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
 {: .notice--primary}
 
 [![image-center](../assets/images/600px/type-1_incoherent_feed-forward_loop.png){: .align-center width="300px"}](../assets/images/type-1_incoherent_feed-forward_loop.png)
@@ -33,9 +31,9 @@ The incoherent feed-forward loop network motif. Note that *X* activates *Y* and 
 
 ## Modeling a type-1 incoherent feedforward loop
 
-As we did in the last section, we will run two simulations. In the first, we will have a simple activation of *Z* by *X*, meaning that we will assume *X* is at its steady state concentration and that *Z* is produced by the reaction *X* → *X* + *Z* and removed by a degradation reaction.
+As we did for negative autoregulation, we will simulate two cells and examine the concentration of a particle of interest, which in this case will be *Z*. The first cell will have a simple activation of *Z* by *X*, meaning that we will assume *X* starts at its steady state concentration and that *Z* is produced by the reaction *X* → *X* + *Z* and removed by a degradation reaction.
 
-The second simulation will include both of these reactions, but we will also have the reaction *X* → *X* + *Y* to model the activation of *Y* by *X*, along with the new reaction *Y* + *Z* → *Y* to model the repression of *Z* by *Y*. Because *Y* and *Z* are being produced from a reaction, we will also have degradation reactions for *Y* and *Z*. For the sake of fairness, we will use the same kill rates for both *Y* and *Z*.
+The second cell will include both of these reactions in addition to the reaction *X* → *X* + *Y* to model the activation of *Y* by *X*, along with the new reaction *Y* + *Z* → *Y* to model the repression of *Z* by *Y*. Because *Y* and *Z* are being produced from a reaction, we will also have degradation reactions for *Y* and *Z*. For the sake of fairness, we will use the same kill rates for both *Y* and *Z*.
 
 Furthermore, to obtain a mathematically controlled comparison, the reaction *X* → *X* + *Z* should have a higher rate in the second simulation modeling the FFL. If we do not raise the rate of this reaction, then the repression of *Z* by *Y* will cause the steady state concentration of *Z* to be lower in the second simulation.
 
@@ -46,25 +44,18 @@ If you are feeling adventurous, then you may like to adapt the [negative autoreg
 
 ## Why feedforward loops speed up response times
 
-The figure below shows a plot visualizing the amount of *Z* across the two simulations. As with negative autoregulation, the type-1 incoherent FFL allows the cell to ramp up production of a gene *Z* much faster than it would under simple regulation.
+The figure below shows a plot visualizing the concentration of *Z* across the two simulations. As with negative autoregulation, the type-1 incoherent FFL allows the cell to ramp up production of a gene *Z* much faster than it would under simple regulation.
 
 [![image-center](../assets/images/600px/ffl_chart.png){: .align-center}](../assets/images/ffl_chart.png)
 The concentration of *Z* in the two simulations. Simple activation of *Z* by *X* is shown in blue, and the type-1 incoherent FFL is shown in purple.
 {: style="font-size: medium;"}
 
-However, you will note a slightly different pattern to the growth of *Z* than we saw under negative autoregulation. In negative autoregulation, the concentration of the protein approached steady state from below. In the case of the FFL, the concentration of *Z* grows so quickly that it passes its eventual steady state concentration and then returns to this steady state from above.
+However, you will note a slightly different pattern to the growth of *Z* than we saw under negative autoregulation. When modeling negative autoregulation, the concentration of the protein approached steady state from below. In the case of the FFL, the concentration of *Z* grows so quickly that it passes its eventual steady state concentration and then returns to this steady state from above.
 
 We can interpret from the model why the FFL allows for a fast response time as well as why it initially passes the steady state concentration. At the start of the simulation, *Z* is activated by *X* very quickly. *X* regulates the production of *Y* as well, but at a lower rate than the regulation of *Z* because *Y* only has its own degradation to slow this process. Therefore, more *Z* is initially produced than *Y*, which causes the concentration of *Z* to shoot past its eventual steady state.
 
-The more *Y* we have, and the more *Z* that we have, the more often the repression reaction *Y* + *Z* → *Y* will occur. Because the concentrations of both *Y* and *Z* increase over time, this reaction serves as the "brakes" for the concentration of *Z*. These brakes need to be very powerful, meaning that the rate of the reaction *Y* + *Z* → *Y* needs to be very high, to decrease the concentration of *Z* to its steady state.
 
-## Damped oscillations give us hope of building a biological oscillator
-
-Unlike negative autoregulation of a single transcription factor, the FFL requires *two* separate transcription factors working together to increase the production of our target gene. This higher evolutionary cost of implementation may help account for why FFLs are more rare as a network motif than loops.
-
-We only considered one of the eight types of FFL in this lesson. You might wonder whether any of the other seven FFLs serve as network motifs.  For example, what happens if *X* activates *Z*, *X* represses *Y*, and *Y* activates *Z*? We will explore these additional FFL motifs in the exercises at the end of the module.
-
-Finally, recall that in our FFL model, the concentration of *Z* increased dramatically before decreasing to the steady state. This figure is reminiscent of a **damped oscillation** process like the one in the figure below, in which the concentration of a particle oscillates above and below a steady state, while the amplitude of the wave gets smaller and smaller. Is it possible for a network motif to produce more of a true "wave" without dampening?
+The figure above is reminiscent of a **damped oscillation** process like the one in the figure below, in which the concentration of a particle oscillates above and below a steady state, while the amplitude of the wave gets smaller and smaller. Is it possible for a network motif to produce more of a true "wave" without dampening?
 
 [![image-center](../assets/images/600px/damped_oscillator.png){: .align-center}](../assets/images/damped_oscillator.png)
 In a damped oscillation, the value of some variable (shown on the y-axis) oscillates back and forth around an asymptotic value while the amplitude decreases over time.[^dampedOscillator]

@@ -43,35 +43,33 @@ To recap, the simulations of both cells will include an initial concentration of
 
 ## Ensuring a mathematically controlled comparison
 
-If you followed the above tutorial, then you were likely disappointed in the second cell and its negative autoregulating transcription factor *Y*. The figure below shows a plot of the concentration of *Y* particles for the two simulations; the first cell is shown in red, and the second cell is shown in yellow.
+If you followed the above tutorial, then you were likely disappointed in the second cell and its negative autoregulating transcription factor *Y*. shows a plot over time of the concentration of *Y* particles in the two simulated cells, using red for the first cell and yellow for the second cell.
 
 [![image-center](../assets/images/600px/nar_unequal_chart.png){: .align-center}](../assets/images/nar_unequal_chart.png)
-A comparison of the number of *Y* particles across two simulations. In the first cell (red), we only have activation of *Y* by *X*, whereas in the second cell (yellow), we keep all parameters fixed but add a reaction simulating negative autoregulation of *Y*.
+A plot of the concentration of Y particles over time across two simulations. In the first cell (red), we only have activation of *Y* by *X*, whereas in the second cell (yellow), we keep all parameters fixed but add a reaction simulating the negative autoregulation of *Y*.
 {: style="font-size: medium;"}
 
-By allowing *Y* to slow its own transcription, we wound up with a simulation in which the final concentration of *Y* was *lower*. It seems like we are back where we started!
+By allowing *Y* to slow its own transcription, we wound up with a simulation in which the final concentration of *Y* was *lower*. How could negative autoregulation possibly be useful?
 
-The solution to our quandary is that the model we built was not a fair comparison between the two systems. In particular, the two simulations should be controlled so that they have approximately the *same* steady state concentration of *Y*, since this concentration represents the cell's response to some stimulus. Ensuring this equal footing for the two simulations is called a **mathematically controlled comparison**.[^Savageau]
+The solution to this quandary is that the model we built was not a fair comparison between the two systems. In particular, the two simulations converge to approximately the *same* steady state concentration of *Y*, since achieving this concentration represents the cell's response to some stimulus. Ensuring this equal footing for the two simulations is called a **mathematically controlled comparison**.[^Savageau]
 
-**STOP:** How can we change the parameters of our models to obtain a mathematically controlled comparison?
+**STOP:** How can we change the parameters of our models to obtain a mathematically controlled comparison of the two simulated cells?
 {: .notice--primary}
 
-There are a number of parameters that we should keep constant across the two simulations because they are unrelated to regulation: the diffusion rates of *X* and *Y*, the number of initial particles *X* and *Y*, and the degradation rate of *Y*.
-
-With these parameters fixed, the only way that the steady state concentration of *Y* can be the same in the two simulations is if we *increase* the rate at which the reaction *X* → *X* + *Y* takes place in the simulation of the second cell. The following tutorial adjusts this rate parameter to ensure a mathematically controlled comparison.
+We should keep a number of parameters constant  across the two simulations because they are unrelated to regulation: the diffusion rates of *X* and *Y*, the number of initial particles *X* and *Y*, and the degradation rate of *Y*. With these parameters fixed, the only way that the final steady state concentration of *Y* can be the same in the two simulations is if we *increase* the rate at which the reaction *X* → *X* + *Y* takes place in the simulation of the second cell. The following tutorial adjusts this rate parameter to ensure a mathematically controlled comparison.
 
 [Visit tutorial](tutorial_nar_mathematically_controlled){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## An evolutionary basis for negative autoregulation
 
-The figure below plots the number of *Y* particles for the two simulations on the same chart over time, with the rate of the *X* → *X* + *Y* reaction increased in the simulation involving negative autoregulation. Both  simulations now have approximately the same steady state concentration of *Y*. However, the second simulation reaches this concentration faster; that is, its **response time** to the external stimulus causing an increase in the production of *Y* is shorter.
+The figure below plots the concentration of *Y* particles for the two simulated cells after ensuring a mathematically controlled comparison, in which the rate of the *X* → *X* + *Y* reaction has been increased in the second cell. This figure shows that the two simulated cells now have approximately the same steady state concentration of *Y*. However, the second cell reaches this concentration faster; that is, its **response time** to the external stimulus causing an increase in the production of *Y* is shorter.
 
 [![image-center](../assets/images/600px/nar_equal_chart.png){: .align-center}](../assets/images/nar_equal_chart.png)
 A comparison of the concentration of *Y* particles across the same two simulations from the previous figure. This time, in the second simulation (yellow), we increase the rate of the reaction *X* → *X* + *Y*.  As a result, the two simulations have approximately the same steady state concentration of *Y*, and the simulation that includes negative autoregulation reaches steady state more quickly.
 {: style="font-size: medium;"}
 
-More importantly, this plot provides evidence of *why* negative autoregulation may have evolved. The simulation involving negative autoregulation wins the "race" to a steady state concentration of *Y*, and so we can conclude that a cell in which this transcription factor is negatively autoregulated is more fit for survival than one that does not. Uri Alon[^Alon] has proposed an excellent analogy of a negatively autoregulating transcription factor as a sports car that has both a powerful engine (corresponding to the higher rate of the reaction producing *Y*) and sensitive brakes (corresponding to the negative autoregulation reaction slowing the production of *Y*).
+The above plots also provide evidence of *why* negative autoregulation may have evolved. The simulated cell including negative autoregulation wins the "race" to a steady state concentration of *Y*, and so we can conclude that a cell in which this transcription factor is negatively autoregulated is more fit for survival than one that does not. Uri Alon[^Alon] has proposed an excellent analogy of a negatively autoregulating transcription factor as a sports car that has both a powerful engine (corresponding to the higher rate of the reaction producing *Y*) and sensitive brakes (corresponding to negative autoregulation slowing the production of *Y* to reach equilibrium quickly).
 
 In this lesson, we have seen that particle-based simulations can be powerful for justifying why a network motif is prevalent. What are some other commonly occurring network motifs in transcription factor networks? And what evolutionary purposes might they serve?
 
