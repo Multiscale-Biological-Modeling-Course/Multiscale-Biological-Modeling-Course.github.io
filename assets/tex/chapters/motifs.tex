@@ -333,7 +333,7 @@ We can interpret from the model why the FFL allows for a fast response time as w
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.8\textwidth]{../images/damped_oscillator.png}
+\includegraphics[width = 0.7\textwidth]{../images/damped_oscillator.png}
 \caption{In a damped oscillation, the value of some variable (shown on the y-axis) oscillates back and forth around an asymptotic value while the amplitude decreases over time.}
 \label{fig:damped_oscillator}
 \end{figure}
@@ -347,19 +347,17 @@ We can interpret from the model why the FFL allows for a fast response time as w
 
 \subsection{Oscillators are everywhere in nature}
 
-Even if placed in a bunker, humans will maintain a roughly 24-hour cycle of sleep and wakefulness. This \textdef{circadian rhythm}{circadian rhythm}{a collection of internal changes in living things that follow a roughly 24-hour cycle} is present throughout living things, including plants and even cyanobacteria.
+Even if placed in a windowless bunker without clocks, humans will maintain a roughly 24-hour cycle of sleep and wakefulness. This \textdef{circadian rhythm}{circadian rhythm}{a collection of internal changes in living things that follow a roughly 24-hour cycle} is present throughout many living things, including plants and even cyanobacteria. Your heart and respiratory system also follow subconscious cyclical rhythms, and your cells are governed by a strict cell cycle as they grow and divide.
 
-Life processes that oscillate over time are not confined to circadian rhythms. You may feel like you have control over when you go to bed, but your heart and respiratory system both follow subconscious cyclical rhythms, and your cells are governed by a strict cell cycle as they grow and divide.
+We might guess from what we have learned in this section that cyclical biological rhythms must be governed by simple rules. However, the question remains as to what these rules are and how they can correctly execute oscillations over and over.
 
-We might guess from what we have learned in this section that cyclical biological rhythms must be governed by simple rules. However, the question remains as to what these rules are and how they can correctly execute oscillations over and over, throughout an organism's life.
-
-Researchers have identified many network motifs that facilitate oscillation, some of which are very complicated and include many components. In this section, we will focus on a simple three-component oscillator motif called a \textdef{repressilator}{repressilator}{a transcription factor network motif in which \textvar{X} represses \textvar{Y}, \textvar{Y} represses \textvar{Z}, and \textvar{Z} represses \textvar{X}}.
+Researchers have identified many network motifs that facilitate oscillation, some of which are very complicated and include many components. In this section, we will focus on a simple three-component oscillator motif.
 
 \FloatBarrier
 \phantomsection
 \subsection{The repressilator: a synthetic biological oscillator}
 
-The repressilator motif is shown in \autoref{fig:repressilator}. In this motif, all three proteins are transcription factors, and they form a cycle in which \textvar{X} represses \textvar{Y}, \textvar{Y} represses \textvar{Z}, and \textvar{Z} represses \textvar{X}. The repressilator clearly forms a feedback loop, but nothing \textit{a priori} about this motif would indicate that it would lead to oscillation.\\
+The \textdef{repressilator}{repressilator motif}{a transcription factor network motif in which \textvar{X} represses \textvar{Y}, \textvar{Y} represses \textvar{Z}, and \textvar{Z} represses \textvar{X}} is shown in \autoref{fig:repressilator}. In this motif, all three proteins are transcription factors, and they form a cycle in which \textvar{X} represses \textvar{Y}, \textvar{Y} represses \textvar{Z}, and \textvar{Z} represses \textvar{X}. The repressilator forms a feedback loop, but nothing \textit{a priori} about this motif would indicate that it would lead to oscillation.\\
 
 \begin{figure}[h]
 \centering
@@ -370,22 +368,20 @@ The repressilator motif is shown in \autoref{fig:repressilator}. In this motif, 
 \end{figure}
 
 \begin{qbox}[%
-Try to devise a reaction-diffusion model representing the repressilator.
+Devise a reaction-diffusion model representing the repressilator.
 ]\end{qbox}
 
-To build a reaction-diffusion model accompanying the repressilator, we start with a quantity of \textvar{X} particles, and no \textvar{Y} or \textvar{Z} particles. We assume that all three particles diffuse at the same rate and degrade at the same rate.
+To build a reaction-diffusion model accompanying the repressilator, we start with a quantity of \textvar{X} particles and no \textvar{Y} or \textvar{Z} particles. We assume that all three particles diffuse at the same rate and degrade at the same rate.
 
-Furthermore, we assume that all three particles are produced as the result of an activation process by some other transcription factor(s), which we assume happens at the same rate. We will use a \textdefnogloss{hidden particle} \textvar{I} that serves to activate the three visible particles via the three reactions $\textvar{I} \rightarrow \textvar{I} + \textvar{X}$, $\textvar{I} \rightarrow \textvar{I} + \textvar{Y}$, and $\textvar{I} \rightarrow \textvar{I} + \textvar{Z}$, all taking place at the same rate.
+Furthermore, we assume that all three particles are produced as the result of an activation process by some other transcription factor(s), which we assume happens at the same rate. We will use a single \textdefnogloss{hidden particle} \textvar{I} that serves to activate the three visible particles via the three reactions $\textvar{I} \rightarrow \textvar{I} + \textvar{X}$, $\textvar{I} \rightarrow \textvar{I} + \textvar{Y}$, and $\textvar{I} \rightarrow \textvar{I} + \textvar{Z}$, all taking place at the same rate.
 
-When discussing the feed-forward loop, we saw that we can use the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ to model the repression of \textvar{Y} by \textvar{X}. To complete the repressilator model, we will add the two reactions $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ and $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$, having the same rate as the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$.
-
-If you followed our previous tutorials, then you may feel comfortable taking off the training wheels and implementing the repressilator with your own reaction-diffusion model.\tutorial[https://biologicalmodeling.org/motifs/tutorial_oscillators]
+When discussing the feed-forward loop, we saw that we can use the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ to model the repression of \textvar{Y} by \textvar{X}. To complete the repressilator model, we will supplement this reaction with the two reactions $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ and $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$, with all three repression reactions occurring at the same rate.\tutorial[https://biologicalmodeling.org/motifs/tutorial_oscillators]
 
 \FloatBarrier
 \phantomsection
 \subsection{Interpreting the repressilator's oscillations}
 
-\autoref{fig:repressilator_chart} shows a plot of the concentration of \textvar{X}, \textvar{Y}, and \textvar{Z} particles from our repressilator simulation. The system shows clear oscillatory behavior, with the concentrations of \textvar{X}, \textvar{Y}, and \textvar{Z} taking turns being at high concentration.\\
+\autoref{fig:repressilator_chart} plots the concentration over time of \textvar{X}, \textvar{Y}, and \textvar{Z} particles from our repressilator simulation (colored yellow, red, and blue, respectively). The system exhibits clear oscillatory behavior, with \textvar{X}, \textvar{Y}, and \textvar{Z} taking turns being at high concentration.\\
 
 \begin{qbox}[%
 Why do you think that the repressilator motif leads to this pattern of oscillations?
@@ -399,27 +395,23 @@ Why do you think that the repressilator motif leads to this pattern of oscillati
 \label{fig:repressilator_chart}
 \end{figure}
 
-Because the concentration of \textvar{X} starts out high, with no \textvar{Y} or \textvar{Z} present, the concentration of \textvar{X} briefly increases because its rate of production exceeds its rate of degradation. Because no \textvar{Y} or \textvar{Z} particles are present, there are none to degrade, and the concentrations of these particles start increasing as well.
+Because the concentration of \textvar{X} starts out high, with no \textvar{Y} or \textvar{Z} present, the concentration of \textvar{X} briefly increases because its rate of production exceeds its rate of degradation. With no \textvar{Y} or \textvar{Z} particles present, there are none to degrade or be repressed, and so the concentrations of these particles start increasing as well. However, because \textvar{X} particles begin at high concentration, the repression reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ prevents the concentration of \textvar{Y} from growing as fast as the concentration of \textvar{Z}.
 
-As the concentration of \textvar{Z} rises, the repression reaction $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$ occurs often enough for the rate of removal of \textvar{X} to equal and exceed its rate of production, accounting for the first peak in \autoref{fig:repressilator_chart}. Furthermore, because the concentration of \textvar{X} particles begins high, the repression reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ prevents the number of \textvar{Y} particles from growing initially.
+As the concentration of \textvar{Z} rises, the repression reaction $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$ occurs often enough for the rate of removal of \textvar{X} to equal and exceed its rate of production, accounting for the first peak in \autoref{fig:repressilator_chart}. The concentration of \textvar{X} then plummets, with the concentration of \textvar{Z} rising up to replace it. This situation is shown by the second (blue) peak in \autoref{fig:repressilator_chart}.
 
-In summary, after an initial rise, the concentration of \textvar{X} plummets, with the concentration of \textvar{Z} rising up to replace it. The concentration of \textvar{Y} increases, but at a slower rate than that of \textvar{Z}. This situation is shown by the second (blue) peak in \autoref{fig:repressilator_chart}.
+As a result, \textvar{Z} and \textvar{X} have switched roles. Because there is a high concentration of \textvar{Z}, and the concentration of \textvar{Y} is increasing, the reaction $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ will be frequent and reduce the concentration of \textvar{Z}. Furthermore, because the concentration of \textvar{X} has decreased, and the concentration of \textvar{Y} is still relatively low, the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ will occur less often, allowing the concentration of \textvar{Y} to continue to rise. Eventually, the decrease in the concentration of \textvar{Z} and the increase in the concentration of \textvar{Y} will account for the third (red) peak in \autoref{fig:repressilator_chart}.
 
-As a result, \textvar{Z} and \textvar{X} have switched roles. Because there is a high concentration of \textvar{Z}, and the concentration of \textvar{Y} is increasing, the reaction $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ will be frequent and reduce the concentration of \textvar{Z}. Furthermore, because the concentration of \textvar{X} has decreased, and the concentration of \textvar{Y} is still relatively low, the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ will occur less often, allowing the concentration of \textvar{Y} to continue to rise. Eventually, the decrease in \textvar{Z} and the increase in \textvar{Y} will account for the third (red) peak in \autoref{fig:repressilator_chart}.
-
-At this point, the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ will suppress the concentration of \textvar{Y}. Because the concentration of \textvar{X} and \textvar{Z} are both lower than the concentration of \textvar{Z}, the reaction $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$ will not greatly influence the concentration of \textvar{X}, which will rise to meet the following concentration of \textvar{Y}, and we have returned to our original situation, at which point the cycle will begin again.
+At this point, the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ will suppress the concentration of \textvar{Y}. Because the concentrations of \textvar{X} and \textvar{Z} are both lower than the concentration of \textvar{Z}, the reaction $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$ will not greatly influence the concentration of \textvar{X}, which will rise to meet the following concentration of \textvar{Y}, and we have returned to our original situation, at which point the cycle will begin again.
 
 \FloatBarrier
 \phantomsection
-\subsection{The power of noise}
+\subsection{Noise is a feature, not a bug}
 
 Take another look at the oscillations of the repressilator in \autoref{fig:repressilator_chart}. You will notice that the concentrations zigzag as they travel up or down, and that they peak at slightly different levels each time.
 
 This noise in the repressilator's oscillations is due to random variation as the particles bounce around due to diffusion. The repression reactions require two particles to collide in order for the reaction to take place. Due to random chance, these collisions may occur more or less often than expected because of random chance. Much of this noise is due to low sample size: we have around 150 molecules at each peak in the \autoref{fig:repressilator_chart}, but a given cell may have on the order of 1,000 to 10,000 molecules of a single protein.
 
-Yet the noise that appears in the repressilator's oscillations is a feature, not a bug. As we have discussed previously, the cell's molecular interactions are inherently random. So if we see oscillations in a simulation that includes noise arising from random chance, then we can be confident that this simulation is \textit{robust} to a certain amount of variation.
-
-In this section's conclusion, we will further explore the concept of robustness as it pertains to the repressilator. What happens if our simulation experiences a much greater disturbance to the concentration of one of the particles?  Will it still be able to recover and return to the same oscillatory pattern?\\
+The noise in the repressilator's oscillations is a feature, not a bug. As we have discussed previously, the cell's molecular interactions are inherently random. If we see oscillations in a simulation built on randomness, then we can be confident that this simulation is \textit{robust} to a certain amount of variation. We will further explore this robustness in the chapter's conclusion.\\
 
 \FloatBarrier
 \phantomsection
@@ -454,7 +446,7 @@ We will discuss the technical details behind our well-mixed model in the next se
 \phantomsection
 \subsection{The repressilator is robust to disturbance}
 
-\autoref{fig:nf_sim_interrupted_chart} shows a plot of concentrations of each particle in our well-mixed simulation of the repressilator.  Midway through this simulation, we greatly increase the concentration of \textvar{Y} particles.
+\autoref{fig:nf_sim_interrupted_chart} shows plots of concentrations of each particle in our well-mixed simulation of the repressilator.  Midway through this simulation, we greatly increase the concentration of \textvar{Y} particles.
 
 \begin{figure}[h]
 \centering
