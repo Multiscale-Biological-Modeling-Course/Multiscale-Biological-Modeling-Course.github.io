@@ -4,7 +4,6 @@
 \renewcommand{\chaptertitle}{Unpacking E. coli’s Genius Exploration Algorithm}
 \addcontentsline{cc}{chapter}{Chapter \thechapter} % Adds chapter number to table of contents
 
-
 \FloatBarrier
 
 \section{Introduction: The Lost Immortals}
@@ -53,18 +52,21 @@ In this chapter, we will delve into chemotaxis and ask a number of questions. Ho
 \phantomsection
 \subsection{Bacterial runs and tumbles}
 
+Every \textit{E. coli} cell has between five and twelve flagella distributed on its surface that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, which is analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates.
 
-Every \textit{E. coli} cell has between five and twelve flagella distributed on its surface that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, which is analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates in place.
-
-When we examine the bacterium's movement under a microscope, we see it alternate between periods of ``running'' in a straight line and then ``tumbling'' in place (\autoref{fig:chemotaxis_intro_runtumble}). Over time, the bacterium's \textdef{run and tumble}{run and tumble model}{an alternation between traveling in a straight line and rotating in place, which models bacteria exploring their environment} exploration amounts to a \textit{random walk} through its environment, similar to the exploration approach used by the lost immortals.\\
+When we examine the bacterium's movement under a microscope, we see it alternate between periods of ``running'' in a straight line and then ``tumbling'' in place (\autoref{fig:chemotaxis_intro_runtumble}). Over time, the bacterium's \textdef{run and tumble}{run and tumble model}{an alternation between traveling in a straight line and rotating in place, which models bacteria exploring their environment} exploration amounts to a \textit{random walk} through its environment, like the exploration approach used by the lost immortals.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.6\textwidth]{../images/chemotaxis_intro_runtumble.png}
-\caption{The run and tumble mechanism of bacterial movement produces a random walk.}
+\caption{The run and tumble mechanism of bacterial movement produces a random walk (bottom left).}
 \label{fig:chemotaxis_intro_runtumble}
 \end{figure}
+
+\begin{qbox}[%
+Say that a bacterium travels 20 µm per second, and every second it chooses a random direction in which to travel.  After an hour, approximately how far will it have traveled on average? What if we allow the bacterium to travel for a week? (Hint: recall the Random Walk Theorem from \autoref{chapter:turing}.)
+]\end{qbox}
 
 \FloatBarrier
 \phantomsection
@@ -74,13 +76,9 @@ Bacteria are amazingly diverse. They have evolved for over three billion years t
 
 And yet despite the diversity of the bacterial kingdom, variations in bacterial tumbling frequencies are relatively small. In the absence of an attractant or repellent, \textit{E. coli} stops to tumble once every 1 to 1.5 seconds, which is similar to most other bacteria.
 
-It is as if there were some invisible force compelling all of these bacteria to tumble with the same frequency. Recalling Dobzhansky's quotation from \autoref{chapter:motifs} that ``nothing in biology makes sense except in the light of evolution'', we wonder how and why evolution might hold tumbling frequency constant across species.
+It is as if some invisible force compels all these bacteria to tumble with the same frequency. Recalling Dobzhansky's quotation from \autoref{chapter:motifs} that ``nothing in biology makes sense except in the light of evolution'', we wonder why evolution might hold tumbling frequency constant across species.
 
-This question is a fundamental one, and we will return to it at the close of this chapter after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism they use to implement chemotaxis is far more sophisticated than we might expect.\\
-
-\begin{qbox}[%
-Say that a bacterium travels 20 µm per second, and every second it chooses a random direction in which to travel.  After an hour, approximately how far will it have traveled on average? What if we allow the bacterium to travel for a week? (Hint: recall the Random Walk Theorem from \autoref{chapter:turing}.)
-]\end{qbox}
+This question is a fundamental one, and we will return to it at the close of this chapter after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism that they use to implement chemotaxis is far more sophisticated than we might expect.\\
 
 
 \FloatBarrier

@@ -10,13 +10,16 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## Bacterial runs and tumbles
 
-Every *E. coli* cell has between five and twelve flagella distributed on its surface[^Sim2017] that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, which is analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates in place.[^Baker2005]
+Every *E. coli* cell has between five and twelve flagella distributed on its surface[^Sim2017] that can rotate both clockwise and counter-clockwise. When all of the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, which is analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates.[^Baker2005]
 
-When we examine the bacterium's movement under a microscope, we see it alternate between periods of "running" in a straight line and then "tumbling" in place (see figure below). Over time, the bacterium's **run and tumble** exploration amounts to a *random walk* through its environment, similar to the exploration approach used by the lost immortals in this module's [introduction](home).
+When we examine the bacterium's movement under a microscope, we see it alternate between periods of "running" in a straight line and then "tumbling" in place (see figure below). Over time, the bacterium's **run and tumble** exploration amounts to a *random walk* through its environment, like the exploration approach used by the lost immortals in this module's [introduction](home).
 
 [![image-center](../assets/images/600px/chemotaxis_intro_runtumble.png){: .align-center}](../assets/images/chemotaxis_intro_runtumble.png)
-The run and tumble mechanism of bacterial movement produces a random walk. Image courtesy: Sandy Parkinson.
+The run and tumble mechanism of bacterial movement produces a random walk (bottom left). Image courtesy: Sandy Parkinson.
 {: style="font-size: medium;"}
+
+**STOP:** Say that a bacterium travels 20 µm per second, and every second it chooses a random direction in which to travel.  After an hour, approximately how far will it have traveled on average?  What if we allow the bacterium to travel for a week? (Hint: recall the Random Walk Theorem from the [prologue](../prologue/random_walk).)
+{: .notice--primary}
 
 
 ## Tumbling frequency is constant across species
@@ -25,12 +28,9 @@ Bacteria are amazingly diverse. They have evolved for over three billion years t
 
 And yet despite the diversity of the bacterial kingdom, variations in bacterial tumbling frequencies are relatively small. In the absence of an attractant or repellent, *E. coli* stops to tumble once every 1 to 1.5 seconds[^Weis1990][^Berg2000], which is similar to most other bacteria.[^Achouri2015][^Turner2016][^Gotz1987]
 
-It is as if there were some invisible force compelling all of these bacteria to tumble with the same frequency. Recalling Dobzhansky's quotation from our work in a [previous module](../motifs/nar) that "nothing in biology makes sense except in the light of evolution", we wonder why evolution might hold tumbling frequency constant across species.
+It is as if some invisible force compels all these bacteria to tumble with the same frequency. Recalling Dobzhansky's quotation from our work in a [previous module](../motifs/nar) that "nothing in biology makes sense except in the light of evolution", we wonder why evolution might hold tumbling frequency constant across species.
 
-This question is a fundamental one, and we will return to it at the close of this module after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism they use to implement chemotaxis is far more sophisticated than we might expect.
-
-**STOP:** Say that a bacterium travels 20 µm per second, and every second it chooses a random direction in which to travel.  After an hour, approximately how far will it have traveled on average?  What if we allow the bacterium to travel for a week? (Hint: recall the Random Walk Theorem from the [prologue](../prologue/random_walk).)
-{: .notice--primary}
+This question is a fundamental one, and we will return to it at the close of this module after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism that they use to implement chemotaxis is far more sophisticated than we might expect.
 
 [Next lesson](signal){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
