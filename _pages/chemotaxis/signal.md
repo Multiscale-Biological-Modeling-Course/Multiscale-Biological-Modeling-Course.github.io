@@ -122,31 +122,31 @@ The only reasonable solution here is 52.5-16.008 = 36.492; As anticipated, the s
 
 We have conspicuously not provided any units in the calculations above for the sake of simplicity, and so we will pause to explain what these units are. The concentration of a particle (whether it is *L*, *T*, or *LT*) is measured in molecules/µm<sup>3</sup>, the number of molecules per unit volume. But what about the binding and dissociation rates?
 
-When we multiply the binding rate *k*<sub>bind</sub> by the concentrations [*L*] and [*T*], the resulting unit should be in molecules/µm<sup>3</sup> per second, which corresponds to the rate at which the concentration of *LT* complexes is increasing. If we let *x* denote the unknown units of *k*<sub>bind</sub>, then we should have that
+When we multiply the binding rate *k*<sub>bind</sub> by the concentrations [*L*] and [*T*], the resulting unit should be in molecules/µm<sup>3</sup> per second, which corresponds to the rate at which the concentration of *LT* complexes is increasing. If we let *y* denote the unknown units of *k*<sub>bind</sub>, then
 
-*x* · (molecules/µm<sup>3</sup>) · (molecules/µm<sup>3</sup>) = (molecules/µm<sup>3</sup>)s<sup>-1</sup>
+*y* · (molecules/µm<sup>3</sup>) · (molecules/µm<sup>3</sup>) = (molecules/µm<sup>3</sup>)s<sup>-1</sup>
 
-and solving for *x* gives us that
+and solving for *y* gives
 
-*x* = ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>.
+*y* = ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>.
 
 **STOP:** Use a similar argument to show that the units of the dissociation rate *k*<sub>dissociate</sub> should be s<sup>-1</sup>.
 {: .notice--primary}
 
 ## Steady state ligand-receptor concentrations for an experimentally verified example
 
-Let's use experimentally verified binding and dissociation rates to identify steady state concentrations. The experimentally verified binding rate is *k*<sub>bind</sub> = 0.0146 ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the dissociation rate constant is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991] We will model an *E. coli* cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants *a*, *b*, and *c* in the quadratic equation:
+Having established the units in our model, we will solve our quadratic equation once more to identify steady state concentrations using experimentally verified binding and dissociation rates. The experimentally verified binding rate of receptors to glucose ligands is *k*<sub>bind</sub> = 0.0146 ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the dissociation rate is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991] We will model an *E. coli* cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants *a*, *b*, and *c* in the quadratic equation:
 
 * *a* = *k*<sub>bind</sub> = 0.0146
 * *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -283.2
 * *c* = *k*<sub>bind</sub> · *l*<sub>0</sub> · *t*<sub>0</sub> = 1022000
 
-When we solve for [*LT*] in the quadratic equation, we obtain [*LT*] = 4,793 molecules/µm<sup>3</sup>. Now that we have this value along with *l*<sub>0</sub> and *t*<sub>0</sub>, we can solve for [*L*] and [*T*] as well:
+When we solve for [*LT*] using the quadratic formula, we obtain [*LT*] = 4,793 molecules/µm<sup>3</sup>. Now that we have this value along with *l*<sub>0</sub> and *t*<sub>0</sub>, we can solve for [*L*] and [*T*] as well:
 
 [*L*] = *l*<sub>0</sub> - [*LT*] = 5,207 molecules/µm<sup>3</sup><br>
 [*T*] = *t*<sub>0</sub> - [*LT*] = 2,207 molecules/µm<sup>3</sup>
 
-We can therefore determine the steady state concentration for a *single* reversible reaction. However, if we want to model real cellular processes, we will have *many* reactions for a variety of different particles. We will see that it quickly becomes infeasible to solve all of the resulting equations exactly. Instead, we need a method of simulating many reactions in parallel without incurring the significant computational overhead that would be required to keep track of every individual particle.
+We can therefore determine the steady state concentration for a *single* reversible reaction. However, if we want to model real cellular processes, we will have *many* reactions for a variety of different particles. We will see that it quickly becomes infeasible to solve all of the resulting equations exactly. Instead, we need a method of simulating many reactions in parallel without incurring the significant computational overhead required to track the movements of every particle. Our hope is that this approach will still be able to correctly determine the equilibrium concentrations shown above for a real system.
 
 [Next lesson](gillespie){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

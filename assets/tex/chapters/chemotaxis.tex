@@ -238,18 +238,18 @@ What do you think will happen to the steady state concentration of $L$ if its in
 \phantomsection
 \subsection{Where are the units?}
 
-We have conspicuously not provided any units in the calculations above for the sake of simplicity, and so we will pause to explain what these units are. The concentration of a particle (whether it is $[L]$, $[T]$, or $[LT]$) is measured in $\text{molecules}/\text{µm}^3$, the number of molecules per unit volume. But what about the binding and dissociation rates?
+We have conspicuously not provided any units in the calculations above for the sake of simplicity, and so we will pause to explain what these units are. The concentration of a particle is measured in $\text{molecules}/\text{µm}^3$, the number of molecules per unit volume. But what about the binding and dissociation rates?
 
-When we multiply the binding rate $k_\text{bind}$ by the concentrations $[L]$ and $[T]$, the resulting unit should be in $\text{molecules}/\text{µm}^3$ per second, which corresponds to the rate at which the concentration of $LT$ complexes is increasing. If we let \textvar{x} denote the unknown units of $k_\text{bind}$, then we should have that
+When we multiply the binding rate $k_\text{bind}$ by the concentrations $[L]$ and $[T]$, the resulting unit should be in $\text{molecules}/\text{µm}^3$ per second, which corresponds to the rate at which the concentration of $LT$ complexes is increasing. If we let \textvar{y} denote the unknown units of $k_\text{bind}$, then
 
 \begin{center}
-$x \cdot (\text{molecules}/\text{µm}^3) \cdot (\text{molecules}/\text{µm}^3) = (\text{molecules}/\text{µm}^3) \cdot s^{-1}$\,,
+$y \cdot (\text{molecules}/\text{µm}^3) \cdot (\text{molecules}/\text{µm}^3) = (\text{molecules}/\text{µm}^3) \cdot s^{-1}$\,,
 \end{center}
 
-\noindent and solving for \textvar{x} gives us that
+\noindent and solving for \textvar{y} gives
 
 \begin{center}
-$x = (\text{µm}^3/\text{molecule}) \cdot s^{-1}$\,.
+$y = (\text{µm}^3/\text{molecule}) \cdot s^{-1}$\,.
 \end{center}
 
 \fudgespace
@@ -262,20 +262,20 @@ Use a similar argument to show that the units of the dissociation rate $k_\text{
 \phantomsection
 \subsection{Steady state ligand-receptor concentrations for an experimentally verified example}
 
-Let's use experimentally verified binding and dissociation rates to identify steady state concentrations. The experimentally verified binding rate is $k_\text{bind} = 0.0146~(\text{µm}^3/\text{molecule}) \cdot s^{-1}$, and the dissociation rate constant is $k_\text{dissociate} = 35s^{-1}$\,. We will model an \textit{E. coli} cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants $a$, $b$, and $c$ in the quadratic equation:
+Having established the units in our model, we will solve our quadratic equation once more to identify steady state concentrations using experimentally verified binding and dissociation rates. The experimentally verified binding rate of receptors to glucose ligands is $k_\text{bind} = 0.0146~(\text{µm}^3/\text{molecule}) \cdot s^{-1}$, and the dissociation rate is $k_\text{dissociate} = 35s^{-1}$\,. We will model an \textit{E. coli} cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants $a$, $b$, and $c$ in the quadratic equation:
 \begin{align*}
 a & = k_\text{bind} = 0.0146\,;\\
 b & = - (k_\text{bind} \cdot l_0 + k_\text{bind} \cdot t_0 + k_\text{dissociate}) = -283.2\,;\\
 c & = k_\text{bind} \cdot l_0 \cdot t_0 = 1022000\,.
 \end{align*}
 
-When we solve for $[LT]$ in the quadratic equation, we obtain $[LT]$ equal to 4,793 $\text{molecules}/\text{µm}^3$. Now that we have this value along with $l_0$ and $t_0$, we can solve for $[L]$ and $[T]$ as well:
+When we solve for $[LT]$ using the quadratic formula, we obtain $[LT]$ equal to 4,793 $\text{molecules}/\text{µm}^3$. Now that we have this value along with $l_0$ and $t_0$, we can solve for $[L]$ and $[T]$ as well:
 \begin{align*}
 [L] & = l_0 - [LT] = \text{5,207 molecules}/\text{µm}^3\,;\\
 [T] & = t_0 - [LT] = \text{2,207 molecules}/\text{µm}^3\,.
 \end{align*}
 
-We can therefore determine the steady state concentration for a \textit{single} reversible reaction. However, if we want to model real cellular processes, we will have \textit{many} reactions for a variety of different particles. We will see that it quickly becomes infeasible to solve all of the resulting equations exactly. Instead, we need a method of simulating many reactions in parallel without incurring the significant computational overhead that would be required to keep track of every individual particle.\\
+We can therefore determine the steady state concentration for a \textit{single} reversible reaction. However, if we want to model real cellular processes, we will have \textit{many} reactions for a variety of different particles. We will see that it quickly becomes infeasible to solve all of the resulting equations exactly. Instead, we need a method of simulating many reactions in parallel without incurring the significant computational overhead required to track the movements of every particle. Our hope is that this approach will still be able to correctly determine the equilibrium concentrations shown above for a real system.\\
 
 \FloatBarrier
 \phantomsection
@@ -390,14 +390,11 @@ On the right side of the rule, we will have \texttt{L(t!1).T(l!1)}, which indica
 
 Since the reaction is bidirectional, we will use \texttt{k\_lr\_bind} and \texttt{k\_lr\_dis} to denote the rates of the forward and reverse reactions, respectively. (We will specify values for these parameters later.)
 
-As a result, this reaction is shown below. We name our rule specifying the ligand-receptor reaction \texttt{LR}.
+As a result, this reaction is shown below. We name our rule specifying the ligand-receptor reaction \texttt{LR}.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial\_lr]\\
 
-\begin{verbatim}
+\begin{BioNetGen}
 LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
-\end{verbatim}
-
-The tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial\_lr] shows how to implement this rule in BioNetGen and use the Gillespie algorithm to determine the equilibrium of a reversible ligand-receptor binding reaction.
-
+\end{BioNetGen}
 
 \FloatBarrier
 \phantomsection
@@ -482,34 +479,34 @@ In the previous section, we very briefly introduced BioNetGen as a way to conver
 
 Say that we were to specify all reactions using the style of modeling reactions used in previous chapters. We would need one particle type to represent MCP molecules, another particle type to represent ligands, and a third to represent bound complexes. A bound complex molecule binds with CheA and CheW and can be either phosphorylated or unphosphorylated, necessitating two different molecule types. In turn, CheY can be phosphorylated or unphosphorylated as well, requiring two more particles.
 
-Instead, the BioNetGen language will allow us to conceptualize this system much more concisely using rules that apply to particles that are in a variety of states. The BioNetGen representation of the four particles in our model is shown below. The notation \texttt{Phos\texttildelow U\texttildelow P} indicates that a given molecule type can be either phosphorylated or unphosphorylated, so that we do not need multiple different expressions to represent the molecule.
+Instead, the BioNetGen language will allow us to conceptualize this system much more concisely using rules that apply to particles that are in a variety of states. The BioNetGen representation of the four particles in our model is shown below. The notation \texttt{Phos\texttildelow U\texttildelow P} indicates that a given molecule type can be either phosphorylated or unphosphorylated, so that we do not need multiple different expressions to represent the molecule.\\
 
-\begin{verbatim}
+\begin{BioNetGen}
 L(t)             #ligand molecule
 T(l,Phos~U~P)    #receptor complex
 CheY(Phos~U~P)
 CheZ()
-\end{verbatim}
+\end{BioNetGen}
 
-The conciseness of BioNetGen's molecule representation helps us represent our reactions concisely as well. We first reproduce the reversible binding and dissociation reaction from the previous section.
+The conciseness of BioNetGen's molecule representation helps us represent our reactions concisely as well. We first reproduce the reversible binding and dissociation reaction from the previous section.\\
 
-\begin{verbatim}
+\begin{BioNetGen}
 LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
-\end{verbatim}
+\end{BioNetGen}
 
-Next, we represent the phosphorylation of the MCP complex. Recall that the phosphorylation of CheA can occur at different rates depending on whether the MCP is bound, and so we will need two different reactions to model these different rates. In our model, the phosphorylation of the MCP will occur at one fifth the rate when it is bound to the attractant ligand.
+Next, we represent the phosphorylation of the MCP complex. Recall that the phosphorylation of CheA can occur at different rates depending on whether the MCP is bound, and so we will need two different reactions to model these different rates. In our model, the phosphorylation of the MCP will occur at one fifth the rate when it is bound to the attractant ligand.\\
 
-\begin{verbatim}
+\begin{BioNetGen}
 FreeTP: T(l,Phos~U) -> T(l,Phos~P) k_T_phos
 BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
-\end{verbatim}
+\end{BioNetGen}
 
-Finally, we represent the phosphorylation and dephosphorylation of CheY. The former requires a phosphorylated MCP receptor, while the latter is done with the help of a CheZ molecule that can be in any state.
+Finally, we represent the phosphorylation and dephosphorylation of CheY. The former requires a phosphorylated MCP receptor, while the latter is done with the help of a CheZ molecule that can be in any state.\\
 
-\begin{verbatim}
+\begin{BioNetGen}
 YP: T(Phos~P) + CheY(Phos~U) -> T(Phos~U) + CheY(Phos~P) k_Y_phos
 YDep: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
-\end{verbatim}
+\end{BioNetGen}
 
 Now that we have converted the reactions from the chemotaxis signal transduction pathway into BioNetGen's rule\-based language, we would like to see what happens when we \textit{change} the concentrations of the ligand. Ideally, the bacterium should be able to distinguish different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY, and the lower the tumbling frequency of the bacterium.
 
@@ -624,13 +621,13 @@ Say that we are simulating the simple reaction of a ligand binding to an MCP, wh
 
 In other words, as our model grows, with multiple different states for each molecule involved in each reaction, the number of reactions we need to represent the system grows very fast; this phenomenon is called \textdef{combinatorial explosion}{combinatorial explosion}{a phenomenon in which the complexity of a problem grows rapidly due to the growth in the number of some quantity of interest (e.g., the number of possible reactions in a molecular system)}. Our model of chemotaxis is ultimately relatively straightforward, but combinatorial explosion means that building realistic models of biochemical systems at scale can be daunting.
 
-A major benefit of using a rule-based modeling language such as the one developed by BioNetGen is that it circumvents combinatorial explosion by consolidating many reactions into a single rule. For example, when modeling ligand-MCP binding, we can summarize the 12 different reactions with the rule ``a free ligand molecule binds to an MCP that is not bound to a ligand molecule.'' In the BioNetGen language, this rule is represented by the same one-line expression as it was in the previous section:
+A major benefit of using a rule-based modeling language such as the one developed by BioNetGen is that it circumvents combinatorial explosion by consolidating many reactions into a single rule. For example, when modeling ligand-MCP binding, we can summarize the 12 different reactions with the rule ``a free ligand molecule binds to an MCP that is not bound to a ligand molecule.'' In the BioNetGen language, this rule is represented by the same one-line expression as it was in the previous section:\\
 
-\begin{verbatim}
+\begin{BioNetGen}
 LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k\_lr\_bind, k\_lr\_dis
-\end{verbatim}
+\end{BioNetGen}
 
-We will not bog down the text with a full specification of all the rules needed to add methylation to our model while avoiding combinatorial explosion. If you're interested in the details, please follow our tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_adaptation].
+We will not bog down the text with a full specification of all the rules needed to add methylation to our model while avoiding combinatorial explosion. If you're interested in the details, please follow our tutorial online.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_adaptation].
 
 
 \FloatBarrier
@@ -711,7 +708,7 @@ Earlier, we saw that \textit{E. coli} is able to adapt its default tumbling freq
 
 Yet imagine a glucose cube in an aqueous solution. As the cube dissolves, a \textdefnogloss{gradient} will form, with a glucose concentration that decreases outward from the cube. How will the tumbling frequency of \textit{E. coli} change if the bacterium finds itself in an environment of an attractant gradient?  Will the tumbling frequency decrease continuously as well, or will the methylation pathways mentioned in the previous section cause more complicated behavior? And once the cell reaches a region of high attractant concentration, will its default tumbling frequency stabilize to the same steady state?
 
-In this section, we will modify our model from the previous section by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of phosphorylated CheY changes. This model will simulate a bacterium traveling up an attractant gradient toward an attractant. Moreover, we will examine how the concentration of phosphorylated CheY changes as we change the gradient's ``steepness'', or the rate at which attractant ligand is increasing. Visit the following tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_gradient] if you're interested in following our adjustments for yourself.
+In this section, we will modify our model from the previous section by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of phosphorylated CheY changes. This model will simulate a bacterium traveling up an attractant gradient toward an attractant. Moreover, we will examine how the concentration of phosphorylated CheY changes as we change the gradient's ``steepness'', or the rate at which attractant ligand is increasing.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_gradient]
 
 \phantomsection
 \subsection{Steady state tumbling frequency is robust}
@@ -747,13 +744,11 @@ More importantly, \autoref{fig:chemotaxis_tutorial_addition03} further illustrat
 
 And what if a cell is moving away from an attractant, down a concentration gradient? We would hope that the cell would be able to \textit{increase} its tumbling frequency (i.e., increase the concentration of phosphorylated CheY), and then restore the background tumbling frequency by removing methylation.
 
-To simulate a decreasing gradient, we will model a cell in a high ligand concentration that is already at steady state, meaning that methylation is also elevated. In this case, the ligand concentration will \textit{decay} exponentially, meaning that the ligand concentration is still given by the equation $\text{[}L{]} = l_0 \cdot e^{k \cdot t}$, but $k$ is negative.\\
+To simulate a decreasing gradient, we will model a cell in a high ligand concentration that is already at steady state, meaning that methylation is also elevated. In this case, the ligand concentration will \textit{decay} exponentially, meaning that the ligand concentration is still given by the equation $\text{[}L{]} = l_0 \cdot e^{k \cdot t}$, but $k$ is negative.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_removal]\\
 
 \begin{qbox}[%
 If $k$ is negative, how do you think that decreasing the value of $k$ will affect the concentration of phosphorylated CheY over time?
 ]\end{qbox}
-
-You may like to modify the previous tutorial on your own to account for traveling down an attractant gradient. If not, we are still happy to provide a separate tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_removal].
 
 
 \FloatBarrier
@@ -829,9 +824,7 @@ To model our ``unintelligent'' random walk strategy, we first select a random di
 
 We then select a random duration to run and let the bacterium run in that direction for the specified amount of time. The duration of each run follows an exponential distribution with mean equal to the experimentally verified value of 1 second.
 
-We then iterate these two steps of tumbling and running until the total time has elapsed.
-
-In the tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_purerandom], we simulate this naive strategy using a Jupyter notebook that will also help us visualize the results of the simulation.
+We then iterate these two steps of tumbling and running until the total time has elapsed.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_purerandom]
 
 \FloatBarrier
 \phantomsection
@@ -862,9 +855,7 @@ $\min\left(\max(t_0 \cdot (1 + 10 \cdot \Delta [L]), 0.000001), 4 \cdot t_0\righ
 What is the mean run duration when $\Delta\text{[}L\text{]}$ is equal to zero? Is this what we would hope? You may assume that $t_0$ is much larger than 0.000001.
 ]\end{qbox}
 
-As with the first strategy, our simulated cell will alternate between tumbling and running until the total time devoted to the simulation has elapsed. The only difference is that we will measure the percentage change in concentration $\Delta [L]$ between a cell's current point and its previous point every $t_{\text{response}}$ seconds. After determining a mean run time $t \cdot \Delta [L]$, we will sample a random number $p$ from an exponential distribution with this mean run time, and the cell will tumble after $p$ seconds if $p$ is smaller than $t_{\text{response}}$.
-
-In the tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_walk], we adapt the Jupyter notebook that we built in the previous tutorial to simulate this second strategy and run it many times, taking the average of the simulated bacteria's distance to the goal.
+As with the first strategy, our simulated cell will alternate between tumbling and running until the total time devoted to the simulation has elapsed. The only difference is that we will measure the percentage change in concentration $\Delta [L]$ between a cell's current point and its previous point every $t_{\text{response}}$ seconds. After determining a mean run time $t \cdot \Delta [L]$, we will sample a random number $p$ from an exponential distribution with this mean run time, and the cell will tumble after $p$ seconds if $p$ is smaller than $t_{\text{response}}$.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_walk]
 
 \FloatBarrier
 \phantomsection
@@ -900,7 +891,7 @@ The answer to this quandary is that the attractant detection provides a ``rubber
 
 A very small change to a simple, unsuccessful randomized algorithm can produce an elegant approach for exploring an unknown environment. But we left one question unanswered. Why is it that a default tumbling frequency of one tumble per second appears to be stable across a wide range of bacteria?
 
-To address this question, we will see how changing $t_0$, the default time for a run step, affects the ability of a simulated bacterium following strategy 2 to locate the goal. You may like to adjust the value of $t_0$ in the previous tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_walk] yourself, or follow the tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_tumbling_frequencies].
+To address this question, we will see how changing $t_0$, the default time for a run step, affects the ability of a simulated bacterium following strategy 2 to locate the goal.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_tumbling_frequencies].
 
 
 \FloatBarrier
