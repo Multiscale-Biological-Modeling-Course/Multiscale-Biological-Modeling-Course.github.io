@@ -89,34 +89,34 @@ This question is a fundamental one, and we will return to it at the close of thi
 \phantomsection
 \subsection{Cells detect and transduce signals via receptor proteins}
 
-Chemotaxis is one example of many ways in which a cell must perceive a change in its environment and react accordingly. This response is governed by a process called \textdef{signal transduction}{signal transduction}{the intracellular transmission of an external stimulus in order to effect a response}, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell in order to effect a response. When a certain molecule's extracellular concentration increases, \textdef{receptor proteins}{receptor protein}{a protein on the surface of the cell that binds to molecules in order to detect changes in their extracellular concentration} on the outside of the cell have more frequent binding with these molecules and are therefore able to detect changes in molecular concentration. This ``signal is then ``transduced'' via a series of internal chemical processes.
+Chemotaxis is one of many ways in which a cell must perceive a change in its environment and react accordingly. This response is governed by a process called \textdef{signal transduction}{signal transduction}{the intracellular transmission of an external stimulus in order to effect a response}, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell in order to effect a response. When a certain molecule's extracellular concentration increases, \textdef{receptor proteins}{receptor protein}{a protein on the surface of the cell that binds to molecules in order to detect changes in their extracellular concentration} on the outside of the cell have more frequent binding with these molecules and are therefore able to detect changes in molecular concentration. This ``signal is then ``transduced'' via a series of internal chemical processes.
 
-For example, transcription factors, which we discussed in \autoref{chapter:motifs}, are involved in a signal transduction process. When some extracellular molecule is detected, a cascade begins that eventually changes a transcription factor into an active state, so that it is ready to activate or repress the genes that it regulates.
+For example, transcription factors are involved in a signal transduction process that we illustrated in \autoref{fig:transduction}. When some extracellular molecule is detected, a cascade begins that eventually changes a transcription factor into an active state, so that it is ready to activate or repress the genes that it regulates.
 
-In the case of chemotaxis, \textit{E. coli} has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant \textdef{ligands}{ligand}{a substance that forms a complex with a biological molecule such as a receptor protein}. The bacterium also contains receptors to detect repellents, but we will focus on modeling the binding of a single type of receptor to a single type of attractant ligand. Later in the chapter, we will enter the cell and model the cascade of reactions after this binding has occurred, as shown in \autoref{fig:chemotaxis_signal}, which cause a change in the rotation of one or more flagella.
+In the case of chemotaxis, \textit{E. coli} has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant \textdef{ligands}{ligand}{a substance that forms a complex with a biological molecule such as a receptor protein}. The bacterium also contains receptors to detect repellents, but we will focus on modeling the binding of a single type of receptor to a single type of attractant ligand. Soon, we will enter the cell and model the cascade of reactions occurring after this complex has formed that will cause a change in the rotation of one or more flagella (\autoref{fig:chemotaxis_signal}).\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.85\textwidth]{../images/chemotaxis_signal.png}
-\caption{An overview of the signaling pathway of chemotaxis. The red circles labeled \textit{L} represent attractant ligands. When these ligands bind to receptors, a signal is transduced inside the cell via a series of enzymes, which finally influences the rotation direction of a flagellum.}
+\caption{An overview of the chemotaxis signaling pathway. The red circles labeled \textit{L} represent attractant ligands. When these ligands bind to receptors, a signal is transduced inside the cell via a series of enzymes, which eventually influences the rotation direction of a flagellum.}
 \label{fig:chemotaxis_signal}
 \end{figure}
 
 \FloatBarrier
 \nopagebreak
 \phantomsection
-\subsection{Ligand-receptor dynamics correspond to a reversible reaction}
+\subsection{Ligand-receptor dynamics can be modeled by a reversible reaction}
 
 The chemical reactions that we have considered earlier in this book are \textdef{irreversible}{irreversible reaction}{a chemical reaction that only proceeds in one direction}, meaning they can only proceed in one direction. For example, in \autoref{chapter:turing}'s reaction-diffusion model, we modeled the reaction $A + 2B \rightarrow 3B$, but we did not consider the reverse reaction $3B \rightarrow A + 2B$.
 
-To model ligand-receptor dynamics, we will use a \textdef{reversible reaction}{reversible reaction}{a chemical reaction that proceeds continuously in both directions (at possibly different rates)} that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bind into a complex. But at the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will \textdefnogloss{dissociate} into two separate molecules. In a future chapter, we will discuss the biochemical details underlying what makes two molecules more or less likely to bind, but for now, we assert that the more suited a receptor is to a ligand, the higher the binding rate and the lower the dissociation rate.\\
+To model ligand-receptor dynamics, we will use a \textdef{reversible reaction}{reversible reaction}{a chemical reaction that proceeds continuously in both directions (at possibly different rates)} that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bind into a complex. At the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will \textdefnogloss{dissociate} into two separate molecules. In \autoref{chapter:coronavirus_2}, we will discuss some of the biochemical details underlying what makes two molecules more or less likely to bind, but for now, we assert that the more suited a receptor is to a ligand, the higher the binding rate and the lower the dissociation rate.\\
 
 \begin{note}[%
-Why should ligand-receptor binding be reversible? If complexes did not dissociate, then a brief increase in ligand concentration would be detected indefinitely by the surface receptors. Without releasing the bound ligands, the cell would need to manufacture more receptors, which are complicated molecules.
+You may be wondering why ligand-receptor binding is reversible. If complexes did not dissociate, then a brief increase in ligand concentration would be detected indefinitely by the surface receptors. Without releasing the bound ligands, the cell would need to manufacture more and more receptors, which are complicated molecules.
 ]\end{note}
 
-We denote the ligand molecule by $L$, the receptor molecule by $T$, and the bound complex as $LT$. The reversible reaction is $L + T \longleftrightarrow LT$ and consists of two reactions. The \textdefnogloss{forward reaction} is $L + T \rightarrow LT$, which takes place at some rate $k_\text{bind}$, and the \textdefnogloss{reverse reaction} is $LT \rightarrow L + T$, which takes place at some rate $k_\text{dissociate}$.
+We denote the ligand molecule by $L$, the receptor molecule by $T$, and the bound complex as $LT$. The reversible reaction representing complex binding and dissociation is $L + T \longleftrightarrow LT$ and consists of two reactions. The \textdefnogloss{forward reaction} is $L + T \rightarrow LT$, which takes place at some rate $k_\text{bind}$, and the \textdefnogloss{reverse reaction} is $LT \rightarrow L + T$, which takes place at some rate $k_\text{dissociate}$.
 
 If we start with a free floating supply of $L$ and $T$ molecules, then $LT$ complexes will initially be formed quickly at the expense of the free-floating $L$ and $T$ molecules. The reverse reaction will not occur because of the lack of $LT$ complexes. However, as the concentration of $LT$ grows and the concentrations of $L$ and $T$ decrease, the rate of increase in $LT$ will slow. Eventually, the number of $T$ complexes being formed by the forward reaction will balance the number of $LT$ complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
 
@@ -126,7 +126,7 @@ If we start with a free floating supply of $L$ and $T$ molecules, then $LT$ comp
 
 For a single reversible reaction, if we know the rates of both the forward and reverse reactions, then we can calculate the steady state concentrations of $L$, $T$, and $LT$ by hand.  Suppose that we begin with initial concentrations of $L$ and $T$ that are represented by $l_0$ and $t_0$, respectively. Let $[L]$, $[T]$, and $[LT]$ denote the concentrations of the three molecule types. And assume that the reaction rate constants $k_\text{bind}$ and $k_\text{dissociate}$ are fixed.
 
-When the steady state concentration of $LT$ occurs, the rate of production of $LT$ is equal to the rate of its dissociation; in other words, we know that
+When the steady state concentration of $LT$ is reached, the number of complexes being produced is equal to the number of complexes dissociating; that is,
 
 \begin{center}
 $k_\text{bind} \cdot [L] \cdot [T] = k_\text{dissociate} \cdot [LT] $\,.
@@ -134,30 +134,24 @@ $k_\text{bind} \cdot [L] \cdot [T] = k_\text{dissociate} \cdot [LT] $\,.
 \end{center}
 
 We also know that by the law of conservation of mass, the concentrations of $L$ and $T$ molecules are always constant across the system and are equal to their initial concentrations. That is, at any time point,
-
-\begin{center}
-$[L] + [LT] = l_0$
-\end{center}
-
-\noindent and
-
-\begin{center}
-$[T] + [LT] = t_0 $\,.
-\end{center}
-
-\noindent Solving these equations for $[L]$ and $[T]$ yields the following two equations:
 \begin{align*}
-[L] & = l_0 - [LT]\\
+[L] + [LT] & = l_0\,;\\
+[T] + [LT] & = t_0\,.
+\end{align*}
+
+\noindent We solve these two equations for $[L]$ and $[T]$ to yield
+\begin{align*}
+[L] & = l_0 - [LT]\,;\\
 [T] & = t_0 - [LT]\,.
 \end{align*}
 
-We will now substitute the expressions on the right for $[L]$ and $[T]$ into our original steady state equation:
+We substitute the expressions on the right for $[L]$ and $[T]$ into our original steady state equation:
 
 \begin{center}
 $k_\text{bind} \cdot (l_0 - [LT]) \cdot (t_0 - [LT]) = k_\text{dissociate} \cdot [LT]$\,.
 \end{center}
 
-\noindent Expanding the left side of this equation gives
+\noindent We then expand of the left side of the above equation:
 
 \begin{center}
 $k_\text{bind} \cdot [LT]^2 - (k_\text{bind} \cdot l_0 + k_\text{bind} \cdot t_0) \cdot [LT]  = k_\text{dissociate} [LT] + k_\text{bind} \cdot l_0 \cdot t_0$\,.
@@ -171,7 +165,7 @@ $k_\text{bind} \cdot [LT]^2 - (k_\text{bind} \cdot l_0 + k_\text{bind} \cdot t_0
 
 \noindent This equation may look daunting, but most of its components are constants. In fact, the only unknown is $[LT]$, which makes this a quadratic equation, with $[LT]$ as the variable.
 
-In general, a quadratic equation has the form $a \cdot x^2 + b \cdot x + c = 0$ for constants $a$, $b$, and $c$ and a single variable $x$. In our case, $x$ = $[LT]$, and the constants are $a = k_\text{bind}$, $b = - (k_\text{bind} \cdot l_0 + k_\text{bind} \cdot t_0 + k_\text{dissociate})$, and $c = k_\text{bind} \cdot l_0 \cdot t_0$. The quadratic formula --- which you may have thought you would never use again --- tells us that the equation $a \cdot x^2 + b \cdot x + c = 0$  has solutions for $x$ given by
+In general, a quadratic equation has the form $a \cdot x^2 + b \cdot x + c = 0$ for a single variable $x$ and constants $a$, $b$, and $c$. In our case, $x$ = $[LT]$, $a = k_\text{bind}$, $b = - (k_\text{bind} \cdot l_0 + k_\text{bind} \cdot t_0 + k_\text{dissociate})$, and $c = k_\text{bind} \cdot l_0 \cdot t_0$. The quadratic formula --- which you may have thought you would never use again --- tells us that the quadratic equation has solutions for $x$ given by
 
 \begin{center}
 $x = \dfrac{-b \pm \sqrt{b^2 - 4 \cdot a \cdot c}}{2 \cdot a}$\,.
@@ -183,7 +177,7 @@ $x = \dfrac{-b \pm \sqrt{b^2 - 4 \cdot a \cdot c}}{2 \cdot a}$\,.
 Use the quadratic formula to find the steady state concentration of $LT$. How can we use this solution to find the steady state concentrations of $L$ and $T$ as well?
 ]\end{qbox}
 
-Now that we have reduced the computation of the steady state concentration of $LT$ to the solution of a quadratic equation, let's compute this steady state concentration for a sample collection of parameters. We will then change the parameters and see how the steady state concentration changes.
+Now that we have reduced the computation of the steady state concentration of $LT$ to the solution of a quadratic equation, let's compute this steady state concentration for a sample collection of parameters.
 
 Say that we are given the following parameter values (the units of these parameters are not important for this toy example):
 \begin{align*}
@@ -213,15 +207,15 @@ c & = k_\text{bind} \cdot l_0 \cdot t_0 = 5000\,.
 $[LT] = \dfrac{205 \pm \sqrt{205^2 - 4 \cdot 2 \cdot 5000}}{2 \cdot 2} = 51.25 \pm 11.25$\,.
 \end{center}
 
-It would seem that this equation has \textit{two} solutions: $51.25 + 11.25 = 62.5$ and $51.25 - 11.25 = 40$. However, because $l_0$ and $t_0$, the respective initial concentrations of $L$ and $T$, are both equal to 50, the steady state concentration of $LT$ cannot be 62.5; instead, it must be 40.
+It would seem that this equation has \textit{two} solutions: $51.25 + 11.25 = 62.5$ and $51.25 - 11.25 = 40$. However, because $l_0$ and $t_0$, the respective initial concentrations of $L$ and $T$, are both equal to 50, the steady state concentration of $LT$ cannot be greater than 50 and must therefore be equal to 40.
 
-Now that we know the steady state concentration of $LT$, we can recover the values of $[L]$ and $[T]$ too:
+Now that we know the steady state concentration of $LT$, we can recover the values of $[L]$ and $[T]$ as
 \begin{align*}
 [L] & = l_0 - [LT] = 10\,;\\
 [T] & = t_0 - [LT] = 10\,.
 \end{align*}
 
-What if the forward reaction were slower (i.e., $k_\text{bind}$ was lower)? We would imagine that the equilibrium concentration of $[LT]$ would decrease. For example, if we halve $k_\text{bind}$, then we obtain the following adjusted parameter values:
+What if the forward reaction were slower (i.e., $k_\text{bind}$ were lower)? We would imagine that the equilibrium concentration of $[LT]$ should decrease. For example, if we halve $k_\text{bind}$, then we obtain the following adjusted parameter values:
 \begin{align*}
 a & = k_\text{bind} = 1\,;\\
 b & = - (k_\text{bind} \cdot l_0 + k_\text{bind} \cdot t_0 + k_\text{dissociate}) = -105\,;\\
@@ -234,10 +228,10 @@ c & = k_\text{bind} \cdot l_0 \cdot t_0 = 2500\,.
 $[LT] = \dfrac{105 \pm \sqrt{105^2 - 4 \cdot 1 \cdot 2500}}{2 \cdot 1} = 52.5 \pm 16.008$\,.
 \end{center}
 
-\noindent The only reasonable solution here is $52.5-16.008 = 36.492$; the steady state concentration has decreased as anticipated.\\
+\noindent The only reasonable solution here is $52.5-16.008 = 36.492$. As anticipated, the steady state concentration has decreased.\\
 
 \begin{qbox}[%
-What do you think will happen to the steady state concentration of $L$ if its initial concentration ($l_0$) increases or decreases? What if the dissociation rate ($k_\text{dissociate}$) increases or decreases?  Confirm your prediction by changing the parameters above and solving the quadratic formula for the concentration of $L$.
+What do you think will happen to the steady state concentration of $L$ if its initial concentration ($l_0$) increases or decreases? What if the dissociation rate ($k_\text{dissociate}$) increases or decreases?  Confirm your predictions by changing the parameters above and solving the quadratic formula for the concentration of $L$.
 ]\end{qbox}
 
 \FloatBarrier
