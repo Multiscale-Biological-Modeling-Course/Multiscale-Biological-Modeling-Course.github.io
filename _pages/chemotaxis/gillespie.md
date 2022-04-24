@@ -10,26 +10,27 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## Verifying a theoretical steady state concentration via stochastic simulation
 
-In the [previous module](../motifs/home), we saw that we could avoid tracking the positions of individual particles if we assume that the particles are *well-mixed*, i.e., uniformly distributed throughout their environment. We will apply this assumption in our current work as well, in part because the *E. coli* cell is so small. As a proof of concept, let us first see if a well-mixed simulation replicates the steady state concentrations of particles that we found in the [previous lesson](signal).
+In the [previous module](../motifs/home), we saw that we could avoid tracking the positions of individual particles if we assume that the particles are *well-mixed*, i.e., uniformly distributed throughout their environment. We will apply this assumption in our current work as well, in part because the *E. coli* cell is so small. As a proof of concept, we will see if a well-mixed simulation replicates a reversible reaction's equilibrium concentrations of particles that we found in the [previous lesson](signal).
 
-Even though we can calculate steady state concentrations by hand, a particle-free simulation will be useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system like what we have done in the previous lesson will become impossible.
+Even though we can calculate steady state concentrations manually, a particle-free simulation will be useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system will become impossible.
 
-The difficulty at hand is comparable to the famed "*n*-body problem" in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution once we add more bodies to the system.
+**Note:** The difficulty posed to precise analysis of systems with multiple chemical reactions is comparable to the famed "*n*-body problem" in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution once we add more bodies to the system.
+{: .notice--info}
 
-Our particle-free model will apply an approach called **Gillespie's stochastic simulation algorithm**, which is often called the **Gillespie algorithm** or just **SSA** for short. Before we explain how this algorithm works, we take a short detour to provide some needed probabilistic context.
+Our particle-free model will apply an approach called **Gillespie's stochastic simulation algorithm**, which is often called the **Gillespie algorithm** or just **SSA** for short. Before we explain how this algorithm works, we will take a short detour to provide some needed probabilistic context.
 
 ## The Poisson and exponential distributions
 
-Say that you own a store and have noticed that on average, there are *λ* customers entering your store in a single hour. Let *X* denote the number of customers that enter the store in the next hour; *X* is an example of a **random variable** because it may change depending on random chance. If we assume that customers are independent actors arriving at a constant rate, then *X* follows a **Poisson distribution**. It can be shown that for a Poisson distribution, the probability that exactly *n* customers arrive in the next hour is
+Imagine that you own a store and have noticed that on average, *λ* customers enter your store in a single hour. Let *X* denote the number of customers entering the store in the next hour; *X* is an example of a **random variable** because its value may change depending on random chance. If we assume that customers are independent actors, then *X* follows a **Poisson distribution**. It can be shown that for a Poisson distribution, the probability that exactly *n* customers arrive in the next hour is
 
 $$\mathrm{Pr}(X = n) = \dfrac{\lambda^n e^{-\lambda}}{n!}\,,$$
 
 where *e* is the mathematical constant known as Euler's number and is equal to 2.7182818284…
 
-**Note:** A derivation of this formula is beyond the scope of our work here, but if you are interested in one, please check out <a href="https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239" target="_blank">this article</a> by Andrew Chamberlain.
+**Note:** A derivation of the above formula for Pr(*X* = *n*) is beyond the scope of our work here, but if you are interested in one, please check out <a href="https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239" target="_blank">this article</a> by Andrew Chamberlain.
 {: .notice--info}
 
-Furthermore, the probability of observing exactly *n* customers in *t* hours where *t* is an arbitrary positive number is
+Furthermore, the probability of observing exactly *n* customers in *t* hours, where *t* is an arbitrary positive number, is
 
 $$\dfrac{(\lambda t)^n e^{-\lambda t}}{n!}\,.$$
 
@@ -37,18 +38,18 @@ We can also ask how long we will typically have to wait for the next customer to
 
 $$\mathrm{Pr}(T > t) = \mathrm{Pr}(X = 0) = \dfrac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}\,.$$
 
-In other words, the probability $$\mathrm{Pr}(T > t)$$ decays exponentially over time as *t* increases. For this reason, the random variable *T* is said to follow an **exponential distribution.** It can be shown that the expected value of the exponential distribution (i.e., the average amount of time we will need to wait for the next event to occur) is 1/λ.
+In other words, the probability Pr(*T* > *t*) $$\mathrm{Pr}(T > t)$$ that the wait time is longer than time *t* decays exponentially as *t* increases. For this reason, the random variable *T* is said to follow an **exponential distribution.** It can be shown that the expected value of the exponential distribution (i.e., the average amount of time we will need to wait for the next event to occur) is 1/λ.
 
 **STOP**: What is the probability Pr(*T* < *t*)?
 {: .notice--primary}
 
 ## The Gillespie algorithm
 
-The engine of the Gillespie algorithm runs on a single question: given a well-mixed environment of particles and a reaction involving those particles taking place at some average rate, how long should we expect to wait before this reaction occurs somewhere in the environment?
+We now return to explain the Gillespie algorithm for simulating multiple chemical reactions in a well-mixed environment. The engine of this algorithm runs on a single question: given a well-mixed environment of particles and a reaction involving those particles taking place at some average rate, how long should we expect to *wait* before this reaction occurs somewhere in the environment?
 
-This is the same question we asked in the previous section; we have simply replaced customers entering a store with instances of a chemical reaction. The average number λ of occurrences of the reaction in a unit time period is the rate at which the reaction occurs. Therefore, an exponential distribution with average wait time 1/λ can be used to model the time between instances of the reaction.
+This is the same question we asked in the previous discussion; we have simply replaced customers entering a store with instances of a chemical reaction. The average number λ of occurrences of the reaction in a unit time period is the rate at which the reaction occurs. Therefore, an exponential distribution with average wait time 1/λ can be used to model the time between instances of the reaction.
 
-Next, say that we have two reactions proceeding independently of each other and occurring at average rates λ<sub>1</sub> and λ<sub>2</sub>. Then the average rate of the two reactions together is λ<sub>1</sub> + λ<sub>2</sub>, which is also a Poisson distribution. Therefore, the wait time for either of the two reactions is exponentially distributed, with an average wait time equal to 1/(λ<sub>1</sub> + λ<sub>2</sub>).
+Next, say that we have two reactions proceeding independently of each other and occurring at average rates λ<sub>1</sub> and λ<sub>2</sub>. The combined average rates of the two reactions is λ<sub>1</sub> + λ<sub>2</sub>, which is also a Poisson distribution. Therefore, the wait time required to wait for either of the two reactions is exponentially distributed, with an average wait time equal to 1/(λ<sub>1</sub> + λ<sub>2</sub>).
 
 Numerical methods allow us to generate a random number simulating the wait time of an exponential distribution. By repeatedly generating these numbers, we can obtain a series of wait times between consecutive reaction occurrences.
 

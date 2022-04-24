@@ -275,7 +275,7 @@ When we solve for $[LT]$ using the quadratic formula, we obtain $[LT]$ equal to 
 [T] & = t_0 - [LT] = \text{2,207 molecules}/\text{µm}^3\,.
 \end{align*}
 
-We can therefore determine the steady state concentration for a \textit{single} reversible reaction. However, if we want to model real cellular processes, we will have \textit{many} reactions for a variety of different particles. We will see that it quickly becomes infeasible to solve all of the resulting equations exactly. Instead, we need a method of simulating many reactions in parallel without incurring the significant computational overhead required to track the movements of every particle. Our hope is that this approach will still be able to correctly determine the equilibrium concentrations shown above for a real system.\\
+We can therefore determine the steady state concentration for a \textit{single} reversible reaction. However, if we want to model real cellular processes, we will have \textit{many} reactions for a variety of different particles. We will see that it quickly becomes infeasible to solve all of the resulting equations exactly. Instead, we need a method of simulating many reactions in parallel without incurring the significant computational overhead required to track the movements of every particle.\\
 
 \FloatBarrier
 \phantomsection
@@ -285,58 +285,56 @@ We can therefore determine the steady state concentration for a \textit{single} 
 \phantomsection
 \subsection{Verifying a theoretical steady state concentration via stochastic simulation}
 
-In \autoref{chapter:motifs}, we saw that we could avoid tracking the positions of individual particles if we assume that the particles are \textit{well-mixed}, i.e., uniformly distributed throughout their environment. We will apply this assumption in our current work as well, in part because the \textit{E. coli} cell is so small. As a proof of concept, let us first see if a well-mixed simulation replicates the steady state concentrations of particles that we found in \autoref{sec:signal}.
+In \autoref{chapter:motifs}, we saw that we could avoid tracking the positions of individual particles if we assume that the particles are \textit{well-mixed}, i.e., uniformly distributed throughout their environment. We will apply this assumption in our current work as well, in part because the \textit{E. coli} cell is so small. As a proof of concept, we will see if a well-mixed simulation replicates a reversible reaction's equilibrium concentrations of particles that we found in the preceding section.
 
-Even though we can calculate steady state concentrations by hand, a particle-free simulation will be useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system like what we have done in the previous section will become impossible.
+Even though we can calculate steady state concentrations manually, a particle-free simulation will be useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system will become impossible.\\
 
-The difficulty at hand is comparable to the famed ``\textit{n}-body problem'' in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution once we add more bodies to the system.
+\begin{note}[%
+The difficulty posed to precise analysis of systems with multiple chemical reactions is comparable to the famed ``$n$-body problem'' in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution once we add more bodies to the system.
+]\end{note}
 
-Our particle-free model will apply an approach called \textdef{Gillespie's stochastic simulation algorithm}{Gillespie's stochastic simulation algorithm (SSA)}{an algorithm that simulates a well-mixed environment of particles by apply repeated sampling from an exponential distribution to determine time between reactions}, which is often called the \textbf{Gillespie algorithm} or just \textbf{SSA} for short. Before we explain how this algorithm works, we take a short detour to provide some needed probabilistic context.
+Our particle-free model will apply an approach called \textdef{Gillespie's stochastic simulation algorithm}{Gillespie's stochastic simulation algorithm (SSA)}{an algorithm that simulates a well-mixed environment of particles by apply repeated sampling from an exponential distribution to determine time between reactions}, which is often called the \textbf{Gillespie algorithm} or just \textbf{SSA} for short. Before we explain how this algorithm works, we will take a short detour to provide some needed probabilistic context.
 
 \FloatBarrier
 \phantomsection
 \subsection{The Poisson and exponential distributions}
 
-Say that you own a store and have noticed that on average, there are $\lambda$ customers entering your store in a single hour. Let \textvar{X} denote the number of customers that enter the store in the next hour; \textvar{X} is an example of a \textdef{random variable}{random variable}{a variable whose values may change based on random chance} because it may change depending on random chance. If we assume that customers are independent actors arriving at a constant rate, then \textvar{X} follows a \textdef{Poisson distribution}{Poisson distribution}{a distribution representing the probability of a number of events occurring in a fixed time interval if these events occur independently at a fixed rate}. It can be shown that for a Poisson distribution, the probability that exactly $n$ customers arrive in the next hour is
+Imagine that you own a store and have noticed that on average, $\lambda$ customers enter your store in a single hour. Let \textvar{X} denote the number of customers entering the store in the next hour; \textvar{X} is an example of a \textdef{random variable}{random variable}{a variable whose values may change based on random chance} because its value may change depending on random chance. If we assume that customers are independent actors, then \textvar{X} follows a \textdef{Poisson distribution}{Poisson distribution}{a distribution representing the probability of a number of events occurring in a fixed time interval if these events occur independently at a fixed rate}.
+
+It can be shown that for a Poisson distribution, the probability that exactly $n$ customers arrive in the next hour is
 
 \begin{center}
 $\mathrm{Pr}(X = n) = \dfrac{\lambda^n e^{-\lambda}}{n!}$\,,
 \end{center}
 
-\noindent where $e$ is the mathematical constant known as Euler's number and is equal to 2.7182818284\ldots\\
-
-\begin{note}[
-A derivation of this formula is beyond the scope of our work here, but if you are interested in one, please check out \href{https://medium.com/@andrew.chamberlain/deriving-the-poisson-distribution-from-the-binomial-distribution-840cc1668239} by Andrew Chamberlain.
-]\end{note}
-
-Furthermore, the probability of observing exactly $n$ customers in $t$ hours where $t$ is an arbitrary positive number is
+\noindent where $e$ is the mathematical constant known as Euler's number and is equal to 2.7182818284\ldots Furthermore, the probability of observing exactly $n$ customers in $t$ hours, where $t$ is an arbitrary positive number, is
 
 \begin{center}
 $\dfrac{(\lambda t)^n e^{-\lambda t}}{n!}$\,.
 \end{center}
 
 We can also ask how long we will typically have to wait for the next customer to arrive. Specifically, what are the chances that this customer will arrive after $t$ hours? If we let \textvar{T} be the random variable corresponding to the wait time on the next customer, then the probability of \textvar{T} being at least $t$ is the probability of seeing zero customers in $t$ hours:
+\begin{align*}
+\mathrm{Pr}(T > t) &= \mathrm{Pr}(X = 0)\\
+& = \dfrac{(\lambda t)^0 e^{-\lambda t}}{0!}\\
+& = e^{-\lambda t}\,.
+\end{align*}
 
-\begin{center}
-$\mathrm{Pr}(T > t) = \mathrm{Pr}(X = 0) = \dfrac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}$\,.
-\end{center}
-
-In other words, the probability $\mathrm{Pr}(T > t)$ decays exponentially over time as \textvar{t} increases. For this reason, the random variable \textvar{T} is said to follow an \textdef{exponential distribution}{exponential distribution}{a distribution representing the ``wait time'' between successive events in a Poisson distribution}. It can be shown that the expected value of the exponential distribution (i.e., the average amount of time we will need to wait for the next event to occur) is $1/\lambda$.\\
+In other words, the probability $\mathrm{Pr}(T > t)$ that the wait time is longer than time \textvar{t} decays exponentially as \textvar{t} increases. For this reason, the random variable \textvar{T} is said to follow an \textdef{exponential distribution}{exponential distribution}{a distribution representing the ``wait time'' between successive events in a Poisson distribution}. It can be shown that the expected value of the exponential distribution (i.e., the average amount of time we will need to wait for the next event to occur) is $1/\lambda$.\\
 
 \begin{qbox}[%
 What is the probability $\mathrm{Pr}(T < t)$?
 ]\end{qbox}
 
-
 \FloatBarrier
 \phantomsection
 \subsection{The Gillespie algorithm}
 
-The engine of the Gillespie algorithm runs on a single question: given a well-mixed environment of particles and a reaction involving those particles taking place at some average rate, how long should we expect to wait before this reaction occurs somewhere in the environment?
+We now return to explain the Gillespie algorithm for simulating multiple chemical reactions in a well-mixed environment. The engine of this algorithm runs on a single question: given a well-mixed environment of particles and a reaction involving those particles taking place at some average rate, how long should we expect to \textit{wait} before this reaction occurs somewhere in the environment?
 
-This is the same question we asked in the previous section; we have simply replaced customers entering a store with instances of a chemical reaction. The average number $\lambda$ of occurrences of the reaction in a unit time period is the rate at which the reaction occurs. Therefore, an exponential distribution with average wait time $1/\lambda$ can be used to model the time between instances of the reaction.
+This is the same question we asked in the previous discussion; we have simply replaced customers entering a store with instances of a chemical reaction. The average number $\lambda$ of occurrences of the reaction in a unit time period is the rate at which the reaction occurs. Therefore, an exponential distribution with average wait time $1/\lambda$ can be used to model the time between instances of the reaction.
 
-Next, say that we have two reactions proceeding independently of each other and occurring at average rates $\lambda_1$ and $\lambda_2$. Then the average rate of the two reactions together is $\lambda_1 + \lambda_2$, which is also a Poisson distribution. Therefore, the wait time for either of the two reactions is exponentially distributed, with an average wait time equal to $1/(\lambda_1 + \lambda_2)$.
+Next, say that we have two reactions proceeding independently of each other and occurring at average rates $\lambda_1$ and $\lambda_2$. The combined average rates of the two reactions is $\lambda_1 + \lambda_2$, and the time required to wait for either of the two reactions is exponentially distributed, with an average wait time equal to $1/(\lambda_1 + \lambda_2)$.
 
 Numerical methods allow us to generate a random number simulating the wait time of an exponential distribution. By repeatedly generating these numbers, we can obtain a series of wait times between consecutive reaction occurrences.
 
@@ -419,7 +417,7 @@ Our BioNetGen model uses the same number of initial molecules and the same react
 \label{fig:chemotaxis_tutorial4_ssa}
 \end{figure}
 
-Yet this simple ligand-receptor model is just the beginning of our study of chemotaxis. In the next section, we will delve into the complex biochemical details of chemotaxis. Furthermore, we will see that the Gillespie algorithm for stochastic simulations will scale easily as our model of this system grows more complex.
+Yet this simple ligand-receptor model is just the beginning of our study of chemotaxis. In the next section, we will delve into the complex biochemical details of chemotaxis. Furthermore, we will see that the Gillespie algorithm for stochastic simulations will scale easily as our model of this system grows more complex.\\
 
 \FloatBarrier
 \phantomsection
@@ -955,8 +953,12 @@ The direction of bacterial reorientation is not completely random, but rather fo
 
 Yet recent research has shown that the direction of the bacterium's reorientation also depends on whether the cell is traveling in the correct direction. If the bacterium is moving up an attractant gradient, then it makes much smaller changes in its reorientation angle. This allows the cell to stay straight if it is moving in the correct direction but also turn around quickly if it starts heading in the wrong direction. We can even see this behavior in the video above, in which bacteria traveling toward the attractant make only very slight changes in their direction of travel, but reorient themselves more drastically if they overshoot the target.
 
-Bacterial chemotaxis is probably the most studied biological system from the perspective of connecting chemical reactions to the emergent behavior that these reactions cause. Yet for many other systems, this thread connecting a reductionist view of a system to its holistic behavior is still a mystery that will continue inspiring the work of biological modelers for a very long time.
+Bacterial chemotaxis is probably the most studied biological system from the perspective of connecting chemical reactions to the emergent behavior that these reactions cause. Yet for many other systems, this thread connecting a reductionist view of a system to its holistic behavior is still a mystery that will continue inspiring the work of biological modelers for a very long time.\\
 
+\FloatBarrier
+\phantomsection
+\section{Exercises}
+Numerical method for generating from exponential distribution.
 
 %\FloatBarrier
 %\phantomsection
