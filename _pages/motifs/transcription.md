@@ -10,7 +10,7 @@ image: "../assets/images/repressilator_chart.png"
 
 ## The central dogma of molecular biology
 
-DNA is a double-stranded molecule consisting of the four nucleobases adenine, cytosine, guanine, and thymine; , and the sum total of a cell's DNA constitutes its **genome**. A gene is a region of an organism's DNA that is **transcribed** into a single-stranded RNA molecule in which thymine is converted to uracil and the other bases remain the same.
+DNA is a double-stranded molecule consisting of the four nucleobases adenine, cytosine, guanine, and thymine; the sum total of a cell's DNA constitutes its **genome**. A gene is a region of an organism's DNA that is **transcribed** into a single-stranded RNA molecule in which thymine is converted to uracil and the other bases remain the same.
 
 The RNA transcript is then **translated** into an amino acid sequence. Because there are four different bases but twenty amino acids available, RNA is translated in **codons**, or triplets of nucleobases. The figure below shows the way in which codons are translated into amino acids, which is called the **genetic code**.
 
