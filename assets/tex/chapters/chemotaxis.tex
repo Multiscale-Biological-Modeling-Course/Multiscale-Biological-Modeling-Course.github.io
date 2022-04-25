@@ -362,7 +362,7 @@ $\mathrm{Pr}(LT \rightarrow L + T) = \dfrac{r_\text{dissociate}}{r_\text{bind} +
 \centering
 \mySfFamily
 \includegraphics[width = 0.85\textwidth]{../images/chemotaxis_visualizessa.png}
-\caption{A visualization of a single reaction event used by the Gillespie algorithm for ligand-receptor binding and dissociation. Red circles represent ligands (\textvar{L}), and orange wedges represent receptors (\textvar{T}). The wait time for the next reaction is drawn from an exponential distribution with mean $\text{1}/(\textvar{k}_\text{bind} + \textvar{k}_\text{dissociate})$. The probability of this event corresponding to a binding or dissociation reaction is proportional to the rate of the respective reaction.}
+\caption{A visualization of a single reaction event used by the Gillespie algorithm for ligand-receptor binding and dissociation. Red circles represent ligands (\textvar{L}), and orange wedges represent receptors (\textvar{T}). The wait time for the next reaction is drawn from an exponential distribution with mean $\text{1}/(\textvar{r}_\text{bind} + \textvar{r}_\text{dissociate})$, where $\textvar{r}_\text{bind}$ and $\textvar{r}_\text{dissociate}$ are the rates of the binding and dissociation reactions, respectively. The probability of this event corresponding to a binding or dissociation reaction is proportional to the rate of the respective reaction.}
 \label{fig:chemotaxis_visualizessa}
 \end{figure}
 
@@ -372,44 +372,19 @@ When we generalize the Gillespie algorithm to \textvar{n} reactions occurring at
 $\dfrac{r_i}{r_1 + r_2 + \cdots + r_n}$\,.
 \end{center}
 
-\FloatBarrier
-\phantomsection
-\subsection{Specifying ligand-receptor binding with a single BioNetGen rule}
-
-Throughout this chapter, we will employ BioNetGen (\href={http://bionetgen.org/}) to apply the Gillespie algorithm to well-mixed models of chemical reactions. We will use our ongoing example of ligand-receptor binding and dissociation to introduce the way in which BioNetGen represents molecules and reactions involving them.
-
-We will have two molecules corresponding to the ligand and receptor $[L]$ and $[T]$ that we denote \texttt{L(t)} and \texttt{T(l)}, respectively. The \texttt{(t)} specifies that molecule \texttt{L} contains a binding site with \texttt{T}, and the \texttt{(l)} specifies a component binding to \texttt{L}. We will use these components later when specifying reactions.
-
-BioNetGen reaction rules are written similarly to chemical equations. The left side of the rule includes the reactants, which are followed by a unidirectional or bidirectional arrow, indicating the direction of the reaction, and the right side of the rule includes the products. After the reaction, we indicate the rate constant of reaction; if the reaction is bi-directional, then we separate the forward and backward reaction rate constants with a comma.
-
-For example, to represent the bi-directional reaction $A + B \longleftrightarrow C$ with forward rate $k_1$ and reverse rate $k_2$, we would write \texttt{A + B <-> C k1, k2}.
-
-Our model consists of one bidirectional reaction and will have a single rule. The left side of this rule will be \texttt{L(t) + T(l)}; by specifying \texttt{L(t)} and \texttt{T(l)}, we indicate to BioNetGen that we are only interested in \textit{unbound} ligand and receptor molecules. If we had wanted to select any ligand molecule, then we would have used \texttt{L + T}.
-
-On the right side of the rule, we will have \texttt{L(t!1).T(l!1)}, which indicates the formation of the complex. In BioNetGen, \texttt{!} indicates formation of a bond, and a unique character specifies the possible location of this bond. In our case, we use the character \texttt{1}, so that the bond is represented by \texttt{!1}. The symbol \texttt{.} is used to indicate that the two molecules are joined into a complex.
-
-Since the reaction is bidirectional, we will use \texttt{k\_lr\_bind} and \texttt{k\_lr\_dis} to denote the rates of the forward and reverse reactions, respectively. (We will specify values for these parameters later.)
-
-As a result, this reaction is shown below. We name our rule specifying the ligand-receptor reaction \texttt{LR}.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial\_lr]\\
-
-\begin{BioNetGen}
-LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
-\end{BioNetGen}
 
 \FloatBarrier
 \phantomsection
 \subsection{Does the Gillespie algorithm confirm our steady state calculations?}
 
-Earlier in this chapter, we showed an example in which a system with 10,000 free ligand molecules and 7,000 free receptor molecules produced the following steady state concentrations using the experimentally verified binding rate of $k_\text{bind} = 0.0146 (\text{µm}^3/\text{molecule}) \cdot s^{-1}$ and dissociation rate of $k_\text{dissociate} = 35s^{-1}$.
+Earlier in this chapter, we showed an example in which a system with 10,000 free ligand molecules and 7,000 free receptor molecules produced the following steady state concentrations using the experimentally verified binding rate of $k_\text{bind} = 0.0146 (\text{µm}^3/\text{molecule}) \cdot s^{-1}$ and dissociation rate of $k_\text{dissociate} = 35s^{-1}$:
 \begin{align*}
-[LT] & = \text{4,793 molecules}/\text{µm}^3\\
-[L] & = \text{5,207molecules}/\text{µm}^3\\
-[T] & = \text{2,207 molecules}/\text{µm}^3
+[LT] & = \text{4,793 molecules}/\text{µm}^3\,;\\
+[L] & = \text{5,207 molecules}/\text{µm}^3\,;\\
+[T] & = \text{2,207 molecules}/\text{µm}^3\,.
 \end{align*}
 
-Our BioNetGen model uses the same number of initial molecules and the same reaction rates. The system evolves via the Gillespie algorithm, and we track the concentration of free ligand molecules, ligand molecules bound to receptor molecules, and free receptor molecules over time.
-
-\autoref{fig:chemotaxis_tutorial4_ssa} demonstrates that the Gillespie algorithm quickly converges to the same values as the ones that we obtained by hand in the last section. We are now ready to apply this algorithm to model bacterial chemotaxis, a system that will involve many different reactions.
+\autoref{fig:chemotaxis_tutorial4_ssa} demonstrates that when running the Gillespie algorithm with the same initial molecules and reaction rates, the system converges to the values shown above. Furthermore, we not only obtain the steady state concentrations, but we also observe that the system reaches steady state in a fraction of a tenth of a second.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial\_lr]\\
 
 \begin{figure}[h]
 \centering
@@ -419,7 +394,7 @@ Our BioNetGen model uses the same number of initial molecules and the same react
 \label{fig:chemotaxis_tutorial4_ssa}
 \end{figure}
 
-Yet this simple ligand-receptor model is just the beginning of our study of chemotaxis. In the next section, we will delve into the complex biochemical details of chemotaxis. Furthermore, we will see that the Gillespie algorithm for stochastic simulations will scale easily as our model of this system grows more complex.\\
+This simple ligand-receptor model is just the beginning of our study of chemotaxis. In the next section, we will delve into the complex biochemical details of chemotaxis. Furthermore, we will see that the Gillespie algorithm for stochastic simulations will scale easily as our model of this system grows more complex.\\
 
 \FloatBarrier
 \phantomsection
@@ -480,6 +455,31 @@ In the previous section, we very briefly introduced BioNetGen as a way to conver
 Say that we were to specify all reactions using the style of modeling reactions used in previous chapters. We would need one particle type to represent MCP molecules, another particle type to represent ligands, and a third to represent bound complexes. A bound complex molecule binds with CheA and CheW and can be either phosphorylated or unphosphorylated, necessitating two different molecule types. In turn, CheY can be phosphorylated or unphosphorylated as well, requiring two more particles.
 
 Instead, the BioNetGen language will allow us to conceptualize this system much more concisely using rules that apply to particles that are in a variety of states. The BioNetGen representation of the four particles in our model is shown below. The notation \texttt{Phos\texttildelow U\texttildelow P} indicates that a given molecule type can be either phosphorylated or unphosphorylated, so that we do not need multiple different expressions to represent the molecule.\\
+
+% Moved down -- delete this and integrate. Then edit the course website so that it is consistent.
+%\FloatBarrier
+%\phantomsection
+%\subsection{Specifying ligand-receptor binding with a single BioNetGen rule}
+%
+%Throughout this chapter, we will employ BioNetGen (\href={http://bionetgen.org/}) to apply the Gillespie algorithm to well-mixed models of chemical reactions. We will use our ongoing example of ligand-receptor binding and dissociation to introduce the way in which BioNetGen represents molecules and reactions involving them.
+%
+%We will have two molecules corresponding to the ligand and receptor $L$ and $T$ that we denote \texttt{L(t)} and \texttt{T(l)}, respectively. The \texttt{(t)} specifies that molecule \texttt{L} contains a binding site with \texttt{T}, and the \texttt{(l)} specifies a component binding to \texttt{L}. We will use these components later when specifying reactions.
+%
+%BioNetGen reaction rules are written similarly to chemical equations. The left side of the rule includes the reactants, which are followed by a unidirectional or bidirectional arrow, indicating the direction of the reaction, and the right side of the rule includes the products. After the reaction, we indicate the rate constant of reaction; if the reaction is bi-directional, then we separate the forward and backward reaction rate constants with a comma.
+%
+%For example, to represent the bi-directional reaction $A + B \longleftrightarrow C$ with forward rate $k_1$ and reverse rate $k_2$, we would write \texttt{A + B <-> C k1, k2}.
+%
+%Our model consists of one bidirectional reaction and will have a single rule. The left side of this rule will be \texttt{L(t) + T(l)}; by specifying \texttt{L(t)} and \texttt{T(l)}, we indicate to BioNetGen that we are only interested in \textit{unbound} ligand and receptor molecules. If we had wanted to select any ligand molecule, then we would have used \texttt{L + T}.
+%
+%On the right side of the rule, we will have \texttt{L(t!1).T(l!1)}, which indicates the formation of the complex. In BioNetGen, \texttt{!} indicates formation of a bond, and a unique character specifies the possible location of this bond. In our case, we use the character \texttt{1}, so that the bond is represented by \texttt{!1}. The symbol \texttt{.} is used to indicate that the two molecules are joined into a complex.
+%
+%Since the reaction is bidirectional, we will use \texttt{k\_lr\_bind} and \texttt{k\_lr\_dis} to denote the rates of the forward and reverse reactions, respectively. (We will specify values for these parameters later.)
+%
+%As a result, this reaction is shown below. We name our rule specifying the ligand-receptor reaction \texttt{LR}.\\
+%
+%\begin{BioNetGen}
+%LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
+%\end{BioNetGen}
 
 \begin{BioNetGen}
 L(t)             #ligand molecule

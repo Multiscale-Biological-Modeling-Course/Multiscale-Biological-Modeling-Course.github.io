@@ -105,13 +105,13 @@ The following tutorial shows how to implement this rule in BioNetGen and use the
 
 ## Does the Gillespie algorithm confirm our steady state calculations?
 
-In the [previous lesson](signal), we showed an example in which a system with 10,000 free ligand molecules and 7,000 free receptor molecules produced the following steady state concentrations using the experimentally verified binding rate of *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup> and dissociation rate of *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.
+In the [previous lesson](signal), we showed an example in which a system with 10,000 free ligand molecules and 7,000 free receptor molecules produced the following steady state concentrations using the experimentally verified binding rate of *k*<sub>bind</sub> = 0.0146((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup> and dissociation rate of *k*<sub>dissociate</sub> = 35s<sup>-1</sup>:
 
-* [*LT*] = 4,793 molecules/µm<sup>3</sup>
-* [*L*] = 5,207 molecules/µm<sup>3</sup>
-* [*T*] = 2,207 molecules/µm<sup>3</sup>
+* [*LT*] = 4,793 molecules/µm<sup>3</sup>;
+* [*L*] = 5,207 molecules/µm<sup>3</sup>;
+* [*T*] = 2,207 molecules/µm<sup>3</sup>.
 
-Our BioNetGen model uses the same number of initial molecules and the same reaction rates. The system evolves via the Gillespie algorithm, and we track the concentration of free ligand molecules, ligand molecules bound to receptor molecules, and free receptor molecules over time.
+Our model uses the same number of initial molecules and the same reaction rates. The system evolves via the Gillespie algorithm, and we track the concentration of free ligand molecules, ligand molecules bound to receptor molecules, and free receptor molecules over time.
 
 The figure below demonstrates that the Gillespie algorithm quickly converges to the same values as the ones that we obtained by hand in the last lesson. We are now ready to apply this algorithm to model bacterial chemotaxis, a system that will involve many different reactions.
 
@@ -119,7 +119,7 @@ The figure below demonstrates that the Gillespie algorithm quickly converges to 
 A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in molecules/µm<sup>3</sup>) on the y-axis. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.
 {: style="font-size: medium;"}
 
-Yet this simple ligand-receptor model is just the beginning of our study of chemotaxis. In the next section, we will delve into the complex biochemical details of chemotaxis. Furthermore, we will see that the Gillespie algorithm for stochastic simulations will scale easily as our model of this system grows more complex.
+This simple ligand-receptor model is just the beginning of our study of chemotaxis. In the next section, we will delve into the complex biochemical details of chemotaxis. Furthermore, we will see that the Gillespie algorithm for stochastic simulations will scale easily as our model of this system grows more complex.
 
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)
 
