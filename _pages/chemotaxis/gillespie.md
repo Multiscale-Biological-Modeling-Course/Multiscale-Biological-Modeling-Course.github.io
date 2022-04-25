@@ -21,7 +21,7 @@ Our particle-free model will apply an approach called **Gillespie's stochastic s
 
 ## The Poisson and exponential distributions
 
-Imagine that you own a store and have noticed that on average, *λ* customers enter your store in a single hour. Let *X* denote the number of customers entering the store in the next hour; *X* is an example of a **random variable** because its value may change depending on random chance. If we assume that customers are independent actors, then *X* follows a **Poisson distribution**. It can be shown that for a Poisson distribution, the probability that exactly *n* customers arrive in the next hour is
+Imagine that you own a store and have noticed that on average, λ customers enter your store in a single hour. Let *X* denote the number of customers entering the store in the next hour; *X* is an example of a **random variable** because its value may change depending on random chance. If we assume that customers are independent actors, then *X* follows a **Poisson distribution**. It can be shown that for a Poisson distribution, the probability that exactly *n* customers arrive in the next hour is
 
 $$\mathrm{Pr}(X = n) = \dfrac{\lambda^n e^{-\lambda}}{n!}\,,$$
 
@@ -47,32 +47,34 @@ In other words, the probability Pr(*T* > *t*) $$\mathrm{Pr}(T > t)$$ that the wa
 
 We now return to explain the Gillespie algorithm for simulating multiple chemical reactions in a well-mixed environment. The engine of this algorithm runs on a single question: given a well-mixed environment of particles and a reaction involving those particles taking place at some average rate, how long should we expect to *wait* before this reaction occurs somewhere in the environment?
 
-This is the same question we asked in the previous discussion; we have simply replaced customers entering a store with instances of a chemical reaction. The average number λ of occurrences of the reaction in a unit time period is the rate at which the reaction occurs. Therefore, an exponential distribution with average wait time 1/λ can be used to model the time between instances of the reaction.
+This is the same question that we asked in the previous discussion; we have simply replaced customers entering a store with instances of a chemical reaction. The average number λ of occurrences of the reaction in a unit time period is the rate *r* at which the reaction occurs. Therefore, an exponential distribution with average wait time 1/*r* can be used to model the time between instances of the reaction.
 
-Next, say that we have two reactions proceeding independently of each other and occurring at average rates λ<sub>1</sub> and λ<sub>2</sub>. The combined average rates of the two reactions is λ<sub>1</sub> + λ<sub>2</sub>, which is also a Poisson distribution. Therefore, the wait time required to wait for either of the two reactions is exponentially distributed, with an average wait time equal to 1/(λ<sub>1</sub> + λ<sub>2</sub>).
+Next, say that we have two reactions proceeding independently of each other and occurring at average rates *r*<sub>1</sub> and *r*<sub>2</sub>. The combined average rates of the two reactions is *r*<sub>1</sub> + *r*<sub>2</sub>, which is also a Poisson distribution. Therefore, the wait time required to wait for either of the two reactions is exponentially distributed, with an average wait time equal to 1/(*r*<sub>1</sub> + *r*<sub>2</sub>).
 
 Numerical methods allow us to generate a random number simulating the wait time of an exponential distribution. By repeatedly generating these numbers, we can obtain a series of wait times between consecutive reaction occurrences.
 
-Once a wait time is selected, we should determine to which of the two reactions it corresponds. If the rates of the two reactions are equal, then we simply choose one of the two reactions randomly with equal probability. But if the rates of these reactions are different, then we should choose one of the reactions via a probability that is *weighted* in direct proportion to the rate of the reaction; that is, the larger the rate of the reaction, the more likely that this reaction corresponds to the current event.[^Schwartz17] To do so, we select the first reaction with probability λ<sub>1</sub>/(λ<sub>1</sub> + λ<sub>2</sub>) and the second reaction with probability λ<sub>2</sub>/(λ<sub>1</sub> + λ<sub>2</sub>).
+Once a wait time is selected, we should determine to which of the two reactions it corresponds. If the rates of the two reactions are equal, then we simply choose one of the two reactions randomly with equal probability. But if the rates of these reactions are different, then we should choose one of the reactions via a probability that is *weighted* in direct proportion to the rate of the reaction; that is, the larger the rate of the reaction, the more likely that this reaction corresponds to the current event.[^Schwartz17] To do so, we select the first reaction with probability *r*<sub>1</sub>/(λ<sub>1</sub> + *r*<sub>2</sub>) and the second reaction with probability *r*<sub>2</sub>/(*r*<sub>1</sub> + *r*<sub>2</sub>).
 
 **STOP**: Verify that these two probabilities sum to 1.
 {: .notice--primary}
 
-As illustrated in the figure below, we will demonstrate the Gillespie algorithm by returning to our ongoing example, in which we are modeling the forward and reverse reactions of ligand-receptor binding and dissociation. First, we choose a wait time according to an exponential distribution with mean value 1/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>). The probability that the event corresponds to a binding reaction is given by
+As illustrated in the figure below, we will demonstrate the Gillespie algorithm by returning to our ongoing example, in which we are modeling the forward and reverse reactions of ligand-receptor binding and dissociation. These reactions have rates that are given by *r*<sub>bind</sub> = *k*<sub>bind</sub> · [*L*] · [*T*] and *r*<sub>dissociate</sub> = *k*<sub>dissociate</sub> · [*LT*], respectively.
 
-Pr(*L* + *T* → *LT*) = *k*<sub>bind</sub>/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>),
+First, we choose a wait time according to an exponential distribution with mean value 1/(*r*<sub>bind</sub> + *r*<sub>dissociate</sub>). The probability that the event corresponds to a binding reaction is given by
+
+Pr(*L* + *T* → *LT*) = *r*<sub>bind</sub>/(*r*<sub>bind</sub> + *r*<sub>dissociate</sub>),
 
 and the probability that it corresponds to a dissociation reaction is
 
-Pr(*LT* → *L* + *T*) = *k*<sub>dissociate</sub>/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>).
+Pr(*LT* → *L* + *T*) = *r*<sub>dissociate</sub>/(*r*<sub>bind</sub> + *r*<sub>dissociate</sub>).
 
 [![image-center](../assets/images/600px/chemotaxis_visualizessa.png){: .align-center}](../assets/images/chemotaxis_visualizessa.png)
 A visualization of a single reaction event used by the Gillespie algorithm for ligand-receptor binding and dissociation. Red circles represent ligands (*L*), and orange wedges represent receptors (*T*). The wait time for the next reaction is drawn from an exponential distribution with mean 1/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>). The probability of this event corresponding to a binding or dissociation reaction is proportional to the rate of the respective reaction.
 {: style="font-size: medium;"}
 
-When we generalize the Gillespie algorithm to *n* reactions occurring at rates λ<sub>1</sub>, λ<sub>2</sub>, …, λ<sub><em>n</em></sub>, the wait time between reactions will be exponentially distributed with average 1/(λ<sub>1</sub> + λ<sub>2</sub> + … + λ<sub><em>n</em></sub>). Once we select the next reaction to occur, the likelihood that it is the *i*-th reaction is equal to
+When we generalize the Gillespie algorithm to *n* reactions occurring at rates *r*<sub>1</sub>, *r*<sub>2</sub>, …, *r*<sub><em>n</em></sub>, the wait time between reactions will be exponentially distributed with average 1/(*r*<sub>1</sub> + *r*<sub>2</sub> + … + *r*<sub><em>n</em></sub>). Once we select the next reaction to occur, the likelihood that it is the *i*-th reaction is equal to
 
-λ<sub><em>i</em></sub>/(λ<sub>1</sub> + λ<sub>2</sub> + … + λ<sub><em>n</em></sub>).
+*r*<sub><em>i</em></sub>/(*r*<sub>1</sub> + *r*<sub>2</sub> + … + *r*<sub><em>n</em></sub>).
 
 ## Specifying ligand-receptor binding with a single BioNetGen rule
 

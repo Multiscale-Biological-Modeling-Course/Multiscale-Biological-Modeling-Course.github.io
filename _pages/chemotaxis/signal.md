@@ -33,7 +33,7 @@ To model ligand-receptor dynamics, we will use a **reversible reaction** that pr
 **Note:** You may be wondering why ligand-receptor binding is reversible. If complexes did not dissociate, then a brief increase in ligand concentration would be detected indefinitely by the surface receptors. Without releasing the bound ligands, the cell would need to manufacture more receptors, which are complicated molecules.
 {: .notice--info}
 
-We denote the ligand molecule by *L*, the receptor molecule by *T*, and the bound complex as *LT*. The reversible reaction representing complex binding and dissociation is *L* + *T* ←→ *LT* and consists of two reactions. The **forward reaction** is *L* + *T* → *LT*, which takes place at some rate *k*<sub>bind</sub>, and the **reverse reaction** is *LT* → *L* + *T*, which takes place at some rate *k*<sub>dissociate</sub>.
+We denote the ligand molecule by *L*, the receptor molecule by *T*, and the bound complex as *LT*. The reversible reaction representing complex binding and dissociation is *L* + *T* ←→ *LT* and consists of two reactions. The **forward reaction** is *L* + *T* → *LT*, which takes place at a rate depending on some rate constant *k*<sub>bind</sub>, and the **reverse reaction** is *LT* → *L* + *T*, which takes place at a rate depending on some rate constant *k*<sub>dissociate</sub>.
 
 If we start with a free floating supply of *L* and *T* molecules, then *LT* complexes will initially be formed quickly at the expense of the free-floating *L* and *T* molecules. The reverse reaction will not occur because of the lack of *LT* complexes. However, as the concentration of *LT* grows and the concentrations of  *L* and *T* decrease, the rate of increase in *LT* will slow. Eventually, the number of *LT* complexes being formed by the forward reaction will balance the number of *LT* complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
 
@@ -41,7 +41,7 @@ If we start with a free floating supply of *L* and *T* molecules, then *LT* comp
 
 For a single reversible reaction, if we know the rates of both the forward and reverse reactions, then we can calculate the steady state concentrations of *L*, *T*, and *LT* by hand.  Suppose that we begin with initial concentrations of *L* and *T* that are represented by *l*<sub>0</sub> and *t*<sub>0</sub>, respectively. Let [*L*], [*T*], and [*LT*] denote the concentrations of the three molecule types. And assume that the reaction rate constants *k*<sub>bind</sub> and *k*<sub>dissociate</sub> are fixed.
 
-When the steady state concentration of *LT* occurs, the rate of production of *LT* is equal to the rate of its dissociation; in other words, we know that
+When the steady state concentration of *LT* is reached, the rates of the forward and reverse reactions are equal. In other words, the number of complexes being produced is equal to the number of complexes dissociating:
 
 *k*<sub>bind</sub> · [*L*] · [*T*] = *k*<sub>dissociate</sub> · [*LT*].
 
@@ -76,7 +76,7 @@ $$x = \dfrac{-b \pm \sqrt{b^2 - 4 \cdot a \cdot c}}{2 \cdot a}\,.$$
 **STOP**: Use the quadratic formula to solve for [*LT*] in our previous equation and find the steady state concentration of *LT*. How can we use this solution to find the steady state concentrations of *L* and *T* as well?
 {: .notice--primary}
 
-Now that we have reduced the computation of the steady state concentration of *LT* to the solution of a quadratic equation, let's compute this steady state concentration for a sample collection of parameters.
+Now that we have reduced the computation of the steady state concentration of *LT* to the solution of a quadratic equation, we will compute this steady state concentration for a sample collection of parameters.
 
 Say that we are given the following parameter values (the units of these parameters are not important for this toy example):
 * *k*<sub>bind</sub> = 2;
@@ -122,7 +122,7 @@ The only reasonable solution here is 52.5-16.008 = 36.492; As anticipated, the s
 
 We have conspicuously not provided any units in the calculations above for the sake of simplicity, and so we will pause to explain what these units are. The concentration of a particle (whether it is *L*, *T*, or *LT*) is measured in molecules/µm<sup>3</sup>, the number of molecules per unit volume. But what about the binding and dissociation rates?
 
-When we multiply the binding rate *k*<sub>bind</sub> by the concentrations [*L*] and [*T*], the resulting unit should be in molecules/µm<sup>3</sup> per second, which corresponds to the rate at which the concentration of *LT* complexes is increasing. If we let *y* denote the unknown units of *k*<sub>bind</sub>, then
+When we multiply the binding rate constant *k*<sub>bind</sub> by the concentrations [*L*] and [*T*], the resulting unit should be in molecules/µm<sup>3</sup> per second, which corresponds to the rate at which the concentration [*LT*] of complexes is increasing. If we let *y* denote the unknown units of *k*<sub>bind</sub>, then
 
 *y* · (molecules/µm<sup>3</sup>) · (molecules/µm<sup>3</sup>) = (molecules/µm<sup>3</sup>)s<sup>-1</sup>
 
@@ -135,7 +135,7 @@ and solving for *y* gives
 
 ## Steady state ligand-receptor concentrations for an experimentally verified example
 
-Having established the units in our model, we will solve our quadratic equation once more to identify steady state concentrations using experimentally verified binding and dissociation rates. The experimentally verified binding rate of receptors to glucose ligands is *k*<sub>bind</sub> = 0.0146 ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the dissociation rate is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991] We will model an *E. coli* cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants *a*, *b*, and *c* in the quadratic equation:
+Having established the units in our model, we will solve our quadratic equation once more to identify steady state concentrations using experimentally verified binding and dissociation rates. The experimentally verified rate constant for the binding of receptors to glucose ligands is *k*<sub>bind</sub> = 0.0146 ((molecules/µm<sup>3</sup>)<sup>-1</sup>)s<sup>-1</sup>, and the dissociation rate constant is *k*<sub>dissociate</sub> = 35s<sup>-1</sup>.[^Li2004][^Spiro1997][^Stock1991] We will model an *E. coli* cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants *a*, *b*, and *c* in the quadratic equation:
 
 * *a* = *k*<sub>bind</sub> = 0.0146
 * *b* = - (*k*<sub>bind</sub> · *l*<sub>0</sub> + *k*<sub>bind</sub> · *t*<sub>0</sub> + *k*<sub>dissociate</sub>) = -283.2

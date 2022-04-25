@@ -387,7 +387,7 @@ How might we incorporate these three reactions into our automaton?
 
 First, we have the feed reaction, which takes place at a rate \textvar{f}. It is tempting to simply add some constant value \textvar{f} to the concentration of \textvar{A} in each cell in each time step. However, if $[\textvar{A}]$ were close to 1, then adding \textvar{f} to it could cause $[\textvar{A}]$ to exceed 1, which we should avoid.
 
-Instead, if a cell has current concentration $[\textvar{A}]$, then we will add $\textvar{f}(1-[\textvar{A}])$ to this cell's concentration of \textvar{A} particles. For example, if $[\textvar{A}]$ is 0.01, then we will add $0.99 \cdot \textvar{f}$ to the cell because the current concentration of is low. If $[\textvar{A}]$ is 0.8, then we will only add $0.2 \cdot \textvar{f}$ to the current concentration of \textvar{A} particles.
+Instead, if a cell has current concentration $[\textvar{A}]$, then we will add $\textvar{f} \cdot (1-[\textvar{A}])$ to this cell's concentration of \textvar{A} particles. For example, if $[\textvar{A}]$ is 0.01, then we will add $0.99 \cdot \textvar{f}$ to the cell because the current concentration of is low. If $[\textvar{A}]$ is 0.8, then we will only add $0.2 \cdot \textvar{f}$ to the current concentration of \textvar{A} particles.
 
 Second, we have the removal reaction of \textvar{B} particles, which takes place at rate \textvar{k}. Recall that \textvar{k} is proportional to the current concentration of \textvar{B} particles. As a result, we will subtract $\textvar{k} \cdot [\textvar{B}]$ from the current concentration of \textvar{B} particles.
 
