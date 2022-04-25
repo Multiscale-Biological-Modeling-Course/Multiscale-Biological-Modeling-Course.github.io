@@ -407,7 +407,7 @@ This simple ligand-receptor model is just the beginning of our study of chemotax
 
 In the previous two sections, we discussed how a cell recognizes an extracellular signal when receptor proteins on the cell's surface bind to ligands, and how to model the reversible ligand-receptor reaction using stochastic simulation via the Gillespie algorithm. We now turn to the question of how the cell conveys the extracellular signal it has detected via the process of signal transduction to the cell's interior and produces an action.
 
-For example, if \textit{E. coli} senses an increase in the concentration of glucose, meaning that more ligand-receptor binding is taking place at the receptor that recognizes glucose, how does the bacterium \textit{E. coli} change its behavior as a result of this increased binding?
+For example, if \textit{E. coli} senses an increase in the concentration of glucose, meaning that more ligand-receptor binding is taking place at the receptor that recognizes glucose, how does the bacterium change its behavior as a result of this increased binding?
 
 The engine of signal transduction is \textdef{phosphorylation}{phosphorylation}{a chemical reaction that attaches a phosphoryl group to an organic molecule}, a chemical reaction that attaches a phosphoryl group ($\text{PO}_3^{-}$) to an organic molecule.  Phosphoryl modifications serve as an information exchange of sorts because they activate or deactivate certain enzymes.
 
@@ -624,7 +624,7 @@ In other words, as our model grows, with multiple different states for each mole
 A major benefit of using a rule-based modeling language such as the one developed by BioNetGen is that it circumvents combinatorial explosion by consolidating many reactions into a single rule. For example, when modeling ligand-MCP binding, we can summarize the 12 different reactions with the rule ``a free ligand molecule binds to an MCP that is not bound to a ligand molecule.'' In the BioNetGen language, this rule is represented by the same one-line expression as it was in the previous section:\\
 
 \begin{BioNetGen}
-LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k\_lr\_bind, k\_lr\_dis
+LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 \end{BioNetGen}
 
 We will not bog down the text with a full specification of all the rules needed to add methylation to our model while avoiding combinatorial explosion. If you're interested in the details, please follow our tutorial online.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_adaptation].

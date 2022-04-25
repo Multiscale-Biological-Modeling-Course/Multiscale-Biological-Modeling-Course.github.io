@@ -121,6 +121,9 @@ A concentration plot over time for ligand-receptor dynamics via a BioNetGen simu
 
 This simple ligand-receptor model is just the beginning of our study of chemotaxis. In the next section, we will delve into the complex biochemical details of chemotaxis. Furthermore, we will see that the Gillespie algorithm for stochastic simulations will scale easily as our model of this system grows more complex.
 
+[Next lesson](biochemistry){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)
 
 [^Pierucci1978]: Pierucci O. 1978. Dimensions of *Escherichia coli* at various growth rates: Model of envelope growth. Journal of Bacteriology 135(2):559-574. [Available online](https://jb.asm.org/content/jb/135/2/559.full.pdf)
@@ -158,6 +161,3 @@ This simple ligand-receptor model is just the beginning of our study of chemotax
 [^Stock1991]: Stock J, Lukat GS. 1991. Intracellular signal transduction networks. Annual Review of Biophysics and Biophysical Chemistry. [Available online](https://www.annualreviews.org/doi/abs/10.1146/annurev.bb.20.060191.000545)
 
 [^Spiro1997]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
-
-[Next lesson](biochemistry){: .btn .btn--primary .btn--large}
-{: style="font-size: 100%; text-align: center;"}
