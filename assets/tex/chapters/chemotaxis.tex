@@ -468,74 +468,38 @@ First, we explain the left side of this rule, \texttt{L(t) + T(l)}. By specifyin
 
 As for the right side of the rule, we will have \texttt{L(t!1).T(l!1)}, which indicates the formation of the complex. In the BioNetGen language, \texttt{!} indicates formation of a bond, and a unique character specifies the possible location of this bond. In our case, we use the character \texttt{1}, so that the bond is represented by \texttt{!1}. The symbol \texttt{.} is used to indicate that the ligand and receptor molecule are joined into a complex. This single rule does not specify anything regarding phosphorylation and can therefore include both phosphorylated and unphosphorylated receptor complexes. 
 
-Next, we represent the phosphorylation of the MCP complex. Recall that the phosphorylation of CheA can occur at different rates depending on whether the MCP is bound, and so we will need two different reactions to model these different rates. In our model, the phosphorylation of the MCP will occur at one fifth the rate when it is bound to the attractant ligand.\\
+We should also represent the phosphorylation of the MCP complex, which can occur at different rates depending on whether the MCP is bound, necessitating two reactions. We will also represent the phosphorylation and dephosphorylation of CheY; the latter is facilitated by a CheZ molecule. The rules that we use for these additional reactions are specified below; we purposefully do not delve into explaining each aspect of these rules, asking that you appreciate their complexity, and we encourage you to explore our website for a further explanation of the language.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_phos]\\
 
 \begin{BioNetGen}
 FreeTP:  T(l,Phos~U) -> T(l,Phos~P) k_T_phos
 BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
-\end{BioNetGen}
-
-Finally, we represent the phosphorylation and dephosphorylation of CheY. The former requires a phosphorylated MCP receptor, while the latter is done with the help of a CheZ molecule that can be in any state.\\
-
-\begin{BioNetGen}
 YP: T(Phos~P) + CheY(Phos~U) -> T(Phos~U) + CheY(Phos~P) k_Y_phos
 YDep: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
 \end{BioNetGen}
 
-Now that we have converted the reactions from the chemotaxis signal transduction pathway into BioNetGen's rule-based language, we would like to see what happens when we \textit{change} the concentrations of the ligand. Ideally, the bacterium should be able to distinguish different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY, and the lower the tumbling frequency of the bacterium.
-
-But does higher attractant concentration in our model really lead to a lower concentration of CheY? Let's find out by incorporating the phosphorylation pathway into our ligand-receptor model in the tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_phos].
-
-BREAK MOVE THIS NEXT PARAGRAPH SOMEWHERE 
-
-However, BioNetGen is useful not only for running particle-free simulations, but also because it implements its own language for \textdef{rule-based modeling}{rule-based modeling}{an approach to modeling that uses a collection of ``rules'' to indirectly specify the model, often as a way of specifying an enormous number of possible reactions}.
-
+Once we have converted the reactions from the chemotaxis signal transduction pathway into this rule-based language, we would like to see what happens when we \textit{change} the concentrations of the ligand. Ideally, the bacterium should be able to distinguish different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY (and the lower the tumbling frequency of the bacterium that we are simulating). But will our model reflect this behavior?
 
 \FloatBarrier
 \phantomsection
 \subsection{Changing ligand concentrations leads to a change in internal molecular concentrations}
 
-\autoref{fig:chemotaxis_tutorial5} shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency.
+\autoref{fig:chemotaxis_concentrations} (top) shows the concentrations of phosphorylated CheA and CheY in a model of our system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency. The addition of 5,000 attractant ligand molecules increases the concentration of bound receptors, therefore leading to less CheA autophosphorylation, and less phosphorylated CheY (\autoref{fig:chemotaxis_concentrations} (middle)). If we instead have 100,000 initial attractant molecules, then we see an even more drastic decrease in phosphorylated CheA and CheY (\autoref{fig:chemotaxis_concentrations} (bottom)).
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial5.png}
-\caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation in which no ligand is present.}
-\label{fig:chemotaxis_tutorial5}
-\end{figure}
-
-The sudden addition of 5,000 attractant ligand molecules increases the concentration of bound receptors, therefore leading to less CheA autophosphorylation, and less phosphorylated CheY (\autoref{fig:chemotaxis_tutorial6}).\\
-
-\begin{figure}[h]
-\centering
-\mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial6.png}
-\caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 5,000 initial attractant ligand particles.}
-\label{fig:chemotaxis_tutorial6}
-\end{figure}
-
-If we instead add 100,000 attractant molecules, then we see an even more drastic decrease in phosphorylated CheA and CheY (\autoref{fig:chemotaxis_tutorial7}).
-
-\begin{figure}[h]
-\centering
-\mySfFamily
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial5.png}\\[2ex]
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial6.png}\\[2ex]
 \includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial7.png}
-\caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100,000 initial attractant ligand particles.}
-\label{fig:chemotaxis_tutorial7}
+\caption{Molecular concentrations over time (in seconds) in a chemotaxis simulation for three different initial unbound attractant ligand concentrations: no attractant ligand (top), 5,000 ligand particles (middle), and 100,000 ligand particles (bottom). Note that the simulated cell's bound ligand concentration (green) achieves equilibrium very quickly in each case.}
+\label{fig:chemotaxis_concentrations}
 \end{figure}
 
+This Gillespie model confirms the biological observations that an increase in attractant reduces the concentration of phosphorylated CheY. What is remarkable is how quickly it takes place, with the cell attaining a new equilibrium in a fraction of a second.
 
-In other words, the BioNetGen simulation is confirming that an increase in attractant reduces the concentration of phosphorylated CheY, which therefore lowers the tumbling frequency. What is remarkable about this is how quickly it takes place, with the cell attaining a new equilibrium in a fraction of a second.
+But you may remain skeptical of our model. After all, the biochemistry powering chemotaxis may be elegant, but it is also simple, and perhaps you are not surprised that the model's particle concentrations reproduced the response of \textit{E. coli} to an attractant ligand.
 
-
-\FloatBarrier
-\phantomsection
-\subsection{So \ldots what's the big deal?}
-
-You may not be surprised that we have been able to build a simple model of the response of \textit{E. coli} to an attractant ligand. After all, the biochemistry presented here may be elegant, but it is also simple.
-
-But what we have shown in this section is just part of the story. In the next section, we will see that the biochemical realities of chemotaxis are even more complicated, and for good reason --- this added complexity will allow \textit{E. coli} to react to a dynamic world with surprising sophistication.\\
+But what we have shown in this section is just part of the story. In the next section, we will see that the biochemical realities of chemotaxis are even more complicated, and for good reason --- this added complexity will allow \textit{E. coli}, and our model of it, to react to a dynamic world with surprising sophistication.\\
 
 \FloatBarrier
 \phantomsection
@@ -607,6 +571,10 @@ LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 
 We will not bog down the text with a full specification of all the rules needed to add methylation to our model while avoiding combinatorial explosion. If you're interested in the details, please follow our tutorial online.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_adaptation].
 
+INTEGRATE THE FOLLOWING PARAGRAPH
+
+However, BioNetGen is useful not only for running particle-free simulations, but also because it implements its own language for \textdef{rule-based modeling}{rule-based modeling}{an approach to modeling that uses a collection of ``rules'' to indirectly specify the model, often as a way of specifying an enormous number of possible reactions}.
+
 
 \FloatBarrier
 \phantomsection
@@ -614,57 +582,22 @@ We will not bog down the text with a full specification of all the rules needed 
 
 In the figures that follow, we show plots of the concentration of each molecule of interest in our system for a few different cases. In each case, we suddenly change the concentration of the attractant ligand $l_0$ and examine how this affects the concentration of phosphorylated CheY. The attractant concentration will then level off; how will our model respond?
 
-Below, we show simulation results for some different concentrations of ligand molecules added at the beginning of the simulation. First we add a relatively small amount of attractant, setting $l_0$ equal to 10,000. The system returns so quickly to an equilibrium in phosphorylated CheY that it is difficult to imagine that the attractant has had any effect on tumbling frequency.
+In \autoref{fig:chemotaxis_tutorial_adaptation} (first panel), we show simulation results for some different concentrations of ligand molecules added at the beginning of the simulation. First we add a relatively small amount of attractant, setting $l_0$ equal to 100,000. After an initial drop in the concentration of phosphorylated CheY, it returns to equilibrium after a few minutes.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_oneadd1e4.png}
-\caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 10,000 initial attractant ligand particles.}
-\label{fig:chemotaxis_tutorial_oneadd1e4}
+\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_oneadd1e5.png}\\[2ex]
+\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_oneadd1e6.png}\\[2ex]
+\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_oneadd1e7.png}\\[2ex]
+\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_oneadd1e8.png}
+\caption{Molecular concentrations over time (in seconds) in a chemotaxis simulation for a variety of initial attractant ligand particle numbers: 100,000 (first panel), 1,000,000 (second panel), 10,000,000 (third panel), and 100,000,000 (fourth panel). initial attractant ligand particles. Phosphorylated CheY, our metric for tumbling frequency, is shown in purple.}
+\label{fig:chemotaxis_tutorial_adaptation}
 \end{figure}
 
+When we increase $l_0$ by a factor of ten to 1 million, the initial drop is more pronounced, but the system returns just as quickly to equilibrium. Note how much higher the concentration of methylated receptors are in the second panel compared to the first panel of \autoref{fig:chemotaxis_tutorial_adaptation}; however, there are still a significant concentration of receptors with low methylation, indicating that the system may be able to handle an even larger jolt of attractant.
 
-If instead $l_0$ is equal to 100,000, then we obtain the result in \autoref{fig:chemotaxis_tutorial_oneadd1e5}. After an initial drop in the concentration of phosphorylated CheY, it returns to equilibrium after a few minutes.
-
-\begin{figure}[h]
-\centering
-\mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_oneadd1e5.png}
-\caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100,000 initial attractant ligand particles.}
-\label{fig:chemotaxis_tutorial_oneadd1e5}
-\end{figure}
-
-
-When we increase $l_0$ by another factor of ten to 1 million, the initial drop is more pronounced, but the system returns just as quickly to equilibrium. Note how much higher the concentration of methylated receptors are in \autoref{fig:chemotaxis_tutorial_oneadd16} compared to \autoref{fig:chemotaxis_tutorial_oneadd1e5}; however, there are still a significant concentration of receptors with low methylation, indicating that the system may be able to handle an even larger jolt of attractant.\\
-
-\begin{figure}[h]
-\centering
-\mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_oneadd1e6.png}
-\caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with one million initial attractant ligand particles.}
-\label{fig:chemotaxis_tutorial_oneadd16}
-\end{figure}
-
-When we set $l_0$ equal to 10 million, we give the system this bigger jolt. Once again, the model returns to its previous CheY equilibrium after a few minutes (\autoref{fig:chemotaxis_tutorial_oneadd1e7}).
-
-\begin{figure}[h]
-\centering
-\mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_oneadd1e7.png}
-\caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with ten million initial attractant ligand particles.}
-\label{fig:chemotaxis_tutorial_oneadd1e7}
-\end{figure}
-
-Finally, with $l_0$ equal to 100 million, we see what we might expect: the steepest drop in phosphorylated CheY yet, but a system that is able to return to equilibrium (\autoref{fig:chemotaxis_tutorial_oneadd1e8}).
-
-\begin{figure}[h]
-\centering
-\mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_oneadd1e8.png}
-\caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100 million initial attractant ligand particles.}
-\label{fig:chemotaxis_tutorial_oneadd1e8}
-\end{figure}
+When we set $l_0$ equal to 10 million, we give the system this bigger jolt. Once again, the model returns to its previous CheY equilibrium after a few minutes (\autoref{fig:chemotaxis_tutorial_adaptation} (third panel)). Finally, with $l_0$ equal to 100 million, we see what we might expect: the steepest drop in phosphorylated CheY yet, but a system that is able to return to equilibrium (\autoref{fig:chemotaxis_tutorial_adaptation} (fourth panel)).
 
 Our model, which is built on real reaction rate parameters, provides compelling evidence that the \textit{E. coli} chemotaxis system is very robust to changes in its environment. Our simulated bacterium can make a very rapid change in response to a sudden change in its environment, but even if this change is significant, the system will return to its default state. This robustness in our simulation has been observed in real bacteria , as well as replicated by other computational simulations.
 

@@ -102,13 +102,11 @@ If we instead add 100,000 attractant molecules, then we see an even more drastic
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100,000 initial attractant ligand particles.
 {: style="font-size: medium;"}
 
-In other words, the BioNetGen simulation is confirming that an increase in attractant reduces the concentration of phosphorylated CheY, which therefore lowers the tumbling frequency. What is remarkable about this is how quickly it takes place, with the cell attaining a new equilibrium in a fraction of a second.
+This Gillespie model confirms the biological observations that an increase in attractant reduces the concentration of phosphorylated CheY. What is remarkable is how quickly it takes place, with the cell attaining a new equilibrium in a fraction of a second.
 
-## So … what's the big deal?
+But you may remain skeptical of our model. After all, the biochemistry powering chemotaxis may be elegant, but it is also simple, and perhaps you are not surprised that the model's particle concentrations reproduced the response of *E. coli* to an attractant ligand.
 
-You may not be surprised that we have been able to build a simple model of the response of *E. coli* to an attractant ligand. After all, the biochemistry presented here may be elegant, but it is also simple.
-
-But what we have shown in this lesson is just part of the story. In the next lesson, we will see that the biochemical realities of chemotaxis are even more complicated, and for good reason --- this added complexity will allow *E. coli* to react to a dynamic world with surprising sophistication.
+But what we have shown in this lesson is just part of the story. In the next lesson, we will see that the biochemical realities of chemotaxis are even more complicated, and for good reason --- this added complexity will allow *E. coli*, and our model of it, to react to a dynamic world with surprising sophistication.
 
 [^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)
 
