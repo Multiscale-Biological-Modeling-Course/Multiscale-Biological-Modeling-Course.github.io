@@ -290,7 +290,7 @@ In \autoref{chapter:motifs}, we saw that we could avoid tracking the positions o
 Even though we can calculate steady state concentrations manually, a particle-free simulation will be useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system will become impossible.\\
 
 \begin{note}[%
-The difficulty posed to precise analysis of systems with multiple chemical reactions is comparable to the famed ``$n$-body problem'' in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution once we add more bodies to the system.
+The difficulty posed to precise analysis of systems with multiple chemical reactions is comparable to the famed ``$n$-body problem'' in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but once we add more bodies to the system, no solution exists, and we must rely on simulation.
 ]\end{note}
 
 Our particle-free model will apply an approach called \textdef{Gillespie's stochastic simulation algorithm}{Gillespie's stochastic simulation algorithm (SSA)}{an algorithm that simulates a well-mixed environment of particles by apply repeated sampling from an exponential distribution to determine time between reactions}, which is often called the \textbf{Gillespie algorithm} or just \textbf{SSA} for short. Before we explain how this algorithm works, we will take a short detour to provide some needed probabilistic context.
@@ -403,23 +403,17 @@ This simple ligand-receptor model is just the beginning of our study of chemotax
 \label{sec:a_biochemically_accurate_model_of_bacterial_chemotaxis}
 
 \phantomsection
-\subsection{Transducing a signal to a cell's interior}
+\subsection{Transducing an extracellular signal to a cell's interior}
 
-In the previous two sections, we discussed how a cell recognizes an extracellular signal when receptor proteins on the cell's surface bind to ligands, and how to model the reversible ligand-receptor reaction using stochastic simulation via the Gillespie algorithm. We now turn to the question of how the cell conveys the extracellular signal it has detected via the process of signal transduction to the cell's interior and produces an action.
+We now turn to the question of how the cell conveys the extracellular signal it has detected via the process of signal transduction to the cell's interior and produces an action. When \textit{E. coli} senses an increase in the concentration of glucose, meaning that more ligand-receptor binding is taking place at the receptor that recognizes glucose, how does the bacterium change its behavior?
 
-For example, if \textit{E. coli} senses an increase in the concentration of glucose, meaning that more ligand-receptor binding is taking place at the receptor that recognizes glucose, how does the bacterium change its behavior as a result of this increased binding?
+The engine of signal transduction is \textdef{phosphorylation}{phosphorylation}{a chemical reaction that attaches a phosphoryl group to an organic molecule}, a chemical reaction that attaches a phosphoryl group ($\text{PO}_3^{-}$) to an organic molecule.  Phosphoryl modifications serve as an information exchange of sorts because, as we will see, they activate or deactivate certain enzymes.
 
-The engine of signal transduction is \textdef{phosphorylation}{phosphorylation}{a chemical reaction that attaches a phosphoryl group to an organic molecule}, a chemical reaction that attaches a phosphoryl group ($\text{PO}_3^{-}$) to an organic molecule.  Phosphoryl modifications serve as an information exchange of sorts because they activate or deactivate certain enzymes.
-
-A phosphoryl group usually comes from one of two sources. First, the phosphoryl can be broken off of an \textdef{adenosine triphosphate (ATP)}{adenosine triphosphate (ATP)}{a molecule serving as the ``energy currency'' of the cell} molecule, the ``energy currency'' of the cell, producing \textdefnogloss{adenosine diphosphate (ADP)}. Second, the phosphoryl can be exchanged from a phosphorylated molecule that has had its phosphoryl group removed in a \textdef{dephosphorylation}{dephosphorylation}{a chemical reaction that removes a phosphoryl group from an organic molecule} reaction.
+A phosphoryl group usually comes from one of two sources. First, the phosphoryl can be broken off of an \textdef{adenosine triphosphate (ATP)}{adenosine triphosphate (ATP)}{a molecule serving as the ``energy currency'' of the cell} molecule, the ``energy currency'' of the cell, producing \textdefnogloss{adenosine diphosphate (ADP)}. Second, the phosphoryl can be exchanged from a phosphorylated molecule that loses its phosphoryl group in a \textdef{dephosphorylation}{dephosphorylation}{a chemical reaction that removes a phosphoryl group from an organic molecule} reaction.
 
 For many cellular responses, including bacterial chemotaxis, a sequence of phosphorylation and dephosphorylation events called a \textdefnogloss{phosphorylation cascade} serves to transmit information within the cell about the amount of ligand binding being detected on the cell's exterior. In this section, we discuss how this cascade of chemical reactions leads to a change in bacterial movement.
 
-\FloatBarrier
-\phantomsection
-\subsection{Chemotaxis pathway}
-
-A high-level view of the transduction pathway for chemotaxis is shown in \autoref{fig:chemotaxisphosnew}. The cell membrane contains receptors called \textdefnogloss{methyl-accepting chemotaxis proteins (MCPs)} that bridge the cellular membrane, binding both to ligand stimuli in the cell exterior and to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix \textit{Che} (short for ``chemotaxis'').
+A high-level view of the transduction pathway for chemotaxis is shown in \autoref{fig:chemotaxisphosnew}. The cell membrane receptors that we have been working with are called \textdefnogloss{methyl-accepting chemotaxis proteins (MCPs)}, and they bridge the cellular membrane, binding both to ligand stimuli in the cell exterior and to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix \textit{Che} (short for ``chemotaxis'').
 
 \begin{figure}[h]
 \centering
@@ -432,54 +426,28 @@ A high-level view of the transduction pathway for chemotaxis is shown in \autore
 
 On the interior of the cellular membrane, MCPs form complexes with two proteins called \textbf{CheW} and \textbf{CheA}. In the absence of MCP-ligand binding, this complex is more stable, and the CheA molecule \textdef{autophosphorylates}{autophosphorylation}{the process of a molecule adding a phosphoryl group to itself}, meaning that it adds a phosphoryl group taken from ATP to \textit{itself} --- a concept that might seem mystical if you have not already followed our discussion of autoregulation in \autoref{chapter:motifs}.
 
-Phosphorylated CheA can pass on its phosphoryl group to a molecule called \textbf{CheY}, which interacts with the flagellum in the following way. Each flagellum has a protein complex called the \textdef{flagellar motor switch}{flagellar motor switch}{a protein complex on a flagellum that is responsible for controlling the direction of flagellar rotation} that is responsible for controlling the direction of flagellar rotation. The interaction of this protein complex with phosphorylated CheY induces a change of flagellar rotation from counter\-clockwise to clockwise. As we discussed earlier in the chapter, this change in flagellar rotation causes the bacterium to tumble, which in the absence of an increase in attractant occurs every 1 to 1.5 seconds.
+Phosphorylated CheA can pass on its phosphoryl group to a molecule called \textbf{CheY}, which interacts with the flagellum in the following way. Each flagellum has a protein complex called the \textdef{flagellar motor switch}{flagellar motor switch}{a protein complex on a flagellum that is responsible for controlling the direction of flagellar rotation} that is responsible for controlling the direction of flagellar rotation. The interaction of this protein complex with phosphorylated CheY induces a change of flagellar rotation from counter-clockwise to clockwise. As we discussed earlier in the chapter, this change in flagellar rotation causes the bacterium to tumble, which in the absence of an increase in attractant occurs every 1 to 1.5 seconds.
 
 Yet when a ligand binds to the MCP, the MCP undergoes conformation changes, which reduce the stability of the complex with CheW and CheA. As a result, CheA is less readily able to autophosphorylate, which means that it does not phosphorylate CheY, which cannot change the flagellar rotation to clockwise, and so the bacterium is less likely to tumble.
 
-In other words, the exchange of phosphoryl groups means that a ligand exterior to the cell can indirectly serve as an inhibitor for phosphorylated CheA as well as phosphorylated CheY. Thus, ligand binding \textit{causes} fewer flagellar interactions and in turn less tumbling of the bacterium, so that the bacterium will run for a longer stretch of time.
+In short, attractant ligand binding \textit{causes} more phosphorylated CheA and CheY, which means that it \textit{causes} fewer flagellar interactions and therefore less tumbling, so that the bacterium will run for a longer stretch of time.\\
 
-A critical part of the process is that if a ligand is detected, and the cell has a high concentration of CheY, then it needs to decrease the CheY concentration quickly. Otherwise, the cell will not be able to change its tumbling frequency. To this end, the cell is able to dephosphorylate CheY using an enzyme called \textbf{CheZ}.
+\begin{note}[%
+A critical part of this process is that if a ligand is detected, and the cell has a high concentration of CheY, then it needs to decrease the CheY concentration quickly. Otherwise, the cell will not be able to change its tumbling frequency. To this end, the cell is able to dephosphorylate CheY using an enzyme called \textdefnogloss{CheZ}.
+]\end{note}
 
 
 \FloatBarrier
 \phantomsection
 \subsection{Adding phosphorylation events to our model of chemotaxis}
 
+We would like to use the Gillespie algorithm to simulate the reactions driving chemotaxis signal transduction and see what happens if the bacterium ``senses an attractant'', meaning that the attractant ligand's concentration increases and leads to more receptor-ligand binding.
 
-We would like to simulate the reactions driving chemotaxis signal transduction and see what happens if the bacterium ``senses an attractant'', meaning that the attractant ligand's concentration increases and leads to more receptor\-ligand binding. To do so, we will use the Gillespie algorithm.
+This model will be more complicated than any we have introduced thus far. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model phosphorylation reactions of CheA, which depend on the current concentrations of bound and unbound MCP molecules. We will at least make the simplifying assumption that the MCP receptor is permanently bound to CheA and CheW, so that we do not need to represent these molecules individually. In other words, rather than thinking about CheA autophosphorylating, we will think about the receptor that includes CheA autophosphorylating.
 
-This model will be more complicated than any we have introduced thus far. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model phosphorylation reactions of CheA, which depend on the current concentrations of bound and unbound MCP molecules. We will at least make a simplifying assumption that the MCP receptor includes CheA and CheW, so that we do not need to represent these molecules individually.
+Say that we wanted to specify all reactions in the manner used up to this point in the book. We would need one particle type to represent MCP molecules, another particle type to represent ligands, and a third to represent bound complexes. A bound complex molecule binds with CheA and CheW and can be either phosphorylated or unphosphorylated, necessitating two different molecule types. In turn, CheY can be phosphorylated or unphosphorylated as well, requiring two more particles.
 
-In the previous section, we very briefly introduced BioNetGen as a way to convert reactions into a software package applying the Gillespie algorithm. However, BioNetGen is useful not only for running particle-free simulations, but also because it implements its own language for \textdef{rule-based modeling}{rule-based modeling}{an approach to modeling that uses a collection of ``rules'' to indirectly specify the model, often as a way of specifying an enormous number of possible reactions}.
-
-Say that we were to specify all reactions using the style of modeling reactions used in previous chapters. We would need one particle type to represent MCP molecules, another particle type to represent ligands, and a third to represent bound complexes. A bound complex molecule binds with CheA and CheW and can be either phosphorylated or unphosphorylated, necessitating two different molecule types. In turn, CheY can be phosphorylated or unphosphorylated as well, requiring two more particles.
-
-Instead, the BioNetGen language will allow us to conceptualize this system much more concisely using rules that apply to particles that are in a variety of states. The BioNetGen representation of the four particles in our model is shown below. The notation \texttt{Phos\texttildelow U\texttildelow P} indicates that a given molecule type can be either phosphorylated or unphosphorylated, so that we do not need multiple different expressions to represent the molecule.\\
-
-% Moved down -- delete this and integrate. Then edit the course website so that it is consistent.
-%\FloatBarrier
-%\phantomsection
-%\subsection{Specifying ligand-receptor binding with a single BioNetGen rule}
-%
-%Throughout this chapter, we will employ BioNetGen (\href={http://bionetgen.org/}) to apply the Gillespie algorithm to well-mixed models of chemical reactions. We will use our ongoing example of ligand-receptor binding and dissociation to introduce the way in which BioNetGen represents molecules and reactions involving them.
-%
-%We will have two molecules corresponding to the ligand and receptor $L$ and $T$ that we denote \texttt{L(t)} and \texttt{T(l)}, respectively. The \texttt{(t)} specifies that molecule \texttt{L} contains a binding site with \texttt{T}, and the \texttt{(l)} specifies a component binding to \texttt{L}. We will use these components later when specifying reactions.
-%
-%BioNetGen reaction rules are written similarly to chemical equations. The left side of the rule includes the reactants, which are followed by a unidirectional or bidirectional arrow, indicating the direction of the reaction, and the right side of the rule includes the products. After the reaction, we indicate the rate constant of reaction; if the reaction is bi-directional, then we separate the forward and backward reaction rate constants with a comma.
-%
-%For example, to represent the bi-directional reaction $A + B \longleftrightarrow C$ with forward rate $k_1$ and reverse rate $k_2$, we would write \texttt{A + B <-> C k1, k2}.
-%
-%Our model consists of one bidirectional reaction and will have a single rule. The left side of this rule will be \texttt{L(t) + T(l)}; by specifying \texttt{L(t)} and \texttt{T(l)}, we indicate to BioNetGen that we are only interested in \textit{unbound} ligand and receptor molecules. If we had wanted to select any ligand molecule, then we would have used \texttt{L + T}.
-%
-%On the right side of the rule, we will have \texttt{L(t!1).T(l!1)}, which indicates the formation of the complex. In BioNetGen, \texttt{!} indicates formation of a bond, and a unique character specifies the possible location of this bond. In our case, we use the character \texttt{1}, so that the bond is represented by \texttt{!1}. The symbol \texttt{.} is used to indicate that the two molecules are joined into a complex.
-%
-%Since the reaction is bidirectional, we will use \texttt{k\_lr\_bind} and \texttt{k\_lr\_dis} to denote the rates of the forward and reverse reactions, respectively. (We will specify values for these parameters later.)
-%
-%As a result, this reaction is shown below. We name our rule specifying the ligand-receptor reaction \texttt{LR}.\\
-%
-%\begin{BioNetGen}
-%LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
-%\end{BioNetGen}
+What we need is a \textit{language} that allows us to represent all this information concisely. BioNetGen, the software used throughout this chapter to build our models, would express the collection of particles above as follows:\\
 
 \begin{BioNetGen}
 L(t)             #ligand molecule
@@ -488,16 +456,22 @@ CheY(Phos~U~P)
 CheZ()
 \end{BioNetGen}
 
-The conciseness of BioNetGen's molecule representation helps us represent our reactions concisely as well. We first reproduce the reversible binding and dissociation reaction from the previous section.\\
+In this notation, the ligand and receptor are denoted \texttt{L(t)} and \verb|T(l,Phos~U~P)|, respectively. The \texttt{(t)} specifies that molecule \texttt{L} contains a binding site with \texttt{T}, and the \texttt{(l)} specifies a binding site to \texttt{L}; in this way, ligands and receptors can be either bound or unbound. Furthermore, the notation \verb|Phos~U~P| indicates that a given molecule type can be either phosphorylated or unphosphorylated, so that we do not need multiple different expressions to represent the molecule.  Note that we specified two additional particles corresponding to CheY and CheZ, with the former being possibly phosporylated.
+
+We can represent a system's reactions concisely as well using a collection of rules. For example, below is the reversible ligand binding/dissociation reaction, called \texttt{LR}, and which takes place according to the forward and reverse rate constants \texttt{k\_lr\_bind} and \texttt{k\_lr\_dis}, respectively. (We will need to declare values for these constants elsewhere in the model.)\\
 
 \begin{BioNetGen}
 LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 \end{BioNetGen}
 
+First, we explain the left side of this rule, \texttt{L(t) + T(l)}. By specifying \texttt{L(t)} and \texttt{T(l)}, we indicate to BioNetGen that we are only interested in \textit{unbound} ligand and receptor molecules. If we had wanted to select any ligand molecule, then we would have used \texttt{L + T}.
+
+As for the right side of the rule, we will have \texttt{L(t!1).T(l!1)}, which indicates the formation of the complex. In the BioNetGen language, \texttt{!} indicates formation of a bond, and a unique character specifies the possible location of this bond. In our case, we use the character \texttt{1}, so that the bond is represented by \texttt{!1}. The symbol \texttt{.} is used to indicate that the ligand and receptor molecule are joined into a complex. This single rule does not specify anything regarding phosphorylation and can therefore include both phosphorylated and unphosphorylated receptor complexes. 
+
 Next, we represent the phosphorylation of the MCP complex. Recall that the phosphorylation of CheA can occur at different rates depending on whether the MCP is bound, and so we will need two different reactions to model these different rates. In our model, the phosphorylation of the MCP will occur at one fifth the rate when it is bound to the attractant ligand.\\
 
 \begin{BioNetGen}
-FreeTP: T(l,Phos~U) -> T(l,Phos~P) k_T_phos
+FreeTP:  T(l,Phos~U) -> T(l,Phos~P) k_T_phos
 BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
 \end{BioNetGen}
 
@@ -508,9 +482,13 @@ YP: T(Phos~P) + CheY(Phos~U) -> T(Phos~U) + CheY(Phos~P) k_Y_phos
 YDep: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
 \end{BioNetGen}
 
-Now that we have converted the reactions from the chemotaxis signal transduction pathway into BioNetGen's rule\-based language, we would like to see what happens when we \textit{change} the concentrations of the ligand. Ideally, the bacterium should be able to distinguish different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY, and the lower the tumbling frequency of the bacterium.
+Now that we have converted the reactions from the chemotaxis signal transduction pathway into BioNetGen's rule-based language, we would like to see what happens when we \textit{change} the concentrations of the ligand. Ideally, the bacterium should be able to distinguish different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY, and the lower the tumbling frequency of the bacterium.
 
 But does higher attractant concentration in our model really lead to a lower concentration of CheY? Let's find out by incorporating the phosphorylation pathway into our ligand-receptor model in the tutorial \tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_phos].
+
+BREAK MOVE THIS NEXT PARAGRAPH SOMEWHERE 
+
+However, BioNetGen is useful not only for running particle-free simulations, but also because it implements its own language for \textdef{rule-based modeling}{rule-based modeling}{an approach to modeling that uses a collection of ``rules'' to indirectly specify the model, often as a way of specifying an enormous number of possible reactions}.
 
 
 \FloatBarrier

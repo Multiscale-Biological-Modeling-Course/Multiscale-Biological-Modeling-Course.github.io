@@ -8,21 +8,17 @@ toc_sticky: true
 image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
-## Transducing a signal to a cell's interior
+## Transducing an extracellular signal to a cell's interior
 
-In the previous two lessons, we discussed how a cell recognizes an extracellular signal when receptor proteins on the cell's surface bind to ligands, and how to model the reversible ligand-receptor reaction using stochastic simulation via the Gillespie algorithm. We now turn to the question of how the cell conveys the extracellular signal it has detected via the process of signal transduction to the cell's interior and produces an action.
+We now turn to the question of how the cell conveys the extracellular signal it has detected via the process of signal transduction to the cell's interior and produces an action. When *E. coli* senses an increase in the concentration of glucose, meaning that more ligand-receptor binding is taking place at the receptor that recognizes glucose, how does the bacterium change its behavior?
 
-For example, if *E. coli* senses an increase in the concentration of glucose, meaning that more ligand-receptor binding is taking place at the receptor that recognizes glucose, how does the bacterium change its behavior as a result of this increased binding?
+The engine of signal transduction is **phosphorylation**, a chemical reaction that attaches a phosphoryl group (PO<sub>3</sub><sup>-</sup>) to an organic molecule.  Phosphoryl modifications serve as an information exchange of sorts because, as we will see, they activate or deactivate certain enzymes.
 
-The engine of signal transduction is **phosphorylation**, a chemical reaction that attaches a phosphoryl group (PO<sub>3</sub><sup>-</sup>) to an organic molecule.  Phosphoryl modifications serve as an information exchange of sorts because they activate or deactivate certain enzymes.
-
-A phosphoryl group usually comes from one of two sources. First, the phosphoryl can be broken off of an **adenosine triphosphate (ATP)** molecule, the "energy currency" of the cell, producing **adenosine diphosphate (ADP)**. Second, the phosphoryl can be exchanged from a phosphorylated molecule that has had its phosphoryl group removed in a **dephosphorylation** reaction.
+A phosphoryl group usually comes from one of two sources. First, the phosphoryl can be broken off of an **adenosine triphosphate (ATP)** molecule, the "energy currency" of the cell, producing **adenosine diphosphate (ADP)**. Second, the phosphoryl can be exchanged from a phosphorylated molecule that loses its phosphoryl group in a **dephosphorylation** reaction.
 
 For many cellular responses, including bacterial chemotaxis, a sequence of phosphorylation and dephosphorylation events called a **phosphorylation cascade** serves to transmit information within the cell about the amount of ligand binding being detected on the cell's exterior. In this lesson, we discuss how this cascade of chemical reactions leads to a change in bacterial movement.
 
-## Chemotaxis pathway
-
-A high-level view of the transduction pathway for chemotaxis is shown in the figure below. The cell membrane contains receptors called **methyl-accepting chemotaxis proteins (MCPs)** that bridge the cellular membrane, binding both to ligand stimuli in the cell exterior and to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix *Che* (short for "chemotaxis").
+A high-level view of the transduction pathway for chemotaxis is shown in the figure below. The cell membrane receptors that we have been working with are called **methyl-accepting chemotaxis proteins (MCPs)**, and they bridge the cellular membrane, binding both to ligand stimuli in the cell exterior and to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix *Che* (short for "chemotaxis").
 
 [![image-center](../assets/images/600px/chemotaxisphosnew.png){: .align-center}](../assets/images/chemotaxisphosnew.png)
 A summary of the chemotaxis transduction pathway. A ligand binding signal is propagated through CheA and CheY phosphorylation, which leads to a response of clockwise flagellar rotation. The blue curved arrow denotes phosphorylation, the grey curved arrow denotes dephosphorylation, and the blue dashed arrow denotes a chemical interaction. Our figure is a simplified view of <a href="http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html">Parkinson Lab</a> illustrations.
@@ -34,19 +30,21 @@ Phosphorylated CheA can pass on its phosphoryl group to a molecule called **CheY
 
 Yet when a ligand binds to the MCP, the MCP undergoes conformation changes, which reduce the stability of the complex with CheW and CheA. As a result, CheA is less readily able to autophosphorylate, which means that it does not phosphorylate CheY, which cannot change the flagellar rotation to clockwise, and so the bacterium is less likely to tumble.
 
-In other words, the exchange of phosphoryl groups means that a ligand exterior to the cell can indirectly serve as an inhibitor for phosphorylated CheA as well as phosphorylated CheY. Thus, ligand binding *causes* fewer flagellar interactions and in turn less tumbling of the bacterium, so that the bacterium will run for a longer stretch of time.
+In short, attractant ligand binding *causes* more phosphorylated CheA and CheY, which means that it *causes* fewer flagellar interactions and therefore less tumbling, so that the bacterium will run for a longer stretch of time.
 
-A critical part of the process is that if a ligand is detected, and the cell has a high concentration of CheY, then it needs to decrease the CheY concentration quickly. Otherwise, the cell will not be able to change its tumbling frequency. To this end, the cell is able to dephosphorylate CheY using an enzyme called **CheZ**.
+**Note:** A critical part of this process is that if a ligand is detected, and the cell has a high concentration of CheY, then it needs to decrease the CheY concentration quickly. Otherwise, the cell will not be able to change its tumbling frequency. To this end, the cell is able to dephosphorylate CheY using an enzyme called **CheZ**.
+{: .notice--info}
 
 ## Adding phosphorylation events to our model of chemotaxis
 
-We would like to simulate the reactions driving chemotaxis signal transduction and see what happens if the bacterium "senses an attractant", meaning that the attractant ligand's concentration increases and leads to more receptor-ligand binding. To do so, we will use the Gillespie algorithm that we introduced in the [previous lesson](gillespie).
+We would like to use the Gillespie algorithm that we introduced in the [previous lesson](gillespie) to simulate the reactions driving chemotaxis signal transduction and see what happens if the bacterium "senses an attractant", meaning that the attractant ligand's concentration increases and leads to more receptor-ligand binding.
 
-This model will be more complicated than any we have introduced thus far. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model phosphorylation reactions of CheA, which depend on the current concentrations of bound and unbound MCP molecules. We will at least make a simplifying assumption that the MCP receptor includes CheA and CheW, so that we do not need to represent these molecules individually.
+This model will be more complicated than any we have introduced thus far. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model phosphorylation reactions of CheA, which depend on the current concentrations of bound and unbound MCP molecules. We will at least make the simplifying assumption that the MCP receptor is permanently bound to CheA and CheW, so that we do not need to represent these molecules individually. In other words, rather than thinking about CheA autophosphorylating, we will think about the receptor that includes CheA autophosphorylating.
+
 
 In the previous lesson, we very briefly introduced BioNetGen as a way to convert reactions into a software package applying the Gillespie algorithm. However, BioNetGen is useful not only for running particle-free simulations, but also because it implements its own language for **rule-based modeling**.
 
-Say that we were to specify all reactions using the style of modeling reactions used in previous modules. We would need one particle type to represent MCP molecules, another particle type to represent ligands, and a third to represent bound complexes. A bound complex molecule binds with CheA and CheW and can be either phosphorylated or unphosphorylated, necessitating two different molecule types. In turn, CheY can be phosphorylated or unphosphorylated as well, requiring two more particles.
+Say that we wanted to specify all particles and the reactions involving them in the manner used up to this point in the book. We would need one particle type to represent MCP molecules, another particle type to represent ligands, and a third to represent bound complexes. A bound complex molecule binds with CheA and CheW and can be either phosphorylated or unphosphorylated, necessitating two different molecule types. In turn, CheY can be phosphorylated or unphosphorylated as well, requiring two more particles.
 
 Instead, the BioNetGen language will allow us to conceptualize this system much more concisely using rules that apply to particles that are in a variety of states. The BioNetGen representation of the four particles in our model is shown below. The notation `Phos~U~P` indicates that a given molecule type can be either phosphorylated or unphosphorylated, so that we do not need multiple different expressions to represent the molecule.
 

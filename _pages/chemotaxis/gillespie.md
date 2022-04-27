@@ -14,7 +14,7 @@ In the [previous module](../motifs/home), we saw that we could avoid tracking th
 
 Even though we can calculate steady state concentrations manually, a particle-free simulation will be useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system will become impossible.
 
-**Note:** The difficulty posed to precise analysis of systems with multiple chemical reactions is comparable to the famed "*n*-body problem" in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but there is no known such solution once we add more bodies to the system.
+**Note:** The difficulty posed to precise analysis of systems with multiple chemical reactions is comparable to the famed "*n*-body problem" in physics. Predicting the motions of two celestial objects interacting due to gravity can be done exactly, but once we add more bodies to the system, no solution exists, and we must rely on simulation.
 {: .notice--info}
 
 Our particle-free model will apply an approach called **Gillespie's stochastic simulation algorithm**, which is often called the **Gillespie algorithm** or just **SSA** for short. Before we explain how this algorithm works, we will take a short detour to provide some needed probabilistic context.
