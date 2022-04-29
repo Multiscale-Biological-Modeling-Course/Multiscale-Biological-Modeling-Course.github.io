@@ -6,7 +6,7 @@ sidebar:
 image: "../assets/images/repressilator_chart.png"
 ---
 
-## Identifying Feed-Forward Loops and More Complex Motifs
+## Identifying feed-forward loops and more complex motifs
 
 **Exercise:** Modify the Jupyter notebook provided in the [tutorial on loops](tutorial_loops) to count the number of feed-forward loops in the transcription factor network for *E. coli.*
 {: .notice--success}
@@ -32,7 +32,7 @@ Example of different motifs within the *S. Cerevisiae* network.[^scNetwork]
 **Exercise:** Can you modify our Jupyter Notebook for motif finding to identify circular loops of transcription factor regulation, such as the multi-component loop above?
 {: .notice--success}
 
-## Negative Autoregulation
+## Negative autoregulation
 
 Using the *NAR_comparison_equal.blend* file from the negative [autoregulation tutorial](tutorial_nar_mathematically_controlled), increase the reaction rate of X1 -> X1 + Y1 to 4e4, so that the table should now look like the following:
 
@@ -52,14 +52,18 @@ If we plot this graph, we can see the steady states of Y1 and Y2 are different o
 **Exercise:** One way for the cell to apply stronger "brakes" to the simple regulation rate would be to simply increase the degradation rate, rather than implement negative autoregulation. Why do you think that the cell doesn't do this?
 {: .notice--success}
 
-## Positive Autoregulation
+## Positive autoregulation
 
 Although most of the autoregulating *E. coli* transcription factors exhibit negative autoregulation, 35 of these transcription factors autoregulate *positively*, meaning that the transcription factor activates its own regulation. This network motif exists in processes in which the cell needs a cell to be produced at a slower, more precise rate than it would under normal activation. This occurs in some genes related to development, when gene expression must be carefully controlled.
 
 **Exercise:** Design and implement a reaction-diffusion model to run a mathematically-controlled simulation comparing the positive autoregulation of a transcription factor *Y* against normal activation of *Y* by another transcription factor *X*. Plot the concentration of *Y* over time in the two circumstances.
 {: .notice--success}
 
-## Implementing More Network Motifs
+## Statistical validation
+
+ 
+
+## Implementing more network motifs
 **Exercise:** Use the NFSim tutorial implementing the repressilator as a basis to replicate the other network motif tutorials presented in this module.
 {: .notice--success}
 
