@@ -14,11 +14,11 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 In the [previous lesson](biochemistry), we explored the signal transduction pathway by which *E. coli* can change its tumbling frequency in response to a change in the concentration of an attractant. But the reality of cellular environments is that the concentration of an attractant can vary across several orders of magnitude. The cell therefore needs to detect not *absolute* concentrations of an attractant but rather *relative* changes.
 
-*E. coli* detects relative changes in its concentration via **adaptation** to the signal concentration. If the concentration of attractant remains constant for a period of time, then regardless of the absolute value of the concentration, the cell returns to the same background tumbling frequency. In other words, *E. coli* demonstrates *robustness* to the background concentration of attractant in maintaining its default tumbling behavior.
+*E. coli* detects relative changes in its concentration via **adaptation** to these changes. If the concentration of attractant remains constant for a period of time, then regardless of the absolute value of the concentration, the cell returns to the same background tumbling frequency. In other words, *E. coli* demonstrates *robustness* to the attractant concentration in maintaining its default tumbling behavior.
 
-However, our current model is not able to address this adaptation. If the ligand concentration increases, then phosphorylated CheY plummets. But if the ligand concentration remains elevated, then the bacterium should eventually resume its exploration. In our model, CheY would remain at a low steady state, and tumbling frequency would be low.
+However, our current model is not able to address this adaptation. If the ligand concentration increases in the model, then phosphorylated CheY will plummet and remain at a low steady state.
 
-In this lesson, we will investigate the biochemical mechanism that *E. coli* uses to achieve such a robust response to environments with different background concentrations. We will then further expand the model we built in the previous lesson to see if this model can replicate the bacterium's adaptive response.
+In this lesson, we will investigate the biochemical mechanism that *E. coli* uses to achieve such a robust response to environments with different background concentrations. We will then expand the model we built in the previous lesson to replicate the bacterium's adaptive response.
 
 ## Bacteria remember past concentrations using methylation
 
@@ -28,7 +28,7 @@ Signal transduction is achieved through phosphorylation, but *E. coli* maintains
 
 Every MCP receptor contains four methylation sites, meaning that between zero and four methyl groups can be added to the receptor. On the plasma membrane, many MCPs, CheW, and CheA molecules form an array structure. Methylation reduces the negative charge on the receptors, stabilizing the array and facilitating CheA autophosphorylation. The more sites that are methylated, the higher the autophosphorylation rate of CheA, which means that CheY has a higher phosphorylation rate, and tumbling frequency increases.
 
-We now have two different ways that tumbling frequency can be elevated. First, if the concentration of an attractant is low, then CheW and CheA freely form a complex with the MCP, and the phosphorylation cascade passes phosphoryl groups to CheY, which interacts with the flagella and keeps tumbling frequency high. Second, an increase in MCP methylation can also boost CheA autophosphorylation and lead to an increased tumbling frequency.
+Note that we now have two different ways that tumbling frequency can be elevated. First, if the concentration of an attractant is low, then CheW and CheA freely form a complex with the MCP, and the phosphorylation cascade passes phosphoryl groups to CheY, which interacts with the flagella and keeps tumbling frequency high. Second, an increase in MCP methylation can also boost CheA autophosphorylation and lead to an increased tumbling frequency.
 
 Methylation of MCPs is achieved by an additional protein called **CheR**. When bound to MCPs, CheR methylates ligand-bound MCPs faster[^Amin2010][^Terwilliger1986], and so the rate of MCP methylation by CheR is higher if the MCP is bound to a ligand.[^Spiro1997]. Let's consider how this fact affects a bacterium's behavior.
 
@@ -36,10 +36,10 @@ Say that *E. coli* encounters an increase in attractant concentration. Then the 
 
 Just as the phosphorylation of CheY can be reversed, MCP methylation can be undone to prevent methylation from being permanent. In particular, an enzyme called **CheB**, which like CheY is phosphorylated by CheA, demethylates MCPs (as well as autodephosphorylates). The rate of an MCP's demethylation is dependent on the extent to which the MCP is methylated. In other words, the rate of MCP methylation is higher when the MCP is in a low methylation state, and the rate of demethylation is faster when the MCP is in a high methylation state.[^Spiro1997]
 
-The figure below adds CheR and CheB to provide a complete picture of the core pathways influencing chemotaxis. To model these pathways, we will need to add quite a few molecules and reactions to our current model.
+The figure below adds CheR and CheB to provide a complete picture of the core pathways influencing chemotaxis. To model these pathways and see how our simulated bacterial system responds to different relative attractant concentrations, we will need to add quite a few molecules and reactions to our current model.
 
 [![image-center](../assets/images/600px/chemotaxis_wholestory.png){: .align-center}](../assets/images/chemotaxis_wholestory.png)
-The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates MCPs while CheR demethylates MCPs. Blue lines denote phosphorylation, grey lines denote dephosphorylation, green arrows denote methylation, and red arrows denote demethlyation. Image modified from <a href="http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html">Parkinson Lab</a>'s illustrations.
+The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates MCPs, while CheR demethylates MCPs. Blue lines denote phosphorylation, grey lines denote dephosphorylation, green arrows denote methylation, and red arrows denote demethlyation. Image modified from <a href="http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html">Parkinson Lab</a>'s illustrations.
 {: style="font-size: medium;"}
 
 ## Combinatorial explosion and the need for rule-based modeling
@@ -54,7 +54,7 @@ Imagine for a moment that we were attempting to specify every reaction that coul
 
 Say that we are simulating the simple reaction of a ligand binding to an MCP, which we originally wrote as *T* + *L* → *TL*. We now need this reaction to include 12 of the 24 states, the ones corresponding to the MCP being unbound to the ligand. Our previously simple reaction would become 12 different reactions, one for each possible unbound state of the complex molecule *T*. And if the situation were just a little more complex, with the ligand molecule *L* having *n* possible states, then we would have 12*n* reactions. Imagine trying to debug a model in which we had accidentally incorporated a typo when transcribing just one of these reactions!
 
-In other words, as our model grows, with multiple different states for each molecule involved in each reaction, the number of reactions we need to represent the system grows very fast; this phenomenon is called **combinatorial explosion**. Our model of chemotaxis is ultimately relatively straightforward, but combinatorial explosion means that building realistic models of biochemical systems at scale can be daunting.
+In other words, as our model grows, with multiple different states for each molecule involved in each reaction, the number of reactions we need to represent the system grows very fast; this phenomenon is called **combinatorial explosion** and means that building realistic models of biochemical systems at scale can be daunting.
 
 A major benefit of using a rule-based modeling language such as the one developed by BioNetGen is that it circumvents combinatorial explosion by consolidating many reactions into a single rule. For example, when modeling ligand-MCP binding, we can summarize the 12 different reactions with the rule "a free ligand molecule binds to an MCP that is not bound to a ligand molecule." In the BioNetGen language, this rule is represented by the same one-line expression as it was in the previous lesson:
 
@@ -69,9 +69,9 @@ We will not bog down the text with a full specification of all the rules needed 
 
 ## Bacterial tumbling is robust to large sudden changes in attractant concentration
 
-In the figures below, we show plots of the concentration of each molecule of interest in our system for a few different cases. In each case, we suddenly change the concentration of the attractant ligand (*l*<sub>0</sub>) and examine how this affects the concentration of phosphorylated CheY. The attractant concentration will then level off; how will our model respond?
+In the figures that follow, we plot the concentration over time of each molecule for different values of *l*<sub>0</sub>, the initial concentration of ligand. From what we have learned about *E. coli*, we should see the concentration of phosphorylated CheY (and therefore the bacterium's tumbling frequency) drop before returning to its original equilibrium. But will our simulation capture this behavior?
 
-Below, we show simulation results for some different concentrations of ligand molecules added at the beginning of the simulation. First we add a relatively small amount of attractant, setting *l*<sub>0</sub> equal to 10,000. The system returns so quickly to an equilibrium in phosphorylated CheY that it is difficult to imagine that the attractant has had any effect on tumbling frequency.
+First, we add a relatively small amount of attractant, setting *l*<sub>0</sub> equal to 10,000. The system returns so quickly to an equilibrium in phosphorylated CheY that it is difficult to imagine that the attractant has had any effect on tumbling frequency.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e4.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd1e4.png)
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 10,000 initial attractant ligand particles.
@@ -101,7 +101,7 @@ Finally, with *l*<sub>0</sub> equal to 100 million, we see what we might expect:
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100 million initial attractant ligand particles.
 {: style="font-size: medium;"}
 
-Our model, which is built on real reaction rate parameters, provides compelling evidence that the *E. coli* chemotaxis system is very robust to changes in its environment. Our simulated bacterium can make a very rapid change in response to a sudden change in its environment, but even if this change is significant, the system will return to its default state. This robustness in our simulation has been observed in real bacteria[^Shimizu2005][^Krembel2015], as well as replicated by other computational simulations[^Bray1993].
+Our model, which is built on real reaction rate parameters, provides compelling evidence that the *E. coli* chemotaxis system is robust to changes in its environment across several orders of magnitude of attractant concentration. This robustness has been observed in real bacteria[^Shimizu2005][^Krembel2015], as well as replicated by other computational simulations[^Bray1993].
 
 Aren't bacteria magnificent?
 
