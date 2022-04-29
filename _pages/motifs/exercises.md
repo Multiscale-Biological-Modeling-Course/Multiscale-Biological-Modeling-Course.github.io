@@ -52,6 +52,13 @@ If we plot this graph, we can see the steady states of Y1 and Y2 are different o
 **Exercise:** One way for the cell to apply stronger "brakes" to the simple regulation rate would be to simply increase the degradation rate, rather than implement negative autoregulation. Why do you think that the cell doesn't do this?
 {: .notice--success}
 
+## Positive Autoregulation
+
+Although most of the autoregulating *E. coli* transcription factors exhibit negative autoregulation, 35 of these transcription factors autoregulate *positively*, meaning that the transcription factor activates its own regulation. This network motif exists in processes in which the cell needs a cell to be produced at a slower, more precise rate than it would under normal activation. This occurs in some genes related to development, when gene expression must be carefully controlled.
+
+**Exercise:** Design and implement a reaction-diffusion model to run a mathematically-controlled simulation comparing the positive autoregulation of a transcription factor *Y* against normal activation of *Y* by another transcription factor *X*. Plot the concentration of *Y* over time in the two circumstances.
+{: .notice--success}
+
 ## Implementing More Network Motifs
 **Exercise:** Use the NFSim tutorial implementing the repressilator as a basis to replicate the other network motif tutorials presented in this module.
 {: .notice--success}
