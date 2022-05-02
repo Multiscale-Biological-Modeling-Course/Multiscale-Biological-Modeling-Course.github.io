@@ -571,7 +571,7 @@ In \autoref{fig:chemotaxis_tutorial_adaptation}, we plot the concentration over 
 
 In \autoref{fig:chemotaxis_tutorial_adaptation} (first panel), we add a relatively small amount of attractant, setting $l_0$ equal to 100,000. The system returns so quickly to an equilibrium in phosphorylated CheY that it is difficult to imagine that the attractant has had any effect on tumbling frequency.
 
-\begin{figure}[h]
+\begin{figure}[p]
 \centering
 \mySfFamily
 \includegraphics[width = 0.8\textwidth]{../images/chemotaxis_tutorial_oneadd1e4.png}\\[2ex]
@@ -585,13 +585,11 @@ When we increase $l_0$ to 1 million, the initial drop is more pronounced, but th
 
 When we set $l_0$ equal to 100 million, we give the system this bigger jolt. Once again, the model returns to its previous CheY equilibrium after a few minutes, despite the steepest initial drop yet in the concentration of phosphorylated CheY (\autoref{fig:chemotaxis_tutorial_adaptation} (third panel)).
 
-Our model, which is built on real reaction rate parameters, provides compelling evidence that the \textit{E. coli} chemotaxis system is robust to changes in its environment across several orders of magnitude of attractant concentration. This robustness has been observed in real bacteria , as well as replicated by other computational simulations.
+Our model, which is built on real reaction rate parameters, provides compelling evidence that the \textit{E. coli} chemotaxis system is robust to changes in its environment across several orders of magnitude of attractant concentration. This robustness has been observed in real bacteria and replicated by other computational simulations.
 
 Aren't bacteria magnificent?
 
-\FloatBarrier
 \phantomsection
-
 \subsection{Traveling up an attractant gradient}
 
 We have simulated \textit{E. coli} adapting to a single sudden change in its environment, but life often depends on responding to continual change. Imagine a glucose cube in an aqueous solution. As the cube dissolves, a \textdefnogloss{gradient} will form, with a glucose concentration that decreases outward from the cube. How will the tumbling frequency of \textit{E. coli} change if the bacterium finds itself in an environment of an attractant gradient?  Will the tumbling frequency decrease continuously as well, or will we see more complicated behavior? And once the cell reaches a region of high attractant concentration, will its default tumbling frequency stabilize to the same steady state?
@@ -603,7 +601,7 @@ We will modify our model by increasing the concentration of the attractant ligan
 
 To model a ligand concentration $[L]$ that is increasing exponentially, we will use the function $[L] = l_0 \cdot e^{k \cdot t}$, where $k$ is a constant dictating the rate of exponential growth, $l_0$ is the initial concentration, and $t$ is the time. The parameter $k$ represents the steepness of the gradient, since the higher the value of $k$, the faster the growth in the ligand concentration $[L]$.
 
-For example, \autoref{fig:chemotaxis_tutorial_addition01} shows the concentration over time of phosphorylated CheY (shown in blue) when $l_0 = 1000$ and $k = 0.1$. The concentration of phosphorylated CheY, and therefore the tumbling frequency, still decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (shown by the plateau in the red curve), the methylation of receptors causes the concentration of phosphorylated CheY to return to its equilibrium. In other words, for these values of $l_0$ and $k$, the outcome is similar to when we provided an instantaneous increase in ligand, although the cell takes longer to reach its minimum concentration of phosphorylated CheY because the attractant concentration is increasing gradually.\\
+\autoref{fig:chemotaxis_tutorial_addition01} shows the concentration over time of phosphorylated CheY (shown in blue) when $l_0 = 1000$ and $k = 0.1$. The concentration of phosphorylated CheY, and therefore the tumbling frequency, still decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (shown by the plateau in the red curve), receptor methylation causes the concentration of phosphorylated CheY to return to its equilibrium. In other words, for these values of $l_0$ and $k$, the outcome is similar to when we provided an instantaneous increase in ligand, although the cell takes longer to reach its minimum concentration of phosphorylated CheY because the attractant concentration is increasing gradually.\\
 
 \begin{figure}[h]
 \centering
@@ -613,8 +611,7 @@ For example, \autoref{fig:chemotaxis_tutorial_addition01} shows the concentratio
 \label{fig:chemotaxis_tutorial_addition01}
 \end{figure}
 
-
-Our next question is what happens as we change $k$, the growth rate of the ligand concentration. \autoref{fig:chemotaxis_tutorial_addition03} shows the results of multiple simulations in which we vary the growth parameter $k$ and plot the concentration of phosphorylated CheY over time. The larger the value of $k$, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.\\
+\autoref{fig:chemotaxis_tutorial_addition03} shows the results of multiple simulations in which we vary the growth parameter $k$ and plot only the concentration of phosphorylated CheY over time. The larger the value of $k$, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.\\
 
 \begin{figure}[h]
 \centering
@@ -624,10 +621,10 @@ Our next question is what happens as we change $k$, the growth rate of the ligan
 \label{fig:chemotaxis_tutorial_addition03}
 \end{figure}
 
-More importantly, \autoref{fig:chemotaxis_tutorial_addition03} further illustrates the \textit{robustness} of bacterial chemotaxis to the rate of growth in ligand concentration. Whether the growth of the attractant is slow or fast, methylation will always bring the cell back to the same equilibrium concentration of phosphorylated CheY, and therefore the same background tumbling frequency.
+More importantly, \autoref{fig:chemotaxis_tutorial_addition03} further illustrates the \textit{robustness} of bacterial chemotaxis to the rate of growth in ligand concentration. Whether the growth of the attractant is slow or fast, methylation will always bring the cell back to the same equilibrium concentration of phosphorylated CheY and therefore the same background tumbling frequency.\\
 
 \begin{qbox}[%
-If $k$ is negative, how do you think that decreasing the value of $k$ will affect the concentration of phosphorylated CheY over time?
+We can simulate a bacterium traveling \textit{down} an attractant gradient if $k$, the parameter representing the steepness of the gradient, is negative. In this case, what do you think the plot of phosphorylated CheY over time will look like?
 ]\end{qbox}
 
 %\FloatBarrier
@@ -672,13 +669,11 @@ If $k$ is negative, how do you think that decreasing the value of $k$ will affec
 \phantomsection
 \subsection{From changing tumbling frequencies to an exploration algorithm}
 
-We hope that you have gained an appreciation for the elegant mechanism of bacterial chemotaxis, as well as the power of rule-based modeling and the Gillespie algorithm for simulating a complex biochemical system with a huge number of reactions without the need to keep track of individual particles.
+We hope that our work in this chapter has conveyed the elegance of bacterial chemotaxis, as well as the power of rule-based modeling and the Gillespie algorithm for simulating a complex biochemical system that may include a huge number of reactions.
 
-And yet we have missed an important part of the story. \textit{E. coli} has evolved to ensure that if it detects a relative increase in concentration (i.e., an attractant gradient), then it can reduce its tumbling frequency in response. But what we have not explored is \textit{why} this change in the bacterium's tumbling frequency would help it find food in the first place.
+And yet we are missing an important part of the story. \textit{E. coli} has evolved to ensure that if it detects a relative increase in concentration (i.e., an attractant gradient), then it can reduce its tumbling frequency in response. But we have not explored \textit{why} changing its tumbling frequency would help a bacterium find food in the first place. After all, according to the run and tumble model, the direction that a bacterium is moving at any point in time is random!
 
-After all, according to the run and tumble model, the direction that a bacterium is moving at any point in time is random! So why would a decrease in tumbling frequency help \textit{E. coli} move toward an attractant?
-
-This question is biologically deep and has no immediate intuitive answer. However, in this chapter's conclusion, we will build a model to explain why \textit{E. coli}'s run and tumble walk algorithm is an extremely clever way of locating resources in an unfamiliar land.\\
+This quandary does not have an obvious intuitive answer. In this chapter's conclusion, we will build a model to explain why \textit{E. coli}'s randomized run and tumble walk algorithm is such a clever way of locating resources in an unfamiliar land.\\
 
 
 \FloatBarrier
@@ -690,15 +685,13 @@ This question is biologically deep and has no immediate intuitive answer. Howeve
 \phantomsection
 \subsection{Two randomized exploration strategies}
 
-In \autoref{chapter:turing}, we saw that a particle taking a collection of \textit{n} unit steps in random directions will wind up on average $\sqrt{n}$ distance away from its starting position. We now would like to compare this random walk against a modified version of the walk that emulates the behavior of \textit{E. coli} that we have learned about in this chapter.
+In \autoref{chapter:turing}, we saw that a particle taking a collection of \textit{n} unit steps in random directions will wind up on average $\sqrt{n}$ units away from its starting position. We would like to compare such a random walk against a modified random walk that emulates the behavior of \textit{E. coli} by changing the length of a step based on the relative change in background attractant concentration.
 
-Specifically, we will place a particle against a background containing a variable concentration of attractant. The bacterium will reorient itself randomly, but it will be able to change its tumbling frequency based on the relative concentration of attractant at its current location. Does this realistic exploration algorithm allow the bacterium to find attractant faster than a pure random walk strategy?
+We will represent a bacterium as a particle traveling in two-dimensional space. Units of distance will be measured in µm; recall from the introduction that a bacterium can cover 20 µm in a second during an uninterrupted run. The bacterium will start at the \textbf{origin} (0, 0), which we will establish to have a ligand concentration of 100 molecules/µm\textsuperscript{3}.
 
-We will represent a bacterium as a point in two-dimensional space. Units in our space will be measured in µm, so that moving from (0, 0) to (0, 20) is 20µm, a distance that we know from the introduction can be covered by the bacterium in 1 second during an uninterrupted run. The bacterium will start at the \textbf{origin} (0, 0), which we will establish to have a ligand concentration of 100 molecules/µm\textsuperscript{3}.
+We will use $L(x,y)$ to denote the ligand concentration at $(x, y)$; furthermore, we simulate an attractant gradient by ensuring that there is a point (called the \textbf{goal}) at which $L(x,y)$ is maximized. We will set the concentration at the goal equal to 10\textsuperscript{8} molecules/µm\textsuperscript{3}, and we will place the goal at $(\text{1,500}, \text{1,500})$, so that the bacterium must travel a significant distance to find the attractant.
 
-We will use $L(x,y)$ to denote the ligand concentration at ($x$, $y$); furthermore, we simulate an attractant gradient by ensuring that there is a point (called the \textbf{goal}) at which $L(x,y)$ is maximized. We will set the concentration at the goal equal to 10\textsuperscript{8} molecules/µm\textsuperscript{3}, and we will place the goal at $(\text{1,500}, \text{1,500})$, so that the bacterium must travel a significant distance to find the attractant.
-
-We would like the ligand concentration $L(x,y)$ to decrease exponentially the farther we travel from the goal. We therefore set $L(x,y)$ = $100 \cdot 10^{6 \cdot (1-d/D)}$, where $d$ is the distance from ($x$, $y$) to the goal, and $D$ is the distance from the origin to the goal, which in this case is $\text{1,500}\sqrt{2} \approx 2121$ µm.\\
+We would like the ligand concentration $L(x,y)$ to decrease exponentially the farther we travel from the goal. We therefore set $L(x,y)$ = $100 \cdot 10^{6 \cdot (1-d/D)}$, where $d$ is the distance from $(x, y)$ to the goal, and $D$ is the distance from the origin to the goal, which in this case is $\text{1,500}\sqrt{2} \approx 2121$ µm.\\
 
 \begin{qbox}[%
 How can we quantify how well a bacterium has done at finding the attractant?
