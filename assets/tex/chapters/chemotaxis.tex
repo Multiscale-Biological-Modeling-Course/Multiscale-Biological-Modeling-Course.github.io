@@ -36,10 +36,6 @@ In fact, Munroe's randomized algorithm for Lost Immortals is inspired by nature;
 
 Like other prokaryotes, \textit{E. coli} is tiny, with a rod-shaped body that is 2 µm long and 0.25 to 1 µm wide. In exploring a vast world with sparse resources, \textit{E. coli} finds itself in a situation comparable to the Munroe's immortals.
 
-%The video below shows a collection of \textit{E. coli} surrounding a sugar crystal. Think of this video the next time you leave a slice of cake out overnight on the kitchen counter!
-%
-%\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
-
 The movement of organisms like \textit{E. coli} in response to a chemical stimulus is called \textdef{chemotaxis}{chemotaxis}{the movement of an organism in response to a chemical stimulus}. \textit{E. coli} and other bacteria have evolved to move toward \textdefnogloss{attractants} like glucose and electron acceptors and move away from \textdefnogloss{repellents} like Ni\textsuperscript{2+} and Co\textsuperscript{2+}.
 
 In this chapter, we will delve into chemotaxis and ask a number of questions. How does a simple organism like \textit{E. coli} sense an attractant or repellent in its environment? How does the bacterium change its internal state accordingly? How can we model the bacterium's response? And how does the bacterium's behavior translate into an ``algorithm'' that it uses to explore its environment?\\
@@ -593,24 +589,19 @@ Our model, which is built on real reaction rate parameters, provides compelling 
 
 Aren't bacteria magnificent?
 
-
 \FloatBarrier
 \phantomsection
 
-\section{Modeling a Bacterium's Response to an Attractant Gradient}
-\label{sec:gradient}
-
-\phantomsection
 \subsection{Traveling up an attractant gradient}
 
-We have simulated \textit{E. coli} adapting to a single sudden change in its environment, but life is about responding to continual change. Imagine a glucose cube in an aqueous solution. As the cube dissolves, a \textdefnogloss{gradient} will form, with a glucose concentration that decreases outward from the cube. How will the tumbling frequency of \textit{E. coli} change if the bacterium finds itself in an environment of an attractant gradient?  Will the tumbling frequency decrease continuously as well, or will the methylation pathways mentioned in the previous section cause more complicated behavior? And once the cell reaches a region of high attractant concentration, will its default tumbling frequency stabilize to the same steady state?
+We have simulated \textit{E. coli} adapting to a single sudden change in its environment, but life often depends on responding to continual change. Imagine a glucose cube in an aqueous solution. As the cube dissolves, a \textdefnogloss{gradient} will form, with a glucose concentration that decreases outward from the cube. How will the tumbling frequency of \textit{E. coli} change if the bacterium finds itself in an environment of an attractant gradient?  Will the tumbling frequency decrease continuously as well, or will we see more complicated behavior? And once the cell reaches a region of high attractant concentration, will its default tumbling frequency stabilize to the same steady state?
 
-In this section, we will modify our model by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of phosphorylated CheY changes. This model will simulate a bacterium traveling up an attractant gradient toward an attractant. Moreover, we will examine how the concentration of phosphorylated CheY changes as we change the gradient's ``steepness'', or the rate at which attractant ligand is increasing.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_gradient]
+We will modify our model by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of phosphorylated CheY changes. This model will simulate a bacterium traveling up an attractant gradient toward an attractant. Moreover, we will examine how the concentration of phosphorylated CheY changes as we change the gradient's ``steepness'', or the rate at which attractant ligand is increasing.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_gradient]
 
-\phantomsection
-\subsection{Steady state tumbling frequency is robust}
+%\phantomsection
+%\subsection{Steady state tumbling frequency is robust}
 
-Recall that we used the expression $[L]$ to denote the concentration of ligand $L$ and $l_0$ to denote the initial concentration of the ligand. To model a ligand concentration that is increasing exponentially, we will use the function $[L] = l_0 \cdot e^{k \cdot t}$, where $t$ is the time and $k$ is a parameter dictating exponential growth. The parameter $k$ represents the steepness of the gradient, since the higher the value of $k$, the faster the growth in the ligand concentration.
+To model a ligand concentration $[L]$ that is increasing exponentially, we will use the function $[L] = l_0 \cdot e^{k \cdot t}$, where $k$ is a constant dictating the rate of exponential growth, $l_0$ is the initial concentration, and $t$ is the time. The parameter $k$ represents the steepness of the gradient, since the higher the value of $k$, the faster the growth in the ligand concentration $[L]$.
 
 For example, \autoref{fig:chemotaxis_tutorial_addition01} shows the concentration over time of phosphorylated CheY (shown in blue) when $l_0 = 1000$ and $k = 0.1$. The concentration of phosphorylated CheY, and therefore the tumbling frequency, still decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (shown by the plateau in the red curve), the methylation of receptors causes the concentration of phosphorylated CheY to return to its equilibrium. In other words, for these values of $l_0$ and $k$, the outcome is similar to when we provided an instantaneous increase in ligand, although the cell takes longer to reach its minimum concentration of phosphorylated CheY because the attractant concentration is increasing gradually.\\
 
