@@ -129,7 +129,7 @@ If two proteins are very similar at the \textvar{i}-th alpha carbon, then for ev
 
 As a result, we think of Qres as a similarity metric ranging between 0 and 1, with low scores representing low similarity between two proteins at the \textvar{i}-th position, and higher scores representing high similarity at this position.
 
-We now will compute Qres for the SARS-CoV and SARS-CoV-2 spike proteins using the VMD plugin \href{https://bit.ly/3LwTYmp}{\textdefnogloss{Multiseq}}, a bioinformatics analysis environment. After determining Qres, we will visualize the individual locations where the two RBD regions differ. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_multiseq]
+We now will compute Qres for the SARS-CoV and SARS-CoV-2 spike proteins using the VMD plugin \href{https://bit.ly/3LwTYmp}{\textdefnogloss{Multiseq}}, a bioinformatics analysis environment. After determining Qres, we will visualize the individual locations where the two RBD regions differ. \tutorial[coronavirus/tutorial_multiseq]
 
 \FloatBarrier
 \phantomsection
@@ -179,7 +179,7 @@ In \autoref{sec:multiseq}, we identified a region between residues 476 and 485 o
 
 We know from our work in this course that a tiny change can produce a big difference in the high-level behavior of a finely tuned system. It may therefore be the case that subtle changes in the ability of SARS-CoV-2 to stick to the ACE2 enzyme can change the virus's infectiousness enough to greatly influence its spread through the human population.
 
-We will first use VMD to highlight the amino acids in the region of interest of the SARS-CoV-2 spike protein's structure. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_visualization]
+We will first use VMD to highlight the amino acids in the region of interest of the SARS-CoV-2 spike protein's structure. \tutorial[coronavirus/tutorial_visualization]
 
 \FloatBarrier
 \phantomsection
@@ -193,7 +193,7 @@ Shang et al. 2020 identified three sites showing significant conformational diff
 
 The first location is our region of interest from the previous section and is found on a loop in a region called the ACE2 binding ridge. This region is shown in \autoref{fig:Ridge}, in which SARS-CoV-2 is on left and SARS-CoV is on the right.
 
-Structural differences are challenging to show with a 2-D image, and we encourage you to use VMD to view the 3-D representation of the protein. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_multiseq]\\
+Structural differences are challenging to show with a 2-D image, and we encourage you to use VMD to view the 3-D representation of the protein. \tutorial[coronavirus/tutorial_multiseq]\\
 
 \begin{qbox}[%
 	See if you can identify the major structural difference between the proteins in \autoref{fig:Ridge}. Hint: look at the yellow residue.
@@ -263,7 +263,7 @@ In part 1, we searched for the tertiary structure that best ``explains'' a prote
 
 To quantify whether two molecules bind well, we will borrow this idea and compute the potential energy of the complex formed by the viral spike protein and ACE2. If two molecules bind well, then the complex will have a very low potential energy. In turn, if we compare the SARS-CoV-2 RBD-ACE2 complex against the SARS-CoV RBD-ACE2 complex, and we find that the potential energy of the former is significantly smaller, then we can conclude that it is more stable, providing evidence for the increased infectiousness of SARS-CoV-2.
 
-We will compute the energy of the bound spike protein-ACE2 complex for the two viruses and see how the three regions that we identified in \autoref{sec:structural_differences} contribute to the total energy of the complex. To do so, we will employ \href{https://bit.ly/3uNv9gf}{\textdefnogloss{NAMD}}, a program that was designed for high-performance large system simulations of biological molecules and is most commonly used with VMD via a plugin called \href{https://bit.ly/367IOUZ}{\textdefnogloss{NAMD Energy}}. This plugin will allow us to isolate a specific region to evaluate how much this local region contributes to the overall energy of the complex. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_NAMD]
+We will compute the energy of the bound spike protein-ACE2 complex for the two viruses and see how the three regions that we identified in \autoref{sec:structural_differences} contribute to the total energy of the complex. To do so, we will employ \href{https://bit.ly/3uNv9gf}{\textdefnogloss{NAMD}}, a program that was designed for high-performance large system simulations of biological molecules and is most commonly used with VMD via a plugin called \href{https://bit.ly/367IOUZ}{\textdefnogloss{NAMD Energy}}. This plugin will allow us to isolate a specific region to evaluate how much this local region contributes to the overall energy of the complex. \tutorial[coronavirus/tutorial_NAMD]
 
 \FloatBarrier
 \phantomsection
@@ -453,7 +453,7 @@ We should consult more than just a single mode when completing a full analysis o
 	\label{fig:hemoglobin_mode_shape_avg}
 \end{figure}
 
-We are now ready to apply what we have learned in this section and use ProDy to build a GNM for the SARS-CoV and SARS-CoV-2 spike proteins. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_GNM]
+We are now ready to apply what we have learned in this section and use ProDy to build a GNM for the SARS-CoV and SARS-CoV-2 spike proteins. \tutorial[coronavirus/tutorial_GNM]
 
 \FloatBarrier
 \phantomsection
@@ -519,7 +519,7 @@ We will not delve into the mathematical intricacies of ANM calculations, but we 
 
 After we produce an animation like the one in \autoref{fig:hemoglobin_anm_2}, we also should attempt to explain it biologically. Human hemoglobin exists in two states: the tense state (T), in which it is not bound to an oxygen molecule, and the relaxed state (R), in which it is oxygenated. Hemoglobin's mobility shown in the above animation corresponds to its ability to transition between these two states, in which salt-bridges and contacts can shift by up to seven angstroms. This significant molecular flexibility exemplifies why we need to study protein dynamics as well as structure.
 
-We will now apply ANM to the SARS-CoV and SARS-CoV-2 spike proteins. We will also use \href{http://prody.csb.pitt.edu/nmwiz/}{\textdefnogloss{NMWiz}}, which is short for ``normal mode wizard'', to perform ANM calculations and create an animation of the SARS-CoV-2 (chimeric) RBD and the SARS-CoV RBD. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_ANM]
+We will now apply ANM to the SARS-CoV and SARS-CoV-2 spike proteins. We will also use \href{http://prody.csb.pitt.edu/nmwiz/}{\textdefnogloss{NMWiz}}, which is short for ``normal mode wizard'', to perform ANM calculations and create an animation of the SARS-CoV-2 (chimeric) RBD and the SARS-CoV RBD. \tutorial[coronavirus/tutorial_ANM]
 
 \FloatBarrier
 \phantomsection
@@ -600,7 +600,7 @@ Recall from \autoref{sec:interaction_energy} that the greatest contribution of n
 \phantomsection
 \subsection{DynOmics Integrates GNM and ANM Analysis}
 
-Although we have separated our discussion of GNM and ANM, the DynOmics 1.0 server (\url{http://enm.pitt.edu/index.php}) is an effort to integrate these approaches on a user-friendly platform. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_DynOmics]
+Although we have separated our discussion of GNM and ANM, the DynOmics 1.0 server (\url{http://enm.pitt.edu/index.php}) is an effort to integrate these approaches on a user-friendly platform. \tutorial[coronavirus/tutorial_DynOmics]
 
 \FloatBarrier
 \phantomsection

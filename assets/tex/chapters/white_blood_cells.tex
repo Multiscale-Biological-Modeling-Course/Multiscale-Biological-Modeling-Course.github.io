@@ -123,7 +123,7 @@ We were unable to distinguish between the image background and the WBC nucleus u
 
 It would seem that we should work with the binarized image based on the red threshold, which contains the clearest image of the nucleus among the three binarized images. However, note that each threshold was successful in eliminating some of the non-nuclear parts of the image. For example, consider the white blob in the top left of the binarized image based on the red threshold in \autoref{fig:neutrophil_binarized_other_colors} (right).
 
-This insight gives us an idea: if each of the three images is successful at excluding some part of the image, then let us produce a fourth image such that a pixel is white if it is white in all three binarized images.\tutorial[https://biologicalmodeling.org/white_blood_cells/tutorial_nuclear_segmentation]
+This insight gives us an idea: if each of the three images is successful at excluding some part of the image, then let us produce a fourth image such that a pixel is white if it is white in all three binarized images.\tutorial[white_blood_cells/tutorial_nuclear_segmentation]
 
 \FloatBarrier
 \phantomsection
@@ -588,13 +588,13 @@ PCA may be old, but it is one of the fundamental tools of statistical analysis i
 %\label{fig:genotyping_continents}
 %\end{figure}
 %
-%Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to use CellOrganizer to build a shape space for our WBC images and apply PCA to this shape space to produce a lower-dimensional representation of the space that we can visualize.\tutorial[https://biologicalmodeling.org/white_blood_cells/tutorial_shape_space]
+%Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to use CellOrganizer to build a shape space for our WBC images and apply PCA to this shape space to produce a lower-dimensional representation of the space that we can visualize.\tutorial[white_blood_cells/tutorial_shape_space]
 
 \FloatBarrier
 \phantomsection
 \subsection{Visualizing the WBC shape space after PCA}
 
-\autoref{fig:cellorg_pca_graph} shows the shape space of WBC images, reduced to three dimensions by PCA, in which each image is represented by a point that is color-coded according to its cell family.\tutorial[https://biologicalmodeling.org/white_blood_cells/tutorial_shape_space]\\
+\autoref{fig:cellorg_pca_graph} shows the shape space of WBC images, reduced to three dimensions by PCA, in which each image is represented by a point that is color-coded according to its cell family.\tutorial[white_blood_cells/tutorial_shape_space]\\
 
 \begin{figure}[h]
 \centering
@@ -797,7 +797,7 @@ This simplification allows us to compute the recall, specificity, and precision 
 Compute the recall, specificity, and precision for each of the other two iris species using the confusion matrix in \autoref{fig:iris_confusion_matrix}.
 ]\end{qbox}
 
-Now that we understand more about how to quantify the performance of a classifier, we are ready to apply k-NN to our WBC shape space --- post-PCA of course! --- and assess its performance.\tutorial[https://biologicalmodeling.org/white_blood_cells/tutorial_image_classification]
+Now that we understand more about how to quantify the performance of a classifier, we are ready to apply k-NN to our WBC shape space --- post-PCA of course! --- and assess its performance.\tutorial[white_blood_cells/tutorial_image_classification]
 
 \FloatBarrier
 \phantomsection

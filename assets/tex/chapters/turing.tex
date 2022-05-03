@@ -35,7 +35,7 @@ You may feel like a single, coherent being, but you are in fact just a skin-cove
 
 We will model the movements of a cellular particle such as a protein by a \textdef{random walk}{random walk}{a model consisting of a sequence of steps in randomly chosen directions} in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction.
 
-If we animate the action of many independent particles following random walks, then although some particles hug the starting point and some wind up far away, most particles steadily drift outward. \autoref{fig:random_walk_multiple_particles} shows a simulation of multiple randomly walking particles that all begin their walk at the same point and that \textdef{diffuse}{diffusion}{the movement of particles due to random motion from an area of higher concentration to lower concentration as the particles spread out} throughout their environment.\tutorial[https://biologicalmodeling.org/prologue/tutorial-random-walk]
+If we animate the action of many independent particles following random walks, then although some particles hug the starting point and some wind up far away, most particles steadily drift outward. \autoref{fig:random_walk_multiple_particles} shows a simulation of multiple randomly walking particles that all begin their walk at the same point and that \textdef{diffuse}{diffusion}{the movement of particles due to random motion from an area of higher concentration to lower concentration as the particles spread out} throughout their environment.\tutorial[prologue/tutorial-random-walk]
 \\
 
 \begin{figure}[h]
@@ -133,7 +133,7 @@ What will happen as we increase or decrease \textvar{f} or \textvar{k}?
 \phantomsection
 \subsection{Changing reaction-diffusion parameters produces different emergent Turing patterns}
 
-We will initiate our reaction-diffusion system with a uniform concentration of \textvar{A} particles spread across the grid and a tightly packed collection of \textvar{B} particles in the center of the grid. As the \textvar{B} particles diffuse, what will we see?\tutorial[https://biologicalmodeling.org/prologue/turing-cellblender]
+We will initiate our reaction-diffusion system with a uniform concentration of \textvar{A} particles spread across the grid and a tightly packed collection of \textvar{B} particles in the center of the grid. As the \textvar{B} particles diffuse, what will we see?\tutorial[prologue/turing-cellblender]
 
 For many parameter values, our reaction-diffusion system is not very interesting. \autoref{fig:k=500000_f=1000} shows that if the kill rate is too high, then the \textvar{B} particles (colored red) will die out more quickly than they can be replenished by the reaction with \textvar{A} particles (colored green), and so only \textvar{A} particles will remain.
 
@@ -347,7 +347,7 @@ First, we will consolidate the information stored in a cell about the concentrat
 What should be the value of this ratio if a cell's concentration of both \textvar{A} and \textvar{B} are equal to zero?
 ]\end{qbox}
 
-Next, we color each cell according to its value of $[\textvar{B}]/([\textvar{A}] + [\textvar{B}])$ using a color spectrum like those shown in \autoref{fig:matplotlib_colormap}. We will use the ``Spectral'' color map, meaning that if a cell has a value close to 0 (relatively few predators), then it will be colored red, while if it has a value close to 1 (relatively many predators), then it will be colored dark blue. When we color each cell over many time steps, we can animate the automaton to see how it changes over time.\tutorial[https://biologicalmodeling.org/prologue/tutorial-diffusion]\\
+Next, we color each cell according to its value of $[\textvar{B}]/([\textvar{A}] + [\textvar{B}])$ using a color spectrum like those shown in \autoref{fig:matplotlib_colormap}. We will use the ``Spectral'' color map, meaning that if a cell has a value close to 0 (relatively few predators), then it will be colored red, while if it has a value close to 1 (relatively many predators), then it will be colored dark blue. When we color each cell over many time steps, we can animate the automaton to see how it changes over time.\tutorial[prologue/tutorial-diffusion]\\
 
 \begin{figure}[h]
 \centering
@@ -413,7 +413,7 @@ As the result, we update the concentrations of \textvar{A} and \textvar{B} to th
 [B]_{\text{new}} & = 0.5 + 0.01 - 0.2 + 0.175 = 0.485
 \end{align*}
 
-We are now ready to implement the Gray-Scott model. The question is: even though we have built a coarser-grained simulation than the previous section, will we still see Turing patterns?\tutorial[https://biologicalmodeling.org/prologue/gs-jupyter]
+We are now ready to implement the Gray-Scott model. The question is: even though we have built a coarser-grained simulation than the previous section, will we still see Turing patterns?\tutorial[prologue/gs-jupyter]
 
 \FloatBarrier
 \phantomsection

@@ -177,7 +177,7 @@ The full \textit{E. coli} transcription factor network contains thousands of gen
 
 Instead, we will focus on the network comprising only those \textit{E. coli} transcription factors that regulate each other. This network has 197 nodes and 477 edges, and so we will begin by forming a random network with $\textvar{n} = 197$ nodes.
 
-We then select \textvar{p} to ensure that our random network will on average have 477 edges. To do so, we note that there are $\textvar{n}^2$ pairs of nodes that could have an edge connecting them (\textvar{n} choices for the starting node and \textvar{n} for the ending node). If we were to set \textvar{p} equal to $1/n^2$, then we would expect on average only to see a single edge in the random network. We therefore scale this value by 477 and set \textvar{p} equal to $477/n^2 \approx 0.0123$ so that we will see, on average, 477 edges in our random network.\tutorial[https://biologicalmodeling.org/motifs/tutorial_loops]
+We then select \textvar{p} to ensure that our random network will on average have 477 edges. To do so, we note that there are $\textvar{n}^2$ pairs of nodes that could have an edge connecting them (\textvar{n} choices for the starting node and \textvar{n} for the ending node). If we were to set \textvar{p} equal to $1/n^2$, then we would expect on average only to see a single edge in the random network. We therefore scale this value by 477 and set \textvar{p} equal to $477/n^2 \approx 0.0123$ so that we will see, on average, 477 edges in our random network.\tutorial[motifs/tutorial_loops]
 
 \FloatBarrier
 \phantomsection
@@ -227,7 +227,7 @@ What chemical reaction could be used to simulate the negative autoregulation of 
 
 The model of the second cell will inherit all of the reactions from the first cell (with the same reaction rates) while adding negative autoregulation of \textvar{Y}. We will model negative autoregulation with the reaction $2\textvar{Y} \rightarrow \textvar{Y}$. That is, when two \textvar{Y} particles collide, there is some probability related to the reaction rate that one of the particles serves to remove the other, which mimics the process of a transcription factor turning off another copy of itself during negative autoregulation.
 
-To recap, the simulations of both cells will include an initial concentration of \textvar{X} at steady state, diffusion of \textvar{X} and \textvar{Y}, removal of \textvar{Y}, and the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$. The second simulation, which includes negative autoregulation of \textvar{Y}, will add the reaction $2\textvar{Y} \rightarrow \textvar{Y}$. \tutorial[https://biologicalmodeling.org/motifs/tutorial_nar]\\
+To recap, the simulations of both cells will include an initial concentration of \textvar{X} at steady state, diffusion of \textvar{X} and \textvar{Y}, removal of \textvar{Y}, and the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$. The second simulation, which includes negative autoregulation of \textvar{Y}, will add the reaction $2\textvar{Y} \rightarrow \textvar{Y}$. \tutorial[motifs/tutorial_nar]\\
 
 \begin{note}[%
 Although we are using a particle-based model to mimic regulation, it is not attempting to replicate specific chemical reactions. In reality, gene regulation is a complicated chemical process that involves a great deal of molecular machinery. The purpose of the model is to strip away what is not relevant and retain the essence of what is being modeled.
@@ -253,7 +253,7 @@ The solution to this quandary is that the model we built was not a fair comparis
 How can we change the parameters of our models to obtain a mathematically controlled comparison of the two simulated cells?
 ]\end{qbox}
 
-We should keep a number of parameters constant across the two simulations because they are unrelated to regulation: the diffusion rates of \textvar{X} and \textvar{Y}, the number of initial particles \textvar{X} and \textvar{Y}, and the degradation rate of \textvar{Y}. With these parameters fixed, the only way that the final steady state concentration of \textvar{Y} can be the same in the two simulations is if we \textit{increase} the rate at which the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ takes place in the simulation of the second cell.\tutorial[https://biologicalmodeling.org/motifs/tutorial_nar_mathematically_controlled]
+We should keep a number of parameters constant across the two simulations because they are unrelated to regulation: the diffusion rates of \textvar{X} and \textvar{Y}, the number of initial particles \textvar{X} and \textvar{Y}, and the degradation rate of \textvar{Y}. With these parameters fixed, the only way that the final steady state concentration of \textvar{Y} can be the same in the two simulations is if we \textit{increase} the rate at which the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ takes place in the simulation of the second cell.\tutorial[motifs/tutorial_nar_mathematically_controlled]
 
 \autoref{fig:nar_equal_chart} plots the concentration of \textvar{Y} particles for the two simulated cells after ensuring a mathematically controlled comparison, in which the rate of the $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ reaction has been increased in the second cell. This figure shows that the two simulated cells now have approximately the same steady state concentration of \textvar{Y}. However, the second cell reaches this concentration faster; that is, its \textdef{response time}{response time}{the time required for a biological system to respond to a stimulus (e.g., reaching a steady state concentration of a specific particle)} to the external stimulus causing an increase in the production of \textvar{Y} is shorter.
 
@@ -312,7 +312,7 @@ As we did for negative autoregulation, we will simulate two cells and examine th
 
 The second cell will include both of these reactions in addition to the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$ to model the activation of \textvar{Y} by \textvar{X}, along with the new reaction $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ to model the repression of \textvar{Z} by \textvar{Y}. Because \textvar{Y} and \textvar{Z} are being produced from a reaction, we will also have degradation reactions for \textvar{Y} and \textvar{Z}. For the sake of fairness, we will use the same kill rates for both \textvar{Y} and \textvar{Z}.
 
-Furthermore, to obtain a mathematically controlled comparison, the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Z}$ should have a higher rate in the second simulation modeling the FFL. If we do not raise the rate of this reaction, then the repression of \textvar{Z} by \textvar{Y} will cause the steady state concentration of \textvar{Z} to be lower in the second simulation.\tutorial[https://biologicalmodeling.org/motifs/tutorial_feed]
+Furthermore, to obtain a mathematically controlled comparison, the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Z}$ should have a higher rate in the second simulation modeling the FFL. If we do not raise the rate of this reaction, then the repression of \textvar{Z} by \textvar{Y} will cause the steady state concentration of \textvar{Z} to be lower in the second simulation.\tutorial[motifs/tutorial_feed]
 
 \autoref{fig:ffl_chart} shows a plot visualizing the concentration of \textvar{Z} across the two simulations. As with negative autoregulation, the type-1 incoherent FFL allows the cell to ramp up production of a gene \textvar{Z} much faster than it would under simple regulation.\\
 
@@ -375,7 +375,7 @@ To build a reaction-diffusion model accompanying the repressilator, we start wit
 
 Furthermore, we assume that all three particles are produced as the result of an activation process by some other transcription factor(s), which we assume happens at the same rate. We will use a single \textdefnogloss{hidden particle} \textvar{I} that serves to activate the three visible particles via the three reactions $\textvar{I} \rightarrow \textvar{I} + \textvar{X}$, $\textvar{I} \rightarrow \textvar{I} + \textvar{Y}$, and $\textvar{I} \rightarrow \textvar{I} + \textvar{Z}$, all taking place at the same rate.
 
-When discussing the feed-forward loop, we saw that we can use the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ to model the repression of \textvar{Y} by \textvar{X}. To complete the repressilator model, we will supplement this reaction with the two reactions $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ and $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$, with all three repression reactions occurring at the same rate.\tutorial[https://biologicalmodeling.org/motifs/tutorial_oscillators]
+When discussing the feed-forward loop, we saw that we can use the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ to model the repression of \textvar{Y} by \textvar{X}. To complete the repressilator model, we will supplement this reaction with the two reactions $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ and $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$, with all three repression reactions occurring at the same rate.\tutorial[motifs/tutorial_oscillators]
 
 \FloatBarrier
 \phantomsection
@@ -440,7 +440,7 @@ For example, say that we are modeling a degradation reaction. If we start with a
 
 As for a repression reaction like $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$, we can update the concentration of \textvar{Y} particles by subtracting some factor \textit{r} times the current concentrations of \textvar{X} and \textvar{Y} particles.
 
-We will further discuss the technical details behind a well-mixed reaction-diffusion model in \autoref{chapter:chemotaxis}. In the meantime, we would like to see what happens when we make a major disturbance to the concentration of one of the particles in the well-mixed model. Do the particle concentrations resume their oscillations?\tutorial[https://biologicalmodeling.org/motifs/tutorial_perturb]
+We will further discuss the technical details behind a well-mixed reaction-diffusion model in \autoref{chapter:chemotaxis}. In the meantime, we would like to see what happens when we make a major disturbance to the concentration of one of the particles in the well-mixed model. Do the particle concentrations resume their oscillations?\tutorial[motifs/tutorial_perturb]
 
 \FloatBarrier
 \phantomsection

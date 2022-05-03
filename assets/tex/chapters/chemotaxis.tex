@@ -380,7 +380,7 @@ Earlier in this chapter, we showed an example in which a system with 10,000 free
 [T] & = \text{2,207 molecules}/\text{µm}^3\,.
 \end{align*}
 
-\autoref{fig:chemotaxis_tutorial4_ssa} demonstrates that when running the Gillespie algorithm with the same initial molecules and reaction rates, the system converges to the values shown above. Furthermore, we not only obtain the steady state concentrations, but we also observe that the system reaches steady state in a fraction of a tenth of a second.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial\_lr]\\
+\autoref{fig:chemotaxis_tutorial4_ssa} demonstrates that when running the Gillespie algorithm with the same initial molecules and reaction rates, the system converges to the values shown above. Furthermore, we not only obtain the steady state concentrations, but we also observe that the system reaches steady state in a fraction of a tenth of a second.\tutorial[chemotaxis/tutorial\_lr]\\
 
 \begin{figure}[h]
 \centering
@@ -464,7 +464,7 @@ First, we explain the left side of this rule, \texttt{L(t) + T(l)}. By specifyin
 
 As for the right side of the rule, we will have \texttt{L(t!1).T(l!1)}, which indicates the formation of the complex. In the BioNetGen language, \texttt{!} indicates formation of a bond, and a unique character specifies the possible location of this bond. In our case, we use the character \texttt{1}, so that the bond is represented by \texttt{!1}. The symbol \texttt{.} is used to indicate that the ligand and receptor molecule are joined into a complex. This single rule does not specify anything regarding phosphorylation and can therefore include both phosphorylated and unphosphorylated receptor complexes. 
 
-We should also represent the phosphorylation of the MCP complex, which can occur at different rates depending on whether the MCP is bound, necessitating two reactions. We will also represent the phosphorylation and dephosphorylation of CheY; the latter is facilitated by a CheZ molecule. The rules that we use for these additional reactions are specified below; we purposefully do not delve into explaining each aspect of these rules, asking that you appreciate their complexity, and we encourage you to explore our website for a further explanation of BioNetGen's \textdef{rule-based}{rule-based modeling}{an approach to modeling that uses a collection of ``rules'' to indirectly specify the model, often as a way of specifying an enormous number of possible reactions} language.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_phos]\\
+We should also represent the phosphorylation of the MCP complex, which can occur at different rates depending on whether the MCP is bound, necessitating two reactions. We will also represent the phosphorylation and dephosphorylation of CheY; the latter is facilitated by a CheZ molecule. The rules that we use for these additional reactions are specified below; we purposefully do not delve into explaining each aspect of these rules, asking that you appreciate their complexity, and we encourage you to explore our website for a further explanation of BioNetGen's \textdef{rule-based}{rule-based modeling}{an approach to modeling that uses a collection of ``rules'' to indirectly specify the model, often as a way of specifying an enormous number of possible reactions} language.\tutorial[chemotaxis/tutorial_phos]\\
 
 \begin{BioNetGen}
 FreeTP:  T(l,Phos~U) -> T(l,Phos~P) k_T_phos
@@ -561,7 +561,7 @@ A major benefit of using a rule-based modeling language such as the one develope
 LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 \end{BioNetGen}
 
-We will not bog down the text with a full specification of all the rules needed to add methylation to our model while avoiding combinatorial explosion. To see these details, please follow our tutorial online.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_adaptation]
+We will not bog down the text with a full specification of all the rules needed to add methylation to our model while avoiding combinatorial explosion. To see these details, please follow our tutorial online.\tutorial[chemotaxis/tutorial_adaptation]
 
 \FloatBarrier
 \phantomsection
@@ -594,7 +594,7 @@ Aren't bacteria magnificent?
 
 We have simulated \textit{E. coli} adapting to a single sudden change in its environment, but life often depends on responding to continual change. Imagine a glucose cube in an aqueous solution. As the cube dissolves, a \textdefnogloss{gradient} will form, with a glucose concentration that decreases outward from the cube. How will the tumbling frequency of \textit{E. coli} change if the bacterium finds itself in an environment of an attractant gradient?  Will the tumbling frequency decrease continuously as well, or will we see more complicated behavior? And once the cell reaches a region of high attractant concentration, will its default tumbling frequency stabilize to the same steady state?
 
-We will modify our model by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of phosphorylated CheY changes. This model will simulate a bacterium traveling up an attractant gradient toward an attractant. Moreover, we will examine how the concentration of phosphorylated CheY changes as we change the gradient's ``steepness'', or the rate at which attractant ligand is increasing.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_gradient]
+We will modify our model by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of phosphorylated CheY changes. This model will simulate a bacterium traveling up an attractant gradient toward an attractant. Moreover, we will examine how the concentration of phosphorylated CheY changes as we change the gradient's ``steepness'', or the rate at which attractant ligand is increasing.\tutorial[chemotaxis/tutorial_gradient]
 
 %\phantomsection
 %\subsection{Steady state tumbling frequency is robust}
@@ -669,7 +669,7 @@ To model a particle following an ``unintelligent'' random walk strategy, we firs
 
 We then select a random duration to run and let the bacterium run in that direction for the specified amount of time.  The duration of each run follows an exponential distribution with mean equal to the experimentally verified value of 1 second.
 
-We then iterate the two steps of tumbling and running until the total time allocated for the simulation has elapsed.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_purerandom]
+We then iterate the two steps of tumbling and running until the total time allocated for the simulation has elapsed.\tutorial[chemotaxis/tutorial_purerandom]
 
 \FloatBarrier
 \phantomsection
@@ -699,7 +699,7 @@ $\min\left(\max(t_0 \cdot (1 + 10 \cdot \Delta [L]), c), 4 \cdot t_0\right)$\,,
 What is the mean run duration when $\Delta\text{[}L\text{]}$ is equal to zero? Is this what we would hope?
 ]\end{qbox}
 
-As with the first strategy, our simulated cell will alternate between tumbling and running in a random direction until the total time devoted to the simulation has elapsed. The \textit{only} difference in the second strategy is that we will measure the percentage change in concentration $\Delta [L]$ between a cell's current point and its previous point every $t_{\text{response}}$ seconds. After determining a mean run time according to the expression above, we will sample a random number $p$ from an exponential distribution with this mean run time, and the cell will tumble after $p$ seconds if $p$ is smaller than $t_{\text{response}}$.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_walk]
+As with the first strategy, our simulated cell will alternate between tumbling and running in a random direction until the total time devoted to the simulation has elapsed. The \textit{only} difference in the second strategy is that we will measure the percentage change in concentration $\Delta [L]$ between a cell's current point and its previous point every $t_{\text{response}}$ seconds. After determining a mean run time according to the expression above, we will sample a random number $p$ from an exponential distribution with this mean run time, and the cell will tumble after $p$ seconds if $p$ is smaller than $t_{\text{response}}$.\tutorial[chemotaxis/tutorial_walk]
 
 \FloatBarrier
 \phantomsection
@@ -735,7 +735,7 @@ The answer to this quandary is that the attractant detection provides a ``rubber
 
 A very small change to a simple, unsuccessful randomized algorithm can produce an elegant approach for exploring an unknown environment. But we left one question unanswered. Why is it that a default tumbling frequency of one tumble per second appears to be stable across a wide range of bacteria?
 
-To address this question, we will see how changing $t_0$, the default time for a run step, affects the ability of a simulated bacterium following strategy 2 to locate the goal.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_tumbling_frequencies]
+To address this question, we will see how changing $t_0$, the default time for a run step, affects the ability of a simulated bacterium following strategy 2 to locate the goal.\tutorial[chemotaxis/tutorial_tumbling_frequencies]
 
 
 \FloatBarrier

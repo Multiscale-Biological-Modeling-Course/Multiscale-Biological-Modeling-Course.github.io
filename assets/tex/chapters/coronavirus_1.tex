@@ -379,7 +379,7 @@ Second, every time we reach a local minimum, we could allow ourselves to change 
 
 To run an \textit{ab initio} structure prediction algorithm on a real protein, we will use a software resource called \href{https://zhanglab.ccmb.med.umich.edu/QUARK/}{QUARK}. QUARK is built upon the ideas discussed in the previous section, with some added features. For example, its algorithm applies a combination of \textit{multiple} scoring functions to look for the lowest energy conformation across all of these functions.
 
-Despite the sophistication of software like QUARK, Levinthal's paradox means that the search space of all possible structures for a protein is so large that accurately predicting large protein structures with \textit{ab initio} modeling remains very difficult, and QUARK limits us to proteins with at most 200 amino acids. Since the SARS-CoV-2 spike protein contains 1,281 amino acids, we will instead apply this software to the shorter human hemoglobin subunit alpha. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_ab_initio]
+Despite the sophistication of software like QUARK, Levinthal's paradox means that the search space of all possible structures for a protein is so large that accurately predicting large protein structures with \textit{ab initio} modeling remains very difficult, and QUARK limits us to proteins with at most 200 amino acids. Since the SARS-CoV-2 spike protein contains 1,281 amino acids, we will instead apply this software to the shorter human hemoglobin subunit alpha. \tutorial[coronavirus/tutorial_ab_initio]
 
 \FloatBarrier
 \phantomsection
@@ -436,7 +436,7 @@ The phenomenon of conserved and variable regions even occurs within individual g
 
 Some homology modeling algorithms account for variable and conserved regions by assuming that very conserved regions in the two genes correspond to essentially identical structures in the proteins. That is, the structure of our protein of interest in these regions will be the same as those of the template protein. We can then use a \textdefnogloss{fragment library}, a catalog of known substructures from many proteins, to fill in the structure of non-conserved regions based on structures of fragments whose sequence is similar to these regions. This approach is called \textdef{fragment assembly}{fragment assembly}{the process of using a library of known substructures from many proteins to fill in the structure of non-conserved regions when predicting a protein's structure}.
 
-We will model the SARS-CoV-2 spike protein using homology modeling software from three publicly available servers (SWISS-MODEL, Robetta, and GalaxyWEB), all of which apply a variant of fragment assembly. If the results are similar, then we have faith in the \textit{robustness} of our predictions to using different approaches. Furthermore, comparing the results of multiple different approaches may give us more insights into structure prediction. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_homology]
+We will model the SARS-CoV-2 spike protein using homology modeling software from three publicly available servers (SWISS-MODEL, Robetta, and GalaxyWEB), all of which apply a variant of fragment assembly. If the results are similar, then we have faith in the \textit{robustness} of our predictions to using different approaches. Furthermore, comparing the results of multiple different approaches may give us more insights into structure prediction. \tutorial[coronavirus/tutorial_homology]
 
 \FloatBarrier
 \phantomsection
@@ -653,7 +653,7 @@ To address this shortcoming, biologists will often align the sequences of two pr
 
 In short, if the RMSD of two proteins is \textit{large}, then we should be wary of concluding that the proteins are very different, and we may need to combine RMSD with other methods of structure comparison. But if the RMSD is \textit{small} (e.g., just a few angstroms), then we can have confidence that the proteins are indeed similar.
 
-We are now ready to apply the Kabsch algorithm to compare the structures that we predicted for human hemoglobin subunit alpha and the SARS-CoV-2 spike protein against their experimentally validated structures. \tutorial[https://biologicalmodeling.org/coronavirus/tutorial_rmsd]
+We are now ready to apply the Kabsch algorithm to compare the structures that we predicted for human hemoglobin subunit alpha and the SARS-CoV-2 spike protein against their experimentally validated structures. \tutorial[coronavirus/tutorial_rmsd]
 
 \FloatBarrier
 \phantomsection
