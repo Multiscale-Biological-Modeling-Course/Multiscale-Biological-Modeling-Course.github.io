@@ -607,17 +607,17 @@ To model a ligand concentration $[L]$ that is increasing exponentially, we will 
 \centering
 \mySfFamily
 \includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_addition01.png}
-\caption{Plots of relevant molecule concentrations in our model (in number of molecules in the cell) over time (in seconds) when the concentration of ligand grows exponentially with $\textvar{l}_\text{0} = \text{1000}$ and $\textvar{k} = \text{0.1}$. The concentration of bound ligand (shown in red) quickly hits saturation, which causes a minimum in phosphorylated CheY (and therefore a low tumbling frequency). To respond, the cell increases the methylation of receptors, which boosts the concentration of phosphorylated CheY back to equilibrium.}
+\caption{Plots of molecular concentrations over time (in seconds) when the concentration of ligand grows exponentially with $\textvar{l}_\text{0} = \text{1000}$ and $\textvar{k} = \text{0.1}$. The concentration of bound ligand (red) quickly hits saturation, which causes a minimum in phosphorylated CheY (and therefore a low tumbling frequency). In response, the cell increases the methylation of receptors, which increases the concentration of phosphorylated CheY (purple) back to equilibrium.}
 \label{fig:chemotaxis_tutorial_addition01}
 \end{figure}
 
-\autoref{fig:chemotaxis_tutorial_addition03} shows the results of multiple simulations in which we vary the growth parameter $k$ and plot only the concentration of phosphorylated CheY over time. The larger the value of $k$, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.\\
+\autoref{fig:chemotaxis_tutorial_addition03} shows the results of multiple simulations in which we vary the growth parameter $k$ and plot only the concentration of phosphorylated CheY over time. The larger the value of $k$, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_addition03.png}
-\caption{Plots of phosphorylated CheY for different growth rates \textvar{k} of the concentration of ligand. The larger the value of \textvar{k}, the steeper the initial drop as the concentration of bound ligand becomes saturated, and the faster the concentration of phosphorylated CheY returns to equilibrium.}
+\includegraphics[width = 0.8\textwidth]{../images/chemotaxis_tutorial_addition03.png}
+\caption{Plots of the concentration of phosphorylated CheY over time (in seconds) for different growth rates \textvar{k} of ligand concentration. The larger the value of \textvar{k}, the steeper the initial drop in the concentration of phosphorylated CheY, and the faster that methylation returns the concentration of phosphorylated CheY to equilibrium. The same equilibrium is obtained regardless of the value of \textvar{k}.}
 \label{fig:chemotaxis_tutorial_addition03}
 \end{figure}
 
@@ -626,44 +626,6 @@ More importantly, \autoref{fig:chemotaxis_tutorial_addition03} further illustrat
 \begin{qbox}[%
 We can simulate a bacterium traveling \textit{down} an attractant gradient if $k$, the parameter representing the steepness of the gradient, is negative. In this case, what do you think the plot of phosphorylated CheY over time will look like?
 ]\end{qbox}
-
-%\FloatBarrier
-%\phantomsection
-%\subsection{Reversing the attractant gradient}
-%
-%And what if a cell is moving away from an attractant, down a concentration gradient? We would hope that the cell would be able to \textit{increase} its tumbling frequency (i.e., increase the concentration of phosphorylated CheY), and then restore the background tumbling frequency by removing methylation.
-%
-%To simulate a decreasing gradient, we will model a cell in a high ligand concentration that is already at steady state, meaning that methylation is also elevated. In this case, the ligand concentration will \textit{decay} exponentially, meaning that the ligand concentration is still given by the equation $\text{[}L{]} = l_0 \cdot e^{k \cdot t}$, but $k$ is negative.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_removal]\\
-%
-%\begin{qbox}[%
-%If $k$ is negative, how do you think that decreasing the value of $k$ will affect the concentration of phosphorylated CheY over time?
-%]\end{qbox}
-%
-%
-%\FloatBarrier
-%\phantomsection
-%\subsection{Steady state tumbling frequency remains robust when traveling down an attractant gradient}
-%
-%\autoref{fig:chemotaxis_tutorial_removal01} plots the concentrations of molecules in our model as the concentration of attractant ligand decreases exponentially with $l_0$ equal to $10^7$ and $k$ equal to $-0.3$. As the ligand concentration decreases, the concentration of bound ligands plummet as bound ligands dissociate and there are not enough free ligands to replace the dissociating ones. In the absence of ligand-receptor binding, CheY is free to phosphorylate, causing a spike in phosphorylated CheY. Demethylation of receptors then causes the concentration of phosphorylated CheY to steadily return back to its equilibrium.\\
-%
-%\begin{figure}[h]
-%\centering
-%\mySfFamily
-%\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_removal01.png}
-%\caption{Molecular concentrations (in number of molecules in the cell) over time (in seconds) for a simulated bacterium traveling down an attractant gradient with $\textvar{l}_\text{0} = \text{10}^\text{7}$ and \textvar{k} equal to $-\text{0.3}$. Phosphorylated CheY follows the opposite pattern to traveling up an attractant gradient, with the concentration of phosphorylated CheY rising quickly only to slowly decrease to equilibrium due to demethylation.}
-%\label{fig:chemotaxis_tutorial_removal01}
-%\end{figure}
-%
-%
-%To be thorough, we should also test the robustness of our model to see whether the CheY concentration will return to the same steady state for a variety of values of $k$ when $k$ is negative. As in the case of an increasing gradient, \autoref{fig:chemotaxis_tutorial_removal02} shows that the more sudden the change in the concentration of attractant (i.e., the more negative the value of $k$), the sharper the spike. And yet regardless of the value of $k$, methylation does its work to bring the concentration back to the same steady state, which has been confirmed by experimental observations.\\
-%
-%\begin{figure}[h]
-%\centering
-%\mySfFamily
-%\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial_removal02.png}
-%\caption{Varying values of \textvar{k} in our exponential decrease in the concentration of attractant ligand produce the same equilibrium concentration of phosphorylated CheY. The smaller the value of \textvar{k}, the steeper the initial spike, and the faster the recovery to steady state.}
-%\label{fig:chemotaxis_tutorial_removal02}
-%\end{figure}
 
 \FloatBarrier
 \phantomsection
@@ -687,71 +649,68 @@ This quandary does not have an obvious intuitive answer. In this chapter's concl
 
 In \autoref{chapter:turing}, we saw that a particle taking a collection of \textit{n} unit steps in random directions will wind up on average $\sqrt{n}$ units away from its starting position. We would like to compare such a random walk against a modified random walk that emulates the behavior of \textit{E. coli} by changing the length of a step based on the relative change in background attractant concentration.
 
-We will represent a bacterium as a particle traveling in two-dimensional space. Units of distance will be measured in µm; recall from the introduction that a bacterium can cover 20 µm in a second during an uninterrupted run. The bacterium will start at the \textbf{origin} (0, 0), which we will establish to have a ligand concentration of 100 molecules/µm\textsuperscript{3}.
+We will represent a bacterium as a particle traveling in two-dimensional space. Units of distance will be measured in µm; recall from the introduction that a bacterium can cover 20 µm in a second during an uninterrupted run. The bacterium will start at the \textbf{origin} $(0, 0)$.
 
-We will use $L(x,y)$ to denote the ligand concentration at $(x, y)$; furthermore, we simulate an attractant gradient by ensuring that there is a point (called the \textbf{goal}) at which $L(x,y)$ is maximized. We will set the concentration at the goal equal to 10\textsuperscript{8} molecules/µm\textsuperscript{3}, and we will place the goal at $(\text{1,500}, \text{1,500})$, so that the bacterium must travel a significant distance to find the attractant.
+We will use $L(x,y)$ to denote the ligand concentration at $(x, y)$ and establish a point (called the \textbf{goal}) at which $L(x,y)$ is maximized. We will place the goal at $(\text{1,500}, \text{1,500})$, so that the bacterium must travel a significant distance from the origin to reach the goal.
 
-We would like the ligand concentration $L(x,y)$ to decrease exponentially the farther we travel from the goal. We therefore set $L(x,y)$ = $100 \cdot 10^{6 \cdot (1-d/D)}$, where $d$ is the distance from $(x, y)$ to the goal, and $D$ is the distance from the origin to the goal, which in this case is $\text{1,500}\sqrt{2} \approx 2121$ µm.\\
+We would like the ligand concentration $L(x,y)$ to decrease exponentially the farther we travel from the goal. We therefore set $L(x,y) = 100 \cdot 10^{6 \cdot (1-d/D)}$, where $d$ is the distance from $(x, y)$ to the goal, and $D$ is the distance from the origin to the goal, which in this case is $\text{1,500}\sqrt{2} \approx 2121$ µm. At the origin, the attractant concentration is equal to 100, and at the origin, the attractant concentration is equal to 100,000,000.  \\
 
 \begin{qbox}[%
 How can we quantify how well a bacterium has done at finding the attractant?
 ]\end{qbox}
 
-For each of our two strategies, we will simulate many random walks of a given bacterium throughout this space for a fixed time. (The total time needed by our simulation should be large enough to allow the bacterium to have enough time to reach the goal.) To compare the two strategies, we will then measure how far \textit{on average} a bacterium with each strategy is from the goal at the end of the simulation.
-
-We will now implement each of the two exploration strategies that we wish to model.\\
+We are comparing two different cellular behaviors, and so in the spirit of \autoref{chapter:motifs}, we will simulate many random walks of a particle following each of the two strategies, described in what follows. (The total time needed by our simulation should be large enough to allow the bacterium to have enough time to reach the goal.) For each strategy, we will then measure how far \textit{on average} a bacterium with each strategy is from the goal at the end of the simulation.
 
 \FloatBarrier
 \phantomsection
 \subsection{Strategy 1: Standard random walk}
 
-To model our ``unintelligent'' random walk strategy, we first select a random direction of movement along with a duration of tumble. The degree of reorientation follows a uniform distribution from 0° to 360°. The duration of each tumble follows an exponential distribution with mean 0.1\textvar{s}. As the result of a tumble, the cell only changes its orientation, not its position.
+To model a particle following an ``unintelligent'' random walk strategy, we first select a random direction of movement along with a duration of tumble. The angle of reorientation is a random number selected uniformly between 0° and 360°. The duration of each tumble is a ``wait time'' of sorts and follows an exponential distribution with experimentally verified mean 0.1\textvar{s}.
 
-We then select a random duration to run and let the bacterium run in that direction for the specified amount of time. The duration of each run follows an exponential distribution with mean equal to the experimentally verified value of 1 second.
+We then select a random duration to run and let the bacterium run in that direction for the specified amount of time.  The duration of each run follows an exponential distribution with mean equal to the experimentally verified value of 1 second.
 
-We then iterate these two steps of tumbling and running until the total time has elapsed.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_purerandom]
+We then iterate the two steps of tumbling and running until the total time allocated for the simulation has elapsed.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_purerandom]
 
 \FloatBarrier
 \phantomsection
 \subsection{Strategy 2: Chemotactic random walk}
 
+In our second strategy, we mimic the real response of \textit{E. coli} to its environment based on what we have learned about chemotaxis throughout this chapter. The simulated bacterium will still follow a run and tumble model, but the duration of each run, which is a function of its tumbling frequency, will depend on the relative change in attractant concentration that it detects.
 
-In our second strategy, we mimic the real response of \textit{E. coli} to its environment based on what we have learned about chemotaxis throughout this chapter. The simulated bacterium will still follow a run and tumble model, but the duration of each run (which is a function of its tumbling frequency) will depend on the relative change in attractant concentration that it detects.
+To ensure a mathematically controlled comparison, we will use the same approach for sampling the duration of a tumble and the direction of a run as in the first strategy.
 
-To ensure a mathematically controlled comparison, we will use the same approach for determining the duration of a tumble and the resulting direction of a run as in the first strategy.
+We have seen, going back to \autoref{fig:chemotaxis_concentrations}, that it takes \textit{E. coli} about half a second to respond to a change in attractant concentration. We use $t_{\text{response}}$ to denote this ``response time''; to produce a reasonable model of chemotaxis, we will check the attractant concentration of a running particle at the particle's current location every $t_{\text{response}}$ seconds.
 
-Say that the ``response time'' of a bacterium, $t_{\text{response}}$, is the time in seconds that it takes for the bacterium to change its internal behavior in response to its change in environment. (We saw earlier in this chapter that the response time for \textit{E. coli} in chemotaxis is about half a second.) To model chemotaxis, we will check the attractant concentration at a simulated bacterium's current location every $t_{\text{response}}$ seconds.
+We will then measure the percentage difference between the attractant concentration $L(x,y)$ at the cell's current point and the attractant concentration at the cell's previous point, $t_{\text{response}}$ seconds in the past; we denote this difference as $\Delta[L]$. If $\Delta[L]$ is equal to zero, then the probability of a tumble in the next $t_{\text{response}}$ seconds should be the same as the likelihood of a tumble in the first strategy over the same time period. If $\Delta[L]$ is positive, then the probability of a tumble should be greater than it was in strategy 1; if $\Delta[L]$ is negative, then the probability of a tumble should be less than it was in strategy 1.
 
-We will then measure the percentage difference between the attractant concentration $L(x,y)$ at the cell's current point and the attractant concentration at the cell's previous point; we denote this difference as $\Delta[L]$. If $\Delta[L]$ is equal to zero, then the probability of a tumble in the next $t_{\text{response}}$ should be the same as the likelihood of a tumble in strategy 1 over the same time period. If $\Delta[L]$ is positive, then the probability of a tumble should be greater than it was in strategy 1; if $\Delta[L]$ is negative, then the probability of a tumble should be less than it was in strategy 1.
+To model the relationship between the likelihood of a tumble and the value of $\Delta[L]$, we will let $t_0$ denote the mean background run duration, which in the first strategy was equal to one second. We would like to use a simple formula for the expected run duration like $t_0 \cdot (1 + 10 \cdot \Delta[L])$.
 
-To model the change in likelihood of a tumble depending on the value of $\Delta[L]$, we will let $t_0$ denote the mean background run duration, which in the first strategy was equal to one second. We would like to use a simple formula for the expected run duration like $t_0 \cdot (1 + 10 \cdot \Delta[L])$.
+Unfortunately, there are two issues with this formula. First, if $\Delta[L]$ is less than -0.1, then the run duration could be negative. Second, if $\Delta[L]$ is large, then the bacterium will run for so long that it could reach the goal and run past it.
 
-Unfortunately, there are two issues with this formula. First, if $\Delta[L]$ is less than -0.1, then the run duration could be negative. Second, if $\Delta[L]$ is large, then the bacterium will run for so long that it may run past the goal.
-
-To prevent the run duration from being negative, we will first take the maximum of $t_0 \cdot (1 + 10 \cdot \Delta [L])$ and some small positive number (we will use 0.000001). To prevent the run length from being too large, we will then take the minimum of the resulting value and $4 \cdot t_0$. This resulting value,
+To fix the first issue, we will first take the maximum of $t_0 \cdot (1 + 10 \cdot \Delta [L])$ and some small positive number $c$ (we will use $c$ equal to 0.000001). As for the second issue, we will then take the minimum of this expression and $4 \cdot t_0$. This resulting value,
 
 \begin{center}
-$\min\left(\max(t_0 \cdot (1 + 10 \cdot \Delta [L]), 0.000001), 4 \cdot t_0\right)$\,,
+$\min\left(\max(t_0 \cdot (1 + 10 \cdot \Delta [L]), c), 4 \cdot t_0\right)$\,,
 \end{center}
 
-\noindent becomes the mean run length of a bacterium based on the recent relative change in concentration given its previous two points.\\
+\noindent becomes the mean run duration of a bacterium based on the recent relative change in concentration.\\
 
 \begin{qbox}[%
-What is the mean run duration when $\Delta\text{[}L\text{]}$ is equal to zero? Is this what we would hope? You may assume that $t_0$ is much larger than 0.000001.
+What is the mean run duration when $\Delta\text{[}L\text{]}$ is equal to zero? Is this what we would hope?
 ]\end{qbox}
 
-As with the first strategy, our simulated cell will alternate between tumbling and running until the total time devoted to the simulation has elapsed. The only difference is that we will measure the percentage change in concentration $\Delta [L]$ between a cell's current point and its previous point every $t_{\text{response}}$ seconds. After determining a mean run time $t \cdot \Delta [L]$, we will sample a random number $p$ from an exponential distribution with this mean run time, and the cell will tumble after $p$ seconds if $p$ is smaller than $t_{\text{response}}$.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_walk]
+As with the first strategy, our simulated cell will alternate between tumbling and running in a random direction until the total time devoted to the simulation has elapsed. The \textit{only} difference in the second strategy is that we will measure the percentage change in concentration $\Delta [L]$ between a cell's current point and its previous point every $t_{\text{response}}$ seconds. After determining a mean run time according to the expression above, we will sample a random number $p$ from an exponential distribution with this mean run time, and the cell will tumble after $p$ seconds if $p$ is smaller than $t_{\text{response}}$.\tutorial[https://biologicalmodeling.org/chemotaxis/tutorial_walk]
 
 \FloatBarrier
 \phantomsection
 \subsection{Comparing the effectiveness of our two random walk strategies}
 
-\autoref{fig:chemotaxis_traj_compare_uniform} visualizes the trajectories of three cells using each of the two strategies. After 500 seconds, cells using strategy 1 have traveled away from the origin, and some of them are found in locations with higher concentrations. The cells using strategy 2, however, quickly hone in on the goal and remain near it.
+\autoref{fig:chemotaxis_traj_compare_uniform} visualizes the trajectories of three cells using each of the two strategies. After 500 seconds, cells using strategy 1 have traveled away from the origin, and some of them are found in locations with higher concentrations. The cells using strategy 2, however, quickly hone in on the goal and remain near it.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.8\textwidth]{../images/chemotaxis_traj_compare_uniform.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_traj_compare_uniform.png}
 \caption{Three sample trajectories for each of the two exploration strategies. The standard random walk strategy is shown on the left, and the chemotactic random walk is shown on the right. Regions that are more heavily colored red correspond to higher concentrations of ligand, with a goal having maximum concentration at the point $(\text{1,500}, \text{1,500})$, which is highlighted using a blue square. A single cell's walk is colored from darker to lighter colors across the time frame of the trajectory.}
 \label{fig:chemotaxis_traj_compare_uniform}
 \end{figure}
@@ -762,7 +721,7 @@ Of course, we should be wary of such a small sample size. To confirm that what w
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_performance_compare_uniform.png}
+\includegraphics[width = 0.8\textwidth]{../images/chemotaxis_performance_compare_uniform.png}
 \caption{Average distance to the goal plotted over time for 500 cellular simulations following each of the two strategies; the standard random walk is shown in red, and the chemotactic random walk is shown in blue. The shaded area around each strategy's plot represents one standard deviation from the average.}
 \label{fig:chemotaxis_performance_compare_uniform}
 \end{figure}
@@ -822,7 +781,7 @@ When we set $t_0$ equal to 1.0, \autoref{fig:chemotaxis_traj_1.0_uniform} shows 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_performance_uniform.png}
+\includegraphics[width = 0.8\textwidth]{../images/chemotaxis_performance_uniform.png}
 \caption{Average distance to the goal over time for 500 cells. Each colored line indicates the average distance to the goal over time for a different value of $\textvar{t}_\text{0}$; the shaded area represents one standard deviation.}
 \label{fig:chemotaxis_performance_uniform}
 \end{figure}
@@ -846,6 +805,8 @@ Bacterial chemotaxis is probably the most studied biological system from the per
 \phantomsection
 \section{Exercises}
 Numerical method for generating from exponential distribution.
+
+Pointer to traveling down an attractant gradient.
 
 %\FloatBarrier
 %\phantomsection

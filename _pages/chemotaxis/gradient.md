@@ -32,7 +32,7 @@ Plots of relevant molecule concentrations in our model (in number of molecules i
 The following figure shows the results of multiple simulations in which we vary the growth parameter *k* and plot only the concentration of phosphorylated CheY over time. The larger the value of *k*, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial_addition03.png){: .align-center}](../assets/images/chemotaxis_tutorial_addition03.png)
-Plots of phosphorylated CheY for different growth rates *k* of the concentration of ligand. The larger the value of *k*, the steeper the initial drop as the concentration of bound ligand becomes saturated, and the faster the concentration of phosphorylated CheY returns to equilibrium.
+Plots of the concentration of phosphorylated CheY over time (in seconds) for different growth rates *k* of ligand concentration. The larger the value of *k*, the steeper the initial drop in the concentration of phosphorylated CheY, and the faster that methylation returns the concentration of phosphorylated CheY to equilibrium. The same equilibrium is obtained regardless of the value of *k*.
 {: style="font-size: medium;"}
 
 More importantly, the above figure further illustrates the *robustness* of bacterial chemotaxis to the rate of growth in ligand concentration. Whether the growth of the attractant is slow or fast, methylation will always bring the cell back to the same equilibrium concentration of phosphorylated CheY and therefore the same background tumbling frequency.
