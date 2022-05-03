@@ -25,7 +25,7 @@ We are comparing two different cellular behaviors, and so in the spirit of Modul
 
 ### Strategy 1: Standard random walk
 
-To model a particle following an "unintelligent" random walk strategy, we first select a random direction of movement along with a duration of tumble. The angle of reorientation is a random number selected uniformly between 0° and 360°. The duration of each tumble is a "wait time" of sorts and follows an exponential distribution with experimentally verified mean 0.1s[^Saragosti2012]. As the result of a tumble, the cell only changes its orientation, not its position.
+To model a particle following an "unintelligent" random walk strategy, we first select a random direction of movement along with a duration of tumble. The angle of reorientation is a random number selected uniformly between 0° and 360°. The duration of each tumble is a "wait time" of sorts and follows an exponential distribution with experimentally verified mean equal to 0.1 seconds[^Saragosti2012]. As the result of a tumble, the cell only changes its orientation, not its position.
 
 We then select a random duration to run and let the bacterium run in that direction for the specified amount of time. The duration of each run follows an exponential distribution with mean equal to the experimentally verified value of 1 second.
 
@@ -68,52 +68,46 @@ In the following tutorial, we will adapt the Jupyter notebook that we built in t
 
 ## Comparing the effectiveness of our two random walk strategies
 
-The following figure visualizes the trajectories of three cells using each of the two strategies. After 500 seconds, cells using strategy 1 have traveled away from the origin, and some of them are found in locations with higher concentrations. The cells using strategy 2, however, quickly hone in on the goal and remain near it.
+The following figure visualizes the trajectories of three cells over 500 seconds using strategy 1 (left) and strategy 2 (right) with a default tumbling frequency *t*<sub>0</sub> of one second. Unlike the cells following strategy 1, the cells following strategy 2 quickly hone in on the goal and remain near it.
 
 [![image-center](../assets/images/600px/chemotaxis_traj_compare_uniform.png){: .align-center}](../assets/images/chemotaxis_traj_compare_uniform.png)
-Three sample trajectories for each of the two exploration strategies. The standard random walk strategy is shown on the left, and the chemotactic random walk is shown on the right. Regions that are more heavily colored red correspond to higher concentrations of ligand, with a goal having maximum concentration at the point (1500, 1500), which is highlighted using a blue square. A single cell's walk is colored from darker to lighter colors across the time frame of the trajectory.
+Three sample trajectories for the standard random walk strategy (left) and chemotactic random walk strategy (right). The standard random walk strategy is shown on the left, and the chemotactic random walk is shown on the right. Redder regions correspond to higher concentrations of ligand, with a goal having maximum concentration at the point (1500, 1500), which is indicated with a blue square. Each particle's walk is colored from darker to lighter colors across the time frame of its trajectory.
 {: style="font-size: medium;"}
 
-Of course, we should be wary of such a small sample size. To confirm that what we observed in these trajectories is true in general, we will compare the two strategies over many simulations. The following figure plots the cell's average final distance to the goal over 500 simulations for both strategies.
+Of course, we should be wary of such a small sample size. To confirm that what we observed in these trajectories is true in general, we will compare the two strategies over many simulations. The following figure visualizes the particle's average distance to the goal over 500 simulations for both strategies and confirms our previous observation that strategy 2 is effective at guiding the simulated particle to the goal. And yet this strategy is driven by *random* choices of direction of travel, so why would it be so successful?
 
 [![image-center](../assets/images/600px/chemotaxis_performance_compare_uniform.png){: .align-center}](../assets/images/chemotaxis_performance_compare_uniform.png)
-Average distance to the goal plotted over time for 500 cellular simulations following each of the two strategies; the standard random walk is shown in red, and the chemotactic random walk is shown in blue. The shaded area around each strategy's plot represents one standard deviation from the average.
+Distance to the goal plotted over time for 500 simulated particles following the standard random walk (pink) and the chemotactic random walk (green). The dark lines indicate the average distance over all simulations, and the shaded area around each line represents one standard deviation from the average.
 {: style="font-size: medium;"}
 
-Using strategy 1, cells have some chance of reaching the goal because they tend to spread out over time, but nothing about this strategy keeps cells at the goal, and so the average distance to the goal does not decrease. In fact, as cells drift away due to random noise, they will on average get farther from the goal. With strategy 2, the cells approach the goal and remain there.
+The chemotactic strategy works because it uses a  "rubber band" effect. If the bacterium is traveling down an attractant gradient (i.e., away from an attractant), then it is not allowed to travel very far in a single step before it is forced to tumble. If an increase of attractant is detected, however, then the cell can travel farther in a single direction before tumbling. On average, this effect serves to pull the bacterium in the direction of increasing attractant, even though the directions in which it travels are random.
 
-Strategy 2 amounts to a very slight change in strategy 1 in which we allow the cell to run for a greater distance if it senses an increase in the attractant concentration. After all, the direction of travel is still *random*. So why would this strategy be so much better than a pure random walk?
-
-The answer to this quandary is that the attractant detection provides a "rubber band" effect. If the bacterium is traveling down an attractant gradient (i.e., away from an attractant), then it is not allowed to travel very far in a single step before it is forced to tumble. If an increase of attractant is detected, however, then the cell can travel farther before tumbling. On average, then, this effect helps to pull the bacterium in the direction of increasing attractant, even though each of its steps is taken in a random direction.
-
-A very small change to a simple, unsuccessful randomized algorithm can produce an elegant approach for exploring an unknown environment. But we left one question unanswered. Why is it that a default tumbling frequency of one tumble per second appears to be stable across a wide range of bacteria?
-
-To address this question, we will see how changing *t*<sub>0</sub>, the default time for a run step, affects the ability of a simulated bacterium following strategy 2 to locate the goal. You may like to adjust the value of *t*<sub>0</sub> in the [previous tutorial](tutorial_walk) yourself, or follow the tutorial below.
+A tiny change to a simple, unsuccessful randomized algorithm can therefore produce an elegant approach for exploring an unknown environment. But we left one more question unanswered: why is a default frequency of one tumble per second stable across a wide range of bacteria? To address this question, we will see how changing *t*<sub>0</sub>, the default time for a run step in the absence of change in attractant concentration, affects the ability of a simulated bacterium following strategy 2 to reach the goal. You may like to adjust the value of *t*<sub>0</sub> in the [previous tutorial](tutorial_walk) yourself, or follow the tutorial below.
 
 [Visit tutorial](tutorial_tumbling_frequencies){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Why is background tumbling frequency constant across bacterial species?
 
-The following figures show three trajectories for a few different values of *t*<sub>0</sub> and a simulation that lasts for 800 seconds. First, we set *t*<sub>0</sub> equal to 0.2 seconds and see that the bacteria are not able to walk far enough in a single step to head toward the goal.
+The following figures show three trajectories for a few different values of *t*<sub>0</sub> and a simulation that lasts for 800 seconds. First, we set *t*<sub>0</sub> equal to 0.2 seconds and see that the simulated bacteria are not able to walk far enough in a single step to head toward the goal.
 
 [![image-center](../assets/images/600px/chemotaxis_traj_0.2_uniform.png){: .align-center}](../assets/images/chemotaxis_traj_0.2_uniform.png)
-Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average default tumbling frequency of 0.2 seconds.
+Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average default tumbling frequency *t*<sub>0</sub> of 0.2 seconds.
 {: style="font-size: medium;"}
 
-If we increase *t*<sub>0</sub> to 5.0 seconds, then cells can run for so long that they may carry on past the goal without being able to apply the brakes by tumbling.
+If we increase *t*<sub>0</sub> to 5.0 seconds, then cells can run for so long that they may run past the goal without being able to apply the brakes by tumbling.
 
 [![image-center](../assets/images/600px/chemotaxis_traj_5.0_uniform.png){: .align-center}](../assets/images/chemotaxis_traj_5.0_uniform.png)
-Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average default tumbling frequency of 5.0 seconds.
+Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average default tumbling frequency *t*<sub>0</sub> of 5.0 seconds.
 {: style="font-size: medium;"}
 
-When we set *t*<sub>0</sub> equal to 1.0, then the figure below shows a "Goldilocks" effect in which the default tumbling time is just right. The simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it there.
+When we set *t*<sub>0</sub> equal to 1.0, then the figure below shows a "Goldilocks" effect in which the simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it there.
 
 [![image-center](../assets/images/600px/chemotaxis_traj_1.0_uniform.png){: .align-center}](../assets/images/chemotaxis_traj_1.0_uniform.png)
-Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average default tumbling frequency of 1.0 seconds.
+Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average default tumbling frequency *t*<sub>0</sub> of 1.0 seconds.
 {: style="font-size: medium;" }
 
-The figure below shows a plot of average distance to the goal over time for 500 simulated cells following the chemotactic strategy for a variety of choices of *t*<sub>0</sub>, and confirms that a *t*<sub>0</sub> value of approximately one second is ideal for finding an attractant.
+The figure below visualizes average particle distance to the goal over time for 500 particles using a variety of choices of *t*<sub>0</sub>. It confirms that tumbling every second by default is "just right" for finding an attractant.
 
 [![image-center](../assets/images/600px/chemotaxis_performance_uniform.png){: .align-center}](../assets/images/chemotaxis_performance_uniform.png)
 Average distance to the goal over time for 500 cells. Each colored line indicates the average distance to the goal over time for a different value of *t*<sub>0</sub>; the shaded area represents one standard deviation.
@@ -125,13 +119,13 @@ Below, we reproduce the video from earlier in this module showing *E. coli* movi
 
 ## Bacteria are even smarter than we thought
 
-If you closely examine the video above, then you may be curious about the way that bacteria turn around and head back toward the attractant. When they reorient, their behavior appears more intelligent than simply walking in a random direction. The reason for this behavior of the bacteria is that like most things in biology, the reality of the system that we are studying turns out to be more complex than we might imagine.
+If you closely examine the video above, then you may be curious about the way that bacteria turn around and head back toward the attractant. When they reorient, their behavior appears more intelligent than simply walking in a random direction. As is often true in biology, the reality of the system that we are studying turns out to be more complex than we might at first imagine.
 
 The direction of bacterial reorientation is not completely random, but rather follows a normal distribution with mean of 68° and standard deviation of 36°[^Berg1972]. That is, the bacterium typically does not tend to make as drastic of a change to its orientation as it would in a pure random walk, which would on average have a change in orientation of 90°.
 
-Yet recent research has shown that the direction of the bacterium's reorientation also depends on whether the cell is traveling in the correct direction.[^Saragosti2011] If the bacterium is moving up an attractant gradient, then it makes much smaller changes in its reorientation angle. This allows the cell to stay straight if it is moving in the correct direction but also turn around quickly if it starts heading in the wrong direction. We can even see this behavior in the video above, in which bacteria traveling toward the attractant make only very slight changes in their direction of travel, but reorient themselves more drastically if they overshoot the target.
+Furthermore, the direction of the bacterium's reorientation also depends on whether the cell is traveling in the correct direction.[^Saragosti2011] If the bacterium is moving up an attractant gradient, then it makes smaller changes in its reorientation angle, a feature that helps the cell continue moving straight if it is traveling in the direction of an attractant.
 
-Bacterial chemotaxis is probably the most studied biological system from the perspective of connecting chemical reactions to the emergent behavior that these reactions cause. Yet for many other systems, this thread connecting a reductionist view of a system to its holistic behavior is still a mystery that will continue inspiring the work of biological modelers for a very long time.
+We are fortunate to have this wealth of research on chemotaxis in *E. coli*, which may be the single most studied biological system from the perspective of demonstrating how chemical reactions produce emergent behavior. However, for the study of most biological systems, finding a clear thread connecting a reductionist view of the system to that system's holistic behavior remains a dream. (For example: how can your thoughts while reading this parenthetical aside be distilled into the firings of individual neurons?)  Regardless of what the future holds, we can be confident that uncovering the underlying mechanisms of biological systems will continue to inspire the work of biological modelers for many years.
 
 [^Saragosti2011]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2011. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)
 
