@@ -10,14 +10,14 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## How does *E. coli* respond to repellents?
 
-Just as *E. coli* has receptors that bind to attractant ligands, it has other receptors that can bind to **repellent** ligands.
+Just as *E. coli* has receptors that bind to attractant ligands, it has other receptors that can bind to **repellent** ligands. Attractant-ligand binding causes an increase in the autophosphorylation of CheA, but repellent-ligand binding causes a decrease in the autophosphorylation of CheA.
 
 **Exercise:** Based on what we have learned in this module about how *E. coli* and other bacteria act in the presence of an attractant, what do you think that the chemotaxis response is in the presence of a repellent? How do you think that the bacterium adjusts to relative changes of the repellent?
 {: .notice--success}
 
-In the [phosphorylation tutorial](tutorial_phos), we defined the rate constant for free CheA autophosphorylation `k_T_phos`, and specified that when the receptor complex is bound to an attractant molecule, the autophosphorylation rate constant decreases to `0.2 · k_T_phos`. To model a receptor complex bound to a repellent molecule, we will need to change the autophosphorylation rate so that it is greater than `k_T_phos`.
+We learned that *E. coli* is likely to run for longer when traveling up an attractant gradient, which in the long run means that it is able to find attractant sources despite running in random directions. For the same reason, *E. coli* is likely to run for longer when traveling *down* a repellent gradient.
 
-**Exercise:** Adapt the BioNetGen model so that the autophosphorylation rate constant is `5 · k_T_phos`. then run your simulation for 3 seconds with `L0 = 5000` and `L0 = 1e5` repellent ligand molecules added at the beginning of the simulation. How does the concentration of phosphorylated CheY change? What do you conclude?
+**Exercise:** Adapt the "chemotactic" random walk strategy that we implemented in a [tutorial](tutorial_walk) to handle the fact that bacteria sensing a relative decrease in repellent concentration will have longer runs before tumbling. Simulate this strategy for a collection of particles placed near a "goal" representing a repellent source. What is the average distance of the particles from the goal? How does this compare to the average distance to the goal for a collection of particles following a pure random walk?
 {: .notice--success}
 
 ## What if *E. coli* has multiple attractant sources?
@@ -27,19 +27,19 @@ Not only can *E. coli* sense both repellents and attractants, but it can detect 
 **Exercise:** Modify our model from the [adaptation tutorial](tutorial_adaptation) to reflect two types of receptor, each specific to its own ligand (call them *A* and *B*). Assume that we have 3500 receptor molecules of each type. (**Hint:** you will not need to have additional molecules in addition to `L` and `T`. Instead, specify additional states for the two molecules that we already have; for example `L(t,Lig~A)` should only bind with `T(l,Lig~A)`. Don't forget to update `species` as well!)
 {: .notice--success}
 
-In the previous exercise, the cell adapts to the presence of two different attractants at the same time. We now consider what will happen if we only add *B* molecules of *B* once the cell has already adapted to *A* molecules.
+In the previous exercise, the cell adapts to the presence of two different attractants at the same time. We now consider what will happen if we only add *B* molecules once the cell has already adapted to *A* molecules.
 
-**Exercise:** Change your model by assuming that after the cell adapts to `1e6` molecules of *A*, `1e6` molecules of *B* are added. Observe the concentration of phosphorylated CheY. Is the cell able to respond to *B* after adapting to the concentration of ligand *A*? Why do you think that the change in CheY phosphorylation different from the scenario in which we release the two different ligands concurrently? (The hint for the previous exercise also applies to this exercise.)
+**Exercise:** Change your model by assuming that after the cell adapts to 1,000,000 molecules of *A*, 1,000,000 molecules of *B* are added. Observe the concentration of phosphorylated CheY. Is the cell able to respond to *B* after adapting to the concentration of ligand *A*? Why do you think that the change in CheY phosphorylation different from the scenario in which we release the two different ligands concurrently? (The hint for the previous exercise also applies to this exercise.)
 {: .notice--success}
 
 In the [chemotactic walk tutorial](tutorial_walk), we used a concentration gradient that grew exponentially toward a single goal. Specifically, if *L*(*x*, *y*) was the concentration of ligand at (*x*, *y*), we set *L*(*x*,*y*) = 100 · 10<sup>6 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal (we used a goal of (1500, 1500)).
 
-To simulate an environment with more than one food source, we will include another goal at (-1500, 1500). The new ligand concentration formula will be *L*(*x*, *y*) = 100 · 10<sup>8 · (1-*d*<sub>1</sub>/*D*<sub>1</sub>)</sup> + 100 · 10<sup>8 · (1-*d*<sub>2</sub>/*D*<sub>2</sub>)</sup>, where *d*<sub>1</sub> is the distance from (*x*, *y*) to the goal at (1500, 1500), *d*<sub>2</sub> is the distance from (*x*, *y*) to the goal at (-1500, 1500), and *D*<sub>1</sub> and *D*<sub>2</sub> are the distances from the origin to the two respective goals.
+To generalize this simulation to an environment with more than one attractant source, we will include another goal at (-1500, 1500). The new ligand concentration formula will be *L*(*x*, *y*) = 100 · 10<sup>6 · (1-*d*<sub>1</sub>/*D*<sub>1</sub>)</sup> + 100 · 10<sup>6 · (1-*d*<sub>2</sub>/*D*<sub>2</sub>)</sup>, where *d*<sub>1</sub> is the distance from (*x*, *y*) to the goal at (1500, 1500), *d*<sub>2</sub> is the distance from (*x*, *y*) to the goal at (-1500, 1500), and *D*<sub>1</sub> and *D*<sub>2</sub> are the distances from the origin to the two respective goals.
 
-**Exercise:** Change the chemotactic walk simulation so that it includes the two goals, and visualize the trajectories of several cells using a background tumbling frequency of once every second. Are the cells able to find one of the goals? How long does it take them?
+**Exercise:** Change the chemotactic walk simulation so that it includes the two goals, and visualize the trajectories of several particles using a background tumbling frequency of once every second. Are the particles able to find one of the goals? How long does it take them, and how does this compare against the case of a single goal?
 {: .notice--success}
 
-**Exercise:** Vary the tumbling frequency according to the parameters given in the [chemotactic walk tutorial](tutorial_walk) to see how tumbling frequency influences the average distance of a cell to the closer of the two goals. As in the tutorial, run your simulation for 500 cells with tumbling frequencies `time_exp = [0.2, 0.5, 1.0, 2.0, 5.0]`.
+**Exercise:** Vary the tumbling frequency according to the parameters given in the [chemotactic walk tutorial](tutorial_walk) to see how tumbling frequency influences the average distance of a cell to the closer of the two goals. As in the tutorial, run your simulation for 500 particles with the default time between tumbles (*t*<sub>0</sub>) equal to each of 0.2, 0.5, 1.0, 2.0 and 5.0 seconds.
 {: .notice--success}
 
 ## Changing the *E. coli* choice of direction
@@ -57,7 +57,7 @@ More recent research suggests that when the bacterium is moving up an attractant
 
 ## Can't get enough BioNetGen?
 
-As we have seen in this module, BioNetGen is very good at simulating systems that involve a large number of species and particles but can be summarized with a small set of rules.
+As we have seen in this module, rule-based modeling is successful at simulating systems that involve a large number of species and particles but can be summarized with a small set of rules.
 
 **Polymerization** reactions offer another good example of such a system. Polymerization is the process by which **monomer** molecules combine into chains called **polymers**. Biological polymers are everywhere, from DNA (formed of monomer nucleotides) to proteins (formed of monomer amino acids) to lipids (formed of monomer fatty acids). For a nonbiological example, polyvinyl chloride (which lends its name to "PVC pipe") is a polymer made up of many vinyl molymers.
 
@@ -105,10 +105,10 @@ After building the model, we can run our simulation with the following command (
 simulate({method=>"nf", t_end=>100, n_steps=>1000})
 ~~~
 
-**Exercise:**Run the simulation. What happens to the concentration of shorter polymers? What about the longer polymers? You may like to play around with the lengths of the polymers that we are interested in.
+**Exercise:**Run the simulation. How do the concentrations of polymers vary according to the lengths of the polymers?
 {: .notice--success}
 
-**Exercise:** What happens if we also tweak the reaction rates so that binding is a little more likely than dissociation? What if dissociation is more likely? Does this reflect what you would guess?
+**Exercise:** What happens to polymer concentrations as we change the polymer binding and dissociation rates? Does your observation reflect what you might expect?
 {: .notice--success}
 
 [^Saragosti2011]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2011. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)

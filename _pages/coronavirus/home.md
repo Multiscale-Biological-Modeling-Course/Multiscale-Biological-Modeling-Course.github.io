@@ -22,57 +22,53 @@ author_profile: true # add author to page
 
 ## The world's fastest outbreak
 
-On February 21, 2003, a Chinese doctor named Liu Jianlun flew to Hong Kong to attend a wedding and checked into Room 911 of the Metropole Hotel. The next day, he became too ill to attend the wedding and was admitted to a hospital. Two weeks later, Dr. Liu was dead.
+On February 21, 2003, a Chinese doctor named Liu Jianlun flew to Hong Kong to attend a wedding and checked into Room 911 of the Metropole Hotel. The next day, he became too ill to attend the wedding and was admitted to a hospital. Two weeks later, he was dead.
 
 On his deathbed, Dr. Liu stated that he had recently treated sick patients in Guangdong Province, China, where a highly contagious respiratory illness had infected hundreds of people. The Chinese government had made brief mention of this incident to the World Health Organization but had concluded that the likely culprit was a common bacterial infection. By the time anyone realized the severity of the disease, it was already too late to stop the outbreak. On February 23, a man who had stayed across the hall from Dr. Liu at the Metropole traveled to Hanoi and died after infecting 80 people. On February 26, a woman checked out of the Metropole, traveled back to Toronto, and died after initiating an outbreak there. On March 1, a third guest was admitted to a hospital in Singapore, where sixteen additional cases of the illness arose within two weeks.[^3][^4].
 
-Consider that it took four years for the Black Death, which killed over a third of all Europeans in the 14th Century, to travel from Constantinople to Kiev. Or that HIV took two decades to circle the globe. In contrast, this mysterious new disease had crossed the Pacific Ocean within a week of entering Hong Kong.
+Consider that the Black Death, which killed over a third of all Europeans in the 14th Century, took four years to travel from Constantinople to Kiev.  Or that HIV took two decades to circle the globe. In contrast, this mysterious new disease had crossed the Pacific Ocean within a week of entering Hong Kong.
 
-As health officials braced for the impact of the fastest-traveling virus in human history, panic set in. Businesses were closed, sick passengers were removed from airplanes, and Chinese officials threatened to execute anyone deliberately spreading the disease. In the process, the mysterious new illness earned a name: **Severe Acute Respiratory Syndrome**, or **SARS**.
+As health officials braced for the impact of the fastest traveling virus in human history, panic set in. Businesses were closed, sick passengers were removed from airplanes, and Chinese officials threatened to execute anyone deliberately spreading the disease. In the process, the mysterious new illness earned a name: **Severe Acute Respiratory Syndrome**, or **SARS**.
 
-## Finding the source of the outbreak
+## Tracing the source of the outbreak
 
-SARS was deadly, killing close to 10% of those who became sick.[^cdc-factsheet] But it also struggled to spread within the human population, and it was contained in July 2003 with fewer than 10,000 confirmed symptomatic cases worldwide.
+SARS was deadly, killing close to 10% of those who became sick.[^cdc-factsheet] But it also struggled to spread within the human population, and it was contained in July 2003 after accumulating fewer than 10,000 confirmed symptomatic cases worldwide.
 
-Scientists initially thought that humans had contracted SARS from palm civets, which are native to Guangdong. But research would later show that the disease likely originated in bats, a notorious disease carrier.[^bats]
-
-In 2017, researchers published the result of five years of sampling horseshoe bats from a cave in Yunnan province. They found that the bats harbored coronaviruses with remarkable genetic similarity to SARS, and they hypothesized that the virus may have come from horseshoe bats. Yet their work has become infamous because they identified additional viruses in the bats that were related to SARS but just as capable of entering human cells. Their words are now chilling:[^bat-cave]
+In 2017, researchers published the result of five years of sampling horseshoe bats from a cave in Yunnan province. They found that the bats harbored coronaviruses with remarkable genetic similarity to SARS, and they hypothesized that the virus may have originated in horseshoe bats. Yet their work has become infamous because they identified additional viruses in the bats that were related to SARS but just as capable of entering human cells. Their words are now chilling:[^bat-cave]
 
 > We have also revealed that various [viruses] ... are still circulating among bats in this region. Thus, the risk of spillover into people and emergence of a disease similar to SARS is possible. This is particularly important given that the nearest village to the bat cave we surveyed is only 1.1 km away, which indicates a potential risk of exposure to bats for the local residents. Thus, we propose that monitoring of SARSr-CoV evolution at this and other sites should continue, as well as examination of human behavioral risk for infection and serological surveys of people, to determine if spillover is already occurring at these sites and to design intervention strategies to avoid future disease emergence.
 
 ## A new threat emerges
 
-On December 30, 2019, a Chinese ophthalmologist named Li Wenliang sent a WeChat message to fellow doctors at Wuhan Central Hospital, warning them that he had seen several patients with symptoms resembling SARS [^Inglesby]. He urged his colleagues to wear protective clothing and masks to shield them from this new potential threat.
+On December 30, 2019, a Chinese ophthalmologist named Li Wenliang sent a WeChat message to fellow doctors at Wuhan Central Hospital, warning them that he had seen several patients with symptoms resembling SARS [^Inglesby]. He urged his colleagues to wear protective clothing and masks to shield them from this new threat.
 
 The next day, a screenshot of his post was leaked online, and local police summoned Dr. Li and forced him to sign a statement that he had "severely disturbed public order". He then returned to work, treating patients in the same Wuhan hospital.
 
-Meanwhile, the World Health Organization (WHO) received reports of multiple pneumonia cases from the Wuhan Municipal Health Commission and activated a support team to assess the new disease. The WHO declared on January 14 that local authorities had seen "no clear evidence of human-to-human transmission of the novel coronavirus". By this point, it was now too late.
+Meanwhile, the World Health Organization (WHO) received reports of multiple pneumonia cases from the Wuhan Municipal Health Commission and activated a support team to assess the new disease. The WHO declared on January 14 that local authorities had seen "no clear evidence of human-to-human transmission of the novel coronavirus". By this point, it was too late.
 
-Throughout January, the virus silently raged through China, spreading to both South Korea and the United States as Lunar New Year celebrations took place within the country. By the end of the month, the disease was in 19 countries, becoming a pandemic and earning a name in the process: **coronavirus disease 2019 (COVID-19)**.
+Throughout January, the virus silently raged through China as Lunar New Year celebrations took place within the country, and it spread to both South Korea and the United States. By the end of the month, the disease was in 19 countries, becoming a pandemic and earning a name in the process: **coronavirus disease 2019 (COVID-19)**.
 
-As for Dr. Li? Despite warning against the risk of this new virus, he contracted the disease from one of his patients on January 8. He continued working in the hospital, and entered the hospital on January 31. Within a week, he was dead, one of the first of millions of COVID-19 casualties.
+As for Dr. Li? Despite warning against the risk of the new virus, he contracted COVID-19 from one of his patients on January 8. He continued working until he was forced to be admitted to the hospital on January 31. Within a week, he was dead, one of the first of millions of COVID-19 casualties.
 
 ## Why were the two outbreaks so different?
 
-The similarity between SARS and COVID-19 extends well beyond their symptoms. The respective viruses causing these diseases, **SARS coronavirus (SARS-CoV)** and **SARS coronavirus 2 (SARS-CoV-2)** are both **coronaviruses**, which means that their outer membranes are covered in a layer of **spike proteins** that cause them to look like the sun's corona during an eclipse (see figure below).
+The viruses causing the two outbreaks, **SARS coronavirus (SARS-CoV)** and **SARS coronavirus 2 (SARS-CoV-2)** are both **coronaviruses**, which means that their outer membranes are covered in a layer of **spike proteins** that cause them to look like the sun's corona during an eclipse (see figure below).
 
 [![image-center](../assets/images/600px/coronavirus.png){: .align-center}](../assets/images/coronavirus.png)
 Coronaviruses as seen under a microscope. The fuzzy blobs on the cell surface are spike proteins, which the virus uses to gain entry to host cells. Figure courtesy F. Murphy and S. Whitfield, CDC[^coronaimage].
 {: style="font-size: medium;"}
 
-Under a microscope, the two viruses look identical, and they use the same mechanism to infect human cells, when the spike protein on the virus surface bonds to the ACE2 enzyme on a human cell's membrane.[^16][^17] So why did SARS fizzle, but SARS-CoV-2, a disease that is on average less harmful[^11][^12] and less deadly to individuals who contract it, transform into a pandemic? The most likely explanation for the ability of SARS-CoV-2 to spread across far more countries and remain a public health threat even in the face of lockdowns is that it spreads more easily; that is, it is more **infectious**.
+When viewed under a microscope, the two viruses look identical, and they use the same mechanism to infect human cells, when the spike protein on the virus surface bonds to the ACE2 enzyme on a human cell's membrane.[^16][^17] So why did SARS fizzle, but SARS-CoV-2, a disease that is on average less harmful[^11][^12] and less deadly to individuals who contract it, transform into a pandemic? The most likely explanation for the ability of SARS-CoV-2 to spread across far more countries and remain a public health threat even in the face of lockdowns is that it spreads more easily; that is, it is more **infectious**. Is there a molecular basis of this increased infectiousness?
 
-Part of the reason for the rapid spread of SARS-CoV-2 is that it can be spread by individuals that are asymptomatic,[^13] a method of transmission that was never found for SARS-CoV.[^14] But we also wonder if we can find a molecular explanation for the increased infectiousness of SARS-CoV-2.
-
-In this module, we will place ourselves in the shoes of early SARS-CoV-2 researchers studying the new virus in January 2020. The virus's genome, consisting of nearly 30,000 nucleotides, was published on January 10[^Genome][^Annotation], and an annotation of this genome showing the position of the virus's genes is shown in the figure below. Upon sequence comparison, SARS-CoV-2 was found to be related to several coronaviruses isolated from bats and distantly related to SARS-CoV.
+In this module, we will place ourselves in the shoes of early SARS-CoV-2 researchers studying the new virus in early 2020. The virus's genome, consisting of nearly 30,000 nucleotides, was published on January 10[^Genome][^Annotation], and an annotation of this genome showing the position of the virus's genes is shown in the figure below. Upon sequence comparison, SARS-CoV-2 was found to be related to several coronaviruses isolated from bats and distantly related to SARS-CoV.
 
 [![image-center](../assets/images/600px/SARSCoV2Annotation.png){: .align-center}](../assets/images/SARSCoV2Annotation.png)
-An annotated genome of SARS-CoV-2. The Spike protein, found at the bottom of this image, is labeled "S" and begins at position 21,563. Accessed from GenBank: [https://go.usa.gov/xfzMM](https://go.usa.gov/xfzMM).
+An annotated genome of SARS-CoV-2. The Spike protein, found at the bottom of this image, is labeled "S" and begins at nucleotide position 21,563. Accessed from GenBank: [https://go.usa.gov/xfzMM](https://go.usa.gov/xfzMM).
 {: style="font-size: medium;"}
 
 Recall from our [discussion of transcription factors](../motifs/transcription) that by the central dogma of molecular biology, DNA is transcribed into RNA, which is then translated into protein. According to the genetic code, triplets of RNA nucleotides called codons are converted into single amino acids. The resulting chain of amino acids is called a **polypeptide**.
 
-The polypeptide chain for the SARS-CoV-2 spike protein is shown below. Each of 20 possible amino acids is represented by a letter taken from the Latin alphabet (all letters except for "B", "J", "O", "U", "X", and "Z" are used for amino acids). Consider how such a global mayhem can ultimately be caused by something so tiny.
+The gene encoding the spike protein starts at nucleotide position 21,563 of the SARS-CoV-2 genome, and the corresponding translated polypeptide chain is shown below. Each of 20 possible amino acids is represented by a letter taken from the Latin alphabet (all letters except for "B", "J", "O", "U", "X", and "Z" are used for amino acids). As you examine the string of letters in this figure, consider how global mayhem can ultimately be caused by something so tiny.
 
 ~~~
 >YP_009724390.1 S [organism=Severe acute respiratory syndrome coronavirus 2] [GeneID=43740568]
@@ -97,7 +93,7 @@ KNLNESLIDLQELGKYEQYIKWPWYIWLGFIAGLIAIVMVTIMLCCMTSCCSCLKGCCSCGSCCKFDEDD
 SEPVLKGVKLHYT
 ~~~
 
-We will ask ourselves two questions. First, can we use this sequence of amino acids to determine the structure of its spike protein? Second, once we know the structure of the SARS-CoV-2 spike protein, how does its structure and function differ from the same protein in SARS-CoV?
+In this module, we will consider two questions. First, can we use the sequence of amino acids in the figure above to determine the spike protein's shape? Second, once we know this molecular structure of the SARS-CoV-2 spike protein, how does its structure and function differ from the same protein in SARS-CoV?
 
 We will split our work on these questions over two parts. If you are already familiar with protein structure prediction, then you may want to skip ahead to the second part of the module, in which we discuss differences between the spike proteins of the two viruses.
 
