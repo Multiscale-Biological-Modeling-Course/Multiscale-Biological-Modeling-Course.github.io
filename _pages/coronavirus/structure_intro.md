@@ -10,8 +10,6 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 ## Determining protein structure is fundamental to understanding protein function
 
-In the [introduction](home), we showed the polypeptide chain for the SARS-CoV-2 spike protein. After this polypeptide chain is formed, it will "fold" into a three-dimensional shape and attach to the exterior of the virus. The folding process occurs spontaneously and without any outside influence, and the same polypeptide chain will almost always fold into the same 3-D structure in a manner of microseconds. This means that nature is applying some "magic algorithm" that produces the folded structure of a protein from its sequence of amino acids. But how does this algorithm work?
-
 Predicting the folded structure of a polypeptide is called the **structure prediction problem**, and this problem is simple to state but deceptively difficult to solve. In fact, it has been an active area of biological research for several decades.
 
 Why do we care about protein structure? Knowing a protein's structure is essential to determining its function and how it interacts with other proteins or molecules in its environment. Determining protein function is still an active area of research: there are still a few thousand proteins in humans alone whose function is unknown.

@@ -56,14 +56,14 @@ As for Dr. Li? Despite warning against the risk of the new virus, he contracted 
 
 \FloatBarrier
 \phantomsection
-\subsection{Why were the two outbreaks so different?}
+\subsection{The sequence of the SARS-CoV-2 spike protein}
 
 The viruses causing the two outbreaks, \textdefnogloss{SARS coronavirus (SARS-CoV)} and \textdefnogloss{SARS coronavirus 2 (SARS-CoV-2)} are both \textdef{coronaviruses}{coronavirus}{a family of viruses whose outer membrines are covered in spike proteins, which cause them to look like the sun's corona during an eclipse}, which means that their outer membranes are covered in a layer of \textdef{spike proteins}{spike protein}{a protein covering the surface of a coronavirus that the virus uses to latch on to cells} that cause them to look like the sun's corona during an eclipse (\autoref{fig:coronavirus}).\\
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.7\textwidth]{../images/coronavirus.png}
+	\includegraphics[width = 0.6\textwidth]{../images/coronavirus.png}
 	\caption{Coronaviruses as seen under a microscope. The fuzzy blobs on the cell surface are spike proteins, which the virus uses to gain entry to host cells.}
 	\label{fig:coronavirus}
 \end{figure}
@@ -80,13 +80,12 @@ We will place ourselves in the shoes of early SARS-CoV-2 researchers studying th
 	\label{fig:SARSCoV2Annotation}
 \end{figure}
 
- Recall from our discussion of transcription factors in \autoref{chapter:motifs} that by the central dogma of molecular biology, DNA is transcribed into RNA, which is then translated into protein. According to the genetic code, triplets of RNA nucleotides called codons are converted into single amino acids. The resulting chain of amino acids is called a \textdef{polypeptide}{polypeptide}{a linear chain of amino acids that forms part or all of a protein}..
+Recall from our discussion of transcription factors in \autoref{chapter:motifs} that by the central dogma of molecular biology, DNA is transcribed into RNA, which is then translated into protein. According to the genetic code, triplets of RNA nucleotides called codons are converted into single amino acids. The resulting chain of amino acids is called a \textdef{polypeptide}{polypeptide}{a linear chain of amino acids that forms part or all of a protein}.
 
-The gene encoding the spike protein starts at nucleotide position 21,563 of the SARS-CoV-2 genome, and the corresponding translated polypeptide chain is shown in \autoref{fig:spike_protein_sequence}. Each of 20 possible amino acids is represented by a letter taken from the Latin alphabet (all letters except for ``B'', ``J'', ``O'', ``U'', ``X'', and ``Z'' are used for amino acids). As you examine the string of letters in this figure, consider how global mayhem can ultimately be caused by something so tiny.\\
+The gene encoding the spike protein starts at nucleotide position 21,563 of the SARS-CoV-2 genome, and the corresponding translated polypeptide chain is shown in \autoref{fig:spike_protein_sequence}. Each of 20 possible amino acids is represented by a letter taken from the Latin alphabet (all letters except for ``B'', ``J'', ``O'', ``U'', ``X'', and ``Z'' are used for amino acids). As you examine the string of letters in this figure, consider how global mayhem can ultimately be caused by something so tiny.
 
 \begin{figure}[h]
-\begin{ttsequence}[0.95]
-MFVFLVLLPLVSSQCVNLTTRTQLPPAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHAIHV\\
+\begin{ttsequence}[0.93]MFVFLVLLPLVSSQCVNLTTRTQLPPAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHAIHV\\
 SGTNGTKRFDNPVLPFNDGVYFASTEKSNIIRGWIFGTTLDSKTQSLLIVNNATNVVIKVCEFQFCNDPF\\
 LGVYYHKNNKSWMESEFRVYSSANNCTFEYVSQPFLMDLEGKQGNFKNLREFVFKNIDGYFKIYSKHTPI\\
 NLVRDLPQGFSALEPLVDLPIGINITRFQTLLALHRSYLTPGDSSSGWTAGAAAYYVGYLQPRTFLLKYN\\
@@ -110,9 +109,20 @@ SEPVLKGVKLHYT\phantom{QCVNLTTRTQLPPAYTNSFTRGVYYPDKVFRSSVLHSTQDLFLPFFSNVTWFHAIHV}
 \label{fig:spike_protein_sequence}
 \end{figure}
 
-We will consider two questions. First, can we use the sequence of amino acids in \autoref{fig:spike_protein_sequence} to determine the spike protein's shape? Second, once we know this molecular structure of the SARS-CoV-2 spike protein, how does its structure and function differ from the same protein in SARS-CoV?
+\phantomsection
+\subsection{Nature's magic protein folding algorithm}
 
-We will split our work on these questions over two chapters. If you are already familiar with protein structure prediction, then you may want to skip ahead to \autoref{chapter:coronavirus_2}, in which we discuss differences between the spike proteins of the two viruses.\\
+After the SARS-CoV-2 spike protein polypeptide chain is formed, it will ``fold'' into a three-dimensional shape. This folding process occurs spontaneously for all proteins and without any outside influence, and the same polypeptide chain will almost always fold into the same 3-D structure in a manner of microseconds. This means that nature applies some ``magic algorithm'' to produce the folded structure of a protein from its sequence of amino acids.
+
+Predicting the folded structure of a polypeptide is called \textdef{protein structure prediction}{protein structure prediction}{the problem of predicting the folded three-dimensional structure of a polypeptide from its nucleotide sequence}, and this problem is simple to state but deceptively difficult to solve. In fact, it has been an active area of biological research for several decades.
+
+Why do we care about protein structure? Knowing a protein's structure is essential to determining its function and how it interacts with other proteins or molecules in its environment. Determining protein function is still an active area of research: there are still a few thousand proteins in humans alone whose function is unknown.
+
+Furthermore, a huge amount of biological research is devoted to understanding protein interactions. For example, a disease may be caused by a faulty protein, in which case researchers want to find a drug that binds to the protein and causes some change of interest in that protein, such as inhibiting its behavior.
+
+In our work with SARS-CoV-2 spike protein analysis, we will consider two questions. First, can we reverse engineer nature's magic algorithm and determine the spike protein's shape from its sequence of amino acids in \autoref{fig:spike_protein_sequence}? Second, once we know this molecular structure of the SARS-CoV-2 spike protein, how does its structure and function differ from the same protein in SARS-CoV?
+
+These two questions are both significant, and so we will split our work on them over two chapters. If you are already familiar with protein structure prediction, then you may want to skip ahead to \autoref{chapter:coronavirus_2}, in which we discuss how to identify structural differences between the spike proteins of the two viruses.\\
 
 \FloatBarrier
 \phantomsection
@@ -121,14 +131,6 @@ We will split our work on these questions over two chapters. If you are already 
 \label{sec:structure_intro}
 \phantomsection
 \subsection{Determining protein structure is fundamental to understanding protein function}
-
-In the introduction, we showed the polypeptide chain for the SARS-CoV-2 spike protein. After this polypeptide chain is formed, it will ``fold'' into a three-dimensional shape and attach to the exterior of the virus. The folding process occurs spontaneously and without any outside influence, and the same polypeptide chain will almost always fold into the same 3-D structure in a manner of microseconds. This means that nature is applying some ``magic algorithm'' that produces the folded structure of a protein from its sequence of amino acids. But how does this algorithm work?
-
-Predicting the folded structure of a polypeptide is called the \textdef{structure prediction problem}{structure prediction problem}{the problem of predicting the folded three-dimensional structure of a polypeptide from its nucleotide sequence}, and this problem is simple to state but deceptively difficult to solve. In fact, it has been an active area of biological research for several decades.
-
-Why do we care about protein structure? Knowing a protein's structure is essential to determining its function and how it interacts with other proteins or molecules in its environment. Determining protein function is still an active area of research: there are still a few thousand proteins in humans alone whose function is unknown.
-
-Furthermore,  a huge amount of biological research is devoted to understanding protein interactions. For example, a disease may be caused by a faulty protein, in which case researchers want to find a drug that binds to the protein and causes some change of interest in that protein, such as inhibiting its behavior.
 
 As we have seen throughout this course, molecular interactions are ruled by probability. Any two molecules may \textit{interact}, but their rate of \textit{dissociation} will be much higher if they do not fit together well. Furthermore, two colliding molecules need to have the correct orientation in order to produce an interaction
 
