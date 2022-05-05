@@ -10,9 +10,7 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 ## Determining protein structure is fundamental to understanding protein function
 
-Predicting the folded structure of a polypeptide is called the **structure prediction problem**, and this problem is simple to state but deceptively difficult to solve. In fact, it has been an active area of biological research for several decades.
 
-Why do we care about protein structure? Knowing a protein's structure is essential to determining its function and how it interacts with other proteins or molecules in its environment. Determining protein function is still an active area of research: there are still a few thousand proteins in humans alone whose function is unknown.
 
 Furthermore,  a huge amount of biological research is devoted to understanding protein interactions. For example, a disease may be caused by a faulty protein, in which case researchers want to find a drug that binds to the protein and causes some change of interest in that protein, such as inhibiting its behavior.
 
