@@ -99,11 +99,17 @@ After the SARS-CoV-2 spike protein polypeptide chain is formed, it will "fold" i
 
 Predicting the folded structure of a polypeptide is called the **protein structure prediction**, and this problem is simple to state but deceptively difficult to solve. In fact, it has been an active area of biological research for several decades.
 
-Why do we care about protein structure? Knowing a protein's structure is essential to determining its function and how it interacts with other proteins or molecules in its environment. Determining protein function is still an active area of research: there are still a few thousand genes in humans alone whose function is unknown.
+Why do we care about protein structure? Knowing a protein's structure is essential to determining its function and how it interacts with other proteins or molecules in its environment. Determining protein function is still an active area of research: we still do not know the function of a few thousand human genes, and Figure 1.4 shows the huge variety of protein shapes in the 2020 “proteins of the month” named by the **Protein Data Bank (PDB)**. (Note that the June 2020 winner is the SARS-CoV-2 spike protein.)
+
+[![image-center](../assets/images/600px/different_protein_shapes_2020.jpg){: .align-center}](../assets/images/different_protein_shapes_2020.jpg)
+Each "molecule of the month" in 2020 named by the PDB. These proteins have widely varying shapes and accomplish a wide variety of cellular tasks. The SARS-CoV-2 spike protein was the molecule of the month in June. Image courtesy: David Goodsell.
+{: style="font-size: medium;"}
 
 For a more visual example of how protein structure affects protein function, consider the following video of a ribosome (which is a complex of RNA and proteins) translating a messenger RNA into protein. For translation to succeed, the ribosome needs to have a very precise shape, including a "slot" into which the messenger RNA strand can fit.
 
 {% include video id="TfYf_rPWUdY" provider="youtube" %}
+
+Another central problem in protein structural research is devoted to understanding protein interactions. For example, a disease may be caused by a faulty protein, in which case researchers want to find a drug that binds to the protein and causes some change of interest in that protein, such as inhibiting its behavior.
 
 In this module, we will consider two questions. First, can we reverse engineer nature's magic algorithm and determine the spike protein's shape from its sequence of amino acids in the figure above? Second, once we know this molecular structure of the SARS-CoV-2 spike protein, how does its structure and function differ from the same protein in SARS-CoV?
 

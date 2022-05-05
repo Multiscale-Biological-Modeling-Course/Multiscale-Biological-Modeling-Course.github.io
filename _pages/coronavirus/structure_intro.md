@@ -8,19 +8,9 @@ toc_sticky: true
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
-## Determining protein structure is fundamental to understanding protein function
-
-As we have seen throughout this course, molecular interactions are ruled by probability. Any two molecules may *interact*, but their rate of *dissociation* will be much higher if they do not fit together well. Furthermore, two colliding molecules need to have the correct orientation in order to bind.
-
-Because structure prediction is such a fundamental problem, researchers wish to catalog the varied shapes of different proteins. This variety is evident in the figure below, which shows the "proteins of the month" in 2020 named by the **Protein Data Bank** (**PDB**). Yet the question remains: how do we know these protein structures?
-
-[![image-center](../assets/images/600px/different_protein_shapes_2020.jpg){: .align-center}](../assets/images/different_protein_shapes_2020.jpg)
-Each "molecule of the month" in 2020 named by the PDB. These proteins have widely varying shapes and accomplish a wide variety of cellular tasks. Note that the SARS-CoV-2 spike protein was the molecule of the month in June. Image courtesy: David Goodsell.
-{: style="font-size: medium;"}
-
 ## Laboratory methods for determining protein structure
 
-We will introduce two popular and sophisticated laboratory methods for accurately determining protein structure. We appeal to high-quality videos explaining them if you are interested.
+Although we would like to infer nature's magic algorithm for inferring protein structure from amino acid sequence, biochemists can determine the structure of a protein experimentally. We will introduce two popular and sophisticated laboratory methods for accurately determining protein structure. We appeal to high-quality videos explaining them if you are interested.
 
 In **X-ray crystallography**, researchers crystallize many copies of a protein and then shine an intense beam of X-rays at the crystal. The light hitting the protein is diffracted, creating patterns from which the position of every atom in the protein can be inferred. If you are interested in learning more about X-ray crystallography, check out the following excellent two-part video series from The Royal Institution.
 
@@ -34,11 +24,11 @@ In **cryo-electron microscopy** (**cryo-EM**), researchers preserve thousands of
 
 {% include video id="Qq8DO-4BnIY" provider="youtube" %}
 
-Unfortunately, laboratory approaches for structure determination are expensive and cannot be used on all proteins. An X-ray crystallography experiment for a single protein costs upward of $2,000; furthermore, crystallizing a protein is a challenging task, and each copy of the protein must line up in the same way, which does not work for very flexible proteins. As for cryo-EM, an electron microscope can cost millions of dollars. And to study bacterial proteins, we need to culture the bacteria in the lab, but microbiologists have estimated that less than 2% of bacteria can currently be cultured with current approaches.[^Wade]
+Unfortunately, laboratory approaches for structure determination are expensive and cannot be used on all proteins. An X-ray crystallography experiment for a single protein costs upward of $2,000, and building an electron microscope can cost millions of dollars. When applying X-ray crystallography, crystallizing a protein is a challenging task, and each copy of the protein must line up in the same way, which does not work for very flexible proteins  And to study bacterial proteins, we need to culture the bacteria in the lab, but microbiologists have estimated that less than 2% of bacteria can be cultured with current approaches.[^Wade]
 
-Protein structures that have been determined experimentally are typically stored in the PDB. This database contains over 160,000 proteins, most of which have been added this century. This number may seem large, but a recent study estimated that humans have between 620,000 and 6.13 million protein isoforms (i.e., differently-shaped protein variants) [^Ponomarenko]. If we hope to catalog the proteins of all living things, then our work on structure determination is just beginning.
+Protein structures that have been determined experimentally are typically stored in the PDB, which contains over 160,000 protein structures. This number may seem large, but a recent study estimated that the 20,000 human genes translate into between 620,000 and 6.13 million protein isoforms (i.e., protein variants with slightly different structures).[^Ponomarenko] If we hope to catalog the proteins of all living things, then our work on structure determination is just beginning.
 
-## What makes protein structure prediction so difficult?
+## Protein sequence and structure do not correlate well
 
 Predicting protein structure from amino acid sequence is very challenging. On the one hand, small perturbations in the sequence of a protein can drastically change the protein's shape and even render it useless. On the other, different amino acids can have similar chemical properties, and so some mutations will hardly change the shape of the protein. As a result, two very different amino acid sequences can fold into proteins with similar structure and comparable function.
 
@@ -48,11 +38,9 @@ For example, the following figure compares the sequences and structures of hemog
 (Top) An amino acid sequence comparison of the first 40 (out of 140) amino acids of hemoglobin subunit alpha for three species: human, shortfin mako shark, and emu. A column is colored blue if all three species have the same amino acid, white if two species have the same amino acid, and red if all amino acids are different. Sequence identity calculates the number of positions in two amino acid sequences that share the same amino acid. (Bottom) Side by side comparisons of the 3-D structures of the three proteins. The final figure on the right superimposes the first three structures to highlight their similarities.
 {: style="font-size: medium;"}
 
-Another reason why protein structure prediction is so difficult is because a polypeptide is very flexible, with the ability to rotate in multiple ways at each amino acid, which means that the polypeptide is able to fold into a staggering number of different shapes.  A good analogy for polypeptide flexibility is the "Rubik's Twist" puzzle, shown in the video below, which consists of a linear chain of flexible blocks that can form a huge number of different shapes.
+## Flexible polypeptide chains can fold into many possible structures
 
-{% include video id="auNLb75QRfg" provider="youtube" %}
-
-The flexibility of a polypeptide owes to the molecular structure of amino acids. As shown in the figure below, an amino acid comprises four parts. In the center, a carbon atom (called the **alpha carbon**) is connected to four different molecules: a hydrogen atom (H), a **carboxyl group** (–COOH), an **amino group** (-NH<sub>2</sub>), and a **side chain** (denoted "R" and often called an **R group**). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) up to -C<sub>8</sub>H<sub>7</sub>N (tryptophan).
+Another reason why protein structure prediction is so difficult is because a polypeptide is very flexible, with the ability to rotate in multiple ways at each amino acid, which means that the polypeptide is able to fold into a staggering number of different shapes. This polypeptide flexibility  owes to the molecular structure of amino acids. As shown in the figure below, an amino acid comprises four parts. In the center, a carbon atom (called the **alpha carbon**) is connected to four different molecules: a hydrogen atom (H), a **carboxyl group** (–COOH), an **amino group** (-NH<sub>2</sub>), and a **side chain** (denoted "R" and often called an **R group**). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) up to -C<sub>8</sub>H<sub>7</sub>N (tryptophan).
 
 [![image-center](../assets/images/600px/AminoAcid.png){: .align-center width="300px"}](../assets/images/AminoAcid.png)
 An amino acid consists of a central, alpha carbon attached to a hydrogen atom, a side group, a carboxyl group, and an amino group.
@@ -61,7 +49,7 @@ An amino acid consists of a central, alpha carbon attached to a hydrogen atom, a
 To form a polypeptide chain, consecutive amino acids are linked together during a condensation reaction in which the amino group of one amino acid is joined to the carboxyl group of another, while a water molecule (H<sub>2</sub>O) is expelled (see figure below).
 
 [![image-center](../assets/images/600px/dipeptide_reaction.png){: .align-center}](../assets/images/dipeptide_reaction.png)
-A condensation reaction joins two amino acids into a "dipeptide" by joining the amino group of one amino acid to the carboxyl group of the other. A water molecule is expelled, which is why the reaction is a condensation reaction. Source: [https://bit.ly/3q0Ph8V](https://bit.ly/3q0Ph8V).
+A condensation reaction joins two amino acids into a "dipeptide" by joining the amino group of one amino acid to the carboxyl group of the other, with a water molecule expelled. Source: [https://bit.ly/3q0Ph8V](https://bit.ly/3q0Ph8V).
 {: style="font-size: medium;"}
 
 The resulting bond that is produced between the carbon atom of one amino acid's carboxyl group and the nitrogen atom of the next amino acid's amino group, called a **peptide bond**, is very strong. The peptide has very little rotation around this bond, which is almost always locked at 180°. As peptide bonds are formed between adjacent amino acids, the polypeptide chain takes shape, as shown in the figure below.
@@ -80,9 +68,13 @@ Below is an excellent video from Jacob Elmer illustrating how changing φ and ψ
 
 {% include video id="1usemtIYe_s" provider="youtube" %}
 
-A polypeptide with *n* amino acids will have *n* - 1 peptide bonds, meaning that its shape is influenced by *n* - 1 phi angles and *n* - 1 psi angles. If each bond has *k* stable conformations, then there are *k*<sup>2<em>n</em>-2</sup> total possible conformations of the polypeptide. For example, if *k* is equal to 3 and *n* is equal to only 100 (representing a short polypeptide), then the number of potential protein structures is more than the number of atoms in the universe! (The concept of combinatorial explosion, introduced in module 2, appears again.) The ability for the protein to reliably find a single conformation using the magic algorithm despite such an enormous number of potential shapes is called **Levinthal's paradox**.[^Levinthal]
+A good analogy for polypeptide flexibility is the "Rubik's Twist" puzzle, shown in the video below, which consists of a linear chain of flexible blocks that can form many different shapes.
 
-Although protein structure prediction is difficult, it is not impossible; nature's algorithm is not, after all, magic. Furthermore, researchers have spent decades cataloging the genomes of thousands of species. As a result, biologists know the *sequence* of amino acids for many proteins whose structures have not been validated experimentally. In our case, although the SARS-CoV-2 genome was sequenced in January 2020, the structure of its spike protein was unknown at that time.  In the next lesson, we will place ourselves in the shoes of early SARS-CoV-2 researchers working before the structure of the virus's spike protein had been experimentally determined to see if we can predict its structure and give biologists a head start on fighting the pandemic.
+{% include video id="auNLb75QRfg" provider="youtube" %}
+
+A polypeptide with *n* amino acids will have *n* - 1 peptide bonds, meaning that its shape is influenced by *n* - 1 phi angles and *n* - 1 psi angles. If each bond has *k* stable conformations, then the polypeptide has *k*<sup>2<em>n</em>-2</sup> total possible conformations. If *k* is equal to 3 and *n* is equal to only 100 (representing a short polypeptide), then the number of potential protein structures is more than the number of atoms in the universe! The ability of the magic algorithm to reliably find a single conformation despite such an enormous number of potential shapes is called **Levinthal's paradox**.[^Levinthal]
+
+Although protein structure prediction is difficult, it is not impossible; the magic algorithm is not, after all, magic. In the next lesson, we will place ourselves in the shoes of early SARS-CoV-2 researchers working before the structure of the virus's spike protein had been experimentally determined to see if we can predict its structure and give biologists a head start on fighting the pandemic.
 
 [Next lesson](ab_initio){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

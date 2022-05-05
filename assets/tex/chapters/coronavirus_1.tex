@@ -116,9 +116,17 @@ After the SARS-CoV-2 spike protein polypeptide chain is formed, it will ``fold''
 
 Predicting the folded structure of a polypeptide is called \textdef{protein structure prediction}{protein structure prediction}{the problem of predicting the folded three-dimensional structure of a polypeptide from its nucleotide sequence}, and this problem is simple to state but deceptively difficult to solve. In fact, it has been an active area of biological research for several decades.
 
-Why do we care about protein structure? Knowing a protein's structure is essential to determining its function and how it interacts with other proteins or molecules in its environment. Determining protein function is still an active area of research: there are still a few thousand genes in humans alone whose function is unknown.
+Why do we care about protein structure? Knowing a protein's structure is essential to determining its function and how it interacts with other proteins or molecules in its environment. Determining protein function is still an active area of research: we still do not know the function of a few thousand human genes, and \autoref{fig:different_protein_shapes_2020} shows the huge variety of protein shapes in the 2020 ``proteins of the month'' named by the \textdef{Protein Data Bank (PDB)}{Protein Data Bank (PDB)}{a public database for the structural study of proteins}. (Note that the June 2020 winner is the SARS-CoV-2 spike protein.)
 
-Furthermore, a huge amount of biological research is devoted to understanding protein interactions. For example, a disease may be caused by a faulty protein, in which case researchers want to find a drug that binds to the protein and causes some change of interest in that protein, such as inhibiting its behavior.
+\begin{figure}[h]
+	\centering
+	\mySfFamily
+	\includegraphics[width = 0.85\textwidth]{../images/different_protein_shapes_2020.jpg}
+	\caption{Each ``molecule of the month'' in 2020 named by the PDB. These proteins have widely varying shapes and accomplish a wide variety of cellular tasks. The SARS-CoV-2 spike protein was the molecule of the month in June.}
+	\label{fig:different_protein_shapes_2020}
+\end{figure}
+
+Another central problem in protein structural research is devoted to understanding protein interactions. For example, a disease may be caused by a faulty protein, in which case researchers want to find a drug that binds to the protein and causes some change of interest in that protein, such as inhibiting its behavior.
 
 In our work with SARS-CoV-2 spike protein analysis, we will consider two questions. First, can we reverse engineer nature's magic algorithm and determine the spike protein's shape from its sequence of amino acids in \autoref{fig:spike_protein_sequence}? Second, once we know this molecular structure of the SARS-CoV-2 spike protein, how does its structure and function differ from the same protein in SARS-CoV?
 
@@ -129,49 +137,69 @@ These two questions are both significant, and so we will split our work on them 
 
 \section{Protein Structure Prediction is Difficult}
 \label{sec:structure_intro}
-\phantomsection
-\subsection{Determining protein structure is fundamental to understanding protein function}
-
-As we have seen throughout this book, molecular interactions are ruled by probability. Any two molecules may \textit{interact}, but their dissociation rate will be higher than their binding rate if they do not bind well. Furthermore, two colliding molecules need to have the correct orientation in order to bind.
-
-Because structure prediction is such a fundamental problem, researchers wish to catalog the varied shapes of different proteins. This variety is evident in \autoref{fig:different_protein_shapes_2020}, which shows the ``proteins of the month'' in 2020 named by the \textdef{Protein Data Bank (PDB)}{Protein Data Bank (PDB)}{a public database for the structural study of proteins}. Yet the question remains: how do we know these protein structures?
-
-\begin{figure}[h]
-	\centering
-	\mySfFamily
-	\includegraphics[width = 0.85\textwidth]{../images/different_protein_shapes_2020.jpg}
-	\caption{Each ``molecule of the month'' in 2020 named by the PDB. These proteins have widely varying shapes and accomplish a wide variety of cellular tasks. Note that the SARS-CoV-2 spike protein was the molecule of the month in June.}
-	\label{fig:different_protein_shapes_2020}
-\end{figure}
 
 \phantomsection
-\subsection{Laboratory methods for determining protein structure}
+\subsection{Experimental methods for determining protein structure}
 
-In \textdef{X-ray crystallography}{X-ray crystallography}{an experimental process in which researchers crystallize many copies of a molecule such as a protein and then shine an intense beam of X-rays at the crystal in order to determine the molecule's structure}, researchers crystallize many copies of a protein and then shine an intense beam of X-rays at the crystal. The light hitting the protein is diffracted, creating patterns from which the position of every atom in the protein can be inferred.
+Although we would like to infer nature's magic algorithm for inferring protein structure from amino acid sequence, biochemists can determine the structure of a protein experimentally. In \textdef{X-ray crystallography}{X-ray crystallography}{an experimental process in which researchers crystallize many copies of a molecule such as a protein and then shine an intense beam of X-rays at the crystal in order to determine the molecule's structure}, researchers crystallize many copies of a protein and then shine an intense beam of X-rays at the crystal. The light hitting the protein is diffracted, creating patterns from which the position of every atom in the protein can be inferred.
 
 X-ray crystallography is over a century old and has been the \textit{de facto} approach for protein structure determination for decades. Yet a newer method is now rapidly replacing X-ray crystallography. In \textdef{cryo-electron microscopy (cryo-EM)}{cryo-electron microscopy (cryo-EM)}{an experimental process in which researchers preserve thousands of copies of a molecule such as a protein in non-crystalline ice and then examine these copies with an electron microscope}, researchers preserve thousands of copies of a protein in non-crystalline ice and then examine these copies with an electron microscope.
 
-Unfortunately, laboratory approaches for structure determination are expensive and cannot be used on all proteins. An X-ray crystallography experiment for a single protein costs upward of \$2,000; furthermore, crystallizing a protein is a challenging task, and each copy of the protein must line up in the same way, which does not work for very flexible proteins. As for cryo-EM, an electron microscope can cost millions of dollars. And to study bacterial proteins, we need to culture the bacteria in the lab, but microbiologists have estimated that less than 2\% of bacteria can be cultured with current approaches.
+Unfortunately, laboratory approaches for structure determination are expensive and cannot be used on all proteins. An X-ray crystallography experiment for a single protein costs upward of \$2,000, and building an electron microscope can cost millions of dollars. When applying X-ray crystallography, crystallizing a protein is a challenging task, and each copy of the protein must line up in the same way, which does not work for very flexible proteins  And to study bacterial proteins, we need to culture the bacteria in the lab, but microbiologists have estimated that less than 2\% of bacteria can be cultured with current approaches.
 
-Protein structures that have been determined experimentally are typically stored in the PDB. This database contains over 160,000 proteins, most of which have been added this century. This number may seem large, but a recent study estimated that humans have between 620,000 and 6.13 million protein isoforms (i.e., differently-shaped protein variants). If we hope to catalog the proteins of all living things, then our work on structure determination is just beginning.
+Protein structures that have been determined experimentally are typically stored in the PDB, which contains over 160,000 protein structures. This number may seem large, but a recent study estimated that the 20,000 human genes translate into between 620,000 and 6.13 million protein isoforms (i.e., protein variants with slightly different structures). If we hope to catalog the proteins of all living things, then our work on structure determination is just beginning.
 
 \FloatBarrier
 \phantomsection
-\subsection{What makes protein structure prediction so difficult?}
+\subsection{Protein sequence and structure do not correlate well}
 
 Predicting protein structure from amino acid sequence is very challenging. On the one hand, small perturbations in the sequence of a protein can drastically change the protein's shape and even render it useless. On the other, different amino acids can have similar chemical properties, and so some mutations will hardly change the shape of the protein. As a result, two very different amino acid sequences can fold into proteins with similar structure and comparable function.
 
-For example, \autoref{fig:SequenceStructureExample} compares the sequences and structures of hemoglobin subunit alpha taken from three species: humans (PDB: 1si4), shortfin mako sharks (PDB: 3mkb), and emus (PDB: 3wtg). Hemoglobin is the oxygen-transport protein in the blood, consisting of two alpha ``subunit'' proteins and two beta subunit proteins that combine into a protein complex; because hemoglobin is well-studied and much shorter than the SARS-CoV-2 spike protein, we will use it as an example throughout this chapter. The alpha subunits for the three species are markedly different in terms of amino acid sequence, and yet their 3-D structures are essentially identical.\\
+For example, \autoref{fig:SequenceStructureExample} compares the sequences and structures of hemoglobin subunit alpha taken from three species: humans, shortfin mako sharks, and emus. Hemoglobin is the oxygen-transport protein in the blood, consisting of two alpha ``subunit'' proteins and two beta subunit proteins that combine into a protein complex; because hemoglobin is well-studied and much shorter than the SARS-CoV-2 spike protein, we will use it as an example throughout this chapter. The alpha subunits for the three species are markedly different in terms of amino acid sequence, and yet their structures are essentially identical.\\
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.85\textwidth]{../images/SequenceStructureExample.png}
-	\caption{(Top) An amino acid sequence comparison of the first 40 (out of 140) amino acids of hemoglobin subunit alpha for three species: human, shortfin mako shark, and emu. A column is colored blue if all three species have the same amino acid, white if two species have the same amino acid, and red if all amino acids are different. Sequence identity calculates the number of positions in two amino acid sequences that share the same amino acid. (Bottom) Side by side comparisons of the 3-D structures of the three proteins. The final figure on the right superimposes the first three structures to highlight their similarities.}
+	\caption{(Top) An amino acid sequence comparison of the first 40 (out of 140) amino acids of hemoglobin subunit alpha for three species: human (PDB entry: 1si4), shortfin mako shark (PDB entry: 3mkb), and emu (PDB entry: 3wtg). A column is colored blue if all three species have the same amino acid, white if two species have the same amino acid, and red if all amino acids are different. Sequence identity calculates the number of positions in two amino acid sequences that share the same amino acid. (Bottom) Side by side comparisons of the 3-D structures of the three proteins. The final figure on the right superimposes the first three structures to highlight their similarities.}
 	\label{fig:SequenceStructureExample}
 \end{figure}
 
-Another reason why protein structure prediction is so difficult is because a polypeptide is very flexible, with the ability to rotate in multiple ways at each amino acid, which means that the polypeptide is able to fold into a staggering number of different shapes. A good analogy for polypeptide flexibility is the ``Rubik's Twist'' puzzle, shown in \autoref{fig:rubiks_twist_four_panel}, which consists of a linear chain of flexible blocks that can form a huge number of different shapes.
+\phantomsection
+\subsection{Flexible polypeptide chains can fold into many possible structures}
+
+Another reason why protein structure prediction is so difficult is because a polypeptide is very flexible, with the ability to rotate in multiple ways at each amino acid, which means that the polypeptide is able to fold into a staggering number of different shapes. This polypeptide flexibility owes to the molecular structure of amino acids. As shown in \autoref{fig:AminoAcid}, an amino acid comprises four parts. In the center, a carbon atom (called the \textdef{alpha carbon}{alpha carbon}{the central carbon atom of an amino acid}) is connected to four different molecules: a hydrogen atom (H), a \textdefnogloss{carboxyl group} ($-\text{COOH}$), an \textdefnogloss{amino group} ($-\text{NH}_2$), and a \textdefnogloss{side chain} (denoted ``R'' and often called an \textbf{R group}). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) up to $-\text{C}_8\text{H}_7\text{N}$ (tryptophan).\\
+
+\begin{figure}[h]
+	\centering
+	\mySfFamily
+	\includegraphics[width = 0.4\textwidth]{../images/AminoAcid.png}
+	\caption{An amino acid consists of a central, alpha carbon attached to a hydrogen atom, a side group, a carboxyl group, and an amino group.}
+	\label{fig:AminoAcid}
+\end{figure}
+
+To form a polypeptide chain, consecutive amino acids are linked together during a condensation reaction in which the amino group of one amino acid is joined to the carboxyl group of another, while a water molecule ($\text{H}_2\text{O}$) is expelled (\autoref{fig:condensation} (top)). The resulting bond that is produced between the carbon atom of one amino acid's carboxyl group and the nitrogen atom of the next amino acid's amino group, called a \textdefnogloss{peptide bond}, is very strong. The peptide has very little rotation around this bond, which is almost always locked at 180\textdegree. As peptide bonds are formed between adjacent amino acids, the polypeptide chain takes shape (\autoref{fig:condensation} (bottom)).
+
+\begin{figure}[h]
+	\centering
+	\mySfFamily
+	\includegraphics[width = 0.85\textwidth]{../images/dipeptide_reaction.png}\\[0.5ex]
+	\includegraphics[width = 0.6\textwidth]{../images/Backbone.png}
+	\caption{(Top) A condensation reaction joins two amino acids into a ``dipeptide'' by joining the amino group of one amino acid to the carboxyl group of the other, with a water molecule expelled. (Bottom) A protein backbone formed of three amino acids.}
+	\label{fig:condensation}
+\end{figure}
+
+However, the bonds \textit{within} an amino acid, joining the alpha carbon to its carboxyl group and amino group, are not as rigid, and the polypeptide is free to rotate around these two bonds. This rotation produces two angles of interest, called the \textdefnogloss{phi angle} ($\phi$) and \textdefnogloss{psi angle} ($\psi$) (\autoref{fig:torsion_angles}), which are formed at the alpha carbon's connections to its amino group and carboxyl group, respectively.
+
+\begin{figure}[b]
+	\centering
+	\mySfFamily
+	\includegraphics[width = 0.25\textwidth]{../images/torsion_angles.png}
+	\caption{A polypeptide chain of multiple amino acids with the torsion angles $\phi$ and $\psi$ indicated. The angle ω indicates the angle of the peptide bond, which is typically 180\textdegree.}
+	\label{fig:torsion_angles}
+\end{figure}
+
+A good analogy for polypeptide flexibility is the ``Rubik's Twist'' puzzle, which consists of a linear chain of flexible blocks that can form many different shapes. \autoref{fig:rubiks_twist_four_panel} shows the Rubik's Twist folding into a ball.
 
 \begin{figure}[h]
 	\centering
@@ -181,49 +209,14 @@ Another reason why protein structure prediction is so difficult is because a pol
 	\label{fig:rubiks_twist_four_panel}
 \end{figure}
 
-The flexibility of a polypeptide owes to the molecular structure of amino acids. As shown in \autoref{fig:AminoAcid}, an amino acid comprises four parts. In the center, a carbon atom (called the \textdef{alpha carbon}{alpha carbon}{the central carbon atom of an amino acid}) is connected to four different molecules: a hydrogen atom (H), a \textdefnogloss{carboxyl group} ($-\text{COOH}$), an \textdefnogloss{amino group} ($-\text{NH}_2$), and a \textdefnogloss{side chain} (denoted ``R'' and often called an \textbf{R group}). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) up to $-\text{C}_8\text{H}_7\text{N}$ (tryptophan).\\
+A polypeptide with \textit{n} amino acids will have $n - 1$ peptide bonds, meaning that its shape is influenced by $n - 1$ phi angles and $n - 1$ psi angles. If each bond has \textit{k} stable conformations, then the polypeptide has $k^{2n-2}$ total possible conformations. If \textit{k} is equal to 3 and \textit{n} is equal to only 100 (representing a short polypeptide), then the number of potential protein structures is more than the number of atoms in the universe! The ability of the magic algorithm to reliably find a single conformation despite such an enormous number of potential shapes is called \textdef{Levinthal's paradox}{Levinthal's paradox}{the conundrum that a protein reliably folds into a single conformation despite there being an enormous number of potential structures for that protein}.
 
-\begin{figure}[h]
-	\centering
-	\mySfFamily
-	\includegraphics[width = 0.5\textwidth]{../images/AminoAcid.png}
-	\caption{An amino acid consists of a central, alpha carbon attached to a hydrogen atom, a side group, a carboxyl group, and an amino group.}
-	\label{fig:AminoAcid}
-\end{figure}
+Although protein structure prediction is difficult, it is not impossible; the magic algorithm is not, after all, magic. But before discussing how we can begin to solve this problem, we will need to learn a few more biochemical details; as is the case elsewhere in the book, feel free to skim the next section if you already know these details.\\
 
-To form a polypeptide chain, consecutive amino acids are linked together during a condensation reaction in which the amino group of one amino acid is joined to the carboxyl group of another, while a water molecule ($\text{H}_2\text{O}$) is expelled (\autoref{fig:dipeptide_reaction}).\\
+\FloatBarrier
+\phantomsection
 
-\begin{figure}[h]
-	\centering
-	\mySfFamily
-	\includegraphics[width = 0.85\textwidth]{../images/dipeptide_reaction.png}
-	\caption{A condensation reaction joins two amino acids into a ``dipeptide'' by joining the amino group of one amino acid to the carboxyl group of the other. A water molecule is expelled, which is why the reaction is a condensation reaction.}
-	\label{fig:dipeptide_reaction}
-\end{figure}
-
-The resulting bond that is produced between the carbon atom of one amino acid's carboxyl group and the nitrogen atom of the next amino acid's amino group, called a \textdefnogloss{peptide bond}, is very strong. The peptide has very little rotation around this bond, which is almost always locked at 180\textdegree. As peptide bonds are formed between adjacent amino acids, the polypeptide chain takes shape (\autoref{fig:backbone}).\\
-
-\begin{figure}[h]
-	\centering
-	\mySfFamily
-	\includegraphics[width = 0.7\textwidth]{../images/Backbone.png}
-	\caption{A protein backbone formed of three amino acids.}
-	\label{fig:backbone}
-\end{figure}
-
-However, the bonds \textit{within} an amino acid, joining the alpha carbon to its carboxyl group and amino group, are not as rigid, and the polypeptide is free to rotate around these two bonds. This rotation produces two angles of interest, called the \textdefnogloss{phi angle} ($\phi$) and \textdefnogloss{psi angle} ($\psi$) (\autoref{fig:torsion_angles}), which are formed at the alpha carbon's connections to its amino group and carboxyl group, respectively.
-
-\begin{figure}[h]
-	\centering
-	\mySfFamily
-	\includegraphics[width = 0.4\textwidth]{../images/torsion_angles.png}
-	\caption{A polypeptide chain of multiple amino acids with the torsion angles $\phi$ and $\psi$ indicated. The angle ω indicates the angle of the peptide bond, which is typically 180\textdegree.}
-	\label{fig:torsion_angles}
-\end{figure}
-
-A polypeptide with \textit{n} amino acids will have $n - 1$ peptide bonds, meaning that its shape is influenced by $n - 1$ phi angles and $n - 1$ psi angles. If each bond has \textit{k} stable conformations, then there are $k^{2n-2}$ total possible conformations of the polypeptide. For example, if \textit{k} is equal to 3 and \textit{n} is equal to only 100 (representing a short polypeptide), then the number of potential protein structures is more than the number of atoms in the universe! (The concept of combinatorial explosion, introduced in \autoref{chapter:chemotaxis}, appears again.) The ability for the protein to reliably find a single conformation using the magic algorithm despite such an enormous number of potential shapes is called \textdef{Levinthal's paradox}{Levinthal's paradox}{the conundrum that a protein reliably folds into a single conformation despite there being an enormous number of potential structures for that protein}.
-
-Although protein structure prediction is difficult, it is not impossible; nature's algorithm is not, after all, magic. Furthermore, researchers have spent decades cataloging the genomes of thousands of species. As a result, biologists know the \textit{sequence} of amino acids for many proteins whose structures have not been validated experimentally. In our case, although the SARS-CoV-2 genome was sequenced in January 2020, the structure of its spike protein was unknown at that time.  In the next section, we will place ourselves in the shoes of early SARS-CoV-2 researchers working before the structure of the virus's spike protein had been experimentally determined to see if we can predict its structure and give biologists a head start on fighting the pandemic.\\
+\section{Protein Biochemistry}
 
 
 \FloatBarrier
@@ -308,7 +301,7 @@ As for van der Waals interactions, atoms are dynamic systems, with electrons con
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.6\textwidth]{../images/van_der_waals_normal.png}
+	\includegraphics[width = 0.4\textwidth]{../images/van_der_waals_normal.png}
 	\caption{A carbon-12 atom showing six positively charged protons (green), six neutrally charged neutrons (blue), and six negatively charged electrons (red). Under typical circumstances, the electrons will most likely be distributed uniformly around the nucleus.}
 	\label{fig:van_der_waals_normal}
 \end{figure}
@@ -791,7 +784,7 @@ As explained previously, the SSGCID models of the spike protein released by Rose
 
 As we might expect due to their access to the resources of thousands of users' computers, the SSGCID models outperform our SWISS-MODEL models. Yet a typical threshold for whether a predicted structure is accurate is if its RMSD compared to a validated structure is smaller than 2.0 angstroms, and the SSGCID models are not quite this accurate, even with access to hundreds of contributors' machines.
 
-The inability of the SSGCID models to attain a very accurate predicted structure may make it seem that protein structure prediction is a lost cause. Perhaps biochemists should head back to expensive experimental validations and ignore the musings of computational scientists. In the conclusion to part 1, we will find hope.
+The inability of the SSGCID models to attain a very accurate predicted structure may make it seem that protein structure prediction is a lost cause. Perhaps biochemists should head back to expensive experimental validations and ignore the musings of computational scientists. In the conclusion to this chapter, we will find hope.
 
 \FloatBarrier
 \phantomsection
