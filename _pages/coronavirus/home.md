@@ -99,7 +99,11 @@ After the SARS-CoV-2 spike protein polypeptide chain is formed, it will "fold" i
 
 Predicting the folded structure of a polypeptide is called the **protein structure prediction**, and this problem is simple to state but deceptively difficult to solve. In fact, it has been an active area of biological research for several decades.
 
-Why do we care about protein structure? Knowing a protein's structure is essential to determining its function and how it interacts with other proteins or molecules in its environment. Determining protein function is still an active area of research: there are still a few thousand proteins in humans alone whose function is unknown.
+Why do we care about protein structure? Knowing a protein's structure is essential to determining its function and how it interacts with other proteins or molecules in its environment. Determining protein function is still an active area of research: there are still a few thousand genes in humans alone whose function is unknown.
+
+For a more visual example of how protein structure affects protein function, consider the following video of a ribosome (which is a complex of RNA and proteins) translating a messenger RNA into protein. For translation to succeed, the ribosome needs to have a very precise shape, including a "slot" into which the messenger RNA strand can fit.
+
+{% include video id="TfYf_rPWUdY" provider="youtube" %}
 
 In this module, we will consider two questions. First, can we reverse engineer nature's magic algorithm and determine the spike protein's shape from its sequence of amino acids in the figure above? Second, once we know this molecular structure of the SARS-CoV-2 spike protein, how does its structure and function differ from the same protein in SARS-CoV?
 

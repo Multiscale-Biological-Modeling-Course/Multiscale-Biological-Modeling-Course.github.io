@@ -10,15 +10,7 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 ## Determining protein structure is fundamental to understanding protein function
 
-
-
-Furthermore,  a huge amount of biological research is devoted to understanding protein interactions. For example, a disease may be caused by a faulty protein, in which case researchers want to find a drug that binds to the protein and causes some change of interest in that protein, such as inhibiting its behavior.
-
-For a more visual example of how protein structure affects protein function, consider the following video of a ribosome (which is a complex of RNA and proteins) translating a messenger RNA into protein. For translation to succeed, the ribosome needs to have a very precise shape, including a "slot" into which the messenger RNA strand can fit.
-
-{% include video id="TfYf_rPWUdY" provider="youtube" %}
-
-As we have seen throughout this course, molecular interactions are ruled by probability. Any two molecules may *interact*, but their rate of *dissociation* will be much higher if they do not fit together well. Furthermore, two colliding molecules need to have the correct orientation in order to produce an interaction
+As we have seen throughout this course, molecular interactions are ruled by probability. Any two molecules may *interact*, but their rate of *dissociation* will be much higher if they do not fit together well. Furthermore, two colliding molecules need to have the correct orientation in order to bind.
 
 Because structure prediction is such a fundamental problem, researchers wish to catalog the varied shapes of different proteins. This variety is evident in the figure below, which shows the "proteins of the month" in 2020 named by the **Protein Data Bank** (**PDB**). Yet the question remains: how do we know these protein structures?
 
@@ -42,7 +34,7 @@ In **cryo-electron microscopy** (**cryo-EM**), researchers preserve thousands of
 
 {% include video id="Qq8DO-4BnIY" provider="youtube" %}
 
-Unfortunately, laboratory approaches for structure determination are expensive and cannot be used on all proteins. X-ray crystallography costs upward of $2,000 per protein; furthermore, crystallizing a protein is a challenging task, and each copy of the protein must line up in the same way, which does not work for very flexible proteins. As for cryo-EM, an electron microscope costs upwards of millions of dollars. And to study bacterial proteins, we need to culture the bacteria in the lab, but microbiologists have estimated that less than 2% of bacteria can currently be cultured.[^Wade]
+Unfortunately, laboratory approaches for structure determination are expensive and cannot be used on all proteins. An X-ray crystallography experiment for a single protein costs upward of $2,000; furthermore, crystallizing a protein is a challenging task, and each copy of the protein must line up in the same way, which does not work for very flexible proteins. As for cryo-EM, an electron microscope can cost millions of dollars. And to study bacterial proteins, we need to culture the bacteria in the lab, but microbiologists have estimated that less than 2% of bacteria can currently be cultured with current approaches.[^Wade]
 
 Protein structures that have been determined experimentally are typically stored in the PDB. This database contains over 160,000 proteins, most of which have been added this century. This number may seem large, but a recent study estimated that humans have between 620,000 and 6.13 million protein isoforms (i.e., differently-shaped protein variants) [^Ponomarenko]. If we hope to catalog the proteins of all living things, then our work on structure determination is just beginning.
 
