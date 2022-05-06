@@ -168,7 +168,7 @@ For example, \autoref{fig:SequenceStructureExample} compares the sequences and s
 \phantomsection
 \subsection{Flexible polypeptide chains can fold into many possible structures}
 
-Another reason why protein structure prediction is so difficult is because a polypeptide is very flexible, with the ability to rotate in multiple ways at each amino acid, which means that the polypeptide is able to fold into a staggering number of different shapes. This polypeptide flexibility owes to the molecular structure of amino acids. As shown in \autoref{fig:AminoAcid}, an amino acid comprises four parts. In the center, a carbon atom (called the \textdef{alpha carbon}{alpha carbon}{the central carbon atom of an amino acid}) is connected to four different molecules: a hydrogen atom (H), a \textdefnogloss{carboxyl group} ($-\text{COOH}$), an \textdefnogloss{amino group} ($-\text{NH}_2$), and a \textdefnogloss{side chain} (denoted ``R'' and often called an \textbf{R group}). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) up to $-\text{C}_8\text{H}_7\text{N}$ (tryptophan).
+Another reason why protein structure prediction is so difficult is because a polypeptide is very flexible, with the ability to rotate in multiple ways at each amino acid, which means that the polypeptide is able to fold into a staggering number of different shapes. This polypeptide flexibility owes to the molecular structure of amino acids. As shown in \autoref{fig:AminoAcid}, an amino acid comprises four parts. In the center, a carbon atom (called the \textdef{alpha carbon}{alpha carbon}{the central carbon atom of an amino acid}) is connected to four different molecules: a hydrogen atom (H), a \textdefnogloss{carboxyl group} ($-\text{COOH}$), an \textdefnogloss{amino group} ($-\text{NH}_2$), and a \textdefnogloss{side chain} (denoted ``R'' and often called an \textbf{R group}). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) up to $-\text{C}_8\text{H}_7\text{N}$ (tryptophan).\\
 
 \begin{figure}[h]
 	\centering
@@ -230,11 +230,11 @@ A protein's \textdef{secondary structure}{secondary structure}{the highly regula
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.85\textwidth]{../images/hemoglobin_secondary_structure.png}
-	\caption{General shape of secondary structure alpha helices (left) and beta sheets (right).}
+	\caption{The general shape of alpha helices (left) and beta sheets (right), the two most common protein secondary structures.}
 	\label{fig:hemoglobin_secondary_structure}
 \end{figure}
 
-A protein's \textdef{tertiary structure}{tertiary structure}{the final, stable 3D shape of a protein's polypeptide chain} describes its final 3D shape after the polypeptide chain has folded and is stable. Throughout this chapter, when discussing the ``shape'' or ``structure'' of a protein, we are almost exclusively referring to its tertiary structure. \autoref{fig:hemoglobin_tertiary_structure} shows the tertiary structure of human hemoglobin subunit alpha. For the sake of simplicity, \autoref{fig:hemoglobin_tertiary_structure} does not show the position of every atom in the protein but rather represents the protein shape as a composition of secondary structures.
+A protein's \textdef{tertiary structure}{tertiary structure}{the final, stable 3D shape of a protein's polypeptide chain} describes its final 3D shape after the polypeptide chain has folded and is stable. Throughout this chapter, when discussing the ``shape'' or ``structure'' of a protein, we are almost exclusively referring to its tertiary structure. \autoref{fig:hemoglobin_tertiary_structure} shows the tertiary structure of human hemoglobin subunit alpha. For the sake of simplicity, this figure does not show the position of every atom in the protein but rather represents the protein shape as a composition of secondary structures.
 
 \begin{figure}[h]
 	\centering
@@ -244,17 +244,20 @@ A protein's \textdef{tertiary structure}{tertiary structure}{the final, stable 3
 	\label{fig:hemoglobin_tertiary_structure}
 \end{figure}
 
-Finally, some proteins have a \textdef{quaternary structure}{quaternary structure}{the arrangement of a protein's subunits with respect to each other to form a single functional unit}, which describes the protein’s interaction with other copies of itself to form a single functional unit, or a \textdef{multimer}{multimer}{a protein formed of more than one polypeptide chain}. Many proteins do not have a quaternary structure and function as an independent monomer. \autoref{fig:hemoglobin_quaternary_structure} shows the quaternary structure of hemoglobin, which is a multimer consisting of two alpha subunits and two beta subunits.
+Finally, some proteins have a \textdef{quaternary structure}{quaternary structure}{the arrangement of a protein's subunits with respect to each other to form a single functional unit}, which describes the protein’s interaction with other copies of itself to form a single functional unit, or a \textdef{multimer}{multimer}{a protein formed of more than one polypeptide chain}. Many proteins do not have a quaternary structure and function as an independent monomer. \autoref{fig:quaternary_structure} (left) shows the quaternary structure of hemoglobin, which is a multimer consisting of two alpha subunits and two beta subunits.
+
+As for SARS-CoV and SARS-CoV-2, the spike protein is a \textdefnogloss{homotrimer}, meaning that it is formed of three essentially identical units called \textdef{chains}{chain}{a subunit of a multimer}, each one translated from the corresponding region of the coronavirus's genome; these chains are colored differently in \autoref{fig:quaternary_structure} (right). When we talk about identifying the structure of the spike protein in this chapter, we typically are referring to the structure of a single chain.
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.5\textwidth]{../images/hemoglobin_quaternary_structure.png}
-	\caption{The quaternary structure of human hemoglobin, which consists of two alpha subunits (shown in red) and two beta subunits (shown in blue).}
-	\label{fig:hemoglobin_quaternary_structure}
+	\tabcolsep = 1em
+	\begin{tabular}{c c}
+	\includegraphics[width = 0.35\textwidth]{../images/hemoglobin_quaternary_structure.png} & \includegraphics[width = 0.45\textwidth]{../images/spike_protein_homotrimer.png}
+	\end{tabular}
+	\caption{(Left) The quaternary structure of human hemoglobin, which consists of two alpha subunits (shown in red) and two beta subunits (shown in blue). Note that each alpha subunit is the tertiary structure from \autoref{fig:hemoglobin_tertiary_structure}. (Right) A side and top view of the quaternary structure of the SARS-CoV-2 spike protein homotrimer, with its three chains highlighted using different colors.}
+	\label{fig:quaternary_structure}
 \end{figure}
-
-As for SARS-CoV and SARS-CoV-2, the spike protein is a \textdefnogloss{homotrimer}, meaning that it is formed of three essentially identical units called \textdef{chains}{chain}{a subunit of a multimer}, each one translated from the corresponding region of the coronavirus's genome. When we talk about identifying the structure of the spike protein in this chapter, we typically are referring to the structure of a single chain.
 
 The structural units making up proteins are often hierarchical, and the spike protein is no exception. Each spike protein chain is a \textdefnogloss{dimer}, consisting of two subunits called \textdefnogloss{S1} and \textdefnogloss{S2}. Each of these subunits further divides into \textdef{protein domains}{protein domain}{a distinct structural unit within a protein that folds independently and is typically responsible for a specific interaction or function}, distinct structural units within the protein that fold independently and are typically responsible for a specific interaction or function. For example, the SARS-CoV-2 spike protein has a \textdefnogloss{receptor binding domain (RBD)} located on the S1 subunit of the spike protein that is responsible for interacting with the human ACE2 enzyme; the rest of the protein does not come into contact with ACE2. We will say more about the RBD soon.
 
@@ -530,7 +533,7 @@ Our idea for defining $d(S, T)$ is first to translate, flip, and rotate \textit{
 
 We first translate \textit{S} to have the same \textdef{center of mass}{center of mass}{the point corresponding to a shape whose coordinates are the averages of respective coordinates of points on the shape} as \textit{T}. The center of mass of \textit{S} is found at the point $(x_{S}, y_{S})$ such that $x_{S}$ and $y_{S}$ are the respective averages of the \textit{x}-coordinates and \textit{y}-coordinates on the boundary of \textit{S}.
 
-For example, suppose that \textit{S} is the semicircular arc shown in \autoref{fig:semicircular_arc}, with endpoints $(-1, 0)$ and $(1, 0)$.
+For example, suppose that \textit{S} is the semicircular arc shown in \autoref{fig:semicircular_arc}, with endpoints $(-1, 0)$ and $(1, 0)$.\\
 
 \begin{figure}[h]
 	\centering
@@ -627,7 +630,7 @@ Unfortunately, the Kabsch algorithm can be fooled. Consider \autoref{fig:RMSD_we
 	\label{fig:RMSD_weakness_mutation}
 \end{figure}
 
-Another way in which the Kabsch algorithm can be fooled is in the case of an appended substructure that throws off the ordering of the amino acids. \autoref{fig:RMSD_weakness_loop} shows a toy example of a structure into which we incorporate a loop, thus throwing off the natural order of comparing amino acids. (The same effect is caused if one or more amino acids are deleted from one of the two proteins.)
+Another way in which the Kabsch algorithm can be fooled is in the case of an appended substructure that throws off the ordering of the amino acids. \autoref{fig:RMSD_weakness_loop} shows a toy example of a structure into which we incorporate a loop, thus throwing off the natural order of comparing amino acids. (The same effect is caused if one or more amino acids are deleted from one of the two proteins.)\\
 
 \begin{figure}[h]
 	\centering
@@ -781,12 +784,12 @@ As explained previously, the SSGCID models of the spike protein released by Rose
 
 As we might expect due to their access to the resources of thousands of users' computers, the SSGCID models outperform our SWISS-MODEL models. Yet a typical threshold for whether a predicted structure is accurate is if its RMSD compared to a validated structure is smaller than 2.0 angstroms, and the SSGCID models are not quite this accurate, even with access to hundreds of contributors' machines.
 
-The inability of the SSGCID models to attain a very accurate predicted structure may make it seem that protein structure prediction is a lost cause. Perhaps biochemists should head back to expensive experimental validations and ignore the musings of computational scientists. In the conclusion to this chapter, we will find hope.
+The inability of the SSGCID models to attain a very accurate predicted structure may make it seem that protein structure prediction is a lost cause. Perhaps biochemists should head back to expensive experimental validations and ignore the musings of computational scientists. In the conclusion to this chapter, we will find hope.\\
 
 \FloatBarrier
 \phantomsection
 
-\section{Conclusion: Protein Structure Prediction is Solved! (Kind of…)}
+\section{Conclusion: Protein Structure Prediction is Solved! (Kind of\ldots)}
 \label{sec:conclusion_part_1}
 \phantomsection
 

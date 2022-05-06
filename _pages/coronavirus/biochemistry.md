@@ -14,7 +14,7 @@ Protein structure is a broad term that encapsulates four different levels of des
 A protein's **secondary structure** describes its highly regular, repeating intermediate substructures that form before the overall protein folding process completes. The two most common such substructures, shown in the figure below, are **alpha helices** and **beta sheets**. Alpha helices occur when nearby amino acids wrap around to form a tube structure; beta sheets occur when nearby amino acids line up side-by-side.
 
 [![image-center](../assets/images/600px/hemoglobin_secondary_structure.png){: .align-center}](../assets/images/hemoglobin_secondary_structure.png)
-General shape of secondary structure alpha helices (left) and beta sheets (right). Source: Cornell, B. (n.d.). [https://ib.bioninja.com.au/higher-level/topic-7-nucleic-acids/73-translation/protein-structure.html](https://ib.bioninja.com.au/higher-level/topic-7-nucleic-acids/73-translation/protein-structure.html)
+The general shape of alpha helices (left) and beta sheets (right), the two most common protein secondary structures. Source: Cornell, B. (n.d.). [https://ib.bioninja.com.au/higher-level/topic-7-nucleic-acids/73-translation/protein-structure.html](https://ib.bioninja.com.au/higher-level/topic-7-nucleic-acids/73-translation/protein-structure.html)
 {: style="font-size: medium;"}
 
 A protein's **tertiary structure** describes its final 3D shape after the polypeptide chain has folded and is stable. Throughout this module, when discussing the "shape" or "structure" of a protein, we are almost exclusively referring to its tertiary structure. The figure below shows the tertiary structure of human hemoglobin subunit alpha. For the sake of simplicity, this figure does not show the position of every atom in the protein but rather represents the protein shape as a composition of secondary structures.
@@ -29,7 +29,11 @@ Finally, some proteins have a **quaternary structure**, which describes the prot
 The quaternary structure of human hemoglobin, which consists of two alpha subunits (shown in red) and two beta subunits (shown in blue). Source: [https://commons.wikimedia.org/wiki/File:1GZX_Haemoglobin.png](https://commons.wikimedia.org/wiki/File:1GZX_Haemoglobin.png)]().
 {: style="font-size: medium;"}
 
-As for SARS-CoV and SARS-CoV-2, the spike protein is a **homotrimer**, meaning that it is formed of three essentially identical units called **chains**, each one translated from the corresponding region of the coronavirus's genome. When we talk about identifying the structure of the spike protein in this module, we typically are referring to the structure of a single chain.
+As for SARS-CoV and SARS-CoV-2, the spike protein is a **homotrimer**, meaning that it is formed of three essentially identical units called **chains**, each one translated from the corresponding region of the coronavirus's genome; these chains are colored differently in the figure below. When we talk about identifying the structure of the spike protein in this module, we typically are referring to the structure of a single chain.
+
+[![image-center](../assets/images/600px/spike_protein_homotrimer.png){: .align-center width="400px"}](../assets/images/spike_protein_homotrimer.png)
+A side and top view of the quaternary structure of the SARS-CoV-2 spike protein homotrimer, with its three chains highlighted using different colors.
+{: style="font-size: medium;"}
 
 The structural units making up proteins are often hierarchical, and the spike protein is no exception. Each spike protein chain is a **dimer**, consisting of two subunits called **S1** and **S2**. Each of these subunits further divides into **protein domains**, distinct structural units within the protein that fold independently and are typically responsible for a specific interaction or function. For example, the SARS-CoV-2 spike protein has a **receptor binding domain (RBD)** located on the S1 subunit of the spike protein that is responsible for interacting with the human ACE2 enzyme; the rest of the protein does not come into contact with ACE2. We will say more about the RBD soon.
 
