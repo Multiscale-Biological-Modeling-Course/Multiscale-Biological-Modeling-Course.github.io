@@ -6,11 +6,11 @@
 
 \FloatBarrier
 
-\begin{quote}
-\textit{One of the world's most important warning systems for a deadly new outbreak is a doctor's or nurse's recognition that some new disease is emerging and then sounding the alarm. It takes intelligence and courage to step up and say something like that, even in the best of circumstances.}
-
-\begin{flushright}---~Tom Inglesby\end{flushright}
-\end{quote}
+%\begin{quote}
+%\textit{One of the world's most important warning systems for a deadly new outbreak is a doctor's or nurse's recognition that some new disease is emerging and then sounding the alarm. It takes intelligence and courage to step up and say something like that, even in the best of circumstances.}
+%
+%\begin{flushright}---~Tom Inglesby\end{flushright}
+%\end{quote}
 
 \section{A Tale of Two Doctors}
 \label{sec:coronavirus_introduction}
@@ -168,7 +168,7 @@ For example, \autoref{fig:SequenceStructureExample} compares the sequences and s
 \phantomsection
 \subsection{Flexible polypeptide chains can fold into many possible structures}
 
-Another reason why protein structure prediction is so difficult is because a polypeptide is very flexible, with the ability to rotate in multiple ways at each amino acid, which means that the polypeptide is able to fold into a staggering number of different shapes. This polypeptide flexibility owes to the molecular structure of amino acids. As shown in \autoref{fig:AminoAcid}, an amino acid comprises four parts. In the center, a carbon atom (called the \textdef{alpha carbon}{alpha carbon}{the central carbon atom of an amino acid}) is connected to four different molecules: a hydrogen atom (H), a \textdefnogloss{carboxyl group} ($-\text{COOH}$), an \textdefnogloss{amino group} ($-\text{NH}_2$), and a \textdefnogloss{side chain} (denoted ``R'' and often called an \textbf{R group}). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) up to $-\text{C}_8\text{H}_7\text{N}$ (tryptophan).\\
+Another reason why protein structure prediction is so difficult is because a polypeptide is very flexible, with the ability to rotate in multiple ways at each amino acid, which means that the polypeptide is able to fold into a staggering number of different shapes. This polypeptide flexibility owes to the molecular structure of amino acids. As shown in \autoref{fig:AminoAcid}, an amino acid comprises four parts. In the center, a carbon atom (called the \textdef{alpha carbon}{alpha carbon}{the central carbon atom of an amino acid}) is connected to four different molecules: a hydrogen atom (H), a \textdefnogloss{carboxyl group} ($-\text{COOH}$), an \textdefnogloss{amino group} ($-\text{NH}_2$), and a \textdefnogloss{side chain} (denoted ``R'' and often called an \textbf{R group}). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) up to $-\text{C}_8\text{H}_7\text{N}$ (tryptophan).
 
 \begin{figure}[h]
 	\centering
@@ -211,27 +211,12 @@ A good analogy for polypeptide flexibility is the ``Rubik's Twist'' puzzle, whic
 
 A polypeptide with \textit{n} amino acids will have $n - 1$ peptide bonds, meaning that its shape is influenced by $n - 1$ phi angles and $n - 1$ psi angles. If each bond has \textit{k} stable conformations, then the polypeptide has $k^{2n-2}$ total possible conformations. If \textit{k} is equal to 3 and \textit{n} is equal to only 100 (representing a short polypeptide), then the number of potential protein structures is more than the number of atoms in the universe! The ability of the magic algorithm to reliably find a single conformation despite such an enormous number of potential shapes is called \textdef{Levinthal's paradox}{Levinthal's paradox}{the conundrum that a protein reliably folds into a single conformation despite there being an enormous number of potential structures for that protein}.
 
-Although protein structure prediction is difficult, it is not impossible; the magic algorithm is not, after all, magic. But before discussing how we can begin to solve this problem, we will need to learn a few more biochemical details; as is the case elsewhere in the book, feel free to skim the next section if you already know these details.\\
+Although protein structure prediction is difficult, it is not impossible; the magic algorithm is not, after all, magic. But before discussing how we can solve this problem, we will need to learn a few more biochemical details and be more precise about two things. First, we should specify what we mean by the ``structure'' of a protein. Second, although we know that a polypeptide always folds into the same final three-dimensional shape, we have not said anything about \textit{why} a protein folds in a certain way. We will therefore need a better understanding of how the physicochemical properties of amino acids affect a protein's final structure.\\
 
 \FloatBarrier
 \phantomsection
 
 \section{Protein Biochemistry}
-
-
-\FloatBarrier
-\phantomsection
-
-\section{\textit{Ab initio} Protein Structure Prediction}
-\label{sec:ab_initio}
-\phantomsection
-\subsection{Distributing the work of protein structure prediction around the world}
-
-The determination of the SARS-CoV-2 spike protein structure was remarkable because in many senses it was a community effort, dividing the computational heavy lifting over thousands of volunteers' computers around the world. Two leading structure prediction projects, \href{https://boinc.bakerlab.org}{Rosetta@home} and \href{https://foldingathome.org}{Folding@home}, encourage volunteers to download their software and contribute to a gigantic \textit{distributed} effort to predict protein shape. Even with a modest laptop, a user can donate some of their computer's idle resources to contribute to the problem of protein structure prediction. But how does this software work?
-
-Predicting a protein’s structure using only its amino acid sequence is called \textdef{\textit{ab initio} structure prediction}{ab initio structure prediction}{the prediction of a protein's structure using only its amino acid sequence} (\textit{ab initio} means “from the beginning” in Latin). In this section, we will explain a little about how \textit{ab initio} structure prediction algorithms work.
-
-As we dive into structure prediction, we should be more precise about two things. First, we will specify what we mean by the ``structure'' of a protein. Second, although we know that a polypeptide always folds into the same final three-dimensional shape, we have not said anything about \textit{why} a protein folds in a certain way. We will therefore need a better understanding of how the physicochemical properties of amino acids affect a protein's final structure.
 
 \FloatBarrier
 \phantomsection
@@ -264,7 +249,7 @@ Finally, some proteins have a \textdef{quaternary structure}{quaternary structur
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.6\textwidth]{../images/hemoglobin_quaternary_structure.png}
+	\includegraphics[width = 0.5\textwidth]{../images/hemoglobin_quaternary_structure.png}
 	\caption{The quaternary structure of human hemoglobin, which consists of two alpha subunits (shown in red) and two beta subunits (shown in blue).}
 	\label{fig:hemoglobin_quaternary_structure}
 \end{figure}
@@ -325,6 +310,18 @@ As the protein folds, it seeks a conformation of \textit{lowest} total potential
 	\caption{A ball on a hill offers a classic analogy for a protein folding into the lowest energy structure. As the ball is more likely to move down into a valley, a protein is more likely to fold into a low-energy conformation.}
 	\label{fig:EnergyCartoon}
 \end{figure}
+
+\FloatBarrier
+\phantomsection
+
+\section{\textit{Ab initio} Protein Structure Prediction}
+\label{sec:ab_initio}
+
+\phantomsection
+\subsection{Distributing the work of protein structure prediction around the world}
+The determination of the SARS-CoV-2 spike protein structure was remarkable because in many senses it was a community effort, dividing the computational heavy lifting over thousands of volunteers' computers around the world. Two leading structure prediction projects, \href{https://boinc.bakerlab.org}{Rosetta@home} and \href{https://foldingathome.org}{Folding@home}, encourage volunteers to download their software and contribute to a gigantic \textit{distributed} effort to predict protein shape. Even with a modest laptop, a user can donate some of their computer's idle resources to contribute to the problem of protein structure prediction. But how does this software work?
+
+Predicting a protein’s structure using only its amino acid sequence is called \textdef{\textit{ab initio} structure prediction}{ab initio structure prediction}{the prediction of a protein's structure using only its amino acid sequence} (\textit{ab initio} means “from the beginning” in Latin). In this section, we will explain a little about how \textit{ab initio} structure prediction algorithms work.
 
 \FloatBarrier
 \phantomsection

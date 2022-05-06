@@ -74,9 +74,9 @@ A good analogy for polypeptide flexibility is the "Rubik's Twist" puzzle, shown 
 
 A polypeptide with *n* amino acids will have *n* - 1 peptide bonds, meaning that its shape is influenced by *n* - 1 phi angles and *n* - 1 psi angles. If each bond has *k* stable conformations, then the polypeptide has *k*<sup>2<em>n</em>-2</sup> total possible conformations. If *k* is equal to 3 and *n* is equal to only 100 (representing a short polypeptide), then the number of potential protein structures is more than the number of atoms in the universe! The ability of the magic algorithm to reliably find a single conformation despite such an enormous number of potential shapes is called **Levinthal's paradox**.[^Levinthal]
 
-Although protein structure prediction is difficult, it is not impossible; the magic algorithm is not, after all, magic. In the next lesson, we will place ourselves in the shoes of early SARS-CoV-2 researchers working before the structure of the virus's spike protein had been experimentally determined to see if we can predict its structure and give biologists a head start on fighting the pandemic.
+Although protein structure prediction is difficult, it is not impossible; the magic algorithm is not, after all, magic. But before discussing how we can solve this problem, we will need to learn a few more biochemical details and be more precise about two things. First, we should specify what we mean by the "structure" of a protein. Second, although we know that a polypeptide always folds into the same final three-dimensional shape, we have not said anything about *why* a protein folds in a certain way. We will therefore need a better understanding of how the physicochemical properties of amino acids affect a protein's final structure.
 
-[Next lesson](ab_initio){: .btn .btn--primary .btn--large}
+[Next lesson](biochemistry){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^Wade]: Wade W. 2002. Unculturable bacteria--the uncharacterized organisms that cause oral infections. Journal of the Royal Society of Medicine, 95(2), 81–83. https://doi.org/10.1258/jrsm.95.2.81

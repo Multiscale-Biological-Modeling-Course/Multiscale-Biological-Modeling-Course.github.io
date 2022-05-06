@@ -133,6 +133,8 @@ coronavirus:
     children:
       - title: "Protein structure prediction is difficult<br><br>"
         url: /coronavirus/structure_intro
+      - title: "Protein biochemistry<br><br>"
+        url: /coronavirus/biochemistry
       - title: "Ab initio protein structure prediction<br><br>"
         url: /coronavirus/ab_initio
       - title: "Homology modeling<br><br>"
