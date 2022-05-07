@@ -59,10 +59,6 @@ Although most of the autoregulating *E. coli* transcription factors exhibit nega
 **Exercise:** Design and implement a reaction-diffusion model to run a mathematically-controlled simulation comparing the positive autoregulation of a transcription factor *Y* against normal activation of *Y* by another transcription factor *X*. Plot the concentration of *Y* over time in the two circumstances.
 {: .notice--success}
 
-## Statistical validation
-
- 
-
 ## Implementing more network motifs
 **Exercise:** Use the NFSim tutorial implementing the repressilator as a basis to replicate the other network motif tutorials presented in this module.
 {: .notice--success}

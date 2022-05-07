@@ -481,9 +481,76 @@ In the next chapter, we will an even more involved biochemical process that is u
 \label{sec:exercises}
 \phantomsection
 
-
+\phantomsection
+\subsection{Statistical validation}
 
 \begin{exercise}[%
 42 FFLs is significant.
 ]\end{exercise}
 
+\phantomsection
+\subsection{Identifying feed-forward loops and more complex motifs}
+
+\begin{exercise}[%
+Modify the Jupyter notebook provided in the tutorial on loops to count the number of feed-forward loops in the transcription factor network for \textit{E.~coli}.
+]\end{exercise}
+
+There are eight types of feed-forward loops based on the eight different ways in which we can label the edges in the network with a ``+'' or a ``-'' based on activation or repression.\\
+
+\begin{exercise}[%
+Modify the Jupyter notebook to count the number of loops of each type present in the \textit{E.~coli} transcription factor network.
+]\end{exercise}
+
+\begin{exercise}[%
+How many feed-forward loops would you expect to see in a random network having the same number of nodes as the \textit{E.~coli} transcription factor network? How does this compare to your answers to the previous two questions?
+]\end{exercise}
+
+%More complex motifs may require more computational power to discover.
+%
+%[![image-center](../assets/images/600px/s_cerevisiae_tf_network.jpg){: .align-center}](../assets/images/s_cerevisiae_tf_network.jpg)
+%Example of different motifs within the *S. Cerevisiae* network.[^scNetwork]
+%{: style="text-align: center; font-size: medium;"}
+
+\begin{exercise}[%
+Can you modify our Jupyter Notebook for motif finding to identify circular loops of transcription factor regulation, such as the multi-component loop above?
+]\end{exercise}
+
+\phantomsection
+\subsection{Negative autoregulation}
+
+\begin{exercise}[%
+One way for the cell to apply stronger "brakes" to the simple regulation rate would be to simply increase the degradation rate, rather than implement negative autoregulation. Why do you think that the cell doesn't do this?
+]\end{exercise}
+
+
+%Using the \texttt{NAR_comparison_equal.blend} file from the negative autoregulation tutorial, increase the reaction rate of $X1 -> X1 + Y1 to 4e4, so that the table should now look like the following:
+
+%| Reactants |Products|Forward Rate|
+%|:--------|:-------:|--------:|
+%| X1’  | X1’ + Y1’ | 4e5 |
+%| X2’  | X2’ + Y2’ | 4e2 |
+%| Y1’  | NULL | 4e2 |
+%| Y2’  | NULL | 4e2 |
+%|Y2’ + Y2’|Y2’|4e2|
+
+%If we plot this graph, we can see the steady states of Y1 and Y2 are different once again.
+
+%**Exercise:** Can you repair the system to find the appropriate reaction rate for X2 -> X2 + Y2 to make the steady states equal once more? Are you able to adjust the reaction Y2 + Y2 -> Y2 as well? Do the reaction rates scale at the same rate?
+%{: .notice--success}
+
+\phantomsection
+\subsection{Positive autoregulation}
+
+Although most of the autoregulating \textit{E.~coli} transcription factors exhibit negative autoregulation, 35 of these transcription factors autoregulate \textit{positively}, meaning that the transcription factor activates its own regulation. This network motif exists in processes in which the cell needs a cell to be produced at a slower, more precise rate than it would under normal activation. This occurs in some genes related to development, when gene expression must be carefully controlled.\\
+
+\begin{exercise}[%
+Design and implement a reaction-diffusion model to run a mathematically-controlled simulation comparing the positive autoregulation of a transcription factor \textvar{Y} against normal activation of \textvar{Y} by another transcription factor \textvar{X}. Plot the concentration of \textvar{Y} over time in the two circumstances.
+]\end{exercise}
+
+
+\phantomsection
+\subsection{Implementing more network motifs}'
+
+\begin{exercise}[%
+Use the NFSim tutorial implementing the repressilator as a basis to replicate the other network motif tutorials presented in this module.
+]\end{exercise}
