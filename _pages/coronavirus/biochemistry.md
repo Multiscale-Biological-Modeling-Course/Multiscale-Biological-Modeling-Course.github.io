@@ -39,21 +39,21 @@ The structural units making up proteins are often hierarchical, and the spike pr
 
 ## Proteins seek the lowest energy conformation
 
-Now that we know a bit more about how protein structure is defined, we will discuss why proteins fold in a certain way every time. In other words, what are the factors driving nature's magic protein folding algorithm?
+Now that we know a bit more about how protein structure is defined, we will discuss why proteins fold in the same way every time. In other words, what are the factors driving the magic algorithm?
 
-Amino acids' variety of side chains causes the amino acids to have different chemical properties, which can lead to different conformations being more chemically "preferable" than others. For example, the table below shows the twenty standard amino acids occurring in proteins grouped by chemical properties. Nine of these amino acids are **hydrophobic** (also called **nonpolar**), meaning that their side chains tend to be repelled by water, and as a result we tend to find these amino acids sheltered from the environment on the interior of the protein.
+Amino acids' side chain variety causes amino acids to have different chemical properties, which can lead to different conformations being more chemically "preferable" than others. For example, the table below groups the twenty amino acids commonly occurring in proteins according to chemical properties. Nine of these amino acids are **hydrophobic** (also called **nonpolar**), meaning that their side chains tend to be repelled by water, and so we tend to find these amino acids sheltered from the environment on the interior of the protein.
 
 [![image-center](../assets/images/600px/AminoAcidChart.png){: .align-center}](../assets/images/AminoAcidChart.png)
 A chart of the twenty amino acid grouped by chemical properties. The side chain of each amino acid is highlighted in blue. Image courtesy: <a href="https://openstax.org/books/biology/pages/1-introduction" target="_blank">OpenStax Biology</a>.
 {: style="font-size: medium;"}
 
-We can therefore view protein folding as finding the tertiary structure that is the most *stable* given a polypeptide's primary structure. A central theme of the previous module on bacterial chemotaxis was that a system of chemical reactions moves toward equilibrium. The same principle is true of the magic folding algorithm; when a protein folds into its final structure, it is obtaining a conformation that is as chemically stable as possible.
+We can therefore view protein folding as finding the tertiary structure that is the most *stable* given a polypeptide's primary structure. A central theme of the previous module on bacterial chemotaxis was that a system of chemical reactions moves toward equilibrium. The same principle is true of protein folding; when a protein folds into its final structure, it is obtaining a conformation that is as chemically stable as possible.
 
 To be more precise, the **potential energy** (sometimes called **free energy**) of a molecule is the energy stored within an object due to its position, state, and arrangement. In molecular mechanics, the potential energy is made up of the sum of **bonded energy** and **non-bonded energy**.
 
-Bonded energy derives from the protein's covalent bonds, as well as the angles of bonds between adjacent amino acids, and the torsion angles that we saw in the [previous lesson](structure_intro), as the protein bends and twists.
+As the protein bends and twists into a stable conformation, bonded energy derives from the protein's covalent bonds, as well as the bond angles between adjacent amino acids, and the torsion angles that we introduced in the [previous lesson](structure_intro).
 
-Non-bonded energy comprises **electrostatic interactions** and **van der Waals interactions**. Electrostatic interactions refer to the attraction and repulsion force from the electric charge between pairs of charged amino acids. Two of the twenty standard amino acids (arginine and lysine) are positively charged, and two (aspartic acid and glutamic acid) are negatively charged. Two nearby amino acids of opposite charge may interact to form a **salt bridge**. Conformations containing salt bridges, and keeping apart similarly charged amino acids are kept apart, will therefore have lower free energy contributed by electrostatic interactions.
+Non-bonded energy comprises **electrostatic interactions** and **van der Waals interactions**. Electrostatic interactions refer to the attraction and repulsion force from the electric charge between pairs of charged amino acids. Two of the twenty standard amino acids (arginine and lysine) are positively charged, and two (aspartic acid and glutamic acid) are negatively charged. Two nearby amino acids of opposite charge may interact to form a **salt bridge**. Conformations that contain salt bridges and keep apart similarly charged amino acids will therefore have lower free energy contributed by electrostatic interactions.
 
 As for van der Waals interactions, atoms are dynamic systems, with electrons constantly buzzing around the nucleus, as shown in the figure below.
 
@@ -67,10 +67,10 @@ However, due to random chance, the electrons in an atom could momentarily be une
 Due to random chance, the electrons in the atom on the left have clustered on the left side of the atom, creating a net negative charge on this side of the atom, and therefore a net positive charge on the right side of the atom. This polarity induces a dipole in the atom on the right, whose electrons are attracted because of van der Waals forces.
 {: style="font-size: medium;"}
 
-As the protein folds, it seeks a conformation of *lowest* total potential energy based on all these forces. For a simple analogy, imagine a ball on a slope, as shown in the following figure. Even if the ball bounces around, it will tend to move down the slope. In this analogy, the lower points on the slope correspond to lower energy conformations of a polypeptide.
+As the protein folds, it seeks a conformation of *lowest* total potential energy based on the combination of all these forces. For an analogy, imagine a ball on a slope, as shown in the following figure. The ball will tend to move down the slope unless it is pushed uphill by some outside force, making it unlikely that the ball will wind up at the top of a hill. We will keep this analogy in mind as we return to the problem of protein structure prediction.
 
 [![image-center](../assets/images/600px/EnergyCartoon.png){: .align-center}](../assets/images/EnergyCartoon.png)
-A ball on a hill offers a classic analogy for a protein folding into the lowest energy structure. As the ball is more likely to move down into a valley, a protein is more likely to fold into a low-energy conformation.
+A ball on a hill offers a classic analogy for a protein folding into the lowest energy structure. As the ball is more likely to move down into a valley, a protein is more likely to fold into a more stable, low-energy conformation.
 {: style="font-size: medium;"}
 
 [Next lesson](ab_initio){: .btn .btn--primary .btn--large}

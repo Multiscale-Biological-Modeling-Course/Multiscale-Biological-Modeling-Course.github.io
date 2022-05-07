@@ -264,9 +264,9 @@ The structural units making up proteins are often hierarchical, and the spike pr
 \FloatBarrier
 \subsection{Proteins seek the lowest energy conformation}
 
-Now that we know a bit more about how protein structure is defined, we will discuss why proteins fold in a certain way every time. In other words, what are the factors driving nature's magic protein folding algorithm?
+Now that we know a bit more about how protein structure is defined, we will discuss why proteins fold in the same every time. In other words, what are the factors driving the magic algorithm?
 
-Amino acids' variety of side chains causes the amino acids to have different chemical properties, which can lead to different conformations being more chemically ``preferable'' than others. For example, \autoref{fig:AminoAcidChart} shows the twenty standard amino acids occurring in proteins grouped by chemical properties. Nine of these amino acids are \textdefnogloss{hydrophobic} (also called \textdefnogloss{nonpolar}), meaning that their side chains tend to be repelled by water, and as a result we tend to find these amino acids sheltered from the environment on the interior of the protein.
+Amino acids' side chain variety causes amino acids to have different chemical properties, which can lead to different conformations being more chemically ``preferable'' than others. For example, \autoref{fig:AminoAcidChart} groups the twenty amino acids commonly occurring in proteins according to chemical properties. Nine of these amino acids are \textdefnogloss{hydrophobic} (also called \textdefnogloss{nonpolar}), meaning that their side chains tend to be repelled by water, and so we tend to find these amino acids sheltered from the environment on the interior of the protein.
 
 \begin{figure}[h]
 	\centering
@@ -276,25 +276,23 @@ Amino acids' variety of side chains causes the amino acids to have different che
 	\label{fig:AminoAcidChart}
 \end{figure}
 
-We can therefore view protein folding as finding the tertiary structure that is the most \textit{stable} given a polypeptide's primary structure. A central theme of the previous chapter on bacterial chemotaxis was that a system of chemical reactions moves toward equilibrium. The same principle is true of the magic folding algorithm; when a protein folds into its final structure, it is obtaining a conformation that is as chemically stable as possible.
+We can therefore view protein folding as finding the tertiary structure that is the most \textit{stable} given a polypeptide's primary structure. A central theme of the previous chapter on bacterial chemotaxis was that a system of chemical reactions moves toward equilibrium. The same principle is true of protein folding; when a protein folds into its final structure, it is obtaining a conformation that is as chemically stable as possible.
 
 To be more precise, the \textdef{potential energy}{potential energy}{the energy stored within a molecule due to its position, state, and arrangement, sometimes called free energy} (sometimes called \textdefnogloss{free energy}) of a molecule is the energy stored within an object due to its position, state, and arrangement. In molecular mechanics, the potential energy is made up of the sum of \textdef{bonded energy}{bonded energy}{the potential energy of a molecule deriving from the molecule's covalent bonds} and \textdef{non-bonded energy}{non-bonded energy}{the potential energy of a molecule deriving from electrostatic interactions and van der Waals interactions}.
 
-Bonded energy derives from the protein's covalent bonds, as well as the angles of bonds between adjacent amino acids, and the torsion angles that we introduced earlier, as the protein bends and twists.
+As the protein bends and twists into a stable conformation, bonded energy derives from the protein's covalent bonds, as well as the bond angles between adjacent amino acids, and the torsion angles that we introduced earlier.
 
-Non-bonded energy comprises \textdef{electrostatic interactions}{electrostatic interactions}{attraction and repulsion forces from electric charge between charged amino acids} and \textdef{van der Waals interactions}{van der Waals interactions}{interactions between nearby atoms due to random imbalances in the locations of electrons}. Electrostatic interactions refer to the attraction and repulsion forces from the electric charge betweencharged amino acids. Two of the twenty standard amino acids (arginine and lysine) are positively charged, and two (aspartic acid and glutamic acid) are negatively charged. Two nearby amino acids of opposite charge may interact to form a \textdef{salt bridge}{salt bridge}{an interaction between two nearby amino acids in a protein of opposite charge}. Conformations containing salt bridges, and keeping apart similarly charged amino acids are kept apart, will therefore have lower free energy contributed by electrostatic interactions.
+Non-bonded energy comprises \textdef{electrostatic interactions}{electrostatic interactions}{attraction and repulsion forces from electric charge between charged amino acids} and \textdef{van der Waals interactions}{van der Waals interactions}{interactions between nearby atoms due to random imbalances in the locations of electrons}. Electrostatic interactions refer to the attraction and repulsion forces from the electric charge between pairs of charged amino acids. Two of the twenty standard amino acids (arginine and lysine) are positively charged, and two (aspartic acid and glutamic acid) are negatively charged. Two nearby amino acids of opposite charge may interact to form a \textdef{salt bridge}{salt bridge}{an interaction between two nearby amino acids in a protein of opposite charge}. Conformations that contain salt bridges and keep apart similarly charged amino acids will therefore have lower free energy contributed by electrostatic interactions.
 
-As for van der Waals interactions, atoms are dynamic systems, with electrons constantly buzzing around the nucleus (\autoref{fig:van_der_waals_normal}).\\
+As for van der Waals interactions, atoms are dynamic systems, with electrons constantly buzzing around the nucleus. However, due to random chance, the electrons in an atom could momentarily be unevenly distributed on one side of the nucleus. Because electrons are negatively charged, this uneven distribution will cause the atom to have a temporary negative charge on the side with the excess electrons and a temporary positive charge on the opposite side. As a result of this charge, one side of the atom may attract only the oppositely charged components of another atom, creating an \textdefnogloss{induced dipole} in that atom (\autoref{fig:van_der_waals}). Van der Waals forces refer to the attraction and repulsion between atoms because of induced dipoles.\\
 
-\begin{figure}[h]
-	\centering
-	\mySfFamily
-	\includegraphics[width = 0.4\textwidth]{../images/van_der_waals_normal.png}
-	\caption{A carbon-12 atom showing six positively charged protons (green), six neutrally charged neutrons (blue), and six negatively charged electrons (red). Under typical circumstances, the electrons will most likely be distributed uniformly around the nucleus.}
-	\label{fig:van_der_waals_normal}
-\end{figure}
-
-However, due to random chance, the electrons in an atom could momentarily be unevenly distributed on one side of the nucleus. Because electrons are negatively charged, this uneven distribution will cause the atom to have a temporary negative charge on the side with the excess electrons and a temporary positive charge on the opposite side. As a result of this charge, one side of the atom may attract only the oppositely charged components of another atom, creating an \textdefnogloss{induced dipole} in that atom in turn (\autoref{fig:van_der_waals}). Van der Waals forces refer to the attraction and repulsion between atoms because of induced dipoles.\\
+%\begin{figure}[h]
+%	\centering
+%	\mySfFamily
+%	\includegraphics[width = 0.4\textwidth]{../images/van_der_waals_normal.png}
+%	\caption{A carbon-12 atom showing six positively charged protons (green), six neutrally charged neutrons (blue), and six negatively charged electrons (red). Under typical circumstances, the electrons will most likely be distributed uniformly around the nucleus.}
+%	\label{fig:van_der_waals_normal}
+%\end{figure}
 
 \begin{figure}[h]
 	\centering
@@ -304,13 +302,13 @@ However, due to random chance, the electrons in an atom could momentarily be une
 	\label{fig:van_der_waals}
 \end{figure}
 
-As the protein folds, it seeks a conformation of \textit{lowest} total potential energy based on all these forces. For a simple analogy, imagine a ball on a slope (\autoref{fig:EnergyCartoon}). Even if the ball bounces around, it will tend to move down the slope. In this analogy, the lower points on the slope correspond to lower energy conformations of a polypeptide.\\
+As the protein folds, it seeks a conformation of \textit{lowest} total potential energy based on the combination of all these forces. For an analogy, imagine a ball on a slope (\autoref{fig:EnergyCartoon}). The ball will tend to move down the slope unless it is pushed uphill by some outside force, making it unlikely that the ball will wind up at the top of a hill. We will keep this analogy in mind as we return to the problem of protein structure prediction.\\
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.85\textwidth]{../images/EnergyCartoon.png}
-	\caption{A ball on a hill offers a classic analogy for a protein folding into the lowest energy structure. As the ball is more likely to move down into a valley, a protein is more likely to fold into a low-energy conformation.}
+	\caption{A ball on a slope offers a classic analogy for a protein folding into the lowest energy structure. As the ball is more likely to move down into a valley, a protein is more likely to fold into a more stable, low-energy conformation.}
 	\label{fig:EnergyCartoon}
 \end{figure}
 
@@ -420,7 +418,6 @@ The phenomenon of conserved and variable regions even occurs within individual g
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.85\textwidth]{../images/spike_protein_similarity.png}\\
-	REPLACE IMAGE
 	\caption{Variable and conserved regions in the SARS-CoV and SARS-CoV-2 spike proteins. The S1 domain tends to be more variable, whereas the S2 domain is more conserved. In this figure, ``NTD'' stands for ``N-terminal domain'' and ``RBD'' stands for ``receptor binding domain'', two subunits of the S1 domain.}
 	\label{fig:spike_protein_similarity}
 \end{figure}
