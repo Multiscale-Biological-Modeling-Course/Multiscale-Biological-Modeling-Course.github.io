@@ -16,7 +16,7 @@ We will represent a bacterium as a particle traveling in two-dimensional space. 
 
 We will use *L*(*x*, *y*) to denote the ligand concentration at (*x*, *y*) and establish a point (called the **goal**) at which *L*(*x*, *y*) is maximized. We will place the goal at (1500, 1500), so that the bacterium must travel a significant distance from the origin to reach the goal.
 
-We would like the ligand concentration *L*(*x*, *y*) to decrease exponentially the farther we travel from the goal. We therefore set *L*(*x*, *y*) = 100 · 10<sup>6 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal, which in this case is 1500√2 ≈ 2121 µm.
+We would like the ligand concentration *L*(*x*, *y*) to decrease exponentially the farther we travel from the goal. We therefore set *L*(*x*, *y*) = 100 · 10<sup>6 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal, which in this case is 1500√2 ≈ 2121 µm. At the origin, the attractant concentration is equal to 100, and at the goal, the attractant concentration is equal to 100,000,000.
 
 **STOP:** How can we quantify how well a bacterium has done at finding the attractant?
 {: .notice--primary}
