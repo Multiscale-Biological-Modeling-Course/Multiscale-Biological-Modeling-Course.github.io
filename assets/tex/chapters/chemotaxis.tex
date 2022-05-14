@@ -10,29 +10,13 @@
 \label{sec:introduction}
 \phantomsection
 
-The book \textit{What If?}, by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these situations occurred. Here is an example, called ``Lost Immortals''.
-
-\begin{itquote}
-If two immortal people were placed on opposite sides of an uninhabited Earth-like planet, how long would it take them to find each other? 100,000 years? 1,000,000 years?
-\end{itquote}
+The book \textit{What If?}, by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these situations occurred. One such hypothetical, called ``Lost Immortals'', ponders how two immortal humans might find each other if they were stranded in different locations of an uninhabited planet.
 
 One could imagine many ideas for how the immortals could reunite. For example, they could avoid the interiors of continents by moving to the coastlines. If they are allowed to discuss how to find each other in advance, then they could agree to meet at the planet's North Pole --- assuming that the planet lacks polar bears.
 
-But Munroe provides a solution that is both sophisticated and elegant, quoted below.
+But Munroe provides a solution that is both sophisticated and elegant. He posits that without additional information, the immortals should walk randomly, leaving markers in their wake pointing in the direction that they travel, and resting frequently. If one immortal finds the other's trail, then they should follow it, resting less and traveling faster, until some time has expired or they lose the trail.
 
-\begin{itquote}
-If you have no information, walk at random, leaving a trail of stone markers, each one pointing to the next. For every day that you walk, rest for three. Periodically mark the date alongside the cairn. It doesn’t matter how you do this, as long as it’s consistent. You could chisel the number of days into a rock, or lay out rocks to plot the number.
-
-If you come across a trail that’s newer than any you’ve seen before, start following it as fast as you can. If you lose the trail and can’t recover it, resume leaving your own trail.
-
-You don’t have to come across the other player’s current location; you simply have to come across a location where they’ve been. You can still chase one another in circles, but as long as you move more quickly when you’re following a trail than when you’re leaving one, you’ll find each other in a matter of years or decades.
-
-And if your partner isn’t cooperating --- perhaps they’re just sitting where they started and waiting for you --- then you’ll get to see some neat stuff.
-\end{itquote}
-
-In the previous two chapters, we have harnessed the power of randomness to answer practical questions. Munroe's approach exemplifies a \textdef{randomized algorithm}{random algorithm}{a method that uses randomness to solve a problem}, or a method that uses randomness to solve a problem.
-
-In fact, Munroe's randomized algorithm for Lost Immortals is inspired by nature; he calls his approach ``be an ant'' because it mimics how ants explore their environment for resources. In this chapter, we will see that this algorithm is also similar to the method of exploration taken by a much smaller organism: our old friend \textit{E. coli}.
+In the previous two chapters, we have harnessed the power of randomness to answer practical questions. Munroe's approach exemplifies a \textdef{randomized algorithm}{random algorithm}{a method that uses randomness to solve a problem}, or a method that uses randomness to solve a problem. In fact, this algorithm is inspired by nature; Munroe calls the approach ``be an ant'' because it mimics how ants explore their environment for resources. In this chapter, we will see that the Lost Immortals algorithm is also similar to the method of exploration taken by a much smaller organism: our old friend \textit{E. coli}.
 
 Like other prokaryotes, \textit{E. coli} is tiny, with a rod-shaped body that is 2 µm long and 0.25 to 1 µm wide. In exploring a vast world with sparse resources, \textit{E. coli} finds itself in a situation comparable to the Munroe's immortals.
 
@@ -441,39 +425,9 @@ We would like to use the Gillespie algorithm to simulate the reactions driving c
 
 This model will be more complicated than any we have introduced thus far. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model phosphorylation reactions of CheA, which depend on the current concentrations of bound and unbound MCP molecules. We will at least make the simplifying assumption that the MCP receptor is permanently bound to CheA and CheW, so that we do not need to represent these molecules individually. In other words, rather than thinking about CheA autophosphorylating, we will think about the receptor that includes CheA autophosphorylating.
 
-Say that we wanted to specify all reactions in the manner used up to this point in the book. We would need one particle type to represent MCP molecules, another particle type to represent ligands, and a third to represent bound complexes. A bound complex molecule binds with CheA and CheW and can be either phosphorylated or unphosphorylated, necessitating two different molecule types. In turn, CheY can be phosphorylated or unphosphorylated as well, requiring two more particles.
+We will need six reactions. Two reversible reactions represent ligand-receptor binding, one for each of phosphorylated or unphosphorylated receptors. Two reactions represent MCP phosphorylation and take place at different rates based on whether the MCP is bound to a ligand (in our model, the phosphorylation rate is five times greater when the MCP is unbound). One reaction represents phosphorylation of CheY, and another models dephosphorylation, which is mediated by the CheZ enzyme.
 
-What we need is a \textit{language} that allows us to represent all this information concisely. BioNetGen, the software used throughout this chapter to build our models, would express the collection of particles above as follows:\\
-
-\begin{BioNetGen}
-L(t)             #ligand molecule
-T(l,Phos~U~P)    #receptor complex
-CheY(Phos~U~P)
-CheZ()
-\end{BioNetGen}
-
-In this notation, the ligand and receptor are denoted \texttt{L(t)} and \verb|T(l,Phos~U~P)|, respectively. The \texttt{(t)} specifies that molecule \texttt{L} contains a binding site with \texttt{T}, and the \texttt{(l)} specifies a binding site to \texttt{L}; in this way, ligands and receptors can be either bound or unbound. Furthermore, the notation \verb|Phos~U~P| indicates that a given molecule type can be either phosphorylated or unphosphorylated, so that we do not need multiple different expressions to represent the molecule.  Note that we specified two additional particles corresponding to CheY and CheZ, with the former being possibly phosporylated.
-
-The BioNetGen language also helps us represent a system's reactions concisely. For example, below is the reversible ligand binding/dissociation reaction, called \texttt{LR}, and which takes place according to the forward and reverse rate constants \texttt{k\_lr\_bind} and \texttt{k\_lr\_dis}, respectively. (We will need to declare values for these constants elsewhere in the model.)\\
-
-\begin{BioNetGen}
-LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
-\end{BioNetGen}
-
-First, we explain the left side of this rule, \texttt{L(t) + T(l)}. By specifying \texttt{L(t)} and \texttt{T(l)}, we indicate to BioNetGen that we are only interested in \textit{unbound} ligand and receptor molecules. If we had wanted to select any ligand molecule, then we would have used \texttt{L + T}.
-
-As for the right side of the rule, we will have \texttt{L(t!1).T(l!1)}, which indicates the formation of the complex. In the BioNetGen language, \texttt{!} indicates formation of a bond, and a unique character specifies the possible location of this bond. In our case, we use the character \texttt{1}, so that the bond is represented by \texttt{!1}. The symbol \texttt{.} is used to indicate that the ligand and receptor molecule are joined into a complex. This single rule does not specify anything regarding phosphorylation and can therefore include both phosphorylated and unphosphorylated receptor complexes. 
-
-We should also represent the phosphorylation of the MCP complex, which can occur at different rates depending on whether the MCP is bound, necessitating two reactions. We will also represent the phosphorylation and dephosphorylation of CheY; the latter is facilitated by a CheZ molecule. The rules that we use for these additional reactions are specified below; we purposefully do not delve into explaining each aspect of these rules, asking that you appreciate their complexity, and we encourage you to explore our website for a further explanation of BioNetGen's \textdef{rule-based}{rule-based modeling}{an approach to modeling that uses a collection of ``rules'' to indirectly specify the model, often as a way of specifying an enormous number of possible reactions} language.\tutorial[chemotaxis/tutorial_phos]\\
-
-\begin{BioNetGen}
-FreeTP:  T(l,Phos~U) -> T(l,Phos~P) k_T_phos
-BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
-YP: T(Phos~P) + CheY(Phos~U) -> T(Phos~U) + CheY(Phos~P) k_Y_phos
-YDep: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
-\end{BioNetGen}
-
-Once we have converted the reactions from the chemotaxis signal transduction pathway into this rule-based language, we would like to see what happens when we \textit{change} the concentrations of the ligand. Ideally, the bacterium should be able to distinguish different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY (and the lower the tumbling frequency of the bacterium that we are simulating). But will our model reflect this behavior?
+Once we have built this model, we would like to see what happens when we \textit{change} the concentrations of the ligand. Ideally, the bacterium should be able to distinguish different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY (and the lower the tumbling frequency of the bacterium that we are simulating). But will the model reflect this behavior?\tutorial[chemotaxis/tutorial_phos]
 
 \FloatBarrier
 \phantomsection
@@ -549,19 +503,21 @@ Just as the phosphorylation of CheY can be reversed, MCP methylation can be undo
 
 To expand our model, we will need to expand our MCP molecule to include methylation of the MCP by CheR and demethylation of the MCP by CheB. We will use three methylation levels (low, medium, and high) rather than five because these three states are the most involved in the chemotaxis response to attractants.
 
-Imagine for a moment that we were attempting to specify every reaction that could take place in our model. To specify an MCP, we would need to tell the program whether it is bound to a ligand (two possible states), whether it is bound to CheR (two possible states), whether it is phosphorylated (two possible states), and which methylation state it is in (three possible states). Therefore, a given MCP has $2 \cdot 2 \cdot 2 \cdot 3 = 24$ total states.
+Imagine that we were attempting to specify every reaction that could take place in our model. To specify an MCP, we would need to establish whether it is bound to a ligand (two possible states), whether it is bound to CheR (two possible states), whether it is phosphorylated (two possible states), and which methylation state it is in (three possible states). Therefore, a given MCP has $2 \cdot 2 \cdot 2 \cdot 3 = 24$ total states.
 
 Say that we are simulating the simple reaction of a ligand binding to an MCP, which we originally wrote as $T + L \rightarrow TL$. We now need this reaction to include 12 of the 24 states, the ones corresponding to the MCP being unbound to the ligand. Our previously simple reaction would become 12 different reactions, one for each possible unbound state of the complex molecule $T$. And if the situation were just a little more complex, with the ligand molecule $L$ having $n$ possible states, then we would have $12n$ reactions. Imagine trying to debug a model in which we had accidentally incorporated a typo when transcribing just one of these reactions!
 
 In other words, as our model grows, with multiple different states for each molecule involved in each reaction, the number of reactions we need to represent the system grows very fast; this phenomenon is called \textdef{combinatorial explosion}{combinatorial explosion}{a phenomenon in which the complexity of a problem grows rapidly due to the growth in the number of some quantity of interest (e.g., the number of possible reactions in a molecular system)} and means that building realistic models of biochemical systems at scale can be daunting.
 
-A major benefit of using a rule-based modeling language such as the one developed by BioNetGen is that it circumvents combinatorial explosion by consolidating many reactions into a single rule. For example, when modeling ligand-MCP binding, we can summarize the 12 different reactions with the rule ``a free ligand molecule binds to an MCP that is not bound to a ligand molecule.'' In the BioNetGen language, this rule is represented by the same one-line expression as it was in the previous section:\\
+Yet all of these 12 reactions can be summarized with a single \textit{rule}: a ligand and a receptor can bind into a complex if the receptor is unbound. This rule applies to all of the 12 states that an unbound receptor can have. Moreover, all 12 reactions implied by the rule are easily inferable from it. This idea is the foundation of \textdef{rule-based modeling}{rule-based modeling}{a paradigm in which a potentially enormous number of reactions are specified by a much smaller collection of ``rules'' from which all reactions can be inferred}, a paradigm in which a potentially enormous number of reactions are specified by a much smaller collection of ``rules'' from which all reactions can be inferred. 
+
+We will not bog down the text with a full specification of all the rules needed to add methylation to our model while avoiding combinatorial explosion. However, we will show the single rule representing ligand-receptor binding in the rule-based modeling language used by the BioNetGen software.\\
 
 \begin{BioNetGen}
 LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 \end{BioNetGen}
 
-We will not bog down the text with a full specification of all the rules needed to add methylation to our model while avoiding combinatorial explosion. To see these details, please follow our tutorial online.\tutorial[chemotaxis/tutorial_adaptation]
+For more technical details and a specification of the complete model of \textit{E.~coli} chemotaxis using BioNetGen's rule-based modeling, please follow our tutorial online.\tutorial[chemotaxis/tutorial_adaptation]
 
 \FloatBarrier
 \phantomsection
