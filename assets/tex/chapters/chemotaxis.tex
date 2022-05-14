@@ -187,9 +187,9 @@ c & = k_\text{bind} \cdot l_0 \cdot t_0 = 5000\,.
 $[LT] = \dfrac{205 \pm \sqrt{205^2 - 4 \cdot 2 \cdot 5000}}{2 \cdot 2} = 51.25 \pm 11.25$\,.
 \end{center}
 
-It would seem that this equation has \textit{two} solutions: $51.25 + 11.25 = 62.5$ and $51.25 - 11.25 = 40$. However, because $l_0$ and $t_0$, the respective initial concentrations of $L$ and $T$, are both equal to 50, the steady state concentration of $LT$ cannot be greater than 50 and must therefore be equal to 40.
+It would seem that this equation has \textit{two} solutions: $[LT] = 51.25 + 11.25 = 62.5$ and $[LT] = 51.25 - 11.25 = 40$. Yet because $l_0$ and $t_0$, the respective initial concentrations of $L$ and $T$, are both equal to 50, the first ``solution'' would imply that $[L] = l_0 - [LT] = 50 - 62.5 = -12.5$ and $[T] = t_0 - [LT] = 50 - 62.5 = -12.5$, which is impossible because the concentration of a particle cannot be negative. 
 
-Now that we know the steady state concentration of $LT$, we can recover the values of $[L]$ and $[T]$ as
+Now that we know the steady state concentration of $LT$ must be 40, we can recover the values of $[L]$ and $[T]$ as
 \begin{align*}
 [L] & = l_0 - [LT] = 10\,;\\
 [T] & = t_0 - [LT] = 10\,.
@@ -318,11 +318,7 @@ Next, say that we have two reactions proceeding independently of each other and 
 
 Numerical methods allow us to generate a random number simulating the wait time of an exponential distribution. By repeatedly generating these numbers, we can obtain a series of wait times between consecutive reaction occurrences.
 
-Once a wait time is selected, we should determine to which of the two reactions it corresponds. If the rates of the two reactions are equal, then we simply choose one of the two reactions randomly with equal probability. But if the rates of these reactions are different, then we should choose one of the reactions via a probability that is \textit{weighted} in direct proportion to the rate of the reaction; that is, the larger the rate of the reaction, the more likely that this reaction corresponds to the current event. To do so, we select the first reaction with probability $r_1/(r_1 + r_2)$ and the second reaction with probability $r_2/(r_1 + r_2)$.\\
-
-\begin{qbox}[%
-Verify that these two probabilities sum to 1.
-]\end{qbox}
+Once a wait time is selected, we should determine to which of the two reactions it corresponds. If the rates of the two reactions are equal, then we simply choose one of the two reactions randomly with equal probability. But if the rates of these reactions are different, then we should choose one of the reactions via a probability that is \textit{weighted} in direct proportion to the rate of the reaction; that is, the larger the rate of the reaction, the more likely that this reaction corresponds to the current event. To do so, we select the first reaction with probability $r_1/(r_1 + r_2)$ and the second reaction with probability $r_2/(r_1 + r_2)$. (Note that these two probabilities sum to 1.)\\
 
 As illustrated in \autoref{fig:chemotaxis_visualizessa}, we will demonstrate the Gillespie algorithm by returning to our ongoing example, in which we are modeling the forward and reverse reactions of ligand-receptor binding and dissociation. These reactions have rates that are given by $r_\text{bind} = k_\text{bind} \cdot [L] \cdot [T]$ and $r_\text{dissociate} = k_\text{dissociate} \cdot [LT]$, respectively.
 

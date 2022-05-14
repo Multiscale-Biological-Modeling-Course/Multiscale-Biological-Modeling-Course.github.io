@@ -53,10 +53,7 @@ Next, say that we have two reactions proceeding independently of each other and 
 
 Numerical methods allow us to generate a random number simulating the wait time of an exponential distribution. By repeatedly generating these numbers, we can obtain a series of wait times between consecutive reaction occurrences.
 
-Once a wait time is selected, we should determine to which of the two reactions it corresponds. If the rates of the two reactions are equal, then we simply choose one of the two reactions randomly with equal probability. But if the rates of these reactions are different, then we should choose one of the reactions via a probability that is *weighted* in direct proportion to the rate of the reaction; that is, the larger the rate of the reaction, the more likely that this reaction corresponds to the current event.[^Schwartz17] To do so, we select the first reaction with probability *r*<sub>1</sub>/(λ<sub>1</sub> + *r*<sub>2</sub>) and the second reaction with probability *r*<sub>2</sub>/(*r*<sub>1</sub> + *r*<sub>2</sub>).
-
-**STOP**: Verify that these two probabilities sum to 1.
-{: .notice--primary}
+Once a wait time is selected, we should determine to which of the two reactions it corresponds. If the rates of the two reactions are equal, then we simply choose one of the two reactions randomly with equal probability. But if the rates of these reactions are different, then we should choose one of the reactions via a probability that is *weighted* in direct proportion to the rate of the reaction; that is, the larger the rate of the reaction, the more likely that this reaction corresponds to the current event.[^Schwartz17] To do so, we select the first reaction with probability *r*<sub>1</sub>/(λ<sub>1</sub> + *r*<sub>2</sub>) and the second reaction with probability *r*<sub>2</sub>/(*r*<sub>1</sub> + *r*<sub>2</sub>). (Note that these two probabilities sum to 1.)
 
 As illustrated in the figure below, we will demonstrate the Gillespie algorithm by returning to our ongoing example, in which we are modeling the forward and reverse reactions of ligand-receptor binding and dissociation. These reactions have rates that are given by *r*<sub>bind</sub> = *k*<sub>bind</sub> · [*L*] · [*T*] and *r*<sub>dissociate</sub> = *k*<sub>dissociate</sub> · [*LT*], respectively.
 

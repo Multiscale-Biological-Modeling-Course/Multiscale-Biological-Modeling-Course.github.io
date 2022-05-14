@@ -38,8 +38,11 @@ DNA can therefore be thought of as a blueprint for storing information that flow
 \centering
 \mySfFamily
 \tiny
-\tabcolsep = 1em
-\begin{tabular}{l l@{\hskip3em} l l @{\hskip3em} l l @{\hskip3em} l l}
+\tabcolsep = 0.5em
+\rowcolors{2}{gray!25}{white}
+\begin{tabular}{c l@{\hspace{2.5em}} c l @{\hspace{2.5em}} c l @{\hspace{2.5em}} c l}
+\rowcolor{gray!50}
+\textbf{Codon} & \textbf{Amino acid} & \textbf{Codon} & \textbf{Amino acid} & \textbf{Codon} & \textbf{Amino acid} & \textbf{Codon} & \textbf{Amino acid}\\
 \textnucl{AAA} & Lysine & \textnucl{AAC} & Asparagine & \textnucl{AAG} & Lysine & \textnucl{AAU} & Asparagine\\
 \textnucl{ACA} & Threonine & \textnucl{ACC} & Threonine & \textnucl{ACG} & Threonine & \textnucl{ACU} & Threonine\\
 \textnucl{AGA} & Arginine & \textnucl{AGC} & Serine & \textnucl{AGG} & Arginine & \textnucl{AGU} & Serine\\
@@ -55,8 +58,11 @@ DNA can therefore be thought of as a blueprint for storing information that flow
 \textnucl{UAA} & STOP & \textnucl{UAC} & Tyrosine & \textnucl{UAG} & STOP & \textnucl{UAU} & Tyrosine\\
 \textnucl{UCA} & Serine & \textnucl{UCC} & Serine & \textnucl{UCG} & Serine & \textnucl{UCU} & Serine\\
 \textnucl{UGA} & STOP & \textnucl{UGC} & Cysteine & \textnucl{UGG} & Tryptophan & \textnucl{UGU} & Cysteine\\
-\textnucl{UUA} & Leucine & \textnucl{UUC} & Phenylalanine & \textnucl{UUG} & Leucine & \textnucl{UUU} & Phenylalanine\\[8ex]
+\textnucl{UUA} & Leucine & \textnucl{UUC} & Phenylalanine & \textnucl{UUG} & Leucine & \textnucl{UUU} & Phenylalanine\\
 \end{tabular}
+
+\vspace{8ex}
+
 \includegraphics[width = 0.4\textwidth]{../images/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg}
 \caption{(Top) The genetic code, which dictates the conversion of RNA codons into amino acids. Codons are read from the inside of the figure outward. Three codons (\textnucl{UAA}, \textnucl{UAG}, and \textnucl{UGA}) do not have a corresponding amino acid and are called stop codons because when encountered they serve to halt translation. (Bottom) The central dogma of molecular biology states that molecular information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA.}
 \label{fig:central_dogma}

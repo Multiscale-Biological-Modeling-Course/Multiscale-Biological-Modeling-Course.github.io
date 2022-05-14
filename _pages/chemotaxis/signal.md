@@ -94,7 +94,7 @@ That is, we are solving the equation 2 · [*LT*]<sup>2</sup> - 205 · [*LT*] + 5
 
 $$[LT] = \dfrac{205 \pm \sqrt{205^2 - 4 \cdot 2 \cdot 5000}}{2 \cdot 2} = 51.25 \pm 11.25$$.
 
-It would seem that this equation has *two* solutions: 51.25 + 11.25 = 62.5 and 51.25 - 11.25 = 40. However, because *l*<sub>0</sub> and *t*<sub>0</sub>, the respective initial concentrations of *L* and *T*, are both equal to 50, the steady state concentration of *LT* cannot be greater than 50 and must therefore be equal to 40.
+It would seem that this equation has *two* solutions: [*LT*] = 51.25 + 11.25 = 62.5 and [*LT*] = 51.25 - 11.25 = 40. Yet because *l*<sub>0</sub> and *t*<sub>0</sub>, the respective initial concentrations of *L* and *T*, are both equal to 50, the first "solution" would imply that [*L*] = *l*<sub>0</sub> - [*LT*] = 50 - 62.5 = -12.5 and [*T*] = *t*<sub>0</sub> - [*LT*] = 50 - 62.5 = -12.5, which is impossible because the concentration of a particle cannot be negative.
 
 Now that we know the steady state concentration of *LT*, we can recover the values of [*L*] and [*T*] as
 
