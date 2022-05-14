@@ -367,7 +367,7 @@ To run an \textit{ab initio} structure prediction algorithm on a real protein, w
 
 Levinthal's paradox means that the search space of all possible structures for a protein is so large that accurately predicting large protein structures with \textit{ab initio} modeling remains very difficult. As such, QUARK limits us to proteins with at most 200 amino acids, and so we will run it only on human hemoglobin subunit alpha.\tutorial[coronavirus/tutorial_ab_initio]
 
-\autoref{fig:ab_initio_results} shows the top five predicted human hemoglobin subunit alpha structures returned by QUARK as well as the protein's experimentally verified structure, and an average of these six structures. It takes a keen eye to see any differences between all these structures. We conclude that although \textit{ab initio} prediction is slow, it is nevertheless accurate. Yet we also wonder if we can speed up our structure prediction algorithms so that they will scale to a larger protein like the SARS-CoV-2 spike protein.
+\autoref{fig:ab_initio_results} shows the top five predicted human hemoglobin subunit alpha structures returned by QUARK as well as the protein's experimentally verified structure, and an average of these six structures. It takes a keen eye to see any differences between all these structures. We conclude that although \textit{ab initio} prediction is slow, it is nevertheless accurate. Yet we also wonder if we can speed up our structure prediction algorithms so that they will scale to a larger protein like the SARS-CoV-2 spike protein.\\
 
 \begin{figure}[h]
 	\centering
@@ -389,21 +389,22 @@ What known protein structure(s) would you first want to consult when studying th
 \phantomsection
 \subsection{Homology modeling finds a similar protein structure}
 
-We have seen that \textit{ab initio} structure prediction of a long protein like the SARS-CoV-2 spike protein can be time consuming and error prone. Yet we also mentioned that researchers have entered over 160,000 experimentally verified structure entries into the PDB. With every new structure that we identify, we gain a little more insight into nature's magic protein folding algorithm. In \textdef{homology modeling}{homology modeling}{an approach for protein structure prediction, also known as comparative modeling, in which we use the information contained in known structures to help us predict the structure of a protein with unknown structure} (also called \textdefnogloss{comparative modeling}), we use the information contained in known structures to help us predict the structure of a protein with unknown structure.
+Although \textit{ab initio} structure prediction can be challenging, we also mentioned that researchers have entered over 160,000 experimentally verified structure entries into the PDB. With every new structure that we identify, we gain a little more insight into nature's magic protein folding algorithm. In \textdef{homology modeling}{homology modeling}{an approach for protein structure prediction, also known as comparative modeling, in which we use the information contained in known structures to help us predict the structure of a protein with unknown structure} (also called \textdefnogloss{comparative modeling}), we use the information contained in known structures to help us predict the structure of a protein with unknown structure.
 
-The structure of the SARS-CoV spike protein was determined in 2003. The amino acid \textit{sequence} of this \textdef{homologous protein}{homologous proteins}{two proteins, say from two related species, sharing the same ancestry} is 96\% similar to that of the SARS-CoV-2 spike protein. Assuming that the structure of the two spike proteins is similar, we will use SARS-CoV spike protein's known structure as a guide to help us predict the structure of the SARS-CoV-2 spike protein. In other words, if the search space of all conformations of the SARS-CoV-2 spike protein is enormous, why not restrict it to those structures that are similar to the SARS-CoV spike protein structure?
+The structure of the SARS-CoV spike protein was determined in 2003. Assuming that the two proteins have similar structure, we will use SARS-CoV spike protein's known structure as a guide to help us predict the structure of the SARS-CoV-2 spike protein. In other words, if the search space of all conformations of the SARS-CoV-2 spike protein is enormous, why not restrict it to those structures that are similar to the SARS-CoV spike protein structure?\\
 
-In the case of the SARS-CoV-2 spike protein, we already know that we want to use the SARS-CoV spike protein as a template. However, if we do not know which template to use before we begin, then we can use a search algorithm such as BLAST to find a protein with known structure that has similar sequence to our protein of interest.
+\begin{qbox}[%
+In the case of the SARS-CoV-2 spike protein, we already know that we want to use the SARS-CoV spike protein as a template. However, if we do not know which template to use before we begin, how could we find a candidate protein template?
+]\end{qbox}
 
-\FloatBarrier
 \phantomsection
 \subsection{A similar structure reduces the size of the search space}
 
-Once we have found a similar protein, we need to use it to help us predict the structure of our protein. One way of doing so is to include a ``similarity term'' that subtracts a structure's similarity to the template structure from the structure's total energy. That is, the more similar that a candidate structure is to the template, the more negative the contribution of this similarity term. To continue our search space analogy, the template protein ``pulls down'' the energy values of nearby structures.
+Once we have found a protein with potentially similar structure to our protein of interest, we need to use it to predict the structure of this protein. One way of doing so is to include a ``similarity term'' in the energy function that subtracts a structure's similarity to the template structure from the structure's total energy. That is, the more similar that a candidate structure is to the template, the more negative the contribution of this similarity term. To continue our search space analogy, the template protein ``pulls down'' the energy values of nearby structures like a gravity well.
 
-Another way to perform homology modeling is to account for variance in similarity across different regions of the two proteins. For example, even though the SARS-CoV and SARS-CoV-2 genomes are 96\% similar, this does not mean that all of their proteins are 96\% similar. When we look at genomes from related species, we expect to see \textdefnogloss{conserved regions} where the species are very similar and other \textdefnogloss{variable regions} where the species are more different than the average. For example, the spike proteins of SARS-CoV and SARS-CoV-2 are only 76\% similar.
+Another way to perform homology modeling is to account for variance in similarity across different regions of the two proteins. The SARS-CoV and SARS-CoV-2 genomes are 96\% similar, but their spike proteins are only 76\% similar. In general, when we examine genomes from related species, we see \textdefnogloss{conserved regions} where the species are very similar and other \textdefnogloss{variable regions} where the species are more different than the average.
 
-The phenomenon of conserved and variable regions even occurs within individual genes. For example, \autoref{fig:spike_protein_similarity} shows that within a spike protein subunit, the S2 domain is 90\% similar between the two viruses, whereas the S1 domain is only 64\% similar. Furthermore, there are nested subregions of greater or less variability within each of the two domains.\\
+The phenomenon of conserved and variable regions also occurs within individual genes. \autoref{fig:spike_protein_similarity} shows that within a spike protein subunit, the S2 domain is 90\% similar between the two viruses, whereas the S1 domain is only 64\% similar. Furthermore, the S1 domain divides into two subunits of differing similarity.
 
 \begin{figure}[h]
 	\centering
@@ -415,27 +416,42 @@ The phenomenon of conserved and variable regions even occurs within individual g
 
 Some homology modeling algorithms account for variable and conserved regions by assuming that very conserved regions in the two genes correspond to essentially identical structures in the proteins. That is, the structure of our protein of interest in these regions will be the same as those of the template protein. We can then use a \textdefnogloss{fragment library}, a catalog of known substructures from many proteins, to fill in the structure of non-conserved regions based on structures of fragments whose sequence is similar to these regions. This approach is called \textdef{fragment assembly}{fragment assembly}{the process of using a library of known substructures from many proteins to fill in the structure of non-conserved regions when predicting a protein's structure}.
 
-We will model the SARS-CoV-2 spike protein using homology modeling software from three publicly available servers (SWISS-MODEL, Robetta, and GalaxyWEB), all of which apply a variant of fragment assembly. If the results are similar, then we have faith in the \textit{robustness} of our predictions to using different approaches. Furthermore, comparing the results of multiple different approaches may give us more insights into structure prediction. \tutorial[coronavirus/tutorial_homology]
+We will model the SARS-CoV-2 spike protein using homology modeling software from three publicly available fragment assembly servers (SWISS-MODEL, Robetta, and GalaxyWEB). If the results are similar, then we have faith in the \textit{robustness} of our predictions when using different approaches. Furthermore, comparing the results of multiple different approaches may give us more insights into structure prediction. \tutorial[coronavirus/tutorial_homology]
+
+\FloatBarrier
+
+\phantomsection
+\subsection{Experiments determine the structure of the SARS-CoV-2 spike protein}
+
+On February 25, 2020, two months after the publication of the SARS-CoV-2 genome, researchers from the Seattle Structural Genomics Center for Infectious Disease uploaded to the PDB the result of a cryo-EM experiment for the SARS-CoV-2 spike protein, which became entry \href{http://www.rcsb.org/structure/6VXX}{6vxx}.\\
+
+\begin{note}[%
+	If you would like to explore the structure of the SARS-CoV-2 spike protein, check out the 3-D protein viewer at \url{https://www.rcsb.org/3d-view/6VXX}.
+	]\end{note}
+	
+We now turn to the problem of comparing the homology modeling results of the SARS-CoV-2 spike protein against the experimentally verified structure of SARS-CoV-2. How to compare two protein structures is a simple question, but it has a complicated answer, to which we will devote an entire section.\\
 
 \FloatBarrier
 \phantomsection
-\subsection{Applying homology modeling to the SARS-CoV-2 spike protein}
 
-The results of the three software resources for predicting the structure of the SARS-CoV-2 spike protein are available for download in \autoref{fig:homology_modeling_results_table}.\\
+\section{Protein Structure Comparison}
+\label{sec:accuracy}
 
-\begin{figure}[h]
-	\centering
-	\tabcolsep = 1 em
-	\mySfFamily
-	\begin{tabular}{c c}
-		\textbf{Structure Prediction Server} & \textbf{Results} \\
-		SWISS-MODEL (spike protein) & \url{https://bit.ly/3gIR1RC} \\
-		Robetta (Single-Chain spike protein) & \url{https://bit.ly/34XMmsd} \\
-		GalaxyWEB & \url{https://bit.ly/34WsKES} \\
-	\end{tabular}
-	\caption{A table containing the download link for the prediction results of three homology modeling softwares. SWISS-MODEL was used to predict the structure of the SARS-CoV-2 spike protein. Robetta was used to predict the structure of a single chain of the SARS-CoV-2 spike protein. GalaxyWEB was used to predict the structure of the receptor binding domain (RBD) of the SARS-CoV-2 spike protein.}
-	\label{fig:homology_modeling_results_table}
-\end{figure}
+%The results of the three software resources for predicting the structure of the SARS-CoV-2 spike protein are available for download in \autoref{fig:homology_modeling_results_table}.\\
+%
+%\begin{figure}[h]
+%	\centering
+%	\tabcolsep = 1 em
+%	\mySfFamily
+%	\begin{tabular}{c c}
+%		\textbf{Structure Prediction Server} & \textbf{Results} \\
+%		SWISS-MODEL (spike protein) & \url{https://bit.ly/3gIR1RC} \\
+%		Robetta (Single-Chain spike protein) & \url{https://bit.ly/34XMmsd} \\
+%		GalaxyWEB & \url{https://bit.ly/34WsKES} \\
+%	\end{tabular}
+%	\caption{A table containing the download link for the prediction results of three homology modeling softwares. SWISS-MODEL was used to predict the structure of the SARS-CoV-2 spike protein. Robetta was used to predict the structure of a single chain of the SARS-CoV-2 spike protein. GalaxyWEB was used to predict the structure of the receptor binding domain (RBD) of the SARS-CoV-2 spike protein.}
+%	\label{fig:homology_modeling_results_table}
+%\end{figure}
 
 To compare the protein structures resulting from running software on the SARS-CoV-2 spike protein sequence, we need a way to represent a protein's tertiary structure. In \texttt{.pdb} format (\autoref{fig:simplifiedPDB}), each atom in the protein is labeled according to several different pieces of information, including:
 
@@ -459,23 +475,9 @@ To compare the protein structures resulting from running software on the SARS-Co
 	\autoref{fig:simplifiedPDB} shows just part of the information needed to fully represent a protein structure. For example, a \texttt{.pdb} file will also contain information about the disulfide bonds between amino acids. For more information, check out the \href{http://www.wwpdb.org/documentation/file-format}{official PDB documentation}.
 	]\end{note}
 
-Now that we can represent protein structures, we wish to compare two protein structures. How similar are the three predicted structures of the SARS-CoV-2 spike protein to each other, and how similar are they to the structure of the SARS-CoV spike protein? This is a simple question, but it has a complicated answer, to which we will devote an entire section.\\
+Now that we can represent protein structures, we wish to compare two protein structures. How similar are the three predicted structures of the SARS-CoV-2 spike protein to each other, and how similar are they to the structure of the SARS-CoV spike protein? \\
 
-\FloatBarrier
-\phantomsection
 
-\section{Protein Structure Comparison}
-\label{sec:accuracy}
-\phantomsection
-\subsection{Experiments determine the structure of the SARS-CoV-2 spike protein}
-
-While some scientists were working to predict the structure of the SARS-CoV-2 spike protein from sequence data, others were working on verifying the structure of this protein experimentally. On February 25, 2020, researchers from the Seattle Structural Genomics Center for Infectious Disease uploaded to the PDB the result of a cryo-EM experiment for the SARS-CoV-2 spike protein, which became entry \href{http://www.rcsb.org/structure/6VXX}{6vxx}.\\
-
-\begin{note}[%
-	If you would like to explore the structure of the SARS-CoV-2 spike protein, check out the 3-D protein viewer at \url{https://www.rcsb.org/3d-view/6VXX}.
-	]\end{note}
-
-In this section, we will compare the results of the SARS-CoV-2 spike protein prediction from the previous section against each other and against the protein's empirically validated structure. To do so, we need a method of comparing two structures.
 
 \FloatBarrier
 \phantomsection
