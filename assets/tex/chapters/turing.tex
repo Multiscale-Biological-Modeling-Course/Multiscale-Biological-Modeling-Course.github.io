@@ -12,14 +12,6 @@
 
 If you are familiar with Alan Turing, then you might be surprised that a famous computer scientist would appear in the first sentence of a book on biological modeling, since he is most famous for two other acts. In 1936, he theorized a computer (which came to be known as a ``Turing machine'') consisting of a tape of cells along with a machine that writes symbols on the tape according to a set of predetermined set of rules, a machine that is simple but nevertheless has been shown to be capable of solving any problem that a modern computer can solve.  And during World War II, he worked at Bletchley Park to devise machines that would be used to break several German ciphers.
 
-%\begin{figure}[h]
-%\centering
-%\mySfFamily
-%\includegraphics[width = 0.4\textwidth]{../images/alan_turing_npg_cc.jpg}
-%\caption{Alan Turing in 1951. © National Portrait Gallery, London.}
-%\label{fig:alan_turing_npg_cc}
-%\end{figure}
-
 In 1952, two years before his untimely demise, Turing published his only paper on biochemistry, which addressed the question: “Why do zebras have stripes?” He was not asking why zebras have \textit{evolved} to have stripes --- this question was unsolved in Turing's time, and recent research has indicated that the stripes may be helpful in warding off flies. Rather, Turing was interested in what biochemical mechanism could produce the stripes that we see on a zebra's coat. And he reasoned that just as a simple machine can emulate a computer, some limited set of molecular ``rules'' could cause stripes to appear on a zebra's coat.
 
 In this chapter, we will introduce a particle simulation model based on Turing's ideas. We will see that a system built on very simple rules and even \textit{randomness} can nevertheless produce emergent behavior that is complex and elegant. And we will explore how this model can be tweaked to provide a hypothesis for the origin of not just the zebra's stripes but also the leopard's spots.\\
@@ -476,13 +468,13 @@ If we expand the size of the simulation and add multiple clusters of predators t
 
 In both the particle-based and automaton model for Turing patterns, we observed that the model is \textdef{fine-tuned}{fine-tuned}{a property of a system in which small disturbances can lead to large changes in the system}, meaning that very slight changes in parameter values can lead to significant changes in the system. These changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.
 
-\autoref{fig:xmorphia-parameter-map} shows how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary. The kill rate increases along the x-axis, and the feed rate increases along the y-axis. Notice how much the patterns change! You may like to tweak the parameters of the Gray-Scott simulation from the previous section to see if you can reproduce these differing patterns.\\
+\autoref{fig:xmorphia-parameter-map} shows how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary. The square at position $(x, y)$ shows the pattern obtained as the result of a Gray-Scott simulation with kill rate $x$ and feed rate $y$. Notice how much the patterns change! You may like to tweak the parameters of the Gray-Scott simulation from the previous section to see if you can reproduce these differing patterns.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.4\textwidth]{../images/xmorphia-parameter-map.jpg}
-\caption{Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns produced in the Gray-Scott model. Note that Turing patterns are only produced in a narrow ``sweet spot'' band of parameter choices.}
+\includegraphics[width = 0.5\textwidth]{../images/xmorphia-parameter-map.jpg}
+\caption{Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns obtained in the Gray-Scott model. Each small square shows the patterns obtained from a given choice of feed and kill rate.  Note that many choices of parameters do not produce Turing patterns, which only result from a narrow ``sweet spot'' band of parameter choices.}
 \label{fig:xmorphia-parameter-map}
 \end{figure}
 
