@@ -18,7 +18,7 @@ A phosphoryl group usually comes from one of two sources. First, the phosphoryl 
 
 For many cellular responses, including bacterial chemotaxis, a sequence of phosphorylation and dephosphorylation events called a **phosphorylation cascade** serves to transmit information within the cell about the amount of ligand binding being detected on the cell's exterior. In this lesson, we discuss how this cascade of chemical reactions leads to a change in bacterial movement.
 
-A high-level view of the transduction pathway for chemotaxis is shown in the figure below. The cell membrane receptors that we have been working with are called **methyl-accepting chemotaxis proteins (MCPs)**, and they bridge the cellular membrane, binding both to ligand stimuli in the cell exterior and to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix *Che* (short for "chemotaxis").
+A high-level view of the transduction pathway for chemotaxis is shown in the figure below. The cell membrane receptors that we have been working with are called **methyl-accepting chemotaxis proteins (MCPs)**, and they bridge the cellular membrane, binding both to ligand stimuli in the cell exterior and to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix "Che" (short for "chemotaxis").
 
 [![image-center](../assets/images/600px/chemotaxisphosnew.png){: .align-center}](../assets/images/chemotaxisphosnew.png)
 A summary of the chemotaxis transduction pathway. A ligand binding signal is propagated through CheA and CheY phosphorylation, which leads to a response of clockwise flagellar rotation. The blue curved arrow denotes phosphorylation, the grey curved arrow denotes dephosphorylation, and the blue dashed arrow denotes a chemical interaction. Our figure is a simplified view of <a href="http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html">Parkinson Lab</a> illustrations.
@@ -30,7 +30,7 @@ Phosphorylated CheA can pass on its phosphoryl group to a molecule called **CheY
 
 Yet when a ligand binds to the MCP, the MCP undergoes conformation changes, which reduce the stability of the complex with CheW and CheA. As a result, CheA is less readily able to autophosphorylate, which means that it does not phosphorylate CheY, which cannot change the flagellar rotation to clockwise, and so the bacterium is less likely to tumble.
 
-In short, attractant ligand binding *causes* more phosphorylated CheA and CheY, which means that it *causes* fewer flagellar interactions and therefore less tumbling, so that the bacterium will run for a longer stretch of time.
+In short, attractant ligand binding *causes* more phosphorylated CheA and CheY, which means that it *causes* fewer flagellar interactions and therefore less tumbling, so that the bacterium will run for a longer period of time.
 
 **Note:** A critical part of this process is that if a ligand is detected, and the cell has a high concentration of CheY, then it needs to decrease the CheY concentration quickly. Otherwise, the cell will not be able to change its tumbling frequency. To this end, the cell is able to dephosphorylate CheY using an enzyme called **CheZ**.
 {: .notice--info}
@@ -102,9 +102,9 @@ If we instead add 100,000 attractant molecules, then we see an even more drastic
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100,000 initial attractant ligand particles.
 {: style="font-size: medium;"}
 
-This Gillespie model confirms the biological observations that an increase in attractant reduces the concentration of phosphorylated CheY. What is remarkable is how quickly it takes place, with the cell attaining a new equilibrium in a fraction of a second.
+This Gillespie model confirms the biological observations that an increase in attractant reduces the concentration of phosphorylated CheY. This reduction takes place remarkably quickly, with the cell attaining a new equilibrium in a fraction of a second.
 
-But you may remain skeptical of our model. After all, the biochemistry powering chemotaxis may be elegant, but it is also simple, and perhaps you are not surprised that the model's particle concentrations reproduced the response of *E. coli* to an attractant ligand.
+And yet you may remain skeptical of our model. After all, the biochemistry powering chemotaxis may be elegant, but it is also simple, and perhaps you are not surprised that the model's particle concentrations reproduced the response of *E. coli* to an attractant ligand.
 
 But what we have shown in this lesson is just part of the story. In the next lesson, we will see that the biochemical realities of chemotaxis are even more complicated, and for good reason --- this added complexity will allow *E. coli*, and our model of it, to react to a dynamic world with surprising sophistication.
 

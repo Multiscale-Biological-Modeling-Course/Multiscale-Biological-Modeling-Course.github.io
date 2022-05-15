@@ -35,7 +35,7 @@ To model ligand-receptor dynamics, we will use a **reversible reaction** that pr
 
 We denote the ligand molecule by *L*, the receptor molecule by *T*, and the bound complex as *LT*. The reversible reaction representing complex binding and dissociation is *L* + *T* ←→ *LT* and consists of two reactions. The **forward reaction** is *L* + *T* → *LT*, which occurs at a rate depending on some rate constant *k*<sub>bind</sub>, and the **reverse reaction** is *LT* → *L* + *T*, which occurs at a rate depending on some rate constant *k*<sub>dissociate</sub>.
 
-If we start with a free floating supply of *L* and *T* molecules, then *LT* complexes will initially be formed quickly at the expense of the free-floating *L* and *T* molecules. The reverse reaction will not occur because of the lack of *LT* complexes. However, as the concentration of *LT* grows and the concentrations of  *L* and *T* decrease, the rate of increase in *LT* will slow. Eventually, the number of *LT* complexes being formed by the forward reaction will balance the number of *LT* complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
+If we start with a free floating supply of *L* and *T* molecules, then *LT* complexes will initially be formed quickly at the expense of the free-floating *L* and *T* molecules. The reverse reaction will not occur because of the lack of *LT* complexes. However, as the concentration of *LT* grows and the concentrations of  *L* and *T* decrease, the rate of increase in the concentration of *LT* will slow. Eventually, the number of *LT* complexes being formed by the forward reaction will balance the number of *LT* complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
 
 ## Calculation of equilibrium in a reversible ligand-receptor reaction
 
@@ -76,9 +76,7 @@ $$x = \dfrac{-b \pm \sqrt{b^2 - 4 \cdot a \cdot c}}{2 \cdot a}\,.$$
 **STOP**: Use the quadratic formula to solve for [*LT*] in our previous equation and find the steady state concentration of *LT*. How can we use this solution to find the steady state concentrations of *L* and *T* as well?
 {: .notice--primary}
 
-Now that we have reduced the computation of the steady state concentration of *LT* to the solution of a quadratic equation, we will compute this steady state concentration for a sample collection of parameters.
-
-Say that we are given the following parameter values (the units of these parameters are not important for this toy example):
+Now that we have reduced the computation of the steady state concentration of *LT* to the solution of a quadratic equation, we will compute this steady state concentration for a sample collection of parameters. Say that we are given the following parameter values (the units of these parameters are not important for this toy example):
 * *k*<sub>bind</sub> = 2;
 * *k*<sub>dissociate</sub> = 5;
 * *l*<sub>0</sub> = 50;
@@ -113,7 +111,7 @@ In this case, if we solve the quadratic equation for [*LT*], then we obtain
 
 $$[LT] = \dfrac{105 \pm \sqrt{105^2 - 4 \cdot 1 \cdot 2500}}{2 \cdot 1} = 52.5 \pm 16.008$$.
 
-The only reasonable solution here is 52.5-16.008 = 36.492; As anticipated, the steady state concentration has decreased.
+The only feasible solution is 52.5-16.008 = 36.492; As anticipated, the steady state concentration has decreased.
 
 **STOP**: What do you think will happen to the steady state concentration of *LT* if its initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your predictions by changing the parameters above and solving the quadratic formula for [*LT*].
 {: .notice--primary}

@@ -10,7 +10,7 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## Two randomized exploration strategies
 
-In the [prologue](../prologue/random_walk), we saw that a particle taking a collection of *n* unit steps in random directions will wind up on average $$\sqrt{n}$$ units away from its starting position. We now will compare such a random walk against a modified algorithm that emulates the  behavior of *E. coli* by changing the length of a step (i.e., how long the bacterium tumbles) based on the relative change in background attractant concentration.
+In the [prologue](../prologue/random_walk), we saw that a particle taking a collection of *n* unit steps in random directions will wind up on average a distance proportional to $$\sqrt{n}$$ units away from its starting position. We now will compare such a random walk against a modified algorithm that emulates the  behavior of *E. coli* by changing the length of a step (i.e., how long the bacterium tumbles) based on the relative change in background attractant concentration.
 
 We will represent a bacterium as a particle traveling in two-dimensional space. Units of distance will be measured in µm; recall from the introduction that a bacterium can cover 20 µm in a second during an uninterrupted run. The bacterium will start at the **origin** (0, 0).
 
@@ -92,19 +92,19 @@ A tiny change to a simple, unsuccessful randomized algorithm can therefore produ
 The following figures show three trajectories for a few different values of *t*<sub>0</sub> and a simulation that lasts for 800 seconds. First, we set *t*<sub>0</sub> equal to 0.2 seconds and see that the simulated bacteria are not able to walk far enough in a single step to head toward the goal.
 
 [![image-center](../assets/images/600px/chemotaxis_traj_0.2_uniform.png){: .align-center}](../assets/images/chemotaxis_traj_0.2_uniform.png)
-Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average default tumbling frequency *t*<sub>0</sub> of 0.2 seconds.
+Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average run time between tumbles *t*<sub>0</sub> of 0.2 seconds.
 {: style="font-size: medium;"}
 
 If we increase *t*<sub>0</sub> to 5.0 seconds, then cells can run for so long that they may run past the goal without being able to apply the brakes by tumbling.
 
 [![image-center](../assets/images/600px/chemotaxis_traj_5.0_uniform.png){: .align-center}](../assets/images/chemotaxis_traj_5.0_uniform.png)
-Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average default tumbling frequency *t*<sub>0</sub> of 5.0 seconds.
+Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average run time between tumbles *t*<sub>0</sub> of 5.0 seconds.
 {: style="font-size: medium;"}
 
 When we set *t*<sub>0</sub> equal to 1.0, then the figure below shows a "Goldilocks" effect in which the simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it there.
 
 [![image-center](../assets/images/600px/chemotaxis_traj_1.0_uniform.png){: .align-center}](../assets/images/chemotaxis_traj_1.0_uniform.png)
-Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average default tumbling frequency *t*<sub>0</sub> of 1.0 seconds.
+Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average run time between tumbles *t*<sub>0</sub> of 1.0 seconds.
 {: style="font-size: medium;" }
 
 The figure below visualizes average particle distance to the goal over time for 500 particles using a variety of choices of *t*<sub>0</sub>. It confirms that tumbling every second by default is "just right" for finding an attractant.
