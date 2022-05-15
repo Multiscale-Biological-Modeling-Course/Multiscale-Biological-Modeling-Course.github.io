@@ -18,7 +18,7 @@ When we examine the bacterium's movement under a microscope, we see it alternate
 The run and tumble mechanism of bacterial movement produces a random walk (bottom left). Image courtesy: Sandy Parkinson.
 {: style="font-size: medium;"}
 
-**STOP:** Say that a bacterium travels 20 µm per second, and every second it chooses a random direction in which to travel.  After an hour, approximately how far will it have traveled on average?  What if we allow the bacterium to travel for a week? (Hint: recall the Random Walk Theorem from the [prologue](../prologue/random_walk).)
+**STOP:** Say that a bacterium travels 20 µm per second, and every second it chooses a random direction in which to travel.  After an hour, approximately how far do we expect it to be from its starting point? (Hint: recall the Random Walk Theorem from the [prologue](../prologue/random_walk).)
 {: .notice--primary}
 
 
@@ -30,7 +30,7 @@ And yet despite the diversity of the bacterial kingdom, variations in bacterial 
 
 It is as if some invisible force compels all these bacteria to tumble with the same frequency. Recalling Dobzhansky's quotation from our work in a [previous module](../motifs/nar) that "nothing in biology makes sense except in the light of evolution", we wonder why evolution might hold tumbling frequency constant across species.
 
-This question is a fundamental one, and we will return to it at the close of this module after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism that they use to implement chemotaxis is far more sophisticated than we might expect.
+This question is a fundamental one, and we will return to it at the close of this module after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism that they use to implement chemotaxis is sophisticated and beautiful.
 
 [Next lesson](signal){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

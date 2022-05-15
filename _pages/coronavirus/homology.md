@@ -46,7 +46,7 @@ The results of the three software resources for predicting the structure of the 
 |Robetta (Single-Chain S protein)|[Robetta Results](../_pages/coronavirus/files/Robetta_Model.zip)|
 |GalaxyWEB|[GalaxyWEB Results](../_pages/coronavirus/files/GalaxyWEB_Models.zip)|
 
-To compare the protein structures resulting from running software on the SARS-CoV-2 spike protein sequence, we need a way to represent a protein's tertiary structure. In `.pdb` format (see the figure below), each atom in the protein is labeled according to several different pieces of information, including:
+To compare the protein structures resulting from running software on the SARS-CoV-2 spike protein sequence, we first need a way to represent a protein's tertiary structure. In `.pdb` format (see the figure below), a file format used by the PDB, each atom in the protein is labeled according to several different characteristics, including:
 
 1. the element from which the atom derives;
 2. the amino acid in which the atom is contained;

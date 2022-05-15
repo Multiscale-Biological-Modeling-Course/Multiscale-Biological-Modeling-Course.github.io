@@ -12,9 +12,9 @@
 
 The book \textit{What If?}, by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these situations occurred. One such hypothetical, called ``Lost Immortals'', ponders how two immortal humans might find each other if they were stranded in different locations of an uninhabited planet.
 
-One could imagine many ideas for how the immortals could reunite. For example, they could avoid the interiors of continents by moving to the coastlines. If they are allowed to discuss how to find each other in advance, then they could agree to meet at the planet's North Pole --- assuming that the planet lacks polar bears.
+We could imagine many ideas for how the immortals could reunite. For example, they could avoid the interiors of continents by moving to the coastlines. If they are allowed to discuss how to find each other in advance, then they could agree to meet at the planet's North Pole --- assuming that the planet lacks polar bears.
 
-But Munroe provides a solution that is both sophisticated and elegant. He posits that without additional information, the immortals should walk randomly, leaving markers in their wake pointing in the direction that they travel, and resting frequently. If one immortal finds the other's trail, then they should follow it, resting less and traveling faster, until some time has expired or they lose the trail.
+But Munroe provides a solution that is both sophisticated and elegant. He argues that without additional information, the immortals should walk randomly, leaving markers in their wake pointing in the direction that they travel, and resting frequently. If one immortal finds the other's trail, then they should follow it, resting less and traveling faster, until some time has expired or they lose the trail.
 
 In the previous two chapters, we have harnessed the power of randomness to answer practical questions. Munroe's approach exemplifies a \textdef{randomized algorithm}{random algorithm}{a method that uses randomness to solve a problem}, or a method that uses randomness to solve a problem. In fact, this algorithm is inspired by nature; Munroe calls the approach ``be an ant'' because it mimics how ants explore their environment for resources. In this chapter, we will see that the Lost Immortals algorithm is also similar to the method of exploration taken by a much smaller organism: our old friend \textit{E. coli}.
 
@@ -45,7 +45,7 @@ When we examine the bacterium's movement under a microscope, we see it alternate
 \end{figure}
 
 \begin{qbox}[%
-Say that a bacterium travels 20 µm per second, and every second it chooses a random direction in which to travel.  After an hour, approximately how far will it have traveled on average? What if we allow the bacterium to travel for a week? (Hint: recall the Random Walk Theorem from \autoref{chapter:turing}.)
+Say that a bacterium travels 20 µm per second, and every second it chooses a random direction in which to travel.  After an hour, approximately how far do we expect it to be from its starting point?? (Hint: recall the Random Walk Theorem from \autoref{chapter:turing}.)
 ]\end{qbox}
 
 \FloatBarrier
@@ -58,7 +58,7 @@ And yet despite the diversity of the bacterial kingdom, variations in bacterial 
 
 It is as if some invisible force compels all these bacteria to tumble with the same frequency. Recalling Dobzhansky's quotation from \autoref{chapter:motifs} that ``nothing in biology makes sense except in the light of evolution'', we wonder why evolution might hold tumbling frequency constant across species.
 
-This question is a fundamental one, and we will return to it at the close of this chapter after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism that they use to implement chemotaxis is far more sophisticated than we might expect.\\
+This question is a fundamental one, and we will return to it at the close of this chapter after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism that they use to implement chemotaxis is sophisticated and beautiful.\\
 
 
 \FloatBarrier
@@ -96,7 +96,7 @@ To model ligand-receptor dynamics, we will use a \textdef{reversible reaction}{r
 You may be wondering why ligand-receptor binding is reversible. If complexes did not dissociate, then a brief increase in ligand concentration would be detected indefinitely by the surface receptors. Without releasing the bound ligands, the cell would need to manufacture more and more receptors, which are complicated molecules.
 ]\end{note}
 
-We denote the ligand molecule by $L$, the receptor molecule by $T$, and the bound complex as $LT$. The reversible reaction representing complex binding and dissociation is $L + T \longleftrightarrow LT$ and consists of two reactions. The \textdefnogloss{forward reaction} is $L + T \rightarrow LT$, which takes place at a rate depending on some rate constant $k_\text{bind}$, and the \textdefnogloss{reverse reaction} is $LT \rightarrow L + T$, which takes place at a rate depending on some rate constant $k_\text{dissociate}$.
+We denote the ligand molecule by $L$, the receptor molecule by $T$, and the bound complex as $LT$. The reversible reaction representing complex binding and dissociation is $L + T \longleftrightarrow LT$ and consists of two reactions. The \textdefnogloss{forward reaction} is $L + T \rightarrow LT$, which occurs at a rate depending on some rate constant $k_\text{bind}$, and the \textdefnogloss{reverse reaction} is $LT \rightarrow L + T$, which occurs at a rate depending on some rate constant $k_\text{dissociate}$.
 
 If we start with a free floating supply of $L$ and $T$ molecules, then $LT$ complexes will initially be formed quickly at the expense of the free-floating $L$ and $T$ molecules. The reverse reaction will not occur because of the lack of $LT$ complexes. However, as the concentration of $LT$ grows and the concentrations of $L$ and $T$ decrease, the rate of increase in $LT$ will slow. Eventually, the number of $T$ complexes being formed by the forward reaction will balance the number of $LT$ complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
 
@@ -366,7 +366,7 @@ Earlier in this chapter, we showed an example in which a system with 10,000 free
 \centering
 \mySfFamily
 \includegraphics[width = 0.85\textwidth]{../images/chemotaxis_tutorial4_ssa.png}
-\caption{A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in $\text{molecules}/\text{µm}^\text{3}$) on the y-axis. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.}
+\caption{A concentration plot over time for ligand-receptor dynamics via a simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in $\text{molecules}/\text{µm}^\text{3}$) on the y-axis. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.}
 \label{fig:chemotaxis_tutorial4_ssa}
 \end{figure}
 
@@ -507,13 +507,13 @@ In other words, as our model grows, with multiple different states for each mole
 
 Yet all of these 12 reactions can be summarized with a single \textit{rule}: a ligand and a receptor can bind into a complex if the receptor is unbound. This rule applies to all of the 12 states that an unbound receptor can have. Moreover, all 12 reactions implied by the rule are easily inferable from it. This idea is the foundation of \textdef{rule-based modeling}{rule-based modeling}{a paradigm in which a potentially enormous number of reactions are specified by a much smaller collection of ``rules'' from which all reactions can be inferred}, a paradigm in which a potentially enormous number of reactions are specified by a much smaller collection of ``rules'' from which all reactions can be inferred. 
 
-We will not bog down the text with a full specification of all the rules needed to add methylation to our model while avoiding combinatorial explosion. However, we will show the single rule representing ligand-receptor binding in the rule-based modeling language used by the BioNetGen software.\\
+We will not bog down the text with a full specification of all the rules needed to add methylation to our model. For the technical details required to build this expanded model of chemotaxis using rule-based modeling, please consult our tutorial online.\tutorial[chemotaxis/tutorial_adaptation]
 
-\begin{BioNetGen}
-LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
-\end{BioNetGen}
+%However, we will show the single rule representing ligand-receptor binding in the rule-based modeling language used by the BioNetGen software.\\
 
-For more technical details and a specification of the complete model of \textit{E.~coli} chemotaxis using BioNetGen's rule-based modeling, please follow our tutorial online.\tutorial[chemotaxis/tutorial_adaptation]
+%\begin{BioNetGen}
+%LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
+%\end{BioNetGen}
 
 \FloatBarrier
 \phantomsection
