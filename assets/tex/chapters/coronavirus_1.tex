@@ -455,15 +455,7 @@ We now turn to the problem of comparing the homology modeling results of the SAR
 %	\label{fig:homology_modeling_results_table}
 %\end{figure}
 
-To compare the protein structures resulting from running software on the SARS-CoV-2 spike protein sequence, we need a way to represent a protein's tertiary structure. In \texttt{.pdb} format (\autoref{fig:simplifiedPDB}), each atom in the protein is labeled according to several different pieces of information, including:
-
-\begin{enumerate}
-	\item the element from which the atom derives;
-	\item the amino acid in which the atom is contained;
-	\item the chain on which this amino acid is found;
-	\item the position of the amino acid within this chain;
-	\item the 3D coordinates $(x, y, z)$ of the atom in angstroms ($10^{-10}$ meters).
-\end{enumerate}
+To compare the protein structures resulting from running software on the SARS-CoV-2 spike protein sequence, we first need a way to represent a protein's tertiary structure. In \texttt{.pdb} format (\autoref{fig:simplifiedPDB}), a file format used by the PDB, each atom in the protein is labeled according to several different characteristics, including: the element from which the atom derives; the amino acid in which the atom is contained; the chain on which this amino acid is found; the position of the amino acid within this chain; and the 3D coordinates $(x, y, z)$ of the atom in angstroms ($10^{-10}$ meters).\\
 
 \begin{figure}[h]
 	\centering
