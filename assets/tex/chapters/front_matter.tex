@@ -1,10 +1,31 @@
-\newpage
-\phantomsection
-\phantom{}
+\clearpage\null
 \thispagestyle{empty}
+\AddToShipoutPictureBG*{% Add picture to current page
+  \AtStockLowerLeft{% Add picture to lower-left corner of paper stock
+    \includegraphics[width=\stockwidth]{../images/front_cover}}
+}
 \addtocounter{page}{-1}
-\newpage
+
+\clearpage
+
+% Title page
+
+\clearpage\null
 \thispagestyle{empty}
+\AddToShipoutPictureBG*{% Add picture to current page
+  \AtStockLowerLeft{% Add picture to lower-left corner of paper stock
+    \includegraphics[width=\stockwidth]{../images/cover_page}}
+}
+\addtocounter{page}{-1}
+
+\newpage
+
+
+\thispagestyle{empty}
+
+% Reverse title page
+
+\phantom{}\vspace{17\baselineskip}
 
 \noindent Copyright ©~2022 by Phillip Compeau. All rights reserved.\\
 
@@ -18,18 +39,33 @@
 
 \noindent Library of Congress Control Number: TBA\\
 
-\noindent Philomath Press, LLC
+\noindent Philomath Press, LLC\\
 Pittsburgh, PA
 \addtocounter{page}{-1}
+
+
+\begin{dedication}
+\textit{For Sandy Nichols, who taught me that mathematics might give me answers, but that writing would always keep me asking questions.}\\[\baselineskip]
+\thispagestyle{empty}
+\end{dedication}
+
 \newpage
 \phantomsection
-\chapter*{Welcome!}
+
+% Blank page
+
+% Welcome
+
+\newpage
+\phantomsection
+\chapter{Welcome!}
 
 \begin{enumerate}
 \item Thank you for joining us!
-\item This is the print companion to the \href{https://biologicalmodeling.org}{Biological Modeling} project, a free and open online course teaching how to model biological systems at multiple scales.
+\item This is the print companion to \href{https://biologicalmodeling.org}{\textit{Biological Modeling}} (\href{https://biologicalmodeling.org}{biologicalmodeling.org}), a free and open online course teaching how to model biological systems at multiple scales.
 \item Explain how everything works in terms of the tutorials. In the E-book, these tutorials are clickable and will take you directly to the appropriate tutorial at the course website.
 \item Explain ``STOP'' questions and how they differ from the exercises that you find at the end of the chapter.
+\item Student effort. Students are co-authors here.
 \end{enumerate}
 
 From web: 
@@ -41,19 +77,6 @@ What these questions share is that they can start to be answered by modeling bio
 In this book, we will build models of biological systems that are relatively simple but nevertheless provide us with deep, fascinating insights into how those systems operate.
 
 \phantom{}\vspace{7.7\baselineskip}
-
-%
-%\thispagestyle{empty}
-%
-%
-%
-%\begin{dedication}
-%\textit{To my family.}\hspace{0.98ex} --- P.\,C.\\[\baselineskip]
-%\thispagestyle{empty}
-%\end{dedication}
-%
-%\newpage \phantom{}
-%\thispagestyle{empty}
 
 \newpage
 
@@ -89,20 +112,21 @@ In this book, we will build models of biological systems that are relatively sim
 
 \newpage
 \phantomsection
-\chapter*{Meet the Team}
+\chapter{Meet the Team}
 
 \noindent\begin{tabular}{l @{\hskip 3em} l}
-\parbox{0.28\textwidth}{\noindent \href{http://compeau.cbd.cmu.edu}{\includegraphics[width=0.28\textwidth]{../images/compeau_phillip_circle}}} & \parbox{0.7\textwidth}{\noindent {\small \href{http://compeau.cbd.cmu.edu}{\textbf{\textsc{Phillip Compeau}}} is the founder of \textit{Biological Modeling}. He is an Associate (Teaching) Professor and the Assistant Department Head in the Computational Biology Department at Carnegie Mellon University, where he directs the undergraduate program and co-directs the precollege program in computational biology. He is passionate about open online education, and his education projects, which include \href{http://rosalind.info}{Rosalind} and the \href{https://www.coursera.org/specializations/bioinformatics}{Bioinformatics Specialization} on Coursera, have reached over a million people. He is also the co-author of \textit{Bioinformatics Algorithms: An Active Learning Approach}, which has been adopted by over 200 instructors in 45 countries.}}\\[20ex]
+\parbox{0.28\textwidth}{\noindent \href{http://compeau.cbd.cmu.edu}{\includegraphics[width=0.28\textwidth]{../images/compeau_phillip_circle}}} & \parbox{0.7\textwidth}{\noindent {\small \href{http://compeau.cbd.cmu.edu}{\textbf{\textsc{Phillip Compeau}}} is the founder of \textit{Biological Modeling}. He is an Associate (Teaching) Professor and the Assistant Department Head in the Computational Biology Department at Carnegie Mellon University, where he directs the undergraduate program and co-directs the precollege program in computational biology. His online education projects, including \href{http://rosalind.info}{Rosalind}, \href{https://programmingforlovers.com}{Programming for Lovers}, and the \href{https://www.coursera.org/specializations/bioinformatics}{Bioinformatics Specialization} on Coursera, have reached over a million people. He is also the co-author of \textit{Bioinformatics Algorithms: An Active Learning Approach}, which has been adopted by 200 instructors in 45 countries.}}\\[22ex]
 
 \parbox{0.28\textwidth}{\noindent \href{http://merterm.github.io}{\includegraphics[width=0.28\textwidth]{../images/inan_mert_circle}}} & \parbox{0.7\textwidth}{\noindent {\small \textbf{\textsc{Mert Inan}} is a computer science Ph.D. student at the University of Pittsburgh and an alum of the M.S. in computational biology program at Carnegie Mellon University. He loves interdisciplinary fields and has been working at the intersection of computation, biology, neuroscience, and machine intelligence. Unlocking the secrets of biology is a pleasure that Mert truly enjoys.}}
 \end{tabular}
 
 \noindent\begin{tabular}[m]{l @{\hskip 3em} l}
-\parbox{0.28\textwidth}{\noindent \href{https://cbb.yale.edu/people/noah-yann-lee}{\includegraphics[width=0.28\textwidth]{../images/lee_noah_circle}}} & \parbox{0.7\textwidth}{\noindent {\small \textbf{\textsc{Noah Yann Lee}} is a PhD student at Yale University under the Computational Biology and Bioinfornatics program and an alum of the undergraduate program in computational biology at Carnegie Mellon University. From running early-childhood educational tests with the Children’s School at Carnegie Mellon for the Global Learning XPRIZE, to cultivating and sequencing phage genomes with the PhageHunters program, Noah has an appreciation for science from the micro to the macro, physical to the digital. Noah is always interested to connect with projects and organizations working with STEM, education, and science outreach.}}\\[20ex]
+\parbox{0.28\textwidth}{\noindent \href{https://cbb.yale.edu/people/noah-yann-lee}{\includegraphics[width=0.28\textwidth]{../images/lee_noah_circle}}} & \parbox{0.7\textwidth}{\noindent {\small \textbf{\textsc{Noah Yann Lee}} is a PhD student at Yale University in the Computational Biology and Bioinfornatics program and an alum of the undergraduate program in computational biology at Carnegie Mellon University. From running early-childhood educational tests with the Children’s School at Carnegie Mellon for the Global Learning XPRIZE, to cultivating and sequencing phage genomes with the PhageHunters program, Noah has an appreciation for science from the micro to the macro, physical to the digital. Noah is interested in projects and organizations working with STEM education, and science outreach.}}\\[22ex]
 
-\parbox{0.28\textwidth}{\noindent \href{https://www.linkedin.com/in/shuanger-li-38b300133/}{\includegraphics[width=0.28\textwidth]{../images/li_shuanger_circle}}} & \parbox{0.7\textwidth}{\noindent {\small \textbf{\textsc{Shuanger Li}} is a PhD student at the University of Chicago, and an alum of the M.S. in Computational Biology at Carnegie Mellon, where she worked with Dr. Oana Carja on heritable phenotypic variability. She enjoys modeling and simulation as powerful and fun ways to understand biological systems. She double majored in Environmental Sciences and Microbial Biology at UC Berkeley, where she studied Hawaiian arthropod assemblages, spider behaviors, and remediation bioreactors.}}\\[18ex]
+\parbox{0.28\textwidth}{\noindent \href{https://www.linkedin.com/in/chris-lee-b1a020158/}{\includegraphics[width=0.28\textwidth]{../images/lee_chris_circle}}} & \parbox{0.7\textwidth}{\noindent {\small \textbf{\textsc{Chris Lee}} is an associate computational biologist at Dicerna Pharmaceuticals. He is an alum of the M.S. in Computational Biology at Carnegie Mellon University; previously, he was an undergraduate student at Rutgers University and worked as an undergraduate researcher studying hydrothermal vent bacteria, where he graduated magna cum laude with a B.A. in Molecular Biology \& Biochemistry and double minor in Chemistry and Computer Science.}}\\[20ex]
 
-\parbox{0.28\textwidth}{\noindent \href{https://www.linkedin.com/in/shuanger-li-38b300133/}{\includegraphics[width=0.28\textwidth]{../images/lee_chris_circle}}} & \parbox{0.7\textwidth}{\noindent {\small \textbf{\textsc{Chris Lee}} Chris Lee is an alum of the M.S. in Computational Biology at Carnegie Mellon University. Previously, he was an undergraduate student at Rutgers University and worked as an undergraduate researcher studying hydrothermal vent bacteria. In 2019, Chris graduated magna cum laude with a B.A. in Molecular Biology \& Biochemistry and double minor in Chemistry and Computer Science. He is currently interested in the fields of bioinformatics and genomics.}}\\[20ex]
+\parbox{0.28\textwidth}{\noindent \href{https://www.linkedin.com/in/shuanger-li-38b300133/}{\includegraphics[width=0.28\textwidth]{../images/li_shuanger_circle}}} & \parbox{0.7\textwidth}{\noindent {\small \textbf{\textsc{Shuanger Li}} is a PhD student at the University of Chicago, and an alum of the M.S. in Computational Biology at Carnegie Mellon, where she worked with Dr. Oana Carja on heritable phenotypic variability. She enjoys modeling and simulation as powerful and fun ways to understand biological systems. She double majored in Environmental Sciences and Microbial Biology at UC Berkeley, where she studied Hawaiian arthropod assemblages, spider behaviors, and remediation bioreactors.}}\\
+
 \end{tabular}
 
 \newpage
@@ -116,11 +140,11 @@ In this book, we will build models of biological systems that are relatively sim
 \chapter{Acknowledgments}
 \label{chapter:acknowledgments}
 
-The online course from which this book derives is a training and dissemination effort for the National Center for Multiscale Modeling of Biological Systems (MMBioS). The development of that course has been supported by the National Institutes of Health (grant ID: P41 GM103712).
+The online course from which this book derives, \href{https://biologicalmodeling.org}{\textit{Biological Modeling}}, is a training and dissemination effort for the National Center for Multiscale Modeling of Biological Systems (MMBioS). The development of that course has been supported by the National Institutes of Health (grant ID: P41 GM103712).
 
 We would like to thank everyone who has contributed to the development of MMBioS software, as their work allowed this project to come about. We also would like to thank the other members of our training and dissemination team (Alex Ropelewski, Joe Ayoob, and Rozita Laghaei) as well as the Director of MMBioS, Jim Faeder.
 
-We are grateful to Wendy Velasquez Ebanks and Ulani Qi, who helped work on the course during its conception. Special thanks as well go to Yanjing Li, who helped develop exercises for \autoref{chapter:white_blood_cells}. 
+We are grateful to Nicole Matamala, who helped develop tutorials for \autoref{chatper:white_blood_cells}, Yanjing Li, who helped develop exercises for \autoref{chapter:white_blood_cells}, and Velasquez Ebanks and Ulani Qi, who helped work on an early version of \textit{Biological Modeling}. Special thanks to Adam Mihalik, who provided helpful comments on an early draft of this work.
 
 \autoref{chapter:motifs} was in part inspired by Uri Alon’s research and superlative textbook \href{https://www.weizmann.ac.il/mcb/UriAlon/introduction-systems-biology-design-principles-biological-circuits}{\textit{An Introduction to Systems Biology}}, a classic that we strongly recommend if you are interested in a greater discussion of biological network motifs.
 
