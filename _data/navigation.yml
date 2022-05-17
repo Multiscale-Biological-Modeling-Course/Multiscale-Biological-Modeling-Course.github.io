@@ -43,6 +43,10 @@ prologue:
         url: /prologue/tutorial-diffusion
       - title: "Implementing the Gray-Scott reaction-diffusion automaton<br><br>"
         url: /prologue/gs-jupyter
+  - title: "Exercises"
+    children:
+      - title: "Prologue exercises"
+        url: /prologue/exercises
 
 motifs:
   - title: "Finding Motifs in Transcription Factor Networks"
