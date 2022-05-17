@@ -35,7 +35,10 @@ Finally, take a look at the following two photos of giant pufferfish.[^youngfish
 
 ## A final note
 
-Thank you for making it this far! We hope that you are enjoying the course. You can join the next module of the course by clicking on the "next module" button below. In the meantime, we ask that you complete the <a href="https://forms.gle/egmmBxGtBciDPYNS8" target="_blank">course survey</a> if you have not done so already.
+Thank you for making it this far! We hope that you are enjoying the course. You can visit the exercises for this module or skip ahead to the next module by clicking on the appropriate button below. We also ask that you complete the <a href="https://forms.gle/egmmBxGtBciDPYNS8" target="_blank">course survey</a> if you have not done so already.
+
+[Visit exercises](exercises){: .btn .btn--success .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 [Next module](../motifs/home){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
