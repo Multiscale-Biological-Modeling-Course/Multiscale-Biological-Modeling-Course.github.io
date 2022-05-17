@@ -53,6 +53,7 @@ Pittsburgh, PA
 \phantomsection
 
 % Blank page
+\addtocounter{page}{-1}
 
 % Welcome
 
@@ -60,21 +61,24 @@ Pittsburgh, PA
 \phantomsection
 \chapter{Welcome!}
 
-\begin{enumerate}
-\item Thank you for joining us!
-\item This is the print companion to \href{https://biologicalmodeling.org}{\textit{Biological Modeling}} (\href{https://biologicalmodeling.org}{biologicalmodeling.org}), a free and open online course teaching how to model biological systems at multiple scales.
-\item Explain how everything works in terms of the tutorials. In the E-book, these tutorials are clickable and will take you directly to the appropriate tutorial at the course website.
-\item Explain ``STOP'' questions and how they differ from the exercises that you find at the end of the chapter.
-\item Student effort. Students are co-authors here.
-\end{enumerate}
+Have you ever wondered why zebras have stripes? How your cells can quickly react to their environment and perform complex tasks without intelligence? Why the original SARS coronavirus fizzled out but SARS-CoV-2 has spread like wildfire around the planet? How algorithms can be trained to ``see'' cells as well as a human?
 
-From web: 
+What all these questions share is that they can be answered by modeling biological systems at multiple ``scales'' of resolution, from the microscopic to the molecular. We will build models of biological systems that are relatively simple but nevertheless provide us with deep, fascinating insights into how those systems operate. Whether you are a biologist seeking to learn more about modeling, a mathematician or computer scientist hoping to see how quantitative methods can help us understand how biological systems work, or just a lover of science, we think you are in the right place.
 
-Have you ever wondered why zebras have stripes? Have you ever wondered how your cells can quickly react to their environment and perform complex tasks without intelligence? Have you ever wondered why the original SARS coronavirus fizzled out but SARS-CoV-2 has spread like wildfire around the planet? Have you ever wondered how algorithms can be trained to “see” cells as well as a human?
+This book is the print companion to \href{https://biologicalmodeling.org}{\textit{Biological Modeling}} (\href{https://biologicalmodeling.org}{biologicalmodeling.org}), a free and open online course teaching how to model biological systems at multiple scales. At the course website, you will find the full text of this book alongside a collection of tutorials walking you through how to build the models that we have used to reach our conclusions. Every time we encounter a tutorial, you will see the laptop symbol in the margin; if you are reading this as an ebook, then clicking on the laptop will take you directly to the relevant tutorial.\tutorial[]
 
-What these questions share is that they can start to be answered by modeling biological systems at multiple “scales” of resolution, from the microscopic to the molecular.
+These tutorials are built using the flagship software of the National Center for Multiscale Modeling of Biological Systems (MMBioS), a multi-university project. Although we use additional software where needed, each chapter is paired with a primary MMBioS software resource: \autoref{chapter:turing} and \autoref{chapter:motifs} are powered by MCell and CellBlender (\url{mcell.org}); \autoref{chapter:chemotaxis} is powered by BioNetGen (\url{bionetgen.org}); \autoref{chapter:coronavirus} is powered by ProDy (\url{http://prody.csb.pitt.edu}) and affiliated software; and \autoref{chapter:white_blood_cells} is powered by CellOrganizer (\url{cellorganizer.org}).
 
-In this book, we will build models of biological systems that are relatively simple but nevertheless provide us with deep, fascinating insights into how those systems operate.
+Each chapter has a collection of exercises at its end, many of which ask you to apply what you have learned to build your own models, but we also have integrated a collection of shorter ``STOP'' questions into the main text that invite you to check your understanding or contemplate the current material before continuing to the next topic. We also have ``Notes'' that provide short asides from the main text for readers who are interested.
+
+Finally, this project may be the labor of love of a single person, but it is far from a solo effort. Every chapter in this book was co-authored by an undergraduate or master's student at Carnegie Mello Universityn. After the table of contents, we have short introductions of the talented team members who helped bring this book to life.
+
+Thank you for joining us. We hope that you enjoy our little tour of biological modeling.
+
+\begin{flushright}
+\textit{Phillip Compeau}\\
+\textit{Pittsburgh, PA}
+\end{flushright}
 
 \phantom{}\vspace{7.7\baselineskip}
 
@@ -84,30 +88,6 @@ In this book, we will build models of biological systems that are relatively sim
 \tableofcontents*
 \clearpage
 \phantomsection
-
-%Thank you for joining us!  Since its first publication in 2014, this textbook has become a bestseller in the field of computational biology, having been adopted by dozens of universities in twenty countries (\autopageref{sec:university_adoptions}).  Yet we are equally proud that the textbook also powers our popular online courses in bioinformatics, which have been completed by thousands of learners around the world.  We hope that you will sign up for our courses and explore our material online as well.
-%
-%You can also find lecture videos, PowerPoint slides, and answers to FAQs at the textbook website, \url{http://bioinformaticsalgorithms.org}.
-%
-%The subtitle of this book is \textit{An Active Learning Approach}.  This is because as you read, you will find a number of active learning components that will help you learn the material interactively and at your own pace.
-%
-%\begin{enumerate}
-%\item \Black{Code Challenges} ask you to implement the algorithms that you will encounter (in any programming language you like).  These code challenges are hosted in the ``Bioinformatics Textbook Track'' location on Rosalind (\url{http://rosalind.info}), a website that will automatically test your implementations.  \marginpar{\centering\vskip-9ex\includegraphics[width = 3.6em]{images/CMYK_ed3/logos/rosalind}}
-%\vspace{0.5\baselineskip}
-%\item \Blue{Charging Stations} provide additional insights on implementing the algorithms you encounter.  However, we suggest trying to solve a Code Challenge before you visit a Charging Station.\marginpar{\centering\vskip-10.3ex{\includegraphics[width = 3.2em]{images/CMYK_ed3/logos/charging_station_intro}\\ \vskip-8.8ex }}
-%%As one of our Coursera students once said, ``read, apply, fail the first attempt, then think carefully about the bigger picture as [you] try to understand why [your] first attempt failed.''
-%\vspace{0.5\baselineskip}
-%\item \Purple{\textbf{Exercise Breaks}} offer ``just in time'' assessments testing your understanding of a topic before moving to the next one.\marginpar{\centering\vskip-6.2ex\includegraphics[width = 3.2em]{images/CMYK_ed3/logos/exercise}}
-%\vspace{0.5\baselineskip}
-%\item \Red{STOP and Think} questions invite you to slow down and contemplate the current material before continuing to the next topic.\marginpar{\centering\vskip-6.1ex\includegraphics[width = 3.2em]{images/CMYK_ed3/logos/stop_sign_no_border}}
-%\vspace{0.5\baselineskip}
-%\item \Orange{Detours} provide extra content that didn't quite fit in the main text.\nop{detour}\marginpar{\centering\vskip-3.3ex\hyperlink{detour}{\includegraphics[width = 6em]{images/CMYK_ed3/logos/detour_blank_no_bg_outline}\hskip-7em\vskip-4.9ex\parbox{7em}{\small\Black{~~~~\textsc{DETOUR}~}}}}
-%\vspace{0.5\baselineskip}
-%\item \Green{Challenge Problems} ask you to apply what you have learned to real experimental datasets.
-%\item \Yellow{FAQs} \marginpar{\centering\vskip-4.6ex\includegraphics[width = 3.6em]{images/CMYK_ed3/logos/faq}} are questions that we encountered many times from the learners who have taken our online courses and the students we have taught using this book in our own offline courses.  When you see the question mark symbol in the margin, it indicates that there is an FAQ on the current subject; answers to FAQs are hosted at the textbook website.
-%\end{enumerate}
-%
-%\noindent Finally, we have tried to make the book as fun to read as possible.  For example, since bioinformatics is still an ever-changing frontier, we decided to implement a Wild West theme for the book. Accordingly, you will notice that each chapter begins with a cartoon image showing the authors entangled in some adventure. What do these cartoons have to do with bioinformatics?  Continue reading to find out!
 
 
 \newpage
@@ -166,7 +146,7 @@ Mark Mammel & Akash Ramachandran\\
 Will Townes & Darrell Thomas\\
 Sean Leonard & Eric Song\\
 Hal Snyder & Jared A.~Davis\\
-Kevin Reed & Iridium66\\
+Kevin Reed & Roger Walker\\
 Maxwell Shapiro & Jérémie Sartor\\
 Jeff Buck & Christopher James Langmead\\
 Jacqueline McVeigh & Nikolett Lehel Lassie\\

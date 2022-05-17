@@ -53,7 +53,7 @@ After \textvar{n} steps of unit length in a random walk, a particle will on aver
 For readers who love mathematics, we provide a proof of the Random Walk Theorem in an appendix.
 ]\end{note}
 
-Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that someone who has a respiratory virus can infect many others in an enclosed space in a short time frame. To take a less morbid example, we also know that when a cake is baking in the oven, we will not need to wait long for delicious smells to waft outward from the kitchen. But what does all this have to do with Alan Turing and Zebra stripes?\\
+Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that someone who has a respiratory virus can infect many others in an enclosed space in a short time frame. To take a less morbid example, we also know that when a cake is baking in the oven, we will not need to wait long for delicious smells to waft outward from the kitchen. But what does all this have to do with Alan Turing and zebra stripes?\\
 
 \FloatBarrier
 \phantomsection
@@ -494,3 +494,60 @@ Finally, take a look at the two photos of giant pufferfish in \autoref{fig:puffe
 \caption{Two similar pufferfish with very different skin patterns. (Left) A juvenile Mbu pufferfish with a very familiar pattern. (Right) An adult Mbu pufferfish exhibiting another familiar pattern.}
 \label{fig:pufferfish}
 \end{figure}
+
+\FloatBarrier
+\phantomsection
+\newpage
+\section{Exercises}
+
+\phantomsection
+\subsection{Photons and random walks}
+
+Photons are massless particles carrying electromagnetic radiation. In the sun's core, photons are created as the result of nuclear fusion when two hydrogen atoms crash together and form a helium atom. The photons that are released have a great deal of kinetic energy, traveling at the speed of light (approximately 300,000,000 $\text{m}/\text{s}$). However, the atom in the center of the sun are densely packed together, and so the photons constantly bounce off these atoms.
+
+The average distance that the photon travels between atom collisions is called the ``mean free path'' of the photon. The mean free path varies depending on the photon's distance from the sun's core, and researchers have produced different estimates for the average mean free path, but conservative estimates dictate that it is no more than 1 cm. Therefore, the path traveled by the photon can be viewed as a random walk of steps of 1 cm.\\
+
+\begin{exercise}[%
+On average, how long does each step of the random walk take? That is, based on a mean free path of 1 cm, what is the typical time between collisions for a given photon?
+]\end{exercise}
+
+The sun's radius is approximately 700,000 km. We are curious how long it will take for a photon produced in the center of the sun to reach the external reaches of the sun's corona. Once it does so, the photon is then free to travel in a straight line and can reach Earth in just 8 minutes. Think about the following exercise the next time you feel the sun on your skin.\\
+
+\begin{exercise}[%
+Use the Random Walk Theorem to approximate the number of steps that it will take for a photon to reach the sun's corona from its center. Then, use your solution to the previous exercise to estimate the expected time required for this journey.
+]\end{exercise}
+
+\subsection{Practicing the cellular automaton model of diffusion}
+
+In \autoref{fig:two_particle_concentration_diffusion}, we showed a grid of cellular concentrations for particles \textvar{A} and \textvar{B} that start at maximum concentration in the central square and diffuse according to the rates $d_A = 0.2$ and $d_B = 0.1$. In a ``STOP'' question, we asked you to update this grid after another time step of diffusion.\\
+
+\begin{exercise}[%
+Instead, update the original grid for two time steps according to the Gray-Scott model. Use $f = 0.03$ and $k = 0.1$.
+]\end{exercise}
+
+\phantomsection
+\subsection{Changing the predator-prey reaction}
+
+In the main text, both our particle simulator and the Gray-Scott model used a reaction $A + 2B \rightarrow 3B$ to represent a predator-prey dynamics of sorts. But there is no reason \textit{a priori} why we would have used this reaction; instead, we could have modeled the simpler reaction $A + B \rightarrow 2B$, in which a predator molecule collides a prey molecule and the prey molecule changes into a predator. Because this reaction only requires the collision of two particles, it would be more frequent than the reaction $A + 2B \rightarrow 3B$.\\
+
+\begin{exercise}[%
+Change the particle-based simulation to have the reaction $A + B \rightarrow 2B$ instead of $A + 2B \rightarrow 3B$. After playing around with the reaction rate parameters, are you still able to generate patterns?
+]\end{exercise}
+
+
+\begin{exercise}[%
+How would the Gray-Scott simulation need to change to model the reaction $A + B \rightarrow 2B$ instead of $A + 2B \rightarrow 3B$? Make the appropriate changes to the implementation of the Gray-Scott model; do you observe Turing patterns?
+]\end{exercise}  
+
+\phantomsection
+\subsection{Changing parameters}
+
+\begin{exercise}[%
+In the Gray-Scott model, given any value of \textvar{f} between 0.01 and 0.99, is it always possible to find a value of \textvar{k} producing a Turing pattern? Given any value of \textvar{k}, is it always possible to find a value of \textvar{f} producing a Turing pattern? (Hint: rather than simulating anything, reexamine \autoref{fig:xmorphia-parameter-map}).
+]\end{exercise}
+
+
+
+\begin{exercise}[%
+Deciding what happens at boundaries is an important part of modeling and simulations. In our Gray-Scott Reaction-Diffusion code, we have given the \texttt{signal.convolve2d()} the \texttt{boundary='fill'} parameter. There are additional options \texttt{'wrap'} and \texttt{'symm'}, which can be combined with the \texttt{'fillvalue'} option as documented here (\url{https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve2d.html}).
+]\end{exercise}
