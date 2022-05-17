@@ -10,7 +10,7 @@
 \label{sec:introduction}
 \phantomsection
 
-If you are familiar with Alan Turing, then you might be surprised that a famous computer scientist would appear in the first sentence of a book on biological modeling, since he is most famous for two other acts. In 1936, he theorized a computer (which came to be known as a ``Turing machine'') consisting of a tape of cells along with a machine that writes symbols on the tape according to a set of predetermined set of rules, a machine that is simple but nevertheless has been shown to be capable of solving any problem that a modern computer can solve.  And during World War II, he worked at Bletchley Park to devise machines that would be used to break several German ciphers.
+If you are familiar with Alan Turing, then you might be surprised that a famous computer scientist would appear in the first sentence of a book on biological modeling, since he is most famous for two other acts. In 1936, he theorized a computer (which came to be known as a ``Turing machine'') consisting of a tape of cells along with a machine that writes symbols on the tape according to a set of predetermined set of rules, a machine that is simple but nevertheless has been shown to be capable of solving any problem that a modern computer can solve.  And during World War II, he worked with Allied cryptographers at Bletchley Park to devise machines that would be used to break several German ciphers.
 
 In 1952, two years before his untimely demise, Turing published his only paper on biochemistry, which addressed the question: “Why do zebras have stripes?” He was not asking why zebras have \textit{evolved} to have stripes --- this question was unsolved in Turing's time, and recent research has indicated that the stripes may be helpful in warding off flies. Rather, Turing was interested in what biochemical mechanism could produce the stripes that we see on a zebra's coat. And he reasoned that just as a simple machine can emulate a computer, some limited set of molecular ``rules'' could cause stripes to appear on a zebra's coat.
 
@@ -23,7 +23,7 @@ In this chapter, we will introduce a particle simulation model based on Turing's
 \label{sec:an_overview_of_random_walks}
 \phantomsection
 
-You may feel like a single, coherent being, but you are in fact just a skin-covered bag of trillions of cells --- about half of which are bacteria --- that act largely independently. These cells are full of \textdef{proteins}{protein}{a complex macromolecule formed of chain(s) of amino acids that perform nearly every cellular function}, complex macromolecules that perform nearly every cellular function. If a protein could move in a straight line, then it would move at 20 kph or faster, meaning that the protein would cover a distance 1 billion times its length every second (analogous to a car traveling at 20 billion kph). However, the cytoplasm filling the cell is so densely packed with water molecules that the protein ping-pongs off them, frequently changing direction.
+You may feel like a single, coherent being, but you are just a skin-covered bag of trillions of cells --- about half of which are bacteria --- that act largely independently. These cells are full of \textdef{proteins}{protein}{a complex macromolecule formed of chain(s) of amino acids that perform nearly every cellular function}, complex macromolecules that perform nearly every cellular function. If a protein could move in a straight line, then it would move at 20 kph or faster, meaning that the protein would cover a distance 1 billion times its length every second (analogous to a car traveling at 20 billion kph). However, the cytoplasm filling the cell is so densely packed with water molecules that the protein ping-pongs off them, frequently changing direction.
 
 We will model the movements of a cellular particle such as a protein by a \textdef{random walk}{random walk}{a model consisting of a sequence of steps in randomly chosen directions} in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction.
 
@@ -62,7 +62,7 @@ Our experience of the world confirms the Random Walk Theorem's statement that ra
 \label{sec:a_reaction-diffusion_model_generating_turing_patterns}
 \phantomsection
 
-\subsection{From random walks to reaction-diffusion}
+\subsection{From random walks to a reaction-diffusion system}
 
 Turing's insight was that remarkable high-level patterns could arise if we combine particle diffusion with chemical reactions, in which colliding particles interact with each other. Such a model is called a \textdef{reaction-diffusion system}{reaction-diffusion system}{a model incorporating the diffusion of particles with chemical reactions involving these particles}, and the emergent patterns are called \textdef{Turing patterns}{Turing patterns}{patterns, such as stripes and spots, that emerge from certain reaction-diffusion systems} in Turing's honor.
 
@@ -123,7 +123,7 @@ What will happen as we increase or decrease \textvar{f} or \textvar{k}?
 
 \FloatBarrier
 \phantomsection
-\subsection{Changing reaction-diffusion parameters produces different emergent Turing patterns}
+\subsection{Changing reaction-diffusion parameters yields different Turing patterns}
 
 We will initiate our reaction-diffusion system with a uniform concentration of \textvar{A} particles spread across the grid and a tightly packed collection of \textvar{B} particles in the center of the grid. As the \textvar{B} particles diffuse, what will we see?\tutorial[prologue/turing-cellblender]
 
@@ -247,7 +247,7 @@ We have a very ``fine-grained'' reaction-diffusion model illustrating Turing pat
 
 Our idea is to grid off two-dimensional space into blocks and store only the \textit{concentration} of each type of particle found inside the block. To simplify things further, we assume that there is some maximum concentration of particles possible, so that we can divide the number of particles by this maximum concentration. As a result, the concentration of a particle in each block will be represented by a decimal number between 0 and 1.
 
-Let us begin with an example of the diffusion of only \textvar{A} particles; we will later add \textvar{B} particles as well as reactions to our model. Say that the particles are at maximum concentration in the central cell of our grid and are present nowhere else (\autoref{fig:initial_A_concentration_one_time_step} (left)).\\
+Let us begin with an example of the diffusion of only \textvar{A} particles; we will later add \textvar{B} particles as well as reactions to our model. Say that the particles are at maximum concentration in the central cell of our grid and are present nowhere else (\autoref{fig:initial_A_concentration_one_time_step} (left)).
 
 \begin{figure}[h]
 \centering
@@ -409,7 +409,7 @@ We are now ready to implement the Gray-Scott model. The question is: even though
 
 \FloatBarrier
 \phantomsection
-\subsection{Reflection on the Gray-Scott model}
+\subsection{Reflecting on the Gray-Scott model}
 
 In contrast to the particle-based simulator introduced earlier, the Gray-Scott model produced an animation in under a minute on a laptop. We show the results of this model in the videos that follow; throughout these animations, we use the parameters $d_A = 0.5$, $d_B = 0.25$, and $r = 1$.
 
@@ -546,7 +546,13 @@ How would the Gray-Scott simulation need to change to model the reaction $A + B 
 In the Gray-Scott model, given any value of \textvar{f} between 0.01 and 0.99, is it always possible to find a value of \textvar{k} producing a Turing pattern? Given any value of \textvar{k}, is it always possible to find a value of \textvar{f} producing a Turing pattern? (Hint: rather than simulating anything, reexamine \autoref{fig:xmorphia-parameter-map}).
 ]\end{exercise}
 
+Boundary -- three choices:
 
+\begin{enumerate}
+\item \texttt{fill}: pad out the values on the edges with some values. In our simulations we used this and padded the edges with a concentration of 0 concentration values for both \textvar{A} and \textvar{B}.
+\item \texttt{wrap}: this is a ``wrap'' or circular boundary condition, which amounts to running the simulation on a torus.
+\item \texttt{symm}: (I believe) that this assumes that any cells on the other side of boundary have values equal to a mirror image of what is present on the current side of the boundary.
+\end{enumerate}
 
 \begin{exercise}[%
 Deciding what happens at boundaries is an important part of modeling and simulations. In our Gray-Scott Reaction-Diffusion code, we have given the \texttt{signal.convolve2d()} the \texttt{boundary='fill'} parameter. There are additional options \texttt{'wrap'} and \texttt{'symm'}, which can be combined with the \texttt{'fillvalue'} option as documented here (\url{https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve2d.html}).

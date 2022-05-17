@@ -13,7 +13,7 @@ author_profile: true # add author to page
 
 # Introduction: Alan Turing and the Zebra's Stripes
 
-If you are familiar with Alan Turing, then you might be surprised that a famous computer scientist would appear in the first sentence of a book on biological modeling, since he is most famous for two other acts. In 1936, he theorized a computer (which came to be known as a "Turing machine"[^numbers]) consisting of a tape of cells along with a machine that writes symbols on the tape according to a set of predetermined set of rules, a machine that is simple but nevertheless has been shown to be capable of solving any problem that a modern computer can solve. And during World War II, he worked at Bletchley Park to devise machines that would be used to break several German ciphers.
+If you are familiar with Alan Turing, then you might be surprised that a famous computer scientist would appear in the first sentence of a book on biological modeling, since he is most famous for two other acts. In 1936, he theorized a computer (which came to be known as a "Turing machine"[^numbers]) consisting of a tape of cells along with a machine that writes symbols on the tape according to a set of predetermined set of rules, a machine that is simple but nevertheless has been shown to be capable of solving any problem that a modern computer can solve. And during World War II, he worked with Allied cryptographers at Bletchley Park to devise machines that would be used to break several German ciphers.
 
 [![image-center](../assets/images/600px/alan_turing_npg_cc.jpg){: .align-center}](../assets/images/alan_turing_npg_cc.jpg)
 Alan Turing in 1951. © National Portrait Gallery, London.

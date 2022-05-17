@@ -10,7 +10,7 @@ image: "../assets/images/gray_scott_jupyter_high-res.png"
 
 ## The wanderlust of a randomly walking particle
 
-You may feel like a single, coherent being, but you are in fact just a skin-covered bag of trillions of cells that act largely independently. Cells are full of **proteins**, complex macromolecules that perform nearly every cellular function. If a protein could move in a straight line, then it would move at 20 kph or faster[^machinery], meaning that the protein would cover a distance 1 billion times its length every second (analogous to a car traveling at 20 billion kph). However, the cytoplasm filling the cell is so densely packed with water molecules that the protein ping-pongs off them, frequently changing direction.
+You may feel like a single, coherent being, but you are just a skin-covered bag of trillions of cells that act largely independently. Cells are full of **proteins**, complex macromolecules that perform nearly every cellular function. If a protein could move in a straight line, then it would move at 20 kph or faster[^machinery], meaning that the protein would cover a distance 1 billion times its length every second (analogous to a car traveling at 20 billion kph). However, the cytoplasm filling the cell is so densely packed with water molecules that the protein ping-pongs off them, frequently changing direction.
 
 We will model the movements of a cellular particle such as a protein by a **random walk** in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction. The video below shows a randomly walking particle taking 1000 steps.
 
