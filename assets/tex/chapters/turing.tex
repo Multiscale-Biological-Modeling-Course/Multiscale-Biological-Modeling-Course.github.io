@@ -522,7 +522,7 @@ Use the Random Walk Theorem to approximate the number of steps that it will take
 In \autoref{fig:two_particle_concentration_diffusion}, we showed a grid of cells containing concentrations of two particles \textvar{A} and \textvar{B} that start at maximum concentration in the central square and diffuse according to the rates $d_A = 0.2$ and $d_B = 0.1$. In a ``STOP'' question, we asked you to update this grid after another time step of diffusion.\\
 
 \begin{exercise}[%
-Instead of solely diffusing the particles, update the original grid for two time steps according to the Gray-Scott model. Use $f = 0.03$ and $k = 0.1$.
+Instead of solely diffusing the particles, update the original grid (in which \textvar{A} and \textvar{B} are at maximum concentration in the central cell) for two time steps according to the Gray-Scott model. Use $f = 0.03$ and $k = 0.1$.
 ]\end{exercise}
 
 \phantomsection
@@ -543,7 +543,7 @@ How would the Gray-Scott simulation need to change to model the reaction $A + B 
 \subsection{Changing Gray-Scott parameters}
 
 \begin{exercise}[%
-In the Gray-Scott model, given any value of \textvar{f} between 0.01 and 0.99, is it always possible to find a value of \textvar{k} producing a Turing pattern? Given any value of \textvar{k}, is it always possible to find a value of \textvar{f} producing a Turing pattern? (Hint: rather than simulating anything, reexamine \autoref{fig:xmorphia-parameter-map}).
+In the Gray-Scott model, given any value of \textvar{f} between 0.01 and 0.99, is it always possible to find a value of \textvar{k} producing a Turing pattern? Given any value of \textvar{k}, is it always possible to find a value of \textvar{f} producing a Turing pattern? (Hint: rather than simulating anything, reexamine \autoref{fig:xmorphia-parameter-map}.)
 ]\end{exercise}
 
 \begin{exercise}[%
@@ -556,14 +556,4 @@ There are two additional methods that we could have used for handling barriers. 
 
 \begin{exercise}[%
 Adapt the simulation of the Gray-Scott model to handle each of these additional two cases. Do you see the same patterns arise? (See online for details.)
-]\end{exercise}
-
-\begin{enumerate}
-\item \texttt{fill}: pad out the values on the edges with some values. In our simulations we used this and padded the edges with a concentration of 0 concentration values for both \textvar{A} and \textvar{B}.
-\item \texttt{wrap}: this is a ``wrap'' or circular boundary condition, which amounts to running the simulation on a torus.
-\item \texttt{symm}: (I believe) that this assumes that any cells on the other side of boundary have values equal to a mirror image of what is present on the current side of the boundary.
-\end{enumerate}
-
-\begin{exercise}[%
-Deciding what happens at boundaries is an important part of modeling and simulations. In our Gray-Scott Reaction-Diffusion code, we have given the \texttt{signal.convolve2d()} the \texttt{boundary='fill'} parameter. There are additional options \texttt{'wrap'} and \texttt{'symm'}, which can be combined with the \texttt{'fillvalue'} option as documented here (\url{https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.convolve2d.html}).
 ]\end{exercise}
