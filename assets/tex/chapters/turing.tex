@@ -115,17 +115,17 @@ A \textdef{parameter}{parameter}{a variable used as input to a model} is a varia
 
 Four parameters are relevant to our reaction-diffusion system: the feed rate (\textvar{f}) of \textvar{A} particles, the kill rate (\textvar{k}) of the \textvar{B} particles, the predator-prey reaction rate (\textvar{r}), and the diffusion rate (i.e., speed) of the the \textvar{B} particles. We do not need to set the diffusion rate of the \textvar{A} particles, since we know that their diffusion is twice that of the \textvar{B} particles.
 
-We think of all these parameters as dials that we can turn, observing how the system changes as a result. For example, if we raise the diffusion rate, then the particles will be moving around and colliding with each other more, which means that we will see more of the reaction $\textvar{A} + 2\textvar{B} \rightarrow 3\textvar{B}$.\\
-
 \begin{qbox}[%
 What will happen as we increase or decrease \textvar{f} or \textvar{k}?
 ]\end{qbox}
+
+We think of all these parameters as dials that we can turn, observing how the system changes as a result. For example, if we raise the diffusion rate, then the particles will be moving around and colliding with each other more, which means that we will see more of the reaction $\textvar{A} + 2\textvar{B} \rightarrow 3\textvar{B}$. We will then initiate our reaction-diffusion system with a uniform concentration of \textvar{A} particles spread across the grid and a tightly packed collection of \textvar{B} particles in the center of the grid. As the \textvar{B} particles diffuse, what will we see?\tutorial[prologue/turing-cellblender]\\
 
 \FloatBarrier
 \phantomsection
 \subsection{Changing reaction-diffusion parameters yields different Turing patterns}
 
-We will initiate our reaction-diffusion system with a uniform concentration of \textvar{A} particles spread across the grid and a tightly packed collection of \textvar{B} particles in the center of the grid. As the \textvar{B} particles diffuse, what will we see?\tutorial[prologue/turing-cellblender]
+
 
 For many parameter values, our reaction-diffusion system is not very interesting. \autoref{fig:k=500000_f=1000} shows that if the kill rate is too high, then the \textvar{B} particles (colored red) will die out more quickly than they can be replenished by the reaction with \textvar{A} particles (colored green), and so only \textvar{A} particles will remain.
 
@@ -501,52 +501,58 @@ Finally, take a look at the two photos of giant pufferfish in \autoref{fig:puffe
 \section{Exercises}
 
 \phantomsection
-\subsection{Photons and random walks}
+\subsection{Solar photons and random walks}
 
-Photons are massless particles carrying electromagnetic radiation. In the sun's core, photons are created as the result of nuclear fusion when two hydrogen atoms crash together and form a helium atom. The photons that are released have a great deal of kinetic energy, traveling at the speed of light (approximately 300,000,000 $\text{m}/\text{s}$). However, the atom in the center of the sun are densely packed together, and so the photons constantly bounce off these atoms.
+Photons are massless particles carrying electromagnetic radiation. In the sun's core, photons are created as the result of nuclear fusion when two hydrogen atoms crash together and form a helium atom. The photons that are released have a great deal of kinetic energy, traveling at the speed of light (approximately 300,000,000 $\text{m}/\text{s}$). However, the atoms in the center of the sun are densely packed together, and so just like proteins in the cytoplasm, photons constantly bounce off atoms and follow random walks.
 
-The average distance that the photon travels between atom collisions is called the ``mean free path'' of the photon. The mean free path varies depending on the photon's distance from the sun's core, and researchers have produced different estimates for the average mean free path, but conservative estimates dictate that it is no more than 1 cm. Therefore, the path traveled by the photon can be viewed as a random walk of steps of 1 cm.\\
+The average distance that the photon travels between atom collisions is called the photon's ``mean free path''. The mean free path varies depending on the photon's distance from the sun's core, but conservative estimates of the average mean free path dictate that it is no more than 1 cm.\\
 
 \begin{exercise}[%
-On average, how long does each step of the random walk take? That is, based on a mean free path of 1 cm, what is the typical time between collisions for a given photon?
+On average, what is the length of each step of a solar photon's random walk? That is, based on a mean free path of 1 cm, what is the typical time between collisions for a given photon traveling at the speed of light?
 ]\end{exercise}
 
-The sun's radius is approximately 700,000 km. We are curious how long it will take for a photon produced in the center of the sun to reach the external reaches of the sun's corona. Once it does so, the photon is then free to travel in a straight line and can reach Earth in just 8 minutes. Think about the following exercise the next time you feel the sun on your skin.\\
+When you feel the warmth of sunshine, the photons colliding with your skin have traveled from the sun in just eight minutes. But how long did these photons take to reach the surface of the sun in the first place?\\
 
 \begin{exercise}[%
-Use the Random Walk Theorem to approximate the number of steps that it will take for a photon to reach the sun's corona from its center. Then, use your solution to the previous exercise to estimate the expected time required for this journey.
+Use the Random Walk Theorem to approximate the number of steps that it will take for a photon to reach the sun's corona from its center, given that the sun has a radius of 700,000 km. Then, use your solution to the previous exercise to estimate the expected time required for this journey.
 ]\end{exercise}
 
 \subsection{Practicing the cellular automaton model of diffusion}
 
-In \autoref{fig:two_particle_concentration_diffusion}, we showed a grid of cellular concentrations for particles \textvar{A} and \textvar{B} that start at maximum concentration in the central square and diffuse according to the rates $d_A = 0.2$ and $d_B = 0.1$. In a ``STOP'' question, we asked you to update this grid after another time step of diffusion.\\
+In \autoref{fig:two_particle_concentration_diffusion}, we showed a grid of cells containing concentrations of two particles \textvar{A} and \textvar{B} that start at maximum concentration in the central square and diffuse according to the rates $d_A = 0.2$ and $d_B = 0.1$. In a ``STOP'' question, we asked you to update this grid after another time step of diffusion.\\
 
 \begin{exercise}[%
-Instead, update the original grid for two time steps according to the Gray-Scott model. Use $f = 0.03$ and $k = 0.1$.
+Instead of solely diffusing the particles, update the original grid for two time steps according to the Gray-Scott model. Use $f = 0.03$ and $k = 0.1$.
 ]\end{exercise}
 
 \phantomsection
 \subsection{Changing the predator-prey reaction}
 
-In the main text, both our particle simulator and the Gray-Scott model used a reaction $A + 2B \rightarrow 3B$ to represent a predator-prey dynamics of sorts. But there is no reason \textit{a priori} why we would have used this reaction; instead, we could have modeled the simpler reaction $A + B \rightarrow 2B$, in which a predator molecule collides a prey molecule and the prey molecule changes into a predator. Because this reaction only requires the collision of two particles, it would be more frequent than the reaction $A + 2B \rightarrow 3B$.\\
+Both our particle simulator and the Gray-Scott model used a reaction $A + 2B \rightarrow 3B$ to represent a predator-prey dynamics of sorts. But there is no reason \textit{a priori} why we would have used this reaction; instead, we could have modeled the simpler reaction $A + B \rightarrow 2B$, in which a predator molecule collides a prey molecule and the prey molecule changes into a predator. Because this reaction only requires the collision of two particles, it would be more frequent than the reaction $A + 2B \rightarrow 3B$ if all else is equal.\\
 
 \begin{exercise}[%
-Change the particle-based simulation to have the reaction $A + B \rightarrow 2B$ instead of $A + 2B \rightarrow 3B$. After playing around with the reaction rate parameters, are you still able to generate patterns?
+Adapt the particle-based simulation that we introduced earlier in this chapter to replace the reaction $A + 2B \rightarrow 3B$ with $A + B \rightarrow 2B$. Play around with the system's reaction rate parameters; are you still able to generate patterns?
 ]\end{exercise}
 
 
 \begin{exercise}[%
-How would the Gray-Scott simulation need to change to model the reaction $A + B \rightarrow 2B$ instead of $A + 2B \rightarrow 3B$? Make the appropriate changes to the implementation of the Gray-Scott model; do you observe Turing patterns?
+How would the Gray-Scott simulation need to change to model the reaction $A + B \rightarrow 2B$ instead of $A + 2B \rightarrow 3B$? Make the appropriate changes to the implementation of the Gray-Scott model; do you still observe Turing patterns?
 ]\end{exercise}  
 
 \phantomsection
-\subsection{Changing parameters}
+\subsection{Changing Gray-Scott parameters}
 
 \begin{exercise}[%
 In the Gray-Scott model, given any value of \textvar{f} between 0.01 and 0.99, is it always possible to find a value of \textvar{k} producing a Turing pattern? Given any value of \textvar{k}, is it always possible to find a value of \textvar{f} producing a Turing pattern? (Hint: rather than simulating anything, reexamine \autoref{fig:xmorphia-parameter-map}).
 ]\end{exercise}
 
-Boundary -- three choices:
+When we diffuse particles in the automaton model (including the Gray-Scott model), we did not mention what happens at the boundary of the simulation because we were interested in the patterns that arise in the interior of the grid. The simulations shown in the figures in this chapter assume that the automaton is surrounded by a single-layer ``buffer'' of invisible cells that have zero concentration. In this way, the particles leaving the board simply flow off the edges.
+
+There are two additional methods that we could have used for handling barriers. First, we could assume that particles flowing off one side of the board are added to the corresponding cells on the opposite side of the board. Second, we could assume that the barriers serve as hard barriers, so that any points that would flow off the side of the board instead remain in the current cell.
+
+\begin{exercise}[%
+Adapt the simulation of the Gray-Scott model to handle each of these additional two cases. Do you see the same patterns arise? (See online for details.)
+]\end{exercise}
 
 \begin{enumerate}
 \item \texttt{fill}: pad out the values on the edges with some values. In our simulations we used this and padded the edges with a concentration of 0 concentration values for both \textvar{A} and \textvar{B}.
