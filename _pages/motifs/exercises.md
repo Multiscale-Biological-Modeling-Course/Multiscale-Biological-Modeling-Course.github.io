@@ -48,8 +48,11 @@ Although most of the autoregulating *E. coli* transcription factors exhibit nega
 **Exercise:** Design and implement a reaction-diffusion model to run a mathematically-controlled simulation comparing the positive autoregulation of a transcription factor *Y* against normal activation of *Y* by another transcription factor *X*. Plot the concentration of *Y* over time in the two circumstances.
 {: .notice--success}
 
-## Implementing more network motifs
-**Exercise:** Use the NFSim tutorial implementing the repressilator as a basis to replicate the other network motif tutorials presented in this module.
+## Replicating the module's conclusions with well-mixed simulations
+
+Recall that a repressilator is a network motif in which *X* inhibits *Y*, which inhibits *Z*, which in turn inhibits *Z*. In a [tutorial](tutorial_perturb), we showed how to use a well-mixed simulation to build the repressilator, which we then perturbed.\tutorial[motifs/tutorial_perturb]\\
+
+**Exercise:** Build well-mixed simulations to replicate the other network motif tutorials presented in this module.
 {: .notice--success}
 
 [Next module](../chemotaxis/home){: .btn .btn--primary .btn--large}
