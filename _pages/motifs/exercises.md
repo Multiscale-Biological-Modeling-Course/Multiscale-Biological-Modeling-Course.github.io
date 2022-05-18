@@ -23,15 +23,6 @@ The eight types of feed-forward loops.[^ffl]
 **Exercise:** How many feed-forward loops would you expect to see in a random network having the same number of nodes as the *E. coli* transcription factor network? How does this compare to your answers to the previous two questions?
 {: .notice--success}
 
-More complex motifs may require more computational power to discover.
-
-[![image-center](../assets/images/600px/s_cerevisiae_tf_network.jpg){: .align-center}](../assets/images/s_cerevisiae_tf_network.jpg)
-Example of different motifs within the *S. Cerevisiae* network.[^scNetwork]
-{: style="text-align: center; font-size: medium;"}
-
-**Exercise:** Can you modify our Jupyter Notebook for motif finding to identify circular loops of transcription factor regulation, such as the multi-component loop above?
-{: .notice--success}
-
 ## Negative autoregulation
 
 Using the *NAR_comparison_equal.blend* file from the negative [autoregulation tutorial](tutorial_nar_mathematically_controlled), increase the reaction rate of X1 -> X1 + Y1 to 4e4, so that the table should now look like the following:

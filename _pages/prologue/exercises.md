@@ -8,7 +8,7 @@ sidebar:
 image: "../assets/images/gray_scott_jupyter_high-res.png"
 ---
 
-### Solar photons and random walks
+## Solar photons and random walks
 
 Photons are massless particles carrying electromagnetic radiation. In the sun's core, photons are created as the result of nuclear fusion when two hydrogen atoms crash together and form a helium atom. The photons that are released have a great deal of kinetic energy, traveling at the speed of light (approximately 300,000,000 m/s). However, the atoms in the center of the sun are densely packed together, and so just like proteins in the cytoplasm, photons constantly bounce off atoms and follow random walks.
 
@@ -23,7 +23,7 @@ When you feel the warmth of sunshine, the photons colliding with your skin have 
 {: .notice--success}
 
 
-### Practicing the cellular automaton model of diffusion
+## Practicing the cellular automaton model of diffusion
 
 Earlier in this module, we showed a grid of cells containing concentrations of two particles *A* and *B* that start at maximum concentration in the central square and diffuse according to the rates *d*<sub><em>A</em></sub> = 0.2 and *d*<sub><em>B</em></sub> = 0.1. In a "STOP" question, we asked you to update this grid, reproduced below, after another time step of diffusion.
 
@@ -34,7 +34,7 @@ A figure showing cellular concentrations after one time step for two particles <
 **Exercise:** Instead of solely diffusing the particles, update the original grid (in which *A* and *B* are at maximum concentration in the central cell) for two time steps according to the Gray-Scott model. Use *f* = 0.03 and *k* = 0.1.
 {: .notice--success}
 
-### Changing the predator-prey reaction
+## Changing the predator-prey reaction
 
 Both our particle simulator and the Gray-Scott model used a reaction *A* + 2*B* → 3*B* to represent a predator-prey dynamics of sorts. But there is no reason *a priori* why we would have used this reaction; instead, we could have modeled the simpler reaction *A* + *B* → 2*B*, in which a predator molecule collides a prey molecule and the prey molecule changes into a predator. Because this reaction only requires the collision of two particles, it would be more frequent than the reaction *A* + 2*B* → 3*B* if all else is equal.
 
@@ -45,7 +45,7 @@ Both our particle simulator and the Gray-Scott model used a reaction *A* + 2*B* 
 {: .notice--success}
 
 
-### Changing Gray-Scott parameters
+## Changing Gray-Scott parameters
 
 Recall the figure below, which shows how changing feed and kill rates affect Turing patterns.
 
