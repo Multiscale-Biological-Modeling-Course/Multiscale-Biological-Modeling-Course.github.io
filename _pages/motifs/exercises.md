@@ -25,23 +25,21 @@ The eight types of feed-forward loops.[^ffl]
 
 ## Negative autoregulation
 
-Using the *NAR_comparison_equal.blend* file from the negative [autoregulation tutorial](tutorial_nar_mathematically_controlled), increase the reaction rate of X1 -> X1 + Y1 to 4e4, so that the table should now look like the following:
+**Exercise:** One way for the cell to apply stronger "brakes" to the simple regulation rate would be to simply increase the degradation rate, rather than implement negative autoregulation. From an evolutionary perspective, why do you think that the cell doesn't do this?
+{: .notice--success}
+
+Recall that we used the reaction reaction *X* → *X* + *Y* to represent simple regulation. We then built a model in a [tutorial](tutorial_nar_mathematically_controlled) to run a mathematically controlled comparison between two simulated cells, one having only simple regulation, and the other also having negative autoregulation, which we represented using the reaction *Y* + *Y* → *Y*.
+
+**Exercise:** Multiply the rate of *X* → *X* + *Y* by a factor of 100 in the cell having only simple regulation, and plot the concentration of *Y* in both cells (the updated table containing reactants, products, and reaction rate constants is found below). By approximately what factor do you need to increase the rate of this reaction in the cell that includes negative autoregulation so that the steady-state concentration of *Y* is the same in both cells?
+{: .notice--success}
 
 | Reactants |Products|Forward Rate|
 |:--------|:-------:|--------:|
-| X1’  | X1’ + Y1’ | 4e5 |
+| X1’  | X1’ + Y1’ | 4e4 |
 | X2’  | X2’ + Y2’ | 4e2 |
 | Y1’  | NULL | 4e2 |
 | Y2’  | NULL | 4e2 |
 |Y2’ + Y2’|Y2’|4e2|
-
-If we plot this graph, we can see the steady states of Y1 and Y2 are different once again.
-
-**Exercise:** Can you repair the system to find the appropriate reaction rate for X2 -> X2 + Y2 to make the steady states equal once more? Are you able to adjust the reaction Y2 + Y2 -> Y2 as well? Do the reaction rates scale at the same rate?
-{: .notice--success}
-
-**Exercise:** One way for the cell to apply stronger "brakes" to the simple regulation rate would be to simply increase the degradation rate, rather than implement negative autoregulation. Why do you think that the cell doesn't do this?
-{: .notice--success}
 
 ## Positive autoregulation
 
