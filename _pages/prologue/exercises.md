@@ -1,14 +1,12 @@
 ---
 permalink: /prologue/exercises
-title: "Exercises"
+title: "Turing Pattern Exercises"
 sidebar:
  nav: "prologue"
  toc: true
  toc_sticky: true
 image: "../assets/images/gray_scott_jupyter_high-res.png"
 ---
-
-## Exercises
 
 ### Solar photons and random walks
 
