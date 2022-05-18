@@ -10,7 +10,7 @@ image: "../assets/images/gray_scott_jupyter_high-res.png"
 
 ## Exercises
 
-###Solar photons and random walks
+### Solar photons and random walks
 
 Photons are massless particles carrying electromagnetic radiation. In the sun's core, photons are created as the result of nuclear fusion when two hydrogen atoms crash together and form a helium atom. The photons that are released have a great deal of kinetic energy, traveling at the speed of light (approximately 300,000,000 m/s). However, the atoms in the center of the sun are densely packed together, and so just like proteins in the cytoplasm, photons constantly bounce off atoms and follow random walks.
 
