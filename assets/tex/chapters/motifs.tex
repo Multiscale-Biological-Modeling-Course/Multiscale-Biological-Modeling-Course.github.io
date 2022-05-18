@@ -1,5 +1,5 @@
 \phantomsection
-\chapter[Finding Motifs in Transcription Factor Networks]{Finding Motifs in Transcription Factor Networks\chapsubhead{Noah Lee and Phillip Compeau}}
+\chapter Motifs in Transcription Factor Networks]{Motifs in Transcription Factor Networks\chapsubhead{Noah Lee and Phillip Compeau}}
 \label{chapter:motifs}
 \renewcommand{\chaptertitle}{Finding Motifs in Transcription Factor Networks}
 \addcontentsline{cc}{chapter}{Chapter \thechapter} % Adds chapter number to table of contents
@@ -224,7 +224,7 @@ Why in the world would organisms have evolved the process of autoregulation only
 
 Theodosius Dobzhansky famously wrote that ``nothing in biology makes sense except in the light of evolution.'' In the spirit of this quotation, there must be some evolutionary reason for the presence of the large number of negatively autoregulating \textit{E. coli} transcription factors that we identified in the previous section. Our goal is to use biological modeling to establish this justification.
 
-We will simulate a ``race'' to the \textdef{steady state}{steady state}{also called equilibrium, a state in which potentially conflicting chemical forces are balanced}, or \textdefnogloss{equilibrium}, concentration of a transcription factor \textvar{Y} in two cells. In the first cell (\autoref{fig:two_cells} (left)), a transcription factor \textvar{X} activates \textvar{Y}; in the second cell (\autoref{fig:two_cells} (right)), \textvar{Y} also negatively autoregulates. Our premise is that the cell that reaches the steady state faster can respond more quickly to its environment and is therefore more fit for survival.\\
+We will simulate a ``race'' to the \textdef{steady state}{steady state}{also called equilibrium, a state in which potentially conflicting chemical forces are balanced}, or \textdefnogloss{equilibrium}, concentration of a transcription factor \textvar{Y} in two cells. In the first cell (\autoref{fig:two_cells} (left)), a transcription factor \textvar{X} activates \textvar{Y}; in the second cell (\autoref{fig:two_cells} (right)), \textvar{Y} also negatively autoregulates. Our premise is that the cell that reaches the steady state faster can respond more quickly to its environment and is therefore more fit for survival.
 
 \begin{figure}[h]
 \centering
@@ -499,24 +499,64 @@ The repressilator is not the only network motif that leads to oscillations of pa
 
 In the next chapter, we will an even more involved biochemical process that is used by bacteria to cleverly (and robustly) explore their environment. In fact, replicating this system will require so many particles and so many reactions that we will need to rethink how we formulate our model.\\
 
+\newpage
+
 \FloatBarrier
 \section{Exercises}
 \label{sec:exercises}
 \phantomsection
 
 \phantomsection
-\subsection{Statistical validation}
+\subsection{A short introduction to statistical validation}
+
+In this chapter, we have largely appealed to intuition when claiming that the number of network structures that we observe is larger than what we would see due to random chance. For example, we pointed out that there are 130 loops in the \textit{E.~coli} transcription factor network, but we would only expect to see 2.42 such loops if the network were random.
+
+This argument hints at a foundational approach in statistics, which is to determine the likelihood that an observation would occur due to random chance; this likelihood is called a \textdefnogloss{p-value}. In this case, our observation is 130 loops, and the probability that this number of loops would have arisen in a random network of the same size is practically zero. The exact computation of this p-value is beyond the scope of our work here, but we will turn our attention to a different p-value that is easier to determine.
+
+We also mentioned that 95 of the 130 loops in the \textit{E.~coli} transcription factor network correspond to repression, which is another surprising fact, since in a random network we would expect to see only about 65 loops that correspond to activation. This leads us to hypothesize that negative autoregulation is on the whole more important to the cell than positive autoregulation.
+
+To quantify our surprise and compute a p-value, we ask, ``if the choice of a loop corresponding to activation or repession were random and equal, then what is the likelihood that out of 130 loops, 95 (or more) correspond to activation?'' This question is biological but is equivalent to a question about flipping coins: ``if we flip a coin 130 times, then what is the likelihood that the coin will come up heads 95 or more times?''
+
+Say that we observe four coin flips. Then there are 16 equally likely outcomes, shown in the table below.
+
+\begin{center}
+\begin{tabular}{c c c c c c c c}
+\texttt{HHHH} & \texttt{HHHT} & \texttt{HHTH} & \texttt{HHTT} & \texttt{HTHH} & \texttt{HTHT} & \texttt{HTTH} & \texttt{HTTT}\\
+\texttt{THHH} & \texttt{THHT} & \texttt{THTH} & \texttt{THTT} & \texttt{TTHH} & \texttt{TTHT} & \texttt{TTTH} & \texttt{TTTT}\\
+\end{tabular}
+\end{center}
+
+\noindent Each of these 16 outcomes is equally likely, and so we can compute the probability of observing \textvar{k} heads out of the four flips by counting how many of the 16 cases have \textvar{k} heads:
+\begin{align*}
+\mathrm{Pr}(\text{0 heads}) &= 1/16\,;\\
+\mathrm{Pr}(\text{1 heads}) & = 4/16 = 1/4\,;\\
+\mathrm{Pr}(\text{2 heads}) & = 6/16 = 3/8\,;\\
+\mathrm{Pr}(\text{3 heads}) & = 4/16 = 1/4\,;\\
+\mathrm{Pr}(\text{4 heads}) & = 1/16\,.
+\end{align*}
+
+To generalize these probabilities, if we flip a coin $n$ times, then the probability of obtaining $k$ heads is equal to 
+
+\begin{center}
+$\dbinom{n}{k} \cdot \left(\dfrac{1}{2}\right)^n$\,,
+\end{center}
+
+\noindent where $\binom{n}{k}$ is called the ``combination statistic'' and is equal to $n!/(k! \cdot (n-k)!)$.
+
+If we instead wish to compute the probability of obtaining \textit{at least} k heads, then we simply need to sum the above expression for all values larger than $k$:
+
+\begin{center}
+$\displaystyle\sum\limits_{j=k}^n{\dbinom{n}{j} \cdot \left(\dfrac{1}{2}\right)^n}$\,.
+\end{center}
+
+\noindent This expression therefore gives us the p-value that we are looking for when substituting the appropriate values of $n$ and $k$.\\
 
 \begin{exercise}[%
-42 FFLs is significant.
-]\end{exercise}
-
-\begin{exercise}[%
-Computing a p-value rigorously.
+When $n = 130$ and $k = 95$, compute the p-value given by the above expression. Is it likely that random chance could have produced 95 out of 130 loops in the transcription factor network that correspond to repression?
 ]\end{exercise}
 
 \phantomsection
-\subsection{Identifying feedforward loops and more complex motifs}
+\subsection{Counting feedforward loops}
 
 Recall that in the feedforward loop motif (illustrated in \autoref{fig:feed-forward_loop}), \textvar{X} is connected to \textvar{Y} and \textvar{Z}, and \textvar{X} is connected to \textvar{Z}.\\
 
