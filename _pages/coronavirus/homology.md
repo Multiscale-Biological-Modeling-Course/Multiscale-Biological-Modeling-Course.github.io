@@ -31,14 +31,7 @@ Variable and conserved regions in the SARS-CoV and SARS-CoV-2 spike proteins. Th
 
 Some homology modeling algorithms account for variable and conserved regions by assuming that very conserved regions in the two genes correspond to essentially identical structures in the proteins. That is, the structure of our protein of interest in these regions will be the same as those of the template protein. We can then use a **fragment library**, a catalog of known substructures from many proteins, to fill in the structure of non-conserved regions based on structures of fragments whose sequence is similar to these regions. This approach is called **fragment assembly**.
 
-We will model the SARS-CoV-2 spike protein using homology modeling software from three publicly available fragment assembly servers (SWISS-MODEL, Robetta, and GalaxyWEB). If the results are similar, then we have faith in the *robustness* of our predictions when using different approaches. Furthermore, comparing the results of multiple different approaches may give us more insights into structure prediction.
-
-[Visit tutorial](tutorial_homology){: .btn .btn--warning .btn--large}
-{: style="font-size: 100%; text-align: center;"}
-
-## Applying homology modeling to the SARS-CoV-2 spike protein
-
-The results of the three software resources for predicting the structure of the SARS-CoV-2 spike protein are available for download below.
+We will model the SARS-CoV-2 spike protein using homology modeling software from three publicly available fragment assembly servers (SWISS-MODEL, Robetta, and GalaxyWEB). If the results are similar, then we have faith in the *robustness* of our predictions when using different approaches. Furthermore, comparing the results of multiple different approaches may give us more insights into structure prediction. If you are not interested in following this tutorial, links to the results can be found in the table below.
 
 |Structure Prediction Server|Results|
 |:--------------------------|:------|
@@ -46,22 +39,8 @@ The results of the three software resources for predicting the structure of the 
 |Robetta (Single-Chain S protein)|[Robetta Results](../_pages/coronavirus/files/Robetta_Model.zip)|
 |GalaxyWEB|[GalaxyWEB Results](../_pages/coronavirus/files/GalaxyWEB_Models.zip)|
 
-To compare the protein structures resulting from running software on the SARS-CoV-2 spike protein sequence, we first need a way to represent a protein's tertiary structure. In `.pdb` format (see the figure below), a file format used by the PDB, each atom in the protein is labeled according to several different characteristics, including:
-
-1. the element from which the atom derives;
-2. the amino acid in which the atom is contained;
-3. the chain on which this amino acid is found;
-4. the position of the amino acid within this chain; and
-5. the 3D coordinates (*x*, *y*, *z*) of the atom in angstroms (10<sup>-10</sup> meters).
-
-[![image-center](../assets/images/600px/simplifiedPDB.png){: .align-center}](../assets/images/simplifiedPDB.png)
-A simplified diagram showing how the `.pdb` format encodes the 3D coordinates of every atom while labeling the identity of this atom and the chain on which it is found. Source: [https://proteopedia.org/wiki/index.php/Atomic_coordinate_file](https://proteopedia.org/wiki/index.php/Atomic_coordinate_file).
-{: style="font-size: medium;"}
-
-**Note:** The above figure shows just part of the information needed to fully represent a protein structure. For example, a `.pdb` file will also contain information about the disulfide bonds between amino acids. For more information, check out the <a href="http://www.wwpdb.org/documentation/file-format" target="_blank">official PDB documentation</a>).
-{: .notice--info}
-
-Now that we can represent protein structures, we wish to compare two protein structures. How similar are the three predicted structures of the SARS-CoV-2 spike protein to each other, and how similar are they to the structure of the SARS-CoV spike protein? This is a simple question, but it has a complicated answer, to which we will devote an entire lesson.
+[Visit tutorial](tutorial_homology){: .btn .btn--warning .btn--large}
+{: style="font-size: 100%; text-align: center;"}
 
 [Next lesson](accuracy){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

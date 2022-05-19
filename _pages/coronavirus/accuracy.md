@@ -8,18 +8,11 @@ toc_sticky: true
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
-## Experiments determine the structure of the SARS-CoV-2 spike protein
-
-While some scientists were working to predict the structure of the SARS-CoV-2 spike protein from sequence data, others were working on verifying the structure of this protein experimentally. On February 25, 2020, researchers from the Seattle Structural Genomics Center for Infectious Disease uploaded to the PDB the result of a cryo-EM experiment for the SARS-CoV-2 spike protein, which became entry <a href="http://www.rcsb.org/structure/6VXX" target="_blank">6vxx</a>.
-
-**Note:** If you would like to explore the structure of the SARS-CoV-2 spike protein, check out the 3-D protein viewer at <a href="http://www.rcsb.org/3d-view/6VXX/1" target="_blank">http://www.rcsb.org/3d-view/6VXX/1</a>.
-{: .notice--info}
-
 In this lesson, we will compare the results of the SARS-CoV-2 spike protein prediction from the previous lesson against each other and against the protein's empirically validated structure. To do so, we need a method of comparing two structures.
 
 ## Comparing two shapes with the Kabsch algorithm
 
-Ultimately, comparing protein structures is intrinsically similar to comparing two shapes, such as those shown in the figure below.
+Comparing two protein structures is intrinsically similar to comparing two shapes, such as those shown in the figure below.
 
 **STOP:** Consider the two shapes in the figure below. How similar are they?
 {: .notice--primary}
@@ -27,44 +20,27 @@ Ultimately, comparing protein structures is intrinsically similar to comparing t
 [![image-center](../assets/images/600px/two_shapes.png){: .align-center}](../assets/images/two_shapes.png)
 {: style="font-size: medium;"}
 
-If you think you have a good handle on comparing the above two shapes, then it is because humans have very highly evolved eyes and brains. As we will see in the next module, training a computer to see objects as well as we can is more difficult than you think!
+If you think you have a good handle on comparing the above two shapes, then it is because humans have very highly evolved eyes and brains. As we will see in the next module, training a computer to detect and differentiate objects is more difficult than you think!
 
-We would like to develop a "distance" function *d*(*S*, *T*) quantifying how different two shapes *S* and *T* are. If *S* and *T* are the same, then *d*(*S*, *T*) should be equal to zero; the more different the shapes, the larger *d* should become.
+We would like to develop a distance function *d*(*S*, *T*) quantifying how different two shapes *S* and *T* are. If *S* and *T* are the same, then *d*(*S*, *T*) should be equal to zero; the more different *S* and *T* become, the larger *d* should become.
 
-You may have noticed that the two shapes in the preceding figure are similar; in fact, they are identical. To demonstrate that this is true, we can first move the red shape to superimpose it over the blue shape, then flip the red shape, and finally rotate it so that its boundary coincides with the blue shape, as shown in the animation below.
+You may have noticed that the two shapes in the preceding figure are, in fact, identical. To demonstrate that this is true, we can first move the red shape to superimpose it over the blue shape, then flip the red shape, and finally rotate it so that its boundary coincides with the blue shape, as shown in the animation below. In general, if a shape *S* can be translated, flipped, and/or rotated to produce shape *T*, then *S* and *T* are the same shape, and so *d*(*S*, *T*) should be equal to zero. The question is what *d*(*S*, *T*) should be if *S* and *T* are not the same shape.
 
 [![image-center](../assets/images/600px/shape_transformations_first_frame.png){: .align-center}](../assets/images/shape_transformations.gif)
 We can transform the red shape into the blue shape by translating it, flipping it, and then rotating it.
 {: style="font-size: medium;"}
 
-If *S* can be translated, flipped, and/or rotated to produce *T*, then *S* and *T* are the same shape, and so *d*(*S*, *T*) should be equal to zero. The question is what *d*(*S*, *T*) should be if *S* and *T* are not the same shape.
-
-Our idea for defining *d*(*S*, *T*) is first to translate, flip, and rotate *S* so that it resembles *T* "as much as possible" to give us a fair comparison. We will then to quantify how different the shapes are to determine *d*(*S*, *T*).
+Our idea for defining *d*(*S*, *T*), then, is first to translate, flip, and rotate *S* so that it resembles *T* "as much as possible" to give us a fair comparison. Once we have done so, we will devise a metric to quantify the difference between the two shapes that will represent *d*(*S*, *T*).
 
 We first translate *S* to have the same **center of mass** (or **center of mass**) as *T*. The center of mass of *S* is found at the point (*x*<sub><em>S</em></sub>, *y*<sub><em>S</em></sub>) such that *x*<sub><em>S</em></sub> and *y*<sub><em>S</em></sub> are the respective averages of the *x*-coordinates and *y*-coordinates on the boundary of *S*.
 
-For example, suppose that *S* is the semicircular arc shown in the figure below, with endpoints (-1, 0) and (1, 0).
+The center of mass of some shapes, like the arc in the preceding example, can be determined mathematically. But for irregular shapes, we will first sample *n* points from the boundary of *S* and then estimate *x*<sub><em>S</em></sub> and *y*<sub><em>S</em></sub> as the average of all the respective *x*- and *y*-coordinates from the sampled points.
 
-[![image-center](../assets/images/600px/semicircular_arc.png){: .align-center width="300px"}](../assets/images/semicircular_arc.png)
-A semicircular arc with radius 1 corresponding to a circle whose center is at the origin.
-{: style="font-size: medium;"}
 
-The *x*-coordinate *x*<sub><em>S</em></sub> is zero, but computing *y*<sub><em>S</em></sub> requires us to apply a little calculus, taking the average of the *y*-coordinates along the entire semicircle:
 
-$$\begin{align*}
-y_S & = \dfrac{\int_{0}^{\pi}{\sin{\theta}}}{\pi} \\
-& = \dfrac{-\cos{\pi} + \cos{0}}{\pi} \\
-& = \dfrac{2}{\pi}
-\end{align*}$$
+After finding the center of mass of the two shapes *S* and *T* that we wish to compare, we translate *S* so that it has the same center of mass as *T*. We then wish to find the rotation of *S*, possibly along with a flip as well, that makes the shape resemble *T* as much as possible.
 
-**STOP:** Say that we connect (-1, 0) and (0, 1) to form a closed semicircle. What will be the center of mass of the resulting shape?
-{: .notice--primary}
-
-The center of mass of some shapes, like the semicircular arc in the preceding example, can be determined mathematically. But for irregular shapes, we can estimate the center of mass of *S* by sampling *n* points from the boundary of the shape and taking the averages of all the *x*- and *y*-coordinates of sampled points.
-
-After finding the center of masss of the two shapes *S* and *T* that we wish to compare, we translate *S* so that it has the same center of mass as *T*. We then wish to find the rotation of *S*, possibly along with a flip as well, that makes the shape resemble *T* as much as possible.
-
-Imagine that we have found the desired rotation; we can then define *d*(*S*, *T*) in the following way. We sample *n* points along the boundary of each shape, converting *S* and *T* into **vectors** **s** = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>) and **t** = (*t*<sub>1</sub>, ..., *t*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is the *i*-th point on the boundary of *S*. The **root mean square deviation (RMSD)** between the two shapes is the square root of the average squared distance between corresponding points in the vectors,
+Imagine that we have found the desired rotation; we are now ready to define *d*(*S*, *T*) in the following way. We sample *n* points along the boundary of each shape, converting *S* and *T* into **vectors** **s** = (*s*<sub>1</sub>, ..., *s*<sub><em>n</em></sub>) and **t** = (*t*<sub>1</sub>, ..., *t*<sub><em>n</em></sub>), where *s*<sub><em>i</em></sub> is the *i*-th point on the boundary of *S*. The **root mean square deviation (RMSD)** between the two shapes is the square root of the average squared distance between corresponding points in the vectors,
 
 $$\text{RMSD}(\mathbf{s}, \mathbf{t}) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)} \,.$$
 
@@ -91,19 +67,40 @@ $$\begin{align*}
 **STOP:** Do you see any issues with using RMSD to compare two shapes?
 {: .notice--primary}
 
-Even if we assume that the shapes have already been overlapped and rotated appropriately, we still need to make sure that we sample enough points to give a good approximation of how different the shapes are. Consider a circle inscribed within a square, as shown in the figure below. If we happened to sample only the four points indicated, then we would sample the same points for each shape and conclude that the RMSD between these two shapes is equal to zero. Fortunately, this issue is easily resolved by making sure to sample enough points to avoid approximation errors.
+Even if we assume that two shapes have already been overlapped and rotated appropriately, we still should ensure that we sample enough points to give a good approximation of how different the shapes are. Consider a circle inscribed within a square, as shown in the figure below. If we happened to sample only the four points indicated, then we would sample the same points for each shape and conclude that the RMSD between these two shapes is equal to zero. Fortunately, this issue is easily resolved by making sure to sample enough points from the shape boundaries.
 
 [![image-center](../assets/images/600px/circle_square_undersampling.png){: .align-center width="300px"}](../assets/images/circle_square_undersampling.png)
-A circle inscribed within a square. Sampling of the four points where the shapes intersect will give a flawed estimate of zero for RMSD.
+A circle inscribed within a square. Sampling of the four points where the shapes intersect will give a flawed estimate of zero for the RMSD.
 {: style="font-size: medium;"}
 
-However, we have still assumed that we already rotated (and possibly flipped) *S* to be as "similar" to *T* as possible. In practice, after superimposing *S* and *T* to have the same center of mass, we will find the flip and/or rotation of *S* that *minimizes* the RMSD between our vectorizations of *S* and *T* over all possible ways of flipping and rotating *S*. It is this minimum RMSD that we define as *d*(*S*, *T*).
+However, we have still assumed that we already rotated (and possibly flipped) *S* to be as "similar" to *T* as possible. In practice, after superimposing *S* and *T* to have the same center of mass, we would like to find the flip and/or rotation of *S* that *minimizes* the RMSD between our vectorizations of *S* and *T* over all possible ways of flipping and rotating *S*. It is this minimum RMSD that we define as *d*(*S*, *T*).
 
 The best way of rotating and flipping *S* so as to minimize the RMSD between the resulting vectors *s* and *t* can be found with a method called the **Kabsch algorithm**. Explaining this algorithm requires some advanced linear algebra and is beyond the scope of our work but is described <a href="https://en.wikipedia.org/wiki/Kabsch_algorithm" target="_blank">here</a>.
 
-## Applying the Kabsch algorithm to protein structure comparison
+## PDB format represents a protein’s structure
 
 The Kabsch algorithm offers a compelling way to determine the similarity of two protein structures. We can convert a protein containing *n* amino acids into a vector of length *n* by selecting a single representative point from each amino acid. We typically use the alpha carbon, the amino acid's centrally located carbon atom; the position of this atom will be present in the `.pdb` file for a given structure.
+
+## PDB format represents a protein's structure
+
+The Kabsch algorithm offers a compelling way to determine the similarity of two protein structures. We can convert a protein containing *n* amino acids into a vector of length *n* by selecting a single representative point from each amino acid. We typically use the alpha carbon, the amino acid’s centrally located carbon atom.
+
+Whether a protein structure is experimentally validated or predicted by an algorithm, the structure is often represented in a unified file format used by the PDB called `.pdb` format. In this format (see the figure below), each atom in the protein is labeled according to several different characteristics, including:
+
+1. the element from which the atom derives;
+2. the amino acid in which the atom is contained;
+3. the chain on which this amino acid is found;
+4. the position of the amino acid within this chain; and
+5. the 3D coordinates (*x*, *y*, *z*) of the atom in angstroms (10<sup>-10</sup> meters).
+
+[![image-center](../assets/images/600px/simplifiedPDB.png){: .align-center}](../assets/images/simplifiedPDB.png)
+A simplified diagram showing how the `.pdb` format encodes the 3D coordinates of every atom while labeling the identity of this atom and the chain on which it is found. Source: [https://proteopedia.org/wiki/index.php/Atomic_coordinate_file](https://proteopedia.org/wiki/index.php/Atomic_coordinate_file).
+{: style="font-size: medium;"}
+
+**Note:** The above figure shows just part of the information needed to fully represent a protein structure. For example, a `.pdb` file will also contain information about the disulfide bonds between amino acids. For more information, consult the <a href="http://www.wwpdb.org/documentation/file-format" target="_blank">official PDB documentation</a>).
+{: .notice--info}
+
+## The Kabsch algorithm can be fooled
 
 **STOP:** Can you think of an example in which a small difference between protein structures can cause a large inflation in RMSD score?
 {: .notice--primary}

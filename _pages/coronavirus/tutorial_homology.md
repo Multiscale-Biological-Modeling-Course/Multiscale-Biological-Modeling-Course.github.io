@@ -83,5 +83,5 @@ Homology models predicted by GalaxyWEB for the SARS-CoV-2 spike protein RBD. The
 
 In the figures above, the structures predicted by the three software resources appear to be reasonably accurate. But throughout this course, we have prioritized using quantitative metrics to analyze results. As we return to the main text, our question is how to develop a quantitative metric to compare the results of these models to each other and to the structure of the SARS-CoV-2 spike protein.
 
-[Return to main text](homology#applying-homology-modeling-to--the-sars-cov-2-spike-protein){: .btn .btn--warning .btn--large}
+[Return to main text](homology#experiments-determine-the-structure-of-the-SARS-CoV-2-spike-protein){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
