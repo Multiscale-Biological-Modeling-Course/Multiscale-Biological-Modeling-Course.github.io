@@ -548,11 +548,36 @@ The Kabsch algorithm offers a compelling way to determine the similarity of two 
 Whether a protein structure is experimentally validated or predicted by an algorithm, the structure is often represented in a unified file format used by the PDB called \texttt{.pdb} format (\autoref{fig:simplifiedPDB}). In this format, each atom in the protein is labeled according to several different characteristics, including: the element from which the atom derives; the amino acid in which the atom is contained; the chain on which this amino acid is found; the position of the amino acid within this chain; and the 3D coordinates $(x, y, z)$ of the atom in angstroms ($10^{-10}$ meters).\\
 
 \begin{figure}[h]
-	\centering
-	\mySfFamily
-	\includegraphics[width = 0.7\textwidth]{../images/simplifiedPDB.png}
-	\caption{A simplified diagram showing how the \texttt{.pdb} format encodes the 3D coordinates of every atom while labeling the identity of this atom and the chain on which it is found.}
-	\label{fig:simplifiedPDB}
+\centering
+\mySfFamily
+\tiny
+\tabcolsep = 0.47em
+\rowcolors{2}{gray!25}{white}
+\begin{tabular}{c c c c c c c c c c}
+\rowcolor{gray!50}
+ & &  &  &  & & & \multicolumn{3}{c}{\textbf{Coordinates}}\\
+\rowcolor{gray!50}
+ & & \textbf{Index} & \textbf{Element} & \textbf{Amino acid} & \textbf{Chain} & \textbf{Position} & \textit{\textbf{x}} & \textit{\textbf{y}} & \textit{\textbf{z}}\\
+\gray{2159} & ATOM & 1 & N & ALA& A & 27 & 171.646& 251.874& 224.877\\
+\Green{2160} & \Green{ATOM} & \Green{2} & \Green{CA} & \Green{ALA}& \Green{A} & \Green{27} & \Green{172.298}& \Green{252.181} & \Green{223.613}\\
+\gray{2161} & ATOM & 3 & C & ALA& A & 27 & 173.530& 251.298& 223.427\\
+\gray{2162} & ATOM & 4 & O & ALA& A & 27 & 174.195& 250.943& 224.405\\
+\gray{2163} & ATOM & 5 & CB & ALA& A & 27 & 172.700& 253.664& 223.554\\
+\gray{2164} & ATOM & 6 & N & TYR& A & 28 & 173.816& 250.939& 222.166\\ 
+\Green{2165} & \Green{ATOM} & \Green{7} & \Green{CA} & \Green{TYR} & \Green{A} & \Green{28} & \Green{174.968} & \Green{250.129} &\Green{221.763}\\
+\gray{2166} & ATOM & 8 & C & TYR& A & 28 & 175.652& 250.729& 220.561\\
+\gray{2167} & ATOM & 9 & O & TYR& A & 28 & 175.009& 251.379& 219.736\\
+\gray{2168} & ATOM & 10 & CB & TYR& A & 28 & 174.546& 248.703& 221.426\\
+\gray{2169} & ATOM & 11 & CG & TYR& A & 28 & 174.049& 247.932& 222.586\\
+\gray{2170} & ATOM & 12 & CD1& TYR& A & 28 & 172.752& 248.072& 223.009\\
+\gray{2171} & ATOM & 13 & CD2& TYR& A & 28 & 174.897& 247.067& 223.225\\
+\gray{2172} & ATOM & 14 & CE1& TYR& A & 28 & 172.304& 247.348& 224.080\\
+\gray{2173} & ATOM & 15 & CE2& TYR& A & 28 & 174.455& 246.338& 224.291\\
+\gray{2174} & ATOM & 16 & CZ & TYR& A & 28 & 173.161& 246.477& 224.723\\
+\gray{2175} & ATOM & 17 & OH & TYR& A & 28 & 172.710& 245.746& 225.795
+\end{tabular}
+\caption{Lines \text{2,159} to \text{2,175} of the \texttt{.pdb} file for the experimentally verified SARS-CoV-2 spike protein structure, PDB entry \href{http://www.rcsb.org/structure/6VXX}{6vxx}. These 17 lines contain information on the atoms taken from two amino acids, alanine and tyrosine. The rows corresponding to these amino acids' alpha carbons are shown in green and appear as ``CA'' under the ``Element'' column.  We have labeled the columns to make it clear what each column corresponds to: ``Index'' refers to the number of the amino acid; ``Element'' identifes the chemical element to which this atom corresponds; ``Chain'' indicates which chain the atom is found on; ``Position'' identifies the position in the protein of the amino acid from which the atom is taken; ``Coordinates'' indicates the \textvar{x}, \textvar{y}, and \textvar{z} coordinates of the atom's location in angstroms.}
+\label{fig:simplifiedPDB}
 \end{figure}
 
 \begin{note}[%
