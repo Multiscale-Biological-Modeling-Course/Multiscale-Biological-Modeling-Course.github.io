@@ -31,7 +31,7 @@ In this free course, we will build models of biological systems that are relativ
 
 ## Course structure and contents
 
-This online course is divided into a prologue and four main modules. Each of the five parts of the book covers a single biological topic (e.g., "Analyzing the structure of the SARS-CoV-2 spike protein") and introduces all of the modeling topics needed to address that topic from first principles. The modules build on each other, so we suggest covering them in order, although it is possible to complete them out of order.
+This online course is divided into a prologue and four main modules. Each of the five parts of the course covers a single biological topic (e.g., "Analyzing the structure of the SARS-CoV-2 spike protein") and introduces all of the modeling topics needed to address that topic from first principles. The modules build on each other, so we suggest covering them in order, although it is possible to complete them out of order.
 
 Each module has a main narrative that can be explored by anyone, including beginner modelers; this main narrative will form our upcoming book. When we need to build a model along the way, we pass our modeling work to "software tutorials" that show how to use high-powered modeling software produced by <a href="http://mmbios.pitt.edu" target="_blank">MMBioS</a> researchers to build biological models. The software tutorials allow users wishing to get their hands dirty with modeling software to build all of the models that we need in this course. This allows for a course that can be explored by both casual and serious biological modeling learners alike.
 
