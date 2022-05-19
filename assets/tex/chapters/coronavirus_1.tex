@@ -543,15 +543,13 @@ Throughout the above discussion, we have assumed that we already rotated (and po
 \phantomsection
 \subsection{PDB format represents a protein's structure}
 
-The Kabsch algorithm offers a compelling way to determine the similarity of two protein structures. We can convert a protein containing \textit{n} amino acids into a vector of length \textit{n} by selecting a single representative point from each amino acid. We typically use the alpha carbon, the amino acid's centrally located carbon atom (recall the chemical structure of an amino acid from \autoref{fig:AminoAcid}).
-
-Whether a protein structure is experimentally validated or predicted by an algorithm, the structure is often represented in a unified file format used by the PDB called \texttt{.pdb} format (\autoref{fig:simplifiedPDB}). In this format, each atom in the protein is labeled according to several different characteristics, including: the element from which the atom derives; the amino acid in which the atom is contained; the chain on which this amino acid is found; the position of the amino acid within this chain; and the 3D coordinates $(x, y, z)$ of the atom in angstroms ($10^{-10}$ meters).\\
+The Kabsch algorithm offers a compelling way to determine the similarity of two protein structures. We can convert a protein containing \textit{n} amino acids into a vector of length \textit{n} by selecting a single representative point from each amino acid. We typically use the alpha carbon, the amino acid's centrally located carbon atom (recall the chemical structure of an amino acid from \autoref{fig:AminoAcid}).\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\tiny
-\tabcolsep = 0.47em
+\scriptsize
+\tabcolsep = 0.4em
 \rowcolors{2}{gray!25}{white}
 \begin{tabular}{c c c c c c c c c c}
 \rowcolor{gray!50}
@@ -576,43 +574,40 @@ Whether a protein structure is experimentally validated or predicted by an algor
 \gray{2174} & ATOM & 16 & CZ & TYR& A & 28 & 173.161& 246.477& 224.723\\
 \gray{2175} & ATOM & 17 & OH & TYR& A & 28 & 172.710& 245.746& 225.795
 \end{tabular}
-\caption{Lines \text{2,159} to \text{2,175} of the \texttt{.pdb} file for the experimentally verified SARS-CoV-2 spike protein structure, PDB entry \href{http://www.rcsb.org/structure/6VXX}{6vxx}. These 17 lines contain information on the atoms taken from two amino acids, alanine and tyrosine. The rows corresponding to these amino acids' alpha carbons are shown in green and appear as ``CA'' under the ``Element'' column.  We have labeled the columns to make it clear what each column corresponds to: ``Index'' refers to the number of the amino acid; ``Element'' identifes the chemical element to which this atom corresponds; ``Chain'' indicates which chain the atom is found on; ``Position'' identifies the position in the protein of the amino acid from which the atom is taken; ``Coordinates'' indicates the \textvar{x}, \textvar{y}, and \textvar{z} coordinates of the atom's location in angstroms.}
+\caption{Lines \text{2,159} to \text{2,175} of the \texttt{.pdb} file for the experimentally verified SARS-CoV-2 spike protein structure, PDB entry \href{http://www.rcsb.org/structure/6VXX}{6vxx}. These 17 lines contain information on the atoms taken from two amino acids, alanine and tyrosine. The rows corresponding to these amino acids' alpha carbons are shown in green and appear as ``CA'' under the ``Element'' column.  We have labeled the columns to make it clear what each column corresponds to: ``Index'' refers to the number of the amino acid; ``Element'' identifies the chemical element to which this atom corresponds; ``Chain'' indicates which chain the atom is found on; ``Position'' identifies the position in the protein of the amino acid from which the atom is taken; ``Coordinates'' indicates the \textvar{x}, \textvar{y}, and \textvar{z} coordinates of the atom's location (in angstroms).}
 \label{fig:simplifiedPDB}
 \end{figure}
+
+Whether a protein structure is experimentally validated or predicted by an algorithm, the structure is often represented in a unified file format used by the PDB called \texttt{.pdb} format (\autoref{fig:simplifiedPDB}). In this format, each atom in the protein is labeled according to several different characteristics, including: the element from which the atom derives; the amino acid in which the atom is contained; the chain on which this amino acid is found; the position of the amino acid within this chain; and the 3D coordinates $(x, y, z)$ of the atom in angstroms ($10^{-10}$ meters).\\
 
 \begin{note}[%
 	\autoref{fig:simplifiedPDB} shows just part of the information needed to fully represent a protein structure. For example, a \texttt{.pdb} file will also contain information about the disulfide bonds between amino acids. For more information, consult the \href{http://www.wwpdb.org/documentation/file-format}{official PDB documentation}.
 	]\end{note}
 
-\FloatBarrier
 \phantomsection
 \subsection{The Kabsch algorithm can be fooled}
 
-\begin{qbox}[%
-	Can you think of an example in which a small difference between protein structures can cause a large inflation in RMSD score?
-	]\end{qbox}
+Although the Kabsch algorithm is powerful, we should be careful when using it. Consider \autoref{fig:RMSD_weakness_mutation}, which shows two toy protein structures; the orange structure (\textit{S}) is identical to the blue structure (\textit{T}) except for a change in a single bond angle between the third and fourth amino acids. And yet this tiny change in the protein's structure causes a significant increase in $d(s_{i}, t_{i})$ for every \textit{i} greater than 3, which inflates the RMSD.
 
-Unfortunately, the Kabsch algorithm can be fooled. Consider \autoref{fig:RMSD_weakness_mutation} showing two toy protein structures. The orange structure (\textit{S}) is identical to the blue structure (\textit{T}) except for a change in a single bond angle between the third and fourth amino acids. And yet this tiny change in the protein's structure causes a significant increase in $d(s_{i}, t_{i})$ for every \textit{i} greater than 3, which inflates the RMSD.
-
-\begin{figure}[p]
+\begin{figure}[ht]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.8\textwidth]{../images/RMSD_weakness_mutation.png}
-	\caption{(Top) Two hypothetical protein structures that differ in only a single bond angle between the third and fourth amino acids, shown in red. Each circle represents an alpha carbon. (Bottom left) Superimposing the first three amino acids shows how much the change in the bond angle throws off the computation of RMSD by increasing the distances between corresponding alpha carbons. (Bottom right) The Kabsch algorithm would align the centers of gravity of the two structures in order to minimize RMSD between corresponding alpha carbons. This alignment belies the similarity in the structures and makes it difficult for the untrained observer to notice that the two proteins only really differ in a single bond angle.}
+	\includegraphics[width = 0.7\textwidth]{../images/RMSD_weakness_mutation.png}\\[2ex]
+	\caption{(Top) Two hypothetical protein structures that differ in only a single bond angle between the third and fourth amino acids, shown in red. Each circle represents an alpha carbon. (Bottom left) Superimposing the first three amino acids shows how much the change in the bond angle throws off the computation of RMSD by increasing the distances between corresponding alpha carbons. (Bottom right) The Kabsch algorithm would align the centers of gravity of the two structures in order to minimize RMSD between corresponding alpha carbons. This alignment belies the similarity in the structures and makes it difficult for the untrained observer to notice that the two proteins only differ in a single bond angle.}
 	\label{fig:RMSD_weakness_mutation}
 \end{figure}
 
-Another way in which the Kabsch algorithm can be fooled is in the case of an appended substructure that throws off the ordering of the amino acids. \autoref{fig:RMSD_weakness_loop} shows a toy example of a structure into which we incorporate a loop, thus throwing off the natural order of comparing amino acids. (The same effect is caused if one or more amino acids are deleted from one of the two proteins.)\\
+Another way in which the Kabsch algorithm can be tricked is in the case of an appended substructure that throws off the ordering of the amino acids. \autoref{fig:RMSD_weakness_loop} shows a toy example of a structure into which we incorporate a loop, thus throwing off the natural order of comparing amino acids. (The same effect is caused if one or more amino acids are deleted from one of the two proteins.)
 
-\begin{figure}[h]
+\begin{figure}[hb]
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.7\textwidth]{../images/RMSD_weakness_loop.png}
-	\caption{A simplification of two protein structures, one of which includes a loop of three amino acids. After the loop, each amino acid in the orange structure will be compared against an amino acid that occurs farther long in the blue structure, thus increasing $\textvar{d}(\textvar{s}_{\textvar{i}}, \textvar{t}_{\textvar{i}})^\text{2}$ for each such amino acid.}
+	\caption{Two toy two protein structures, one of which includes a loop of three amino acids. After the loop, each amino acid in the orange structure will be compared against an amino acid that occurs farther long in the blue structure, thus increasing $\textvar{d}(\textvar{s}_{\textvar{i}}, \textvar{t}_{\textvar{i}})^\text{2}$ for each such amino acid.}
 	\label{fig:RMSD_weakness_loop}
 \end{figure}
 
-To address this shortcoming, biologists will often align the sequences of two proteins first, discarding any positions that do not align well when it comes time to perform the RMSD calculation. We will soon see an example of a protein sequence alignment soon when comparing the coronavirus spike proteins.
+To address this second issue, biologists will often align the sequences of two proteins first, discarding any positions that do not align well when it comes time to perform the RMSD calculation. We will soon see an example of a protein sequence alignment when comparing the coronavirus spike proteins.
 
 In short, if the RMSD of two proteins is \textit{large}, then we should be wary of concluding that the proteins are very different, and we may need to combine RMSD with other methods of structure comparison. But if the RMSD is \textit{small} (e.g., just a few angstroms), then we can have confidence that the proteins are indeed similar.
 
