@@ -119,13 +119,11 @@ We are now ready to apply the Kabsch algorithm to compare the structures that we
 
 ## Assessing the accuracy of our structure prediction models
 
-In the tutorials occurring earlier in this module, we used publicly available protein structure prediction servers to predict the structure of human hemoglobin subunit alpha (using *ab initio* modeling) and the SARS-CoV-2 spike protein (using homology modeling).
-
-Let's see how well our models performed by showing the values of RMSD produced by the Kabsch algorithm when comparing each of these models against the validated structures.
+In the tutorials occurring earlier in this module, we used publicly available protein structure prediction servers to predict the structure of human hemoglobin subunit alpha (using *ab initio* modeling) and the SARS-CoV-2 spike protein (using homology modeling). We will now see how well our models performed by showing the values of RMSD produced by the Kabsch algorithm when comparing each of these models against the validated structures.
 
 ### *Ab initio* (QUARK) models of Human Hemoglobin Subunit Alpha
 
-We previously showed that *<a href="https://zhanglab.ccmb.med.umich.edu/QUARK/" target="_blank">QUARK</a>* produced five predicted structures from the amino acid sequence of human hemoglobin subunit alpha. The following table shows the RMSD given by the Kabsch algorithm for each of these models against the validated structure of this subunit (PDB: <a href="https://www.rcsb.org/structure/1SI4" target="_blank">1si4</a>).
+The table below shows the RMSD between each of the five predicted structures returned by QUARK and the validated structure of human hemoglobin subunit alpha (PDB entry: <a href="https://www.rcsb.org/structure/1SI4" target="_blank">1si4</a>). We are tempted to conclude that our *ab initio* prediction was a success. However, because human hemoglobin subunit alpha is such a short protein (141 amino acids), researchers would consider this RMSD score high.
 
 | Quark Model | RMSD  |
 |:------------|:------|
@@ -136,8 +134,6 @@ We previously showed that *<a href="https://zhanglab.ccmb.med.umich.edu/QUARK/" 
 | QUARK5      | 2.6495|
 
 It is tempting to conclude that our *ab initio* prediction was a success. However, because human hemoglobin subunit alpha is such a short protein (141 amino acids), researchers would consider this RMSD score high.
-
-We know that homology modeling will be faster than *ab initio* modeling. But will it be more accurate as well?
 
 ### Homology models of SARS-CoV-2 S protein
 
