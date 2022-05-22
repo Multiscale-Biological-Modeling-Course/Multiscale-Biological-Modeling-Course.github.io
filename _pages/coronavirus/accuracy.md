@@ -123,7 +123,7 @@ In the tutorials occurring earlier in this module, we used publicly available pr
 
 ### *Ab initio* (QUARK) models of Human Hemoglobin Subunit Alpha
 
-The table below shows the RMSD between each of the five predicted structures returned by QUARK and the validated structure of human hemoglobin subunit alpha (PDB entry: <a href="https://www.rcsb.org/structure/1SI4" target="_blank">1si4</a>). We are tempted to conclude that our *ab initio* prediction was a success. However, because human hemoglobin subunit alpha is such a short protein (141 amino acids), researchers would consider this RMSD score high.
+The table below shows the RMSD between each of the five predicted structures returned by QUARK and the validated structure of human hemoglobin subunit alpha (PDB entry: <a href="https://www.rcsb.org/structure/1SI4" target="_blank">1si4</a>). We are tempted to conclude that our *ab initio* prediction was a success. However, because human hemoglobin subunit alpha is so short (141 amino acids), researchers would consider this RMSD score to be high.
 
 | Quark Model | RMSD  |
 |:------------|:------|
@@ -135,11 +135,9 @@ The table below shows the RMSD between each of the five predicted structures ret
 
 It is tempting to conclude that our *ab initio* prediction was a success. However, because human hemoglobin subunit alpha is such a short protein (141 amino acids), researchers would consider this RMSD score high.
 
-### Homology models of SARS-CoV-2 S protein
+### Homology models of the SARS-CoV-2 spike protein
 
-In the [homology tutorial](tutorial_homology), we used SWISS-MODEL and Robetta to predict the structure of the SARS-CoV-2 spike protein, and we used GalaxyWeb to predict the structure of this protein's receptor binding domain (RBD). In addition to our predicted models, we will also assess five predicted models of the full SARS-CoV-2 spike protein released early in the COVID-19 pandemic by <a href="https://boinc.bakerlab.org/" target="_blank">Rosetta@Home</a> and published to the Seattle Structural Genomics Center for Infectious Disease (SSGCID).
-
-Because the work needed to generate these models was distributed over many users' machines, comparing the RMSD scores obtained by the Rosetta@Home models against our own may provide insights on the effect of computational power on the accuracy of predictions. The SSGCID models can be found <a href="https://www.ssgcid.org/cttdb/molecularmodel_list/?target__icontains=BewuA" target="_blank">here</a>.
+In the [homology tutorial](tutorial_homology), we used SWISS-MODEL and Robetta to predict the structure of the SARS-CoV-2 spike protein, and we used GalaxyWeb to predict the structure of this protein's receptor binding domain (RBD).
 
 #### GalaxyWEB
 
@@ -184,7 +182,7 @@ Finally, we produced five predicted structures of a single chain of the SARS-CoV
 
 #### SSGCID
 
-As explained above, the SSGCID models of the S protein released by <a href="https://boinc.bakerlab.org/" target="_blank">Rosetta@Home</a> used large amounts of computational resources. Therefore, we might expect to see RMSD scores lower than those of our models. Like before, we will compare the models to the validated structure of (PDB: <a href="https://www.rcsb.org/structure/6vxx">6vxx</a>). This time, we will assess the accuracy of predictions of a single chain as well as of the entire spike protein.
+The <a href="https://www.ssgcid.org/cttdb/molecularmodel_list/?target__icontains=BewuA" target="_blank">SSGCID models</a> of the S protein released by <a href="https://boinc.bakerlab.org/" target="_blank">Rosetta@Home</a> used large amounts of computational resources. Therefore, we might expect to see RMSD scores lower than those of our models. Like before, we will compare the models to the validated structure of (PDB: <a href="https://www.rcsb.org/structure/6vxx">6vxx</a>). This time, we will assess the accuracy of predictions of a single chain as well as of the entire spike protein.
 
 | SSGCID | RMSD (Full Protein) | RMSD (Single Chain)|
 |:-------|:--------------------|:-------------------|
@@ -194,9 +192,9 @@ As explained above, the SSGCID models of the S protein released by <a href="http
 |SSGCID4|2.0854|2.047|
 |SSGCID5|4.9636|4.6443|
 
-As we might expect due to their access to the resources of thousands of users' computers, the SSGCID models outperform our SWISS-MODEL models. Yet a typical threshold for whether a predicted structure is accurate is if its RMSD compared to a validated structure is smaller than 2.0 angstroms, and the SSGCID models are not quite this accurate, even with access to hundreds of contributors' machines.
+As we might expect due to having access to thousands of users' computers, the SSGCID models outperform our SWISS-MODEL models. Yet a typical threshold for whether a predicted structure is accurate is if its RMSD compared to a validated structure is smaller than 2.0 angstroms, a test that the models in the above table do not pass.
 
-The inability of the SSGCID models to attain a very accurate predicted structure may make it seem that protein structure prediction is a lost cause. Perhaps biochemists should head back to expensive experimental validations and ignore the musings of computational scientists. In the conclusion to part 1, we will find hope.
+The inability of even powerful models to obtain an accurate predicted structure may make it seem that protein structure prediction is a lost cause. Perhaps biochemists should head back to expensive experimental validations and ignore the musings of computational scientists. In the conclusion to part 1, we will find hope.
 
 [Next lesson](conclusion_part_1){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

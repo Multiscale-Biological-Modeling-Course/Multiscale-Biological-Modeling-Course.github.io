@@ -318,10 +318,6 @@ As the protein folds, it seeks a conformation of \textit{lowest} total potential
 \section{\textit{Ab initio} Protein Structure Prediction}
 \label{sec:ab_initio}
 
-%\phantomsection
-%\subsection{Distributing the work of protein structure prediction around the world}
-%The determination of the SARS-CoV-2 spike protein structure was remarkable because in many senses it was a community effort, dividing the computational heavy lifting over thousands of volunteers' computers around the world. Two leading structure prediction projects, \href{https://boinc.bakerlab.org}{Rosetta@home} and \href{https://foldingathome.org}{Folding@home}, encourage volunteers to download their software and contribute to a gigantic \textit{distributed} effort to predict protein shape. Even with a modest laptop, a user can donate some of their computer's idle resources to contribute to the problem of protein structure prediction. But how does this software work?
-
 \phantomsection
 \subsection{Modeling \textit{ab initio} structure prediction as an exploration problem}
 
@@ -589,21 +585,21 @@ Whether a protein structure is experimentally validated or predicted by an algor
 
 Although the Kabsch algorithm is powerful, we should be careful when using it. Consider \autoref{fig:RMSD_weakness_mutation}, which shows two toy protein structures; the orange structure (\textit{S}) is identical to the blue structure (\textit{T}) except for a change in a single bond angle between the third and fourth amino acids. And yet this tiny change in the protein's structure causes a significant increase in $d(s_{i}, t_{i})$ for every \textit{i} greater than 3, which inflates the RMSD.
 
-\begin{figure}[ht]
+\begin{figure}[p]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.7\textwidth]{../images/RMSD_weakness_mutation.png}\\[2ex]
+	\includegraphics[width = 0.85\textwidth]{../images/RMSD_weakness_mutation.png}
 	\caption{(Top) Two hypothetical protein structures that differ in only a single bond angle between the third and fourth amino acids, shown in red. Each circle represents an alpha carbon. (Bottom left) Superimposing the first three amino acids shows how much the change in the bond angle throws off the computation of RMSD by increasing the distances between corresponding alpha carbons. (Bottom right) The Kabsch algorithm would align the centers of gravity of the two structures in order to minimize RMSD between corresponding alpha carbons. This alignment belies the similarity in the structures and makes it difficult for the untrained observer to notice that the two proteins only differ in a single bond angle.}
 	\label{fig:RMSD_weakness_mutation}
 \end{figure}
 
 Another way in which the Kabsch algorithm can be tricked is in the case of an appended substructure that throws off the ordering of the amino acids. \autoref{fig:RMSD_weakness_loop} shows a toy example of a structure into which we incorporate a loop, thus throwing off the natural order of comparing amino acids. (The same effect is caused if one or more amino acids are deleted from one of the two proteins.)
 
-\begin{figure}[hb]
+\begin{figure}[t]
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.7\textwidth]{../images/RMSD_weakness_loop.png}
-	\caption{Two toy two protein structures, one of which includes a loop of three amino acids. After the loop, each amino acid in the orange structure will be compared against an amino acid that occurs farther long in the blue structure, thus increasing $\textvar{d}(\textvar{s}_{\textvar{i}}, \textvar{t}_{\textvar{i}})^\text{2}$ for each such amino acid.}
+	\caption{Two toy protein structures, one of which (bottom) includes a loop of three amino acids. After the loop, each amino acid in the orange structure will be compared against an amino acid that occurs farther long in the blue structure, thus increasing $\textvar{d}(\textvar{s}_{\textvar{i}}, \textvar{t}_{\textvar{i}})$ for each such amino acid and inflating RMSD.}
 	\label{fig:RMSD_weakness_loop}
 \end{figure}
 
@@ -619,7 +615,7 @@ We are now ready to apply the Kabsch algorithm to compare the structures that we
 
 Earlier in this chapter, we used publicly available protein structure prediction servers to predict the structure of human hemoglobin subunit alpha (using \textit{ab initio} modeling) and the SARS-CoV-2 spike protein (using homology modeling). We will now see how well our models performed by showing the values of RMSD produced by the Kabsch algorithm when comparing each of these models against the validated structures.
 
-The table below shows the RMSD between each of the five predicted structures returned by QUARK and the validated structure of human hemoglobin subunit alpha. We are tempted to conclude that our \textit{ab initio} prediction was a success. However, because human hemoglobin subunit alpha is such a short protein (141 amino acids), researchers would consider this RMSD score high.\\
+\autoref{fig:quark_rmsd_table} shows the RMSD between each of the five predicted structures returned by QUARK and the validated structure of human hemoglobin subunit alpha. We are tempted to conclude that our \textit{ab initio} prediction was a success. However, because human hemoglobin subunit alpha is so short (141 amino acids), researchers would consider this RMSD score to be high.\fudgespace
 
 \begin{figure}[h]
 	\centering
@@ -627,26 +623,22 @@ The table below shows the RMSD between each of the five predicted structures ret
 	\mySfFamily
 	\begin{tabular}{c c}
 		\textbf{QUARK Models} & \textbf{RMSD} \\
-		QUARK1 & 1.58 \\
-		QUARK2 & 2.0988 \\
-		QUARK3 & 3.11 \\
-		QUARK4 & 1.9343 \\
-		QUARK5 & 2.6495 \\
+		QUARK 1 & 1.58\phantom{xx} \\
+		QUARK 2 & 2.0988\\
+		QUARK 3 & 3.11\phantom{xx} \\
+		QUARK 4 & 1.9343\\
+		QUARK 5 & 2.6495
 	\end{tabular}
-	\caption{A table containing the the calculated RMSD of the QUARK models of human hemoglobin subunit alpha compared to the validated structure (PDB entry: \href{https://www.rcsb.org/structure/1si4}{1si4}).}
+	\caption{The RMSD of five models of human hemoglobin subunit alpha predicted by QUARK compared against the protein's validated structure (PDB entry: \href{https://www.rcsb.org/structure/1si4}{1si4}).}
 	\label{fig:quark_rmsd_table}
 \end{figure}
 
 
 \FloatBarrier
 \phantomsection
-\subsection{Homology models of SARS-CoV-2 spike protein}
+\subsection{Homology models of the SARS-CoV-2 spike protein}
 
-Earlier, we used SWISS-MODEL and Robetta to predict the structure of the SARS-CoV-2 spike protein, and we used GalaxyWeb to predict the structure of this protein's receptor binding domain (RBD). In addition to our predicted models, we will also assess five predicted models of the full SARS-CoV-2 spike protein released early in the COVID-19 pandemic by Rosetta@Home.
-
-Because the work needed to generate these models was distributed over many users' machines, comparing the RMSD scores obtained by the Rosetta@Home models against our own may provide insights on the effect of computational power on the accuracy of predictions. The SSGCID models are publicly available on \href{https://www.ssgcid.org/cttdb/molecularmodel_list/?target__icontains=BewuA}{their website}.
-
-First, we consider the five GalaxyWEB models produced for the spike protein RBD. \autoref{fig:galaxyweb_rmsd_table} shows the RMSD between each of these models and the validated SARS-CoV-2 RBD, which has PDB entry \href{https://www.rcsb.org/structure/6lzg}{6lzg}.\\
+We also used GalaxyWeb to predict the structure of the SARS-CoV-2 spike protein's RBD, Robetta to predict the structure of a single chain, and SWISS-MODEL to predict the structure of the entire protein. \autoref{fig:sars-cov-2_rmsd_table} compiles the RMSD of structures predicted by this homology modeling software against experimental results.\\
 
 \begin{figure}[h]
 	\centering
@@ -659,53 +651,49 @@ First, we consider the five GalaxyWEB models produced for the spike protein RBD.
 		GalaxyWEB 3 & \phantom{x}0.1526 \\
 		GalaxyWEB 4 & \phantom{x}0.1434 \\
 		GalaxyWEB 5 & \phantom{x}0.1202 \\
-		SWISS-Model 1 & \phantom{x}5.8518 \\
-		SWISS-Model 2 & 11.3432 \\
-		SWISS-Model 3 & 11.3432 \\
 		Robetta 1 & \phantom{x}3.1189 \\
 		Robetta 2 & \phantom{x}3.7568 \\
 		Robetta 3 & \phantom{x}2.9972 \\
 		Robetta 4 & \phantom{x}2.5852 \\
 		Robetta 5 & 12.0975 \\
+		SWISS-Model 1 & \phantom{x}5.8518 \\
+		SWISS-Model 2 & 11.3432 \\
+		SWISS-Model 3 & 11.3432 \\
 	\end{tabular}
-	\caption{A table containing the the calculated RMSD of the GalaxyWEB models of SARS-CoV-2 spike protein RBD compared to the validated structure (PDB entry:6lzg). A table containing the the calculated RMSD of the SWISS-MODEL models of SARS-CoV-2 spike protein compared to the validated structure (PDB entry:6vxx). A table containing the the calculated RMSD of the Robetta models of SARS-CoV-2 spike protein chain A compared to the validated structure (PDB entry: 6vxx).}
-	\label{fig:galaxyweb_rmsd_table}
+	\caption{A table containing the RMSD of SARS-CoV-2 spike protein structures predicted by software against the known structure. GalaxyWEB's results are compared against the RBD (PDB entry: \href{https://www.rcsb.org/structure/6lzg}{6lzg}); Robetta's results are compared against a single chain, and SWISS-Model's are compared against the entire protein (PDB entry: \href{https://www.rcsb.org/structure/6vxx}{6vxx}).}
+	\label{fig:sars-cov-2_rmsd_table}
 \end{figure}
 
-All of these models have an excellent RMSD score and can be considered very accurate. Note that their RMSD is more than an order of magnitude lower than the RMSD computed for our \textit{ab initio} model of hemoglobin subunit alpha, despite the fact that the RBD is longer (229 amino acids).
-
-We now shift to homology models of the entire spike protein and start with SWISS-MODEL. \autoref{fig:swiss_rmsd_table} shows the RMSD between each of three structures produced by SWISS-MODEL and the validated structure of the SARS-CoV-2 spike protein.\\
-
-The first structure has a lowest RMSD over the three models, and even though its RMSD (5.818) is significantly higher than what we saw for the GalaxyWEB prediction for the RBD, keep in mind that the spike protein is 1,281 amino acids long, and so the sensitivity of RMSD to slight changes should give us confidence that our models are on the right track.
-
-Finally, we produced five predicted structures of a single chain of the SARS-CoV-2 spike protein using Robetta. \autoref{fig:robetta_rmsd_table} compares each of them against the validated structure of the SARS-CoV-2 spike protein.\\
+The GalaxyWEB models have an excellent RMSD score and can be considered very accurate. Note that their RMSD is more than an order of magnitude lower than the RMSD computed for our \textit{ab initio} predictions of hemoglobin subunit alpha, despite the fact that the RBD is longer (229 amino acids). As for the other two software resources, although the RMSD values are higher than those of GalaxyWEB, keep in mind that a single chain of the spike protein is 1,281 amino acids long, and so the sensitivity of RMSD to slight changes should give us confidence that our models are on the right track.\\
 
 \begin{qbox}[%
 	Which do you think performed more accurately on our predictions: SWISS-MODEL or Robetta?
-	]\end{qbox}
+]\end{qbox}
 
+\phantomsection
+\subsection{Distributing the work of protein structure prediction around the world}
 
-As explained previously, the SSGCID models of the spike protein released by Rosetta@Home used substantial computational resources. Therefore, we might expect to see RMSD scores lower than those of our models. Like before, we will compare the models to the validated structure of the SARS-CoV-2 spike protein.. This time, we will assess the accuracy of predictions of a single chain as well as of the entire spike protein.
+Two leading structure prediction projects, \href{https://boinc.bakerlab.org}{Rosetta@home} and \href{https://foldingathome.org}{Folding@home}, encourage volunteers to download their software and contribute to a gigantic \textit{distributed} effort to predict protein shape. Even with a modest laptop, a user can donate some of their computer's idle resources to contribute to the problem of protein structure prediction. While some researchers were working to elucidate the structure of the SARS-CoV-2 spike protein experimentally, thousands of users were devoting their computers to the cause of predicting the protein's structure computationally.
+
+The RMSD values for the models predicted by Rosetta@Home are shown in \autoref{fig:ssgcid_rmsd_table}. As we might expect due to having access to thousands of users' computers, these models outperform our own from \autoref{fig:sars-cov-2_rmsd_table}. Yet a typical threshold for whether a predicted structure is accurate is if its RMSD compared to a validated structure is smaller than 2.0 angstroms, a test that the models in \autoref{fig:ssgcid_rmsd_table} do not pass.
 
 \begin{figure}[h]
 	\centering
 	\tabcolsep = 1 em
 	\mySfFamily
 	\begin{tabular}{c c c}
-		\textbf{SSGCID Models} & \textbf{RMSD (Full Protein)} & \textbf{RMSD (Single Chain)} \\
-		SSGCID1  & 3.505 & 2.7843 \\
-		SSGCID2  & 2.3274 & 2.107 \\
-		SSGCID3  & 2.12 & 1.866 \\
-		SSGCID4  & 2.0854 & 2.047 \\
-		SSGCID5  & 4.9636 & 4.6443 \\
+		\textbf{Rosetta@Home Models} & \textbf{RMSD (Single Chain)} & \textbf{RMSD (Full Protein)}\\
+		Model 1  & 2.7843 & 3.505\phantom{x}  \\
+		Model 2  & 2.107\phantom{x} & 2.3274 \\
+		Model 3  & 1.866\phantom{x} & 2.12\phantom{xx} \\
+		Model 4  & 2.047\phantom{x} & 2.0854 \\
+		Model 5  & 4.6443 & 4.9636
 	\end{tabular}
-	\caption{A table containing the the calculated RMSD of the SSGCID models of SARS-CoV-2 spike protein, full protein and single chain, compared to the validated structure (PDB entry: 6vxx).}
+	\caption{A table containing the the calculated RMSD of the Rosetta@Home models of SARS-CoV-2 spike protein, full protein and single chain, compared to the validated structure (PDB entry: 6vxx).}
 	\label{fig:ssgcid_rmsd_table}
 \end{figure}
 
-As we might expect due to their access to the resources of thousands of users' computers, the SSGCID models outperform our SWISS-MODEL models. Yet a typical threshold for whether a predicted structure is accurate is if its RMSD compared to a validated structure is smaller than 2.0 angstroms, and the SSGCID models are not quite this accurate, even with access to hundreds of contributors' machines.
-
-The inability of the SSGCID models to attain a very accurate predicted structure may make it seem that protein structure prediction is a lost cause. Perhaps biochemists should head back to expensive experimental validations and ignore the musings of computational scientists. In the conclusion to this chapter, we will find hope.\\
+The inability of even powerful models to obtain an accurate predicted structure may make it seem that protein structure prediction is a lost cause. Perhaps biochemists should head back to expensive experimental validations and ignore the musings of computational scientists. In the conclusion to this chapter, we will find hope.\\
 
 \FloatBarrier
 \phantomsection
