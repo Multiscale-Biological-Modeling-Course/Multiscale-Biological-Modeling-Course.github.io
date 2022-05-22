@@ -702,41 +702,30 @@ The inability of even powerful models to obtain an accurate predicted structure 
 \label{sec:conclusion_part_1}
 \phantomsection
 
-In 1967, the Soviets founded an entire research institute (\url{https://www.protres.ru}) dedicated to protein research and decoding nature's magic protein folding algorithm. Most of its founding scientists are dead now, but the institute carries on.
-
-Protein structure prediction is an old problem, but continual algorithmic improvements and increasing computational resources have led biologists around the world to wish for the day when they could consider protein structure prediction to be solved.
+Protein structure prediction is an old problem. In 1967, the Soviets founded an entire research institute dedicated to solving ``the protein problem''; this institute still lives on today. Despite the difficulty of protein structure prediction, gradual algorithmic improvements and increasing computational resources have led biologists around the world to wish for the day when they could consider protein structure prediction to be solved.
 
 That day has come. Kind of.
 
-Every two years since 1994, a global effort called \textdefnogloss{Critical Assessment of protein Structure Prediction} has allowed modelers to test their protein structure prediction algorithms against each other. The contest organizers compile a (secret) collection of experimentally verified protein structures and then run all submitted algorithms against these proteins.
+Every two years since 1994, a global contest called \textdefnogloss{Critical Assessment of protein Structure Prediction (CASP)} has allowed modelers to test their protein structure prediction algorithms against each other. The contest organizers compile a (secret) collection of experimentally verified protein structures and then run all submitted algorithms against these proteins.
 
-The 14th iteration of this contest, held in 2020, was won in a landslide. The second version of \href{https://bit.ly/3sKl6pH}{AlphaFold}, one of the projects of DeepMind (an Alphabet subsidiary), vastly outperformed the world's foremost structure prediction approaches, including those that we discussed in this chapter. The algorithm powering AlphaFold is an extremely involved method based on deep learning, a topic that we will touch upon in \autoref{chapter:white_blood_cells}.
+The 14th iteration of this contest, held in 2020, was won in a landslide. The second version of \href{https://bit.ly/3sKl6pH}{\textdefnogloss{AlphaFold}}, one of the projects of DeepMind, vastly outperformed the world's foremost structure prediction approaches, including those that we discussed in this chapter. The algorithm powering AlphaFold is an extremely involved method based on deep learning, a topic that we will touch upon in \autoref{chapter:white_blood_cells}.
 
-Instead of using RMSD, CASP scores a predicted structure against a known structure using the \textdefnogloss{global distance test (GDT)}. For some threshold \textit{t}, we first take the percentage of alpha carbon positions for which the distance between corresponding alpha carbons in the two structures is at most \textit{t}. The GDT score that CASP uses then averages the percentages obtained when \textit{t} is equal to each of 1, 2, 4, and 8 angstroms. A GDT score of 90\% is considered good, and a score of 95\% is considered excellent (i.e., comparable to minor errors resulting from experimentation).
+Instead of using RMSD, CASP scores a predicted structure against a known structure using the \textdefnogloss{global distance test (GDT)}. We first ask, ``How many alpha carbons are close in the two structures?'' To answer this question, we take the percentage of alpha carbon positions for which the distance between corresponding alpha carbons in the two structures is at most equal to some threshold \textit{t}. The GDT score then averages the percentages obtained when \textit{t} is equal to each of 1, 2, 4, and 8 angstroms. A GDT score of 90\% is considered good, and a score of 95\% is considered excellent (i.e., comparable to minor errors resulting from experimentation).
 
-We will show a few plots to illustrate the decisiveness of AlphaFold's CASP victory. The first graph, which is shown in \autoref{fig:AlphaFold2_BAKER}, compares the scores of AlphaFold against the second-place algorithm (a product of David Baker's laboratory, which developed the Robetta and Rosetta@Home software that we used in this chapter).\\
-
-\begin{figure}[h]
-	\centering
-	\mySfFamily
-	\includegraphics[width = 0.85\textwidth]{../images/AlphaFold2_BAKER.png}
-	\caption{A plot of GDT scores for AlphaFold2 (shown in blue) and Baker lab (shown in orange) submissions over all proteins in the CASP14 contest. AlphaFold2 finished first in CASP14, and Baker lab finished second.}
-	\label{fig:AlphaFold2_BAKER}
-\end{figure}
-
-We can appreciate the margin of victory in \autoref{fig:AlphaFold2_BAKER} if we compare it against the margin between the second- and third-place competitors (\autoref{fig:BAKER_Zhang}).\\
+We will show a few plots to illustrate the decisiveness of AlphaFold's CASP victory. In \autoref{fig:AlphaFold2_BAKER_Zhang} (top), we compare the GDT scores of AlphaFold against the second-place algorithm (a product of David Baker's laboratory, which developed the Robetta and Rosetta@Home software that we encountered in this chapter). We can appreciate the size of this margin of victory if we compare it against the difference between the second and third place competitors (\autoref{fig:AlphaFold2_BAKER_Zhang} (bottom)).
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
+	\includegraphics[width = 0.85\textwidth]{../images/AlphaFold2_BAKER.png}\\[4ex]
 	\includegraphics[width = 0.85\textwidth]{../images/BAKER_Zhang.png}
-	\caption{A plot of GDT scores for the Baker lab (shown in blue) and Zhang lab (shown in orange) submissions for all proteins in the CASP14 contest. Baker lab finished second in CASP14, and Zhang lab finished third.}
-	\label{fig:BAKER_Zhang}
+	\caption{(Top) A plot of GDT scores for the AlphaFold2 (shown in blue) and Baker lab (shown in orange) submissions over all proteins in the CASP14 contest. AlphaFold2 finished first in CASP14, and Baker lab finished second. (Bottom) A plot of GDT scores for the Baker lab (shown in blue) and Zhang lab (shown in orange) submissions for all proteins in the CASP14 contest. Zhang lab finished third in CASP14.}
+	\label{fig:AlphaFold2_BAKER_Zhang}
 \end{figure}
 
 For each protein in the CASP14 contest, we can also compute each algorithm's \textdefnogloss{z-score}, defined as the number of standard deviations that the algorithm's GDT score falls from the mean GDT score over all competitors. For example, a z-score of 1.4 would imply that the approach performed 1.4 standard deviations above the mean, and a z-score of $-0.9$ would imply that the approach performed 0.9 standard deviations below the mean.
 
-By summing all of an algorithm's positive z-scores, we obtain a reasonable metric for the relative quality of an algorithm compared to its competitors. If an algorithm's sum of z-scores is large, then the algorithm racked up lots of positive z-scores, and we can conclude that it performed well. \autoref{fig:CASP14_overall_results} shows the sum of z-scores for all CASP14 participants and reiterates the margin of AlphaFold's victory.\\
+By summing all of an algorithm's positive z-scores, we obtain a reasonable metric for the relative quality of an algorithm compared to its competitors. If an algorithm's sum of z-scores is large, then the algorithm racked up lots of positive z-scores, and we can conclude that it performed comparatively well. \autoref{fig:CASP14_overall_results} shows the sum of z-scores for all CASP14 participants and reiterates the margin of AlphaFold's victory.
 
 \begin{figure}[h]
 	\centering
