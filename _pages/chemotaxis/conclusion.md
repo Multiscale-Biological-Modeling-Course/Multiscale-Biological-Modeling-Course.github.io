@@ -127,6 +127,9 @@ Furthermore, the direction of the bacterium's reorientation also depends on whet
 
 We are fortunate to have this wealth of research on chemotaxis in *E. coli*, which may be the single most studied biological system from the perspective of demonstrating how chemical reactions produce emergent behavior. However, for the study of most biological systems, finding a clear thread connecting a reductionist view of the system to that system's holistic behavior remains a dream. (For example: how can your thoughts while reading this parenthetical aside be distilled into the firings of individual neurons?)  Regardless of what the future holds, we can be confident that uncovering the underlying mechanisms of biological systems will continue to inspire the work of biological modelers for many years.
 
+[Visit exercises](exercises){: .btn .btn--success .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
 [^Saragosti2011]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2011. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)
 
 [^Saragosti2012]: Saragosti J., Siberzan P., Buguin A. 2012. Modeling *E. coli* tumbles by rotational diffusion. Implications for chemotaxis. PLoS One 7(4):e35412. [available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3329434/).
@@ -134,7 +137,3 @@ We are fortunate to have this wealth of research on chemotaxis in *E. coli*, whi
 [^Berg1972]: Berg HC, Brown DA. 1972. Chemotaxis in Escherichia coli analysed by three-dimensional tracking. Nature. [Available online](https://www.nature.com/articles/239500a0)
 
 [^Baker2005]: Baker MD, Wolanin PM, Stock JB. 2005. Signal transduction in bacterial chemotaxis. BioEssays 28:9-22. [Available online](https://pubmed.ncbi.nlm.nih.gov/16369945/)
-
-
-[Visit exercises](exercises){: .btn .btn--success .btn--large}
-{: style="font-size: 100%; text-align: center;"}

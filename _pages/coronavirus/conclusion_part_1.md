@@ -50,6 +50,9 @@ Pronouncing protein structure prediction to be solved may be hasty, but we will 
 
 Thus ends our discussion of protein structure prediction, but we still have much more to say. In particular, when comparing two protein structures, we have relied only upon the RMSD between the vectorizations of these two structures after applying the Kabsch algorithm. But using a single statistic to represent the differences between two protein structures belies what those differences might be. Furthermore, proteins are not static objects; they bend and shape in their environment as they perform their tasks. We will therefore now transition into a second part of our treatment of protein analysis, in which we show additional methods used to compare proteins and apply these techniques to the validated structures of the SARS-CoV and SARS-CoV-2 spike proteins.
 
+[Visit part 1 exercises](exercises_part_1){: .btn .btn--success .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
 [Continue to part 2: spike protein comparison](multiseq){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
