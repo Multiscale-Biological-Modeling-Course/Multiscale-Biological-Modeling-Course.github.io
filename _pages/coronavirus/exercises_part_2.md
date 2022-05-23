@@ -1,5 +1,5 @@
 ---
-permalink: /coronavirus/exercises
+permalink: /coronavirus/exercises_part_2
 title: "Exercises: Coming Soon!"
 sidebar:
  nav: "coronavirus"
