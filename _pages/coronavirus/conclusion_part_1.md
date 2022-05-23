@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/conclusion_part_1
-title: "Part 1 Conclusion: Protein Structure Prediction is Solved! (Kind of…)"
+title: "Part 1 Conclusion: Protein Structure Prediction is Solved?"
 sidebar:
  nav: "coronavirus"
 image: "../assets/images/SARS_spike_proteins.jpg"
