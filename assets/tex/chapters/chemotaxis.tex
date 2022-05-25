@@ -649,7 +649,7 @@ $\min\left(\max(t_0 \cdot (1 + 10 \cdot \Delta [L]), c), 4 \cdot t_0\right)$\,,
 What is the mean run duration when $\Delta\text{[}L\text{]}$ is equal to zero? Is this what we would hope?
 ]\end{qbox}
 
-As with the first strategy, our simulated cell will alternate between tumbling and running in a random direction until the total time devoted to the simulation has elapsed. The \textit{only} difference in the second strategy is that we will measure the percentage change in concentration $\Delta [L]$ between a cell's current point and its previous point every $t_{\text{response}}$ seconds. After determining a mean run time according to the expression above, we will sample a random number $p$ from an exponential distribution with this mean run time, and the cell will tumble after $p$ seconds if $p$ is smaller than $t_{\text{response}}$.\tutorial[chemotaxis/tutorial_walk]
+As with the first strategy, our simulated cell will alternate between tumbling and running in a random direction until the total time devoted to the simulation has elapsed. The \textit{only} difference in the second strategy is that we will measure the percentage change in concentration $\Delta [L]$ between a cell's current point and its previous point every $t_{\text{response}}$ seconds. After determining a mean run time according to the expression above, we will sample a random number $p$ from an exponential distribution with this mean run time, and the cell will tumble after $p$ seconds if $p$ is smaller than $t_{\text{response}}$.\tutorial[chemotaxis/tutorial_gradient]
 
 \FloatBarrier
 \phantomsection
