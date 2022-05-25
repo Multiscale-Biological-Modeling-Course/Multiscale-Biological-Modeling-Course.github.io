@@ -781,3 +781,45 @@ Determine the center of mass of the shape in \autoref{fig:semicircular_arc}. (Hi
 \begin{exercise}[%
 	Say that we connect $(-1, 0)$ and $(0, 1)$ to form a closed semicircle. What will be the center of mass of the resulting shape?
 ]\end{exercise}
+
+\phantomsection
+\subsection{Calculating RMSD}
+
+Imagine that the plot in (\autoref{fig:rmsd_exercise} (top)) depicts a 2D protein structure  where each point represents an alpha carbon.\\
+
+\begin{figure}[h]
+	\centering
+	\mySfFamily
+	\includegraphics[width = 0.7\textwidth]{../images/rmsd_exercise1.png}\\[4ex]
+	\includegraphics[width = 0.7\textwidth]{../images/rmsd_exercise2.png}
+	\caption{A semicircular arc with radius 1 corresponding to a circle whose center is at the origin.}
+	\label{fig:rmsd_exercise}
+\end{figure}
+
+\begin{exercise}[%
+Determine the center of mass of this protein structure.
+]\end{exercise}
+
+Imagine that we have a second 2D protein structure (\autoref{fig:rmsd_exercise} (bottom)) and wanted to compare it with the protein structure from (\autoref{fig:rmsd_exercise} (top)).\\
+
+\begin{exercise}[%
+Assume that we do not need to rotate either structure and calculate the RMSD between the two proteins. (\textbf{Hint:} calculate the center of mass and translate each point such that the new center of mass matches the center of mass of the previous protein. You can also translate both proteins such that their center of mass lie on the origin).
+]\end{exercise}
+
+\phantomsection
+\subsection{\textit{Ab initio} and homology modeling}
+
+In this exercise, we will perform \textit{ab initio} and homology structure prediction on a simple protein, the human hemoglobin subunit alpha that we have worked with in this chapter. First, go to the \href{https://www.rcsb.org/}{protein data bank} and search for the protein ``1SI4''. Download the PDB file by clicking on ``Download Files'' and then ``PDB Format''. We will use this file for structure comparisons later. Next, go to the ``Sequence'' tab and click ``Display Files'' and then ``FASTA Sequence''. Copy the first sequence corresponding to the alpha subunit and submit it to the ab initio structure prediction software \href{https://zhanggroup.org/QUARK/}{QUARK}, and your choice of homology modeling software: \href{https://swissmodel.expasy.org/}{SWISS-MODEL}, \href{https://robetta.bakerlab.org/}{Robetta}, or \href{https://galaxy.seoklab.org/cgi-bin/submit.cgi?type=TBM}{GalaxyWEB}. Once you get the results, use ProDy to calculate the RMSD between the predicted structures and the actual structure (1SI4).\\
+
+\begin{exercise}[%
+Which type of modeling resulted in the most accurate prediction? Is this what you expected? (\textbf{Hint:} Use ``Chain A'' to focus on subunit alpha.)
+]\end{exercise}
+
+\phantomsection
+\subsection{Trying out AlphaFold}
+
+In the conclusion of this chapter, we introduced AlphaFold from DeepMind that won the 14th CASP contest in 2020 by a wide margin. A simplified version of AlphaFold is available on Colab. This version currently does not work with the entire spike protein, so we will use the human hemoglobin subunit alpha once again. Following the directions from the previous exercise, grab the protein sequence of the alpha subunit. Next, open the \href{https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb#scrollTo=woIxeCPygt7K}{simplified version of AlphaFold}. Read the documentation and follow the directions in each step to generate the predicted structure.\\
+
+\begin{exercise}[%
+Use ProDy to calculate the RMSD between the predicted structure and the actual structure (1SI4). Did this simplified version of AlphaFold perform better than your \textit{Ab initio} and homology modeling results from the previous exercise?
+]\end{exercise}
