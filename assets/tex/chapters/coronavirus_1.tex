@@ -809,7 +809,7 @@ Without rotating these structures, align the two structures in \autoref{fig:rmsd
 \phantomsection
 \subsection{Practicing \textit{Ab initio} and homology modeling}
 
-In this chapter, we sometimes worked with human hemoglobin subunit beta. Let's predict the structure of the beta subunit of this protein using both \textit{ab initio} and homology structure prediction. To do so, first, go to the \href{https://www.rcsb.org/}{Protein Data Bank} and search for the protein ``1SI4''. Download the PDB file by clicking on ``Download Files'' and then ``PDB Format''. We will use this file for structure comparisons later. Next, go to the ``Sequence'' tab and click ``Display Files'' and then ``FASTA Sequence''. Copy the first sequence corresponding to the beta subunit.\\
+In this chapter, we sometimes worked with human hemoglobin subunit alpha. Let's predict the structure of the beta subunit of this protein using both \textit{ab initio} and homology structure prediction. To do so, first visit the \href{https://www.rcsb.org/}{Protein Data Bank} and search for the protein ``1SI4''. Download the PDB file by clicking on ``Download Files'' and then ``PDB Format''. We will use this file for structure comparisons later. Next, go to the ``Sequence'' tab and click ``Display Files'' and then ``FASTA Sequence''. In this file, find the sequence corresponding to the beta subunit.\\
 
 \begin{exercise}[%
 Submit the beta subunit sequence to the \textit{ab initio} structure prediction software \href{https://zhanggroup.org/QUARK/}{QUARK}, and your choice of homology modeling software: \href{https://swissmodel.expasy.org/}{SWISS-MODEL}, \href{https://robetta.bakerlab.org/}{Robetta}, and/or \href{https://galaxy.seoklab.org/cgi-bin/submit.cgi?type=TBM}{GalaxyWEB}.
@@ -824,7 +824,7 @@ Calculate the RMSD between your predicted structures from the previous exercise 
 \phantomsection
 \subsection{Trying out AlphaFold}
 
-A simplified version of AlphaFold is available for public use on Colab. This version currently does not work with the entire spike protein, so we will use the human hemoglobin subunit beta once again. Following the directions from a preceding exercise, obtain the protein sequence of the beta subunit. Next, open \href{https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb#scrollTo=woIxeCPygt7K}{Colab's simplified version of AlphaFold}. Read the documentation and follow the directions in each step to generate the predicted structure.\\
+A simplified version of AlphaFold is available for public use on Colab. This version currently does not work when using the entire spike protein, and so we will use the human hemoglobin subunit beta once again. Following the directions from a preceding exercise, obtain the protein sequence of the beta subunit. Next, open \href{https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb#scrollTo=woIxeCPygt7K}{Colab's simplified version of AlphaFold}. Read the documentation and follow the directions in each step to generate the predicted structure.\\
 
 \begin{exercise}[%
 Calculate the RMSD between the predicted structure and the actual structure. Did this simplified version of AlphaFold perform better than your \textit{ab initio} and homology modeling results from the previous exercise?
