@@ -807,19 +807,25 @@ Without rotating these structures, align the two structures in \autoref{fig:rmsd
 ]\end{exercise}
 
 \phantomsection
-\subsection{\textit{Ab initio} and homology modeling}
+\subsection{Practicing \textit{Ab initio} and homology modeling}
 
-In this exercise, we will perform \textit{ab initio} and homology structure prediction on a simple protein, the human hemoglobin subunit alpha that we have worked with in this chapter. First, go to the \href{https://www.rcsb.org/}{protein data bank} and search for the protein ``1SI4''. Download the PDB file by clicking on ``Download Files'' and then ``PDB Format''. We will use this file for structure comparisons later. Next, go to the ``Sequence'' tab and click ``Display Files'' and then ``FASTA Sequence''. Copy the first sequence corresponding to the alpha subunit and submit it to the ab initio structure prediction software \href{https://zhanggroup.org/QUARK/}{QUARK}, and your choice of homology modeling software: \href{https://swissmodel.expasy.org/}{SWISS-MODEL}, \href{https://robetta.bakerlab.org/}{Robetta}, or \href{https://galaxy.seoklab.org/cgi-bin/submit.cgi?type=TBM}{GalaxyWEB}. Once you get the results, use ProDy to calculate the RMSD between the predicted structures and the actual structure (1SI4).\\
+In this chapter, we sometimes worked with human hemoglobin subunit beta. Let's predict the structure of the beta subunit of this protein using both \textit{ab initio} and homology structure prediction. To do so, first, go to the \href{https://www.rcsb.org/}{Protein Data Bank} and search for the protein ``1SI4''. Download the PDB file by clicking on ``Download Files'' and then ``PDB Format''. We will use this file for structure comparisons later. Next, go to the ``Sequence'' tab and click ``Display Files'' and then ``FASTA Sequence''. Copy the first sequence corresponding to the beta subunit.\\
 
 \begin{exercise}[%
-Which type of modeling resulted in the most accurate prediction? Is this what you expected? (\textbf{Hint:} Use ``Chain A'' to focus on subunit alpha.)
+Submit the beta subunit sequence to the \textit{ab initio} structure prediction software \href{https://zhanggroup.org/QUARK/}{QUARK}, and your choice of homology modeling software: \href{https://swissmodel.expasy.org/}{SWISS-MODEL}, \href{https://robetta.bakerlab.org/}{Robetta}, and/or \href{https://galaxy.seoklab.org/cgi-bin/submit.cgi?type=TBM}{GalaxyWEB}.
+]\end{exercise}
+
+In a tutorial, we saw how to use ProDy to compute RMSD between protein structures.\tutorial[tutorial_rmsd]\\
+
+\begin{exercise}[%
+Calculate the RMSD between your predicted structures from the previous exercise and the actual structure. (Use ``Chain B'' of the validated structure to focus on subunit beta.) Which type of modeling resulted in the most accurate structure prediction? Is this what you expected? 
 ]\end{exercise}
 
 \phantomsection
 \subsection{Trying out AlphaFold}
 
-In the conclusion of this chapter, we introduced AlphaFold from DeepMind that won the 14th CASP contest in 2020 by a wide margin. A simplified version of AlphaFold is available on Colab. This version currently does not work with the entire spike protein, so we will use the human hemoglobin subunit alpha once again. Following the directions from the previous exercise, grab the protein sequence of the alpha subunit. Next, open the \href{https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb#scrollTo=woIxeCPygt7K}{simplified version of AlphaFold}. Read the documentation and follow the directions in each step to generate the predicted structure.\\
+A simplified version of AlphaFold is available for public use on Colab. This version currently does not work with the entire spike protein, so we will use the human hemoglobin subunit beta once again. Following the directions from a preceding exercise, obtain the protein sequence of the beta subunit. Next, open \href{https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb#scrollTo=woIxeCPygt7K}{Colab's simplified version of AlphaFold}. Read the documentation and follow the directions in each step to generate the predicted structure.\\
 
 \begin{exercise}[%
-Use ProDy to calculate the RMSD between the predicted structure and the actual structure (1SI4). Did this simplified version of AlphaFold perform better than your \textit{Ab initio} and homology modeling results from the previous exercise?
+Calculate the RMSD between the predicted structure and the actual structure. Did this simplified version of AlphaFold perform better than your \textit{ab initio} and homology modeling results from the previous exercise?
 ]\end{exercise}

@@ -36,7 +36,7 @@ Two hypothetical protein structures with vectorizations into eight points each.
 **Exercise:** Without rotating these structures, align the two structures so that they have the same center of mass, and determine the RMSD between the two structures for the vectorizations shown.
 {: .notice--success}
 
-## *Ab initio* and homology modeling
+## Practicing *Ab initio* and homology modeling
 
 In this exercise, we will perform *ab initio* and homology structure prediction on a simple protein, the human hemoglobin subunit alpha that we have worked with in this module. First, go to the <a href="https://www.rcsb.org/" target="_blank">protein data bank</a> and search for the protein “1SI4”. Download the PDB file by clicking on “Download Files” and then “PDB Format”. We will use this file for structure comparisons later. Next, go to the “Sequence” tab and click “Display Files” and then “FASTA Sequence”. Copy the first sequence corresponding to the alpha subunit and submit it to the ab initio structure prediction software, <a href="https://zhanggroup.org/QUARK/" target="_blank">QUARK</a>, and your choice of homology modeling software: <a href="https://swissmodel.expasy.org/" target="_blank">SWISS-MODEL</a>, <a href="https://robetta.bakerlab.org/" target="_blank">Robetta</a>, or <a href="https://galaxy.seoklab.org/cgi-bin/submit.cgi?type=TBM" target="_blank">GalaxyWEB</a>. Once you get the results, use ProDy to calculate the RMSD between the predicted structures and the actual structure (1SI4).
 
