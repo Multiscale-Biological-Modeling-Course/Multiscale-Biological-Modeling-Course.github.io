@@ -785,25 +785,25 @@ Determine the center of mass of the shape in \autoref{fig:semicircular_arc}. (Hi
 \phantomsection
 \subsection{Calculating RMSD}
 
-Imagine that the plot in (\autoref{fig:rmsd_exercise} (top)) depicts a 2D protein structure  where each point represents an alpha carbon.\\
+Consider the two (very) hypothetical protein structures shown in \autoref{fig:rmsd_exercise} with vectorizations of eight points each.\\
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.7\textwidth]{../images/rmsd_exercise1.png}\\[4ex]
-	\includegraphics[width = 0.7\textwidth]{../images/rmsd_exercise2.png}
-	\caption{A semicircular arc with radius 1 corresponding to a circle whose center is at the origin.}
+	\tabcolsep = 2em
+	\begin{tabular}{c c}
+	\includegraphics[width = 0.4\textwidth]{../images/rmsd_exercise1.png} & \includegraphics[width = 0.4\textwidth]{../images/rmsd_exercise2.png}
+	\end{tabular}
+	\caption{Two hypothetical protein structures with vectorizations into eight points each.}
 	\label{fig:rmsd_exercise}
 \end{figure}
 
 \begin{exercise}[%
-Determine the center of mass of this protein structure.
+Using the vectorization of the figures indicated, estimate the center of mass of these two protein structures.
 ]\end{exercise}
 
-Imagine that we have a second 2D protein structure (\autoref{fig:rmsd_exercise} (bottom)) and wanted to compare it with the protein structure from (\autoref{fig:rmsd_exercise} (top)).\\
-
 \begin{exercise}[%
-Assume that we do not need to rotate either structure and calculate the RMSD between the two proteins. (\textbf{Hint:} calculate the center of mass and translate each point such that the new center of mass matches the center of mass of the previous protein. You can also translate both proteins such that their center of mass lie on the origin).
+Without rotating these structures, align the two structures in \autoref{fig:rmsd_exercise} so that they have the same center of mass, and determine the RMSD between the two structures for the vectorizations shown.
 ]\end{exercise}
 
 \phantomsection

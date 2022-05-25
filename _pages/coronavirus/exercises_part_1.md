@@ -24,22 +24,16 @@ A semicircular arc with radius 1 corresponding to a circle whose center is at th
 
 ## Calculating RMSD
 
-Imagine that this plot depicts a 2D protein structure where each point represents an alpha carbon.
+Consider the two (very) hypothetical protein structures shown in the figure below with vectorizations of eight points each.
 
-[![image-center](../assets/images/600px/rmsd_exercise1.png){: .align-center}](../assets/images/coronavirus_exercise1.png)
-Simple 2D structure A.
+[![image-center](../assets/images/600px/rmsd_exercise.png){: .align-center}](../assets/images/rmsd_exercise.png)
+Two hypothetical protein structures with vectorizations into eight points each.
 {: style="text-align: center; font-size: medium;"}
 
-**Exercise:** Determine the center of mass of this protein structure.
+**Exercise:** Using the vectorization of the figures indicated, estimate the center of mass of these two protein structures.
 {: .notice--success}
 
-Imagine that we have a second 2D protein structure and wanted to compare it with our first protein structure from the previous exercise.
-
-[![image-center](../assets/images/600px/rmsd_exercise2.png){: .align-center}](../assets/images/coronavirus_exercise2.png)
-Simple 2D structure B.
-{: style="text-align: center; font-size: medium;"}
-
-**Exercise:** Assume that we do not need to rotate either structure and calculate the RMSD between the two proteins. (**Hint:** calculate the center of mass and translate each point such that the new center of mass matches the center of mass of the previous protein. You can also translate both proteins such that their center of mass lie on the origin).
+**Exercise:** Without rotating these structures, align the two structures so that they have the same center of mass, and determine the RMSD between the two structures for the vectorizations shown.
 {: .notice--success}
 
 ## *Ab initio* and homology modeling
