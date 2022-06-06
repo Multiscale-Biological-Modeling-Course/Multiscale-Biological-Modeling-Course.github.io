@@ -43,7 +43,7 @@ Because we know the structures of the bound complexes, we can produce 3-D visual
 
 ## A first attempt at identifying local dissimilarities between protein structures
 
-To assess the accuracy of a predicted structure, we introduced a metric called root mean square deviation (RMSD) for quantifying the difference between two protein structures. RMSD offered an excellent method for a *global* comparison (i.e., a comparison across all structures), but we are interested in the *local* regions where the SARS-CoV and SARS-CoV-2 complexes differ. To this end, we will need an approach that considers individual amino acids in similar protein structures.
+In part 1, we introduced the RMSD metric for quantifying the difference between two protein structures.  RMSD offered an excellent method for a *global* comparison (i.e., a comparison across all structures), but we are interested in the *local* regions where the SARS-CoV and SARS-CoV-2 complexes differ. To this end, we will need an approach that compares structures at the level of individual amino acids.
 
 **STOP:** How could we compare individual amino acid differences of two protein structures?
 {: .notice--primary}
