@@ -10,7 +10,7 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## Two randomized exploration strategies
 
-In the [prologue](../prologue/random_walk), we saw that a particle taking a collection of *n* unit steps in random directions will wind up on average a distance proportional to $$\sqrt{n}$$ units away from its starting position. We now will compare such a random walk against a modified algorithm that emulates the  behavior of *E. coli* by changing the length of a step (i.e., how long the bacterium tumbles) based on the relative change in background attractant concentration.
+In the [prologue](../prologue/random_walk), we saw that a particle taking a collection of *n* unit steps in random directions will wind up on average a distance proportional to $\sqrt{n}$ units away from its starting position. We now will compare such a random walk against a modified algorithm that emulates the  behavior of *E. coli* by changing the length of a step (i.e., how long the bacterium tumbles) based on the relative change in background attractant concentration.
 
 We will represent a bacterium as a particle traveling in two-dimensional space. Units of distance will be measured in µm; recall from the introduction that a bacterium can cover 20 µm in a second during an uninterrupted run. The bacterium will start at the **origin** (0, 0).
 
