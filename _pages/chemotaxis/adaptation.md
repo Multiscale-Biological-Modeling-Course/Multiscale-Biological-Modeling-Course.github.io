@@ -44,23 +44,15 @@ The chemotaxis signal-transduction pathway with methylation included. CheA phosp
 
 ## Combinatorial explosion and the need for rule-based modeling
 
-We would like to add the methylation reactions discussed above to the model that we built in the previous lesson and see if this model can replicate the adaptation behavior of *E. coli* in the presence of a changing attractant concentration. Before incorporating the adaptation mechanisms in our BioNetGen model, we will first describe the reactions that BioNetGen will need.
+To expand our model, we will need to expand our MCP molecule to include methylation of the MCP by CheR and demethylation of the MCP by CheB. We will use three methylation levels (low, medium, and high) rather than five because these three states are the most involved in the chemotaxis response to attractants. 
 
-We begin with considering the MCP complexes. In the [phosphorylation tutorial](tutorial_phos), we identified two components relevant for reactions involving MCPs: a ligand-binding component `l` and a phosphorylation component `Phos`. The adaptation mechanism introduces two additional reactions: methylation of the MCP by CheR, and demethylation of the MCP by CheB.
+Imagine that we were attempting to specify every reaction that could take place in our model. To specify an MCP, we would need to establsh whether it is bound to a ligand (two possible states), whether it is bound to CheR (two possible states), whether it is phosphorylated (two possible states), and which methylation state it is in (three possible states). Therefore, a given MCP has $2 \cdot 2 \cdot 2 \cdot 3 = 24$ total states. 
 
-We also need to include binding and dissociation reactions between the MCP and CheR because under normal conditions, most CheR are bound to MCP complexes.[^Lupas1989] We will therefore introduce two additional components to the MCP molecules in addition to their phosphorylation components: `r` (denoting CheR-binding) and `Meth` (denoting methylation states). In our simulation, we will use three methylation levels (low, medium, and high) rather than five because these three states are most involved in the chemotaxis response to attractants.[^Boyd1980]
+Consider the simple reaction of a ligand binding to an MCP, which we originaly wrote as *T* + *L* → *TL*. We now need this reaction to include 12 of the 24 states, the ones corresponding to the MCP being unbound to the ligand. Our previously simply reaction would become, 12 different reactions, one for each possible unbound state of the complex molecule *T*. And if the situation were just a little more complex, with the ligand molecule *L* having *n* possible states, then we would have 12*n* reactions. Image trying to debug a model in which we had accidentally incorporated a type when transcribing just one of these reaction! 
 
-Imagine for a moment that we were attempting to specify every reaction that could take place in our model. To specify an MCP, we would need to tell the program whether it is bound to a ligand (two possible states), whether it is bound to CheR (two possible states), whether it is phosphorylated (two possible states), and which methylation state it is in (three possible states). Therefore, a given MCP has 2 · 2 · 2 · 3 = 24 total states.
+In other words, as our model grows, with multiple different statse for each molecule involved in each reaction, the number of reactions we need to represent the system grows rapidly; this phenomenon is called **combinatorial explosion** and means that building realistic models of biochemical systems at scale can be daunting. 
 
-Say that we are simulating the simple reaction of a ligand binding to an MCP, which we originally wrote as *T* + *L* → *TL*. We now need this reaction to include 12 of the 24 states, the ones corresponding to the MCP being unbound to the ligand. Our previously simple reaction would become 12 different reactions, one for each possible unbound state of the complex molecule *T*. And if the situation were just a little more complex, with the ligand molecule *L* having *n* possible states, then we would have 12*n* reactions. Imagine trying to debug a model in which we had accidentally incorporated a typo when transcribing just one of these reactions!
-
-In other words, as our model grows, with multiple different states for each molecule involved in each reaction, the number of reactions we need to represent the system grows very fast; this phenomenon is called **combinatorial explosion** and means that building realistic models of biochemical systems at scale can be daunting.
-
-A major benefit of using a rule-based modeling language such as the one developed by BioNetGen is that it circumvents combinatorial explosion by consolidating many reactions into a single rule. For example, when modeling ligand-MCP binding, we can summarize the 12 different reactions with the rule "a free ligand molecule binds to an MCP that is not bound to a ligand molecule." In the BioNetGen language, this rule is represented by the same one-line expression as it was in the previous lesson:
-
-~~~ ruby
-LigandReceptor: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
-~~~
+Yet all of these 12 reactions can be summarized with a single *rule*: a ligand and a receptor can bind into a complex if the receptor is unbound. This rule applies to all of the 12 states that an unbound receptor can have. Moreover, all 12 reactions implied by the rule are easily inferable from it. This idea is the foundation of **rule-based modeling**, a paradigm in which a potentially enormous number of reactions are specified by a much smaller collection of "rules" from which all reactions can be inferred. 
 
 We will not bog down the text with a full specification of all the rules needed to add methylation to our model while avoiding combinatorial explosion. If you're interested in the details, please follow our tutorial.
 
@@ -95,7 +87,7 @@ When we set *l*<sub>0</sub> equal to 10 million, we give the system this bigger 
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with ten million initial attractant ligand particles.
 {: style="font-size: medium;"}
 
-Finally, with *l*<sub>0</sub> equal to 100 million, we see what we might expect: the steepest drop in phosphorylated CheY yet, but a system that is able to return to equilibrium.
+Finally, with *l*<sub>0</sub> equal to 100 million, we see what we might expect: the steepest drop in phosphorylated CheY yet, but a system that is able to return to equilibrium after a few minutes.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e8.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd1e8.png)
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100 million initial attractant ligand particles.
@@ -105,9 +97,70 @@ Our model, which is built on real reaction rate parameters, provides compelling 
 
 Aren't bacteria magnificent?
 
-However, our work is not done. We have simulated *E. coli* adapting to a single sudden change in its environment, but life is about responding to continual change. So in the next lesson, we will further examine how our simulated bacterium responds in an environment in which the ligand concentration is changing constantly.
+## Traveling up an attractant gradient
 
-[Next lesson](gradient){: .btn .btn--primary .btn--large}
+We have simulated *E. coli* adapting to a single sudden change in its environment, but life often depends on responding to continual change. Imagine a glucose cube in an aqueous solution. As the cube dissolves, a **gradient** will form, with a glucose concentration that decreases outward from the cube. How will the tumbling frequency of *E. coli* change if the bacterium finds itself in an environment of an attractant gradient?  Will the tumbling frequency decrease continuously as well, or will we see more complicated behavior? And once the cell reaches a region of high attractant concentration, will its default tumbling frequency stabilize to the same steady state? 
+
+We will modify our model by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of phosphorylated CheY changes. This model will simulate a bacterium traveling up an attractant gradient toward an attractant. Moreover, we will examine how the concentration of phosphorylated CheY changes as we change the gradient's "steepness", or the rate at which attractant ligand is increasing. Visit the following tutorial if you're interested in following our adjustments for yourself.
+
+[Visit tutorial](tutorial_gradient){: .btn .btn--warning .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
+## Steady state tumbling frequency is robust
+
+To model a ligand concentration [*L*] that is increasing exponentially, we will use the function [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup>, where *l*<sub>0</sub> is the initial ligand concentration, *k* is a constant dictating the rate of exponential growth, and *t* is the time. The parameter *k* represents the steepness of the gradient, since the higher the value of *k*, the faster the growth in the ligand concentration [*L*].
+
+For example, the following figure shows the concentration over time of phosphorylated CheY (shown in blue) when *l*<sub>0</sub> = 1000 and *k* = 0.1. The concentration of phosphorylated CheY, and therefore the tumbling frequency, still decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (shown by the plateau in the red curve), receptor methylation causes the concentration of phosphorylated CheY to return to its equilibrium. In other words, for these values of *l*<sub>0</sub> and *k*, the outcome is similar to when we provided an instantaneous increase in ligand, although the cell takes longer to reach its minimum concentration of phosphorylated CheY because the attractant concentration is increasing gradually.
+
+[![image-center](../assets/images/600px/chemotaxis_tutorial_addition01.png){: .align-center}](../assets/images/chemotaxis_tutorial_addition01.png)
+Plots of relevant molecule concentrations in our model (in number of molecules in the cell) over time (in seconds) when the concentration of ligand grows exponentially with *l*<sub>0</sub> = 1000 and *k* = 0.1. The concentration of bound ligand (shown in red) quickly hits saturation, which causes a minimum in phosphorylated CheY (and therefore a low tumbling frequency). To respond, the cell increases the methylation of receptors, which boosts the concentration of phosphorylated CheY back to equilibrium.
+{: style="font-size: medium;"}
+
+The following figure shows the results of multiple simulations in which we vary the growth parameter *k* and plot only the concentration of phosphorylated CheY over time. The larger the value of *k*, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.
+
+[![image-center](../assets/images/600px/chemotaxis_tutorial_addition03.png){: .align-center}](../assets/images/chemotaxis_tutorial_addition03.png)
+Plots of the concentration of phosphorylated CheY over time (in seconds) for different growth rates *k* of ligand concentration. The larger the value of *k*, the steeper the initial drop in the concentration of phosphorylated CheY, and the faster that methylation returns the concentration of phosphorylated CheY to equilibrium. The same equilibrium is obtained regardless of the value of *k*.
+{: style="font-size: medium;"}
+
+More importantly, the above figure further illustrates the *robustness* of bacterial chemotaxis to the rate of growth in ligand concentration. Whether the growth of the attractant is slow or fast, methylation will always bring the cell back to the same equilibrium concentration of phosphorylated CheY and therefore the same background tumbling frequency.
+
+## Reversing the attractant gradient
+
+And what if a cell is moving away from an attractant, down a concentration gradient? We would hope that the cell would be able to *increase* its tumbling frequency (i.e., increase the concentration of phosphorylated CheY), and then restore the background tumbling frequency by removing methylation.
+
+To simulate a decreasing gradient, we will model a cell in a high ligand concentration that is already at steady state, meaning that methylation is also elevated. In this case, the ligand concentration will *decay* exponentially, meaning that the ligand concentration is still given by the equation [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup>, but *k* is negative.
+
+**STOP:** If *k* is negative, how do you think that decreasing the value of *k* will affect the concentration of phosphorylated CheY over time?
+{: .notice--primary}
+
+You may like to modify the previous tutorial on your own to account for traveling down an attractant gradient. If not, we are still happy to provide a separate tutorial below.
+
+[Visit tutorial](tutorial_removal){: .btn .btn--warning .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
+## Steady state tumbling frequency remains robust when traveling down an attractant gradient
+
+The following figure plots the concentrations of molecules in our model as the concentration of attractant ligand decreases exponentially with *l*<sub>0</sub> equal to 10<sup>7</sup> and *k* equal to -0.3. As the ligand concentration decreases, the concentration of bound ligands plummet as bound ligands dissociate and there are not enough free ligands to replace the dissociating ones. In the absence of ligand-receptor binding, CheY is free to phosphorylate, causing a spike in phosphorylated CheY. Demethylation of receptors then causes the concentration of phosphorylated CheY to steadily return back to its equilibrium.
+
+[![image-center](../assets/images/600px/chemotaxis_tutorial_removal01.png){: .align-center}](../assets/images/chemotaxis_tutorial_removal01.png)
+Molecular concentrations (in number of molecules in the cell) over time (in seconds) for a simulated bacterium traveling down an attractant gradient with *l*<sub>0</sub> = 10<sup>7</sup> and *k* equal to -0.3. Phosphorylated CheY follows the opposite pattern to traveling up an attractant gradient, with the concentration of phosphorylated CheY rising quickly only to slowly decrease to equilibrium due to demethylation.
+{: style="font-size: medium;"}
+
+To be thorough, we should also test the robustness of our model to see whether the CheY concentration will return to the same steady state for a variety of values of *k* when *k* is negative. As in the case of an increasing gradient, the figure below shows that the more sudden the change in the concentration of attractant (i.e., the more negative the value of *k*), the sharper the spike. And yet regardless of the value of *k*, methylation does its work to bring the concentration back to the same steady state, which has been confirmed by experimental observations.[^Krembel2015]
+
+[![image-center](../assets/images/600px/chemotaxis_tutorial_removal02.png){: .align-center}](../assets/images/chemotaxis_tutorial_removal02.png)
+Varying values of *k* in our exponential decrease in the concentration of attractant ligand produce the same equilibrium concentration of phosphorylated CheY. The smaller the value of *k*, the steeper the initial spike, and the faster the recovery to steady state.
+{: style="font-size: medium;"}
+
+## From changing tumbling frequencies to an exploration algorithm
+
+We hope that our work here has conveyed the elegance of bacterial chemotaxis, as well as the power of rule-based modeling and the Gillespie algorithm for simulating a complex biochemical system that may include a huge number of reactions.
+
+And yet we are missing an important part of the story. *E. coli* has evolved to ensure that if it detects a relative increase in concentration (i.e., an attractant gradient), then it can reduce its tumbling frequency in response. But we have not explored *why* changing its tumbling frequency would help a bacterium find food in the first place. After all, according to the run and tumble model, the direction that a bacterium is moving at any point in time is random!
+
+This quandary does not have an obvious intuitive answer. In this module's conclusion, we will build a model to explain why *E. coli*'s randomized run and tumble walk algorithm is such a clever way of locating resources in an unfamiliar land.
+
+[Next lesson](conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 ## Additional resources

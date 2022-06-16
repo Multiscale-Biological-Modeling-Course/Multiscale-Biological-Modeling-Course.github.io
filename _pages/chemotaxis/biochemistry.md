@@ -39,43 +39,9 @@ In short, attractant ligand binding *causes* more phosphorylated CheA and CheY, 
 
 We would like to use the Gillespie algorithm that we introduced in the [previous lesson](gillespie) to simulate the reactions driving chemotaxis signal transduction and see what happens if the bacterium "senses an attractant", meaning that the attractant ligand's concentration increases and leads to more receptor-ligand binding.
 
-This model will be more complicated than any we have introduced thus far. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model phosphorylation reactions of CheA, which depend on the current concentrations of bound and unbound MCP molecules. We will at least make the simplifying assumption that the MCP receptor is permanently bound to CheA and CheW, so that we do not need to represent these molecules individually. In other words, rather than thinking about CheA autophosphorylating, we will think about the receptor that includes CheA autophosphorylating.
+This model will be more complicated than any we have introduced thus far. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model phosphorylation reactions of CheA, which depend on the current concentrations of bound and unbound MCP molecules. We will at least make the simplifying assumption that the MCP receptor is permanently bound  
 
-
-In the previous lesson, we very briefly introduced BioNetGen as a way to convert reactions into a software package applying the Gillespie algorithm. However, BioNetGen is useful not only for running particle-free simulations, but also because it implements its own language for **rule-based modeling**.
-
-Say that we wanted to specify all particles and the reactions involving them in the manner used up to this point in the book. We would need one particle type to represent MCP molecules, another particle type to represent ligands, and a third to represent bound complexes. A bound complex molecule binds with CheA and CheW and can be either phosphorylated or unphosphorylated, necessitating two different molecule types. In turn, CheY can be phosphorylated or unphosphorylated as well, requiring two more particles.
-
-Instead, the BioNetGen language will allow us to conceptualize this system much more concisely using rules that apply to particles that are in a variety of states. The BioNetGen representation of the four particles in our model is shown below. The notation `Phos~U~P` indicates that a given molecule type can be either phosphorylated or unphosphorylated, so that we do not need multiple different expressions to represent the molecule.
-
-~~~ ruby
-L(t)             #ligand molecule
-T(l,Phos~U~P)    #receptor complex
-CheY(Phos~U~P)
-CheZ()
-~~~
-
-The conciseness of BioNetGen's molecule representation helps us represent our reactions concisely as well. We first reproduce the reversible binding and dissociation reaction from the previous lesson.
-
-~~~ ruby
-LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
-~~~
-
-Next, we represent the phosphorylation of the MCP complex. Recall that the phosphorylation of CheA can occur at different rates depending on whether the MCP is bound, and so we will need two different reactions to model these different rates. In our model, the phosphorylation of the MCP will occur at one fifth the rate when it is bound to the attractant ligand.
-
-~~~ ruby
-FreeTP: T(l,Phos~U) -> T(l,Phos~P) k_T_phos
-BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
-~~~
-
-Finally, we represent the phosphorylation and dephosphorylation of CheY. The former requires a phosphorylated MCP receptor, while the latter is done with the help of a CheZ molecule that can be in any state.
-
-~~~ ruby
-YP: T(Phos~P) + CheY(Phos~U) -> T(Phos~U) + CheY(Phos~P) k_Y_phos
-YDep: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
-~~~
-
-Now that we have converted the reactions from the chemotaxis signal transduction pathway into BioNetGen's rule-based language, we would like to see what happens when we *change* the concentrations of the ligand. Ideally, the bacterium should be able to distinguish different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY, and the lower the tumbling frequency of the bacterium.
+Once we have built this model, we would like to see what happens when we *change* the concentrations of the ligand. Ideally, the bacterium should be able to distinguish different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY, and the lower the tumbling frequency of the bacterium.
 
 But does higher attractant concentration in our model really lead to a lower concentration of CheY? Let's find out by incorporating the phosphorylation pathway into our ligand-receptor model in the following tutorial.
 
@@ -84,22 +50,14 @@ But does higher attractant concentration in our model really lead to a lower con
 
 ## Changing ligand concentrations leads to a change in internal molecular concentrations
 
-The following figure shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency.
+The top panel of the following figure shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency. The addition of 5,000 attractant ligand molecules increases the concentration of bound receptors, therefore leading to less CheA autophosphorylation, and less phosphorylated CheY (middle panel). If we instead have 100,000 iitial attractant molecules, then we see an even more drastic decrease in phosphorylated CheA and CheY (bottom panel). 
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial5.png){: .align-center}](../assets/images/chemotaxis_tutorial5.png)
-Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation in which no ligand is present.
-{: style="font-size: medium;"}
-
-The sudden addition of 5,000 attractant ligand molecules increases the concentration of bound receptors, therefore leading to less CheA autophosphorylation, and less phosphorylated CheY.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial6.png){: .align-center}](../assets/images/chemotaxis_tutorial6.png)
-Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 5,000 initial attractant ligand particles.
-{: style="font-size: medium;"}
-
-If we instead add 100,000 attractant molecules, then we see an even more drastic decrease in phosphorylated CheA and CheY.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial7.png){: .align-center}](../assets/images/chemotaxis_tutorial7.png)
-Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100,000 initial attractant ligand particles.
+Molecular concentrations over time (in seconds) in a chemotaxis simulation for three different initial unbound attractant ligand concentrations: no attractant ligand (top), 5,000 ligand particles (middle), and 100,000 ligand particles (bottom). Note that the simulated cell's bound ligand concentration (green) achieves equilibrium very quickly in each case. 
 {: style="font-size: medium;"}
 
 This Gillespie model confirms the biological observations that an increase in attractant reduces the concentration of phosphorylated CheY. This reduction takes place remarkably quickly, with the cell attaining a new equilibrium in a fraction of a second.

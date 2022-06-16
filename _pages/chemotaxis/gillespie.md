@@ -38,7 +38,7 @@ We can also ask how long we will typically have to wait for the next customer to
 
 $$\mathrm{Pr}(T > t) = \mathrm{Pr}(X = 0) = \dfrac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}\,.$$
 
-In other words, the probability Pr(*T* > *t*) $$\mathrm{Pr}(T > t)$$ that the wait time is longer than time *t* decays exponentially as *t* increases. For this reason, the random variable *T* is said to follow an **exponential distribution.** It can be shown that the expected value of the exponential distribution (i.e., the average amount of time we will need to wait for the next event to occur) is 1/λ.
+In other words, the probability Pr(*T* > *t*) that the wait time is longer than time *t* decays exponentially as *t* increases. For this reason, the random variable *T* is said to follow an **exponential distribution.** It can be shown that the expected value of the exponential distribution (i.e., the average amount of time we will need to wait for the next event to occur) is 1/λ.
 
 **STOP**: What is the probability Pr(*T* < *t*)?
 {: .notice--primary}
@@ -73,29 +73,7 @@ When we generalize the Gillespie algorithm to *n* reactions occurring at rates *
 
 *r*<sub><em>i</em></sub>/(*r*<sub>1</sub> + *r*<sub>2</sub> + … + *r*<sub><em>n</em></sub>).
 
-## Specifying ligand-receptor binding with a single BioNetGen rule
-
-Throughout this module, we will employ <a href="http://bionetgen.org/" target="_blank">BioNetGen</a> to apply the Gillespie algorithm to well-mixed models of chemical reactions. We will use our ongoing example of ligand-receptor binding and dissociation to introduce the way in which BioNetGen represents molecules and reactions involving them.
-
-We will have two molecules corresponding to the ligand and receptor *L* and *T* that we denote `L(t)` and `T(l)`, respectively. The `(t)` specifies that molecule `L` contains a binding site with `T`, and the `(l)` specifies a component binding to `L`. We will use these components later when specifying reactions.
-
-BioNetGen reaction rules are written similarly to chemical equations. The left side of the rule includes the reactants, which are followed by a unidirectional or bidirectional arrow, indicating the direction of the reaction, and the right side of the rule includes the products. After the reaction, we indicate the rate constant of reaction; if the reaction is bi-directional, then we separate the forward and backward reaction rate constants with a comma.
-
-For example, to represent the bi-directional reaction *A* + *B* ↔ *C* with forward rate *k*<sub>1</sub> and reverse rate *k*<sub>2</sub>, we would write `A + B <-> C k1, k2`.
-
-Our model consists of one bidirectional reaction and will have a single rule. The left side of this rule will be `L(t) + T(l)`; by specifying `L(t)` and `T(l)`, we indicate to BioNetGen that we are only interested in *unbound* ligand and receptor molecules. If we had wanted to select any ligand molecule, then we would have used `L + T`.
-
-On the right side of the rule, we will have `L(t!1).T(l!1)`, which indicates the formation of the complex. In BioNetGen, `!` indicates formation of a bond, and a unique character specifies the possible location of this bond. In our case, we use the character `1`, so that the bond is represented by `!1`. The symbol `.` is used to indicate that the two molecules are joined into a complex.
-
-Since the reaction is bidirectional, we will use `k_lr_bind` and `k_lr_dis` to denote the rates of the forward and reverse reactions, respectively. (We will specify values for these parameters later.)
-
-As a result, this reaction is shown below. We name our rule specifying the ligand-receptor reaction `LR`.
-
-~~~ ruby
-LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
-~~~
-
-The following tutorial shows how to implement this rule in BioNetGen and use the Gillespie algorithm to determine the equilibrium of a reversible ligand-receptor binding reaction.
+Throughout this module, we will employ <a href="http://bionetgen.org/" target="_blank">BioNetGen</a> to apply the Gillespie algorithm to well-mixed models of chemical reactions. We will use our ongoing example of ligand-receptor binding and dissociation to introduce the way in which BioNetGen represents molecules and reactions involving them.The following tutorial shows how to implement this rule in BioNetGen and use the Gillespie algorithm to determine the equilibrium of a reversible ligand-receptor binding reaction.
 
 [Visit tutorial](tutorial_lr){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
@@ -110,7 +88,7 @@ In the [previous lesson](signal), we showed an example in which a system with 10
 
 Our model uses the same number of initial molecules and the same reaction rates. The system evolves via the Gillespie algorithm, and we track the concentration of free ligand molecules, ligand molecules bound to receptor molecules, and free receptor molecules over time.
 
-The figure below demonstrates that the Gillespie algorithm quickly converges to the same values as the ones that we obtained by hand in the last lesson. We are now ready to apply this algorithm to model bacterial chemotaxis, a system that will involve many different reactions.
+The figure below demonstrates that the Gillespie algorithm quickly converges quickly to the same values calculated just above. Furthermore, we not only obtain the steady state concentrations, but we also observe that the system reaches steady state in a craction of a tenth of a second. We are now ready to apply this algorithm to model bacterial chemotaxis, a system that will involve many different reactions.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial4_ssa.png){: .align-center}](../assets/images/chemotaxis_tutorial4_ssa.png)
 A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in molecules/µm<sup>3</sup>) on the y-axis. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.
