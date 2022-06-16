@@ -112,7 +112,7 @@ After building the model, we can run our simulation with the following command (
 simulate({method=>"nf", t_end=>100, n_steps=>1000})
 ~~~
 
-**Exercise:**Run the simulation. How do the concentrations of polymers vary according to the lengths of the polymers?
+**Exercise:** Run the simulation. How do the concentrations of polymers vary according to the lengths of the polymers?
 {: .notice--success}
 
 **Exercise:** What happens to polymer concentrations as we change the polymer binding and dissociation rates? Does your observation reflect what you might expect?
