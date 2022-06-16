@@ -88,7 +88,7 @@ In the [previous lesson](signal), we showed an example in which a system with 10
 
 Our model uses the same number of initial molecules and the same reaction rates. The system evolves via the Gillespie algorithm, and we track the concentration of free ligand molecules, ligand molecules bound to receptor molecules, and free receptor molecules over time.
 
-The figure below demonstrates that the Gillespie algorithm quickly converges quickly to the same values calculated just above. Furthermore, we not only obtain the steady state concentrations, but we also observe that the system reaches steady state in a craction of a tenth of a second. We are now ready to apply this algorithm to model bacterial chemotaxis, a system that will involve many different reactions.
+The figure below demonstrates that the Gillespie algorithm quickly converges quickly to the same values calculated just above. Furthermore, we not only obtain the steady state concentrations, but we also observe that the system reaches steady state in a craction of a tenth of a second.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial4_ssa.png){: .align-center}](../assets/images/chemotaxis_tutorial4_ssa.png)
 A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in molecules/µm<sup>3</sup>) on the y-axis. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.
