@@ -142,33 +142,23 @@ Finding a region in the RBM where the structures of the SARS-CoV and SARS-CoV-2 
 
 In the preceding section, we identified a region between residues 476 and 485 of the SARS-CoV-2 spike protein that corresponds to a structural difference between the SARS-CoV-2 and SARS-CoV RBMs. We now wish to determine whether the differences we have found affect binding affinity with the human ACE2 enzyme.
 
-We know from our work in this course that a tiny change can produce a big difference in the high-level behavior of a finely tuned system. It may therefore be the case that subtle changes in the ability of SARS-CoV-2 to stick to the ACE2 enzyme can change the virus's infectiousness enough to greatly influence its spread through the human population.
+Throughout this book, we have seen that a tiny change can produce a big difference in the high-level behavior of a finely tuned system. Perhaps, then, subtle changes in the ability of SARS-CoV-2 to stick to the ACE2 enzyme could change the virus's infectiousness enough to greatly influence its spread through the human population.
 
-We will first use VMD to highlight the amino acids in the region of interest of the SARS-CoV-2 spike protein's structure. \tutorial[coronavirus/tutorial_visualization]
-
-\FloatBarrier
-\phantomsection
-\subsection{Analyzing three sites of conformational differences}
-
-Shang et al. 2020 identified three sites showing significant conformational differences between the SARS-CoV-2 and SARS-CoV spike proteins. We will discuss each of these three locations and see how they affect binding affinity between the spike protein and ACE2.
+We will discuss three sites showing significant conformational differences between the SARS-CoV-2 and SARS-CoV spike proteins and see how they affect binding affinity between the spike protein and ACE2. Structural differences are challenging to show with a 2-D image, and we encourage you to view the 3-D representation of the protein in a tutorial.\tutorial[coronavirus/tutorial_visualization]\\
 
 \FloatBarrier
 \phantomsection
 \subsection{Site 1: loop in ACE2-binding ridge}
 
-The first location is our region of interest from the previous section and is found on a loop in a region called the ACE2 binding ridge. This region is shown in \autoref{fig:Ridge}, in which SARS-CoV-2 is on left and SARS-CoV is on the right.
-
-Structural differences are challenging to show with a 2-D image, and we encourage you to use VMD to view the 3-D representation of the protein. \tutorial[coronavirus/tutorial_multiseq]\\
-
-\begin{qbox}[%
-	See if you can identify the major structural difference between the proteins in \autoref{fig:Ridge}. Hint: look at the yellow residue.
-	]\end{qbox}
+The first location that we will discuss is our region of interest identified in the previous section, which is found on a loop in a region called the ACE2 binding ridge. This region is highlighted in \autoref{fig:Ridge} for SARS-CoV-2 (left) and SARS-CoV (right).\\
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.85\textwidth]{../images/Ridge.png}
-	\caption{A visualization of the loop in the ACE2-binding ridge that is conformationally different between SARS-CoV-2 (left) and SARS-CoV (right). The coronavirus RBD is shown in purple, and ACE2 is shown in green. Structural differences cause certain amino acid residues (highlighted in various colors) to behave differently between the two interactions.}
+	\begin{tabular}{c c}
+	\includegraphics[width = 0.4\textwidth]{../images/Ridge_SARS-2.png} & \includegraphics[width = 0.4\textwidth]{../images/Ridge_SARS.png}
+	\end{tabular}
+	\caption{A visualization of the loop in the ACE2-binding ridge that is conformationally different between SARS-CoV-2 (left) and SARS-CoV (right). The coronavirus RBD is shown in purple, and ACE2 is shown in green. Structural differences cause certain amino acid residues, which are highlighted in various colors and described in the main text, to behave differently between the two interactions.}
 	\label{fig:Ridge}
 \end{figure}
 
@@ -191,7 +181,9 @@ Although the interaction with the hydrophobic pocket is the most critical differ
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.85\textwidth]{../images/Hotspot31.png}
+	\begin{tabular}{c c}
+	\includegraphics[width = 0.4\textwidth]{../images/Hotspot31_SARS-2.png} & \includegraphics[width = 0.4\textwidth]{../images/Hotspot31_SARS.png}
+	\end{tabular}
 	\caption{Visualizations of hotspot 31 in SARS-CoV-2 (left) and SARS-CoV (right). The RBD is shown in purple, and ACE2 is shown in green. In SARS-CoV, hotspot 31 corresponds to a salt bridge, which is broken in SARS-CoV-2 to form a new hydrogen bond.}
 	\label{fig:Hotspot31}
 \end{figure}
@@ -207,7 +199,9 @@ Finally, we consider \textbf{hotspot 353}, which involves another salt bridge co
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.85\textwidth]{../images/Hotspot31.png}
+	\begin{tabular}{c c}
+	\includegraphics[width = 0.4\textwidth]{../images/Hotspot353_SARS-2.png} & \includegraphics[width = 0.4\textwidth]{../images/Hotspot353_SARS.png}
+	\end{tabular}
 	\caption{Visualizations of hotspot 353 in SARS-CoV-2 (left) and SARS-CoV (right). The RBD is shown in purple, and ACE2 is shown in green. In SARS-CoV, the RBD residue Thr487 (yellow) stabilizes the salt bridge between ACE2 residues Lys 353 and Asp38 (red). In SARS-CoV-2, the corresponding RBD residue Asn501 (yellow) provides less support, causing ACE2 residue Lys353 (red residue on the left) to be in a slightly different conformation and form a new hydrogen bond with the RBD.}
 	\label{fig:Hotspot353}
 \end{figure}
@@ -222,7 +216,7 @@ You may be wondering how researchers can be so fastidious that they would notice
 \section{Quantification of Protein Interaction Energy}
 \label{sec:interaction_energy}
 \phantomsection
-\subsection{Computing energy of a bound complex}
+\subsection{Computing the energy of a bound complex}
 
 In part 1, we searched for the tertiary structure that best ``explains'' a protein's primary structure by looking for the structure with the lowest potential energy (i.e., the one that is the most chemically stable).
 
@@ -278,13 +272,10 @@ A protein's molecular bonds are constantly vibrating, stretching and compressing
 
 In an \textdef{elastic network model (ENM)}{elastic network model (ENM)}{a model in which we consider nearby alpha carbons to be connected by springs}, we imagine nearby alpha carbons of a protein structure to be connected by springs. Because distant atoms will not influence each other, we will only connect two alpha carbons if they are within some threshold distance of each other. In the following section, we will describe a \textdef{Gaussian network model}{Gaussian network model}{an elastic network model used for molecular dynamics in which alpha carbons are subject to normally distributed fluctuations} \textbf{(GNM)}, an ENM for molecular dynamics.
 
-\FloatBarrier
-\phantomsection
-\subsection{An Introduction to Gaussian Network Models}
 
 \FloatBarrier
 \phantomsection
-\subsubsection{Representing random movements of alpha carbons}
+\subsection{Representing random movements of alpha carbons}
 
 We will introduce GNMs using our old friend human hemoglobin protein (PDB: 1A3N). We first convert hemoglobin into a network of nodes and springs, in which each alpha carbon is given by a node, and two alpha carbons are connected by a string if they are within a threshold distance; \autoref{fig:hemoglobin_enm} uses a threshold value of 7.3 angstroms.
 
@@ -312,7 +303,7 @@ Yet although atomic fluctuations are powered by randomness, the movements of pro
 
 \FloatBarrier
 \phantomsection
-\subsubsection{Inner products and cross-correlations}
+\subsection{Inner products and cross-correlations}
 
 To determine how the movements of nodes \textvar{i} and \textvar{j} are related, we need to study the fluctuation vectors $ \mathbf{\Delta R_i} $ and $\mathbf{\Delta R_j}$. Do these vectors point in similar or opposing directions?
 
@@ -362,7 +353,7 @@ Consider again the cross-correlation map of human hemoglobin in \autoref{fig:hem
 
 \FloatBarrier
 \phantomsection
-\subsubsection{Mean-square fluctuations and B-factors}
+\subsection{Mean-square fluctuations and B-factors}
 
 Just as we can visualize cross-correlation, we could also plot the mean-square fluctuations of residues using a line graph, where the x-axis represents the order of alpha carbons, and the y-axis represents the mean-square fluctuation $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $ of the \textvar{i}-th alpha carbon. Large \textvar{y}-values in this plot would correspond to mobile alpha carbons, whereas lower values would correspond to static alpha carbons.
 

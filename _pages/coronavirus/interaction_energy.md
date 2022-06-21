@@ -8,7 +8,7 @@ toc_sticky: true
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
-## Computing energy of a bound complex
+## Computing the energy of a bound complex
 
 In part 1 of this module, we searched for the tertiary structure that best "explains" a protein's primary structure by looking for the structure with the lowest potential energy (i.e., the one that is the most chemically stable).
 

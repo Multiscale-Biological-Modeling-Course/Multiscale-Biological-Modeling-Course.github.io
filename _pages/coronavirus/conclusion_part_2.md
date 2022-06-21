@@ -22,9 +22,7 @@ A mass-spring system in which a mass is attached to the end of a spring. The mor
 
 In an **elastic network model (ENM)**, we imagine nearby alpha carbons of a protein structure to be connected by springs. Because distant atoms will not influence each other, we will only connect two alpha carbons if they are within some threshold distance of each other. In the following section, we will describe a **Gaussian network model (GNM)**, an ENM for molecular dynamics.
 
-## An Introduction to Gaussian Network Models
-
-### Representing random movements of alpha carbons
+## Representing random movements of alpha carbons
 
 We will introduce GNMs using our old friend human hemoglobin protein (<a href="https://www.rcsb.org/structure/1a3n" target="_blank">1A3N.pdb</a>). We first convert hemoglobin into a network of nodes and springs, in which each alpha carbon is given by a node, and two alpha carbons are connected by a string if they are within a threshold distance; the figure below uses a threshold value of 7.3 angstroms.
 
@@ -42,7 +40,7 @@ The equilibrium position of node \textvar{i} is represented by the vector $$\mat
 
 Yet although atomic fluctuations are powered by randomness, the movements of protein atoms are in fact heavily correlated. For example, imagine the simple case in which all of a protein's alpha carbons are connected in a straight line. If we pull the first alpha carbon away from the second node, then the second alpha carbon will be pulled toward the first alpha carbon, and the movements of these two alpha carbons will be directly correlated. Our goal is to understand how the movements of *every* pair of alpha carbons, called the **cross-correlation** of these atoms, may be related. We will see how using vectors to represent these movements can be helpful.
 
-### Inner products and cross-correlations
+## Inner products and cross-correlations
 
 To determine how the movements of nodes *i* and *j* are related, we need to study the fluctuation vectors $$ \mathbf{\mathbf{\Delta R_i}} $$ and $$ \mathbf{\mathbf{\Delta R_j}} $$. Do these vectors point in similar or opposing directions?
 
@@ -81,7 +79,7 @@ Consider again the cross-correlation map of human hemoglobin shown above. We can
 **STOP:** What other patterns do you notice in the hemoglobin cross-correlation heat map?
 {: .notice--primary}
 
-### Mean-square fluctuations and B-factors
+## Mean-square fluctuations and B-factors
 
 Just as we can visualize cross-correlation, we could also plot the mean-square fluctuations of residues using a line graph, where the x-axis represents the order of alpha carbons, and the y-axis represents the mean-square fluctuation $$ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $$ of the *i*-th alpha carbon. Large *y*-values in this plot would correspond to mobile alpha carbons, whereas lower values would correspond to static alpha carbons.
 
@@ -99,7 +97,7 @@ The figure below shows a plot of the B-factor of the α<sub>1</sub> subunit of h
 (Top): Human hemoglobin colored according to theoretical B-factors calculated from GNM (left) and experimental B-factors (right). Subunit α<sub>1</sub> is located at the top left quarter of the protein figure. (Bottom): A 2-D plot comparing the theoretical (blue) and experimental (black) B-factors of subunit α<sub>1</sub>.  The theoretical and experimental B-factors are correlated with a coefficient of 0.63.
 {: style="font-size: medium;"}
 
-### Normal mode analysis
+## Normal mode analysis
 
 When listening to your favorite song, you probably do not think of the individual notes that it comprises. Yet a talented musician can dissect the song into the set of notes that each instrument contributes to the whole. Just because the music combines a number of individual sound waves does not mean that we cannot deconvolve the music into its substituent waves.
 
