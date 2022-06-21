@@ -10,15 +10,15 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 ## Modeling proteins using tiny springs
 
-You may think that simulating the movements of proteins with hundreds of amino acids will be a hopeless task. After all, predicting the static structure of a protein has occupied biologists for decades! Yet part of what makes structure prediction so challenging is that the search space of potential structures is so enormous. Once we have established the static structure of a protein, its dynamic behavior will not allow it to deviate greatly from this static structure, and so the space of potential dynamic structures is narrowed down to those that are similar to the static structure.
+You may think that simulating the movements of proteins with hundreds of amino acids will prove hopeless. After all, predicting the static structure of a protein has occupied biologists for decades! Yet part of what makes structure prediction so challenging is that the search space of potential structures is enormous. In contrast, once we have established the static structure of a protein, its dynamic behavior will not allow it to deviate greatly from this static structure, and so the space of potential dynamic structures is narrowed down to those that are similar to the static structure.
 
-A protein's molecular bonds are constantly vibrating, stretching and compressing, much like that of the oscillating mass-spring system shown in the figure below. Bonded atoms are held together by sharing electrons and are held at specific bond length due to the attraction and repulsion of the negatively charged electrons and positively charged nucleus. If you push the atoms closer together or pull them farther apart, then they will "bounce back" to their equilibrium.
+A protein's molecular bonds are constantly vibrating, stretching and compressing, much like that of the oscillating mass-spring system shown in the figure below. Bonded atoms are held at a specific distance apart due to the attraction and repulsion of the negatively charged electrons and positively charged nucleus. If you push the atoms closer together or pull them farther apart, then they will "bounce back" to their equilibrium.
 
 [![image-center](../assets/images/600px/mass-spring_first_frame.png){: .align-center}](../assets/images/mass-spring.gif)
 A mass-spring system in which a mass is attached to the end of a spring. The more we move the mass from its equilibrium, the greater its resistance and the more it will be repelled back toward equilibrium. Image courtesy: [flippingphysics.com](http://flippingphysics.com).
 {: style="font-size: medium;"}
 
-In an **elastic network model (ENM)**, we imagine nearby alpha carbons of a protein structure to be connected by springs. Because distant atoms will not influence each other, we will only connect two alpha carbons if they are within some threshold distance of each other. In the following section, we will describe a **Gaussian network model (GNM)**, an ENM for molecular dynamics.
+In an **elastic network model (ENM)**, we imagine nearby alpha carbons of a protein structure to be connected by springs. Because distant atoms will not influence each other, we will only connect two alpha carbons if they are within some threshold distance of each other. In this lesson, we will describe a **Gaussian network model (GNM)**, an ENM for molecular dynamics.
 
 ## Representing random movements of alpha carbons
 
@@ -28,7 +28,7 @@ We will introduce GNMs using our old friend human hemoglobin protein (<a href="h
 Conversion of human hemoglobin (left) to a network of nodes and springs (right) in which two nodes are connected by a spring if they are within a threshold distance of 7.3 angstroms.
 {: style="font-size: medium;"}
 
-The alpha carbons in a protein are subject to random fluctuations that cause them to deviate from their equilibrium positions. These fluctuations are *Gaussian*, which give the model its name. Gaussian fluctuations mean that the alpha carbon can deviate randomly from its equilibrium position according to a normal (bell-shaped) distribution, meaning that it is more likely to be near the equilibrium than far away.
+The alpha carbons in a protein are subject to random fluctuations that cause them to deviate from their equilibrium positions. These fluctuations are *Gaussian*, meaning that the alpha carbon can deviate randomly from its equilibrium position according to a normal (bell-shaped) distribution. In other words, the alpha carbon is more likely to be near the equilibrium than far away.
 
 The equilibrium position of node \textvar{i} is represented by the vector $$\mathbf{R_i^0}$$, and its position at a given point in time is denoted by the (variable) vector $$ \mathbf{\mathbf{\Delta R_i}}$$. The distance between node \textvar{i} and node \textvar{j} at equilibrium is denoted by the vector $$\mathbf{R_{ij}^0}$$, which is equal to $$\mathbf{R_j^0} - \mathbf{R_i^0}$$ (as illustrated in the figure below; at a given point in time, this distance becomes the vector $$\mathbf{R_{ij}}$$.
 
