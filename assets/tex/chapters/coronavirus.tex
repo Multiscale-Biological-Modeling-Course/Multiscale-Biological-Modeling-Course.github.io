@@ -161,7 +161,7 @@ For example, \autoref{fig:SequenceStructureExample} compares the sequences and s
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.85\textwidth]{../images/SequenceStructureExample.png}
-	\caption{(Top) An amino acid sequence comparison of the first 40 (out of 140) amino acids of hemoglobin subunit alpha for three species: human (PDB entry: 1si4), shortfin mako shark (PDB entry: 3mkb), and emu (PDB entry: 3wtg). A column is colored blue if all three species have the same amino acid, white if two species have the same amino acid, and red if all amino acids are different. Sequence identity calculates the number of positions in two amino acid sequences that share the same amino acid. (Bottom) Side by side comparisons of the 3-D structures of the three proteins. The final figure on the right superimposes the first three structures to highlight their similarities.}
+	\caption{(Top) An amino acid sequence comparison of the first 40 (out of 140) amino acids of hemoglobin subunit alpha for three species: human (PDB entry: \href{https://www.rcsb.org/structure/1si4}{1si4}), shortfin mako shark (PDB entry: \href{https://www.rcsb.org/structure/3mkb}{3mkb}), and emu (PDB entry: \href{https://www.rcsb.org/structure/3wtg}{3wtg}). A column is colored blue if all three species have the same amino acid, white if two species have the same amino acid, and red if all amino acids are different. Sequence identity calculates the number of positions in two amino acid sequences that share the same amino acid. (Bottom) Side by side comparisons of the 3-D structures of the three proteins. The final figure on the right superimposes the first three structures to highlight their similarities.}
 	\label{fig:SequenceStructureExample}
 \end{figure}
 
@@ -689,7 +689,7 @@ The RMSD values for the models predicted by Rosetta@Home are shown in \autoref{f
 		Model 4  & 2.047\phantom{x} & 2.0854 \\
 		Model 5  & 4.6443 & 4.9636
 	\end{tabular}
-	\caption{A table containing the the calculated RMSD of the Rosetta@Home models of SARS-CoV-2 spike protein, full protein and single chain, compared to the validated structure (PDB entry: 6vxx).}
+	\caption{A table containing the the calculated RMSD of the Rosetta@Home models of SARS-CoV-2 spike protein, full protein and single chain, compared to the validated structure (PDB entry: \href{https://www.rcsb.org/structure/6vxx}{6vxx}).}
 	\label{fig:ssgcid_rmsd_table}
 \end{figure}
 
@@ -992,52 +992,58 @@ In an \textdef{elastic network model (ENM)}{elastic network model (ENM)}{a model
 \phantomsection
 \subsection{Representing random movements of alpha carbons}
 
-We will introduce GNMs using our old friend human hemoglobin protein (PDB: 1A3N). We first convert hemoglobin into a network of nodes and springs, in which each alpha carbon is given by a node, and two alpha carbons are connected by a string if they are within a threshold distance; \autoref{fig:hemoglobin_enm} uses a threshold value of 7.3 angstroms.
+We will introduce GNMs using our old friend human hemoglobin (PDB entry: \href{https://www.rcsb.org/structure/1a3n}{1a3n}). We first convert hemoglobin into a network of nodes and springs, in which each alpha carbon is given by a node, and two alpha carbons are connected by a string if they are within a threshold distance; \autoref{fig:hemoglobin_enm} uses a threshold value of 7.3 angstroms.\\
 
 \begin{figure}[h]
 	\centering
+	\tabcolsep = 1.5em
 	\mySfFamily
-	\includegraphics[width = 0.7\textwidth]{../images/hemoglobin_enm.png}
-	\caption{Conversion of human hemoglobin (left) to a network of nodes and springs (right) in which two nodes are connected by a spring if they are within a threshold distance of 7.3 angstroms.}
+	\begin{tabular}{c c}
+		\includegraphics[width = 0.3\textwidth]{../images/hemoglobin.png} & \includegraphics[width = 0.3\textwidth]{../images/hemoglobin_network.png}
+	\end{tabular}
+	\caption{Conversion of human hemoglobin (left) into a network of nodes and springs (right) in which two nodes are connected by a spring if they are within a threshold distance of 7.3 angstroms.}
 	\label{fig:hemoglobin_enm}
 \end{figure}
 
-The alpha carbons in a protein are subject to random fluctuations that cause them to deviate from their equilibrium positions. These fluctuations are \textit{Gaussian}, meaning that the alpha carbon can deviate randomly from its equilibrium position according to a normal (bell-shaped) distribution. In other words, the alpha carbon is more likely to be near the equilibrium than far away.
+The alpha carbons in a protein are subject to random fluctuations that cause them to move from their equilibrium positions. These fluctuations are \textit{Gaussian}, meaning that the alpha carbon can deviate randomly from its equilibrium position according to a normal (bell-shaped) distribution. In other words, although an alpha carbon's position is due to random chance, it is more likely to be near the equilibrium than far away.
 
-The equilibrium position of node \textvar{i} is represented by the vector $\mathbf{R_i^0}$, and its position at a given point in time is denoted by the (variable) vector $ \mathbf{\Delta R_i}$. The distance between node \textvar{i} and node \textvar{j} at equilibrium is denoted by the vector $\mathbf{R_{ij}^0}$, which is equal to $\mathbf{R_j^0} - \mathbf{R_i^0}$ (as illustrated in \autoref{fig:gaussian_fluctuations}); at a given point in time, this distance becomes the vector $\mathbf{R_{ij}}$.
+As illustrated in \autoref{fig:gaussian_fluctuations} (right), the equilibrium position of node \textvar{i} is represented by the vector $\mathbf{R_i^0}$, and its position at a given point in time is denoted by the (variable) vector $ \mathbf{\Delta R_i}$. The distance between node \textvar{i} and node \textvar{j} at equilibrium is denoted by the vector $\mathbf{R_{ij}^0}$, which is equal to $\mathbf{R_j^0} - \mathbf{R_i^0}$; at a given point in time, this distance becomes the variable vector $\mathbf{R_{ij}}$.\\
 
 \begin{figure}[h]
 	\centering
+	\tabcolsep = 1.5em
 	\mySfFamily
-	\includegraphics[width = 0.7\textwidth]{../images/gaussian_fluctuations.png}
-	\caption{(Left) A small network of nodes connected by springs deriving from a protein structure. The distance between two nodes \textvar{i} and \textvar{j} is denoted by the variable $\textbf{R}_\textbf{ij}$. (Right) Zooming in on two nodes \textvar{i} and \textvar{j} that are within the threshold distance. The equilibrium positions of node \textvar{i} and node \textvar{j} are represented by the distance vectors $ \textbf{R}_\textbf{i}^\textbf{0} $ and $\textbf{R}_\textbf{j}^\textbf{0}$, with the distance between them denoted $\textbf{R}_{\textbf{ij}}^\textbf{0}$, which is equal to $\textbf{R}_\textbf{j}^\textbf{0} - \textbf{R}_\textbf{i}^\textbf{0}$. The vectors $\mathbf{\Delta} \textbf{R}_\textbf{i} $ and $ \mathbf{\Delta} \textbf{R}_\textbf{j}$ represent the nodes' respective changes from equilibrium.}
+	\begin{tabular}{c c}
+		\includegraphics[width = 0.33\textwidth]{../images/gaussian_network_small.png} & \includegraphics[width = 0.4\textwidth]{../images/gaussian_network_vectors.png}
+	\end{tabular}
+	\caption{(Left) A small network of nodes connected by springs deriving from a protein structure. The distance between two nodes \textvar{i} and \textvar{j} is denoted by the variable vector $\textbf{R}_\textbf{ij}$. (Right) Zooming in on two nodes \textvar{i} and \textvar{j} that are within the threshold distance. The equilibrium positions of node \textvar{i} and node \textvar{j} are represented by the distance vectors $ \textbf{R}_\textbf{i}^\textbf{0} $ and $\textbf{R}_\textbf{j}^\textbf{0}$, with the distance between them denoted $\textbf{R}_{\textbf{ij}}^\textbf{0}$, which is equal to $\textbf{R}_\textbf{j}^\textbf{0} - \textbf{R}_\textbf{i}^\textbf{0}$. The vectors $\mathbf{\Delta} \textbf{R}_\textbf{i} $ and $ \mathbf{\Delta} \textbf{R}_\textbf{j}$ represent the nodes' respective changes from equilibrium.}
 	\label{fig:gaussian_fluctuations}
 \end{figure}
 
-Yet although atomic fluctuations are powered by randomness, the movements of protein atoms are in fact heavily correlated. For example, imagine the simple case in which all of a protein's alpha carbons are connected in a straight line. If we pull the first alpha carbon away from the second node, then the second alpha carbon will be pulled toward the first alpha carbon, and the movements of these two alpha carbons will be directly correlated. Our goal is to understand how the movements of \textit{every} pair of alpha carbons, called the \textdefnogloss{cross-correlation} of these atoms, may be related. We will see how using vectors to represent these movements can be helpful.
+Although atomic fluctuations are powered by randomness, the movements of protein atoms are heavily correlated. For example, imagine the simple case in which all of a protein's alpha carbons are connected in a straight line. If we pull the first alpha carbon away from the center of the protein, then the second alpha carbon will be pulled along with it, and the movements of these two alpha carbons will be directly correlated. Our goal is to understand how the movements of \textit{every} pair of alpha carbons may be related.
 
 \FloatBarrier
 \phantomsection
 \subsection{Inner products and cross-correlations}
 
-To determine how the movements of nodes \textvar{i} and \textvar{j} are related, we need to study the fluctuation vectors $ \mathbf{\Delta R_i} $ and $\mathbf{\Delta R_j}$. Do these vectors point in similar or opposing directions?
+To determine how the movements of alpha carbons \textvar{i} and \textvar{j} are related, we need to study the fluctuation vectors $ \mathbf{\Delta R_i} $ and $\mathbf{\Delta R_j}$. Do these vectors point in similar or opposing directions?
 
-To answer this question, we compute the \textdefnogloss{inner product}, or \textdefnogloss{dot product}, of the two vectors, $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_j} \rangle $. The inner product of two vectors $\mathbf{x} = (x_1, x_2, x_3)$ and $\mathbf{y} = (y_1, y_2, y_3)$ is given by $ \langle \mathbf{x}, \mathbf{y} \rangle = x_1 \cdot y_1 + x_2 \cdot y_2 + x_3 \cdot y_3$. If $\mathbf{x}$ and $\mathbf{y}$ are perpendicular, then $ \langle \mathbf{x}, \mathbf{y} \rangle $ is equal to zero. The more that the two vectors point in the same direction, the larger the value of $\langle \mathbf{x}, \mathbf{y} \rangle $. And the more that the two vectors point in opposite directions, the smaller the value of $\langle \mathbf{x}, \mathbf{y} \rangle $.\\
+To answer this question, we compute the \textdefnogloss{inner product}, or \textdefnogloss{dot product}, of the two vectors, $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_j} \rangle $. The inner product of two vectors $\mathbf{x} = (x_1, x_2, x_3)$ and $\mathbf{y} = (y_1, y_2, y_3)$ is given by $ \langle \mathbf{x}, \mathbf{y} \rangle = x_1 \cdot y_1 + x_2 \cdot y_2 + x_3 \cdot y_3$. If $\mathbf{x}$ and $\mathbf{y}$ are perpendicular, then $ \langle \mathbf{x}, \mathbf{y} \rangle $ is equal to zero. The more that the two vectors point in the same direction, the larger the value of $\langle \mathbf{x}, \mathbf{y} \rangle $. And the more that the two vectors point in opposite directions, the more negative the value of $\langle \mathbf{x}, \mathbf{y} \rangle $.\\
 
 \begin{qbox}[%
-	Say that $\mathbf{x} = (1, -2, 3)$, $\mathbf{y} = (2, -3, 5)$, and  $\mathbf{z} = (-1, 3, -4)$. Compute the inner products $\langle \mathbf{x}, \mathbf{y} \rangle$ and $\langle \mathbf{x}, \mathbf{z} \rangle$  and ensure that your answers match the preceding observation.
+	Say that $\mathbf{x} = (1, -2, 3)$, $\mathbf{y} = (2, -3, 5)$, and  $\mathbf{z} = (-1, 3, -4)$. Compute the inner products $\langle \mathbf{x}, \mathbf{y} \rangle$ and $\langle \mathbf{x}, \mathbf{z} \rangle$. Ensure that your answers match the preceding observation about the value of the inner product and the directions of vectors.
 	]\end{qbox}
 
-The inner product is also useful for representing  the \textdefnogloss{mean-square fluctuation} of an alpha carbon, or the expected squared distance of node \textvar{i} from equilibrium. The fluctuation of node \textvar{i} from equilibrium is just $\mathbf{\Delta R_i}$. If this vector is represented by the coordinates (\textvar{x}, \textvar{y}, \textvar{z}), then its square distance from equilibrium is $x^2 + y^2 + z^2$, which is the inner product of the fluctuation vector with itself, $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $.\\
+The inner product is also useful for representing  the \textdefnogloss{mean-square fluctuation} of an alpha carbon, or the expected squared distance of node \textvar{i} from equilibrium. The fluctuation of node \textvar{i} from equilibrium is just $\mathbf{\Delta R_i}$. If this vector is represented by the coordinates (\textvar{x}, \textvar{y}, \textvar{z}), then its square distance from equilibrium is $x^2 + y^2 + z^2$, which is the inner product of the fluctuation vector with itself, $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $. Alpha carbons having large values of mean-square fluctuation may belong to more flexible regions of the protein.\\
 
 \begin{note}[%
-	In practice, we will not know the exact values for the $ \mathbf{\Delta R_i} $ and must compute the inner products of fluctuation vectors indirectly using linear algebra, which is beyond the scope of this work. A full treatment of the mathematics of GNMs can be found in the chapter at \url{https://www.csb.pitt.edu/Faculty/bahar/publications/b14.pdf}.
+	In practice, we will not know the exact values for the $ \mathbf{\Delta R_i} $ and must compute the inner products of fluctuation vectors indirectly using linear algebra, which is beyond the scope of this work. A full treatment of the mathematics of GNMs can be found in the chapter at \url{https://bit.ly/3n2wV8d}.
 	]\end{note}
 
-Long vectors pointing in the same direction will have a larger inner product than short vectors pointing in the same direction. As a result, we can normalize the inner product so that we can have a sense of the correlation of these vectors, independent of their length. To be precise, the cross-correlation of nodes \textvar{i} and \textvar{j} is given by
+Long vectors pointing in the same direction will have a larger inner product than short vectors pointing in the same direction. We should therefore normalize the inner product so that we can have a sense of how correlated two vectors movements are that is independent of the vectors' length. The \textdefnogloss{cross-correlation} of alpha carbons \textvar{i} and \textvar{j} is given by
 
 \begin{center}
-$ C_{ij} = \dfrac{\langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle}{\sqrt{\langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle}}$\,.
+$ C_{ij} = \dfrac{\langle \mathbf{\Delta R_i}, \mathbf{\Delta R_j} \rangle}{\sqrt{\langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle \langle \mathbf{\Delta R_j}, \mathbf{\Delta R_j} \rangle}}$\,.
 \end{center}
 
 After normalization, the cross-correlation ranges from -1 to 1. A cross-correlation of -1 means that the two alpha carbons' movements are completely anti-correlated, and a cross-correlation of 1 means that their movements are completely correlated.
@@ -1048,22 +1054,20 @@ After computing the cross-correlation of every pair of alpha carbons in a protei
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.6\textwidth]{../images/hemoglobin_cc.png}
-	\caption{The normalized cross-correlation heat map of human hemoglobin (PDB: 1A3N). Red regions indicate correlated residue pairs which move in the same direction; blue regions indicate anti-correlated residue pairs which move in opposite directions. Note that the matrix is oriented so that its first element is in the bottom left corner.}
+	\caption{The normalized cross-correlation heat map of human hemoglobin (PDB entry: \href{https://www.rcsb.org/structure/1a3n}{1a3n}). Red regions indicate correlated residue pairs, which move in the same direction; blue regions indicate anti-correlated residue pairs, which move in opposite directions. Note that the matrix is oriented so that the first alpha carbon in both proteins correspond to the cell in the bottom left corner of the heat map.}
 	\label{fig:hemoglobin_cc}
 \end{figure}
 
-The cross-correlation map of a protein contains complex patterns of correlated and anti-correlated movement of the protein's atoms. Much like the contact map that we showed in an earlier section, it serves as a ``fingerprint'' of sorts for the protein and can give useful insights into the protein's structure.
+The cross-correlation map of a protein contains complex patterns of correlated and anti-correlated movement of the protein's atoms. Much like the contact maps that we showed in \autoref{fig:contact_map}, it serves as a ``fingerprint'' of sorts for the protein and can give useful insights into the protein's dynamics.
 
-For example, we should not be surprised that the main diagonal of the cross-correlation map is colored red, since alpha carbons that are near each other in a polypeptide chain will likely have correlated movements.
+For example, we should not be surprised that the main diagonal of the cross-correlation heat map in \autoref{fig:hemoglobin_cc} is colored red, since alpha carbons that are near each other in a polypeptide chain will likely have correlated movements. Furthermore, the regions of high correlation near the main diagonal typically provide information regarding the protein's secondary structures, since amino acids belonging to the same secondary structure will typically move in concert.
 
-Furthermore, the regions of high correlation near the main diagonal typically provide information regarding the protein's secondary structures, since amino acids belonging to the same secondary structure will typically move in concert.
+High correlation regions that are far away from the matrix's main diagonal provide information about the \textit{tertiary} structure of the protein, such as protein domains and other components of the protein that are distant in terms of sequence but work together.
 
-High correlation regions that are far away from the matrix's main diagonal provide information about the \textit{tertiary} structure of the protein, such as protein domains and other components of the protein that work together.
-
-Consider again the cross-correlation map of human hemoglobin in \autoref{fig:hemoglobin_cc}. We can see four squares of positive correlation along the main diagonal, representing the four subunits of hemoglobin from bottom left to top right: $\alpha_1$, $\beta_1$, $\alpha_2$, and $\beta_2$. Note that the first and third squares have the same patterns; these squares correspond to $\alpha_1$ and $\alpha_2$, respectively. Similarly, the second and fourth squares correspond to $\beta_1$ and $\beta_2$.\\
+In the cross-correlation heat map in \autoref{fig:hemoglobin_cc}, we can see four squares of positive correlation along the main diagonal, representing the four subunits of hemoglobin from bottom left to top right: $\alpha_1$, $\beta_1$, $\alpha_2$, and $\beta_2$. Note that the first and third squares have the same patterns; these squares correspond to $\alpha_1$ and $\alpha_2$, respectively. Similarly, the second and fourth squares correspond to $\beta_1$ and $\beta_2$, respectively.\\
 
 \begin{qbox}[%
-	What other patterns do you notice in the hemoglobin cross-correlation heat map?
+	What other patterns do you notice in the hemoglobin cross-correlation heat map in \autoref{fig:hemoglobin_cc}?
 	]\end{qbox}
 
 \FloatBarrier
@@ -1164,7 +1168,7 @@ The mode shape plots show that the RBD of both spike proteins are highly flexibl
 
 \autoref{fig:spike_slowmode_comparison} highlights another flexible region, the spike protein's \textdefnogloss{non-terminal domain (NTD)}. Similar to the RBD, the NTD of the Spike proteins also mediates viral infection, but by interacting with DC-SIGN and L-SIGN receptors rather than ACE2. These receptors are present on macrophages and dendritic cells, allowing SARS-CoV-2 to infect different tissues such as the lungs, where ACE2 expression levels are low. The ability to infect lung cells attributes to pneumonia, the main symptom of severe COVID-19 cases. As with the RBD, the high flexibility in this domain allows the spike protein to more easily interact with these receptors.
 
-We should perhaps not be surprised that these plots point to SARS-CoV-2 and SARS-CoV having similar dynamics, since their structures were similar, and both viral proteins target the ACE2 enzyme. To help provide more evidence for their similarity, we will learn about another aspect of molecular dynamics.
+We should perhaps not be surprised that these plots point to SARS-CoV-2 and SARS-CoV having similar dynamics, since their structures were similar, and both viral proteins target the ACE2 enzyme. To help provide more evidence for their similarity, we will learn about another aspect of molecular dynamics.\\
 
 \FloatBarrier
 \phantomsection
@@ -1204,7 +1208,7 @@ To predict spike protein movements based on ANM, we used NMWiz and VMD to create
 
 \FloatBarrier
 \phantomsection
-\subsection{SARS-CoV spike protein RBD (PDB: 2ajf)}
+\subsection{SARS-CoV spike protein RBD (PDB entry: \href{https://www.rcsb.org/structure/2ajf}{2ajf}).}
 
 \begin{figure}[h]
 	\centering
@@ -1231,13 +1235,13 @@ To predict spike protein movements based on ANM, we used NMWiz and VMD to create
 	\begin{tabular}{c c c}
 		\includegraphics[width = 0.25\textwidth]{../images/2ajf_animation1.png} & \includegraphics[width = 0.25\textwidth]{../images/2ajf_animation2.png} & \includegraphics[width = 0.25\textwidth]{../images/2ajf_animation3.png}
 	\end{tabular}
-	\caption{Snapshots of ANM analysis animation of SARS-CoV-2 spike RBD and ACE2 (PDB entry: 2ajf)}
+	\caption{Snapshots of ANM analysis animation of SARS-CoV-2 spike RBD and ACE2 (PDB entry: \href{https://www.rcsb.org/structure/2ajf}{2ajf}).}
 	\label{fig:2ajf_animation}
 \end{figure}
 
 \FloatBarrier
 \phantomsection
-\subsection{SARS-CoV-2 spike protein chimeric RBD (PDB: 6vw1)}
+\subsection{SARS-CoV-2 spike protein chimeric RBD (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}).}
 
 \begin{figure}[h]
 	\centering
@@ -1265,7 +1269,7 @@ To predict spike protein movements based on ANM, we used NMWiz and VMD to create
 	\begin{tabular}{c c c}
 		\includegraphics[width = 0.25\textwidth]{../images/6vw1_animation1.png} & \includegraphics[width = 0.25\textwidth]{../images/6vw1_animation2.png} & \includegraphics[width = 0.25\textwidth]{../images/6vw1_animation3.png}
 	\end{tabular}
-	\caption{Snapshots of ANM analysis animation of SARS-CoV-2 spike chimeric RBD and ACE2 (PDB entry: 6vw1)}
+	\caption{Snapshots of ANM analysis animation of SARS-CoV-2 spike chimeric RBD and ACE2 (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}).}
 	\label{fig:6vw1_animation}
 \end{figure}
 
