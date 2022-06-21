@@ -54,7 +54,7 @@ The inner product is also useful for representing  the **mean-square fluctuation
 
 Long vectors pointing in the same direction will have a larger inner product than short vectors pointing in the same direction. As a result, we can normalize the inner product so that we can have a sense of the correlation of these vectors, independent of their length. The **cross-correlation** of alpha carbons *i* and *j* is given by
 
-$$ C_{ij} = \dfrac{\langle \mathbf{\Delta R_i}, \mathbf{\Delta R_j} \rangle}{\sqrt{\langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle \langle \mathbf{\Delta R_j}, \mathbf{\Delta R_j} \rangle}}.$$
+$$ C_{ij} = \dfrac{\langle \mathbf{\Delta R_i}, \mathbf{\Delta R_j} \rangle}{\sqrt{\langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle \cdot \langle \mathbf{\Delta R_j}, \mathbf{\Delta R_j} \rangle}}.$$
 
 After normalization, the cross-correlation ranges from -1 to 1. A cross-correlation of -1 means that the two alpha carbons' movements are completely anti-correlated, and a cross-correlation of 1 means that their movements are completely correlated.
 
@@ -77,45 +77,43 @@ In the cross-correlation heat map in the figure above, we can see four squares o
 
 ## Mean-square fluctuations and B-factors
 
-Just as we can visualize cross-correlation, we could also plot the mean-square fluctuations of residues using a line graph, where the x-axis represents the order of alpha carbons, and the y-axis represents the mean-square fluctuation $$ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $$ of the *i*-th alpha carbon. Large *y*-values in this plot would correspond to mobile alpha carbons, whereas lower values would correspond to static alpha carbons.
+Just as we can visualize cross-correlation, we would also like to visualize the mean-square fluctuations that the GNM model predicts. During X-ray crystallography, the displacement of atoms within the protein crystal decreases the intensity of the scattered X-ray, creating uncertainty in the positions of atoms. **B-factor**, also known as **temperature factor** or **Debye-Waller factor**, is a measure of this uncertainty, which includes noise from positional variance of thermal protein motion, model errors, and lattice defects.
 
-We also would like to compare these predicted mean-square fluctuations against what we can infer from experimental results. During X-ray crystallography, the displacement of atoms within the protein crystal decreases the intensity of the scattered X-ray, creating uncertainty in the positions of atoms. **B-factor**, also known as **temperature factor** or **Debye-Waller factor**, is a measure of this uncertainty, which includes noise from positional variance of thermal protein motion, model errors, and lattice defects.
-
-We can then compare these *experimental* B-factors against a *theoretical* estimate of their value. It is beyond the scope of this work, but the theoretical B-factors are given by
+It is beyond the scope of this work, but the theoretical B-factor of the *i*-th alpha carbon is equal to a constant factor times the estimated mean-square fluctuation,
 
 $$ B_i = \frac{8 \pi^2}{3} \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle. $$
 
-In other words, once we can estimate the mean-square fluctuations $$\langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $$, the theoretical B-factor of the *i*-th alpha carbon is equal to a constant times this inner product. This theoretical B-factor tends to correlate well with theoretical B-factors in practice.[^Yang2]
+We can then compare these theoretical B-factors against experimental results. The figure below shows a 3-D structure of the hemoglobin protein, with amino acids colored along a spectrum according to both theoretical and experimental B-factors for the sake of comparison.  In these structures, red indicates large B-factors (mobile amino acids), and blue indicates small B-factors (static amino acids). Note that the mobile amino acids are generally found at the ends of secondary structures in the outer edges of the protein, which is expected because the boundaries between secondary structures typically contain highly fluctuating residues. This figure confirms the general observation that theoretical B-factors tend to correlate well with experimental B-factors in practice[^Yang2] and offers one more example of a property of a biological system that we can infer computationally without the need for costly experimentation.
 
-The figure below shows a plot of the B-factor of the α<sub>1</sub> subunit of human hemoglobin. We also show a 3-D structure of the hemoglobin protein, with amino acids colored along a spectrum according to both theoretical and experimental B-factors for the sake of comparison. In these structures, red indicates large B-factors (mobile amino acids), and blue indicates small B-factors (static amino acids). Note that the mobile amino acids are generally found at the ends of secondary structures in the outer edges of the protein, which is expected because the boundaries between secondary structures typically contain highly fluctuating residues.
+It is beyond the scope of this work, but the theoretical B-factors are given byIn other words, once we can estimate the mean-square fluctuations $$\langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $$, the theoretical B-factor of the *i*-th alpha carbon is equal to a constant times this inner product. This theoretical B-factor tends to correlate well with theoretical B-factors in practice.[^Yang2]
 
 [![image-center](../assets/images/600px/hemoglobin_b_factors.png){: .align-center}](../assets/images/hemoglobin_b_factors.png)
-(Top): Human hemoglobin colored according to theoretical B-factors calculated from GNM (left) and experimental B-factors (right). Subunit α<sub>1</sub> is located at the top left quarter of the protein figure. (Bottom): A 2-D plot comparing the theoretical (blue) and experimental (black) B-factors of subunit α<sub>1</sub>.  The theoretical and experimental B-factors are correlated with a coefficient of 0.63.
+(Top): Human hemoglobin colored according to theoretical B-factors calculated from GNM (left) and experimental B-factors (right). Blue indicates low B-factors, and red indicates high B-factors. Subunit α<sub>1</sub> is located at the top left quarter of the protein. (Bottom): A 2-D plot comparing the theoretical (blue) and experimental (black) B-factors of subunit α<sub>1</sub>.  The theoretical and experimental B-factors are correlated with a coefficient of 0.63.
 {: style="font-size: medium;"}
 
 ## Normal mode analysis
 
 When listening to your favorite song, you probably do not think of the individual notes that it comprises. Yet a talented musician can dissect the song into the set of notes that each instrument contributes to the whole. Just because the music combines a number of individual sound waves does not mean that we cannot deconvolve the music into its substituent waves.
 
-All objects, from colossal skyscrapers to tiny proteins, vibrate. And, just like in our musical example, these oscillations are the net result of individual waves passing through the object. The paradigm of breaking down a collection of vibrations into the comparatively small number of "modes" that summarize them is called **normal mode analysis (NMA)** and is at the heart of elastic network models.
+All objects, from colossal skyscrapers to tiny proteins, vibrate. And, just like in our musical example, these oscillations are the net result of individual waves passing through the object. The paradigm of breaking down a collection of vibrations into the comparatively small number of "modes" that summarize them is called **normal mode analysis (NMA)** .
 
-The mathematical details are complicated, but by deconvolving a protein's movement into individual normal modes, we can observe how each mode affects individual amino acids. As we did with B-factors, for a given mode, we can visualize the results of a mode with a line graph, called the **mode shape plot**. The x-axis of this plot corresponds to the amino acid sequence of the protein, and the height of the *i*-th position on the x-axis corresponds to the magnitude of the square fluctuation caused by the mode on the protein's *i*-th residue.
+The mathematical details are complicated, but by deconvolving a protein's movement into individual normal modes, we can observe how each mode affects individual amino acids. As we did with B-factors, for a given mode, we can visualize the results of a mode with a line graph, called the **mode shape plot**. The x-axis of this plot corresponds to the amino acid sequence of the protein, and the height of the *i*-th position on the x-axis corresponds to the magnitude of the square fluctuation caused by the mode on the protein's *i*-th amino acid.
 
-Just as a piece of music can have one instrument that is much louder than another, some of the oscillations contributing to an object's vibrations may be more significant than others. NMA also determines the degree to which each mode contributes to the overall fluctuations of a protein; the mode contributing the most is called the **slowest mode** of the protein. The figure below shows a mode shape plot of the slowest mode for each of the four subunits of human hemoglobin.
+Just as a piece of music can have one instrument that is much louder than another, some of the oscillations contributing to an object's vibrations may be more significant than others. NMA also determines the degree to which each mode contributes to the overall fluctuations of a protein; the mode contributing the most is called the **slowest mode** of the protein. The figure below shows a mode shape plot of the slowest mode for each of the four subunits of human hemoglobin and reveals that all four subunits have similar mode shape for the slowest mode.
 
 [![image-center](../assets/images/600px/hemoglobin_mode_shape.png){: .align-center}](../assets/images/hemoglobin_mode_shape.png)
 (Top) Visualization of human hemoglobin colored based on GNM slow mode shape for the slowest mode (left) and the average of the ten slowest modes (right), or the ten modes that contribute the most to the square fluctuation. Regions of high mobility are colored red, corresponding to peaks in the mode shape plot. (Bottom) A mode shape plot of the slowest mode for human hemoglobin, separated over each of the four chains, shows that the four chains have a similar slowest mode.
 {: style="font-size: medium;"}
 
-Similar to cross-correlation, analyzing a protein's mode shapes will give insights into the structure of the protein, and comparing mode shapes for two proteins can reveal structural differences. For example, the mode shape plots in the figure above show that the slowest mode shape for the four subunits of hemoglobin are quite similar.
+Similar to cross-correlation, analyzing a protein's mode shapes will give insights into the structure of the protein, and comparing mode shapes for two proteins can reveal differences. For example, the mode shape plots in the figure above show that the slowest mode shape for the four subunits of hemoglobin are quite similar.
 
-We should consult more than just a single mode when completing a full analysis of a protein's molecular dynamics. Below is the slow mode plot averaging the "slowest" ten modes of hemoglobin, meaning the modes that have the greatest affect on mean fluctuation. Unlike when we examined only the slowest mode, we can now see a stark difference between the two groups of subunits/chains; the plots for α subunits (chains A and C) are very similar, whereas the plots for β subunits (chains B and D) share a slightly less similar average slow mode shape.
+We should consult more than just a single mode when completing a full analysis of a protein's molecular dynamics. Below is the slow mode plot averaging the "slowest" ten modes of hemoglobin, meaning the ten modes that have the greatest effect on mean fluctuation. Unlike when we examined only the slowest mode, we can now see a stark difference when comparing α subunits (chains A and C) to β subunits (chains B and D).
 
 [![image-center](../assets/images/600px/hemoglobin_mode_shape_avg.png){: .align-center}](../assets/images/hemoglobin_mode_shape_avg.png)
-The average mode shape of the slowest ten modes for each of the four human hemoglobin subunits using GNM.
+The average mode shape of the slowest ten modes for each of the four human hemoglobin subunits using GNM. Note that the plots for α subunits (chains A and C) and β subunits (chains B and D) differ more than when considering only the slowest mode.
 {: style="font-size: medium;"}
 
-We are now ready to apply what we have learned in this lesson and use ProDy to build a GNM for the SARS-CoV and SARS-CoV-2 spike proteins.
+We are now ready to apply what we have learned in a tutorial in order to build a GNM for the SARS-CoV and SARS-CoV-2 spike proteins and analyze the dynamics of these proteins using the plots that we have introduced in this section.
 
 [Visit tutorial](tutorial_GNM){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
