@@ -15,9 +15,9 @@
 \phantomsection
 \subsection{Focusing on a variable region of interest in the spike protein}
 
-The spike protein is much more variable than other regions of the coronavirus genome, and as we showed in \autoref{fig:spike_protein_similarity}, the protein has some regions of greater variability.  One such region is the RBD, whose structure we predicted using GalaxyWEB.
+The spike protein is much more variable than other regions of the coronavirus genome, and as we showed in \autoref{fig:spike_protein_similarity}, the protein has some regions of greater variability.  One such region is the RBD, which includes the \textdefnogloss{receptor binding motif (RBM)}, a subregion whose amino acid product mediates contact with the human ACE2 enzyme and is part of the RBD, whose structure we predicted using GalaxyWEB.
 
-The fact that the region binding to the target human enzyme mutated so much in two decades makes it a fascinating region of study. Do the mutations that SARS-CoV-2 has accumulated somehow make it easier for the virus to infect human cells?
+The fact that the region binding to the target human enzyme has mutated so much makes it a fascinating region of study. Do the mutations that SARS-CoV-2 has accumulated somehow make it easier for the virus to infect human cells?
 
 \autoref{fig:RBM_alignment} shows an alignment of the 70 amino acid long RBM region from SARS-CoV and SARS-CoV-2. We know from our work in structure prediction that just because the sequence of a protein has been greatly mutated does not mean that the structure of that protein has changed much. Therefore, we will start a \textit{structural} comparison of the SARS-CoV and SARS-CoV-2 spike proteins.
 
@@ -32,7 +32,7 @@ The fact that the region binding to the target human enzyme mutated so much in t
 	\label{fig:RBM_alignment}
 \end{figure}
 
-In addition to verifying the structure of the spike protein in both SARS-CoV and SARS-CoV-2, researchers also determined the structure of the RBD complexed with ACE2 in both SARS-CoV (PDB entry: \href{https://www.rcsb.org/structure/2ajf}{2ajf}) and SARS-CoV-2 (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}). Because we know the structures of the bound complexes, we can produce 3-D visualizations of the two different complexes and look for structural differences, rotating the structures to examine potential differences. However, we should be wary of only trusting our eyes to guide us; can a quantitative approach tell us where to look for structural differences between the two RBMs?\\
+In addition to verifying the structure of the spike protein in both SARS-CoV and SARS-CoV-2, researchers also determined the structure of the RBD complexed with ACE2 in both SARS-CoV (PDB entry: \href{https://www.rcsb.org/structure/2ajf}{2ajf}) and SARS-CoV-2 (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}). Because we know the structures of the bound complexes, we can produce 3-D visualizations of the two different complexes and look for structural differences involving the RBM, rotating the structures around to examine potential differences. However, we should be wary of only trusting our eyes to guide us; how can a quantitative approach tell us where to look for structural differences between the two RBMs?\\
 
 \begin{note}[%
 	The experimentally verified SARS-CoV-2 structure is a \textit{chimeric} protein formed of the SARS-CoV RBD in which the RBM has the sequence from SARS-CoV-2. A chimeric RBD was used for complex technical reasons to ensure that the crystallization process during X-ray crystallography could be borrowed from that used for SARS-CoV.
