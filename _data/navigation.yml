@@ -153,8 +153,6 @@ coronavirus:
         url: /coronavirus/multiseq
       - title: "Analysis of structural protein differences<br><br>"
         url: /coronavirus/structural_differences
-      - title: "Quantification of protein interaction energy<br><br>"
-        url: /coronavirus/interaction_energy
       - title: "Part 2 conclusion: from static protein analysis to molecular dynamics<br><br>"
         url: /coronavirus/conclusion_part_2
   - title: Software Tutorials (featuring ProDy)

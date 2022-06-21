@@ -10,8 +10,6 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 ## Modeling proteins using tiny springs
 
-We now transition from the static study of proteins to the field of **molecular dynamics**, in which we simulate the movement of proteins' atoms, along with their interactions as they move.
-
 You may think that simulating the movements of proteins with hundreds of amino acids will be a hopeless task. After all, predicting the static structure of a protein has occupied biologists for decades! Yet part of what makes structure prediction so challenging is that the search space of potential structures is so enormous. Once we have established the static structure of a protein, its dynamic behavior will not allow it to deviate greatly from this static structure, and so the space of potential dynamic structures is narrowed down to those that are similar to the static structure.
 
 A protein's molecular bonds are constantly vibrating, stretching and compressing, much like that of the oscillating mass-spring system shown in the figure below. Bonded atoms are held together by sharing electrons and are held at specific bond length due to the attraction and repulsion of the negatively charged electrons and positively charged nucleus. If you push the atoms closer together or pull them farther apart, then they will "bounce back" to their equilibrium.
