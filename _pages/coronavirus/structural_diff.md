@@ -12,8 +12,6 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 In the [previous lesson](multiseq), we identified a region between residues 476 and 485 of the SARS-CoV-2 spike protein that corresponds to a structural difference between the SARS-CoV-2 and SARS-CoV RBMs. We now wish to determine whether the differences we have found affect binding affinity with the human ACE2 enzyme.
 
-Throughout this course, we have seen that a tiny change can produce a big difference in the high-level behavior of a finely tuned system. Perhaps, then, subtle changes in the ability of SARS-CoV-2 to stick to the ACE2 enzyme could change the virus's infectiousness enough to greatly influence its spread through the human population.
-
 We will first use VMD to highlight the amino acids in the region of interest of the SARS-CoV-2 spike protein's structure.
 
 [Visit tutorial](tutorial_visualization){: .btn .btn--warning .btn--large}
