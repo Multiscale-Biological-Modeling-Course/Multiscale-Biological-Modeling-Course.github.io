@@ -153,6 +153,10 @@ coronavirus:
         url: /coronavirus/multiseq
       - title: "Analysis of structural protein differences<br><br>"
         url: /coronavirus/structural_differences
+      - title: "From static protein analysis to molecular dynamics<br><br>"
+        url: /coronavirus/gnm
+      - title: "Anisotropic network models<br><br>"
+        url: /coronavirus/anm
       - title: "Part 2 conclusion: from static protein analysis to molecular dynamics<br><br>"
         url: /coronavirus/conclusion_part_2
   - title: Software Tutorials (featuring ProDy)

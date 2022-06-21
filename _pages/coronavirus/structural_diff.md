@@ -93,7 +93,7 @@ Nevertheless, we should be careful with making inferences about the infectiousne
 
 Another reason for our cautiousness is that proteins are not fixed objects but rather *dynamic* structures whose shape is subject to small changes over time. We will now transition from the static study of proteins to the field of **molecular dynamics**, in which we simulate the movement of proteins' atoms, along with their interactions as they move.
 
-[Next lesson](conclusion_part_2){: .btn .btn--primary .btn--large}
+[Next lesson](gnm){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 
