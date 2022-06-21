@@ -14,36 +14,24 @@ Now begins part 2, in which we examine how the structure of the SARS-CoV-2 spike
 
 ## Focusing on a variable region of interest in the spike protein
 
-In part 1, we saw that the spike protein is much more variable than other regions of the viral genomes. We even see variable and conserved regions within the spike protein, as the following figure (reproduced from the section on [homology modeling](homology)) indicates.
+In part 1, we saw that the spike protein is much more variable than other regions of the coronavirus genome. We even see variable and conserved regions within the spike protein, as the following figure (reproduced from the section on [homology modeling](homology)) indicates.
 
 [![image-center](../assets/images/600px/spike_protein_similarity.png){: .align-center}](../assets/images/spike_protein_similarity.png)
 Variable and conserved regions in the SARS-CoV and SARS-CoV-2 spike proteins. The S1 domain tends to be more variable, whereas the S2 domain is more conserved.
 {: style="font-size: medium;"}
 
-One variable spike protein region is the **receptor binding motif (RBM)**, part of the receptor binding domain (RBD) whose structure we predicted using GalaxyWEB in the [homology modeling tutorial](tutorial_homology). The RBM is the component of the RBD that mediates contact with ACE2, as the following simplified animation of the process illustrates.
-
-{% include video id="e2Qi-hAXdJo" provider="youtube" %}
-
-The fact that the region binding to the target human enzyme has mutated so much makes it a fascinating region of study. Do the mutations that SARS-CoV-2 has accumulated somehow make it easier for the virus to infect human cells?
-
-The figure below shows an alignment of the 70 amino acid long RBM region from SARS-CoV and SARS-CoV-2.
-
-[![image-center](../assets/images/600px/RBM_alignment.png){: .align-center}](../assets/images/RBM_alignment.png)
-An alignment of the RBM of the human SARS-CoV virus (first row) and the SARS-CoV-2 virus (second row). Amino acids that are highlighted in green represents matches between the two sequence. Beneath each column, a bar illlustrates conservation between the two sequences, where full conservation indicates a match and partial conservation indicates a mismatch.
-{: style="font-size: medium;"}
-
-We know from our work in structure prediction that just because the sequence of a protein has been greatly mutated does not mean that the structure of that protein has changed much. Therefore, in this lesson, we will start a structural comparison of the SARS-CoV and SARS-CoV-2 spike proteins. All of this analysis will be performed using the software resources ProDy and VMD.
+One variable region within the spike protein is the RBD, whose structure we predicted using GalaxyWEB in the [homology modeling tutorial](tutorial_homology). The fact that the region binding to the target human enzyme has mutated so much makes it a fascinating region of study. Do the mutations that SARS-CoV-2 has accumulated somehow make it easier for the virus to infect human cells?
 
 In addition to verifying the structure of the spike protein in both SARS-CoV and SARS-CoV-2, researchers also determined the structure of the RBD complexed with ACE2 in both SARS-CoV (PDB entry: <a href="https://www.rcsb.org/structure/2AJF" target="_blank">2ajf</a>) and SARS-CoV-2 (PDB entry: <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>).
+
+Because we know the structures of the bound complexes, we can produce 3-D visualizations of the two different complexes and look for structural differences. We will use VMD to produce this visualization, rotating the structures to examine potential differences. However, we should be wary of only trusting our eyes to guide us; can a quantitative approach tell us where to look for structural differences between the two RBMs?
 
 **Note:** The experimentally verified SARS-CoV-2 structure is a *chimeric* protein formed of the SARS-CoV RBD in which the RBM has the sequence from SARS-CoV-2 [^Shang]. A chimeric RBD was used for complex technical reasons to ensure that the crystallization process during X-ray crystallography could be borrowed from that used for SARS-CoV.
 {: .notice--info}
 
-Because we know the structures of the bound complexes, we can produce 3-D visualizations of the two different complexes and look for structural differences involving the RBM. We will use VMD to produce this visualization, rotating the structures around to examine potential differences. However, we should be wary of only trusting our eyes to guide us; how can a quantitative approach tell us where to look for structural differences between the two RBMs?
-
 ## A first attempt at identifying local dissimilarities between protein structures
 
-In part 1, we introduced the RMSD metric for quantifying the difference between two protein structures.  RMSD offered an excellent method for a *global* comparison (i.e., a comparison across all structures), but we are interested in the *local* regions where the SARS-CoV and SARS-CoV-2 complexes differ. To this end, we will need an approach that compares structures at the level of individual amino acids.
+In part 1, we introduced the RMSD metric for quantifying the difference between two protein structures.  RMSD offered an excellent method for a *global* comparison (i.e., a comparison across all structures), but we are interested in investigating the *local* regions where the SARS-CoV and SARS-CoV-2 complexes differ.
 
 **STOP:** How could we compare individual amino acid differences of two protein structures?
 {: .notice--primary}

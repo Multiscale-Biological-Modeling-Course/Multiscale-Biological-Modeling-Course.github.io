@@ -15,33 +15,34 @@
 \phantomsection
 \subsection{Focusing on a variable region of interest in the spike protein}
 
-The spike protein is much more variable than other regions of the coronavirus genome and exhibits regions of greater variability (recall \autoref{fig:spike_protein_similarity}). One variable spike protein region is the \textdefnogloss{receptor binding motif (RBM)}, which mediates contact with the human ACE2 enzyme and is part of the RBD, whose structure we predicted using GalaxyWEB.
+The spike protein is much more variable than other regions of the coronavirus genome, and as we showed in \autoref{fig:spike_protein_similarity}, the protein has some regions of greater variability.  One such region is the RBD, whose structure we predicted using GalaxyWEB.
 
-The fact that the region binding to the target human enzyme has mutated so much makes it a fascinating region of study. Do the mutations that SARS-CoV-2 has accumulated somehow make it easier for the virus to infect human cells?
+The fact that the region binding to the target human enzyme mutated so much in two decades makes it a fascinating region of study. Do the mutations that SARS-CoV-2 has accumulated somehow make it easier for the virus to infect human cells?
 
 \autoref{fig:RBM_alignment} shows an alignment of the 70 amino acid long RBM region from SARS-CoV and SARS-CoV-2. We know from our work in structure prediction that just because the sequence of a protein has been greatly mutated does not mean that the structure of that protein has changed much. Therefore, we will start a \textit{structural} comparison of the SARS-CoV and SARS-CoV-2 spike proteins.
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.7\textwidth]{../images/RBM_alignment.png}
-	\caption{An alignment of the RBM of the human SARS-CoV virus (first row) and the SARS-CoV-2 virus (second row). Amino acids that are highlighted in green represents matches between the two sequence. Beneath each column, a bar illlustrates conservation between the two sequences, where full conservation indicates a match and partial conservation indicates a mismatch.}
+	\begin{sequence}[0.58]%
+	\Green{NTRNIDATSTGNYNYKYR}YL\Green{R}HGK\Green{L}R\Green{PFERDIS}NVPFSPDGK\Green{PC}TP-PAL\Green{NCY}W\Green{PL}ND\Green{YGF}YT\Green{T}T\Green{G}I\Green{GYQPY}-\\
+	\Green{NTRNIDATSTGNYNYKYR}LF\Green{R}KSN\Green{L}K\Green{PFERDIS}TEIYQAGST\Green{PC}NGVEGF\Green{NCY}F\Green{PL}QS\Green{YGF}QP\Green{T}N\Green{G}V\Green{GYQPY}-
+	\end{sequence}
+	\caption{An alignment of the RBM of the human SARS-CoV virus (first row) and the SARS-CoV-2 virus (second row). Amino acids that are highlighted in green represent matches between the two RBM sequences.}
 	\label{fig:RBM_alignment}
 \end{figure}
 
-In addition to verifying the structure of the spike protein in both SARS-CoV and SARS-CoV-2, researchers also determined the structure of the RBD complexed with ACE2 in both SARS-CoV (PDB entry: \href{https://www.rcsb.org/structure/2ajf}{2ajf}) and SARS-CoV-2 (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}).\\
+In addition to verifying the structure of the spike protein in both SARS-CoV and SARS-CoV-2, researchers also determined the structure of the RBD complexed with ACE2 in both SARS-CoV (PDB entry: \href{https://www.rcsb.org/structure/2ajf}{2ajf}) and SARS-CoV-2 (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}). Because we know the structures of the bound complexes, we can produce 3-D visualizations of the two different complexes and look for structural differences, rotating the structures to examine potential differences. However, we should be wary of only trusting our eyes to guide us; can a quantitative approach tell us where to look for structural differences between the two RBMs?\\
 
 \begin{note}[%
 	The experimentally verified SARS-CoV-2 structure is a \textit{chimeric} protein formed of the SARS-CoV RBD in which the RBM has the sequence from SARS-CoV-2. A chimeric RBD was used for complex technical reasons to ensure that the crystallization process during X-ray crystallography could be borrowed from that used for SARS-CoV.
 	]\end{note}
 
-Because we know the structures of the bound complexes, we can produce 3-D visualizations of the two different complexes and look for structural differences involving the RBM, rotating the structures around to examine potential differences. However, we should be wary of only trusting our eyes to guide us; how can a quantitative approach tell us where to look for structural differences between the two RBMs?
-
 \FloatBarrier
 \phantomsection
 \subsection{A first attempt at identifying local dissimilarities between protein structures}
 
-Earlier, we introduced the RMSD metric for quantifying the difference between two protein structures. RMSD offered an excellent method for a \textit{global} comparison (i.e., a comparison across all structures), but we are interested in the \textit{local} regions where the SARS-CoV and SARS-CoV-2 complexes differ. To this end, we will need an approach that compares structures at the level of individual amino acids.\\
+Earlier, we introduced the RMSD metric for quantifying the difference between two protein structures. RMSD offered an excellent method for a \textit{global} comparison (i.e., a comparison across all structures), but we are interested in investigating the \textit{local} regions where the SARS-CoV and SARS-CoV-2 complexes differ.\\
 
 \begin{qbox}[%
 	How could we compare individual amino acid differences of two protein structures?
@@ -53,8 +54,9 @@ Recall the following definition of RMSD for two protein structures \textvar{s} a
 $\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)}$\,.
 \end{center}
 
-\noindent If two similar protein structures differ in a few locations, then the corresponding alpha carbon distances $d(s_{i}, t_{i})$ will likely be higher at these locations. However, we will introduce a more sophisticated approach for
-comparing the local structure of $s_{i}$ against $t_{i}$. First, however, we will discuss an alternative to RMSD for computing global structure.
+\noindent RMSD offers an excellent method for a \textit{global} comparison (i.e., a comparison across all structures), but we are interested in investigating the \textit{local} regions where the SARS-CoV and SARS-CoV-2 complexes differ.
+
+If two similar protein structures differ in a few locations, then the corresponding alpha carbon distances $d(s_{i}, t_{i})$ will likely be higher at these locations. However, we will introduce a more sophisticated approach for comparing the local structure of $s_{i}$ against $t_{i}$. First, however, we will discuss an alternative to RMSD for computing global structure.
 
 \FloatBarrier
 \phantomsection
@@ -276,8 +278,8 @@ Another reason for our cautiousness is that proteins are not fixed objects but r
 \FloatBarrier
 \phantomsection
 
-\section{Conclusion: From Static Protein Analysis to Molecular Dynamics}
-\label{sec:conclusion_part_2}
+\section{Gaussian Network Models and Molecular Dynamics}
+\label{sec:gaussian_network_models}
 \phantomsection
 \subsection{Modeling proteins using tiny springs}
 
@@ -485,6 +487,10 @@ We should perhaps not be surprised that these plots point to SARS-CoV-2 and SARS
 
 \FloatBarrier
 \phantomsection
+\section{Anisotropic Network Models}
+
+\FloatBarrier
+\phantomsection
 \subsection{ANM accounts for the direction of protein fluctuations}
 
 All of the analysis provided by GNM, from cross-correlation plots to B-factors and NMA, depend on the estimation of inner products $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $ or $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $ as the case may be. Although the $ \mathbf{\Delta R_i} $ are vectors, meaning that they have a \textvar{direction} as well as a magnitude, the inner products have only a value, and we therefore are not able to infer anything about the direction of a protein's movements. For this reason, GNM is said to be \textdefnogloss{isotropic}, meaning that it only considers the magnitude of force exerted on the springs between nearby molecules and ignores any global effect on the directions of these forces.
@@ -592,7 +598,7 @@ Although we have separated our discussion of GNM and ANM, the DynOmics 1.0 serve
 
 \FloatBarrier
 \phantomsection
-\subsection{Fighting a Virus with Open Science}
+\section{Conclusion: Fighting a Virus with Open Science}
 
 In this chapter, we began with a discussion of the fundamental problem of determining a protein's structure. Because experimental methods for identifying protein structure are costly and time consuming, we transitioned to discuss algorithmic approaches that do a good job of predicting a protein's structure from its sequence of amino acids.
 
