@@ -23,6 +23,9 @@ Thus concludes our discussion of protein analysis. In the course's final module,
 **Note:** Although we have covered a great deal in this chapter, there is still much more to say about SARS-CoV-2. What happens after the spike protein binds to ACE2? How does the virus enter the cell and replicate? How does it fight our immune systems, and how should we design a vaccine to fight back? If you are interested in an online course covering some of these questions, then check out the free online course *<a href="https://sites.google.com/view/sarswars/home" target="_blank">SARS Wars: A New Hope</a>* by <a href="https://www.cs.cmu.edu/~cjl/" target="_blank">Christopher Langmead</a>.
 {: .notice--info}
 
+[Visit exercises](exercises_part_2){: .btn .btn--success .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
 [Next module](../white_blood_cells/home){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 

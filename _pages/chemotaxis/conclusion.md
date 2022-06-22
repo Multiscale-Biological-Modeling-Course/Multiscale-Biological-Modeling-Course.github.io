@@ -130,6 +130,9 @@ We are fortunate to have this wealth of research on chemotaxis in *E. coli*, whi
 [Visit exercises](exercises){: .btn .btn--success .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
+[Next module](../coronavirus/home){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
 [^Saragosti2011]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2011. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)
 
 [^Saragosti2012]: Saragosti J., Siberzan P., Buguin A. 2012. Modeling *E. coli* tumbles by rotational diffusion. Implications for chemotaxis. PLoS One 7(4):e35412. [available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3329434/).
