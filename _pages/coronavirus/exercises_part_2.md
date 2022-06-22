@@ -10,23 +10,23 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 ## Qres Comparison
 
-Recall the following two hypothetical protein structures from the [part 1 exercises](exercises_part_1).
+Recall the following two toy protein structures from the [part 1 exercises](exercises_part_1).
 
 [![image-center](../assets/images/600px/rmsd_exercise.png){: .align-center}](../assets/images/rmsd_exercise.png)
 Two hypothetical protein structures with vectorizations into eight points each.
 {: style="text-align: center; font-size: medium;"}
 
-**Exercise:**  Assuming that the first sampled point in the two figures are, respectively, (1,2) and (1,3), compute the Qres of the fourth sampled point. The formula for Qres of the i-th sampled point in a protein with N amino acids is reproduced below:
+The formula for Qres of the i-th sampled point in a protein with N amino acids is reproduced below:
 
 $$Q_{res}^{(i)} = \dfrac{1}{N-k} \sum^{residues}_{j\neq i-1,i,i+1} \textrm{exp}[-\dfrac{[d(s_i,s_j)-d(t_i,t_j)]^2}{2\sigma^2_{i,j}}]\, .$$
 {: .notice--success}
 
-In part 2 of the module, we computed Qres between SARS and SARS-CoV-2 RBD to find local differences between the two structures. Here, we will try repeating this while using the hemoglobin subunit alpha protein. Using the PDB files of the human hemoglobin 1SI4 and mako shark hemoglobin 3MKB, upload the protein structures into VMD. Align the structures using “Multiseq” and visualize the structures using Qres as the coloring parameter.
-
-**Exercise:**  Use the visualizations to determine where the protein structures vary the most? Why do you think this makes sense?
+**Exercise:**  Assuming that the first sampled point in the two figures are, respectively, (1,2) and (1,3), compute the Qres of the fourth sampled point.
 {: .notice--success}
 
-**Optional:** Take the best performing predicted model from the previous exercise perform the Qres visual analysis with the actual human hemoglobin subunit alpha structure 1SI4. Where do the protein structures vary the most? Compare the predicted model with the mako shark hemoglobin 3MKB. Where do the structures vary the most, and are the results similar to the comparison between 1SI4 and 3MKB?
+In a [tutorial](tutorial_multiseq), computed Qres between SARS and SARS-CoV-2 RBD to find local differences between the two structures. Here, we will try repeating this using the hemoglobin subunit alpha protein. Using the PDB files of human hemoglobin ([1SI4](https://www.rcsb.org/structure/1si4)) and mako shark hemoglobin ([3MKB](https://www.rcsb.org/structure/3mkb)), upload the protein structures into VMD. Align the structures using “Multiseq” and visualize the structures using Qres as the coloring parameter.
+
+**Exercise:**  Use the visualizations to determine where the protein structures vary the most. Does what you find make sense intuitively?
 {: .notice--success}
 
 ## Calculating Interaction Energy with NAMD Energy
