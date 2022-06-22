@@ -1167,7 +1167,7 @@ The analysis provided by GNM is compelling, but it ultimately relies on the esti
 \phantomsection
 \subsection{ANMs account for the direction of protein fluctuations}
 
-The generalization of a Gaussian network model, in which we attempt to determine the directions of the forces influencing alpha carbons, is called an \textdef{anisotropic network model (ANM)}{anisotropic network model (ANM)}{a generalization of a Gaussian network model accounting for the directions of the forces acting on atoms}. Although ANMs include directionality, they typically perform worse than GNMs when benchmarked against experimental data. However, this model offers the benefit that it can be used to create animations depicting the range of motions and fluctuations of the protein, as well as to estimate the specific directions of movement caused by each of a protein's modes.
+The generalization of a Gaussian network model, in which we attempt to determine the directions of the forces influencing alpha carbons, is called an \textdef{anisotropic network model (ANM)}{anisotropic network model (ANM)}{a generalization of a Gaussian network model accounting for the directions of the forces acting on atoms}. Although ANMs include directionality, they typically perform worse than GNMs when benchmarked against experimental data. However, ANMs can be used to create animations depicting the range of motions and fluctuations of the protein, as well as to estimate the specific directions of movement caused by each of a protein's modes.
 
 We will not delve into the mathematical intricacies of ANM calculations, but we will use ANM to create animations visualizing protein fluctuations in the SARS-CoV and SARS-CoV-2 RBDs.\tutorial[coronavirus/tutorial_ANM]
 
@@ -1191,82 +1191,27 @@ We will not delve into the mathematical intricacies of ANM calculations, but we 
 \phantomsection
 \subsection{ANM analysis of the coronavirus binding domain}
 
-\autoref{fig:2ajf_animation} and \autoref{fig:6vw1_animation} show the complex of each virus's RBD (purple) bound with ACE2 (green). Important residues from the three sites of conformational differences identified previously in this chapter are also highlighted.
-
-\FloatBarrier
-\phantomsection
-\subsection{SARS-CoV spike protein RBD (PDB entry: \href{https://www.rcsb.org/structure/2ajf}{2ajf}).}
-
-\begin{figure}[h]
-	\centering
-	\tabcolsep = 1 em
-	\mySfFamily
-	\begin{tabular}{c c }
-		\textbf{SARS-CoV RBD} & \textbf{Purple} \\
-		Resid 463 to 472 (Loop)  & Yellow \\
-		Resid 442 (Hotspot 31)  & Orange \\
-		Resid 487 (Hotspot 353)  & Red \\
-		\textbf{ACE2}  & \textbf{Green} \\
-		Resid 79, 82, 83 (Loop) & Silver \\
-		Resid 31, 35 (Hotspot 31) & Orange \\
-		Resid 38, 353 (Hotspot 353) & Red \\
-	\end{tabular}
-	\caption{}
-	\label{fig:2ajf_B&F_table}
-\end{figure}
+\autoref{fig:coronavirus_anm_animation} shows the complex of each virus's RBD (purple) bound with ACE2 (green). Important residues from the three sites of conformational differences identified previously in this chapter are also highlighted.\\
 
 \begin{figure}[h]
 	\centering
 	\tabcolsep = 1em
 	\mySfFamily
 	\begin{tabular}{c c c}
-		\includegraphics[width = 0.25\textwidth]{../images/2ajf_animation1.png} & \includegraphics[width = 0.25\textwidth]{../images/2ajf_animation2.png} & \includegraphics[width = 0.25\textwidth]{../images/2ajf_animation3.png}
-	\end{tabular}
-	\caption{Snapshots of ANM analysis animation of SARS-CoV-2 spike RBD and ACE2 (PDB entry: \href{https://www.rcsb.org/structure/2ajf}{2ajf}).}
-	\label{fig:2ajf_animation}
-\end{figure}
-
-\FloatBarrier
-\phantomsection
-\subsection{SARS-CoV-2 spike protein chimeric RBD (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}).}
-
-\begin{figure}[h]
-	\centering
-	\tabcolsep = 1 em
-	\mySfFamily
-	\begin{tabular}{c c }
-		\textbf{SARS-CoV-2 (Chimeric) RBD} & \textbf{Purple} \\
-		Resid 476 to 486 (Loop)  & Yellow \\
-		Resid 455 (Hotspot 31)  & Blue \\
-		Resid 493 (Hotspot 31) & Orange \\
-		Resid 501 (Hotspot 353) & Red \\
-		\textbf{ACE2}  & \textbf{Green} \\
-		Resid 79, 82, 83 (Loop) & Silver \\
-		Resid 31, 35 (Hotspot 31) & Orange \\
-		Resid 38, 353 (Hotspot 353) & Red \\
-	\end{tabular}
-	\caption{}
-	\label{fig:6vw1_B&F_table}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\tabcolsep = 1em
-	\mySfFamily
-	\begin{tabular}{c c c}
+		\includegraphics[width = 0.25\textwidth]{../images/2ajf_animation1.png} & \includegraphics[width = 0.25\textwidth]{../images/2ajf_animation2.png} & \includegraphics[width = 0.25\textwidth]{../images/2ajf_animation3.png} \\[3ex]
 		\includegraphics[width = 0.25\textwidth]{../images/6vw1_animation1.png} & \includegraphics[width = 0.25\textwidth]{../images/6vw1_animation2.png} & \includegraphics[width = 0.25\textwidth]{../images/6vw1_animation3.png}
 	\end{tabular}
-	\caption{Snapshots of ANM analysis animation of SARS-CoV-2 spike chimeric RBD and ACE2 (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}).}
-	\label{fig:6vw1_animation}
+	\caption{(Top) Snapshots of ANM analysis animation of SARS-CoV-2 spike RBD and ACE2 (PDB entry: \href{https://www.rcsb.org/structure/2ajf}{2ajf}). (Bottom) Snapshots of ANM analysis animation of SARS-CoV-2 spike chimeric RBD and ACE2 (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}).}
+	\label{fig:coronavirus_anm_animation}
 \end{figure}
 
-Recall that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called ``hotspot 31''. This region is highlighted in blue and orange in \autoref{fig:6vw1_animation}. If you look very closely, as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This animation provides one more piece of evidence that SARS-CoV-2 is more effective at binding to the ACE2 enzyme.
+Recall that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called ``hotspot 31''. This region is highlighted in blue and orange in \autoref{fig:coronavirus_anm_animation} (bottom). If you look very closely, as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This animation provides one more piece of evidence that SARS-CoV-2 is more effective at binding to the ACE2 enzyme.\\
 
-\FloatBarrier
-\phantomsection
-\subsection{DynOmics Integrates GNM and ANM Analysis}
-
-Although we have separated our discussion of GNM and ANM, the DynOmics 1.0 server (\url{http://enm.pitt.edu/index.php}) is an effort to integrate these approaches on a user-friendly platform. \tutorial[coronavirus/tutorial_DynOmics]\\
+%\FloatBarrier
+%\phantomsection
+%\subsection{DynOmics Integrates GNM and ANM Analysis}
+%
+%Although we have separated our discussion of GNM and ANM, the DynOmics 1.0 server (\url{http://enm.pitt.edu/index.php}) is an effort to integrate these approaches on a user-friendly platform. \tutorial[coronavirus/tutorial_DynOmics]\\
 
 \FloatBarrier
 \phantomsection

@@ -10,7 +10,7 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 ## ANMs account for the direction of protein fluctuations
 
-The generalization of a Gaussian network model, in which we attempt to determine the directions of the forces influencing alpha carbons, is called an **anisotropic network model (ANM)**. Although ANMs include directionality, they typically perform worse than GNMs when benchmarked against experimental data[^Yang]. However, this model offers the benefit that it can be used to create animations depicting the range of motions and fluctuations of the protein, as well as to estimate the specific directions of movement caused by each of a protein's modes.
+The generalization of a Gaussian network model, in which we attempt to determine the directions of the forces influencing alpha carbons, is called an **anisotropic network model (ANM)**. Although ANMs include directionality, they typically perform worse than GNMs when benchmarked against experimental data[^Yang]. However, ANMs can be used to create animations depicting the range of motions and fluctuations of the protein, as well as to estimate the specific directions of movement caused by each of a protein's modes.
 
 We will not delve into the mathematical intricacies of ANM calculations, but we will use ANM to create animations visualizing protein fluctuations. For example, click on the animation below to see a video of estimated hemoglobin fluctuations produced from ANM. We can see that the left and right side of the protein are more flexible than the rest of the protein and twist in opposite directions.
 
