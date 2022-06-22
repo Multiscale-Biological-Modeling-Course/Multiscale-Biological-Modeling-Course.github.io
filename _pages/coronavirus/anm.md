@@ -8,9 +8,7 @@ toc_sticky: true
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
-## ANM accounts for the direction of protein fluctuations
-
-All of the analysis provided by GNM, from cross-correlation plots to B-factors and NMA, depend on the estimation of inner products $$ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $$ or $$ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_j} \rangle $$ as the case may be. Although the $$ \mathbf{\Delta R_i} $$ are vectors, meaning that they have a *direction* as well as a magnitude, the inner products have only a value, and we therefore are not able to infer anything about the direction of a protein's movements. For this reason, GNM is said to be **isotropic**, meaning that it only considers the magnitude of force exerted on the springs between nearby molecules and ignores any global effect on the directions of these forces.
+## ANMs account for the direction of protein fluctuations
 
 The generalization of GNM in which we attempt to determine the directions of these forces is called an **anisotropic network model (ANM)**. Although ANM includes directionality, it typically performs worse than GNM when compared with experimental data[^Yang]. However, this model offers the benefit that it can be used to create animations depicting the range of motions and fluctuations of the protein, as well as to estimate the directions of movement caused by each of a protein's modes.
 

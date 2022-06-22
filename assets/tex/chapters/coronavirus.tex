@@ -1124,7 +1124,7 @@ We are now ready to apply what we have learned in a tutorial in order to build a
 \phantomsection
 \subsection{Molecular dynamics analyses of SARS-CoV and SARS-CoV-2 spike proteins using GNM}
 
-\autoref{fig:CrossCorr} shows the cross-correlation heat maps of SARS-CoV and SARS-CoV-2 spike proteins, indicating that these proteins may have similar dynamics.\\
+\autoref{fig:CrossCorr} shows the cross-correlation heat maps of the SARS-CoV and SARS-CoV-2 spike proteins, which are very similar, and \autoref{fig:spike_slowmode_comparison} shows the mode shape plot for the average of the slowest ten modes in each of the two spike proteins (\autoref{fig:spike_slowmode_comparison}). The mode shape plots show that the RBD of both spike proteins are highly flexible, which agrees with the biological functions of these regions. When the RBD interacts with the ACE2 enzyme on human cells, the RBD of one of the three chains ``opens up'', exposing itself to more easily bind with ACE2.\\
 
 \begin{figure}[h]
 	\centering
@@ -1134,31 +1134,30 @@ We are now ready to apply what we have learned in a tutorial in order to build a
 	\label{fig:CrossCorr}
 \end{figure}
 
-\autoref{fig:SlowMode} shows the mode shape plot for the slowest mode of the two proteins. The protein region between positions 200 and 500 of the spike protein is the most mobile and overlaps with the RBD region, found between residues 331 to 524.\\
+%\autoref{fig:SlowMode} shows the mode shape plot for the slowest mode of the two proteins. The protein region between positions 200 and 500 of the spike protein is the most mobile and overlaps with the RBD region, found between residues 331 to 524.\\
+%
+%\begin{figure}[h]
+%	\centering
+%	\mySfFamily
+%	\includegraphics[width = 0.85\textwidth]{../images/SlowMode.png}
+%	\caption{(Top) A mode shape plot for the slowest mode of the SARS-CoV-2 spike protein (left) and SARS-CoV spike protein (right). (Bottom) A mode shape plot for the slowest mode of a single chain of the SARS-CoV-2 spike protein (left) and a single chain of the SARS-CoV spike protein (right). Note that the plot on the right is inverted compared to the one on the left because of a choice made by the software, but the two plots have the same shape if we consider the absolute value. These plots show that the two viruses have similar dynamics, and that residues 200 to 500 fluctuate the most, a region that overlaps heavily with the RBD.}
+%	\label{fig:SlowMode}
+%\end{figure}
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.85\textwidth]{../images/SlowMode.png}
-	\caption{(Top) A mode shape plot for the slowest mode of the SARS-CoV-2 spike protein (left) and SARS-CoV spike protein (right). (Bottom) A mode shape plot for the slowest mode of a single chain of the SARS-CoV-2 spike protein (left) and a single chain of the SARS-CoV spike protein (right). Note that the plot on the right is inverted compared to the one on the left because of a choice made by the software, but the two plots have the same shape if we consider the absolute value. These plots show that the two viruses have similar dynamics, and that residues 200 to 500 fluctuate the most, a region that overlaps heavily with the RBD.}
-	\label{fig:SlowMode}
-\end{figure}
-
-We can also examine the mode shape plot for the average of the slowest ten modes for the two spike proteins (\autoref{fig:spike_slowmode_comparison}). Using this plot, we color flexible parts of the protein red and inflexible parts of the protein blue.\\
-
-\begin{figure}[h]
-	\centering
-	\mySfFamily
-	\includegraphics[width = 0.85\textwidth]{../images/spike_slowmode_comparison.png}
+	\tabcolsep = 1.5em
+	\begin{tabular}{c c}
+	\includegraphics[width = 0.38\textwidth]{../images/spike_slowmode_SARS-CoV-2.png} & \includegraphics[width = 0.38\textwidth]{../images/spike_slowmode_SARS-CoV.png}
+	\end{tabular}
 	\caption{Average mode shape of the slowest ten modes of SARS-CoV-2 Spike (left) and SARS-CoV Spike (right). The first peak corresponds to the N-Terminal Domain (NTD) and the second peak corresponds to the Receptor Binding Domain (RBD).}
 	\label{fig:spike_slowmode_comparison}
 \end{figure}
 
-The mode shape plots show that the RBD of both spike proteins are highly flexible, which agrees with the biological functions of these regions. When the RBD interacts with the ACE2 enzyme on human cells, the RBD of one of the three chains ``opens up'', exposing itself to more easily bind with ACE2.
+\autoref{fig:spike_slowmode_comparison} highlights another flexible region, the spike protein's \textdefnogloss{non-terminal domain (NTD)}, which appears to be more mobile in SARS-CoV-2. Like the RBD, the NTD also mediates viral infection, but by interacting with DC-SIGN and L-SIGN receptors rather than ACE2. These receptors are present on macrophages and dendritic cells, allowing SARS-CoV-2 to infect different tissues such as the lungs, where ACE2 expression levels are low, which may help explain why SARS-CoV-2 is more prone to progress to pneumonia.
 
-\autoref{fig:spike_slowmode_comparison} highlights another flexible region, the spike protein's \textdefnogloss{non-terminal domain (NTD)}. Similar to the RBD, the NTD of the Spike proteins also mediates viral infection, but by interacting with DC-SIGN and L-SIGN receptors rather than ACE2. These receptors are present on macrophages and dendritic cells, allowing SARS-CoV-2 to infect different tissues such as the lungs, where ACE2 expression levels are low. The ability to infect lung cells attributes to pneumonia, the main symptom of severe COVID-19 cases. As with the RBD, the high flexibility in this domain allows the spike protein to more easily interact with these receptors.
-
-We should perhaps not be surprised that these plots point to SARS-CoV-2 and SARS-CoV having similar dynamics, since their structures were similar, and both viral proteins target the ACE2 enzyme. To help provide more evidence for their similarity, we will learn about another aspect of molecular dynamics.\\
+The analysis provided by GNM is compelling, but it ultimately relies on the estimation of inner products $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $ or $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $ as the case may be. Although the $ \mathbf{\Delta R_i} $ are vectors, meaning that they have a \textvar{direction} as well as a magnitude, the inner products have only a value, and we therefore cannot infer anything about the direction of a protein's movements. In the next section, we will generalize GNMs to take these movements into account.\\
 
 \FloatBarrier
 \phantomsection
@@ -1166,9 +1165,7 @@ We should perhaps not be surprised that these plots point to SARS-CoV-2 and SARS
 
 \FloatBarrier
 \phantomsection
-\subsection{ANM accounts for the direction of protein fluctuations}
-
-All of the analysis provided by GNM, from cross-correlation plots to B-factors and NMA, depend on the estimation of inner products $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $ or $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $ as the case may be. Although the $ \mathbf{\Delta R_i} $ are vectors, meaning that they have a \textvar{direction} as well as a magnitude, the inner products have only a value, and we therefore are not able to infer anything about the direction of a protein's movements. For this reason, GNM is said to be \textdefnogloss{isotropic}, meaning that it only considers the magnitude of force exerted on the springs between nearby molecules and ignores any global effect on the directions of these forces.
+\subsection{ANMs account for the direction of protein fluctuations}
 
 The generalization of GNM in which we attempt to determine the directions of these forces is called an \textdef{anisotropic network model (ANM)}{anisotropic network model (ANM)}{a generalization of a Gaussian network model accounting for the directions of the forces acting on atoms}. Although ANM includes directionality, it typically performs worse than GNM when compared with experimental data. However, this model offers the benefit that it can be used to create animations depicting the range of motions and fluctuations of the protein, as well as to estimate the directions of movement caused by each of a protein's modes.
 
