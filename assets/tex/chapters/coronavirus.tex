@@ -1167,31 +1167,31 @@ The analysis provided by GNM is compelling, but it ultimately relies on the esti
 \phantomsection
 \subsection{ANMs account for the direction of protein fluctuations}
 
-The generalization of GNM in which we attempt to determine the directions of these forces is called an \textdef{anisotropic network model (ANM)}{anisotropic network model (ANM)}{a generalization of a Gaussian network model accounting for the directions of the forces acting on atoms}. Although ANM includes directionality, it typically performs worse than GNM when compared with experimental data. However, this model offers the benefit that it can be used to create animations depicting the range of motions and fluctuations of the protein, as well as to estimate the directions of movement caused by each of a protein's modes.
+The generalization of a Gaussian network model, in which we attempt to determine the directions of the forces influencing alpha carbons, is called an \textdef{anisotropic network model (ANM)}{anisotropic network model (ANM)}{a generalization of a Gaussian network model accounting for the directions of the forces acting on atoms}. Although ANMs include directionality, they typically perform worse than GNMs when benchmarked against experimental data. However, this model offers the benefit that it can be used to create animations depicting the range of motions and fluctuations of the protein, as well as to estimate the specific directions of movement caused by each of a protein's modes.
 
-We will not delve into the mathematical intricacies of ANM calculations, but we will use ANM to create animations visualizing protein fluctuations. For example, \autoref{fig:hemoglobin_anm_2} shows the estimated hemoglobin fluctuations produced from ANM. We can see that the left and right side of the protein are more flexible than the rest of the protein and twist in opposite directions.\\
+We will not delve into the mathematical intricacies of ANM calculations, but we will use ANM to create animations visualizing protein fluctuations in the SARS-CoV and SARS-CoV-2 RBDs.\tutorial[coronavirus/tutorial_ANM]
 
-\begin{figure}[h]
-	\centering
-	\tabcolsep = 1em
-	\mySfFamily
-	\begin{tabular}{c c c}
-		\includegraphics[width = 0.25\textwidth]{../images/hemoglobin_animation1.png} & \includegraphics[width = 0.25\textwidth]{../images/hemoglobin_animation2.png} & \includegraphics[width = 0.25\textwidth]{../images/hemoglobin_animation3.png}
-	\end{tabular}
-	\caption{Collective motions of the slowest mode in human hemoglobin from ANM calculations using DynOmics.}
-	\label{fig:hemoglobin_anm_2}
-\end{figure}
-
-
-After we produce an animation like the one in \autoref{fig:hemoglobin_anm_2}, we also should attempt to explain it biologically. Human hemoglobin exists in two states: the tense state (T), in which it is not bound to an oxygen molecule, and the relaxed state (R), in which it is oxygenated. Hemoglobin's mobility shown in the above animation corresponds to its ability to transition between these two states, in which salt-bridges and contacts can shift by up to seven angstroms. This significant molecular flexibility exemplifies why we need to study protein dynamics as well as structure.
-
-We will now apply ANM to the SARS-CoV and SARS-CoV-2 spike proteins. We will also use \href{http://prody.csb.pitt.edu/nmwiz/}{\textdefnogloss{NMWiz}}, which is short for ``normal mode wizard'', to perform ANM calculations and create an animation of the SARS-CoV-2 (chimeric) RBD and the SARS-CoV RBD. \tutorial[coronavirus/tutorial_ANM]
+%For example, \autoref{fig:hemoglobin_anm_2} shows the estimated hemoglobin fluctuations produced from ANM. We can see that the left and right side of the protein are more flexible than the rest of the protein and twist in opposite directions.\\
+%
+%\begin{figure}[h]
+%	\centering
+%	\tabcolsep = 1em
+%	\mySfFamily
+%	\begin{tabular}{c c c}
+%		\includegraphics[width = 0.25\textwidth]{../images/hemoglobin_animation1.png} & \includegraphics[width = 0.25\textwidth]{../images/hemoglobin_animation2.png} & \includegraphics[width = 0.25\textwidth]{../images/hemoglobin_animation3.png}
+%	\end{tabular}
+%	\caption{Collective motions of the slowest mode in human hemoglobin from ANM calculations using DynOmics.}
+%	\label{fig:hemoglobin_anm_2}
+%\end{figure}
+%
+%
+%After we produce an animation like the one in \autoref{fig:hemoglobin_anm_2}, we also should attempt to explain it biologically. Human hemoglobin exists in two states: the tense state (T), in which it is not bound to an oxygen molecule, and the relaxed state (R), in which it is oxygenated. Hemoglobin's mobility shown in the above animation corresponds to its ability to transition between these two states, in which salt-bridges and contacts can shift by up to seven angstroms. This significant molecular flexibility exemplifies why we need to study protein dynamics as well as structure.
 
 \FloatBarrier
 \phantomsection
-\subsection{ANM accounts for the direction of protein fluctuations}
+\subsection{ANM analysis of the coronavirus binding domain}
 
-To predict spike protein movements based on ANM, we used NMWiz and VMD to create animations of the protein fluctuations over time as calculated via ANM analysis. \autoref{fig:2ajf_animation} and \autoref{fig:6vw1_animation} show the complex of each virus's RBD (purple) bound with ACE2 (green). Important residues from the three sites of conformational differences identified previously in this chapter are also highlighted.
+\autoref{fig:2ajf_animation} and \autoref{fig:6vw1_animation} show the complex of each virus's RBD (purple) bound with ACE2 (green). Important residues from the three sites of conformational differences identified previously in this chapter are also highlighted.
 
 \FloatBarrier
 \phantomsection
