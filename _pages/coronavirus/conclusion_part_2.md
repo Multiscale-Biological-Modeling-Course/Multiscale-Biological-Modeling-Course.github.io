@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/conclusion_part_2
-title: "Part 2 Conclusion: Fighting a Virus with Open Science"
+title: "Part 2 Conclusion: Bamboo Shoots After the Rain"
 sidebar:
  nav: "coronavirus"
 toc: true
@@ -14,7 +14,7 @@ We then discussed how to compare protein structures, with a lengthy case study c
 
 We concluded with a transition from the study of structure to the structure of molecular dynamics. If we hope to fully understand a protein's function, then we need to know how it flexes and bends within its environment, sometimes in order to interact with other molecules.
 
-Despite covering a great deal of ground, we have left just as much unstudied. For one example, the surface of viruses and host cells are "fuzzy" because they are covered by structures called **glycans**, or numerous monosaccharides linked together. SARS-CoV and SARS-CoV-2 have a “glycan shield”, in which glycosylation of surface antigens allows the virus to hide from antibody detection. Researchers have found that the SARS-CoV-2 spike protein is heavily glycosylated, shielding around 40% of the protein from antibody recognition[^Grant]; we will save a comparative analysis of the two virus's glycan shields for another time.
+Despite covering a great deal of ground, we have left just as much unstudied. For one example, the surface of viruses and host cells are "fuzzy" because they are covered by structures called **glycans**, or numerous monosaccharides linked together. SARS-CoV and SARS-CoV-2 have a “glycan shield”, in which glycosylation of surface antigens allows the virus to hide from antibody detection. Researchers have found that the SARS-CoV-2 spike protein is heavily glycosylated, shielding around 40% of the protein from antibody recognition[^Grant].
 
 Finally, we would point out that although scientific research has often historically been siloed away from the public, the COVID-19 pandemic exemplifies how global citizens can get involved in real research. <a href="https://www.gisaid.org" target="_blank">GISAID</a> published their first publicly available SARS-CoV-2 genome on December 24, 2019. Within six months, this database had grown to contain over 50,000 entries, and after two years, it would contain nearly 7 million.
 
