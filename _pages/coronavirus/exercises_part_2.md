@@ -59,7 +59,7 @@ In the conclusion of part 2 of this module, we mentioned that the surface of the
 
 * Exercise based on following excellent observation: In the case of RMSD, I believe that they assign the RMSD of an alignment between a residue and gap to be 0, effectively ignoring it. I believe this is how it is ensured that the two sets have the same number of points (alpha carbons) and also one of the shortcomings of using RMSD. I think for prody, you can set a gap penalty during chain matching,
 
-"Thus, gap-filled alignments focusing on low RMSDs, while accurate and useful for superposition of structures, are sub-optimal for machine learning as the features of many potentially relevant residues are discarded due to a lack of data in those positions. In most cases, positions with over a certain percentage of aligned residues are considered, with gaps replaced by zeros or by the average of the feature values in that position [22]."
+"Thus, gap-filled alignments focusing on low RMSDs, while accurate and useful for superimposition of structures, are sub-optimal for machine learning as the features of many potentially relevant residues are discarded due to a lack of data in those positions. In most cases, positions with over a certain percentage of aligned residues are considered, with gaps replaced by zeros or by the average of the feature values in that position [22]."
 
 * (RMSD with gap. Also included a jupyter notebook of this exercise with the necessary files to the email.) In this exercise, we will see what can happen to RMSD calculations when there is a gap in sequence alignment between two proteins. Let’s use our homology modeling result *robetta4* (single chain of SARS-CoV-2 Spike) and the associated SARS-CoV-2 Spike model *6vxx* from the PDB.
 

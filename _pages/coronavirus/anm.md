@@ -12,7 +12,7 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 The generalization of a Gaussian network model, in which we attempt to determine the directions of the forces influencing alpha carbons, is called an **anisotropic network model (ANM)**. Although ANMs include directionality, they typically perform worse than GNMs when benchmarked against experimental data[^Yang]. However, ANMs can be used to create animations depicting the range of motions and fluctuations of the protein, as well as to estimate the specific directions of movement caused by each of a protein's modes.
 
-We will not delve into the mathematical intricacies of ANM calculations, but we will use ANM to create animations visualizing protein fluctuations. For example, click on the animation below to see a video of estimated hemoglobin fluctuations produced from ANM. We can see that the left and right side of the protein are more flexible than the rest of the protein and twist in opposite directions.
+We will not delve into the mathematical intricacies of ANM calculations, but we will use ANMs to create animations visualizing protein fluctuations. For example, click on the animation below to see a video of estimated hemoglobin fluctuations produced from ANM. We can see that the left and right side of the protein are more flexible than the rest of the protein and twist in opposite directions.
 
 [![image-center](../assets/images/600px/hemoglobin_anm_2.gif){: .align-center}](../assets/images/hemoglobin_anm_2.gif)
 Collective motions of the slowest mode in human hemoglobin from ANM calculations using DynOmics.
@@ -25,9 +25,12 @@ We will now apply ANM to the SARS-CoV and SARS-CoV-2 spike proteins. We will als
 [Visit tutorial](tutorial_ANM){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
+**Note:** Although we have separated our discussion of GNM and ANM, the <a href="http://enm.pitt.edu/index.php" target="_blank">DynOmics 1.0</a> server is an effort to integrate these approaches on a user-friendly platform. If you are interested, an <a href="tutorial_DynOmics">additional tutorial</a> shows how to use DynOmics to replicate some of the analysis below.
+{: .notice--info}
+
 ## ANM analysis of the coronavirus binding domain
 
-The following two animations show the complex of each virus's RBD (purple) bound with ACE2 (green). Important residues from the three sites of conformational differences from the previous lessons are also highlighted.
+The following two animations show the complex of each virus's RBD (purple) bound with ACE2 (green). The following tables indicate the color-coding of each animation.
 
 ### SARS-CoV spike protein RBD (PDB: 2ajf)
 
@@ -68,14 +71,7 @@ The following two animations show the complex of each virus's RBD (purple) bound
 </video>
 </center>
 
-Recall from the [previous lesson](NAMD#differences-in-interaction-energy-with-ace2-between-sars-and-sars-cov-2) that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called "hotspot 31". This region is highlighted in blue and orange in the above figures. If you look very closely, as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This animation provides one more piece of evidence that SARS-CoV-2 is more effective at binding to the ACE2 enzyme.
-
-## DynOmics Integrates GNM and ANM Analysis
-
-Although we have separated our discussion of GNM and ANM, the <a href="http://enm.pitt.edu/index.php" target="_blank">DynOmics 1.0</a> server is an effort to integrate these approaches on a user-friendly platform. If you are interested, the following tutorial shows how to use DynOmics to replicate some of our above analysis.
-
-[Visit tutorial](tutorial_DynOmics){: .btn .btn--warning .btn--large}
-{: style="font-size: 100%; text-align: center;"}
+Recall from the [previous lesson](NAMD#differences-in-interaction-energy-with-ace2-between-sars-and-sars-cov-2) that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called "hotspot 31", which is highlighted in blue and orange in the above figures. If you look closely, as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This animation provides one more piece of evidence that SARS-CoV-2 is more effective than SARS-CoV at binding to the ACE2 enzyme.
 
 [Next lesson](conclusion_part_2){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

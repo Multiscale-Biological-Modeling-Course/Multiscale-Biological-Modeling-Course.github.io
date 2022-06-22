@@ -699,7 +699,7 @@ The inability of even powerful models to obtain an accurate predicted structure 
 \phantomsection
 
 \section{Intermezzo: Protein Structure Prediction is Solved?}
-\label{sec:conclusion_part_1}
+\label{sec:intermezzo}
 \phantomsection
 
 Protein structure prediction is an old problem. In 1967, the Soviets founded an entire research institute dedicated to solving ``the protein problem''; this institute still lives on today. Despite the difficulty of protein structure prediction, gradual algorithmic improvements and increasing computational resources have led biologists around the world to wish for the day when they could consider protein structure prediction to be solved.
@@ -865,7 +865,7 @@ If we zoom in on the region around position 150 of the alignment, then we find a
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.6\textwidth]{../images/QresVMD.png}
-	\caption{A visualization showing the superposed structures of the SARS-CoV-2 chimeric RBD  and SARS-CoV RBD, with individual amino acids colored blue or red depending on whether Qres is high or low, respectively.  The ACE2 enzyme is shown in green. The boxed region corresponds to the part of the RBM having a potential structural difference. Because this region is adjacent to ACE2, the structural difference will likely affect ACE2 interactions.}
+	\caption{A visualization showing the superimposed structures of the SARS-CoV-2 chimeric RBD  and SARS-CoV RBD, with individual amino acids colored blue or red depending on whether Qres is high or low, respectively.  The ACE2 enzyme is shown in green. The boxed region corresponds to the part of the RBM having a potential structural difference. Because this region is adjacent to ACE2, the structural difference will likely affect ACE2 interactions.}
 	\label{fig:QresVMD}
 \end{figure}
 
@@ -1151,7 +1151,7 @@ We are now ready to apply what we have learned in a tutorial in order to build a
 	\begin{tabular}{c c}
 	\includegraphics[width = 0.38\textwidth]{../images/spike_slowmode_SARS-CoV-2.png} & \includegraphics[width = 0.38\textwidth]{../images/spike_slowmode_SARS-CoV.png}
 	\end{tabular}
-	\caption{Average mode shape of the slowest ten modes of SARS-CoV-2 Spike (left) and SARS-CoV Spike (right). The first peak corresponds to the N-Terminal Domain (NTD) and the second peak corresponds to the Receptor Binding Domain (RBD).}
+	\caption{Average mode shape of the slowest ten modes of SARS-CoV-2 Spike (left) and SARS-CoV Spike (right). The first peak corresponds to the N-Terminal Domain (NTD) and the second peak corresponds to the Receptor Binding Domain (RBD). Above the mode shape plots, the viral spike proteins are colored according to the value of mode shape, with high values colored red and indicating greater predicted flexibility; note that the SARS-CoV-2 NTD is predicted to be more flexible than that of SARS-CoV.}
 	\label{fig:spike_slowmode_comparison}
 \end{figure}
 
@@ -1169,7 +1169,7 @@ The analysis provided by GNM is compelling, but it ultimately relies on the esti
 
 The generalization of a Gaussian network model, in which we attempt to determine the directions of the forces influencing alpha carbons, is called an \textdef{anisotropic network model (ANM)}{anisotropic network model (ANM)}{a generalization of a Gaussian network model accounting for the directions of the forces acting on atoms}. Although ANMs include directionality, they typically perform worse than GNMs when benchmarked against experimental data. However, ANMs can be used to create animations depicting the range of motions and fluctuations of the protein, as well as to estimate the specific directions of movement caused by each of a protein's modes.
 
-We will not delve into the mathematical intricacies of ANM calculations, but we will use ANM to create animations visualizing protein fluctuations in the SARS-CoV and SARS-CoV-2 RBDs.\tutorial[coronavirus/tutorial_ANM]
+We will not delve into the mathematical intricacies of ANM calculations, but we will use ANMs to create animations visualizing protein fluctuations in the SARS-CoV and SARS-CoV-2 RBDs.\tutorial[coronavirus/tutorial_ANM]
 
 %For example, \autoref{fig:hemoglobin_anm_2} shows the estimated hemoglobin fluctuations produced from ANM. We can see that the left and right side of the protein are more flexible than the rest of the protein and twist in opposite directions.\\
 %
@@ -1191,7 +1191,7 @@ We will not delve into the mathematical intricacies of ANM calculations, but we 
 \phantomsection
 \subsection{ANM analysis of the coronavirus binding domain}
 
-\autoref{fig:coronavirus_anm_animation} shows the complex of each virus's RBD (purple) bound with ACE2 (green). Important residues from the three sites of conformational differences identified previously in this chapter are also highlighted.\\
+\autoref{fig:coronavirus_anm_animation} shows screen captures of an ANM-generated animation of the complex of each virus's RBD (purple) bound with ACE2 (green). Recall from \autoref{fig:NAMDEnergy2} that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called ``hotspot 31'', which is highlighted in blue and orange in \autoref{fig:coronavirus_anm_animation} (bottom). If you look closely, as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This animation provides one more piece of evidence that SARS-CoV-2 is more effective than SARS-CoV at binding to the ACE2 enzyme.\\
 
 \begin{figure}[h]
 	\centering
@@ -1201,23 +1201,15 @@ We will not delve into the mathematical intricacies of ANM calculations, but we 
 		\includegraphics[width = 0.25\textwidth]{../images/2ajf_animation1.png} & \includegraphics[width = 0.25\textwidth]{../images/2ajf_animation2.png} & \includegraphics[width = 0.25\textwidth]{../images/2ajf_animation3.png} \\[3ex]
 		\includegraphics[width = 0.25\textwidth]{../images/6vw1_animation1.png} & \includegraphics[width = 0.25\textwidth]{../images/6vw1_animation2.png} & \includegraphics[width = 0.25\textwidth]{../images/6vw1_animation3.png}
 	\end{tabular}
-	\caption{(Top) Snapshots of ANM analysis animation of SARS-CoV-2 spike RBD and ACE2 (PDB entry: \href{https://www.rcsb.org/structure/2ajf}{2ajf}). (Bottom) Snapshots of ANM analysis animation of SARS-CoV-2 spike chimeric RBD and ACE2 (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}).}
+	\caption{(Top) Snapshots of an ANM analysis animation of SARS-CoV-2 spike RBD and ACE2 (PDB entry: \href{https://www.rcsb.org/structure/2ajf}{2ajf}). (Bottom) Snapshots of an ANM analysis animation of SARS-CoV-2 spike chimeric RBD and ACE2 (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}).}
 	\label{fig:coronavirus_anm_animation}
 \end{figure}
-
-Recall that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called ``hotspot 31''. This region is highlighted in blue and orange in \autoref{fig:coronavirus_anm_animation} (bottom). If you look very closely, as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This animation provides one more piece of evidence that SARS-CoV-2 is more effective at binding to the ACE2 enzyme.\\
-
-%\FloatBarrier
-%\phantomsection
-%\subsection{DynOmics Integrates GNM and ANM Analysis}
-%
-%Although we have separated our discussion of GNM and ANM, the DynOmics 1.0 server (\url{http://enm.pitt.edu/index.php}) is an effort to integrate these approaches on a user-friendly platform. \tutorial[coronavirus/tutorial_DynOmics]\\
 
 \FloatBarrier
 \phantomsection
 \section{Conclusion: Fighting a Virus with Open Science}
 
-In this chapter, we began with a discussion of the fundamental problem of determining a protein's structure. Because experimental methods for identifying protein structure are costly and time consuming, we transitioned to discuss algorithmic approaches that do a good job of predicting a protein's structure from its sequence of amino acids.
+This chapter has been a journey. We began with a discussion of the fundamental problem of determining a protein's structure. Because experimental methods for identifying protein structure are costly and time consuming, we transitioned to discuss algorithmic approaches that do a good job of predicting a protein's structure from its sequence of amino acids.
 
 We then discussed how to compare protein structures, with a lengthy case study comparing the SARS-CoV and SARS-CoV-2 spike proteins. The problem of quantifying how different two structures is can be challenging, and we established both global and local structure comparison metrics. We applied these approaches to isolate three candidate regions of interest of the SARS-CoV-2 spike protein that differ from the SARS-CoV spike protein when complexed with the ACE2 enzyme, and we quantified this binding using a localized energy function.
 

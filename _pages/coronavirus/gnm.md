@@ -135,7 +135,7 @@ The next figure shows the mode shape plot for the slowest mode of the two protei
 We can also examine the mode shape plot for the average of the slowest ten modes for the two spike proteins (see figure below). Using this plot, we color flexible parts of the protein red and inflexible parts of the protein blue.
 
 [![image-center](../assets/images/600px/spike_slowmode_comparison.png){: .align-center}](../assets/images/spike_slowmode_comparison.png)
-Average mode shape of the slowest ten modes of SARS-CoV-2 Spike (left) and SARS-CoV Spike (right). The first peak corresponds to the N-Terminal Domain (NTD) and the second peak corresponds to the Receptor Binding Domain (RBD).
+Average mode shape of the slowest ten modes of SARS-CoV-2 Spike (left) and SARS-CoV Spike (right). The first peak corresponds to the N-Terminal Domain (NTD) and the second peak corresponds to the Receptor Binding Domain (RBD). Above the mode shape plots, the viral spike proteins are colored according to the value of mode shape, with high values colored red and indicating greater predicted flexibility; note that the SARS-CoV-2 NTD is predicted to be more flexible than that of SARS-CoV.
 {: style="font-size: medium;"}
 
 The mode shape plots show that the RBD of both spike proteins are highly flexible, which agrees with the biological functions of these regions. When the RBD interacts with the ACE2 enzyme on human cells, the RBD of one of the three chains "opens up", exposing itself to more easily bind with ACE2.
