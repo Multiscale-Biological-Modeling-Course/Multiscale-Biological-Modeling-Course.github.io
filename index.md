@@ -69,7 +69,7 @@ This online course is a training and dissemination effort for the <a href="https
 
 We would first and foremost like to thank everyone working on MMBioS software; their work allowed this project to come about. Chiefly, thank you to the other members of our training and dissemination team (Alex Ropelewski, Joe Ayoob, and Rozita Laghaei) as well as the head of the MMBioS consortium, Jim Faeder.
 
-We are also very grateful to Wendy Velasquez Ebanks and Ulani Qi, who provided additional work on the course during its conception.
+We are also very grateful to Wendy Velasquez Ebanks, Julien Gomez, Yanjing Li, and Ulani Qi, who provided additional work on the course during its conception.
 
 Module 1 was in part inspired by Uri Alon's research and superlative book <a href="https://www.amazon.com/Introduction-Systems-Biology-Mathematical-Computational/dp/1439837171" target="_blank"><i>An Introduction to Systems Biology</i></a>, a landmark biological textbook that we strongly recommend if you are interested in a greater discussion of biological network motifs.
 
