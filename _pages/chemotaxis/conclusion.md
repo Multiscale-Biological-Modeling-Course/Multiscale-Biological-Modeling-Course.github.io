@@ -125,6 +125,8 @@ The direction of bacterial reorientation is not completely random, but rather fo
 
 Furthermore, the direction of the bacterium's reorientation also depends on whether the cell is traveling in the correct direction.[^Saragosti2011] If the bacterium is moving up an attractant gradient, then it makes smaller changes in its reorientation angle, a feature that helps the cell continue moving straight if it is traveling in the direction of an attractant.
 
+And the run-and-tumble model of E. coli only represents one way for bacteria to explore their surroundings. However, microorganisms have many different sizes, shapes, metabolisms, and they live in a very diverse range of environments, which results in other strategies of exploration.[^Mitchell2006].
+
 We are fortunate to have this wealth of research on chemotaxis in *E. coli*, which may be the single most studied biological system from the perspective of demonstrating how chemical reactions produce emergent behavior. However, for the study of most biological systems, finding a clear thread connecting a reductionist view of the system to that system's holistic behavior remains a dream. (For example: how can your thoughts while reading this parenthetical aside be distilled into the firings of individual neurons?)  Regardless of what the future holds, we can be confident that uncovering the underlying mechanisms of biological systems will continue to inspire the work of biological modelers for many years.
 
 [Visit exercises](exercises){: .btn .btn--success .btn--large}
@@ -140,3 +142,5 @@ We are fortunate to have this wealth of research on chemotaxis in *E. coli*, whi
 [^Berg1972]: Berg HC, Brown DA. 1972. Chemotaxis in Escherichia coli analysed by three-dimensional tracking. Nature. [Available online](https://www.nature.com/articles/239500a0)
 
 [^Baker2005]: Baker MD, Wolanin PM, Stock JB. 2005. Signal transduction in bacterial chemotaxis. BioEssays 28:9-22. [Available online](https://pubmed.ncbi.nlm.nih.gov/16369945/)
+
+[^Mitchell2006]: Michell J.G., Kogure K. 2005. Bacterial motility: links to the environment and a driving force for microbial physics. FEMS Microbial Ecol 55:3-16. [Available online](https://academic.oup.com/femsec/article/55/1/3/554107)
