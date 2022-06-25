@@ -53,7 +53,7 @@ Levinthal's paradox means that the search space of all possible structures for a
 The figure below shows the top five predicted human hemoglobin subunit alpha structures returned by QUARK as well as the protein's experimentally verified structure, and an average of these six structures. It takes a keen eye to see any differences between these structures. We conclude that although *ab initio* prediction is slow, it is nevertheless accurate.
 
 [![image-center](../assets/images/600px/ab_initio_results.png){: .align-center}](../assets/images/ab_initio_results.png)
-The experimentally verified protein structure of human hemoglobin subunit alpha (top left) along with five models of this protein produced by QUARK from the protein's primary sequence. We can see how close all five models are to the experimentally verified structure, as shown in the superimposition of all six structures at right.
+The experimentally verified protein structure of human hemoglobin subunit alpha (top left) along with five models of this protein produced by QUARK from the protein's primary sequence, all of which are nearly indistinguishable from the verified structure with the naked eye.
 {: style="font-size: medium;"}
 
 Yet we also wonder if we can speed up our structure prediction algorithms so that they will scale to a larger protein like the SARS-CoV-2 spike protein. In the next lesson, we will learn about another type of protein structure prediction that uses a database of known structures.

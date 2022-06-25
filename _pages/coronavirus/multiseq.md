@@ -96,14 +96,10 @@ We now will compute Qres for the SARS-CoV and SARS-CoV-2 spike proteins using th
 
 ## Local comparison of spike proteins leads us to a region of interest
 
-By computing Qres at every position of the two coronavirus RBD regions, we can form a **structural alignment** of the two regions, as shown in the figure below. Blue columns correspond to amino acids with high Qres (meaning high structural similarity), and red columns correspond to amino acids with low Qres (meaning low structural similarity).
-
-If we zoom in on the region around position 150 of the alignment, we find a 13-column region of the alignment within the RBD region for which Qres values are significantly lower than they are elsewhere. This region corresponds to positions 476 to 485 in the SARS-CoV-2 spike protein, which is part of the RBM, and is shown in the bottom of the figure below.
+By computing Qres at every position of the two coronavirus RBD regions, we can form a **structural alignment** of the two regions, as shown in the figure below. Blue columns correspond to amino acids with high Qres (meaning high structural similarity), and red columns correspond to amino acids with low Qres (meaning low structural similarity). If we zoom in on the region around position 150 of the alignment, we find a 13-column region of the alignment within the RBD region for which Qres values are significantly lower than they are elsewhere. This region corresponds to positions 476 to 485 in the SARS-CoV-2 spike protein, which is part of the RBM.
 
 [![image-center](../assets/images/600px/QresResult.png){: .align-center}](../assets/images/QresResult.png)
-
-[![image-center](../assets/images/600px/QresResult_cropped.png){: .align-center}](../assets/images/QresResult_cropped.png)
-(Top) A snapshot of the sequence alignment between the SARS-CoV RBD (first row) and the SARS-CoV-2 chimeric RBD[^Shang] (second row). Columns are colored along a spectrum from blue (high Qres) to red (low Qres), with positions that correspond to an inserted or deleted amino acid colored red. (Bottom) A region of the alignment with low Qres, which corresponds to amino acids at positions 476 to 485 in the SARS-CoV-2 spike protein.
+A snapshot of the sequence alignment between the SARS-CoV RBD (first row) and the SARS-CoV-2 chimeric RBD[^Shang] (second row). Columns are colored along a spectrum from blue (high Qres) to red (low Qres), with positions that correspond to an inserted or deleted amino acid colored red. The region with low Qres corresponds to amino acids at positions 476 to 485 in the SARS-CoV-2 spike protein.
 {: style="font-size: medium;"}
 
 The figure below shows a 3-D visualization of the ACE2 enzyme (green) bound with the superimposed structures of both the SARS and SARS-CoV-2 RBD. The same color-coding of columns of the multiple alignment in the figure above is used to color positions in the superimposed RBDs. The low-Qres region of the RBM alignment that we highlighted in the above figure is outlined in the figure below.

@@ -34,7 +34,7 @@ As health officials braced for the impact of the fastest traveling virus in huma
 
 SARS was deadly, killing close to 10\% of those who became sick. But it also struggled to spread within the human population, and it was contained in July 2003 after accumulating fewer than 10,000 confirmed symptomatic cases worldwide.
 
-In 2017, researchers published the result of five years of sampling horseshoe bats from a cave in Yunnan province. They found that the bats harbored coronaviruses with remarkable genetic similarity to SARS, and they hypothesized that the virus may have originated in horseshoe bats. Yet their work has become infamous because they identified additional viruses in the bats that were related to SARS but just as capable of entering human cells. Their words are now chilling:
+In 2017, researchers published the result of five years of sampling horseshoe bats from a cave in Yunnan province. They found that the bats harbored coronaviruses with remarkable genetic similarity to SARS, and they hypothesized that the virus may have originated in horseshoe bats. Yet their work has become infamous because they identified additional viruses in the bats that were related to SARS and just as capable of entering human cells. Their words are now chilling:
 
 \begin{itquote}
 We have also revealed that various [viruses] ... are still circulating among bats in this region. Thus, the risk of spillover into people and emergence of a disease similar to SARS is possible. This is particularly important given that the nearest village to the bat cave we surveyed is only 1.1 km away, which indicates a potential risk of exposure to bats for the local residents. Thus, we propose that monitoring of SARSr-CoV evolution at this and other sites should continue, as well as examination of human behavioral risk for infection and serological surveys of people, to determine if spillover is already occurring at these sites and to design intervention strategies to avoid future disease emergence.
@@ -76,7 +76,7 @@ We will place ourselves in the shoes of early SARS-CoV-2 researchers studying th
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.85\textwidth]{../images/SARSCoV2Annotation.png}
-	\caption{An annotated genome of SARS-CoV-2. The Spike protein, found at the bottom of this image, is labeled ``S'' and begins at nucleotide position 21,563.}
+	\caption{An annotated genome of SARS-CoV-2, with rectangles showing the location of areas encoding RNA or protein. The spike protein, found at the bottom of this image, is labeled ``S'' and begins at nucleotide position 21,563.}
 	\label{fig:SARSCoV2Annotation}
 \end{figure}
 
@@ -153,7 +153,7 @@ Protein structures that have been determined experimentally are typically stored
 \phantomsection
 \subsection{Protein sequence and structure do not correlate well}
 
-The prediction of protein structure from amino acid sequence is challenging because proteins are fine-tuned with respect to some mutations but robust with respect to others. On the one hand, small perturbations in the sequence of a protein can drastically change the protein's shape and even render it useless; sickle cell anemia is caused by a single amino acid mutation in hemoglobin subunit beta that causes hemoglobin molecules to bind into long chains, which winds up altering the shape of the red blood cells carrying hemoglobin. On the other hand, different amino acids can have similar chemical properties, and so some mutations will hardly change the shape of the protein. As a result, two very different amino acid sequences can fold into proteins with similar structure and comparable function.
+The prediction of protein structure from amino acid sequence is challenging because this prediction is fine-tuned with respect to some mutations but robust with respect to others. On the one hand, small perturbations in the sequence of a protein can drastically change the protein's shape and even render it useless; sickle cell anemia is caused by a single amino acid mutation in hemoglobin subunit beta that causes hemoglobin molecules to bind into long chains, which winds up altering the shape of the red blood cells carrying hemoglobin. On the other hand, different amino acids can have similar chemical properties, and so some mutations will hardly change the shape of the protein. As a result, two very different amino acid sequences can fold into proteins with similar structure and comparable function.
 
 For example, \autoref{fig:SequenceStructureExample} compares the sequences and structures of hemoglobin subunit alpha taken from three species: humans, shortfin mako sharks, and emus. Hemoglobin is the oxygen-transport protein in the blood, consisting of two alpha ``subunit'' proteins and two beta subunit proteins that combine into a protein complex; because hemoglobin is well-studied and much shorter than the SARS-CoV-2 spike protein (the alpha and beta subunits are only 140 and 146 amino acids long, respectively), we will use it as an example throughout this chapter. The alpha subunits for the three species are markedly different in terms of amino acid sequence, and yet their structures are essentially identical.\\
 
@@ -209,7 +209,7 @@ A good analogy for polypeptide flexibility is the ``Rubik's Twist'' puzzle, whic
 	\label{fig:rubiks_twist_four_panel}
 \end{figure}
 
-A polypeptide with \textit{n} amino acids will have $n - 1$ peptide bonds, meaning that its shape is influenced by $n - 1$ phi angles and $n - 1$ psi angles. If each bond has \textit{k} stable conformations, then the polypeptide has $k^{2n-2}$ total possible conformations. If \textit{k} is equal to 3 and \textit{n} is equal to only 100 (representing a short polypeptide), then the number of potential protein structures is more than the number of atoms in the universe! The ability of the magic algorithm to reliably find a single conformation despite such an enormous number of potential shapes is called \textdef{Levinthal's paradox}{Levinthal's paradox}{the conundrum that a protein reliably folds into a single conformation despite there being an enormous number of potential structures for that protein}.
+A polypeptide with \textit{n} amino acids will have $n - 1$ peptide bonds, meaning that its shape is influenced by $n - 1$ phi angles and $n - 1$ psi angles. If each bond angle has \textit{k} possible values, then the polypeptide has $k^{2n-2}$ total possible conformations. If \textit{k} is equal to 3 and \textit{n} is equal to only 100 (representing a short polypeptide), then the number of potential protein structures is more than the number of atoms in the universe! The ability of the magic algorithm to reliably find a single conformation despite such an enormous number of potential shapes is called \textdef{Levinthal's paradox}{Levinthal's paradox}{the conundrum that a protein reliably folds into a single conformation despite there being an enormous number of potential structures for that protein}.
 
 Although protein structure prediction is difficult, it is not impossible; the magic algorithm is not, after all, magic. But before discussing how we can solve this problem, we will need to learn a few more biochemical details and be more precise about two things. First, we should specify what we mean by the ``structure'' of a protein. Second, although we know that a polypeptide always folds into the same final three-dimensional shape, we have not said anything about \textit{why} a protein folds in a certain way. We will therefore need a better understanding of how the physicochemical properties of amino acids affect a protein's final structure.\\
 
@@ -368,8 +368,8 @@ Levinthal's paradox means that the search space of all possible structures for a
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.85\textwidth]{../images/ab_initio_results.png}
-	\caption{The experimentally verified protein structure of human hemoglobin subunit alpha (top left) along with five models of this protein produced by QUARK from the protein's primary sequence. We can see how close all five models are to the experimentally verified structure, as shown in the superimposition of all six structures at right.}
+	\includegraphics[width = 0.7\textwidth]{../images/ab_initio_results.png}
+	\caption{The experimentally verified protein structure of human hemoglobin subunit alpha (top left) along with five models of this protein produced by QUARK from the protein's primary sequence, all of which are nearly indistinguishable from the verified structure with the naked eye.}
 	\label{fig:ab_initio_results}
 \end{figure}
 
@@ -438,7 +438,7 @@ On February 25, 2020, two months after the publication of the SARS-CoV-2 genome,
 \begin{note}[%
 	If you would like to explore the structure of the SARS-CoV-2 spike protein, check out the 3-D protein viewer at \url{https://www.rcsb.org/3d-view/6VXX}.
 	]\end{note}
-	
+
 We now turn to the problem of comparing our homology modeling results of the SARS-CoV-2 spike protein against the experimentally verified structure of SARS-CoV-2. How to compare two protein structures is a simple question, but it has a complicated answer, to which we will devote an entire section.\\
 
 \FloatBarrier
@@ -504,7 +504,7 @@ $\text{RMSD}(\mathbf{s}, \mathbf{t}) = \sqrt{\dfrac{1}{n} \cdot \left(d(s_1, t_1
 	RMSD is a very commonly used approach across data science when measuring the differences between two vectors.
 	]\end{note}
 
-For an example two-dimensional RMSD calculation, consider \autoref{fig:rmsd_simple_shapes}, which shows two shapes with four points sampled from each. (Note: the shapes purposefully do not have the same center of mass.) The distances between corresponding points in this figure are equal to $\sqrt{2}$, 1, 4, and $\sqrt{2}$. As a result, we compute the RMSD as follows:
+For an example two-dimensional RMSD calculation, consider \autoref{fig:rmsd_simple_shapes}, which shows two shapes with four points sampled from each. (Note: for simplicity, the shapes do not have the same center of mass.) The distances between corresponding points in this figure are equal to $\sqrt{2}$, 1, 4, and $\sqrt{2}$. As a result, we compute the RMSD as follows:
 \begin{align*}
 	\text{RMSD}(\mathbf{s}, \mathbf{t}) &= \sqrt{\dfrac{1}{4} \cdot (\sqrt{2}^2 + 1^2 + 2^2 + \sqrt{2}^2)} \\
 	&= \sqrt{\dfrac{1}{4} \cdot 9}\\
@@ -557,7 +557,7 @@ The Kabsch algorithm offers a compelling way to determine the similarity of two 
 \gray{2161} & ATOM & 3 & C & ALA& A & 27 & 173.530& 251.298& 223.427\\
 \gray{2162} & ATOM & 4 & O & ALA& A & 27 & 174.195& 250.943& 224.405\\
 \gray{2163} & ATOM & 5 & CB & ALA& A & 27 & 172.700& 253.664& 223.554\\
-\gray{2164} & ATOM & 6 & N & TYR& A & 28 & 173.816& 250.939& 222.166\\ 
+\gray{2164} & ATOM & 6 & N & TYR& A & 28 & 173.816& 250.939& 222.166\\
 \Green{2165} & \Green{ATOM} & \Green{7} & \Green{CA} & \Green{TYR} & \Green{A} & \Green{28} & \Green{174.968} & \Green{250.129} &\Green{221.763}\\
 \gray{2166} & ATOM & 8 & C & TYR& A & 28 & 175.652& 250.729& 220.561\\
 \gray{2167} & ATOM & 9 & O & TYR& A & 28 & 175.009& 251.379& 219.736\\
@@ -793,7 +793,7 @@ $\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \
 
 \noindent RMSD offers an excellent method for a \textit{global} comparison (i.e., a comparison across all structures), but we are interested in investigating the \textit{local} regions where the SARS-CoV and SARS-CoV-2 complexes differ.
 
-If two similar protein structures differ in a few locations, then the corresponding alpha carbon distances $d(s_{i}, t_{i})$ will likely be higher at these locations. However, one of the weaknesses of RMSD that we pointed out in part 1 is that a change to a single bond angle at the \textvar{i}-th position may cause $d(s_{j}, t_{j})$ to be nonzero when $j > i$, even though the structure of the protein downstream of this bond angle has not changed. For example, recall \autoref{fig:RMSD_weakness_mutation} from our discussion of the Kabsch algorithm, in which we showed two toy protein structures that are identical except for a single bond angle. All of the alpha carbon distances $d(s_{i}, t_{i})$ for \textvar{i} at least equal to 4 will be thrown off by this changed angle.
+If two similar protein structures differ in a few locations, then the corresponding alpha carbon distances $d(s_{i}, t_{i})$ will likely be higher at these locations. However, one of the weaknesses of RMSD that we pointed out earlier is that a change to a single bond angle at the \textvar{i}-th position may cause $d(s_{j}, t_{j})$ to be nonzero when $j > i$, even though the structure of the protein downstream of this bond angle has not changed. For example, recall \autoref{fig:RMSD_weakness_mutation} from our discussion of the Kabsch algorithm, in which we showed two toy protein structures that are identical except for a single bond angle. All of the alpha carbon distances $d(s_{i}, t_{i})$ for \textvar{i} at least equal to 4 will be thrown off by this changed angle.
 
 However, note in \autoref{fig:RMSD_weakness_mutation}  that when \textvar{i} and \textvar{j} are both at least equal to 4, the distance $d(s_{i}, s_{j})$ between the \textvar{i}-th and \textvar{j}-th alpha carbons in \textvar{S} will still be similar to the distance $d(t_{i}, t_{j})$ between the same alpha carbons in \textvar{T}. This observation leads us to a more robust approach for measuring differences in two protein structures, which compares \textvar{all} pairwise intraprotein distances $d(s_{i}, s_{j})$ in one protein structure against the corresponding distances $d(t_{i}, t_{j})$ in the other structure.
 
@@ -843,19 +843,13 @@ Qres is therefore a metric of similarity ranging between 0 and 1. Low scores ind
 \phantomsection
 \subsection{Local comparison of spike proteins leads us to a region of interest}
 
-By computing Qres at every position of the two coronavirus RBD regions, we can form a \textdefnogloss{structural alignment} of the two regions (\autoref{fig:QresResult} (top)). Blue columns correspond to amino acids with high Qres (meaning high structural similarity), and red columns correspond to amino acids with low Qres (meaning low structural similarity).
-
-If we zoom in on the region around position 150 of the alignment, then we find a 13-column region of the alignment within the RBD region for which Qres values are significantly lower than they are elsewhere. This region corresponds to positions 476 to 485 in the SARS-CoV-2 spike protein (\autoref{fig:QresResult} (bottom)), which is part of the RBM.\\
+By computing Qres at every position of the two coronavirus RBD regions, we can form a \textdefnogloss{structural alignment} of the two regions (\autoref{fig:QresResult}). Blue columns correspond to amino acids with high Qres (meaning high structural similarity), and red columns correspond to amino acids with low Qres (meaning low structural similarity). If we zoom in on the region around position 150 of the alignment, then we find a 13-column region of the alignment within the RBD region for which Qres values are significantly lower than they are elsewhere. This region corresponds to positions 476 to 485 in the SARS-CoV-2 spike protein, which is part of the RBM.\\
 
 \begin{figure}[h]
 	\centering
-	\tabcolsep = 1em
 	\mySfFamily
-	\begin{tabular}{c}
 		\includegraphics[width = 0.85\textwidth]{../images/QresResult.png} \\
-		\includegraphics[width = 0.3\textwidth]{../images/QresResult_cropped.png} \\
-	\end{tabular}
-	\caption{(Top) A snapshot of the sequence alignment between the SARS-CoV RBD (first row) and the SARS-CoV-2 chimeric RBD (second row). Columns are colored along a spectrum from blue (high Qres) to red (low Qres), with positions that correspond to an inserted or deleted amino acid colored red. (Bottom) A region of the alignment with low Qres, which corresponds to amino acids at positions 476 to 485 in the SARS-CoV-2 spike protein.}
+	\caption{A snapshot of the sequence alignment between the SARS-CoV RBD (first row) and the SARS-CoV-2 chimeric RBD (second row). Columns are colored along a spectrum from blue (high Qres) to red (low Qres), with positions that correspond to an inserted or deleted amino acid colored red. The region with low Qres corresponds to amino acids at positions 476 to 485 in the SARS-CoV-2 spike protein.}
 	\label{fig:QresResult}
 \end{figure}
 
@@ -1290,7 +1284,7 @@ Submit the beta subunit sequence to the \textit{ab initio} structure prediction 
 In a tutorial, we saw how to use ProDy to compute RMSD between protein structures.\tutorial[coronavirus/tutorial_rmsd]\\
 
 \begin{exercise}[%
-Calculate the RMSD between your predicted structures from the previous exercise and the actual structure. (Use ``Chain B'' of the validated structure to focus on subunit beta.) Which type of modeling resulted in the most accurate structure prediction? Is this what you expected? 
+Calculate the RMSD between your predicted structures from the previous exercise and the actual structure. (Use ``Chain B'' of the validated structure to focus on subunit beta.) Which type of modeling resulted in the most accurate structure prediction? Is this what you expected?
 ]\end{exercise}
 
 \phantomsection
@@ -1359,5 +1353,3 @@ In a tutorial, we created a contact map for the SARS-CoV-2 spike protein using t
 \begin{exercise}[%
 Try making the contact map of one of the chains of SARS-CoV-2 spike protein (PDB entry: \href{https://www.rcsb.org/structure/6vxx}{6vxx}) with thresholds of 10 angstroms and 40 angstroms. How different are the resulting contact maps?
 ]\end{exercise}
-
-
