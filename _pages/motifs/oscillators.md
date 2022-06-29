@@ -45,7 +45,7 @@ The figure below plots the concentration over time of *X*, *Y*, and *Z* particle
 **STOP:** Why do you think that the repressilator motif leads to this pattern of oscillations?
 {: .notice--primary}
 
-[![image-center](../assets/images/600px/shalini_changed_repressilator_chart.png){: .align-center}](../assets/images/shalini_changed_repressilator_chart.png)
+[![image-center](../assets/images/600px/new_repressilator_chart.png){: .align-center}](../assets/images/new_repressilator_chart.png)
 Modeling the repressilator's concentration of particles. *X* is shown in yellow, *Y* is shown in red, and *Z* is shown in blue.
 {: style="font-size: medium;"}
 
