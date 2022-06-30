@@ -10,7 +10,7 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## Two randomized exploration strategies
 
-In the [prologue](../prologue/random_walk), we saw that a particle taking a collection of *n* unit steps in random directions will wind up on average a distance proportional to $\sqrt{n}$ units away from its starting position. We now will compare such a random walk against a modified algorithm that emulates the  behavior of *E. coli* by changing the length of a step (i.e., how long the bacterium tumbles) based on the relative change in background attractant concentration.
+In the [prologue](../prologue/random_walk), we saw that a particle taking a collection of *n* unit steps in random directions will wind up on average a distance proportional to $$\sqrt{n}$$ units away from its starting position. We now will compare such a random walk against a modified algorithm that emulates the  behavior of *E. coli* by changing the length of a step (i.e., how long the bacterium tumbles) based on the relative change in background attractant concentration.
 
 We will represent a bacterium as a particle traveling in two-dimensional space. Units of distance will be measured in µm; recall from the introduction that a bacterium can cover 20 µm in a second during an uninterrupted run. The bacterium will start at the **origin** (0, 0).
 
@@ -128,6 +128,9 @@ Furthermore, the direction of the bacterium's reorientation also depends on whet
 We are fortunate to have this wealth of research on chemotaxis in *E. coli*, which may be the single most studied biological system from the perspective of demonstrating how chemical reactions produce emergent behavior. However, for the study of most biological systems, finding a clear thread connecting a reductionist view of the system to that system's holistic behavior remains a dream. (For example: how can your thoughts while reading this parenthetical aside be distilled into the firings of individual neurons?)  Regardless of what the future holds, we can be confident that uncovering the underlying mechanisms of biological systems will continue to inspire the work of biological modelers for many years.
 
 [Visit exercises](exercises){: .btn .btn--success .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
+[Next module](../coronavirus/home){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^Saragosti2011]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2011. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)

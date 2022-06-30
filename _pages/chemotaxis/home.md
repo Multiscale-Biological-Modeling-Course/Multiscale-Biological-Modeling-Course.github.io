@@ -14,12 +14,11 @@ author_profile: true # add author to page
 
 # Introduction: The lost immortals
 
-The book <a href="https://what-if.xkcd.com/" target="_blank"><em>What If?</em></a>[^Munroe], by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these situations occurred. One such hypothetical, called “Lost Immortals”, ponders how two
-immortal humans might find each other if they were stranded in different locations of an uninhabited planet:
+The book <a href="https://what-if.xkcd.com/" target="_blank"><em>What If?</em></a>[^Munroe], by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these situations occurred. Here is an example, called "Lost Immortals".
 
 > If two immortal people were placed on opposite sides of an uninhabited Earth-like planet, how long would it take them to find each other? 100,000 years? 1,000,000 years?
 
-We could imagine many ideas for how the immortals could reunite. For example, they could avoid the interiors of continents by moving to the coastlines. If they are allowed to discuss how to find each other in advance, then they could agree to meet at the planet's North Pole --- assuming that the planet lacks polar bears.
+One could imagine many ideas for how the immortals could reunite. For example, they could avoid the interiors of continents by moving to the coastlines. If they are allowed to discuss how to find each other in advance, then they could agree to meet at the planet's North Pole --- assuming that the planet lacks polar bears.
 
 But Munroe provides a solution that is both sophisticated and elegant, quoted below.
 
