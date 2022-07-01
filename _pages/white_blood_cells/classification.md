@@ -23,7 +23,7 @@ gallery:
 
 ## The classification problem
 
-Labeling images of WBCs according to their family is a specific instance of an ubiqitous problem in data science, in which we wish to classify each object in a given dataset into one of *k* classes.
+Classifying images of WBCs according to their family is a specific instance of an ubiqitous problem in data science, in which we wish to classify each object in a given dataset into one of *k* classes.
 
 In our ongoing example, the data are images of WBCs, and the classes are the three main families of WBCs (granulocytes, lymphocytes, and monocytes). To take a different example, our data could be tumor genomes sequenced from cancer patients, which we want to classify based on which therapeutic should be prescribed for the patient. Or the data may be the past sales behavior of shoppers, who we want to classify into two classes based on a prediction of whether they will buy a new product.
 
