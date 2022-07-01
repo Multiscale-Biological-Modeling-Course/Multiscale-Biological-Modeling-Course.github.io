@@ -6,7 +6,7 @@ sidebar:
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
-In this tutorial, we will be performing GNM calculations on one of the chains in the SARS-CoV-2 spike protein (<a href="http://www.rcsb.org/structure/6VXX" target="_blank">6vxx</a>) and then visualizing the results using the plots that we discussed in the [main text](conclusion_part_2#an-introduction-to-gaussian-network-models).
+In this tutorial, we will be performing GNM calculations on one of the chains in the SARS-CoV-2 spike protein (<a href="http://www.rcsb.org/structure/6VXX" target="_blank">6vxx</a>) and then visualizing the results using the plots that we discussed in the [main text](gnm#an-introduction-to-gaussian-network-models).
 
 We will be using <a href="http://prody.csb.pitt.edu/" target="_blank">ProDy</a>, an open-source Python package that allows users to perform protein structural dynamics analysis. Its flexibility allows users to select specific parts or atoms of the structure for conducting normal mode analysis and structure comparison.
 
@@ -128,5 +128,5 @@ This mode shape plot is shown in the figure below.
 
 Now that we have produced our plots, we are ready to head back to the main text and analyze our results.
 
-[Return to main text](conclusion_part_2#molecular-dynamics-analyses-of-sars-cov-and-sars-cov-2-spike-proteins-using-gnm){: .btn .btn--warning .btn--large}
+[Return to main text](gnm#molecular-dynamics-analyses-of-sars-cov-and-sars-cov-2-spike-proteins-using-gnm){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

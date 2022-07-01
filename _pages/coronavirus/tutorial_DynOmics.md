@@ -6,7 +6,7 @@ sidebar:
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
-In this tutorial, we will be using a publicly available web server, DynOmics, produced by Dr. Hongchun Li and colleagues at the University of Pittsburgh School of Medicine. This server is dedicated to performing molecular dynamics analysis by integrating the GNM and ANM models that we learned about in the [main text](conclusion_part_2).
+In this tutorial, we will be using a publicly available web server, DynOmics, produced by Dr. Hongchun Li and colleagues at the University of Pittsburgh School of Medicine. This server is dedicated to performing molecular dynamics analysis by integrating the GNM and ANM models that we learned about in the [main text](anm).
 
 Navigate to the <a href="http://enm.pitt.edu/index.php" target="_blank">DynOmics homepage</a>. This page contains many options that we can change to customize our analysis, but we will keep the default options for now.
 
@@ -62,5 +62,5 @@ There is plenty more to say about the additional results produced by DynOmics; i
 
 If you have made it this far, congratulations! You have become an expert in protein analysis. We will now head back to the main text to wrap up this module with some concluding thoughts.
 
-[Return to main text](conclusion_part_2#fighting-a-virus-with-open-science){: .btn .btn--warning .btn--large}
+[Return to main text](anm#fighting-a-virus-with-open-science){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

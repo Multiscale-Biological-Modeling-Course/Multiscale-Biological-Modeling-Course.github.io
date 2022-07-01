@@ -47,7 +47,7 @@ In this formula, *d*(*s*<sub><em>i</em></sub>, *t*<sub><em>i</em></sub>) is the 
 **Note:** RMSD is a very commonly used approach across data science when measuring the differences between two vectors.
 {: .notice--info}
 
-For an example two-dimensional RMSD calculation, consider the figure below, which shows two shapes with four points sampled from each.
+For an example two-dimensional RMSD calculation, consider the figure below, which shows two shapes with four points sampled from each. (Note: for simplicity, the shapes do not have the same center of mass.)
 
 [![image-center](../assets/images/600px/rmsd_simple_shapes.png){: .align-center width="400px"}](../assets/images/rmsd_simple_shapes.png)
 Two shapes with four points sampled from each.

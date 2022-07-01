@@ -88,7 +88,7 @@ The above results seem to indicate that the interaction between SARS-CoV-2 RBD a
 |SARS-CoV (2ajf)| Hotspot353 | protein and chain B | protein and chain F and resid 487|
 |SARS-CoV (2ajf)| Hotspot353 | protein and chain B and (resid 38 or resid 353)| protein and chain F|
 
-[Return to main text](NAMD#differences-in-interaction-energy-with-ace2-between-sars-and-sars-cov-2){: .btn .btn--warning .btn--large}
+[Return to main text](structural_differences#differences-in-interaction-energy-with-ace2-between-sars-and-sars-cov-2){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^PSF]: https://www.ks.uiuc.edu/Training/Tutorials/namd/namd-tutorial-unix-html/node23.html

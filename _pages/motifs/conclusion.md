@@ -58,6 +58,9 @@ In the meantime, check out the exercises below to continue building your underst
 [Visit exercises](exercises){: .btn .btn--success .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
+[Next module](../chemotaxis/home){: .btn .btn--primary .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
 [^ffl]: Image adapted from Mangan, S., & Alon, U. (2003). Structure and function of the feed-forward loop network motif. Proceedings of the National Academy of Sciences of the United States of America, 100(21), 11980–11985. https://doi.org/10.1073/pnas.2133841100
 
 [^oscillator]: Elowitz, M. B. & Leibler, S. A Synthetic Oscillatory Network of Transcriptional Regulators. Nature 403, 335-338 (2000).
