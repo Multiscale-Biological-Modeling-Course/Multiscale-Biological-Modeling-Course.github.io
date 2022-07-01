@@ -101,7 +101,7 @@ chemotaxis:
         url: /chemotaxis/biochemistry
       - title: "Methylation helps a bacterium adapt to differing concentrations<br><br>"
         url: /chemotaxis/adaptation
-      - title: "Modeling a Bacterium’s Response to an Attractant Gradient"
+      - title: "Modeling a Bacterium’s Response to an Attractant Gradient<br><br>"
         url: /chemotaxis/gradient
       - title: "Conclusion: the beauty of E. coli's robust randomized exploration algorithm<br><br>"
         url: /chemotaxis/conclusion
