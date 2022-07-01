@@ -23,7 +23,7 @@ In this tutorial, we will focus only on modeling ligand-receptor dynamics, which
 
 ## Installation and setup
 
-BioNetGen features a convenient interface via the Microsoft Visual Studio Code editor. To see how to set up and install the necessary software, please visit their [setup and installation page](http://bionetgen.org/install). (Click on "installation instructions").
+BioNetGen features a convenient interface via the Microsoft Visual Studio Code editor. To see how to set up and install the necessary software, please visit their [setup and installation page](http://bionetgen.org/install). 
 
 <!-- Old Paragraph -->
 <!-- [RuleBender](https://github.com/RuleWorld/rulebender/releases/tag/RuleBender-2.3.2) is the graphical interface for BioNetGen. Please [download](https://github.com/RuleWorld/rulebender/releases/tag/RuleBender-2.3.2) the version corresponding to your operating system. Here is a step-by-step [installation guide](https://github.com/RuleWorld/rulebender/blob/master/docs/RuleBender-installation-guide.pdf). -->
@@ -228,4 +228,3 @@ Is the result you obtain what you expected? In the main text, we will return to 
 
 [Return to main text](gillespie#does-a-simulation-confirm-our-steady-state-calculations){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
-(see section, "Installing under VS Code"). 
