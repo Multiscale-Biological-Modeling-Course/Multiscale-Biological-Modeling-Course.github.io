@@ -46,7 +46,7 @@ We will set the initial concentrations of all `species` to be the final steady s
 
 First, visit the `adaptation.bngl` model and add the concentration for each combination of methylation state and ligand binding state of the receptor complex to the `observables` section. Then run this simulation with `L0` equal to `1e7`.
 
-When the simulation is finished, visit `RuleBender-workspace/PROJECT_NAME/results/adaptation/` and find the simulation result at the final time point.
+When the simulation is finished, visit the `adaptation` folder from the [adaptation tutorial](tutorial_adaptation) and find the simulation result at the final time point.
 
 When the model finishes running, input the final concentrations of molecules to the `species` section of our `removal.bngl` model. Here is what we have.
 
@@ -203,11 +203,19 @@ Save your file, and then visit `simulation` and click `Run`. What happens to the
 
 As we did in the tutorial simulating increasing ligand, we can try different values for `k_gone`. Change `t_end` in the `simulate` method to 1800 seconds, and run the simulation with `k_gone` equal to 0.01, 0.03, 0.05, 0.1, and 0.5.
 
-All simulation results are stored in the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/TIME/` directory in your computer. Rename the directory with the `k_gone` values instead of the timestamp for simplicity.
+<!-- Changed to a notice. -->
+**Note:** All simulation results are stored in the `removal` directory in your working directory. As you change the values of `k_gone`, rename the directory with the `k_gone` values instead of the timestamp for simplicity.
+{: .notice--info}
+
+<!-- Old Instructions. -->
+<!-- All simulation results are stored in the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/TIME/` directory in your computer. Rename the directory with the `k_gone` values instead of the timestamp for simplicity. -->
 
 ## Visualizing the results of our simulation
 
-We will use the jupyter notebook <a href="../downloads/downloadable/plotter_up.ipynb" download="plotter_up.ipynb">plotter_up.ipynb</a> as a template for the `plotter_down.ipynb` file that we will use to visualize our results. First, we will specify the directories, model name, species of interest, and reaction rates. Put the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/` folder inside the same directory as the Jupyter notebook or change the `model_path` accordingly.
+We will use the jupyter notebook <a href="../downloads/downloadable/plotter_up.ipynb" download="plotter_up.ipynb">plotter_up.ipynb</a> as a template for the `plotter_down.ipynb` file that we will use to visualize our results. First, we will specify the directories, model name, species of interest, and reaction rates. Put the Jupyter notebook in the same directory as `removal.bngl` or change the `model_path` accordingly.
+
+<!-- Old instructions. -->
+<!-- We will use the jupyter notebook <a href="../downloads/downloadable/plotter_up.ipynb" download="plotter_up.ipynb">plotter_up.ipynb</a> as a template for the `plotter_down.ipynb` file that we will use to visualize our results. First, we will specify the directories, model name, species of interest, and reaction rates. Put the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/` folder inside the same directory as the Jupyter notebook or change the `model_path` accordingly. -->
 
 ~~~ python
 model_path = "removal"  #The folder containing the model

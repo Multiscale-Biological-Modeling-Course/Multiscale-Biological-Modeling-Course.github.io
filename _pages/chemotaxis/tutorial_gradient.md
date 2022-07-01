@@ -205,15 +205,23 @@ Save your file, then go to `simulation` and click `Run`. What happens to the con
 
 Try the following few different values for `k_add`: 0.01, 0.03, 0.05, 0.1, 0.3, 0.5. What do these changing `k_add` values represent in the simulation? How does the system respond to the different values?
 
-All of your simulation results are stored in the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/TIME/` directory in your computer. Rename the directory with the `k_add` values instead of the time of running for simplicity.
+<!-- Changed to a note. -->
+**Note:** All of your simulation results are stored in the `addition/TIME/` directory within your working directory. As you change the value of `k_add`, rename the directory with the `k_add` values instead of the timestamp for simplicity.
+{: .notice--info}
+
+<!-- Old instructions. -->
+<!-- All of your simulation results are stored in the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/TIME/` directory in your computer. Rename the directory with the `k_add` values instead of the time of running for simplicity. -->
 
 You will observe that CheY phosphorylation drops gradually first, instead of the instantaneous sharp drop as we add lots of ligand at once. That means, with the ligand concentration increases, the cell is able to continuously lower the tumbling frequency.
 
 ## Visualizing the results of our simulation
 
-We are now ready to fill in `plotter_up.ipynb`, a Jupyter notebook that we will use to visualize the outcome of our simulations.
+We are now ready to fill in `plotter_up.ipynb`, a Jupyter notebook that we will use to visualize the outcome of our simulations. 
 
-First specify the directories, model name, species of interest, and rates. Put the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/` folder inside the same directory as `plotter_up.ipynb` or change the `model_path` below to point at this folder.
+First specify the directories, model name, species of interest, and rates. Put the `plotter_up.ipynb` file inside the same folder as `addition.bngl`, or change the `model_path` below to point at this folder.
+
+<!-- Old Instructions. -->
+<!-- First specify the directories, model name, species of interest, and rates. Put the `RuleBender-workspace/PROJECT_NAME/results/MODEL_NAME/` folder inside the same directory as `plotter_up.ipynb` or change the `model_path` below to point at this folder. -->
 
 ~~~ python
 #Specify the data to plot here.
