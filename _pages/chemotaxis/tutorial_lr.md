@@ -50,7 +50,7 @@ To use BioNetGen, first create a folder called "EColiSimulations" in an appropri
 
 In this directory, create a new file by selecting the `File > New Text File`. Save the file as  `ligand_receptor.bngl`. Now you should be able to start coding on line 1.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial2_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2_VSCode.png) -->
+[![image-center](../assets/images/600px/chemotaxis_tutorial2_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2_VSCode.png) 
 
 <!-- Old Instructions -->
 <!-- First, open RuleBender and select `File > New BioNetGen Project`.
