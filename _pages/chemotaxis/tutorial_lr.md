@@ -46,11 +46,11 @@ Equilibrium is reached when `k_lr_bind [L][T]` = `k_lr_dis[L.T]`. Our goal in th
 
 To use BioNetGen, first create a folder called "EColiSimulations" in an appropriate location on your computer. Next, open VSCode, and select `File > Open Folder`, and open the folder you just created. 
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial1.png){: .align-center}](../assets/images/chemotaxis_tutorial1.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial1_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial1_VSCode.png)
 
 In this directory, create a new file by selecting the `File > New Text File`. Save the file as  `ligand_receptor.bngl`. Now you should be able to start coding on line 1.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial2.png){: .align-center}](../assets/images/chemotaxis_tutorial2.png) -->
+[![image-center](../assets/images/600px/chemotaxis_tutorial2_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2_VSCode.png) -->
 
 <!-- Old Instructions -->
 <!-- First, open RuleBender and select `File > New BioNetGen Project`.
@@ -204,11 +204,11 @@ simulate({method=>"ssa", t_end=>1, n_steps=>100})
 
 We are now ready to run our simulation. To do so, click the "Run BNG" button on the top right of your VS Code window (see screenshot). You should see a terminal appear on the bottom of the window, which will show you the progress of the simulation. The output of the program is stored in a folder located in the working directory, named `ligand_receptor`.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial2.1.png){: .align-center}](../assets/images/chemotaxis_tutorial2.1.png) -->
+[![image-center](../assets/images/600px/chemotaxis_tutorial2.1_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2.1_VSCode.png) -->
 
 To visualize the results, open the file `ligand_receptor.gdat` stored inside the folder. With this file open, click on the "CLI Plotting" button on the top right corner of the VS Code window. 
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial2.2.png){: .align-center}](../assets/images/chemotaxis_tutorial2.2.png) -->
+[![image-center](../assets/images/600px/chemotaxis_tutorial2.2_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2.2_VSCode.png) -->
 
 <!-- Old Instructions -->
 <!-- We are now ready to run our simulation. To do so, visit `Simulation` at the right side of the contact map and click `Run`. You can then visualize the results of the simulation, showing changes in concentration over time. These results are also stored as a .gdat file in the folder `result/your time of simulation`. -->
