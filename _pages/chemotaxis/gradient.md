@@ -31,7 +31,7 @@ Plots of relevant molecule concentrations in our model (in number of molecules i
 
 The following figure shows the results of multiple simulations in which we vary the growth parameter *k* and plot only the concentration of phosphorylated CheY over time. The larger the value of *k*, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_addition03_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial_addition03_vscode.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial_addition03.png){: .align-center}](../assets/images/chemotaxis_tutorial_addition03.png)
 Plots of the concentration of phosphorylated CheY over time (in seconds) for different growth rates *k* of ligand concentration. The larger the value of *k*, the steeper the initial drop in the concentration of phosphorylated CheY, and the faster that methylation returns the concentration of phosphorylated CheY to equilibrium. The same equilibrium is obtained regardless of the value of *k*.
 {: style="font-size: medium;"}
 
@@ -55,7 +55,7 @@ You may like to modify the previous tutorial on your own to account for travelin
 
 The following figure plots the concentrations of molecules in our model as the concentration of attractant ligand decreases exponentially with *l*<sub>0</sub> equal to 10<sup>7</sup> and *k* equal to -0.3. As the ligand concentration decreases, the concentration of bound ligands plummet as bound ligands dissociate and there are not enough free ligands to replace the dissociating ones. In the absence of ligand-receptor binding, CheY is free to phosphorylate, causing a spike in phosphorylated CheY. Demethylation of receptors then causes the concentration of phosphorylated CheY to steadily return back to its equilibrium.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_removal01.png){: .align-center}](../assets/images/chemotaxis_tutorial_removal01.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial_removal01_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial_removal01_vscode.png)
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) for a simulated bacterium traveling down an attractant gradient with *l*<sub>0</sub> = 10<sup>7</sup> and *k* equal to -0.3. Phosphorylated CheY follows the opposite pattern to traveling up an attractant gradient, with the concentration of phosphorylated CheY rising quickly only to slowly decrease to equilibrium due to demethylation.
 {: style="font-size: medium;"}
 
