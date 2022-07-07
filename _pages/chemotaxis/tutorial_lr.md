@@ -213,6 +213,10 @@ To visualize the results, open the file `ligand_receptor.gdat` stored inside the
 <!-- Old Instructions -->
 <!-- We are now ready to run our simulation. To do so, visit `Simulation` at the right side of the contact map and click `Run`. You can then visualize the results of the simulation, showing changes in concentration over time. These results are also stored as a .gdat file in the folder `result/your time of simulation`. -->
 
+It is also possible to create an interactive plot from the results. Open the file `ligand_receptor.gdat`, and click on the "built-in plotting" botton located next to the "CLI Plotting" button you used to create the figure. The following interactive plot will be created:
+
+[![image-center](../assets/images/600px/chemotaxis_tutorial2.3_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2.3_VSCode.png) 
+
 Is the result you obtain what you expected? In the main text, we will return to this question and then learn more about the details of bacterial chemotaxis in order to expand our BioNetGen model into one that fully reflects these details.
 
 [^Li2004]: Li M, Hazelbauer GL. 2004. Cellular stoichiometry of the components of the chemotaxis signaling complex. Journal of Bacteriology. [Available online](https://jb.asm.org/content/186/12/3687)
