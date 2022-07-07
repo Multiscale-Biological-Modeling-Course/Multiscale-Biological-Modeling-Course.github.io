@@ -112,7 +112,7 @@ Our model uses the same number of initial molecules and the same reaction rates.
 
 The figure below demonstrates that the Gillespie algorithm quickly converges to the same values as the ones that we obtained by hand in the last lesson. We are now ready to apply this algorithm to model bacterial chemotaxis, a system that will involve many different reactions.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial4_ssa.png){: .align-center}](../assets/images/chemotaxis_tutorial4_ssa.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial4_ssa_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial4_ssa_vscode.png)
 A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in molecules/µm<sup>3</sup>) on the y-axis. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.
 {: style="font-size: medium;"}
 
