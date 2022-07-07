@@ -25,13 +25,13 @@ To model a ligand concentration [*L*] that is increasing exponentially, we will 
 
 For example, the following figure shows the concentration over time of phosphorylated CheY (shown in blue) when *l*<sub>0</sub> = 1000 and *k* = 0.1. The concentration of phosphorylated CheY, and therefore the tumbling frequency, still decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (shown by the plateau in the red curve), receptor methylation causes the concentration of phosphorylated CheY to return to its equilibrium. In other words, for these values of *l*<sub>0</sub> and *k*, the outcome is similar to when we provided an instantaneous increase in ligand, although the cell takes longer to reach its minimum concentration of phosphorylated CheY because the attractant concentration is increasing gradually.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_addition01.png){: .align-center}](../assets/images/chemotaxis_tutorial_addition01.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial_addition01_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial_addition01_vscode.png)
 Plots of relevant molecule concentrations in our model (in number of molecules in the cell) over time (in seconds) when the concentration of ligand grows exponentially with *l*<sub>0</sub> = 1000 and *k* = 0.1. The concentration of bound ligand (shown in red) quickly hits saturation, which causes a minimum in phosphorylated CheY (and therefore a low tumbling frequency). To respond, the cell increases the methylation of receptors, which boosts the concentration of phosphorylated CheY back to equilibrium.
 {: style="font-size: medium;"}
 
 The following figure shows the results of multiple simulations in which we vary the growth parameter *k* and plot only the concentration of phosphorylated CheY over time. The larger the value of *k*, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_addition03.png){: .align-center}](../assets/images/chemotaxis_tutorial_addition03.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial_addition03_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial_addition03_vscode.png)
 Plots of the concentration of phosphorylated CheY over time (in seconds) for different growth rates *k* of ligand concentration. The larger the value of *k*, the steeper the initial drop in the concentration of phosphorylated CheY, and the faster that methylation returns the concentration of phosphorylated CheY to equilibrium. The same equilibrium is obtained regardless of the value of *k*.
 {: style="font-size: medium;"}
 
