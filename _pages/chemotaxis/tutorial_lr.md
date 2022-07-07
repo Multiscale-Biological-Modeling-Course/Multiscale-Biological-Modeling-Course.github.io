@@ -204,11 +204,11 @@ simulate({method=>"ssa", t_end=>1, n_steps=>100})
 
 We are now ready to run our simulation. To do so, click the "Run BNG" button on the top right of your VS Code window (see screenshot). You should see a terminal appear on the bottom of the window, which will show you the progress of the simulation. The output of the program is stored in a folder located in the working directory, named `ligand_receptor`.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial2.1_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2.1_VSCode.png) -->
+[![image-center](../assets/images/600px/chemotaxis_tutorial2.1_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2.1_VSCode.png) 
 
 To visualize the results, open the file `ligand_receptor.gdat` stored inside the folder. With this file open, click on the "CLI Plotting" button on the top right corner of the VS Code window. 
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial2.2_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2.2_VSCode.png) -->
+[![image-center](../assets/images/600px/chemotaxis_tutorial2.2_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2.2_VSCode.png) 
 
 <!-- Old Instructions -->
 <!-- We are now ready to run our simulation. To do so, visit `Simulation` at the right side of the contact map and click `Run`. You can then visualize the results of the simulation, showing changes in concentration over time. These results are also stored as a .gdat file in the folder `result/your time of simulation`. -->
