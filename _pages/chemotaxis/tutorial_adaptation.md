@@ -364,7 +364,7 @@ simulate({method=>"ssa", t_end=>800, n_steps=>800})
 
 Now save your file and run the model. Because the model is at equilibrium, we will see the seemingly boring plot shown below.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd0.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd0.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd0_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd0_vscode.png)
 
 Things get interesting when we change the initial concentration of ligand to see how the simulated bacterium will adapt. Run your simulation with `L0` = `1e6`. What happens to CheY activity? What happens to the concentration of receptors at different methylation states?
 
