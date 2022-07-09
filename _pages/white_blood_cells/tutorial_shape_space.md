@@ -12,6 +12,9 @@ In a [previous tutorial](tutorial_nuclear_segmentation), we segmented and binari
 
 We are now ready to use CellOrganizer to build a shape space of these images and then apply PCA to the resulting shape vectors in order to reduce the dimension of the dataset.
 
+**Note:** Unfortunately, this tutorial does not currently work on Windows. If you are running a Windows machine and would like to follow along the next tutorial, you can download the following file here: <a href='../downloads/WBC_PCA.csv'>WBC_PCA.csv</a>.
+{: .notice--info}
+
 ### Installing CellOrganizer
 
 First, as in the previous tutorial, you will need the latest version of <a href="https://www.mathworks.com/products/matlab.html" target="_blank">MATLAB</a>. You should then download the latest version of CellOrganizer for MATLAB, which you can find under `Downloads` at the <a href="http://www.cellorganizer.org" target="_blank">CellOrganizer homepage</a>. After downloading a .zip file, extract this file into a folder, and then place this folder somewhere on your computer where you will remember it. (Our suggestion is to place the folder in the same applications folder where MATLAB is found.)
