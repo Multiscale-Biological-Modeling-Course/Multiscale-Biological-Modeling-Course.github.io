@@ -12,7 +12,7 @@ In a [previous tutorial](tutorial_nuclear_segmentation), we segmented and binari
 
 We are now ready to use CellOrganizer to build a shape space of these images and then apply PCA to the resulting shape vectors in order to reduce the dimension of the dataset.
 
-**Note:** Unfortunately, this tutorial does not currently work on Windows. If you are running a Windows machine and would like to follow along the next tutorial, you can download the following file here: <a href='../downloads/WBC_PCA.csv'>WBC_PCA.csv</a>.
+**Note:** Unfortunately, this tutorial does not currently work on Windows. If you are running a Windows machine and would like to follow along the next tutorial, you can download the following file here: <a href='../downloads/WBC_PCA.csv'>WBC_PCA.csv</a>. You can also skip down to [shape space visualization](tutorial_shape_space#shape-space-visualization).
 {: .notice--info}
 
 ### Installing CellOrganizer
