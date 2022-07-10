@@ -16,7 +16,7 @@ To install Weka, follow the instructions provided at the <a href="https://waikat
 
 ### Converting a shape space file
 
-To convert our current PCA pipeline coordinates to a format to be used in Weka, we need to convert the `WBC_PCA.csv` file that we produced in the previous tutorial and that contains the coordinates of every image in the post-PCA shape space into the `arff` format used by Weka. If you have not completed the previous tutorial, or you would like to skip to the next section of this tutorial, we provide the completed file for download <a href="../downloads/WBC_PCA.arff">here</a>.
+To convert our current PCA pipeline coordinates to a format to be used in Weka, we need to convert the <a href='../downloads/WBC_PCA.csv'>WBC_PCA.csv</a> file that we produced in the previous tutorial and that contains the coordinates of every image in the post-PCA shape space into the `arff` format used by Weka. If you have not completed the previous tutorial, or you would like to skip to the next section of this tutorial, we provide the completed file for download <a href="../downloads/WBC_PCA.arff">here</a>.
 
 Open Weka and navigate to `Tools --> ArffViewer`.
 
@@ -31,7 +31,7 @@ Change the `Files of Type` option to `CSV data files`.
 
 [![image-center](../assets/images/600px/cellorg_step_4.png){: .align-center}](../assets/images/cellorg_step_4.png)
 
-Find the `WBC_PCA.csv` file in your `Step4_Visualization` folder and click `Open`.
+Find (or download) the <a href='../downloads/WBC_PCA.csv'>WBC_PCA.csv</a> file in your `Step4_Visualization` folder and click `Open`.
 
 [![image-center](../assets/images/600px/cellorg_step_5.png){: .align-center}](../assets/images/cellorg_step_5.png)
 

@@ -73,31 +73,31 @@ In the figures that follow, we plot the concentration over time of each molecule
 
 First, we add a relatively small amount of attractant, setting *l*<sub>0</sub> equal to 10,000. The system returns so quickly to an equilibrium in phosphorylated CheY that it is difficult to imagine that the attractant has had any effect on tumbling frequency.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e4.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd1e4.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e4_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd1e4_vscode.png)
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 10,000 initial attractant ligand particles.
 {: style="font-size: medium;"}
 
 If instead *l*<sub>0</sub> is equal to 100,000, then we obtain the figure below. After an initial drop in the concentration of phosphorylated CheY, it returns to equilibrium after a few minutes.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e5.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd1e5.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e5_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd1e5_vscode.png)
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100,000 initial attractant ligand particles.
 {: style="font-size: medium;"}
 
 When we increase *l*<sub>0</sub> by another factor of ten to 1 million, the initial drop is more pronounced, but the system returns just as quickly to equilibrium. Note how much higher the concentration of methylated receptors are in this figure compared to the previous figure; however, there are still a significant concentration of receptors with low methylation, indicating that the system may be able to handle an even larger jolt of attractant.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e6.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd1e6.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e6_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd1e6_vscode.png)
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with one million initial attractant ligand particles.
 {: style="font-size: medium;"}
 
 When we set *l*<sub>0</sub> equal to 10 million, we give the system this bigger jolt. Once again, the model returns to its previous CheY equilibrium after a few minutes.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e7.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd1e7.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e7_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd1e7_vscode.png)
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with ten million initial attractant ligand particles.
 {: style="font-size: medium;"}
 
 Finally, with *l*<sub>0</sub> equal to 100 million, we see what we might expect: the steepest drop in phosphorylated CheY yet, but a system that is able to return to equilibrium.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e8.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd1e8.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e8_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd1e8_vscode.png)
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100 million initial attractant ligand particles.
 {: style="font-size: medium;"}
 

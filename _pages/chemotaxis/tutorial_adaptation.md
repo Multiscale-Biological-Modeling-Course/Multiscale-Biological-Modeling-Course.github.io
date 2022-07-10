@@ -364,7 +364,7 @@ simulate({method=>"ssa", t_end=>800, n_steps=>800})
 
 Now save your file and run the model. Because the model is at equilibrium, we will see the seemingly boring plot shown below.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd0.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd0.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd0_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd0_vscode.png)
 
 Things get interesting when we change the initial concentration of ligand to see how the simulated bacterium will adapt. Run your simulation with `L0` = `1e6`. What happens to CheY activity? What happens to the concentration of receptors at different methylation states?
 
@@ -389,5 +389,5 @@ Back in the main text, we will examine how a sudden change in the concentration 
 [^Krembel2015]: Krembel A., Colin R., Sourijik V. 2015. Importance of multiple methylation sites in *Escherichia coli* chemotaxis. [Available online](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0145582)
 
 
-[Return to main text](adaptation#bacterial-tumbling-is-resilient-to-large-sudden-changes-in-ligand-concentration){: .btn .btn--warning .btn--large}
+[Return to main text](adaptation#bacterial-tumbling-is-robust-to-large-sudden-changes-in-attractant-concentration){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

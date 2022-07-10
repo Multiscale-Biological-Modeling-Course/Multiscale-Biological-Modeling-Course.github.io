@@ -43,7 +43,30 @@ end observables
 
 ## Defining reactions
 
-Now we are ready to update our reaction rules to include phosphorylation and dephosphorylation in addition to the ligand-receptor reaction. These rules were discussed in the main text and are reproduced below.
+The conciseness of BioNetGen's molecule representation helps us represent our reactions concisely as well. We first reproduce the reversible binding and dissociation reaction from the previous lesson.
+
+~~~ ruby
+LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
+~~~
+
+Next, we represent the phosphorylation of the MCP complex. Recall that the phosphorylation of CheA can occur at different rates depending on whether the MCP is bound, and so we will need two different reactions to model these different rates. In our model, the phosphorylation of the MCP will occur at one fifth the rate when it is bound to the attractant ligand.
+
+~~~ ruby
+FreeTP: T(l,Phos~U) -> T(l,Phos~P) k_T_phos
+BoundTP: L(t!1).T(l!1,Phos~U) -> L(t!1).T(l!1,Phos~P) k_T_phos*0.2
+~~~
+
+Finally, we represent the phosphorylation and dephosphorylation of CheY. The former requires a phosphorylated MCP receptor, while the latter is done with the help of a CheZ molecule that can be in any state.
+
+~~~ ruby
+YP: T(Phos~P) + CheY(Phos~U) -> T(Phos~U) + CheY(Phos~P) k_Y_phos
+YDep: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
+~~~
+
+We use the snippets above to create a complete set of reaction rules for our simulated system. 
+
+<!-- Old Instructions. -->
+<!-- Now we are ready to update our reaction rules to include phosphorylation and dephosphorylation in addition to the ligand-receptor reaction. These rules were discussed in the main text and are reproduced below. -->
 
 ~~~ ruby
 begin reaction rules
@@ -169,7 +192,7 @@ generate_network({overwrite=>1})
 simulate({method=>"ssa", t_end=>3, n_steps=>100})
 ~~~
 
-Now save your file and run the simulation by clicking `Run` under `Simulate`. What do you observe?
+Now save your file and run the simulation by clicking on the `Run BNG` button. What do you observe?
 
 When we add ligand molecules into the system, as we did in the tutorial for [ligand-receptor dynamics](tutorial_lr), the concentration of bound receptors should increase. What will happen to the concentration of phosphorylated CheA, and phosphorylated CheY? What will happen to steady state concentrations?
 
@@ -186,5 +209,5 @@ In the main text, we will explore the results of the above simulation. We will t
 [^Spiro1997]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
 
 
-[Return to main text](biochemistry#tumbling-frequency-and-changing-ligand-concentrations){: .btn .btn--warning .btn--large}
+[Return to main text](biochemistry#changing-ligand-concentrations-leads-to-a-change-in-internal-molecular-concentrations){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
