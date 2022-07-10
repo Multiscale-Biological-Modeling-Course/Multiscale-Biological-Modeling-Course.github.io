@@ -429,7 +429,7 @@ Instead, we will reduce the number of dimensions of our shape space without remo
 \phantomsection
 \subsection{Dimension reduction with principal components analysis}
 
-We will introduce dimension reduction using the iris flower dataset that we introduced when discussing classification. Although this dataset has four features, we will focus again on only petal length and width, which we plot against each other in \autoref{fig:iris_petal_data_unlabeled}. We can trust our eyes to notice the clear pattern: as iris petal width increases, petal length tends to increase as well.\\
+We will introduce dimension reduction using the iris flower dataset. Although this dataset has four features, we will focus again on only petal length and width, which we plot against each other in \autoref{fig:iris_petal_data_unlabeled}. We can trust our eyes to notice the clear pattern: as iris petal width increases, petal length tends to increase as well.\\
 
 \begin{figure}[h]
 \centering
@@ -453,7 +453,7 @@ If we draw a line through the center of the data (\autoref{fig:iris_flowers_regr
 How could we have determined the line in \autoref{fig:iris_flowers_regression_line}?
 ]\end{qbox}
 
-Long ago in math class, you may have learned how to choose a line to best approximate a two-dimensional dataset using \textdefnogloss{linear regression}, which we will now briefly describe. In regression, we first establish one variable as the \textit{dependent} variable, which is typically plotted on the y-axis. In our iris flower example, the dependent variable is petal width.
+Long ago in math class, you may have learned how to choose a line to best approximate a two-dimensional dataset using \textdefnogloss{linear regression}, which we will now briefly describe. In linear regression, we first establish one variable as the \textit{dependent} variable, which is typically plotted on the y-axis. In our iris flower example, the dependent variable is petal width.
 
 Given a line, we use $L(x)$ to denote the y-coordinate of the point on the line corresponding to a given x-coordinate. For this line, we can then define the \textdefnogloss{residual} of a data point $(x, y)$ as the difference $y - L(x)$ between its y-coordinate and the y-coordinate that the line estimates as corresponding to \textvar{x}. If a residual is positive, then the data point lies ``above'' the line, and if the residual is negative, then the point lies ``below'' the line (\autoref{fig:residuals_y_coordinates}).\\
 
@@ -465,20 +465,20 @@ Given a line, we use $L(x)$ to denote the y-coordinate of the point on the line 
 \label{fig:residuals_y_coordinates}
 \end{figure}
 
-As the line changes, so will the points' residuals. The smaller the residuals become, the better the line fits the points. In linear regression, we are looking for the line that the line that minimizes the sum of squared residuals.
+As the line changes, so will the points' residuals. The smaller the residuals become, the better the line fits the points. In linear regression, we are looking for the line that minimizes the sum of squared residuals.
 
-Linear regression is a common approach, but it is not the only way to fit a line to a collection of data. Choosing petal width as the dependent variable makes sense if we want to explain petal width as a function of petal length, but if we were to make petal length the dependent variable instead, then linear regression would minimize the squared differences between residuals in the x-direction, as illustrated in \autoref{fig:residuals_x_coordinates}.\\
+Linear regression is a common approach, but it is not the only way to fit a line to a collection of data. Choosing petal width as the dependent variable makes sense if we want to explain petal width as a function of petal length, but if we were to make petal length the dependent variable instead, then linear regression would minimize the sum of squared residuals in the x-direction (\autoref{fig:residuals_x_coordinates}).\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.5\textwidth]{../images/residuals_x_coordinates.png}
-\caption{If \textvar{x} is the dependent variable, then the residuals with respect to a line become the horizontal distances between points and the line, and linear regression finds the line that minimizes these horizontal residuals.}
+\caption{If \textvar{x} is the dependent variable, then the residuals with respect to a line become the horizontal distances between data points and the line, and linear regression finds the line that minimizes the sum of the squares of these horizontal residuals over all possible lines through the data.}
 \label{fig:residuals_x_coordinates}
 \end{figure}
 
 \begin{note}[%
-The linear regression line will likely differ according to which variable we choose as the dependent variable, since the quantity that we are minimizing changes. However, if there is a linear pattern in our data, then the two regression lines will be similar.
+The linear regression line will likely differ according to which variable we choose as the dependent variable, since the quantity that we are minimizing changes. However, if a linear pattern is present in our data, then the two regression lines will be similar.
 ]\end{note}
 
 \fudgespace
@@ -489,13 +489,13 @@ For the iris flower dataset, which of the two choices for dependent variable do 
 
 The preceding question is implying that no clear \textit{causality} underlies the correlation between petal width and petal length, which makes it difficult to prioritize one variable over the other as the dependent variable. For this reason, we will revisit how we are defining the line that best fits the data.
 
-Instead of considering residuals based on distances to the line in only the x-direction or the y-direction, we can instead examine the distances from our data points to the line (\autoref{fig:residuals_projections}). The line minimizing the sum of the squares of these distances treats each of the two variables equally and is called the \textdefnogloss{first principal component} of the data.\\
+Instead of considering residuals based on distances to the line in only the x-direction or the y-direction, we can treat both variables equally. To do so, we examine the distance from each data point to its nearest point on the line (\autoref{fig:residuals_projections}), which is called the \textdefnogloss{projection} of the point onto the line. The line that minimizes the sum of the squares of distances between each point and its projection onto the line is called the \textdefnogloss{first principal component} of the data.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.5\textwidth]{../images/residuals_projections.png}
-\caption{A line along with a collection of points; dashed lines show the shortest segments connecting each point to the line.}
+\caption{A line along with a collection of data points; dashed lines show the shortest segments connecting each data point to its projection onto the line, which is the point on the line that is as close as possible to the data point.}
 \label{fig:residuals_projections}
 \end{figure}
 
@@ -507,7 +507,7 @@ The first principal component is often said to be the line that ``explains the m
 %An animated GIF showing that the distances from points to their projections onto a line change as the line rotates. The line of best fit is the one in which the sum of the square of these distances is minimized.  Source: amoeba, StackExchange user.[^amoeba]
 %{: style="font-size: medium;"}
 
-Another benefit of finding the first principal component of a dataset is that it allows us to \textit{reduce} the dimensionality of our dataset from two dimensions to one. We call the point on a line that is nearest to a given point the \textdefnogloss{projection} of that point onto the line. As a result, the projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
+Another benefit of finding the first principal component of a dataset is that it allows us to \textit{reduce} the dimensionality of our dataset from two dimensions to one. As a result, the projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
 
 Say that we wanted to generalize the ideas above to three-dimensional space. The first principal component would offer a one-dimensional explanation of the variance in the data, but perhaps a line is insufficient to this end. Maybe the points all lie very near to a plane (a two-dimensional object), and projecting these points onto the nearest plane would effectively reduce the dataset to two dimensions.
 
@@ -571,24 +571,15 @@ PCA may be old, but it is one of the fundamental tools of statistical analysis i
 \phantomsection
 \subsection{Visualizing the WBC shape space after PCA}
 
-\autoref{fig:cellorg_pca_graph} shows the shape space of WBC images, reduced to three dimensions by PCA, in which each image is represented by a point that is color-coded according to its cell family.\tutorial[white_blood_cells/tutorial_shape_space]\\
+\autoref{fig:cellorg_pca_graph} (top) shows the shape space of WBC images, reduced to three dimensions by PCA, in which each image is represented by a point that is color-coded according to its cell family. We can also subdivide granulocytes into basophils, eosinophils, and neutrophils. Updating our labels according to this subdivision produces the plot in \autoref{fig:cellorg_pca_graph} (bottom).\tutorial[white_blood_cells/tutorial_shape_space]
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/cellorg_pca_graph.png}
-\caption{The projection of each WBC shape vector onto a three-dimensional PCA hyperplane produces the above three-dimensional space. Granulocytes are shown in blue, lymphocytes are shown in orange, and monocytes are shown in green.}
-\label{fig:cellorg_pca_graph}
-\end{figure}
-
-We can also subdivide granulocytes into basophils, eosinophils, and neutrophils. Updating our labels according to this subdivision produces the plot in \autoref{fig:cellorg_pca_graph_cell}.
-
-\begin{figure}[h]
-\centering
-\mySfFamily
+\includegraphics[width = 0.7\textwidth]{../images/cellorg_pca_graph.png}\\[4ex]
 \includegraphics[width = 0.7\textwidth]{../images/cellorg_pca_graph_cell.png}
-\caption{The reduced dimension shape space from the previous figure, with granulocytes subdivided into basophils, eosinophils, and neutrophils.}
-\label{fig:cellorg_pca_graph_cell}
+\caption{(Top) The projection of each WBC shape vector onto a three-dimensional PCA hyperplane produces the above three-dimensional space. Granulocytes are shown in blue, lymphocytes are shown in orange, and monocytes are shown in green. (Bottom) The same reduced dimension shape space, with granulocytes subdivided into basophils, eosinophils, and neutrophils.}
+\label{fig:cellorg_pca_graph}
 \end{figure}
 
 Although images from the same family do not cluster as tightly as the iris flower dataset --- which could be criticized as an unrealistic representation of the noise inherent in most real datasets --- images from the same type do appear to be nearby. This fact should give us hope that proximity in a dimension-reduced space may help us correctly classify images of unknown type.\\

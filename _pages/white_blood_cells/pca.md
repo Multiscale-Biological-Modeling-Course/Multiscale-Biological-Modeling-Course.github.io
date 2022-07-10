@@ -53,7 +53,7 @@ A line passing through the plot of iris petal length against petal width. The li
 **STOP:** How could we have determined the line in the figure above?
 {: .notice--primary}
 
-Long ago in math class, you may have learned how to choose a line to best approximate a two-dimensional dataset using **linear regression**, which we will now briefly describe. In regression, we first establish one variable as the *dependent* variable, which is typically plotted on the y-axis. In our iris flower example, the dependent variable is petal width.
+Long ago in math class, you may have learned how to choose a line to best approximate a two-dimensional dataset using **linear regression**, which we will now briefly describe. In linear regression, we first establish one variable as the *dependent* variable, which is typically plotted on the y-axis. In our iris flower example, the dependent variable is petal width.
 
 Given a line, we use *L*(*x*) to denote the *y*-coordinate of the point on the line corresponding to a given *x*-coordinate. For this line, we can then define the **residual** of a data point (*x*, *y*) as the difference *y* - *L*(*x*) between its *y*-coordinate and the *y*-coordinate that the line estimates as corresponding to *x*. If a residual is positive, then the data point lies "above" the line, and if the residual is negative, then the point lies "below" the line (see figure below).
 
@@ -61,21 +61,23 @@ Given a line, we use *L*(*x*) to denote the *y*-coordinate of the point on the l
 An example line and data points with a visual depiction of the points' residuals. The absolute value of a residual is the length of its dashed line, and the sign of a residual corresponds to whether it lies above or below the line.
 {: style="font-size: medium;"}
 
-As the line changes, so will the points' residuals. The smaller the residuals become, the better the line fits the points. In linear regression, we are looking for the line that the line that minimizes the sum of squared residuals.
+As the line changes, so will the points' residuals. The smaller the residuals become, the better the line fits the points. In linear regression, we are looking for the line that minimizes the sum of squared residuals.
 
-Linear regression is a common approach, but it is not the only way to fit a line to a collection of data. Choosing petal width as the dependent variable makes sense if we want to explain petal width as a function of petal length, but if we were to make petal length the dependent variable instead, then linear regression would minimize the squared differences between residuals in the *x*-direction, as illustrated in the figure below.
+Linear regression is a common approach, but it is not the only way to fit a line to a collection of data. Choosing petal width as the dependent variable makes sense if we want to explain petal width as a function of petal length, but if we were to make petal length the dependent variable instead, then linear regression would minimize the sum of squared residuals in the *x*-direction, as illustrated in the figure below.
 
 [![image-center](../assets/images/600px/residuals_x_coordinates.png){: .align-center width="300px"}](../assets/images/residuals_x_coordinates.png)
-If *x* is the dependent variable, then the residuals with respect to a line become the horizontal distances between points and the line, and linear regression finds the line that minimizes these horizontal residuals.
+If *x* is the dependent variable, then the residuals with respect to a line become the horizontal distances between points and the line, and linear regression finds the line that minimizes the sum of the squares of these horizontal residuals over all possible lines through the data.
 {: style="font-size: medium;"}
 
-**Note:** The linear regression line will likely differ according to which variable we choose as the dependent variable, since the quantity that we are minimizing changes. However, if there is a linear pattern in our data, then the two regression lines will be similar.
+**Note:** The linear regression line will likely differ according to which variable we choose as the dependent variable, since the quantity that we are minimizing changes. However, if a linear pattern is present in our data, then the two regression lines will be similar.
 {: .notice--info}
 
 **STOP:** For the iris flower dataset, which of the two choices for dependent variable do you think is better?
 {: .notice--primary}
 
 The preceding question is implying that no clear *causality* underlies the correlation between petal width and petal length, which makes it difficult to prioritize one variable over the other as the dependent variable. For this reason, we will revisit how we are defining the line that best fits the data.
+
+Instead of considering residuals based on distances to the line in only the x-direction or the y-direction, we can treat both variables equally. To do so, we examine the distance from each data point to its nearest point on the line (see figure below), which is called the **projection** of the point onto the line. The line that minimizes the sum of the squares of distances between each point and its projection onto the line is called the \textdefnogloss{first principal component} of the data.
 
 Instead of considering residuals based on distances to the line in only the *x*-direction or the *y*-direction, we can instead examine the distances from our data points to the line, as shown in the figure below. The line minimizing the sum of the squares of these distances treats each of the two variables equally and is called the **first principal component** of the data.
 
@@ -91,7 +93,7 @@ The following animated GIF shows a line rotating through a collection of data po
 An animated GIF showing that the distances from points to their projections onto a line change as the line rotates. The line of best fit is the one in which the sum of the square of these distances is minimized.  Source: amoeba, StackExchange user.[^amoeba]
 {: style="font-size: medium;"}
 
-Another benefit of finding the first principal component of a dataset is that it allows us to *reduce* the dimensionality of our dataset from two dimensions to one. We call the point on a line that is nearest to a given point the **projection** of that point onto the line; in the figure above, the projection of each point onto the line is shown in red. As a result, the projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
+Another benefit of finding the first principal component of a dataset is that it allows us to *reduce* the dimensionality of our dataset from two dimensions to one. In the figure above, the projection of each point onto the line is shown in red. As a result, the projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
 
 Say that we wanted to generalize the ideas above to three-dimensional space. The first principal component would offer a one-dimensional explanation of the variance in the data, but perhaps a line is insufficient to this end. Maybe the points all lie very near to a plane (a two-dimensional object), and projecting these points onto the nearest plane would effectively reduce the dataset to two dimensions.
 
