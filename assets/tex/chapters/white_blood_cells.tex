@@ -1,5 +1,5 @@
 \phantomsection
-\chapter[Classifying White Blood Cells]{Classifying White Blood Cells\chapsubhead{Phillip Compeau}}
+\chapter[Classifying White Blood Cells]{Classifying White Blood Cells}
 \label{chapter:white_blood_cells}
 \renewcommand{\chaptertitle}{Classifying White Blood Cells}
 \addcontentsline{cc}{chapter}{Chapter \thechapter} % Adds chapter number to table of contents
@@ -21,12 +21,19 @@
 
 Your doctor sometimes counts your blood cells to ensure that they are within healthy ranges as part of a complete blood count. These cells comprise \textdef{red blood cells (RBCs)}{red blood cells (RBCs)}{cells in blood that transport oxygen via the hemoglobin protein}, which transport oxygen via the hemoglobin protein, and \textdef{white blood cells (WBCs)}{white blood cells (WBCs)}{cells that help identify and attack foreign cells as part of the immune system}, which help identify and attack foreign cells as part of your immune system.
 
-The classic device used for counting blood cells is the \textdefnogloss{hemocytometer}. In this device, a technician filters a small amount of blood onto a gridded slide and then counts the number of cells of each type in the squares on the grid. As a result, the technician can estimate the number of each type of cell per volume of blood.
+The classic device used for counting blood cells is the \textdefnogloss{hemocytometer}. In this device, a technician filters a small amount of blood onto a gridded slide (\autoref{fig:hemocytometer}) and then counts the number of cells of each type in the squares on the grid. As a result, the technician can estimate the number of each type of cell per volume of blood.\\
 
-\texttt{NEED FIGURE HERE -- TO REPLACE VIDEO}\\
+\begin{figure}[h]
+\centering
+\tabcolsep = 1em
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../images/hemocytometer.png}
+\caption{FILL IN CAPTION}
+\label{fig:hemocytometer}
+\end{figure}
 
 \begin{qbox}[%
-Why might the size of the blood sample influence the estimate of blood cell count?
+How could the volume of a blood sample influence the estimate of blood cell count?
 ]\end{qbox}
 
 You would not be wrong to think that the hemocytometer seems old-fashioned, as it was invented by Louis-Charles Malassez 150 years ago. To reduce the human error inherent in using this device, what if we train a computer to count blood cells for us?
@@ -68,7 +75,7 @@ What makes the WBC nucleus so easy for a human to spot in the images in \autoref
 
 In the \textdef{RGB color model}{RGB color model}{a model in which every rectangular pixel on a computer screen emits a single color formed as a mixture of red, green, and blue}, every rectangular pixel on a computer screen emits a single color formed as a mixture of differing amounts of the three primary colors of light: red, green, and blue (hence the acronym ``RGB''). The amount of each primary color in a pixel is expressed as an integer between 0 and 255, inclusively, with larger integers corresponding to greater amounts of the color.
 
-A few colors are shown in \autoref{fig:RGB_color_chart} along with their RGB equivalents; for example, magenta corresponds to equal parts red and blue. Note that a color like (128, 0, 0) contains only red but appears duskier than (256, 0, 0) because the red light in that pixel has not been “turned on” fully.
+A few colors are shown in \autoref{fig:RGB_color_chart} along with their RGB equivalents; for example, magenta corresponds to equal parts red and blue. Note that a color like (128, 0, 0) contains only red but appears duskier than (256, 0, 0) because the red light in that pixel has not been fully “turned on”.\\
 
 \begin{figure}[h]
 \centering
@@ -154,7 +161,7 @@ We can continue to tweak threshold parameters, but our relatively simple algorit
 \phantomsection
 \subsection{The classification problem}
 
-Classifying images of WBCs according to their family is a specific instance of an ubiquitous problem in data science, in which we wish to classify each object in a given dataset into one of \textvar{k} classes.
+Classifying images of WBCs according to their family is a specific instance of a ubiquitous problem in data science, in which we wish to classify each object in a given dataset into one of \textvar{k} classes.
 
 In our ongoing example, the data are images of WBCs, and the classes are the three main families of WBCs (granulocytes, lymphocytes, and monocytes). To take a different example, our data could be tumor genomes sequenced from cancer patients, which we want to classify based on which therapeutic should be prescribed for the patient. Or the data may be the past sales behavior of shoppers, who we want to classify into two classes based on a prediction of whether they will buy a new product.
 
@@ -392,7 +399,7 @@ When we align the major axes of similar shapes, their similarities will overlap 
 When we align images along their major axes, we need to ensure that a shape's mirror image is not a better alignment. Handling this issue is beyond the scope of our work here but is discussed in the literature.
 ]\end{note}
 
-By vectorizing a collection of binarized cellular images after alignment, the resulting vectors form our desired shape space. To review, each vector correspond to a sampling of \textvar{n} points from the boundary of each image, which can be translated into a vector of $2n$ coordinates. Yet one more pitfall remains.
+By vectorizing a collection of binarized cellular images after alignment, the resulting vectors form our desired shape space. To review, each vector correspond to a sampling of \textvar{n} points from the boundary of each image, which can be translated into a vector of $2n$ coordinates. Yet one more pitfall remains.\\
 
 
 \FloatBarrier
