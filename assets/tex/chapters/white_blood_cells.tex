@@ -27,8 +27,8 @@ The classic device used for counting blood cells is the \textdefnogloss{hemocyto
 \centering
 \tabcolsep = 1em
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/hemocytometer.png}
-\caption{FILL IN CAPTION}
+\includegraphics[width = 0.8\textwidth]{../images/hemocytometer.png}
+\caption{(Left) A schematic of a 3 mm by 3 mm hemocytometer, showing grid lines with differing widths. (Right) A hypothetical blood smear within a 1 mm by 1 mm square, which contains a volume of 0.0001 mL. By counting the number of cells in these squares, researchers can estimate the counts of cells per unit of blood.}
 \label{fig:hemocytometer}
 \end{figure}
 
@@ -80,7 +80,7 @@ A few colors are shown in \autoref{fig:RGB_color_chart} along with their RGB equ
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/RGB_color_chart.png}
+\includegraphics[width = 0.55\textwidth]{../images/RGB_color_chart.png}
 \caption{A collection of colors along with their RGB codes. This table corresponds to mixing colors of light instead of pigment, which causes some non-intuitive effects; for example, yellow is formed by mixing equal parts red and green. The last six colors appear muted because they only receive half of a given color value compared to a color that receives 256 units. If all three colors are mixed in equal proportions, then we obtain a color on the gray scale between white (maximum amount of all three colors) and black (no color).}
 \label{fig:RGB_color_chart}
 \end{figure}
@@ -137,8 +137,6 @@ This insight gives us an idea: if each of the three binarized images was success
 \label{fig:segmentation}
 \end{figure}
 
-We can continue to tweak threshold parameters, but our relatively simple algorithm successfully segments almost every WBC nucleus from our dataset. We are ready to move on to classify WBC nuclei into families according to their shape.\\
-
 \begin{figure}[h]
 \centering
 \tabcolsep = 1em
@@ -150,6 +148,8 @@ We can continue to tweak threshold parameters, but our relatively simple algorit
 \label{fig:segmentation_imperfect}
 \end{figure}
 
+We can continue to tweak threshold parameters, but our relatively simple algorithm successfully segments almost every WBC nucleus from our dataset. We are ready to move on to classify WBC nuclei into families according to their shape.\\
+
 
 
 \FloatBarrier
@@ -159,17 +159,11 @@ We can continue to tweak threshold parameters, but our relatively simple algorit
 
 
 \phantomsection
-\subsection{The classification problem}
+\subsection{The classification problem and the iris flower dataset}
 
-Classifying images of WBCs according to their family is a specific instance of a ubiquitous problem in data science, in which we wish to classify each object in a given dataset into one of \textvar{k} classes.
+Categorizing images of WBCs according to family is a specific instance of a ubiquitous problem in data science, in which we wish to \textit{classify} each object in a given dataset into one of \textvar{k} groups called \textdefnogloss{classes}. In our ongoing example, the data are images of WBCs, and the classes are the three main families of WBCs (granulocytes, lymphocytes, and monocytes). To take a different example, our data could be tumor genomes sequenced from cancer patients, which we want to classify according to the therapeutic that should be prescribed for the patient. Or the data may be the past sales behavior of shoppers, whom we wish to classify into two classes based on a prediction of whether they will buy a new product.
 
-In our ongoing example, the data are images of WBCs, and the classes are the three main families of WBCs (granulocytes, lymphocytes, and monocytes). To take a different example, our data could be tumor genomes sequenced from cancer patients, which we want to classify based on which therapeutic should be prescribed for the patient. Or the data may be the past sales behavior of shoppers, who we want to classify into two classes based on a prediction of whether they will buy a new product.
-
-\FloatBarrier
-\phantomsection
-\subsection{The iris flower dataset}
-
-A classical dataset commonly used for motivating classification is the \textdef{iris flower dataset}{iris flower dataset}{a dataset commonly used for motivating classification, which was compiled by Edgar Anderson, and which Ronald Fisher used in a seminal paper on classification in 1936}, which was compiled by Edgar Anderson, and which Ronald Fisher used in a seminal paper on classification in 1936. Anderson took measurements from 150 iris flowers, equally divided among three species (\autoref{fig:iris_flowers}).\\
+A classical dataset used for motivating classification is the \textdef{iris flower dataset}{iris flower dataset}{a dataset commonly used for motivating classification, which was compiled by Edgar Anderson, and which Ronald Fisher used in a seminal paper on classification in 1936}, which was compiled by Edgar Anderson and used by Ronald Fisher in a seminal paper on classification in 1936. Anderson took measurements from 150 iris flowers, fifty from each of three species (\autoref{fig:iris_flowers}).\\
 
 \begin{figure}[h]
 \centering
@@ -182,13 +176,17 @@ A classical dataset commonly used for motivating classification is the \textdef{
 \label{fig:iris_flowers}
 \end{figure}
 
-Anderson measured four attributes, or \textdef{features}{feature}{a measurable characteristic of a data point; multiple features are grouped together to form a feature vector in which the \textvar{i}-th element is the data point's value for the \textvar{i}-th feature}, of each of the flowers in his dataset: both the width and height of the flower's petal, and both the width and height of the flower's sepal (a green offshoot beneath the petals). The features and species labels for twelve of the flowers in the iris flower dataset are shown in \autoref{fig:iris_feature_table}. Fisher considered whether it was possible to classify each flower according to its species using only the features Anderson had measured.\\
+Anderson measured four attributes, or \textdef{features}{feature}{a measurable characteristic of a data point; multiple features are grouped together to form a feature vector in which the \textvar{i}-th element is the data point's value for the \textvar{i}-th feature}, of each flower in his dataset: the width and height of the flower's petal, and the width and height of the flower's sepal (a green offshoot beneath the petals). \autoref{fig:iris_feature_table} shows the features and species labels for twelve of the flowers in the iris flower dataset. Fisher noticed that flowers from the same species had similar features and wondered whether it was possible to classify the flowers according to its species using only Anderson's four features.\\
+
+
 
 \begin{figure}[h]
 \centering
-\tabcolsep = 1 em
+\tabcolsep = 0.5 em
 \mySfFamily
+\rowcolors{2}{gray!25}{white}
 \begin{tabular}{c c c c c}
+\rowcolor{gray!50}
 \textbf{Sepal length} & \textbf{Sepal width} & \textbf{Petal length} & \textbf{Petal width} & \textbf{Species} \\
 5.1 & 3.5 & 1.4 & 0.2 & \textit{I. setosa} \\
 4.9 & 3.0 & 1.4 & 0.2 & \textit{I. setosa} \\
@@ -203,40 +201,40 @@ Anderson measured four attributes, or \textdef{features}{feature}{a measurable c
 7.1 & 3.0 & 5.9 & 2.1 & \textit{I. virginica} \\
 6.3 & 2.9 & 5.6 & 1.8 & \textit{I. virginica} \\
 \end{tabular}
-\caption{A table containing values of the four features for twelve members of the iris flower dataset, along with each flower's species. Distances are in centimeters. The complete dataset was accessed from the University of California, Irvine Machine Learning Repository.}
+\caption{A table containing values of the four features for twelve members of the iris flower dataset, along with each flower's species. Distances are in centimeters. The complete dataset was accessed from the \href{https://archive.ics.uci.edu/ml/datasets/iris}{University of California, Irvine Machine Learning Repository}.}
 \label{fig:iris_feature_table}
 \end{figure}
 
 \begin{qbox}[%
-What characteristics do flowers from each species tend to share in terms of the four features in \autoref{fig:iris_feature_table}?
+What are the typical values of each feature for flowers from each species in \autoref{fig:iris_feature_table}?
 ]\end{qbox}
 
 \FloatBarrier
 \phantomsection
 \subsection{From flowers to vectors}
 
-If we were to use only two features in the Iris flower dataset, then a flower's feature values \textvar{x} and \textvar{y} could be represented as a point in two-dimensional space $(x, y)$. \autoref{fig:iris_petal_data} shows such a plot for the features of petal length (x-axis) and petal width (y-axis).
+If we were to use only two of the four features in the iris flower dataset, then a flower's feature values \textvar{x} and \textvar{y} could be represented as a point in two-dimensional space $(x, y)$. \autoref{fig:iris_petal_data} shows such a plot for the features of petal length (x-axis) and petal width (y-axis).
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/iris_petal_data.png}
-\caption{Petal width (x-axis) plotted against width (y-axis) for each of the flowers in the iris flower dataset, colored by species. There are not fifty points corresponding to every species because some flowers have the same petal length and width.}
+\caption{Petal width (x-axis) plotted against width (y-axis) for each of the flowers in the iris flower dataset, with data points colored by species. Although there were fifty flowers from each species, there are not fifty points corresponding to every species because some flowers have the same petal length and width and therefore occupy the same point.}
 \label{fig:iris_petal_data}
 \end{figure}
 
-Note how stark the pattern is in \autoref{fig:iris_petal_data}. Even though we chose only two features from the iris flowers, the points associated with the flowers can be divided into three main clusters by species. In other words, nearby points tend to correspond to flowers from the same species.
+Note how stark the pattern is in \autoref{fig:iris_petal_data}. Even though we chose only two features from the iris flowers, the points associated with the flowers mostly divide into three main clusters by species. In other words, nearby points tend to correspond to flowers from the same species.
 
-If we were to use all four features for the iris dataset, then every flower would be represented by a point in four-dimensional space. For example, the first flower in our initial table of iris features would be represented by the point $(5.1, 3.5, 1.4, 0.2)$. In general, when classifying a collection of data with \textvar{n} features, each element in the dataset can be represented by a \textdefnogloss{feature vector} of length \textvar{n}, whose \textvar{i}-th value corresponds to its value for the \textvar{i}-th feature.
+If we were to use all four features for the iris dataset, then every flower would be represented by a point in four-dimensional space. For example, the first flower in our initial table of iris features would be represented by the point $(5.1, 3.5, 1.4, 0.2)$. In general, when classifying a collection of data with \textvar{n} features, each element in the dataset can be represented by a \textdefnogloss{feature vector} of length \textvar{n}, whose \textvar{i}-th value corresponds to the value of the data point's \textvar{i}-th feature.
 
 \FloatBarrier
 \phantomsection
 \subsection{Classifying unknown elements with k-nearest neighbors}
 
-For the iris flower dataset, recall our observation that data points were more likely to belong to the same class if they were nearby. Our hope is that this fact is true for other datasets, that elements from the same class will have feature vectors that are close in \textvar{n}-dimensional space. If so, then we can classify a data point whose class is \textit{unknown} by determining which data points with \textit{known} classification it is near.\\
+Our hope is that for datasets other than the iris flower dataset, elements from the same class will have feature vectors that are nearby in \textvar{n}-dimensional space. If so, then we can classify a data point whose class is \textit{unknown} by determining which data points with \textit{known} classification it is near.\\
 
 \begin{qbox}[%
-Consider the point with unknown class (gray) in \autoref{fig:knn_neighborhood}. Should it be assigned to the class of the green points or to the class of the blue points?
+Consider the gray point with unknown class in \autoref{fig:knn_neighborhood}. Should it be assigned to the class of the green points or to the class of the blue points?
 ]\end{qbox}
 
 \begin{figure}[h]
@@ -249,37 +247,35 @@ Consider the point with unknown class (gray) in \autoref{fig:knn_neighborhood}. 
 
 The preceding question indicates that classifying points can be surprisingly open-ended. Because of this freedom, researchers have devised a variety of different approaches for classifying data given data with known classes.
 
-We will discuss a simple but powerful classification algorithm called \textdef{k-nearest neighbors (k-NN)}{k-nearest neighbors (k-NN)}{a classification algorithm that assigns each point with unknown class to have the class possessed by the largest number of its \textvar{k} closest neighbors with known class.}. In k-NN, we fix a positive integer \textvar{k} in advance, which will be used for classification of all points. Then, for each point with unknown class, we assign it the class possessed by the largest number of its \textvar{k} closest neighbors.
+We will discuss a simple but powerful classification algorithm called \textdef{k-nearest neighbors (k-NN)}{k-nearest neighbors (k-NN)}{a classification algorithm that assigns each point with unknown class to have the class possessed by the largest number of its \textvar{k} closest neighbors with known class.}. In k-NN, we fix a positive integer \textvar{k} in advance. Then, for each point with unknown class, we assign it to the class possessed by the largest number of its \textvar{k} closest neighbors.
 
-In the ongoing example, if we were using \textvar{k} equal to 1, then we would assign the unknown point from \autoref{fig:knn_neighborhood} to the green class (\autoref{fig:knn_neighborhood_k=1}).\\
+In the ongoing example, if we were using \textvar{k} equal to 1, then we would assign the unknown point from \autoref{fig:knn_neighborhood} to the green class (\autoref{fig:knn_neighborhood_k=1}). However, with the same data and \textvar{k} equal to 4, most of the gray point's \textvar{k} nearest neighbors are blue, and so we classify the unknown point as blue (\autoref{fig:knn_neighborhood_k=4}). This example reinforces a theme of this course, that the results of an algorithm can be sensitive to our choice of parameters.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.6\textwidth]{../images/knn_neighborhood_k=1.png}
-\caption{When using k-NN with \textvar{k} equal to 1, we classify an unknown point according to the point of known class that is nearest; for this reason, the unknown point above would be assigned to the green class.}
+\caption{When \textvar{k} is equal to 1, k-NN classifies an unknown point according to the point of known class that is nearest; for this reason, the gray point with unknown class would be assigned to the green class. (Bottom)}
 \label{fig:knn_neighborhood_k=1}
 \end{figure}
-
-However, with the same data and \textvar{k} equal to 4, \autoref{fig:knn_neighborhood_k=4} shows that a majority of the \textvar{k} nearest neighbors are blue, and so we classify the unknown point as blue. This example reinforces a theme of this course, that the results of an algorithm can be sensitive to our choice of parameters.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.6\textwidth]{../images/knn_neighborhood_k=4.png}
-\caption{When using k-NN with \textvar{k} equal to 4, k-NN will classify the unknown point as blue, since three of its four closest neighbors are blue.}
+\caption{When \textvar{k} is equal to 4, k-NN classifies the gray point as blue, since three of its four closest neighbors are blue.}
 \label{fig:knn_neighborhood_k=4}
 \end{figure}
 
 \begin{qbox}[%
-When \textvar{k} = 2 or \textvar{k} = 6 for the classification of the point in \autoref{fig:knn_neighborhood}, note that we obtain a tie in the number of points from each known class belonging to the \textvar{k} nearest neighbors of a point with unknown class. How could we break ties in k-NN?
+When \textvar{k} is equal to 2 or 6 for the classification of the point in \autoref{fig:knn_neighborhood}, note that we obtain a tie in the number of points from each known class belonging to the \textvar{k} nearest neighbors of a point with unknown class. How could we break ties in k-NN?
 ]\end{qbox}
 
-In the more general case in which feature vectors have length \textvar{n}, we can determine which points are nearest to a given point by using the \textdefnogloss{Euclidean distance}, which generalizes the distance between two points in two-dimensional space to vectors in \textvar{n}-dimensional space. Say that we have the vectors $\mathbf{x} = (x_1, x_2, \ldots, x_n)$ and $\mathbf{y} = (y_1, y_2, \ldots, y_n)$. Then the Euclidean distance between them is given by the sum of squares of differences between corresponding vector elements:
+In the more general case in which feature vectors have \textvar{n} coordinates, we can determine which points are nearest to a given point by using the \textdefnogloss{Euclidean distance}, which generalizes the distance formula to handle vectors in \textvar{n}-dimensional space. The Euclidean distance between vectors $\mathbf{x} = (x_1, x_2, \ldots, x_n)$ and $\mathbf{y} = (y_1, y_2, \ldots, y_n)$ is given by the sum of squares of differences between corresponding vector elements:
 
-$$d(\mathbf{x}, \mathbf{y}) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n-y_n)^2}$$
+$$d(\mathbf{x}, \mathbf{y}) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n-y_n)^2}\,.$$
 
-We now have learned how to use k-NN to classify feature vectors with unknown classes given vectors with known classes. There is just one problem: how can we convert an image of a WBC into a vector?
+We now have learned how to use k-NN to classify feature vectors with unknown classes given vectors with known classes. There is just one problem: how can we convert an image of a WBC into a vector?\\
 
 \FloatBarrier
 \phantomsection
@@ -294,9 +290,12 @@ Imagine that you are a traveler to Earth and come across the ruins of New York C
 
 \begin{figure}[h]
 \centering
-\tabcolsep = 1 em
+\tabcolsep = 0.5 em
 \mySfFamily
+\small
+\rowcolors{2}{gray!25}{white}
 \begin{tabular}{r c c c c c c}
+\rowcolor{gray!50}
 & \textbf{NYC} & \textbf{LA} & \textbf{Pitt.} & \textbf{Miami} & \textbf{Houston} & \textbf{Seattle} \\
 \textbf{New York City} & 0 & 2805 & 371 & 1283 & 1628 & 2852 \\
 \textbf{Los Angeles} & 2805 & 0 & 2427 & 2733 & 1547 & 1135 \\
@@ -305,7 +304,7 @@ Imagine that you are a traveler to Earth and come across the ruins of New York C
 \textbf{Houston} & 1628 & 1547 & 1388 & 1189 & 0 & 2340 \\
 \textbf{Seattle} & 2852 & 1135 & 2502 & 3300 & 2340 & 0 \\
 \end{tabular}
-\caption{All pairwise distances between six cities in the United States.}
+\caption{All pairwise distances (in miles) between six cities in the United States.}
 \label{fig:atlas}
 \end{figure}
 
@@ -345,9 +344,7 @@ It is tempting to take the vectorization of every shape as our desired shape spa
 
 On the one hand, we need to ensure that the number of points that we sample from the object boundary is sufficiently high to avoid dissimilar shapes from having low RMSD. For this reason, CellOrganizer samples $n = 1000$ points by default for cell nuclei.
 
-On the other hand, we could have very similar shapes whose RMSD winds up being high. For example, recall the shapes in the figure below, which are identical, but one has been flipped and rotated. If we were to vectorize these shapes as they are now in the same way (say, by starting at the top of the shape and proceeding clockwise), then we would obtain two vectors with high RMSD.
-
-REPLACE THIS WITH A LINK TO PREVIOUS IMAGE
+On the other hand, we could have very similar shapes whose RMSD winds up being high. For example, recall the shapes in \autoref{fig:two_shapes}, which are identical, but one has been flipped and rotated. If we were to vectorize these shapes as they are now in the same way (say, by starting at the top of the shape and proceeding clockwise), then we would obtain two vectors with high RMSD.
 
 We handled this issue in our work on protein structure comparison by introducing the Kabsch algorithm, which identified the best rotation of one shape into another that would minimize the RMSD of the resulting vectors. And yet what makes our work here more complicated is that we are not comparing just two shape vectors in our example of WBC images, we are comparing hundreds.
 
@@ -644,7 +641,9 @@ Before we can apply cross validation to WBC images, we should know how to quanti
 \centering
 \tabcolsep = 1 em
 \mySfFamily
+\rowcolors{2}{gray!25}{white}
 \begin{tabular}{c c c}
+\rowcolor{gray!50}
 \textbf{\textit{Iris setosa}} & \textbf{\textit{Iris versicolor}} & \textbf{\textit{Iris virginica}} \\
 50 & 0 & 0 \\
 0 & 47 & 3 \\
@@ -668,7 +667,9 @@ It may seem that accuracy is the only metric that we need. But if you were in a 
 \centering
 \tabcolsep = 1 em
 \mySfFamily
+\rowcolors{2}{gray!25}{white}
 \begin{tabular}{c c c}
+\rowcolor{gray!50}
 \textbf{Granulocyte} & \textbf{Monocyte} & \textbf{Lymphocyte} \\
 291 & 0 & 0 \\
 21 & 0 & 0 \\
@@ -688,7 +689,9 @@ The clown classifier blindly assigned every image in the dataset to be a granulo
 \centering
 \tabcolsep = 1 em
 \mySfFamily
+\rowcolors{2}{gray!25}{white}
 \begin{tabular}{c c c}
+\rowcolor{gray!50}
 \textbf{Granulocyte} & \textbf{Monocyte} & \textbf{Lymphocyte} \\
 232 & 25 & 34 \\
 2 & 17 & 2 \\
@@ -769,7 +772,9 @@ We use the iris flower dataset to show how this works. Say that we wish to compu
 \centering
 \tabcolsep = 1 em
 \mySfFamily
+ \rowcolors{2}{gray!25}{white}
 \begin{tabular}{c c}
+\rowcolor{gray!50}
 \textbf{\textit{Iris virginica}} & \textbf{\textit{Iris setosa} and \textit{Iris versicolor}} \\
 46 & 4 \\
 3 & 47 \\
@@ -804,7 +809,9 @@ If we run k-NN on our shape space, using \textvar{d} (the number of dimensions i
 \centering
 \tabcolsep = 1 em
 \mySfFamily
+ \rowcolors{2}{gray!25}{white}
 \begin{tabular}{c c c}
+\rowcolor{gray!50}
 \textbf{Granulocyte} & \textbf{Monocyte} & \textbf{Lymphocyte} \\
 259 & 9 & 23 \\
 14 & 6 & 1 \\
@@ -816,13 +823,15 @@ If we run k-NN on our shape space, using \textvar{d} (the number of dimensions i
 
 These three values of \textvar{d}, \textvar{k}, \textvar{f} appear to be close to optimal, in that changing them does not improve our classification metrics. We should ask why this is the case.
 
-We start with \textvar{d}. If we set \textvar{d} too large, then once again the curse of dimension strikes. Using \textvar{d} equal to 344 (with \textvar{k} equal to 1 and \textvar{f} equal to 10) produces the baffling confusion matrix in \autoref{fig:wbc_baffling_confusion_matrix}, in which every element in the space is somehow closest to a lymphocyte.
+We start with \textvar{d}. If we set \textvar{d} too large, then once again the curse of dimension strikes. Using \textvar{d} equal to 344 (with \textvar{k} equal to 1 and \textvar{f} equal to 10) produces the baffling confusion matrix in \autoref{fig:wbc_baffling_confusion_matrix}, in which every element in the space is somehow closest to a lymphocyte.\\
 
 \begin{figure}[h]
 \centering
 \tabcolsep = 1 em
 \mySfFamily
+ \rowcolors{2}{gray!25}{white}
 \begin{tabular}{c c c}
+\rowcolor{gray!50}
 \textbf{Granulocyte} & \textbf{Monocyte} & \textbf{Lymphocyte} \\
 0 & 0 & 291 \\
 0 & 0 & 21 \\
@@ -838,7 +847,9 @@ Using \textvar{d} equal to 3, we obtain better results, but we have reduced the 
 \centering
 \tabcolsep = 1 em
 \mySfFamily
+\rowcolors{2}{gray!25}{white}
 \begin{tabular}{c c c}
+\rowcolor{gray!50}
 \textbf{Granulocyte} & \textbf{Monocyte} & \textbf{Lymphocyte} \\
 257 & 15 & 19 \\
 16 & 5 & 0 \\
@@ -850,11 +861,15 @@ Using \textvar{d} equal to 3, we obtain better results, but we have reduced the 
 
 We next consider \textvar{k}. It might seem that taking more neighbors into account would be helpful. But because of the class imbalance toward granulocytes, the effects of random noise will mean that as we increase \textvar{k}, we will start considering granulocytes that just happen to be lurking nearby. For example, when \textvar{k} is equal to 5 (with \textvar{d} equal to 10 and \textvar{f} equal to 10), every monocyte is classified as a granulocyte (\autoref{fig:wbc_too_many_neighbors}).\\
 
+
+
 \begin{figure}[h]
 \centering
 \tabcolsep = 1 em
 \mySfFamily
+\rowcolors{2}{gray!25}{white}
 \begin{tabular}{c c c}
+\rowcolor{gray!50}
 \textbf{Granulocyte} & \textbf{Monocyte} & \textbf{Lymphocyte} \\
 264 & 1 & 26 \\
 21 & 0 & 0 \\
