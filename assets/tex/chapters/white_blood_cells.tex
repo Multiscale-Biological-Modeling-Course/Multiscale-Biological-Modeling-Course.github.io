@@ -395,7 +395,7 @@ By aligning and then vectorizing a collection of binarized cellular images after
 
 Things get weird in multi-dimensional space.
 
-Consider a circle inscribed in a square, as shown in \autoref{fig:inscribed_circle_and_sphere}. The ratio of the area of the circle to the area of the square is $π/4 \approx 0.785$, regardless of the side length. When we move to three dimensions and have a sphere inscribed in a cube, the ratio of the volume of the sphere to that of the cube is $(4π/3)/8 \approx 0.524$.\\
+Consider a circle inscribed in a square (\autoref{fig:inscribed_circle_and_sphere} (left)). The ratio of the area of the circle to the area of the square is $\pi/4 \approx 0.785$, regardless of the side length. When we move to three dimensions and have a sphere inscribed in a cube (\autoref{fig:inscribed_circle_and_sphere} (right)), the ratio of the volume of the sphere to that of the cube is $(4\pi/3)/8 \approx 0.524$.\\
 
 \begin{figure}[h]
 \centering
@@ -405,23 +405,23 @@ Consider a circle inscribed in a square, as shown in \autoref{fig:inscribed_circ
 \label{fig:inscribed_circle_and_sphere}
 \end{figure}
 
-We define an \textvar{n}-dimensional unit sphere as the set of points in \textvar{n}-dimensional space whose (Euclidean) distance from the origin is at most 1, and an \textvar{n}-dimensional cube as the set of points whose coordinates are all between 0 and 1. A precise definition of the volume of a multi-dimensional object is beyond the scope of our work, but as \textvar{n} increases, the sphere takes up less and less of the cube. As \textvar{n} tends toward infinity, the ratio of the volume of the \textvar{n}-dimensional unit sphere to the volume of the \textvar{n}-dimensional unit cube approaches zero!
+We define an \textvar{n}-dimensional unit sphere as the set of points in \textvar{n}-dimensional space whose Euclidean distance from the origin is at most 1, and an \textvar{n}-dimensional cube as the set of points whose coordinates are all between 0 and 1. A precise definition of the volume of a multi-dimensional object is beyond the scope of this work, but as \textvar{n} increases, the sphere takes up less and less of the cube. As \textvar{n} tends toward infinity, the ratio of the volume of the \textvar{n}-dimensional unit sphere to the volume of the \textvar{n}-dimensional unit cube approaches zero!
 
-One way of interpreting the vanishing of the sphere's volume is that the cube has more corners than a square does, and so the more dimensions that we have, the more corners in which there are to hide away from the sphere. In other words, as we increase the number of dimensions, most of the volume of an object winds up scattering outward from the object's center.
+One way of interpreting the vanishing of the sphere's volume is that as \textvar{n} increases, an \textvar{n}-dimensional cube has more and more corners in which there points can hide away from the sphere. Most of the cube's volume therefore winds up scattering outward from its center.
 
-The vanishing sphere seem like an arcane triviality holding interest only for mathematicians toiling in fluorescently lit academic offices at strange hours. Yet this little story is just one manifestation of a very deep paradigm in data science called the \textdef{curse of dimensionality}{curse of dimensionality}{a collection of principles that arise in higher dimensions that run counter to our intuition about our three-dimensional existence}, a collection of principles that arise in higher dimensions that run counter to our intuition about our three-dimensional existence.
+The case of the vanishing sphere may seem like an arcane triviality that only holds interest for mathematicians toiling in fluorescently lit academic offices at strange hours. Yet this phenomenon is just one manifestation of a profound paradigm in data science called the \textdef{curse of dimensionality}{curse of dimensionality}{a collection of principles that arise in higher dimensions that run counter to our intuition about our three-dimensional existence}, a collection of principles that arise in higher dimensions that run counter to our intuition about three-dimensional space.
 
 \FloatBarrier
 \phantomsection
 \subsection{How the curse of dimensionality affects classification}
 
-In the previous section, we discussed sampling \textvar{n} points from the boundary of an image, thus converting the image into a vector in a space with $2n$ dimensions. We argued that \textvar{n} needs to be sufficiently large to ensure that comparing the vectors of two images will give an accurate representation of how similar their shapes are. And yet the size of \textvar{n} means that we need to be careful about the curse of dimensionality.
+In the previous section, we discussed sampling \textvar{n} points from the boundary of a two-dimensional WBC nuclear image, thus converting the image into a vector in a space with $2n$ dimensions. We argued that \textvar{n} needs to be sufficiently large to ensure that comparing the vectors of two images will give an accurate representation of how similar their shapes are. Yet increasing \textvar{n} means that we need to be careful about the curse of dimensionality.
 
-Say that we sample \textvar{k} points randomly from the interior of an \textvar{n}-dimensional unit hypercube. Let $d_{\text{min}}$ and $d_{\text{max}}$ denote the minimum and maximum distance from any of our points to the origin, respectively. As \textvar{n} grows, the ratio $d_{\text{min}}d_{\text{max}}$ heads toward 1; in other words, the minimum distance between points becomes indistinguishable from the maximum distance between points.
+Say that we sample \textvar{k} points randomly from the interior of an \textvar{n}-dimensional unit cube. Let $d_{\text{min}}$ and $d_{\text{max}}$ denote the minimum and maximum distance from any of our points to the origin, respectively. As \textvar{n} grows, the ratio $d_{\text{min}}/d_{\text{max}}$ heads toward 1; in other words, as points fly toward the many corners of the cube, the minimum distance between points becomes indistinguishable from the maximum distance between points.
 
 This other facet of the curse of dimensionality means that algorithms like k-NN, which classify points with unknown classes based on nearby points with known classes, may not perform well in higher-dimensional spaces in which even similar points tend to fly away from each other.
 
-Because of the curse of dimensionality, it makes sense to reduce the number of dimensions before performing any further analysis. We could reduce the number of features used for generating a vector, especially if we have reason to believe that some features are more informative than others. This approach will likely not work for our WBC image example, since it is not clear why one point on the boundary of our images would be inherently better than another.
+Because of the curse of dimensionality, it makes sense to reduce the number of dimensions before performing any further analysis such as classification. We could reduce the number of features used for generating a vector, especially if we have reason to believe that some features are more informative than others. This approach will likely not work for our WBC image example, since it is not clear why one point on the boundary of our images would be inherently better than another.
 
 Instead, we will reduce the number of dimensions of our shape space without removing any features from the data. As perplexing as multi-dimensional space may already seem, it may be totally unclear how we could reduce the dimensions of a space. We will therefore explain dimension reduction in the context of three-dimensional space; our approach may be more familiar than you think.
 
@@ -429,7 +429,7 @@ Instead, we will reduce the number of dimensions of our shape space without remo
 \phantomsection
 \subsection{Dimension reduction with principal components analysis}
 
-We will introduce dimension reduction using the iris flower dataset that we introduced when discussing classification. Although this dataset has four features, we will focus again on only petal length and width, which we plot against each other in \autoref{fig:iris_petal_data_unlabeled}. We can trust our eyes to notice the clear pattern: as iris petal width increases, petal length tends to increase as well.
+We will introduce dimension reduction using the iris flower dataset that we introduced when discussing classification. Although this dataset has four features, we will focus again on only petal length and width, which we plot against each other in \autoref{fig:iris_petal_data_unlabeled}. We can trust our eyes to notice the clear pattern: as iris petal width increases, petal length tends to increase as well.\\
 
 \begin{figure}[h]
 \centering
@@ -591,7 +591,7 @@ We can also subdivide granulocytes into basophils, eosinophils, and neutrophils.
 \label{fig:cellorg_pca_graph_cell}
 \end{figure}
 
-Although images from the same family do not cluster as tightly as the iris flower dataset --- which could be criticized as an unrealistic representation of the noise inherent in most real datasets --- images from the same type do appear to be nearby. This fact should give us hope that proximity in a dimension-reduced space may help us correctly classify images of unknown type.
+Although images from the same family do not cluster as tightly as the iris flower dataset --- which could be criticized as an unrealistic representation of the noise inherent in most real datasets --- images from the same type do appear to be nearby. This fact should give us hope that proximity in a dimension-reduced space may help us correctly classify images of unknown type.\\
 
 \FloatBarrier
 \phantomsection
