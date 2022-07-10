@@ -27,8 +27,8 @@ The classic device used for counting blood cells is the \textdefnogloss{hemocyto
 \centering
 \tabcolsep = 1em
 \mySfFamily
-\includegraphics[width = 0.8\textwidth]{../images/hemocytometer.png}
-\caption{(Left) A schematic of a 3 mm by 3 mm hemocytometer, showing grid lines with differing widths. (Right) A hypothetical blood smear within a 1 mm by 1 mm square, which contains a volume of 0.0001 mL. By counting the number of cells in these squares, researchers can estimate the counts of cells per unit of blood.}
+\includegraphics[width = 0.7\textwidth]{../images/hemocytometer.png}
+\caption{(Left) A schematic of a 3 mm by 3 mm hemocytometer, showing grid lines with differing widths. (Right) A hypothetical blood smear within a 0.25 mm by 0.25 mm square, which contains a volume of blood equaling 0.00000625 mL. By counting the number of cells in a number of squares, researchers can estimate the counts of cells per unit volume of blood.}
 \label{fig:hemocytometer}
 \end{figure}
 
@@ -109,7 +109,7 @@ We will \textdefnogloss{binarize} each blood cell image by coloring a pixel whit
 How might we modify our segmentation approach to perform a binarization that identifies the WBC nucleus more effectively?
 ]\end{qbox}
 
-We were unable to distinguish between the image background and the WBC nucleus using blue color values, but a color picker verifies that pixels in the WBC nucleus tend to have a green value that is much lower than the image background and a red value that is lower than every other part of the image. \autoref{fig:neutrophil_binarized_other_colors} shows two binarizations of the original image using a green threshold of 153 (left) and a red threshold of 166 (right).\\
+We were unable to distinguish between the image background and the WBC nucleus using blue color values, but a color picker verifies that pixels in the WBC nucleus tend to have a green value that is much lower than the image background and a red value that is lower than every other part of the image. \autoref{fig:neutrophil_binarized_other_colors} shows two binarizations of the original image using a green threshold of 153 (left) and a red threshold of 166 (right).
 
 \begin{figure}[h]
 \centering
@@ -179,10 +179,9 @@ A classical dataset used for motivating classification is the \textdef{iris flow
 Anderson measured four attributes, or \textdef{features}{feature}{a measurable characteristic of a data point; multiple features are grouped together to form a feature vector in which the \textvar{i}-th element is the data point's value for the \textvar{i}-th feature}, of each flower in his dataset: the width and height of the flower's petal, and the width and height of the flower's sepal (a green offshoot beneath the petals). \autoref{fig:iris_feature_table} shows the features and species labels for twelve of the flowers in the iris flower dataset. Fisher noticed that flowers from the same species had similar features and wondered whether it was possible to classify the flowers according to its species using only Anderson's four features.\\
 
 
-
 \begin{figure}[h]
 \centering
-\tabcolsep = 0.5 em
+\tabcolsep = 0.45 em
 \mySfFamily
 \rowcolors{2}{gray!25}{white}
 \begin{tabular}{c c c c c}
@@ -286,11 +285,11 @@ We now have learned how to use k-NN to classify feature vectors with unknown cla
 
 \subsection{Interlude: Stone tablets and lost cities}
 
-Imagine that you are a traveler to Earth and come across the ruins of New York City. You find an old road atlas that has driving distances between cities (in miles), shown in \autoref{fig:atlas}. Can you use this atlas to find the other cities? In \autoref{chapter:chemotaxis}, we encountered a ``Lost Immortals'' problem; we call the problem of inferring the locations of cities given the distance between them the ``Lost Cities'' problem.\\
+Imagine that you are an interstellar traveler to Earth and come across the ruins of New York City. You find an old road atlas that has driving distances between cities (\autoref{fig:atlas}). Can you use this atlas to find the other cities? In \autoref{chapter:chemotaxis}, we encountered a ``Lost Immortals'' problem; we call the problem of inferring the locations of cities given the distance between them the ``Lost Cities'' problem.\\
 
 \begin{figure}[h]
 \centering
-\tabcolsep = 0.5 em
+\tabcolsep = 0.7 em
 \mySfFamily
 \small
 \rowcolors{2}{gray!25}{white}
@@ -309,10 +308,10 @@ Imagine that you are a traveler to Earth and come across the ruins of New York C
 \end{figure}
 
 \begin{qbox}[%
-If you know the location of New York, how could you use the information in the table above to find the other cities?
+If you know the location of New York, how could you use the information in \autoref{fig:atlas} to find the other cities?
 ]\end{qbox}
 
-This seemingly contrived example has a real archaeological counterpart. In 2019, researchers used commercial records that had been engraved by Assyrian merchants onto 19th Century BCE stone tablets in order to estimate distances between pairs of lost Bronze age cities in present-day Turkey. Using this ``atlas'' of sorts, they estimated the locations of the lost cities.
+This seemingly contrived example has a real archaeological counterpart. In 2019, researchers used commercial records that had been engraved by Assyrian merchants onto 19th Century BCE stone tablets in order to estimate distances between pairs of Bronze age cities in present-day Turkey. Using this ``atlas'' of sorts, they estimated the locations of lost cities.
 
 You may be confused as to why biologists should care about stone tablets and lost cities. Let us therefore return to our problem of classifying segmented WBC images by family.
 
@@ -320,47 +319,33 @@ You may be confused as to why biologists should care about stone tablets and los
 \phantomsection
 \subsection{Vectorizing a segmented image}
 
-As we mentioned in the previous section, we would like to apply k-NN to our example of segmented WBC images. Yet k-NN first requires each object to be represented by a feature vector, and so we need some way of converting a WBC image into a feature vector. In this way, we can produce a \textdef{shape space}{shape space}{an assignment of shapes to points in multi-dimensional space}, or an assignment of (cellular image) shapes to points in multi-dimensional space.
+We would like to apply a classification algorithm like k-NN to our example of segmented WBC images. Yet k-NN first requires each object to be represented by a feature vector, and so we need some way of converting a WBC image into a feature vector. In this way, we can produce a \textdef{shape space}{shape space}{an assignment of shapes to points in multi-dimensional space}, or an assignment of shapes to points in multi-dimensional space.
 
-You may notice that the problem of ``vectorizing'' a WBC image is similar to one that we have already encountered in \autoref{chapter:coronavirus}, when we vectorized a protein structure as the collection of locations of its alpha carbons. Given a protein structure \textvar{S}, we sampled the \textvar{n} alpha carbons from \textvar{S}, producing a vector $\mathbf{s} = (s_1, \ldots, s_n)$, where $s_i$ is the position of the \textvar{i}-th alpha carbon of \textvar{S}.
+You may notice that the problem of ``vectorizing'' a WBC image is similar to one that we have already encountered in \autoref{chapter:coronavirus}, when we vectorized a protein structure \textvar{S} as the collection of locations of its \textvar{n} alpha carbons to produce a vector $\mathbf{s} = (s_1, \ldots, s_n)$, where $s_i$ is the position of the \textvar{i}-th alpha carbon of \textvar{S}.
 
-We will apply the same idea to vectorize our segmented WBCs. Given a binarized image, we will first center the image so that its center of mass is at the origin, and then sample \textvar{n} points from the boundary of the cell nucleus to produce a \textdef{shape vector}{shape vector}{a feature vector for a shape whose features are points on the boundary of the shape} $s = (s_1, \ldots, s_n)$, where $s_i$ is a point with coordinates $(x(i), y(i))$.\\
+We will apply the same idea to vectorize our segmented WBCs. Given a binarized WBC nucleus image, we will first center the image so that its center of mass is at the origin, and then sample \textvar{n} points from the boundary of the cell nucleus to produce a \textdef{shape vector}{shape vector}{a feature vector for a shape whose features are points on the boundary of the shape} $s = (s_1, \ldots, s_n)$, where $s_i$ is a point with coordinates $(x(i), y(i))$.\\
 
 \begin{note}[%
-Both isolating the boundary of a binarized image, and sampling points from this boundary to ensure that points are similarly spaced, are challenging tasks that are outside the scope of our work here, and which we will let CellOrganizer handle for us.
+Both identifying the boundary of a binarized image and sampling points from this boundary to ensure that points are similarly spaced are challenging tasks that are outside the scope of our work here, and which we will let modeling software handle for us.
 ]\end{note}
 
-The feature vector of a binarized image has $2n$ elements, two corresponding to each of the coordinates of its \textvar{n} sampled points. However, it will be more intuitive to think of the shape vector as having length \textvar{n}, with each element having two coordinates.
-
-Furthermore, to determine the ``distance'' between two images' shape vectors, we will use our old friend root mean square deviation (RMSD), which is very similar to the Euclidean distance. Given shape vectors $\mathbf{s}$ and $\mathbf{t}$, the RMSD between these vectors is
+To determine the ``distance'' between two images' shape vectors, we will use our old friend root mean square deviation (RMSD), which is very similar to the Euclidean distance. Given shape vectors $\mathbf{s}$ and $\mathbf{t}$, the RMSD between these vectors is
 
 $$\text{RMSD}(\mathbf{s}, \mathbf{t}) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)}\,. $$
 
 \FloatBarrier
 \phantomsection
-\subsection{Ensuring that image vectorization preserves (dis)similarity}
+\subsection{Inferring a shape space from pairwise distances}
 
 It is tempting to take the vectorization of every shape as our desired shape space. If this were the case, then we would hope that images of similarly shaped nuclei will have low RMSD and that the more dissimilar two nuclei become, the higher the RMSD of their shape vectors. The potential issues with this assumption are the same as those encountered when discussing protein structures, which we now review.
 
-On the one hand, we need to ensure that the number of points that we sample from the object boundary is sufficiently high to avoid dissimilar shapes from having low RMSD. For this reason, CellOrganizer samples $n = 1000$ points by default for cell nuclei.
+On the one hand, recall the danger from undersampling from \autoref{fig:circle_square_undersampling}, so that we must ensure that the number of points that we sample from the object boundary is sufficiently high to avoid dissimilar shapes from having low RMSD. On the other hand, we could have very similar shapes whose RMSD winds up being high. For example, recall the shapes in \autoref{fig:two_shapes}, which are identical, but one has been flipped and rotated. If we were to vectorize these shapes as they are now in the same way (say, by starting at the top of the shape and proceeding clockwise), then we would obtain two vectors with high RMSD.
 
-On the other hand, we could have very similar shapes whose RMSD winds up being high. For example, recall the shapes in \autoref{fig:two_shapes}, which are identical, but one has been flipped and rotated. If we were to vectorize these shapes as they are now in the same way (say, by starting at the top of the shape and proceeding clockwise), then we would obtain two vectors with high RMSD.
+We handled the latter issue in our work on protein structure comparison by introducing the Kabsch algorithm, which identified the best rotation of one shape into another that would minimize the RMSD of the resulting shape vectors. And yet what makes our work here more complicated is that we are not comparing  two WBC image shape vectors, we are comparing hundreds.
 
-We handled this issue in our work on protein structure comparison by introducing the Kabsch algorithm, which identified the best rotation of one shape into another that would minimize the RMSD of the resulting vectors. And yet what makes our work here more complicated is that we are not comparing just two shape vectors in our example of WBC images, we are comparing hundreds.
+However, we could apply the Kabsch algorithm to every pair of images, producing the RMSD between every pair of images. We would then need to build a shape space from all these distances between pairs of shapes. We hope that this problem sounds familiar, as it is the Lost Cities problem in disguise. The pairs of distances between images correspond to a road atlas, and placing images into a shape space corresponds to locating cities.
 
-\FloatBarrier
-\phantomsection
-\subsection{Inferring a shape space from pairwise distances}
-
-One way to build a shape space for a collection of binarized images is to apply the Kabsch algorithm, which includes a step in which the best rotation is found, to every pair of images. As a result, we would obtain the RMSD between every pair of images, and we would then need to build a shape space from all these distances between pairs of shapes.\\
-
-\begin{note}[%
-CellOrganizer has one applies an alternative approach to the Kabsch algorithm for computing a cellular distance, called the \textdefnogloss{diffeomorphic distance}, which can be thought of intuitively as determining the amount of energy required to deform one shape into another.
-]\end{note}
-
-We hope that this problem sounds familiar, as it is the Lost Cities problem in disguise. The pairs of distances between images correspond to a road atlas, and placing images into a shape space corresponds to locating cities.
-
-Statisticians have devised a collection of approaches to solve the Lost Cities problem, the most common of which are called multi-dimensional scaling. The fundamental idea of multi-dimensional scaling is to assign points to \textvar{n}-dimensional space such that the distances between points in this space approximately resemble a collection of distances between pairs of objects in some dataset (which in our case is cellular images).\\
+Statisticians have devised a collection of approaches called multi-dimensional scaling to solve versions of the Lost Cities problem that arise frequently in practice. The fundamental idea of multi-dimensional scaling is to assign points to \textvar{n}-dimensional space such that the distances between points in this space approximately resemble a collection of distances between pairs of objects in some dataset.\\
 
 \begin{qbox}[%
 If we have \textvar{m} cellular images, then how many times will we need to compute the distance between a pair of images?
@@ -370,33 +355,33 @@ If we have \textvar{m} cellular images, then how many times will we need to comp
 \phantomsection
 \subsection{Aligning many images concurrently}
 
-Unfortunately, if we have a large dataset, then computing the distance between every pair of objects can become very time-intensive, even with a powerful computer. Instead, we will rotate all images \textit{concurrently}. After this alignment, we can then center and vectorize all the images starting at the same position.
+Unfortunately, if we have a large dataset, then computing the distance between every pair of objects can prove time-intensive, even with a powerful computer. Instead, we will rotate all images \textit{concurrently}. After this alignment, we can then center and vectorize all the images starting at the same position.
 
-One way of aligning a collection of images is to first identify the \textdef{major axis}{major axis}{the line segment crossing through an object's center of mass that is as long as possible} of each image, which is the line segment crossing through the image's center of mass that is as long as possible. \autoref{fig:three_similar_shapes_unaligned} shows the major axis for a few shapes that may not immediately look similar.
+One way of aligning a collection of images is to first identify the \textdef{major axis}{major axis}{the line segment crossing through an object's center of mass that is as long as possible} of each image, which is the line segment crossing through the image's center of mass that is as long as possible. \autoref{fig:three_similar_shapes_unaligned} shows the major axis for a few similar shapes.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.8\textwidth]{../images/three_similar_shapes_unaligned.png}
+\includegraphics[width = 0.85\textwidth]{../images/three_similar_shapes_unaligned.png}
 \caption{Three similar shapes, with their major axes highlighted in gray.}
 \label{fig:three_similar_shapes_unaligned}
 \end{figure}
 
-When we align the major axes of similar shapes, their similarities will overlap (\autoref{fig:three_similar_shapes_aligned}). These images are ready to be vectorized (say, starting from the point on the right side of an image's major axis and proceeding counterclockwise). The resulting vectors will have low RMSD because corresponding points on the shapes will be nearby.
+Aligning the major axes of these similar shapes reveals their similarities (\autoref{fig:three_similar_shapes_aligned}). These images are ready to be vectorized (say, starting from the point on the right side of an image's major axis and proceeding counterclockwise). The resulting vectors will have low RMSD because corresponding points on the shapes will be nearby.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.4\textwidth]{../images/three_similar_shapes_aligned.png}
+\includegraphics[width = 0.3\textwidth]{../images/three_similar_shapes_aligned.png}
 \caption{Aligning the three images from \autoref{fig:three_similar_shapes_unaligned} so that their major axes overlap allows us to see similarities between the shapes as well as build consistent shape vectors for them.}
 \label{fig:three_similar_shapes_aligned}
 \end{figure}
 
 \begin{note}[%
-When we align images along their major axes, we need to ensure that a shape's mirror image is not a better alignment. Handling this issue is beyond the scope of our work here but is discussed in the literature.
+In practice, when we align shapes along their major axes, we need to consider the flip of each shape across its major axis as well.
 ]\end{note}
 
-By vectorizing a collection of binarized cellular images after alignment, the resulting vectors form our desired shape space. To review, each vector correspond to a sampling of \textvar{n} points from the boundary of each image, which can be translated into a vector of $2n$ coordinates. Yet one more pitfall remains.\\
+By aligning and then vectorizing a collection of binarized cellular images after alignment, the resulting feature vectors form our desired shape space. We are almost ready to apply a classifier to this shape space, but one more pitfall remains.\\
 
 
 \FloatBarrier
