@@ -80,7 +80,7 @@ A few colors are shown in \autoref{fig:RGB_color_chart} along with their RGB equ
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/RGB_color_chart.png}
+\includegraphics[width = 0.7\textwidth]{../images/RGB_color_chart.png}
 \caption{A collection of colors along with their RGB codes. This table corresponds to mixing colors of light instead of pigment, which causes some non-intuitive effects; for example, yellow is formed by mixing equal parts red and green. The last six colors appear muted because they only receive half of a given color value compared to a color that receives 256 units. If all three colors are mixed in equal proportions, then we obtain a color on the gray scale between white (maximum amount of all three colors) and black (no color).}
 \label{fig:RGB_color_chart}
 \end{figure}
@@ -109,7 +109,7 @@ We will \textdefnogloss{binarize} each blood cell image by coloring a pixel whit
 How might we modify our segmentation approach to perform a binarization that identifies the WBC nucleus more effectively?
 ]\end{qbox}
 
-We were unable to distinguish between the image background and the WBC nucleus using blue color values, but a color picker verifies that pixels in the WBC nucleus tend to have a green value that is much lower than the image background and a red value that is lower than every other part of the image. \autoref{fig:neutrophil_binarized_other_colors} shows two binarizations of the original image using a green threshold of 153 (left) and a red threshold of 166 (right).
+We were unable to distinguish between the image background and the WBC nucleus using blue color values, but a color picker verifies that pixels in the WBC nucleus tend to have a green value that is much lower than the image background and a red value that is lower than every other part of the image. \autoref{fig:neutrophil_binarized_other_colors} shows two binarizations of the original image using a green threshold of 153 (left) and a red threshold of 166 (right).\\
 
 \begin{figure}[h]
 \centering
