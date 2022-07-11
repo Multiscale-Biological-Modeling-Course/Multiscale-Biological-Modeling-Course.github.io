@@ -509,7 +509,15 @@ The first principal component is often said to be the line that ``explains the m
 
 Another benefit of finding the first principal component of a dataset is that it allows us to \textit{reduce} the dimensionality of our dataset from two dimensions to one. As a result, the projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
 
-Say that we wanted to generalize the ideas above to three-dimensional space. The first principal component would offer a one-dimensional explanation of the variance in the data, but perhaps a line is insufficient to this end. Maybe the points all lie very near to a plane (a two-dimensional object), and projecting these points onto the nearest plane would effectively reduce the dataset to two dimensions.
+Say that we wanted to generalize the ideas above to three-dimensional space. The first principal component would offer a one-dimensional explanation of the variance in the data, but perhaps a line is insufficient to this end. Maybe the points all lie very near to a plane (a two-dimensional object), and projecting these points onto the nearest plane would effectively reduce the dataset to two dimensions (\autoref{fig:three_dimensional_pca}).
+
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.6\textwidth]{../images/three_dimensional_pca.png}
+\caption{FILL IN CAPTION}
+\label{fig:three_dimensional_pca}
+\end{figure}
 
 Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but it is possible to generalize these concepts mathematically. Given a collection of \textvar{m} data points (vectors) in \textvar{n}-dimensional space, we are looking for a \textvar{d}-dimensional \textdef{hyperplane}{hyperplane}{an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space}, or an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on this hyperplane, we reduce the dimension of the dataset from \textvar{n} to \textvar{d}. This approach, which is over 100 years old, is called \textdef{principal component analysis (PCA)}{principal component analysis (PCA)}{an approach used for finding the lower-dimensional hyperplane through a collection of data minimizing the distances of the points to the hyperplane}; a closely related concept called \textdefnogloss{singular value decomposition} was developed in the \nth{19} century.\\
 
@@ -573,14 +581,16 @@ PCA may be old, but it is one of the fundamental tools of statistical analysis i
 
 \autoref{fig:cellorg_pca_graph} (top) shows the shape space of WBC images, reduced to three dimensions by PCA, in which each image is represented by a point that is color-coded according to its cell family. We can also subdivide granulocytes into basophils, eosinophils, and neutrophils. Updating our labels according to this subdivision produces the plot in \autoref{fig:cellorg_pca_graph} (bottom).\tutorial[white_blood_cells/tutorial_shape_space]
 
-\begin{figure}[h]
+\begin{figure}[p]
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/cellorg_pca_graph.png}\\[4ex]
 \includegraphics[width = 0.7\textwidth]{../images/cellorg_pca_graph_cell.png}
-\caption{(Top) The projection of each WBC shape vector onto a three-dimensional PCA hyperplane produces the above three-dimensional space. Granulocytes are shown in blue, lymphocytes are shown in orange, and monocytes are shown in green. (Bottom) The same reduced dimension shape space, with granulocytes subdivided into basophils, eosinophils, and neutrophils.}
+\caption{(Top) The projection of each WBC shape vector onto a three-dimensional PCA hyperplane produces the above three-dimensional space. (Bottom) The same reduced dimension shape space, with granulocytes subdivided into basophils, eosinophils, and neutrophils.}
 \label{fig:cellorg_pca_graph}
 \end{figure}
+
+
 
 Although images from the same family do not cluster as tightly as the iris flower dataset --- which could be criticized as an unrealistic representation of the noise inherent in most real datasets --- images from the same type do appear to be nearby. This fact should give us hope that proximity in a dimension-reduced space may help us correctly classify images of unknown type.\\
 
