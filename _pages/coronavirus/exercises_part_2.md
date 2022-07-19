@@ -1,6 +1,6 @@
 ---
 permalink: /coronavirus/exercises_part_2
-title: "Coronavirus Exercises Part 1"
+title: "Coronavirus Exercises Part 2"
 sidebar:
  nav: "coronavirus"
 toc: true
