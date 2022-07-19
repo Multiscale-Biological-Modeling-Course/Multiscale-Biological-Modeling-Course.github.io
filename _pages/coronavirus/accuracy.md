@@ -34,7 +34,7 @@ Our idea for defining *d*(*S*, *T*), then, is first to translate, flip, and rota
 
 We first translate *S* to have the same **center of mass** (or **center of mass**) as *T*. The center of mass of *S* is found at the point (*x*<sub><em>S</em></sub>, *y*<sub><em>S</em></sub>) such that *x*<sub><em>S</em></sub> and *y*<sub><em>S</em></sub> are the respective averages of the *x*-coordinates and *y*-coordinates on the boundary of *S*.
 
-The center of mass of some shapes, like the arc in the preceding example, can be determined mathematically. But for irregular shapes, we will first sample *n* points from the boundary of *S* and then estimate *x*<sub><em>S</em></sub> and *y*<sub><em>S</em></sub> as the average of all the respective *x*- and *y*-coordinates from the sampled points.
+The center of mass of some shapes can be determined mathematically. But for irregular shapes, we will first sample *n* points from the boundary of *S* and then estimate *x*<sub><em>S</em></sub> and *y*<sub><em>S</em></sub> as the average of all the respective *x*- and *y*-coordinates from the sampled points.
 
 After finding the center of mass of the two shapes *S* and *T* that we wish to compare, we translate *S* so that it has the same center of mass as *T*. We then wish to find the rotation of *S*, possibly along with a flip as well, that makes the shape resemble *T* as much as possible.
 
