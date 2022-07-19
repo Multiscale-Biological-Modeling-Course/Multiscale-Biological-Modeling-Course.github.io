@@ -269,6 +269,7 @@ GEM
 
 PLATFORMS
   universal-darwin-18
+  universal-darwin-21
 
 DEPENDENCIES
   github-pages
@@ -282,4 +283,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   2.2.25
+   2.3.18

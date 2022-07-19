@@ -28,7 +28,10 @@ In the `AutoPSF` window, make sure that the selected molecule is `6vw1.pdb` and 
 [![image-center](../assets/images/600px/NAMD2.png){: .align-center}](../assets/images/NAMD2.png)
 {: style="font-size: medium;"}
 
-During this process, you may see an error message stating `MOLECULE DESTROYED`. If you see this message, click `Reset Autopsf` and repeat the above steps. The selected molecule will change, so make sure that the selected molecule is `6vw1.pdb` when you start over. Failed molecules remain in VMD, so deleting the failed molecule from `VMD Main` is recommended before each new attempt.
+**Note:** It may be the case that NAMD hangs when attempting to guess and split chains. If so, we are providing the PSF files <a target="_blank" href="../tutorials/PSF_Files.zip">here</a>. During this process, you may see an error message stating `MOLECULE DESTROYED`. If you see this message, click `Reset Autopsf` and repeat the above steps. The selected molecule will change, so make sure that the selected molecule is `6vw1.pdb` when you start over. Failed molecules remain in VMD, so deleting the failed molecule from `VMD Main` is recommended before each new attempt.
+{: .notice--info}
+
+../tutorials/NAR_compare_equal.blend
 
 If the PSF file is successfully created, then you will see a message stating `Structure complete.` The `VMD Main` window also will have an additional line.
 
