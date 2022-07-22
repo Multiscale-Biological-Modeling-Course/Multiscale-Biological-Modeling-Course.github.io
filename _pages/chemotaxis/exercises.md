@@ -20,6 +20,13 @@ We learned that *E. coli* is likely to run for longer when traveling up an attra
 **Exercise:** Adapt the "chemotactic" random walk strategy that we implemented in a [tutorial](tutorial_walk) to handle the fact that bacteria sensing a relative decrease in repellent concentration will have longer runs before tumbling. Simulate this strategy for a collection of particles placed near a "goal" representing a repellent source. What is the average distance of the particles from the goal? How does this compare to the average distance to the goal for a collection of particles following a pure random walk?
 {: .notice--success}
 
+## Traveling down an attraction gradient. 
+
+A related question to how a bacterium responds to a repellent is how it responds to traveling *away* from an attractant, i.e., down an attractant gradient. To model this situation, we will still use the functionm \[*L*\] = $l_o \cdot e^{k \cdot t}$ that we used when modeling a bacterium traveling up an attractant gradient, but we will now assume that $k$ is negative so that the concentration is decaying exponentially. Refer to that tutorial for details. 
+
+**Exercise:** Adapt [the gradient simulation](tutorial_gradient) to model the concentration of phosphorylated CheY over time for an exponentially decaying attractant concentration. How does the plot of phosphorylated CheY change as $k$ gets more negative? 
+{: .notice--success}
+
 ## What if *E. coli* has multiple attractant sources?
 
 Not only can *E. coli* sense both repellents and attractants, but it can detect *more than one* attractant gradient at the same time.  This function has a clear evolutionary purpose in a bacterial environment of multiple sparsely populated food sources. In this section, we will explore whether the chemotaxis mechanism allows cells to navigate through heterogeneous nutrient distributions.
@@ -105,7 +112,7 @@ After building the model, we can run our simulation with the following command (
 simulate({method=>"nf", t_end=>100, n_steps=>1000})
 ~~~
 
-**Exercise:**Run the simulation. How do the concentrations of polymers vary according to the lengths of the polymers?
+**Exercise:** Run the simulation. How do the concentrations of polymers vary according to the lengths of the polymers?
 {: .notice--success}
 
 **Exercise:** What happens to polymer concentrations as we change the polymer binding and dissociation rates? Does your observation reflect what you might expect?

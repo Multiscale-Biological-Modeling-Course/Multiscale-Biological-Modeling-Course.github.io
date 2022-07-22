@@ -47,7 +47,7 @@ When the steady state concentration of *LT* is reached, the rates of the forward
 
 We also know that by the law of conservation of mass, the concentrations of *L* and *T* molecules are always constant across the system and are equal to their initial concentrations. That is, at any time point,
 
-[*L*] + [*LT*] = *l*<sub>0</sub>
+[*L*] + [*LT*] = *l*<sub>0</sub><br>
 [*T*] + [*LT*] = *t*<sub>0</sub>.
 
 We solve these two equations for [*L*] and [*T*] to yield
@@ -94,7 +94,7 @@ $$[LT] = \dfrac{205 \pm \sqrt{205^2 - 4 \cdot 2 \cdot 5000}}{2 \cdot 2} = 51.25 
 
 It would seem that this equation has *two* solutions: [*LT*] = 51.25 + 11.25 = 62.5 and [*LT*] = 51.25 - 11.25 = 40. Yet because *l*<sub>0</sub> and *t*<sub>0</sub>, the respective initial concentrations of *L* and *T*, are both equal to 50, the first "solution" would imply that [*L*] = *l*<sub>0</sub> - [*LT*] = 50 - 62.5 = -12.5 and [*T*] = *t*<sub>0</sub> - [*LT*] = 50 - 62.5 = -12.5, which is impossible because the concentration of a particle cannot be negative.
 
-Now that we know the steady state concentration of *LT*, we can recover the values of [*L*] and [*T*] as
+Now that we know the steady state concentration of *LT* must be 40, we can recover the values of [*L*] and [*T*] as
 
 [*L*] = *l*<sub>0</sub> - [*LT*] = 10<br>
 [*T*] = *t*<sub>0</sub> - [*LT*] = 10.
