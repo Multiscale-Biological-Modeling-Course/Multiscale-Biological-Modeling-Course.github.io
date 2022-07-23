@@ -12,13 +12,13 @@ In a [previous tutorial](tutorial_nuclear_segmentation), we segmented and binari
 
 We are now ready to use CellOrganizer to build a shape space of these images and then apply PCA to the resulting shape vectors in order to reduce the dimension of the dataset. 
 
-**Note:** This is a modified version of the [shape space tutorial](tutorial_shape_space), written to use the <a href="https://www.docker.com/" target="_blank">Docker</a> implementation of CellOrganizer rather than the MATLAB version. We created this alternative version primarily for Windows users, as the MATLAB implementation of CellOrganizer does not currently work on the Windows platform. Those who are running a Mac/Linux machine may prefer to follow the [original version](tutorial_shape_space) of the tutorial. Note that MATLAB is still required for this version of the tutorial.
+**Note:** This is a modified version of the [shape space tutorial](tutorial_shape_space), written to use the <a href="https://www.docker.com/" target="_blank">Docker</a> implementation of CellOrganizer rather than the (standard) MATLAB implementation. We created this alternative version primarily for Windows users, as the MATLAB implementation of CellOrganizer does not currently work on the Windows platform. Those who are running a Mac/Linux machine may prefer to follow the [original tutorial](tutorial_shape_space). Note that MATLAB is still required for this version of the tutorial.
 {: .notice--info}
 
 
 ### Installing Docker and CellOrganizer
 
-We'll need to install Docker in order to use CellOrganizer. To do so, follow the instructions <a href="https://docs.docker.com/desktop/install/windows-install/" target="_blank">here</a>. 
+We'll need to install Docker in order to use this version of CellOrganizer. To do so, follow the instructions <a href="https://docs.docker.com/desktop/install/windows-install/" target="_blank">here</a>. 
 
 **Note:** In order to get Docker to run, it may be necessary for Windows users to <a href="https://docs.microsoft.com/en-us/windows/wsl/install" target="_blank">set up the Windows Subsystem for Linux</a>. Also, depending on the computer, it may be necessary to modify the computer's BIOS settings and enable <a href="https://en.wikipedia.org/wiki/Virtualization" target="_blank">virtualization technology</a> in order to get Docker to run. Consult the help sections on <a href="https://docs.docker.com/desktop/install/windows-install/#wsl-2-backend" target="_blank">WSL</a> and <a href="https://docs.docker.com/desktop/troubleshoot/topics/#virtualization" target="_blank">virtualization</a> for more details. 
 {: .notice--info}
@@ -28,7 +28,7 @@ We'll need to install Docker in order to use CellOrganizer. To do so, follow the
 
 CellOrganizer for Docker is implemented as a Jupyter notebook server. First, ensure that Docker is running by launching the Docker Desktop app. Next, follow the instructions <a href="https://cellorganizer.readthedocs.io/en/latest/chapters/cellorganizer_for_docker.html#getting-started" target="_blank">here</a> to start the server. 
 
-**Note:** For Windows users, we recommend executing the commands in the instructions in the link above using a UNIX-like terminal such as git bash, which can be downloaded <a href="https://gitforwindows.org/" target="_blank">here</a>. To execute the `run.sh` script, simply navigate to the folder where you saved the file, and execute the command `bash ./run.sh`. For example, if you saved the file onto your desktop, you would first type in `cd ~/Desktop`, and then run the bash script. 
+**Note:** For Windows users, we recommend executing the commands in the instructions above using a UNIX-like terminal such as git bash, which can be downloaded <a href="https://gitforwindows.org/" target="_blank">here</a>. To execute the `run.sh` script, simply navigate to the folder where you saved the file, and execute the command `bash ./run.sh`. For example, if you saved the file onto your desktop, you would first type in `cd ~/Desktop`, and then run the bash script. 
 {: .notice--info}
 
 The output of `run.sh` is shown below. To access the Jupyter notebook server, copy the URL shown at the bottom of the output (highlighted below).
@@ -36,23 +36,24 @@ The output of `run.sh` is shown below. To access the Jupyter notebook server, co
 [![image-center](../assets/images/600px/shape_space_docker_img1.png){: .align-center width="400px"}](../assets/images/shape_space_docker_img1.png)
 {: style="font-size: medium;"}
 
-Open a web browser, and navigate to the URL. This will open up the Jupyter notebook server, which contains all of the software needed to run CellOrganizer. 
+Open a web browser, and navigate to the URL you copied above. This will open up the Jupyter notebook server, which contains all of the software needed to run CellOrganizer and create our model. 
 
 [![image-center](../assets/images/600px/shape_space_docker_img2.png){: .align-center width="400px"}](../assets/images/shape_space_docker_img2.png)
 {: style="font-size: medium;"}
 
-Next, we need to upload our images to the server so that they can be input to CellOrganizer. The most straightforward way to do this would be to upload our `WBC_PCAPipeline/Data/BWImgs_1` folder onto the server, but unfortunately we can only upload individual files onto the server. Thus, it seems we need to upload all 345 images one-by-one onto the server! Fortunately, there is a workaround - Jupyter notebooks allows us to upload zipped folders, so we can simply upload a zipped folder onto the server which contains all of our images. Much better!
+Next, we need to upload our images to the server so that they can be input to CellOrganizer. The most straightforward way to do this would be to upload our `WBC_PCAPipeline/Data/BWImgs_1` folder onto the server, but unfortunately we can only upload individual files onto the server. Thus, it seems we need to upload all 345 images, one-by-one, onto the server! Fortunately, there is a simple workaround - Jupyter notebooks allows us to upload zipped folders, so we can instead upload a zipped folder onto the server which contains all of our images. Much better!
 
-Thus, first zip your `BWImgs_1` folder. (If you are unsure how to do so, on Windows, you can right-click on the folder in your File Explorer, and select `send to > Compressed (zipped) folder`). Next, click the `upload` button near the top-right corner of the Jupyter notebook screen, and double-click on the zipped folder you just created. Then, click the `upload` button next to the newly added file. 
+So, first zip your `BWImgs_1` folder. (If you are unsure how to do so, on Windows, you can right-click on the folder in your File Explorer, and select `send to > Compressed (zipped) folder`). Next, click the `upload` button near the top-right corner of the Jupyter notebook screen, and double-click on the zipped folder you just created. Then, click the `upload` button next to the newly added folder. 
 
 [![image-center](../assets/images/600px/shape_space_docker_img3.png){: .align-center width="400px"}](../assets/images/shape_space_docker_img3.png)
 {: style="font-size: medium;"}
 
-We are finally ready to start using CellOrganizer! Create a new IPython notebook on the server, and copy and paste the following code. We will not walk through the code, but feel free to compare it with the corresponding MATLAB code contained in `WBC_PCAPipeline/Step3_ModelGeneration/WBC_PCAModel.m`. 
+We are finally ready to start using CellOrganizer! Create a new IPython notebook on the server, and copy and paste the following code into a code cell. We will not walk through the code, but feel free to compare it with the corresponding MATLAB code contained in `WBC_PCAPipeline/Step3_ModelGeneration/WBC_PCAModel.m`. 
 
 ~~~ python
-! unzip BWImgs_1 # unzip folder - ! specifies UNIX command (not python)
+! unzip BWImgs_1 # unzip folder - the ! specifies a UNIX command (not python)
 
+# import CellOrganizer functions
 from cellorganizer.tools import img2slml, slml2info
 
 import os
@@ -97,18 +98,18 @@ cellm = [os.path.join(directory, 'bw*.tiff')]
 img2slml(dimensionality, dna, cellm, [], options)
 
 # img2slml results saved in a MATLAB data file if command run successfully.
-print("WBC_PCA.mat" in os.listdir())
+print("Model output saved successfully:", "WBC_PCA.mat" in os.listdir())
 ~~~
 
-The results of running the python code above will be a new file, `WBC_PCA.mat`, stored on the Jupyter notebook server. Download the file onto your own local computer, and store it in the folder `WBC_PCAPipeline/Step3_ModelGeneration`. 
+The results of running the python code above will be a new file called `WBC_PCA.mat` stored on the Jupyter notebook server. Download the file onto your own local computer, and store it in the folder `WBC_PCAPipeline/Step3_ModelGeneration`. 
 
-Next, start MATLAB, and type in the following command to navigate to the appropriate folder (replace `PATH/TO/` with the actual path name):
+Next, start MATLAB, and type in the following command to set the path to `WBC_PCAPipeline/Step3_ModelGeneration` (replace `PATH/TO/` with the actual path preceding this folder):
 
 ~~~
-cd PATH/TO/WBC_PCAPipeline/Step3_ModelGeneration
+cd 'PATH/TO/WBC_PCAPipeline/Step3_ModelGeneration'
 ~~~
 
-Next, run the following lines of code to extract and save the principal components from your saved model: 
+Next, run the following lines of code to extract and save the principal components from your model to a `.csv` file: 
 
 ~~~
 load( [pwd filesep 'WBC_PCA.mat'] );
@@ -120,7 +121,7 @@ writetable(mtrx, '../Step4_Visualization/WBC_PCA.csv');
 
 The result will be a new file, `WBC_PCA.csv`, saved to the folder `Step4_Visualization`. 
 
-**Note:** If you use this file as input for the [next tutorial](tutorial_image_classification), you will obtain slightly different results from those shown in the tutorial. We are not sure why the results obtained from CellOrganizer for Docker outputs slightly different results from CellOrganizer for MATLAB; however, the differences should not be significant. 
+**Note:** If you use this file as input for the [next tutorial](tutorial_image_classification), you will obtain slightly different results from those in the text. We are not sure why the results obtained from CellOrganizer for Docker outputs slightly different results from CellOrganizer for MATLAB; however, the differences should not be significant. 
 {: .notice--info}
 
 That's it! You can now follow along the remainder of the tutorial, where we visualize the PCA results we just created.
