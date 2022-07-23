@@ -4,7 +4,7 @@ title: "Software Tutorial: Generalizing and Visualizing an Image Shape Space Aft
 sidebar:
  nav: "white_blood_cells"
 toc: false
-toc_sticky: false
+toc_sticky: true
 image: "../assets/images/normal_adult_blood_smear.JPG"
 ---
 
