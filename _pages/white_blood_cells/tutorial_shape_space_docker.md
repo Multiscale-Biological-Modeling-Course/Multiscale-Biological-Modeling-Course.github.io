@@ -16,9 +16,9 @@ We are now ready to use CellOrganizer to build a shape space of these images and
 {: .notice--info}
 
 
-### Installing Docker and CellOrganizer
+### Necessary Software
 
-We'll need to install Docker in order to use this version of CellOrganizer. To do so, follow the instructions <a href="https://docs.docker.com/desktop/install/windows-install/" target="_blank">here</a>. 
+We'll need to install Docker in order to use this version of CellOrganizer. To do so, follow the instructions <a href="https://docs.docker.com/desktop/install/windows-install/" target="_blank">here</a>. For Windows users, we also recommend installing a UNIX-like terminal such as Git Bash, which can be downloaded as part of <a href="https://gitforwindows.org/" target="_blank">Git for Windows</a>.
 
 **Note:** In order to get Docker to run, it may be necessary for Windows users to <a href="https://docs.microsoft.com/en-us/windows/wsl/install" target="_blank">set up the Windows Subsystem for Linux</a>. Also, depending on the computer, it may be necessary to modify the computer's BIOS settings and enable <a href="https://en.wikipedia.org/wiki/Virtualization" target="_blank">virtualization technology</a> in order to get Docker to run. Consult the help sections on <a href="https://docs.docker.com/desktop/install/windows-install/#wsl-2-backend" target="_blank">WSL</a> and <a href="https://docs.docker.com/desktop/troubleshoot/topics/#virtualization" target="_blank">virtualization</a> for more details. 
 {: .notice--info}
@@ -28,10 +28,10 @@ We'll need to install Docker in order to use this version of CellOrganizer. To d
 
 CellOrganizer for Docker is accessed via a Jupyter notebook server interface. To get started, first ensure that Docker is running by launching the Docker Desktop app. Next, follow the instructions <a href="https://cellorganizer.readthedocs.io/en/latest/chapters/cellorganizer_for_docker.html#getting-started" target="_blank">here</a> to start the server. 
 
-**Note:** For Windows users, we recommend executing the commands in the instructions above using a UNIX-like terminal such as git bash, which can be downloaded <a href="https://gitforwindows.org/" target="_blank">here</a>. To execute the `run.sh` script, simply navigate to the folder where you saved the file, and execute the command `bash ./run.sh`. For example, if you saved the file onto your desktop, you would first type in `cd ~/Desktop`, and then `bash ./run.sh` to run the bash script. 
+**Note:** To execute the `run.sh` script from the instructions above, first navigate to the folder where you saved the file using Git Bash, and execute the command `bash ./run.sh`. For example, if you saved the file onto your desktop, you would first type in `cd ~/Desktop`, and then `bash ./run.sh` to run the bash script. 
 {: .notice--info}
 
-The output of `run.sh` is shown below. To access the Jupyter notebook server, copy the URL shown at the bottom of the output (highlighted below).
+The output from running the commands in the instructions above is shown below. To access the Jupyter notebook server, copy the URL shown at the bottom of the output (highlighted below).
 
 [![image-center](../assets/images/600px/shape_space_docker_img1.png){: .align-center width="400px"}](../assets/images/shape_space_docker_img1.png)
 {: style="font-size: medium;"}
