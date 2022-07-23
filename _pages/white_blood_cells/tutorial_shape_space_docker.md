@@ -108,7 +108,7 @@ Next, start MATLAB, and set the MATLAB path by clicking the button indicated bel
 [![image-center](../assets/images/600px/shape_space_docker_img4.png){: .align-center width="400px"}](../assets/images/shape_space_docker_img4.png)
 {: style="font-size: medium;"}
 
-Next, run the following lines of MATLAB code to extract and save the principal components from your model to a `.csv` file: 
+Once the path is set, run the following lines of MATLAB code to extract and save the principal components from your model to a `.csv` file: 
 
 ~~~
 load( [pwd filesep 'WBC_PCA.mat'] );
