@@ -71,9 +71,9 @@ A visualization of a single reaction event used by the Gillespie algorithm for l
 
 When we generalize the Gillespie algorithm to *n* reactions occurring at rates *r*<sub>1</sub>, *r*<sub>2</sub>, …, *r*<sub><em>n</em></sub>, the wait time between reactions will be exponentially distributed with average 1/(*r*<sub>1</sub> + *r*<sub>2</sub> + … + *r*<sub><em>n</em></sub>). Once we select the next reaction to occur, the likelihood that it is the *i*-th reaction is equal to
 
-*r*<sub><em>i</em></sub>/(*r*<sub>1</sub> + *r*<sub>2</sub> + … + *r*<sub><em>n</em></sub>).
+*r*<sub><em>i&nbsp;</em></sub>/(*r*<sub>1</sub> + *r*<sub>2</sub> + … + *r*<sub><em>n</em></sub>).
 
-Throughout this module, we will employ <a href="http://bionetgen.org/" target="_blank">BioNetGen</a> to apply the Gillespie algorithm to well-mixed models of chemical reactions. We will use our ongoing example of ligand-receptor binding and dissociation to introduce the way in which BioNetGen represents molecules and reactions involving them.The following tutorial shows how to implement this rule in BioNetGen and use the Gillespie algorithm to determine the equilibrium of a reversible ligand-receptor binding reaction.
+Throughout this module, we will employ <a href="http://bionetgen.org/" target="_blank">BioNetGen</a> to apply the Gillespie algorithm to well-mixed models of chemical reactions. We will use our ongoing example of ligand-receptor binding and dissociation to introduce the way in which BioNetGen represents molecules and reactions involving them. The following tutorial shows how to implement this rule in BioNetGen and use the Gillespie algorithm to determine the equilibrium of a reversible ligand-receptor binding reaction.
 
 [Visit tutorial](tutorial_lr){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
