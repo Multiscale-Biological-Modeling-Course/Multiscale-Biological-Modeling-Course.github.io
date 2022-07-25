@@ -17,19 +17,19 @@ To get started, create a copy of your file from the ligand-receptor tutorial and
 
 ## Defining molecules
 
-First, we introduce a state into the receptor and CheY particles to mark whether they are is phosphorylated or not. The notation `Phos~U~P` indicates we introduce phosphorylation states to a molecule (`U` indicates unphosphorylated, and `P` indicates phosphorylated). We also add molecule `CheY(Phos~U~P)` and `CheZ()`.
+Say that we wanted to specify all particles and the reactions involving them in the manner used up to this point in the book. We would need one particle type to represent MCP molecules, another particle type to represent ligands, and a third to represent bound complexes. A bound complex molecule binds with CheA and CheW and can be either phosphorylated or unphosphorylated, necessitating two different molecule types. In turn, CheY can be phosphorylated or unphosphorylated as well, requiring two more particles.
+
+Instead, the BioNetGen language will allow us to conceptualize this system much more concisely using **rules** that apply to particles that are in a variety of states (we will say more about the paradigm of using rules soon in the main text). The BioNetGen representation of the four particles in our model is shown below. The notation `Phos~U~P` indicates that a given molecule type can be either phosphorylated or unphosphorylated, so that we do not need multiple different expressions to represent the molecule. We also add molecules `CheY(Phos~U~P)` and `CheZ()`.
+
+~~~ ruby
+L(t)             #ligand molecule
+T(l,Phos~U~P)    #receptor complex
+CheY(Phos~U~P)
+CheZ()
+~~~
 
 **Note:** Be careful with the use of spaces; don't put spaces after the comma in the specification of the receptor.)
 {: .notice--info}
-
-~~~ ruby
-begin molecule types
-	L(t)             #ligand molecule
-	T(l,Phos~U~P)    #receptor complex
-	CheY(Phos~U~P)
-	CheZ()
-end molecule types
-~~~
 
 During this simulation, we are interested in tracking the concentration of phosphorylated CheY and CheA (receptor complex) along with the concentration of the ligand.
 
@@ -63,7 +63,7 @@ YP: T(Phos~P) + CheY(Phos~U) -> T(Phos~U) + CheY(Phos~P) k_Y_phos
 YDep: CheZ() + CheY(Phos~P) -> CheZ() + CheY(Phos~U) k_Y_dephos
 ~~~
 
-We use the snippets above to create a complete set of reaction rules for our simulated system. 
+We use the snippets above to create a complete set of reaction rules for our simulated system.
 
 <!-- Old Instructions. -->
 <!-- Now we are ready to update our reaction rules to include phosphorylation and dephosphorylation in addition to the ligand-receptor reaction. These rules were discussed in the main text and are reproduced below. -->
