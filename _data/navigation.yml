@@ -101,8 +101,6 @@ chemotaxis:
         url: /chemotaxis/biochemistry
       - title: "Methylation helps a bacterium adapt to differing concentrations<br><br>"
         url: /chemotaxis/adaptation
-      - title: "Modeling a Bacterium’s Response to an Attractant Gradient<br><br>"
-        url: /chemotaxis/gradient
       - title: "Conclusion: the beauty of E. coli's robust randomized exploration algorithm<br><br>"
         url: /chemotaxis/conclusion
   - title: Software Tutorials (featuring BioNetGen)
@@ -153,11 +151,9 @@ coronavirus:
         url: /coronavirus/multiseq
       - title: "Analysis of structural protein differences<br><br>"
         url: /coronavirus/structural_differences
-      - title: "From static protein analysis to molecular dynamics<br><br>"
-        url: /coronavirus/gnm
-      - title: "Anisotropic network models<br><br>"
-        url: /coronavirus/anm
-      - title: "Part 2 conclusion: bamboo shoots after the rain<br><br>"
+      - title: "Quantification of protein interaction energy<br><br>"
+        url: /coronavirus/interaction_energy
+      - title: "Part 2 conclusion: from static protein analysis to molecular dynamics<br><br>"
         url: /coronavirus/conclusion_part_2
   - title: Software Tutorials (featuring ProDy)
     children:
@@ -183,8 +179,6 @@ coronavirus:
     children:
       - title: "Coronavirus part 1 exercises"
         url: /coronavirus/exercises_part_1
-      - title: "Coronavirus part 2 exercises"
-        url: /coronavirus/exercises_part_2
 
 white_blood_cells:
   - title: "Training a Computer to Classify White Blood Cells"
