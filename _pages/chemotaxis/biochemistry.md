@@ -54,12 +54,12 @@ But does higher attractant concentration in our model really lead to a lower con
 
 The top panel of the following figure shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency. The addition of 5,000 attractant ligand molecules increases the concentration of bound receptors, therefore leading to less CheA autophosphorylation, and less phosphorylated CheY (middle panel). If we instead have 100,000 initial attractant molecules, then we see an even more drastic decrease in phosphorylated CheA and CheY (bottom panel). 
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial5.png){: .align-center}](../assets/images/chemotaxis_tutorial5.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial5_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial5_vscode.png)
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial6.png){: .align-center}](../assets/images/chemotaxis_tutorial6.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial6_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial6_vscode.png)
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial7.png){: .align-center}](../assets/images/chemotaxis_tutorial7.png)
-Molecular concentrations over time (in seconds) in a chemotaxis simulation for three different initial unbound attractant ligand concentrations: no attractant ligand (top), 5,000 ligand particles (middle), and 100,000 ligand particles (bottom). Note that the simulated cell's bound ligand concentration (green) achieves equilibrium very quickly in each case.
+[![image-center](../assets/images/600px/chemotaxis_tutorial7_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial7_vscode.png)
+Molecular concentrations over time (in seconds) in a chemotaxis simulation for three different initial unbound attractant ligand concentrations: no attractant ligand (top), 5,000 ligand particles (middle), and 100,000 ligand particles (bottom). Note that the simulated cell's bound ligand concentration (green) achieves equilibrium very quickly in each case. 
 {: style="font-size: medium;"}
 
 This Gillespie model confirms the biological observations that an increase in attractant reduces the concentration of phosphorylated CheY. This reduction takes place remarkably quickly, with the cell attaining a new equilibrium in a fraction of a second.
