@@ -23,7 +23,7 @@ In this tutorial, we will focus only on modeling ligand-receptor dynamics, which
 
 ## Installation and setup
 
-BioNetGen features a convenient interface via the Microsoft Visual Studio Code editor. To see how to set up and install the necessary software, please visit their [setup and installation page](http://bionetgen.org/install). 
+BioNetGen features a convenient interface via the Microsoft Visual Studio Code editor. To see how to set up and install the necessary software, please visit their [setup and installation page](http://bionetgen.org/install).
 
 <!-- Old Paragraph -->
 <!-- [RuleBender](https://github.com/RuleWorld/rulebender/releases/tag/RuleBender-2.3.2) is the graphical interface for BioNetGen. Please [download](https://github.com/RuleWorld/rulebender/releases/tag/RuleBender-2.3.2) the version corresponding to your operating system. Here is a step-by-step [installation guide](https://github.com/RuleWorld/rulebender/blob/master/docs/RuleBender-installation-guide.pdf). -->
@@ -44,13 +44,13 @@ We will simulate reaching this steady state, which means that we will need to kn
 
 Equilibrium is reached when `k_lr_bind [L][T]` = `k_lr_dis[L.T]`. Our goal in this tutorial is to use BioNetGen to determine this equilibrium in molecule concentrations as a proof of concept.
 
-To use BioNetGen, first create a folder called "EColiSimulations" in an appropriate location on your computer. Next, open VSCode, and select `File > Open Folder`, and open the folder you just created. 
+To use BioNetGen, first create a folder called "EColiSimulations" in an appropriate location on your computer. Next, open VSCode, and select `File > Open Folder`, and open the folder you just created.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial1_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial1_VSCode.png)
 
 In this directory, create a new file by selecting the `File > New Text File`. Save the file as  `ligand_receptor.bngl`. Now you should be able to start coding on line 1.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial2_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2_VSCode.png) 
+[![image-center](../assets/images/600px/chemotaxis_tutorial2_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2_VSCode.png)
 
 <!-- Old Instructions -->
 <!-- First, open RuleBender and select `File > New BioNetGen Project`.
@@ -67,7 +67,9 @@ We will specify everything needed for this tutorial, but if you are interested, 
 
 To specify our model, add `begin model` and `end model`. Everything below regarding the specification of the model will go between these two lines.
 
-We first add ligand and receptor molecules to our model under a `molecule types` section. Recall from the main text that we will call these molecules `L(t)` and `T(l)`.  
+We will have two molecules corresponding to the ligand and receptor *L* and *T* that we denote `L(t)` and `T(l)`, respectively. The `(t)` specifies that molecule `L` contains a binding site with `T`, and the `(l)` specifies a component binding to `L`. We will use these components later when specifying reactions.
+
+We will add the ligand and receptor molecules to our model under a `molecule types` section.
 
 ~~~ ruby
 begin model
@@ -82,7 +84,18 @@ end model
 
 ## Specifying reaction rules and observables
 
-As discussed in the [main text](gillespie), the ligand-receptor simulation will only need to apply a single bi-directional reaction.
+As discussed in the [main text](gillespie), the ligand-receptor simulation will only need to apply a single bi-directional reaction. To represent the bi-directional reaction *A* + *B* ↔ *C* with forward rate *k*<sub>1</sub> and reverse rate *k*<sub>2</sub>, we would write `A + B <-> C k1, k2`.
+
+Our model consists of one bidirectional reaction and will have a single rule. The left side of this rule will be `L(t) + T(l)`; by specifying `L(t)` and `T(l)`, we indicate to BioNetGen that we are only interested in *unbound* ligand and receptor molecules. If we had wanted to select any ligand molecule, then we would have used `L + T`.
+
+On the right side of the rule, we will have `L(t!1).T(l!1)`, which indicates the formation of the complex. In BioNetGen, `!` indicates formation of a bond, and a unique character specifies the possible location of this bond. In our case, we use the character `1`, so that the bond is represented by `!1`. The symbol `.` is used to indicate that the two molecules are joined into a complex.
+
+Since the reaction is bidirectional, we will use `k_lr_bind` and `k_lr_dis` to denote the rates of the forward and reverse reactions, respectively. (We will specify values for these parameters later.)
+
+As a result, this reaction is shown below. We name our rule specifying the ligand-receptor reaction `LR`.
+
+~~~ ruby
+LR: L(t) + T(l) <-> L(t!1).T(l!1) k_lr_bind, k_lr_dis
 
 ~~~ ruby
 begin reaction rules
@@ -204,18 +217,18 @@ simulate({method=>"ssa", t_end=>1, n_steps=>100})
 
 We are now ready to run our simulation. To do so, click the "Run BNG" button on the top right of your VS Code window (see screenshot). You should see a terminal appear on the bottom of the window, which will show you the progress of the simulation. The output of the program is stored in a folder located in the working directory, named `ligand_receptor`.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial2.1_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2.1_VSCode.png) 
+[![image-center](../assets/images/600px/chemotaxis_tutorial2.1_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2.1_VSCode.png)
 
-To visualize the results, open the file `ligand_receptor.gdat` stored inside the folder. With this file open, click on the "CLI Plotting" button on the top right corner of the VS Code window. 
+To visualize the results, open the file `ligand_receptor.gdat` stored inside the folder. With this file open, click on the "CLI Plotting" button on the top right corner of the VS Code window.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial2.2_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2.2_VSCode.png) 
+[![image-center](../assets/images/600px/chemotaxis_tutorial2.2_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2.2_VSCode.png)
 
 <!-- Old Instructions -->
 <!-- We are now ready to run our simulation. To do so, visit `Simulation` at the right side of the contact map and click `Run`. You can then visualize the results of the simulation, showing changes in concentration over time. These results are also stored as a .gdat file in the folder `result/your time of simulation`. -->
 
 It is also possible to create an interactive plot from the results. Open the file `ligand_receptor.gdat`, and click on the "built-in plotting" botton located next to the "CLI Plotting" button you used to create the figure. The following interactive plot will be created:
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial2.3_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2.3_VSCode.png) 
+[![image-center](../assets/images/600px/chemotaxis_tutorial2.3_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2.3_VSCode.png)
 
 Is the result you obtain what you expected? In the main text, we will return to this question and then learn more about the details of bacterial chemotaxis in order to expand our BioNetGen model into one that fully reflects these details.
 
