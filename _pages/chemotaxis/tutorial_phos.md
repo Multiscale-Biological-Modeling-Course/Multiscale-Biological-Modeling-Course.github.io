@@ -12,7 +12,7 @@ In this tutorial, we will extend the BioNetGen model covered in the [ligand-rece
 
 [![image-center](../assets/images/600px/chemotaxisphosnew.png){: .align-center}](../assets/images/chemotaxisphosnew.png)
 
-To get started, create a copy of your file from the ligand-receptor tutorial and save it as `phosphorylation.bngl`. If you would rather not follow along below, you can download a completed BioNetGen file here:
+To get started, open the `EColiSimulations` folder from the [previous tutorial](tutorial_lr) in Visual Studio Code. Create a copy of your file from the ligand-receptor tutorial and save it as `phosphorylation.bngl`. If you would rather not follow along below, you can download a completed BioNetGen file here:
 <a href="../downloads/downloadable/phosphorylation.bngl" download="phosphorylation.bngl">phosphorylation.bngl</a>
 
 ## Defining molecules
