@@ -41,7 +41,7 @@ We would like to use the Gillespie algorithm that we introduced in the [previous
 
 This model will be more complicated than any we have introduced thus far. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model phosphorylation reactions of CheA, which depend on the current concentrations of bound and unbound MCP molecules. We will at least make the simplifying assumption that the MCP receptor is permanently bound to CheA and CheW, so that we do not need to represent these molecules individually. In other words, rather than thinking about CheA autophosphorylating, we will think about the receptor that includes CheA autophosphorylating.
 
-We will need six reactions. Two reversible reactionsk represent ligand-receptor binding, one for each of phosphorylated or unphosphorylated receptors. Two reactions represent MCP phosphorylation and take place at different rates based on whether the MCP is bound to a ligand (in our model, the phosphorylation rate is five times greater when the MCP is unbound). One reaction represent phosphorylation of CheY, and another reaction models dephosphorylation, which is mediated by the CheZ enzyme. 
+We will need six reactions. Two reversible reactionsk represent ligand-receptor binding, one for each of phosphorylated or unphosphorylated receptors. Two reactions represent MCP phosphorylation and take place at different rates based on whether the MCP is bound to a ligand (in our model, the phosphorylation rate is five times greater when the MCP is unbound). One reaction represent phosphorylation of CheY, and another reaction models dephosphorylation, which is mediated by the CheZ enzyme.
 
 Once we have built this model, we would like to see what happens when we *change* the concentrations of the ligand. Ideally, the bacterium should be able to distinguish different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY, and the lower the tumbling frequency of the bacterium.
 
@@ -52,14 +52,14 @@ But does higher attractant concentration in our model really lead to a lower con
 
 ## Changing ligand concentrations leads to a change in internal molecular concentrations
 
-The top panel of the following figure shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency. The addition of 5,000 attractant ligand molecules increases the concentration of bound receptors, therefore leading to less CheA autophosphorylation, and less phosphorylated CheY (middle panel). If we instead have 100,000 iitial attractant molecules, then we see an even more drastic decrease in phosphorylated CheA and CheY (bottom panel). 
+The top panel of the following figure shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency. The addition of 5,000 attractant ligand molecules increases the concentration of bound receptors, therefore leading to less CheA autophosphorylation, and less phosphorylated CheY (middle panel). If we instead have 100,000 initial attractant molecules, then we see an even more drastic decrease in phosphorylated CheA and CheY (bottom panel). 
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial5.png){: .align-center}](../assets/images/chemotaxis_tutorial5.png)
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial6.png){: .align-center}](../assets/images/chemotaxis_tutorial6.png)
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial7.png){: .align-center}](../assets/images/chemotaxis_tutorial7.png)
-Molecular concentrations over time (in seconds) in a chemotaxis simulation for three different initial unbound attractant ligand concentrations: no attractant ligand (top), 5,000 ligand particles (middle), and 100,000 ligand particles (bottom). Note that the simulated cell's bound ligand concentration (green) achieves equilibrium very quickly in each case. 
+Molecular concentrations over time (in seconds) in a chemotaxis simulation for three different initial unbound attractant ligand concentrations: no attractant ligand (top), 5,000 ligand particles (middle), and 100,000 ligand particles (bottom). Note that the simulated cell's bound ligand concentration (green) achieves equilibrium very quickly in each case.
 {: style="font-size: medium;"}
 
 This Gillespie model confirms the biological observations that an increase in attractant reduces the concentration of phosphorylated CheY. This reduction takes place remarkably quickly, with the cell attaining a new equilibrium in a fraction of a second.
