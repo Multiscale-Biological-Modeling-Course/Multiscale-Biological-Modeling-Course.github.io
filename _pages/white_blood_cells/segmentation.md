@@ -98,7 +98,7 @@ At the same time, no segmentation pipeline is perfect. The figure below illustra
 
 {% include gallery id="gallery3" caption="(Left) An image of a WBC (ID: 167). (Right) The binarization of this image, showing that the nucleus is not correctly identified during segmentation using the parameters described in this lesson." %}
 
-We can continue to tweak threshold parameters, but our relatively simple algorithm successfully segments almost every WBC nucleus from our dataset. We are ready to move on to classify WBC nuclei into families according to their shape
+We can continue to tweak threshold parameters, but our relatively simple algorithm successfully segments almost every WBC nucleus from our dataset. We are ready to move on to classify WBC nuclei into families according to their shape.
 
 [Next lesson](classification){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
