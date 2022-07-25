@@ -107,7 +107,7 @@ TbDemeth: T(Meth~B) + CheB(Phos~P) -> T(Meth~A) + CheB(Phos~P) k_Tb_demeth
 TcDemeth: T(Meth~C) + CheB(Phos~P) -> T(Meth~B) + CheB(Phos~P) k_Tc_demeth
 ~~~
 
-We are now ready to combine the above reaction rules with the reaction rules we are inheriting from the original model (ligand-receptor binding and CheY phosphorylation/dephosphorylation) to give us a complete set of reaction rules.
+We are now ready to combine the above reaction rules with the reaction rules inherited from the original model (ligand-receptor binding and CheY phosphorylation/dephosphorylation) to give us a complete set of reaction rules. As pointed out in the main text, were we to write out all possible reactions that are implied from these rules, we would have an enormous model. BioNetGen takes the following rules and converts them into all necessary reactions for us behind the scenes.
 ~~~ ruby
 begin reaction rules
   #Ligand-receptor binding
