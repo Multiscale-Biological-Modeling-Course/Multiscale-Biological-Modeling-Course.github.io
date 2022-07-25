@@ -107,7 +107,12 @@ Next, start MATLAB, and set the MATLAB path by clicking the button indicated bel
 [![image-center](../assets/images/600px/shape_space_docker_img4.png){: .align-center width="400px"}](../assets/images/shape_space_docker_img4.png)
 {: style="font-size: medium;"}
 
-Once the path is set, navigate to the Home pane at the top of your MATLAB window, and click on the `New Script` button. This will open up a new script in your editor window. Enter the following lines of MATLAB code into the new file, which extract and save the principal components from your model to a `.csv` file:
+Once the path is set, navigate to the Home pane at the top of your MATLAB window, and click on the `New Script` button. This will open up a new script in your editor window. 
+
+[![image-center](../assets/images/600px/shape_space_docker_img5.png){: .align-center width="400px"}](../assets/images/shape_space_docker_img5.png)
+{: style="font-size: medium;"}
+
+Enter the following lines of MATLAB code into the newly opened file, which extract and save the principal components from your model to a `.csv` file:
 
 ~~~
 load( [pwd filesep 'WBC_PCA.mat'] );
@@ -120,12 +125,12 @@ writetable(mtrx, '../Step4_Visualization/WBC_PCA.csv');
 Save the file as `extract_and_save_pcs.m` in your `Step3_ModelGeneration` folder. Next, in the MATLAB command window, type in 
 
 ~~~
-extrac_and_save_pcs
+extract_and_save_pcs
 ~~~
 
 This will run the script, and the result will be a new file, `WBC_PCA.csv`, saved to the folder `Step4_Visualization`. This file contains the shape vector of each image after PCA has been applied.
 
-**Note:** If you use this file as input for the [next tutorial](tutorial_image_classification), then you will obtain very slightly different results from those in the text. The reasons why these results do not match are not clear but the conclusions will remain the same.
+**Note:** If you use this file as input for the [next tutorial](tutorial_image_classification), then you will obtain *very slightly* different results from those in the text. The reasons why these results do not match are not clear but the conclusions will remain the same.
 {: .notice--info}
 
 That's it! You can now follow along the remainder of the tutorial, in which we visualize the post-PCA shape space.
