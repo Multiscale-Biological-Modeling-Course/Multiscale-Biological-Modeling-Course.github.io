@@ -17,7 +17,7 @@ In this tutorial, we will:
 
 ## What is BioNetGen?
 
-[BioNetGen](http://bionetgen.org/) is a software application for specification and simulation of rule-based modeling. In past modules, we have worked with chemical reactions that can be thought of as rules (e.g., "whenever an *X* particle and a *Y* particle collide, replace them with a single *X* particle"). The chemotaxis pathway also can be thought of as a set of biochemical rules specifying a set of mathematical equations dictating molecule concentrations. Our larger goal is to use BioNetGen to translate these rules into a reasonable chemotaxis simulation, then visualize and interpret the results.
+In past modules, we have worked with chemical reactions that can be thought of as rules (e.g., "whenever an *X* particle and a *Y* particle collide, replace them with a single *X* particle"). The chemotaxis pathway also can be thought of as a set of biochemical rules specifying a set of mathematical equations dictating molecule concentrations. Our larger goal is to use BioNetGen to translate these rules into a reasonable chemotaxis simulation, then visualize and interpret the results.
 
 In this tutorial, we will focus only on modeling ligand-receptor dynamics, which we will use as a starting point for more advanced modeling later.
 
