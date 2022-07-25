@@ -43,9 +43,9 @@ To recap, the simulations of both cells will include an initial concentration of
 
 ## Ensuring a mathematically controlled comparison
 
-If you followed the above tutorial, then you were likely disappointed in the second cell and its negative autoregulating transcription factor *Y*. shows a plot over time of the concentration of *Y* particles in the two simulated cells, using red for the first cell and yellow for the second cell.
+If you followed the above tutorial, then you were likely disappointed in the second cell and its negative autoregulating transcription factor *Y*. shows a plot over time of the concentration of *Y* particles in the two simulated cells, using yellow for the first cell and blue for the second cell.
 
-[![image-center](../assets/images/600px/nar_unequal_chart.png){: .align-center}](../assets/images/nar_unequal_chart.png)
+[![image-center](../assets/images/600px/new_nar.png){: .align-center}](../assets/images/new_nar.png)
 A plot of the concentration of Y particles over time across two simulations. In the first cell (red), we only have activation of *Y* by *X*, whereas in the second cell (yellow), we keep all parameters fixed but add a reaction simulating the negative autoregulation of *Y*.
 {: style="font-size: medium;"}
 
@@ -65,7 +65,7 @@ We should keep a number of parameters constant  across the two simulations becau
 
 The figure below plots the concentration of *Y* particles for the two simulated cells after ensuring a mathematically controlled comparison, in which the rate of the *X* → *X* + *Y* reaction has been increased in the second cell. This figure shows that the two simulated cells now have approximately the same steady state concentration of *Y*. However, the second cell reaches this concentration faster; that is, its **response time** to the external stimulus causing an increase in the production of *Y* is shorter.
 
-[![image-center](../assets/images/600px/nar_equal_chart.png){: .align-center}](../assets/images/nar_equal_chart.png)
+[![image-center](../assets/images/600px/new_nar_equal.png){: .align-center}](../assets/images/new_nar_equal.png)
 A comparison of the concentration of *Y* particles across the same two simulations from the previous figure. This time, in the second simulation (yellow), we increase the rate of the reaction *X* → *X* + *Y*.  As a result, the two simulations have approximately the same steady state concentration of *Y*, and the simulation that includes negative autoregulation reaches steady state more quickly.
 {: style="font-size: medium;"}
 
