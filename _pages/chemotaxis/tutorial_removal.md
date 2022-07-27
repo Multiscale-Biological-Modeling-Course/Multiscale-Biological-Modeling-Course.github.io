@@ -203,11 +203,11 @@ Now save your file and run the simulation by clicking `Run BNG`. The results wil
  
 ![image-center](../assets/images/600px/tutorial_removal_vscode1.png){: .align-center}](../assets/images/tutorial_removal_vscode1.png)
 
-Open the newly created `removal.gdat` file and create a plot by clicking the `Built-in plotting` button.
+Open the newly created `removal.gdat` file and create a plot by clicking the `Built-in plotting` button. What happens to the concentration of phosphorylated CheY? Are the concentrations of complexes at different methylation states restored to their levels before adding ligands to the `adaptation.bngl` model?
 
 ![image-center](../assets/images/600px/tutorial_removal_vscode2.png){: .align-center}](../assets/images/tutorial_removal_vscode2.png)
 
-As we did in the tutorial simulating increasing ligand, we can try different values for `k_gone`. Change `t_end` in the `simulate` method to 1800 seconds, and run the simulation with `k_gone` equal to 0.01, 0.03, 0.05, 0.1, and 0.5. What happens to the concentration of phosphorylated CheY? Are the concentrations of complexes at different methylation states restored to their levels before adding ligands to the `adaptation.bngl` model? 
+As we did in the tutorial simulating increasing ligand, we can try different values for `k_gone`. Change `t_end` in the `simulate` method to 1800 seconds, and run the simulation with `k_gone` equal to 0.01, 0.03, 0.05, 0.1, and 0.5.  
 
 <!-- Changed to a notice. -->
 **Note:** All simulation results are stored in the `removal` directory in your working directory. As you change the values of `k_gone`, rename the directory with the `k_gone` values instead of the timestamp for simplicity.
