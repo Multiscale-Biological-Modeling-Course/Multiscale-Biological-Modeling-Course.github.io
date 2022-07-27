@@ -196,7 +196,7 @@ Now save your file and run the simulation by clicking the `Run BNG` button. The 
 
 [![image-center](../assets/images/600px/tutorial_phos_vscode1.png){: .align-center}](../assets/images/tutorial_phos_vscode1.png)
 
-Open the newly created `phosphorylation.gdat` file within this folder, and plot the data by clicking on `Built-in Plotting`. What do you observe?
+Open the newly created `phosphorylation.gdat` file within this folder, and plot the data by clicking on `Built-in plotting`. What do you observe?
 
 [![image-center](../assets/images/600px/tutorial_phos_vscode2.png){: .align-center}](../assets/images/tutorial_phos_vscode2.png)
 
