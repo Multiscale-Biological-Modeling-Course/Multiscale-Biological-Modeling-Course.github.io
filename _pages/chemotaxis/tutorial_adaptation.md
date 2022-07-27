@@ -364,11 +364,11 @@ simulate({method=>"ssa", t_end=>800, n_steps=>800})
 
 Now save your file and run the simulation by clicking on the `Run BNG` button. The results will be saved in a new folder called `adaptation/TIMESTAMP` contained in the current directory. Rename the newly created folder from the time stamp to `L0_0`. 
 
-![image-center](../assets/images/600px/tutorial_adaptation_vscode1.png){: .align-center}](../assets/images/tutorial_adaptation_vscode1.png)
+[![image-center](../assets/images/600px/tutorial_adaptation_vscode1.png){: .align-center}](../assets/images/tutorial_adaptation_vscode1.png)
 
 Next, open the newly created `adaptation.gdat` file in your results folder and create a plot by clicking the `Built-in plotting` button. 
 
-![image-center](../assets/images/600px/tutorial_adaptation_vscode2.png){: .align-center}](../assets/images/tutorial_adaptation_vscode2.png)
+[![image-center](../assets/images/600px/tutorial_adaptation_vscode2.png){: .align-center}](../assets/images/tutorial_adaptation_vscode2.png)
 
 Because the model is at equilibrium, we will see the seemingly boring plot shown below.
 
