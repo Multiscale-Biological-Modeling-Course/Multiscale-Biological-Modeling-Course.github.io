@@ -202,9 +202,11 @@ Now save your file and run the simulation by clicking on the `Run BNG` button. T
 
 ![image-center](../assets/images/600px/tutorial_addition_vscode1.png){: .align-center}](../assets/images/tutorial_addition_vscode1.png)
 
-Open the newly created `addition.gdat` file and create a plot by clicking the `Built-in plotting` button. What happens to the concentration of phosphorylated CheY?
+Open the newly created `addition.gdat` file and create a plot by clicking the `Built-in plotting` button. 
 
 ![image-center](../assets/images/600px/tutorial_addition_vscode2.png){: .align-center}](../assets/images/tutorial_addition_vscode2.png)
+
+What happens to the concentration of phosphorylated CheY?
 
 **Note:** You can deselect `AllLigand` to make the plot of the concentration of phosphorylated CheY easier to see.
 {: .notice--info}
