@@ -202,14 +202,14 @@ Now save your file and run the simulation by clicking on the `Run BNG` button. T
 
 ![image-center](../assets/images/600px/tutorial_addition_vscode1.png){: .align-center}](../assets/images/tutorial_addition_vscode1.png)
 
-Open the newly created `addition.gdat` file and create a plot by clicking the `Built-in plotting` button.
+Open the newly created `addition.gdat` file and create a plot by clicking the `Built-in plotting` button. What happens to the concentration of phosphorylated CheY?
 
 ![image-center](../assets/images/600px/tutorial_addition_vscode2.png){: .align-center}](../assets/images/tutorial_addition_vscode2.png)
 
 **Note:** You can deselect `AllLigand` to make the plot of the concentration of phosphorylated CheY easier to see.
 {: .notice--info}
 
-Next, try the following few different values for `k_add`: 0.01, 0.03, 0.05, 0.1, 0.3, 0.5. What do these changing `k_add` values represent in the simulation? How does the system respond to the different values? What happens to the concentration of phosphorylated CheY?
+Next, try the following few different values for `k_add`: 0.01, 0.03, 0.05, 0.1, 0.3, 0.5. What do these changing `k_add` values represent in the simulation? How does the system respond to the different values? 
 
 <!-- Changed to a note. -->
 **Note:** All of your simulation results are stored in the `addition/TIME/` directory within your working directory. As you change the value of `k_add`, rename the directory with the `k_add` values instead of the timestamp for simplicity.
