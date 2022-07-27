@@ -10,7 +10,7 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 In the [previous tutorial](tutorial_gradient), we simulated the behavior of a bacterium moving up the concentration gradient. In this tutorial, we will simulate the opposite - when the bacterium is not in luck and moves down a concentration gradient.
 
-To get started, create a copy of your `adaptation.bngl` file from the [adaptation tutorial](tutorial_adaptation) and save it as `removal.bngl`. If you would rather not follow along below, you can download a completed BioNetGen file here: <a href="../downloads/downloadable/removal.bngl" download="removal.bngl">removal.bngl</a>.
+To get started, open Visual Studio Code, and click `File > Open Folder...`. Open the `EColiSimulations` folder from the [first tutorial](tutorial_lr). If you would rather not follow along below, you can download a completed BioNetGen file here: <a href="../downloads/downloadable/removal.bngl" download="removal.bngl">removal.bngl</a>.
 
 We also will build a Jupyter notebook in this tutorial for plotting the concentrations of different particles over time. To do so, you should save a copy of your `plotter_up.ipynb` file called `plotter_down.ipynb`; if you would rather not follow along, we provide a completed notebook here: <a href="../downloads/downloadable/plotter_down.ipynb" download="plotter_down.ipynb">plotter_down.ipynb</a>
 
@@ -199,9 +199,15 @@ generate_network({overwrite=>1})
 simulate({method=>"ssa", t_end=>1800, n_steps=>1800})
 ~~~
 
-Save your file, and then visit `simulation` and click `Run`. What happens to the concentration of phosphorylated CheY? Are the concentrations of complexes at different methylation states restored to their levels before adding ligands to the `adaptation.bngl` model?
+Now save your file and run the simulation by clicking `Run BNG`. The results will be saved in a new folder called `removal/TIME` contained in the current directory. Rename the folder from the timestamp to the value of `k_gone`, `0.3`. 
+ 
+![image-center](../assets/images/600px/tutorial_removal_vscode1.png){: .align-center}](../assets/images/tutorial_removal_vscode1.png)
 
-As we did in the tutorial simulating increasing ligand, we can try different values for `k_gone`. Change `t_end` in the `simulate` method to 1800 seconds, and run the simulation with `k_gone` equal to 0.01, 0.03, 0.05, 0.1, and 0.5.
+Open the newly created `removal.gdat` file and create a plot by clicking the `Built-in plotting` button.
+
+![image-center](../assets/images/600px/tutorial_removal_vscode2.png){: .align-center}](../assets/images/tutorial_removal_vscode2.png)
+
+As we did in the tutorial simulating increasing ligand, we can try different values for `k_gone`. Change `t_end` in the `simulate` method to 1800 seconds, and run the simulation with `k_gone` equal to 0.01, 0.03, 0.05, 0.1, and 0.5. What happens to the concentration of phosphorylated CheY? Are the concentrations of complexes at different methylation states restored to their levels before adding ligands to the `adaptation.bngl` model? 
 
 <!-- Changed to a notice. -->
 **Note:** All simulation results are stored in the `removal` directory in your working directory. As you change the values of `k_gone`, rename the directory with the `k_gone` values instead of the timestamp for simplicity.
