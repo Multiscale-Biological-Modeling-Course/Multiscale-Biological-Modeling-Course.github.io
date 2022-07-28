@@ -124,34 +124,6 @@ Plots of the concentration of phosphorylated CheY over time (in seconds) for dif
 
 More importantly, the above figure further illustrates the *robustness* of bacterial chemotaxis to the rate of growth in ligand concentration. Whether the growth of the attractant is slow or fast, methylation will always bring the cell back to the same equilibrium concentration of phosphorylated CheY and therefore the same background tumbling frequency.
 
-## Reversing the attractant gradient
-
-And what if a cell is moving away from an attractant, down a concentration gradient? We would hope that the cell would be able to *increase* its tumbling frequency (i.e., increase the concentration of phosphorylated CheY), and then restore the background tumbling frequency by removing methylation.
-
-To simulate a decreasing gradient, we will model a cell in a high ligand concentration that is already at steady state, meaning that methylation is also elevated. In this case, the ligand concentration will *decay* exponentially, meaning that the ligand concentration is still given by the equation [*L*] = *l*<sub>0</sub> · *e*<sup>*k* · t</sup>, but *k* is negative.
-
-**STOP:** If *k* is negative, how do you think that decreasing the value of *k* will affect the concentration of phosphorylated CheY over time?
-{: .notice--primary}
-
-You may like to modify the previous tutorial on your own to account for traveling down an attractant gradient. If not, we are still happy to provide a separate tutorial below.
-
-[Visit tutorial](tutorial_removal){: .btn .btn--warning .btn--large}
-{: style="font-size: 100%; text-align: center;"}
-
-## Steady state tumbling frequency remains robust when traveling down an attractant gradient
-
-The following figure plots the concentrations of molecules in our model as the concentration of attractant ligand decreases exponentially with *l*<sub>0</sub> equal to 10<sup>7</sup> and *k* equal to -0.3. As the ligand concentration decreases, the concentration of bound ligands plummet as bound ligands dissociate and there are not enough free ligands to replace the dissociating ones. In the absence of ligand-receptor binding, CheY is free to phosphorylate, causing a spike in phosphorylated CheY. Demethylation of receptors then causes the concentration of phosphorylated CheY to steadily return back to its equilibrium.
-
-[![image-center](../assets/images/600px/chemotaxis_tutorial_removal01_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial_removal01_vscode.png)
-Molecular concentrations (in number of molecules in the cell) over time (in seconds) for a simulated bacterium traveling down an attractant gradient with *l*<sub>0</sub> = 10<sup>7</sup> and *k* equal to -0.3. Phosphorylated CheY follows the opposite pattern to traveling up an attractant gradient, with the concentration of phosphorylated CheY rising quickly only to slowly decrease to equilibrium due to demethylation.
-{: style="font-size: medium;"}
-
-To be thorough, we should also test the robustness of our model to see whether the CheY concentration will return to the same steady state for a variety of values of *k* when *k* is negative. As in the case of an increasing gradient, the figure below shows that the more sudden the change in the concentration of attractant (i.e., the more negative the value of *k*), the sharper the spike. And yet regardless of the value of *k*, methylation does its work to bring the concentration back to the same steady state, which has been confirmed by experimental observations.[^Krembel2015]
-
-[![image-center](../assets/images/600px/chemotaxis_tutorial_removal02.png){: .align-center}](../assets/images/chemotaxis_tutorial_removal02.png)
-Varying values of *k* in our exponential decrease in the concentration of attractant ligand produce the same equilibrium concentration of phosphorylated CheY. The smaller the value of *k*, the steeper the initial spike, and the faster the recovery to steady state.
-{: style="font-size: medium;"}
-
 ## From changing tumbling frequencies to an exploration algorithm
 
 We hope that our work here has conveyed the elegance of bacterial chemotaxis, as well as the power of rule-based modeling and the Gillespie algorithm for simulating a complex biochemical system that may include a huge number of reactions.

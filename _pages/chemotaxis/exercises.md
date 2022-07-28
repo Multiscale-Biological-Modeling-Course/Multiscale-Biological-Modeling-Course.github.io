@@ -20,11 +20,11 @@ We learned that *E. coli* is likely to run for longer when traveling up an attra
 **Exercise:** Adapt the "chemotactic" random walk strategy that we implemented in a [tutorial](tutorial_walk) to handle the fact that bacteria sensing a relative decrease in repellent concentration will have longer runs before tumbling. Simulate this strategy for a collection of particles placed near a "goal" representing a repellent source. What is the average distance of the particles from the goal? How does this compare to the average distance to the goal for a collection of particles following a pure random walk?
 {: .notice--success}
 
-## Traveling down an attractant gradient. 
+## Traveling down an attractant gradient.
 
-A related question to how a bacterium responds to a repellent is how it responds to traveling *away* from an attractant, i.e., down an attractant gradient. To model this situation, we will still use the functionm \[*L*\] = $l_o \cdot e^{k \cdot t}$ that we used when modeling a bacterium traveling up an attractant gradient, but we will now assume that $k$ is negative so that the concentration is decaying exponentially. Refer to that tutorial for details.
+A related question to how a bacterium responds to a repellent is how it responds to traveling *away* from an attractant, i.e., down an attractant gradient. To model this situation, we will still use the function \[*L*\] = $$l_o \cdot e^{k \cdot t}$$ that we used when modeling a bacterium traveling up an attractant gradient, but we will now assume that *k* is negative so that the concentration is decaying exponentially. Refer to that tutorial for details.
 
-**Exercise:** Adapt [the gradient simulation](tutorial_gradient) to model the concentration of phosphorylated CheY over time for an exponentially decaying attractant concentration. How does the plot of phosphorylated CheY change as $k$ gets more negative?
+**Exercise:** Adapt [the gradient simulation](tutorial_gradient) to model the concentration of phosphorylated CheY over time for an exponentially decaying attractant concentration. How does the plot of phosphorylated CheY change as *k* gets more negative?
 {: .notice--success}
 
 ## What if *E. coli* has multiple attractant sources?

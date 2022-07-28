@@ -12,7 +12,7 @@ In the [previous tutorial](tutorial_adaptation), we modeled how bacteria react a
 
 We will also explore defining and using **functions**, a feature of BioNetGen that will allow us to specify reaction rules in which the reaction rates are dependent on the current state of the system.
 
-To get started, open Visual Studio Code, and click `File > Open Folder...`. Open the `EColiSimulations` folder from the [first tutorial](tutorial_lr). Create a copy of your `adaptation.bngl` file from the adaptation tutorial and save it as `addition.bngl`. If you would rather not follow along below, you can download a completed BioNetGen file here: <a href="../downloads/downloadable/addition.bngl" download="addition.bngl">addition.bngl</a>
+To get started, open Visual Studio Code, and click `File > Open Folder...`. Open the `EColiSimulations` folder from the [first tutorial](tutorial_lr). Create a copy of your `adaptation.bngl` file from the [adaptation tutorial](tutorial_adaptation) and save it as `addition.bngl`. If you would rather not follow along below, you can download a completed BioNetGen file here: <a href="../downloads/downloadable/addition.bngl" download="addition.bngl">addition.bngl</a>
 
 We also will build a Jupyter notebook in this tutorial for plotting the concentrations of molecules over time. You should create a file called `plotter_up.ipynb`; if you would rather not follow along, we provide a completed notebook here:
 <a href="../downloads/downloadable/plotter_up.ipynb" download="plotter_up.ipynb">plotter_up.ipynb</a>
@@ -198,11 +198,11 @@ generate_network({overwrite=>1})
 simulate({method=>"ssa", t_end=>1000, n_steps=>500})
 ~~~
 
-Now save your file and run the simulation by clicking on the `Run BNG` button. The results will be saved in a new folder called `addition/TIME` contained in the current directory. Rename the folder from the timestamp to the value of `k_add`, `0.1`. 
+Now save your file and run the simulation by clicking on the `Run BNG` button. The results will be saved in a new folder called `addition/TIME` contained in the current directory. Rename the folder from the timestamp to the value of `k_add`, `0.1`.
 
 [![image-center](../assets/images/600px/tutorial_addition_vscode1.png){: .align-center}](../assets/images/tutorial_addition_vscode1.png)
 
-Open the newly created `addition.gdat` file and create a plot by clicking the `Built-in plotting` button. 
+Open the newly created `addition.gdat` file and create a plot by clicking the `Built-in plotting` button.
 
 [![image-center](../assets/images/600px/tutorial_addition_vscode2.png){: .align-center}](../assets/images/tutorial_addition_vscode2.png)
 
@@ -211,7 +211,7 @@ What happens to the concentration of phosphorylated CheY?
 **Note:** You can deselect `AllLigand` to make the plot of the concentration of phosphorylated CheY easier to see.
 {: .notice--info}
 
-Next, try the following few different values for `k_add`: 0.01, 0.03, 0.05, 0.1, 0.3, 0.5. What do these changing `k_add` values represent in the simulation? How does the system respond to the different values? 
+Next, try the following few different values for `k_add`: 0.01, 0.03, 0.05, 0.1, 0.3, 0.5. What do these changing `k_add` values represent in the simulation? How does the system respond to the different values?
 
 <!-- Changed to a note. -->
 **Note:** All of your simulation results are stored in the `addition/TIME/` directory within your working directory. As you change the value of `k_add`, rename the directory with the `k_add` values instead of the timestamp for simplicity.
@@ -224,7 +224,7 @@ You will observe that CheY phosphorylation drops gradually first, instead of the
 
 ## Visualizing the results of our simulation
 
-We are now ready to fill in `plotter_up.ipynb`, a Jupyter notebook that we will use to visualize the outcome of our simulations. 
+We are now ready to fill in `plotter_up.ipynb`, a Jupyter notebook that we will use to visualize the outcome of our simulations.
 
 First specify the directories, model name, species of interest, and rates. Put the `plotter_up.ipynb` file inside the same folder as `addition.bngl`, or change the `model_path` below to point at this folder.
 
