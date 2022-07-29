@@ -44,11 +44,11 @@ We will simulate reaching this steady state, which means that we will need to kn
 
 Equilibrium is reached when `k_lr_bind [L][T]` = `k_lr_dis[L.T]`. Our goal in this tutorial is to use BioNetGen to determine this equilibrium in molecule concentrations as a proof of concept.
 
-To use BioNetGen, first create a folder called "EColiSimulations" in an appropriate location on your computer. Next, open VSCode, and select `File > Open Folder`, and open the folder you just created.
+To use BioNetGen, first create a folder called `EColiSimulations` in an appropriate location on your computer. Next, open VSCode, and select `File > Open Folder`, and open the folder you just created.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial1_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial1_VSCode.png)
 
-In this directory, create a new file by selecting the `File > New Text File`. Save the file as  `ligand_receptor.bngl`. Now you should be able to start coding on line 1.
+In this directory, create a new file by selecting the `File > New Text File`. Save the file as  `ligand_receptor.bngl`. Now you should be able to start building our model in this file using the code that follows in this tutorial.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial2_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2_VSCode.png)
 
@@ -88,7 +88,7 @@ As discussed in the [main text](gillespie), the ligand-receptor simulation will 
 
 Our model consists of one bidirectional reaction and will have a single rule. The left side of this rule will be `L(t) + T(l)`; by specifying `L(t)` and `T(l)`, we indicate to BioNetGen that we are only interested in *unbound* ligand and receptor molecules. If we had wanted to select any ligand molecule, then we would have used `L + T`.
 
-On the right side of the rule, we will have `L(t!1).T(l!1)`, which indicates the formation of the complex. In BioNetGen, `!` indicates formation of a bond, and a unique character specifies the possible location of this bond. In our case, we use the character `1`, so that the bond is represented by `!1`. The symbol `.` is used to indicate that the two molecules are joined into a complex.
+On the right side of the rule, we will have `L(t!1).T(l!1)`, which indicates the formation of the complex. In BioNetGen, the symbol `!` indicates formation of a bond, and a unique character specifies the possible location of this bond. In our case, we use the character `1`, so that the bond is represented by `!1`. The symbol `.` is used to indicate that the two molecules are joined into a complex.
 
 Since the reaction is bidirectional, we will use `k_lr_bind` and `k_lr_dis` to denote the rates of the forward and reverse reactions, respectively. (We will specify values for these parameters later.)
 
@@ -215,11 +215,11 @@ simulate({method=>"ssa", t_end=>1, n_steps=>100})
 
 ## Running our simulation
 
-We are now ready to run our simulation. To do so, click the "Run BNG" button on the top right of your VS Code window (see screenshot). You should see a terminal appear on the bottom of the window, which will show you the progress of the simulation. The output of the program is stored in a folder located in the working directory, named `ligand_receptor`.
+We are now ready to run our simulation. To do so, click the `Run BNG` button on the top right of your VS Code window (see screenshot below). You should see a terminal appear on the bottom of the window, which will show you the progress of the simulation. The output of the program is stored in a folder located in the working directory, named `ligand_receptor`.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial2.1_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2.1_VSCode.png)
 
-To visualize the results, open the file `ligand_receptor.gdat` stored inside the folder. With this file open, click on the "CLI Plotting" button on the top right corner of the VS Code window.
+To visualize the results, open the file `ligand_receptor.gdat` stored inside the folder. With this file open, click on the `CLI Plotting` button on the top right corner of the VS Code window.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial2.2_VSCode.png){: .align-center}](../assets/images/chemotaxis_tutorial2.2_VSCode.png)
 

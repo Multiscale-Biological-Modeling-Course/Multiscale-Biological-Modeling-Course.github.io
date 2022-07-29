@@ -18,7 +18,7 @@ Finally, after running our model, we will see how methylation can be used to hel
 The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates MCPs, while CheR demethylates MCPs. Blue lines denote phosphorylation, grey lines denote dephosphorylation, and the green arrow denotes methylation. Image modified from <a href="http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html">Parkinson Lab</a>'s illustrations.
 {: style="font-size: medium;"}
 
-To get started, open Visual Studio Code, and click `File > Open Folder...`. Open the `EColiSimulations` folder from the [first tutorial](tutorial_lr). Create a copy of your file from the phosphorylation tutorial and save it as `adaptation.bngl`. If you would rather not follow along below, you can download a completed BioNetGen file here: <a href="../downloads/downloadable/adaptation.bngl" download="adaptation.bngl">adaptation.bngl</a>.
+To get started, open Visual Studio Code, and click `File > Open Folder...`. Open the `EColiSimulations` folder from the [first tutorial](tutorial_lr). Create a copy of your file from the [phosphorylation tutorial](tutorial_phos) and save it as `adaptation.bngl`. If you would rather not follow along below, you can download a completed BioNetGen file here: <a href="../downloads/downloadable/adaptation.bngl" download="adaptation.bngl">adaptation.bngl</a>.
 
 ## Specifying molecule types
 
@@ -362,11 +362,11 @@ simulate({method=>"ssa", t_end=>800, n_steps=>800})
 
 ## Running our adaptation model
 
-Now save your file and run the simulation by clicking on the `Run BNG` button. The results will be saved in a new folder called `adaptation/TIMESTAMP` contained in the current directory. Rename the newly created folder from the time stamp to `L0_0`. 
+Now save your file and run the simulation by clicking on the `Run BNG` button. The results will be saved in a new folder called `adaptation/TIMESTAMP` contained in the current directory. Rename the newly created folder from the time stamp to `L0_0`.
 
 [![image-center](../assets/images/600px/tutorial_adaptation_vscode1.png){: .align-center}](../assets/images/tutorial_adaptation_vscode1.png)
 
-Next, open the newly created `adaptation.gdat` file in your results folder and create a plot by clicking the `Built-in plotting` button. 
+Next, open the newly created `adaptation.gdat` file in your results folder and create a plot by clicking the `Built-in plotting` button.
 
 [![image-center](../assets/images/600px/tutorial_adaptation_vscode2.png){: .align-center}](../assets/images/tutorial_adaptation_vscode2.png)
 

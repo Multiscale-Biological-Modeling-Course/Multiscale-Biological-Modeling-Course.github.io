@@ -113,8 +113,6 @@ chemotaxis:
         url: /chemotaxis/tutorial_adaptation
       - title: "Traveling up an attractant gradient<br><br>"
         url: /chemotaxis/tutorial_gradient
-      - title: "Traveling down an attractant gradient<br><br>"
-        url: /chemotaxis/tutorial_removal
       - title: "Modeling a pure random walk strategy<br><br>"
         url: /chemotaxis/tutorial_purerandom
       - title: "Modeling E. coli's sophisticated random walk algorithm<br><br>"
