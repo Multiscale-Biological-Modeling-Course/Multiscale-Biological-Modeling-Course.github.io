@@ -509,23 +509,28 @@ The first principal component is often said to be the line that ``explains the m
 
 Another benefit of finding the first principal component of a dataset is that it allows us to \textit{reduce} the dimensionality of our dataset from two dimensions to one. As a result, the projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
 
-Say that we wanted to generalize the ideas above to three-dimensional space. The first principal component would offer a one-dimensional explanation of the variance in the data, but perhaps a line is insufficient to this end. Maybe the points all lie very near to a plane (a two-dimensional object), and projecting these points onto the nearest plane would effectively reduce the dataset to two dimensions (\autoref{fig:three_dimensional_pca}).
+Say that we wanted to generalize the ideas above to three-dimensional space. The first principal component would offer a one-dimensional explanation of the variance in the data, but perhaps a line is insufficient to this end. The points could lie very near to a plane (a two-dimensional object), and projecting these points onto the nearest plane would effectively reduce the dataset to two dimensions (\autoref{fig:three_dimensional_pca}).
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/three_dimensional_pca.png}
-\caption{FILL IN CAPTION}
+\tabcolsep = 1em
+\begin{tabular}{m{0.4\textwidth} m{0.4\textwidth}}
+\includegraphics[width = 0.4\textwidth]{../images/three_dimensional_pca.png} &
+\includegraphics[width = 0.4\textwidth]{../images/three_dimensional_pca_plane.png}
+\end{tabular}
+\caption{(Left) A collection of seven points, each labeled with a different color. Each point is projected onto the plane that minimizes the sum of squared distances between points and the plane. The line indicated is the first principal component of the data; this line lies within the plane, which is the case for any dataset. The y-axis of this plane is the ``second principal component'' of the data. (Right) A reorientation of the plane such that the first principal component is shown as the x-axis, with colored points corresponding to the projections onto the plane from the first figure.}
 \label{fig:three_dimensional_pca}
 \end{figure}
 
-Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but it is possible to generalize these concepts mathematically. Given a collection of \textvar{m} data points (vectors) in \textvar{n}-dimensional space, we are looking for a \textvar{d}-dimensional \textdef{hyperplane}{hyperplane}{an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space}, or an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on this hyperplane, we reduce the dimension of the dataset from \textvar{n} to \textvar{d}. This approach, which is over 100 years old, is called \textdef{principal component analysis (PCA)}{principal component analysis (PCA)}{an approach used for finding the lower-dimensional hyperplane through a collection of data minimizing the distances of the points to the hyperplane}; a closely related concept called \textdefnogloss{singular value decomposition} was developed in the \nth{19} century.\\
+Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but we can generalize these concepts mathematically. Given a collection of \textvar{m} data points (vectors) in \textvar{n}-dimensional space, we are looking for a \textvar{d}-dimensional \textdef{hyperplane}{hyperplane}{an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space}, or an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on this hyperplane, we reduce the dimension of the dataset from \textvar{n} to \textvar{d}.
+
+This approach, which is over 100 years old but omnipresent in modern data science, is called \textdef{principal component analysis (PCA)}{principal component analysis (PCA)}{an approach used for finding the lower-dimensional hyperplane through a collection of data minimizing the distances of the points to the hyperplane}. A closely related concept called \textdefnogloss{singular value decomposition} was developed in the \nth{19} century.\\
 
 \begin{note}[%
-It can be shown that if $d_1$ is smaller than $d_2$, then the hyperplane provided by PCA of dimension $d_1$ is a subset of the hyperplane of dimension $d_2$. For example, the first principal component is always found within the plane ($d = 2$) provided by PCA.
+When $d_1$ is smaller than $d_2$, then the hyperplane provided by PCA of dimension $d_1$ is \textit{always} a subset of the hyperplane of dimension $d_2$. For example, the first principal component is always found within the plane ($d = 2$) provided by PCA, which was indicated in \autoref{fig:three_dimensional_pca} (left).
 ]\end{note}
 
-PCA may be old, but it is one of the fundamental tools of statistical analysis in an era defined by growing datasets.
 
 %We will soon apply it to reduce the dimensions of our shape space; first, we make a brief aside to discuss a different biological problem in which the application of PCA has provided amazing insights.
 %
