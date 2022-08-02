@@ -177,7 +177,7 @@ coronavirus:
         url: /coronavirus/tutorial_DynOmics
   - title: "Exercises"
     children:
-      - title: "Coronavirus part 1 exercises"
+      - title: "Coronavirus part 1 exercises<br><br>"
         url: /coronavirus/exercises_part_1
       - title: "Coronavirus part 2 exercises"
         url: /coronavirus/exercises_part_2
