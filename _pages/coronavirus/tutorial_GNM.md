@@ -94,7 +94,6 @@ We have now successfully initialized our GNM model and are ready to generate our
 
 First, we produce a contact map, which we introduced [earlier](multiseq) in the module.
 
-Contact Map:
 ~~~ python
 In[#]: showContactMap(gnm);
 ~~~~
