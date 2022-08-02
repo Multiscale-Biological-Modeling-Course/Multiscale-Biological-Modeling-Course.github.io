@@ -10,7 +10,7 @@ image: "../assets/images/gray_scott_jupyter_high-res.png"
 
 ## Adding reactions to our diffusion automaton
 
-Now that we have established a cellular automaton for coarse-grained particle diffusion, we will add to it the three reactions that we introduced in the [previous lesson](reaction-diffusion), which are reproduced below.
+Now that we have established a cellular automaton for coarse-grained particle diffusion, we will add to it the three reactions that we introduced in the [previous lesson](diffusion_automaton), which are reproduced below.
 
 1. A "feed" reaction in which new *A* particles are fed into the system at a constant rate.
 2. A "death" reaction in which *B* particles are removed from the system at a rate proportional to their current concentration.
