@@ -310,5 +310,5 @@ Now run the notebook. How do changing values of `k_add` impact the CheY-P concen
 
 In the main text, we will examine the results of our plots and discuss how they can be used to infer the cell's behavior in the presence of increasing attractant.
 
-[Return to main text](gradient#steady-state-tumbling-frequency-is-robust){: .btn .btn--warning .btn--large}
+[Return to main text](adaptation#steady-state-tumbling-frequency-is-robust){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
