@@ -45,7 +45,7 @@ To simulate this reaction on a particle level, if an *A* particle and two *B* pa
 
 The three reactions defining our system are summarized by the figure below.
 
-{% include gallery caption="A visualization of our reaction-diffusion system. (Left) The system contains both types of particles and two collisions. The two *A* particles shown with dashed lines are not yet present. (Right) Two of the A particles are fed into the system, two of the B particles die out, and a B particle replaces an A particle after the collision of two *B* particles and an *A* particle." %}
+{% include gallery caption="A visualization of our reaction-diffusion system. (Left) The system contains both types of particles and two collisions. The two *A* particles shown with dashed lines are not yet present. (Right) Two of the *A* particles are fed into the system, two of the *B* particles die out, and a B particle replaces an *A* particle after the collision of two *B* particles and an *A* particle." %}
 
 Before continuing, we call your attention to a slight difference between the feed and kill reactions. In the former, the concentration of *A* particles increases by a constant in each time step. In the latter, the concentration of *B* particles decreases by a constant factor multiplied by the current concentration of *B* particles. If we were using calculus to model this system, then letting [*A*] and [*B*] denote the concentrations of the two particle types, we would represent the feed and kill reactions by the following two differential equations:
 
