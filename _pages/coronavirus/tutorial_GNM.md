@@ -64,7 +64,7 @@ An example network (left) with its the corresponding Kirchhoff matrix (right).
 
 The Kirchhoff matrix is helpful because applying some matrix algebra to it (specifically, determining its eigenvector decomposition) allows us to estimate the inner products $$ \langle \Delta R_i, \Delta R_j \rangle $$ that power the GNM model.
 
-Returning to our SARS-CoV-2 example, we are now ready to build the Kirchhoff matrix. You can pass parameters for the cutoff (threshold distance between atoms) and gamma (spring constant). The defaults are 10.0 angstroms (Å) and 1.0, respectively. Here, we will set the cutoff to be 20.0 Å.
+Returning to our SARS-CoV-2 example, we are now ready to build the Kirchhoff matrix. You can pass parameters for the cutoff (threshold distance between atoms) and gamma (spring constant). The defaults are 10.0 angstroms and 1.0, respectively. Here, we will set the cutoff to be 20.0 Å.
 
 ~~~ python
 In[#]: gnm = GNM('SARS-CoV-2 Spike (6vxx) Chain A Cutoff = 20.0 A')
