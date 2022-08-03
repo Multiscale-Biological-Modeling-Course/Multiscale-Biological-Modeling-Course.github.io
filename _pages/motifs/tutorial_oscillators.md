@@ -29,12 +29,10 @@ Repeat the above steps to make sure that the following molecules are all entered
 | X  | Surface  | 4e-5  | 5|
 | Y  | Surface  | 4e-5  | 5|
 | Z  | Surface  | 4e-5  | 5|
-| HiddenX  | Surface  | 3e-6  | 3|
-| HiddenY  | Surface  | 3e-6  | 3|
-| HiddenZ  | Surface  | 3e-6  | 3|
-| HiddenX_off  | Surface  | 1e-6  | 3|
-| HiddenY_off  | Surface  | 1e-6  | 3|
-| HiddenZ_off  | Surface  | 1e-6  | 3|
+| I  | Surface  | 3e-6  | 3|
+| mRNAX  | Surface  | 3e-6  | 3|
+| mRNAY  | Surface  | 3e-6  | 3|
+| mRNAZ  | Surface  | 3e-6  | 3|
 
 Now go to `CellBlender > Molecule Placement` to establish molecule release sites by following these steps:
 
@@ -50,9 +48,7 @@ Repeat the above steps to make sure the following molecules are entered with the
 | Molecule Name | Object/Region|Quantity to Release|
 |:--------|:-------:|--------:|
 | X  | Plane | 150 |
-| HiddenX  | Plane | 100 |
-| HiddenY  | Plane | 100 |
-| HiddenZ  | Plane | 100 |
+| I  | Plane | 300 |
 
 Next go to `CellBlender > Reactions` to create the following reactions:
 
@@ -70,21 +66,21 @@ Repeat the above steps for the following reactions, ensuring that you have the a
 
 | Reactants |Products|Forward Rate|
 |:--------|:-------:|--------:|
-| HiddenX’  | HiddenX’ + X’ | 2e3 |
-| HiddenY’  | HiddenY’ +Y’ | 2e3 |
-| HiddenZ’  | HiddenZ’ + Z’ | 2e3 |
-| X’ + HiddenY’ | HiddenY_off’ + X, | 6e2 |
-| Y’ + HiddenZ’ | HiddenZ_off’ + Y, | 6e2 |
-| Z’ + HiddenX’ | HiddenX_off’ + Z, | 6e2 |
-| HiddenX_off’ | HiddenX’ | 6e2 |
-| HiddenY_off’ | HiddenY’ | 6e2 |
-| HiddenZ_off’ | HiddenZ’ | 6e2 |
-| X’ | NULL | 6e2 |
-| Y’ | NULL | 6e2 |
-| Z’ | NULL | 6e2 |
-| X, | X’ | 2e2 |
-| Y, | Y’ | 2e2 |
-| Z, | Z’ | 2e2 |
+| I'  | I' + X’ | 3e2 |
+| I'  | I' + Y’ | 3e2 |
+| I'  | I' + Z’ | 3e2 |
+| mRNAX' | mRNAX' + X' | 3e2 |
+| mRNAY' | mRNAY' + Y'  | 3e2 |
+| mRNAZ' | mRNAZ' + Z'  | 3e2 |
+| X' + mRNAY' | X' | 5e2 |
+| Y' + mRNAZ' | Y' | 5e2 |
+| Z' + mRNAX' | Z' | 5e2 |
+| mRNAX’ | NULL | 6e2 |
+| mRNAY’ | NULL | 6e2 |
+| mRNAZ’ | NULL | 6e2 |
+| X' | X’ | 6e2 |
+| Y' | Y’ | 6e2 |
+| Z' | Z’ | 6e2 |
 {: text-align: center;"}
 
 Go to `CellBlender > Plot Output Settings` to build a plot as follows:
@@ -110,7 +106,7 @@ We are now ready to run our simulation. Go to `CellBlender > Run Simulation` and
 
 [![image-center](../assets/images/600px/motifs_norm7.png){: .align-center}](../assets/images/motifs_norm7.png)
 
-1. Set the number of iterations to `120000`.
+1. Set the number of iterations to `30000`.
 2. Ensure the time step is set as `1e-6`.
 3. Click `Export & Run`.
 

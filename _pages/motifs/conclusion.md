@@ -33,7 +33,7 @@ We will further discuss the technical details behind a well-mixed reaction-diffu
 
 ## The repressilator is robust to disturbance
 
-The figure below shows plots over time of concentrations of each particle in our well-mixed simulation of the repressilator.  Midway through this simulation, we greatly increase the concentration of *Y* particles.
+The figure below shows plots over time of concentrations of each particle in our well-mixed simulation of the repressilator. Midway through this simulation, we greatly increase the concentration of *Y* particles. 
 
 [![image-center](../assets/images/600px/nf_sim_interrupted_chart.png){: .align-center}](../assets/images/nf_sim_interrupted_chart.png)
 A plot of particle concentrations in the well-mixed repressilator model over time. Adding a significant number of *Y* particles to our simulation (the second blue peak) produces little ultimate disturbance to the concentrations of the three particles, which return to normal oscillations within a single cycle.

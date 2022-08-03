@@ -27,26 +27,26 @@ Rename your file `oscillator_copy.bngl` and double-click the file in the navigat
 ~~~ ruby
 begin parameters
  r1 2e3
- r2 6e2
- r3 6e2
- r4 2e2
- r5 6e2
+ r2 5e3
+ r3 3e3
+ r4 3e3
+ r5 4e3
 end parameters
 ~~~
+
+We note that because we are using a particle free simulation with NFSim, we are able to simulate at greater concentration of particles and greater rates of reaction than in Blender. For this reason, many of the reaction rates in this tutorial are greater than in the previous tutorial. 
 
 Next, add the molecules used as follows:
 
 ~~~ ruby
 begin molecule types
- x(Y~U~P)
- y(Y~U~P)
- z(Y~U~P)
- hx()
- hy()
- hz()
- hx_off()
- hy_off()
- hz_off()
+ x()
+ y()
+ z()
+ i()
+ mRNAX()
+ mRNAY() 
+ mRNAZ()
  null()
 end molecule types
 ~~~
@@ -55,15 +55,13 @@ Next, specify the quantities of each molecule at the start of the simulation:
 
 ~~~ ruby
 begin species
- x(Y~U) 150
- y(Y~U) 0
- z(Y~U) 0
- hx() 100
- hy() 100
- hz() 100
- hx_off() 0
- hy_off() 0
- hz_off() 0
+ x() 50
+ y() 0
+ z() 0
+ i() 2000
+ mRNAX() 0
+ mRNAY() 0
+ mRNAZ() 0
  null() 0
 end species
 ~~~
@@ -82,31 +80,34 @@ The following rules and reaction parameters are the same reaction rules as used 
 
 ~~~ ruby
 begin reaction rules
- # x copy
- hx() -> hx() + x(Y~U) r1
- x(Y~U) + hy() -> hy_off() + x(Y~P) r2
- hy_off() -> hy() r3
- x(Y~P) -> x(Y~U) r4
+
+ i() -> i() + mRNAX() r1
+ i() -> i() + mRNAY() r1
+ i() -> i() + mRNAZ() r1
+
+# repression 
+ mRNAX() -> mRNAX() + x() r2
+ mRNAY() -> mRNAY() + y() r2
+ mRNAZ() -> mRNAZ() + z() r2
+ 
+ x() + mRNAY() -> x() r3
+ y() + mRNAZ() -> y() r3
+ z() + mRNAX() -> z() r3
+ 
+# degradation
+ mRNAX() -> null() r4
+ mRNAZ() -> null() r4
+ mRNAZ() -> null() r4 
  x() -> null() r5
- # y copy
- hy() -> hy() + y(Y~U) r1
- y(Y~U) + hz() -> hz_off() + y(Y~P) r2
- hz_off() -> hz() r3
- y(Y~P) -> y(Y~U) r4
  y() -> null() r5
- # z copy
- hz() -> hz() + z(Y~U) r1
- z(Y~U) + hx() -> hx_off() + z(Y~P) r2
- hx_off() -> hx() r3
- z(Y~P) -> z(Y~U) r4
- z() -> null() r5
+ z() -> null() r5 
 end reaction rules
 ~~~
 
 Finally, specify the type of simulation and number of frames to run using the following code.
 
 ~~~ ruby
-# i.e. 12,000 frames at 1e-6 timestep on CellBlender
+# i.e. 2,000 frames at 1e-6 timestep on CellBlender
 simulate_nf({t_end=>.06,n_steps=>60000});
 ~~~
 
@@ -123,7 +124,7 @@ Add the following parameters to the `parameters` section of the file:
 ~~~ ruby
  # delay mechanic
  r6 1e7
- r7 4e2
+ r7 4e3
  r8 1e3
  r9 2e4
  r10 1e3
@@ -165,7 +166,7 @@ Finally, add the following to `reaction rules`.  These rules act as a delayed sp
  delay() -> null() r7
  a(Y~U) -> a(Y~P) r8
  a(Y~P) -> b() r9
- b() -> y(Y~U) r10
+ b() -> y() r10
 ~~~
 
 On the right side of the window, click `Simulation > Run`. After the simulation is complete, a new window will appear showing the plotted graph.
