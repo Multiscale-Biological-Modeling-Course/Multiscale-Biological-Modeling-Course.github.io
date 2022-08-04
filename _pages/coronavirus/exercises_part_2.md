@@ -58,5 +58,5 @@ We will use what we learned about VMD in a [tutorial](tutorial_multiseq) to visu
 
 ## Contact maps
 
-**Exercise:** In our [GNM tutorial](tutorial_GNM), we created the contact map using the threshold of 20Å. Try making the contact map of one of the chains of SARS-CoV-2 spike protein [6vxx](http://www.rcsb.org/structure/6VXX) with thresholds of 10 angstroms and 40 angstroms. How different are the resulting contact maps?
+**Exercise:** In our [GNM tutorial](tutorial_GNM), we created the contact map using the threshold of 20 angstroms. Try making the contact map of one of the chains of SARS-CoV-2 spike protein [6vxx](http://www.rcsb.org/structure/6VXX) with thresholds of 10 angstroms and 40 angstroms. How different are the resulting contact maps?
 {: .notice--success}
