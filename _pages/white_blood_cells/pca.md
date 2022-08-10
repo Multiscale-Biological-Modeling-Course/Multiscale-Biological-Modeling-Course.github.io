@@ -106,7 +106,7 @@ Our three-dimensional minds will not permit us the intuition needed to visualize
 
 This approach, which is over 100 years old but omnipresent in modern data science, is called **principal component analysis (PCA)**. A closely related concept called **singular value decomposition** was developed in the 19th century.
 
-**Note:** It can be shown that if *d*<sub>1</sub> is smaller than *d*<sub>2</sub>, then the hyperplane provided by PCA of dimension *d*<sub>1</sub> is a subset of the hyperplane of dimension *d*<sub>2</sub>. For example, the first principal component is always found within the plane (*d* = 2) provided by PCA, which was indicated in the preceding figure.
+**Note:** It can be proven that for any dataset, when *d*<sub>1</sub> is smaller than *d*<sub>2</sub>, the hyperplane provided by PCA of dimension *d*<sub>1</sub> is a subset of the hyperplane of dimension *d*<sub>2</sub>. For example, the first principal component is always found within the plane (*d* = 2) provided by PCA, which was indicated in the preceding figure.
 {: .notice--info}
 
 We will soon apply PCA to reduce the dimensions of our shape space; first, we make a brief aside to discuss a different biological problem in which the application of PCA has provided amazing insights.
@@ -162,7 +162,7 @@ We can also subdivide granulocytes into basophils, eosinophils, and neutrophils.
 The reduced dimension shape space from the previous figure, with granulocytes subdivided into basophils, eosinophils, and neutrophils.
 {: style="font-size: medium;"}
 
-Although images from the same family do not cluster as tightly as the iris flower dataset --- which could be criticized as an unrealistic representation of the noise inherent in most real datasets --- images from the same type do appear to be nearby. This fact should give us hope that proximity in a dimension-reduced space may help us correctly classify images of unknown type.
+Although images from the same family do not cluster as tightly as the iris flower dataset --- which could be criticized as an unrealistic representation of real datasets --- images from the same type do appear to be nearby. This fact should give us hope that proximity in a shape space of lower dimension may help us correctly classify images of unknown type.
 
 [Next lesson](training){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

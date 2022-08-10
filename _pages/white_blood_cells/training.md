@@ -23,24 +23,22 @@ gallery:
 
 ## Cross validation
 
-We would like to apply k-NN to a dimension-reduced shape space WBC images to see how often it assigns an image to the correct class. The tricky part is that we already know the correct class for every image in our dataset. To get around this issue, we could exclude some *subset* of the data, called the **validation set**. After pretending that we don't know the correct classes for elements of the validation set, we will see how often our classification algorithm correctly identifies the class of each object in this set.
+We would like to apply k-NN to a dimension-reduced shape space WBC images to see how often it assigns an image to the correct class. However, we already know the correct class for every image in our dataset!
+
+One approach for assessing how well a classification algorithm performs when the classes of each object in our dataset are known is to exclude some *subset* of the data, called the **validation set**. After hiding the correct classes for elements of the validation set from the classification algorithm, we will measure how often the algorithm correctly identifies the class of each object in this set.
 
 **STOP:** What issues do you see with using a validation set?
 {: .notice--primary}
 
-Unfortunately, it is unclear which subset of the data we should use as a validation set. Random variation could mean that the reported accuracy will change depending on which subset we choose. And what makes the elements of the validation set so special as to be chosen? Ideally, we would use a more democratic approach that is not subject to random variation and that uses *all* of the data for validation.
+Yet it remains unclear which subset of the data we should use as a validation set. Random variation could cause that the classifier's accuracy will change depending on which subset we choose. After all, what makes the elements of the validation set so special as to be chosen? Ideally, we would use a more democratic approach that is not subject to random variation and that uses *all* of the data for validation.
 
-In **cross validation**, we divide our data into a collection of *f* (approximately) equally sized groups called **folds**. We use one of these folds as a validation set, keeping track of how many objects are correctly classified, and then we start over with a different fold as our validation set. Cross validation is democratic, since every element in our dataset will get used as a member of a validation set exactly once.
-
-The case in which *f* is equal to the number of points in our dataset is called **leave one out cross validation**.  For every point in the dataset, we pretend that we do not know its label, use the classification algorithm to assign it a class, and then compare this prediction against the known class.
+In **cross validation**, we divide our data into a collection of *f* (approximately) equally sized groups called **folds**. We use one of these folds as a validation set, keeping track of which objects the classification algorithm classifies correctly, and then we start over with a different fold as our validation set. In this way, every element in our dataset will get used as a member of a validation set exactly once.
 
 ## A first attempt at quantifying the success of a classifier
 
-Before we can apply cross validation to WBC images, we should know how to quantify the performance of the classifier. This task may seem easy, but we will see that pitfalls are lurking.
+Before we can apply cross validation to WBC images, we should discuss how to quantify the performance of the classifier. The table below shows the result of applying k-NN to the iris flower dataset, using *k* equal to 3 and cross validation with *f* equal to 10 (since there are 150 flowers, each fold contains 15 flowers). This table is called a **confusion matrix**, because it helps us visualize whether we are "confusing" the class assignment of an object.
 
-The table below shows the result of applying k-NN to the iris flower dataset, using *k* = 1 and cross-validation with *f* = 10 (meaning that since there are 150 flowers, each fold contains 15 flowers). This table is called a **confusion matrix**, because it helps us visualize whether we are "confusing" the assignment of a flower to the wrong class.
-
-In the confusion matrix, rows correspond to true classes, and columns correspond to predicted classes. For example, consider the second row, which corresponds to the flowers that we know are *Iris versicolor*. Our classifier predicted that none of these flowers were *Iris setosa*, that 47 of these flowers were *Iris versicolor*, and that three of the flowers were *Iris virginica*. Therefore, it correctly predicted the class of 47 of the 50 total *Iris versicolor* flowers.
+In the confusion matrix, rows correspond to true classes, and columns correspond to predicted classes. For example, consider the second row, which corresponds to the flowers that we know are *Iris versicolor*. k-NN predicted that none of these flowers were *Iris setosa*, that 47 of these flowers were *Iris versicolor*, and that three of the flowers were *Iris virginica*. Therefore, it correctly predicted the class of 47 of the 50 total *Iris versicolor* flowers.
 
 | *Iris setosa* | *Iris versicolor* | *Iris virginica* |
 | :---: |  :----: | :---: |
@@ -53,7 +51,7 @@ In the confusion matrix, rows correspond to true classes, and columns correspond
 
 We define the **accuracy** of a classifier as the fraction of objects that it correctly identifies out of the total. For the above iris flower example, the confusion matrix indicates that k-NN has an accuracy of (50 + 47 + 46)/150 = 95.3%.
 
-It may seem that accuracy is the only metric that we need. But if you were in a smarmy mood, then you might design a classifier that produces the following confusion matrix for our WBC dataset.
+It may seem that accuracy is the only metric that we need. But if we were in a smarmy mood, then we might design a classifier that produces the following confusion matrix for our WBC dataset.
 
 | Granulocyte | Monocyte | Lymphocyte |
 | :---: |  :----: | :---: |
@@ -64,7 +62,7 @@ It may seem that accuracy is the only metric that we need. But if you were in a 
 **STOP:** What is the accuracy of this classifier?
 {: .notice--primary}
 
-The clown classifier blindly assigned every image in the dataset to be a granulocyte. And yet its accuracy is 291/345 = 84.3%! To make matters worse, below is a confusion matrix for a hypothetical classifier on the same dataset that is clearly better. And yet its accuracy would be only (232 + 17 + 26)/345 = 79.7%.
+Our clown classifier blindly assigned every image in the dataset to be a granulocyte, but its accuracy is 291/345 = 84.3%! To make matters worse, below is a confusion matrix for a hypothetical classifier on the same dataset that is clearly better but that has an accuracy of only (232 + 17 + 26)/345 = 79.7%.
 
 | Granulocyte | Monocyte | Lymphocyte |
 | :---: |  :----: | :---: |
@@ -72,18 +70,18 @@ The clown classifier blindly assigned every image in the dataset to be a granulo
 | 2 | 17 | 2 |
 | 6 | 1 | 26 |
 
-The failure of this classifier to attain the same accuracy as the one assigning the majority class to each element owes to the WBC dataset having *imbalanced* classes, a common issue in data science. Imbalanced classes mean that only reporting a classifier's accuracy may be misleading.
+The failure of this classifier to attain the same accuracy as the one assigning the majority class to each element owes to the WBC dataset having *imbalanced* classes, which means that reporting only a classifier's accuracy may be misleading.
 
-For another example, say that we design a sham COVID test that always comes back negative. If 1% of the population at a given point in time is COVID-positive, then we could report that our test is 99% accurate. But we would fail to get this test approved for widespread use because it performs horribly on COVID-positive individuals.
+For another example, say that we design a sham medical test for some condition that always comes back negative. If 1% of the population at a given point in time is positive for the condition, then we could report that our test is 99% accurate. But we would fail to get this test approved for widespread use because it never correctly identifies an individual who has the condition.
 
 **STOP:** What other metrics could we design for measuring the success of a classifier?
 {: .notice--primary}
 
 ## Recall, specificity, and precision
 
-To motivate our discussion of other classifier metrics, we will continue discussing medical tests, which can be thought of as classifiers with two classes (positive or negative).
+To motivate our discussion of other classifier metrics, we will continue with the analogy of medical tests, which can be thought of as classifiers with two classes (positive or negative).
 
-First, we define some terms. A **true positive** is a positive test in a patient that has the disease; a **false positive** is a positive test in a patient that does not have the disease; a **true negative** is a negative test in a patient that does not have the disease; and a **false negative** is a negative test in a patient that does have the disease. The table below shows the locations of these four terms in a two-class confusion matrix.
+First, we define some terms. A **true positive** is a positive test in a patient that has the condition; a **false positive** is a positive test in a patient that does not have the condition; a **true negative** is a negative test in a patient that does not have the condition; and a **false negative** is a negative test in a patient that does have the condition. The table below shows the locations of these four terms in the two-class confusion matrix for the test.
 
 [![image-center](../assets/images/600px/medical_test_confusion_matrix.png){: .align-center}](../assets/images/medical_test_confusion_matrix.png)
 The locations of true positives, true positives, true negatives, and false negatives in the confusion matrix associated with a medical test. Correct predictions are shown in green, and incorrect predictions are shown in red.
