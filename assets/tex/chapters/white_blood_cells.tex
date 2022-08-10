@@ -630,9 +630,9 @@ Before applying cross validation to WBC images, we will discuss how to quantify 
 %& \multicolumn{3}{c}{\textbf{Predicted class}}\\
 \rowcolor{gray!50}
 & \textbf{\textit{I.~setosa}} & \textbf{\textit{I.~versicolor}} & \textbf{\textit{I.~virginica}} \\
-\textbf{\textit{I.~setosa}} & 50 & 0 & 0 \\
-\textbf{\textit{I.~versicolor}} & 0 & 47 & 3 \\
-\textbf{\textit{I.~virginica}} & 0 & 4 & 46
+\textbf{\textit{I.~setosa}} & 50 & \phantom{5}0 & \phantom{5}0 \\
+\textbf{\textit{I.~versicolor}} & \phantom{5}0 & 47 & \phantom{5}3 \\
+\textbf{\textit{I.~virginica}} & \phantom{5}0 & \phantom{5}4 & 46
 \end{tabular}
 \caption{The confusion matrix resulting from applying k-NN to the iris flower dataset, using $\textvar{k} = \text{1}$ and cross validation with $\textvar{f} = \text{10}$.}
 \label{fig:iris_confusion_matrix}
@@ -657,8 +657,8 @@ It may seem that accuracy is the only metric that we need. But if we were in a s
 \rowcolor{gray!50}
 & \textbf{Granulocyte} & \textbf{Monocyte} & \textbf{Lymphocyte} \\
 \textbf{Granulocyte} & 291 & 0 & 0 \\
-\textbf{Monocyte} & 21 & 0 & 0 \\
-\textbf{Lymphocyte} & 33 & 0 & 0
+\textbf{Monocyte} & \phantom{5}21 & 0 & 0 \\
+\textbf{Lymphocyte} & \phantom{5}33 & 0 & 0
 \end{tabular}
 \caption{The confusion matrix for our WBC image dataset produced by classifying every image as a granulocyte.}
 \label{fig:wbc_clown_matrix}
@@ -679,8 +679,8 @@ Our clown classifier blindly assigned every image in the dataset to be a granulo
 \rowcolor{gray!50}
 & \textbf{Granulocyte} & \textbf{Monocyte} & \textbf{Lymphocyte} \\
  \textbf{Granulocyte} & 232 & 25 & 34 \\
-\textbf{Monocyte} & 2 & 17 & 2 \\
-\textbf{Lymphocyte} & 6 & 1 & 26
+\textbf{Monocyte} & \phantom{55}2 & 17 & \phantom{5}2 \\
+\textbf{Lymphocyte} & \phantom{55}6 & \phantom{5}1 & 26
 \end{tabular}
 \caption{A hypothetical confusion matrix for our WBC image dataset.}
 \label{fig:wbc_better_confusion_matrix}
@@ -708,45 +708,54 @@ First, we define some terms. A \textdef{true positive}{true positive}{a positive
 \label{fig:medical_test_confusion_matrix}
 \end{figure}
 
-In what follows, we will use the hypothetical confusion matrix for a COVID test shown in \autoref{fig:medical_test_confusion_matrix_hypothetical}. We used a hypothetical confusion matrix because results for COVID tests, even the same type of test, can vary widely.\\
+In what follows, we will work with the confusion matrix for a hypothetical medical test shown in \autoref{fig:medical_test_confusion_matrix_hypothetical}. Note that this test has lower accuracy than our sham test that returns negative for all individuals, but we will now show metrics for which it is superior.\\
 
 \begin{figure}[h]
 \centering
+\tabcolsep = 1 em
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/medical_test_confusion_matrix_hypothetical.png}
-\caption{A hypothetical COVID test confusion matrix.}
+\rowcolors{2}{gray!25}{white}
+\begin{tabular}{r c c}
+\rowcolor{gray!50}
+& \textbf{Positive} & \textbf{Negative} \\
+ \textbf{Positive} & 1,000 & \phantom{198,}500 \\
+\textbf{Negative} & 2,000 & 198,000 \\
+\end{tabular}
+\caption{The confusion matrix for a hypothetical medical test.}
 \label{fig:medical_test_confusion_matrix_hypothetical}
 \end{figure}
 
-\begin{qbox}[%
-What is the accuracy of this test? How does it compare to the accuracy of a test that returns negative for everyone in the population?
-]\end{qbox}
+%\begin{figure}[h]
+%\centering
+%\mySfFamily
+%\includegraphics[width = 0.7\textwidth]{../images/medical_test_confusion_matrix_hypothetical.png}
+%\caption{A hypothetical COVID test confusion matrix.}
+%\label{fig:medical_test_confusion_matrix_hypothetical}
+%\end{figure}
 
-Once again, this test has lower accuracy than one that returns negative for all individuals, but we will now show metrics for which it is superior.
+The \textdef{recall}{recall (sensitivity)}{the percentage of positive cases that a two-class classifier such as a medical test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives} (a.k.a.~\textdefnogloss{sensitivity}) of a two-class classifier is the percentage of positive cases that the test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives (found by summing the top row of the confusion matrix). For the confusion matrix in \autoref{fig:medical_test_confusion_matrix_hypothetical}, the recall is $1,000/(1,000 + 500) = 66.7\%$. Recall ranges from 0 to 1, with larger values indicating that the test is ``sensitive'', meaning that it can identify true positives from a pool of patients who actually are positive.
 
-The \textdef{recall}{recall (sensitivity)}{the percentage of positive cases that a two-class classifier such as a medical test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives} (a.k.a.~\textdefnogloss{sensitivity}) of a two-class classifier is the percentage of positive cases that the test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives (found by summing the top row of the confusion matrix). For our hypothetical COVID confusion matrix in \autoref{fig:medical_test_confusion_matrix_hypothetical}, the recall is $1,000/(1,000 + 500) = 66.7\%$. Recall ranges from 0 to 1, with larger values indicating that the test is ``sensitive'', meaning that it can identify true positives out of patients who actually are positive.
+The \textdef{specificity}{specificity}{the ratio of true negatives to the sum of true negatives and false positives for a two-class classifier such as a medical test} of a test is an analogous metric for patients whose actual status is negative. Specificity measures the ratio of true negatives to the sum of true negatives and false positives (found by summing the second row of the confusion matrix). The test with confusion matrix in \autoref{fig:medical_test_confusion_matrix_hypothetical} has specificity equal to $198,000/(198,000 + 2,000) = 99\%$.
 
-The \textdef{specificity}{specificity}{the ratio of true negatives to the sum of true negatives and false positives for a two-class classifier such as a medical test} of a test is an analogous metric for patients whose actual status is negative. It measures the ratio of true negatives to the sum of true negatives and false positives (found by summing the second row of the confusion matrix). For the test with confusion matrix in \autoref{fig:medical_test_confusion_matrix_hypothetical}, the test specificity is $198,000/(198,000 + 2,000) = 99\%$.
-
-Finally, the \textdef{precision}{precision}{the percentage of positive tests that are correct for a two-class classifier such as a medical test, formed by taking the ratio of true positives to the sum of true positives and false positives} of a test is the percentage of positive tests that are correct, formed by taking the ratio of true positives to the sum of true positives and false positives (found by summing the first column of the confusion matrix). For example, the  test whose confusion matrix is shown in \autoref{fig:medical_test_confusion_matrix_hypothetical} is $1,000/(1,000 + 2,000) = 33.3\%$.\\
-
-\begin{qbox}[%
-How could we trick a test to have recall close to 1? What about specificity or precision?
-]\end{qbox}
-
-Just like accuracy, all three of the metrics we have just introduced are imperfect and can be fooled by frivolous tests that always return positive or negative. However, it is not possible for such a test to score well on all of these metrics at the same time. Therefore, in practice we will examine all of these metrics, as well as accuracy, when assessing the quality of a classifier.\\
+Finally, the \textdef{precision}{precision}{the percentage of positive tests that are correct for a two-class classifier such as a medical test, formed by taking the ratio of true positives to the sum of true positives and false positives} of a test is the percentage of positive tests that are correct, formed by taking the ratio of true positives to the total number of positive tests (found by summing the first column of the confusion matrix). For example, the test with confusion matrix in \autoref{fig:medical_test_confusion_matrix_hypothetical} has precision equal to $1,000/(1,000 + 2,000) = 33.3\%$.\\
 
 \begin{qbox}[%
-Compute the recall, specificity, and precision of a hypothetical COVID test that always returns negative.
+How could we trick a test to have recall, specificity, or precision close to 1?
 ]\end{qbox}
 
-You may find all these terms confusing and difficult to keep straight. You are not alone! An entire generation of scientists make copious trips to the \href{https://en.wikipedia.org/wiki/Precision_and_recall#Definition_(classification_context)}{Wikipedia page} describing these metrics as well as others used for analyzing classifiers. After all, it's called a confusion matrix for a reason\ldots
+Just like accuracy, all three of the metrics we have just introduced are imperfect and can be fooled by frivolous tests that always return positive or negative. However, a frivolous test cannot score well on all of these metrics at the same time. Therefore, in practice we will examine all of these metrics, as well as accuracy, when assessing the quality of a classifier.\\
+
+\begin{qbox}[%
+Consider a dataset of 201,500 patients, 1,500 of whom have a condition. Compute the recall, specificity, and precision of a hypothetical medical test for the condition that always returns negative. How does each metric compare against those of the hypothetical test in \autoref{fig:medical_test_confusion_matrix_hypothetical}?
+]\end{qbox}
+
+You may find all these terms difficult to keep straight. You are not alone! An entire generation of scientists make copious trips to the \href{https://en.wikipedia.org/wiki/Precision_and_recall#Definition_(classification_context)}{Wikipedia page} describing these metrics as well as others used for analyzing classifiers. After all, it's called a confusion matrix for a reason\ldots
 
 \FloatBarrier
 \phantomsection
 \subsection{Extending classification metrics to multiple classes}
 
-To return to our example of classifying images of WBC nuclei, we need to extend the ideas discussed in the preceding section to handle more than two classes. To do so, we consider each class individually and treat this class as the ``positive'' case.
+Before we return to our example of classifying images of WBC nuclei, we need to extend the ideas discussed in the preceding section to handle more than two classes. To do so, we consider each class individually and treat this class as the ``positive'' case, and all other classes together as the ``negative'' case.
 
 We use the iris flower dataset to show how this works. Say that we wish to compute the recall, specificity, and precision for \textit{Iris virginica} using the k-NN confusion matrix in \autoref{fig:iris_confusion_matrix}. We can simplify this confusion matrix into a two-class confusion matrix that combines the two classes corresponding to the other two species. \autoref{fig:iris_confusion_matrix_compressed}
  shows this smaller confusion matrix, with \textit{Iris virginica} moved to the first row and column.\\
@@ -759,28 +768,20 @@ We use the iris flower dataset to show how this works. Say that we wish to compu
 \begin{tabular}{r c c}
 \rowcolor{gray!50}
 & \textbf{\textit{I.~virginica}} & \textbf{\textit{I.~setosa} and \textit{I.~versicolor}} \\
-\textbf{\textit{I.~virginica}} & 46 & 4 \\
-\textbf{\textit{I.~setosa} and \textit{I.~versicolor}} & 3 & 47 \\
+\textbf{\textit{I.~virginica}} & 46 & \phantom{5}4 \\
+\textbf{\textit{I.~setosa} and \textit{I.~versicolor}} & \phantom{5}3 & 47 \\
 \end{tabular}
 \caption{A compressed version of the confusion matrix in \autoref{fig:iris_confusion_matrix} in which we combine \textit{Iris setosa} and \textit{Iris versicolor} into a single class.}
 \label{fig:iris_confusion_matrix_compressed}
 \end{figure}
 
-This simplification allows us to compute the recall, specificity, and precision for ths classifier with respect to \textit{Iris virginica}.
-
-\begin{itemize}
-\item recall: $46/(46+4) = 92\%$
-\item specificity: $47/(3+47) = 94\%$
-\item precision: $46/(46+3) = 93.9\%$
-\end{itemize}
-
-\fudgespace
+This simplification allows us to compute the classifier statistics with respect to \textit{Iris virginica}: recall is $46/(46+4) = 92\%$; specificity is $47/(3+47) = 94\%$; and precision is $46/(46+3) = 93.9\%$.\\
 
 \begin{qbox}[%
-Compute the recall, specificity, and precision for each of the other two iris species using the confusion matrix in \autoref{fig:iris_confusion_matrix}.
+Compute the recall, specificity, and precision using each of the other two iris species as the positive case and the confusion matrix in \autoref{fig:iris_confusion_matrix}.
 ]\end{qbox}
 
-Now that we understand more about how to quantify the performance of a classifier, we are ready to apply k-NN to our WBC shape space --- post-PCA of course! --- and assess its performance.\tutorial[white_blood_cells/tutorial_image_classification]
+Now that we understand more about how to quantify the performance of a classifier, we are ready to apply k-NN to our WBC shape space --- post-PCA of course! --- and then assess its performance.\tutorial[white_blood_cells/tutorial_image_classification]
 
 \FloatBarrier
 \phantomsection
@@ -797,8 +798,8 @@ If we run k-NN on our shape space, using \textvar{d} (the number of dimensions i
 \rowcolor{gray!50}
 & \textbf{Granulocyte} & \textbf{Monocyte} & \textbf{Lymphocyte} \\
 \textbf{Granulocyte} & 259 & 9 & 23 \\
-\textbf{Monocyte} & 14 & 6 & 1 \\
- \textbf{Lymphocyte} & 5 & 2 & 26
+\textbf{Monocyte} & \phantom{5}14 & 6 & \phantom{5}1 \\
+ \textbf{Lymphocyte} & \phantom{55}5 & 2 & 26
 \end{tabular}
 \caption{The confusion matrix for our WBC image dataset using k-NN with $\textvar{d} = \text{10}$, $\textvar{k} = \text{1}$, and $\textvar{f} = \text{10}$.}
 \label{fig:wbc_better_confusion_matrix}
@@ -817,8 +818,8 @@ We start with \textvar{d}. If we set \textvar{d} too large, then once again the 
 \rowcolor{gray!50}
 & \textbf{Granulocyte} & \textbf{Monocyte} & \textbf{Lymphocyte} \\
 \textbf{Granulocyte} & 0 & 0 & 291 \\
-\textbf{Monocyte} & 0 & 0 & 21 \\
-\textbf{Lymphocyte} & 0 & 0 & 33
+\textbf{Monocyte} & 0 & 0 & \phantom{5}21 \\
+\textbf{Lymphocyte} & 0 & 0 & \phantom{5}33
 \end{tabular}
 \caption{The confusion matrix for our WBC image dataset using k-NN with $\textvar{d} = \text{344}$, $\textvar{k} = \text{1}$, and $\textvar{f} = \text{10}$.}
 \label{fig:wbc_baffling_confusion_matrix}
@@ -835,8 +836,8 @@ Using \textvar{d} equal to 3, we obtain better results, but we have reduced the 
 \rowcolor{gray!50}
 & \textbf{Granulocyte} & \textbf{Monocyte} & \textbf{Lymphocyte} \\
 \textbf{Granulocyte} & 257 & 15 & 19 \\
-\textbf{Monocyte} & 16 & 5 & 0 \\
-\textbf{Lymphocyte} & 20 & 0 & 13
+\textbf{Monocyte} & \phantom{5}16 & \phantom{5}5 & \phantom{5}0 \\
+\textbf{Lymphocyte} & \phantom{5}20 & \phantom{5}0 & 13
 \end{tabular}
 \caption{The confusion matrix for our WBC image dataset using k-NN with $\textvar{d} = \text{3}$, $\textvar{k} = \text{1}$, and $\textvar{f} = \text{10}$.}
 \label{fig:wbc_dimension_too_high}
@@ -855,8 +856,8 @@ We next consider \textvar{k}. It might seem that taking more neighbors into acco
 \rowcolor{gray!50}
 & \textbf{Granulocyte} & \textbf{Monocyte} & \textbf{Lymphocyte} \\
 \textbf{Granulocyte} & 264 & 1 & 26 \\
-\textbf{Monocyte} & 21 & 0 & 0 \\
-\textbf{Lymphocyte} & 7 & 0 & 26
+\textbf{Monocyte} & \phantom{5}21 & 0 & \phantom{5}0 \\
+\textbf{Lymphocyte} & \phantom{55}7 & 0 & 26
 \end{tabular}
 \caption{The confusion matrix for our WBC image dataset using k-NN with $\textvar{d} = \text{3}$, $\textvar{k} = \text{1}$, and $\textvar{f} = \text{10}$.}
 \label{fig:wbc_too_many_neighbors}

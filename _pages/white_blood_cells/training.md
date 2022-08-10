@@ -87,10 +87,10 @@ First, we define some terms. A **true positive** is a positive test in a patient
 The locations of true positives, true positives, true negatives, and false negatives in the confusion matrix associated with a medical test. Correct predictions are shown in green, and incorrect predictions are shown in red.
 {: style="font-size: medium;"}
 
-In what follows, we will use the hypothetical confusion matrix for a COVID test shown in the figure below. We used a hypothetical confusion matrix because results for COVID tests, even the same type of test, can vary widely.[^Mistry]
+In what follows, we will work with the confusion matrix for a hypothetical medical test shown in the figure below.
 
 [![image-center](../assets/images/600px/medical_test_confusion_matrix_hypothetical.png){: .align-center}](../assets/images/medical_test_confusion_matrix_hypothetical.png)
-A hypothetical COVID test confusion matrix.
+A hypothetical medical test confusion matrix.
 {: style="font-size: medium;"}
 
 **STOP:** What is the accuracy of this test? How does it compare to the accuracy of a test that returns negative for everyone in the population?
@@ -98,21 +98,21 @@ A hypothetical COVID test confusion matrix.
 
 Once again, this test has lower accuracy than one that returns negative for all individuals, but we will now show metrics for which it is superior.
 
-The **recall** (a.k.a. **sensitivity**) of a two-class classifier is the percentage of positive cases that the test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives (found by summing the top row of the confusion matrix). For our hypothetical COVID confusion matrix in the table above, the recall is 1,000/(1,000 + 500) = 66.7%. Recall ranges from 0 to 1, with larger values indicating that the test is "sensitive", meaning that it can identify true positives out of patients who actually are positive.
+The **recall** (a.k.a. **sensitivity**) of a two-class classifier is the percentage of positive cases that the test correctly identifies, or the ratio of true positives over the sum of the true positives and false negatives (found by summing the top row of the confusion matrix). For the confusion matrix in the table above, the recall is 1,000/(1,000 + 500) = 66.7%. Recall ranges from 0 to 1, with larger values indicating that the test is "sensitive", meaning that it can identify true positives from a pool of patients who actually are positive.
 
-The **specificity** of a test is an analogous metric for patients whose actual status is negative. It measures the ratio of true negatives to the sum of true negatives and false positives (found by summing the second row of the confusion matrix). For the hypothetical COVID test confusion matrix, the test specificity is 198,000/(198,000 + 2,000) = 99%.
+The **specificity** of a test is an analogous metric for patients whose actual status is negative. Specificity measures the ratio of true negatives to the sum of true negatives and false positives (found by summing the second row of the confusion matrix). The hypothetical medical test has specificity equal to 198,000/(198,000 + 2,000) = 99%.
 
-Finally, the **precision** of a test is the percentage of positive tests that are correct, formed by taking the ratio of true positives to the sum of true positives and false positives (found by summing the first column of the confusion matrix). For example, the precision of our hypothetical COVID test is 1,000/(1,000 + 2,000) = 33.3%.
+Finally, the **precision** of a test is the percentage of positive tests that are correct, formed by taking the ratio of true positives to the total number of positive tests (found by summing the first column of the confusion matrix). For example, the precision of our hypothetical medical test is 1,000/(1,000 + 2,000) = 33.3%.
 
-**STOP:** How could we trick a test to have recall close to 1? What about specificity? Precision?
+**STOP:** How could we trick a test to have recall, specificity, or precision close to 1?
 {: .notice--primary}
 
-Just like accuracy, all three of the metrics introduced in this section are not perfect and can be fooled by frivolous tests that always return positive or negative. However, it is not possible for such a test to score well on all of these metrics at the same time. Therefore, in practice we will examine all of these metrics, as well as accuracy, when assessing the quality of a classifier.
+Just like accuracy, all three of the metrics introduced in this section are not perfect and can be fooled by frivolous tests that always return positive or negative. However, a frivolous test cannot score well on all of these metrics at the same time. Therefore, in practice we will examine all of these metrics, as well as accuracy, when assessing the quality of a classifier.
 
-**STOP:** Compute the recall, specificity, and precision of the hypothetical COVID test that always returns negative.
+**STOP:** Consider a dataset of 201,500 patients, 1,500 of whom have a condition. Compute the recall, specificity, and precision of a hypothetical medical test for the condition that always returns negative. How does each metric compare against those of our hypothetical test?
 {: .notice--primary}
 
-You may find all these terms confusing and difficult to keep straight. You are not alone! An entire generation of scientists make copious trips to the <a href="https://en.wikipedia.org/wiki/Precision_and_recall#Definition_(classification_context)" target="_blank">Wikipedia page</a> describing these metrics as well as others used for analyzing classifiers. After all, it's called a confusion matrix for a reason…
+You may find all these terms difficult to keep straight. You are not alone! An entire generation of scientists make copious trips to the <a href="https://en.wikipedia.org/wiki/Precision_and_recall#Definition_(classification_context)" target="_blank">Wikipedia page</a> describing these metrics as well as others used for analyzing classifiers. After all, it's called a confusion matrix for a reason…
 
 {% include video id="6gJdf7LyGpg" provider="youtube" %}
 
@@ -120,7 +120,7 @@ You may find all these terms confusing and difficult to keep straight. You are n
 
 ## Extending classification metrics to multiple classes
 
-To return to our example of classifying images of WBC nuclei, we need to extend the ideas discussed in the preceding section to handle more than two classes. To do so, we consider each class individually and treat this class as the "positive" case.
+Before we return to our example of classifying images of WBC nuclei, we need to extend the ideas discussed in the preceding section to handle more than two classes. To do so, we consider each class individually and treat this class as the "positive" case and all other classes together as the "negative" case.
 
 We use the iris flower dataset to show how this works. Say that we wish to compute the recall, specificity, and precision for *Iris virginica* using the k-NN confusion matrix that we generated, reproduced below.
 
@@ -137,16 +137,16 @@ We can simplify this confusion matrix into a two-class confusion matrix that com
 | 46 | 4 |
 | 3 | 47 |
 
-This simplification allows us to compute the recall, specificity, and precision for ths classifier with respect to *Iris virginica*.
+This simplification allows us to compute the classification statistics with respect to *Iris virginica*.
 
 * recall: 46/(46+4) = 92%
 * specificity: 47/(3+47) = 94%
 * precision: 46/(46+3) = 93.9%
 
-**STOP:** Compute the recall, specificity, and precision for each of the other two iris species using the above confusion matrix.
+**STOP:** Compute the recall, specificity, and precision using each of the other two iris species as the positive case and the confusion matrix in the above confusion matrix.
 {: .notice--primary}
 
-Now that we understand more about how to quantify the performance of a classifier, we are ready to apply k-NN to our WBC shape space (post-PCA of course!) and assess its performance.
+Now that we understand more about how to quantify the performance of a classifier, we are ready to apply k-NN to our WBC shape space (post-PCA of course!) and then assess its performance.
 
 [Visit tutorial](tutorial_image_classification){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
