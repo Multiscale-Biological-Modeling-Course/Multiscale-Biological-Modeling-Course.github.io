@@ -135,16 +135,38 @@ We can simplify this confusion matrix into a two-class confusion matrix that com
 | *Iris virginica* | *Iris setosa* and *Iris versicolor* |
 | :---: |  :----: |
 | 46 | 4 |
-| 3 | 47 |
+| 3 | 97 |
 
 This simplification allows us to compute the classification statistics with respect to *Iris virginica*.
 
 * recall: 46/(46+4) = 92%
-* specificity: 47/(3+47) = 94%
+* specificity: 97/(3+97) = 94%
 * precision: 46/(46+3) = 93.9%
 
-**STOP:** Compute the recall, specificity, and precision using each of the other two iris species as the positive case and the confusion matrix in the above confusion matrix.
+Once we have computed a statistic for each of the three iris species, we can then obtain a statistic for the classifier as a whole by taking the average of the statistics over all three species. For example, the overall recall of the classifier shown in the k-NN iris flower confusion matrix is the average of the recall for *Iris setosa*, *Iris versicolor*, and *Iris virginica* (which we just computed to be 92\%). We leave the computation of the other two recall values as an exercise.
+
+**STOP:** Compute the recall, specificity, and precision for each of the other two iris species using the k-NN confusion matrix. Then, average each statistic over all three species to determine the classifier's overall recall, specificity, and precision.
 {: .notice--primary}
+
+Let us consider one more example, returning to the confusion matrix for a hypothetical classifier on our WBC image dataset, reproduced below.
+
+| Granulocyte | Monocyte | Lymphocyte |
+| :---: |  :----: | :---: |
+| 232 | 25 | 34 |
+| 2 | 17 | 2 |
+| 6 | 1 | 26 |
+
+The table below shows the computation of average recall, specificity, and precision for this classifier, which we previously mentioned has an accuracy of 79.7%.
+
+| | Count | Recall | Specificity | Precision |
+| ---: | :---: |  :----: | :---: | :---: |
+| **Granulocyte** | 291 | 79.725% | 85.185% | 96.667% |
+| **Monocyte** | 21 | 80.952% | 91.975% | 39.535% |
+| **Lymphocyte** | 33 | 78.788% | 88.462% | 41.935% |
+| **Average** | | 79.822% | 88.541% | 59.379% |
+| **Weighted Average** | | 79.710% | 85.912% | 87.954% |
+
+Note that the precision statistics for monocytes and lymphocytes weigh down the overall average precision of 59.379%; as a result, when we have imbalanced classes, we will also report the weighted average of the statistic, weighted over the number of elements in each class (see the final row in the above table). For example, the weighted average of the precision statistic is (291 · 96.667% + 21 · 39.535% + 33 · 41.935%)/(291 + 21 + 33) = 87.954%.
 
 Now that we understand more about how to quantify the performance of a classifier, we are ready to apply k-NN to our WBC shape space (post-PCA of course!) and then assess its performance.
 
@@ -153,7 +175,7 @@ Now that we understand more about how to quantify the performance of a classifie
 
 ## Applying a classifier to the WBC shape space
 
-If we run k-NN on our shape space, using *d* (the number of dimensions in the PCA hyperplane) equal to 10, *k* (the number of nearest neighbors to consider when assigning a class) equal to 1, and *f* (the number of folds) equal to 10, then we obtain the confusion matrix shown below. For this dataset, k-NN has an accuracy of 84.3% and a weighted average of precision and recall over all three classes of 85.7% and 84.3%, respectively.
+The confusion matrix shown below is the result of running k-NN on our WBC image shape space, using *d* (the number of dimensions in the PCA hyperplane) equal to 10, *k* (the number of nearest neighbors to consider when assigning a class) equal to 1, and *f* (the number of folds) equal to 10.  For this dataset, k-NN has an accuracy of 84.3% and a weighted average of precision and recall over all three classes of 85.7% and 84.3%, respectively.
 
 | Granulocyte | Monocyte | Lymphocyte |
 | :---: |  :----: | :---: |

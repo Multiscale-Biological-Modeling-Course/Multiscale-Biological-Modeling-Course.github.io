@@ -529,55 +529,6 @@ Our three-dimensional minds will not permit us the intuition needed to visualize
 It can be proven that for any dataset, when $d_1$ is smaller than $d_2$, the hyperplane provided by PCA of dimension $d_1$ is \textit{always} a subset of the hyperplane of dimension $d_2$. For example, the first principal component is always found within the plane ($d = 2$) provided by PCA, which was indicated in \autoref{fig:three_dimensional_pca} (left).
 ]\end{note}
 
-
-%We will soon apply it to reduce the dimensions of our shape space; first, we make a brief aside to discuss a different biological problem in which the application of PCA has provided amazing insights.
-%
-%\FloatBarrier
-%\phantomsection
-%\subsection{Genotyping: PCA is more powerful than you think}
-%
-%Biologists have identified hundreds of thousands of \textdefnogloss{markers}, locations within human DNA that that are common sources of human variation. The most commonly type of marker is a single nucleotide (A, C, G, or T). In the process of \textdef{genotyping}{genotyping}{a process in which an individual's genetic markers are identified and compared to those sampled from others}, a service provided by companies as part of the booming ancestry industry, an individual's markers are determined from a DNA sample.
-%
-%An individual's \textvar{n} markers can be converted to an \textvar{n}-dimensional vector $\mathbf{v} = (v_1, v_2, \ldots, v_n)$ such that $v_i$ is 1 if the individual possesses the variant for a marker and $v_i$ is 0 if the individual has the more common version of the marker.\\
-%
-%\begin{note}[%
-%The mathematically astute reader will notice that this vector lies on one of the many corners of an \textvar{n}-dimensional hypercube.
-%]\end{note}
-%
-%Because \textvar{n} is so large --- and in the early days of genotyping studies it far outnumbered the number of individual samples --- we need to be wary of the curse of dimensionality. When we apply PCA with $d = 2$ to produce a lower-dimensional projection of the data, we will see some amazing results that helped launch a multi-billion dollar industry.
-%
-%\autoref{fig:genotyping_europe} shows a two-dimensional projection for individuals of known European ancestry. Even though we have condensed hundreds of thousands of dimensions to just two, and even though we are not capturing any information about the ancestry of the individuals other than their DNA, the projected data points reconstruct the map of Europe.\\
-%
-%\begin{figure}[h]
-%\centering
-%\mySfFamily
-%\includegraphics[width = 0.5\textwidth]{../images/genotyping_europe.png}
-%\caption{The projection of a collection of marker vectors sampled from individuals of known European ethnicity onto the plane produced by PCA with \textvar{d} = 2. Individuals cluster by country, and neighboring European countries remain nearby in the projected dataset. NEED courtesy}
-%\label{fig:genotyping_europe}
-%\end{figure}
-%
-%If we zoom in on Switzerland, we can see that the countries around Switzerland tend to pull individuals toward them based on language spoken (\autoref{fig:genotyping_switzerland}).
-%
-%\begin{figure}[h]
-%\centering
-%\mySfFamily
-%\includegraphics[width = 0.7\textwidth]{../images/genotyping_switzerland.png}
-%\caption{A PCA plot (\textvar{d} = 2) of individuals from Switzerland as well as neighboring countries shows that an individual's mother tongue correlates with the individual's genetic similarity to representatives from the neighboring country where that language is spoken. NEED courtesy}
-%\label{fig:genotyping_switzerland}
-%\end{figure}
-%
-%And if we zoom farther out, then we can see continental patterns emerge, with India standing out as its own entity (\autoref{fig:genotyping_continents}). What is particularly remarkable about all these figures is that humans on the whole are genetically very similar, and yet PCA is able to find evidence of human migrations and separation lurking within our DNA.
-%
-%\begin{figure}[h]
-%\centering
-%\mySfFamily
-%\includegraphics[width = 0.7\textwidth]{../images/genotyping_continents.png}
-%\caption{A PCA plot (\textvar{d} = 2) shows clustering of individuals from Europe, Asia, Africa, and India. NEED courtesy}
-%\label{fig:genotyping_continents}
-%\end{figure}
-%
-%Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to use CellOrganizer to build a shape space for our WBC images and apply PCA to this shape space to produce a lower-dimensional representation of the space that we can visualize.\tutorial[white_blood_cells/tutorial_shape_space]
-
 \FloatBarrier
 \phantomsection
 \subsection{Visualizing the WBC shape space after PCA}
@@ -775,11 +726,37 @@ We use the iris flower dataset to show how this works. Say that we wish to compu
 \label{fig:iris_confusion_matrix_compressed}
 \end{figure}
 
-This simplification allows us to compute the classifier statistics with respect to \textit{Iris virginica}: recall is $46/(46+4) = 92\%$; specificity is $47/(3+47) = 94\%$; and precision is $46/(46+3) = 93.9\%$.\\
+This simplification allows us to compute the classifier statistics with respect to \textit{Iris virginica}: recall is $46/(46+4) = 92\%$; specificity is $97/(3+97) = 97\%$; and precision is $46/(46+3) = 93.9\%$. Once we have computed a statistic for each of the three iris species, we can then obtain a statistic for the classifier as a whole by taking the average of the statistics over all three species. For example, the overall recall of the classifier shown in \autoref{fig:iris_confusion_matrix} is the average of the recall for \textit{Iris setosa}, \textit{Iris versicolor}, and \textit{Iris virginica} (which we just computed to be 92\%). We leave the computation of the other two recall values as an exercise.\\
 
 \begin{qbox}[%
-Compute the recall, specificity, and precision using each of the other two iris species as the positive case and the confusion matrix in \autoref{fig:iris_confusion_matrix}.
+Compute the recall, specificity, and precision for each of the other two iris species using the confusion matrix in \autoref{fig:iris_confusion_matrix}. Then, average each statistic over all three species to determine the classifier's overall recall, specificity, and precision.
 ]\end{qbox}
+
+Let us consider one more example, returning to the confusion matrix in \autoref{fig:wbc_better_confusion_matrix} for a hypothetical classifier on our WBC image dataset. The table in \autoref{fig:hypothetical_wbc_classifier_statistics} shows the computation of average recall, specificity, and precision for this classifier, which we previously mentioned has an accuracy of 79.7\%.
+
+Note that the precision statistics for monocytes and lymphocytes weigh down the overall average precision of 59.379\%; as a result, when we have imbalanced classes, we will also report the weighted average of the statistic, weighted over the number of elements in each class (see the final row in \autoref{fig:hypothetical_wbc_classifier_statistics}). For example, the weighted average of the precision statistic is
+
+\begin{center}
+$(291 \cdot 96.667\% + 21 \cdot 39.535\% + 33 \cdot 41.935\%)/(291+19+33) = 87.954\%$\,.
+\end{center}
+
+\begin{figure}[h]
+\centering
+\tabcolsep = 0.9em
+\mySfFamily
+\rowcolors{2}{gray!25}{white}
+\begin{tabular}{r c c c c}
+\rowcolor{gray!50}
+& \textbf{Count} & \textbf{Recall} & \textbf{Specificity} & \textbf{Precision} \\
+\textbf{Granulocyte} & 291 & 79.725\% & 85.185\% & 96.667\%\\
+\textbf{Monocyte} & \phantom{2}21 & 80.952\% & 91.975\% & 39.535\% \\
+\textbf{Lymphocyte} & \phantom{2}33 & 78.788\% & 88.462\% & 41.935\%\\
+\textbf{Average} & & 79.822\% & 88.541\% & 59.379\%\\
+\textbf{Weighted Av.} & & 79.710\% & 85.912\% & 87.954\%\\
+\end{tabular}
+\caption{Classification statistics along with their averages and weighted averages for the hypothetical confusion matrix from \autoref{fig:wbc_better_confusion_matrix} on our WBC image dataset.}
+\label{fig:hypothetical_wbc_classifier_statistics}
+\end{figure}
 
 Now that we understand more about how to quantify the performance of a classifier, we are ready to apply k-NN to our WBC shape space --- post-PCA of course! --- and then assess its performance.\tutorial[white_blood_cells/tutorial_image_classification]
 
@@ -787,7 +764,7 @@ Now that we understand more about how to quantify the performance of a classifie
 \phantomsection
 \subsection{Applying a classifier to the WBC shape space}
 
-If we run k-NN on our shape space, using \textvar{d} (the number of dimensions in the PCA hyperplane) equal to 10, \textvar{k} (the number of nearest neighbors to consider when assigning a class) equal to 1, and \textvar{f} (the number of folds) equal to 10, then we obtain the confusion matrix shown in \autoref{fig:wbc_better_confusion_matrix}. For this dataset, k-NN has an accuracy of 84.3\% and a weighted average of precision and recall over all three classes of 85.7\% and 84.3\%, respectively.\\
+The confusion matrix shown in \autoref{fig:wbc_cellorganizer} (top) is the result of running k-NN on our WBC image shape space, using \textvar{d} (the number of dimensions in the PCA hyperplane) equal to 10, \textvar{k} (the number of nearest neighbors to consider when assigning a class) equal to 1, and \textvar{f} (the number of folds) equal to 10. k-NN has an accuracy of 84.3\% and a weighted average of recall, specificity, and precision of 84.3\%, 69.4\%, and 85.7\%, respectively (\autoref{fig:wbc_cellorganizer} (bottom)). These three values of \textvar{d}, \textvar{k}, \textvar{f} appear to be close to optimal, in that changing them does not improve our classification metrics. We should ask why this is the case.\\
 
 \begin{figure}[h]
 \centering
@@ -801,11 +778,23 @@ If we run k-NN on our shape space, using \textvar{d} (the number of dimensions i
 \textbf{Monocyte} & \phantom{5}14 & 6 & \phantom{5}1 \\
  \textbf{Lymphocyte} & \phantom{55}5 & 2 & 26
 \end{tabular}
-\caption{The confusion matrix for our WBC image dataset using k-NN with $\textvar{d} = \text{10}$, $\textvar{k} = \text{1}$, and $\textvar{f} = \text{10}$.}
-\label{fig:wbc_better_confusion_matrix}
-\end{figure}
 
-These three values of \textvar{d}, \textvar{k}, \textvar{f} appear to be close to optimal, in that changing them does not improve our classification metrics. We should ask why this is the case.
+\phantom{Test}\vspace{\baselineskip}
+
+\tabcolsep = 0.9em
+\rowcolors{2}{gray!25}{white}
+\begin{tabular}{r c c c c}
+\rowcolor{gray!50}
+& \textbf{Count} & \textbf{Recall} & \textbf{Specificity} & \textbf{Precision} \\
+\textbf{Granulocyte} & 291 & 89.003\% & 64.815\% & 93.165\%\\
+\textbf{Monocyte} & 21 & 28.571\% & 96.605\% & 35.294\% \\
+\textbf{Lymphocyte} & 33 & 78.788\% & 92.308\% & 52.000\%\\
+\textbf{Average} & & 65.454\% & 84.576\% & 60.153\%\\
+\textbf{Weighted Av.} & & 84.348\% & 69.380\% & 85.705\%\\
+\end{tabular}
+\caption{(Top) The confusion matrix for our WBC image dataset using k-NN with $\textvar{d} = \text{10}$, $\textvar{k} = \text{1}$, and $\textvar{f} = \text{10}$. (Bottom) A table showing the computation of recall, specificity, and precision for this confusion matrix, along with their averages and weighted averages.}
+\label{fig:wbc_cellorganizer}
+\end{figure}
 
 We start with \textvar{d}. If we set \textvar{d} too large, then once again the curse of dimension strikes. Using \textvar{d} equal to 344 (with \textvar{k} equal to 1 and \textvar{f} equal to 10) produces the baffling confusion matrix in \autoref{fig:wbc_baffling_confusion_matrix}, in which every element in the space is somehow closest to a lymphocyte.\\
 
