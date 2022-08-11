@@ -940,24 +940,33 @@ We can generalize the perceptron even further. by allowing the input variables $
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/activation_function.png}
-\caption{A general form of an artificial neuron for two input variables <em>x</em><sub>1</sub> and <em>x</em><sub>2</sub>, two fixed weights <em>w</em><sub>1</sub> and <em>w</em><sub>2</sub>, and an activation function <em>f</em>. The output of the neuron, rather than being strictly 0 or 1, is <em>f</em>(<em>w</em><sub>1</sub> · <em>x</em><sub>1</sub> + <em>w</em><sub>2</sub> · <em>x</em><sub>2</sub>).}
+\caption{A general form of an artificial neuron for two input variables $\textvar{x}_\text{1}$ and $\textvar{x}_\text{2}$, two fixed weights $\textvar{w}_\text{1}$ and $\textvar{w}_\text{2}$, and an activation function \textvar{f}. The output of the neuron, rather than being strictly 0 or 1, is $\textvar{f}(\textvar{w}_\text{1} \cdot \textvar{x}_\text{1} + \textvar{w}_\text{2} \cdot \textvar{x}_\text{2}).}
 \label{fig:activation_function}
 \end{figure}
 
-A commonly used activation function is the \textdefnogloss{logistic function}, *f*(*x*) = 1/(1 + *e*<sup>-<em>x</em></sup>), shown in the figure below. Note that the output of this function ranges between 0 (when its input is very negative) and 1 (when its input is very positive).
+A commonly used activation function is the \textdefnogloss{logistic function}, $f(x) = 1/(1+e^{-x})$, shown in \autoref{fig:logistic_function}. Note that the output of this function ranges between 0 (when its input is very negative) and 1 (when its input is very positive).\\
 
-<figure>
-	<a href="../assets/images/logistic_function.png"><img src="../assets/images/600px/logistic_function.png"></a>
-	<figcaption>A plot of the logistic function <em>f</em>(<em>x</em>) = 1/(1 + <em>e</em><sup>-<em>x</em></sup>), an increasing function whose values range between 0 and 1.</figcaption>
-</figure>
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.7\textwidth]{../images/logistic_function.png}
+\caption{A plot of the logistic function $\textvar{f}(\textvar{x}) = 1/(1+\textvar{e}^{-\textvar{x}})$, an increasing function whose values range between 0 and 1.}
+\label{fig:activation_function}
+\end{figure}
 
 \begin{qbox}[%
 What is the activation function used by a perceptron?
 ]\end{qbox}
 
-The outputs of mathematical functions can be used as inputs to other functions via function composition. For example, if *f*(*x*) = 2*x*-1, *g*(*x*) = *e*<sup>*x*</sup>, and *h*(*x*) = cos(*x*), then *h*(*g*(*f*(*x*))) = cos(*e*<sup>2*x*-1</sup>). Similarly, the outputs of artificial neurons can be used as inputs to other neurons with (possibly) different weights and activation functions. Linking neurons together in this way produces a **neural network** such as the one shown in the figure below.
+The outputs of mathematical functions can be used as inputs to other functions via function composition. For example, if $f(x) = 2x-1$, $g(x) = e^x$, and $h(x) = \cos{x}$, then $h(g(f(x))) = \cos{(e^{2x-1})}.. Similarly, the outputs of artificial neurons can be used as inputs to other neurons with (possibly) different weights and activation functions. Linking neurons together in this way produces a \textdef{neural network}{neural network}{a network of artificial neurons linked together, with the outputs of some neurons used as the input variables for others} such as the one shown in \autoref{fig:neural_network}.
 
+\begin{figure}[h]
+\centering
+\mySfFamily
 INSERT FIGURE
+\caption{FILL IN}
+\label{fig:neural_network}
+\end{figure}
 
 We have a huge amount of freedom when building neural networks, since we can link up neurons however we like, and since the weights of all incoming edges at each neuron are allowed to vary, as well as the activation function used at each neuron. This freedom will mean that the number of possible neural networks is incomprehensibly large, so that neural networks are very powerful, but they can also be difficult to interpret.
 
@@ -970,12 +979,15 @@ The most typical design of a neural network for classification is then to connec
 
 The remaining question is what the output of our neural network should be. If we are classifying our data into *k* classes, then we typically would like to connect the final hidden layer of neurons to *k* **output neurons**. Ideally, if we plug in the values of the feature vector for a given data point *x* that we know belongs to the *i*-th class, then we would like for the *i*-th output neuron to output a value close to 1, and all other output neurons to output a value close to 0.
 
-A potential neural network model is illustrated in the figure below for our example of categorizing WBC images into three classes. Because the number of nodes and edges in a real network is enormous, this figure uses gray boxes to indicate layers containing potentially many hidden neurons, as well as dashed edges to represent connecting many (if not all) nodes in one layer to each of the nodes in the next layer.
+A potential neural network model is illustrated in \autoref{fig:neural_network_wbc} for our example of categorizing WBC images into three classes. Because the number of nodes and edges in a real network is enormous, this figure uses gray boxes to indicate layers containing potentially many hidden neurons, as well as dashed edges to represent connecting many (if not all) nodes in one layer to each of the nodes in the next layer.\\
 
-<figure>
-	<a href="../assets/images/600px/neural_network_wbc.png"><img src="../assets/images/neural_network_wbc.png"></a>
-	<figcaption>An illustration of a potential neural network used for WBC image classification. This network assumes that each WBC is represented by <em>n</em> features, which serve as the input variables for the network. A number of hidden layers of additional neurons may be used, with connections between some of the neurons in adjacent layers. A final output layer of three neurons corresponds to each of the three WBC classes; our hope is that the weights of the neurons in the network are chosen so that the appropriate neuron outputs a value close to 1 corresponding to an image's class, and that the other two neurons output values close to 0.</figcaption>
-</figure>
+\begin{figure}[h]
+\centering
+\mySfFamily
+\includegraphics[width = 0.7\textwidth]{../images/neural_network_wbc.png}
+\caption{An illustration of a potential neural network used for WBC image classification. This network assumes that each WBC is represented by \textvar{n} features, which serve as the input variables for the network. A number of hidden layers of additional neurons may be used, with connections between some of the neurons in adjacent layers. A final output layer of three neurons corresponds to each of the three WBC classes; our hope is that the weights of the neurons in the network are chosen so that the appropriate neuron outputs a value close to 1 corresponding to an image's class, and that the other two neurons output values close to 0.}
+\label{fig:activation_function}
+\end{figure}
 
 In order for such a neural network to classify objects in our dataset, we must find the ``best'' choices for the weights assigned to input variables at each neuron, assuming that we have decided on which activation function(s) to use for the network's neurons. A network may have hundreds of thousands of these input weights, and for a given application it will be initially unclear which weights to use to produce the magic output in which an object belonging to the *i*-th class produces an output close to 1 for the *i*-th output neuron (and an output close to 0) for other neurons.
 
