@@ -23,7 +23,7 @@ gallery:
 
 ## A brief introduction to neural networks
 
-You may be wondering what the state of the art is for WBC image classification. The best known classifier (CITE) uses high-resolution images in addition to a technique called **deep learning**. You may have seen this term wielded with mystical reverence, but you may very well not know what it means, and so in this module's conclusion, we will make an aside to explain the basics of this method.
+You may be wondering what the state of the art is for WBC image classification. The best known classifiers[^Habibzadeh_2018] use a technique called **deep learning**. You may have seen this term wielded with mystical reverence, but you may very well not know what it means, and so in this module's conclusion, we will make an aside to explain the basics of this method.
 
 **Neurons** are cells in the nervous system that are electrically charged and that use this charge as a method of communication to other cells. As you are reading this text, huge numbers of neurons are firing in your brain as it processes the visual information that it receives. The basic structure of a neuron is shown in the figure below.
 
@@ -32,13 +32,13 @@ You may be wondering what the state of the art is for WBC image classification. 
 	<figcaption>The components of a neuron. Electrical signals are passed down axons and exchanged at terminal boundaries between neurons. Image courtesy: Jennifer Walinga.</figcaption>
 </figure>
 
-In 1943, Warren McCulloch, a neuroscientist, and Walter Pitts, a logician, devised a small network modeling a neuron called a **McCulloch-Pitts neuron**. (CITE) A McCulloch-Pitts neuron has a fixed threshold θ and takes as input *n* **binary variables** *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>, where each of these variables is equal to either 0 or 1. The MP neuron outputs 1 if *x*<sub>1</sub> + … + *x*<sub><em>n</em></sub> ≥ θ; otherwise, it returns 0. If an MP neuron outputs 1, then we say that it **fires**.
+In 1943, Warren McCulloch, a neuroscientist, and Walter Pitts, a logician, devised a small network modeling a neuron called a **McCulloch-Pitts neuron**.[^McCulloch-Pitts] A McCulloch-Pitts neuron has a fixed threshold θ and takes as input *n* **binary variables** *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>, where each of these variables is equal to either 0 or 1. The neuron outputs 1 if *x*<sub>1</sub> + … + *x*<sub><em>n</em></sub> ≥ θ; otherwise, it returns 0. If a McCulloch-Pitts neuron outputs 1, then we say that it **fires**.
 
 The McCulloch-Pitts neuron with *n* equal to 2 and θ equal to 2 is shown in the figure below. The only way that this neuron will fire is if both inputs *x*<sub>1</sub> and *x*<sub>2</sub> are equal to 1.
 
 <figure>
 	<a href="../assets/images/MP_neuron.png"><img src="../assets/images/600px/MP_neuron.png"></a>
-	<figcaption>A McCullough-Pitts neuron with <em>n</em> = 2 and θ = 2. The neuron will fire (i.e., output 1) precisely when both input variables are equal to 1; if either is equal to 0, then <em>x</em><sub>1</sub> + <em>x</em><sub>2</sub> will be less than θ and the neuron will not fire (i.e., output 0).</figcaption>
+	<figcaption>A McCullough-Pitts neuron with <em>n</em> equal to 2 and θ equal to 2. The neuron will fire (i.e., output 1) precisely when both input variables are equal to 1; if either input variable is equal to 0, then <em>x</em><sub>1</sub> + <em>x</em><sub>2</sub> will be less than θ and the neuron will not fire (i.e., it will output 0).</figcaption>
 </figure>
 
 In 1957, Frank Rosenblatt generalized the McCulloch-Pitts neuron into a **perceptron**. A perceptron also has a threshold constant θ and *n* binary input variables *x*<sub><em>i</em></sub>, but it also includes a collection of real-valued constant weights *w*<sub><em>i</em></sub> that are applied to each input variable. That is, the neuron will output 1 (fire) precisely when *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *x*<sub><em>n</em></sub> ≥ θ.
@@ -53,7 +53,7 @@ For example, consider the perceptron shown in the figure below. We assign the we
 	<figcaption>A perceptron with two input variables. The perceptron includes a constant threshold and constant weights <em>w</em><sub>1</sub> and <em>w</em><sub>2</sub>. The perceptron outputs 1 precisely when the weighted sum <em>w</em><sub>1</sub> · <em>x</em><sub>1</sub> + <em>w</em><sub>2</sub> · <em>x</em><sub>2</sub> is greater than or equal to θ, and it outputs 0 otherwise.</figcaption>
 </figure>
 
-We can generalize the perceptron even further. by allowing the input variables *x*<sub><em>i</em></sub> to have arbitrary real values (often, these inputs are constrained to be between 0 and 1). Then, rather than the neuron rigidly firing when *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub> is greater than or equal to θ, we pass this weighted sum into a function *f* called an **activation function**, so that the neuron's output is not 1 or 0 but rather *f*(*w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub>). The figure below shows the most general form of an artificial neuron for two inputs.
+We can generalize the perceptron even further. by allowing the input variables *x*<sub><em>i</em></sub> to have arbitrary decimal values (often, these inputs are constrained to be between 0 and 1). Then, rather than the neuron rigidly firing when *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub> is greater than or equal to θ, we pass this weighted sum into a function *f* called an **activation function**, so that the neuron's output is not 1 or 0 but rather *f*(*w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub>). The figure below shows the most general form of an artificial neuron for two inputs.
 
 <figure>
 	<a href="../assets/images/activation_function.png"><img src="../assets/images/600px/activation_function.png"></a>
@@ -97,7 +97,7 @@ In order for such a neural network to classify objects in our dataset, we must f
 
 ## Finding the best choice of parameters
 
-In a previous lesson (CITE), we discussed how to assess the results of a classification algorithm like k-NN on a collection of data with known classes. To this end, we established a subset of our data called the *validation set* and asked how well the classification algorithm performed on these data, pretending that we did not know the correct class for each data point.
+In a [previous lesson](training), we discussed how to assess the results of a classification algorithm like k-NN on a collection of data with known classes. To this end, we established a subset of our data called the *validation set* and asked how well the classification algorithm performed on these data, pretending that we did not know the correct class for each data point.
 
 To generalize this idea to our neural network classifier, we divide our data with known classes into a **training set** and a **test set**. We then seek the choice of parameters that "performs the best" on the training set, ignoring the test set for the moment.
 
@@ -134,6 +134,10 @@ Many modifications of gradient descent have been developed, but all are based on
 
 **Note:** If you find yourself interested in deep learning and would like to learn more, check out the excellent <a href="http://neuralnetworksanddeeplearning.com" target="_blank"><em>Neural Networks and Deep Learning</em> online book by Michael Nielsen.
 {: .notice--info}
+
+[^McCulloch-Pitts]: McCulloch WS, Pitts WS 1943. A Logical calculus of the ideas Immanent in nervous activity. The bulletin of mathematical biophysics (5): 115–133. [Available online](https://doi.org/10.1007/BF02478259)
+
+[^Habibzadeh_2018]: Habibzadeh M, Jannesari M, Rezaei Z, Baharvand H, Totonchi M. Automatic white blood cell classification using pre-trained deep learning models: ResNet and Inception. Proc. SPIE 10696, Tenth International Conference on Machine Vision (ICMV 2017), 1069612 (13 April 2018). [Available online](https://doi.org/10.1117/12.2311282)
 
 ## Thank you!
 
