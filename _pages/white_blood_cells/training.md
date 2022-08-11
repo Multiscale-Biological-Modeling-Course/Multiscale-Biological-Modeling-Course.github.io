@@ -211,7 +211,7 @@ Using *d* = 3, we obtain better results, but we have reduced the dimension so mu
 | 16 | 5 | 0 |
 | 20 | 0 | 13 |
 
-We next consider *k*. It might seem that taking more neighbors into account would be helpful. But because of the class imbalance toward granulocytes, the effects of random noise will mean that as we increase *k*, we will start considering granulocytes that just happen to be lurking nearby. For example, when *k* is equal to 5, every monocyte is classified as a granulocyte, as shown in the confusion matrix below (with *d* equal to 10 and *f* equal to 10).
+We next consider *k*. It might seem that taking more neighbors into account would be helpful, but because of the class imbalance toward granulocytes, the effects of random noise mean that as we increase *k*, we will start considering granulocytes that just happen to be relatively nearby. For example, when *k* is equal to 5, every monocyte is classified as a granulocyte, as shown in the confusion matrix below (with *d* equal to 10 and *f* equal to 10).
 
 | Granulocyte | Monocyte | Lymphocyte |
 | :---: |  :----: | :---: |
@@ -219,21 +219,21 @@ We next consider *k*. It might seem that taking more neighbors into account woul
 | 21 | 0 | 0 |
 | 7 | 0 | 26 |
 
-The question of the number of folds, *f*, is trickier. Increasing this parameter does not change the confusion matrix much, but if *f* is too small, then we ignore too many known classes of our data.
+The question of the number of folds, *f*, is trickier. Increasing this parameter does not change the confusion matrix much, but in general, if we use too few folds (i.e., if *f* is too small), then we ignore too many known objects' classes.
 
-However, we still have a problem. Although k-NN can identify granulocytes and lymphocytes quite well, it performs poorly on monocytes because of the class imbalance in our data. We have so few monocytes that it is rare to encounter another one in the shape space.
+Yet we still have a problem. Although k-NN can identify granulocytes and lymphocytes quite well, it performs poorly on monocytes because of the class imbalance in our dataset. We have so few monocytes that encountering another one in the shape space simply does not happen often.
 
 Statisticians have devised a variety of approaches to address class imbalance. We could **undersample** our data by excluding a random sample of the granulocytes. Undersampling works better when we have a large amount of data, so that throwing out some of the data does not cause problems. In our case, our dataset is small to begin with, and undersampling would risk plummeting the classifier's performance on granulocytes.
 
-We could also try a different classifier. One idea is to use a **cost-sensitive classifier** that charges a variable penalty for assigning an element to the wrong class, and then minimizes the total cost over all elements. For example, classifying a monocyte as a granulocyte would receive a greater penalty than classifying a granulocyte as a monocyte. A cost-sensitive classifier would help increase the number of images that are classified as monocytes, although it would also incorporate incorrectly classified monocytes as well.
+We could also try using a different classification algorithm. One idea is to use a **cost-sensitive classifier** that charges a variable penalty for assigning an element to the wrong class, and then minimizes the total cost over all elements. For example, classifying a monocyte as a granulocyte would receive a greater penalty than classifying a granulocyte as a monocyte. A cost-sensitive classifier would help increase the number of images that are classified as monocytes, although it would also incorporate incorrectly classified monocytes as well.
 
-Yet ultimately, k-NN outperforms much more advanced classifiers on this dataset. It may be a relatively simple approach, but k-NN is also a great match for classifying images within a WBC shape space, since proximity in this space indicates that two WBCs belong to the same family.
+Yet ultimately, k-NN outperforms much more advanced classifiers on this dataset. It may be a relatively simple approach, but k-NN is a great match for classifying images within a WBC shape space, since proximity in this space indicates that two WBCs belong to the same family.
 
 ## Limitations of our WBC image classification pipeline
 
-Even though k-NN has performed reasonably well, we can still make improvements to our algorithm. After all, our model requires a number of steps from the intake of data to their ultimate classification, which means that several potential failure points could arise.
+Even though k-NN has performed reasonably well on our WBC image dataset, we can still make improvements to our algorithm. After all, our model requires a number of steps from the intake of data to their ultimate classification, which means that several potential failure points could arise.
 
-We will start with data. Algorithms are beautiful, but if we have great data, then a relatively simple approach will probably give a great result; if we have bad data, then no amount of algorithmic wizardry will save us. An example of "good data" is the iris flower dataset; the features chosen were measured precisely and differentiate the data so clearly that it almost seems silly to run a classifier.
+We will start with data. If we have great data, then a relatively simple approach will probably give a great result; if we have bad data, then no amount of algorithmic wizardry will save us. An example of "good data" is the iris flower dataset; the features chosen were measured precisely and differentiate the flowers so clearly that it almost seems silly to run a classifier.
 
 In our case, we have a small collection of very low resolution WBC images, which limits the performance of any classifier before we begin. Yet these data limitations are a feature of this chapter, not a bug, as they allow us to highlight a very common issue in data analysis. Now that we have built a classification pipeline, we should look for a larger dataset with higher-resolution images less class imbalance.
 
@@ -241,16 +241,16 @@ The next failure point in our model is our segmentation pipeline. Earlier in the
 
 We then handed off the segmented images to CellOrganizer to build a shape space from the vectorized boundaries of the nuclei. Even though CellOrganizer does what we tell it to do, the low resolution of the nuclear images will mean that the vectorization of each nuclear image will be noisy.
 
-But even if we use higher resolution images and adjust our segmentation pipeline, we are still only building a model from the *shape* of the nucleus. We didn't even take the size of the nucleus into account! If we return to the three sample WBC images from the introduction, reproduced in the figure below, then we can see that the lymphocyte nucleus is much smaller than the other two nuclei, which on average is true in general. To address this concern, when vectorizing the images, we could devote one of the coordinates of each vector to the size (in pixels) of the segmented nucleus. This change would hopefully help improve the performance of our classifier, especially on lymphocytes.
+But even if we use higher resolution images and adjust our segmentation pipeline, we are still only building a model from the *shape* of the nucleus. We didn't even take the size of the nucleus into account! If we return to the three sample WBC images from the introduction, reproduced in the figure below, then we can see that the lymphocyte nucleus is much smaller than the other two nuclei, which is true in general. To address this concern, when vectorizing the images, we could reserve an additional coordinate of each image's vector for the size (in pixels) of the segmented nucleus. This change would hopefully help improve the performance of our classifier, especially on lymphocytes.
 
 {% include gallery caption="Three images from the blood cell image dataset showing a granulocyte (left), a monocyte (center), and a lymphocyte (right)." %}
 
 **STOP**: What other quantitative features could we extract from our images?
 {: .notice--primary}
 
-Finally, we discuss the classification algorithm itself. We used k-NN because it is intuitive to newcomers, but perhaps a more complicated algorithm could peer deeper into our dataset to find hidden signals.
+Finally, we discuss the classification algorithm itself. We used k-NN because it is intuitive to newcomers, but perhaps a more complicated algorithm could peer deeper into our dataset to find more subtle signals.
 
-Ultimately, obtaining even moderate classification performance is impressive given the quality and size of our data, and the fact that we only modeled the shape of each cell's nucleus. It also leads us to wonder how much better we could do. In this module's conclusion, we discuss the foundations of the approach that constitute the best known solution for WBC image classification.
+Ultimately, obtaining even moderate classification performance is impressive given the quality and size of our data, and the fact that we only modeled the shape of each cell's nucleus. It also leads us to wonder how much better we could do. In this module's conclusion, we discuss the foundations of an approach that not only constitutes the best known solution for WBC image classification but that is taking over the world.
 
 [Next lesson (coming soon!)](){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
