@@ -175,7 +175,7 @@ Now that we understand more about how to quantify the performance of a classifie
 
 ## Applying a classifier to the WBC shape space
 
-The confusion matrix shown below is the result of running k-NN on our WBC image shape space, using *d* (the number of dimensions in the PCA hyperplane) equal to 10, *k* (the number of nearest neighbors to consider when assigning a class) equal to 1, and *f* (the number of folds) equal to 10.  For this dataset, k-NN has an accuracy of 84.3% and a weighted average of precision and recall over all three classes of 85.7% and 84.3%, respectively.
+The confusion matrix shown below is the result of running k-NN on our WBC image shape space, using *d* (the number of dimensions in the PCA hyperplane) equal to 10, *k* (the number of nearest neighbors to consider when assigning a class) equal to 1, and *f* (the number of folds) equal to 10.
 
 | Granulocyte | Monocyte | Lymphocyte |
 | :---: |  :----: | :---: |
@@ -183,7 +183,17 @@ The confusion matrix shown below is the result of running k-NN on our WBC image 
 | 14 | 6 | 1 |
 | 5 | 2 | 26 |
 
-These three values of *d*, *k*, and *f* appear to be close to optimal, in that changing them does not improve our classification metrics. We should ask why this is the case.
+For these parameters, k-NN has an accuracy of 84.3% and a weighted average of recall, specificity, and precision of 84.3%, 69.4%, and 85.7%, respectively, as shown in the following table.
+
+| | Count | Recall | Specificity | Precision |
+| ---: | :---: |  :----: | :---: | :---: |
+| **Granulocyte** | 291 | 89.003% | 64.815% | 93.165% |
+| **Monocyte** | 21 | 28.571% | 96.605% | 35.294% |
+| **Lymphocyte** | 33 | 78.788% | 92.308% | 52.000% |
+| **Average** | | 65.454% | 84.576% | 60.153% |
+| **Weighted Average** | | 84.348% | 69.380% | 85.705% |
+
+You may like to adapt our tutorials to verify that these three values of *d*, *k*, and *f* appear to be close to optimal, in that changing them does not improve our classification metrics. We should ask why this is the case.
 
 We start with *d*. If we set *d* too large, then once again the curse of dimension strikes. Using *d* equal to 344 (with *k* equal to 1 and *f* equal to 10) produces the baffling confusion matrix below, in which every element in the space is somehow closest to a lymphocyte.
 

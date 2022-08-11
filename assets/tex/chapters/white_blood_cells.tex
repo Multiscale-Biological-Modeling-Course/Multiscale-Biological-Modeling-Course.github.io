@@ -764,7 +764,7 @@ Now that we understand more about how to quantify the performance of a classifie
 \phantomsection
 \subsection{Applying a classifier to the WBC shape space}
 
-The confusion matrix shown in \autoref{fig:wbc_cellorganizer} (top) is the result of running k-NN on our WBC image shape space, using \textvar{d} (the number of dimensions in the PCA hyperplane) equal to 10, \textvar{k} (the number of nearest neighbors to consider when assigning a class) equal to 1, and \textvar{f} (the number of folds) equal to 10. k-NN has an accuracy of 84.3\% and a weighted average of recall, specificity, and precision of 84.3\%, 69.4\%, and 85.7\%, respectively (\autoref{fig:wbc_cellorganizer} (bottom)). These three values of \textvar{d}, \textvar{k}, \textvar{f} appear to be close to optimal, in that changing them does not improve our classification metrics. We should ask why this is the case.\\
+The confusion matrix shown in \autoref{fig:wbc_cellorganizer} (top) is the result of running k-NN on our WBC image shape space, using \textvar{d} (the number of dimensions in the PCA hyperplane) equal to 10, \textvar{k} (the number of nearest neighbors to consider when assigning a class) equal to 1, and \textvar{f} (the number of folds) equal to 10. k-NN has an accuracy of 84.3\% and a weighted average of recall, specificity, and precision of 84.3\%, 69.4\%, and 85.7\%, respectively (\autoref{fig:wbc_cellorganizer} (bottom)).
 
 \begin{figure}[h]
 \centering
@@ -795,6 +795,8 @@ The confusion matrix shown in \autoref{fig:wbc_cellorganizer} (top) is the resul
 \caption{(Top) The confusion matrix for our WBC image dataset using k-NN with $\textvar{d} = \text{10}$, $\textvar{k} = \text{1}$, and $\textvar{f} = \text{10}$. (Bottom) A table showing the computation of recall, specificity, and precision for this confusion matrix, along with their averages and weighted averages.}
 \label{fig:wbc_cellorganizer}
 \end{figure}
+
+You may like to adapt our tutorials to verify that the three values of \textvar{d}, \textvar{k}, \textvar{f} in \autoref{fig:wbc_cellorganizer} appear to be close to optimal, in that changing them does not improve the resulting classification metrics. We will examine why this is the case.
 
 We start with \textvar{d}. If we set \textvar{d} too large, then once again the curse of dimension strikes. Using \textvar{d} equal to 344 (with \textvar{k} equal to 1 and \textvar{f} equal to 10) produces the baffling confusion matrix in \autoref{fig:wbc_baffling_confusion_matrix}, in which every element in the space is somehow closest to a lymphocyte.\\
 
