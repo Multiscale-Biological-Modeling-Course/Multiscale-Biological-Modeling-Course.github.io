@@ -23,7 +23,7 @@ gallery:
 
 ## A brief introduction to neural networks
 
-The best known classification algorithms for WBC image analysis[^Habibzadeh_2018] use a technique called **deep learning**. You have probably seen this term wielded with reverence, and so in this chapter's conclusion, we will make an aside to explain what it means and how it could be applied to classification.
+The best known classification algorithms for WBC image analysis[^Habibzadeh_2018] use a technique called **deep learning**. You have probably seen this term wielded with reverence, and so in this chapter's conclusion, we will briefly explain what it means and how it could be applied to classification.
 
 **Neurons** are cells in the nervous system that are electrically charged and that use this charge as a method of communication to other cells. As you are reading this text, huge numbers of neurons are firing in your brain as it processes the visual information that it receives. The basic structure of a neuron is shown in the figure below.
 
@@ -32,7 +32,7 @@ The best known classification algorithms for WBC image analysis[^Habibzadeh_2018
 	<figcaption>The components of a neuron. Electrical signals are passed down axons and exchanged at terminal boundaries between neurons. Image courtesy: Jennifer Walinga.</figcaption>
 </figure>
 
-In 1943, Warren McCulloch, a neuroscientist, and Walter Pitts, a logician, devised a small network modeling a neuron called a **McCulloch-Pitts neuron**.[^McCulloch-Pitts] A McCulloch-Pitts neuron has a fixed threshold θ and takes as input *n* **binary variables** *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>, where each of these variables is equal to either 0 or 1. The neuron outputs 1 if *x*<sub>1</sub> + … + *x*<sub><em>n</em></sub> ≥ θ; otherwise, it returns 0. If a McCulloch-Pitts neuron outputs 1, then we say that it **fires**.
+In 1943, Warren McCulloch, a neuroscientist, and Walter Pitts, a logician, devised an artificial model of a neuron that is now called a **McCulloch-Pitts neuron**.[^McCulloch-Pitts] A McCulloch-Pitts neuron has a fixed threshold θ and takes as input *n* **binary variables** *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>, where each of these variables is equal to either 0 or 1. The neuron outputs 1 if *x*<sub>1</sub> + … + *x*<sub><em>n</em></sub> ≥ θ; otherwise, it returns 0. If a McCulloch-Pitts neuron outputs 1, then we say that it **fires**.
 
 The McCulloch-Pitts neuron with *n* equal to 2 and θ equal to 2 is shown in the figure below. The only way that this neuron will fire is if both inputs *x*<sub>1</sub> and *x*<sub>2</sub> are equal to 1.
 
