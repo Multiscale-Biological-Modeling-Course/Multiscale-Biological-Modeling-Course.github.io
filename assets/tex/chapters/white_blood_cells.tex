@@ -984,14 +984,14 @@ The most typical design of a neural network for classification is then to connec
 
 The remaining question is what the output of our neural network should be. If we are classifying our data into \textvar{k} classes, then we typically would like to connect the final hidden layer of neurons to \textvar{x} \textdefnogloss{output neurons}. Ideally, if we plug in the values of the feature vector for a given data point \textvar{x} that we know belongs to the \textvar{i}-th class, then we would like for the \textvar{i}-th output neuron to output a value close to 1, and all other output neurons to output a value close to 0.
 
-A potential neural network model is illustrated in \autoref{fig:neural_network_wbc} for our example of categorizing WBC images into three classes. Because the number of nodes and edges in a real network is enormous, this figure uses gray boxes to indicate layers containing potentially many hidden neurons, as well as dashed edges to represent connecting many (if not all) nodes in one layer to each of the nodes in the next layer.\\
+A potential neural network model is illustrated in \autoref{fig:neural_network_wbc} for our example of categorizing WBC images into three classes. Because the number of nodes and edges in a real network is enormous, this figure uses gray boxes to indicate layers containing potentially many hidden neurons, as well as dashed edges to represent connecting many (if not all) nodes in one layer to each of the nodes in the next layer.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/neural_network_wbc.png}
 \caption{An illustration of a potential neural network used for WBC image classification. This network assumes that each WBC is represented by \textvar{n} features, which serve as the input variables for the network. A number of hidden layers of additional neurons may be used, with connections between some of the neurons in adjacent layers. A final output layer of three neurons corresponds to each of the three WBC classes; our hope is that the weights of the neurons in the network are chosen so that the appropriate neuron outputs a value close to 1 corresponding to an image's class, and that the other two neurons output values close to 0.}
-\label{fig:activation_function}
+\label{fig:neural_network_wbc}
 \end{figure}
 
 For such a neural network to classify objects in our dataset, we must find the ``best'' choices for the weights assigned to input variables at each neuron, assuming that we have decided on which activation function(s) to use for the network's neurons. A network may have hundreds of thousands of these input weights, and for a given application it will be initially unclear which weights to use to produce the magic output in which an object belonging to the \textvar{i}-th class produces an output close to 1 for the \textvar{i}-th output neuron (and an output close to 0) for other neurons.
@@ -1032,11 +1032,16 @@ Our idea, then, is to borrow what we have learned in this course, and apply a \t
 How can we avoid getting stuck in a local minimum? What does a local minimum mean in the context of parameter search?
 ]\end{qbox}
 
-To avoid getting stuck in a \textit{local minimum}, we then run this local search algorithm for many different randomly chosen initial parameters. In the end, we take the choice of parameters minimizing mean RMSD over all of the different runs of gradient descent. Many modifications of gradient descent have been developed, but all are based on the core idea of local search, the same core idea that we used to predict the structure of a protein or model the exploration of a humble bacterium.
+To avoid getting stuck in a \textit{local minimum}, we then run this local search algorithm for many different randomly chosen initial parameters. In the end, we take the choice of parameters minimizing mean RMSD over all of the different runs of gradient descent.
+
+\phantomsection
+\subsection{Final reflections}
+
+AT SOME POINT, CALL BACK TO ALPHAFOLD. Critical idea here is that a neural network can be thought of a big, bulky thing that takes some things and produces others, a complicated function. We already know how to vectorize structures, so we could train a neural network to take sequences (encoded as vectors) and produce their shape vectors. What AlphaFold does is more complicated than this, involving a few different neural networks, but the idea is still the same.
 
 Something here about the themes that we have encountered that unite biological modeling: emergent behavior from simple rules; intelligent exploration of a large, sparsely populated space; the power of randomness to solve problems. We hope that we have inspired you that biology is a field in which computational methods can help us solve our problems. And yet despite what we have had the time and space to present here, many aspects of biology still remain an untouched universe waiting to be explored. MAKE ANALOGY CLEARER -- like a bacterium's environment?
 
-AT SOME POINT, CALL BACK TO ALPHAFOLD. Critical idea here is that a neural network can be thought of a big, bulky thing that takes some things and produces others, a complicated function. We already know how to vectorize structures, so we could train a neural network to take sequences (encoded as vectors) and produce their shape vectors. What AlphaFold does is more complicated than this, involving a few different neural networks, but the idea is still the same.
+
 
 \FloatBarrier
 
