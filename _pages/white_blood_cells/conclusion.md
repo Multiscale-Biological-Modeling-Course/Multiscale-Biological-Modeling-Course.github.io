@@ -23,7 +23,7 @@ gallery:
 
 ## A brief introduction to neural networks
 
-You may be wondering what the state of the art is for WBC image classification. The best known classifiers[^Habibzadeh_2018] use a technique called **deep learning**. You may have seen this term wielded with mystical reverence, but you may very well not know what it means, and so in this module's conclusion, we will make an aside to explain the basics of this method.
+The best known classification algorithms for WBC image analysis[^Habibzadeh_2018] use a technique called **deep learning**. You have probably seen this term wielded with reverence, and so in this chapter's conclusion, we will make an aside to explain what it means and how it could be applied to classification.
 
 **Neurons** are cells in the nervous system that are electrically charged and that use this charge as a method of communication to other cells. As you are reading this text, huge numbers of neurons are firing in your brain as it processes the visual information that it receives. The basic structure of a neuron is shown in the figure below.
 
@@ -93,7 +93,7 @@ A potential neural network model is illustrated in the figure below for our exam
 	<figcaption>An illustration of a potential neural network used for WBC image classification. This network assumes that each WBC is represented by <em>n</em> features, which serve as the input variables for the network. A number of hidden layers of additional neurons may be used, with connections between some of the neurons in adjacent layers. A final output layer of three neurons corresponds to each of the three WBC classes; our hope is that the weights of the neurons in the network are chosen so that the appropriate neuron outputs a value close to 1 corresponding to an image's class, and that the other two neurons output values close to 0.</figcaption>
 </figure>
 
-In order for such a neural network to classify objects in our dataset, we must find the "best" choices for the weights assigned to input variables at each neuron, assuming that we have decided on which activation function(s) to use for the network's neurons. A network may have hundreds of thousands of these input weights, and for a given application it will be initially unclear which weights to use to produce the magic output in which an object belonging to the *i*-th class produces an output close to 1 for the *i*-th output neuron (and an output close to 0) for other neurons.
+For such a neural network to classify objects in our dataset, we must find the "best" choices for the weights assigned to input variables at each neuron, assuming that we have decided on which activation function(s) to use for the network's neurons. A network may have hundreds of thousands of these input weights, and for a given application it will be initially unclear which weights to use to produce the magic output in which an object belonging to the *i*-th class produces an output close to 1 for the *i*-th output neuron (and an output close to 0) for other neurons.
 
 ## Finding the best choice of parameters
 

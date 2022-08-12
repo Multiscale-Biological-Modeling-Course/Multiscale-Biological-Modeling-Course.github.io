@@ -246,7 +246,7 @@ Consider the gray point with unknown class in \autoref{fig:knn_neighborhood}. Sh
 
 The preceding question indicates that classifying points can be surprisingly open-ended. Because of this freedom, researchers have devised a variety of different approaches for classifying data given data with known classes.
 
-We will discuss a simple but powerful classification algorithm called \textdef{k-nearest neighbors (k-NN)}{k-nearest neighbors (k-NN)}{a classification algorithm that assigns each point with unknown class to have the class possessed by the largest number of its \textvar{k} closest neighbors with known class.}. In k-NN, we fix a positive integer \textvar{k} in advance. Then, for each point with unknown class, we assign it to the class possessed by the largest number of its \textvar{k} closest neighbors.
+We will discuss a simple but powerful classification algorithm called \textdef{k-nearest neighbors (k-NN)}{k-nearest neighbors (k-NN)}{a classification algorithm that assigns each point with unknown class to have the class possessed by the largest number of its \textvar{k} closest neighbors with known class}. In k-NN, we fix a positive integer \textvar{k} in advance. Then, for each point with unknown class, we assign it to the class possessed by the largest number of its \textvar{k} closest neighbors.
 
 In the ongoing example, if we were using \textvar{k} equal to 1, then we would assign the unknown point from \autoref{fig:knn_neighborhood} to the green class (\autoref{fig:knn_neighborhood_k=1}). However, with the same data and \textvar{k} equal to 4, most of the gray point's \textvar{k} nearest neighbors are blue, and so we classify the unknown point as blue (\autoref{fig:knn_neighborhood_k=4}). This example reinforces a theme of this course, that the results of an algorithm can be sensitive to our choice of parameters.\\
 
@@ -409,7 +409,7 @@ We define an \textvar{n}-dimensional unit sphere as the set of points in \textva
 
 One way of interpreting the vanishing of the sphere's volume is that as \textvar{n} increases, an \textvar{n}-dimensional cube has more and more corners in which there points can hide away from the sphere. Most of the cube's volume therefore winds up scattering outward from its center.
 
-The case of the vanishing sphere may seem like an arcane triviality that only holds interest for mathematicians toiling in fluorescently lit academic offices at strange hours. Yet this phenomenon is just one manifestation of a profound paradigm in data science called the \textdef{curse of dimensionality}{curse of dimensionality}{a collection of principles that arise in higher dimensions that run counter to our intuition about our three-dimensional existence}, a collection of principles that arise in higher dimensions that run counter to our intuition about three-dimensional space.
+The case of the vanishing sphere may seem like an arcane triviality that only holds interest for mathematicians toiling in fluorescently lit academic offices at strange hours. Yet this phenomenon is just one manifestation of a profound paradigm in data science called the \textdef{curse of dimensionality}{curse of dimensionality}{a collection of principles that arise in higher dimensions that run counter to our intuition about three-dimensional space}, a collection of principles that arise in higher dimensions that run counter to our intuition about three-dimensional space.
 
 \FloatBarrier
 \phantomsection
@@ -523,7 +523,7 @@ Say that we wanted to generalize the ideas above to three-dimensional space. The
 \label{fig:three_dimensional_pca}
 \end{figure}
 
-Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but we can generalize these concepts mathematically. Given a collection of \textvar{m} data points (vectors) in \textvar{n}-dimensional space, we are looking for a \textvar{d}-dimensional \textdef{hyperplane}{hyperplane}{an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space}, or an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on this hyperplane, we reduce the dimension of the dataset from \textvar{n} to \textvar{d}. This approach, which is over 100 years old but omnipresent in modern data science, is called \textdef{principal component analysis (PCA)}{principal component analysis (PCA)}{an approach used for finding the lower-dimensional hyperplane through a collection of data minimizing the distances of the points to the hyperplane}.\\
+Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but we can generalize these concepts mathematically. Given a collection of \textvar{m} data points (vectors) in \textvar{n}-dimensional space, we are looking for a \textvar{d}-dimensional \textdef{hyperplane}{hyperplane}{an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space}, or an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on this hyperplane, we reduce the dimension of the dataset from \textvar{n} to \textvar{d}. This approach, which is over 100 years old but omnipresent in modern data science, is called \textdef{principal component analysis (PCA)}{principal component analysis (PCA)}{an approach used for finding the lower-dimensional hyperplane through a collection of data minimizing the distances from the points to the hyperplane}.\\
 
 \begin{note}[%
 It can be proven that for any dataset, when $d_1$ is smaller than $d_2$, the hyperplane provided by PCA of dimension $d_1$ is \textit{always} a subset of the hyperplane of dimension $d_2$. For example, the first principal component is always found within the plane ($d = 2$) provided by PCA, which was indicated in \autoref{fig:three_dimensional_pca} (left).
@@ -563,7 +563,7 @@ One approach for assessing how well a classification algorithm performs when the
 
 Yet it remains unclear which subset of the data we should use as a validation set. Random variation could cause that the classifier's accuracy will change depending on which subset we choose. After all, what makes the elements of the validation set so special as to be chosen? Ideally, we would use a more democratic approach that is not subject to random variation and that uses \textit{all} of the data for validation.
 
-In \textdef{cross validation}{cross validation}{an approach used in classification (or other machine learning approaches) in which we divide the data into approximately equally sized groups called folds; over multiple rounds, one fold is used as a validation set, pretending that we do not know the correct class of these data points, and we measure the correctness of the approach at identifying the class of each point}, we divide our data into a collection of \textvar{f} (approximately) equally sized groups called \textdefnogloss{folds}. We use one of these folds as a validation set, keeping track of which objects the classification algorithm classifies correctly, and then we start over with a different fold as our validation set. In this way, every element in our dataset will get used as a member of a validation set exactly once.
+In \textdef{cross validation}{cross validation}{an approach used in classification (or other machine learning approaches) in which we divide the data into approximately equally sized groups called folds; over multiple rounds, one fold is used as a validation set, pretending that we do not know the correct class of these data points, and we then determine how well the algorithm performs at identifying the correct class of each point}, we divide our data into a collection of \textvar{f} (approximately) equally sized groups called \textdefnogloss{folds}. We use one of these folds as a validation set, keeping track of which objects the classification algorithm classifies correctly, and then we start over with a different fold as our validation set. In this way, every element in our dataset will get used as a member of a validation set exactly once.
 
 \FloatBarrier
 \phantomsection
@@ -649,7 +649,7 @@ What other metrics could we design for measuring the success of a classifier?
 
 To motivate our discussion of other classifier metrics, we will continue with the analogy of medical tests, which can be thought of as classifiers with two classes (positive or negative).
 
-First, we define some terms. A \textdef{true positive}{true positive}{a positive test in an individual that is positive for the condition} is a positive test in a patient that has the condition; a \textdef{false positive}{false positive}{a positive test in an individual that is negative for the condition} is a positive test in a patient that does not have the condition; a \textdef{true negative}{true negative}{a negative test in an individual that is negative for the condition} is a negative test in a patient that does not have the condition; and a \textdef{false negative}{false negative}{a negative test in an individual that is positive for the condition} is a negative test in a patient that does have the condition. \autoref{fig:medical_test_confusion_matrix} shows the locations of these four terms in the two-class confusion matrix for the test.\\
+First, we define some terms. A \textdef{true positive}{true positive}{a positive test in an individual who is positive for the condition} is a positive test in a patient that has the condition; a \textdef{false positive}{false positive}{a positive test in an individual who is negative for the condition} is a positive test in a patient that does not have the condition; a \textdef{true negative}{true negative}{a negative test in an individual who is negative for the condition} is a negative test in a patient that does not have the condition; and a \textdef{false negative}{false negative}{a negative test in an individual who is positive for the condition} is a negative test in a patient that does have the condition. \autoref{fig:medical_test_confusion_matrix} shows the locations of these four terms in the two-class confusion matrix for the test.\\
 
 \begin{figure}[h]
 \centering
@@ -892,11 +892,11 @@ Ultimately, obtaining even moderate classification performance is impressive giv
 \label{sec:conclusion}
 
 \phantomsection
-\section{A brief introduction to neural networks}
+\subsection{A brief introduction to neural networks}
 
-You may be wondering what the state of the art is for WBC image classification. The best known classifiers use a technique called \textdef{deep learning}{deep learning}{an approach that applies neural networks with multiple hidden layers to analyze datasets}. You may have seen this term wielded with mystical reverence, but you may very well not know what it means, and so in this module's conclusion, we will make an aside to explain the basics of this method.
+The best known classification algorithms for WBC image analysis use a technique called ``deep learning''. You have probably seen this term wielded with reverence, and so in this chapter's conclusion, we will make an aside to explain what it means and how it could be applied to classification.
 
-\textdef{Neurons}{neuron}{a cell in the nervous system that is electrically charged and that uses this charge as a method of communication to other neurons} are cells in the nervous system that are electrically charged and that use this charge as a method of communication to other cells. As you are reading this text, huge numbers of neurons are firing in your brain as it processes the visual information that it receives. The basic structure of a neuron is shown in \autoref{fig:components_of_neuron}.\\
+\textdef{Neurons}{neuron}{a cell in the nervous system that is electrically charged and that uses this charge as a method of communication to other neurons} are cells in the nervous system that are electrically charged and that use this charge as a method of communication to other cells (\autoref{fig:components_of_neuron}). As you are reading this text, huge numbers of neurons are firing in your brain as it processes the visual information that it receives.
 
 \begin{figure}[h]
 \centering
@@ -906,19 +906,19 @@ You may be wondering what the state of the art is for WBC image classification. 
 \label{fig:components_of_neuron}
 \end{figure}
 
-In 1943, Warren McCulloch, a neuroscientist, and Walter Pitts, a logician, devised a small network modeling a neuron called a \textdef{McCulloch-Pitts neuron}{McCulloch-Pitts neuron}{an early model of a neuron that aggregates a collection of input binary variables and fires a 1 or 0 based on whether the sum of inputs exceed some threshold}. A McCulloch-Pitts neuron has a fixed threshold θ and takes as input \textvar{n} \textdefnogloss{binary variables} $x_1, \ldots, x_n$, where each of these variables is equal to either 0 or 1. The neuron outputs 1 if $x_1 + \cdots + x_n \geq θ$; otherwise, it returns 0. If a McCulloch-Pitts neuron outputs 1, then we say that it \textdefnogloss{fires}.
+In 1943, Warren McCulloch, a neuroscientist, and Walter Pitts, a logician, devised a small network modeling a neuron called a \textdef{McCulloch-Pitts neuron}{McCulloch-Pitts neuron}{an early model of a neuron that aggregates a collection of input binary variables and fires a 1 or 0 based on whether the sum of inputs exceeds some fixed threshold}. A McCulloch-Pitts neuron has a fixed threshold $\theta$ and takes as input \textvar{n} \textdefnogloss{binary variables} $x_1, \ldots, x_n$, where each of these variables is equal to either 0 or 1. The neuron outputs 1 if $x_1 + \cdots + x_n \geq \theta$; otherwise, it returns 0. If a McCulloch-Pitts neuron outputs 1, then we say that it \textdefnogloss{fires}.
 
-The McCulloch-Pitts neuron with \textvar{n} equal to 2 and θ equal to 2 is shown in \autoref{fig:MP_neuron}. The only way that this neuron will fire is if both inputs $x_1$ and $x_2$ are equal to 1.\\
+The McCulloch-Pitts neuron with \textvar{n} equal to 2 and $\theta$ equal to 2 is shown in \autoref{fig:MP_neuron}. The only way that this neuron will fire is if both inputs $x_1$ and $x_2$ are equal to 1.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/MP_neuron.png}
-\caption{A McCullough-Pitts neuron with \textvar{n} equal to 2 and θ equal to 2. The neuron will fire (i.e., output 1) precisely when both input variables are equal to 1; if either input variable is equal to 0, then $x_1 + x_2$ will be less than θ and the neuron will not fire (i.e., it will output 0).}
+\caption{A McCullough-Pitts neuron with \textvar{n} equal to 2 and $\theta$ equal to 2. The neuron will fire (i.e., output 1) precisely when both input variables are equal to 1; if either input variable is equal to 0, then $x_1 + x_2$ will be less than $\theta$ and the neuron will not fire (i.e., it will output 0).}
 \label{fig:components_of_neuron}
 \end{figure}
 
-In 1957, Frank Rosenblatt generalized the McCulloch-Pitts neuron into a \textdef{perceptron}{perceptron}{an artificial neuron that aggregates a weighted average of binary input variables and outputs 1 if this average is greater than some threshold and 0 otherwise}. A perceptron also has a threshold constant θ and \textvar{n} binary input variables $x_i$, but it also includes a collection of real-valued constant weights $w_i$ that are applied to each input variable. That is, the neuron will output 1 (fire) precisely when $w_1 \cdot x_1 + w_2 \cdot x_2 + \cdots + w_n \cdot x_n \geq θ$.\\
+In 1957, Frank Rosenblatt generalized the McCulloch-Pitts neuron into a \textdef{perceptron}{perceptron}{an artificial neuron that aggregates a weighted average of binary input variables and that outputs 1 if this average is greater than some fixed threshold and 0 otherwise}. A perceptron also has a threshold constant $\theta$ and \textvar{n} binary input variables $x_i$, but it also includes a collection of real-valued constant weights $w_i$ that are applied to each input variable. That is, the neuron will output 1 (fire) precisely when $w_1 \cdot x_1 + w_2 \cdot x_2 + \cdots + w_n \cdot x_n \geq \theta$.\\
 
 \begin{note}[%
 A McCulloch-Pitts neuron is a perceptron for which all of the $w_i$ are equal to 1.
@@ -930,21 +930,28 @@ For example, consider the perceptron shown in \autoref{fig:perceptron}. We assig
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/perceptron.png}
-\caption{A perceptron with two input variables. The perceptron includes a constant threshold and constant weights $\textvar{w}_\text{1}$ and $\textvar{w}_\text{2}$. The perceptron outputs 1 precisely when the weighted sum $\textvar{w}_\text{1} \cdot \textvar{x}_\text{1} + \textvar{w}_\text{2} \cdot \textvar{x}_\text{2}$ is greater than or equal to θ, and it outputs 0 otherwise.}
+\caption{A perceptron with two input variables. The perceptron includes a constant threshold and constant weights $\textvar{w}_\text{1}$ and $\textvar{w}_\text{2}$. The perceptron outputs 1 precisely when the weighted sum $\textvar{w}_\text{1} \cdot \textvar{x}_\text{1} + \textvar{w}_\text{2} \cdot \textvar{x}_\text{2}$ is greater than or equal to $\theta$, and it outputs 0 otherwise.}
 \label{fig:perceptron}
 \end{figure}
 
-We can generalize the perceptron even further. by allowing the input variables $x_i$ to have arbitrary decimal values (often, these inputs are constrained to be between 0 and 1). Then, rather than the neuron rigidly firing when $w_1 \cdot x_1 + w_2 \cdot x_2 + \cdots + w_n \cdot x_n$ is greater than or equal to θ, we pass this weighted sum into a function \textvar{f} called an \textdef{activation function}{a function that takes as input a weighted average of input variables in an artificial neuron and whose output is the neuron's output}, so that the neuron's output is not 1 or 0 but rather $f(w_1 \cdot x_1 + w_2 \cdot x_2 + \cdots + w_n \cdot x_n)$. \autoref{fig:activation_function} shows the most general form of an artificial neuron for two inputs.\\
+IMPROVE THIS GENERALIZATION: A generalized neuron allows n arbitrary decimal inputs (often between 0 and 1) and fires f(w1 · x1 + w2 · x2 + … + wn · xn – b) for an activation function f and a constant bias b.
+
+\texttt{MAKE CLEAR that b serves as our theta, so to speak. Not sure if this is beyond scope of this text.} 
+
+
+We can generalize the perceptron even further. by allowing the input variables $x_i$ to have arbitrary decimal values (often, these inputs are constrained to be between 0 and 1). Then, rather than the neuron rigidly firing when $w_1 \cdot x_1 + w_2 \cdot x_2 + \cdots + w_n \cdot x_n$ is greater than or equal to $\theta$, we pass this weighted sum into a function \textvar{f} called an \textdef{activation function}{activation function}{a function that takes as input a weighted average of input variables in an artificial neuron and whose output is the neuron's output}, so that the neuron's output is not 1 or 0 but rather $f(w_1 \cdot x_1 + w_2 \cdot x_2 + \cdots + w_n \cdot x_n)$. \autoref{fig:activation_function} shows the most general form of an artificial neuron for two inputs.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/activation_function.png}
-\caption{A general form of an artificial neuron for two input variables $\textvar{x}_\text{1}$ and $\textvar{x}_\text{2}$, two fixed weights $\textvar{w}_\text{1}$ and $\textvar{w}_\text{2}$, and an activation function \textvar{f}. The output of the neuron, rather than being strictly 0 or 1, is $\textvar{f}(\textvar{w}_\text{1} \cdot \textvar{x}_\text{1} + \textvar{w}_\text{2} \cdot \textvar{x}_\text{2}).}
+\caption{A general form of an artificial neuron for two input variables $\textvar{x}_\text{1}$ and $\textvar{x}_\text{2}$, two fixed weights $\textvar{w}_\text{1}$ and $\textvar{w}_\text{2}$, and an activation function \textvar{f}. The output of the neuron, rather than being strictly 0 or 1, is $\textvar{f}(\textvar{w}_\text{1} \cdot \textvar{x}_\text{1} + \textvar{w}_\text{2} \cdot \textvar{x}_\text{2})$.}
 \label{fig:activation_function}
 \end{figure}
 
 A commonly used activation function is the \textdefnogloss{logistic function}, $f(x) = 1/(1+e^{-x})$, shown in \autoref{fig:logistic_function}. Note that the output of this function ranges between 0 (when its input is very negative) and 1 (when its input is very positive).\\
+
+INSERT THE FOLLOWING Note: even though it’s simple, researchers now often use a “rectifier” function: f(x) = max(0, x). How does this differ from the activation function used by a perceptron? 
 
 \begin{figure}[h]
 \centering
@@ -958,7 +965,9 @@ A commonly used activation function is the \textdefnogloss{logistic function}, $
 What is the activation function used by a perceptron?
 ]\end{qbox}
 
-The outputs of mathematical functions can be used as inputs to other functions via function composition. For example, if $f(x) = 2x-1$, $g(x) = e^x$, and $h(x) = \cos{x}$, then $h(g(f(x))) = \cos{(e^{2x-1})}.. Similarly, the outputs of artificial neurons can be used as inputs to other neurons with (possibly) different weights and activation functions. Linking neurons together in this way produces a \textdef{neural network}{neural network}{a network of artificial neurons linked together, with the outputs of some neurons used as the input variables for others} such as the one shown in \autoref{fig:neural_network}.
+The outputs of mathematical functions can be used as inputs to other functions via function composition. For example, if $f(x) = 2x-1$, $g(x) = e^x$, and $h(x) = \cos{x}$, then $h(g(f(x))) = \cos{(e^{2x-1})}$. Similarly, the outputs of artificial neurons can be used as inputs to other neurons with (possibly) different weights and activation functions. Linking neurons together in this way produces a \textdef{neural network}{neural network}{a network of artificial neurons linked together, with the outputs of some neurons used as the input variables for others} such as the one shown in \autoref{fig:neural_network}.\\
+
+SIMPLY HAVE ONE NETWORK AND APPEAL TO IT TWICE. TIGHTEN THIS AREA GREATLY AND INTEGRATE WITH NEXT SUBSECTION. EXPLAIN IT AS WE GO, EXPLAINING WHAT THE CONNECTIONS MEAN
 
 \begin{figure}[h]
 \centering
@@ -973,11 +982,11 @@ We have a huge amount of freedom when building neural networks, since we can lin
 \phantomsection
 \subsection{Framing a classification problem using neural networks}
 
-The question is how to use neural networks to solve a classification problem involving real data. Earlier in this module, we discussed converting each data point *x* into a *feature vector* (*x*<sub>1</sub>, *x*<sub>2</sub>, …, *x*<sub>*n*</sub>) representing each of the *n* feature values of *x*. As a result, these *n* variables of the data's feature vectors become the *n* input variables of a neural network.
+The question is how to use neural networks to solve a classification problem involving real data. Earlier in this chapter, we discussed converting each data point \textvar{x} into a \textit{feature vector} $(x_1, x_2, \ldots, x_n)$ representing each of the \textvar{n} feature values of \textvar{x}. As a result, these \textvar{n} variables of the data's feature vectors become the \textvar{n} input variables of a neural network.
 
-The most typical design of a neural network for classification is then to connect all of the input variables into each one of a collection of (possibly many) artificial neurons, called a **hidden layer**. These neurons may then be connected in some combination to neurons in another layer, which are connected to neurons in another layer, and so on. As a result, many practical neural networks may have several hidden layers amounting to thousands of neurons, each with their own input weights and possibly different activation functions. The most common usage of the term **deep learning** refers to solving problems using many hidden layers of neurons; the discussion of the many pitfalls in designing neural networks for deep learning would cover an entire course much longer than this one.
+The most typical design of a neural network for classification is then to connect all of the input variables into each one of a collection of (possibly many) artificial neurons, called a \textdefnogloss{hidden layer}. These neurons may then be connected in some combination to neurons in another layer, which are connected to neurons in another layer, and so on. As a result, many practical neural networks may have several hidden layers amounting to thousands of neurons, each with their own input weights and possibly different activation functions. The most common usage of the term \textdef{deep learning}{deep learning}{an approach that applies neural networks with multiple hidden layers to analyze datasets} refers to solving problems using many hidden layers of neurons; the discussion of the many pitfalls in designing neural networks for deep learning would cover an entire course much longer than this one.
 
-The remaining question is what the output of our neural network should be. If we are classifying our data into *k* classes, then we typically would like to connect the final hidden layer of neurons to *k* **output neurons**. Ideally, if we plug in the values of the feature vector for a given data point *x* that we know belongs to the *i*-th class, then we would like for the *i*-th output neuron to output a value close to 1, and all other output neurons to output a value close to 0.
+The remaining question is what the output of our neural network should be. If we are classifying our data into \textvar{k} classes, then we typically would like to connect the final hidden layer of neurons to \textvar{x} \textdefnogloss{output neurons}. Ideally, if we plug in the values of the feature vector for a given data point \textvar{x} that we know belongs to the \textvar{i}-th class, then we would like for the \textvar{i}-th output neuron to output a value close to 1, and all other output neurons to output a value close to 0.
 
 A potential neural network model is illustrated in \autoref{fig:neural_network_wbc} for our example of categorizing WBC images into three classes. Because the number of nodes and edges in a real network is enormous, this figure uses gray boxes to indicate layers containing potentially many hidden neurons, as well as dashed edges to represent connecting many (if not all) nodes in one layer to each of the nodes in the next layer.\\
 
@@ -989,16 +998,16 @@ A potential neural network model is illustrated in \autoref{fig:neural_network_w
 \label{fig:activation_function}
 \end{figure}
 
-In order for such a neural network to classify objects in our dataset, we must find the ``best'' choices for the weights assigned to input variables at each neuron, assuming that we have decided on which activation function(s) to use for the network's neurons. A network may have hundreds of thousands of these input weights, and for a given application it will be initially unclear which weights to use to produce the magic output in which an object belonging to the *i*-th class produces an output close to 1 for the *i*-th output neuron (and an output close to 0) for other neurons.
+For such a neural network to classify objects in our dataset, we must find the ``best'' choices for the weights assigned to input variables at each neuron, assuming that we have decided on which activation function(s) to use for the network's neurons. A network may have hundreds of thousands of these input weights, and for a given application it will be initially unclear which weights to use to produce the magic output in which an object belonging to the \textvar{i}-th class produces an output close to 1 for the \textvar{i}-th output neuron (and an output close to 0) for other neurons.
 
 \phantomsection
 \subsection{Finding the best choice of parameters}
 
-In a previous section, we discussed how to assess the results of a classification algorithm like k-NN on a collection of data with known classes. To this end, we established a subset of our data called the *validation set* and asked how well the classification algorithm performed on these data, pretending that we did not know the correct class for each data point.
+In a previous section, we discussed how to assess the results of a classification algorithm like k-NN on a collection of data with known classes. To this end, we established a subset of our data called the validation set and asked how well the classification algorithm performed on these data, pretending that we did not know the correct class for each data point.
 
-To generalize this idea to our neural network classifier, we divide our data with known classes into a **training set** and a **test set**. We then seek the choice of parameters that ``performs the best'' on the training set, ignoring the test set for the moment.
+To generalize this idea to our neural network classifier, we divide our data with known classes into a \textdef{training set}{training set}{a subset of a dataset that is used to choose parameters for a model such as a neural network} and a \textdef{test set}{test set}{a subset of a dataset that is used, once parameters have been fixed, to identify the accuracy of a model such as a neural network}. We then seek the choice of parameters that ``performs the best'' on the training set, ignoring the test set for the moment.
 
-Of course, we should specify what it means for a neural network with established parameters to perform well on the training set. Each data point *x* in the training set has a ground truth classification vector *c*(*x*) = (*c*<sub>1</sub>, *c*<sub>2</sub>, ..., *c*<sub>*k*</sub>), where exactly one of the *c*<sub>*i*</sub> is equal to 1 corresponding to the correct class of *x*, and the other *c*<sub>*i*</sub> are equal to 0. The data point *x* also has an output vector *o*(*x*) = (*o*<sub>1</sub>, *o*<sub>2</sub>, ..., *o*<sub>*k*</sub>), where *o*<sub>*i*</sub> is the output of the *i*-th output vector in the network when *x* is used as the input data.
+Of course, we should specify what it means for a neural network with established parameters to perform well on the training set. Each data point \textvar{x} in the training set has a ground truth classification vector $\mathbf{c}(x) = (c_1, c_2, \ldots, c_k)$, where exactly one of the $c_i$ is equal to 1 corresponding to the correct class of \textvar{x}, and the other $c_i$ are equal to 0. The data point \textvar{x} also has an output vector $\mathbf{o}(x) = (o_1, o_2, \ldots, o_k)$, where $o_i$  is the output of the \textvar{i}-th output vector in the network when \textvar{x} is used as the input data.
 
 Fortunately, we have been using a method of comparing two vectors throughout this course, namely RMSD. The RMSD between an object's classification vector and its output vector for a given neural network measures how well the network classified this data point, with a value close to 0 representing a good fit.
 
@@ -1006,7 +1015,7 @@ Therefore, we can obtain a good measure of how well a neural network performs on
 
 NEEDS EXAMPLE
 
-Once we have chosen a collection of weight parameters for our network that perform well on the training set, we then assess how well this choice of parameters performs on the test set that we left out initially. To this end, we can insert the feature vector of each test set object \textit{x} as input into the network, and then consult the output vector $o(x) = (o_1, o_2, \ldots, o_k)$ for this object. Whichever \textvar{i} maximizes $o_i$ for this output vector is the assigned class of \textvar{x}. Now we are ready to apply what we have learned earlier in this module for quantifying the quality of a classifier, using metrics such as accuracy, recall, specificity, and precision, to determine how well the neural network is performing as a classifier.
+Once we have chosen a collection of weight parameters for our network that perform well on the training set, we then assess how well this choice of parameters performs on the test set that we left out initially. To this end, we can insert the feature vector of each test set object \textit{x} as input into the network, and then consult the output vector $\mathbf{o}(x) = (o_1, o_2, \ldots, o_k)$ for this object. Whichever \textvar{i} maximizes $o_i$ for this output vector is the assigned class of \textvar{x}. Now we are ready to apply what we have learned earlier in this chapter for quantifying the quality of a classifier, using metrics such as accuracy, recall, specificity, and precision, to determine how well the neural network is performing as a classifier.
 
 However, because the typical neural network has many parameters, we should be wary of the curse of dimensionality. As many a student completing a deep learning project has learned, it may be very difficult to obtain a network and parameters that perform well on the training set, and even if a model has a low mean RMSD for the training set, it may perform horribly on the test set. (The former situation is called ``underfitting'' and the latter is called ``overfitting''.)
 
@@ -1027,9 +1036,9 @@ Our idea, then, is to borrow what we have learned in this course, and apply a \t
 How can we avoid getting stuck in a local minimum? What does a local minimum mean in the context of parameter search?
 ]\end{qbox}
 
-To avoid getting stuck in a \textit{local minimum}, we then run this local search algorithm for many different randomly chosen initial parameters. In the end, we take the choice of parameters minimizing mean RMSD over all of the different runs of gradient descent.
+To avoid getting stuck in a \textit{local minimum}, we then run this local search algorithm for many different randomly chosen initial parameters. In the end, we take the choice of parameters minimizing mean RMSD over all of the different runs of gradient descent. Many modifications of gradient descent have been developed, but all are based on the core idea of local search, the same core idea that we used to predict the structure of a protein or model the exploration of a humble bacterium.
 
-Many modifications of gradient descent have been developed, but all are based on the core idea of local search. Whether we are classifying cellular images, predicting the structure of a protein, or modeling the exploration of a humble bacterium, local search can prove powerful. And yet despite these three problems demonstrating how biological problems can be solved with modeling, biology on the whole largely remains an untouched universe just waiting to be explored.
+Something here about the themes that we have encountered that unite biological modeling: emergent behavior from simple rules; intelligent exploration of a large, sparsely populated space; the power of randomness to solve problems. We hope that we have inspired you that biology is a field in which computational methods can help us solve our problems. And yet despite what we have had the time and space to present here, many aspects of biology still remain an untouched universe waiting to be explored.
 
 \FloatBarrier
 
