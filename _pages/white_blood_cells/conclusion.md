@@ -21,7 +21,7 @@ gallery:
     title: "A lymphocyte with a small, round nucleus."
 ---
 
-## A brief introduction to neural networks
+## A brief introduction to artificial neurons
 
 The best known classification algorithms for WBC image analysis[^Habibzadeh_2018] use a technique called **deep learning**. You have probably seen this term wielded with reverence, and so in this chapter's conclusion, we will briefly explain what it means and how it could be applied to classification.
 
@@ -32,32 +32,35 @@ The best known classification algorithms for WBC image analysis[^Habibzadeh_2018
 	<figcaption>The components of a neuron. Electrical signals are passed down axons and exchanged at terminal boundaries between neurons. Image courtesy: Jennifer Walinga.</figcaption>
 </figure>
 
-In 1943, Warren McCulloch, a neuroscientist, and Walter Pitts, a logician, devised an artificial model of a neuron that is now called a **McCulloch-Pitts neuron**.[^McCulloch-Pitts] A McCulloch-Pitts neuron has a fixed threshold θ and takes as input *n* **binary variables** *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>, where each of these variables is equal to either 0 or 1. The neuron outputs 1 if *x*<sub>1</sub> + … + *x*<sub><em>n</em></sub> ≥ θ; otherwise, it returns 0. If a McCulloch-Pitts neuron outputs 1, then we say that it **fires**.
+In 1943, Warren McCulloch (a neuroscientist) and Walter Pitts (a logician) devised an artificial model of a neuron that is now called a **McCulloch-Pitts neuron**.[^McCulloch-Pitts] A McCulloch-Pitts neuron has a fixed threshold *b* and takes as input *n* **binary variables** *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>, where each of these variables is equal to either 0 or 1. The neuron outputs 1 if *x*<sub>1</sub> + … + *x*<sub><em>n</em></sub> ≥ *b*; otherwise, it returns 0. If a McCulloch-Pitts neuron outputs 1, then we say that it **fires**.
 
-The McCulloch-Pitts neuron with *n* equal to 2 and θ equal to 2 is shown in the figure below. The only way that this neuron will fire is if both inputs *x*<sub>1</sub> and *x*<sub>2</sub> are equal to 1.
+The McCulloch-Pitts neuron with *n* equal to 2 and *b* equal to 2 is shown in the figure below. The only way that this neuron will fire is if both inputs *x*<sub>1</sub> and *x*<sub>2</sub> are equal to 1.
 
 <figure>
 	<a href="../assets/images/MP_neuron.png"><img src="../assets/images/600px/MP_neuron.png"></a>
-	<figcaption>A McCullough-Pitts neuron with <em>n</em> equal to 2 and θ equal to 2. The neuron will fire (i.e., output 1) precisely when both input variables are equal to 1; if either input variable is equal to 0, then <em>x</em><sub>1</sub> + <em>x</em><sub>2</sub> will be less than θ and the neuron will not fire (i.e., it will output 0).</figcaption>
+	<figcaption>A McCullough-Pitts neuron with <em>n</em> equal to 2 and *b* equal to 2. The neuron fires precisely when both input variables are equal to 1; if either input variable is equal to 0, then <em>x</em><sub>1</sub> + <em>x</em><sub>2</sub> will be less than *b* and the neuron will not fire (i.e., it will output 0).</figcaption>
 </figure>
 
-In 1957, Frank Rosenblatt generalized the McCulloch-Pitts neuron into a **perceptron**. A perceptron also has a threshold constant θ and *n* binary input variables *x*<sub><em>i</em></sub>, but it also includes a collection of real-valued constant weights *w*<sub><em>i</em></sub> that are applied to each input variable. That is, the neuron will output 1 (fire) precisely when *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *x*<sub><em>n</em></sub> ≥ θ.
+**Note:** The mathematically astute reader may have noticed that the output of the McCulloch-Pitts neuron in the figure above is identical to the logical proposition *x*<sub>1</sub> `AND` *x*<sub>2</sub>, which explains why these neurons started as a collaboration between a neuroscientist and a logician.
+{: .notice--info}
+
+In 1957, Frank Rosenblatt generalized the McCulloch-Pitts neuron into a **perceptron**. A perceptron also has a threshold constant *b* and *n* binary input variables *x*<sub><em>i</em></sub>, but it also includes a collection of real-valued constant weights *w*<sub><em>i</em></sub> that are applied to each input variable. That is, the neuron will output 1 (fire) precisely when the weighted sum *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *x*<sub><em>n</em></sub> is greater than or equal to *b*.
 
 **Note:** A McCulloch-Pitts neuron is a perceptron for which all of the *w*<sub><em>i</em></sub> are equal to 1.
 {: .notice--info}
 
-For example, consider the perceptron shown in the figure below. We assign the weight *w*<sub><em>i</em></sub> to the edge connecting input variable *x*<sub><em>i</em></sub> to the neuron.
+For example, consider the perceptron shown in the figure below; we assign the weight *w*<sub><em>i</em></sub> to the edge connecting input variable *x*<sub><em>i</em></sub> to the neuron.
 
 <figure>
 	<a href="../assets/images/perceptron.png"><img src="../assets/images/600px/perceptron.png"></a>
-	<figcaption>A perceptron with two input variables. The perceptron includes a constant threshold and constant weights <em>w</em><sub>1</sub> and <em>w</em><sub>2</sub>. The perceptron outputs 1 precisely when the weighted sum <em>w</em><sub>1</sub> · <em>x</em><sub>1</sub> + <em>w</em><sub>2</sub> · <em>x</em><sub>2</sub> is greater than or equal to θ, and it outputs 0 otherwise.</figcaption>
+	<figcaption>A perceptron with two input variables. The perceptron includes a constant threshold and constant weights <em>w</em><sub>1</sub> and <em>w</em><sub>2</sub>. The perceptron outputs 1 precisely when the weighted sum <em>w</em><sub>1</sub> · <em>x</em><sub>1</sub> + <em>w</em><sub>2</sub> · <em>x</em><sub>2</sub> is greater than or equal to *b*, and it outputs 0 otherwise.</figcaption>
 </figure>
 
-We can generalize the perceptron even further. by allowing the input variables *x*<sub><em>i</em></sub> to have arbitrary decimal values (often, these inputs are constrained to be between 0 and 1). Then, rather than the neuron rigidly firing when *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub> is greater than or equal to θ, we pass this weighted sum into a function *f* called an **activation function**, so that the neuron's output is not 1 or 0 but rather *f*(*w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub>). The figure below shows the most general form of an artificial neuron for two inputs.
+Modern artificial neurons, as shown in the figure below, generalize the perceptron further in two ways. First, the input variables *x*<sub><em>i</em></sub> can have arbitrary decimal values (often, these inputs are constrained to be between 0 and 1). Second, rather than the neuron rigidly outputting 1 when *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub> is greater than or equal to *b*, we subtract *b* from the weighted sum and pass the resulting value into a function *f* called an **activation function**; that is, the neuron outputs *f*(*w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub>). In this form of the neuron, *b* is called the **bias** of the neuron.
 
 <figure>
 	<a href="../assets/images/activation_function.png"><img src="../assets/images/600px/activation_function.png"></a>
-	<figcaption>A general form of an artificial neuron for two input variables <em>x</em><sub>1</sub> and <em>x</em><sub>2</sub>, two fixed weights <em>w</em><sub>1</sub> and <em>w</em><sub>2</sub>, and an activation function <em>f</em>. The output of the neuron, rather than being strictly 0 or 1, is <em>f</em>(<em>w</em><sub>1</sub> · <em>x</em><sub>1</sub> + <em>w</em><sub>2</sub> · <em>x</em><sub>2</sub>).</figcaption>
+	<figcaption>A general form of an artificial neuron for two input variables <em>x</em><sub>1</sub> and <em>x</em><sub>2</sub>, two constant weights <em>w</em><sub>1</sub> and <em>w</em><sub>2</sub>, a constant bias *b*, and an activation function <em>f</em>. The output of the neuron, rather than being strictly 0 or 1, is <em>f</em>(<em>w</em><sub>1</sub> · <em>x</em><sub>1</sub> + <em>w</em><sub>2</sub> · <em>x</em><sub>2</sub> - *b*).</figcaption>
 </figure>
 
 A commonly used activation function is the **logistic function**, *f*(*x*) = 1/(1 + *e*<sup>-<em>x</em></sup>), shown in the figure below. Note that the output of this function ranges between 0 (when its input is very negative) and 1 (when its input is very positive).
@@ -70,15 +73,13 @@ A commonly used activation function is the **logistic function**, *f*(*x*) = 1/(
 **STOP:** What is the activation function used by a perceptron?
 {: .notice--primary}
 
-
+## Framing a classification problem using neural networks
 
 The outputs of mathematical functions can be used as inputs to other functions via function composition. For example, if *f*(*x*) = 2*x*-1, *g*(*x*) = *e*<sup>*x*</sup>, and *h*(*x*) = cos(*x*), then *h*(*g*(*f*(*x*))) = cos(*e*<sup>2*x*-1</sup>). Similarly, the outputs of artificial neurons can be used as inputs to other neurons with (possibly) different weights and activation functions. Linking neurons together in this way produces a **neural network** such as the one shown in the figure below.
 
 INSERT FIGURE
 
 We have a huge amount of freedom when building neural networks, since we can link up neurons however we like, and since the weights of all incoming edges at each neuron are allowed to vary, as well as the activation function used at each neuron. This freedom will mean that the number of possible neural networks is incomprehensibly large, so that neural networks are very powerful, but they can also be difficult to interpret.
-
-## Framing a classification problem using neural networks
 
 The question is how to use neural networks to solve a classification problem involving real data. Earlier in this module, we discussed converting each data point *x* into a *feature vector* (*x*<sub>1</sub>, *x*<sub>2</sub>, …, *x*<sub>*n*</sub>) representing each of the *n* feature values of *x*. As a result, these *n* variables of the data's feature vectors become the *n* input variables of a neural network.
 

@@ -725,6 +725,7 @@ We are fortunate to have this wealth of research on chemotaxis in \textit{E.~col
 \phantomsection
 \section{Exercises}
 
+\phantomsection
 \subsection{How does \textit{E.~coli} respond to repellents?}
 
 Just as \textit{E.~coli} has receptors that bind to attractant ligands, it has other receptors that can bind to \textdefnogloss{repellent} ligands. Attractant-ligand binding causes an increase in the autophosphorylation of CheA, but repellent-ligand binding causes a decrease in the autophosphorylation of CheA.\\
@@ -739,6 +740,7 @@ We learned that \textit{E.~coli} is likely to run for longer when traveling up a
 Adapt the ``chemotactic'' random walk strategy to handle the fact that bacteria sensing a relative decrease in repellent concentration will have longer runs before tumbling. Simulate this strategy for a collection of particles placed near a ``goal'' representing a repellent source. What is the average distance of the particles from the goal? How does this compare to the average distance to the goal for a collection of particles following a pure random walk? And how does the distance to the goal change as we change $t_0$, the default time between tumbles?
 ]\end{exercise}
 
+\phantomsection
 \subsection{Traveling down an attractant gradient}
 
 A related question to how a bacterium responds to a repellent is how it responds to traveling \textit{away} from an attractant, i.e., down an attractant gradient. To model this situation, we will still use the function $[L] = l_0 \cdot e^{k \cdot t}$ that we used when modeling a bacterium traveling up an attractant gradient, but we will now assume that $k$ is negative so that the concentration is decaying exponentially. Refer to that tutorial for details.\tutorial[tutorial_walk]\\
@@ -747,6 +749,7 @@ A related question to how a bacterium responds to a repellent is how it responds
 Adapt the simulation that we used to produce \autoref{fig:chemotaxis_tutorial_addition01} to model the concentration of phosphorylated CheY over time for an exponentially decaying attractant concentration. How does the plot of phosphorylated CheY change as $k$ gets more negative?
 ]\end{exercise}
 
+\phantomsection
 \subsection{What if \textit{E.~coli} has multiple attractant sources?}
 
 Not only can \textit{E.~coli} sense both repellents and attractants, but it can detect \textit{more than one} attractant gradient at the same time.  This function has a clear evolutionary purpose in a bacterial environment of multiple sparsely populated food sources. In this section, we will explore whether the chemotaxis mechanism allows cells to navigate through heterogeneous nutrient distributions.\\
@@ -773,6 +776,7 @@ Change the chemotactic walk simulation so that it includes the two goals, and vi
 Vary the tumbling frequency according to the parameters given in the chemotactic walk tutorial to see how tumbling frequency influences the average distance of a cell to the closer of the two goals. As in the tutorial, run your simulation for 500 particles with the default time between tumbles ($t_0$) equal to each of 0.2, 0.5, 1.0, 2.0 and 5.0 seconds.
 ]\end{exercise}
 
+\phantomsection
 \subsection{Changing the \textit{E.~coli} choice of direction}
 
 In the conclusion, we mentioned that when \textit{E.~coli} tumbles, the degree of reorientation is not uniformly random from 0° to 360°. Rather, research has shown that it follows a normal distribution with mean of 68° (1.19 radians) and standard deviation of 36° (0.63 radians).\\
@@ -787,6 +791,7 @@ More recent research suggests that when the bacterium is moving up an attractant
 Modify your model from the previous exercise so that if the cell has just made a move of increasing ligand concentration, then its mean reorientation angle is 0.1 radians smaller to change the random uniform sampling to this "smarter" sampling. Calculate  the mean and standard deviation of each cell's distance to the goal for 500 cells with the default running time $t_0$ equal to each of 0.2, 0.5, 1.0, 2.0 and 5.0 seconds. Do the cells find the goal faster?
 ]\end{exercise}
 
+\phantomsection
 \subsection{Can't get enough rule-based modeling?}
 
 As we have seen in this chapter, rule-based modeling is successful at simulating systems that involve a large number of species and particles but can be summarized with a small set of rules.
@@ -814,8 +819,6 @@ Run the simulation. How do the concentrations of polymers vary according to the 
 \begin{exercise}[%
 What happens to polymer concentrations as we change the polymer binding and dissociation rates? Does your observation reflect what you might expect?
 ]\end{exercise}
-
-%\subsection{A method for generating random numbers from exponential distribution}
 
 
 %\FloatBarrier
