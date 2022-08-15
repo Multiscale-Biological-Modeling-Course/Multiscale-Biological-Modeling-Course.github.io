@@ -876,7 +876,7 @@ The next failure point in our model is our segmentation pipeline. Earlier in the
 
 We then built a shape space from the vectorized boundaries of the nuclei using PCA. In this case, the low resolution of the nuclear images will mean that the vectorization of each nuclear image will be noisy.
 
-But even if we use higher resolution images and adjust our segmentation pipeline, we are still only building a model from the \textit{shape} of the nucleus. We didn't even take the size of the nucleus into account! If we return to the three sample WBC images from \autoref{fig:three_families}, then we can see that the lymphocyte nucleus is much smaller than the other two nuclei, which is true in general. To address this concern, when vectorizing the images, we could reserve an additional coordinate of each image's vector for the size (in pixels) of the segmented nucleus. This change would hopefully help improve the performance of our classifier, especially on lymphocytes.\\
+But even if we use higher resolution images and adjust our segmentation pipeline, we are still only building a model from the \textit{shape} of the nucleus. We didn't even take the size of the nucleus into account! If we return to the three sample WBC images from \autoref{fig:three_families}, then we can see that the lymphocyte nucleus is much smaller than the other two nuclei, which is true in general. To address this concern, when vectorizing the images, we could reserve an additional coordinate of each image's vector for the size (in pixels) of the segmented nucleus. This change, which we will explore in an exercise, could hopefully help improve the performance of our classifier, especially on lymphocytes.\\
 
 \begin{qbox}[%
 What other quantitative features could we extract from our images?
@@ -950,7 +950,7 @@ A commonly used activation function is the \textdefnogloss{logistic function}, $
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/logistic_function.png}
-\caption{A plot of the logistic function $\textvar{f}(\textvar{x}) = 1/(1+\textvar{e}^{-\textvar{x}})$, an increasing function whose values range between 0 and 1.}
+\caption{A plot of the logistic function $\textvar{f}(\textvar{x}) = \text{1}/(\text{1}+\textvar{e}^{-\textvar{x}})$, an increasing function whose values range between 0 and 1.}
 \label{fig:logistic_function}
 \end{figure}
 
@@ -1012,21 +1012,19 @@ What does a local minimum mean in the context of parameter search?
 Just as we run \textit{ab initio} structure prediction algorithms using many different initial protein conformations, to avoid getting stuck in a \textit{local minimum}, we run gradient descent for many different sets of randomly chosen initial parameters. In the end, we take the choice of parameters minimizing mean RMSD over all the runs of gradient descent.
 
 \phantomsection
-\subsection{The curse of dimensionality, Alphafold, and final reflections}
+\subsection{Pitfalls of neural networks, Alphafold, and final reflections}
 
-AT SOME POINT, CALL BACK TO ALPHAFOLD. Critical idea here is that a neural network can be thought of a big, bulky thing that takes some things and produces others, a complicated function. We already know how to vectorize structures, so we could train a neural network to take sequences (encoded as vectors) and produce their shape vectors. What AlphaFold does is more complicated than this, involving a few different neural networks, but the idea is still the same.
+At the time of writing, neural networks are wildly popular. However, they are not a cure-all, as many problems exist for which they are struggling to make progress. Furthermore, neural networks come with their own issues. Because we have so much freedom for how the neural network is formed, it is challenging to know \textit{a priori} how to design an ``architecture'' for how the neurons should be connected to each other for a given problem.
 
-Even though neural networks have had successes, they are not a cure-all, and there are still many problems in which they are struggling to make in-roads. We have encountered many themes in this work, from emergent behavior from simple rules, to the power of randomness to solve practical problems, to how to explore a large, sparsely populated space, but we hope that above all, this is the largest one. Despite what we have had the time and space to present here, many aspects of biology and its intersection with computation still remain like a bacterium's world: an untouched universe waiting to be explored.
+Once we have decided on an architecture, the neural network has so many bias and weight parameters that even with access to a supercomputer, it may be difficult to find parameters that perform well on the training set. ALPHAFOLD parameters
 
-%MOVE THIS DOWN
-%However, because the neural network has many bias and weight parameters, we should be wary of the curse of dimensionality. It may be difficult to obtain a network and parameters that perform well on the training set, and even if a model has a low mean RMSD for the training set, it may perform horribly on the test set. (The former situation is called ``underfitting'' and the latter is called ``overfitting''.)
+Furthermore, even if a model has a low mean RMSD for the training set, then it may perform horribly on the test set, which is yet another instance of the curse of dimensionality. (The former situation is called ``underfitting'' and the latter is called ``overfitting''.)
 
-%Neural networks aren't a cure all and they come with their own issues.
-
-% Something about the number of parameters in the AlphaFold network (21 million). Energy usage?
-%
 %We have a huge amount of freedom when building neural networks, since we can link up neurons however we like, and since the weights of all incoming edges at each neuron are allowed to vary, as well as the activation function used at each neuron. This freedom will mean that the number of possible neural networks is incomprehensibly large, so that neural networks are very powerful, but they can also be difficult to interpret.
 
+AT SOME POINT, CALL BACK TO ALPHAFOLD (21 million parameters). Critical idea here is that a neural network can be thought of a big, bulky thing that takes some things and produces others, a complicated function. We already know how to vectorize structures, so we could train a neural network to take sequences (encoded as vectors) and produce their shape vectors. What AlphaFold does is more complicated than this, involving a few different neural networks, but the idea is still the same.
+
+We have encountered many themes in this work, from emergent behavior from simple rules, to the power of randomness to solve practical problems, to how to explore a large, sparsely populated space, but we hope that above all, this is the largest one. Despite what we have had the time and space to present here, many aspects of biology and its intersection with computation still remain like a bacterium's world: an untouched universe waiting to be explored.
 
 
 \FloatBarrier
@@ -1068,7 +1066,7 @@ This example provides another reason why we reduce the dimension of a dataset wh
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/curse_of_dimensionality_two_irises.png}
-\caption{Petal length plotted against petal width for two flowers in the iris flower dataset. Because of random chance and small sample size, these two flowers demonstrate an inverse correlation between petal length and width, the opposite of the true correlation found in \autoref{fig:iris_flowers_regression_line}.}
+\caption{Petal length (x-axis) plotted against petal width (y-axis) for two flowers in the iris flower dataset. Because of random chance and small sample size, these two flowers demonstrate an inverse correlation between petal length and width, the opposite of the true correlation found in \autoref{fig:iris_flowers_regression_line}.}
 \label{fig:curse_of_dimensionality_two_irises}
 \end{figure}
 
@@ -1089,18 +1087,20 @@ The iris flower dataset has four features. Apply PCA with $d = 2$ to reduce the 
 Another way to reduce the dimension of a dataset is to eliminate features from the dataset. Apply k-NN with \textvar{k} equal to 1 and cross validation with \textvar{f} equal to 10 to the iris flower dataset using only the two features petal width and petal length. Then, run the same classifier on your own choice of two iris features to obtain a confusion matrix. How do the results compare against the result of the previous exercise (which used PCA instead of feature elimination) and \autoref{fig:iris_confusion_matrix} (which used all four features)?
 ]\end{exercise}
 
-%\phantomsection
-%\subsection{More classification of our WBC image dataset}
-%
+\phantomsection
+\subsection{More classification of our WBC image dataset}
+
+The following exercises allow us to explore making changes to our WBC image classifier. For each such exercise, you should form a confusion matrix and compare your results against those in \autoref{fig:wbc_cellorganizer}.  For more details on running these exercises, please consult the \href{http://biologicalmodeling.org}{\textit{Biological Modeling} website}.\\
+
+\begin{exercise}[
+In the main text, we mentioned that lymphocytes are much smaller than monocytes and granulocytes. Add a parameter corresponding to the size of a nucleus to the WBC image shape space vectors after applying PCA with \textvar{d} = 10. Then, apply k-NN with \textvar{k} equal to 1 and \textvar{f} equal to 10 to produce a confusion matrix. (Why do you think that we asked you to add the nuclear size as a parameter after applying PCA?)
+]\end{exercise}
+
+\begin{exercise}[
+Apply the same pipeline as the one used to produce \autoref{fig:wbc_cellorganizer} on a dataset on a dataset containing higher resolution WBC images.
+]\end{exercise}
+
 %\begin{exercise}[%
-%Add nuclear size to dataset -- call back to the main text when we mentioned this. In main text, say that we explore as an exercise?
-%]\end{exercise}
-%
-%\begin{exercise}[%
-%Yanjing's other exercise here.
-%]\end{exercise}
-%
-%\begin{exercise}[%
-%Neural network exercise on WBC image dataset.
+%Neural network exercise on WBC image dataset?
 %]\end{exercise}
 
