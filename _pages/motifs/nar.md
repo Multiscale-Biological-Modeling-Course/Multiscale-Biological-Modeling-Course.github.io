@@ -82,4 +82,4 @@ In this lesson, we have seen that particle-based simulations can be powerful for
 
 [^machinery]: Goodsell, David (2009), *The Machinery of Life*. Copernicus Books.
 
-[^Savageau]: Savageau, 1976 https://ucdavis.pure.elsevier.com/en/publications/biochemical-systems-analysis-a-study-of-function-and-design-in-mo
+[^Savageau]: Savageau, M (1976). *Biochemical systems analysis: A study of function and design in molecular biology*. Addison Wesley.

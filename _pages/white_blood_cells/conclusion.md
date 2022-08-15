@@ -44,7 +44,7 @@ The McCulloch-Pitts neuron with *n* equal to 2 and *b* equal to 2 is shown in th
 **Note:** The mathematically astute reader may have noticed that the output of the McCulloch-Pitts neuron in the figure above is identical to the logical proposition *x*<sub>1</sub> `AND` *x*<sub>2</sub>, which explains why these neurons started as a collaboration between a neuroscientist and a logician.
 {: .notice--info}
 
-In 1957, Frank Rosenblatt generalized the McCulloch-Pitts neuron into a **perceptron**. A perceptron also has a threshold constant *b* and *n* binary input variables *x*<sub><em>i</em></sub>, but it also includes a collection of real-valued constant weights *w*<sub><em>i</em></sub> that are applied to each input variable. That is, the neuron will output 1 (fire) precisely when the weighted sum *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *x*<sub><em>n</em></sub> is greater than or equal to *b*.
+In 1958, Frank Rosenblatt generalized the McCulloch-Pitts neuron into a **perceptron**.[^Rosenblatt] A perceptron also has a threshold constant *b* and *n* binary input variables *x*<sub><em>i</em></sub>, but it also includes a collection of real-valued constant weights *w*<sub><em>i</em></sub> that are applied to each input variable. That is, the neuron will output 1 (fire) precisely when the weighted sum *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *x*<sub><em>n</em></sub> is greater than or equal to *b*.
 
 **Note:** A McCulloch-Pitts neuron is a perceptron for which all of the *w*<sub><em>i</em></sub> are equal to 1.
 {: .notice--info}
@@ -137,6 +137,8 @@ Whether we are classifying cellular images, predicting the structure of a protei
 {: .notice--info}
 
 [^McCulloch-Pitts]: McCulloch WS, Pitts WS 1943. A Logical calculus of the ideas Immanent in nervous activity. The bulletin of mathematical biophysics (5): 115–133. [Available online](https://doi.org/10.1007/BF02478259)
+
+[^Rosenblatt]: Rosenblatt M 1958. The perceptron: a probabilistic model for information storage and organization in the brain. Psychological review 65 (6): 386.
 
 [^Habibzadeh_2018]: Habibzadeh M, Jannesari M, Rezaei Z, Baharvand H, Totonchi M. Automatic white blood cell classification using pre-trained deep learning models: ResNet and Inception. Proc. SPIE 10696, Tenth International Conference on Machine Vision (ICMV 2017), 1069612 (13 April 2018). [Available online](https://doi.org/10.1117/12.2311282)
 
