@@ -1014,18 +1014,13 @@ Just as we run \textit{ab initio} structure prediction algorithms using many dif
 \phantomsection
 \subsection{Pitfalls of neural networks, Alphafold, and final reflections}
 
-At the time of writing, neural networks are wildly popular. However, they are not a cure-all, as many problems exist for which they are struggling to make progress. Furthermore, neural networks come with their own issues. Because we have so much freedom for how the neural network is formed, it is challenging to know \textit{a priori} how to design an ``architecture'' for how the neurons should be connected to each other for a given problem.
+At the time of writing, neural networks are wildly popular, but they come with their own issues. Because we have so much freedom for how the neural network is formed, it is challenging to know \textit{a priori} how to design an ``architecture'' for how the neurons should be connected to each other for a given problem.
 
-Once we have decided on an architecture, the neural network has so many bias and weight parameters that even with access to a supercomputer, it may be difficult to find parameters that perform well on the training set. ALPHAFOLD parameters
+Once we have decided on an architecture, the neural network has so many bias and weight parameters that it may be difficult to find values for these parameters that perform even reasonably well on the training set. This situation, which is called ``underfitting'', can be challenging to overcome, and companies building large neural networks are investing enormous resources into high performance computing.
 
-Furthermore, even if a model has a low mean RMSD for the training set, then it may perform horribly on the test set, which is yet another instance of the curse of dimensionality. (The former situation is called ``underfitting'' and the latter is called ``overfitting''.)
+Even if we are able to build a neural network with a low mean RMSD for the training set, the neural network may perform horribly on the test set, which is called ``overfitting'' and offers yet another instance of the curse of dimensionality.
 
-%We have a huge amount of freedom when building neural networks, since we can link up neurons however we like, and since the weights of all incoming edges at each neuron are allowed to vary, as well as the activation function used at each neuron. This freedom will mean that the number of possible neural networks is incomprehensibly large, so that neural networks are very powerful, but they can also be difficult to interpret.
-
-AT SOME POINT, CALL BACK TO ALPHAFOLD (21 million parameters). Critical idea here is that a neural network can be thought of a big, bulky thing that takes some things and produces others, a complicated function. We already know how to vectorize structures, so we could train a neural network to take sequences (encoded as vectors) and produce their shape vectors. What AlphaFold does is more complicated than this, involving a few different neural networks, but the idea is still the same.
-
-We have encountered many themes in this work, from emergent behavior from simple rules, to the power of randomness to solve practical problems, to how to explore a large, sparsely populated space, but we hope that above all, this is the largest one. Despite what we have had the time and space to present here, many aspects of biology and its intersection with computation still remain like a bacterium's world: an untouched universe waiting to be explored.
-
+Despite these potential concerns with building effective neural networks, they are starting to show promise of making significant progress in solving biological problems. AlphaFold, which we introduced in \autoref{chapter:coronavirus}, is powered in part by neural networks that contain 21 million parameters.  Yet although AlphaFold has revolutionized the study of protein folding, just as many problems exist for which they neural networks are struggling to make progress. The study of biology and its intersection with computation still remains like the environment of a lonely bacterium: an untouched universe waiting to be explored.
 
 \FloatBarrier
 
