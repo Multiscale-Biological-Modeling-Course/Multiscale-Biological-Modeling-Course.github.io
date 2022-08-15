@@ -694,7 +694,7 @@ Finally, the \textdef{precision}{precision}{the percentage of positive tests tha
 How could we trick a test to have recall, specificity, or precision close to 1?
 ]\end{qbox}
 
-Just like accuracy, all three of the metrics we have just introduced are imperfect and can be fooled by frivolous tests that always return positive or negative. However, a frivolous test cannot score well on all of these metrics at the same time. Therefore, in practice we will examine all of these metrics, as well as accuracy, when assessing the quality of a classifier.\\
+Just like accuracy, all three of the metrics we have just introduced are imperfect and can be fooled by frivolous tests that always return positive or negative. However, a frivolous test cannot score well on all these metrics at the same time. Therefore, in practice we will examine all these metrics, as well as accuracy, when assessing the quality of a classifier.\\
 
 \begin{qbox}[%
 Consider a dataset of 201,500 patients, 1,500 of whom have a condition. Compute the recall, specificity, and precision of a hypothetical medical test for the condition that always returns negative. How does each metric compare against those of the hypothetical test in \autoref{fig:medical_test_confusion_matrix_hypothetical}?
@@ -923,7 +923,7 @@ The mathematically astute reader may have noticed that the output of the McCullo
 In 1957, Frank Rosenblatt generalized the McCulloch-Pitts neuron into a \textdef{perceptron}{perceptron}{an artificial neuron that aggregates a weighted average of binary input variables and that outputs 1 if this average is greater than some fixed threshold and 0 otherwise}. A perceptron also has a threshold \textvar{b} and \textvar{n} binary input variables $x_i$, but it includes a collection of constant weights $w_i$, and the neuron fires precisely when the weighted sum $w_1 \cdot x_1 + w_2 \cdot x_2 + \cdots + w_n \cdot x_n$ is at least equal to \textvar{b} (\autoref{fig:perceptron}).\\
 
 \begin{note}[%
-A McCulloch-Pitts neuron is a perceptron for which all of the $w_i$ are equal to 1.
+A McCulloch-Pitts neuron is a perceptron for which all the $w_i$ are equal to 1.
 ]\end{note}
 
 \begin{figure}[h]
@@ -973,11 +973,11 @@ The outputs of mathematical functions can be used as inputs to other functions v
 
 We have discussed converting each object \textvar{x} in a dataset (such as our WBC image dataset) into a feature vector $(x_1, x_2, \ldots, x_n)$ representing each of the \textvar{n} feature values of \textvar{x}. In \autoref{fig:neural_network_wbc}, these \textvar{n} variables of the data's feature vectors become the \textvar{n} input variables of the neural network.
 
-We typically then connect all of the input variables to most or all of a collection of (possibly many) artificial neurons, called a \textdefnogloss{hidden layer}, which is shown for simplicity as a gray box in \autoref{fig:neural_network_wbc}. If we have \textvar{m} artificial neurons in the hidden layer, and \textvar{n} input variables, then we will have $m$ bias constants as well as $m \cdot n$ weights, one assigned to each edge connecting an input variable to a hidden layer neuron (all these edges are indicated by dashed edges in \autoref{fig:neural_network_wbc}. Our model has quickly accumulated an enormous number of parameters!
+We typically then connect all the input variables to most or all of a collection of (possibly many) artificial neurons, called a \textdefnogloss{hidden layer}, which is shown for simplicity as a gray box in \autoref{fig:neural_network_wbc}. If we have \textvar{m} artificial neurons in the hidden layer, and \textvar{n} input variables, then we will have $m$ bias constants as well as $m \cdot n$ weights, one assigned to each edge connecting an input variable to a hidden layer neuron (all these edges are indicated by dashed edges in \autoref{fig:neural_network_wbc}. Our model has quickly accumulated an enormous number of parameters!
 
 The first hidden layer of neurons may then be connected as inputs to neurons in another hidden layer, which are connected to neurons in another layer, and so on. As a result, practical neural networks may have several hidden layers with thousands of neurons, each with their own biases, input weights, and even different activation functions. The most common usage of the term \textdef{deep learning}{deep learning}{an approach that applies neural networks with multiple hidden layers to analyze datasets} refers to solving problems using many hidden layers of neurons; the discussion of the many challenges in designing neural networks for deep learning would cover an entire course much longer than this one.
 
-The remaining question is what the output of our neural network should be. If we would like to apply the network to classify our data into \textvar{k} classes, then we typically will connect the final hidden layer of neurons to \textvar{x} \textdefnogloss{output neurons}. Ideally, if we know that a data point \textvar{x} belongs to the \textvar{i}-th class, then when we use the values of its feature vector as input to the network, we would like for the \textvar{i}-th output neuron to output a value close to 1, and all other output neurons to output a value close to 0. For a neural network to correctly classify objects in our dataset, we must find such an ideal choice for the biases of each neuron and the weights assigned to input variables at each neuron --- assuming that we have decided on which activation function(s) to use for the network's neurons. We will return to this problem of parameter selection soon.\\
+The remaining question is what the output of our neural network should be. If we would like to apply the network to classify our data into \textvar{k} classes, then we typically will connect the final hidden layer of neurons to \textvar{x} \textdefnogloss{output neurons}. Ideally, if we know that a data point \textvar{x} belongs to the \textvar{i}-th class, then when we use the values of its feature vector as input to the network, we would like for the \textvar{i}-th output neuron to output a value close to 1, and all other output neurons to output a value close to 0. For a neural network to correctly classify objects in our dataset, we must find such an ideal choice for the biases of each neuron and the weights assigned to input variables at each neuron --- assuming that we have decided on which activation function(s) to use for the network's neurons. We will now define quantitatively what makes a given choice of neural network parameters suitable for classification.\\
 
 \begin{qbox}[%
 Say that a neural network has 100 input variables, three output neurons, and four hidden layers of 1000 neurons each. Say also that every neuron in one layer is connected as an input to every neuron in the next layer. How many bias parameters will this network have? How many weight parameters will this network have?
@@ -986,47 +986,44 @@ Say that a neural network has 100 input variables, three output neurons, and fou
 \phantomsection
 \subsection{Defining the best choice of parameters for a neural network}
 
-In a previous section, we discussed how to use a validation set to assess the results of a classification algorithm like k-NN on a collection of data with known classes. To generalize this idea to our neural network classifier, we divide our data with known classes into a \textdef{training set}{training set}{a subset of a dataset that is used to choose parameters for a model such as a neural network} and a \textdef{test set}{test set}{a subset of a dataset that is used, once parameters have been fixed, to identify the accuracy of a model such as a neural network}. We then seek the choice of parameters for the neural network that ``performs the best'' on the training set.
+We previously introduced cross validation to assess the results of a classification algorithm like k-NN on a collection of data with known classes. To generalize this idea to our neural network classifier, we divide our data that have known classes into a \textdef{training set}{training set}{a subset of a dataset that is used to choose parameters for a model such as a neural network} and a \textdef{test set}{test set}{a subset of a dataset that is used, once parameters have been fixed, to identify the accuracy of a model such as a neural network}, where the training set is typically much larger than the training set. We then seek the choice of parameters for the neural network that ``performs the best'' on the training set, which we will now explain.
 
-Of course, we should specify what it means for a neural network with established parameters to perform well on the training set. Each data point \textvar{x} in the training set has a ground truth classification vector $\mathbf{c}(x) = (c_1, c_2, \ldots, c_k)$, where exactly one of the $c_i$ is equal to 1 corresponding to the correct class of \textvar{x}, and the other $c_i$ are equal to 0. The data point \textvar{x} also has an output vector $\mathbf{o}(x) = (o_1, o_2, \ldots, o_k)$, where $o_i$  is the output of the \textvar{i}-th output vector in the network when \textvar{x} is used as the input data.
+Each data point \textvar{x} in the training set has a ground truth classification vector $\mathbf{c}(x) = (c_1, c_2, \ldots, c_k)$, where if \textvar{x} belongs to class \textvar{j}, then $c_j$ is equal to 1, and the other elements of $\mathbf{c}(x)$ are equal to 0. The point \textvar{x} also has an output vector $\mathbf{o}(x) = (o_1, o_2, \ldots, o_k)$, where for each \textvar{i}, $o_i$  is the output of the \textvar{i}-th output vector in the network when \textvar{x} is used as the network's input. The neural network is doing well at identifying the class of \textvar{x} when the classification vector $\mathbf{c}(x)$ is similar to the output vector $\mathbf{o}(x)$.
 
-Fortunately, we have been using a method of comparing two vectors throughout this course, namely RMSD. The RMSD between an object's classification vector and its output vector for a given neural network measures how well the network classified this data point, with a value close to 0 representing a good fit.
+Fortunately, we have been using a method of comparing two vectors throughout this book. The RMSD between an object's classification vector and its output vector for a given neural network measures how well the network classified this data point, with a value close to 0 representing a good fit. We can obtain a good measure of how well a neural network with given weight and bias parameters performs on a training set on the whole by taking the average RMSD between classification and output vectors over every element in the training set. We therefore would like to choose the biases and input weights for the neural network that minimize this average RMSD for all objects in the training set.
 
-Therefore, we can obtain a good measure of how well a neural network performs on a training set by taking the mean RMSD between classification and output vectors for every element in the training set. As a result, we have a clear problem to solve: select the input weights of each neuron in a neural net minimizing this mean RMSD for objects in the training set.
+Once we have chosen a collection of bias and weight parameters for our network that perform well on the training set, we then assess how well these parameters performs on the test set. To this end, we can insert the feature vector of each test set object \textit{x} as input into the network, and then consult the output vector $\mathbf{o}(x) = (o_1, o_2, \ldots, o_k)$ for this object. Whichever \textvar{i} maximizes $o_i$ for this output vector becomes the assigned class of \textvar{x}. We can then use metrics for quantifying the quality of a classifier such as accuracy, recall, specificity, and precision, to determine how well the neural network is performing at classifying objects from the test set.
 
-NEEDS EXAMPLE
-
-Once we have chosen a collection of weight parameters for our network that perform well on the training set, we then assess how well this choice of parameters performs on the test set that we left out initially. To this end, we can insert the feature vector of each test set object \textit{x} as input into the network, and then consult the output vector $\mathbf{o}(x) = (o_1, o_2, \ldots, o_k)$ for this object. Whichever \textvar{i} maximizes $o_i$ for this output vector is the assigned class of \textvar{x}. Now we are ready to apply what we have learned earlier in this chapter for quantifying the quality of a classifier, using metrics such as accuracy, recall, specificity, and precision, to determine how well the neural network is performing as a classifier.
-
-However, because the typical neural network has many parameters, we should be wary of the curse of dimensionality. As many a student completing a deep learning project has learned, it may be very difficult to obtain a network and parameters that perform well on the training set, and even if a model has a low mean RMSD for the training set, it may perform horribly on the test set. (The former situation is called ``underfitting'' and the latter is called ``overfitting''.)
-
-All of this discussion, however, assumes that we have already determined our network's choice of parameters to produce a low mean RMSD for our training set. But how can we find this best choice of parameters in the first place?
+This discussion has assumed that we can easily determine the best choice of network parameters to produce a low mean RMSD for the training set. But how can we find this set of parameters in the first place?
 
 \phantomsection
 \subsection{Exploring a parameter space}
 
-Every neural network contains a collection of hundreds of thousands or more input weights. We can think of each of these weight parameters as the coordinate of a very long vector in a very high-dimensional space.
+The typical neural network contains anywhere from thousands to billions of biases and input weights. We can think of these weight parameters as forming the coordinates of a long vector in a high-dimensional space. From the perspective of producing low mean RMSD between output and classification vectors over a collection of training data, the vast majority of the points in this space (i.e., choices of network parameters) are worthless. In this vast landscape, a tiny number of these parameter choices will provide a good result on our training set, and even with substantial computational resources, finding one of these points is daunting.
 
-From the perspective of producing low mean RMSD between output and classification vectors for a collection of training data, the vast majority of the points in this space (i.e., choices of weight parameters) are worthless. Among this vast infinitude, a tiny number of these points will provide a good result on our training set. Even with substantial computational resources, finding one of these points is daunting.
+The situation in which we find ourselves is remarkably similar to that of a bacterium exploring an environment with sparse food resources, or identifying the conformation of a protein having the lowest potential energy. Borrowing this idea, we would like to apply a \textit{local search} algorithm to explore the parameter space.
 
-The situation in which we find ourselves is remarkably similar to that of a bacterium exploring an environment with sparse food resources. Or identifying the conformation of a protein having the lowest potential energy.
-
-Our idea, then, is to borrow what we have learned in this course, and apply a \textit{local search} algorithm to explore the parameter space. As with \textit{ab initio} structure prediction, we could make a variety of small changes to the parameter values, and then update our current parameters to the ones producing the greatest decrease in mean RMSD between output and classification vectors. We continue this process until this mean RMSD stops decreasing. This idea serves as the foundation for the most popular approach for determining parameters for a neural network, called \textdefnogloss{gradient descent}.\\
+As with \textit{ab initio} structure prediction, we could start with a random choice of parameters, make a variety of small changes to the parameter values to obtain ``nearby'' parameter vectors, and then update our current parameters to the choice of nearby parameters that produce the greatest decrease in mean RMSD between output and classification vectors. We continue this process of making small parameter changes until this mean RMSD stops decreasing. This local search algorithm powers the most popular approach for determining parameters for a neural network, called \textdefnogloss{gradient descent}.\\
 
 \begin{qbox}[%
-How can we avoid getting stuck in a local minimum? What does a local minimum mean in the context of parameter search?
+What does a local minimum mean in the context of parameter search?
 ]\end{qbox}
 
-To avoid getting stuck in a \textit{local minimum}, we then run this local search algorithm for many different randomly chosen initial parameters. In the end, we take the choice of parameters minimizing mean RMSD over all of the different runs of gradient descent.
+Just as we run \textit{ab initio} structure prediction algorithms using many different initial protein conformations, to avoid getting stuck in a \textit{local minimum}, we run gradient descent for many different sets of randomly chosen initial parameters. In the end, we take the choice of parameters minimizing mean RMSD over all the runs of gradient descent.
 
 \phantomsection
-\subsection{Returning to Alphafold and final reflections}
+\subsection{The curse of dimensionality, Alphafold, and final reflections}
 
 AT SOME POINT, CALL BACK TO ALPHAFOLD. Critical idea here is that a neural network can be thought of a big, bulky thing that takes some things and produces others, a complicated function. We already know how to vectorize structures, so we could train a neural network to take sequences (encoded as vectors) and produce their shape vectors. What AlphaFold does is more complicated than this, involving a few different neural networks, but the idea is still the same.
 
 Even though neural networks have had successes, they are not a cure-all, and there are still many problems in which they are struggling to make in-roads. We have encountered many themes in this work, from emergent behavior from simple rules, to the power of randomness to solve practical problems, to how to explore a large, sparsely populated space, but we hope that above all, this is the largest one. Despite what we have had the time and space to present here, many aspects of biology and its intersection with computation still remain like a bacterium's world: an untouched universe waiting to be explored.
 
 %MOVE THIS DOWN
+%However, because the neural network has many bias and weight parameters, we should be wary of the curse of dimensionality. It may be difficult to obtain a network and parameters that perform well on the training set, and even if a model has a low mean RMSD for the training set, it may perform horribly on the test set. (The former situation is called ``underfitting'' and the latter is called ``overfitting''.)
+
+%Neural networks aren't a cure all and they come with their own issues.
+
+% Something about the number of parameters in the AlphaFold network (21 million). Energy usage?
 %
 %We have a huge amount of freedom when building neural networks, since we can link up neurons however we like, and since the weights of all incoming edges at each neuron are allowed to vary, as well as the activation function used at each neuron. This freedom will mean that the number of possible neural networks is incomprehensibly large, so that neural networks are very powerful, but they can also be difficult to interpret.
 
@@ -1041,67 +1038,69 @@ Even though neural networks have had successes, they are not a cure-all, and the
 \phantomsection
 \subsection{Neural networks and logical connectives}
 
-One of the strengths of artificial neurons and neural networks is that it can be shown that their output can mimic, at least approximately, any function. In the case of classification, this means that if some function $g(x_1, \ldots x_n)$ exists that does a good job of classifying data with \textvar{n} features, some neural network exists that will replicate this function: we just need to find the right set of parameters for the network.
+One of the strengths of artificial neurons and neural networks is that it can be shown that their output can mimic, at least approximately, any function. In the case of classification, this means that if some function $g(x_1, \ldots x_n)$ exists that does a good job of classifying data with \textvar{n} features, then some neural network exists that will replicate this function: we just need to find the right set of network parameters.
 
-We say that a neural network with input variables $x_1, \ldots x_n$ \textdefnogloss{represents} a function $g(x_1, \ldots, x_n)$ if for any choice of input variables $x_1$, the output of the neural network is equal to $g(x_1, \ldots, x_n)$.\\
+We say that a neural network with input variables $x_1, \ldots x_n$ \textdefnogloss{represents} a function $g(x_1, \ldots, x_n)$ if for any choice of input variables $x_1$, the output of the neural network is equal to $g(x_1, \ldots, x_n)$. We provide two exercises providing some practice on finding neural networks that represent relatively simple functions.\\
 
 \begin{exercise}[%
-Consider the function $g(x_1, x_2)$ for binary input variables $x_1$ and $x_2$ that outputs 0 when $x_1$ and $x_2$ are both equal to 1 and that outputs 1 otherwise.  Find a single perceptron that represents \textvar{g}. (The function \textvar{g} is known as a ``NAND gate'').
+Consider the function $g(x_1, x_2)$ for binary input variables $x_1$ and $x_2$ that outputs 0 only when $x_1$ and $x_2$ are both equal to 1 and that outputs 1 for other choices of $x_1$ and $x_2$. (The function \textvar{g} is known as a ``\texttt{NAND} gate'').  Find a single perceptron that represents \textvar{g}. 
 ]\end{exercise}
 
 \begin{exercise}[%
-Consider the function $g(x_1, x_2)$ for binary input variables $x_1$ and $x_2$ that outputs 1 when $x_1 \neq x_2$ and 0 when $x_1 = x_2$. It can be shown that no single perceptron represents \textvar{g}; find a neural network of perceptrons that does.
+Consider the function $g(x_1, x_2)$ for binary input variables $x_1$ and $x_2$ that outputs 1 when $x_1 \neq x_2$ and 0 when $x_1 = x_2$. (The function \textvar{g} is known as an ``\texttt{XOR} gate'').  It can be shown that no single perceptron represents \textvar{g}; find a neural network of perceptrons that represents \textvar{g}.
 ]\end{exercise}
 
 \phantomsection
-\subsection{Fun with lost cities}
+\subsection{A little fun with lost cities}
 
 \begin{exercise}[%
-Say that we have identified the locations of the following three points: $x = (-8, 1)$; $y = (7, 6)$; $z = (10, -2)$. Say also that the distances from these points to some point \textvar{w} with unknown location are as follows: $d(x, w) = 13$; $d(y, w) = 3$; $d(z, w) = 10$. Where is \textvar{w}?
+Consider the three points $x = (-8, 1)$, $y = (7, 6)$, and $z = (10, -2)$. Say that the distances from these points to some point \textvar{w} with unknown location are as follows: $d(x, w) = 13$; $d(y, w) = 3$; $d(z, w) = 10$. Where is \textvar{w}?
 ]\end{exercise}
 
 \phantomsection
 \subsection{More on the curse of dimensionality}
 
-Another aspect of the curse of dimensionality occurs when fitting a hyperplane to a collection of data. Intuitively, having a large number of features in our data (i.e., a large dimension of \textvar{n} in our feature vector) is a good thing. Yet consider the extreme case in which we have two points in two-dimensional space; \autoref{fig:curse_of_dimensionality_two_irises} shows that if we were to 
+Intuitively, having a large number of features in our data (i.e., a large dimension of \textvar{n} in our feature vector) is a good thing. Yet consider \autoref{fig:curse_of_dimensionality_two_irises}, which plots the petal width and length of two iris flowers. It would be a horrible idea to extrapolate anything from the line connecting these two points, as it indicates that these two variables are inversely coordinated, the \textit{opposite} of the true correlation that we found in \autoref{fig:iris_flowers_regression_line}.
 
-when we are attempting to fit a \textvar{d}-dimensional hyperplane to a collection of data, we need to be careful with selecting a large value of \textvar{d} if we do not have a large number of data points.\\
+This example provides another reason why we reduce the dimension of a dataset when the number of objects in our dataset is smaller than the number of features of each object. Furthermore, when fitting a \textvar{d}-dimensional hyperplane to a collection of data, we need to be careful with selecting too large of a value of \textvar{d}, especially if we do not have many data points. \\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/curse_of_dimensionality_two_irises.png}
-\caption{FILL IN}
+\caption{Petal length plotted against petal width for two flowers in the iris flower dataset. Because of random chance and small sample size, these two flowers demonstrate an inverse correlation between petal length and width, the opposite of the true correlation found in \autoref{fig:iris_flowers_regression_line}.}
 \label{fig:curse_of_dimensionality_two_irises}
 \end{figure}
 
 \begin{exercise}[%
-What is the minimum number of points that we need in three-dimensional space such that we cannot guarantee that there is a plane containing them all? Provide a conjecture as to the minimum number of points that we need in \textvar{n}-dimensional space such that we cannot guarantee that there is a \textvar{d}-dimensional hyperplane containing them all.
+What is the minimum number of points in three-dimensional space such that we cannot guarantee that there is a plane containing them all? Provide a conjecture as to the minimum number of points in \textvar{n}-dimensional space such that we cannot guarantee that there is a \textvar{d}-dimensional hyperplane containing them all.
 ]\end{exercise}
 
 \phantomsection
 \subsection{Irises and feature selection}
 
+\fudgespace
+
 \begin{exercise}[%
-The iris flower dataset has four features. Apply PCA to produce the iris flower dataset with dimension $d = 2$. Then, apply k-NN with \textvar{k} equal to 1 and cross validation with \textvar{f} equal to 10 to the resulting collection of vectors to obtain a confusion matrix. What are the accuracy, recall, specificity, and precision? How do they compare against the results of using all four iris features without dimension reduction from \autoref{fig:iris_confusion_matrix}?
+The iris flower dataset has four features. Apply PCA with $d = 2$ to reduce the dimension of this dataset. Then, apply k-NN with \textvar{k} equal to 1 and cross validation with \textvar{f} equal to 10 to the resulting vectors of reduced dimension to obtain a confusion matrix. What are the accuracy, recall, specificity, and precision? How do they compare against the results of using all four iris features from \autoref{fig:iris_confusion_matrix}?
 ]\end{exercise}
 
 \begin{exercise}[%
-Another way to reduce the dimension of a dataset is to eliminate features from the dataset. Apply k-NN with \textvar{k} equal to 1 and cross validation with \textvar{f} equal to 10 to the iris flower dataset using only the features petal width and petal length. Then, run the same classifier on your favorite two iris features to obtain a confusion matrix. How does the result compare against the results of the previous exercise (which used PCA instead of feature elimination) and \autoref{fig:iris_confusion_matrix} (which used all four features)?
+Another way to reduce the dimension of a dataset is to eliminate features from the dataset. Apply k-NN with \textvar{k} equal to 1 and cross validation with \textvar{f} equal to 10 to the iris flower dataset using only the two features petal width and petal length. Then, run the same classifier on your own choice of two iris features to obtain a confusion matrix. How do the results compare against the result of the previous exercise (which used PCA instead of feature elimination) and \autoref{fig:iris_confusion_matrix} (which used all four features)?
 ]\end{exercise}
 
-\phantomsection
-\subsection{More classification of our WBC image dataset}
-
-\begin{exercise}[%
-Add nuclear size to dataset -- call back to the main text when we mentioned this. In main text, say that we explore as an exercise?
-]\end{exercise}
-
-\begin{exercise}[%
-Yanjing's other exercise here.
-]\end{exercise}
-
-\begin{exercise}[%
-Neural network exercise on WBC image dataset.
-]\end{exercise}
+%\phantomsection
+%\subsection{More classification of our WBC image dataset}
+%
+%\begin{exercise}[%
+%Add nuclear size to dataset -- call back to the main text when we mentioned this. In main text, say that we explore as an exercise?
+%]\end{exercise}
+%
+%\begin{exercise}[%
+%Yanjing's other exercise here.
+%]\end{exercise}
+%
+%\begin{exercise}[%
+%Neural network exercise on WBC image dataset.
+%]\end{exercise}
 
