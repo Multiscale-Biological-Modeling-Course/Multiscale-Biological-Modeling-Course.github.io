@@ -252,7 +252,7 @@ Finally, we discuss the classification algorithm itself. We used k-NN because it
 
 Ultimately, obtaining even moderate classification performance is impressive given the quality and size of our data, and the fact that we only modeled the shape of each cell's nucleus. It also leads us to wonder how much better we could do. In this module's conclusion, we discuss the foundations of an approach that not only constitutes the best known solution for WBC image classification but that is taking over the world.
 
-[Next lesson (coming soon!)](){: .btn .btn--primary .btn--large}
+[Next lesson](conclusion){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
 [^Mistry]: Mistry DA, Wang JY, Moeser ME, Starkey T, Lee LYW 2021. A systematic review of the sensitivity and specificity of lateral flow devices in the detection of SARS-CoV-2. BMC Infectious Diseases 21(1):828. [Available online](https://doi.org/10.1186/s12879-021-06528-3)
