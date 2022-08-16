@@ -95,43 +95,42 @@ The remaining question is what the output of our neural network should be. If we
 
 ## Defining the best choice of parameters for a neural network
 
-In a [previous lesson](training), we discussed how to assess the results of a classification algorithm like k-NN on a collection of data with known classes. To this end, we established a subset of our data called the *validation set* and asked how well the classification algorithm performed on these data, pretending that we did not know the correct class for each data point.
+In a [previous lesson](training), we discussed how to assess the results of a classification algorithm like k-NN on a collection of data with known classes. To generalize this idea to our neural network classifier, we divide our data that have known classes into a **training set** and a **test set**, where the training set is typically much larger than the training set. We then seek the choice of parameters for the neural network that "performs the best" on the training set, which we will now explain.
 
-To generalize this idea to our neural network classifier, we divide our data with known classes into a **training set** and a **test set**. We then seek the choice of parameters that "performs the best" on the training set, ignoring the test set for the moment.
+Each data point *x* in the training set has a ground truth classification vector **c**(*x*) = (*c*<sub>1</sub>, *c*<sub>2</sub>, ..., *c*<sub>*k*</sub>),, where if *x* belongs to class *j*, then *c*<sub>*j*</sub> is equal to 1, and the other elements of **c**(*x*) are equal to 0. The point *x* also has an output vector **o**(*x*) = (*o*<sub>1</sub>, *o*<sub>2</sub>, ..., *o*<sub>*k*</sub>), where for each *i*, *o*<sub>*i*</sub> is the output of the *i*-th output vector in the network when *x* is used as the network’s input. The neural network is doing well at identifying the class of *x* when the classification vector **c**(*x*) is similar to the output vector **o**(*x*).
 
-Of course, we should specify what it means for a neural network with established parameters to perform well on the training set. Each data point *x* in the training set has a ground truth classification vector *c*(*x*) = (*c*<sub>1</sub>, *c*<sub>2</sub>, ..., *c*<sub>*k*</sub>), where exactly one of the *c*<sub>*i*</sub> is equal to 1 corresponding to the correct class of *x*, and the other *c*<sub>*i*</sub> are equal to 0. The data point *x* also has an output vector *o*(*x*) = (*o*<sub>1</sub>, *o*<sub>2</sub>, ..., *o*<sub>*k*</sub>), where *o*<sub>*i*</sub> is the output of the *i*-th output vector in the network when *x* is used as the input data.
+Fortunately, we have been using a method of comparing two vectors throughout this book. The RMSD between an object’s classification vector and its output vector for a given neural network measures how well the network classified this data point, with a value close to 0 representing a good fit. We can obtain a good measure of how well a neural network with given weight and bias parameters performs on a training set on the whole by taking the average RMSD between classification and output vectors over every element in the training set. We therefore would like to choose the biases and input weights for the neural network that minimize this average RMSD for all objects in the training set.
 
-Fortunately, we have been using a method of comparing two vectors throughout this course, namely RMSD. The RMSD between an object's classification vector and its output vector for a given neural network measures how well the network classified this data point, with a value close to 0 representing a good fit.
+Once we have chosen a collection of bias and weight parameters for our network that perform well on the training set, we then assess how well these parameters performs on the test set. To this end, we can insert the feature vector of each test set object *x* as input into the network and consult the output vector **o**(*x*). Whichever *i* maximizes *o*<sub><em>i</em></sub> for this output vector becomes the assigned class of *x*. We can then use metrics for quantifying the quality of a classifier such as accuracy, recall, specificity, and precision, to determine how well the neural network is performing at classifying objects from the test set.
 
-Therefore, we can obtain a good measure of how well a neural network performs on a training set by taking the mean RMSD between classification and output vectors for every element in the training set. As a result, we have a clear problem to solve: select the input weights of each neuron in a neural net minimizing this mean RMSD for objects in the training set.
+This discussion has assumed that we can easily determine the best choice of network parameters to produce a low mean RMSD for the training set. But how can we find this set of parameters in the first place?
 
-NEEDS EXAMPLE
+## Exploring a neural network’s parameter space
 
-Once we have chosen a collection of weight parameters for our network that perform well on the training set, we then assess how well this choice of parameters performs on the test set that we left out initially. To this end, we can insert the feature vector of each test set object *x* as input into the network, and then consult the output vector *o*(*x*) = (*o*<sub>1</sub>, *o*<sub>2</sub>, ..., *o*<sub>*k*</sub>) for this object. Whichever *i* maximizes *o*<sub>*i*</sub> for this output vector is the assigned class of *x*. Now we are ready to apply what we have learned earlier in this module for quantifying the quality of a classifier, using metrics such as accuracy, recall, specificity, and precision, to determine how well the neural network is performing as a classifier.
+The typical neural network contains anywhere from thousands to billions of biases and input weights. We can think of these weight parameters as forming the coordinates of a long vector in a high-dimensional space. From the perspective of producing low mean RMSD between output and classification vectors over a collection of training data, the vast majority of the points in this space (i.e., choices of network parameters) are worthless. In this vast landscape, a tiny number of these parameter choices will provide a good result on our training set, and even with substantial computational resources, finding one of these points is daunting.
 
-However, because the typical neural network has many parameters, we should be wary of the curse of dimensionality. As many a student completing a deep learning project has learned, it may be very difficult to obtain a network and parameters that perform well on the training set, and even if a model has a low mean RMSD for the training set, it may perform horribly on the test set. (The former situation is called "underfitting" and the latter is called "overfitting".)
+The situation in which we find ourselves is remarkably similar to those we have encountered already in this course, in which we need to explore a search space for some "best" object. We would therefore like to design a *local search* algorithm to explore the parameter space.
 
-All of this discussion, however, assumes that we have already determined our network's choice of parameters to produce a low mean RMSD for our training set. But how can we find this best choice of parameters in the first place?
+As with ab initio structure prediction, we could start with a random choice of parameters, make a variety of small changes to the parameter values to obtain a set of "nearby" parameter vectors, and update our current parameter vector to the parameter vector from this set that produces the greatest decrease in mean RMSD between output and classification vectors. We then continue this process of making small changes to the current parameter vector until this mean RMSD stops decreasing. This local search algorithm is similar to the most popular approach for determining parameters for a neural network, called **gradient descent**.
 
-## Exploring a parameter space
-
-Every neural network contains a collection of hundreds of thousands or more input weights. We can think of each of these weight parameters as the coordinate of a very long vector in a very high-dimensional space.
-
-From the perspective of producing low mean RMSD between output and classification vectors for a collection of training data, the vast majority of the points in this space (i.e., choices of weight parameters) are worthless. Among this vast infinitude, a tiny number of these points will provide a good result on our training set. Even with substantial computational resources, finding one of these points is daunting.
-
-The situation in which we find ourselves is remarkably similar to that of a bacterium exploring an environment with sparse food resources. Or identifying the conformation of a protein having the lowest potential energy.
-
-Our idea, then, is to borrow what we have learned in this course, and apply a *local search* algorithm to explore the parameter space. As with *ab initio* structure prediction, we could make a variety of small changes to the parameter values, and then update our current parameters to the ones producing the greatest decrease in mean RMSD between output and classification vectors. We continue this process until this mean RMSD stops decreasing. This idea serves as the foundation for the most popular approach for determining parameters for a neural network, called **gradient descent**.
-
-**STOP:** How can we avoid getting stuck in a local minimum? What does a local minimum mean in the context of parameter search?
+**STOP:** What does a local minimum mean in the context of neural network parameter search?
 {: .notice--primary}
 
-To avoid getting stuck in a *local minimum*, we then run this local search algorithm for many different randomly chosen initial parameters. In the end, we take the choice of parameters minimizing mean RMSD over all of the different runs of gradient descent.
-
-Whether we are classifying cellular images, predicting the structure of a protein, or modeling the exploration of a humble bacterium, local search can prove powerful. And yet despite these three problems demonstrating how biological problems can be solved with modeling, biology on the whole largely remains an untouched universe just waiting to be explored.
+Just as we run *ab initio* structure prediction algorithms using many different initial protein conformations, to avoid getting stuck in a local minimum, we run gradient descent for many different sets of randomly chosen initial parameters. In the end, we take the choice of parameters minimizing mean RMSD over all the runs of gradient descent.
 
 **Note:** If you find yourself interested in deep learning and would like to learn more, check out the excellent <a href="http://neuralnetworksanddeeplearning.com" target="_blank"><em>Neural Networks and Deep Learning</em> online book by Michael Nielsen.
 {: .notice--info}
+
+## Neural network pitfalls, Alphafold, and final reflections
+
+At the time of writing, neural networks are wildly popular, but they come with their own issues. Because we have so much freedom for how the neural network is formed, it is challenging to know a priori how to design an “architecture” for how the neurons should be connected to each other for a given problem.
+
+Once we have decided on an architecture, the neural network has so many bias and weight parameters that it may be difficult to find values for these parameters that perform even reasonably well on the training set. This situation, which is called “underfitting”, can be challenging to overcome, and companies building large neural networks are investing enormous resources into high performance computing.
+
+Even if we are able to build a neural network with a low mean RMSD for the training set, the neural network may perform horribly on the test set, which is called
+“overfitting” and offers yet another instance of the curse of dimensionality.
+
+Despite these potential concerns with building effective neural networks, they are starting to show promise of making significant progress in solving biological problems. AlphaFold, which we introduced when discussing protein folding, is powered in part by neural networks that contain 21 million parameters. Yet although AlphaFold has revolutionized the study of protein folding, just as many problems exist for which they neural networks are struggling to make progress. The study of biology and its intersection with computation still remains like the environment of a lonely bacterium: an untouched universe waiting to be explored.
 
 [^McCulloch-Pitts]: McCulloch WS, Pitts WS 1943. A Logical calculus of the ideas Immanent in nervous activity. The bulletin of mathematical biophysics (5): 115–133. [Available online](https://doi.org/10.1007/BF02478259)
 
