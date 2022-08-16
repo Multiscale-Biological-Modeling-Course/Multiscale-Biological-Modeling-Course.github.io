@@ -123,14 +123,11 @@ Just as we run *ab initio* structure prediction algorithms using many different 
 
 ## Neural network pitfalls, Alphafold, and final reflections
 
-At the time of writing, neural networks are wildly popular, but they come with their own issues. Because we have so much freedom for how the neural network is formed, it is challenging to know a priori how to design an “architecture” for how the neurons should be connected to each other for a given problem.
+Neural networks are wildly popular, but they have their own issues. Because we have so much freedom for how the neural network is formed, it is challenging to know a priori how to design an “architecture” for how the neurons should be connected to each other for a given problem.
 
-Once we have decided on an architecture, the neural network has so many bias and weight parameters that it may be difficult to find values for these parameters that perform even reasonably well on the training set. This situation, which is called “underfitting”, can be challenging to overcome, and companies building large neural networks are investing enormous resources into high performance computing.
+Once we have decided on an architecture, the neural network has so many bias and weight parameters that even with access to a supercomputer, it may be difficult to find values for these parameters that perform even reasonably well on the training set; the situation of having parameters with high RMSD for the training set is called “underfitting”. Even if we build a neural network having low mean RMSD for the training set, the neural network may perform horribly on the test set, which is called “overfitting” and offers yet another instance of the curse of dimensionality.
 
-Even if we are able to build a neural network with a low mean RMSD for the training set, the neural network may perform horribly on the test set, which is called
-“overfitting” and offers yet another instance of the curse of dimensionality.
-
-Despite these potential concerns with building effective neural networks, they are starting to show promise of making significant progress in solving biological problems. AlphaFold, which we introduced when discussing protein folding, is powered in part by neural networks that contain 21 million parameters. Yet although AlphaFold has revolutionized the study of protein folding, just as many problems exist for which they neural networks are struggling to make progress. The study of biology and its intersection with computation still remains like the environment of a lonely bacterium: an untouched universe waiting to be explored.
+Despite these potential concerns with building effective neural networks, they are starting to show promise of making significant progress in solving biological problems. AlphaFold, which we introduced when discussing protein folding, is powered by neural networks that contain 21 million parameters. Yet although AlphaFold has revolutionized the study of protein folding, just as many problems exist for which neural networks are struggling to make progress over existing methods. Ultimately, the study of biology remains like the environment of a lonely bacterium: an untouched universe waiting to be explored.
 
 [^McCulloch-Pitts]: McCulloch WS, Pitts WS 1943. A Logical calculus of the ideas Immanent in nervous activity. The bulletin of mathematical biophysics (5): 115–133. [Available online](https://doi.org/10.1007/BF02478259)
 
