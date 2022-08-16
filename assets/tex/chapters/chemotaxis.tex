@@ -363,7 +363,7 @@ Earlier in this chapter, we showed an example in which a system with 10,000 free
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.63\textwidth]{../images/chemotaxis_tutorial4_ssa_vscode.png}
+\includegraphics[width = 0.8\textwidth]{../images/chemotaxis_tutorial4_ssa_vscode.png}
 \caption{A concentration plot over time for ligand-receptor dynamics via a simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in $\text{molecules}/\text{µm}^\text{3}$) on the y-axis. The concentrations reach a steady state at the end of the simulation that matches the concentrations identified by hand.}
 \label{fig:chemotaxis_tutorial4_ssa}
 \end{figure}
@@ -432,9 +432,9 @@ Once we have built this model, we would like to see what happens when we \textit
 \begin{figure}[hp]
 \centering
 \mySfFamily
-\includegraphics[width = 0.5\textwidth]{../images/chemotaxis_tutorial5_vscode.png}\\[3ex]
-\includegraphics[width = 0.5\textwidth]{../images/chemotaxis_tutorial6_vscode.png}\\[3ex]
-\includegraphics[width = 0.5\textwidth]{../images/chemotaxis_tutorial7_vscode.png}
+\includegraphics[width = 0.65\textwidth]{../images/chemotaxis_tutorial5_vscode.png}\\[1ex]
+\includegraphics[width = 0.65\textwidth]{../images/chemotaxis_tutorial6_vscode.png}\\[1ex]
+\includegraphics[width = 0.65\textwidth]{../images/chemotaxis_tutorial7_vscode.png}
 \caption{Molecular concentrations over time (in seconds) in a chemotaxis simulation for three different initial unbound attractant ligand concentrations: no attractant ligand (top), 5,000 ligand particles (middle), and 100,000 ligand particles (bottom). Note that the simulated cell's bound ligand concentration (green) achieves equilibrium very quickly in each case.}
 \label{fig:chemotaxis_concentrations}
 \end{figure}
@@ -517,28 +517,29 @@ We will not bog down the text with a full specification of all the rules needed 
 \phantomsection
 \subsection{Bacterial tumbling is robust to large sudden changes in attractant concentration}
 
-In \autoref{fig:chemotaxis_tutorial_adaptation}, we plot the concentration over time of each molecule for different values of $l_0$, the initial concentration of ligand. From what we have learned about \textit{E. coli}, we should see the concentration of phosphorylated CheY (and therefore the bacterium's tumbling frequency) drop before returning to its original equilibrium. But will our simulation capture this behavior?
+We will now plot the concentration over time of each molecule for different values of $l_0$, the initial concentration of ligand. From what we have learned about \textit{E. coli}, we should see the concentration of phosphorylated CheY (and therefore the bacterium's tumbling frequency) drop before returning to its original equilibrium. But will our simulation capture this behavior?
 
-In \autoref{fig:chemotaxis_tutorial_adaptation} (first panel), we add a relatively small amount of attractant, setting $l_0$ equal to 100,000. The system returns so quickly to an equilibrium in phosphorylated CheY that it is difficult to imagine that the attractant has had any effect on tumbling frequency.
+In \autoref{fig:chemotaxis_tutorial_adaptation} (top), we add a relatively small amount of attractant, setting $l_0$ equal to 100,000. The system returns so quickly to an equilibrium in phosphorylated CheY that it is difficult to imagine that the attractant has had any effect on tumbling frequency.
 
 \begin{figure}[p]
 \centering
 \mySfFamily
-\includegraphics[width = 0.65\textwidth]{../images/chemotaxis_tutorial_oneadd1e4_vscode.png}\\[2ex]
-\includegraphics[width = 0.65\textwidth]{../images/chemotaxis_tutorial_oneadd1e6_vscode.png}\\[2ex]
-\includegraphics[width = 0.65\textwidth]{../images/chemotaxis_tutorial_oneadd1e8_vscode.png}
-\caption{Molecular concentrations over time (in seconds) in a chemotaxis simulation for a variety of initial attractant ligand particle numbers: 10,000 (first panel), 1,000,000 (second panel), and 100,000,000 (third panel). initial attractant ligand particles. Phosphorylated CheY, our metric for tumbling frequency, is shown in orange.}
+\includegraphics[width = 0.42\textwidth]{../images/chemotaxis_tutorial_oneadd1e4_vscode.png}\\[1ex]
+\includegraphics[width = 0.42\textwidth]{../images/chemotaxis_tutorial_oneadd1e6_vscode.png}\\[1ex]
+\includegraphics[width = 0.42\textwidth]{../images/chemotaxis_tutorial_oneadd1e8_vscode.png}
+\caption{Molecular concentrations over time (in seconds) in a chemotaxis simulation for a variety of initial attractant ligand particle numbers: 10,000 (top), 1,000,000 (middle), and 100,000,000 (bottom). initial attractant ligand particles. Phosphorylated CheY, our metric for tumbling frequency, is shown in orange.}
 \label{fig:chemotaxis_tutorial_adaptation}
 \end{figure}
 
-When we increase $l_0$ to 1 million, the initial drop is more pronounced, but the system returns  to equilibrium in a couple of minutes. Note how much higher the concentration of methylated receptors are in the second panel compared to the first panel of \autoref{fig:chemotaxis_tutorial_adaptation}; however, there are still a significant concentration of receptors with low methylation, indicating that the system may be able to handle an even larger jolt of attractant.
+When we increase $l_0$ to 1 million (\autoref{fig:chemotaxis_tutorial_adaptation} (middle)), the initial drop is more pronounced, but the system returns  to equilibrium in a couple of minutes. Note how much higher the concentration of methylated receptors are compared to the top panel; however, there are still a significant concentration of receptors with low methylation, indicating that the system may be able to handle an even larger jolt of attractant.
 
-When we set $l_0$ equal to 100 million, we give the system this bigger jolt. Once again, the model returns to its previous CheY equilibrium after a few minutes, despite the steepest initial drop yet in the concentration of phosphorylated CheY (\autoref{fig:chemotaxis_tutorial_adaptation} (third panel)).
+When we set $l_0$ equal to 100 million, we give the system this bigger jolt. Once again, the model returns to its previous CheY equilibrium after a few minutes, despite the steepest initial drop yet in the concentration of phosphorylated CheY (\autoref{fig:chemotaxis_tutorial_adaptation} (bottom)).
 
 Our model, which is built on real reaction rate parameters, provides compelling evidence that the \textit{E. coli} chemotaxis system is robust to changes in its environment across several orders of magnitude of attractant concentration. This robustness has been observed in real bacteria and replicated by other computational simulations.
 
 Aren't bacteria magnificent?
 
+\FloatBarrier
 \phantomsection
 \subsection{Traveling up an attractant gradient}
 
@@ -557,7 +558,7 @@ To model a ligand concentration $[L]$ that is increasing exponentially, we will 
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_addition01_vscode.png}
-\caption{Plots of molecular concentrations over time (in seconds) when the concentration of ligand grows exponentially with $\textvar{l}_\text{0} = \text{1000}$ and $\textvar{k} = \text{0.1}$. The concentration of bound ligand (blue) quickly hits saturation, which causes a minimum in phosphorylated CheY (and therefore a low tumbling frequency). In response, the cell increases the methylation of receptors, which increases the concentration of phosphorylated CheY (orange) back to equilibrium.}
+\caption{A plot of molecular concentrations over time (in seconds) when the concentration of ligand grows exponentially with $\textvar{l}_\text{0} = \text{1000}$ and $\textvar{k} = \text{0.1}$. The concentration of bound ligand (blue) quickly hits saturation, which causes a minimum in phosphorylated CheY (and therefore a low tumbling frequency). In response, the cell increases the methylation of receptors, which increases the concentration of phosphorylated CheY (orange) back to equilibrium.}
 \label{fig:chemotaxis_tutorial_addition01}
 \end{figure}
 
@@ -649,18 +650,18 @@ $\min\left(\max(t_0 \cdot (1 + 10 \cdot \Delta [L]), c), 4 \cdot t_0\right)$\,,
 What is the mean run duration when $\Delta\text{[}L\text{]}$ is equal to zero? Is this what we would hope?
 ]\end{qbox}
 
-As with the first strategy, our simulated cell will alternate between tumbling and running in a random direction until the total time devoted to the simulation has elapsed. The \textit{only} difference in the second strategy is that we will measure the percentage change in concentration $\Delta [L]$ between a cell's current point and its previous point every $t_{\text{response}}$ seconds. After determining a mean run time according to the expression above, we will sample a random number $p$ from an exponential distribution with this mean run time, and the cell will tumble after $p$ seconds if $p$ is smaller than $t_{\text{response}}$.\tutorial[chemotaxis/tutorial_gradient]
+As with the first strategy, our simulated cell alternates between tumbling and running in a random direction until the total time devoted to the simulation has elapsed. The \textit{only} difference in the second strategy is that we will measure the percentage change in concentration $\Delta [L]$ between a cell's current point and its previous point every $t_{\text{response}}$ seconds. After determining a mean run time according to the expression above, we will sample a random number $p$ from an exponential distribution with this mean run time, and the cell will tumble after $p$ seconds if $p$ is smaller than $t_{\text{response}}$.\tutorial[chemotaxis/tutorial_gradient]
 
 \FloatBarrier
 \phantomsection
 \subsection{Comparing the effectiveness of our two random walk strategies}
 
-\autoref{fig:chemotaxis_traj_compare_uniform} visualizes the trajectories of three cells over 500 seconds using strategy 1 (left) and strategy 2 (right) with a default tumbling frequency $t_0$ of one second. Unlike the cells following strategy 1, the cells following strategy 2 quickly hone in on the goal and remain near it.\\
+\autoref{fig:chemotaxis_traj_compare_uniform} visualizes the trajectories of three cells over 500 seconds using strategy 1 (left) and strategy 2 (right) with a default tumbling frequency $t_0$ of one second. Unlike the cells following strategy 1, the cells following strategy 2 quickly hone in on the goal and remain near it.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_traj_compare_uniform.png}
+\includegraphics[width = 0.72\textwidth]{../images/chemotaxis_traj_compare_uniform.png}
 \caption{Three sample trajectories for the standard random walk strategy (left) and chemotactic random walk strategy (right) with a default tumbling frequency of one second. Redder regions correspond to higher concentrations of ligand, with a goal having maximum concentration at the point $(\text{1,500}, \text{1,500})$, which is indicated with a blue square. Each particle's walk is colored from darker to lighter colors across the time frame of its trajectory.}
 \label{fig:chemotaxis_traj_compare_uniform}
 \end{figure}
@@ -683,7 +684,7 @@ A tiny change to a simple, unsuccessful randomized algorithm can therefore produ
 \phantomsection
 \subsection{Why is background tumbling frequency constant across bacterial species?}
 
-\autoref{fig:chemotaxis_traj_low_high_tumbling} shows three trajectories for two different values of $t_0$ in a simulation that lasts for 800 seconds. When $t_0$ is equal to 0.2 seconds, the simulated bacteria are not able to walk far enough in a single step to head toward the goal (\autoref{fig:chemotaxis_traj_low_high_tumbling} (left)). If we increase $t_0$ to 5.0 seconds, then the particles run for so long that they may run past the goal without being able to apply the brakes by tumbling (\autoref{fig:chemotaxis_traj_low_high_tumbling} (right)). When we set $t_0$ equal to 1.0, we obtain the trajectories from \autoref{fig:chemotaxis_traj_compare_uniform} (right), exhibiting a ``Goldilocks'' effect in which the simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it there.\\
+\autoref{fig:chemotaxis_traj_low_high_tumbling} shows three trajectories for two different values of $t_0$ in a simulation that lasts for 800 seconds. When $t_0$ is equal to 0.2 seconds, the simulated bacteria are not able to walk far enough in a single step to head toward the goal (\autoref{fig:chemotaxis_traj_low_high_tumbling} (left)).\\
 
 \begin{figure}[h]
 \centering
@@ -695,6 +696,8 @@ A tiny change to a simple, unsuccessful randomized algorithm can therefore produ
 \caption{Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average run time between tumbles $\textvar{t}_\text{0}$ of 0.2 seconds (left) and 5.0 seconds (right).}
 \label{fig:chemotaxis_traj_low_high_tumbling}
 \end{figure}
+
+ If we increase $t_0$ to 5.0 seconds, then the particles run for so long that they may run past the goal without being able to apply the brakes by tumbling (\autoref{fig:chemotaxis_traj_low_high_tumbling} (right)). When we set $t_0$ equal to 1.0, we obtain the trajectories from \autoref{fig:chemotaxis_traj_compare_uniform} (right), exhibiting a ``Goldilocks'' effect in which the simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it there.
 
 \autoref{fig:chemotaxis_performance_uniform} visualizes average particle distance to the goal over time for 500 particles using a variety of choices of $t_0$. It confirms that tumbling every second by default is ``just right'' for finding an attractant.\\
 
