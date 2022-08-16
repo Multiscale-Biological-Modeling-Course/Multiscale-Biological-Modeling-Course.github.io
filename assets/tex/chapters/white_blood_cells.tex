@@ -894,14 +894,14 @@ Ultimately, obtaining even moderate classification performance is impressive giv
 \phantomsection
 \subsection{A brief introduction to artificial neurons}
 
-The best known classification algorithms for WBC image analysis use a technique called ``deep learning''. You have probably seen this term wielded with reverence, and so in this chapter's conclusion, we will briefly explain what it means and how it could be applied to classification.
+The best known classification algorithms for WBC image analysis use a technique called ``deep learning''. You have probably seen this term wielded with reverence, and so in this chapter's conclusion, we will briefly explain what it means and how it can be applied to classification.
 
 \textdef{Neurons}{neuron}{a cell in the nervous system that is electrically charged and that uses this charge as a method of communication to other neurons} are cells in the nervous system that are electrically charged and that use this charge as a method of communication to other cells (\autoref{fig:components_of_neuron}). As you are reading this text, huge numbers of neurons are firing in your brain as it processes the visual information that it receives.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.8\textwidth]{../images/components_of_neuron.png}\\[4ex]
+\includegraphics[width = 0.7\textwidth]{../images/components_of_neuron.png}\\[4ex]
 \caption{The components of a neuron. Electrical signals are passed down axons and exchanged at terminal boundaries between neurons.}
 \label{fig:components_of_neuron}
 \end{figure}
@@ -936,8 +936,6 @@ A McCulloch-Pitts neuron is a perceptron for which all the $w_i$ are equal to 1.
 
 Modern artificial neurons (\autoref{fig:activation_function}) generalize the perceptron further in two ways. First, the input variables $x_i$ can have arbitrary decimal values (often, these inputs are constrained to be between 0 and 1). Second, rather than the neuron rigidly outputting 1 when $w_1 \cdot x_1 + w_2 \cdot x_2 + \cdots + w_n \cdot x_n$ is greater than or equal to \textvar{b}, we subtract \textvar{b} from the weighted sum and pass the resulting value into a function \textvar{f} called an \textdef{activation function}{activation function}{a function that takes as input a weighted average of input variables in an artificial neuron and whose output is the neuron's output}; that is, the neuron outputs $f(w_1 \cdot x_1 + w_2 \cdot x_2 + \cdots + w_n \cdot x_n - b)$. In this form of the neuron, \textvar{b} is called the \textdefnogloss{bias} of the neuron.
 
-A commonly used activation function is the \textdefnogloss{logistic function}, $f(x) = 1/(1+e^{-x})$, shown in \autoref{fig:logistic_function}. Note that the output of this function ranges between 0 (when its input is very negative) and 1 (when its input is very positive).\\
-
 \begin{figure}[h]
 \centering
 \mySfFamily
@@ -945,6 +943,10 @@ A commonly used activation function is the \textdefnogloss{logistic function}, $
 \caption{A general form of an artificial neuron for two input variables $\textvar{x}_\text{1}$ and $\textvar{x}_\text{2}$, two constant weights $\textvar{w}_\text{1}$ and $\textvar{w}_\text{2}$, a bias \textvar{b}, and an activation function \textvar{f}. The output of the neuron, rather than being strictly 0 or 1, is $\textvar{f}(\textvar{w}_\text{1} \cdot \textvar{x}_\text{1} + \textvar{w}_\text{2} \cdot \textvar{x}_\text{2} - b)$.}
 \label{fig:activation_function}
 \end{figure}
+
+A commonly used activation function is the \textdefnogloss{logistic function}, $f(x) = 1/(1+e^{-x})$, shown in \autoref{fig:logistic_function}. Note that the output of this function ranges between 0 (when its input is very negative) and 1 (when its input is very positive).\\
+
+
 
 \begin{figure}[h]
 \centering
@@ -973,7 +975,7 @@ The outputs of mathematical functions can be used as inputs to other functions v
 
 We have discussed converting each object \textvar{x} in a dataset (such as our WBC image dataset) into a feature vector $(x_1, x_2, \ldots, x_n)$ representing each of the \textvar{n} feature values of \textvar{x}. In \autoref{fig:neural_network_wbc}, these \textvar{n} variables of the data's feature vectors become the \textvar{n} input variables of the neural network.
 
-We typically then connect all the input variables to most or all of a collection of (possibly many) artificial neurons, called a \textdefnogloss{hidden layer}, which is shown for simplicity as a gray box in \autoref{fig:neural_network_wbc}. If we have \textvar{m} artificial neurons in the hidden layer, and \textvar{n} input variables, then we will have $m$ bias constants as well as $m \cdot n$ weights, one assigned to each edge connecting an input variable to a hidden layer neuron (all these edges are indicated by dashed edges in \autoref{fig:neural_network_wbc}. Our model has quickly accumulated an enormous number of parameters!
+We typically then connect all the input variables to most or all of a collection of (possibly many) artificial neurons, called a \textdefnogloss{hidden layer}, which is shown for simplicity as a gray box in \autoref{fig:neural_network_wbc}. If we have \textvar{m} artificial neurons in the hidden layer, and \textvar{n} input variables, then we will have $m$ bias constants as well as $m \cdot n$ weights, one assigned to each edge connecting an input variable to a hidden layer neuron (all these edges are indicated by dashed edges in \autoref{fig:neural_network_wbc}). Our model has quickly accumulated an enormous number of parameters!
 
 The first hidden layer of neurons may then be connected as inputs to neurons in another hidden layer, which are connected to neurons in another layer, and so on. As a result, practical neural networks may have several hidden layers with thousands of neurons, each with their own biases, input weights, and even different activation functions. The most common usage of the term \textdef{deep learning}{deep learning}{an approach that applies neural networks with multiple hidden layers to analyze datasets} refers to solving problems using many hidden layers of neurons; the discussion of the many challenges in designing neural networks for deep learning would cover an entire course much longer than this one.
 
@@ -1085,7 +1087,7 @@ Another way to reduce the dimension of a dataset is to eliminate features from t
 \phantomsection
 \subsection{More classification of our WBC image dataset}
 
-The following exercises allow us to explore making changes to our WBC image classifier. For each such exercise, you should form a confusion matrix and compare your results against those in \autoref{fig:wbc_cellorganizer}.  For more details on running these exercises, please consult the \href{http://biologicalmodeling.org}{\textit{Biological Modeling} website}.\\
+The following exercises allow us to explore making changes to our WBC image classifier. For each such exercise, you should form a confusion matrix and compare your results against those in \autoref{fig:wbc_cellorganizer}.  For more details on running these exercises, please consult the \href{https://biologicalmodeling.org/white_blood_cells/conclusion}{\textit{Biological Modeling} website}.\\
 
 \begin{exercise}[
 In the main text, we mentioned that lymphocytes are much smaller than monocytes and granulocytes. Add a parameter corresponding to the size of a nucleus to the WBC image shape space vectors after applying PCA with \textvar{d} = 10. Then, apply k-NN with \textvar{k} equal to 1 and \textvar{f} equal to 10 to produce a confusion matrix. (Why do you think that we asked you to add the nuclear size as a parameter after applying PCA?)

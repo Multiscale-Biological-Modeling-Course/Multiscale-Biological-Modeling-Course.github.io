@@ -23,7 +23,7 @@ gallery:
 
 ## A brief introduction to artificial neurons
 
-The best known classification algorithms for WBC image analysis[^Habibzadeh_2018] use a technique called **deep learning**. You have probably seen this term wielded with reverence, and so in this chapter's conclusion, we will briefly explain what it means and how it could be applied to classification.
+The best known classification algorithms for WBC image analysis[^Habibzadeh_2018] use a technique called **deep learning**. You have probably seen this term wielded with reverence, and so in this chapter's conclusion, we will briefly explain what it means and how it can be applied to classification.
 
 **Neurons** are cells in the nervous system that are electrically charged and that use this charge as a method of communication to other cells. As you are reading this text, huge numbers of neurons are firing in your brain as it processes the visual information that it receives. The basic structure of a neuron is shown in the figure below.
 
@@ -70,31 +70,28 @@ A commonly used activation function is the **logistic function**, *f*(*x*) = 1/(
 	<figcaption>A plot of the logistic function <em>f</em>(<em>x</em>) = 1/(1 + <em>e</em><sup>-<em>x</em></sup>), an increasing function whose values range between 0 and 1.</figcaption>
 </figure>
 
-**STOP:** What is the activation function used by a perceptron?
+**STOP:** Because of its simplicity, researchers now often use a "rectifier" function: *f*(*x*) = max(0, *x*). What does the graph of this function look like? What is the activation function used by a perceptron, and how does it differ from the rectifier function?
 {: .notice--primary}
 
 ## Framing a classification problem using neural networks
 
-The outputs of mathematical functions can be used as inputs to other functions via function composition. For example, if *f*(*x*) = 2*x*-1, *g*(*x*) = *e*<sup>*x*</sup>, and *h*(*x*) = cos(*x*), then *h*(*g*(*f*(*x*))) = cos(*e*<sup>2*x*-1</sup>). Similarly, the outputs of artificial neurons can be used as inputs to other neurons with (possibly) different weights and activation functions. Linking neurons together in this way produces a **neural network** such as the one shown in the figure below.
-
-INSERT FIGURE
-
-We have a huge amount of freedom when building neural networks, since we can link up neurons however we like, and since the weights of all incoming edges at each neuron are allowed to vary, as well as the activation function used at each neuron. This freedom will mean that the number of possible neural networks is incomprehensibly large, so that neural networks are very powerful, but they can also be difficult to interpret.
-
-The question is how to use neural networks to solve a classification problem involving real data. Earlier in this module, we discussed converting each data point *x* into a *feature vector* (*x*<sub>1</sub>, *x*<sub>2</sub>, …, *x*<sub>*n*</sub>) representing each of the *n* feature values of *x*. As a result, these *n* variables of the data's feature vectors become the *n* input variables of a neural network.
-
-The most typical design of a neural network for classification is then to connect all of the input variables into each one of a collection of (possibly many) artificial neurons, called a **hidden layer**. These neurons may then be connected in some combination to neurons in another layer, which are connected to neurons in another layer, and so on. As a result, many practical neural networks may have several hidden layers amounting to thousands of neurons, each with their own input weights and possibly different activation functions. The most common usage of the term **deep learning** refers to solving problems using many hidden layers of neurons; the discussion of the many pitfalls in designing neural networks for deep learning would cover an entire course much longer than this one.
-
-The remaining question is what the output of our neural network should be. If we are classifying our data into *k* classes, then we typically would like to connect the final hidden layer of neurons to *k* **output neurons**. Ideally, if we plug in the values of the feature vector for a given data point *x* that we know belongs to the *i*-th class, then we would like for the *i*-th output neuron to output a value close to 1, and all other output neurons to output a value close to 0.
-
-A potential neural network model is illustrated in the figure below for our example of categorizing WBC images into three classes. Because the number of nodes and edges in a real network is enormous, this figure uses gray boxes to indicate layers containing potentially many hidden neurons, as well as dashed edges to represent connecting many (if not all) nodes in one layer to each of the nodes in the next layer.
+The outputs of mathematical functions can be used as inputs to other functions via function composition. For example, if *f*(*x*) = 2*x*-1, *g*(*x*) = *e*<sup>*x*</sup>, and *h*(*x*) = cos(*x*), then *h*(*g*(*f*(*x*))) = cos(*e*<sup>2*x*-1</sup>). Similarly, we can use artificial neurons as building blocks by linking them together, with the outputs of some neurons serving as inputs to other neurons. Linking neurons together in this way produces a **neural network** such as the one shown in the figure below, which we will take time to explain.
 
 <figure>
 	<a href="../assets/images/600px/neural_network_wbc.png"><img src="../assets/images/neural_network_wbc.png"></a>
-	<figcaption>An illustration of a potential neural network used for WBC image classification. This network assumes that each WBC is represented by <em>n</em> features, which serve as the input variables for the network. A number of hidden layers of additional neurons may be used, with connections between some of the neurons in adjacent layers. A final output layer of three neurons corresponds to each of the three WBC classes; our hope is that the weights of the neurons in the network are chosen so that the appropriate neuron outputs a value close to 1 corresponding to an image's class, and that the other two neurons output values close to 0.</figcaption>
+	<figcaption>An illustration of a potential neural network used for WBC image classification. This network assumes that each WBC is represented by *n* features, which serve as the input variables for the network. A number of hidden layers of additional neurons may be used, with connections between some of the neurons in adjacent layers. A final output layer of three neurons corresponds to each of the three WBC classes; our hope is that the weights of the neurons in the network are chosen so that the appropriate neuron outputs a value close to 1 corresponding to an image’s class, and that the other two neurons output values close to 0.</figcaption>
 </figure>
 
-For such a neural network to classify objects in our dataset, we must find the "best" choices for the weights assigned to input variables at each neuron, assuming that we have decided on which activation function(s) to use for the network's neurons. A network may have hundreds of thousands of these input weights, and for a given application it will be initially unclear which weights to use to produce the magic output in which an object belonging to the *i*-th class produces an output close to 1 for the *i*-th output neuron (and an output close to 0) for other neurons.
+We have discussed converting each object *x* in a dataset (such as our WBC image dataset) into a *feature vector* (*x*<sub>1</sub>, *x*<sub>2</sub>, …, *x*<sub>*n*</sub>) representing each of the *n* feature values of *x*. In the figure above, these n variables of the data’s feature vectors become the *n* input variables of the neural network.
+
+We typically then connect all the input variables to most or all of a collection of (possibly many) artificial neurons, called a **hidden layer**, which is shown for simplicity as a gray box in the figure above. If we have *m* artificial neurons in the hidden layer, and *n* input variables, then we will have *m* bias constants as well as *m* · *n* weights, one assigned to each edge connecting an input variable to a hidden layer neuron (all these edges are indicated by dashed edges in the figure above). Our model has quickly accumulated an enormous number of parameters!
+
+The first hidden layer of neurons may then be connected as inputs to neurons in another hidden layer, which are connected to neurons in another layer, and so on. As a result, practical neural networks may have several hidden layers with thousands of neurons, each with their own biases, input weights, and even different activation functions. The most common usage of the term **deep learning** refers to solving problems using many hidden layers of neurons; the discussion of the many challenges in designing neural networks for deep learning would cover an entire course much longer than this one.
+
+The remaining question is what the output of our neural network should be. If we would like to apply the network to classify our data into *k* classes, then we typically will connect the final hidden layer of neurons to *x* **output neurons**. Ideally, if we know that a data point *x* belongs to the *i*-th class, then when we use the values of its feature vector as input to the network, we would like for the *i*-th output neuron to output a value close to 1, and all other output neurons to output a value close to 0. For a neural network to correctly classify objects in our dataset, we must find such an ideal choice for the biases of each neuron and the weights assigned to input variables at each neuron — assuming that we have decided on which activation function(s) to use for the network’s neurons. We will now define quantitatively what makes a given choice of neural network parameters suitable for classification.
+
+**STOP:** Say that a neural network has 100 input variables, three output neurons, and four hidden layers of 1000 neurons each. Say also that every neuron in one layer is connected as an input to every neuron in the next layer. How many bias parameters will this network have? How many weight parameters will this network have?
+{: .notice--primary}
 
 ## Defining the best choice of parameters for a neural network
 
