@@ -138,3 +138,6 @@ Despite these potential concerns with building effective neural networks, they a
 ## Thank you!
 
 If you are reading this, and you've made it through our entire course, **thank you** for joining us on this journey! We are grateful that you gave your time to us, and we wish you the best on your educational journey. Please don't hesitate to [contact us](../contact) if you have any questions, feedback, or would like to leave us a testimonial; we would love to hear from you.
+
+[Visit exercises](exercises){: .btn .btn--success .btn--large}
+{: style="font-size: 100%; text-align: center;"}
