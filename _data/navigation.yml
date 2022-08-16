@@ -195,8 +195,10 @@ white_blood_cells:
         url: /white_blood_cells/shape_space
       - title: "Principal components analysis<br><br>"
         url: /white_blood_cells/pca
-      - title: "Classifying white blood cell images"
+      - title: "Classifying white blood cell images"<br><br>
         url: /white_blood_cells/training
+      - title: "Conclusion: toward deep learning"
+        url: /white_blood_cells/conclusion
   - title: Software Tutorials (featuring CellOrganizer)
     children:
       - title: "Segmenting nuclei from cellular images<br><br>"
@@ -205,3 +207,7 @@ white_blood_cells:
         url: /white_blood_cells/tutorial_shape_space
       - title: "Training a classifier on an image shape space<br><br>"
         url: /white_blood_cells/tutorial_image_classification
+  - title: "Exercises"
+    children:
+      - title: "Classification and image analysis exercises<br><br>"
+        url: /white_blood_cells/exercises
