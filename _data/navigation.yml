@@ -195,7 +195,7 @@ white_blood_cells:
         url: /white_blood_cells/shape_space
       - title: "Principal components analysis<br><br>"
         url: /white_blood_cells/pca
-      - title: "Classifying white blood cell images"<br><br>
+      - title: "Classifying white blood cell images<br><br>"
         url: /white_blood_cells/training
       - title: "Conclusion: toward deep learning"
         url: /white_blood_cells/conclusion
