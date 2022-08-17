@@ -695,7 +695,6 @@ The RMSD values for the models predicted by Rosetta@Home are shown in \autoref{f
 
 The inability of even powerful models to obtain an accurate predicted structure may make it seem that protein structure prediction is a lost cause. Perhaps biochemists should head back to expensive experimental validations and ignore the musings of computational scientists. In the next section, which serves as the midpoint of this chapter, we will find hope.\\
 
-\FloatBarrier
 \phantomsection
 
 \section{Intermezzo: Protein Structure Prediction is Solved?}
@@ -712,7 +711,7 @@ In 2020, the 14th iteration of this contest (CASP14) was won in a landslide. The
 
 Instead of using RMSD, CASP scores a predicted structure against a known structure using the \textdefnogloss{global distance test (GDT)}. We first ask, ``How many corresponding alpha carbons are close to each other in the two structures?'' To answer this question, we take the percentage of corresponding alpha carbon positions having distance apart that is at most equal to some threshold \textit{t}. The GDT score averages the percentages obtained when \textit{t} is equal to each of 1, 2, 4, and 8 angstroms. A GDT score of 90\% is considered good, and a score of GDT 95\% is considered excellent (i.e., comparable to minor errors resulting from experimentation).
 
-We will show a few plots to illustrate the decisiveness of AlphaFold's CASP14 victory. In \autoref{fig:AlphaFold2_BAKER_Zhang} (top), we compare the GDT scores of AlphaFold against the second-place algorithm (a product of David Baker's laboratory, which developed the Robetta and Rosetta@Home software that we encountered in this chapter). We can appreciate the size of this margin of victory if we compare it against the difference between the second and third place competitors (\autoref{fig:AlphaFold2_BAKER_Zhang} (bottom)).
+We will show a few plots to illustrate the decisiveness of AlphaFold's CASP14 victory. In \autoref{fig:AlphaFold2_BAKER_Zhang} (top), we compare the GDT scores of AlphaFold against the second-place algorithm (a product of David Baker's laboratory, which developed the Robetta and Rosetta@Home software that we encountered in this chapter). We can appreciate the size of this margin of victory if we compare it against the difference between the second and third place competitors (\autoref{fig:AlphaFold2_BAKER_Zhang} (bottom)).\\
 
 \begin{figure}[h]
 	\centering
@@ -1001,7 +1000,7 @@ We will introduce GNMs using our old friend human hemoglobin (PDB entry: \href{h
 
 The alpha carbons in a protein are subject to random fluctuations that cause them to move from their equilibrium positions. These fluctuations are \textit{Gaussian}, meaning that the alpha carbon can deviate randomly from its equilibrium position according to a normal (bell-shaped) distribution. In other words, although an alpha carbon's position is due to random chance, it is more likely to be near the equilibrium than far away.
 
-As illustrated in \autoref{fig:gaussian_fluctuations} (right), the equilibrium position of node \textvar{i} is represented by the vector $\mathbf{R_i^0}$, and its position at a given point in time is denoted by the (variable) vector $ \mathbf{\Delta R_i}$. The distance between node \textvar{i} and node \textvar{j} at equilibrium is denoted by the vector $\mathbf{R_{ij}^0}$, which is equal to $\mathbf{R_j^0} - \mathbf{R_i^0}$; at a given point in time, this distance becomes the variable vector $\mathbf{R_{ij}}$.\\
+As illustrated in \autoref{fig:gaussian_fluctuations} (right), the equilibrium position of node \textvar{i} is represented by the vector $\mathbf{R_i^0}$, and its position at a given point in time is denoted by the (variable) vector $ \mathbf{\Delta R_i}$. The distance between node \textvar{i} and node \textvar{j} at equilibrium is denoted by the vector $\mathbf{R_{ij}^0}$, which is equal to $\mathbf{R_j^0} - \mathbf{R_i^0}$; at a given point in time, this distance becomes the variable vector $\mathbf{R_{ij}}$.
 
 \begin{figure}[h]
 	\centering
@@ -1016,7 +1015,6 @@ As illustrated in \autoref{fig:gaussian_fluctuations} (right), the equilibrium p
 
 Although atomic fluctuations are powered by randomness, the movements of protein atoms are heavily correlated. For example, imagine the simple case in which all of a protein's alpha carbons are connected in a straight line. If we pull the first alpha carbon away from the center of the protein, then the second alpha carbon will be pulled along with it, and the movements of these two alpha carbons will be directly correlated. Our goal is to understand how the movements of \textit{every} pair of alpha carbons may be related.
 
-\FloatBarrier
 \phantomsection
 \subsection{Inner products and cross-correlations}
 
@@ -1042,7 +1040,7 @@ $ C_{ij} = \dfrac{\langle \mathbf{\Delta R_i}, \mathbf{\Delta R_j} \rangle}{\sqr
 
 After normalization, the cross-correlation ranges from -1 to 1. A cross-correlation of -1 means that the two alpha carbons' movements are completely anti-correlated, and a cross-correlation of 1 means that their movements are completely correlated.
 
-After computing the cross-correlation of every pair of alpha carbons in a protein structure with \textvar{n} residues, we obtain an $\textvar{n} \times \textvar{n}$ \textdefnogloss{cross-correlation matrix} \textvar{C} such that \textvar{C}(\textvar{i}, \textvar{j}) is the cross-correlation between amino acids \textvar{i} and \textvar{j}. We can visualize this matrix using a \textdefnogloss{heat map}, in which we color matrix values along a spectrum from blue ($-1$) to red (1). The heat map for the cross-correlation matrix of human hemoglobin is shown in \autoref{fig:hemoglobin_cc}.\\
+After computing the cross-correlation of every pair of alpha carbons in a protein structure with \textvar{n} residues, we obtain an $\textvar{n} \times \textvar{n}$ \textdefnogloss{cross-correlation matrix} \textvar{C} such that \textvar{C}(\textvar{i}, \textvar{j}) is the cross-correlation between amino acids \textvar{i} and \textvar{j}. We can visualize this matrix using a \textdefnogloss{heat map}, in which we color matrix values along a spectrum from blue ($-1$) to red (1). The heat map for the cross-correlation matrix of human hemoglobin is shown in \autoref{fig:hemoglobin_cc}.
 
 \begin{figure}[h]
 	\centering
@@ -1118,36 +1116,29 @@ We are now ready to apply what we have learned in a tutorial in order to build a
 \phantomsection
 \subsection{Molecular dynamics analyses of SARS-CoV and SARS-CoV-2 spike proteins using GNM}
 
-\autoref{fig:CrossCorr} shows the cross-correlation heat maps of the SARS-CoV and SARS-CoV-2 spike proteins, which are very similar, and \autoref{fig:spike_slowmode_comparison} shows the mode shape plot for the average of the slowest ten modes in each of the two spike proteins (\autoref{fig:spike_slowmode_comparison}). The mode shape plots show that the RBD of both spike proteins are highly flexible, which agrees with the biological functions of these regions. When the RBD interacts with the ACE2 enzyme on human cells, the RBD of one of the three chains ``opens up'', exposing itself to more easily bind with ACE2.\\
+\autoref{fig:spike_crosscorr_slowmode} (top) shows the cross-correlation heat maps of the SARS-CoV and SARS-CoV-2 spike proteins, which are very similar, and \autoref{fig:spike_crosscorr_slowmode} (bottom) shows the mode shape plot for the average of the slowest ten modes in each of the two spike proteins. The mode shape plots show that the RBD of both spike proteins are highly flexible, which agrees with the biological functions of these regions. When the RBD interacts with the ACE2 enzyme on human cells, the RBD of one of the three chains ``opens up'', exposing itself to more easily bind with ACE2.\\
 
-\begin{figure}[h]
+\begin{figure}[p]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.85\textwidth]{../images/CrossCorr.png}
-	\caption{The cross-correlation heat maps of the SARS-CoV-2 spike protein (top-left), SARS-CoV spike protein (top-right), single chain of the SARS-CoV-2 spike protein (bottom-left), and single-chain of the SARS-CoV spike protein (bottom-right).}
-	\label{fig:CrossCorr}
-\end{figure}
-
-%\autoref{fig:SlowMode} shows the mode shape plot for the slowest mode of the two proteins. The protein region between positions 200 and 500 of the spike protein is the most mobile and overlaps with the RBD region, found between residues 331 to 524.\\
-%
-%\begin{figure}[h]
-%	\centering
-%	\mySfFamily
-%	\includegraphics[width = 0.85\textwidth]{../images/SlowMode.png}
-%	\caption{(Top) A mode shape plot for the slowest mode of the SARS-CoV-2 spike protein (left) and SARS-CoV spike protein (right). (Bottom) A mode shape plot for the slowest mode of a single chain of the SARS-CoV-2 spike protein (left) and a single chain of the SARS-CoV spike protein (right). Note that the plot on the right is inverted compared to the one on the left because of a choice made by the software, but the two plots have the same shape if we consider the absolute value. These plots show that the two viruses have similar dynamics, and that residues 200 to 500 fluctuate the most, a region that overlaps heavily with the RBD.}
-%	\label{fig:SlowMode}
-%\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\mySfFamily
-	\tabcolsep = 1.5em
+	\includegraphics[width = 0.85\textwidth]{../images/CrossCorr.png}\\[2ex]
 	\begin{tabular}{c c}
 	\includegraphics[width = 0.38\textwidth]{../images/spike_slowmode_SARS-CoV-2.png} & \includegraphics[width = 0.38\textwidth]{../images/spike_slowmode_SARS-CoV.png}
 	\end{tabular}
-	\caption{Average mode shape of the slowest ten modes of SARS-CoV-2 Spike (left) and SARS-CoV Spike (right). The first peak corresponds to the N-Terminal Domain (NTD) and the second peak corresponds to the Receptor Binding Domain (RBD). Above the mode shape plots, the viral spike proteins are colored according to the value of mode shape, with high values colored red and indicating greater predicted flexibility; note that the SARS-CoV-2 NTD is predicted to be more flexible than that of SARS-CoV.}
-	\label{fig:spike_slowmode_comparison}
+	\caption{(Top) The cross-correlation heat maps of the SARS-CoV-2 spike protein (top-left), SARS-CoV spike protein (top-right), single chain of the SARS-CoV-2 spike protein (bottom-left), and single-chain of the SARS-CoV spike protein (bottom-right). (Bottom) Average mode shape of the slowest ten modes of SARS-CoV-2 Spike (left) and SARS-CoV Spike (right). The first peak corresponds to the N-Terminal Domain (NTD) and the second peak corresponds to the Receptor Binding Domain (RBD). Above the mode shape plots, the viral spike proteins are colored according to the value of mode shape, with high values colored red and indicating greater predicted flexibility; note that the SARS-CoV-2 NTD is predicted to be more flexible than that of SARS-CoV.}
+	\label{fig:spike_crosscorr_slowmode}
 \end{figure}
+
+%\begin{figure}[h]
+%	\centering
+%	\mySfFamily
+%	\tabcolsep = 1.5em
+%	\begin{tabular}{c c}
+%	\includegraphics[width = 0.38\textwidth]{../images/spike_slowmode_SARS-CoV-2.png} & \includegraphics[width = 0.38\textwidth]{../images/spike_slowmode_SARS-CoV.png}
+%	\end{tabular}
+%	\caption{Average mode shape of the slowest ten modes of SARS-CoV-2 Spike (left) and SARS-CoV Spike (right). The first peak corresponds to the N-Terminal Domain (NTD) and the second peak corresponds to the Receptor Binding Domain (RBD). Above the mode shape plots, the viral spike proteins are colored according to the value of mode shape, with high values colored red and indicating greater predicted flexibility; note that the SARS-CoV-2 NTD is predicted to be more flexible than that of SARS-CoV.}
+%	\label{fig:spike_slowmode_comparison}
+%\end{figure}
 
 \autoref{fig:spike_slowmode_comparison} highlights another flexible region, the spike protein's \textdefnogloss{non-terminal domain (NTD)}, which appears to be more mobile in SARS-CoV-2. Like the RBD, the NTD also mediates viral infection, but by interacting with DC-SIGN and L-SIGN receptors rather than ACE2. These receptors are present on macrophages and dendritic cells, allowing SARS-CoV-2 to infect different tissues such as the lungs, where ACE2 expression levels are low, which may help explain why SARS-CoV-2 is more prone to progress to pneumonia.
 
@@ -1199,7 +1190,6 @@ We will not delve into the mathematical intricacies of ANM calculations, but we 
 	\label{fig:coronavirus_anm_animation}
 \end{figure}
 
-\FloatBarrier
 \phantomsection
 \section{Conclusion: Bamboo Shoots After the Rain}
 
