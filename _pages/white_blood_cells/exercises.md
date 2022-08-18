@@ -10,9 +10,9 @@ image: "../assets/images/normal_adult_blood_smear.JPG"
 
 ## Neural networks and logical connectives
 
-One of the strengths of artificial neurons and neural networks is that their output can mimic, at least approximately, any function. In the case of classification, this means that if some function *g*(*x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>) performs well at classifying data with \textvar{n} features, then some neural network exists that will replicate $g$: we just need to find the right set of network parameters.
+One of the strengths of artificial neurons and neural networks is that their output can mimic, at least approximately, any function. In the case of classification, this means that if some function *g*(*x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>) performs well at classifying data with *n* features, then some neural network exists that will replicate *g*: we just need to find the right set of network parameters.
 
-We say that a neural network with input variables *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub> \textdefnogloss{represents} a function *g*(*x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>) if for any choice of input variables *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>, the output of the neural network is equal to *g*(*x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>). We provide two exercises on finding neural networks that represent relatively simple functions.
+We say that a neural network with input variables *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub> **represents** a function *g*(*x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>) if for any choice of input variables *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>, the output of the neural network is equal to *g*(*x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>). We provide two exercises on finding neural networks that represent relatively simple functions.
 
 **Exercise:** Consider the function *g*(*x*<sub>1</sub>, *x*<sub>2</sub>) for binary input variables *x*<sub>1</sub> and *x*<sub>2</sub> that outputs 0 only when *x*<sub>1</sub> and *x*<sub>2</sub> are both equal to 1 and that outputs 1 for other choices of *x*<sub>1</sub> and *x*<sub>2</sub>. (The function *g* is known as a “``NAND`` gate”). Find a single perceptron that represents *g*.
 {: .notice--success}
