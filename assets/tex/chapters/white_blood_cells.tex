@@ -1031,9 +1031,9 @@ Despite these potential concerns with building effective neural networks, they a
 \phantomsection
 \subsection{Neural networks and logical connectives}
 
-One of the strengths of artificial neurons and neural networks is that it can be shown that their output can mimic, at least approximately, any function. In the case of classification, this means that if some function $g(x_1, \ldots x_n)$ exists that does a good job of classifying data with \textvar{n} features, then some neural network exists that will replicate this function: we just need to find the right set of network parameters.
+One of the strengths of artificial neurons and neural networks is that their output can mimic, at least approximately, any function. In the case of classification, this means that if some function $g(x_1, \ldots x_n)$ performs well at classifying data with \textvar{n} features, then some neural network exists that will replicate $g$: we just need to find the right set of network parameters.
 
-We say that a neural network with input variables $x_1, \ldots x_n$ \textdefnogloss{represents} a function $g(x_1, \ldots, x_n)$ if for any choice of input variables $x_1$, the output of the neural network is equal to $g(x_1, \ldots, x_n)$. We provide two exercises providing some practice on finding neural networks that represent relatively simple functions.\\
+We say that a neural network with input variables $x_1, \ldots x_n$ \textdefnogloss{represents} a function $g(x_1, \ldots, x_n)$ if for any choice of input variables $(x_1, \ldots x_n)$, the output of the neural network is equal to $g(x_1, \ldots, x_n)$.  We provide two exercises on finding neural networks that represent relatively simple functions.\\
 
 \begin{exercise}[%
 Consider the function $g(x_1, x_2)$ for binary input variables $x_1$ and $x_2$ that outputs 0 only when $x_1$ and $x_2$ are both equal to 1 and that outputs 1 for other choices of $x_1$ and $x_2$. (The function \textvar{g} is known as a ``\texttt{NAND} gate'').  Find a single perceptron that represents \textvar{g}. 
