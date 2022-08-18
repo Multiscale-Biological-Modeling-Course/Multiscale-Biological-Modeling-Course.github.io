@@ -27,9 +27,18 @@ We say that a neural network with input variables *x*<sub>1</sub>, …, *x*<sub>
 
 ## More on the curse of dimensionality
 
-Intuitively, we would like to have a large number of features in our data (i.e., a large dimension of *n* in each data point's feature vector). Yet consider the figure below, which plots the petal width and length of only two iris flowers. It would be a horrible idea to extrapolate anything from the line connecting these two points, as it indicates that these two variables are inversely coordinated, which is the *opposite* of the true correlation that we found in the [main text]().
+Intuitively, we would like to have a large number of features in our data (i.e., a large dimension of *n* in each data point's feature vector). Yet consider the figure below, which plots the petal width and length of only two iris flowers. It would be a horrible idea to extrapolate anything from the line connecting these two points, as it indicates that these two variables are inversely coordinated, which is the *opposite* of the true correlation that we found in the [main text](pca#dimension-reduction-with-principal-components-analysis).
 
-## Irises and feature selection
+[![image-center](../assets/images/600px/curse_of_dimensionality_two_irises.png){: .align-center}](../assets/images/curse_of_dimensionality_two_irises.png)
+Petal length (x-axis) plotted against petal width (y-axis) for two flowers in the iris flower dataset. Because of random chance and small sample size, these two flowers demonstrate an inverse correlation between petal length and width, the opposite of the true correlation found in the main text.
+{: style="font-size: medium;"}
+
+This example provides another reason why we reduce the dimension of a dataset when the number of objects in our dataset is smaller than the number of features of each object. Furthermore, when fitting a *d*-dimensional hyperplane to a collection of data, we need to be careful with selecting too large of a value of *d*, especially if we do not have many data points.
+
+**Exercise:** What is the minimum number of points in three-dimensional space such that we cannot guarantee that there is a plane containing them all? Provide a conjecture as to the minimum number of points in *n*-dimensional space such that we cannot guarantee that there is a *d*-dimensional hyperplane containing them all.
+{: .notice--success}
+
+## Irises, PCA, and feature selection
 
 **Exercise:** The [iris flower dataset](../downloads/iris.csv) has four features. Apply PCA with *d* = 2 to reduce the dimension of this dataset. Then, apply k-NN with *k* equal to 1 and cross validation with *f* equal to 10 to the resulting vectors of reduced dimension to obtain a confusion matrix. What are the accuracy, recall, specificity, and precision? How do they compare against the results of using all four iris features that we found [earlier](training#a-first-attempt-at-quantifying-the-success-of-a-classifier)?
 {: .notice--success}
@@ -37,6 +46,6 @@ Intuitively, we would like to have a large number of features in our data (i.e.,
 **Exercise:** Another way to reduce the dimension of a dataset is to eliminate features from the dataset. Apply k-NN with *k* equal to 1 and cross validation with *f* equal to 10 to the [iris flower dataset](../downloads/iris.csv) using only the two features petal width and petal length. Then, run the same classifier on your own choice of two iris features to obtain a confusion matrix. How do the results compare against the result of the previous exercise (which used PCA instead of feature elimination) and those from using [all four features](training#a-first-attempt-at-quantifying-the-success-of-a-classifier)?
 {: .notice--success}
 
-## More classification of our WBC image dataset
+## More classification of WBC images
 
 Exercises coming soon!
