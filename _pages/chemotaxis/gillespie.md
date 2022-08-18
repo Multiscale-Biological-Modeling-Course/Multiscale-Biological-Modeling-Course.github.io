@@ -125,7 +125,7 @@ This simple ligand-receptor model is just the beginning of our study of chemotax
 
 [^Hlavacek2006]: Hlavacek WS, Faeder JR, Blinov ML, Posner RG, Hucka M, Fontana W. 2006. Rules for modeling signal-transduction systems. Science Signaling 344:re6. [Available online](https://stke.sciencemag.org/content/2006/344/re6.long)
 
-[^ParkinsonLab]: Parkinson Lab website. [website](http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html)
+[^ParkinsonLab]: Parkinson Lab website. [website](https://chemotaxis.biology.utah.edu/projects/projects.html)
 
 [^Schwartz14]: Schwartz R. Biological Modeling and Simulaton: A Survey of Practical Models, Algorithms, and Numerical Methods. Chapter 14.1.
 

@@ -97,8 +97,8 @@ Another benefit of finding the first principal component of a dataset is that it
 
 Say that we wanted to generalize the ideas above to three-dimensional space. The first principal component would offer a one-dimensional explanation of the variance in the data, but perhaps a line is insufficient to this end. The points could lie very near to a plane (a two-dimensional object), and projecting these points onto the nearest plane would effectively reduce the dataset to two dimensions, as shown in the figure below.
 
-[![image-center](../assets/images/600px/three_dimensional_pca){: .align-center}](../assets/images/three_dimensional_pca)
-[![image-center](../assets/images/600px/three_dimensional_pca_plane){: .align-center}](../assets/images/three_dimensional_pca_plane)
+[![image-center](../assets/images/600px/three_dimensional_pca.png){: .align-center}](../assets/images/three_dimensional_pca.png)
+[![image-center](../assets/images/600px/three_dimensional_pca_plane.png){: .align-center}](../assets/images/three_dimensional_pca_plane.png)
 (Top) A collection of seven points, each labeled with a different color. Each point is projected onto the plane that minimizes the sum of squared distances between points and the plane. The line indicated is the first principal component of the data; this line lies within the plane, which is the case for any dataset. The y-axis of this plane is the "second principal component" of the data. (Bottom) A reorientation of the plane such that the first principal component is shown as the x-axis, with colored points corresponding to the projections onto the plane from the top figure.
 {: style="font-size: medium;"}
 

@@ -39,7 +39,7 @@ Just as the phosphorylation of CheY can be reversed, MCP methylation can be undo
 The figure below adds CheR and CheB to provide a complete picture of the core pathways influencing chemotaxis. To model these pathways and see how our simulated bacterial system responds to different relative attractant concentrations, we will need to add quite a few molecules and reactions to our current model.
 
 [![image-center](../assets/images/600px/chemotaxis_wholestory.png){: .align-center}](../assets/images/chemotaxis_wholestory.png)
-The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates MCPs, while CheR demethylates MCPs. Blue lines denote phosphorylation, grey lines denote dephosphorylation, green arrows denote methylation, and red arrows denote demethlyation. Image modified from <a href="http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html">Parkinson Lab</a>'s illustrations.
+The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates MCPs, while CheR demethylates MCPs. Blue lines denote phosphorylation, grey lines denote dephosphorylation, green arrows denote methylation, and red arrows denote demethlyation. Image modified from <a href="https://chemotaxis.biology.utah.edu/projects/projects.html">Parkinson Lab</a>'s illustrations.
 {: style="font-size: medium;"}
 
 ## Combinatorial explosion and the need for rule-based modeling
@@ -138,7 +138,7 @@ This quandary does not have an obvious intuitive answer. In this module's conclu
 ## Additional resources
 
 If you find chemotaxis biology as interesting as we do, then we suggest the following resources.
- - An amazing introduction to chemotaxis from the  [Parkinson Lab](http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html).
+ - An amazing introduction to chemotaxis from the  [Parkinson Lab](https://chemotaxis.biology.utah.edu/projects/projects.html).
  - A good overview of chemotaxis: [Webre et al. 2003 ](https://doi.org/10.1016/S0960-9822(02)01424-0)
  - A review article on chemotaxis pathway and MCPs:  [Baker et al. 2005](https://pubmed.ncbi.nlm.nih.gov/16369945/).
  - A more recent review article of MCPs: [Parkinson et al. 2015](https://www.sciencedirect.com/science/article/abs/pii/S0966842X15000578).
@@ -171,7 +171,7 @@ If you find chemotaxis biology as interesting as we do, then we suggest the foll
 
 [^Hlavacek2006]: Hlavacek WS, Faeder JR, Blinov ML, Posner RG, Hucka M, Fontana W. 2006. Rules for modeling signal-transduction systems. Science Signaling 344:re6. [Available online](https://stke.sciencemag.org/content/2006/344/re6.long)
 
-[^ParkinsonLab]: Parkinson Lab website. [website](http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html)
+[^ParkinsonLab]: Parkinson Lab website. [website](https://chemotaxis.biology.utah.edu/projects/projects.html)
 
 [^Spiro1997]: Spiro PA, Parkinson JS, and Othmer H. 1997. A model of excitation and adaptation in bacterial chemotaxis. Biochemistry 94:7263-7268. [Available online](https://www.pnas.org/content/94/14/7263).
 
