@@ -1,8 +1,8 @@
 ---
 permalink: /white_blood_cells/exercises
-title: "Exercises"
+title: "Classification and Image Analysis Exercises"
 sidebar:
- nav: "exercises"
+ nav: "white_blood_cells"
 toc: true
 toc_sticky: true
 image: "../assets/images/normal_adult_blood_smear.JPG"
@@ -20,14 +20,14 @@ We say that a neural network with input variables *x*<sub>1</sub>, …, *x*<sub>
 **Exercise:** Consider the function *g*(*x*<sub>1</sub>, *x*<sub>2</sub>) for binary input variables *x*<sub>1</sub> and *x*<sub>2</sub> that outputs 1 when *x*<sub>1</sub> ≠ *x*<sub>2</sub> and 0 when *x*<sub>1</sub> = *x*<sub>2</sub>. (The function *g* is known as an “`XOR` gate”). It can be shown that no single perceptron represents *g*; find a neural network of perceptrons that represents *g*.
 {: .notice--success}
 
-
-
 ## A little fun with lost cities
 
 **Exercise:** Consider the three points *x* = (−8, 1), *y* = (7, 6), and *z* = (10, −2). Say that the distances from these points to some point *w* with unknown location are as follows: *d*(*x*,*w*) = 13; *d*(*y*,*w*) = 3; *d*(*z*,*w*) = 10. Where is *w*?
 {: .notice--success}
 
 ## More on the curse of dimensionality
+
+Intuitively, we would like to have a large number of features in our data (i.e., a large dimension of *n* in each data point's feature vector). Yet consider the figure below, which plots the petal width and length of only two iris flowers. It would be a horrible idea to extrapolate anything from the line connecting these two points, as it indicates that these two variables are inversely coordinated, which is the *opposite* of the true correlation that we found in the [main text]().
 
 ## Irises and feature selection
 
@@ -38,3 +38,5 @@ We say that a neural network with input variables *x*<sub>1</sub>, …, *x*<sub>
 {: .notice--success}
 
 ## More classification of our WBC image dataset
+
+Exercises coming soon!

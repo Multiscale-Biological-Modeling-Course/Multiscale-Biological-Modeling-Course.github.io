@@ -1053,7 +1053,7 @@ Consider the three points $x = (-8, 1)$, $y = (7, 6)$, and $z = (10, -2)$. Say t
 \phantomsection
 \subsection{More on the curse of dimensionality}
 
-Intuitively, having a large number of features in our data (i.e., a large dimension of \textvar{n} in our feature vector) is a good thing. Yet consider \autoref{fig:curse_of_dimensionality_two_irises}, which plots the petal width and length of two iris flowers. It would be a horrible idea to extrapolate anything from the line connecting these two points, as it indicates that these two variables are inversely coordinated, the \textit{opposite} of the true correlation that we found in \autoref{fig:iris_flowers_regression_line}.
+Intuitively, we would like to have a large number of features in our data (i.e., a large dimension of \textvar{n} in each data point's feature vector). Yet consider \autoref{fig:curse_of_dimensionality_two_irises}, which plots the petal width and length of only two iris flowers. It would be a horrible idea to extrapolate anything from the line connecting these two points, as it indicates that these two variables are inversely coordinated, which is the \textit{opposite} of the true correlation that we found in \autoref{fig:iris_flowers_regression_line}.
 
 This example provides another reason why we reduce the dimension of a dataset when the number of objects in our dataset is smaller than the number of features of each object. Furthermore, when fitting a \textvar{d}-dimensional hyperplane to a collection of data, we need to be careful with selecting too large of a value of \textvar{d}, especially if we do not have many data points. \\
 
