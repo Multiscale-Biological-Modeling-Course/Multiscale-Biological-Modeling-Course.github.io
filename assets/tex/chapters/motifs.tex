@@ -63,7 +63,7 @@ DNA can therefore be thought of as a blueprint for storing information that flow
 
 \vspace{8ex}
 
-\includegraphics[width = 0.4\textwidth]{../images/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg}
+\includegraphics[width = 0.6\textwidth]{../images/central_dogma.png}
 \caption{(Top) The genetic code, which dictates the conversion of RNA codons into amino acids. Codons are read from the inside of the figure outward. Three codons (\textnucl{UAA}, \textnucl{UAG}, and \textnucl{UGA}) do not have a corresponding amino acid and are called stop codons because when encountered they serve to halt translation. (Bottom) The central dogma of molecular biology states that molecular information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA.}
 \label{fig:central_dogma}
 \end{figure}
@@ -87,7 +87,7 @@ Transcription factors are vital for the cell's response to its environment becau
 \centering
 \mySfFamily
 \includegraphics[width = 0.6\textwidth]{../images/signal_pathway.jpg}
-\caption{A cell receiving a signal which triggers a response in which this signal is ``transduced'' into the cell, resulting in transcription of a gene.}
+\caption{A cell receiving a signal, which triggers a response in which this signal is ``transduced'' into the cell, resulting in transcription of a gene.}
 \label{fig:transduction}
 \end{figure}
 
@@ -136,13 +136,13 @@ Once we know which genes each transcription factor regulates, we can consolidate
 
 \autoref{fig:e_coli_tf_network} shows a portion of the transcription factor network for \textit{Escherichia coli}, the workhorse model organism of bacterial study. The complete network, which is the sum of over two decades of biological research, consists of thousands of genes and around 300 transcription factors. Because of the size of this network, it forms what computational biologists affectionally call a ``hairball'', or a network with so many connections that it is functionally impossible to analyze visually. For this reason, we will need to use computational approaches to study this network.
 
-Note that the edges in the \textit{E. coli} transcription factor network below are colored red or green. An edge connecting \textvar{X} to \textvar{Y} is colored green if \textvar{X} activates \textvar{Y}, and it is colored red if \textvar{X} represses \textvar{Y}. (Alternatively, we could label the edges with a ``+'' or ``$-$''.)\\
+Note that the edges in the \textit{E. coli} transcription factor network in \autoref{fig:e_coli_tf_network} have different colors. An edge connecting \textvar{X} to \textvar{Y} is colored blue if \textvar{X} activates \textvar{Y}, and it is colored orange if \textvar{X} represses \textvar{Y}. (Alternatively, we could label the edges with a ``+'' or ``$-$''.)\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/e_coli_tf_network.jpeg}
-\caption{A subset of the \textit{E. coli} transcription factor network. An edge from \textvar{X} to \textvar{Y} denotes that \textvar{X} is a transcription factor that regulates \textvar{Y}. Edges corresponding to activation are colored green, and edges corresponding to repression are colored red.}
+\includegraphics[width = 0.7\textwidth]{../images/e_coli_tf_network_blue_orange.png}
+\caption{A subset of the \textit{E. coli} transcription factor network. An edge from \textvar{X} to \textvar{Y} denotes that \textvar{X} is a transcription factor that regulates \textvar{Y}. Edges corresponding to activation are colored blue, and edges corresponding to repression are colored orange.}
 \label{fig:e_coli_tf_network}
 \end{figure}
 

@@ -14,10 +14,10 @@ Once we know which genes each transcription factor regulates, we can consolidate
 
 The figure below shows a portion of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial study. The complete network, which is the sum of over two decades of biological research, consists of thousands of genes and around 300 transcription factors[^tfNumber]. Because of the size of this network, it forms what computational biologists affectionally call a "hairball", or a network with so many connections that it is functionally impossible to analyze visually. For this reason, we will need to use computational approaches to study this network.
 
-Note that the edges in the *E. coli* transcription factor network below are colored red or green. An edge connecting *X* to *Y* is colored green if *X* activates *Y*, and it is colored red if *X* represses *Y*. (Alternatively, we could label the edges with a "+" or "-".)
+Note that the edges in the *E. coli* transcription factor network below have different colors. An edge connecting *X* to *Y* is colored blue if *X* activates *Y*, and it is colored orange if *X* represses *Y*. (Alternatively, we could label the edges with a "+" or "-".)
 
-[![image-center](../assets/images/600px/e_coli_tf_network.jpeg){: .align-center}](../assets/images/e_coli_tf_network.jpeg)
-A subset of the *E. coli* transcription factor network[^eColiNetwork] (click to enlarge). An edge from *X* to *Y* denotes that *X* is a transcription factor that regulates *Y*. Edges corresponding to activation are colored green, and edges corresponding to repression are colored red.
+[![image-center](../assets/images/600px/e_coli_tf_network_blue_orange.png){: .align-center}](../assets/images/e_coli_tf_network_blue_orange.png)
+A subset of the *E. coli* transcription factor network[^eColiNetwork] (click to enlarge). An edge from *X* to *Y* denotes that *X* is a transcription factor that regulates *Y*. Edges corresponding to activation are colored blue, and edges corresponding to repression are colored orange.
 {: style="font-size: medium;"}
 
 **STOP:** Select the expanded view of the transcription factor network in the figure above. Do you notice anything interesting about this network?
