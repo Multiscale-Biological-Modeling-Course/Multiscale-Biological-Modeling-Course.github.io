@@ -24,7 +24,7 @@ DNA can therefore be thought of as a blueprint for storing information that flow
 {: .notice--info}
 
 [![image-center](../assets/images/600px/central_dogma.png){: .align-center}](../assets/images/central_dogma.png)
-The central dogma of molecular biology states that molecular information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA. Image courtesy: Dhorpool, Wikimedia commons user.
+The central dogma of molecular biology states that molecular information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA.
 {: style="font-size: medium;"}
 
 ## Transcription factors control gene regulation
