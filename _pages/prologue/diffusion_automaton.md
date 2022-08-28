@@ -27,7 +27,7 @@ Part of a modeler's job is to find simple models that capture the essence of a s
 
 In our case, we have a very "fine-grained" reaction-diffusion model illustrating Turing patterns, but this model consumes a huge amount of computational resources because it requires tracking the movements of hundreds of thousands of individual particles. Our goal is to build a "coarse-grained" model that will allow us to appreciate Turing patterns without the computational overhead required to track particles.
 
-Our idea is to grid off two-dimensional space into blocks and store only the *concentration* of each type of particle found inside the block. To simplify things further, we assume that there is some maximum concentration of particles possible, so that we can divide the number of particles by this maximum concentration. As a result, the concentration of a particle in each block will be represented by a decimal number between 0 and 1.
+Our idea is to grid off two-dimensional space into blocks and store only the *concentration* of each type of particle found inside the block.  To simplify things further, we assume that the concentration of a particle in each block is represented by a decimal number (perhaps representing a percentage concentration) as opposed to counting individual particles.
 
 Let us begin with an example of the diffusion of only *A* particles; we will later add *B* particles as well as reactions to our model. Say that the particles are at maximum concentration in the central cell of our grid and are present nowhere else, as shown below.
 
@@ -41,7 +41,7 @@ We will now update the grid of cells after one time step to mimic particle diffu
 A grid showing an update to the system in the previous figure after diffusion of particles after a single time step.
 {: style="font-size: medium;"}
 
-**Note:** The sum of the values in the grid in the figure above is 1, which is the same as the sum of the values in our original figure. Regardless of how many times we update the grid, the sum of the values should be 1 to ensure the conservation of total mass in the system.
+**Note:** The sum of the values in each grid in the figure above is equal to 1, which ensures the conservation of total mass in the system.
 {: .notice--info}
 
 After an additional time step, the particles continue to diffuse outward. For example, each diagonal neighbor of the central cell in the above figure, which has a concentration of 0.05 after one time step, will lose all of its particles in the following step. Each of these cells will also gain 20% of the particles from two of its adjacent neighbors, along with 5% of the particles from the central square (which doesn't have any particles). This makes the updated concentration of this cell after two time steps equal to 2(0.2)(0.2) + 0.05(0) = 0.08.
@@ -95,7 +95,7 @@ First, we will consolidate the information stored in a cell about the concentrat
 **STOP**: What should be the value of [*B*]/([*A*] + [*B*]) if both [*A*] and [*B*] are equal to zero?
 {: .notice--primary}
 
-Next, we color each cell according to its value of [*B*]/([*A*] + [*B*]) using a color spectrum like those shown in the figure below. We will use the `Spectral` color map, meaning that if a cell has a value close to 0 (relatively few predators), then it will be colored red, while if it has a value close to 1 (relatively many predators), then it will be colored dark blue.
+Next, we color each cell according to its value of [*B*]/([*A*] + [*B*]) using a color spectrum like those shown in the figure below. We will use the `Spectral` color map, meaning that if a cell has a value close to 0 (relatively few predators), then it will be colored red, while if it has a value close to the maximum value of [*B*]/([*A*] + [*B*]) (relatively many predators), then it will be colored dark blue.
 
 [![image-center](../assets/images/600px/matplotlib_colormap.png){: .align-center}](../assets/images/matplotlib_colormap.png)
 
@@ -104,7 +104,10 @@ When we color each cell over many time steps, we can animate the automaton to se
 [Visit tutorial](tutorial-diffusion){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-The video below shows an animation of a 101 x 101 board with <em>d</em><sub><em>A</em></sub> = 0.5 and <em>d</em><sub><em>B</em></sub> = 0.25 that begins with [*A*] = 1 for all cells. All cells have [*B*] = 0 except for an 11 x 11 square in the middle of the grid, where [*B*] = 1. Without looking at individual concentration values, this animation allows us to see immediately that the *A* particles are remaining in the corners, while a band of *B* particles expands outward from the center.
+The video below shows an animation of a 101 x 101 board with <em>d</em><sub><em>A</em></sub> = 0.5 and <em>d</em><sub><em>B</em></sub> = 0.25 that begins with [*A*] = 1 for all cells. All cells have [*B*] = 0 except for an 11 x 11 square in the middle of the grid, where [*B*] = 1. (There is nothing special about the dimensions of this central square.) Without looking at individual concentration values, this animation allows us to see immediately that the *A* particles are remaining in the corners, while a band of *B* particles expands outward from the center.
+
+**Note:** Particles technically "fall off" the sides of the board in the figure below, meaning that a given particle’s total concentration across all cells decreases over time.
+{: .notice--info}
 
 [![image-center](../assets/images/600px/diffusion_movie_first_frame.png){: .align-center}](../assets/images/diffusion_movie.gif)
 

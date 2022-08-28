@@ -245,7 +245,7 @@ Despite using advanced modeling software that has undergone years of development
 
 We have a very ``fine-grained'' reaction-diffusion model illustrating Turing patterns, but this model consumes a huge amount of computational resources because it requires tracking the movements of hundreds of thousands of individual particles. Our goal is to build a ``coarse-grained'' model that will allow us to appreciate Turing patterns without the computational overhead required to track particles.
 
-Our idea is to grid off two-dimensional space into blocks and store only the \textit{concentration} of each type of particle found inside the block. To simplify things further, we assume that there is some maximum concentration of particles possible, so that we can divide the number of particles by this maximum concentration. As a result, the concentration of a particle in each block will be represented by a decimal number between 0 and 1.
+Our idea is to grid off two-dimensional space into blocks and store only the \textit{concentration} of each type of particle found inside the block. To simplify things further, we assume that the concentration of a particle in each block is represented by a decimal number (perhaps representing a percentage concentration) as opposed to counting individual particles.
 
 Let us begin with an example of the diffusion of only \textvar{A} particles; we will later add \textvar{B} particles as well as reactions to our model. Say that the particles are at maximum concentration in the central cell of our grid and are present nowhere else (\autoref{fig:initial_A_concentration_one_time_step} (left)).
 
@@ -263,7 +263,7 @@ Let us begin with an example of the diffusion of only \textvar{A} particles; we 
 We will now update the grid of cells after one time step to mimic particle diffusion. To do so, we will spread out the concentration of particles in each square to its eight neighbors. For example, we could assume that 20\% of the current cell's concentration diffuses to each of its four adjacent neighbors, and that 5\% of the cell's concentration diffuses to its four diagonal neighbors. Because the central square in our ongoing example is the only cell with any particles, only its neighbors will receive any particles after a single time step (\autoref{fig:initial_A_concentration_one_time_step} (right)).\\
 
 \begin{note}[%
-The sum of the values in each grid in \autoref{fig:initial_A_concentration_one_time_step} is 1. Regardless of how many times we update the grid, the sum of the values should be 1 to ensure the conservation of total mass in the system.
+The sum of the values in each grid in \autoref{fig:initial_A_concentration_one_time_step} is equal to 1, which ensures the conservation of total mass in the system.
 ]\end{note}
 
 After an additional time step (\autoref{fig:A_concentration_two_time_steps_partial}), the particles continue to diffuse outward. For example, each diagonal neighbor of the central cell in the above figure, which has a concentration of 0.05 after one time step, will lose all of its particles in the following step. Each of these cells will also gain 20\% of the particles from two of its adjacent neighbors, along with 5\% of the particles from the central square (which doesn't have any particles). This makes the updated concentration of this cell after two time steps equal to $2 \cdot 0.2 \cdot 0.2 + 0.05 \cdot 0 = 0.08$.
@@ -339,7 +339,7 @@ First, we will consolidate the information stored in a cell about the concentrat
 What should be the value of this ratio if a cell's concentration of both \textvar{A} and \textvar{B} are equal to zero?
 ]\end{qbox}
 
-Next, we color each cell according to its value of $[\textvar{B}]/([\textvar{A}] + [\textvar{B}])$ using a color spectrum like those shown in \autoref{fig:matplotlib_colormap}. We will use the ``Spectral'' color map, meaning that if a cell has a value close to 0 (relatively few predators), then it will be colored red, while if it has a value close to 1 (relatively many predators), then it will be colored dark blue. When we color each cell over many time steps, we can animate the automaton to see how it changes over time.\tutorial[prologue/tutorial-diffusion]\\
+Next, we color each cell according to its value of $[\textvar{B}]/([\textvar{A}] + [\textvar{B}])$ using a color spectrum like those shown in \autoref{fig:matplotlib_colormap}. We will use the ``Spectral'' color map, meaning that if a cell has a value close to 0 (relatively few predators), then it will be colored red, while if it has a value close to the maximum value of $[\textvar{B}]/([\textvar{A}] + [\textvar{B}])$ in the grid (relatively many predators), then it will be colored dark blue. When we color each cell over many time steps, we can animate the automaton to see how it changes over time.\tutorial[prologue/tutorial-diffusion]\\
 
 \begin{figure}[h]
 \centering
@@ -349,7 +349,11 @@ Next, we color each cell according to its value of $[\textvar{B}]/([\textvar{A}]
 \label{fig:matplotlib_colormap}
 \end{figure}
 
-\autoref{fig:diffusion_movie_still} shows an animation of a 101 x 101 board with $d_A = 0.5$ and $d_A = 0.25$ that begins with $[\textvar{A}] = 1$ for all cells. All cells have $[\textvar{B}] = 0$ except for an $11 \times 11$ square in the middle of the grid, where $[\textvar{B}] = 1$. Without looking at individual concentration values, this animation allows us to see immediately that the \textvar{A} particles are remaining in the corners, while a band of \textvar{B} particles expands outward from the center.\\
+\autoref{fig:diffusion_movie_still} shows an animation of a $101 \times 101$ board with $d_A = 0.5$ and $d_A = 0.25$ that begins with $[\textvar{A}] = 1$ for all cells. All cells have $[\textvar{B}] = 0$ except for an $11 \times 11$ square in the middle of the grid, where $[\textvar{B}] = 1$. (There is nothing special about the dimensions of this central square.) Without looking at individual concentration values, this animation allows us to see immediately that the \textvar{A} particles are remaining in the corners, while a band of \textvar{B} particles expands outward from the center.\\
+
+\begin{note}[%
+Particles technically ``fall off'' the sides of the board in \autoref{fig:diffusion_movie_still}, meaning that cells on the boundary lose some of their particle concentration that is not gained by their neighbors.
+]\end{note}
 
 \begin{figure}[h]
 \centering
