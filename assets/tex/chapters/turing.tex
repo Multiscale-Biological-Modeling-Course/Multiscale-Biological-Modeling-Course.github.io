@@ -10,7 +10,7 @@
 \label{sec:introduction}
 \phantomsection
 
-If you are familiar with Alan Turing, then you might be surprised that such a famous computer scientist would appear in the first sentence of a book on biological modeling, since he is best known for two achievements that have nothing to do with biology. In 1936, he theorized a computer (which came to be known as a ``Turing machine'') consisting of a tape of cells along with a machine that writes symbols on the tape according to a set of predetermined set of rules, a machine that is simple but nevertheless has been shown to be capable of solving any problem that a modern computer can solve.  And during World War II, he worked with Allied cryptographers at Bletchley Park to devise machines that would be used to break several German ciphers.
+If you are familiar with Alan Turing, then you might be surprised that a famous computer scientist would appear in the first sentence of a book on biological modeling. After all, he is best known for two achievements that have nothing to do with biology. In 1936, Turing theorized a primitive computer consisting of a tape of cells along with a machine that writes symbols on the tape according to a set of predetermined set of rules; this ``Turing machine'' is simple but nevertheless has been proven capable of solving any problem that a modern computer can solve.  Then, during World War II, Turing worked with Allied cryptographers at Bletchley Park to devise machines that broke several German ciphers.
 
 In 1952, two years before his untimely demise, Turing published his only paper on biochemistry, which addressed the question: “Why do zebras have stripes?” He was not asking why zebras have \textit{evolved} to have stripes --- this question was unsolved in Turing's time, and recent research has indicated that the stripes may be helpful in warding off flies. Rather, Turing was interested in what biochemical mechanism could produce the stripes that we see on a zebra's coat. And he reasoned that just as a simple machine can emulate a computer, some limited set of molecular ``rules'' could cause stripes to appear on a zebra's coat.
 
@@ -25,9 +25,7 @@ In this chapter, we will introduce a particle simulation model based on Turing's
 
 You may feel like a single, coherent being, but you are just a skin-covered bag of trillions of cells --- about half of which are bacteria --- that act largely independently. These cells are full of \textdef{proteins}{protein}{a complex macromolecule formed of chain(s) of amino acids; proteins perform nearly every cellular function}, complex macromolecules that perform nearly every cellular function. If a protein could move in a straight line, then it would move at 20 kph or faster, meaning that the protein would cover a distance 1 billion times its length every second (analogous to a car traveling at 20 billion kph). However, the cytoplasm filling the cell is so densely packed with water molecules that the protein ping-pongs off them, frequently changing direction.
 
-We will model the movements of a cellular particle such as a protein by a \textdef{random walk}{random walk}{a model consisting of a sequence of steps in randomly chosen directions} in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction.
-
-If we animate the action of many independent particles following random walks, then although some particles hug the starting point and some wind up far away, most particles steadily drift outward. \autoref{fig:random_walk_multiple_particles} shows a simulation of multiple randomly walking particles that all begin their walk at the same point and that \textdef{diffuse}{diffusion}{the movement of particles due to random motion from an area of higher concentration to lower concentration as the particles spread out} throughout their environment.\tutorial[prologue/tutorial-random-walk]
+We will model the movements of a cellular particle such as a protein by a \textdef{random walk}{random walk}{a model consisting of a sequence of steps in randomly chosen directions} in a two-dimensional plane. At each step, the particle moves a single unit of distance in a randomly chosen direction. If we animate the action of many independent particles following random walks, then although some particles hug the starting point and some wind up far away, most particles steadily drift outward. \autoref{fig:random_walk_multiple_particles} shows a simulation of multiple randomly walking particles that all begin their walk at the same point and that \textdef{diffuse}{diffusion}{the movement of particles due to random motion from an area of higher concentration to lower concentration as the particles spread out} throughout their environment.\tutorial[prologue/tutorial-random-walk]
 \\
 
 \begin{figure}[h]
@@ -53,7 +51,7 @@ After \textvar{n} steps of unit length in a random walk, a particle will on aver
 For readers who love mathematics, we provide a proof of the Random Walk Theorem in an appendix.
 ]\end{note}
 
-Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that someone who has a respiratory virus can infect many others in an enclosed space in a short time frame. To take a less morbid example, we also know that when a cake is baking in the oven, we will not need to wait long for delicious smells to waft outward from the kitchen. But what does all this have to do with Alan Turing and zebra stripes?\\
+Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that someone who has a respiratory virus can infect many others within an enclosed space as the viral particles expand outward. We also know that when a cake is baking in the oven, we will not need to wait long for delicious smells to waft from the kitchen. But what does all this have to do with Alan Turing and zebra stripes?\\
 
 \FloatBarrier
 \phantomsection
@@ -217,7 +215,7 @@ You may still be skeptical, since the patterns in these figures do not have the 
 
 \FloatBarrier
 \phantomsection
-\subsection{Turing's patterns and Klüver's form constants}
+\subsection{Turing's patterns and Klüver's hallucinogenic form constants}
 
 The particle simulations in the previous subsection may evoke the adjective ``trippy''. This is no accident.
 
@@ -373,7 +371,7 @@ Particles technically ``fall off'' the sides of the board in \autoref{fig:diffus
 
 \FloatBarrier
 \phantomsection
-\subsection{Adding reactions to our automaton: the Gray-Scott model}
+\subsection{Adding reactions to our diffusion automaton}
 
 Now that we have established a cellular automaton for coarse-grained particle diffusion, we would like to also model the feed, kill, and reproduction reactions that we introduced for our reaction-diffusion model.\\
 
@@ -521,7 +519,7 @@ When you feel the warmth of sunshine, the photons colliding with your skin have 
 Use the Random Walk Theorem to approximate the number of steps that it will take for a photon to reach the sun's corona from its center, given that the sun has a radius of 700,000 km. Then, use your solution to the previous exercise to estimate the expected time required for this journey.
 ]\end{exercise}
 
-\subsection{Practicing the cellular automaton model of diffusion}
+\subsection{Practice with the cellular automaton model of diffusion}
 
 In \autoref{fig:two_particle_concentration_diffusion}, we showed a grid of cells containing concentrations of two particles \textvar{A} and \textvar{B} that start at maximum concentration in the central square and diffuse according to the rates $d_A = 0.2$ and $d_B = 0.1$. In a ``STOP'' question, we asked you to update this grid after another time step of diffusion.\\
 
@@ -544,7 +542,7 @@ How would the Gray-Scott simulation need to change to model the reaction $A + B 
 ]\end{exercise}  
 
 \phantomsection
-\subsection{Changing Gray-Scott parameters}
+\subsection{Adjusting Gray-Scott parameters}
 
 \begin{exercise}[%
 In the Gray-Scott model, given any value of \textvar{f} between 0.01 and 0.99, is it always possible to find a value of \textvar{k} producing a Turing pattern? Given any value of \textvar{k}, is it always possible to find a value of \textvar{f} producing a Turing pattern? (Hint: rather than simulating anything, reexamine \autoref{fig:xmorphia-parameter-map}.)
