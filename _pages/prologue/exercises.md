@@ -36,7 +36,7 @@ A figure showing cellular concentrations after one time step for two particles <
 
 ## Changing the predator-prey reaction
 
-Both our particle simulator and the Gray-Scott model used a reaction *A* + 2*B* → 3*B* to represent a predator-prey dynamics of sorts. But there is no reason *a priori* why we would have used this reaction; instead, we could have modeled the simpler reaction *A* + *B* → 2*B*, in which a predator molecule collides a prey molecule and the prey molecule changes into a predator. Because this reaction only requires the collision of two particles, it would be more frequent than the reaction *A* + 2*B* → 3*B* if all else is equal.
+Both our particle simulator and the Gray-Scott model used a reaction *A* + 2*B* → 3*B* to represent a predator-prey dynamics of sorts. But there is no reason *a priori* why we would have used this reaction; instead, we could have modeled the simpler reaction *A* + *B* → 2*B*, in which a predator molecule collides with a prey molecule, and the prey molecule changes into a predator. Because this reaction only requires the collision of two particles, it would be more frequent than the reaction *A* + 2*B* → 3*B* if all else is equal.
 
 **Exercise:** Adapt the particle-based simulation that we introduced earlier in a [tutorial](turing-cellblender) to replace the reaction *A* + *B* → 3*B* with *A* + *B* → 2*B*. Play around with the system's reaction rate parameters; are you still able to generate patterns?
 {: .notice--success}

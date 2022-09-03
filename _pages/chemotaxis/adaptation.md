@@ -52,7 +52,7 @@ Consider the simple reaction of a ligand binding to an MCP, which we originaly w
 
 In other words, as our model grows, with multiple different statse for each molecule involved in each reaction, the number of reactions we need to represent the system grows rapidly; this phenomenon is called **combinatorial explosion** and means that building realistic models of biochemical systems at scale can be daunting.
 
-Yet all of these 12 reactions can be summarized with a single *rule*: a ligand and a receptor can bind into a complex if the receptor is unbound. This rule applies to all of the 12 states that an unbound receptor can have. Moreover, all 12 reactions implied by the rule are easily inferable from it. This idea is the foundation of **rule-based modeling**, a paradigm applied by BioNetGen in which a potentially enormous number of reactions are specified by a much smaller collection of "rules" from which all reactions can be inferred.
+Yet all these 12 reactions can be summarized with a single *rule*: a ligand and a receptor can bind into a complex if the receptor is unbound. This rule applies to all 12 states that an unbound receptor can have. Moreover, all 12 reactions implied by the rule are easily inferable from it. This idea is the foundation of **rule-based modeling**, a paradigm applied by BioNetGen in which a potentially enormous number of reactions are specified by a much smaller collection of "rules" from which all reactions can be inferred.
 
 We will not bog down the main text with a full specification of all the rules needed to add methylation to our model while avoiding combinatorial explosion. If you are interested in the details, please follow our tutorial.
 

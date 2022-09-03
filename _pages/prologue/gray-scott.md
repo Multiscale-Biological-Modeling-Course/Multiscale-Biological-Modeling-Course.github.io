@@ -65,7 +65,7 @@ Our first video shows an animation of the Gray-Scott model using the parameters 
 
 [![image-center](../assets/images/600px/gray-scott_movie_first_frame.png){: .align-center}](../assets/images/gray-scott_movie.gif)
 
-If we expand the size of the simulation and add multiple clusters of predators to the automaton, then the patterns become more complex as waves of predators collide.
+If we expand the size of the simulation and add multiple clusters of *B* particles to the automaton, then the patterns become more complex as waves of *B* particles collide.
 
 [![image-center](../assets/images/600px/gray-scott_multiple_predators_first_frame.png){: .align-center}](../assets/images/gray-scott_multiple_predators.gif)
 
@@ -74,7 +74,7 @@ If we keep the feed rate constant and increase the kill rate slightly to *k* = 0
 [![image-center](../assets/images/600px/gray-scott_f34_k63_first_frame.png){: .align-center}](../assets/images/gray-scott_f34_k63.gif)
 {: style="font-size: medium;"}
 
-If we make the prey a little happier as well, increasing  *f* to 0.038 and *k* to 0.099, then we have a different striped pattern.
+If we make the *A* particles a little happier as well, increasing  *f* to 0.038 and *k* to 0.099, then we have a different striped pattern.
 
 [![image-center](../assets/images/600px/gray-scott_f38_k61_first_frame.png){: .align-center}](../assets/images/gray-scott_f38_k61.gif)
 {: style="font-size: medium;"}
