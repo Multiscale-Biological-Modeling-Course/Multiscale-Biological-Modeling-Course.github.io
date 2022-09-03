@@ -25,13 +25,13 @@ The figure below shows how the Turing patterns produced by the Gray-Scott model 
 Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns obtained in the Gray-Scott model. Each small square shows the patterns obtained from a given choice of feed and kill rate.  Note that many choices of parameters do not produce Turing patterns, which only result from a narrow "sweet spot" band of parameter choices. Image courtesy: Robert Munafo.[^robert]
 {: style="font-size: medium;"}
 
-Later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In a **robust** system, perturbations such as variations in parameters do not lead to substantive changes in the ultimate behavior of the system.  Robustness is vital for processes, like your heartbeat, that must be resilient to small environmental changes.
+Later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In a **robust** system, perturbations such as parameter variations do not lead to substantive changes in the ultimate behavior of the system.  Robustness is vital for processes, like your heartbeat, that must be resilient to small environmental changes.
 
-It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism causing these stripes to form is still an unresolved question. However, researchers have shown that the skin of *zebrafish* does exhibit Turing patterns because two types of pigment cells serve as "particles" following a reaction-diffusion model much like the one we presented in this prologue.[^zebrafish]
+It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the cellular mechanism causing these stripes to form remains unidentified. However, researchers have shown that the skin of *zebrafish* does exhibit Turing patterns because two types of pigment cells serve as "particles" following a reaction-diffusion model much like the one we presented in this prologue.[^zebrafish]
 
 Finally, take a look at the following two photos of giant pufferfish.[^youngfish][^pufferfish] Genetically, these fish are practically identical, but their skin patterns are very different. What may seem like a drastic change from spots to stripes is likely attributable to a small change of parameters in a fine-tuned biological system that, like much of life, is powered by randomness.
 
-{% include gallery caption="Two similar pufferfish with very different skin patterns. (Left) A juvenile Mbu pufferfish with a very familiar pattern. (Right) An adult Mbu pufferfish exhibiting another familiar pattern." %}
+{% include gallery caption="Two similar pufferfish with very different skin Turing patterns. (Left) A juvenile Mbu pufferfish with spotted skin. (Right) An adult Mbu pufferfish with striped skin." %}
 
 ## A final note
 

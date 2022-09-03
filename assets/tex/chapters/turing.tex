@@ -378,13 +378,13 @@ Now that we have established a cellular automaton for coarse-grained particle di
 How might we incorporate these three reactions into our automaton?
 ]\end{qbox}
 
-First, we have the feed reaction, which takes place at a rate \textvar{f}. It is tempting to simply add some constant value \textvar{f} to the concentration of \textvar{A} in each cell in each time step. However, if $[\textvar{A}]$ were close to 1, then adding \textvar{f} to it could cause $[\textvar{A}]$ to exceed 1, which we should avoid.
+First, we have the feed reaction, which takes place at a rate \textvar{f}. It is tempting to simply add some constant value \textvar{f} to the concentration of \textvar{A} in each cell in each time step. However, if $[\textvar{A}]$ were close to 1, then adding \textvar{f} to it could cause $[\textvar{A}]$ to exceed 1, which we may wish to avoid.
 
-Instead, if a cell has current concentration $[\textvar{A}]$, then we will add $\textvar{f} \cdot (1-[\textvar{A}])$ to this cell's concentration of \textvar{A} particles. For example, if $[\textvar{A}]$ is 0.01, then we will add $0.99 \cdot \textvar{f}$ to the cell because the current concentration of is low. If $[\textvar{A}]$ is 0.8, then we will only add $0.2 \cdot \textvar{f}$ to the current concentration of \textvar{A} particles.
+Instead, if a cell has current concentration $[\textvar{A}]$, then we will add $\textvar{f} \cdot (1-[\textvar{A}])$ to this cell's concentration of \textvar{A} particles. For example, if $[\textvar{A}]$ is equal to 0.01, then we will add $0.99 \cdot \textvar{f}$ to the cell because the current concentration of is low. If $[\textvar{A}]$ is equal to 0.8, then we will only add $0.2 \cdot \textvar{f}$ to the current concentration of \textvar{A} particles.
 
 Second, we have the removal reaction of \textvar{B} particles, which takes place at rate \textvar{k}. Recall that \textvar{k} is proportional to the current concentration of \textvar{B} particles. As a result, we will subtract $\textvar{k} \cdot [\textvar{B}]$ from the current concentration of \textvar{B} particles.
 
-Third, we have the reproduction reaction $\textvar{A} + 2\textvar{B} \rightarrow 3\textvar{B}$, which takes place at a rate \textvar{r}. The higher the concentration of \textvar{A} and \textvar{B}, the more this reaction will take place. Furthermore, because we need \textit{two} \textvar{B} particles in order for the collision to occur, the reaction should be even more rare if we have a low concentration of \textvar{B} than if we have a low concentration of \textvar{A}. To model this situation, we will subtract $\textvar{r} \cdot [\textvar{A}] \cdot [\textvar{B}]^2$ from the concentration of \textvar{A} particles and add $\textvar{r} \cdot [\textvar{A}] \cdot [\textvar{B}]^2$ to the concentration of \textvar{B} particles.
+Third, we have the reproduction reaction $\textvar{A} + 2\textvar{B} \rightarrow 3\textvar{B}$, which takes place at a rate \textvar{r}. The higher the concentration of \textvar{A} and \textvar{B}, the more this reaction will take place. Furthermore, because we need \textit{two} \textvar{B} particles in order for the collision to occur, the reaction should be more rare if we have a low concentration of \textvar{B} than if we have a low concentration of \textvar{A}. To model this situation, we will subtract $\textvar{r} \cdot [\textvar{A}] \cdot [\textvar{B}]^2$ from the concentration of \textvar{A} particles and add $\textvar{r} \cdot [\textvar{A}] \cdot [\textvar{B}]^2$ to the concentration of \textvar{B} particles.
 
 We now just need to combine these reactions with diffusion. Say that as the result of diffusion, the change in its concentrations are $\Delta A$ and $\Delta B$, where a negative number represents particles leaving the cell, and a positive number represents particles entering the cell. Then in the next time step, the particle concentrations $[\textvar{A}]_{\text{new}}$ and $[\textvar{B}]_{\text{new}}$ are given by the following equations:
 \begin{align*}
@@ -392,18 +392,18 @@ We now just need to combine these reactions with diffusion. Say that as the resu
 [B]_{\text{new}} & = [B] + \Delta B - k \cdot [B] + r \cdot [A] \cdot [B]^2,.
 \end{align*}
 
-\noindent Applying these reaction-diffusion computations over all cells in parallel and over many generations constitutes a cellular automaton model called the \textdef{Gray-Scott model}{Gray-Scott model}{a cellular automaton model generating Turing patterns without needing to track individual particles}.
+\noindent Applying these reaction-diffusion computations over all cells in parallel and over many generations constitutes a cellular automaton called the \textdef{Gray-Scott model}{Gray-Scott model}{a cellular automaton model generating Turing patterns without needing to track individual particles}.
 
-Before continuing, let us consider an example of how a single cell might update its concentration of both particle types as a result of reaction and diffusion.  Say that we have the parameter values: $d_A = 0.2$; $d_B = 0.1$; $f = 0.3$; $k = 0.4$; $r = 1$ (the value typically always used in the Gray-Scott model).
+Before continuing, let us consider an example of how a single cell might update its concentration of both particle types as a result of reaction and diffusion.  Say that we have the parameter values $d_A = 0.2$, $d_B = 0.1$, $f = 0.3$, $k = 0.4$, and $r = 1$ (the value typically always used in the Gray-Scott model).
 
-Furthermore, say that our cell has the current concentrations $([\textvar{A}], [\textvar{B}]) = (0.7, 0.5)$. Then as a result of diffusion, the cell's concentration of \textvar{A} will decrease by $0.7 \cdot d_A = 0.14$, and its concentration of \textvar{B} will decrease by $0.5 \cdot d_B = 0.05$. It will also receive particles from neighboring cells; for example, say that it receives an increase to its concentration of \textvar{A} by 0.08 and an increase to its concentration of \textvar{B} by 0.06 as the result of diffusion from neighbors. Therefore, the net concentration changes due to diffusion are $\Delta A  = 0.08 - 0.14 = -0.06$, and $\Delta B = 0.06 - 0.05 = 0.01$.
+Furthermore, say that our cell has the current concentrations $([\textvar{A}], [\textvar{B}]) = (0.7, 0.5)$. Then as a result of diffusion, the cell's concentration of \textvar{A} will decrease by $0.7 \cdot d_A = 0.14$, and its concentration of \textvar{B} will decrease by $0.5 \cdot d_B = 0.05$. It will also receive particles from neighboring cells; for example, say that it receives an increase to its concentration of \textvar{A} by 0.08 and an increase to its concentration of \textvar{B} by 0.06 as the result of diffusion from neighbors. Therefore, the net concentration changes due to diffusion are $\Delta A  = 0.08 - 0.14 = -0.06$ and $\Delta B = 0.06 - 0.05 = 0.01$.
 
-Now we will consider the three reactions. The feed reaction will cause the cell's concentration of \textvar{A} to increase by $(1 - [A]) \cdot f = (1-0.7) \cdot 0.3 = 0.09$. The death reaction will cause its concentration of \textvar{B} to decrease by $k \cdot [B] = 0.4 \cdot 0.5 = 0.2$. And the reproduction reaction will mean that the concentration of \textvar{A} decreases by $[A] \cdot [B]^2 = 0.7 \cdot 0.5^2 = 0.175$, with the concentration of \textvar{B} increasing by the same amount.
+Now we will consider the three reactions. The feed reaction will cause the cell's concentration of \textvar{A} to increase by $(1 - [A]) \cdot f = (1-0.7) \cdot 0.3 = 0.09$. The kill reaction will cause its concentration of \textvar{B} to decrease by $k \cdot [B] = 0.4 \cdot 0.5 = 0.2$. And the reproduction reaction will mean that the concentration of \textvar{A} decreases by $[A] \cdot [B]^2 = 0.7 \cdot 0.5^2 = 0.175$, with the concentration of \textvar{B} increasing by the same amount.
 
-As the result, we update the concentrations of \textvar{A} and \textvar{B} to the following values $([A]_{\text{new}}, [B]_{\text{new}})$ in the next time step according to the equations above.
+As a result, we update the concentrations of \textvar{A} and \textvar{B} to the values $([A]_{\text{new}}, [B]_{\text{new}})$ in the next time step according to the equations above:
 \begin{align*}
 [A]_{\text{new}} & = 0.7 - 0.06 + 0.09 - 0.175 = 0.555\\
-[B]_{\text{new}} & = 0.5 + 0.01 - 0.2 + 0.175 = 0.485
+[B]_{\text{new}} & = 0.5 + 0.01 - 0.2 + 0.175 = 0.485\,.
 \end{align*}
 
 We are now ready to implement the Gray-Scott model. The question is: even though we have built a coarser-grained simulation than the previous section, will we still see Turing patterns?\tutorial[prologue/gs-jupyter]
@@ -412,9 +412,9 @@ We are now ready to implement the Gray-Scott model. The question is: even though
 \phantomsection
 \subsection{Reflecting on the Gray-Scott model}
 
-In contrast to the particle-based simulator introduced earlier, the Gray-Scott model produced an animation in under a minute on a laptop. We show the results of this model in the videos that follow; throughout these animations, we use the parameters $d_A = 0.5$, $d_B = 0.25$, and $r = 1$.
+In contrast to the particle-based simulator introduced earlier, the Gray-Scott model produced an animation in under a minute on a laptop. We show the results of this model in the figures that follow. Throughout these figures, we use the parameters $d_A = 0.5$, $d_B = 0.25$, and $r = 1$, and we color each cell according to its value of $[\textvar{B}]/([\textvar{A}] + [\textvar{B}])$ using the ``Spectral'' color map.
 
-\autoref{fig:gray-scott_movie_first_frame} shows an animation of the Gray-Scott model using the parameters  $f = 0.034$ and $k = 0.100$. We use a comparable initial configuration of the automaton that we used in the diffusion example, in which a cluster of \textvar{B} particles are found in a board full of \textvar{A} particles.\\
+In \autoref{fig:gray-scott_movie_first_frame}, we use the parameters  $f = 0.034$ and $k = 0.100$. We use a comparable initial configuration of the automaton as in the diffusion example, in which a cluster of \textvar{B} particles are found in a board full of \textvar{A} particles.
 
 \begin{figure}[h]
 \centering
@@ -422,7 +422,7 @@ In contrast to the particle-based simulator introduced earlier, the Gray-Scott m
 \begin{tabular}{c c c c}
 \includegraphics[width = 0.19\textwidth]{../images/gs_f038_k100_Moment_1.png} & \includegraphics[width = 0.19\textwidth]{../images/gs_f038_k100_Moment_2.png} & \includegraphics[width = 0.19\textwidth]{../images/gs_f038_k100_Moment_3.png} & \includegraphics[width = 0.19\textwidth]{../images/gs_f038_k100_Moment_4.png}
 \end{tabular}
-\caption{An animation of the Gray-Scott model for \textvar{f} = 0.034 and \textvar{k} = 0.100, in which a single cluster of \textvar{B} particles expands outward into clear stripes of varying \textvar{B} concentrations.}
+\caption{An animation of the Gray-Scott model for \textvar{f} = 0.034 and \textvar{k} = 0.1, in which a single cluster of \textvar{B} particles expands outward into clear stripes.}
 \label{fig:gray-scott_movie_first_frame}
 \end{figure}
 
@@ -434,7 +434,7 @@ If we expand the size of the simulation and add multiple clusters of \textvar{B}
 \begin{tabular}{c c c c}
 \includegraphics[width = 0.19\textwidth]{../images/f038_100_multi_Moment_1.jpg} & \includegraphics[width = 0.19\textwidth]{../images/f038_100_multi_Moment_2.jpg} & \includegraphics[width = 0.19\textwidth]{../images/f038_100_multi_Moment_3.jpg} & \includegraphics[width = 0.19\textwidth]{../images/f038_100_multi_Moment_4.jpg}
 \end{tabular}
-\caption{An expanded version of the animation from \autoref{fig:gray-scott_movie_first_frame} containing several initial clusters of \textvar{B} particles. The same type of pattern is produced, albeit over a larger region.}
+\caption{An expanded version of the animation from \autoref{fig:gray-scott_movie_first_frame} containing several initial clusters of \textvar{B} particles. The same pattern is produced, albeit over a larger region.}
 \label{fig:gray-scott_multiple_predators_first_frame}
 \end{figure}
 
@@ -454,7 +454,7 @@ If we expand the size of the simulation and add multiple clusters of \textvar{B}
 \begin{tabular}{c c c c}
 \includegraphics[width = 0.19\textwidth]{../images/f044_k102_multi_Moment_1.jpg} & \includegraphics[width = 0.19\textwidth]{../images/f044_k102_multi_Moment_2.jpg} & \includegraphics[width = 0.19\textwidth]{../images/f044_k102_multi_Moment_3.jpg} & \includegraphics[width = 0.19\textwidth]{../images/f044_k102_multi_Moment_4.jpg}
 \end{tabular}
-\caption{A Gray-Scott simulation with \textvar{f} = 0.044 and \textvar{k} = 0.102.}
+\caption{A Gray-Scott simulation with \textvar{f} = 0.044 and \textvar{k} = 0.102, showing a different striped pattern than \autoref{fig:gray-scott_multiple_predators_first_frame}.}
 \label{fig:gray-scott_f44_k102_first_frame}
 \end{figure}
 
@@ -475,13 +475,13 @@ In both the particle-based and automaton model for Turing patterns, we observed 
 \centering
 \mySfFamily
 \includegraphics[width = 0.5\textwidth]{../images/xmorphia-parameter-map.jpg}
-\caption{Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns obtained in the Gray-Scott model. Each small square shows the patterns obtained from a given choice of feed and kill rate.  Note that many choices of parameters do not produce Turing patterns, which only result from a narrow ``sweet spot'' band of parameter choices.}
+\caption{Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns obtained in the Gray-Scott model. Each small square shows the patterns obtained from a given choice of kill and feed rate.  Note that, just as we saw in \autoref{fig:k=500000_f=1000} and \autoref{fig:k=100000_f=1000000}, many choices of parameters do not produce Turing patterns, which only result from a narrow ``sweet spot'' band of parameter choices.}
 \label{fig:xmorphia-parameter-map}
 \end{figure}
 
-Later in this book, we will see an example of a biological system that is the opposite of fine-tuned. In a \textdef{robust}{robustness}{the ability of a system to retain a desired behavior despite perturbations such as changes to parameters} system, perturbations such as variations in parameters do not lead to substantive changes in the ultimate behavior of the system. Robustness is vital for processes, like your heartbeat, that must be resilient to small environmental changes.
+Later in this book, we will see an example of a biological system that is the opposite of fine-tuned. In a \textdef{robust}{robustness}{the ability of a system to retain a desired behavior despite perturbations such as changes to parameters} system, perturbations such as parameter variations do not lead to substantive changes in the ultimate behavior of the system. Robustness is vital for processes, like your heartbeat, that must be resilient to small environmental changes.
 
-It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the exact mechanism causing these stripes to form is still an unresolved question. However, researchers have shown that the skin of \textit{zebrafish} does exhibit Turing patterns because two types of pigment cells serve as ``particles'' following a reaction-diffusion model much like the one we presented in this chapter.
+It turns out that although Turing's work offers a compelling argument for how zebras might have gotten their stripes, the cellular mechanism causing these stripes to form remains unidentified. However, researchers have shown that the skin of \textit{zebrafish} does exhibit Turing patterns because two types of pigment cells serve as ``particles'' following a reaction-diffusion model much like the one we presented in this chapter.
 
 Finally, take a look at the two photos of giant pufferfish in \autoref{fig:pufferfish}. Genetically, these fish are practically identical, but their skin patterns are very different. What may seem like a drastic change from spots to stripes is likely attributable to a small change of parameters in a fine-tuned biological system that, like much of life, is powered by randomness.\\
 
@@ -492,7 +492,7 @@ Finally, take a look at the two photos of giant pufferfish in \autoref{fig:puffe
 \begin{tabular}{c c}
 \includegraphics[width = 0.4\textwidth]{../images/Juvenile_Mbu_pufferfish.jpg} & \includegraphics[width = 0.4\textwidth]{../images/Giant_Puffer_fish_skin_pattern.jpg}
 \end{tabular}
-\caption{Two similar pufferfish with very different skin patterns. (Left) A juvenile Mbu pufferfish with a very familiar pattern. (Right) An adult Mbu pufferfish exhibiting another familiar pattern.}
+\caption{Two similar pufferfish with very different skin Turing patterns. (Left) A juvenile Mbu pufferfish with spotted skin. (Right) An adult Mbu pufferfish with striped skin.}
 \label{fig:pufferfish}
 \end{figure}
 
@@ -506,7 +506,7 @@ Finally, take a look at the two photos of giant pufferfish in \autoref{fig:puffe
 
 Photons are massless particles carrying electromagnetic radiation. In the sun's core, photons are created as the result of nuclear fusion when two hydrogen atoms crash together and form a helium atom. The photons that are released have a great deal of kinetic energy, traveling at the speed of light (approximately 300,000,000 $\text{m}/\text{s}$). However, the atoms in the center of the sun are densely packed together, and so just like proteins in the cytoplasm, photons constantly bounce off atoms and follow random walks.
 
-The average distance that the photon travels between atom collisions is called the photon's ``mean free path''. The mean free path varies depending on the photon's distance from the sun's core, but conservative estimates of the average mean free path dictate that it is no more than 1 cm.\\
+The average distance that a photon travels between atom collisions is called the photon's ``mean free path''. The mean free path varies depending on the photon's distance from the sun's core, but conservative estimates of the average mean free path dictate that it is no more than 1 cm.\\
 
 \begin{exercise}[%
 On average, what is the length of each step of a solar photon's random walk? That is, based on a mean free path of 1 cm, what is the typical time between collisions for a given photon traveling at the speed of light?
@@ -520,10 +520,10 @@ Use the Random Walk Theorem to approximate the number of steps that it will take
 
 \subsection{Practice with the cellular automaton model of diffusion}
 
-In \autoref{fig:two_particle_concentration_diffusion}, we showed a grid of cells containing concentrations of two particles \textvar{A} and \textvar{B} that start at maximum concentration in the central square and diffuse according to the rates $d_A = 0.2$ and $d_B = 0.1$. In a ``STOP'' question, we asked you to update this grid after another time step of diffusion.\\
+In \autoref{fig:two_particle_concentration_diffusion}, we showed a grid of cells containing concentrations of two particles \textvar{A} and \textvar{B} that start with concentration equal to 1 in the central square and diffuse according to the rates $d_A = 0.2$ and $d_B = 0.1$.\\
 
 \begin{exercise}[%
-Instead of solely diffusing the particles, update the original grid (in which \textvar{A} and \textvar{B} are at maximum concentration in the central cell) for two time steps according to the Gray-Scott model. Use $f = 0.03$ and $k = 0.1$.
+Instead of solely diffusing the particles, update the original grid (in which \textvar{A} and \textvar{B} have concentration equal to 1 in the central cell) for two time steps according to the Gray-Scott model. Use $f = 0.03$ and $k = 0.1$.
 ]\end{exercise}
 
 \phantomsection
@@ -532,7 +532,7 @@ Instead of solely diffusing the particles, update the original grid (in which \t
 Both our particle simulator and the Gray-Scott model used a reaction $A + 2B \rightarrow 3B$ to represent a predator-prey dynamics of sorts. But there is no reason \textit{a priori} why we would have used this reaction; instead, we could have modeled the simpler reaction $A + B \rightarrow 2B$, in which a predator molecule collides with a prey molecule, and the prey molecule changes into a predator. Because this reaction only requires the collision of two particles, it would be more frequent than the reaction $A + 2B \rightarrow 3B$ if all else is equal.\\
 
 \begin{exercise}[%
-Adapt the particle-based simulation that we introduced earlier in this chapter to replace the reaction $A + 2B \rightarrow 3B$ with $A + B \rightarrow 2B$. Play around with the system's reaction rate parameters; are you still able to generate patterns?
+Adapt the particle-based simulation that we introduced earlier in this chapter to replace the reaction $A + 2B \rightarrow 3B$ with $A + B \rightarrow 2B$. Play around with the system's reaction rate parameters; are you still able to generate Turing patterns?
 ]\end{exercise}
 
 
@@ -548,13 +548,20 @@ In the Gray-Scott model, given any value of \textvar{f} between 0.01 and 0.99, i
 ]\end{exercise}
 
 \begin{exercise}[%
-Try changing the diffusion rates in the Gray-Scott model from the values of $\textvar{dA} = 0.2$ and $\textvar{dB} = 0.1$ presented in this chapter to see if the same behavior is obtained. What happens if we multiply both diffusion rates by a constant factor? What happens if we make the diffusion rates equal?
+Try changing the diffusion rates in the Gray-Scott model to the values of  $d_A = 0.1$ and $d_B = 0.05$. Do the same patterns result? What happens if we make the diffusion rates equal?
 ]\end{exercise}
 
 When we diffuse particles in the automaton model (including the Gray-Scott model), we did not mention what happens at the boundary of the simulation because we were interested in the patterns that arise in the interior of the grid. The simulations shown in the figures in this chapter assume that the automaton is surrounded by a ``buffer'' of invisible cells that have zero concentration. In this way, the particles leaving the board simply flow off the edges.
 
-There are two additional methods that we could have used for handling barriers. First, we could assume that particles flowing off one side of the board are added to the corresponding cells on the opposite side of the board. Second, we could assume that the barriers serve as hard barriers, so that any points that would flow off the side of the board instead remain in the current cell.\\
+We could have used two additional methods to handle barriers. First, we could assume that particles flowing off one side of the board are added to the corresponding cells on the opposite side of the board. Second, we could assume that particles ricochet off the barriers, so that any points that would flow off the side of the board instead remain in the current cell.\\
 
 \begin{exercise}[%
-Adapt the simulation of the Gray-Scott model to handle each of these additional two cases. Do you see the same patterns arise? (See the online version of this exercise for details.)
+Adapt the simulation of the Gray-Scott model to handle each of these additional two cases. Do you see the same patterns arise? (See the \href{https://biologicalmodeling.org/prologue/exercises}{online version} of this exercise for details.)
 ]\end{exercise}
+
+\newpage
+
+\phantom{x}
+\pagestyle{empty}
+
+\newpage
