@@ -138,36 +138,35 @@ Once we know which genes each transcription factor regulates, we can consolidate
 
 Note that the edges in the \textit{E. coli} transcription factor network in \autoref{fig:e_coli_tf_network} have different colors. An edge connecting \textvar{X} to \textvar{Y} is colored blue if \textvar{X} activates \textvar{Y}, and it is colored orange if \textvar{X} represses \textvar{Y}. (Alternatively, we could label the edges with a ``+'' or ``$-$''.)\\
 
+\begin{qbox}[%
+Do you notice anything interesting about the network in \autoref{fig:e_coli_tf_network}?
+]\end{qbox}
+
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/e_coli_tf_network_blue_orange.png}
-\caption{A subset of the \textit{E. coli} transcription factor network. An edge from \textvar{X} to \textvar{Y} denotes that \textvar{X} is a transcription factor that regulates \textvar{Y}. Edges corresponding to activation are colored blue, and edges corresponding to repression are colored orange.}
+\caption{A subset of the \textit{E. coli} transcription factor network. An edge from \textvar{X} to \textvar{Y} denotes that \textvar{X} is a transcription factor that regulates \textvar{Y}. Edges corresponding to activation are colored blue, and edges corresponding to repression are colored orange. All genes in the subset of the network shown are transcription factors, so that edges represent transcription factors that regulate other transcription factors.}
 \label{fig:e_coli_tf_network}
 \end{figure}
-
-\begin{qbox}[%
-Do you notice anything interesting about the network in \autoref{fig:e_coli_tf_network}?
-]\end{qbox}
 
 \FloatBarrier
 \phantomsection
 \subsection{Loops in the transcription factor network}
 
-You may have noticed that the \textit{E. coli} transcription factor network seems to have surprisingly many \textdef{loops}{loop}{an edge in a network connecting a node to itself}, or edges that connect a node to itself. We will pause to consider the implications of a loop in a transcription factor network --- what does it mean for a transcription factor to regulate itself?
+You may have noticed that the \textit{E. coli} transcription factor network in \autoref{fig:e_coli_tf_network} has surprisingly many \textdef{loops}{loop}{an edge in a network connecting a node to itself}, or edges that connect a node to itself. We will pause to consider the implications of a loop in a transcription factor network --- what does it mean for a transcription factor to regulate itself?
 
-A transcription factor is a protein, which means that because of the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In \textdef{autoregulation}{autoregulation}{the process by which a transcription factor regulates its own production} (\autoref{fig:autoregulation_example}), the transcription factor protein then binds to the DNA in the region preceding the gene that encodes the very \textit{same} transcription factor. This type of \textit{feedback} is a beautiful and surprising feature of a simple biological system.
+A transcription factor is a protein, which means that because of the central dogma, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In \textdef{autoregulation}{autoregulation}{the process by which a transcription factor regulates its own production} (\autoref{fig:autoregulation_example}), the transcription factor protein then binds to the DNA in the region preceding the gene that encodes the very \textit{same} transcription factor. This type of \textit{feedback} is a beautiful and surprising feature of a simple biological system.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/autoregulation_example.png}
-\caption{A simplified illustration of autoregulation, in which a gene is transcribed into messenger RNA (mRNA) and then translated into protein, and then this protein regulates the same gene, producing a feedback loop. ``Protein'' labels the transcription factor binding factor protein, which binds to the DNA encoding this transcription factor, labeled by ``Gene''.}
+\includegraphics[width = 0.85\textwidth]{../images/autoregulation_example.png}
+\caption{A simplified illustration of autoregulation, in which a gene is transcribed into messenger RNA (mRNA) and then translated into a transcription factor protein, and then this transcription factor regulates the same gene, producing a feedback loop. ``Protein'' labels the transcription factor binding factor protein, which binds to the DNA encoding this transcription factor, labeled by ``Gene''.}
 \label{fig:autoregulation_example}
 \end{figure}
 
 Transcription factor autoregulation leads us to ask two questions. First, how can we justify that a transcription factor network has ``surprisingly many'' loops? And second, if autoregulation is so common, then why would a transcription factor have evolved to regulate its own transcription? We will address these questions in each of the next two sections.\\
-
 
 \FloatBarrier
 \phantomsection
@@ -215,11 +214,10 @@ Why in the world would organisms have evolved the process of autoregulation only
 
 \FloatBarrier
 \phantomsection
-
 \section{The Negative Autoregulation Motif}
 \label{sec:the_negative_autoregulation_motif}
-\phantomsection
 
+\phantomsection
 \subsection{Simulating transcriptional regulation with a reaction-diffusion model}
 
 Theodosius Dobzhansky famously wrote that ``nothing in biology makes sense except in the light of evolution.'' In the spirit of this quotation, there must be some evolutionary reason for the presence of the large number of negatively autoregulating \textit{E. coli} transcription factors that we identified in the previous section. Our goal is to use biological modeling to establish this justification.

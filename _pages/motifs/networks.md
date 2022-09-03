@@ -25,12 +25,12 @@ A subset of the *E. coli* transcription factor network[^eColiNetwork] (click to 
 
 ## Loops in the transcription factor network
 
-You may have noticed that the *E. coli* transcription factor network seems to have surprisingly many **loops**, or edges that connect a node to itself. We will pause to consider the implications of a loop in a transcription factor network — what does it mean for a transcription factor to regulate itself?
+You may have noticed that the *E. coli* transcription factor network has surprisingly many **loops**, or edges that connect a node to itself. We will pause to consider the implications of a loop in a transcription factor network — what does it mean for a transcription factor to regulate itself?
 
-A transcription factor is a protein, which means that because of the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In **autoregulation**, illustrated in the figure below, the transcription factor protein then binds to the DNA in the region preceding the gene that encodes the very *same* transcription factor. This type of *feedback* is a beautiful and surprising feature of a simple biological system.
+A transcription factor is a protein, which means that because of the central dogma, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In **autoregulation**, illustrated in the figure below, the transcription factor protein then binds to the DNA in the region preceding the gene that encodes the very *same* transcription factor. This type of *feedback* is a beautiful and surprising feature of a simple biological system.
 
 [![image-center](../assets/images/600px/autoregulation_example.png){: .align-center}](../assets/images/autoregulation_example.png)
-A simplified illustration of autoregulation. "Protein" labels the transcription factor binding factor protein, which binds to the DNA encoding this transcription factor, labeled by "Gene".[^auto]
+A simplified illustration of autoregulation, in which a gene is transcribed into messenger RNA (mRNA) and then translated into a transcription factor protein, and then this transcription factor regulates the same gene, producing a feedback loop. "Protein" labels the transcription factor binding factor protein, which binds to the DNA encoding this transcription factor, labeled by "Gene".
 {: style="font-size: medium;"}
 
 Transcription factor autoregulation leads us to ask two questions. First, how can we justify that a transcription factor network has "surprisingly many" loops? And second, if autoregulation is so common, then why would a transcription factor have evolved to regulate its own transcription? We will address these questions in each of the next two lessons.
