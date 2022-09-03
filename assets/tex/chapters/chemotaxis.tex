@@ -6,7 +6,7 @@
 
 \FloatBarrier
 
-\section{Introduction: The Lost Immortals}
+\section{The Lost Immortals}
 \label{sec:introduction}
 \phantomsection
 
@@ -238,7 +238,7 @@ Use a similar argument to show that the units of the dissociation rate $k_\text{
 
 \FloatBarrier
 \phantomsection
-\subsection{Steady state ligand-receptor concentrations for an experimentally verified example}
+\subsection{Example steady state ligand-receptor concentrations}
 
 Having established the units in our model, we will solve our quadratic equation once more to identify steady state concentrations using experimentally verified binding and dissociation rates. The experimentally verified rate constant for the binding of receptors to glucose ligands is $k_\text{bind} = 0.0146~(\text{µm}^3/\text{molecule}) \cdot \text{s}^{-1}$, and the dissociation rate constant is $k_\text{dissociate} = 35\,\text{s}^{-1}$\,. We will model an \textit{E. coli} cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants $a$, $b$, and $c$ in the quadratic equation:
 \begin{align*}
@@ -261,7 +261,7 @@ We can therefore determine the steady state concentration for a \textit{single} 
 \section{Stochastic Simulation of Chemical Reactions}
 \label{sec:stochastic_simulation_of_chemical_reactions}
 \phantomsection
-\subsection{Verifying a theoretical steady state concentration via stochastic simulation}
+\subsection{Verifying a steady state concentration via stochastic simulation}
 
 In \autoref{chapter:motifs}, we saw that we could avoid tracking the positions of individual particles if we assume that the particles are \textit{well-mixed}, i.e., uniformly distributed throughout their environment. We will apply this assumption in our current work as well, in part because the \textit{E. coli} cell is so small. As a proof of concept, we will see if a well-mixed simulation replicates a reversible reaction's equilibrium concentrations of particles that we found in the preceding section.
 
@@ -306,7 +306,7 @@ What is the probability $\mathrm{Pr}(T < t)$?
 
 \FloatBarrier
 \phantomsection
-\subsection{The Gillespie algorithm}
+\subsection{The Gillespie algorithm for simulating well-mixed reactions}
 
 We now return to explain the Gillespie algorithm for simulating multiple chemical reactions in a well-mixed environment. The engine of this algorithm runs on a single question: given a well-mixed environment of particles and a reaction involving those particles taking place at some average rate, how long should we expect to \textit{wait} before this reaction occurs somewhere in the environment?
 
@@ -349,7 +349,7 @@ $\dfrac{r_i}{r_1 + r_2 + \cdots + r_n}$\,.
 
 \FloatBarrier
 \phantomsection
-\subsection{Does the Gillespie algorithm confirm our steady state calculations?}
+\subsection{Confirming steady state calculations with the Gillespie algorithm}
 
 Earlier in this chapter, we showed an example in which a system with 10,000 free ligand molecules and 7,000 free receptor molecules produced the following steady state concentrations using the experimentally verified binding rate of $k_\text{bind} = 0.0146 (\text{µm}^3/\text{molecule}) \cdot \text{s}^{-1}$ and dissociation rate of $k_\text{dissociate} = 35\,\text{s}^{-1}$:
 \begin{align*}
@@ -425,7 +425,7 @@ Once we have built this model, we would like to see what happens when we \textit
 
 \FloatBarrier
 \phantomsection
-\subsection{Changing ligand concentrations leads to a change in internal molecular concentrations}
+\subsection{Changing ligand concentrations leads to an internal change}
 
 \autoref{fig:chemotaxis_concentrations} (top) shows the concentrations of phosphorylated CheA and CheY in a model of our system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency. The addition of 5,000 attractant ligand molecules increases the concentration of bound receptors, therefore leading to less CheA autophosphorylation, and less phosphorylated CheY (\autoref{fig:chemotaxis_concentrations} (middle)). If we instead have 100,000 initial attractant molecules, then we see an even more drastic decrease in phosphorylated CheA and CheY (\autoref{fig:chemotaxis_concentrations} (bottom)).
 
@@ -452,7 +452,7 @@ What we have shown here is just part of the story. In the next section, we will 
 \label{sec:methylation}
 
 \phantomsection
-\subsection{Bacterial tumbling remains constant for different attractant concentrations}
+\subsection{Bacterial tumbling stays constant for different attractant concentrations}
 
 The reality of cellular environments is that the concentration of an attractant can vary across several orders of magnitude. The cell therefore needs to detect not \textit{absolute} concentrations of an attractant but rather \textit{relative} changes.
 
@@ -515,7 +515,7 @@ We will not bog down the text with a full specification of all the rules needed 
 
 \FloatBarrier
 \phantomsection
-\subsection{Bacterial tumbling is robust to large sudden changes in attractant concentration}
+\subsection{Bacterial tumbling is robust to large sudden changes in attractant}
 
 We will now plot the concentration over time of each molecule for different values of $l_0$, the initial concentration of ligand. From what we have learned about \textit{E. coli}, we should see the concentration of phosphorylated CheY (and therefore the bacterium's tumbling frequency) drop before returning to its original equilibrium. But will our simulation capture this behavior?
 
@@ -592,11 +592,11 @@ This quandary does not have an obvious intuitive answer. In this chapter's concl
 \FloatBarrier
 \phantomsection
 
-\section{Conclusion: The Beauty of \textit{E. coli}'s Robust Randomized Exploration Algorithm}
+\section{Conclusion: The Beauty of \textit{E. coli}'s Random Exploration Algorithm}
 \label{sec:conclusion}
 
 \phantomsection
-\subsection{Two randomized exploration strategies}
+\subsection{Simulating a bacterium's motion}
 
 In \autoref{chapter:turing}, we saw that a particle taking a collection of \textit{n} unit steps in random directions will wind up on average a distance proportional to $\sqrt{n}$ units away from its starting position. We would like to compare such a random walk against a modified random walk that emulates the behavior of \textit{E. coli} by changing the length of a step based on the relative change in background attractant concentration.
 
@@ -614,7 +614,7 @@ We are comparing two different cellular behaviors, and so in the spirit of \auto
 
 \FloatBarrier
 \phantomsection
-\subsection{Strategy 1: Standard random walk}
+\subsection{Simulated strategy 1: Standard random walk}
 
 To model a particle following an ``unintelligent'' random walk strategy, we first select a random direction of movement along with a duration of tumble. The angle of reorientation is a random number selected uniformly between 0° and 360°. The duration of each tumble is a ``wait time'' of sorts and follows an exponential distribution with experimentally verified mean equal to 0.1 seconds.
 
@@ -624,7 +624,7 @@ We then iterate the two steps of tumbling and running until the total time alloc
 
 \FloatBarrier
 \phantomsection
-\subsection{Strategy 2: Chemotactic random walk}
+\subsection{Simulated strategy 2: Chemotactic random walk}
 
 In our second strategy, we mimic the real response of \textit{E. coli} to its environment based on what we have learned about chemotaxis throughout this chapter. The simulated bacterium will still follow a run and tumble model, but the duration of each run, which is a function of its tumbling frequency, will depend on the relative change in attractant concentration that it detects.
 
@@ -682,7 +682,7 @@ A tiny change to a simple, unsuccessful randomized algorithm can therefore produ
 
 \FloatBarrier
 \phantomsection
-\subsection{Why is background tumbling frequency constant across bacterial species?}
+\subsection{Why is background tumbling frequency constant across species?}
 
 \autoref{fig:chemotaxis_traj_low_high_tumbling} shows three trajectories for two different values of $t_0$ in a simulation that lasts for 800 seconds. When $t_0$ is equal to 0.2 seconds, the simulated bacteria are not able to walk far enough in a single step to head toward the goal (\autoref{fig:chemotaxis_traj_low_high_tumbling} (left)).\\
 
@@ -744,7 +744,7 @@ Adapt the ``chemotactic'' random walk strategy to handle the fact that bacteria 
 ]\end{exercise}
 
 \phantomsection
-\subsection{Traveling down an attractant gradient}
+\subsection{Simulating a bacterium traveling down an attractant gradient}
 
 A related question to how a bacterium responds to a repellent is how it responds to traveling \textit{away} from an attractant, i.e., down an attractant gradient. To model this situation, we will still use the function $[L] = l_0 \cdot e^{k \cdot t}$ that we used when modeling a bacterium traveling up an attractant gradient, but we will now assume that $k$ is negative so that the concentration is decaying exponentially. Refer to that tutorial for details.\tutorial[tutorial_walk]\\
 
@@ -780,7 +780,7 @@ Vary the tumbling frequency according to the parameters given in the chemotactic
 ]\end{exercise}
 
 \phantomsection
-\subsection{Changing the \textit{E.~coli} choice of direction}
+\subsection{Changing the reorientation angle to \textit{E.~coli}}
 
 In the conclusion, we mentioned that when \textit{E.~coli} tumbles, the degree of reorientation is not uniformly random from 0° to 360°. Rather, research has shown that it follows a normal distribution with mean of 68° (1.19 radians) and standard deviation of 36° (0.63 radians).\\
 

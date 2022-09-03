@@ -15,7 +15,7 @@
 
 \FloatBarrier
 
-\section{Introduction: How Are Blood Cells Counted?}
+\section{How Are Blood Cells Counted?}
 \label{sec:introduction}
 \phantomsection
 
@@ -93,7 +93,7 @@ You can find a color picker in \texttt{Utilities > Digital Color Meter} (Mac OS 
 
 \FloatBarrier
 \phantomsection
-\subsection{Binarizing an image based on a color threshold}
+\subsection{Segmenting an image based on a color threshold}
 
 We will \textdefnogloss{binarize} each blood cell image by coloring a pixel white (RGB: (256, 256, 256)) if its blue value is above some threshold, and turning a pixel black (RGB: (0, 0, 0)) if its blue value is beneath some threshold. The binarized version of the granulocyte image from \autoref{fig:three_families} (left) using the threshold value of 153 is shown in \autoref{fig:neutrophil_binarized_blue}. Unfortunately, we cannot clearly see the WBC nucleus in this binarized image because although the nucleus's pixels have high blue values, so do those of the image's background, which emit high percentages of red, green, and blue, producing the background's light appearance.\\
 
@@ -228,7 +228,7 @@ If we were to use all four features for the iris dataset, then every flower woul
 
 \FloatBarrier
 \phantomsection
-\subsection{Classifying unknown elements with k-nearest neighbors}
+\subsection{Classifying unknown data points with k-nearest neighbors}
 
 Our hope is that for datasets other than the iris flower dataset, elements from the same class will have feature vectors that are nearby in \textvar{n}-dimensional space. If so, then we can classify a data point whose class is \textit{unknown} by determining which data points with \textit{known} classification it is near.\\
 
@@ -283,7 +283,7 @@ We now have learned how to use k-NN to classify feature vectors with unknown cla
 \label{sec:shape_spaces}
 \phantomsection
 
-\subsection{Interlude: Stone tablets and lost cities}
+\subsection{Stone tablets and lost cities}
 
 Imagine that you are an interstellar traveler to Earth and come across the ruins of New York City. You find an old road atlas that has driving distances between cities (\autoref{fig:atlas}). Can you use this atlas to find the other cities? In \autoref{chapter:chemotaxis}, we encountered a ``Lost Immortals'' problem; we call the problem of inferring the locations of cities given the distance between them the ``Lost Cities'' problem.\\
 
@@ -531,7 +531,7 @@ It can be proven that for any dataset, when $d_1$ is smaller than $d_2$, the hyp
 
 \FloatBarrier
 \phantomsection
-\subsection{Visualizing the WBC shape space after PCA}
+\subsection{Visualizing a white blood cell shape space after PCA}
 
 \autoref{fig:cellorg_pca_graph} (top) shows the shape space of WBC images, reduced to three dimensions by PCA, in which each image is represented by a point that is color-coded according to its cell family. We can also subdivide granulocytes into basophils, eosinophils, and neutrophils. Updating our labels according to this subdivision produces the plot in \autoref{fig:cellorg_pca_graph} (bottom).\tutorial[white_blood_cells/tutorial_shape_space]
 
@@ -567,7 +567,7 @@ In \textdef{cross validation}{cross validation}{an approach used in classificati
 
 \FloatBarrier
 \phantomsection
-\subsection{A first attempt at quantifying the success of a classifier}
+\subsection{Accuracy and a first attempt at quantifying the success of a classifier}
 
 Before applying cross validation to WBC images, we will discuss how to quantify the performance of a classifier. \autoref{fig:iris_confusion_matrix} shows the result of applying k-NN to the iris flower dataset, using \textvar{k} equal to 3 and cross validation with \textvar{f} equal to 10 (since there are 150 flowers, each fold contains 15 flowers). This table is called a \textdef{confusion matrix}{confusion matrix}{a table used to measure the results of a classification algorithm, identifying how many items from each known class were assigned to each class by the algorithm} because it visualizes whether an algorithm is ``confusing'' an object's class assignment.
 
@@ -762,7 +762,7 @@ Now that we understand more about how to quantify the performance of a classifie
 
 \FloatBarrier
 \phantomsection
-\subsection{Applying a classifier to the WBC shape space}
+\subsection{Applying a classifier to a white blood cell shape space}
 
 The confusion matrix shown in \autoref{fig:wbc_cellorganizer} (top) is the result of running k-NN on our WBC image shape space, using \textvar{d} (the number of dimensions in the PCA hyperplane) equal to 10, \textvar{k} (the number of nearest neighbors to consider when assigning a class) equal to 1, and \textvar{f} (the number of folds) equal to 10. k-NN has an accuracy of 84.3\% and a weighted average of recall, specificity, and precision of 84.3\%, 69.4\%, and 85.7\%, respectively (\autoref{fig:wbc_cellorganizer} (bottom)).
 
@@ -864,7 +864,7 @@ Yet ultimately, k-NN outperforms much more advanced classifiers on this dataset.
 
 \FloatBarrier
 \phantomsection
-\subsection{Limitations of our WBC image classification pipeline}
+\subsection{Discussing limitations of our image classification pipeline}
 
 Even though k-NN has performed reasonably well on our WBC image dataset, we can still make improvements to our algorithm. After all, our model requires a number of steps from the intake of data to their ultimate classification, which means that several potential failure points could arise.
 

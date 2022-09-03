@@ -8,7 +8,7 @@ toc_sticky: true
 image: "../assets/images/normal_adult_blood_smear.JPG"
 ---
 
-## Interlude: Stone tablets and lost cities
+## Stone tablets and lost cities
 
 Imagine that you are a traveler to Earth and come across the ruins of New York City. You find an old road atlas that has driving distances between cities (in miles), shown in the table below. Can you use this atlas to find the other cities in the table? In an [earlier module](../chemotaxis/home), we encountered a "Lost Immortals" problem; this problem, of inferring the locations of cities given the distance between them, we call "Lost Cities".
 
