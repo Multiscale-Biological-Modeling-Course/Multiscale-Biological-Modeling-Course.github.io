@@ -51,7 +51,7 @@ After \textvar{n} steps of unit length in a random walk, a particle will on aver
 For readers who love mathematics, we provide a proof of the Random Walk Theorem in an appendix.
 ]\end{note}
 
-Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that someone who has a respiratory virus can infect many others within an enclosed space as the viral particles expand outward. We also know that when a cake is baking in the oven, we will not need to wait long for delicious smells to waft from the kitchen. But what does all this have to do with Alan Turing and zebra stripes?\\
+Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that someone who has a respiratory virus can infect many others within an enclosed space as the viral particles expand outward. We also know that when a cake is baking in the oven, we will not need to wait long for delicious smells to waft from the kitchen. But what does all this have to do with zebra stripes?\\
 
 \FloatBarrier
 \phantomsection
@@ -62,11 +62,11 @@ Our experience of the world confirms the Random Walk Theorem's statement that ra
 
 \subsection{From random walks to a reaction-diffusion system}
 
-Turing's insight was that remarkable high-level patterns could arise if we combine particle diffusion with chemical reactions, in which colliding particles interact with each other. Such a model is called a \textdef{reaction-diffusion system}{reaction-diffusion system}{a model incorporating the diffusion of particles with chemical reactions involving these particles}, and the emergent patterns are called \textdef{Turing patterns}{Turing patterns}{patterns, such as stripes and spots, that emerge from certain reaction-diffusion systems} in Turing's honor.
+Turing's insight was that high-level patterns could arise in certain circumstances if we combine particle diffusion with chemical reactions, in which colliding particles interact. Such a system is called a \textdef{reaction-diffusion system}{reaction-diffusion system}{a model incorporating the diffusion of particles with chemical reactions involving these particles}, and the emergent patterns are called \textdef{Turing patterns}{Turing patterns}{patterns, such as stripes and spots, that emerge from certain reaction-diffusion systems} in his honor.
 
-We will consider a reaction-diffusion system having two types of particles, \textvar{A} and \textvar{B}. The system is not explicitly a predator-prey relationship, but you may like to think of the \textvar{A} particles as prey and the \textvar{B} particles as predators for reasons that will become clear soon.
+We will consider a reaction-diffusion system having two types of particles, \textvar{A} and \textvar{B}. The system is not explicitly a predator-prey relationship, but you may like to think of the \textvar{A} particles as prey and the \textvar{B} particles as predators.
 
-Both types of particles diffuse randomly through the plane, but the \textvar{A} particles diffuse more quickly than the \textvar{B} particles.  In the simulation that follows, we will assume that \textvar{A} particles diffuse twice as quickly as \textvar{B} particles. In terms of our random walk model, this faster rate of diffusion means that in a single ``step'', an \textvar{A} particle moves twice as far as a \textvar{B} particle.\\
+Both types of particles diffuse randomly through the plane, but the \textvar{A} particles diffuse more quickly than the \textvar{B} particles.  In what follows, we will assume that \textvar{A} particles diffuse twice as quickly as \textvar{B} particles. In terms of our random walk model, this faster rate of diffusion means that in a single time ``step'', an \textvar{A} particle moves twice as far as a \textvar{B} particle.\\
 
 \begin{qbox}[%
 Say that we release a collection of \textvar{A} and \textvar{B} particles at the same location. If the particles move via random walks, and the \textvar{A} particles diffuse twice as fast as the \textvar{B} particles, then on average, how much farther from the origin will the \textvar{A} particles be than the \textvar{B} particles after \textvar{n} steps?

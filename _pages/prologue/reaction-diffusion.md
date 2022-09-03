@@ -21,9 +21,9 @@ gallery:
 
 In the [previous lesson](random_walk), we introduced the model of a particle randomly walking through a medium. But what exactly do random walks have to do with Alan Turing and zebras?
 
-Turing's insight was that remarkable high-level patterns could arise if we combine particle diffusion with chemical reactions, in which colliding particles interact with each other. Such a model is called a **reaction-diffusion system**, and the emergent patterns are called **Turing patterns** in Turing's honor.
+Turing's insight was that remarkable high-level patterns could arise if we combine particle diffusion with chemical reactions, in which colliding particles interact with each other. Such a model is called a **reaction-diffusion system**, and the emergent patterns are called **Turing patterns** in his honor.
 
-We will consider a reaction-diffusion system having two types of particles, *A* and *B*. The system is not explicitly a predator-prey relationship, but you may like to think of the *A* particles as prey and the *B* particles as predators for reasons that will become clear soon.
+We will consider a reaction-diffusion system having two types of particles, *A* and *B*. The system is not explicitly a predator-prey relationship, but you may like to think of the *A* particles as prey and the *B* particles as predators.
 
 Both types of particles diffuse randomly through the plane, but the *A* particles diffuse more quickly than the *B* particles.  In the simulation that follows, we will assume that *A* particles diffuse twice as quickly as *B* particles. In terms of our random walk model, this faster rate of diffusion means that in a single "step", an *A* particle moves twice as far as a *B* particle.
 
