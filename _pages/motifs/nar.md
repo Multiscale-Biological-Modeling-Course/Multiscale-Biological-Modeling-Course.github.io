@@ -38,7 +38,7 @@ To recap, both simulated cells will include an initial concentration of *X* at s
 [Visit tutorial](tutorial_nar){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-**Note:** Although we are using a particle-based model to mimic regulation, it is not replicating specific chemical reactions. In reality, gene regulation is a complicated chemical process that involves a great deal of molecular machinery. The purpose of the model is to strip away the irrelevant and retain the essence of what is being modeled.
+**Note:** Although we are using a particle-based model to mimic regulation, it does not implement specific chemical reactions. In reality, gene regulation is a complicated chemical process that involves a great deal of molecular machinery. The purpose of the model is to strip away the irrelevant and retain the essence of what is being modeled.
 {: .notice--info}
 
 ## Ensuring a mathematically controlled comparison
@@ -63,13 +63,13 @@ We should keep a number of parameters constant  across the two simulations becau
 
 ## An evolutionary basis for negative autoregulation
 
-The figure below plots the concentration of *Y* particles for the two simulated cells after ensuring a mathematically controlled comparison, in which the rate of the *X* → *X* + *Y* reaction has been increased in the second cell. This figure shows that the two simulated cells now have approximately the same steady state concentration of *Y*. However, the second cell reaches this concentration faster; that is, its **response time** to the external stimulus causing an increase in the production of *Y* is shorter.
+The figure below plots the concentration over time of *Y* particles for the two simulated cells after ensuring a mathematically controlled comparison, in which the rate of the reaction *X* → *X* + *Y* has been increased in the second cell. This figure shows that the two simulated cells now have approximately the same steady state concentration of *Y*. However, the second cell reaches this concentration faster; that is, its **response time** to the external stimulus that caused an increase in the production of *Y* is shorter.
 
 [![image-center](../assets/images/600px/nar_equal_chart_2.png){: .align-center}](../assets/images/nar_equal_chart_2.png)
 A comparison of the concentration of *Y* particles across the same two simulations from the previous figure. This time, in the second simulation (yellow), we increase the rate of the reaction *X* → *X* + *Y*.  As a result, the two simulations have approximately the same steady state concentration of *Y*, and the simulation that includes negative autoregulation reaches steady state more quickly.
 {: style="font-size: medium;"}
 
-The above plots also provide evidence of *why* negative autoregulation may have evolved. The simulated cell including negative autoregulation wins the "race" to a steady state concentration of *Y*, and so we can conclude that a cell in which this transcription factor is negatively autoregulated is more fit for survival than one that does not. Uri Alon[^Alon] has proposed an excellent analogy of a negatively autoregulating transcription factor as a sports car that has both a powerful engine (corresponding to the higher rate of the reaction producing *Y*) and sensitive brakes (corresponding to negative autoregulation slowing the production of *Y* to reach equilibrium quickly).
+The above plots also provide evidence of *why* negative autoregulation may have evolved. The simulated cell that includes negative autoregulation wins the "race" to a steady state concentration of *Y*, and so we can conclude that this cell is more fit for survival than one in which *Y* does not negatively autoregulate. Uri Alon[^Alon] has proposed an excellent analogy of a negatively autoregulating transcription factor as a sports car that has both a powerful engine (corresponding to the higher rate of the reaction producing *Y*) and sensitive brakes (corresponding to negative autoregulation slowing the production of *Y* to reach equilibrium quickly).
 
 In this lesson, we have seen that particle-based simulations can be powerful for justifying why a network motif is prevalent. What are some other commonly occurring network motifs in transcription factor networks? And what evolutionary purposes might they serve?
 
