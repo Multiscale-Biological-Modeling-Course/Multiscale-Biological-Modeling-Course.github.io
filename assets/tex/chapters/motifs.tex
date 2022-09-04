@@ -185,11 +185,11 @@ To argue that a loop is indeed a motif in the \textit{E. coli} transcription fac
 
 To determine whether the number of loops in the transcription factor network of \textit{E. coli} is statistically significant, we will compare this number against the expected number of loops we would find in a randomly generated transcription factor network. If the former is much higher than the latter, then we have strong evidence that some selective force is causing gene autoregulation.
 
-There are multiple ways to generate a random network, but we will use an approach developed by Edgar Gilbert in 1959. Given an integer \textvar{n} and a probability \textvar{p} (between 0 and 1), we form \textvar{n} nodes. Then, for every possible pair of nodes \textvar{X} and \textvar{Y}, we connect \textvar{X} to \textvar{Y} via a directed edge with probability \textvar{p}; that is, we simulate the process of flipping a weighted coin that has probability \textvar{p} of coming up ``heads''.\\
+To generate a random network, we will use an approach developed by Edgar Gilbert in 1959. Given an integer \textvar{n} and a probability \textvar{p} (between 0 and 1), we form \textvar{n} nodes. Then, for every possible pair of nodes \textvar{X} and \textvar{Y}, we connect \textvar{X} to \textvar{Y} via a directed edge with probability \textvar{p}; that is, we simulate the process of flipping a weighted coin that has probability \textvar{p} of coming up ``heads''.\\
 
-\begin{note}[%
-Simulating a weighted coin flip amounts to generating a ``random'' number $x$ between 0 and 1, and considering it ``heads'' if $x$ is less than $p$ and ``tails'' otherwise. For more details on random number generation, consult Programming for Lovers (\url{http://programmingforlovers.com}).
-]\end{note}
+%\begin{note}[%
+%Simulating a weighted coin flip amounts to generating a ``random'' number $x$ between 0 and 1, and considering it ``heads'' if $x$ is less than $p$ and ``tails'' otherwise. For more details on random number generation, consult Programming for Lovers (\url{http://programmingforlovers.com}).
+%]\end{note}
 
 \begin{qbox}[%
 What should \textvar{n} and \textvar{p} be if we are generating a random network to compare against the \textit{E. coli} transcription factor network?
@@ -203,13 +203,11 @@ We then select \textvar{p} to ensure that our random network will on average hav
 
 \FloatBarrier
 \phantomsection
-\subsection{Negative autoregulation is surprisingly frequent}
+\subsection{Negative autoregulation is very frequent}
 
-In a random network containing \textvar{n} nodes, the probability that a given edge is a loop is 1/\textvar{n}. Therefore, if the network has \textit{e} edges, then we would on average see \textit{e}/\textvar{n} loops in the network. In our case, \textvar{n} is 197, and \textit{e} is 477; therefore, on average, we expect to see $197/497 \approx 2.42$ loops in a random network. Yet the real \textit{E. coli} network of transcription factors that regulate each other contains 130 loops!
+In a random network containing \textvar{n} nodes, the probability that a given edge is a loop is 1/\textvar{n}. Therefore, if the network has \textit{e} edges, then we would on average see \textit{e}/\textvar{n} loops in the network. In our case, \textvar{n} is 197 and \textit{e} is 477; therefore, on average, we expect to see $197/497 \approx 2.42$ loops in a random network. Yet the real \textit{E. coli} network of transcription factors that regulate each other contains 130 loops!
 
-Furthermore, in a random network, we would expect about half of the edges correspond to activation, and the other half correspond to repression. But of the 130 loops in the \textit{E. coli} network, 35 correspond to activation and 95 correspond to repression. Just as you would be surprised to flip a coin 130 times and see ``heads'' come up 95 times, the cell must be \textdef{negatively autoregulating}{negative autoregulation}{the process by which a transcription factor represses itself} for some reason.
-
-Why in the world would organisms have evolved the process of autoregulation only for a transcription factor to \textit{slow down} its own transcription? In the next section, we will begin to unravel the mystery.\\
+Furthermore, in a random network, we would expect about half of the edges correspond to activation, and the other half correspond to repression. But of the 130 loops in the \textit{E. coli} network, 35 correspond to activation and 95 correspond to repression. Just as you would be surprised to flip a coin 130 times and see ``heads'' 95 times, the cell must be \textdef{negatively autoregulating}{negative autoregulation}{the process by which a transcription factor represses itself} for some reason. Why in the world would organisms have evolved the process of autoregulation only for a transcription factor to \textit{slow down} its own transcription?
 
 
 \FloatBarrier
@@ -222,7 +220,7 @@ Why in the world would organisms have evolved the process of autoregulation only
 
 Theodosius Dobzhansky famously wrote that ``nothing in biology makes sense except in the light of evolution.'' In the spirit of this quotation, there must be some evolutionary reason for the presence of the large number of negatively autoregulating \textit{E. coli} transcription factors that we identified in the previous section. Our goal is to use biological modeling to establish this justification.
 
-We will simulate a ``race'' to the \textdef{steady state}{steady state}{also called equilibrium, a state in which potentially conflicting chemical forces are balanced}, or \textdefnogloss{equilibrium}, concentration of a transcription factor \textvar{Y} in two cells. In the first cell (\autoref{fig:two_cells} (left)), a transcription factor \textvar{X} activates \textvar{Y}; in the second cell (\autoref{fig:two_cells} (right)), \textvar{Y} also negatively autoregulates. Our premise is that the cell that reaches the steady state faster can respond more quickly to its environment and is therefore more fit for survival.
+We will simulate a ``race'' to the \textdef{steady state}{steady state}{also called equilibrium, a state in which potentially conflicting chemical forces are balanced}, or \textdefnogloss{equilibrium}, concentration of a transcription factor \textvar{Y} in two cells. In the first cell (\autoref{fig:two_cells} (left)), a transcription factor \textvar{X} activates \textvar{Y}; in the second cell (\autoref{fig:two_cells} (right)), \textvar{Y} also negatively autoregulates. Our premise is that the cell that reaches the steady state faster can respond more quickly to its environment and is therefore more fit for survival.\\
 
 \begin{figure}[h]
 \centering
