@@ -91,7 +91,7 @@ Our model uses the same number of initial molecules and the same reaction rates.
 The figure below demonstrates that the Gillespie algorithm quickly converges quickly to the same values calculated just above. Furthermore, the system reaches steady state in a fraction of a second.
 
 [![image-center](../assets/images/600px/chemotaxis_tutorial4_ssa_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial4_ssa_vscode.png)
-A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in molecules/µm<sup>3</sup>) on the y-axis. The molecules quickly reach a steady state that matches the concentrations identified by hand.
+A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in molecules/µm<sup>3</sup>) on the y-axis. The molecules quickly reach steady state concentrations that match those identified by hand.
 {: style="font-size: medium;"}
 
 This simple ligand-receptor model is just the beginning of our study of chemotaxis. In the next section, we will delve into the complex biochemical details of chemotaxis. Furthermore, we will see that the Gillespie algorithm for stochastic simulations will scale easily as our model of this system grows more complex.

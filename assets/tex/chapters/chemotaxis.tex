@@ -16,23 +16,23 @@ We could imagine many ideas for how the immortals could reunite. For example, th
 
 But Munroe provides a solution that is both sophisticated and elegant. He argues that without additional information, the immortals should walk randomly, leaving markers in their wake pointing in the direction that they travel, and resting frequently. If one immortal finds the other's trail, then they should follow it, resting less and traveling faster, until some time has expired or they lose the trail.
 
-In the previous two chapters, we have harnessed the power of randomness to answer practical questions. Munroe's approach exemplifies a \textdef{randomized algorithm}{random algorithm}{a method that uses randomness to solve (or approximately solve) a problem}, or a method that uses randomness to solve a problem. In fact, this algorithm is inspired by nature; Munroe calls the approach ``be an ant'' because it mimics how ants explore their environment for resources. In this chapter, we will see that the Lost Immortals algorithm is also similar to the method of exploration taken by a much smaller organism: our old friend \textit{E. coli}.
+In the previous two chapters, we have harnessed the power of randomness to answer practical questions. Munroe's approach exemplifies a \textdef{randomized algorithm}{random algorithm}{a method that uses randomness to solve (or approximately solve) a problem}, or a method that uses randomness to solve a problem. In fact, this algorithm is inspired by nature; Munroe calls the approach ``be an ant'' because it mimics how ants explore their environment for resources. In this chapter, we will see that the Lost Immortals algorithm is also similar to the method of exploration taken by a much smaller organism: our old friend \textit{E.~coli}.
 
-Like other prokaryotes, \textit{E. coli} is tiny, with a rod-shaped body that is 2 µm long and 0.25 to 1 µm wide. In exploring a vast world with sparse resources, \textit{E. coli} finds itself in a situation comparable to that of Munroe's immortals.
+Like other prokaryotes, \textit{E.~coli} is tiny, with a rod-shaped body that is 2 µm long and 0.25 to 1 µm wide. In exploring a vast world with sparse resources, \textit{E.~coli} finds itself in a situation comparable to that of Munroe's immortals.
 
-The movement of organisms like \textit{E. coli} in response to a chemical stimulus is called \textdef{chemotaxis}{chemotaxis}{the movement of an organism in response to a chemical stimulus}. \textit{E. coli} and other bacteria have evolved to move toward \textdefnogloss{attractants} like glucose and electron acceptors and move away from \textdefnogloss{repellents} like Ni\textsuperscript{2+} and Co\textsuperscript{2+}.
+The movement of organisms like \textit{E.~coli} in response to a chemical stimulus is called \textdef{chemotaxis}{chemotaxis}{the movement of an organism in response to a chemical stimulus}. \textit{E.~coli} and other bacteria have evolved to move toward \textdefnogloss{attractants} like glucose and electron acceptors and move away from \textdefnogloss{repellents} like Ni\textsuperscript{2+} and Co\textsuperscript{2+}.
 
-In this chapter, we will delve into chemotaxis and ask a number of questions. How does a simple organism like \textit{E. coli} sense an attractant or repellent in its environment? How does the bacterium change its internal state accordingly? How can we model the bacterium's response? And how does the bacterium's behavior translate into an ``algorithm'' that it uses to explore its environment?\\
+In this chapter, we will delve into chemotaxis and ask a number of questions. How does a simple organism like \textit{E.~coli} sense an attractant or repellent in its environment? How does the bacterium change its internal state accordingly? How can we model the bacterium's response? And how does the bacterium's behavior translate into an ``algorithm'' that it uses to explore its environment?\\
 
 \FloatBarrier
 \phantomsection
-\section{\textit{E. coli} Explores Its World Via a Random Walk}
+\section{\textit{E.~coli} Explores Its World Via a Random Walk}
 \label{sec:e_coli_explores_its_world_via_a_random_walk}
 
 \phantomsection
 \subsection{Bacterial runs and tumbles}
 
-Every \textit{E. coli} cell has between five and twelve flagella distributed on its surface that can rotate both clockwise and counter-clockwise. When all flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, which is analogous to a car traveling at 160 kph. When a single flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates.
+Every \textit{E.~coli} cell has between five and twelve flagella distributed on its surface that can rotate both clockwise and counter-clockwise. When all flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, which is analogous to a car traveling at 160 kph. When a single flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates.
 
 When we examine the bacterium's movement under a microscope, we see it alternate between periods of ``running'' in a straight line and then ``tumbling'' in place (\autoref{fig:chemotaxis_intro_runtumble}). Over time, the bacterium's \textdef{run and tumble}{run and tumble model}{an alternation between traveling in a straight line and rotating in place, which models bacteria exploring their environment} exploration amounts to a \textit{random walk} through its environment, like the exploration approach used by the lost immortals.\\
 
@@ -54,7 +54,7 @@ Say that a bacterium travels 20 µm per second, and every second it chooses a ra
 
 Bacteria are amazingly diverse. They have evolved for over three billion years to thrive in practically every environment on the planet, including hazardous human-made environments. They manufacture compounds such as antibiotics that larger organisms like ourselves cannot make. Some eukaryotes are even completely dependent upon bacteria to perform some critical task for them, from digesting their food, to camouflaging them from predators, to helping them develop organs.
 
-And yet despite the diversity of the bacterial kingdom, variations in bacterial tumbling frequencies are relatively small. In the absence of an attractant or repellent, \textit{E. coli} stops to tumble once every 1 to 1.5 seconds, which is similar to most other bacteria. It is as if some invisible force compels all these bacteria to tumble with the same frequency. Recalling Dobzhansky's quotation that ``nothing in biology makes sense except in the light of evolution'', we wonder why evolution might hold tumbling frequency constant across species.
+And yet despite the diversity of the bacterial kingdom, variations in bacterial tumbling frequencies are relatively small. In the absence of an attractant or repellent, \textit{E.~coli} stops to tumble once every 1 to 1.5 seconds, which is similar to most other bacteria. It is as if some invisible force compels all these bacteria to tumble with the same frequency. Recalling Dobzhansky's quotation that ``nothing in biology makes sense except in the light of evolution'', we wonder why evolution might hold tumbling frequency constant across species.
 
 This question is a fundamental one, and we will return to it at the close of this chapter after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism that they use to implement chemotaxis is sophisticated and beautiful.\\
 
@@ -71,7 +71,7 @@ Chemotaxis is one of many ways in which a cell must perceive a change in its env
 
 For example, transcription factors are involved in a signal transduction process that we illustrated in \autoref{fig:transduction}. When some extracellular molecule is detected, a cascade begins that eventually changes a transcription factor into an active state, so that it is ready to activate or repress the genes that it regulates.
 
-In the case of chemotaxis, \textit{E. coli} has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant \textdef{ligands}{ligand}{a substance that forms a complex with a biological molecule such as a receptor protein}. The bacterium also contains receptors to detect repellents, but we will focus on modeling the binding of a single type of receptor to a single type of attractant ligand. Soon, we will enter the cell and model the cascade of reactions occurring after this complex has formed that will cause a change in the rotation of one or more flagella (\autoref{fig:chemotaxis_signal}).\\
+In the case of chemotaxis, \textit{E.~coli} has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant \textdef{ligands}{ligand}{a substance that forms a complex with a biological molecule such as a receptor protein}. The bacterium also contains receptors to detect repellents, but we will focus on modeling the binding of a single type of receptor to a single type of attractant ligand. Soon, we will enter the cell and model the cascade of reactions occurring after this complex has formed that will cause a change in the rotation of one or more flagella (\autoref{fig:chemotaxis_signal}).\\
 
 \begin{figure}[h]
 \centering
@@ -238,7 +238,7 @@ Use a similar argument to show that the units of the dissociation rate $k_\text{
 \phantomsection
 \subsection{Example steady state ligand-receptor concentrations}
 
-Having established the units in our model, we will solve our quadratic equation once more to identify steady state concentrations using experimentally verified binding and dissociation rates. The experimentally verified rate constant for the binding of receptors to glucose ligands is $k_\text{bind} = 0.0146~(\text{µm}^3/\text{molecule}) \cdot \text{s}^{-1}$, and the dissociation rate constant is $k_\text{dissociate} = 35\,\text{s}^{-1}$\,. We will model an \textit{E. coli} cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants $a$, $b$, and $c$ in the quadratic equation:
+Having established the units in our model, we will solve our quadratic equation once more to identify steady state concentrations using experimentally verified binding and dissociation rates. The experimentally verified rate constant for the binding of receptors to glucose ligands is $k_\text{bind} = 0.0146~(\text{µm}^3/\text{molecule}) \cdot \text{s}^{-1}$, and the dissociation rate constant is $k_\text{dissociate} = 35\,\text{s}^{-1}$\,. We will model an \textit{E.~coli} cell with 7,000 receptor molecules in an environment containing 10,000 ligand molecules. Using these values, we obtain the following constants $a$, $b$, and $c$ in the quadratic equation:
 \begin{align*}
 a & = k_\text{bind} = 0.0146\,;\\
 b & = - (k_\text{bind} \cdot l_0 + k_\text{bind} \cdot t_0 + k_\text{dissociate}) = -283.2\,;\\
@@ -261,7 +261,7 @@ We can therefore determine the steady state concentration for a \textit{single} 
 \phantomsection
 \subsection{Verifying a steady state concentration via stochastic simulation}
 
-In \autoref{chapter:motifs}, we saw that we could avoid tracking the positions of individual particles if we assume that the particles are \textit{well-mixed}, i.e., uniformly distributed throughout their environment. We will apply this assumption in our current work as well, in part because the \textit{E. coli} cell is so small. As a proof of concept, we will see if a well-mixed simulation replicates a reversible reaction's equilibrium concentrations of particles that we found in the preceding section.
+In \autoref{chapter:motifs}, we saw that we could avoid tracking the positions of individual particles if we assume that the particles are \textit{well-mixed}, i.e., uniformly distributed throughout their environment. We will apply this assumption in our current work as well, in part because the \textit{E.~coli} cell is so small. As a proof of concept, we will see if a well-mixed simulation replicates a reversible reaction's equilibrium concentrations of particles that we found in the preceding section.
 
 Even though we can calculate steady state concentrations manually, a particle-free simulation will be useful for two reasons. First, this simulation will give us snapshots of the concentrations of particles in the system over multiple time points and allow us to see how quickly the concentrations reach equilibrium. Second, we will soon expand our model of chemotaxis to have many particles and reactions that depend on each other, and direct mathematical analysis of the system will become impossible.\\
 
@@ -377,35 +377,35 @@ This simple ligand-receptor model is just the beginning of our study of chemotax
 \phantomsection
 \subsection{Transducing an extracellular signal to a cell's interior}
 
-We now turn to the question of how the cell conveys the extracellular signal it has detected via the process of signal transduction to the cell's interior and produces an action. When \textit{E. coli} senses an increase in the concentration of glucose, meaning that more ligand-receptor binding is taking place at the receptor that recognizes glucose, how does the bacterium change its behavior?
+We now turn to the question of how the cell conveys the extracellular signal it has detected via the process of signal transduction to the cell's interior. In other words, when \textit{E.~coli} senses an increase in the concentration of glucose, meaning that more ligand-receptor binding is taking place at the receptor that recognizes glucose, how does the bacterium change its behavior?
 
 The engine of signal transduction is \textdef{phosphorylation}{phosphorylation}{a chemical reaction that attaches a phosphoryl group to an organic molecule}, a chemical reaction that attaches a phosphoryl group ($\text{PO}_3^{-}$) to an organic molecule.  Phosphoryl modifications serve as an information exchange of sorts because, as we will see, they activate or deactivate certain enzymes.
 
-A phosphoryl group usually comes from one of two sources. First, the phosphoryl can be broken off of an \textdef{adenosine triphosphate (ATP)}{adenosine triphosphate (ATP)}{a molecule serving as the ``energy currency'' of the cell} molecule, the ``energy currency'' of the cell, producing \textdefnogloss{adenosine diphosphate (ADP)}. Second, the phosphoryl can be exchanged from a phosphorylated molecule that loses its phosphoryl group in a \textdef{dephosphorylation}{dephosphorylation}{a chemical reaction that removes a phosphoryl group from an organic molecule} reaction.
+A phosphoryl group usually comes from one of two sources. First, the phosphoryl can be broken off from an \textdef{adenosine triphosphate (ATP)}{adenosine triphosphate (ATP)}{a molecule serving as the ``energy currency'' of the cell} molecule, the ``energy currency'' of the cell, producing \textdefnogloss{adenosine diphosphate (ADP)}. Second, the phosphoryl can be exchanged from a phosphorylated molecule that loses its phosphoryl group in a \textdef{dephosphorylation}{dephosphorylation}{a chemical reaction that removes a phosphoryl group from an organic molecule} reaction.
 
-For many cellular responses, including bacterial chemotaxis, a sequence of phosphorylation and dephosphorylation events called a \textdefnogloss{phosphorylation cascade} serves to transmit information within the cell about the amount of ligand binding being detected on the cell's exterior. In this section, we discuss how this cascade of chemical reactions leads to a change in bacterial movement.
+For many cellular responses, including bacterial chemotaxis, a sequence of phosphorylation and dephosphorylation events called a \textdefnogloss{phosphorylation cascade} serves to transmit information within the cell about the amount of ligand binding being detected on the cell's exterior. We will discuss how this cascade of chemical reactions leads to a change in bacterial movement.
 
-A high-level view of the transduction pathway for chemotaxis is shown in \autoref{fig:chemotaxisphosnew}. The cell membrane receptors that we have been working with are called \textdefnogloss{methyl-accepting chemotaxis proteins (MCPs)}, and they bridge the cellular membrane, binding both to ligand stimuli in the cell exterior and to other proteins on the inside of the cell. The pathway includes a number of additional proteins, which all start with the prefix ``Che'' (short for ``chemotaxis'').
+A high-level view of the transduction pathway for chemotaxis is shown in \autoref{fig:chemotaxisphosnew}. The cell membrane receptors that we have been working with are called \textdefnogloss{methyl-accepting chemotaxis proteins (MCPs)}, and they bridge the cellular membrane, binding both to ligand stimuli in the cell exterior and to other proteins on the inside of the cell. The pathway also includes a number of additional proteins, which all start with the prefix ``Che'' (short for ``chemotaxis'').
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.85\textwidth]{../images/chemotaxisphosnew.png}
-\caption{A summary of the chemotaxis transduction pathway. A ligand binding signal is propagated through CheA and CheY phosphorylation, which leads to a response of clockwise flagellar rotation. The blue curved arrow denotes phosphorylation, the grey curved arrow denotes dephosphorylation, and the blue dashed arrow denotes a chemical interaction. Our figure is a simplified view of \href{http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html} illustrations.}
+\caption{A high-level summary of the chemotaxis transduction pathway. A ligand binding signal is propagated through CheA and CheY phosphorylation, which leads to a response of clockwise flagellar rotation. The blue curved arrow denotes phosphorylation, the grey curved arrow denotes dephosphorylation, and the blue dashed arrow denotes a chemical interaction. Our figure offers a simplified view of \href{http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html}{Parkinson lab} illustrations.}
 \label{fig:chemotaxisphosnew}
 \end{figure}
 
 
 On the interior of the cellular membrane, MCPs form complexes with two proteins called \textbf{CheW} and \textbf{CheA}. In the absence of MCP-ligand binding, this complex is more stable, and the CheA molecule \textdef{autophosphorylates}{autophosphorylation}{the process of a molecule adding a phosphoryl group to itself}, meaning that it adds a phosphoryl group taken from ATP to \textit{itself} --- a concept that might seem mystical if you have not already followed our discussion of autoregulation in \autoref{chapter:motifs}.
 
-Phosphorylated CheA can pass on its phosphoryl group to a molecule called \textbf{CheY}, which interacts with the flagellum in the following way. Each flagellum has a protein complex called the \textdef{flagellar motor switch}{flagellar motor switch}{a protein complex on a flagellum that is responsible for controlling the direction of flagellar rotation} that is responsible for controlling the direction of flagellar rotation. The interaction of this protein complex with phosphorylated CheY induces a change of flagellar rotation from counter-clockwise to clockwise. As we discussed earlier in the chapter, this change in flagellar rotation causes the bacterium to tumble, which in the absence of an increase in attractant occurs every 1 to 1.5 seconds.
+A phosphorylated CheA protein can pass on its phosphoryl group to a molecule called \textbf{CheY}, which interacts with the flagellum in the following way. Each flagellum has a protein complex called the \textdef{flagellar motor switch}{flagellar motor switch}{a protein complex on a flagellum that is responsible for controlling the direction of flagellar rotation} that is responsible for controlling the direction of flagellar rotation. The interaction of this protein complex with phosphorylated CheY induces a change of flagellar rotation from counter-clockwise to clockwise. As we discussed earlier in the chapter, this change in flagellar rotation causes the bacterium to tumble, which in the absence of an increase in attractant occurs every 1 to 1.5 seconds.
 
 Yet when a ligand binds to the MCP, the MCP undergoes conformation changes, which reduce the stability of the complex with CheW and CheA. As a result, CheA is less readily able to autophosphorylate, which means that it does not phosphorylate CheY, which cannot change the flagellar rotation to clockwise, and so the bacterium is less likely to tumble.
 
-In short, attractant ligand binding \textit{causes} more phosphorylated CheA and CheY, which means that it \textit{causes} fewer flagellar interactions and therefore less tumbling, so that the bacterium will run for a longer period of time.\\
+In summary, attractant ligand binding \textit{causes} more phosphorylated CheA and CheY, which means that it \textit{causes} fewer flagellar interactions and therefore less tumbling, which means that it \textit{causes} the bacterium to run for a longer period of time.\\
 
 \begin{note}[%
-A critical part of this process is that if a ligand is detected, and the cell has a high concentration of CheY, then it needs to decrease the CheY concentration quickly. Otherwise, the cell will not be able to change its tumbling frequency. To this end, the cell is able to dephosphorylate CheY using an enzyme called \textdefnogloss{CheZ}.
+A critical part of this process is that if a cell with a high concentration of CheY detects an attractant ligand, then it needs to decrease its CheY concentration quickly. Otherwise, the cell will not be able to change its tumbling frequency. To this end, the cell is able to dephosphorylate CheY using an enzyme called \textdefnogloss{CheZ}.
 ]\end{note}
 
 
@@ -415,17 +415,17 @@ A critical part of this process is that if a ligand is detected, and the cell ha
 
 We would like to use the Gillespie algorithm to simulate the reactions driving chemotaxis signal transduction and see what happens if the bacterium ``senses an attractant'', meaning that the attractant ligand's concentration increases and leads to more receptor-ligand binding.
 
-This model will be more complicated than any we have introduced thus far. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model phosphorylation reactions of CheA, which depend on the current concentrations of bound and unbound MCP molecules. We will at least make the simplifying assumption that the MCP receptor is permanently bound to CheA and CheW, so that we do not need to represent these molecules individually. In other words, rather than thinking about CheA autophosphorylating, we will think about the receptor that includes CheA autophosphorylating.
+This model will be more complicated than any we have introduced thus far. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model CheA phosphorylation reactions, which depend on the current concentrations of bound and unbound MCP molecules. We will at least make the simplifying assumption that the MCP receptor is permanently bound to CheA and CheW, so that we do not need to represent these molecules individually. In other words, rather than thinking about CheA autophosphorylating, we will think about the receptor that includes CheA autophosphorylating.
 
-We will need six reactions. Two reversible reactions represent ligand-receptor binding, one for each of phosphorylated or unphosphorylated receptors. Two reactions represent MCP phosphorylation and take place at different rates based on whether the MCP is bound to a ligand (in our model, the phosphorylation rate is five times greater when the MCP is unbound). One reaction represents phosphorylation of CheY, and another reaction models dephosphorylation, which is mediated by the CheZ enzyme.
+We will need six reactions. Two reversible reactions represent ligand-receptor binding, one for phosphorylated receptors, and another for unphosphorylated receptors. Two reactions represent MCP phosphorylation and take place at different rates based on whether the MCP is bound to a ligand (in our model, the phosphorylation rate is five times greater when the MCP is unbound). One reaction represents phosphorylation of CheY, and another reaction models dephosphorylation, which is mediated by the CheZ enzyme.
 
-Once we have built this model, we would like to see what happens when we \textit{change} the concentrations of the ligand. Ideally, the bacterium should be able to distinguish different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY (and the lower the tumbling frequency of the bacterium that we are simulating). But will the model reflect this behavior?\tutorial[chemotaxis/tutorial_phos]
+Once we have built this model, we would like to see what happens when we change the concentrations of the ligand. Ideally, the bacterium should be able to distinguish different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY (and the lower the tumbling frequency of the bacterium that we are simulating). But will the model reflect this behavior?\tutorial[chemotaxis/tutorial_phos]
 
 \FloatBarrier
 \phantomsection
 \subsection{Changing ligand concentrations leads to an internal change}
 
-\autoref{fig:chemotaxis_concentrations} (top) shows the concentrations of phosphorylated CheA and CheY in a model of our system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency. The addition of 5,000 attractant ligand molecules increases the concentration of bound receptors, therefore leading to less CheA autophosphorylation, and less phosphorylated CheY (\autoref{fig:chemotaxis_concentrations} (middle)). If we instead have 100,000 initial attractant molecules, then we see an even more drastic decrease in phosphorylated CheA and CheY (\autoref{fig:chemotaxis_concentrations} (bottom)).
+\autoref{fig:chemotaxis_concentrations} (top) shows the concentrations of phosphorylated CheA and CheY in a model of our system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency. The addition of 5,000 attractant ligand molecules increases the concentration of bound receptors, therefore leading to less CheA autophosphorylation and less phosphorylated CheY (\autoref{fig:chemotaxis_concentrations} (middle)). If we instead have 100,000 initial attractant molecules, then we see an even more drastic decrease in phosphorylated CheA and CheY (\autoref{fig:chemotaxis_concentrations} (bottom)).
 
 \begin{figure}[hp]
 \centering
@@ -437,11 +437,11 @@ Once we have built this model, we would like to see what happens when we \textit
 \label{fig:chemotaxis_concentrations}
 \end{figure}
 
-This Gillespie model confirms the biological observations that an increase in attractant reduces the concentration of phosphorylated CheY. This reduction takes place remarkably quickly, with the cell attaining a new equilibrium in a fraction of a second.
+This model, powered by the Gillespie algorithm, confirms the biological observations that an increase in attractant reduces the concentration of phosphorylated CheY. The reduction takes place remarkably quickly, with the cell attaining a new equilibrium in a fraction of a second.
 
-And yet you may remain skeptical of our model. After all, the biochemistry powering chemotaxis may be elegant, but it is also simple, and perhaps you are not surprised that the model's particle concentrations reproduced the response of \textit{E. coli} to an attractant ligand.
+The biochemistry powering chemotaxis may be elegant, but it is also simple, and so perhaps it is not surprising that the model's particle concentrations reproduced the response of \textit{E.~coli} to an attractant ligand.
 
-What we have shown here is just part of the story. In the next section, we will see that the biochemical realities of chemotaxis are even more complicated, and for good reason --- this added complexity will allow \textit{E. coli} to react to a dynamic world with surprising sophistication.\\
+Yet what we have shown here is just part of the story. In the next section, we will see that the biochemical realities of chemotaxis are more complicated, and for good reason --- this added complexity will allow \textit{E.~coli} to react to a dynamic world with surprising sophistication.\\
 
 \FloatBarrier
 \phantomsection
@@ -454,11 +454,11 @@ What we have shown here is just part of the story. In the next section, we will 
 
 The reality of cellular environments is that the concentration of an attractant can vary across several orders of magnitude. The cell therefore needs to detect not \textit{absolute} concentrations of an attractant but rather \textit{relative} changes.
 
-\textit{E. coli} detects relative changes in its concentration via \textdefnogloss{adaptation} to these changes. If the concentration of attractant remains constant for a period of time, then regardless of the absolute value of the concentration, the cell returns to the same background tumbling frequency. In other words, \textit{E. coli} demonstrates \textit{robustness} to the attractant concentration in maintaining its default tumbling behavior.
+\textit{E.~coli} detects relative changes in its concentration via \textdefnogloss{adaptation} to these changes. If the concentration of attractant remains constant for a period of time, then regardless of the absolute value of the concentration, the cell returns to the same background tumbling frequency. In other words, \textit{E.~coli} demonstrates \textit{robustness} to the attractant concentration in maintaining its default tumbling behavior.
 
 However, our current model is not able to address this adaptation. If the ligand concentration increases in the model, then phosphorylated CheY will plummet and remain at a low steady state.
 
-We will investigate the biochemical mechanism that \textit{E. coli} uses to achieve such a robust response to environments with different background concentrations. We will then expand the model we have built to replicate the bacterium's adaptive response.
+We will investigate the biochemical mechanism that \textit{E.~coli} uses to achieve such a robust response to environments with different background concentrations. We will then expand the model we have built to replicate the bacterium's adaptive response.
 
 \FloatBarrier
 \phantomsection
@@ -466,7 +466,7 @@ We will investigate the biochemical mechanism that \textit{E. coli} uses to achi
 
 Recall that in the absence of an attractant, CheW and CheA readily bind to an MCP, leading to greater autophosphorylation of CheA, which in turn phosphorylates CheY. The greater the concentration of phosphorylated CheY, the more frequently the bacterium tumbles.
 
-Signal transduction is achieved through phosphorylation, but \textit{E. coli} maintains a ``memory'' of past environmental concentrations through a chemical process called \textdef{methylation}{methylation}{a chemical reaction in which a methyl group ($-\text{CH}_3$) is added to an organic molecule}. In this reaction, a \textdefnogloss{methyl group} ($-\text{CH}_3$) is added to an organic molecule; the removal of a methyl group is called \textdef{demethylation}{demethylation}{the reversal of a methylation reaction, in which a methyl group ($-\text{CH}_3$) is removed from an organic molecule}.
+Signal transduction is achieved through phosphorylation, but \textit{E.~coli} maintains a ``memory'' of past environmental concentrations through a chemical process called \textdef{methylation}{methylation}{a chemical reaction in which a methyl group ($-\text{CH}_3$) is added to an organic molecule}. In this reaction, a \textdefnogloss{methyl group} ($-\text{CH}_3$) is added to an organic molecule; the removal of a methyl group is called \textdef{demethylation}{demethylation}{the reversal of a methylation reaction, in which a methyl group ($-\text{CH}_3$) is removed from an organic molecule}.
 
 Every MCP receptor contains four methylation sites, meaning that between zero and four methyl groups can be added to the receptor. On the plasma membrane, many MCPs, CheW, and CheA molecules form an array structure. Methylation reduces the negative charge on the receptors, stabilizing the array and facilitating CheA autophosphorylation. The more sites that are methylated, the higher the autophosphorylation rate of CheA, which means that CheY has a higher phosphorylation rate, and tumbling frequency increases.
 
@@ -474,7 +474,7 @@ Note that we now have two different ways that tumbling frequency can be elevated
 
 Methylation of MCPs is achieved by an additional protein called \textbf{CheR}. When bound to MCPs, CheR methylates ligand-bound MCPs faster, and so the rate of MCP methylation by CheR is higher if the MCP is bound to a ligand. Let's consider how this fact affects a bacterium's behavior.
 
-Say that \textit{E. coli} encounters an increase in attractant concentration. Then the lack of a phosphorylation cascade will mean less phosphorylated CheY, and so the tumbling frequency will decrease. However, if the attractant concentration levels off, then the tumbling frequency will flatten, while CheR starts methylating the MCP. Over time, the rising methylation will increase CheA autophosphorylation, bringing back the phosphorylation cascade and raising tumbling frequency back to default levels.
+Say that \textit{E.~coli} encounters an increase in attractant concentration. Then the lack of a phosphorylation cascade will mean less phosphorylated CheY, and so the tumbling frequency will decrease. However, if the attractant concentration levels off, then the tumbling frequency will flatten, while CheR starts methylating the MCP. Over time, the rising methylation will increase CheA autophosphorylation, bringing back the phosphorylation cascade and raising tumbling frequency back to default levels.
 
 Just as the phosphorylation of CheY can be reversed, MCP methylation can be undone to prevent methylation from being permanent. In particular, an enzyme called \textbf{CheB}, which like CheY is phosphorylated by CheA, demethylates MCPs (as well as autodephosphorylates). The rate of an MCP's demethylation is dependent on the extent to which the MCP is methylated. In other words, the rate of MCP methylation is higher when the MCP is in a low methylation state, and the rate of demethylation is faster when the MCP is in a high methylation state.
 
@@ -515,7 +515,7 @@ We will not bog down the text with a full specification of all the rules needed 
 \phantomsection
 \subsection{Bacterial tumbling is robust to large sudden changes in attractant}
 
-We will now plot the concentration over time of each molecule for different values of $l_0$, the initial concentration of ligand. From what we have learned about \textit{E. coli}, we should see the concentration of phosphorylated CheY (and therefore the bacterium's tumbling frequency) drop before returning to its original equilibrium. But will our simulation capture this behavior?
+We will now plot the concentration over time of each molecule for different values of $l_0$, the initial concentration of ligand. From what we have learned about \textit{E.~coli}, we should see the concentration of phosphorylated CheY (and therefore the bacterium's tumbling frequency) drop before returning to its original equilibrium. But will our simulation capture this behavior?
 
 In \autoref{fig:chemotaxis_tutorial_adaptation} (top), we add a relatively small amount of attractant, setting $l_0$ equal to 100,000. The system returns so quickly to an equilibrium in phosphorylated CheY that it is difficult to imagine that the attractant has had any effect on tumbling frequency.
 
@@ -533,7 +533,7 @@ When we increase $l_0$ to 1 million (\autoref{fig:chemotaxis_tutorial_adaptation
 
 When we set $l_0$ equal to 100 million, we give the system this bigger jolt. Once again, the model returns to its previous CheY equilibrium after a few minutes, despite the steepest initial drop yet in the concentration of phosphorylated CheY (\autoref{fig:chemotaxis_tutorial_adaptation} (bottom)).
 
-Our model, which is built on real reaction rate parameters, provides compelling evidence that the \textit{E. coli} chemotaxis system is robust to changes in its environment across several orders of magnitude of attractant concentration. This robustness has been observed in real bacteria and replicated by other computational simulations.
+Our model, which is built on real reaction rate parameters, provides compelling evidence that the \textit{E.~coli} chemotaxis system is robust to changes in its environment across several orders of magnitude of attractant concentration. This robustness has been observed in real bacteria and replicated by other computational simulations.
 
 Aren't bacteria magnificent?
 
@@ -541,7 +541,7 @@ Aren't bacteria magnificent?
 \phantomsection
 \subsection{Traveling up an attractant gradient}
 
-We have simulated \textit{E. coli} adapting to a single sudden change in its environment, but life often depends on responding to continual change. Imagine a glucose cube in an aqueous solution. As the cube dissolves, a \textdefnogloss{gradient} will form, with a glucose concentration that decreases outward from the cube. How will the tumbling frequency of \textit{E. coli} change if the bacterium finds itself in an environment of an attractant gradient?  Will the tumbling frequency decrease continuously as well, or will we see more complicated behavior? And once the cell reaches a region of high attractant concentration, will its default tumbling frequency stabilize to the same steady state?
+We have simulated \textit{E.~coli} adapting to a single sudden change in its environment, but life often depends on responding to continual change. Imagine a glucose cube in an aqueous solution. As the cube dissolves, a \textdefnogloss{gradient} will form, with a glucose concentration that decreases outward from the cube. How will the tumbling frequency of \textit{E.~coli} change if the bacterium finds itself in an environment of an attractant gradient?  Will the tumbling frequency decrease continuously as well, or will we see more complicated behavior? And once the cell reaches a region of high attractant concentration, will its default tumbling frequency stabilize to the same steady state?
 
 We will modify our model by increasing the concentration of the attractant ligand at an exponential rate and seeing how the concentration of phosphorylated CheY changes. This model will simulate a bacterium traveling up an attractant gradient toward an attractant. Moreover, we will examine how the concentration of phosphorylated CheY changes as we change the gradient's ``steepness'', or the rate at which attractant ligand is increasing.\tutorial[chemotaxis/tutorial_gradient]
 
@@ -582,21 +582,21 @@ We can simulate a bacterium traveling \textit{down} an attractant gradient if $k
 
 We hope that our work in this chapter has conveyed the elegance of bacterial chemotaxis, as well as the power of rule-based modeling and the Gillespie algorithm for simulating a complex biochemical system that may include a huge number of reactions.
 
-And yet we are missing an important part of the story. \textit{E. coli} has evolved to ensure that if it detects a relative increase in concentration (i.e., an attractant gradient), then it can reduce its tumbling frequency in response. But we have not explored \textit{why} changing its tumbling frequency would help a bacterium find food in the first place. After all, according to the run and tumble model, the direction that a bacterium is moving at any point in time is random!
+And yet we are missing an important part of the story. \textit{E.~coli} has evolved to ensure that if it detects a relative increase in concentration (i.e., an attractant gradient), then it can reduce its tumbling frequency in response. But we have not explored \textit{why} changing its tumbling frequency would help a bacterium find food in the first place. After all, according to the run and tumble model, the direction that a bacterium is moving at any point in time is random!
 
-This quandary does not have an obvious intuitive answer. In this chapter's conclusion, we will build a model to explain why \textit{E. coli}'s randomized run and tumble walk algorithm is such a clever way of locating resources in an unfamiliar land.\\
+This quandary does not have an obvious intuitive answer. In this chapter's conclusion, we will build a model to explain why \textit{E.~coli}'s randomized run and tumble walk algorithm is such a clever way of locating resources in an unfamiliar land.\\
 
 
 \FloatBarrier
 \phantomsection
 
-\section{Conclusion: The Beauty of \textit{E. coli}'s Random Exploration Algorithm}
+\section{Conclusion: The Beauty of \textit{E.~coli}'s Random Exploration Algorithm}
 \label{sec:conclusion}
 
 \phantomsection
 \subsection{Simulating a bacterium's motion}
 
-In \autoref{chapter:turing}, we saw that a particle taking a collection of \textit{n} unit steps in random directions will wind up on average a distance proportional to $\sqrt{n}$ units away from its starting position. We would like to compare such a random walk against a modified random walk that emulates the behavior of \textit{E. coli} by changing the length of a step based on the relative change in background attractant concentration.
+In \autoref{chapter:turing}, we saw that a particle taking a collection of \textit{n} unit steps in random directions will wind up on average a distance proportional to $\sqrt{n}$ units away from its starting position. We would like to compare such a random walk against a modified random walk that emulates the behavior of \textit{E.~coli} by changing the length of a step based on the relative change in background attractant concentration.
 
 We will represent a bacterium as a particle traveling in two-dimensional space. Units of distance will be measured in µm; recall from the introduction that a bacterium can cover 20 µm in a second during an uninterrupted run. The bacterium will start at the \textbf{origin} $(0, 0)$.
 
@@ -624,11 +624,11 @@ We then iterate the two steps of tumbling and running until the total time alloc
 \phantomsection
 \subsection{Simulated strategy 2: Chemotactic random walk}
 
-In our second strategy, we mimic the real response of \textit{E. coli} to its environment based on what we have learned about chemotaxis throughout this chapter. The simulated bacterium will still follow a run and tumble model, but the duration of each run, which is a function of its tumbling frequency, will depend on the relative change in attractant concentration that it detects.
+In our second strategy, we mimic the real response of \textit{E.~coli} to its environment based on what we have learned about chemotaxis throughout this chapter. The simulated bacterium will still follow a run and tumble model, but the duration of each run, which is a function of its tumbling frequency, will depend on the relative change in attractant concentration that it detects.
 
 To ensure a mathematically controlled comparison, we will use the same approach for sampling the duration of a tumble and the direction of a run as in the first strategy.
 
-We have seen, going back to \autoref{fig:chemotaxis_concentrations}, that it takes \textit{E. coli} about half a second to respond to a change in attractant concentration. We use $t_{\text{response}}$ to denote this ``response time''; to produce a reasonable model of chemotaxis, we will check the attractant concentration of a running particle at the particle's current location every $t_{\text{response}}$ seconds.
+We have seen, going back to \autoref{fig:chemotaxis_concentrations}, that it takes \textit{E.~coli} about half a second to respond to a change in attractant concentration. We use $t_{\text{response}}$ to denote this ``response time''; to produce a reasonable model of chemotaxis, we will check the attractant concentration of a running particle at the particle's current location every $t_{\text{response}}$ seconds.
 
 We will then measure the percentage difference between the attractant concentration $L(x,y)$ at the cell's current point and the attractant concentration at the cell's previous point, $t_{\text{response}}$ seconds in the past; we denote this difference as $\Delta[L]$. If $\Delta[L]$ is equal to zero, then the probability of a tumble in the next $t_{\text{response}}$ seconds should be the same as the likelihood of a tumble in the first strategy over the same time period. If $\Delta[L]$ is positive, then the probability of a tumble should be greater than it was in strategy 1; if $\Delta[L]$ is negative, then the probability of a tumble should be less than it was in strategy 1.
 
