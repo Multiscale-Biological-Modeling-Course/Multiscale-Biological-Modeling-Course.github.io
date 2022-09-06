@@ -6,6 +6,44 @@ sidebar:
 image: "../assets/images/repressilator_chart.png"
 ---
 
+## A short introduction to statistical validation
+
+
+In this chapter, we have largely appealed to intuition when claiming that the number of network structures that we observe is larger than what we would see due to random chance. For example, we pointed out that there are 130 loops in the E. coli transcription factor network, but we would only expect to see 2.42 such loops if the network were random.
+
+This argument hints at a foundational approach in statistics, which is to determine the likelihood that an observation would occur due to random chance; this likelihood is called a **p-value**. In this case, our observation is 130 loops, and the probability that this number of loops would have arisen in a random network of the same size is practically zero. The exact computation of this p-value is beyond the scope of our work here, but we will turn our attention to a different p-value that is easier to determine.
+
+We also mentioned that 95 of the 130 loops in the *E. coli* transcription factor network correspond to repression, which is another surprising fact, since in a random network we would expect to see only about 65 loops that correspond to activation. This leads us to hypothesize that negative autoregulation is on the whole more important to the cell than positive autoregulation.
+
+To quantify our surprise and compute a p-value, we ask, “if the choice of a loop corresponding to activation or repession were random and equal, then what is the likelihood that out of 130 loops, 95 (or more) correspond to activation?” This question is biological but is equivalent to a question about flipping coins: “if we flip a coin 130 times, then what is the likelihood that the coin will come up heads 95 or more times?”
+
+Say that we observe four coin flips. Then there are 16 equally likely outcomes, shown in the table below.
+
+Each of these 16 outcomes is equally likely, and so we can compute the probability of observing *k* heads out of the four flips by counting how many of the 16 cases have *k* heads:
+
+$$\begin{align*}
+\mathrm{Pr}(\text{0 heads}) &= 1/16\,;\\
+\mathrm{Pr}(\text{1 heads}) & = 4/16 = 1/4\,;\\
+\mathrm{Pr}(\text{2 heads}) & = 6/16 = 3/8\,;\\
+\mathrm{Pr}(\text{3 heads}) & = 4/16 = 1/4\,;\\
+\mathrm{Pr}(\text{4 heads}) & = 1/16\,.
+\end{align*}$$
+
+To generalize these probabilities, if we flip a coin *n* times, then the probability of obtaining *k* heads is equal to
+
+$$\dbinom{n}{k} \cdot \left(\dfrac{1}{2}\right)^n$$
+
+where $$\binom{n}{k}$$ is called the "combination statistic" and is equal to *n*!/(*k*! · (*n* − *k*)!).
+
+If we instead wish to compute the probability of obtaining *at least* *k* heads, then we simply need to sum the above expression for all values larger than *k*:
+
+$$\displaystyle\sum\limits_{j=k}^n{\dbinom{n}{j} \cdot \left(\dfrac{1}{2}\right)^n}$$
+
+This expression therefore gives us the p-value that we are looking for when substituting the appropriate values of *n* and *k*.
+
+**Exercise:** When *n* = 130 and *k* = 95, compute the p-value given by the above expression. Is it likely that random chance could have produced 95 out of 130 loops in the transcription factor network that correspond to repression?
+{: .notice--success}
+
 ## Identifying feed-forward loops and more complex motifs
 
 **Exercise:** Modify the Jupyter notebook provided in the [tutorial on loops](tutorial_loops) to count the number of feed-forward loops in the transcription factor network for *E. coli.*

@@ -18,7 +18,7 @@ Researchers have identified many network motifs that facilitate oscillation, som
 
 ## The repressilator: a synthetic biological oscillator
 
-The **repressilator motif**[^repress] is shown in the figure below. In this motif, all three proteins are transcription factors, and they form a cycle in which *X* represses *Y*, *Y* represses *Z*, and *Z* represses *X*. The repressilator forms a feedback loop, but nothing *a priori* about this motif would indicate that it would lead to oscillation.
+The **repressilator motif**[^repress] is shown in the figure below. In this motif, all three proteins are transcription factors, and they form a cycle in which *X* represses *Y*, *Y* represses *Z*, and *Z* represses *X*. The repressilator forms a feedback loop, but nothing *a priori* about this motif indicates that it would lead to oscillation.
 
 [![image-center](../assets/images/600px/repressilator.png){: .align-center width="250px"}](../assets/images/repressilator.png)
 The repressilator motif for three particles <em>X</em>, <em>Y</em>, and <em>Z</em>. <em>X</em> represses <em>Y</em>, which represses <em>Z</em>, which in turn represses <em>X</em>, forming a feedback loop.
@@ -42,28 +42,28 @@ If you followed our previous tutorials, then you may feel comfortable taking off
 
 The figure below plots the concentration over time of *X*, *Y*, and *Z* particles from our repressilator simulation (colored yellow, red, and blue, respectively). The system exhibits clear oscillatory behavior, with *X*, *Y*, and *Z* taking turns being at high concentration.
 
-**STOP:** Why do you think that the repressilator motif leads to this pattern of oscillations?
+**STOP:** Why do you think that the repressilator motif leads to a pattern of oscillations?
 {: .notice--primary}
 
 [![image-center](../assets/images/600px/repressilator_chart_2.png){: .align-center}](../assets/images/repressilator_chart_2.png)
-Modeling the repressilator's concentration of particles. *X* is shown in yellow, *Y* is shown in red, and *Z* is shown in blue.
+Modeling the repressilator's concentration of each particle over time; *X* is shown in yellow, *Y* is shown in red, and *Z* is shown in blue.
 {: style="font-size: medium;"}
 
 Because the concentration of *X* starts out high, with no *Y* or *Z* present, the concentration of *X* briefly increases because its rate of production exceeds its rate of degradation. With no *Y* or *Z* particles present, there are none to degrade or be repressed, and so the concentrations of these particles start increasing as well. However, because *X* particles begin at high concentration, the repression reaction *X* + *Y* → *X* prevents the concentration of Y from growing as fast as the concentration of *Z*.
 
 As the concentration of *Z* rises, the repression reaction *Z* + *X* → *Z* occurs often enough for the rate of removal of *X* to equal and exceed its rate of production, accounting for the first peak in the figure above. The concentration of *X* then plummets, with the concentration of *Z* rising up to replace it. This situation is shown by the second (blue) peak in the figure above.
 
-As a result, *Z* and *X* have switched roles. Because there is a high concentration of *Z*, and the concentration of *Y* is increasing, the reaction *Y* + *Z* → *Y* will be frequent and reduce the concentration of *Z*. Furthermore, because the concentration of *X* has decreased, and the concentration of *Y* is still relatively low, the reaction *X* + *Y* → *X* will occur less often, allowing the concentration of *Y* to continue to rise. Eventually, the decrease in the concentration of *Z* and the increase in the concentration of *Y* will account for the third (red) peak in the figure above.
+As a result, *Z* and *X* have switched roles. Because the concentration of *Z* is high and the concentration of *Y* is increasing, the reaction *Y* + *Z* → *Y* will occur frequently and reduce the concentration of *Z*. Furthermore, because the concentration of *X* has decreased and the concentration of *Y* is still relatively low, the reaction *X* + *Y* → *X* will occur less often, allowing the concentration of *Y* to continue to rise. Eventually, the decrease in the concentration of *Z* and the increase in the concentration of *Y* will account for the third (red) peak in the figure above.
 
-At this point, the reaction *X* + *Y* → *X* will suppress the concentration of *Y*. Because the concentration of *X* and *Z* are both lower than the concentration of *Z*, the reaction *Z* + *X* → *Z* will not greatly influence the concentration of *X*, which will rise to meet the following concentration of *Y*, and we have returned to our original situation, at which point the cycle will begin again.
+At this point, the reaction *X* + *Y* → *X* will suppress the concentration of *Y*. Because the concentration of *X* and *Z* are both lower than the concentration of *Z*, the reaction *Z* + *X* → *Z* will not greatly influence the concentration of *X*, which will rise to meet the falling concentration of *Y*, and we have returned to our original situation, at which point the cycle will begin again.
 
 ## Noise is a feature, not a bug
 
 Take another look at the figure showing the oscillations of the repressilator. You will notice that the concentrations zigzag as they travel up or down, and that they peak at slightly different levels each time.
 
-This noise in the repressilator's oscillations is due to random variation as the particles bounce around due to diffusion. The repression reactions require two particles to collide in order for the reaction to take place. Due to random chance, these collisions may occur more or less often than expected because of random chance. Much of this noise is due to low sample size: we have around 150 molecules at each peak in the above figure, but a given cell may have on the order of 1,000 to 10,000 molecules of a single protein.[^noise]
+This noise in the repressilator's oscillations is due to random variation as the particles bounce around due to diffusion. The repression reactions require two particles to collide, and these collisions may occur more or less often than expected because of random chance, which is exacerbated by low sample size. We have around 150 molecules at each peak in the above figure, but a given cell may have 1,000 to 10,000 molecules of a single protein.[^noise]
 
-The noise in the repressilator's oscillations is a feature, not a bug. As we have discussed previously, the cell's molecular interactions are inherently random. If we see oscillations in a simulation built on randomness, then we can be confident that this simulation is *robust* to a certain amount of variation.
+Yet the noise in the repressilator's oscillations is a feature, not a bug. As we have discussed previously, the cell's molecular interactions are inherently random. If we see oscillations in a simulation built on randomness, then we can be confident that this simulation is *robust* to a certain amount of variation.
 
 In this module's conclusion, we will further explore the concept of robustness as it pertains to the repressilator. What happens if our simulation experiences a much greater disturbance to the concentration of one of the particles?  Will it still be able to recover and return to the same oscillatory pattern?
 

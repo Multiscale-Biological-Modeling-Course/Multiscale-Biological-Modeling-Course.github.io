@@ -374,7 +374,7 @@ Researchers have identified many network motifs that facilitate oscillation, som
 \phantomsection
 \subsection{The repressilator: a synthetic biological oscillator}
 
-The \textdef{repressilator}{repressilator motif}{a transcription factor network motif in which \textvar{X} represses \textvar{Y}, \textvar{Y} represses \textvar{Z}, and \textvar{Z} represses \textvar{X}} is shown in \autoref{fig:repressilator}. In this motif, all three proteins are transcription factors, and they form a cycle in which \textvar{X} represses \textvar{Y}, \textvar{Y} represses \textvar{Z}, and \textvar{Z} represses \textvar{X}. The repressilator forms a feedback loop, but nothing \textit{a priori} about this motif would indicate that it would lead to oscillation.\\
+The \textdef{repressilator}{repressilator motif}{a transcription factor network motif in which \textvar{X} represses \textvar{Y}, \textvar{Y} represses \textvar{Z}, and \textvar{Z} represses \textvar{X}} is shown in \autoref{fig:repressilator}. In this motif, all three proteins are transcription factors, and they form a cycle in which \textvar{X} represses \textvar{Y}, \textvar{Y} represses \textvar{Z}, and \textvar{Z} represses \textvar{X}. The repressilator forms a feedback loop, but nothing \textit{a priori} about this motif indicates that it would lead to oscillation.\\
 
 \begin{figure}[h]
 \centering
@@ -401,14 +401,14 @@ When discussing the feed-forward loop, we saw that we can use the reaction $\tex
 \autoref{fig:repressilator_chart} plots the concentration over time of \textvar{X}, \textvar{Y}, and \textvar{Z} particles from our repressilator simulation (colored yellow, red, and blue, respectively). The system exhibits clear oscillatory behavior, with \textvar{X}, \textvar{Y}, and \textvar{Z} taking turns being at high concentration.\\
 
 \begin{qbox}[%
-Why do you think that the repressilator motif leads to this pattern of oscillations?
+Why do you think that the repressilator motif leads to a pattern of oscillations?
 ]\end{qbox}
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.85\textwidth]{../images/cellblender_repressilator_white.png}
-\caption{Modeling the repressilator's concentration of particles over time; \textvar{X} is shown in yellow, \textvar{Y} is shown in red, and \textvar{Z} is shown in blue}
+\caption{Modeling the repressilator's concentration of each particle over time; \textvar{X} is shown in yellow, \textvar{Y} is shown in red, and \textvar{Z} is shown in blue.}
 \label{fig:repressilator_chart}
 \end{figure}
 
@@ -416,9 +416,9 @@ Because the concentration of \textvar{X} starts out high, with no \textvar{Y} or
 
 As the concentration of \textvar{Z} rises, the repression reaction $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$ occurs often enough for the rate of removal of \textvar{X} to equal and exceed its rate of production, accounting for the first peak in \autoref{fig:repressilator_chart}. The concentration of \textvar{X} then plummets, with the concentration of \textvar{Z} rising up to replace it. This situation is shown by the second (blue) peak in \autoref{fig:repressilator_chart}.
 
-As a result, \textvar{Z} and \textvar{X} have switched roles. Because there is a high concentration of \textvar{Z}, and the concentration of \textvar{Y} is increasing, the reaction $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ will be frequent and reduce the concentration of \textvar{Z}. Furthermore, because the concentration of \textvar{X} has decreased, and the concentration of \textvar{Y} is still relatively low, the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ will occur less often, allowing the concentration of \textvar{Y} to continue to rise. Eventually, the decrease in the concentration of \textvar{Z} and the increase in the concentration of \textvar{Y} will account for the third (red) peak in \autoref{fig:repressilator_chart}.
+As a result, \textvar{Z} and \textvar{X} have switched roles. Because the concentration of \textvar{Z} is high and the concentration of \textvar{Y} is increasing, the reaction $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ will occur frequently and reduce the concentration of \textvar{Z}. Furthermore, because the concentration of \textvar{X} has decreased and the concentration of \textvar{Y} is still relatively low, the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ will occur less often, allowing the concentration of \textvar{Y} to continue to rise. Eventually, the decrease in the concentration of \textvar{Z} and the increase in the concentration of \textvar{Y} will account for the third (red) peak in \autoref{fig:repressilator_chart}.
 
-At this point, the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ will suppress the concentration of \textvar{Y}. Because the concentrations of \textvar{X} and \textvar{Z} are both lower than the concentration of \textvar{Z}, the reaction $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$ will not greatly influence the concentration of \textvar{X}, which will rise to meet the following concentration of \textvar{Y}, and we have returned to our original situation, at which point the cycle will begin again.
+At this point, the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ will suppress the concentration of \textvar{Y}. Because the concentrations of \textvar{X} and \textvar{Z} are both lower than the concentration of \textvar{Z}, the reaction $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$ will not greatly influence the concentration of \textvar{X}, which will rise to meet the falling concentration of \textvar{Y}, and we have returned to our original situation, at which point the cycle will begin again.
 
 \FloatBarrier
 \phantomsection
@@ -426,9 +426,9 @@ At this point, the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ 
 
 Take another look at the oscillations of the repressilator in \autoref{fig:repressilator_chart}. You will notice that the concentrations zigzag as they travel up or down, and that they peak at slightly different levels each time.
 
-This noise in the repressilator's oscillations is due to random variation as the particles bounce around due to diffusion. The repression reactions require two particles to collide in order for the reaction to take place. Due to random chance, these collisions may occur more or less often than expected because of random chance. Much of this noise is due to low sample size: we have around 150 molecules at each peak in the \autoref{fig:repressilator_chart}, but a given cell may have on the order of 1,000 to 10,000 molecules of a single protein.
+This noise in the repressilator's oscillations is due to random variation as the particles bounce around due to diffusion. The repression reactions require two particles to collide, and these collisions may occur more or less often than expected because of random chance, which is exacerbated by low sample size. We have around 150 molecules at each peak in the \autoref{fig:repressilator_chart}, but a given cell may have 1,000 to 10,000 molecules of a single protein.
 
-The noise in the repressilator's oscillations is a feature, not a bug. As we have discussed previously, the cell's molecular interactions are inherently random. If we see oscillations in a simulation built on randomness, then we can be confident that this simulation is \textit{robust} to a certain amount of variation. We will further explore this robustness in the chapter's conclusion.\\
+Yet the noise in the repressilator's oscillations is a feature, not a bug. As we have discussed previously, the cell's molecular interactions are inherently random. If we see oscillations in a simulation built on randomness, then we can be confident that this simulation is \textit{robust} to a certain amount of variation. We will further explore this robustness in the chapter's conclusion.\\
 
 \FloatBarrier
 \phantomsection
@@ -439,9 +439,9 @@ The noise in the repressilator's oscillations is a feature, not a bug. As we hav
 
 \subsection{Biological oscillators are robust by design}
 
-If your heart skips a beat when you are watching a horror movie, then it should return quickly to its natural rhythm. When you hold your breath to dive underwater, your normal breathing resumes at the surface. And regardless of what functions your cells perform or what disturbances they find in their environment, they should be able to maintain a normal cell cycle.
+If your heart skips a beat when you are watching a horror movie, then it should return quickly to its natural rhythm. When you hold your breath to dive underwater, your normal breathing resumes at the surface. And regardless of what functions your cells perform, they should be able to maintain a normal cell cycle despite disturbance.
 
-An excellent illustration of oscillator robustness is the body's ability to handle jet lag. There is no apparent reason why humans would have evolved to be able to fly halfway around the world. And yet our circadian clock is so resilient that after a few days of fatigue and crankiness, our circadian clock returns to a normal daily cycle.
+An excellent illustration of oscillator robustness is the body's ability to handle jet lag. There is no apparent reason why we would have evolved to fly halfway around the world in a few hours. And yet our circadian clock is so resilient that after a few days of fatigue and crankiness, it returns us to a normal daily cycle.
 
 In the previous section, we saw that the repressilator, a three-element motif, can exhibit oscillations even in a noisy environment of randomly moving particles. The repressilator's resilience makes us wonder how well it can respond to a disturbance in the concentrations of its particles.
 
@@ -451,47 +451,47 @@ In the previous section, we saw that the repressilator, a three-element motif, c
 
 With our work on Turing patterns in \autoref{chapter:turing}, we saw that tracking the movements of many individual particles led to a slow simulation that did not scale well given more particles or reactions. This observation led us to devise a coarse-grained reaction-diffusion model that was still able to produce Turing patterns. We used a cellular automaton because the concentrations of particles varied in different locations and were diffusing at different rates.
 
-We would like to devise a coarse-grained model of the repressilator. However, the particles diffuse at the same rate and are \textit{uniform} across the simulation, and so there is no need to track concentrations in individual locations. As a result, we will use a simulation that assumes that the particles are \textdefnogloss{well-mixed}.
+We would like to devise a coarse-grained model of the repressilator. However, the particles diffuse at the same rate and are \textit{uniform} across the simulation, and so there is no need to track concentrations in individual locations. As a result, we will use a simulation that assumes that particles are \textdefnogloss{well-mixed}.
 
 For example, say that we are modeling a degradation reaction. If we start with a concentration of 10,000 \textvar{X} particles, then after a single time step, we will simply multiply the number of \textvar{X} particles by $(1-k)$, where \textit{k} is a parameter related to the rate of the degradation reaction.
 
 As for a repression reaction like $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$, we can update the concentration of \textvar{Y} particles by subtracting some factor \textit{r} times the current concentrations of \textvar{X} and \textvar{Y} particles.
 
-We will further discuss the technical details behind a well-mixed reaction-diffusion model in \autoref{chapter:chemotaxis}. In the meantime, we would like to see what happens when we make a major disturbance to the concentration of one of the particles in the well-mixed model. Do the particle concentrations resume their oscillations?\tutorial[motifs/tutorial_perturb]
+We will further discuss the technical details required to implement a well-mixed reaction-diffusion model in \autoref{chapter:chemotaxis}. In the meantime, we would like to see what happens when we make a major disturbance to the concentration of one of the particles in the well-mixed model. Do particle concentrations resume their oscillations?\tutorial[motifs/tutorial_perturb]
 
 \FloatBarrier
 \phantomsection
 \subsection{The repressilator is robust to disturbance}
 
-\autoref{fig:nf_sim_interrupted_chart} shows plots over time of concentrations of each particle in our well-mixed simulation of the repressilator.  Midway through this simulation, we greatly increase the concentration of \textvar{Y} particles.
+\autoref{fig:nf_sim_interrupted_chart} shows plots over time of particle concentrations in our well-mixed simulation of the repressilator. (Note that these plots are less noisy than the ones that we produced in \autoref{fig:repressilator_chart} because we are assuming a well-mixed environment.) Midway through this simulation, we greatly increase the concentration of \textvar{Y} particles.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/nf_sim_interrupted_chart.png}
+\includegraphics[width = 0.85\textwidth]{../images/nf_sim_interrupted_chart_spike.png}
 \caption{A plot of particle concentrations in the well-mixed repressilator model over time. Adding a significant number of \textvar{Y} particles to our simulation (the second blue peak) produces little ultimate disturbance to the concentrations of the three particles, which return to normal oscillations within a single cycle.}
 \label{fig:nf_sim_interrupted_chart}
 \end{figure}
 
 Because of the spike in the concentration of \textvar{Y}, the reaction $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ suppresses the concentration of \textvar{Z} for longer than usual, and so the concentration of \textvar{X} is free to increase for longer than normal. As a result, the next peak of \textvar{X} particles is higher than normal.
 
-We might hypothesize that this process would continue, with a tall peak in the concentration of \textvar{Z}. However, the peak in the concentration of \textvar{Z} is no taller than normal, and the next peak shows a normal concentration of \textvar{X}. In other words, the system has very quickly absorbed the blow of an increase in concentration of \textvar{Y} and returned to normal within one cycle.
+We might hypothesize that this process would continue, with a tall peak in the concentration of \textvar{Z}. However, the peak in the concentration of \textvar{Z} is no taller than normal, and the following peak shows a normal concentration of \textvar{Y}. The system has very quickly absorbed the blow of an increase in concentration of \textvar{Y} and returned to normal within one cycle.
 
-Even with a much larger jolt to the concentration of \textvar{Y}, the concentrations of the three particles return to normal oscillations very quickly (\autoref{fig:nf_sim_interrupted_chart_spike}).\\
-
-\begin{figure}[h]
-\centering
-\mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/nf_sim_interrupted_chart_spike.png}
-\caption{A larger sudden increase in the concentration of \textvar{Y} particles than in \autoref{fig:nf_sim_interrupted_chart} still does not produce a substantive change in the system over time.}
-\label{fig:nf_sim_interrupted_chart_spike}
-\end{figure}
+%Even with a much larger jolt to the concentration of \textvar{Y}, the concentrations of the three particles return to normal oscillations very quickly (\autoref{fig:nf_sim_interrupted_chart_spike}).\\
+%
+%\begin{figure}[h]
+%\centering
+%\mySfFamily
+%\includegraphics[width = 0.85\textwidth]{../images/nf_sim_interrupted_chart_spike.png}
+%\caption{A larger sudden increase in the concentration of \textvar{Y} particles than in \autoref{fig:nf_sim_interrupted_chart} still does not produce a substantive change in the system over time.}
+%\label{fig:nf_sim_interrupted_chart_spike}
+%\end{figure}
 
 The repressilator is not the only network motif that leads to oscillations of particle concentrations, but robustness to disturbance is a shared feature of all these motifs. Furthermore, the repressilator is not the most robust oscillator that we can build. Researchers have shown that at least five components are typically needed to build a very robust oscillator, which may help explain why real oscillators tend to have more than three components.
 
 %The repressilator's robustness implies a bigger picture moral of biological modeling. If an underlying biological system demonstrates robustness to change, then any model of that system should also be able to withstand this change. Conversely, in biology and in life, we should be skeptical of any non-robust model of a robust system.
 
-In the next chapter, we will an even more involved biochemical process that is used by bacteria to cleverly (and robustly) explore their environment. In fact, replicating this system will require so many particles and so many reactions that we will need to rethink how we formulate our model.\\
+In the next chapter, we will encounter a much more involved biochemical process that is used by bacteria to cleverly (and robustly) explore their environment. In fact, replicating this system will require so many particles and so many reactions that we will need to rethink how we formulate our model.\\
 
 \newpage
 
@@ -505,7 +505,7 @@ In the next chapter, we will an even more involved biochemical process that is u
 
 In this chapter, we have largely appealed to intuition when claiming that the number of network structures that we observe is larger than what we would see due to random chance. For example, we pointed out that there are 130 loops in the \textit{E.~coli} transcription factor network, but we would only expect to see 2.42 such loops if the network were random.
 
-This argument hints at a foundational approach in statistics, which is to determine the likelihood that an observation would occur due to random chance; this likelihood is called a \textdefnogloss{p-value}. In this case, our observation is 130 loops, and the probability that this number of loops would have arisen in a random network of the same size is practically zero. The exact computation of this p-value is beyond the scope of our work here, but we will turn our attention to a different p-value that is easier to determine.
+This argument hints at a foundational approach in statistics, which is to determine the likelihood that an observation would occur due to random chance; this likelihood is called a \textdefnogloss{p-value}. In this case, our observation is 130 loops, and the probability of this observation in a random network of the same size is practically zero. The exact computation of this p-value is beyond the scope of our work here, but we will turn our attention to a different p-value that is easier to determine.
 
 We also mentioned that 95 of the 130 loops in the \textit{E.~coli} transcription factor network correspond to repression, which is another surprising fact, since in a random network we would expect to see only about 65 loops that correspond to activation. This leads us to hypothesize that negative autoregulation is on the whole more important to the cell than positive autoregulation.
 
