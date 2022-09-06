@@ -507,9 +507,9 @@ In this chapter, we have largely appealed to intuition when claiming that the nu
 
 This argument hints at a foundational approach in statistics, which is to determine the likelihood that an observation would occur due to random chance; this likelihood is called a \textdefnogloss{p-value}. In this case, our observation is 130 loops, and the probability of this observation in a random network of the same size is practically zero. The exact computation of this p-value is beyond the scope of our work here, but we will turn our attention to a different p-value that is easier to determine.
 
-We also mentioned that 95 of the 130 loops in the \textit{E.~coli} transcription factor network correspond to repression, which is another surprising fact, since in a random network we would expect to see only about 65 loops that correspond to activation. This leads us to hypothesize that negative autoregulation is on the whole more important to the cell than positive autoregulation.
+We also mentioned that 95 of the 130 loops in the \textit{E.~coli} transcription factor network correspond to repression, which is another surprising fact, since in a random network, we would expect to see only about 65 loops that correspond to activation. We therefore hypothesize that negative autoregulation is on the whole more important to the cell than positive autoregulation.
 
-To quantify our surprise and compute a p-value, we ask, ``if the choice of a loop corresponding to activation or repession were random and equal, then what is the likelihood that out of 130 loops, 95 (or more) correspond to activation?'' This question is biological but is equivalent to a question about flipping coins: ``if we flip a coin 130 times, then what is the likelihood that the coin will come up heads 95 or more times?''
+To compute a p-value associated with the frequency of negative autoregulation, we ask, ``if the choice of a loop corresponding to activation or repession were random and equal, then what is the likelihood that out of 130 loops, 95 (or more) correspond to activation?'' This question is biological but is equivalent to a question about flipping coins: ``if we flip a coin 130 times, then what is the likelihood that the coin will come up heads 95 or more times?''
 
 Say that we observe four coin flips. Then there are 16 equally likely outcomes, shown in the table below.
 
@@ -520,7 +520,7 @@ Say that we observe four coin flips. Then there are 16 equally likely outcomes, 
 \end{tabular}
 \end{center}
 
-\noindent Each of these 16 outcomes is equally likely, and so we can compute the probability of observing \textvar{k} heads out of the four flips by counting how many of the 16 cases have \textvar{k} heads:
+\noindent Each outcome is equally likely, and so we can compute the probability of observing \textvar{k} heads in the four flips by counting how many of the 16 cases have \textvar{k} heads:
 \begin{align*}
 \mathrm{Pr}(\text{0 heads}) &= 1/16\,;\\
 \mathrm{Pr}(\text{1 heads}) & = 4/16 = 1/4\,;\\
@@ -543,7 +543,7 @@ If we instead wish to compute the probability of obtaining \textit{at least} k h
 $\displaystyle\sum\limits_{j=k}^n{\dbinom{n}{j} \cdot \left(\dfrac{1}{2}\right)^n}$\,.
 \end{center}
 
-\noindent This expression therefore gives us the p-value that we are looking for when substituting the appropriate values of $n$ and $k$.\\
+\noindent This expression gives us our desired p-value.\\
 
 \begin{exercise}[%
 When $n = 130$ and $k = 95$, compute the p-value given by the above expression. Is it likely that random chance could have produced 95 out of 130 loops in the transcription factor network that correspond to repression?
@@ -552,7 +552,7 @@ When $n = 130$ and $k = 95$, compute the p-value given by the above expression. 
 \phantomsection
 \subsection{Counting feedforward loops}
 
-Recall that in the feedforward loop motif (illustrated in \autoref{fig:feed-forward_loop}), \textvar{X} is connected to \textvar{Y} and \textvar{Z}, and \textvar{X} is connected to \textvar{Z}.\\
+Recall that in the feedforward loop motif (illustrated in \autoref{fig:feed-forward_loop}), \textvar{X} is connected to \textvar{Y} and \textvar{Z}, and \textvar{X} is connected to \textvar{Z}. In a tutorial, we counted the number of loops in a transcription factor network; we now allow you to adapt that tutorial for the case of feed-forward loops.\tutorial[motifs/tutorial_loops]\\
 
 \begin{exercise}[%
 Count the number of feedforward loops in the transcription factor network for \textit{E.~coli}.
@@ -561,7 +561,7 @@ Count the number of feedforward loops in the transcription factor network for \t
 There are eight types of feedforward loops based on the eight different ways in which we can label the edges in a feedforward motif; each edge can be labeled by a ``+'' or a ``-'' depending on whether that edge corresponds to activation or repression.\\
 
 \begin{exercise}[%
-Adapt your solution to the previous exercise to count the number of loops of each type present in the \textit{E.~coli} transcription factor network.
+Adapt your solution to the previous exercise to count the number of loops of each type in the \textit{E.~coli} transcription factor network.
 ]\end{exercise}
 
 \begin{exercise}[%
@@ -582,13 +582,13 @@ How many feedforward loops would you expect to see in a random network having th
 \subsection{Negative autoregulation}
 
 \begin{exercise}[%
-One way for the cell to apply stronger "brakes" to the simple regulation rate would be to simply increase the degradation rate, rather than implement negative autoregulation. From an evolutionary perspective, why do you think that the cell doesn't do this?
+One way for the cell to apply stronger "brakes" to the activation of a transcription factor would be to simply increase the degradation rate of that transcription factor, rather than implement negative autoregulation. From an evolutionary perspective, why do you think that the cell doesn't do this?
 ]\end{exercise}
 
-Recall that we used the reaction reaction $X \rightarrow X + Y$ to represent simple regulation. We then built a model in a tutorial to run a mathematically controlled comparison between two simulated cells, one having only simple regulation, and the other also having negative autoregulation, which we represented using the reaction $Y + Y \rightarrow Y$.\tutorial[motifs/tutorial_nar_mathematically_controlled]\\
+Recall that we used the reaction reaction $X \rightarrow X + Y$ to represent activation. We then built a model in a tutorial to run a mathematically controlled comparison between two simulated cells, one having only this reaction, and the other also having negative autoregulation, which we represented using the reaction $Y + Y \rightarrow Y$.\tutorial[motifs/tutorial_nar_mathematically_controlled]\\
 
 \begin{exercise}[%
-Multiply the rate of $X \rightarrow X + Y$ by a factor of 100 in the cell having only simple regulation, and plot the concentration of $Y$ in both cells. By approximately what factor do you need to increase the rate of this reaction in the cell that includes negative autoregulation so that the steady-state concentration of $Y$ is the same in both cells?
+Multiply the rate of the reaction $X \rightarrow X + Y$ by a factor of 100 in the cell having only simple regulation, and plot the concentration of $Y$ in both cells. By approximately what factor do you need to increase the rate of this reaction in the cell that includes negative autoregulation so that the steady-state concentration of $Y$ remains the same in both cells?
 ]\end{exercise}
 
 
@@ -598,15 +598,15 @@ Multiply the rate of $X \rightarrow X + Y$ by a factor of 100 in the cell having
 Although most of the autoregulating \textit{E.~coli} transcription factors exhibit negative autoregulation, 35 of these transcription factors autoregulate \textit{positively}, meaning that the transcription factor activates its own regulation. This network motif exists in processes in which the cell needs a cell to be produced at a slower, more precise rate than it would under normal activation. This occurs in some genes related to development, when gene expression must be carefully controlled.\\
 
 \begin{exercise}[%
-Design and implement a reaction-diffusion model to run a mathematically-controlled simulation comparing the positive autoregulation of a transcription factor \textvar{Y} against normal activation of \textvar{Y} by another transcription factor \textvar{X}. Plot the concentration of \textvar{Y} over time in the two circumstances.
+Design and implement a reaction-diffusion model to run a mathematically-controlled simulation comparing the positive autoregulation of a transcription factor \textvar{Y} against normal activation of \textvar{Y} by another transcription factor \textvar{X}. Plot the concentration of \textvar{Y} over time in the two simulations.
 ]\end{exercise}
 
 
 \phantomsection
 \subsection{Replicating the chapter's conclusions with well-mixed simulations}
 
-Recall that a repressilator is a network motif in which \textvar{X} inhibits \textvar{Y}, which inhibits \textvar{Z}, which in turn inhibits \textvar{Z}. In a tutorial, we showed how to use a well-mixed simulation to build the repressilator, which we then perturbed to produce the concentration plot in \autoref{fig:nf_sim_interrupted_chart}.\\
+Recall that the repressilator is a network motif in which \textvar{X} inhibits \textvar{Y}, which inhibits \textvar{Z}, which in turn inhibits \textvar{Z} (\autoref{fig:repressilator}). In a tutorial, we showed how to use a well-mixed simulation to build the repressilator, which we then perturbed to produce the concentration plot in \autoref{fig:nf_sim_interrupted_chart}.\tutorial[motifs/tutorial_perturb]\\
 
 \begin{exercise}[%
-Build well-mixed simulations to replicate the other network motif tutorials presented in this module.
+Build well-mixed simulations to replicate the conclusions of the other network motif tutorials presented in this chapter.
 ]\end{exercise}
