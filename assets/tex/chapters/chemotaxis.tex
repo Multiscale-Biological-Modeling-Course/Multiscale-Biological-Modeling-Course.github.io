@@ -18,7 +18,7 @@ But Munroe provides a solution that is both sophisticated and elegant. He argues
 
 In the previous two chapters, we have harnessed the power of randomness to answer practical questions. Munroe's approach exemplifies a \textdef{randomized algorithm}{random algorithm}{a method that uses randomness to solve (or approximately solve) a problem}, or a method that uses randomness to solve a problem. In fact, this algorithm is inspired by nature; Munroe calls the approach ``be an ant'' because it mimics how ants explore their environment for resources. In this chapter, we will see that the Lost Immortals algorithm is also similar to the method of exploration taken by a much smaller organism: our old friend \textit{E. coli}.
 
-Like other prokaryotes, \textit{E. coli} is tiny, with a rod-shaped body that is 2 µm long and 0.25 to 1 µm wide. In exploring a vast world with sparse resources, \textit{E. coli} finds itself in a situation comparable to the Munroe's immortals.
+Like other prokaryotes, \textit{E. coli} is tiny, with a rod-shaped body that is 2 µm long and 0.25 to 1 µm wide. In exploring a vast world with sparse resources, \textit{E. coli} finds itself in a situation comparable to that of Munroe's immortals.
 
 The movement of organisms like \textit{E. coli} in response to a chemical stimulus is called \textdef{chemotaxis}{chemotaxis}{the movement of an organism in response to a chemical stimulus}. \textit{E. coli} and other bacteria have evolved to move toward \textdefnogloss{attractants} like glucose and electron acceptors and move away from \textdefnogloss{repellents} like Ni\textsuperscript{2+} and Co\textsuperscript{2+}.
 
@@ -32,7 +32,7 @@ In this chapter, we will delve into chemotaxis and ask a number of questions. Ho
 \phantomsection
 \subsection{Bacterial runs and tumbles}
 
-Every \textit{E. coli} cell has between five and twelve flagella distributed on its surface that can rotate both clockwise and counter-clockwise. When all the flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, which is analogous to a car traveling at 160 kph. When a flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates.
+Every \textit{E. coli} cell has between five and twelve flagella distributed on its surface that can rotate both clockwise and counter-clockwise. When all flagella are rotating counter-clockwise, they form a bundle and propel the cell forward at about 20 µm per second. This speed may seem insignificant, but it is about ten times the length of the cell per second, which is analogous to a car traveling at 160 kph. When a single flagellum rotates clockwise, the flagella become uncoordinated, and the bacterium stops and rotates.
 
 When we examine the bacterium's movement under a microscope, we see it alternate between periods of ``running'' in a straight line and then ``tumbling'' in place (\autoref{fig:chemotaxis_intro_runtumble}). Over time, the bacterium's \textdef{run and tumble}{run and tumble model}{an alternation between traveling in a straight line and rotating in place, which models bacteria exploring their environment} exploration amounts to a \textit{random walk} through its environment, like the exploration approach used by the lost immortals.\\
 
@@ -45,7 +45,7 @@ When we examine the bacterium's movement under a microscope, we see it alternate
 \end{figure}
 
 \begin{qbox}[%
-Say that a bacterium travels 20 µm per second, and every second it chooses a random direction in which to travel.  After an hour, approximately how far do we expect it to be from its starting point?? (Hint: recall the Random Walk Theorem from \autoref{chapter:turing}.)
+Say that a bacterium travels 20 µm per second, and every second it chooses a random direction in which to travel.  After an hour, approximately how far do we expect it to be from its starting point? (Hint: recall the Random Walk Theorem from \autoref{chapter:turing}.)
 ]\end{qbox}
 
 \FloatBarrier
@@ -54,9 +54,7 @@ Say that a bacterium travels 20 µm per second, and every second it chooses a ra
 
 Bacteria are amazingly diverse. They have evolved for over three billion years to thrive in practically every environment on the planet, including hazardous human-made environments. They manufacture compounds such as antibiotics that larger organisms like ourselves cannot make. Some eukaryotes are even completely dependent upon bacteria to perform some critical task for them, from digesting their food, to camouflaging them from predators, to helping them develop organs.
 
-And yet despite the diversity of the bacterial kingdom, variations in bacterial tumbling frequencies are relatively small. In the absence of an attractant or repellent, \textit{E. coli} stops to tumble once every 1 to 1.5 seconds, which is similar to most other bacteria.
-
-It is as if some invisible force compels all these bacteria to tumble with the same frequency. Recalling Dobzhansky's quotation from \autoref{chapter:motifs} that ``nothing in biology makes sense except in the light of evolution'', we wonder why evolution might hold tumbling frequency constant across species.
+And yet despite the diversity of the bacterial kingdom, variations in bacterial tumbling frequencies are relatively small. In the absence of an attractant or repellent, \textit{E. coli} stops to tumble once every 1 to 1.5 seconds, which is similar to most other bacteria. It is as if some invisible force compels all these bacteria to tumble with the same frequency. Recalling Dobzhansky's quotation that ``nothing in biology makes sense except in the light of evolution'', we wonder why evolution might hold tumbling frequency constant across species.
 
 This question is a fundamental one, and we will return to it at the close of this chapter after we have learned more about the biochemical basis of chemotaxis and how a bacterium can adjust its behavior in response to a chemical substance. In the process, we will see that despite bacteria being simple organisms, the mechanism that they use to implement chemotaxis is sophisticated and beautiful.\\
 
@@ -69,7 +67,7 @@ This question is a fundamental one, and we will return to it at the close of thi
 \phantomsection
 \subsection{Cells detect and transduce signals via receptor proteins}
 
-Chemotaxis is one of many ways in which a cell must perceive a change in its environment and react accordingly. This response is governed by a process called \textdef{signal transduction}{signal transduction}{the intracellular transmission of an external stimulus in order to effect a response}, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell in order to effect a response. When a certain molecule's extracellular concentration increases, \textdef{receptor proteins}{receptor protein}{a protein on the surface of the cell that binds to molecules in order to detect changes in their extracellular concentration} on the outside of the cell have more frequent binding with these molecules and are therefore able to detect changes in molecular concentration. This ``signal is then ``transduced'' via a series of internal chemical processes.
+Chemotaxis is one of many ways in which a cell must perceive a change in its environment and react accordingly. This response is governed by a process called \textdef{signal transduction}{signal transduction}{the intracellular transmission of an external stimulus in order to effect a response}, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell. When a certain molecule's extracellular concentration increases, \textdef{receptor proteins}{receptor protein}{a protein on the surface of the cell that binds to molecules in order to detect changes in their extracellular concentration} on the outside of the cell have more frequent binding with these molecules and are therefore able to detect changes in molecular concentration. This signal is then ``transduced'' via a series of internal chemical processes.
 
 For example, transcription factors are involved in a signal transduction process that we illustrated in \autoref{fig:transduction}. When some extracellular molecule is detected, a cascade begins that eventually changes a transcription factor into an active state, so that it is ready to activate or repress the genes that it regulates.
 
@@ -79,7 +77,7 @@ In the case of chemotaxis, \textit{E. coli} has receptor proteins that detect at
 \centering
 \mySfFamily
 \includegraphics[width = 0.85\textwidth]{../images/chemotaxis_signal.png}
-\caption{An overview of the chemotaxis signaling pathway. The red circles labeled \textit{L} represent attractant ligands. When these ligands bind to receptors, a signal is transduced inside the cell via a series of enzymes, which eventually influences the rotation direction of a flagellum.}
+\caption{A high-level overview of the chemotaxis signaling pathway. The red circles labeled \textit{L} represent attractant ligands. When these ligands bind to receptors, a signal is transduced inside the cell via a series of enzymes, which eventually influences the rotation direction of a flagellum.}
 \label{fig:chemotaxis_signal}
 \end{figure}
 
@@ -90,13 +88,13 @@ In the case of chemotaxis, \textit{E. coli} has receptor proteins that detect at
 
 The chemical reactions that we have considered earlier in this book are \textdef{irreversible}{irreversible reaction}{a chemical reaction that only proceeds in one direction}, meaning they can only proceed in one direction. For example, in \autoref{chapter:turing}'s reaction-diffusion model, we modeled the reaction $A + 2B \rightarrow 3B$, but we did not consider the reverse reaction $3B \rightarrow A + 2B$.
 
-To model ligand-receptor dynamics, we will use a \textdef{reversible reaction}{reversible reaction}{a chemical reaction that proceeds continuously in both directions (at possibly different rates)} that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bind into a complex. At the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will \textdefnogloss{dissociate} into two separate molecules. In \autoref{chapter:coronavirus}, we will discuss some of the biochemical details underlying what makes two molecules more or less likely to bind, but for now, we assert that the more suited a receptor is to a ligand, the higher the binding rate and the lower the dissociation rate.\\
+To model ligand-receptor dynamics, we will use a \textdef{reversible reaction}{reversible reaction}{a chemical reaction that proceeds continuously in both directions (at possibly different rates)} that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bind into a complex. At the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will \textdefnogloss{dissociate} into two separate molecules. The better suited a receptor is to a ligand, the higher the binding rate and the lower the dissociation rate. In \autoref{chapter:coronavirus}, we will discuss some of the biochemical details underlying what makes two molecules more or less likely to bind and disssociate.\\
 
 \begin{note}[%
 You may be wondering why ligand-receptor binding is reversible. If complexes did not dissociate, then a brief increase in ligand concentration would be detected indefinitely by the surface receptors. Without releasing the bound ligands, the cell would need to manufacture more and more receptors, which are complicated molecules.
 ]\end{note}
 
-We denote the ligand molecule by $L$, the receptor molecule by $T$, and the bound complex as $LT$. The reversible reaction representing complex binding and dissociation is $L + T \longleftrightarrow LT$ and consists of two reactions. The \textdefnogloss{forward reaction} is $L + T \rightarrow LT$, which occurs at a rate depending on some rate constant $k_\text{bind}$, and the \textdefnogloss{reverse reaction} is $LT \rightarrow L + T$, which occurs at a rate depending on some rate constant $k_\text{dissociate}$.
+We denote the ligand molecule by $L$, the receptor molecule by $T$, and the bound complex by $LT$. The reversible reaction representing complex binding and dissociation is $L + T \longleftrightarrow LT$ and consists of two reactions. The \textdefnogloss{forward reaction} is $L + T \rightarrow LT$, which occurs at a rate depending on some rate constant $k_\text{bind}$, and the \textdefnogloss{reverse reaction} is $LT \rightarrow L + T$, which occurs at a rate depending on some rate constant $k_\text{dissociate}$.
 
 If we start with a free floating supply of $L$ and $T$ molecules, then $LT$ complexes will initially be formed quickly at the expense of the free-floating $L$ and $T$ molecules. The reverse reaction will not occur because of the lack of $LT$ complexes. However, as the concentration of $LT$ grows and the concentrations of $L$ and $T$ decrease, the rate of increase in the concentration of $LT$ will slow. Eventually, the number of $T$ complexes being formed by the forward reaction will balance the number of $LT$ complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
 
