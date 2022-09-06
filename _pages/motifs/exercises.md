@@ -8,7 +8,6 @@ image: "../assets/images/repressilator_chart.png"
 
 ## A short introduction to statistical validation
 
-
 In this chapter, we have largely appealed to intuition when claiming that the number of network structures that we observe is larger than what we would see due to random chance. For example, we pointed out that there are 130 loops in the E. coli transcription factor network, but we would only expect to see 2.42 such loops if the network were random.
 
 This argument hints at a foundational approach in statistics, which is to determine the likelihood that an observation would occur due to random chance; this likelihood is called a **p-value**. In this case, our observation is 130 loops, and the probability that this number of loops would have arisen in a random network of the same size is practically zero. The exact computation of this p-value is beyond the scope of our work here, but we will turn our attention to a different p-value that is easier to determine.
