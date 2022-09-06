@@ -45,7 +45,7 @@ When the steady state concentration of *LT* is reached, the rates of the forward
 
 *k*<sub>bind</sub> · [*L*] · [*T*] = *k*<sub>dissociate</sub> · [*LT*].
 
-We also know that by the law of conservation of mass, the concentrations of *L* and *T* molecules are always constant across the system and are equal to their initial concentrations. That is, at any time point,
+We also know that by the law of conservation of mass, the concentrations of *L* and *T* are always constant across the system and are equal to their initial concentrations. That is, at any time point,
 
 [*L*] + [*LT*] = *l*<sub>0</sub><br>
 [*T*] + [*LT*] = *t*<sub>0</sub>.
@@ -113,7 +113,7 @@ $$[LT] = \dfrac{105 \pm \sqrt{105^2 - 4 \cdot 1 \cdot 2500}}{2 \cdot 1} = 52.5 \
 
 The only feasible solution is 52.5-16.008 = 36.492; As anticipated, the steady state concentration has decreased.
 
-**STOP**: What do you think will happen to the steady state concentration of *LT* if its initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your predictions by changing the parameters above and solving the quadratic formula for [*LT*].
+**STOP**: What do you think will happen to the steady state concentration of *LT* if its initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your predictions by changing these parameters and applying the quadratic formula to find the concentration of [*LT*].
 {: .notice--primary}
 
 ## Where are the units?
