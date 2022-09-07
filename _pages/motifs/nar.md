@@ -10,7 +10,7 @@ image: "../assets/images/repressilator_chart.png"
 
 ## Simulating transcriptional regulation with a reaction-diffusion model
 
-Theodosius Dobzhansky famously wrote that "nothing in biology makes sense except in the light of evolution."[^Dob] In the spirit of this quotation, there must be some evolutionary reason for the presence of the large number of negatively autoregulating *E. coli* transcription factors that we identified in the [previous lesson](autoregulation). Our goal is to use biological modeling to establish this justification.
+Theodosius Dobzhansky famously wrote that "nothing in biology makes sense except in the light of evolution."[^Dob] In the spirit of this quotation, some evolutionary reason must explain the presence of the large number of negatively autoregulating *E. coli* transcription factors that we identified in the [previous lesson](autoregulation). Our goal is to use biological modeling to establish this justification.
 
 We will simulate a "race" to the **steady state**, or **equilibrium**, concentration of a transcription factor *Y* in two cells, shown in the figure below. In the first cell, a transcription factor *X* activates *Y*; in the second cell, *Y* also negatively autoregulates. Our premise is that the cell that reaches the steady state faster can respond more quickly to its environment and is therefore more fit for survival.
 
@@ -22,7 +22,7 @@ We will simulate these two cells using a reaction-diffusion model analogous to t
 
 We begin with the first cell. To simulate *X* activating *Y*, we use the reaction *X* → *X* + *Y*. In a given interval of time, there is a constant underlying probability related to the reaction rate that any given *X* particle will spontaneously form a new *Y* particle.
 
-We should also account for the fact that proteins are *degraded* over time by enzymes called proteases. The typical protein's concentration will be degraded by 20 to 40 percent in an hour, but transcription factors degrade even faster, lasting a matter of minutes.[^machinery] Degradation is an important feature  of cellular design, as it allows the cell to remove a protein after increasing that protein's concentration in response to some environmental change.
+We should also account for the fact that proteins are *degraded* over time by enzymes called proteases. The typical protein's concentration will be degraded by 20 to 40 percent in an hour, but transcription factors degrade even faster, with each one lasting only a matter of minutes.[^machinery] Protein degradation is an important feature  of cellular design, as it allows the cell to remove a protein after increasing that protein's concentration in response to some environmental change.
 
 To model the degradation of *Y*, we add a "kill" reaction that removes *Y* particles at some rate. We will initialize our simulation with no *Y* particles and the *X* concentration at steady state; since *X* is being produced at a rate that exactly balances its degradation rate, we will not need to add reactions to the model simulating the production or degradation of *X*.
 
@@ -31,14 +31,14 @@ To complete the model of the first cell, diffusion of the *X* and *Y* particles 
 **STOP:** What chemical reaction could be used to simulate the negative autoregulation of *Y*?
 {: .notice--primary}
 
-The model of the second cell will inherit all of the reactions from the first cell (with the same reaction rates) while adding negative autoregulation of *Y*. We will model negative autoregulation with the reaction 2*Y* → *Y*. That is, when two *Y* particles collide, there is some probability related to the reaction rate that one of the particles serves to remove the other, which mimics the process of a transcription factor turning off another copy of itself during negative autoregulation.
+The model of the second cell will inherit all of the reactions from the first cell (with the same reaction rates) while adding negative autoregulation of *Y*, which we will model using the reaction 2*Y* → *Y*. That is, when two *Y* particles collide, there is some probability related to the reaction rate that one of the particles serves to remove the other, which mimics the process of a transcription factor turning off another copy of itself during negative autoregulation.
 
-To recap, the simulations of both cells will include an initial concentration of *X* at steady state, diffusion of *X* and *Y*, removal of *Y*, and the reaction *X* → *X* + *Y*. The second simulation, which includes negative autoregulation of *Y*, will add the reaction 2*Y* → *Y*. You can explore these simulations in the following tutorial.
+To recap, both simulated cells will include an initial concentration of *X* at steady state, diffusion of *X* and *Y*, removal of *Y*, and the reaction *X* → *X* + *Y*. The second simulation, which includes negative autoregulation of *Y*, will add the reaction 2*Y* → *Y*. You can explore these simulations in the following tutorial.
 
 [Visit tutorial](tutorial_nar){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
 
-**Note:** Although we are using a particle-based model to mimic regulation, it is not attempting to replicate specific chemical reactions. In reality, gene regulation is a complicated chemical process that involves a great deal of molecular machinery. The purpose of the model is to strip away what is not relevant and retain the essence of what is being modeled.
+**Note:** Although we are using a particle-based model to mimic regulation, it does not implement specific chemical reactions. In reality, gene regulation is a complicated chemical process that involves a great deal of molecular machinery. The purpose of the model is to strip away the irrelevant and retain the essence of what is being modeled.
 {: .notice--info}
 
 ## Ensuring a mathematically controlled comparison
@@ -63,13 +63,13 @@ We should keep a number of parameters constant  across the two simulations becau
 
 ## An evolutionary basis for negative autoregulation
 
-The figure below plots the concentration of *Y* particles for the two simulated cells after ensuring a mathematically controlled comparison, in which the rate of the *X* → *X* + *Y* reaction has been increased in the second cell. This figure shows that the two simulated cells now have approximately the same steady state concentration of *Y*. However, the second cell reaches this concentration faster; that is, its **response time** to the external stimulus causing an increase in the production of *Y* is shorter.
+The figure below plots the concentration over time of *Y* particles for the two simulated cells after ensuring a mathematically controlled comparison, in which the rate of the reaction *X* → *X* + *Y* has been increased in the second cell. This figure shows that the two simulated cells now have approximately the same steady state concentration of *Y*. However, the second cell reaches this concentration faster; that is, its **response time** to the external stimulus that caused an increase in the production of *Y* is shorter.
 
 [![image-center](../assets/images/600px/nar_equal_chart_2.png){: .align-center}](../assets/images/nar_equal_chart_2.png)
 A comparison of the concentration of *Y* particles across the same two simulations from the previous figure. This time, in the second simulation (yellow), we increase the rate of the reaction *X* → *X* + *Y*.  As a result, the two simulations have approximately the same steady state concentration of *Y*, and the simulation that includes negative autoregulation reaches steady state more quickly.
 {: style="font-size: medium;"}
 
-The above plots also provide evidence of *why* negative autoregulation may have evolved. The simulated cell including negative autoregulation wins the "race" to a steady state concentration of *Y*, and so we can conclude that a cell in which this transcription factor is negatively autoregulated is more fit for survival than one that does not. Uri Alon[^Alon] has proposed an excellent analogy of a negatively autoregulating transcription factor as a sports car that has both a powerful engine (corresponding to the higher rate of the reaction producing *Y*) and sensitive brakes (corresponding to negative autoregulation slowing the production of *Y* to reach equilibrium quickly).
+The above plots also provide evidence of *why* negative autoregulation may have evolved. The simulated cell that includes negative autoregulation wins the "race" to a steady state concentration of *Y*, and so we can conclude that this cell is more fit for survival than one in which *Y* does not negatively autoregulate. Uri Alon[^Alon] has proposed an excellent analogy of a negatively autoregulating transcription factor as a sports car that has both a powerful engine (corresponding to the higher rate of the reaction producing *Y*) and sensitive brakes (corresponding to negative autoregulation slowing the production of *Y* to reach equilibrium quickly).
 
 In this lesson, we have seen that particle-based simulations can be powerful for justifying why a network motif is prevalent. What are some other commonly occurring network motifs in transcription factor networks? And what evolutionary purposes might they serve?
 

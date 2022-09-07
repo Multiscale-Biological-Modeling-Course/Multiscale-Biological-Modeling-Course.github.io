@@ -359,7 +359,7 @@ Researchers applying local search algorithms have devised a number of ways to av
 \phantomsection
 \subsection{Applying an \textit{ab initio} algorithm to a protein sequence}
 
-To run an \textit{ab initio} structure prediction algorithm on a real protein, we will use a software resource called \href{https://zhanglab.ccmb.med.umich.edu/QUARK/}{QUARK}, which is built upon the ideas discussed in the previous section, with some added features. For example, its algorithm applies a combination of \textit{multiple} scoring functions to look for the lowest energy conformation across all of these functions.
+To run an \textit{ab initio} structure prediction algorithm on a real protein, we will use a software resource called \href{https://zhanglab.ccmb.med.umich.edu/QUARK/}{QUARK}, which is built upon the ideas discussed in the previous section, with some added features. For example, its algorithm applies a combination of \textit{multiple} scoring functions to look for the lowest energy conformation across all these functions.
 
 Levinthal's paradox means that the search space of all possible structures for a protein is so large that accurately predicting large protein structures with \textit{ab initio} modeling remains very difficult. As such, QUARK limits us to proteins with at most 200 amino acids, and so we will run it only on human hemoglobin subunit alpha.\tutorial[coronavirus/tutorial_ab_initio]
 
@@ -383,7 +383,7 @@ What known protein structure(s) would you first want to consult when studying th
 \section{Homology Modeling}
 \label{sec:homology}
 \phantomsection
-\subsection{Homology modeling finds a similar protein structure}
+\subsection{Using a known protein structure as a reference}
 
 Although \textit{ab initio} structure prediction can be challenging, we also mentioned that researchers have entered over 160,000 experimentally verified structure entries into the PDB. With every new structure that we identify, we gain a little more insight into nature's magic protein folding algorithm. In \textdef{homology modeling}{homology modeling}{an approach for protein structure prediction, also known as comparative modeling, in which we use the information contained in known structures to help us predict the structure of a protein with unknown structure} (also called \textdefnogloss{comparative modeling}), we use the information contained in known structures to help us predict the structure of a protein with unknown structure.
 
@@ -394,7 +394,7 @@ In the case of the SARS-CoV-2 spike protein, we already know that we want to use
 ]\end{qbox}
 
 \phantomsection
-\subsection{A similar structure reduces the size of the search space}
+\subsection{Finding a similar structure reduces the size of the search space}
 
 Once we have found a protein with potentially similar structure to our protein of interest, we need to use it to predict the structure of this protein. One way of doing so is to include a ``similarity term'' in the energy function that subtracts a structure's similarity to the template structure from the structure's total energy. That is, the more similar that a candidate structure is to the template, the more negative the contribution of this similarity term. To continue our search space analogy, the template protein ``pulls down'' the energy values of nearby structures like a gravity well.
 
@@ -537,7 +537,7 @@ Even if we assume that two shapes have already been overlapped and rotated appro
 Throughout the above discussion, we have assumed that we already rotated (and possibly flipped) \textit{S} to be as ``similar'' to \textit{T} as possible. In practice, after superimposing \textit{S} and \textit{T} to have the same center of mass, we would like to find the flip and/or rotation of \textit{S} that \textit{minimizes} the RMSD between our vectorizations of \textit{S} and \textit{T} over all possible ways of flipping and rotating \textit{S}; fortunately, this flip and/or rotation can be found with an approach called the \textdef{Kabsch algorithm}{Kabsch algorithm}{an algorithm that identifies the best alignment of two shapes} that relies on some advanced linear algebra and is beyond the scope of this work. After applying the Kabsch algorithm to rotate and/or flip $S$, we set our desired distance $d(S, T)$ equal to the RMSD between the shapes' vectors of sampled points.
 
 \phantomsection
-\subsection{PDB format represents a protein's structure}
+\subsection{PDB format encodes a protein's structure}
 
 The Kabsch algorithm offers a compelling way to determine the similarity of two protein structures. We can convert a protein containing \textit{n} amino acids into a vector of length \textit{n} by selecting a single representative point from each amino acid. We typically use the alpha carbon, the amino acid's centrally located carbon atom (recall the chemical structure of an amino acid from \autoref{fig:AminoAcid}).\\
 
@@ -697,7 +697,7 @@ The inability of even powerful models to obtain an accurate predicted structure 
 
 \phantomsection
 
-\section{Intermezzo: Protein Structure Prediction is Solved?}
+\section{Intermezzo: Did AlphaFold Solve the Protein Structure Prediction Problem?}
 \label{sec:intermezzo}
 \phantomsection
 
@@ -792,7 +792,7 @@ $\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \
 
 \noindent RMSD offers an excellent method for a \textit{global} comparison (i.e., a comparison across all structures), but we are interested in investigating the \textit{local} regions where the SARS-CoV and SARS-CoV-2 complexes differ.
 
-If two similar protein structures differ in a few locations, then the corresponding alpha carbon distances $d(s_{i}, t_{i})$ will likely be higher at these locations. However, one of the weaknesses of RMSD that we pointed out earlier is that a change to a single bond angle at the \textvar{i}-th position may cause $d(s_{j}, t_{j})$ to be nonzero when $j > i$, even though the structure of the protein downstream of this bond angle has not changed. For example, recall \autoref{fig:RMSD_weakness_mutation} from our discussion of the Kabsch algorithm, in which we showed two toy protein structures that are identical except for a single bond angle. All of the alpha carbon distances $d(s_{i}, t_{i})$ for \textvar{i} at least equal to 4 will be thrown off by this changed angle.
+If two similar protein structures differ in a few locations, then the corresponding alpha carbon distances $d(s_{i}, t_{i})$ will likely be higher at these locations. However, one of the weaknesses of RMSD that we pointed out earlier is that a change to a single bond angle at the \textvar{i}-th position may cause $d(s_{j}, t_{j})$ to be nonzero when $j > i$, even though the structure of the protein downstream of this bond angle has not changed. For example, recall \autoref{fig:RMSD_weakness_mutation} from our discussion of the Kabsch algorithm, in which we showed two toy protein structures that are identical except for a single bond angle. All the alpha carbon distances $d(s_{i}, t_{i})$ for \textvar{i} at least equal to 4 will be thrown off by this changed angle.
 
 However, note in \autoref{fig:RMSD_weakness_mutation}  that when \textvar{i} and \textvar{j} are both at least equal to 4, the distance $d(s_{i}, s_{j})$ between the \textvar{i}-th and \textvar{j}-th alpha carbons in \textvar{S} will still be similar to the distance $d(t_{i}, t_{j})$ between the same alpha carbons in \textvar{T}. This observation leads us to a more robust approach for measuring differences in two protein structures, which compares \textvar{all} pairwise intraprotein distances $d(s_{i}, s_{j})$ in one protein structure against the corresponding distances $d(t_{i}, t_{j})$ in the other structure.
 
@@ -822,7 +822,7 @@ We observe two facts about the contact maps in \autoref{fig:contact_map}. First,
 \phantomsection
 \subsection{Qres measures local structural differences}
 
-We obtain some insight into how two proteins differ structurally at the \textvar{i}-th amino acid if we look at the values in the \textvar{i}-th row of the proteins' contact maps; that is, if we compare all of the $d(s_{i}, s_{j})$ values to all of the $d(t_{i}, t_{j})$ values. In practice, researchers combine all of this information into a single metric called \textdefnogloss{Q per residue (Qres)} measuring the similarity of two structures at the \textvar{i}-th amino acid. The formal definition of Qres for two structures \textvar{s} and \textvar{t} having \textvar{N} amino acids is
+We obtain some insight into how two proteins differ structurally at the \textvar{i}-th amino acid if we look at the values in the \textvar{i}-th row of the proteins' contact maps; that is, if we compare all the $d(s_{i}, s_{j})$ values to all the $d(t_{i}, t_{j})$ values. In practice, researchers combine all this information into a single metric called \textdefnogloss{Q per residue (Qres)} measuring the similarity of two structures at the \textvar{i}-th amino acid. The formal definition of Qres for two structures \textvar{s} and \textvar{t} having \textvar{N} amino acids is
 
 \begin{center}
 $Q_{\text{res}}^{(i)} = \dfrac{1}{N-k} \displaystyle \sum^{N}_{j\neq i-1,i,i+1} \exp\left[-\dfrac{[d(s_i,s_j)-d(t_i,t_j)]^2}{2\sigma^2_{i,j}}\right]$\,.
@@ -870,11 +870,11 @@ Finding a region in the RBM where the structures of the SARS-CoV and SARS-CoV-2 
 
 \FloatBarrier
 \phantomsection
-\section{Analysis of Structural Protein Differences}
+\section{Analysis of Structural Protein Differences in the Spike Protein}
 \label{sec:structural_differences}
 
 \phantomsection
-\subsection{Site 1: loop in ACE2-binding ridge}
+\subsection{Site 1: loop in the ACE2-binding ridge}
 
 The first location that we will consider is our region of interest identified in the previous section, which is found on a loop in a region called the ACE2 binding ridge. This region is highlighted in \autoref{fig:Ridge} for SARS-CoV-2 (left) and SARS-CoV (right).
 
@@ -934,7 +934,7 @@ You may be wondering how researchers can be so fastidious that they would notice
 
 \FloatBarrier
 \phantomsection
-\subsection{Differences in interaction energy with ACE2 between SARS and SARS-CoV-2}
+\subsection{Differences in interaction energy with ACE2}
 
 When predicting the structure of a protein, we searched for the tertiary structure that best ``explains'' the protein's primary structure by looking for the structure with the lowest potential energy (i.e., the one that is the most chemically stable). To quantify whether two molecules bind well, we will borrow this idea and compute the potential energy of the complex formed by the viral RBD and ACE2. If two molecules bind well, then the complex will have a very low potential energy. In turn, if we compare the SARS-CoV-2 RBD-ACE2 complex against the SARS-CoV RBD-ACE2 complex, and we find that the potential energy of the former is significantly smaller, then we can conclude that it is more stable, providing evidence for the increased infectiousness of SARS-CoV-2.\tutorial[coronavirus/tutorial_NAMD]
 
@@ -957,10 +957,10 @@ Another reason for our cautiousness is that proteins are not fixed objects but r
 \FloatBarrier
 \phantomsection
 
-\section{Gaussian Network Models and Molecular Dynamics}
+\section{Gaussian Network Models (GNMs) and Molecular Dynamics}
 \label{sec:gaussian_network_models}
 \phantomsection
-\subsection{Modeling proteins using tiny springs}
+\subsection{GNMs represent proteins using tiny springs}
 
 You may think that simulating the movements of proteins with hundreds of amino acids will prove hopeless. After all, predicting the static structure of a protein has occupied biologists for decades! Yet part of what makes structure prediction so challenging is that the search space of potential structures is enormous. In contrast, once we have established the static structure of a protein, its dynamic behavior will not allow it to deviate greatly from this static structure, and so the space of potential dynamic structures is narrowed down to those that are similar to the static structure.
 
@@ -1114,7 +1114,7 @@ We are now ready to apply what we have learned in a tutorial in order to build a
 
 \FloatBarrier
 \phantomsection
-\subsection{Molecular dynamics analyses of SARS-CoV and SARS-CoV-2 spike proteins using GNM}
+\subsection{Applying GNMs to compare spike proteins}
 
 \autoref{fig:spike_crosscorr_slowmode} (top) shows the cross-correlation heat maps of the SARS-CoV and SARS-CoV-2 spike proteins, which are very similar, and \autoref{fig:spike_crosscorr_slowmode} (bottom) shows the mode shape plot for the average of the slowest ten modes in each of the two spike proteins. The mode shape plots show that the RBD of both spike proteins are highly flexible, which agrees with the biological functions of these regions. When the RBD interacts with the ACE2 enzyme on human cells, the RBD of one of the three chains ``opens up'', exposing itself to more easily bind with ACE2.\\
 
@@ -1174,7 +1174,7 @@ We will not delve into the mathematical intricacies of ANM calculations, but we 
 
 \FloatBarrier
 \phantomsection
-\subsection{ANM analysis of the coronavirus binding domain}
+\subsection{ANM analysis of the spike protein binding domain}
 
 \autoref{fig:coronavirus_anm_animation} shows screen captures of an ANM-generated animation of the complex of each virus's RBD (purple) bound with ACE2 (green). Recall from \autoref{fig:NAMDEnergy2} that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called ``hotspot 31'', which is highlighted in blue and orange in \autoref{fig:coronavirus_anm_animation} (bottom). If you look closely, as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This animation provides one more piece of evidence that SARS-CoV-2 is more effective than SARS-CoV at binding to the ACE2 enzyme.\\
 
@@ -1239,7 +1239,7 @@ Determine the center of mass of the shape in \autoref{fig:semicircular_arc}. (Hi
 ]\end{exercise}
 
 \phantomsection
-\subsection{Calculating RMSD}
+\subsection{Calculating RMSD by hand}
 
 Consider the two (very) hypothetical protein structures shown in \autoref{fig:rmsd_exercise} with vectorizations of eight points each.\\
 
@@ -1288,7 +1288,7 @@ Calculate the RMSD between the predicted structure and the actual structure. Did
 
 
 \phantomsection
-\subsection{Comparing structures with Qres}
+\subsection{Comparing protein structures with Qres}
 
 Recall the two toy protein structures from \autoref{fig:rmsd_exercise}, and that the formula for Qres of the i-th sampled point in a protein with N amino acids is
 
@@ -1307,7 +1307,7 @@ Use the visualizations to determine where the protein structures vary the most. 
 ]\end{exercise}
 
 \phantomsection
-\subsection{Calculating interaction energy}
+\subsection{Calculating interaction energy of two}
 
 In this exercise, we will be performing a short analysis of the SARS-CoV-2 Spike protein interaction energy with the human receptor ACE2 using NAMD. Download the PDB file from the Protein Data Bank (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}). Upload the structure into VMD and navigate to \texttt{Extension > Analysis > NAMD Energy}. Calculate the energy types ``VDW'' and ``Elec'' using the following selections.\\
 
@@ -1325,7 +1325,7 @@ How do the results of part A compare with that of part B? Can you justify the re
 ]\end{exercise}
 
 \phantomsection
-\subsection{Visualizing glycans}
+\subsection{Visualizing glycans on the surface of SARS-CoV-2}
 
 In the conclusion, we mentioned that the surface of the surface of viruses and host cells are ``fuzzy'' because they are covered by structures called glycans. As you may expect, SARS-CoV and SARS-CoV-2 are also covered by this ``glycan shield'', in which glycosylation of surface antigens allows the virus to hide from antibody detection.
 
@@ -1336,7 +1336,7 @@ Create the representation. Assuming that all the non-proteins are glycans, which
 ]\end{exercise}
 
 \phantomsection
-\subsection{Contact maps}
+\subsection{Creating contact maps for the SARS-CoV-2 spike protein}
 
 In a tutorial, we created a contact map for the SARS-CoV-2 spike protein using the threshold of 20 angstroms.\tutorial[coronavirus/tutorial_GNM]\\
 

@@ -49,7 +49,7 @@ To generalize this simulation to an environment with more than one attractant so
 **Exercise:** Vary the tumbling frequency according to the parameters given in the [chemotactic walk tutorial](tutorial_walk) to see how tumbling frequency influences the average distance of a cell to the closer of the two goals. As in the tutorial, run your simulation for 500 particles with the default time between tumbles (*t*<sub>0</sub>) equal to each of 0.2, 0.5, 1.0, 2.0 and 5.0 seconds.
 {: .notice--success}
 
-## Changing the *E. coli* choice of direction
+## Changing the reorientation angle of *E. coli*
 
 In the [conclusion](conclusion), we mentioned that when *E. coli* tumbles, the degree of reorientation is not uniformly random from 0° to 360°. Rather, research has shown that it follows a normal distribution with mean of 68° (1.19 radians) and standard deviation of 36° (0.63 radians).
 

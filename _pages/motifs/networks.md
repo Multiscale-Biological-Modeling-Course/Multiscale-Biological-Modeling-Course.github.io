@@ -14,10 +14,10 @@ Once we know which genes each transcription factor regulates, we can consolidate
 
 The figure below shows a portion of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial study. The complete network, which is the sum of over two decades of biological research, consists of thousands of genes and around 300 transcription factors[^tfNumber]. Because of the size of this network, it forms what computational biologists affectionally call a "hairball", or a network with so many connections that it is functionally impossible to analyze visually. For this reason, we will need to use computational approaches to study this network.
 
-Note that the edges in the *E. coli* transcription factor network below are colored red or green. An edge connecting *X* to *Y* is colored green if *X* activates *Y*, and it is colored red if *X* represses *Y*. (Alternatively, we could label the edges with a "+" or "-".)
+Note that the edges in the *E. coli* transcription factor network below have different colors. An edge connecting *X* to *Y* is colored blue if *X* activates *Y*, and it is colored orange if *X* represses *Y*. (Alternatively, we could label the edges with a "+" or "-".)
 
-[![image-center](../assets/images/600px/e_coli_tf_network.jpeg){: .align-center}](../assets/images/e_coli_tf_network.jpeg)
-A subset of the *E. coli* transcription factor network[^eColiNetwork] (click to enlarge). An edge from *X* to *Y* denotes that *X* is a transcription factor that regulates *Y*. Edges corresponding to activation are colored green, and edges corresponding to repression are colored red.
+[![image-center](../assets/images/600px/e_coli_tf_network_blue_orange.png){: .align-center}](../assets/images/e_coli_tf_network_blue_orange.png)
+A subset of the *E. coli* transcription factor network[^eColiNetwork] (click to enlarge). An edge from *X* to *Y* denotes that *X* is a transcription factor that regulates *Y*. Edges corresponding to activation are colored blue, and edges corresponding to repression are colored orange.
 {: style="font-size: medium;"}
 
 **STOP:** Select the expanded view of the transcription factor network in the figure above. Do you notice anything interesting about this network?
@@ -25,12 +25,12 @@ A subset of the *E. coli* transcription factor network[^eColiNetwork] (click to 
 
 ## Loops in the transcription factor network
 
-You may have noticed that the *E. coli* transcription factor network seems to have surprisingly many **loops**, or edges that connect a node to itself. We will pause to consider the implications of a loop in a transcription factor network — what does it mean for a transcription factor to regulate itself?
+You may have noticed that the *E. coli* transcription factor network has surprisingly many **loops**, or edges that connect a node to itself. We will pause to consider the implications of a loop in a transcription factor network — what does it mean for a transcription factor to regulate itself?
 
-A transcription factor is a protein, which means that because of the Central Dogma of Molecular Biology, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In **autoregulation**, illustrated in the figure below, the transcription factor protein then binds to the DNA in the region preceding the gene that encodes the very *same* transcription factor. This type of *feedback* is a beautiful and surprising feature of a simple biological system.
+A transcription factor is a protein, which means that because of the central dogma, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In **autoregulation**, illustrated in the figure below, the transcription factor protein then binds to the DNA in the region preceding the gene that encodes the very *same* transcription factor. This type of *feedback* is a beautiful and surprising feature of a simple biological system.
 
 [![image-center](../assets/images/600px/autoregulation_example.png){: .align-center}](../assets/images/autoregulation_example.png)
-A simplified illustration of autoregulation. "Protein" labels the transcription factor binding factor protein, which binds to the DNA encoding this transcription factor, labeled by "Gene".[^auto]
+A simplified illustration of autoregulation, in which a gene is transcribed into messenger RNA (mRNA) and then translated into a transcription factor protein, and then this transcription factor regulates the same gene, producing a feedback loop. "Protein" labels the transcription factor binding factor protein, which binds to the DNA encoding this transcription factor, labeled by "Gene".
 {: style="font-size: medium;"}
 
 Transcription factor autoregulation leads us to ask two questions. First, how can we justify that a transcription factor network has "surprisingly many" loops? And second, if autoregulation is so common, then why would a transcription factor have evolved to regulate its own transcription? We will address these questions in each of the next two lessons.

@@ -12,7 +12,7 @@ header:
 author_profile: true # add author to page
 ---
 
-# Introduction: The lost immortals
+# The lost immortals
 
 The book <a href="https://what-if.xkcd.com/" target="_blank"><em>What If?</em></a>[^Munroe], by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these situations occurred. One such hypothetical, called “Lost Immortals”, ponders how two immortal humans might find each other if they were stranded in different locations of an uninhabited planet.
 
@@ -24,7 +24,7 @@ In the previous two modules, we have harnessed the power of randomness to answer
 
 In fact, Munroe's randomized algorithm for Lost Immortals is inspired by nature; he calls his approach "be an ant" because it mimics how ants explore their environment for resources.  However, in this module, we will see that this algorithm is also similar to the method of exploration taken by a much smaller organism: our old friend *E. coli*.
 
-Like other prokaryotes, *E. coli* is tiny, with a rod-shaped body that is 2µm long and 0.25 to 1µm wide.[^Pierucci1978] In exploring a vast world with sparse resources, *E. coli* finds itself in a situation comparable to Munroe's immortals.
+Like other prokaryotes, *E. coli* is tiny, with a rod-shaped body that is 2µm long and 0.25 to 1µm wide.[^Pierucci1978] In exploring a vast world with sparse resources, *E. coli* finds itself in a situation comparable to that of Munroe's immortals.
 
 The video below shows a collection of *E. coli* surrounding a sugar crystal. Think of this video the next time you leave a slice of cake out overnight on the kitchen counter!
 

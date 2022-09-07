@@ -10,16 +10,16 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## Cells detect and transduce signals via receptor proteins
 
-Chemotaxis is one of many ways in which a cell must perceive a change in its environment and react accordingly. This response is governed by a process called **signal transduction**, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell in order to effect a response.
+Chemotaxis is one of many ways in which a cell must perceive a change in its environment and react accordingly. This response is governed by a process called **signal transduction**, in which a cell identifies a stimulus outside the cell and then transmits this stimulus into the cell.
 
-When a certain molecule's extracellular concentration increases, **receptor proteins** on the outside of the cell have more frequent binding with these molecules and are therefore able to detect changes in molecular concentration. This "signal" is then "transduced" via a series of internal chemical processes.
+When a certain molecule's extracellular concentration increases, **receptor proteins** on the outside of the cell have more frequent binding with these molecules and are therefore able to detect changes in molecular concentration. This signal is then "transduced" via a series of internal chemical processes.
 
 For example, transcription factors, which we discussed in the [previous module](../motifs/transcription), are involved in a signal transduction process. When some extracellular molecule is detected, a cascade begins that eventually changes a transcription factor into an active state, so that it is ready to activate or repress the genes that it regulates.
 
 In the case of chemotaxis, *E. coli* has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant **ligands**. The bacterium also contains receptors to detect repellents, but we will focus on modeling the binding of a single type of receptor to a single type of attractant ligand.  In later lessons, we will enter the cell and model the cascade of reactions after this binding has occurred, as shown in the figure below, which cause a change in the rotation of one or more flagella.
 
 [![image-center](../assets/images/600px/chemotaxis_signal.png){: .align-center}](../assets/images/chemotaxis_signal.png)
-An overview of the chemotaxis signaling pathway. The red circles labeled *L* represent attractant ligands. When these ligands bind to receptors, a signal is transduced inside the cell via a series of enzymes, which eventually influences the rotation direction of a flagellum.
+A high-level overview of the chemotaxis signaling pathway. The red circles labeled *L* represent attractant ligands. When these ligands bind to receptors, a signal is transduced inside the cell via a series of enzymes, which eventually influences the rotation direction of a flagellum.
 {: style="font-size: medium;"}
 
 In this lesson, we will discuss how to model ligand-receptor binding.
@@ -28,12 +28,12 @@ In this lesson, we will discuss how to model ligand-receptor binding.
 
 The chemical reactions that we have considered earlier in this course are **irreversible**, meaning they can only proceed in one direction. For example, in the prologue's [reaction-diffusion model](../prologue/reaction-diffusion), we modeled the reaction *A* + 2*B* → 3*B*, but we did not consider the reverse reaction 3*B* → *A* + 2*B*.
 
-To model ligand-receptor dynamics, we will use a **reversible reaction** that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bind into a complex. At the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will **dissociate** into two separate molecules. In a future module, we will discuss some of the biochemical details underlying what makes two molecules more or less likely to bind, but for now, we assert that the more suited a receptor is to a ligand, the higher the binding rate and the lower the dissociation rate.
+To model ligand-receptor dynamics, we will use a **reversible reaction** that proceeds continuously in both directions at possibly different rates. If a ligand collides with a receptor, then there is some probability that the two molecules will bind into a complex. At the same time, in any unit of time, there is also some probability that a bound receptor-ligand complex will **dissociate** into two separate molecules. The better suited a receptor is to a ligand, the higher the binding rate and the lower the dissociation rate. In a future module, we will discuss some of the biochemical details underlying what makes two molecules more or less likely to bind and disssociate.
 
 **Note:** You may be wondering why ligand-receptor binding is reversible. If complexes did not dissociate, then a brief increase in ligand concentration would be detected indefinitely by the surface receptors. Without releasing the bound ligands, the cell would need to manufacture more receptors, which are complicated molecules.
 {: .notice--info}
 
-We denote the ligand molecule by *L*, the receptor molecule by *T*, and the bound complex as *LT*. The reversible reaction representing complex binding and dissociation is *L* + *T* ←→ *LT* and consists of two reactions. The **forward reaction** is *L* + *T* → *LT*, which occurs at a rate depending on some rate constant *k*<sub>bind</sub>, and the **reverse reaction** is *LT* → *L* + *T*, which occurs at a rate depending on some rate constant *k*<sub>dissociate</sub>.
+We denote the ligand molecule by *L*, the receptor molecule by *T*, and the bound complex by *LT*. The reversible reaction representing complex binding and dissociation is *L* + *T* ←→ *LT* and consists of two reactions. The **forward reaction** is *L* + *T* → *LT*, which occurs at a rate depending on some rate constant *k*<sub>bind</sub>, and the **reverse reaction** is *LT* → *L* + *T*, which occurs at a rate depending on some rate constant *k*<sub>dissociate</sub>.
 
 If we start with a free floating supply of *L* and *T* molecules, then *LT* complexes will initially be formed quickly at the expense of the free-floating *L* and *T* molecules. The reverse reaction will not occur because of the lack of *LT* complexes. However, as the concentration of *LT* grows and the concentrations of  *L* and *T* decrease, the rate of increase in the concentration of *LT* will slow. Eventually, the number of *LT* complexes being formed by the forward reaction will balance the number of *LT* complexes being split apart by the reverse reaction. At this point, the concentration of all particles reaches equilibrium.
 
@@ -45,7 +45,7 @@ When the steady state concentration of *LT* is reached, the rates of the forward
 
 *k*<sub>bind</sub> · [*L*] · [*T*] = *k*<sub>dissociate</sub> · [*LT*].
 
-We also know that by the law of conservation of mass, the concentrations of *L* and *T* molecules are always constant across the system and are equal to their initial concentrations. That is, at any time point,
+We also know that by the law of conservation of mass, the concentrations of *L* and *T* are always constant across the system and are equal to their initial concentrations. That is, at any time point,
 
 [*L*] + [*LT*] = *l*<sub>0</sub><br>
 [*T*] + [*LT*] = *t*<sub>0</sub>.
@@ -113,7 +113,7 @@ $$[LT] = \dfrac{105 \pm \sqrt{105^2 - 4 \cdot 1 \cdot 2500}}{2 \cdot 1} = 52.5 \
 
 The only feasible solution is 52.5-16.008 = 36.492; As anticipated, the steady state concentration has decreased.
 
-**STOP**: What do you think will happen to the steady state concentration of *LT* if its initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your predictions by changing the parameters above and solving the quadratic formula for [*LT*].
+**STOP**: What do you think will happen to the steady state concentration of *LT* if its initial concentration (*l*<sub>0</sub>) increases or decreases? What if the dissociation rate (*k*<sub>dissociate</sub>) increases or decreases?  Confirm your predictions by changing these parameters and applying the quadratic formula to find the concentration of [*LT*].
 {: .notice--primary}
 
 ## Where are the units?
@@ -144,7 +144,7 @@ When we solve for [*LT*] using the quadratic formula, we obtain [*LT*] = 4,793 m
 [*L*] = *l*<sub>0</sub> - [*LT*] = 5,207 molecules/µm<sup>3</sup><br>
 [*T*] = *t*<sub>0</sub> - [*LT*] = 2,207 molecules/µm<sup>3</sup>
 
-We can therefore determine the steady state concentration for a *single* reversible reaction. However, if we want to model real cellular processes, we will have *many* reactions for a variety of different particles. We will see that it quickly becomes infeasible to solve all of the resulting equations exactly. Instead, we need a method of simulating many reactions in parallel without incurring the significant computational overhead required to track the movements of every particle.
+We can therefore determine the steady state concentration for a *single* reversible reaction. However, if we want to model real cellular processes, we will have *many* reactions for a variety of different particles. It will quickly become infeasible to solve all the resulting equations exactly. Instead, we need a method of simulating many reactions in parallel without incurring the significant computational overhead required to track the movements of every particle.
 
 [Next lesson](gillespie){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
