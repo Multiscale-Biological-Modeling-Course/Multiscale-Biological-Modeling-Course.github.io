@@ -10,14 +10,14 @@ image: "../assets/images/chemotaxis_traj_1.0.png"
 
 ## How does *E. coli* respond to repellents?
 
-Just as *E. coli* has receptors that bind to attractant ligands, it has other receptors that can bind to **repellent** ligands. Attractant-ligand binding causes an increase in the autophosphorylation of CheA, but repellent-ligand binding causes a decrease in the autophosphorylation of CheA.
+Just as *E. coli* has receptors that bind to attractant ligands, it has other receptors that bind to **repellent** ligands. Attractant-ligand binding causes an increase in the autophosphorylation of CheA, but repellent-ligand binding causes a decrease in the autophosphorylation of CheA.
 
-**Exercise:** Based on what we have learned in this module about how *E. coli* and other bacteria act in the presence of an attractant, what do you think that the chemotaxis response is in the presence of a repellent? How do you think that the bacterium adjusts to relative changes of the repellent?
+**Exercise:** Based on what we have learned in this module about how *E. coli* and other bacteria act in the presence of an attractant, how do you think that bacteria respond in the presence of a repellent, and how do you think that the bacterium adjusts to relative changes of the repellent?
 {: .notice--success}
 
 We learned that *E. coli* is likely to run for longer when traveling up an attractant gradient, which in the long run means that it is able to find attractant sources despite running in random directions. For the same reason, *E. coli* is likely to run for longer when traveling *down* a repellent gradient.
 
-**Exercise:** Adapt the "chemotactic" random walk strategy that we implemented in a [tutorial](tutorial_walk) to handle the fact that bacteria sensing a relative decrease in repellent concentration will have longer runs before tumbling. Simulate this strategy for a collection of particles placed near a "goal" representing a repellent source. What is the average distance of the particles from the goal? How does this compare to the average distance to the goal for a collection of particles following a pure random walk?
+**Exercise:** Adapt the "chemotactic" random walk strategy that we implemented in a [tutorial](tutorial_walk) to handle the fact that bacteria sensing a relative decrease in repellent concentration will have longer runs before tumbling. Simulate this strategy for a collection of particles placed near a "goal" representing a repellent source. What is the average distance of the particles from the goal? How does it compare to the average distance to the goal for a collection of particles following a pure random walk?
 {: .notice--success}
 
 ## Traveling down an attractant gradient.
