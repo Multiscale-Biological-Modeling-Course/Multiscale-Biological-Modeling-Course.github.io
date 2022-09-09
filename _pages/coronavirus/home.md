@@ -24,17 +24,19 @@ author_profile: true # add author to page
 
 On February 21, 2003, a Chinese doctor named Liu Jianlun flew to Hong Kong to attend a wedding and checked into Room 911 of the Metropole Hotel. The next day, he became too ill to attend the wedding and was admitted to a hospital. Two weeks later, he was dead.
 
-On his deathbed, Dr. Liu stated that he had recently treated sick patients in Guangdong Province, China, where a highly contagious respiratory illness had infected hundreds of people. The Chinese government had made brief mention of this incident to the World Health Organization but had concluded that the likely culprit was a common bacterial infection. By the time anyone realized the severity of the disease, it was already too late to stop the outbreak. On February 23, a man who had stayed across the hall from Dr. Liu at the Metropole traveled to Hanoi and died after infecting 80 people. On February 26, a woman checked out of the Metropole, traveled back to Toronto, and died after initiating an outbreak there. On March 1, a third guest was admitted to a hospital in Singapore, where sixteen additional cases of the illness arose within two weeks.[^3][^4].
+On his deathbed, Dr. Liu stated that he had recently treated sick patients in Guangdong Province, where a highly contagious respiratory illness had infected hundreds of people. The Chinese government had made brief mention of this incident to the World Health Organization (WHO) but had concluded that the likely culprit was a common bacterial infection. By the time anyone realized the severity of the disease, it was already too late to stop the outbreak.
+
+On February 23, a man who had stayed across the hall from Dr. Liu at the Metropole traveled to Hanoi and died after infecting 80 people. On February 26, a woman checked out of the Metropole, traveled back to Toronto, and died after initiating an outbreak there. On March 1, a third guest was admitted to a hospital in Singapore, where sixteen additional cases of the illness arose within two weeks.[^3][^4].
 
 Consider that the Black Death, which killed over a third of all Europeans, took four years to travel from Constantinople to Kiev.  Or that HIV took two decades to circle the globe. In contrast, this mysterious new disease had crossed the Pacific Ocean within a week of entering Hong Kong.
 
-As health officials braced for the impact of the fastest traveling virus in human history, panic set in. Businesses were closed, sick passengers were removed from airplanes, and Chinese officials threatened to execute anyone deliberately spreading the disease. In the process, the mysterious new illness earned a name: **Severe Acute Respiratory Syndrome**, or **SARS**.
+As health officials braced for the impact of the fastest traveling virus in human history, panic set in. Businesses were closed, sick passengers were removed from airplanes, and Chinese officials threatened to execute anyone deliberately spreading the disease. In the process, the mysterious new illness earned a name: **severe acute respiratory syndrome**, or **SARS**.
 
 ## Tracing the source of the outbreak
 
 SARS was deadly, killing close to 10% of those who became sick.[^cdc-factsheet] But it also struggled to spread within the human population, and it was contained in July 2003 after accumulating fewer than 10,000 confirmed symptomatic cases worldwide.
 
-In 2017, researchers published the result of five years of sampling horseshoe bats from a cave in Yunnan province. They found that the bats harbored coronaviruses with remarkable genetic similarity to SARS, and they hypothesized that the virus may have originated in horseshoe bats. Yet their work has become infamous because they identified additional viruses in the bats that were related to SARS and just as capable of entering human cells. Their words are now chilling:[^bat-cave]
+In 2017, researchers published the results of sampling horseshoe bats for five years in a cave in Yunnan province. They found that these bats harbored coronaviruses with remarkable genetic similarity to the virus causing SARS. Yet their work has become infamous because they identified additional coronaviruses in the bats that were capable of entering human cells. Their words are now chilling:[^bat-cave]
 
 > We have also revealed that various [viruses] ... are still circulating among bats in this region. Thus, the risk of spillover into people and emergence of a disease similar to SARS is possible. This is particularly important given that the nearest village to the bat cave we surveyed is only 1.1 km away, which indicates a potential risk of exposure to bats for the local residents. Thus, we propose that monitoring of SARSr-CoV evolution at this and other sites should continue, as well as examination of human behavioral risk for infection and serological surveys of people, to determine if spillover is already occurring at these sites and to design intervention strategies to avoid future disease emergence.
 
@@ -44,7 +46,7 @@ On December 30, 2019, a Chinese ophthalmologist named Li Wenliang sent a WeChat 
 
 The next day, a screenshot of his post was leaked online, and local police summoned Dr. Li and forced him to sign a statement that he had "severely disturbed public order". He then returned to work, treating patients in the same Wuhan hospital.
 
-Meanwhile, the World Health Organization (WHO) received reports of multiple pneumonia cases from the Wuhan Municipal Health Commission and activated a support team to assess the new disease. The WHO declared on January 14 that local authorities had seen "no clear evidence of human-to-human transmission of the novel coronavirus". By this point, it was too late.
+Meanwhile, WHO received reports of multiple pneumonia cases from the Wuhan Municipal Health Commission and activated a support team to assess the new disease. WHO declared on January 14 that local authorities had seen "no clear evidence of human-to-human transmission of the novel coronavirus". But once again, it was already too late.
 
 Throughout January, the virus silently raged through China as Lunar New Year celebrations took place within the country, and it spread to both South Korea and the United States. By the end of the month, the disease was in 19 countries, becoming a pandemic and earning a name in the process: **coronavirus disease 2019 (COVID-19)**.
 
@@ -60,7 +62,7 @@ Coronaviruses as seen under a microscope. The fuzzy blobs on the cell surface ar
 
 When viewed under a microscope, the two viruses look identical, and they use the same mechanism to infect human cells, when the spike protein on the virus surface bonds to the ACE2 enzyme on a human cell's membrane.[^16][^17] So why did SARS fizzle, but SARS-CoV-2, a disease that is on average less harmful[^11][^12] and less deadly to individuals who contract it, transform into a pandemic? The most likely explanation for the ability of SARS-CoV-2 to spread across far more countries and remain a public health threat even in the face of lockdowns is that it spreads more easily; that is, it is more **infectious**. Is there a molecular basis of this increased infectiousness?
 
-In this module, we will place ourselves in the shoes of early SARS-CoV-2 researchers studying the new virus in early 2020. The virus's genome, consisting of nearly 30,000 nucleotides, was published on January 10[^Genome][^Annotation], and an annotation of this genome showing the position of the virus's genes is shown in the figure below. Upon sequence comparison, SARS-CoV-2 was found to be related to several coronaviruses isolated from bats and distantly related to SARS-CoV.
+In this module, we will place ourselves in the shoes of early SARS-CoV-2 researchers studying the new virus in early 2020. The virus's genome, consisting of nearly 30,000 nucleotides, was published on January 10[^Genome][^Annotation], and an annotation of this genome identifying the location of the virus's genes is shown in the figure below. Upon sequence comparison, SARS-CoV-2 was found to be related to several coronaviruses isolated from bats and distantly related to SARS-CoV.
 
 [![image-center](../assets/images/600px/SARSCoV2Annotation.png){: .align-center}](../assets/images/SARSCoV2Annotation.png)
 An annotated genome of SARS-CoV-2, with rectangles showing the location of areas encoding RNA or protein. The spike protein, found at the bottom of this image, is labeled "S" and begins at nucleotide position 21,563. Accessed from GenBank: [https://go.usa.gov/xfzMM](https://go.usa.gov/xfzMM).
@@ -68,7 +70,10 @@ An annotated genome of SARS-CoV-2, with rectangles showing the location of areas
 
 Recall from our [discussion of transcription factors](../motifs/transcription) that by the central dogma of molecular biology, DNA is transcribed into RNA, which is then translated into protein. According to the genetic code, triplets of RNA nucleotides called codons are converted into single amino acids. The resulting chain of amino acids is called a **polypeptide**.
 
-The gene encoding the spike protein starts at nucleotide position 21,563 of the SARS-CoV-2 genome, and the corresponding translated polypeptide chain is shown below. Each of 20 possible amino acids is represented by a letter taken from the Latin alphabet (all letters except for "B", "J", "O", "U", "X", and "Z" are used for amino acids). As you examine the string of letters in this figure, consider how global mayhem can ultimately be caused by something so tiny.
+**Note:** Coronaviruses are RNA viruses, which means that they do not have DNA and their genome is encoded as a single strand of RNA. As a result, they bypass the DNA to RNA transcription process.
+{: .notice--info}
+
+The gene encoding the spike protein starts at nucleotide position 21,563 of the SARS-CoV-2 genome, and the corresponding translated polypeptide chain is shown below. Each of the 20 standard amino acids is represented by a letter taken from the Latin alphabet (all letters except for "B", "J", "O", "U", "X", and "Z" are used). As you examine the string of letters in this figure, consider how global mayhem can ultimately be caused by something so tiny.
 
 ~~~
 >YP_009724390.1 S [organism=Severe acute respiratory syndrome coronavirus 2] [GeneID=43740568]
@@ -95,11 +100,11 @@ SEPVLKGVKLHYT
 
 ## Nature's magic protein folding algorithm
 
-After the SARS-CoV-2 spike protein polypeptide chain is formed, it will "fold" into a three-dimensional shape. This folding process occurs spontaneously for all proteins and without any outside influence, and the same polypeptide chain will almost always fold into the same 3-D structure in a manner of microseconds. This means that nature applies some "magic algorithm" to produce the folded structure of a protein from its sequence of amino acids.
+After the SARS-CoV-2 spike protein polypeptide chain is formed, it will "fold" into a three-dimensional shape. This folding process occurs spontaneously for all proteins and without any outside influence, and the same polypeptide chain will almost always fold into the same 3-D structure in a manner of microseconds. Nature must be applying some "magic algorithm" to quickly produce the folded structure of a protein from its sequence of amino acids.
 
-Predicting the folded structure of a polypeptide is called the **protein structure prediction**, and this problem is simple to state but deceptively difficult to solve. In fact, it has been an active area of biological research for several decades.
+Predicting the folded structure of a polypeptide is called the **protein structure prediction**, and this problem is simple to state but deceptively difficult to solve. In fact, protein structure prediction has been an active area of biological research for several decades.
 
-Why do we care about protein structure? Knowing a protein's structure is essential to determining its function and how it interacts with other proteins or molecules in its environment. Determining protein function is still an active area of research: we still do not know the function of a few thousand human genes, and Figure 1.4 shows the huge variety of protein shapes in the 2020 “proteins of the month” named by the **Protein Data Bank (PDB)**. (Note that the June 2020 winner is the SARS-CoV-2 spike protein.)
+Why do we care about protein structure? Knowing a protein's structure is essential to determining its function and how it interacts with other proteins or molecules in its environment. After all, we still do not know the function of a few thousand human genes, and Figure 1.4 shows the huge variety of protein shapes in the 2020 “proteins of the month” named by the **Protein Data Bank (PDB)**. (Note that the June 2020 winner is the SARS-CoV-2 spike protein.)
 
 [![image-center](../assets/images/600px/different_protein_shapes_2020.jpg){: .align-center}](../assets/images/different_protein_shapes_2020.jpg)
 Each "molecule of the month" in 2020 named by the PDB. These proteins have widely varying shapes and accomplish a wide variety of cellular tasks. The SARS-CoV-2 spike protein was the molecule of the month in June. Image courtesy: David Goodsell.
