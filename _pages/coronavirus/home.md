@@ -102,7 +102,7 @@ SEPVLKGVKLHYT
 
 After the SARS-CoV-2 spike protein polypeptide chain is formed, it will "fold" into a three-dimensional shape. This folding process occurs spontaneously for all proteins and without any outside influence, and the same polypeptide chain will almost always fold into the same 3-D structure in a manner of microseconds. Nature must be applying some "magic algorithm" to quickly produce the folded structure of a protein from its sequence of amino acids.
 
-Predicting the folded structure of a polypeptide is called the **protein structure prediction**, and this problem is simple to state but deceptively difficult to solve. In fact, protein structure prediction has been an active area of biological research for several decades.
+Predicting the folded structure of a polypeptide is called the **protein structure prediction**, a problem that is simple to state but difficult to solve. In fact, protein structure prediction has been an active area of biological research for several decades.
 
 Why do we care about protein structure? Knowing a protein's structure is essential to determining its function and how it interacts with other proteins or molecules in its environment. After all, we still do not know the function of a few thousand human genes, and Figure 1.4 shows the huge variety of protein shapes in the 2020 “proteins of the month” named by the **Protein Data Bank (PDB)**. (Note that the June 2020 winner is the SARS-CoV-2 spike protein.)
 
