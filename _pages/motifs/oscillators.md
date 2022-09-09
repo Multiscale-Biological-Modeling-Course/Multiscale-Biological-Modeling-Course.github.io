@@ -33,7 +33,9 @@ Furthermore, we assume that all three particles are produced as the result of an
 
 In the [previous lesson](feedforward) on the feed-forward loop, we saw that we can use the reaction *X* + *Y* → *X* to model the repression of *Y* by *X*. To complete the repressilator model, we will supplement this reaction with the reactions *Y* + *Z* → *Y* and *Z* + *X* → *Z*, with all three repression reactions occurring at the same rate.
 
-If you followed our previous tutorials, then you may feel comfortable taking off the training wheels and implementing the repressilator with your own reaction-diffusion model, which we cover in the following tutorial.
+**Note:** To better reflect the biological reality of proteins regulating genes, we will need to add a few additional particles to our model differentiating transcription factor genes from the proteins that they encode. We leave the details to the tutorial below.
+{: .notice--info}
+
 
 [Visit tutorial](tutorial_oscillators){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

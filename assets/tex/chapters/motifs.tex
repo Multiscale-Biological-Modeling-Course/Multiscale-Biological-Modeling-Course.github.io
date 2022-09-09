@@ -392,7 +392,11 @@ To build a reaction-diffusion model accompanying the repressilator, we start wit
 
 Furthermore, we assume that all three particles are produced as the result of an activation process by some other transcription factor(s), which we assume happens at the same rate. We will use a single \textdefnogloss{hidden particle} \textvar{I} that serves to activate the three visible particles via the three reactions $\textvar{I} \rightarrow \textvar{I} + \textvar{X}$, $\textvar{I} \rightarrow \textvar{I} + \textvar{Y}$, and $\textvar{I} \rightarrow \textvar{I} + \textvar{Z}$, all taking place at the same rate.
 
-When discussing the feed-forward loop, we saw that we can use the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ to model the repression of \textvar{Y} by \textvar{X}. To complete the repressilator model, we will supplement this reaction with the two reactions $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ and $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$, with all three repression reactions occurring at the same rate.\tutorial[motifs/tutorial_oscillators]
+When discussing the feed-forward loop, we saw that we can use the reaction $\textvar{X} + \textvar{Y} \rightarrow \textvar{X}$ to model the repression of \textvar{Y} by \textvar{X}. To complete the repressilator model, we will supplement this reaction with the two reactions $\textvar{Y} + \textvar{Z} \rightarrow \textvar{Y}$ and $\textvar{Z} + \textvar{X} \rightarrow \textvar{Z}$, with all three repression reactions occurring at the same rate.\tutorial[motifs/tutorial_oscillators]\\
+
+\begin{note}[%
+To better reflect the biological reality of proteins regulating genes, we will need to add a few additional particles to our model differentiating transcription factor genes from the proteins that they encode. We leave the details to the tutorial at the \textit{Biological Modeling} website.
+]\end{note}
 
 \FloatBarrier
 \phantomsection
