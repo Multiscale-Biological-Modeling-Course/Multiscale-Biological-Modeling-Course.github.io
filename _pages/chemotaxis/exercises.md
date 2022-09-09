@@ -22,28 +22,28 @@ We learned that *E. coli* is likely to run for longer when traveling up an attra
 
 ## Traveling down an attractant gradient.
 
-A related question to how a bacterium responds to a repellent is how it responds to traveling *away* from an attractant, i.e., down an attractant gradient. To model this situation, we will still use the function \[*L*\] = $$l_o \cdot e^{k \cdot t}$$ that we used when modeling a bacterium traveling up an attractant gradient, but we will now assume that *k* is negative so that the concentration is decaying exponentially. Refer to that tutorial for details.
+A related question to how a bacterium responds to a repellent is how it behaves when traveling *away* from an attractant, i.e., down an attractant gradient. To model this situation, we will still use the function \[*L*\] = $$l_o \cdot e^{k \cdot t}$$ from our [tutorial](tutorial_gradient) modeling a bacterium traveling up an attractant gradient, but we will now assume that *k* is negative so that the concentration is decaying exponentially.
 
 **Exercise:** Adapt [the gradient simulation](tutorial_gradient) to model the concentration of phosphorylated CheY over time for an exponentially decaying attractant concentration. How does the plot of phosphorylated CheY change as *k* gets more negative?
 {: .notice--success}
 
 ## What if *E. coli* has multiple attractant sources?
 
-Not only can *E. coli* sense both repellents and attractants, but it can detect *more than one* attractant gradient at the same time.  This function has a clear evolutionary purpose in a bacterial environment of multiple sparsely populated food sources. In this section, we will explore whether the chemotaxis mechanism allows cells to navigate through heterogeneous nutrient distributions.
+Not only can *E. coli* sense both repellents and attractants, but it can detect *more than one* attractant gradient at the same time.  This function has a clear evolutionary purpose in a bacterial environment containing multiple dispersed food sources. We will now explore whether the chemotaxis mechanism allows cells to navigate through heterogeneous nutrient distributions.
 
 **Exercise:** Modify our model from the [adaptation tutorial](tutorial_adaptation) to reflect two types of receptor, each specific to its own ligand (call them *A* and *B*). Assume that we have 3500 receptor molecules of each type. (**Hint:** you will not need to have additional molecules in addition to `L` and `T`. Instead, specify additional states for the two molecules that we already have; for example `L(t,Lig~A)` should only bind with `T(l,Lig~A)`. Don't forget to update `species` as well!)
 {: .notice--success}
 
 In the previous exercise, the cell adapts to the presence of two different attractants at the same time. We now consider what will happen if we only add *B* molecules once the cell has already adapted to *A* molecules.
 
-**Exercise:** Change your model by assuming that after the cell adapts to 1,000,000 molecules of *A*, 1,000,000 molecules of *B* are added. Observe the concentration of phosphorylated CheY. Is the cell able to respond to *B* after adapting to the concentration of ligand *A*? Why do you think that the change in CheY phosphorylation different from the scenario in which we release the two different ligands concurrently? (The hint for the previous exercise also applies to this exercise.)
+**Exercise:** Change your model by assuming that after the cell adapts to 1,000,000 molecules of *A*, 1,000,000 molecules of *B* are added. Observe the concentration of phosphorylated CheY. Is the cell able to respond to the influx of *B* after adapting to the concentration of ligand *A*? Why do you think that the change in CheY phosphorylation is different from the scenario in which we release the two different ligands concurrently? (The hint for the previous exercise also applies to this exercise.)
 {: .notice--success}
 
-In the [chemotactic walk tutorial](tutorial_walk), we used a concentration gradient that grew exponentially toward a single goal. Specifically, if *L*(*x*, *y*) was the concentration of ligand at (*x*, *y*), we set *L*(*x*,*y*) = 100 · 10<sup>6 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal (we used a goal of (1500, 1500)).
+In the [chemotactic walk tutorial](tutorial_walk), we used a concentration gradient that grew exponentially toward a single goal. Specifically, if *L*(*x*, *y*) was the concentration of ligand at (*x*, *y*), then we set *L*(*x*,*y*) = 100 · 10<sup>6 · (1-*d*/*D*)</sup>, where *d* is the distance from (*x*, *y*) to the goal, and *D* is the distance from the origin to the goal (we used a goal of (1500, 1500)).
 
 To generalize this simulation to an environment with more than one attractant source, we will include another goal at (-1500, 1500). The new ligand concentration formula will be *L*(*x*, *y*) = 100 · 10<sup>6 · (1-*d*<sub>1</sub>/*D*<sub>1</sub>)</sup> + 100 · 10<sup>6 · (1-*d*<sub>2</sub>/*D*<sub>2</sub>)</sup>, where *d*<sub>1</sub> is the distance from (*x*, *y*) to the goal at (1500, 1500), *d*<sub>2</sub> is the distance from (*x*, *y*) to the goal at (-1500, 1500), and *D*<sub>1</sub> and *D*<sub>2</sub> are the distances from the origin to the two respective goals.
 
-**Exercise:** Change the chemotactic walk simulation so that it includes the two goals, and visualize the trajectories of several particles using a background tumbling frequency of once every second. Are the particles able to find one of the goals? How long does it take them, and how does this compare against the case of a single goal?
+**Exercise:** Change the chemotactic walk simulation so that it includes the two goals, and visualize the trajectories of several particles using a background time between tumbles (*t*<sub>0</sub>) equal to one second. Are the particles able to find one of the goals? How long does it take them, and how does the result compare against the case of a single goal?
 {: .notice--success}
 
 **Exercise:** Vary the tumbling frequency according to the parameters given in the [chemotactic walk tutorial](tutorial_walk) to see how tumbling frequency influences the average distance of a cell to the closer of the two goals. As in the tutorial, run your simulation for 500 particles with the default time between tumbles (*t*<sub>0</sub>) equal to each of 0.2, 0.5, 1.0, 2.0 and 5.0 seconds.
@@ -53,12 +53,12 @@ To generalize this simulation to an environment with more than one attractant so
 
 In the [conclusion](conclusion), we mentioned that when *E. coli* tumbles, the degree of reorientation is not uniformly random from 0° to 360°. Rather, research has shown that it follows a normal distribution with mean of 68° (1.19 radians) and standard deviation of 36° (0.63 radians).
 
-**Exercise:** Modify your model from the [chemotactic walk tutorial](tutorial_walk) to change the random uniform sampling to this "smarter" sampling. Compare the chemotactic walk strategy and this smarter strategy by calculating the mean and standard deviation of each cell's distance to the goal for 500 simulated cells with the collection of tumbling frequencies `time_exp = [0.2, 0.5, 1.0, 2.0, 5.0]`. Do these simulated cells do a better job of finding the goal?
+**Exercise:** Modify your model from the [chemotactic walk tutorial](tutorial_walk) to change the random uniform sampling to this "smarter" sampling. Compare the chemotactic walk strategy and this smarter strategy by calculating the mean and standard deviation of each cell's distance to the goal for 500 simulated cells with the default time between tumbles (*t*<sub>0</sub>) equal to each of 0.2, 0.5, 1.0, 2.0, and 5.0. Do these simulated cells do a better job of finding the goal compared to those of the original chemotactic strategy?
 {: .notice--success}
 
-More recent research suggests that when the bacterium is moving up an attractant gradient, the degree of reorientation may be even smaller[^Saragosti2011]. Do you think that such a reorientation strategy would improve a cell's chemotaxis response?
+More recent research suggests that when a bacterium is moving up an attractant gradient, the degree of reorientation may be even smaller[^Saragosti2011]. Do you think that such a reorientation strategy would improve a cell's chemotaxis response?
 
-**Exercise:** Modify your model from the previous exercise so that if the cell has just made a move of increasing ligand concentration, then its mean reorientation angle is 0.1 radians smaller to change the random uniform sampling to this "smarter" sampling. Calculate  the mean and standard deviation of each cell's distance to the goal for 500 cells with `time_exp = [0.2, 0.5, 1.0, 2.0, 5.0]`. Do the cells find the goal faster?
+**Exercise:** Modify your model from the previous exercise so that if the cell has just made a move of increasing ligand concentration, then its mean reorientation angle is 0.1 radians smaller. Calculate the mean and standard deviation of each cell's distance to the goal for 500 cells with the default time between tumbles (*t*<sub>0</sub>) equal to each of 0.2, 0.5, 1.0, 2.0, and 5.0. Do the cells find the goal faster than they did in the preceding exercise?
 {: .notice--success}
 
 
@@ -66,11 +66,11 @@ More recent research suggests that when the bacterium is moving up an attractant
 
 As we have seen in this module, rule-based modeling is successful at simulating systems that involve a large number of species and particles but can be summarized with a small set of rules.
 
-**Polymerization** reactions offer another good example of such a system. Polymerization is the process by which **monomer** molecules combine into chains called **polymers**. Biological polymers are everywhere, from DNA (formed of monomer nucleotides) to proteins (formed of monomer amino acids) to lipids (formed of monomer fatty acids). For a nonbiological example, polyvinyl chloride (which lends its name to "PVC pipe") is a polymer made up of many vinyl molymers.
+**Polymerization** reactions offer another example of such a system. Polymerization is the process by which solitary **monomer** molecules combine into chains called **polymers**. Biological polymers are everywhere, from DNA (formed of monomer nucleotides) to proteins (formed of monomer amino acids) to lipids (formed of monomer fatty acids). For a nonbiological example, polyvinyl chloride (which lends its name to "PVC pipe") is a polymer comprising many vinyl molymers.
 
-We would like to simulate the polymerization of copies of a monomer *A* to form a polymer *AAAAAA*..., where the length of the polymer is allowed to vary. If we simulate this process, we are curious what the distribution of the polymer lengths will be.
+We would like to simulate the polymerization of copies of a monomer *A* to form a polymer *AAAAAA*..., where the length of the polymer is allowed to vary. When we simulate this process, we are curious what the distribution of the polymer lengths will be.
 
-We will write our polymer reaction as *A*<sub><em>m</em></sub> + *A*<sub><em>n</em></sub> -> *A*<sub><em>m</em>+<em>n</em></sub>, where *A*<sub>m</sub> denotes a polymer consisting of *m* copies of *A*. Using classical reaction rules, this would require an infinite number of reactions; will BioNetGen come to our rescue?
+We will write our polymer reaction as *A*<sub><em>m</em></sub> + *A*<sub><em>n</em></sub> -> *A*<sub><em>m</em>+<em>n</em></sub>, where *A*<sub>m</sub> denotes a polymer consisting of *m* copies of *A*. Using classical reactions, this single rule would require an infinite number of reactions; will rule-based modeling and BioNetGen come to our rescue?
 
 There are two sites on the monomer *A* that are involved in a polymerization reaction: the "head" and the "tail". For two monomers to bind, we need the head on one monomer and the tail on another to both be free. The following BioNetGen model is taken from the [BioNetGen tutorials](https://github.com/RuleWorld/BNGTutorial/blob/master/CBNGL/BLBR.bngl).
 

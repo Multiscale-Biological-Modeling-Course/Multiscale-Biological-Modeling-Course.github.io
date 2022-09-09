@@ -745,7 +745,7 @@ Adapt the chemotactic random walk strategy to handle the fact that bacteria sens
 \phantomsection
 \subsection{Simulating a bacterium traveling down an attractant gradient}
 
-A related question to how a bacterium responds to a repellent is how it responds to traveling \textit{away} from an attractant, i.e., down an attractant gradient. To model this situation, we will still use the function $[L] = l_0 \cdot e^{k \cdot t}$ that we used when modeling a bacterium traveling up an attractant gradient, but we will now assume that $k$ is negative so that the concentration is decaying exponentially. Refer to that tutorial for details.\tutorial[tutorial_walk]\\
+A related question to how a bacterium responds to a repellent is how it behaves when traveling \textit{away} from an attractant, i.e., down an attractant gradient. To model this situation, we will still use the function $[L] = l_0 \cdot e^{k \cdot t}$ from our tutorial modeling a bacterium traveling up an attractant gradient, but we will now assume that $k$ is negative so that the concentration is decaying exponentially.\tutorial[tutorial_walk]\\
 
 \begin{exercise}[%
 Adapt the simulation that we used to produce \autoref{fig:chemotaxis_tutorial_addition01} to model the concentration of phosphorylated CheY over time for an exponentially decaying attractant concentration. How does the plot of phosphorylated CheY change as $k$ gets more negative?
@@ -754,7 +754,7 @@ Adapt the simulation that we used to produce \autoref{fig:chemotaxis_tutorial_ad
 \phantomsection
 \subsection{What if \textit{E.~coli} has multiple attractant sources?}
 
-Not only can \textit{E.~coli} sense both repellents and attractants, but it can detect \textit{more than one} attractant gradient at the same time.  This function has a clear evolutionary purpose in a bacterial environment of multiple sparsely populated food sources. In this section, we will explore whether the chemotaxis mechanism allows cells to navigate through heterogeneous nutrient distributions.\\
+Not only can \textit{E.~coli} sense both repellents and attractants, but it can detect \textit{more than one} attractant gradient at the same time.  This function has a clear evolutionary purpose in a bacterial environment containing multiple dispersed food sources. We will now explore whether the chemotaxis mechanism allows cells to navigate through heterogeneous nutrient distributions, building on the tutorial that we used to model bacterial adaptation to changing attractant.\tutorial[chemotaxis/tutorial_adaptation]\\
 
 \begin{exercise}[%
 Modify our Gillespie model of chemotaxis adaptation to reflect two types of receptor, each specific to its own ligand (call them \textvar{A} and \textvar{B}). Assume that we have 3500 receptor molecules of each type.
@@ -763,15 +763,21 @@ Modify our Gillespie model of chemotaxis adaptation to reflect two types of rece
 In the previous exercise, the cell adapts to the presence of two different attractants at the same time. We now consider what will happen if we only add \textvar{B} molecules once the cell has already adapted to \textvar{A} molecules.\\
 
 \begin{exercise}[%
-Change your model from the previous exercise by assuming that after the cell adapts to 1,000,000 molecules of \textvar{A}, 1,000,000 molecules of \textvar{B} are added. Observe the concentration of phosphorylated CheY. Is the cell able to respond to \textvar{B} after adapting to the concentration of ligand \textvar{A}? Why do you think that the change in CheY phosphorylation different from the scenario in which we release the two different ligands concurrently?
+Change your model from the previous exercise by assuming that after the cell adapts to 1,000,000 molecules of \textvar{A}, 1,000,000 molecules of \textvar{B} are added. Observe the concentration of phosphorylated CheY. Is the cell able to respond to the influx of \textvar{B} after adapting to the concentration of ligand \textvar{A}? Why do you think that the change in CheY phosphorylation is different from the scenario in which we release the two different ligands concurrently?
 ]\end{exercise}
 
-When modeling a chemotactic random walk, we used a concentration gradient that grew exponentially toward a single goal. Specifically, if $L(x,y)$ was the concentration of ligand at $(x, y)$, we set $L(x,y) = 100 \cdot 10^{6 \cdot (1-d/D)}$, where $d$ is the distance from $(x,y)$ to the goal, and $D$ is the distance from the origin to the goal (we used a goal of $(\text{1,500}, \text{1,500})$).
+When modeling a chemotactic random walk, we used a concentration gradient that grew exponentially toward a single goal. Specifically, if $L(x,y)$ was the concentration of ligand at $(x, y)$, then we set $L(x,y) = 100 \cdot 10^{6 \cdot (1-d/D)}$, where $d$ is the distance from $(x,y)$ to the goal, and $D$ is the distance from the origin to the goal (we used a goal of $(\text{1,500}, \text{1,500})$).
 
-To generalize this simulation to an environment with more than one attractant source, we will include another goal at $(-\text{1,500}, \text{1,500})$. The new ligand concentration formula will be $L(x, y) = 100 \cdot 10^{6 \cdot (1-d_1/D_1)} + 100 \cdot 10^{6 \cdot (1-d_2/D_2)}$, where $d_1$ is the distance from $(x, y)$ to the goal at $(\text{1,500}, \text{1,500})$, $d_2$ is the distance from $(x, y)$ to the goal at $(-\text{1,500}, \text{1,500})$, and $D_1$ and $D_2$ are the distances from the origin to the two respective goals.\\
+To generalize this simulation to an environment with more than one attractant source, we will include another goal at $(-\text{1,500}, \text{1,500})$. The new ligand concentration formula will be
+
+\begin{center}
+$L(x, y) = 100 \cdot 10^{6 \cdot (1-d_1/D_1)} + 100 \cdot 10^{6 \cdot (1-d_2/D_2)}$\,,
+\end{center}
+
+\noindent where $d_1$ is the distance from $(x, y)$ to the goal at $(\text{1,500}, \text{1,500})$, $d_2$ is the distance from $(x, y)$ to the goal at $(-\text{1,500}, \text{1,500})$, and $D_1$ and $D_2$ are the distances from the origin to the two respective goals.\\
 
 \begin{exercise}[%
-Change the chemotactic walk simulation so that it includes the two goals, and visualize the trajectories of several particles using a background tumbling frequency of once every second. Are the particles able to find one of the goals? How long does it take them, and how does this compare against the case of a single goal?
+Change the chemotactic walk simulation so that it includes the above two goals, and visualize the trajectories of several particles using a background time between tumbles ($t_0$) equal to one second. Are the particles able to find one of the goals? How long does it take them, and how does the result compare against the case of a single goal?
 ]\end{exercise}
 
 \begin{exercise}[%
@@ -781,16 +787,16 @@ Vary the tumbling frequency according to the parameters given in the chemotactic
 \phantomsection
 \subsection{Changing the reorientation angle to \textit{E.~coli}}
 
-In the conclusion, we mentioned that when \textit{E.~coli} tumbles, the degree of reorientation is not uniformly random from 0° to 360°. Rather, research has shown that it follows a normal distribution with mean of 68° (1.19 radians) and standard deviation of 36° (0.63 radians).\\
+In the conclusion, we mentioned that when \textit{E.~coli} tumbles, the degree of reorientation is not uniformly random between 0° and 360°. Rather, research has shown that it follows a normal distribution with mean of 68° (1.19 radians) and standard deviation of 36° (0.63 radians).\\
 
 \begin{exercise}[%
-Modify your model from the chemotactic walk tutorial to change the random uniform sampling to this ``smarter'' sampling. Compare the chemotactic walk strategy and this smarter strategy by calculating the mean and standard deviation of each cell's distance to the goal for 500 simulated cells with the default running time $t_0$ equal to each of 0.2, 0.5, 1.0, 2.0 and 5.0 seconds. Do these simulated cells do a better job of finding the goal?
+Modify the chemotactic strategy to change the random uniform sampling to this ``smarter'' sampling. Compare the chemotactic walk strategy and this smarter strategy by calculating the mean and standard deviation of each cell's distance to the goal for 500 simulated cells with the default  time between tumbles ($t_0$) equal to each of 0.2, 0.5, 1.0, 2.0 and 5.0 seconds. Do these simulated cells do a better job of finding the goal compared to those of the original chemotactic strategy?
 ]\end{exercise}
 
-More recent research suggests that when the bacterium is moving up an attractant gradient, the degree of reorientation may be even smaller. The question is whether reducing the reorientation angle improves a cell's chemotaxis response.\\
+More recent research suggests that when a bacterium is moving up an attractant gradient, the degree of reorientation may be even smaller. The question is whether reducing the reorientation angle improves a cell's chemotaxis response.\\
 
 \begin{exercise}[%
-Modify your model from the previous exercise so that if the cell has just made a move of increasing ligand concentration, then its mean reorientation angle is 0.1 radians smaller to change the random uniform sampling to this "smarter" sampling. Calculate  the mean and standard deviation of each cell's distance to the goal for 500 cells with the default running time $t_0$ equal to each of 0.2, 0.5, 1.0, 2.0 and 5.0 seconds. Do the cells find the goal faster?
+Modify your model from the previous exercise so that if the cell has just made a move of increasing ligand concentration, then its mean reorientation angle is 0.1 radians smaller. Calculate  the mean and standard deviation of each cell's distance to the goal for 500 cells with the default time between tumbles ($t_0$) equal to each of 0.2, 0.5, 1.0, 2.0 and 5.0 seconds. Do the cells find the goal faster than they did in the preceding exercise?
 ]\end{exercise}
 
 \phantomsection
@@ -798,9 +804,9 @@ Modify your model from the previous exercise so that if the cell has just made a
 
 As we have seen in this chapter, rule-based modeling is successful at simulating systems that involve a large number of species and particles but can be summarized with a small set of rules.
 
-\textdefnogloss{Polymerization} reactions offer another good example of such a system. Polymerization is the process by which \textdefnogloss{monomer} molecules combine into chains called \textdefnogloss{polymers}. Biological polymers are everywhere, from DNA (formed of monomer nucleotides) to proteins (formed of monomer amino acids) to lipids (formed of monomer fatty acids). For a nonbiological example, polyvinyl chloride (which lends its name to ``PVC pipe'') is a polymer made up of many vinyl molymers.
+\textdefnogloss{Polymerization} reactions offer another example of such a system. Polymerization is the process by which solitary \textdefnogloss{monomer} molecules combine into chains called \textdefnogloss{polymers}. Biological polymers are everywhere, from DNA (formed of monomer nucleotides) to proteins (formed of monomer amino acids) to lipids (formed of monomer fatty acids). For a nonbiological example, polyvinyl chloride (which lends its name to ``PVC pipe'') is a polymer comprising many vinyl molymers.
 
-We would like to simulate the polymerization of copies of a monomer \textvar{A} to form a polymer \textvar{AAAAAA}\ldots, where the length of the polymer is allowed to vary. If we simulate this process, we are curious what the distribution of the polymer lengths will be.
+We would like to simulate the polymerization of copies of a monomer \textvar{A} to form a polymer \textvar{AAAAAA}\ldots, where the length of the polymer is allowed to vary. When we simulate this process, we are curious what the distribution of the polymer lengths will be.
 
 We will write our polymer reaction as
 
@@ -808,18 +814,18 @@ We will write our polymer reaction as
 $A_m + A_n \rightarrow A_{m+n}$\,,
 \end{center}
 
-\noindent where $A_m$ denotes a polymer consisting of \textvar{m} copies of \textvar{A}. Using classical reaction rules, this would require an infinite number of reactions; will rule-based modeling come to our rescue?
+\noindent where $A_m$ denotes a polymer consisting of \textvar{m} copies of \textvar{A}. Using classical reactions, this single ``rule'' would require an infinite number of reactions; will rule-based modeling come to our rescue?
 
-There are two sites on the monomer \textvar{A} that are involved in a polymerization reaction: the ``head'' and the ``tail''. A polymer $A_m$ containing $m$ monomers can be viewed as the result of $m-1$ binding reactions of the head of one monomer and the tail of another. As a result, the infinitely many polymer reactions can be summarized with the single rule ``If one monomer has an unbound head and another has an unbound tail, then the two monomers can bind.''
+There are two sites on the monomer \textvar{A} that are involved in a polymerization reaction: the ``head'' and the ``tail''. A polymer $A_m$ containing $m$ monomers can be viewed as the result of $m-1$ binding reactions of the head of one monomer and the tail of another. As a result, the infinitely many polymer reactions can be summarized with the rule, ``If one monomer has an unbound head and another has an unbound tail, then the two monomers can bind.''
 
-Unfortunately, even though these reactions can be summarized with a single rule, the number of possible reactions is infinite! As a result, we cannot apply the Gillespie algorithm and will need to apply an alternative called ``network-free simulation'', which avoids having to generate all possible reactions. We appeal to the \textit{Biological Modeling} website version of this section for a complete specification of how to build this polymer simulation.\tutorial[chemotaxis/exercises]\\
+Although these reactions can be summarized using a single rule, the number of possible reactions is still infinite! As a result, we cannot apply the Gillespie algorithm and will need to apply an alternative called ``network-free simulation'', which avoids having to generate all possible reactions. We appeal to the \textit{Biological Modeling} website version of this exercise for a complete specification of how to build this polymer simulation.\tutorial[chemotaxis/exercises]\\
 
 \begin{exercise}[%
 Run the simulation. How do the concentrations of polymers vary according to the lengths of the polymers?
 ]\end{exercise}
 
 \begin{exercise}[%
-What happens to polymer concentrations as we change the polymer binding and dissociation rates? Does your observation reflect what you might expect?
+What happens to polymer concentrations of different lengths as we change the polymer binding and dissociation rates? Does your observation reflect what you might expect?
 ]\end{exercise}
 
 \newpage
