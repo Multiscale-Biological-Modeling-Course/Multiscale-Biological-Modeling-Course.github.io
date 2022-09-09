@@ -38,7 +38,7 @@ In the following tutorial, we simulate this naive strategy using a Jupyter noteb
 
 ### Strategy 2: Chemotactic random walk
 
-In our second strategy, we mimic the real response of *E. coli* to its environment based on what we have learned about chemotaxis throughout this module. The simulated bacterium will still follow a run and tumble model, but the duration of each run, which is a function of its tumbling frequency, will depend on the relative change in attractant concentration that it detects.
+In our second strategy, which we call the "chemotactic strategy", we mimic the real response of *E. coli* to its environment based on what we have learned about chemotaxis throughout this module. The simulated bacterium will still follow a run and tumble model, but the duration of each run, which is a function of the bacterium's tumbling frequency, will depend on the relative change in attractant concentration that it detects.
 
 To ensure a mathematically controlled comparison, we will use the same approach for sampling the duration of a tumble and the direction of a run as in the first strategy.
 
@@ -46,20 +46,20 @@ We have seen in this module that it takes *E. coli* about half a second to respo
 
 We will then measure the percentage difference between the attractant concentration *L*(*x*, *y*) at the cell's current point and the attractant concentration at the cell's previous point, *t*<sub>response</sub> in the past; we denote this difference as Δ[*L*]. If Δ[*L*] is equal to zero, then the probability of a tumble in the next *t*<sub>response</sub> seconds should be the same as the likelihood of a tumble in the first strategy over the same time period. If Δ[*L*] is positive, then the probability of a tumble should be greater than it was in strategy 1; if Δ[*L*] is negative, then the probability of a tumble should be less than it was in strategy 1.
 
-To model the relationship between the likelihood of a tumble and the value of Δ[*L*], we will let *t*<sub>0</sub> denote the mean background run duration, which in the first strategy was equal to one second. We would like to use a simple formula for the expected run duration like *t*<sub>0</sub> * (1 + 10 · Δ[*L*]).
+To model the relationship between the likelihood of a tumble and the value of Δ[*L*], we will let *t*<sub>0</sub> denote the mean background run duration, which in the first strategy was equal to one second. We would like to use a simple formula for the expected run duration, such as *t*<sub>0</sub> * (1 + 10 · Δ[*L*]).
 
 Unfortunately, there are two issues with this formula. First, if Δ[*L*] is less than -0.1, then the run duration could be negative. Second, if Δ[*L*] is large, then the bacterium will run for so long that it could reach the goal and run past it.
 
-To fix the first issue, we will first take the maximum of *t*<sub>0</sub> * (1 + 10 · Δ[*L*]) and some small positive number *c* (we will use *c* equal to 0.000001). As for the second issue, we will then take the minimum of this expression and 4 · *t*<sub>0</sub>. This resulting value,
+To fix the first issue, we will first take the maximum of *t*<sub>0</sub> * (1 + 10 · Δ[*L*]) and some small positive number *c* (we will use *c* equal to 0.000001). As for the second issue, we will then take the minimum of the resulting expression and 4 · *t*<sub>0</sub>. The final value,
 
-min(max(*t*<sub>0</sub> * (1 + 10 · Δ[*L*]), *c*), 4 · *t*<sub>0</sub>),
+μ = min(max(*t*<sub>0</sub> * (1 + 10 · Δ[*L*]), *c*), 4 · *t*<sub>0</sub>),
 
 becomes the mean run duration of a bacterium based on the recent relative change in concentration.
 
-**STOP:** What is the mean run duration when Δ[*L*] is equal to zero? Is this what we would hope?
+**STOP:** What is the mean run duration μ when Δ[*L*] is equal to zero? Is this what we would hope?
 {: .notice--primary}
 
-As with the first strategy, our simulated cell will alternate between tumbling and running in a random direction until the total time devoted to the simulation has elapsed. The *only* difference in the second strategy is that we will measure the percentage change in concentration Δ[*L*] between a cell's current point and its previous point every *t*<sub>response</sub> seconds. After determining a mean run time according to the expression above, we will sample a random number *p* from an exponential distribution with this mean run time, and the cell will tumble after *p* seconds if *p* is smaller than *t*<sub>response</sub>.
+As with the first strategy, our simulated cell will alternate between tumbling and running in a random direction until the total time devoted to the simulation has elapsed. The *only* difference in the second strategy is that we will measure the percentage change in concentration Δ[*L*] between a cell's current point and its previous point every *t*<sub>response</sub> seconds. After determining a mean run time μ according to the expression above, we will sample a random number *p* from an exponential distribution with mean μ, and the cell will tumble after *p* seconds if *p* is smaller than *t*<sub>response</sub>.
 
 In the following tutorial, we will adapt the Jupyter notebook that we built in the previous tutorial to simulate this second strategy and run it many times, taking the average of the simulated bacteria's distance to the goal.
 
@@ -74,15 +74,15 @@ The following figure visualizes the trajectories of three cells over 500 seconds
 Three sample trajectories for the standard random walk strategy (left) and chemotactic random walk strategy (right). The standard random walk strategy is shown on the left, and the chemotactic random walk is shown on the right. Redder regions correspond to higher concentrations of ligand, with a goal having maximum concentration at the point (1500, 1500), which is indicated with a blue square. Each particle's walk is colored from darker to lighter colors across the time frame of its trajectory.
 {: style="font-size: medium;"}
 
-Of course, we should be wary of such a small sample size. To confirm that what we observed in these trajectories is true in general, we will compare the two strategies over many simulations. The following figure visualizes the particle's average distance to the goal over 500 simulations for both strategies and confirms our previous observation that strategy 2 is effective at guiding the simulated particle to the goal. And yet this strategy is driven by *random* choices of direction of travel, so why would it be so successful?
+We should be wary of such a small sample size. To confirm that what we observed in these trajectories is true in general, we will compare the two strategies over many simulations. The following figure visualizes the particle's average distance to the goal over 500 simulations for both strategies and confirms our previous observation that strategy 2 is effective at guiding the simulated particle to the goal. And yet the direction of travel in this strategy is *random*, so why would this strategy be so successful?
 
 [![image-center](../assets/images/600px/chemotaxis_performance_compare_uniform.png){: .align-center}](../assets/images/chemotaxis_performance_compare_uniform.png)
-Distance to the goal plotted over time for 500 simulated particles following the standard random walk (pink) and the chemotactic random walk (green). The dark lines indicate the average distance over all simulations, and the shaded area around each line represents one standard deviation from the average.
+Distance to the goal plotted over time for 500 simulated particles following the standard random walk strategy (pink) and the chemotactic random walk strategy (green). The dark lines indicate the average distance over all simulations, and the shaded area around each line represents one standard deviation from the average.
 {: style="font-size: medium;"}
 
-The chemotactic strategy works because it uses a  "rubber band" effect. If the bacterium is traveling down an attractant gradient (i.e., away from an attractant), then it is not allowed to travel very far in a single step before it is forced to tumble. If an increase of attractant is detected, however, then the cell can travel farther in a single direction before tumbling. On average, this effect serves to pull the bacterium in the direction of increasing attractant, even though the directions in which it travels are random.
+The chemotactic strategy works because of a  "rubber band" effect. If the bacterium is traveling down an attractant gradient (i.e., away from an attractant), then it is not allowed to travel very far in a single step before it is forced to tumble. If an increase of attractant is detected, however, then the cell can travel farther in a single direction before tumbling. On average, this effect serves to pull the bacterium in the direction of increasing attractant, even though the directions in which it travels are random.
 
-A tiny change to a simple, unsuccessful randomized algorithm can therefore produce an elegant approach for exploring an unknown environment. But we left one more question unanswered: why is a default frequency of one tumble per second stable across a wide range of bacteria? To address this question, we will see how changing *t*<sub>0</sub>, the default time for a run step in the absence of change in attractant concentration, affects the ability of a simulated bacterium following strategy 2 to reach the goal. You may like to adjust the value of *t*<sub>0</sub> in the [previous tutorial](tutorial_walk) yourself, or follow the tutorial below.
+A tiny change to a simple, unsuccessful randomized algorithm can therefore produce an elegant approach for exploring an unknown environment. But we left one more question unanswered: why is the default frequency of one tumble per second stable across a wide range of bacteria? To address this question, we will see how changing *t*<sub>0</sub>, the default time for a run step in the absence of change in attractant concentration, affects the ability of a simulated bacterium following strategy 2 to reach the goal. You may like to adjust the value of *t*<sub>0</sub> in the [previous tutorial](tutorial_walk) yourself, or follow the tutorial below.
 
 [Visit tutorial](tutorial_tumbling_frequencies){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}
@@ -95,13 +95,13 @@ The following figures show three trajectories for a few different values of *t*<
 Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average run time between tumbles *t*<sub>0</sub> of 0.2 seconds.
 {: style="font-size: medium;"}
 
-If we increase *t*<sub>0</sub> to 5.0 seconds, then cells can run for so long that they may run past the goal without being able to apply the brakes by tumbling.
+If we increase *t*<sub>0</sub> to 5.0 seconds, then cells can run for so long that they may run past the goal without being able to brake by tumbling.
 
 [![image-center](../assets/images/600px/chemotaxis_traj_5.0_uniform.png){: .align-center}](../assets/images/chemotaxis_traj_5.0_uniform.png)
 Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average run time between tumbles *t*<sub>0</sub> of 5.0 seconds.
 {: style="font-size: medium;"}
 
-When we set *t*<sub>0</sub> equal to 1.0, then the figure below shows a "Goldilocks" effect in which the simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it there.
+When we set *t*<sub>0</sub> equal to 1.0, then the figure below shows a "Goldilocks" effect in which the simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it near the goal.
 
 [![image-center](../assets/images/600px/chemotaxis_traj_1.0_uniform.png){: .align-center}](../assets/images/chemotaxis_traj_1.0_uniform.png)
 Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average run time between tumbles *t*<sub>0</sub> of 1.0 seconds.
@@ -121,13 +121,13 @@ Below, we reproduce the video from earlier in this module showing *E. coli* movi
 
 If you closely examine the video above, then you may be curious about the way that bacteria turn around and head back toward the attractant. When they reorient, their behavior appears more intelligent than simply walking in a random direction. As is often true in biology, the reality of the system that we are studying turns out to be more complex than we might at first imagine.
 
-The direction of bacterial reorientation is not completely random, but rather follows a normal distribution with mean of 68° and standard deviation of 36°[^Berg1972]. That is, the bacterium typically does not tend to make as drastic of a change to its orientation as it would in a pure random walk, which would on average have a change in orientation of 90°.
+The direction of bacterial reorientation is not completely random, but rather follows a normal distribution with mean of 68° and standard deviation of 36°[^Berg1972]. That is, the bacterium typically does not tend to make as drastic of a change to its orientation as it would in a pure random walk, which would have an average change in orientation of 90°.
 
 Furthermore, the direction of the bacterium's reorientation also depends on whether the cell is traveling in the correct direction.[^Saragosti2011] If the bacterium is moving up an attractant gradient, then it makes smaller changes in its reorientation angle, a feature that helps the cell continue moving straight if it is traveling in the direction of an attractant.
 
 For that matter, the run-and-tumble model of *E. coli* only represents one way for bacteria to explore their surroundings. Microorganisms have many different sizes, shapes, metabolisms, and they live in a very diverse range of environments, which has produced several other exploration strategies.[^Mitchell2006].
 
-We are fortunate to have this wealth of research on chemotaxis in *E. coli*, which may be the single most studied biological system from the perspective of demonstrating how chemical reactions produce emergent behavior. However, for the study of most biological systems, finding a clear thread connecting a reductionist view of the system to that system's holistic behavior remains a dream. (For example: how can your thoughts while reading this parenthetical aside be distilled into the firings of individual neurons?)  Regardless of what the future holds, we can be confident that uncovering the underlying mechanisms of biological systems will continue to inspire the work of biological modelers for many years.
+We are fortunate to have this wealth of research on chemotaxis in *E. coli*, which may be the single most studied biological system from the perspective of understanding how chemical reactions produce emergent behavior. However, for the study of most biological systems, a clear thread connecting a reductionist view of the system to that system's holistic behavior remains a dream. (For example: how can your thoughts while reading this parenthetical aside be distilled into the firings of individual neurons?)  Fortunately, we can be confident that uncovering the underlying mechanisms of biological systems will continue to inspire the work of biological modelers for many years.
 
 [Visit exercises](exercises){: .btn .btn--success .btn--large}
 {: style="font-size: 100%; text-align: center;"}
