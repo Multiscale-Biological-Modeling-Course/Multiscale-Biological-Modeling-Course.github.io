@@ -176,7 +176,7 @@ Finally, we produced five predicted structures of a single chain of the SARS-CoV
 **STOP:** Which do you think performed more accurately on our predictions: SWISS-MODEL or Robetta?
 {: .notice--primary}
 
-## Distributing the work of protein structure prediction around the world
+## Distributing protein structure prediction around the world
 
 While some researchers were working to elucidate the structure of the SARS-CoV-2 spike protein experimentally, thousands of users were devoting their computers to the cause of predicting the protein’s structure computationally. Two leading structure prediction projects, Rosetta@home and Folding@home, encourage volunteers to download their software and contribute to a gigantic *distributed* effort to predict protein shape. Even with a modest laptop, a user can donate some of their computer's idle resources to help predict protein structure.
 

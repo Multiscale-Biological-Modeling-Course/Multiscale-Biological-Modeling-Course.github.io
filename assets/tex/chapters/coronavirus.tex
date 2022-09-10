@@ -656,7 +656,7 @@ The GalaxyWEB models have an excellent RMSD score and can be considered very acc
 ]\end{qbox}
 
 \phantomsection
-\subsection{Distributing the work of protein structure prediction around the world}
+\subsection{Distributing protein structure prediction around the world}
 
 While some researchers were working to elucidate the structure of the SARS-CoV-2 spike protein experimentally, thousands of users were enlisting their computers to predict the protein's structure computationally. Two leading structure prediction projects, \href{https://boinc.bakerlab.org}{Rosetta@home} and \href{https://foldingathome.org}{Folding@home}, encourage volunteers to download their software and contribute to a gigantic \textit{distributed} effort to predict protein shape. Even with a modest laptop, a user can donate some of their computer's idle resources to help predict protein structure. 
 
@@ -690,13 +690,13 @@ Protein structure prediction is an old problem. In 1967, the Soviets founded an 
 
 That day has come. Kind of.
 
-Every two years since 1994, a global contest called \textdefnogloss{Critical Assessment of protein Structure Prediction (CASP)} has allowed modelers to test their protein structure prediction algorithms against each other. The contest organizers compile a (secret) collection of experimentally verified protein structures and then run all submitted algorithms against these proteins.
+Every two years since 1994, a global contest called \textdefnogloss{Critical Assessment of protein Structure Prediction (CASP)} has allowed modelers to test their protein structure prediction algorithms against each other. The contest organizers compile a secret collection of experimentally verified protein structures and then run all submitted algorithms against these proteins.
 
 In 2020, the 14th iteration of this contest (CASP14) was won in a landslide. The second version of \href{https://bit.ly/3sKl6pH}{\textdefnogloss{AlphaFold}}, a DeepMind project, vastly outperformed the world's foremost structure prediction approaches. The algorithm powering AlphaFold is an extremely involved method based on deep learning, a topic that we will touch upon in \autoref{chapter:white_blood_cells}.
 
-Instead of using RMSD, CASP scores a predicted structure against a known structure using the \textdefnogloss{global distance test (GDT)}. We first ask, ``How many corresponding alpha carbons are close to each other in the two structures?'' To answer this question, we take the percentage of corresponding alpha carbon positions having distance apart that is at most equal to some threshold \textit{t}. The GDT score averages the percentages obtained when \textit{t} is equal to each of 1, 2, 4, and 8 angstroms. A GDT score of 90\% is considered good, and a score of GDT 95\% is considered excellent (i.e., comparable to minor errors resulting from experimentation).
+Instead of using RMSD, CASP scores a predicted structure against a known structure using the \textdefnogloss{global distance test (GDT)}. This test first asks, ``How many corresponding alpha carbons are close to each other in the two structures?'' To answer this question, we take the percentage of corresponding alpha carbon positions whose distance from each other is at most equal to some threshold \textit{t}. The GDT score averages the percentages obtained when \textit{t} is equal to each of 1, 2, 4, and 8 angstroms. A GDT score of 90\% is considered good, and a score of GDT 95\% is considered excellent (i.e., comparable to minor errors resulting from experimentation).
 
-We will show a few plots to illustrate the decisiveness of AlphaFold's CASP14 victory. In \autoref{fig:AlphaFold2_BAKER_Zhang} (top), we compare the GDT scores of AlphaFold against the second-place algorithm (a product of David Baker's laboratory, which developed the Robetta and Rosetta@Home software that we encountered in this chapter). We can appreciate the size of this margin of victory if we compare it against the difference between the second and third place competitors (\autoref{fig:AlphaFold2_BAKER_Zhang} (bottom)).\\
+We will show a few plots to illustrate the decisiveness of AlphaFold's CASP14 victory. In \autoref{fig:AlphaFold2_BAKER_Zhang} (top), we compare the GDT scores of AlphaFold against the second-place algorithm (a product of David Baker's laboratory, which developed the Robetta and Rosetta@Home software). We can appreciate the size of this margin of victory if we compare it against the difference between the second and third place competitors (\autoref{fig:AlphaFold2_BAKER_Zhang} (bottom)).\\
 
 \begin{figure}[h]
 	\centering
@@ -709,7 +709,7 @@ We will show a few plots to illustrate the decisiveness of AlphaFold's CASP14 vi
 
 For each protein in the CASP14 contest, we can also compute each algorithm's \textdefnogloss{z-score}, defined as the number of standard deviations that the algorithm's GDT score falls from the mean GDT score over all competitors. For example, a z-score of 1.4 would imply that the approach performed 1.4 standard deviations above the mean, and a z-score of $-0.9$ would imply that the approach performed 0.9 standard deviations below the mean.
 
-By summing all of an algorithm's positive z-scores, we obtain a reasonable metric for the relative quality of an algorithm compared to its competitors. If this sum of z-scores is large, then the algorithm racked up lots of positive z-scores, meaning that it is performing significantly above average on the prediction of some proteins. \autoref{fig:CASP14_overall_results} shows the sum of z-scores for all CASP14 participants and reiterates the margin of AlphaFold's victory, since its sum of z-scores was twice that of the second place algorithm.
+Summing all of an algorithm's positive z-scores gives a reasonable metric for the relative quality of an algorithm compared to its competitors. If this sum of z-scores is large, then the algorithm performed significantly above average on the prediction of some proteins. \autoref{fig:CASP14_overall_results} shows the sum of z-scores for all CASP14 participants and reiterates the margin of AlphaFold's victory, since its sum of z-scores is twice that of the second place algorithm.\\
 
 \begin{figure}[h]
 	\centering
@@ -721,7 +721,7 @@ By summing all of an algorithm's positive z-scores, we obtain a reasonable metri
 
 AlphaFold's CASP14 triumph led some scientists --- and media outlets --- to declare that protein structure prediction had finally been solved. Yet some critics remained skeptical.
 
-Although AlphaFold obtained an impressive median RMSD of 1.6 angstroms for its predicted proteins, about a third of these predictions have an RMSD over 2.0 angstroms, which we mentioned earlier is often used as a threshold for whether a predicted structure is reliable. We will not know in advance whether AlphaFold's predicted structure is outside of this range unless we experimentally validate the protein's structure.
+Although AlphaFold obtained an impressive median RMSD of 1.6 angstroms for its predicted proteins, about a third of these predictions have an RMSD over 2.0 angstroms, which we mentioned earlier is often used as a threshold for whether a predicted structure is reliable. For a given protein, we will not know in advance whether AlphaFold's predicted structure is outside of this range unless we experimentally validate the protein's structure.
 
 Furthermore, some experts have claimed that to be completely trustworthy for a sensitive application like designing drugs to target proteins implicated in diseases, the RMSD of predicted protein structures would need to be nearly an order of magnitude lower, i.e., closer to 0.2 angstroms.
 
@@ -729,7 +729,7 @@ Finally, the AlphaFold algorithm is ``trained'' using a database of known protei
 
 Pronouncing protein structure prediction to be solved may be hasty, but we will likely never again see such a clear improvement to the state of the art for structure prediction. AlphaFold represents, perhaps, the final great innovation for a research problem that has puzzled biologists for over half a century.
 
-Thus ends our discussion of protein structure prediction, but we still have much more to say. In particular, when comparing two protein structures, we have relied only upon the RMSD between the vectorizations of these two structures after applying the Kabsch algorithm. But using a single statistic to represent the differences between two protein structures belies what those differences might be. Furthermore, proteins are not static objects; they bend and shape in their environment as they perform their tasks. We will therefore now transition into a second part of our treatment of protein analysis, in which we investigate additional methods used to compare proteins and apply these techniques to the validated structures of the SARS-CoV and SARS-CoV-2 spike proteins.\\
+Thus ends our discussion of protein structure prediction, but we still have much more to discuss. In particular, when comparing two protein structures, we have relied only upon the RMSD between the vectorizations of these two structures after applying the Kabsch algorithm. But using a single statistic to represent the differences between two protein structures masks what those differences might be. Furthermore, proteins are not static objects; they bend and shape in the cell as they perform their tasks. We will therefore now transition to a second part of our discussion of protein analysis, in which we investigate additional methods used to compare proteins and apply these techniques to the validated structures of the SARS-CoV and SARS-CoV-2 spike proteins.\\
 
 \FloatBarrier
 \phantomsection
