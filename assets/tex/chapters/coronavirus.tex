@@ -153,7 +153,7 @@ Although we would like to infer nature's magic algorithm for inferring protein s
 
 X-ray crystallography is over a century old and has been the \textit{de facto} approach for protein structure determination for decades. Yet a newer method is now rapidly replacing X-ray crystallography. In \textdef{cryo-electron microscopy (cryo-EM)}{cryo-electron microscopy (cryo-EM)}{an experimental process in which researchers preserve thousands of copies of a molecule such as a protein in non-crystalline ice and then examine these copies with an electron microscope}, researchers preserve thousands of copies of a protein in non-crystalline ice and then examine these copies with an electron microscope.
 
-Unfortunately, laboratory approaches for structure determination are expensive and cannot be used on all proteins. An X-ray crystallography experiment for a single protein costs upward of \$2,000, and building an electron microscope can cost millions of dollars. When applying X-ray crystallography, crystallizing a protein is a challenging task, and each copy of the protein must line up in the same way, which does not work for very flexible proteins  And to study bacterial proteins, we need to culture the bacteria in the lab, but microbiologists have estimated that less than 2\% of bacteria can be cultured with current approaches.
+Unfortunately, laboratory approaches for structure determination are expensive and cannot be used on all proteins. An X-ray crystallography experiment for a single protein costs upward of \$2,000, and building an electron microscope can cost millions. When applying X-ray crystallography, crystallizing a protein is a challenging task, and each copy of the protein must line up in the same way, which does not work for very flexible proteins.  And to study bacterial proteins, we need to culture the bacteria in the lab, but microbiologists have estimated that fewer than 2\% of bacteria can be cultured with current approaches.
 
 Protein structures that have been determined experimentally are typically stored in the PDB, which contains over 160,000 protein structures. This number may seem large, but a recent study estimated that the 20,000 human genes translate into between 620,000 and 6.13 million protein isoforms (i.e., protein variants with slightly different structures). If we hope to catalog the proteins of all living things, then our work on structure determination is just beginning.
 
@@ -161,22 +161,24 @@ Protein structures that have been determined experimentally are typically stored
 \phantomsection
 \subsection{Protein sequence and structure do not correlate well}
 
-The prediction of protein structure from amino acid sequence is challenging because this prediction is fine-tuned with respect to some mutations but robust with respect to others. On the one hand, small perturbations in the sequence of a protein can drastically change the protein's shape and even render it useless; sickle cell anemia is caused by a single amino acid mutation in hemoglobin subunit beta that causes hemoglobin molecules to bind into long chains, which winds up altering the shape of the red blood cells carrying hemoglobin. On the other hand, different amino acids can have similar chemical properties, and so some mutations will hardly change the shape of the protein. As a result, two very different amino acid sequences can fold into proteins with similar structure and comparable function.
+The prediction of protein structure from amino acid sequence is challenging because this prediction is fine-tuned with respect to some mutations but robust with respect to others. On the one hand, small perturbations in a protein's sequence can drastically change the protein's shape and even render it useless. On the other hand, different amino acids can have similar chemical properties, and so some sequence mutations will hardly change the structure of the protein. As a result, two very different amino acid sequences can fold into proteins with similar structure and comparable function.
 
-For example, \autoref{fig:SequenceStructureExample} compares the sequences and structures of hemoglobin subunit alpha taken from three species: humans, shortfin mako sharks, and emus. Hemoglobin is the oxygen-transport protein in the blood, consisting of two alpha ``subunit'' proteins and two beta subunit proteins that combine into a protein complex; because hemoglobin is well-studied and much shorter than the SARS-CoV-2 spike protein (the alpha and beta subunits are only 140 and 146 amino acids long, respectively), we will use it as an example throughout this chapter. The alpha subunits for the three species are markedly different in terms of amino acid sequence, and yet their structures are essentially identical.\\
+Continuing with our hemoglobin example, \autoref{fig:SequenceStructureExample} compares the sequences and structures of hemoglobin subunit alpha taken from three species: humans, shortfin mako sharks, and emus. Hemoglobin is the oxygen-transport protein in the blood, consisting of two alpha ``subunit'' proteins and two beta subunit proteins that combine into a protein complex; because hemoglobin is well-studied and much shorter than the SARS-CoV-2 spike protein (the alpha and beta subunits are only 140 and 146 amino acids long, respectively), we will use it as an example throughout this chapter. The alpha subunits for the three species are markedly different in terms of amino acid sequence, and yet their structures are essentially identical.\\
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.85\textwidth]{../images/SequenceStructureExample.png}
-	\caption{(Top) An amino acid sequence comparison of the first 40 (out of 140) amino acids of hemoglobin subunit alpha for three species: human (PDB entry: \href{https://www.rcsb.org/structure/1si4}{1si4}), shortfin mako shark (PDB entry: \href{https://www.rcsb.org/structure/3mkb}{3mkb}), and emu (PDB entry: \href{https://www.rcsb.org/structure/3wtg}{3wtg}). A column is colored blue if all three species have the same amino acid, white if two species have the same amino acid, and red if all amino acids are different. Sequence identity calculates the number of positions in two amino acid sequences that share the same amino acid. (Bottom) Side by side comparisons of the 3-D structures of the three proteins. The final figure on the right superimposes the first three structures to highlight their similarities.}
+	\caption{(Top) An amino acid sequence comparison of the first 40 (out of 140) amino acids of hemoglobin subunit alpha for three species: human (PDB entry: \href{https://www.rcsb.org/structure/1si4}{1si4}), shortfin mako shark (PDB entry: \href{https://www.rcsb.org/structure/3mkb}{3mkb}), and emu (PDB entry: \href{https://www.rcsb.org/structure/3wtg}{3wtg}). A column is colored blue if all three species have the same amino acid, white if two species have the same amino acid, and red if all amino acids are different. Sequence identity calculates the number of positions in two amino acid sequences that share the same amino acid. (Bottom) Side by side comparisons of the 3-D structures of the three proteins. The final figure on the right superimposes the first three structures to highlight that they are virtually identical.}
 	\label{fig:SequenceStructureExample}
 \end{figure}
 
 \phantomsection
 \subsection{Flexible polypeptide chains can fold into many possible structures}
 
-Another reason why protein structure prediction is so difficult is because a polypeptide is very flexible, with the ability to rotate in multiple ways at each amino acid, which means that the polypeptide is able to fold into a staggering number of different shapes. This polypeptide flexibility owes to the molecular structure of amino acids. As shown in \autoref{fig:AminoAcid}, an amino acid comprises four parts. In the center, a carbon atom (called the \textdef{alpha carbon}{alpha carbon}{the central carbon atom of an amino acid}) is connected to four different molecules: a hydrogen atom (H), a \textdefnogloss{carboxyl group} ($-\text{COOH}$), an \textdefnogloss{amino group} ($-\text{NH}_2$), and a \textdefnogloss{side chain} (denoted ``R'' and often called an \textbf{R group}). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) up to $-\text{C}_8\text{H}_7\text{N}$ (tryptophan).\\
+Another reason why protein structure prediction is so difficult is because a polypeptide is very flexible, with the ability to rotate in multiple ways at each amino acid, which means that the polypeptide can fold into a staggering number of different shapes. This polypeptide flexibility owes to the molecular structure of amino acids.
+
+As shown in \autoref{fig:AminoAcid}, an amino acid comprises four parts. In the center, a carbon atom (called the \textdef{alpha carbon}{alpha carbon}{the central carbon atom of an amino acid}) is connected to four different molecules: a hydrogen atom (H), a \textdefnogloss{carboxyl group} ($-\text{COOH}$), an \textdefnogloss{amino group} ($-\text{NH}_2$), and a \textdefnogloss{side chain} (denoted ``R'' and often called an \textbf{R group}). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) up to $-\text{C}_8\text{H}_7\text{N}$ (tryptophan).
 
 \begin{figure}[h]
 	\centering
@@ -193,13 +195,13 @@ To form a polypeptide chain, consecutive amino acids are linked together during 
 	\mySfFamily
 	\includegraphics[width = 0.85\textwidth]{../images/dipeptide_reaction.png}\\[0.5ex]
 	\includegraphics[width = 0.6\textwidth]{../images/Backbone.png}
-	\caption{(Top) A condensation reaction joins two amino acids into a ``dipeptide'' by joining the amino group of one amino acid to the carboxyl group of the other, with a water molecule expelled. (Bottom) A protein backbone formed of three amino acids.}
+	\caption{(Top) A condensation reaction joins two amino acids into a ``dipeptide'' by joining the amino group of one amino acid to the carboxyl group of the other, with a water molecule expelled. (Bottom) A polypeptide chain formed of three amino acids.}
 	\label{fig:condensation}
 \end{figure}
 
-However, the bonds \textit{within} an amino acid, joining the alpha carbon to its carboxyl group and amino group, are not as rigid, and the polypeptide is free to rotate around these two bonds. This rotation produces two angles of interest, called the \textdefnogloss{phi angle} ($\phi$) and \textdefnogloss{psi angle} ($\psi$) (\autoref{fig:torsion_angles}), which are formed at the alpha carbon's connections to its amino group and carboxyl group, respectively.
+However, the bonds \textit{within} an amino acid, joining the alpha carbon to its carboxyl group and amino group, are not as rigid, and the polypeptide is free to rotate around these two bonds. This rotation produces two angles of interest, called the \textdefnogloss{phi angle} ($\phi$) and \textdefnogloss{psi angle} ($\psi$) (\autoref{fig:torsion_angles}), which are formed at the alpha carbon's connections to its amino group and carboxyl group, respectively.\\
 
-\begin{figure}[b]
+\begin{figure}[h]
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.25\textwidth]{../images/torsion_angles.png}
@@ -212,14 +214,14 @@ A good analogy for polypeptide flexibility is the ``Rubik's Twist'' puzzle, whic
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.85\textwidth]{../images/rubiks_twist_four_panel.jpg}
-	\caption{Each section of the Rubik's Twist puzzle can be rotated, allowing the toy to take on many different conformations such as a ball.}
+	\includegraphics[width = 0.75\textwidth]{../images/rubiks_twist_four_panel.jpg}
+	\caption{Each section of the Rubik's Twist puzzle can be rotated, allowing the toy to take on many different conformations, such as a ball (bottom right).}
 	\label{fig:rubiks_twist_four_panel}
 \end{figure}
 
-A polypeptide with \textit{n} amino acids will have $n - 1$ peptide bonds, meaning that its shape is influenced by $n - 1$ phi angles and $n - 1$ psi angles. If each bond angle has \textit{k} possible values, then the polypeptide has $k^{2n-2}$ total possible conformations. If \textit{k} is equal to 3 and \textit{n} is equal to only 100 (representing a short polypeptide), then the number of potential protein structures is more than the number of atoms in the universe! The ability of the magic algorithm to reliably find a single conformation despite such an enormous number of potential shapes is called \textdef{Levinthal's paradox}{Levinthal's paradox}{the conundrum that a protein reliably folds into a single conformation despite there being an enormous number of potential structures for that protein}.
+A polypeptide with \textit{n} amino acids has $n - 1$ peptide bonds, meaning that its shape is influenced by $n - 1$ phi angles and $n - 1$ psi angles. If each bond angle has \textit{k} possible values, then the polypeptide has $k^{2n-2}$ total possible conformations. If \textit{k} is equal to 3 and \textit{n} is equal to only 100 (representing a short polypeptide), then the number of potential protein structures is more than the number of atoms in the universe! The ability of the magic algorithm to reliably find a single conformation despite such an enormous number of potential shapes is called \textdef{Levinthal's paradox}{Levinthal's paradox}{the conundrum that a protein reliably folds into a single conformation despite there being an enormous number of potential structures for that protein}.
 
-Although protein structure prediction is difficult, it is not impossible; the magic algorithm is not, after all, magic. But before discussing how we can solve this problem, we will need to learn a few more biochemical details and be more precise about two things. First, we should specify what we mean by the ``structure'' of a protein. Second, although we know that a polypeptide always folds into the same final three-dimensional shape, we have not said anything about \textit{why} a protein folds in a certain way. We will therefore need a better understanding of how the physicochemical properties of amino acids affect a protein's final structure.\\
+Although protein structure prediction is difficult, it is not impossible; the magic algorithm is not, after all, magic. But before discussing how we can solve this problem, we will need to learn a few more biochemical details and be more precise about two things. First, we should specify what we mean by the ``structure'' of a protein. Second, although we know that a polypeptide always folds into the same final three-dimensional shape, we have not said anything about \textit{why} a protein folds in a certain way. We will therefore need a better understanding of how the physicochemical properties of amino acids influence a protein's final structure.\\
 
 \FloatBarrier
 \phantomsection
@@ -242,7 +244,7 @@ A protein's \textdef{secondary structure}{secondary structure}{the highly regula
 	\label{fig:hemoglobin_secondary_structure}
 \end{figure}
 
-A protein's \textdef{tertiary structure}{tertiary structure}{the final, stable 3D shape of a protein's polypeptide chain} describes its final 3D shape after the polypeptide chain has folded and is stable. Throughout this chapter, when discussing the ``shape'' or ``structure'' of a protein, we are almost exclusively referring to its tertiary structure. \autoref{fig:hemoglobin_tertiary_structure} shows the tertiary structure of human hemoglobin subunit alpha. For the sake of simplicity, this figure does not show the position of every atom in the protein but rather represents the protein shape as a composition of secondary structures.
+A protein's \textdef{tertiary structure}{tertiary structure}{the final, stable 3D shape of a protein's polypeptide chain} describes its final 3D shape after the polypeptide chain has folded and is chemically stable. Throughout this chapter, when discussing the ``shape'' or ``structure'' of a protein, we are almost exclusively referring to its tertiary structure. \autoref{fig:hemoglobin_tertiary_structure} shows the tertiary structure of human hemoglobin subunit alpha. For the sake of simplicity, this figure does not show the position of every atom in the protein but rather represents the protein shape as a composition of secondary structures.\\
 
 \begin{figure}[h]
 	\centering
@@ -254,7 +256,7 @@ A protein's \textdef{tertiary structure}{tertiary structure}{the final, stable 3
 
 Finally, some proteins have a \textdef{quaternary structure}{quaternary structure}{the arrangement of a protein's subunits with respect to each other to form a single functional unit}, which describes the protein’s interaction with other copies of itself to form a single functional unit, or a \textdef{multimer}{multimer}{a protein formed of more than one polypeptide chain}. Many proteins do not have a quaternary structure and function as an independent monomer. \autoref{fig:quaternary_structure} (left) shows the quaternary structure of hemoglobin, which is a multimer consisting of two alpha subunits and two beta subunits.
 
-As for SARS-CoV and SARS-CoV-2, the spike protein is a \textdefnogloss{homotrimer}, meaning that it is formed of three essentially identical units called \textdef{chains}{chain}{a subunit of a multimer}, each one translated from the corresponding region of the coronavirus's genome; these chains are colored differently in \autoref{fig:quaternary_structure} (right). In this chapter, when discussing the structure of the spike protein, we typically are referring to the structure of a single chain.
+As for coronaviruses, the spike protein is a \textdefnogloss{homotrimer}, meaning that it is formed of three essentially identical units called \textdef{chains}{chain}{a subunit of a multimer}, each one translated from the corresponding region of the coronavirus's genome; these chains are colored differently in \autoref{fig:quaternary_structure} (right). In this chapter, when discussing the structure of the spike protein, we often are referring to the structure of a single chain.\\
 
 \begin{figure}[h]
 	\centering
@@ -263,7 +265,7 @@ As for SARS-CoV and SARS-CoV-2, the spike protein is a \textdefnogloss{homotrime
 	\begin{tabular}{c c}
 	\includegraphics[width = 0.35\textwidth]{../images/hemoglobin_quaternary_structure.png} & \includegraphics[width = 0.45\textwidth]{../images/spike_protein_homotrimer.png}
 	\end{tabular}
-	\caption{(Left) The quaternary structure of human hemoglobin, which consists of two alpha subunits (shown in red) and two beta subunits (shown in blue). Note that each alpha subunit is the tertiary structure from \autoref{fig:hemoglobin_tertiary_structure}. (Right) A side and top view of the quaternary structure of the SARS-CoV-2 spike protein homotrimer, with its three chains highlighted using different colors.}
+	\caption{(Left) The quaternary structure of human hemoglobin, which consists of two alpha subunits (shown in red) and two beta subunits (shown in blue). Each alpha subunit is the tertiary structure from \autoref{fig:hemoglobin_tertiary_structure}. (Right) A side and top view of the quaternary structure of the SARS-CoV-2 spike protein homotrimer, with its three chains highlighted using different colors.}
 	\label{fig:quaternary_structure}
 \end{figure}
 
@@ -274,7 +276,7 @@ The structural units making up proteins are often hierarchical, and the spike pr
 
 Now that we know a bit more about how protein structure is defined, we will discuss why proteins fold in the same every time. In other words, what are the factors driving the magic algorithm?
 
-Amino acids' side chain variety causes amino acids to have different chemical properties, which can lead to different conformations being more chemically ``preferable'' than others. For example, \autoref{fig:AminoAcidChart} groups the twenty amino acids commonly occurring in proteins according to chemical properties. Nine of these amino acids are \textdefnogloss{hydrophobic} (also called \textdefnogloss{nonpolar}), meaning that their side chains tend to be repelled by water, and so we tend to find these amino acids sheltered from the environment on the interior of the protein.
+Amino acids' side chain variety causes them to have different chemical properties, which can lead to some protein conformations being more chemically ``preferable'' than others. For example, \autoref{fig:AminoAcidChart} groups the twenty amino acids commonly occurring in proteins according to their chemical properties. Nine of these amino acids are \textdefnogloss{hydrophobic} (also called \textdefnogloss{nonpolar}), meaning that their side chains are repelled by water, and so we tend to find these amino acids tucked away on the interior of the protein.
 
 \begin{figure}[h]
 	\centering
@@ -284,15 +286,15 @@ Amino acids' side chain variety causes amino acids to have different chemical pr
 	\label{fig:AminoAcidChart}
 \end{figure}
 
-We can therefore view protein folding as finding the tertiary structure that is the most \textit{stable} given a polypeptide's primary structure. A central theme of the previous chapter on bacterial chemotaxis was that a system of chemical reactions moves toward equilibrium. The same principle is true of protein folding; when a protein folds into its final structure, it is obtaining a conformation that is as chemically stable as possible.
+We can therefore view protein folding as finding the tertiary structure that is the most \textit{stable} given a polypeptide's primary structure. A central theme of \autoref{chapter:chemotaxis} was that a system of chemical reactions moves toward equilibrium. The same principle is true of protein folding; when a protein folds into its final structure, it reaches a conformation that is as chemically stable as possible.
 
 To be more precise, the \textdef{potential energy}{potential energy}{the energy stored within a molecule due to its position, state, and arrangement, sometimes called free energy} (sometimes called \textdefnogloss{free energy}) of a molecule is the energy stored within an object due to its position, state, and arrangement. In molecular mechanics, the potential energy is made up of the sum of \textdef{bonded energy}{bonded energy}{the potential energy of a molecule deriving from the molecule's covalent bonds} and \textdef{non-bonded energy}{non-bonded energy}{the potential energy of a molecule deriving from electrostatic interactions and van der Waals interactions}.
 
 As the protein bends and twists into a stable conformation, bonded energy derives from the protein's covalent bonds, as well as the bond angles between adjacent amino acids, and the torsion angles that we introduced earlier.
 
-Non-bonded energy comprises \textdef{electrostatic interactions}{electrostatic interactions}{attraction and repulsion forces from electric charge between charged amino acids} and \textdef{van der Waals interactions}{van der Waals interactions}{interactions between nearby atoms due to random imbalances in the locations of electrons}. Electrostatic interactions refer to the attraction and repulsion forces from the electric charge between pairs of charged amino acids. Two of the twenty standard amino acids (arginine and lysine) are positively charged, and two (aspartic acid and glutamic acid) are negatively charged. Two nearby amino acids of opposite charge may interact to form a \textdef{salt bridge}{salt bridge}{an interaction between two nearby amino acids in a protein of opposite charge}. Conformations that contain salt bridges and keep apart similarly charged amino acids will therefore have lower free energy contributed by electrostatic interactions.
+Non-bonded energy comprises \textdef{electrostatic interactions}{electrostatic interactions}{attraction and repulsion forces from electric charge between charged amino acids} and \textdef{van der Waals interactions}{van der Waals interactions}{interactions between nearby atoms due to random imbalances in the locations of electrons}. Electrostatic interactions refer to the attraction and repulsion forces from the electric charge between pairs of charged amino acids. Two of the twenty standard amino acids (arginine and lysine) are positively charged, and two (aspartic acid and glutamic acid) are negatively charged. Two nearby amino acids of opposite charge may interact to form a \textdef{salt bridge}{salt bridge}{an interaction between two nearby amino acids in a protein of opposite charge}. Conformations that contain salt bridges and keep apart similarly charged amino acids will therefore have a lower free energy component contributed by electrostatic interactions.
 
-As for van der Waals interactions, atoms are dynamic systems, with electrons constantly buzzing around the nucleus. However, due to random chance, the electrons in an atom could momentarily be unevenly distributed on one side of the nucleus. Because electrons are negatively charged, this uneven distribution will cause the atom to have a temporary negative charge on the side with the excess electrons and a temporary positive charge on the opposite side. As a result of this charge, one side of the atom may attract only the oppositely charged components of another atom, creating an \textdefnogloss{induced dipole} in that atom (\autoref{fig:van_der_waals}). Van der Waals forces refer to the attraction and repulsion between atoms because of induced dipoles.\\
+As for van der Waals interactions, atoms are dynamic systems, with electrons constantly buzzing around the nucleus. However, due to random chance, the negatively charged electrons in an atom could momentarily be unevenly distributed on one side of the nucleus. This uneven distribution will cause the atom to have a temporary negative charge on the side with the excess electrons and a temporary positive charge on the opposite side. As a result of this charge, one side of the atom may attract only the oppositely charged components of another atom, creating an \textdefnogloss{induced dipole} in that atom (\autoref{fig:van_der_waals}). Van der Waals forces refer to the attraction and repulsion between atoms because of induced dipoles.
 
 %\begin{figure}[h]
 %	\centering
@@ -310,13 +312,13 @@ As for van der Waals interactions, atoms are dynamic systems, with electrons con
 	\label{fig:van_der_waals}
 \end{figure}
 
-As the protein folds, it seeks a conformation of \textit{lowest} total potential energy based on the combination of all these forces. For an analogy, imagine a ball on a slope (\autoref{fig:EnergyCartoon}). The ball will tend to move down the slope unless it is pushed uphill by some outside force, making it unlikely that the ball will wind up at the top of a hill. We will keep this analogy in mind as we return to the problem of protein structure prediction.\\
+As the protein folds, it seeks a conformation of \textit{lowest} total potential energy based on the combination of all the above-mentioned forces. For an analogy, imagine a ball on a slope (\autoref{fig:EnergyCartoon}). The ball will move down the slope unless it is pushed uphill by some outside force, making it unlikely that the ball will wind up at the top of a hill. We will keep this analogy in mind as we return to the problem of protein structure prediction.\\
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.85\textwidth]{../images/EnergyCartoon.png}
-	\caption{A ball on a slope offers a classic analogy for a protein folding into the lowest energy structure. As the ball is more likely to move down into a valley, a protein is more likely to fold into a more stable, low-energy conformation.}
+	\includegraphics[width = 0.65\textwidth]{../images/EnergyCartoon.png}
+	\caption{A ball on a slope offers an analogy for a protein folding into the lowest energy structure. As the ball is more likely to move down into a valley, a protein is more likely to fold into a more stable, lower energy conformation.}
 	\label{fig:EnergyCartoon}
 \end{figure}
 
@@ -333,15 +335,15 @@ Predicting a protein’s structure using only its amino acid sequence is called 
 
 Biochemical research has contributed to the development of scoring functions called \textdef{force fields}{force field}{an approach that estimates forces between atoms within or between molecules} that use the physicochemical properties of amino acids introduced in the previous section to compute the potential energy of a candidate protein shape. For a given choice of force field, we can think of \textit{ab initio} structure prediction as solving the following problem: given a primary structure of a polypeptide, find its tertiary structure having minimum energy. This problem exemplifies an \textdef{optimization problem}{optimization problem}{a problem in which we are seeking an object maximizing or minimizing some function subject to constraints}, in which we are seeking an object maximizing or minimizing some function subject to constraints.
 
-This formulation of protein structure prediction may not strike you as similar to anything that we have done before in this course. However, consider once more a bacterium exploring an environment for food. Every point in the bacterium's ``search space'' is characterized by a concentration of attractant, and the bacterium's goal is to reach the point of maximum attractant concentration.
+The formulation of protein structure prediction as an optimization problem may not strike you as similar to anything that we have seen before in this book. However, consider once more a bacterium exploring an environment for food. Every point in the bacterium's ``search space'' is characterized by a concentration of attractant, and the bacterium's goal is to reach the point of maximum attractant concentration.
 
-In the case of structure prediction, our search space is the collection of all possible conformations of a given protein, and each point in this search space is characterized by the energy of the conformation at the point. Just as we imagined a ball rolling down a hill to find lower energy in \autoref{fig:EnergyCartoon}, we can now imagine exploring the search space of all conformations of a polypeptide to find the conformation having lowest energy. The general problem of exploring a search space to find a point minimizing some function is illustrated in \autoref{fig:energy_landscape}, in which the height of each point represents the function value, and our goal is to find the lowest point in the space.\\
+In the case of structure prediction, our search space is the collection of all possible conformations of a given protein, and each point in this search space represents a single conformation with an associated potential energy.  Just as we imagined a ball rolling down a hill to find lower energy in \autoref{fig:EnergyCartoon}, we can now imagine exploring the search space of all conformations of a polypeptide to find the conformation having lowest energy. The general problem of exploring a search space to find a point minimizing some function is illustrated in \autoref{fig:energy_landscape}, in which the height of each point represents the value of the function at that point, and our goal is to find the lowest point in the space.\\
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.7\textwidth]{../images/energy_landscape.png}
-	\caption{Optimization problems can be thought of as exploring a search space, visualized as a landscape, in which the height of a point is the value of the function that we wish to optimize. Finding the highest or lowest point in this landscape corresponds to maximizing or minimizing the function over the search space.}
+	\caption{Optimization problems can be thought of as exploring a landscape, in which the height of a point is the value of the function that we wish to optimize. Finding the highest or lowest point in this landscape corresponds to maximizing or minimizing the function over the search space.}
 	\label{fig:energy_landscape}
 \end{figure}
 
@@ -349,41 +351,39 @@ In the case of structure prediction, our search space is the collection of all p
 \phantomsection
 \subsection{A local search algorithm for \textit{ab initio} structure prediction}
 
-Now that we have conceptualized finding the most stable protein structure as exploring a search space, we turn to developing an algorithm to explore this space. Our idea is to use an approach similar to \textit{E. coli}'s clever exploration algorithm from \autoref{chapter:chemotaxis}: over a sequence of steps, we will consult a collection of nearby points in the space, and then move in the ``direction'' in which the energy function decreases by the most. This approach belongs to a broad category of optimization algorithms called \textdef{local search algorithms}{local search algorithm}{an algorithm for an optimization problem that explores a search space by making subsequent small modifications to an object of interest}.
+Now that we have conceptualized the protein structure prediction problem as exploring a search space, we will develop an algorithm to explore this space. Our idea is to use an approach similar to \textit{E. coli}'s clever exploration algorithm from \autoref{chapter:chemotaxis}: over a sequence of steps, we will consult a collection of nearby points in the space, and then move in the ``direction'' in which the energy function decreases the most. This approach belongs to a broad category of optimization algorithms called \textdef{local search algorithms}{local search algorithm}{an algorithm for an optimization problem that explores a search space by making subsequent small modifications to an object of interest}.
 
-Adapting this exploration algorithm to protein structure prediction requires us to develop a notion of what it means to consider the points ``nearby'' a given conformation in a protein search space. Many \textit{ab initio} algorithms will start at an arbitrary initial conformation and then make a variety of minor modifications to that structure (i.e., nearby points in the space), updating the current conformation to the modification that produces the greatest decrease in free energy. These algorithms then iterate the process of changing the protein structure to have greatest decrease in potential energy. They terminate the search after reaching a structure for which no changes to the structure reduce the free energy.
+Adapting a local search algorithm to protein structure prediction requires us to develop a notion of what it means to consider the points ``nearby'' a given conformation in a protein search space. Many \textit{ab initio} algorithms start at an arbitrary initial conformation and then make a variety of minor modifications to that structure (i.e., nearby points in the space), updating the current conformation to the modification that produces the greatest decrease in free energy. These algorithms then iterate the process of progressively altering the protein structure to have the greatest decrease in potential energy. They terminate the search after reaching a structure for which no changes to the structure further reduce this energy.
 
-Yet returning to the chemotaxis analogy, imagine what happens if we were to place many small sugar cubes and one large sugar cube into the bacterium's environment. The bacterium will sense the gradient not of the large sugar cube but of its \textit{nearest} attractant. Because the smaller food sources outnumber the larger food source, the bacterium will likely not reach the point of greatest attractant concentration. In bacterial exploration, this is a feature, not a bug; if the bacterium exhausts one food source, then it will just move to another. But in protein structure prediction, we should be wary of returning a protein structure that does not have minimum free energy but does have the property that no ``nearby'' structures have lower energy.
+Yet returning to the chemotaxis analogy, imagine what happens if we were to place many small sugar cubes and one large sugar cube into the bacterium's environment. The bacterium will sense the gradient not of the large sugar cube but of its \textit{nearest} attractant. Because the smaller food sources outnumber the larger food source, the bacterium will likely not reach the point of greatest attractant concentration. In bacterial exploration, this is a feature, not a bug; if the bacterium exhausts one food source, then it will just move to another. But in protein structure prediction, we should be wary of a local search algorithm returning a protein structure that does not have minimum free energy but that does have the property that no ``nearby'' structures have lower energy.
 
-In general, an object in a search space that has a smaller value of the optimization function than neighboring points is called a \textdef{local minimum}{local minimum}{a candidate solution to an optimization problem that does not solve the problem but that has a smaller value of the optimization function than ``nearby'' candidate solutions}. Returning to our landscape analogy from \autoref{fig:energy_landscape}, our search space may have many valleys, but in an optimization problem we would like the one that is as low as possible over the entire space, called a \textdefnogloss{global minimum}.\\
+In general, an object in a search space that has a smaller value of the optimization function than neighboring points is called a \textdef{local minimum}{local minimum}{a candidate solution to an optimization problem that does not solve the problem but that has a smaller value of the optimization function than ``nearby'' candidate solutions}. Returning to our landscape analogy from \autoref{fig:energy_landscape}, our search space may have many valleys, but in an optimization problem, we are seeking the lowest valley over the entire landscape, called a \textdefnogloss{global minimum}.\\
 
 \begin{qbox}[%
-	How could we improve our local search approach for structure prediction to avoid winding up in a local minimum?
+	How could we improve our local search algorithm for structure prediction to avoid winding up in a local minimum?
 	]\end{qbox}
 
-Researchers applying local search algorithms have devised a number of ways to avoid local minima, and two are so fundamental as to be worth mentioning here. First, because the initial conformation has a huge influence on the final conformation, we could run the algorithm multiple times with different starting conformations. This is analogous to allowing multiple bacteria to explore their environment at different starting points. Second, every time we reach a local minimum, we could allow ourselves to change the structure with some probability, thus giving our local search algorithm the chance to ``bounce'' out of the local minimum. Once again, randomized algorithms help us solve problems!
+Researchers applying local search algorithms have devised a number of ways to avoid local minima, two of which are so fundamental that we should mention them. First, because the algorithm's choice of initial conformation has a huge influence on the final conformation, we should run the algorithm multiple times with different starting conformations. This is analogous to allowing multiple bacteria to explore their environment at different starting points. Second, every time we reach a local minimum, we could allow ourselves to change the structure with some probability, thus giving our local search algorithm the chance to ``bounce'' out of a local minimum. Once again, randomized algorithms help us solve problems!
 
 \FloatBarrier
 \phantomsection
 \subsection{Applying an \textit{ab initio} algorithm to a protein sequence}
 
-To run an \textit{ab initio} structure prediction algorithm on a real protein, we will use a software resource called \href{https://zhanglab.ccmb.med.umich.edu/QUARK/}{QUARK}, which is built upon the ideas discussed in the previous section, with some added features. For example, its algorithm applies a combination of \textit{multiple} scoring functions to look for the lowest energy conformation across all these functions.
+Levinthal's paradox means that the search space of all possible structures for a protein is so large that accurately predicting large protein structures with \textit{ab initio} modeling remains very difficult. As such, the software resource that we will apply (called \href{https://zhanglab.ccmb.med.umich.edu/QUARK/}{QUARK}) limits us to proteins with at most 200 amino acids, and so we will run it only on human hemoglobin subunit alpha.\tutorial[coronavirus/tutorial_ab_initio]
 
-Levinthal's paradox means that the search space of all possible structures for a protein is so large that accurately predicting large protein structures with \textit{ab initio} modeling remains very difficult. As such, QUARK limits us to proteins with at most 200 amino acids, and so we will run it only on human hemoglobin subunit alpha.\tutorial[coronavirus/tutorial_ab_initio]
-
-\autoref{fig:ab_initio_results} shows the top five predicted human hemoglobin subunit alpha structures returned by QUARK as well as the protein's experimentally verified structure, and an average of these six structures. It takes a keen eye to see any differences between all these structures. We conclude that although \textit{ab initio} prediction is slow, it is nevertheless accurate. Yet we also wonder if we can speed up our structure prediction algorithms so that they will scale to a larger protein like the SARS-CoV-2 spike protein.\\
+\autoref{fig:ab_initio_results} shows the top five predicted human hemoglobin subunit alpha structures returned by QUARK as well as the protein's experimentally verified structure, and an average of these six structures. It takes a keen eye to see any differences between all these structures. We conclude that \textit{ab initio} prediction can be accurate. Yet we also wonder if we can speed up our structure prediction algorithms so that they will scale to a larger protein like the SARS-CoV-2 spike protein.\\
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.7\textwidth]{../images/ab_initio_results.png}
+	\includegraphics[width = 0.65\textwidth]{../images/ab_initio_results.png}
 	\caption{The experimentally verified protein structure of human hemoglobin subunit alpha (top left) along with five models of this protein produced by QUARK from the protein's primary sequence, all of which are nearly indistinguishable from the verified structure with the naked eye.}
 	\label{fig:ab_initio_results}
 \end{figure}
 
-\begin{qbox}[%
-What known protein structure(s) would you first want to consult when studying the SARS-CoV-2 spike protein?
-]\end{qbox}
+%\begin{qbox}[%
+%What known protein structure(s) would you first want to consult when studying the SARS-CoV-2 spike protein?
+%]\end{qbox}
 
 \FloatBarrier
 \phantomsection
