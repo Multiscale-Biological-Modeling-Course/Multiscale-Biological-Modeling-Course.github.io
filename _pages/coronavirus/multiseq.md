@@ -32,7 +32,7 @@ The figure below shows an alignment of the 70 amino acid long RBM region from SA
 An alignment of the RBM of the human SARS-CoV virus (first row) and the SARS-CoV-2 virus (second row). Amino acids that are highlighted in green represent matches between the two RBM sequences. Beneath each column, a bar illlustrates conservation between the two sequences, where full conservation indicates a match and partial conservation indicates a mismatch.
 {: style="font-size: medium;"}
 
-We know from our work in structure prediction that just because the sequence of a protein has been greatly mutated does not mean that the structure of that protein has changed much. Therefore, in this lesson, we will start a structural comparison of the SARS-CoV and SARS-CoV-2 spike proteins. All of this analysis will be performed using the software resources ProDy and VMD.
+We already know from our previous work in this module that just because the sequence of a protein has been greatly mutated does not mean that the structure of that protein has changed much. Therefore, in this lesson, we will start a structural comparison of the SARS-CoV and SARS-CoV-2 spike proteins. All of this analysis will be performed using the software resources ProDy and VMD.
 
 In addition to verifying the structure of the spike protein in both SARS-CoV and SARS-CoV-2, researchers also determined the structure of the RBD complexed with ACE2 in both SARS-CoV (PDB entry: <a href="https://www.rcsb.org/structure/2AJF" target="_blank">2ajf</a>) and SARS-CoV-2 (PDB entry: <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>).
 
@@ -43,7 +43,7 @@ Because we know the structures of the bound complexes, we can produce 3-D visual
 
 ## Contact maps visualize global structural differences
 
-Recall from part 1 the following definition of RMSD for two protein structures *s* and *t*, in which each structure is represented by the positions of its *n* alpha carbons (<em>s</em><sub>1</sub>, ..., <em>s</em><sub><em>n</em></sub>) and (<em>t</em><sub>1</sub>, ..., <em>t</em><sub><em>n</em></sub>).
+Recall from part 1 the definition of RMSD for two protein structures *s* and *t*, in which each structure is represented by the positions of its *n* alpha carbons (<em>s</em><sub>1</sub>, ..., <em>s</em><sub><em>n</em></sub>) and (<em>t</em><sub>1</sub>, ..., <em>t</em><sub><em>n</em></sub>).
 
 $$\text{RMSD}(s, t) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)} $$
 
@@ -53,19 +53,19 @@ If two similar protein structures differ in a few locations, then the correspond
 Two toy protein structures in which the bond angle between the third and fourth alpha carbon has been changed. This change does not affect the distance between the *i*-th and *j*-th alpha carbons when *i* and *j* are both at least equal to 4.
 {: style="font-size: medium;"}
 
-However, note that when *i* and *j* are both at least equal to 4, the distance *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) between the *i*-th and *j*-th alpha carbons in *S* will still be similar to the distance *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) between the same alpha carbons in *T*. This observation leads us to a more robust approach for measuring differences in two protein structures, which compares *all* pairwise intraprotein distances *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) in one protein structure against the corresponding distances *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) in the other structure.
+However, note that when *i* and *j* are both at least equal to 4, the distance *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) between the *i*-th and *j*-th alpha carbons in *S* will still be similar to the distance *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) between the same alpha carbons in *T*. This observation leads us to a more rigorous approach for measuring differences in two protein structures, which compares all pairwise intraprotein distances *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) in one protein structure against the corresponding distances *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) in the other structure.
 
 To help us visualize all these pairwise distances, we will introduce the **contact map** of a protein structure *s*, which is a binary matrix indicating whether two alpha carbons are near each other in *s*. After setting a threshold distance, we set *M*(*i*, *j*) = 1 if the distance *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) is less than the threshold, and we set *M*(*i*, *j*) = 0 if *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) is greater than or equal to the threshold.
 
-The figure below shows the contact maps for the SARS-CoV-2 and SARS-CoV spike proteins (both full proteins and single chains) with a threshold distance of twenty angstroms. In this map, we color contact map values black if they are equal to 1 (close amino acid pairs) and white if they are equal to 0 (distant amino acid pairs).
+The figure below illustrates the contact maps for both full proteins and single chains of the SARS-CoV-2 and SARS-CoV spike proteins, using a threshold distance of twenty angstroms. We color each contact map cell black if it is equal to 1 (corresponding to close amino acid pairs) and white if it is equal to 0 (corresponding to distant amino acid pairs).
 
 **Note:** Interested in learning how to make contact maps? We will use ProDy to do so in a later section.
 {: .notice--info}
 
-We observe two facts about these contact maps. First, many black values cluster around the main diagonal of the matrix, since amino acids that are nearby in the protein sequence will remain near each other in the 3-D structure. Second, the contact maps for the two proteins are very similar, reinforcing that the two proteins have similar structures.
+We observe two facts about these contact maps. First, many black values cluster around the main diagonal of the matrix, since amino acids that are nearby in a protein's sequence will remain near each other in the protein's structure. Second, the contact maps for the two proteins are very similar, reinforcing that the two proteins have similar structures. Contact map regions that differ provide regions for further investigation when comparing two proteins structurally.
 
 [![image-center](../assets/images/600px/Contact.png){: .align-center}](../assets/images/Contact.png)
-The contact maps of the SARS-CoV-2 spike protein (top left), SARS-CoV spike protein (top right), single chain of the SARS-CoV-2 spike protein (bottom left), and single chain of the SARS-CoV spike protein (bottom right). If the distance between the *i*-th and *j*-th amino acids in a protein structure is 20.0 angstroms or less, then the (*i*, *j*)-th cell of the figure is colored black. The SARS-CoV-2 and SARS spike proteins have very similar contact maps, indicating similar global structures.
+The contact maps of the SARS-CoV-2 spike protein (top left), SARS-CoV spike protein (top right), single chain of the SARS-CoV-2 spike protein (bottom left), and single chain of the SARS-CoV spike protein (bottom right). If the distance between the *i*-th and *j*-th amino acids in a protein structure is 20.0 angstroms or less, then the (*i*, *j*)-th cell of the figure is colored black. The SARS-CoV-2 and SARS spike proteins have very similar contact maps, indicating that they have similar structures.
 {: style="font-size: medium;"}
 
 **STOP:** How do you think a contact map will change as we increase or decrease the threshold distance used to produce that map?
@@ -82,12 +82,12 @@ In this equation, *exp(x)* denotes *e*<sup><em>x</em></sup>. This equation also 
 * *k* is equal to 2 at either the start or the end of the protein (i.e., *i* is equal to 1 or *N*), and *k* is equal to 3 otherwise.
 * The variance term $$\sigma_{ij}^2$$ is equal to $$\left\lvert{i-j}\right\rvert ^{0.15}$$, which corresponds to the sequence separation between the *i*-th and *j*-th alpha carbons.
 
-**Note:** The above definition assumes that the two proteins have the same length or have been pre-processed by removing amino acids that only occur in one protein. Generalizations of Qres for proteins of non-equal length exist that first align proteins and retain only those amino acids for structural comparison that are shared by the two proteins.
+**Note:** The above definition assumes that the two proteins have the same length or have been pre-processed by removing amino acids that only occur in one protein. Generalizations of Qres for proteins of non-equal length first align the sequences of two proteins and retain only those amino acids for structural comparison that are shared by the two proteins.
 {: .notice--info}
 
 If two proteins are very similar at the *i*-th alpha carbon, then for every *j*, the difference *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) - *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) will be close to zero, meaning that each term inside the summation in the Qres equation will be close to 1. The sum will be equal to approximately *N* - *k*, and so Qres will be close to 1. As two proteins become more different at the *i*-th alpha carbon, then the term inside the summation will head toward zero, and so will the value of Qres.
 
-Qres is therefore a metric of similarity ranging between 0 and 1. Low scores indicate low similarity between two proteins at the *i*-th position, and higher scores indicate high similarity at this position.
+Qres is therefore a metric of similarity ranging between 0 and 1. Low Qres scores indicate that two proteins differ structurally at the *i*-th position, and high scores indicate that the two proteins are similar structurally similarity at this position.
 
 We now will compute Qres for the SARS-CoV and SARS-CoV-2 spike proteins using the VMD plugin *<a href="https://www.ks.uiuc.edu/Research/vmd/plugins/multiseq/" target="_blank">Multiseq</a>*, a bioinformatics analysis environment. After determining Qres, we will visualize the individual locations where the two RBD regions differ.
 
