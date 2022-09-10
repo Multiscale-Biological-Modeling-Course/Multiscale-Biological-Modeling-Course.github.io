@@ -1109,11 +1109,7 @@ We are now ready to apply what we have learned  to build a GNM for the SARS-CoV 
 
 \autoref{fig:spike_crosscorr_slowmode} highlights another flexible region, the spike protein's \textdefnogloss{non-terminal domain (NTD)}, which appears to be more mobile in SARS-CoV-2. Like the RBD, the NTD also mediates viral infection, but by interacting with DC-SIGN and L-SIGN receptors rather than ACE2. These receptors are present on macrophages and dendritic cells, allowing SARS-CoV-2 to infect different tissues such as the lungs, where ACE2 expression levels are low, which may help explain why SARS-CoV-2 is more likely than SARS-CoV to progress to pneumonia.
 
-The analysis provided by GNM is compelling, but it ultimately relies on the estimation of inner products $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $ and $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $. Although the $ \mathbf{\Delta R_i} $ are vectors, meaning that they have a \textvar{direction} as well as a magnitude, the inner products have only a value, and so we therefore cannot infer anything about the direction of a protein's movements. In the next section, we will generalize GNMs to take these movements into account.\\
-
-\FloatBarrier
-\phantomsection
-\section{Anisotropic Network Models}
+The analysis provided by GNM is compelling, but it ultimately relies on the estimation of inner products $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $ and $ \langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $. Although the $ \mathbf{\Delta R_i} $ are vectors, meaning that they have a \textvar{direction} as well as a magnitude, the inner products have only a value, and so we therefore cannot infer anything about the direction of a protein's movements. We will need to generalize GNMs to take these movements into account.
 
 \FloatBarrier
 \phantomsection
@@ -1123,27 +1119,7 @@ The generalization of a Gaussian network model, in which we attempt to determine
 
 We will not delve into the mathematical intricacies of ANM calculations, but we will use ANMs to create animations visualizing protein fluctuations in the SARS-CoV and SARS-CoV-2 RBDs.\tutorial[coronavirus/tutorial_ANM]
 
-%For example, \autoref{fig:hemoglobin_anm_2} shows the estimated hemoglobin fluctuations produced from ANM. We can see that the left and right side of the protein are more flexible than the rest of the protein and twist in opposite directions.\\
-%
-%\begin{figure}[h]
-%	\centering
-%	\tabcolsep = 1em
-%	\mySfFamily
-%	\begin{tabular}{c c c}
-%		\includegraphics[width = 0.25\textwidth]{../images/hemoglobin_animation1.png} & \includegraphics[width = 0.25\textwidth]{../images/hemoglobin_animation2.png} & \includegraphics[width = 0.25\textwidth]{../images/hemoglobin_animation3.png}
-%	\end{tabular}
-%	\caption{Collective motions of the slowest mode in human hemoglobin from ANM calculations using DynOmics.}
-%	\label{fig:hemoglobin_anm_2}
-%\end{figure}
-%
-%
-%After we produce an animation like the one in \autoref{fig:hemoglobin_anm_2}, we also should attempt to explain it biologically. Human hemoglobin exists in two states: the tense state (T), in which it is not bound to an oxygen molecule, and the relaxed state (R), in which it is oxygenated. Hemoglobin's mobility shown in the above animation corresponds to its ability to transition between these two states, in which salt-bridges and contacts can shift by up to seven angstroms. This significant molecular flexibility exemplifies why we need to study protein dynamics as well as structure.
-
-\FloatBarrier
-\phantomsection
-\subsection{ANM analysis of the spike protein binding domain}
-
-\autoref{fig:coronavirus_anm_animation} shows screen captures of an ANM-generated animation of the complex of each virus's RBD (purple) bound with ACE2 (green). Recall from \autoref{fig:NAMDEnergy2} that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called ``hotspot 31'', which is highlighted in blue and orange in \autoref{fig:coronavirus_anm_animation} (bottom). If you look closely, as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This animation provides one more piece of evidence that SARS-CoV-2 is more effective than SARS-CoV at binding to the ACE2 enzyme.\\
+\autoref{fig:coronavirus_anm_animation} shows screen captures of an ANM-generated animation of the complex of each virus's RBD (purple) bound with ACE2 (green). Recall from \autoref{fig:NAMDEnergy2} that the greatest contribution of negative energy to the RBD/ACE2 complex in SARS-CoV-2 was the region called ``hotspot 31'', which is highlighted in blue and orange in \autoref{fig:coronavirus_anm_animation} (bottom). If you look closely, as the protein swings in to bind with ACE2, the blue and orange regions appear to line up just a bit more naturally in the SARS-CoV-2 animation than in the SARS-CoV animation. That is, the improved binding that we hypothesized for a static structure appears to be confirmed by dynamics simulations. This animation provides yet one more piece of evidence that SARS-CoV-2 is more effective than SARS-CoV at binding to the ACE2 enzyme.\\
 
 \begin{figure}[h]
 	\centering
@@ -1153,22 +1129,22 @@ We will not delve into the mathematical intricacies of ANM calculations, but we 
 		\includegraphics[width = 0.25\textwidth]{../images/2ajf_animation1_cropped.png} & \includegraphics[width = 0.25\textwidth]{../images/2ajf_animation2_cropped.png} & \includegraphics[width = 0.25\textwidth]{../images/2ajf_animation3_cropped.png} \\[3ex]
 		\includegraphics[width = 0.25\textwidth]{../images/6vw1_animation1_cropped.png} & \includegraphics[width = 0.25\textwidth]{../images/6vw1_animation2_cropped.png} & \includegraphics[width = 0.25\textwidth]{../images/6vw1_animation3_cropped.png}
 	\end{tabular}
-	\caption{(Top) Snapshots of an ANM analysis animation of SARS-CoV-2 spike RBD and ACE2 (PDB entry: \href{https://www.rcsb.org/structure/2ajf}{2ajf}). (Bottom) Snapshots of an ANM analysis animation of SARS-CoV-2 spike chimeric RBD and ACE2 (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}).}
+	\caption{(Top) Snapshots of an ANM analysis animation of the SARS-CoV spike RBD, shown in purple, and ACE2, shown in green (PDB entry: \href{https://www.rcsb.org/structure/2ajf}{2ajf}). (Bottom) Snapshots of an ANM analysis animation of the SARS-CoV-2 spike chimeric RBD and ACE2 (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}).}
 	\label{fig:coronavirus_anm_animation}
 \end{figure}
 
 \phantomsection
 \section{Conclusion: Bamboo Shoots After the Rain}
 
-This chapter has been a journey. We began with a discussion of the fundamental problem of determining a protein's structure. Because experimental methods for identifying protein structure are costly and time consuming, we transitioned to discuss algorithmic approaches that do a good job of predicting a protein's structure from its sequence of amino acids.
+This chapter has been a journey. We began with a discussion of the fundamental problem of determining a protein's structure. Because experimental methods for identifying protein structure are costly and time consuming, we transitioned to cover algorithmic approaches that do a good job of predicting a protein's structure from its sequence of amino acids.
 
-We then discussed how to compare protein structures, with a lengthy case study comparing the SARS-CoV and SARS-CoV-2 spike proteins. The problem of quantifying how different two structures is can be challenging, and we established both global and local structure comparison metrics. We applied these approaches to isolate three candidate regions of interest of the SARS-CoV-2 spike protein that differ from the SARS-CoV spike protein when complexed with the ACE2 enzyme, and we quantified this binding using a localized energy function.
+We then discussed how to compare protein structures, with a lengthy case study comparing the SARS-CoV and SARS-CoV-2 spike proteins. The problem of quantifying the difference between two structures is challenging, and we established both global and local structure comparison metrics. We applied these approaches to isolate three candidate regions of interest of the SARS-CoV-2 spike protein that differ from the SARS-CoV spike protein when complexed with the ACE2 enzyme, and we quantified the binding of this complex using a localized energy function.
 
-We concluded with a transition from the study of structure to the structure of molecular dynamics. If we hope to fully understand a protein's function, then we need to know how it flexes and bends within its environment, sometimes in order to interact with other molecules.
+We concluded with a study of molecular dynamics. If we hope to fully understand a protein's function, then we need to know how it flexes and bends within its environment, sometimes in order to interact with other molecules.
 
 Despite covering a great deal of ground, we have left just as much unstudied. For one example, the surface of viruses and host cells are ``fuzzy'' because they are covered by structures called \textdef{glycans}{glycans}{numerous monosaccharides linked together on the surface of viruses and host cells}, or numerous monosaccharides linked together. SARS-CoV and SARS-CoV-2 have a “glycan shield”, in which glycosylation of surface antigens allows the virus to hide from antibody detection. Researchers have found that the SARS-CoV-2 spike protein is heavily glycosylated, shielding around 40\% of the protein from antibody recognition.
 
-Finally, although the study of proteins is in some sense the first major area of biological research to become influenced by computational approaches, we hope that this chapter has made it clear that this area is not just still active, but booming. With the COVID-19 pandemic reiterating the importance of biomedical research, the dawn of Alphafold showing the power of supercomputing to solve age-old problems, and computational modeling promising to help find the medications of the future, new companies are rising up to study proteins like bamboo shoots after the rain.
+Finally, although the study of proteins is in some sense the first major area of biological research to become influenced by computational approaches, we hope that this chapter has made it clear that the analysis of protein structure and dynamics is booming. With the COVID-19 pandemic reiterating the importance of biomedical research, the dawn of Alphafold showing the power of supercomputing to solve age-old problems, and the promise of computational modeling to discover the medications of the future, new companies and organizations are rising up to study proteins like bamboo shoots after the rain.
 
 \newpage
 
