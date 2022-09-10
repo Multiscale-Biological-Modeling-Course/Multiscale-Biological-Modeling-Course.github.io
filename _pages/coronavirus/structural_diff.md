@@ -51,7 +51,7 @@ Although the interaction with the hydrophobic pocket is the most critical differ
 Visualizations of hotspot 31 in SARS-CoV-2 (left) and SARS-CoV (right). The coronavirus RBD is shown at the top in purple, and ACE2 is shown at the top in green. In SARS-CoV, hotspot 31 corresponds to a salt bridge (red), which is broken in SARS-CoV-2 to form a new hydrogen bond with Gln493 (blue)
 {: style="font-size: medium;"}
 
-The figure above shows how the salt bridge differs in the two viruses. In SARS-CoV, shown on the right, the two residues point towards each other because in the SARS-CoV RBM, Tyr442 (colored yellow) supports the salt bridge between Lys31 and Glu35 on ACE2. In SARS-CoV-2, shown on the left, the corresponding amino acid is the less bulky Leu455 (yellow), which provides less support to Lys31. This causes the salt bridge to break, so that Lys31 and Glu35 in ACE2 point in parallel toward Gln493 (colored blue) on the RBD, forming hydrogen bonds with the spike protein.[^Shang].
+The figure above shows how the salt bridge differs in the two viruses. In SARS-CoV, shown on the right, the two residues point towards each other because in the RBM, Tyr442 (colored yellow) supports the salt bridge between Lys31 and Glu35 on ACE2. In SARS-CoV-2, shown on the left, the corresponding amino acid is the less bulky Leu455 (yellow), which provides less support to Lys31. This causes the salt bridge to break, so that Lys31 and Glu35 in ACE2 point in parallel toward Gln493 (colored blue) on the RBD, forming hydrogen bonds with the spike protein.[^Shang].
 
 ### Site 3: hotspot 353
 
@@ -70,7 +70,7 @@ You may be wondering how researchers can be so fastidious that they would notice
 
 In part 1 of this module, we searched for the tertiary structure that best "explains" a protein's primary structure by looking for the structure with the lowest potential energy (i.e., the one that is the most chemically stable).
 
-To quantify whether two molecules bind well, we will borrow this idea and compute the potential energy of the complex formed by the viral RBD and ACE2. If two molecules bind well, then the complex will have a very low potential energy. In turn, if we compare the SARS-CoV-2 RBD-ACE2 complex against the SARS-CoV RBD-ACE2 complex, and we find that the potential energy of the former is significantly smaller, then we can conclude that it is more stable, providing evidence for the increased infectiousness of SARS-CoV-2.
+To quantify whether two molecules bind well, we will borrow this idea and compute the potential energy of the complex formed by the viral RBD and ACE2. If two molecules bind well, then the complex will have a very low potential energy. In turn, if we compare the SARS-CoV RBD-ACE2 complex against the SARS-CoV-2 RBD-ACE2 complex, and we find that the potential energy of the latter is significantly smaller, then we can conclude that it is more stable, providing evidence for the increased infectiousness of SARS-CoV-2.
 
 In the following tutorial, we will compute the energy of the bound spike protein-ACE2 complex for the two viruses and see how the three regions that we identified in the [previous lesson](structural_differences) contribute to the total energy of the complex. To do so, we will employ <a href="https://www.ks.uiuc.edu/Research/namd/" target="_blank">NAMD</a>, a program that was designed for high-performance large system simulations of biological molecules and is most commonly used with VMD via a plugin called <a href="https://www.ks.uiuc.edu/Research/vmd/plugins/namdenergy/" target="_blank">NAMD Energy</a>. This plugin will allow us to isolate a specific region to evaluate how much this local region contributes to the overall energy of the complex.
 
@@ -79,17 +79,15 @@ In the following tutorial, we will compute the energy of the bound spike protein
 
 ## Differences in interaction energy with ACE2 between SARS and SARS-CoV-2
 
-The table below shows the interaction energies for each of our three regions of interest as well as the total energy of the RBD-ACE2 complex for both SARS-CoV and SARS-CoV-2.
+The table below shows the interaction energies for each of our three regions of interest as well as the total energy of the RBD-ACE2 complex for both SARS-CoV and SARS-CoV-2. The overall attractive interaction energy between the RBD and ACE2 is lower for SARS-CoV-2 than for SARS-CoV, which supports previous studies that have found the SARS-CoV-2 spike protein to have higher affinity with ACE2.
 
 [![image-center](../assets/images/600px/NAMDEnergy2.png){: .align-center}](../assets/images/NAMDEnergy2.png)
-ACE2 interaction energies of the chimeric SARS-CoV-2 RBD and SARS-CoV RBD. The PDB files contain two biological assemblies, or instances, of the corresponding structure. The first instance includes chain A (ACE2) and chain E (RBD), and the second instance includes chain B (ACE2) and chain F (RBD). The overall interactive energies between the RBD and ACE2 are shown in the first two rows (green). Then, the individual interaction energies are shown from the loop site (yellow), hotspot 31 (red), and hotspot 353 (grey). Total energy is computed as the sum of electrostatic interactions and van der Waals (vdW) forces.
+ACE2 interaction energies of the chimeric SARS-CoV-2 RBD (left) and SARS-CoV RBD (right). The PDB files contain two biological assemblies, or instances, of the corresponding structure. The first instance includes chain A (ACE2) and chain E (RBD), and the second instance includes chain B (ACE2) and chain F (RBD). The overall interactive energies between the RBD and ACE2 are shown in the first two rows (green). Remaining rows show interaction energies for regions of interest: the loop site (yellow), hotspot 31 (red), and hotspot 353 (gray). Total energy is computed as the sum of electrostatic interactions and van der Waals (vdW) forces.
 {: style="font-size: medium;"}
-
-This table shows that the overall attractive interaction energy between the RBD and ACE2 is lower for SARS-CoV-2 than for SARS-CoV, which supports previous studies that have found the SARS-CoV-2 spike protein to have higher affinity with ACE2.
 
 Furthermore, all three regions of interest have a lower total energy in SARS-CoV-2 than in SARS-CoV, with hotspot 31 (red) having the greatest negative contribution. We now have quantitative evidence that the conformational changes in the three sites do indeed increase the binding affinity between the spike protein and ACE2.
 
-Nevertheless, we should be careful with making inferences about the infectiousness of SARS-CoV-2 based on these results. To add evidence for our case, we would need biologists to perform additional experimental work to demonstrate that the improved binding of SARS-CoV-2 translates into greater infectiousness in human cells.
+Nevertheless, we should be careful with making inferences about the infectiousness of SARS-CoV-2 based on these results. To add evidence for our case, we would need biologists to perform additional experiments.
 
 Another reason for our cautiousness is that proteins are not fixed objects but rather *dynamic* structures whose shape is subject to small changes over time. We will now transition from the static study of proteins to the field of **molecular dynamics**, in which we simulate the movement of proteins' atoms, along with their interactions as they move.
 

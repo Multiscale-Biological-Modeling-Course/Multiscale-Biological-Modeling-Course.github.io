@@ -87,7 +87,7 @@ In this equation, *exp(x)* denotes *e*<sup><em>x</em></sup>. This equation also 
 
 If two proteins are very similar at the *i*-th alpha carbon, then for every *j*, the difference *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) - *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) will be close to zero, meaning that each term inside the summation in the Qres equation will be close to 1. The sum will be equal to approximately *N* - *k*, and so Qres will be close to 1. As two proteins become more different at the *i*-th alpha carbon, then the term inside the summation will head toward zero, and so will the value of Qres.
 
-Qres is therefore a metric of similarity ranging between 0 and 1. Low Qres scores indicate that two proteins differ structurally at the *i*-th position, and high scores indicate that the two proteins are similar structurally similarity at this position.
+Qres is therefore a metric of similarity ranging between 0 and 1. Low Qres scores indicate that two proteins differ structurally at the *i*-th position, and high scores indicate that the two proteins are similar structurally at this position.
 
 We now will compute Qres for the SARS-CoV and SARS-CoV-2 spike proteins using the VMD plugin *<a href="https://www.ks.uiuc.edu/Research/vmd/plugins/multiseq/" target="_blank">Multiseq</a>*, a bioinformatics analysis environment. After determining Qres, we will visualize the individual locations where the two RBD regions differ.
 
@@ -102,16 +102,16 @@ By computing Qres at every position of the two coronavirus RBD regions, we can f
 A snapshot of the sequence alignment between the SARS-CoV RBD (first row) and the SARS-CoV-2 chimeric RBD[^Shang] (second row). Columns are colored along a spectrum from blue (high Qres) to red (low Qres), with positions that correspond to an inserted or deleted amino acid colored red. The region with low Qres corresponds to amino acids at positions 476 to 485 in the SARS-CoV-2 spike protein.
 {: style="font-size: medium;"}
 
-The figure below shows a 3-D visualization of the ACE2 enzyme (green) bound with the superimposed structures of both the SARS and SARS-CoV-2 RBD. The same color-coding of columns of the multiple alignment in the figure above is used to color positions in the superimposed RBDs. The low-Qres region of the RBM alignment that we highlighted in the above figure is outlined in the figure below.
+The figure below shows a 3-D visualization of the ACE2 enzyme (green) bound with the superimposed structures of both the SARS-CoV and SARS-CoV-2 RBD. The same color-coding of columns of the multiple alignment in the figure above is used to color positions in the superimposed RBDs. The low-Qres region of the RBM alignment that we highlighted in the above figure is outlined in the figure below.
 
 [![image-center](../assets/images/600px/QresVMD.png){: .align-center}](../assets/images/QresVMD.png)
 A visualization showing the superimposed structures of the SARS-CoV-2 chimeric RBD[^Shang]  and SARS-CoV RBD, with individual amino acids colored blue or red depending on whether Qres is high or low, respectively.  The ACE2 enzyme is shown in green. The boxed region corresponds to the part of the RBM having a potential structural difference. Because this region is adjacent to ACE2, the structural difference will likely affect ACE2 interactions.
 {: style="font-size: medium;"}
 
-**Note:** Although the rest of the proteins are similar, there are other parts of the RBD at the top of the protein that show dissimilarities in the two proteins, which may be attributable to an experimental artifact. The authors of the work in which the comparison was published have pointed out that the highlighted region is unlikely to be an artifact of the experimentation because it is "buried at the RBD–ACE2 interface and did not affect crystallization".
+**Note:** Although the rest of the proteins are similar, there are other parts of the RBD at the top of the protein that show dissimilarities in the two proteins, which may be attributable to an experimental artifact.
 {: .notice--info}
 
-Finding a region in the RBM where the structures of the SARS-CoV and SARS-CoV-2 spike proteins differ presents an exciting development.  We will next explore this region of the protein structure to determine whether the mutations acquired by SARS-CoV-2 may have influenced the binding affinity of the virus spike protein with the human ACE2 enzyme.
+Finding a region in the RBM where the structures of the SARS-CoV and SARS-CoV-2 spike proteins differ presents an exciting development.  We will next explore this region of the protein structure to determine whether the mutations acquired by SARS-CoV-2 may have influenced the binding affinity of the spike protein with the human ACE2 enzyme.
 
 [Next lesson](structural_differences){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
