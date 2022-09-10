@@ -1174,17 +1174,17 @@ In the main text, we noted that the center of some shapes can be computed mathem
 \end{figure}
 
 \begin{exercise}[%
-Determine the center of mass of the shape in \autoref{fig:semicircular_arc}. (Hint: finding the x-coordinate of the center of mass is easy, but finding the y-coordinate requires a little calculus for finding an average value.)
+Determine the center of mass of the shape in \autoref{fig:semicircular_arc}. (Hint: finding the x-coordinate of the center of mass is easy, but finding the y-coordinate requires a little calculus.)
 ]\end{exercise}
 
 \begin{exercise}[%
-	Say that we connect $(-1, 0)$ and $(0, 1)$ to form a closed semicircle. What will be the center of mass of the resulting shape?
+	Say that we connect $(-1, 0)$ and $(0, 1)$ in \autoref{fig:semicircular_arc} to form a closed semicircle. What will be the center of mass of the resulting shape?
 ]\end{exercise}
 
 \phantomsection
 \subsection{Calculating RMSD by hand}
 
-Consider the two (very) hypothetical protein structures shown in \autoref{fig:rmsd_exercise} with vectorizations of eight points each.\\
+Consider the two shapes shown in \autoref{fig:rmsd_exercise} with vectorizations of eight points each.\\
 
 \begin{figure}[h]
 	\centering
@@ -1206,24 +1206,24 @@ Without rotating these structures, align the two structures in \autoref{fig:rmsd
 ]\end{exercise}
 
 \phantomsection
-\subsection{Practicing \textit{Ab initio} and homology modeling}
+\subsection{Practicing \textit{ab initio} and homology modeling}
 
-In this chapter, we sometimes worked with human hemoglobin subunit alpha. Let's predict the structure of the beta subunit of this protein using both \textit{ab initio} and homology structure prediction. To do so, first visit the \href{https://www.rcsb.org/}{Protein Data Bank} and search for the protein ``1SI4''. Download the PDB file by clicking on ``Download Files'' and then ``PDB Format''. We will use this file for structure comparisons later. Next, go to the ``Sequence'' tab and click ``Display Files'' and then ``FASTA Sequence''. In this file, find the sequence corresponding to the beta subunit.\\
+Let's predict the structure of the beta subunit of human hemoglobin subunit alpha using both \textit{ab initio} and homology structure prediction. To do so, first visit the \href{https://www.rcsb.org/}{Protein Data Bank} and search for the protein ``1SI4''. Download the PDB file by clicking on ``Download Files'' and then ``PDB Format''. We will use this file for structure comparisons later. Next, go to the ``Sequence'' tab and click ``Display Files'' and then ``FASTA Sequence''. In this file, find the sequence corresponding to the beta subunit.\\
 
 \begin{exercise}[%
-Submit the beta subunit sequence to the \textit{ab initio} structure prediction software \href{https://zhanggroup.org/QUARK/}{QUARK}, and your choice of homology modeling software: \href{https://swissmodel.expasy.org/}{SWISS-MODEL}, \href{https://robetta.bakerlab.org/}{Robetta}, and/or \href{https://galaxy.seoklab.org/cgi-bin/submit.cgi?type=TBM}{GalaxyWEB}.
+Submit the beta subunit sequence to the \textit{ab initio} structure prediction software \href{https://zhanggroup.org/QUARK/}{QUARK} as well as your choice of homology modeling software: \href{https://swissmodel.expasy.org/}{SWISS-MODEL}, \href{https://robetta.bakerlab.org/}{Robetta}, and/or \href{https://galaxy.seoklab.org/cgi-bin/submit.cgi?type=TBM}{GalaxyWEB}.
 ]\end{exercise}
 
-In a tutorial, we saw how to use ProDy to compute RMSD between protein structures.\tutorial[coronavirus/tutorial_rmsd]\\
+In a tutorial, we learned how to compute RMSD between protein structures, which we now apply to human hemoglobin.\tutorial[coronavirus/tutorial_rmsd]\\
 
 \begin{exercise}[%
-Calculate the RMSD between your predicted structures from the previous exercise and the actual structure. (Use ``Chain B'' of the validated structure to focus on subunit beta.) Which type of modeling resulted in the most accurate structure prediction? Is this what you expected?
+Calculate the RMSD between your predicted structures from the previous exercise and the actual structure. (Use ``Chain B'' of the validated structure to focus on subunit beta.) Which type of modeling (\textit{ab initio} or homology modeling) resulted in the most accurate structure prediction? Is this what you expected?
 ]\end{exercise}
 
 \phantomsection
 \subsection{Trying out AlphaFold}
 
-A simplified version of AlphaFold is available for public use on Colab. This version currently does not work when using the entire spike protein, and so we will use the human hemoglobin subunit beta once again. Following the directions from a preceding exercise, obtain the protein sequence of the beta subunit. Next, open \href{https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb#scrollTo=woIxeCPygt7K}{Colab's simplified version of AlphaFold}. Read the documentation and follow the directions in each step to generate the predicted structure.\\
+A simplified version of AlphaFold is available for public use on Colab. Following the directions from a preceding exercise, obtain the protein sequence of the human hemoglobin beta subunit. Next, open \href{https://colab.research.google.com/github/deepmind/alphafold/blob/main/notebooks/AlphaFold.ipynb#scrollTo=woIxeCPygt7K}{Colab's simplified version of AlphaFold}. Read the documentation and follow the directions in each step to generate the predicted structure.\\
 
 \begin{exercise}[%
 Calculate the RMSD between the predicted structure and the actual structure. Did this simplified version of AlphaFold perform better than your \textit{ab initio} and homology modeling results from the previous exercise?
@@ -1233,26 +1233,26 @@ Calculate the RMSD between the predicted structure and the actual structure. Did
 \phantomsection
 \subsection{Comparing protein structures with Qres}
 
-Recall the two toy protein structures from \autoref{fig:rmsd_exercise}, and that the formula for Qres of the i-th sampled point in a protein with N amino acids is
+Recall that the formula for Qres of the i-th sampled point in a protein with N amino acids is
 
 \begin{center}
 $Q_{res}^{(i)} = \dfrac{1}{N-k} \sum^{residues}_{j\neq i-1,i,i+1} \textrm{exp}[-\dfrac{[d(s_i,s_j)-d(t_i,t_j)]^2}{2\sigma^2_{i,j}}]\, .$
 \end{center}
 
 \begin{exercise}[%
-Assuming that the first sampled point in the two figures are, respectively, $(1,2)$ and $(1,3)$, compute the Qres of the fourth sampled point.
+Assuming that the first sampled point in each of the two shapes in \autoref{fig:rmsd_exercise} are, respectively, $(1,2)$ and $(1,3)$, compute the Qres of the fourth sampled point.
 ]\end{exercise}
 
-In a tutorial, we computed Qres between SARS and SARS-CoV-2 RBD to find local differences between the two structures.\tutorial[coronavirus/tutorial_multiseq] We will repeat this analysis using the hemoglobin subunit alpha protein. Using the PDB files of human hemoglobin (PDB entry: \href{https://www.rcsb.org/structure/1si4}{1si4}) and mako shark hemoglobin (PDB entry: \href{https://www.rcsb.org/structure/3mkb}{3mkb}), upload the protein structures into VMD. Align the structures using Multiseq and visualize the structures using Qres as the coloring parameter.\\
+In a tutorial, we computed Qres between SARS and SARS-CoV-2 RBD to find local differences between the two structures.\tutorial[coronavirus/tutorial_multiseq] We will repeat this analysis with hemoglobin subunit alpha. Using the PDB files of human hemoglobin (PDB entry: \href{https://www.rcsb.org/structure/1si4}{1si4}) and mako shark hemoglobin (PDB entry: \href{https://www.rcsb.org/structure/3mkb}{3mkb}), upload the protein structures into VMD. Align the structures using Multiseq and visualize the structures using Qres as the coloring parameter.\\
 
 \begin{exercise}[%
-Use the visualizations to determine where the protein structures vary the most. Does what you find make sense intuitively?
+Use the visualizations to determine where the protein structures vary the most. Do your findings make sense intuitively?
 ]\end{exercise}
 
 \phantomsection
-\subsection{Calculating interaction energy of two}
+\subsection{Calculating interaction energy}
 
-In this exercise, we will be performing a short analysis of the SARS-CoV-2 Spike protein interaction energy with the human receptor ACE2 using NAMD. Download the PDB file from the Protein Data Bank (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}). Upload the structure into VMD and navigate to \texttt{Extension > Analysis > NAMD Energy}. Calculate the energy types ``VDW'' and ``Elec'' using the following selections.\\
+We will perform a short analysis of the SARS-CoV-2 spike protein's interaction energy with the human receptor ACE2 using NAMD. Download the PDB file of the SARS-CoV-2 RBD-ACE2 complex from the Protein Data Bank (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}). Upload the structure into VMD and navigate to ``Extension'', then ``Analysis'', then ``NAMD Energy''. Calculate the energy types ``VDW'' and ``Elec'' using the selections in the following table.
 
 \begin{center}
 \mySfFamily
@@ -1264,25 +1264,23 @@ B & protein and chain B & protein and chain F and resid 383 to 394
 \end{center}
 
 \begin{exercise}[%
-How do the results of part A compare with that of part B? Can you justify the results? (Hint: Visualize the specific residues).
+How do the results of part A compare with those of part B? Can you justify the results? (Hint: Visualize the specific residues).
 ]\end{exercise}
 
 \phantomsection
 \subsection{Visualizing glycans on the surface of SARS-CoV-2}
 
-In the conclusion, we mentioned that the surface of the surface of viruses and host cells are ``fuzzy'' because they are covered by structures called glycans. As you may expect, SARS-CoV and SARS-CoV-2 are also covered by this ``glycan shield'', in which glycosylation of surface antigens allows the virus to hide from antibody detection.
-
-We will use what we learned in a tutorial to visualize glycans on the spike protein of both viruses.\tutorial[coronavirus/tutorial_multiseq] First, we will need to download the protein structures of the SARS-CoV spike protein (PDB entry: \href{https://www.rcsb.org/structure/5xlr}{5xlr}) and the SARS-CoV-2 spike protein (PDB entry: \href{https://www.rcsb.org/structure/6vxx}{6vxx}). Load each structure into VMD and navigate to \texttt{Graphics > Representations}. For VMD, there is no specific keyword to select glycans, and so we will use a workaround with the keywords: ``not protein and not water''.\\
+In the conclusion, we mentioned that the surface of viruses and host cells are ``fuzzy'' because they are covered by structures called glycans. We will use what we learned in a tutorial to visualize glycans on the spike protein of both viruses.\tutorial[coronavirus/tutorial_multiseq] First, we will need to download the protein structures of the SARS-CoV spike protein (PDB entry: \href{https://www.rcsb.org/structure/5xlr}{5xlr}) and the SARS-CoV-2 spike protein (PDB entry: \href{https://www.rcsb.org/structure/6vxx}{6vxx}). Load each structure into VMD and navigate to ``Graphics'' and then ``Representations''. For VMD, there is no specific keyword to select glycans, and so we will use a workaround with the keywords: ``not protein and not water''.\\
 
 \begin{exercise}[%
-Create the representation. Assuming that all the non-proteins are glycans, which structure contains the most number of glycans? Do you think this supports SARS-CoV-2's higher infectivity compared to SARS-CoV?
+Create the representation. Assuming that all the non-proteins are glycans, which structure contains the most number of glycans? Do you think that this supports SARS-CoV-2's higher infectivity compared to SARS-CoV?
 ]\end{exercise}
 
 \phantomsection
 \subsection{Creating contact maps for the SARS-CoV-2 spike protein}
 
-In a tutorial, we created a contact map for the SARS-CoV-2 spike protein using the threshold of 20 angstroms.\tutorial[coronavirus/tutorial_GNM]\\
+In a tutorial, we created a contact map for the SARS-CoV-2 spike protein using a threshold distance of 20 angstroms.\tutorial[coronavirus/tutorial_GNM]\\
 
 \begin{exercise}[%
-Try making the contact map of one of the chains of SARS-CoV-2 spike protein (PDB entry: \href{https://www.rcsb.org/structure/6vxx}{6vxx}) with thresholds of 10 angstroms and 40 angstroms. How different are the resulting contact maps?
+Try making the contact map of one of the chains of SARS-CoV-2 spike protein (PDB entry: \href{https://www.rcsb.org/structure/6vxx}{6vxx}) using thresholds of 10 angstroms and 40 angstroms. How different are the resulting contact maps?
 ]\end{exercise}

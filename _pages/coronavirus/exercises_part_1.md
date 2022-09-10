@@ -16,7 +16,7 @@ In the main text, we noted that the center of some shapes can be computed mathem
 A semicircular arc with radius 1 corresponding to a circle whose center is at the origin.
 {: style="font-size: medium;"}
 
-**Exercise:** Determine the center of mass of the shape in the figure above. (**Hint:** finding the x-coordinate of the center of mass is easy, but finding the y-coordinate requires a little calculus for finding an average value.)
+**Exercise:** Determine the center of mass of the shape in the figure above. (**Hint:** finding the x-coordinate of the center of mass is easy, but finding the y-coordinate requires a little calculus.)
 {: .notice--success}
 
 **Exercise:** Say that we connect (-1, 0) and (0, 1) to form a closed semicircle. What will be the center of mass of the resulting shape?
@@ -24,7 +24,7 @@ A semicircular arc with radius 1 corresponding to a circle whose center is at th
 
 ## Calculating RMSD
 
-Consider the two (very) hypothetical protein structures shown in the figure below with vectorizations of eight points each.
+Consider the two shapes shown in the figure below with vectorizations of eight points each.
 
 [![image-center](../assets/images/600px/rmsd_exercise.png){: .align-center}](../assets/images/rmsd_exercise.png)
 Two hypothetical protein structures with vectorizations into eight points each.
@@ -38,14 +38,14 @@ Two hypothetical protein structures with vectorizations into eight points each.
 
 ## Practicing *Ab initio* and homology modeling
 
-In this module, we have sometimes worked with human hemoglobin subunit beta. Let's predict the structure of the beta subunit of this protein using both *ab initio* and homology structure prediction. To do so, first visit the <a href="https://www.rcsb.org/" target="_blank">Protein Data Bank</a> and search for the protein “1SI4”. Download the PDB file by clicking on “Download Files” and then “PDB Format”. We will use this file for structure comparisons later. Next, go to the “Sequence” tab and click “Display Files” and then “FASTA Sequence”. In this file, find the sequence corresponding to the beta subunit.
+Let's predict the structure of the beta subunit of human hemoglobin subunit alpha using both *ab initio* and homology structure prediction. To do so, first visit the <a href="https://www.rcsb.org/" target="_blank">Protein Data Bank</a> and search for the protein “1SI4”. Download the PDB file by clicking on “Download Files” and then “PDB Format”. We will use this file for structure comparisons later. Next, go to the “Sequence” tab and click “Display Files” and then “FASTA Sequence”. In this file, find the sequence corresponding to the beta subunit.
 
-**Exercise:** Submit the beta subunit sequence to the *ab initio* structure prediction software, <a href="https://zhanggroup.org/QUARK/" target="_blank">QUARK</a>, and your choice of homology modeling software: <a href="https://swissmodel.expasy.org/" target="_blank">SWISS-MODEL</a>, <a href="https://robetta.bakerlab.org/" target="_blank">Robetta</a>, and/or <a href="https://galaxy.seoklab.org/cgi-bin/submit.cgi?type=TBM" target="_blank">GalaxyWEB</a>.
+**Exercise:** Submit the beta subunit sequence to the *ab initio* structure prediction software, <a href="https://zhanggroup.org/QUARK/" target="_blank">QUARK</a> as well as your choice of homology modeling software: <a href="https://swissmodel.expasy.org/" target="_blank">SWISS-MODEL</a>, <a href="https://robetta.bakerlab.org/" target="_blank">Robetta</a>, and/or <a href="https://galaxy.seoklab.org/cgi-bin/submit.cgi?type=TBM" target="_blank">GalaxyWEB</a>.
 {: .notice--success}
 
 In a [tutorial](tutorial_rmsd), we saw how to use ProDy to compute RMSD between protein structures.
 
-**Exercise:** Use ProDy to calculate the RMSD between your predicted structures from the previous exercise and the actual structure. (Use "Chain B" of the validated structure to focus on subunit beta.) Which type of modeling resulted in the most accurate structure prediction? Is this what you expected?
+**Exercise:** Use ProDy to calculate the RMSD between your predicted structures from the previous exercise and the actual structure. (Use "Chain B" of the validated structure to focus on subunit beta.) Which type of modeling (*ab initio* or homology modeling) resulted in the most accurate structure prediction? Is this what you expected?
 {: .notice--success}
 
 ## Trying out AlphaFold
