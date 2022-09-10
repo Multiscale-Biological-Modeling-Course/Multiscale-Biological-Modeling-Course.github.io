@@ -34,7 +34,7 @@ Structures of the three models of this protein reported by SWISS-MODEL. The supe
 {: style="font-size: medium;"}
 
 ## Robetta
-Robetta is a publicly available software resource that uses the same software as the distributed Rosetta@home project that we mentioned earlier in this module. As with SWISS-MODEL, we will provide Robetta a single chain of the SARS-CoV-2 spike protein.
+Robetta is a publicly available software resource that uses the same software as the distributed Rosetta@home project. As with SWISS-MODEL, we will provide Robetta a single chain of the SARS-CoV-2 spike protein.
 
 First, if you have not already done so, download the sequence of the chain: <a href="../_pages/coronavirus/files/CoV2SpikeProteinSeq.txt" download>SARS-CoV-2 spike chain sequence</a>.
 

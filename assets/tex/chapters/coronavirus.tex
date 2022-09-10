@@ -456,11 +456,7 @@ We now turn to the problem of comparing our homology modeling results of the SAR
 \phantomsection
 \subsection{Comparing two shapes with the Kabsch algorithm}
 
-Comparing two protein structures is intrinsically similar to comparing two shapes, such as those in \autoref{fig:two_shapes}.\\
-
-\begin{qbox}[%
-	How similar are the two shapes in \autoref{fig:two_shapes}?
-]\end{qbox}
+Comparing two protein structures is intrinsically similar to comparing two shapes, such as those in \autoref{fig:two_shapes}. If you think you have a good handle on comparing these two shapes, then it is because humans have very highly evolved eyes and brains. As we will see in \autoref{chapter:white_blood_cells}, training a computer to detect and differentiate objects is more difficult than you think!
 
 \begin{figure}[h]
 	\centering
@@ -470,53 +466,43 @@ Comparing two protein structures is intrinsically similar to comparing two shape
 	\label{fig:two_shapes}
 \end{figure}
 
-If you think you have a good handle on comparing the two shapes in \autoref{fig:two_shapes}, then it is because humans have very highly evolved eyes and brains. As we will see in \autoref{chapter:white_blood_cells}, training a computer to detect and differentiate objects is more difficult than you think!
-
 We would like to develop a distance function $d(S, T)$ quantifying how different two shapes \textit{S} and \textit{T} are. If \textit{S} and \textit{T} are the same, then $d(S, T)$ should be equal to zero; the more different \textit{S} and \textit{T} become, the larger \textit{d} should become.
 
-You may have noticed that the two shapes in \autoref{fig:two_shapes} are, in fact, identical. To demonstrate that this is true, we can first move the red shape to superimpose it over the blue shape, then flip the red shape, and finally rotate it so that its boundary coincides with the blue shape (\autoref{fig:shape_transformation}). In general, if a shape \textit{S} can be translated, flipped, and/or rotated to produce shape \textit{T}, then \textit{S} and \textit{T} are the same shape, and so $d(S, T)$ should be equal to zero. The question is what $d(S, T)$ should be if \textit{S} and \textit{T} are not the same shape.
+You may have noticed that the two shapes in \autoref{fig:two_shapes} are, in fact, identical. To demonstrate that this is true, we can first move the red shape to superimpose it over the blue shape, then flip the red shape, and finally rotate it so that its boundary coincides with the blue shape (\autoref{fig:shape_transformation}). In general, if a shape \textit{S} can be translated, flipped, and/or rotated to produce shape \textit{T}, then \textit{S} and \textit{T} are the same shape, and so $d(S, T)$ should be equal to zero. The question is what $d(S, T)$ should be if \textit{S} and \textit{T} are not the same shape.\\
 
-\begin{figure}[p]
+\begin{figure}[h]
 	\centering
 	\tabcolsep = 1em
 	\mySfFamily
-	\begin{tabular}{c}
-		\includegraphics[width = 0.6\textwidth]{../images/shape_transformation1.png}\\[2ex]
-		\includegraphics[width = 0.25\textwidth]{../images/shape_transformation2.png} \\[2ex]
-		\includegraphics[width = 0.25\textwidth]{../images/shape_transformation3.png}\\[2ex]
-		\includegraphics[width = 0.25\textwidth]{../images/shape_transformation4.png} \\
+	\begin{tabular}{c c c}
+		\includegraphics[width = 0.25\textwidth]{../images/shape_transformation2.png} & 
+\includegraphics[width = 0.25\textwidth]{../images/shape_transformation3.png} &  \includegraphics[width = 0.25\textwidth]{../images/shape_transformation4.png}
 	\end{tabular}
-	\caption{(First panel) The two example shapes from \autoref{fig:two_shapes}. (Second panel) aligning the two shapes. (Third panel) Flipping the red shape across its vertical axis. (Fourth panel) Rotating the red shape reveals that it is identical to the blue shape.}
+	\caption{ (First panel) Aligning the two shapes from \autoref{fig:two_shapes} to have the same center of mass. (Second panel) Flipping the red shape across its vertical axis. (Third panel) Rotating the red shape reveals that it is identical to the blue shape.}
 	\label{fig:shape_transformation}
 \end{figure}
 
-Our idea for defining $d(S, T)$, then, is first to translate, flip, and rotate \textit{S} so that it resembles \textit{T} ``as much as possible'' to give us a fair comparison. Once we have done so, we will devise a metric to quantify the difference between the two shapes that will represent $d(S, T)$.
+Our idea for defining $d(S, T)$, then, is first to translate, flip, and rotate \textit{S} so that it resembles \textit{T} ``as much as possible'' to give us a fair comparison. Once we have done so, we should devise a metric to quantify the difference between the two shapes that will represent $d(S, T)$.
 
-We first translate \textit{S} to have the same \textdef{center of mass}{center of mass}{the point corresponding to a shape whose coordinates are the averages of respective coordinates of points on the shape} as \textit{T}. The center of mass of \textit{S} is found at the point $(x_{S}, y_{S})$ such that $x_{S}$ and $y_{S}$ are the respective averages of the \textit{x}-coordinates and \textit{y}-coordinates on the boundary of \textit{S}.
+We first translate \textit{S} to have the same \textdef{center of mass}{center of mass}{the point corresponding to a shape whose coordinates are the averages of respective coordinates of points on the shape} as \textit{T}. The center of mass of \textit{S} is found at the point $(x_{S}, y_{S})$ such that $x_{S}$ and $y_{S}$ are the respective averages of the \textit{x}-coordinates and \textit{y}-coordinates on the boundary of \textit{S}. The center of mass of some shapes can be determined mathematically. But for irregular shapes, we will first sample \textvar{n} points from the boundary of \textvar{S} and then estimate $x_S$ and $y_S$ as the average of all the respective \textvar{x}- and \textvar{y}-coordinates from the sampled points.
 
-The center of mass of some shapes can be determined mathematically. But for irregular shapes, we will first sample \textvar{n} points from the boundary of \textvar{S} and then estimate $x_S$ and $y_S$ as the average of all the respective \textvar{x}- and \textvar{y}-coordinates from the sampled points.
-
-After finding the centers of mass of the two shapes \textit{S} and \textit{T} that we wish to compare, we translate \textit{S} so that it has the same center of mass as \textit{T}. We then wish to find the rotation of \textit{S}, possibly along with a flip as well, that makes the shape resemble \textit{T} as much as possible.
-
-Imagine that we have found the desired rotation; we are now ready to define $d(S, T)$ in the following way. We sample \textit{n} points along the boundary of each shape, converting \textit{S} and \textit{T} into \textdefnogloss{vectors} $\mathbf{s} = (s_{1}, \ldots, s_{n})$ and $\mathbf{t} = (t_{1}, \ldots, t_{n})$, where $s_{i}$ is the \textit{i}-th point on the boundary of \textit{S}. The \textdef{root mean square deviation (RMSD)}{root mean square deviation (RMSD)}{the square root of the average squared distance between corresponding points in two vectors} between the two shapes is the square root of the average squared distance between corresponding points in the vectors,
+Next, imagine that we have found the desired rotation and flip of \textvar{S} that makes it resemble \textit{T} as much as possible; we are now ready to define $d(S, T)$ in the following way. We sample \textit{n} points along the boundary of each shape, converting \textit{S} and \textit{T} into \textdefnogloss{vectors} $\mathbf{s} = (s_{1}, \ldots, s_{n})$ and $\mathbf{t} = (t_{1}, \ldots, t_{n})$, where $s_{i}$ is the \textit{i}-th point on the boundary of \textit{S}. The \textdef{root mean square deviation (RMSD)}{root mean square deviation (RMSD)}{the square root of the average squared distance between corresponding points in two vectors} between the two vectors is the square root of the average squared distance between corresponding points,
 
 \begin{center}
-$\text{RMSD}(\mathbf{s}, \mathbf{t}) = \sqrt{\dfrac{1}{n} \cdot \left(d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2\right)}$\,.
+$\text{RMSD}(\mathbf{s}, \mathbf{t}) = \sqrt{\dfrac{1}{n} \cdot \left[d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2\right]}$\,.
 \end{center}
 
 \noindent In this formula, $d(s_{i}, t_{i})$ is the distance between the points $s_{i}$ and $t_{i}$.\\
 
 \begin{note}[%
-	RMSD is a very commonly used approach across data science when measuring the differences between two vectors.
+	RMSD is a common approach across data science when measuring the differences between two vectors.
 	]\end{note}
 
-For an example two-dimensional RMSD calculation, consider \autoref{fig:rmsd_simple_shapes}, which shows two shapes with four points sampled from each. (Note: for simplicity, the shapes do not have the same center of mass.) The distances between corresponding points in this figure are equal to $\sqrt{2}$, 1, 4, and $\sqrt{2}$. As a result, we compute the RMSD as follows:
-\begin{align*}
-	\text{RMSD}(\mathbf{s}, \mathbf{t}) &= \sqrt{\dfrac{1}{4} \cdot (\sqrt{2}^2 + 1^2 + 2^2 + \sqrt{2}^2)} \\
-	&= \sqrt{\dfrac{1}{4} \cdot 9}\\
-	&= \sqrt{\dfrac{9}{4}}\\
-	&= \dfrac{3}{2}
-\end{align*}
+For an example two-dimensional RMSD calculation, consider \autoref{fig:rmsd_simple_shapes}, which shows two shapes with four points sampled from each. (For simplicity, the shapes do not have the same center of mass.) The distances between corresponding points in this figure are equal to $\sqrt{2}$, 1, 4, and $\sqrt{2}$. As a result, we compute the RMSD as
+
+\begin{center}
+$\text{RMSD}(\mathbf{s}, \mathbf{t}) = \sqrt{\dfrac{1}{4} \cdot (\sqrt{2}^2 + 1^2 + 2^2 + \sqrt{2}^2)} = \sqrt{\dfrac{9}{4}} = \dfrac{3}{2}\,.$
+\end{center}
 
 \begin{figure}[h]
 	\centering
@@ -530,22 +516,24 @@ For an example two-dimensional RMSD calculation, consider \autoref{fig:rmsd_simp
 	Do you see any issues with using RMSD to compare two shapes?
 ]\end{qbox}
 
-Even if we assume that two shapes have already been overlapped and rotated appropriately, we still should ensure that we sample enough points to give a good approximation of how different the shapes are. Consider a circle inscribed within a square (\autoref{fig:circle_square_undersampling}). If we happened to sample only the four points indicated, then we would sample the same points for each shape and conclude that the RMSD between these two shapes is equal to zero. Fortunately, this issue is easily resolved by making sure to sample enough points from the shape boundaries.\\
+Even if we assume that two shapes have already been overlapped and rotated appropriately, we still should ensure that we sample enough points to give a good approximation of how different the shapes are. Consider a circle inscribed within a square (\autoref{fig:circle_square_undersampling}). If we happened to sample only the four points indicated in this figure, then we would sample the same points for each shape and conclude that the RMSD between these two shapes is equal to zero. Fortunately, this issue is easily resolved by making sure to sample enough points from the shape boundaries.
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.4\textwidth]{../images/circle_square_undersampling.png}
-	\caption{A circle inscribed within a square. Sampling of the four points where the shapes intersect will give a flawed estimate of zero for the RMSD.}
+	\caption{A circle inscribed within a square. Sampling of only the four points where the shapes intersect will give an RMSD of zero, a flawed estimate for the distance between the two shapes.}
 	\label{fig:circle_square_undersampling}
 \end{figure}
 
-Throughout the above discussion, we have assumed that we already rotated (and possibly flipped) \textit{S} to be as ``similar'' to \textit{T} as possible. In practice, after superimposing \textit{S} and \textit{T} to have the same center of mass, we would like to find the flip and/or rotation of \textit{S} that \textit{minimizes} the RMSD between our vectorizations of \textit{S} and \textit{T} over all possible ways of flipping and rotating \textit{S}; fortunately, this flip and/or rotation can be found with an approach called the \textdef{Kabsch algorithm}{Kabsch algorithm}{an algorithm that identifies the best alignment of two shapes} that relies on some advanced linear algebra and is beyond the scope of this work. After applying the Kabsch algorithm to rotate and/or flip $S$, we set our desired distance $d(S, T)$ equal to the RMSD between the shapes' vectors of sampled points.
+Throughout the above discussion, we have assumed that we already rotated (and possibly flipped) \textit{S} to be as ``similar'' to \textit{T} as possible. In practice, after superimposing \textit{S} and \textit{T} to have the same center of mass, we would like to find the flip and/or rotation of \textit{S} that \textit{minimizes} the RMSD between our vectorizations of \textit{S} and \textit{T} over all possible ways of flipping and rotating \textit{S}. This flip and/or rotation can be found with an approach called the \textdef{Kabsch algorithm}{Kabsch algorithm}{an algorithm that identifies the best alignment of two shapes} that relies on some advanced linear algebra and is beyond the scope of this work. After applying the Kabsch algorithm to rotate and/or flip $S$, we set our desired distance $d(S, T)$ equal to the RMSD between the shapes' vectors of sampled points.
 
 \phantomsection
 \subsection{PDB format encodes a protein's structure}
 
-The Kabsch algorithm offers a compelling way to determine the similarity of two protein structures. We can convert a protein containing \textit{n} amino acids into a vector of length \textit{n} by selecting a single representative point from each amino acid. We typically use the alpha carbon, the amino acid's centrally located carbon atom (recall the chemical structure of an amino acid from \autoref{fig:AminoAcid}).\\
+The Kabsch algorithm offers a compelling way to determine the similarity of two protein structures. We can convert a protein containing \textit{n} amino acids into a vector of length \textit{n} by selecting a single representative point from each amino acid. For this representative point, we typically use the alpha carbon, the amino acid's centrally located carbon atom (recall the chemical structure of an amino acid from \autoref{fig:AminoAcid}).
+
+Whether a protein structure is experimentally validated or predicted by an algorithm, the structure is often represented in a unified file format used by the PDB called \texttt{.pdb} format (\autoref{fig:simplifiedPDB}). In this format, each atom in the protein is labeled according to several different characteristics, including: the element from which the atom derives; the amino acid in which the atom is contained; the chain on which this amino acid is found; the position of the amino acid within this chain; and the 3D coordinates $(x, y, z)$ of the atom in angstroms ($10^{-10}$ meters).\\
 
 \begin{figure}[h]
 \centering
@@ -576,11 +564,9 @@ The Kabsch algorithm offers a compelling way to determine the similarity of two 
 \gray{2174} & ATOM & 16 & CZ & TYR& A & 28 & 173.161& 246.477& 224.723\\
 \gray{2175} & ATOM & 17 & OH & TYR& A & 28 & 172.710& 245.746& 225.795
 \end{tabular}
-\caption{Lines \text{2,159} to \text{2,175} of the \texttt{.pdb} file for the experimentally verified SARS-CoV-2 spike protein structure, PDB entry \href{http://www.rcsb.org/structure/6VXX}{6vxx}. These 17 lines contain information on the atoms taken from two amino acids, alanine and tyrosine. The rows corresponding to these amino acids' alpha carbons are shown in green and appear as ``CA'' under the ``Element'' column.  We have labeled the columns to make it clear what each column corresponds to: ``Index'' refers to the number of the amino acid; ``Element'' identifies the chemical element to which this atom corresponds; ``Chain'' indicates which chain the atom is found on; ``Position'' identifies the position in the protein of the amino acid from which the atom is taken; ``Coordinates'' indicates the \textvar{x}, \textvar{y}, and \textvar{z} coordinates of the atom's location (in angstroms).}
+\caption{Lines \text{2,159} to \text{2,175} of the \texttt{.pdb} file for the experimentally verified SARS-CoV-2 spike protein structure, PDB entry \href{http://www.rcsb.org/structure/6VXX}{6vxx}. These 17 lines contain information on the atoms taken from two amino acids, alanine and tyrosine. The rows corresponding to these amino acids' alpha carbons are shown in green and appear as ``CA'' under the ``Element'' column.  Column labels are as follows: ``Index'' refers to the number of the amino acid; ``Element'' identifies the chemical element to which this atom corresponds; ``Chain'' indicates the chain on which the atom is found; ``Position'' identifies the position in the protein of the amino acid from which the atom is taken; ``Coordinates'' indicates the \textvar{x}, \textvar{y}, and \textvar{z} coordinates of the atom's position (in angstroms).}
 \label{fig:simplifiedPDB}
 \end{figure}
-
-Whether a protein structure is experimentally validated or predicted by an algorithm, the structure is often represented in a unified file format used by the PDB called \texttt{.pdb} format (\autoref{fig:simplifiedPDB}). In this format, each atom in the protein is labeled according to several different characteristics, including: the element from which the atom derives; the amino acid in which the atom is contained; the chain on which this amino acid is found; the position of the amino acid within this chain; and the 3D coordinates $(x, y, z)$ of the atom in angstroms ($10^{-10}$ meters).\\
 
 \begin{note}[%
 	\autoref{fig:simplifiedPDB} shows just part of the information needed to fully represent a protein structure. For example, a \texttt{.pdb} file will also contain information about the disulfide bonds between amino acids. For more information, consult the \href{http://www.wwpdb.org/documentation/file-format}{official PDB documentation}.
@@ -589,13 +575,13 @@ Whether a protein structure is experimentally validated or predicted by an algor
 \phantomsection
 \subsection{The Kabsch algorithm can be fooled}
 
-Although the Kabsch algorithm is powerful, we should be careful when using it. Consider \autoref{fig:RMSD_weakness_mutation}, which shows two toy protein structures; the orange structure (\textit{S}) is identical to the blue structure (\textit{T}) except for a change in a single bond angle between the third and fourth amino acids. And yet this tiny change in the protein's structure causes a significant increase in $d(s_{i}, t_{i})$ for every \textit{i} greater than 3, which inflates the RMSD.
+Although the Kabsch algorithm is powerful, we should be careful when applying it. Consider \autoref{fig:RMSD_weakness_mutation}, which shows two toy protein structures; the orange structure (\textit{S}) is identical to the blue structure (\textit{T}) except for a change in a single bond angle between the third and fourth amino acids. And yet this tiny change in the protein's structure causes a significant increase in $d(s_{i}, t_{i})$ for every \textit{i} greater than 3, which inflates the RMSD.
 
 \begin{figure}[p]
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.85\textwidth]{../images/RMSD_weakness_mutation.png}
-	\caption{(Top) Two hypothetical protein structures that differ in only a single bond angle between the third and fourth amino acids, shown in red. Each circle represents an alpha carbon. (Bottom left) Superimposing the first three amino acids shows how much the change in the bond angle throws off the computation of RMSD by increasing the distances between corresponding alpha carbons. (Bottom right) The Kabsch algorithm would align the centers of gravity of the two structures in order to minimize RMSD between corresponding alpha carbons. This alignment belies the similarity in the structures and makes it difficult for the untrained observer to notice that the two proteins only differ in a single bond angle.}
+	\caption{(Top) Two hypothetical protein structures that differ in only a single bond angle between the third and fourth amino acids, shown in red. Each circle represents an alpha carbon. (Bottom left) Superimposing the first three amino acids shows how much the change in the bond angle throws off the computation of RMSD by increasing the distances between corresponding alpha carbons. (Bottom right) The Kabsch algorithm would align the centers of gravity of the two structures in order to minimize RMSD between corresponding alpha carbons. This alignment belies the similarity in the structures and makes it difficult for the untrained observer to notice the proteins' similarity.}
 	\label{fig:RMSD_weakness_mutation}
 \end{figure}
 
@@ -609,19 +595,17 @@ Another way in which the Kabsch algorithm can be tricked is in the case of an ap
 	\label{fig:RMSD_weakness_loop}
 \end{figure}
 
-To address this second issue, biologists will often align the sequences of two proteins first, discarding any positions that do not align well when it comes time to perform the RMSD calculation. We will soon see an example of a protein sequence alignment when comparing the coronavirus spike proteins.
+To address this second issue, biologists often first align the sequences of two proteins, discarding any amino acids that do not align before performing a vectorization of structures for the RMSD calculation. We will soon see an example of a protein sequence alignment when comparing the coronavirus spike proteins.
 
 In short, if the RMSD of two proteins is \textit{large}, then we should be wary of concluding that the proteins are very different, and we may need to combine RMSD with other methods of structure comparison. But if the RMSD is \textit{small} (e.g., just a few angstroms), then we can have confidence that the proteins are indeed similar.
 
-We are now ready to apply the Kabsch algorithm to compare the structures that we predicted for human hemoglobin subunit alpha and the SARS-CoV-2 spike protein against their experimentally validated structures. \tutorial[coronavirus/tutorial_rmsd]
+Earlier in this chapter, we used protein structure prediction software to predict the structure of human hemoglobin subunit alpha (using \textit{ab initio} modeling) and the SARS-CoV-2 spike protein (using homology modeling). We are now ready to apply the Kabsch algorithm to compare the structures that we predicted for human hemoglobin subunit alpha and the SARS-CoV-2 spike protein against their respective experimentally validated structures. \tutorial[coronavirus/tutorial_rmsd]
 
 \FloatBarrier
 \phantomsection
-\subsection{Assessing the accuracy of our structure prediction models}
+\subsection{Applying the Kabsch algorithm to predicted structures}
 
-Earlier in this chapter, we used publicly available protein structure prediction servers to predict the structure of human hemoglobin subunit alpha (using \textit{ab initio} modeling) and the SARS-CoV-2 spike protein (using homology modeling). We will now see how well our models performed by showing the values of RMSD produced by the Kabsch algorithm when comparing each of these models against the validated structures.
-
-\autoref{fig:quark_rmsd_table} shows the RMSD between each of the five predicted structures returned by QUARK and the validated structure of human hemoglobin subunit alpha. We are tempted to conclude that our \textit{ab initio} prediction was a success. However, because human hemoglobin subunit alpha is so short (141 amino acids), researchers would consider this RMSD score to be high.\fudgespace
+\autoref{fig:quark_rmsd_table} shows the RMSD between each of the five predicted structures returned by QUARK and the validated structure of human hemoglobin subunit alpha. We are tempted to conclude that our \textit{ab initio} prediction was a success. However, because human hemoglobin subunit alpha is so short (141 amino acids), researchers would consider this RMSD score to be high.
 
 \begin{figure}[h]
 	\centering
@@ -638,11 +622,6 @@ Earlier in this chapter, we used publicly available protein structure prediction
 	\caption{The RMSD of five models of human hemoglobin subunit alpha predicted by QUARK compared against the protein's validated structure (PDB entry: \href{https://www.rcsb.org/structure/1si4}{1si4}).}
 	\label{fig:quark_rmsd_table}
 \end{figure}
-
-
-\FloatBarrier
-\phantomsection
-\subsection{Homology models of the SARS-CoV-2 spike protein}
 
 We also used GalaxyWeb to predict the structure of the SARS-CoV-2 spike protein's RBD, Robetta to predict the structure of a single chain, and SWISS-MODEL to predict the structure of the entire protein. \autoref{fig:sars-cov-2_rmsd_table} compiles the RMSD of structures predicted by this homology modeling software against experimental results.\\
 
@@ -666,7 +645,7 @@ We also used GalaxyWeb to predict the structure of the SARS-CoV-2 spike protein'
 		SWISS-Model 2 & 11.3432 \\
 		SWISS-Model 3 & 11.3432 \\
 	\end{tabular}
-	\caption{A table containing the RMSD of SARS-CoV-2 spike protein structures predicted by software against the known structure. GalaxyWEB's results are compared against the RBD (PDB entry: \href{https://www.rcsb.org/structure/6lzg}{6lzg}); Robetta's results are compared against a single chain, and SWISS-Model's are compared against the entire protein (PDB entry: \href{https://www.rcsb.org/structure/6vxx}{6vxx}).}
+	\caption{A table containing the RMSD of SARS-CoV-2 spike protein structures predicted by software compared against the known structure. GalaxyWEB's results are compared against the RBD (PDB entry: \href{https://www.rcsb.org/structure/6lzg}{6lzg}); Robetta's results are compared against a single chain of the protein, and SWISS-Model's are compared against the entire protein (PDB entry: \href{https://www.rcsb.org/structure/6vxx}{6vxx}).}
 	\label{fig:sars-cov-2_rmsd_table}
 \end{figure}
 
@@ -679,9 +658,9 @@ The GalaxyWEB models have an excellent RMSD score and can be considered very acc
 \phantomsection
 \subsection{Distributing the work of protein structure prediction around the world}
 
-Two leading structure prediction projects, \href{https://boinc.bakerlab.org}{Rosetta@home} and \href{https://foldingathome.org}{Folding@home}, encourage volunteers to download their software and contribute to a gigantic \textit{distributed} effort to predict protein shape. Even with a modest laptop, a user can donate some of their computer's idle resources to contribute to the problem of protein structure prediction. While some researchers were working to elucidate the structure of the SARS-CoV-2 spike protein experimentally, thousands of users were devoting their computers to the cause of predicting the protein's structure computationally.
+While some researchers were working to elucidate the structure of the SARS-CoV-2 spike protein experimentally, thousands of users were enlisting their computers to predict the protein's structure computationally. Two leading structure prediction projects, \href{https://boinc.bakerlab.org}{Rosetta@home} and \href{https://foldingathome.org}{Folding@home}, encourage volunteers to download their software and contribute to a gigantic \textit{distributed} effort to predict protein shape. Even with a modest laptop, a user can donate some of their computer's idle resources to help predict protein structure. 
 
-The RMSD values for the models predicted by Rosetta@Home are shown in \autoref{fig:ssgcid_rmsd_table}. As we might expect due to having access to thousands of users' computers, these models outperform our own from \autoref{fig:sars-cov-2_rmsd_table}. Yet a typical threshold for whether a predicted structure is accurate is if its RMSD compared to a validated structure is smaller than 2.0 angstroms, a test that the models in \autoref{fig:ssgcid_rmsd_table} do not pass.
+\autoref{fig:ssgcid_rmsd_table} shows the RMSD values for the models predicted by Rosetta@Home. As we might expect, these models outperform our own models from \autoref{fig:sars-cov-2_rmsd_table}. Yet a typical threshold for whether a predicted structure is accurate is if, when compared to a validated structure, its RMSD is smaller than 2.0 angstroms, a test that the models in \autoref{fig:ssgcid_rmsd_table} do not pass.\\
 
 \begin{figure}[h]
 	\centering
@@ -695,11 +674,11 @@ The RMSD values for the models predicted by Rosetta@Home are shown in \autoref{f
 		Model 4  & 2.047\phantom{x} & 2.0854 \\
 		Model 5  & 4.6443 & 4.9636
 	\end{tabular}
-	\caption{A table containing the the calculated RMSD of the Rosetta@Home models of SARS-CoV-2 spike protein, full protein and single chain, compared to the validated structure (PDB entry: \href{https://www.rcsb.org/structure/6vxx}{6vxx}).}
+	\caption{A table containing the RMSD of the Rosetta@Home models of the SARS-CoV-2 full spike protein and single chain, as compared to the validated structure (PDB entry: \href{https://www.rcsb.org/structure/6vxx}{6vxx}).}
 	\label{fig:ssgcid_rmsd_table}
 \end{figure}
 
-The inability of even powerful models to obtain an accurate predicted structure may make it seem that protein structure prediction is a lost cause. Perhaps biochemists should head back to expensive experimental validations and ignore the musings of computational scientists. In the next section, which serves as the midpoint of this chapter, we will find hope.\\
+The inability of even powerful models to obtain an accurate predicted structure for the SARS-CoV-2 spike protein may make it seem that protein structure prediction is a lost cause. Perhaps biochemists should head back to their expensive experimental validations and ignore the musings of computational scientists. In the next section, which concludes the first part of this chapter, we will find hope.\\
 
 \phantomsection
 
