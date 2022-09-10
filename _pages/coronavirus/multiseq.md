@@ -20,7 +20,7 @@ In part 1, we saw that the spike protein is much more variable than other region
 Variable and conserved regions in the SARS-CoV and SARS-CoV-2 spike proteins. The S1 domain tends to be more variable, whereas the S2 domain is more conserved.
 {: style="font-size: medium;"}
 
-One variable spike protein region is the **receptor binding motif (RBM)**, part of the receptor binding domain (RBD), whose structure we predicted using GalaxyWEB in the [homology modeling tutorial](tutorial_homology). The RBM is the component of the RBD that mediates contact with ACE2, as the following simplified animation of the process illustrates.
+One variable spike protein region is the **receptor binding motif (RBM)**, part of the receptor binding domain (RBD), whose structure we predicted using GalaxyWEB in the [homology modeling tutorial](tutorial_homology). The RBM mediates contact with ACE2, as the following simplified animation of the process illustrates.
 
 {% include video id="e2Qi-hAXdJo" provider="youtube" %}
 
