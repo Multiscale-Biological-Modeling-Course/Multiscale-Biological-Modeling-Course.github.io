@@ -10,7 +10,7 @@ image: "../assets/images/normal_adult_blood_smear.JPG"
 
 ## Stone tablets and lost cities
 
-Imagine that you are a traveler to Earth and come across the ruins of New York City. You find an old road atlas that has driving distances between cities (in miles), shown in the table below. Can you use this atlas to find the other cities in the table? In an [earlier module](../chemotaxis/home), we encountered a "Lost Immortals" problem; this problem, of inferring the locations of cities given the distance between them, we call "Lost Cities".
+Imagine that you are a traveler to Earth and come across the ruins of New York City. You find an old road atlas that has a table of driving distances between cities (in miles), shown in the table below. Can you use this atlas to find the other cities in the table? In an [earlier module](../chemotaxis/home), we encountered a "Lost Immortals" problem; this problem, of inferring the locations of cities given the distance between them, we call "Lost Cities".
 
 | | New York | Los Angeles | Pittsburgh | Miami | Houston | Seattle |
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
@@ -26,7 +26,7 @@ Imagine that you are a traveler to Earth and come across the ruins of New York C
 
 This seemingly contrived example has a real archaeological counterpart. In 2019, researchers used commercial records that had been engraved by Assyrian merchants onto 19th Century BCE stone tablets in order to estimate distances between pairs of lost Bronze age cities in present-day Turkey. Using this "atlas" of sorts, they estimated the locations of the lost cities.[^Barjamovich2019]
 
-You may be confused as to why biologists should care about stone tablets and lost cities. Let us therefore return to our problem of classifying segmented WBC images by family.
+You may be confused as to why biologists should care about stone tablets and lost cities. For now, we will return to our problem of classifying segmented WBC images by family.
 
 ## Vectorizing a segmented image
 
@@ -39,13 +39,13 @@ We will apply the same idea to vectorize our segmented WBCs. Given a binarized W
 **Note:** Both isolating the boundary of a binarized image and sampling points from this boundary to ensure that points are similarly spaced are challenging tasks that are outside the scope of our work here, and which we will let CellOrganizer handle for us.
 {: .notice--info}
 
-To determine the "distance" between two images' shape vectors, we will use our old friend root mean square deviation (RMSD), which is very similar to the Euclidean distance. Given shape vectors **s** and **t**, the RMSD between these vectors is
+To determine the "distance" between two images' shape vectors, we will use our old friend root mean square deviation (RMSD), which is very similar to the Euclidean distance. Recall that the RMSD between shape vectors *s* and *t* is
 
-$$\text{RMSD}(\mathbf{s}, \mathbf{t}) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)}\,. $$
+$$\text{RMSD}(\mathbf{s}, \mathbf{t}) = \sqrt{\dfrac{1}{n} \cdot [d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2]}\,. $$
 
 ## Inferring a shape space from pairwise distances
 
-It is tempting to take the vectorization of every shape as our desired shape space. If this were the case, then we would hope that images of similarly shaped nuclei will have low RMSD and that the more dissimilar two nuclei become, the higher the RMSD of their shape vectors. The potential issues with this assumption are the same as those encountered when discussing protein structures, which we now review.
+It is tempting to take the vectorization of every shape as our desired shape space. If this were the case, then we would hope that images of similarly shaped nuclei would have low RMSD and that the more dissimilar two nuclei become, the higher the RMSD of their shape vectors. The potential issues with this assumption are the same as those encountered when discussing protein structures, which we now review.
 
 On the one hand, we need to ensure that the number of points that we sample from the object boundary is sufficiently high to avoid dissimilar shapes from having low RMSD. For this reason, CellOrganizer samples *n* = 1000 points by default for cell nuclei.
 
@@ -57,7 +57,7 @@ Two identical shapes, with one shape flipped and rotated. Vectorizing these shap
 
 We handled the latter issue in our work on protein structure comparison by introducing the Kabsch algorithm, which identified the best rotation of one shape into another that would minimize the RMSD of the resulting vectors. Yet what makes our work here more complicated is that we are not comparing  two WBC image shape vectors, we are comparing hundreds.
 
-However, we could apply the Kabsch algorithm to every pair of images, producing the RMSD between every pair of images. We would then need to build a shape space from all these distances between pairs of shapes. We hope that this problem sounds familiar, as it is the Lost Cities problem in disguise. The pairs of distances between images correspond to a road atlas, and placing images into a shape space corresponds to locating cities.
+We could apply the Kabsch algorithm to every pair of images, producing the RMSD between every pair of images. We would then need to build a shape space from all these distances between pairs of shapes. We hope that this problem sounds familiar, as it is the Lost Cities problem in disguise. The pairs of distances between images correspond to a road atlas, and placing images into a shape space corresponds to locating cities.
 
 **Note:** CellOrganizer includes one model that applies an alternative approach to the Kabsch algorithm for computing a cellular distance, called the **diffeomorphic distance**[^Rohde2008], which can be thought of intuitively as determining the amount of energy required to deform one shape into another.
 {: .notice--info}
@@ -69,9 +69,9 @@ Statisticians have devised a collection of approaches called multi-dimensional s
 
 ## Aligning many images concurrently
 
-Unfortunately, if we have a large dataset, then computing the distance between every pair of objects can prove time-intensive, even with a powerful computer. Instead, we will rotate all images *concurrently*. After this alignment, we can then center and vectorize all the images starting at the same position.
+Unfortunately, for a large image dataset, computing the distance between every pair of images can prove time-intensive, even with a powerful computer. Instead, we will rotate all images *concurrently*. After this alignment, we can then center and vectorize all the images starting at the same position.
 
-One way of aligning a collection of images is to first identify the **major axis** of each image, which is the line segment crossing through the image's center of mass that is as long as possible. The figure below shows the major axis for a few similar shapes.
+One way of aligning a collection of images is to first identify the **major axis** of each image, which is the longest line segment that connects two points on the outside of the image and crosses through the image's center of mass. The figure below shows the major axis for a few similar shapes.
 
 [![image-center](../assets/images/600px/three_similar_shapes_unaligned.png){: .align-center}](../assets/images/three_similar_shapes_unaligned.png)
 Three similar shapes, with their major axes highlighted in gray.
@@ -80,7 +80,7 @@ Three similar shapes, with their major axes highlighted in gray.
 Aligning the major axes of these similar shapes reveals their similarities (see figure below). These images are ready to be vectorized (say, starting from the point on the right side of an image's major axis and proceeding counterclockwise). The resulting vectors will have low RMSD because corresponding points on the shapes will be nearby.
 
 [![image-center](../assets/images/600px/three_similar_shapes_aligned.png){: .align-center width="300px"}](../assets/images/three_similar_shapes_aligned.png)
-Aligning the three images from the previous figure so that their major axes overlap allows us to see similarities between the shapes as well as build consistent shape vectors for them.
+Aligning the three images from the previous figure so that their major axes overlap allows us to see similarities between the shapes as well as build shape vectors for them having a consistent frame of reference.
 {: style="font-size: medium;"}
 
 **Note:** In practice, when we align shapes along their major axes, we need to consider the flip of each shape across its major axis as well. Handling this issue is beyond the scope of our work here but is discussed in the literature.[^Pincus2007]

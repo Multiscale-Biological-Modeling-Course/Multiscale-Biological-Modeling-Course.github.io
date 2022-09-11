@@ -288,7 +288,7 @@ We now have learned how to use k-NN to classify feature vectors with unknown cla
 
 \subsection{Stone tablets and lost cities}
 
-Imagine that you are an interstellar traveler to Earth and come across the ruins of New York City. You find an old road atlas that has driving distances between cities (\autoref{fig:atlas}). Can you use this atlas to find the other cities? In \autoref{chapter:chemotaxis}, we encountered a ``Lost Immortals'' problem; we call the problem of inferring the locations of cities given the distance between them the ``Lost Cities'' problem.\\
+Imagine that you are an interstellar traveler to Earth and come across the ruins of New York City. You find an old road atlas that has a table of driving distances between cities (\autoref{fig:atlas}). Can you use this atlas to find the other cities? In \autoref{chapter:chemotaxis}, we encountered a ``Lost Immortals'' problem; we call the problem of inferring the locations of cities given the distance between them the ``Lost Cities'' problem.\\
 
 \begin{figure}[h]
 \centering
@@ -316,7 +316,7 @@ If you know the location of New York, how could you use the information in \auto
 
 This seemingly contrived example has a real archaeological counterpart. In 2019, researchers used commercial records that had been engraved by Assyrian merchants onto 19th Century BCE stone tablets in order to estimate distances between pairs of Bronze age cities in present-day Turkey. Using this ``atlas'' of sorts, they estimated the locations of lost cities.
 
-You may be confused as to why biologists should care about stone tablets and lost cities. Let us therefore return to our problem of classifying segmented WBC images by family.
+You may be confused as to why biologists should care about stone tablets and lost cities. For now, we will return to our problem of classifying segmented WBC images by family.
 
 \FloatBarrier
 \phantomsection
@@ -332,21 +332,23 @@ We will apply the same idea to vectorize our segmented WBCs. Given a binarized W
 Both identifying the boundary of a binarized image and sampling points from this boundary to ensure that points are similarly spaced are challenging tasks that are outside the scope of our work here, and which we will let modeling software handle for us.
 ]\end{note}
 
-To determine the ``distance'' between two images' shape vectors, we will use our old friend root mean square deviation (RMSD), which is very similar to the Euclidean distance. Given shape vectors $\mathbf{s}$ and $\mathbf{t}$, the RMSD between these vectors is
+To determine the ``distance'' between two images' shape vectors, we will use our old friend root mean square deviation (RMSD), which is very similar to the Euclidean distance. Recall that the RMSD between shape vectors $\mathbf{s}$ and $\mathbf{t}$ is
 
-$$\text{RMSD}(\mathbf{s}, \mathbf{t}) = \sqrt{\dfrac{1}{n} \cdot (d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2)}\,. $$
+\begin{center}
+$\text{RMSD}(\mathbf{s}, \mathbf{t}) = \sqrt{\dfrac{1}{n} \cdot \left[d(s_1, t_1)^2 + d(s_2, t_2)^2 + \cdots + d(s_n, t_n)^2\right]}\,.$
+\end{center}
 
 \FloatBarrier
 \phantomsection
 \subsection{Inferring a shape space from pairwise distances}
 
-It is tempting to take the vectorization of every shape as our desired shape space. If this were the case, then we would hope that images of similarly shaped nuclei will have low RMSD and that the more dissimilar two nuclei become, the higher the RMSD of their shape vectors. The potential issues with this assumption are the same as those encountered when discussing protein structures, which we now review.
+It is tempting to take the vectorization of every shape as our desired shape space. If this were the case, then we would hope that images of similarly shaped nuclei would have low RMSD and that the more dissimilar two nuclei become, the higher the RMSD of their shape vectors. The potential issues with this assumption are the same as those encountered when discussing protein structures, which we now review.
 
 On the one hand, recall the danger from undersampling from \autoref{fig:circle_square_undersampling}, so that we must ensure that the number of points that we sample from the object boundary is sufficiently high to avoid dissimilar shapes from having low RMSD. On the other hand, we could have very similar shapes whose RMSD winds up being high. For example, recall the shapes in \autoref{fig:two_shapes}, which are identical, but one has been flipped and rotated. If we were to vectorize these shapes as they are now in the same way (say, by starting at the top of the shape and proceeding clockwise), then we would obtain two vectors with high RMSD.
 
 We handled the latter issue in our work on protein structure comparison by introducing the Kabsch algorithm, which identified the best rotation of one shape into another that would minimize the RMSD of the resulting shape vectors. And yet what makes our work here more complicated is that we are not comparing  two WBC image shape vectors, we are comparing hundreds.
 
-However, we could apply the Kabsch algorithm to every pair of images, producing the RMSD between every pair of images. We would then need to build a shape space from all these distances between pairs of shapes. We hope that this problem sounds familiar, as it is the Lost Cities problem in disguise. The pairs of distances between images correspond to a road atlas, and placing images into a shape space corresponds to locating cities.
+We could apply the Kabsch algorithm to every pair of images, producing the RMSD between every pair of images. We would then need to build a shape space from all these distances between pairs of shapes. We hope that this problem sounds familiar, as it is the Lost Cities problem in disguise. The pairs of distances between images correspond to a road atlas, and placing images into a shape space corresponds to locating cities.
 
 Statisticians have devised a collection of approaches called multi-dimensional scaling to solve versions of the Lost Cities problem that arise frequently in practice. The fundamental idea of multi-dimensional scaling is to assign points to \textvar{n}-dimensional space such that the distances between points in this space approximately resemble a collection of distances between pairs of objects in some dataset.\\
 
@@ -358,9 +360,9 @@ If we have \textvar{m} cellular images, then how many times will we need to comp
 \phantomsection
 \subsection{Aligning many images concurrently}
 
-Unfortunately, if we have a large dataset, then computing the distance between every pair of objects can prove time-intensive, even with a powerful computer. Instead, we will rotate all images \textit{concurrently}. After this alignment, we can then center and vectorize all the images starting at the same position.
+Unfortunately, for a large image dataset, computing the distance between every pair of images can prove time-intensive, even with a powerful computer. Instead, we will rotate all images \textit{concurrently}. After this alignment, we can then center and vectorize all the images starting at the same position.
 
-One way of aligning a collection of images is to first identify the \textdef{major axis}{major axis}{the line segment crossing through an object's center of mass that is as long as possible} of each image, which is the line segment crossing through the image's center of mass that is as long as possible. \autoref{fig:three_similar_shapes_unaligned} shows the major axis for a few similar shapes.\\
+One way of aligning a collection of images is to first identify the \textdef{major axis}{major axis}{the longest line segment that connects two points on the outside of an image and crosses through the image's center of mass} of each image, which is the longest line segment that connects two points on the outside of the image and crosses through the image's center of mass. \autoref{fig:three_similar_shapes_unaligned} shows the major axis for a few similar shapes.\\
 
 \begin{figure}[h]
 \centering
@@ -376,7 +378,7 @@ Aligning the major axes of these similar shapes reveals their similarities (\aut
 \centering
 \mySfFamily
 \includegraphics[width = 0.3\textwidth]{../images/three_similar_shapes_aligned.png}
-\caption{Aligning the three images from \autoref{fig:three_similar_shapes_unaligned} so that their major axes overlap allows us to see similarities between the shapes as well as build consistent shape vectors for them.}
+\caption{Aligning the three images from \autoref{fig:three_similar_shapes_unaligned} so that their major axes overlap allows us to see similarities between the shapes as well as build shape vectors for them having a consistent frame of reference.}
 \label{fig:three_similar_shapes_aligned}
 \end{figure}
 
