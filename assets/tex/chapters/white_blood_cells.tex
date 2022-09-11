@@ -28,7 +28,7 @@ The classic device used for counting blood cells is the \textdefnogloss{hemocyto
 \tabcolsep = 1em
 \mySfFamily
 \includegraphics[width = 0.7\textwidth]{../images/hemocytometer.png}
-\caption{(Left) A schematic of a 3 mm by 3 mm hemocytometer, showing grid lines with differing widths. (Right) A hypothetical blood smear within a 0.25 mm by 0.25 mm square, which contains a volume of blood equaling 0.00000625 mL. By counting the number of cells in a region of squares having known volume, researchers can estimate the counts of cells per unit volume of blood.}
+\caption{(Left) A schematic of a 3 mm by 3 mm hemocytometer, showing grid lines with differing widths. (Right) A hypothetical blood smear within a 0.25 mm by 0.25 mm square, which contains a volume of blood equaling 0.00000625 mL. Red cells are RBCs, and purple cells are WBCs. By counting the number of cells in a region of squares having known volume, researchers can estimate the counts of cells per unit volume of blood.}
 \label{fig:hemocytometer}
 \end{figure}
 
@@ -36,13 +36,13 @@ The classic device used for counting blood cells is the \textdefnogloss{hemocyto
 How could the volume of a blood sample influence the estimate of blood cell count?
 ]\end{qbox}
 
-You would not be wrong to think that the hemocytometer seems old-fashioned, as it was invented by Louis-Charles Malassez 150 years ago. To reduce the human error inherent in using this device, what if we train a computer to count blood cells for us?
+You would not be wrong to think that the hemocytometer seems old-fashioned, as it was invented by Louis-Charles Malassez 150 years ago. To reduce the human error inherent in using this device, can we train a computer to count blood cells for us?
 
-We will focus our work on WBCs. WBCs divide into families based on their structure and function, with some diseases causing an abnormally low or high count of cells in a specific WBC class. In this chapter, we therefore have two aims. First, can we excise, or \textdef{segment}{segmentation}{the process of partitioning an image in order to excise objects of interest}, WBCs from cellular images?  Second, can we \textdef{classify}{classification}{the seminal problem of (correctly) categorizing a collection of data} WBCs into their appropriate types?
+In this chapter, we will focus our work on WBCs, which divide into families based on their structure and function, with some diseases causing an abnormally low or high count of cells in a specific family. We therefore have two aims. First, can we excise, or \textdef{segment}{segmentation}{the process of partitioning an image in order to excise objects of interest}, WBCs from cellular images?  Second, can we devise an algorithm to \textdef{classify}{classification}{the seminal problem of (correctly) categorizing a collection of data} WBCs by family?
 
-We will work with a publicly available dataset (\url{https://github.com/Shenggan/BCCD_Dataset}) containing blood cell images that depict both RBCs and WBCs (\autoref{fig:three_families}). The cells have been stained with a red-orange dye that bonds to hemoglobin and a blue dye that bonds to DNA and RNA. RBCs lack a nucleus and will only absorb the red-orange dye, whereas WBCs have a nucleus but lack hemoglobin and will only absorb the blue dye.
+We will work with a \href{https://github.com/Shenggan/BCCD_Dataset}{publicly available dataset} containing blood cell images that depict both RBCs and WBCs (\autoref{fig:three_families}). The cells have been stained with a red-orange dye that bonds to hemoglobin and a blue dye that bonds to DNA and RNA. RBCs lack a nucleus and will only absorb the red-orange dye, whereas WBCs have a nucleus but lack hemoglobin and will only absorb the blue dye.
 
-\autoref{fig:three_families} also illustrates the three main families of WBCs: \textdefnogloss{granulocytes} (left), \textdefnogloss{monocytes} (center), and \textdefnogloss{lymphocytes} (right).  Granulocytes have a \textdef{multilobular nucleus}{multilobular nucleus}{a nucleus consisting of several round ``lobes'' that are linked by thin strands of nuclear material}, which consists of several round ``lobes'' that are linked by thin strands of nuclear material. Monocyte and lymphocyte nuclei only have a single lobe, but monocyte nuclei have a more irregular shape, whereas lymphocyte nuclei are more rounded and take up a greater fraction of the cell's volume.\\
+\autoref{fig:three_families} also illustrates the three main families of WBCs: \textdefnogloss{granulocytes} (left), \textdefnogloss{monocytes} (center), and \textdefnogloss{lymphocytes} (right).  Granulocytes have a \textdef{multilobular nucleus}{multilobular nucleus}{a nucleus consisting of several ``lobes'' that are linked by thin strands of nuclear material}, which consists of several round ``lobes'' that are linked by thin strands of nuclear material. Monocyte and lymphocyte nuclei only have a single lobe, but monocyte nuclei have a more irregular shape, whereas lymphocyte nuclei are more rounded and take up a greater fraction of the cell's volume.\\
 
 \begin{figure}[h]
 \centering
@@ -55,7 +55,7 @@ We will work with a publicly available dataset (\url{https://github.com/Shenggan
 \label{fig:three_families}
 \end{figure}
 
-When you look at the cells in \autoref{fig:three_families}, you may think that our work will be easy. Segmenting WBCs only requires identifying the large purplish regions, and classifying them is just a matter of categorizing them according to the differences in shape that we described above. Yet even after decades of research into computer vision, researchers struggle to attain the precision of the human eye, which is the result of billions of years of evolution.\\
+When you look at the cells in \autoref{fig:three_families}, you may think that our work will be easy. Segmenting WBC nuclei only requires identifying the large purplish regions, and classifying them is just a matter of categorizing them according to the differences in nuclear shape that we described above. Yet even after decades of research into computer vision, researchers struggle to attain the precision of the human eye, a biological apparatus that is the result of billions of years of evolution.\\
 
 \FloatBarrier
 \phantomsection
@@ -65,7 +65,7 @@ When you look at the cells in \autoref{fig:three_families}, you may think that o
 \phantomsection
 \subsection{Image segmentation requires a tailored approach}
 
-We begin our work by discussing how to segment WBCs from blood cell images. Researchers have developed many algorithms for cellular image segmentation, but no single approach can be used in all contexts. We therefore will identify the key attributes that make this dataset special, which we will use to develop our own segmentation algorithm.
+We begin our work by discussing how to segment WBC nuclei from blood cell images like those in \autoref{fig:three_families}. Researchers have developed many algorithms for cellular image segmentation, but no single approach can be used in all contexts. We therefore will identify the key attributes that make this dataset special, which we will use to develop our own segmentation algorithm.
 
 What makes the WBC nucleus so easy for a human to spot in the images in \autoref{fig:three_families}? You may be screaming, ``The nucleus is dark blue! How hard could it be?'' But to train a computer to segment images by color, we should first understand how the computer encodes color in images.
 
@@ -73,29 +73,29 @@ What makes the WBC nucleus so easy for a human to spot in the images in \autoref
 \phantomsection
 \subsection{The RGB color model}
 
-In the \textdef{RGB color model}{RGB color model}{a model in which every rectangular pixel on a computer screen emits a single color formed as a mixture of red, green, and blue}, every rectangular pixel on a computer screen emits a single color formed as a mixture of differing amounts of the three primary colors of light: red, green, and blue (hence the acronym ``RGB''). The amount of each primary color in a pixel is expressed as an integer between 0 and 255, inclusively, with larger integers corresponding to greater amounts of the color.
+In the \textdef{RGB color model}{RGB color model}{a model in which every rectangular pixel on a computer screen emits a single color formed as a mixture of red, green, and blue}, every rectangular pixel on a computer screen emits a single color formed as a mixture of differing amounts of the three primary colors of light: red, green, and blue (hence the acronym ``RGB''). The intensity of each primary color in a pixel is expressed as an integer between 0 and 255, inclusively, with larger integers corresponding to greater intensities.
 
-A few colors are shown in \autoref{fig:RGB_color_chart} along with their RGB equivalents; for example, magenta corresponds to equal parts red and blue. Note that a color like (128, 0, 0) contains only red but appears duskier than (256, 0, 0) because the red light in that pixel has not been fully “turned on”.\\
+A few colors are shown in \autoref{fig:RGB_color_chart} along with their RGB equivalents; for example, magenta corresponds to equal parts red and blue. Note that a color like (128, 0, 0) contains only red but appears duskier than (256, 0, 0) because the red in that pixel is less intense.\\
 
 \begin{figure}[h]
 \centering
 \mySfFamily
 \includegraphics[width = 0.55\textwidth]{../images/RGB_color_chart.png}
-\caption{A collection of colors along with their RGB codes. This table corresponds to mixing colors of light instead of pigment, which causes some non-intuitive effects; for example, yellow is formed by mixing equal parts red and green. The last six colors appear muted because they only receive half of a given color value compared to a color that receives 256 units. If all three colors are mixed in equal proportions, then we obtain a color on the gray scale between white (maximum amount of all three colors) and black (no color).}
+\caption{A collection of colors along with their RGB codes. This table corresponds to mixing colors of light instead of pigment, which causes some non-intuitive effects; for example, yellow is formed by mixing equal parts red and green. The last six colors appear muted because they only receive half of a given color value compared to a color that receives 256 units. If all three colors are mixed in equal proportions, then we obtain a color on the gray scale between white (255, 255, 255) and black (0, 0, 0).}
 \label{fig:RGB_color_chart}
 \end{figure}
 
 The RGB model gives us an idea for segmenting a WBC nucleus. If we scan through the pixels in a blood cell image, we can ignore any pixels whose RGB color values are not sufficiently blue; hopefully, the remaining pixels are found in the WBC nucleus.\\
 
 \begin{qbox}[%
-You can find a color picker in \texttt{Utilities > Digital Color Meter} (Mac OS X) or by using ShareX  (Windows). Open your color picker, and hover the picker over different parts of the granulocyte image in \autoref{fig:three_families} (left). What are the typical RGB values for the WBC nucleus, and how do these RGB values differ from those of the RBCs and the image background?
+You can find a color picker in the Digital Color Meter utility (Mac OS X) or ShareX  (Windows). Open your color picker, and hover the picker over different parts of the granulocyte image in \autoref{fig:three_families} (left). What are the typical RGB values for the WBC nucleus, and how do these RGB values differ from those of the RBCs and the image background?
 ]\end{qbox}
 
 \FloatBarrier
 \phantomsection
 \subsection{Segmenting an image based on a color threshold}
 
-We will \textdefnogloss{binarize} each blood cell image by coloring a pixel white (RGB: (256, 256, 256)) if its blue value is above some threshold, and turning a pixel black (RGB: (0, 0, 0)) if its blue value is beneath some threshold. The binarized version of the granulocyte image from \autoref{fig:three_families} (left) using the threshold value of 153 is shown in \autoref{fig:neutrophil_binarized_blue}. Unfortunately, we cannot clearly see the WBC nucleus in this binarized image because although the nucleus's pixels have high blue values, so do those of the image's background, which emit high percentages of red, green, and blue, producing the background's light appearance.\\
+We will \textdefnogloss{binarize} each blood cell image by coloring a pixel white if its blue value is above some threshold, and coloring a pixel black if its blue value is beneath some threshold. The binarized version of the granulocyte image from \autoref{fig:three_families} (left) using the threshold value of 153 is shown in \autoref{fig:neutrophil_binarized_blue}. Unfortunately, we cannot clearly see the WBC nucleus in this binarized image because although the nucleus's pixels have high blue values, so do those of the image's background, which have high intensities of red, green, and blue, producing the background's light appearance.\\
 
 \begin{figure}[h]
 \centering
@@ -109,7 +109,7 @@ We will \textdefnogloss{binarize} each blood cell image by coloring a pixel whit
 How might we modify our segmentation approach to perform a binarization that identifies the WBC nucleus more effectively?
 ]\end{qbox}
 
-We were unable to distinguish between the image background and the WBC nucleus using blue color values, but a color picker verifies that pixels in the WBC nucleus tend to have a green value that is much lower than the image background and a red value that is lower than every other part of the image. \autoref{fig:neutrophil_binarized_other_colors} shows two binarizations of the original image using a green threshold of 153 (left) and a red threshold of 166 (right).
+We were unable to distinguish between the image background and the WBC nucleus using blue color values, but pixels in the WBC nucleus tend to have a green value that is much lower than the image background and a red value that is lower than every other part of the image. \autoref{fig:neutrophil_binarized_other_colors} shows two binarizations of the original image using a green threshold of 153 (left) and a red threshold of 166 (right).
 
 \begin{figure}[h]
 \centering
@@ -118,13 +118,13 @@ We were unable to distinguish between the image background and the WBC nucleus u
 \begin{tabular}{c c}
 \includegraphics[width = 0.4\textwidth]{../images/neutrophil_binarized_green.png} & \includegraphics[width = 0.4\textwidth]{../images/neutrophil_binarized_red.png}
 \end{tabular}
-\caption{Two more binarized versions of the neutrophil image from \autoref{fig:three_families} (left), based on the green and red channels. For both these colors, the WBC nucleus tends to have lower values than other parts of the original image. (Left) A binarization in which a pixel is colored white if it has a green value less than or equal to 153, and a pixel is colored black otherwise. (Right) A binarization in which a pixel is turned white if it has a red value less than or equal to 166, and a pixel is colored black otherwise.}
+\caption{Two more binarized versions of the granulocyte image from \autoref{fig:three_families} (left), based on the green and red channels.  (Left) A binarization in which a pixel is colored white if it has a green value less than or equal to 153, and a pixel is colored black otherwise. (Right) A binarization in which a pixel is turned white if it has a red value less than or equal to 166, and a pixel is colored black otherwise.}
 \label{fig:neutrophil_binarized_other_colors}
 \end{figure}
 
-It would seem that we should work with the binarized image based on the red threshold, which contains the clearest image of the nucleus among the three binarized images. However, note that each threshold was successful in eliminating some of the non-nuclear parts of the image. For example, the white regions in the top left of both binarized images in \autoref{fig:neutrophil_binarized_other_colors} was eliminated by the binarized image in \autoref{fig:neutrophil_binarized_blue} based on the blue threshold, which initially did not seem helpful.
+It might seem that we should work with the binarized image based on the red threshold, which contains the clearest image of the nucleus among the three binarized images. However, note that each threshold was successful in eliminating some of the non-nuclear parts of the image. For example, the white regions in the top left of both binarized images in \autoref{fig:neutrophil_binarized_other_colors} was eliminated by the binarized image in \autoref{fig:neutrophil_binarized_blue} based on the blue threshold, which initially did not seem helpful.
 
-This insight gives us an idea: if each of the three binarized images was successful at excluding some part of the image, then let us produce a fourth image in which a pixel is white only if it is white in all three binarized images, and a pixel is black if it is black in any of the three binarized images.\tutorial[white_blood_cells/tutorial_nuclear_segmentation] This process typically produces a nice result, as indicated in \autoref{fig:segmentation} for the sample monocyte and lymphocyte images presented in \autoref{fig:three_families}. At the same time, no segmentation pipeline is perfect; \autoref{fig:segmentation_imperfect} illustrates that for a few images in our dataset, we may not correctly segment the entire nucleus. \\
+This insight gives us an idea: if each of the three binarized images based on thresholding a single color channel was successful at excluding some part of the image, then let us produce a fourth image in which a pixel is colored white only if it is white in all three binarized images, and a pixel is colored black if it is black in any of the three binarized images. \autoref{fig:segmentation} shows the result of this process for the sample monocyte and lymphocyte images presented in \autoref{fig:three_families}.\tutorial[white_blood_cells/tutorial_nuclear_segmentation] \\
 
 \begin{figure}[h]
 \centering
@@ -137,6 +137,8 @@ This insight gives us an idea: if each of the three binarized images was success
 \label{fig:segmentation}
 \end{figure}
 
+At the same time, no segmentation pipeline is perfect; \autoref{fig:segmentation_imperfect} illustrates that for a few images in our dataset, we may not correctly segment the entire nucleus. We can continue to tweak threshold parameters, but our relatively simple algorithm successfully segments almost every WBC nucleus from our dataset, and we are ready to move on to classify WBC nuclei into families.\\
+
 \begin{figure}[h]
 \centering
 \tabcolsep = 1em
@@ -148,7 +150,7 @@ This insight gives us an idea: if each of the three binarized images was success
 \label{fig:segmentation_imperfect}
 \end{figure}
 
-We can continue to tweak threshold parameters, but our relatively simple algorithm successfully segments almost every WBC nucleus from our dataset. We are ready to move on to classify WBC nuclei into families according to their shape.\\
+
 
 
 
@@ -161,9 +163,9 @@ We can continue to tweak threshold parameters, but our relatively simple algorit
 \phantomsection
 \subsection{The classification problem and the iris flower dataset}
 
-Categorizing images of WBCs according to family is a specific instance of a ubiquitous problem in data science, in which we wish to \textit{classify} each object in a given dataset into one of \textvar{k} groups called \textdefnogloss{classes}. In our ongoing example, the data are images of WBCs, and the classes are the three main families of WBCs (granulocytes, lymphocytes, and monocytes). To take a different example, our data could be tumor genomes sequenced from cancer patients, which we want to classify according to the therapeutic that should be prescribed for the patient. Or the data may be the past sales behavior of shoppers, whom we wish to classify into two classes based on a prediction of whether they will buy a new product.
+Categorizing images of WBCs according to family is a specific instance of a ubiquitous problem in data science, in which we wish to \textit{classify} each object in a given dataset into one of \textvar{k} groups called \textdefnogloss{classes}. In our ongoing example, the data are images of WBC nuclei, and the classes are the three main families of WBCs (granulocytes, lymphocytes, and monocytes). To take a different example, our data could be tumor genomes sequenced from cancer patients, which we want to classify according to the therapeutic that should be prescribed for the patient. Or the data may be the past sales behavior of shoppers, whom we wish to classify into two classes based on a prediction of whether they will buy a new product.
 
-A classical dataset used for motivating classification is the \textdef{iris flower dataset}{iris flower dataset}{a dataset commonly used for motivating classification, which was compiled by Edgar Anderson, and which Ronald Fisher used in a seminal paper on classification in 1936}, which was compiled by Edgar Anderson and used by Ronald Fisher in a seminal paper on classification in 1936. Anderson took measurements from 150 iris flowers, fifty from each of three species (\autoref{fig:iris_flowers}).\\
+A classical dataset used for motivating classification is the \textdef{iris flower dataset}{iris flower dataset}{a dataset commonly used for motivating classification, which was compiled by Edgar Anderson, and which Ronald Fisher used in a seminal paper on classification in 1936}, which was compiled by Edgar Anderson and used by Ronald Fisher in a seminal paper on classification in 1936. Anderson took morphological measurements from 150 iris flowers, evenly divided over three species (\autoref{fig:iris_flowers}).\\
 
 \begin{figure}[h]
 \centering
@@ -176,7 +178,7 @@ A classical dataset used for motivating classification is the \textdef{iris flow
 \label{fig:iris_flowers}
 \end{figure}
 
-Anderson measured four attributes, or \textdef{features}{feature}{a measurable characteristic of a data point; multiple features are grouped together to form a feature vector in which the \textvar{i}-th element is the data point's value for the \textvar{i}-th feature}, of each flower in his dataset: the width and height of the flower's petal, and the width and height of the flower's sepal (a green offshoot beneath the petals). \autoref{fig:iris_feature_table} shows the features and species labels for twelve of the flowers in the iris flower dataset. Fisher noticed that flowers from the same species had similar features and wondered whether it was possible to classify the flowers according to its species using only Anderson's four features.\\
+Anderson measured four attributes, or \textdef{features}{feature}{a measurable characteristic of a data point; multiple features are grouped together to form a feature vector in which the \textvar{i}-th element is the data point's value for the \textvar{i}-th feature}, of each flower in his dataset: the width and height of the flower's petal, and the width and height of the flower's sepal (a green offshoot beneath the petals). \autoref{fig:iris_feature_table} shows the features and species labels for twelve flowers in the iris flower dataset. Fisher noticed that flowers from the same species had similar features and wondered whether it was possible to classify the flowers according to its species using only Anderson's four features.\\
 
 
 \begin{figure}[h]
@@ -205,7 +207,7 @@ Anderson measured four attributes, or \textdef{features}{feature}{a measurable c
 \end{figure}
 
 \begin{qbox}[%
-What are the typical values of each feature for flowers from each species in \autoref{fig:iris_feature_table}?
+What are typical feature values for flowers from each species in \autoref{fig:iris_feature_table}? If presented with an iris of unknown species, how could you use these features to classify it?
 ]\end{qbox}
 
 \FloatBarrier
@@ -222,7 +224,7 @@ If we were to use only two of the four features in the iris flower dataset, then
 \label{fig:iris_petal_data}
 \end{figure}
 
-Note how stark the pattern is in \autoref{fig:iris_petal_data}. Even though we chose only two features from the iris flowers, the points associated with the flowers mostly divide into three main clusters by species. In other words, nearby points tend to correspond to flowers from the same species.
+Note how stark the pattern is in \autoref{fig:iris_petal_data}. Even though we chose only two features from the iris flowers, the points associated with the flowers mostly divide into three main clusters by species.
 
 If we were to use all four features for the iris dataset, then every flower would be represented by a point in four-dimensional space. For example, the first flower in our initial table of iris features would be represented by the point $(5.1, 3.5, 1.4, 0.2)$. In general, when classifying a collection of data with \textvar{n} features, each element in the dataset can be represented by a \textdefnogloss{feature vector} of length \textvar{n}, whose \textvar{i}-th value corresponds to the value of the data point's \textvar{i}-th feature.
 
@@ -267,14 +269,15 @@ In the ongoing example, if we were using \textvar{k} equal to 1, then we would a
 \end{figure}
 
 \begin{qbox}[%
-When \textvar{k} is equal to 2 or 6 for the classification of the point in \autoref{fig:knn_neighborhood}, note that we obtain a tie in the number of points from each known class belonging to the \textvar{k} nearest neighbors of a point with unknown class. How could we break ties in k-NN?
+When \textvar{k} is equal to 2 or 6 for the classification of the point in \autoref{fig:knn_neighborhood}, we obtain a tie in the number of points from each known class belonging to the \textvar{k} nearest neighbors of a point with unknown class. How could we break ties in k-NN?
 ]\end{qbox}
 
-In the more general case in which feature vectors have \textvar{n} coordinates, we can determine which points are nearest to a given point by using the \textdefnogloss{Euclidean distance}, which generalizes the distance formula to handle vectors in \textvar{n}-dimensional space. The Euclidean distance between vectors $\mathbf{x} = (x_1, x_2, \ldots, x_n)$ and $\mathbf{y} = (y_1, y_2, \ldots, y_n)$ is given by the sum of squares of differences between corresponding vector elements:
+In the more general case in which feature vectors have \textvar{n} coordinates, we can determine which points are nearest to a given point by using the \textdefnogloss{Euclidean distance}, which generalizes the distance formula between vectors in three-dimensional space to the case of \textvar{n}-dimensional vectors. The Euclidean distance between vectors $\mathbf{x} = (x_1, x_2, \ldots, x_n)$ and $\mathbf{y} = (y_1, y_2, \ldots, y_n)$ is given by the sum of squares of differences between corresponding vector elements:
+\begin{center}
+$d(\mathbf{x}, \mathbf{y}) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n-y_n)^2}\,.$
+\end{center}
 
-$$d(\mathbf{x}, \mathbf{y}) = \sqrt{(x_1 - y_1)^2 + (x_2 - y_2)^2 + \cdots + (x_n-y_n)^2}\,.$$
-
-We now have learned how to use k-NN to classify feature vectors with unknown classes given vectors with known classes. There is just one problem: how can we convert an image of a WBC into a vector?\\
+We now have learned how to use k-NN to classify feature vectors with unknown classes given vectors with known classes. There is just one problem: how can we convert an image of a WBC nucleus into a vector?\\
 
 \FloatBarrier
 \phantomsection

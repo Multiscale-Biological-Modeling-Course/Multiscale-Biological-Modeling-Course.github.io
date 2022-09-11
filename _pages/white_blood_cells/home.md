@@ -36,17 +36,17 @@ The classic device used for counting blood cells is the **hemocytometer**. As il
 **STOP:** How could the volume of a blood sample influence the estimate of blood cell count?
 {: .notice--primary}
 
-You would not be wrong to think that the hemocytometer seems old-fashioned, as it was invented by Louis-Charles Malassez 150 years ago. To reduce the human error inherent in using this device, what if we train a computer to count blood cells for us?
+You would not be wrong to think that the hemocytometer seems old-fashioned, as it was invented by Louis-Charles Malassez 150 years ago. To reduce the human error inherent in using this device, can we train a computer to count blood cells for us?
 
-We will focus our work on WBCs. WBCs divide into families based on their structure and function, with some diseases causing an abnormally low or high count of cells in a specific WBC class.  In this module, we therefore have two aims. First, can we excise, or **segment**, WBCs from cellular images? Second, can we **classify** WBCs into their appropriate types?
+In this module, we will focus our work on WBCs, which divide into families based on their structure and function, with some diseases causing an abnormally low or high count of cells in a specific family.  We therefore have two aims. First, can we excise, or **segment**, WBCs from cellular images? Second, can we devise an algorithm to **classify** WBCs by family?
 
 We will work with a <a href="https://github.com/Shenggan/BCCD_Dataset" target="_blank">publicly available dataset</a> containing blood cell images that depict both RBCs and WBCs, as shown in the figure below. The cells have been stained with a red-orange dye that bonds to hemoglobin and a blue dye that bonds to DNA and RNA. RBCs lack a nucleus and will only absorb the red-orange dye, whereas WBCs have a nucleus but lack hemoglobin and will only absorb the blue dye.
 
-The figure below also illustrates the three main families of WBCs: **granulocytes**, **monocytes**, and **lymphocytes**.  Granulocytes have a **multilobular nucleus**, which consists of several round “lobes” that are linked by thin strands of nuclear material. Monocyte and lymphocyte nuclei only have a single lobe, but monocyte nuclei have a more irregular shape, whereas lymphocyte nuclei are more rounded and take up a greater fraction of the cell's volume.
+The figure below also illustrates the three main families of WBCs: **granulocytes**, **monocytes**, and **lymphocytes**.  Granulocytes have a **multilobular nucleus**, which consists of several “lobes” that are linked by thin strands of nuclear material. Monocyte and lymphocyte nuclei only have a single lobe, but monocyte nuclei have a more irregular shape, whereas lymphocyte nuclei are more rounded and take up a greater fraction of the cell's volume.
 
 {% include gallery caption="Three images from the blood cell image dataset showing three types of WBCs. In our dataset, these cells correspond to image IDs 3, 15, and 20. (Left) A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family. (Center) A monocyte with a single, irregularly-shaped nucleus. (Right) A lymphocyte with a small, round nucleus." %}
 
-When you look at the cells in the figure above, you may think that our work will be easy. Segmenting WBCs only requires identifying the large purplish regions, and classifying them is just a matter of categorizing them according to the differences in shape that we described above. Yet even after decades of research into computer vision, researchers struggle to attain the precision of the human eye, which is the result of billions of years of evolution.
+When you look at the cells in the figure above, you may think that our work will be easy. Segmenting WBC nuclei only requires identifying the large purplish regions, and classifying them is just a matter of categorizing them according to the differences in nuclear shape that we described above. Yet even after decades of research into computer vision, researchers struggle to attain the precision of the human eye, a biological apparatus that is the result of billions of years of evolution.
 
 [Next lesson](segmentation){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}
