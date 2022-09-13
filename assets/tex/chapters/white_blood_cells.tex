@@ -38,7 +38,7 @@ How could the volume of a blood sample influence the estimate of blood cell coun
 
 You would not be wrong to think that the hemocytometer seems old-fashioned, as it was invented by Louis-Charles Malassez 150 years ago. To reduce the human error inherent in using this device, can we train a computer to count blood cells for us?
 
-In this chapter, we will focus our work on WBCs, which divide into families based on their structure and function, with some diseases causing an abnormally low or high count of cells in a specific family. We therefore have two aims. First, can we excise, or \textdef{segment}{segmentation}{the process of partitioning an image in order to excise objects of interest}, WBCs from cellular images?  Second, can we devise an algorithm to \textdef{classify}{classification}{the seminal problem of (correctly) categorizing a collection of data} WBCs by family?
+In this chapter, we will focus our work on WBCs, which divide into families based on their structure and function, with some diseases causing an abnormally low or high count of cells in a specific family. We therefore have two aims. First, can we excise, or \textdef{segment}{segmentation}{the process of partitioning an image in order to excise objects of interest}, WBCs from cellular images?  Second, can we devise an algorithm to \textdef{classify}{classification}{the seminal problem of categorizing a collection of data} WBCs by family?
 
 We will work with a \href{https://github.com/Shenggan/BCCD_Dataset}{publicly available dataset} containing blood cell images that depict both RBCs and WBCs (\autoref{fig:three_families}). The cells have been stained with a red-orange dye that bonds to hemoglobin and a blue dye that bonds to DNA and RNA. RBCs lack a nucleus and will only absorb the red-orange dye, whereas WBCs have a nucleus but lack hemoglobin and will only absorb the blue dye.
 
@@ -1031,7 +1031,7 @@ One of the strengths of artificial neurons and neural networks is that their out
 We say that a neural network with input variables $x_1, \ldots x_n$ \textdefnogloss{represents} a function $g(x_1, \ldots, x_n)$ if for any choice of input variables $(x_1, \ldots x_n)$, the output of the neural network is equal to $g(x_1, \ldots, x_n)$.  We provide two exercises on finding neural networks that represent relatively simple functions.\\
 
 \begin{exercise}[%
-Consider the function $g(x_1, x_2)$ for binary input variables $x_1$ and $x_2$ that outputs 0 only when $x_1$ and $x_2$ are both equal to 1 and that outputs 1 for other choices of $x_1$ and $x_2$. (The function \textvar{g} is known as a ``\texttt{NAND} gate'').  Find a single perceptron that represents \textvar{g}. 
+Consider the function $g(x_1, x_2)$ for binary input variables $x_1$ and $x_2$ that outputs 0 when $x_1$ and $x_2$ are both equal to 1 and that outputs 1 for other choices of $x_1$ and $x_2$. (The function \textvar{g} is known as a ``\texttt{NAND} gate'').  Find a single perceptron that represents \textvar{g}. 
 ]\end{exercise}
 
 \begin{exercise}[%
@@ -1061,7 +1061,7 @@ This example provides another reason why we reduce the dimension of a dataset wh
 \end{figure}
 
 \begin{exercise}[%
-What is the minimum number of points in three-dimensional space such that we cannot guarantee that there is a plane containing them all? Provide a conjecture as to the minimum number of points in \textvar{n}-dimensional space such that we cannot guarantee that there is a \textvar{d}-dimensional hyperplane containing them all.
+What is the minimum number of points in three-dimensional space such that we cannot guarantee that there is some plane containing them all? Provide a conjecture as to the minimum number of points in \textvar{n}-dimensional space such that we cannot guarantee that there is some \textvar{d}-dimensional hyperplane containing them all.
 ]\end{exercise}
 
 \phantomsection
@@ -1087,7 +1087,7 @@ In the main text, we mentioned that lymphocytes are much smaller than monocytes 
 ]\end{exercise}
 
 \begin{exercise}[
-Apply the same pipeline as the one used to produce \autoref{fig:wbc_cellorganizer} on a dataset on a dataset containing higher resolution WBC images.
+Apply the same pipeline as the one used to produce \autoref{fig:wbc_cellorganizer} on a dataset containing higher resolution WBC images.
 ]\end{exercise}
 
 %\begin{exercise}[%

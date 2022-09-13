@@ -10,11 +10,11 @@ image: "../assets/images/normal_adult_blood_smear.JPG"
 
 ## Neural networks and logical connectives
 
-One of the strengths of artificial neurons and neural networks is that their output can mimic, at least approximately, any function. In the case of classification, this means that if some function *g*(*x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>) performs well at classifying data with *n* features, then some neural network exists that will replicate *g*: we just need to find the right set of network parameters.
+One of the strengths of neural networks is that their output can mimic, at least approximately, any function. In the case of classification, this means that if some function *g*(*x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>) performs well at classifying data with *n* features, then some neural network exists that will replicate *g*: we just need to find the right set of network parameters.
 
 We say that a neural network with input variables *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub> **represents** a function *g*(*x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>) if for any choice of input variables *x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>, the output of the neural network is equal to *g*(*x*<sub>1</sub>, …, *x*<sub><em>n</em></sub>). We provide two exercises on finding neural networks that represent relatively simple functions.
 
-**Exercise:** Consider the function *g*(*x*<sub>1</sub>, *x*<sub>2</sub>) for binary input variables *x*<sub>1</sub> and *x*<sub>2</sub> that outputs 0 only when *x*<sub>1</sub> and *x*<sub>2</sub> are both equal to 1 and that outputs 1 for other choices of *x*<sub>1</sub> and *x*<sub>2</sub>. (The function *g* is known as a “``NAND`` gate”). Find a single perceptron that represents *g*.
+**Exercise:** Consider the function *g*(*x*<sub>1</sub>, *x*<sub>2</sub>) for binary input variables *x*<sub>1</sub> and *x*<sub>2</sub> that outputs 0 when *x*<sub>1</sub> and *x*<sub>2</sub> are both equal to 1 and that outputs 1 for other choices of *x*<sub>1</sub> and *x*<sub>2</sub>. (The function *g* is known as a “``NAND`` gate”). Find a single perceptron that represents *g*.
 {: .notice--success}
 
 **Exercise:** Consider the function *g*(*x*<sub>1</sub>, *x*<sub>2</sub>) for binary input variables *x*<sub>1</sub> and *x*<sub>2</sub> that outputs 1 when *x*<sub>1</sub> ≠ *x*<sub>2</sub> and 0 when *x*<sub>1</sub> = *x*<sub>2</sub>. (The function *g* is known as an “`XOR` gate”). It can be shown that no single perceptron represents *g*; find a neural network of perceptrons that represents *g*.
@@ -35,7 +35,7 @@ Petal length (x-axis) plotted against petal width (y-axis) for two flowers in th
 
 This example provides another reason why we reduce the dimension of a dataset when the number of objects in our dataset is smaller than the number of features of each object. Furthermore, when fitting a *d*-dimensional hyperplane to a collection of data, we need to be careful with selecting too large of a value of *d*, especially if we do not have many data points.
 
-**Exercise:** What is the minimum number of points in three-dimensional space such that we cannot guarantee that there is a plane containing them all? Provide a conjecture as to the minimum number of points in *n*-dimensional space such that we cannot guarantee that there is a *d*-dimensional hyperplane containing them all.
+**Exercise:** What is the minimum number of points in three-dimensional space such that we cannot guarantee that there is some plane containing them all? Provide a conjecture as to the minimum number of points in *n*-dimensional space such that we cannot guarantee that there is some *d*-dimensional hyperplane containing them all.
 {: .notice--success}
 
 ## Irises, PCA, and feature selection
