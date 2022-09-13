@@ -19,7 +19,7 @@
 \label{sec:introduction}
 \phantomsection
 
-Your doctor sometimes counts your blood cells to ensure that they are within healthy ranges as part of a complete blood count. These cells comprise \textdef{red blood cells (RBCs)}{red blood cells (RBCs)}{cells in blood that transport oxygen via the hemoglobin protein}, which transport oxygen via the hemoglobin protein, and \textdef{white blood cells (WBCs)}{white blood cells (WBCs)}{cells that help identify and attack foreign cells as part of the immune system}, which help identify and attack foreign cells as part of your immune system.
+Your doctor sometimes counts your blood cells to ensure that they are within healthy ranges as part of a complete blood count. These cells comprise \textdef{red blood cells (RBCs)}{red blood cells (RBCs)}{cells in the blood that transport oxygen via the hemoglobin protein}, which transport oxygen via the hemoglobin protein, and \textdef{white blood cells (WBCs)}{white blood cells (WBCs)}{cells that help identify and attack foreign cells as part of the immune system}, which help identify and attack foreign cells as part of your immune system.
 
 The classic device used for counting blood cells is the \textdefnogloss{hemocytometer}. In this device, a technician filters a small amount of blood onto a gridded slide (\autoref{fig:hemocytometer}) and then counts the number of cells of each type in the squares on the grid. As a result, the technician can estimate the number of each type of cell per volume of blood.\\
 
@@ -499,12 +499,6 @@ Instead of considering residuals based on distances to the line in only the x-di
 
 The first principal component is often said to be the line that ``explains the most variance in the data''. If a correspondence exists between lily petal width and length, then the distances from points to the first principal component correspond to variation due to randomness. By minimizing the sum of squares of these distances, we limit the amount of variation in our data that we cannot explain with a linear relationship.
 
-%The following animated GIF shows a line rotating through a collection of data points, with the distance from each point to the line shown in red. As the line rotates, we can see the distances from the points to the line change.
-%
-%[![image-center](../assets/images/600px/pca_rotating_line_first_frame.png){: .align-center}](../assets/images/pca_rotating_line.gif)
-%An animated GIF showing that the distances from points to their projections onto a line change as the line rotates. The line of best fit is the one in which the sum of the square of these distances is minimized.  Source: amoeba, StackExchange user.[^amoeba]
-%{: style="font-size: medium;"}
-
 Another benefit of finding the first principal component of a dataset is that it allows us to \textit{reduce} the dimensionality of our dataset from two dimensions to one. The projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
 
 Say that we wanted to generalize these ideas to three-dimensional space. The first principal component would offer a one-dimensional explanation of the variance in the data, but perhaps a line is insufficient to this end. The points could lie very near to a plane (a two-dimensional object), and projecting these points onto the nearest plane would effectively reduce the dataset to two dimensions (\autoref{fig:three_dimensional_pca}).\\
@@ -521,7 +515,7 @@ Say that we wanted to generalize these ideas to three-dimensional space. The fir
 \label{fig:three_dimensional_pca}
 \end{figure}
 
-Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but we can generalize these concepts mathematically. Given a collection of \textvar{m} data points (or vectors) in \textvar{n}-dimensional space, we are looking for a \textvar{d}-dimensional \textdef{hyperplane}{hyperplane}{an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space}, or an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on this hyperplane, we reduce the dimension of the dataset from \textvar{n} to \textvar{d}. This approach, which is over 100 years old but omnipresent in modern data science, is called \textdef{principal component analysis (PCA)}{principal component analysis (PCA)}{an approach used for finding the lower-dimensional hyperplane through a collection of data minimizing the distances from the points to the hyperplane}.
+Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but we can generalize these concepts mathematically. Given a collection of \textvar{m} data points (or vectors) in \textvar{n}-dimensional space, we are looking for a \textvar{d}-dimensional \textdef{hyperplane}{hyperplane}{an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space}, or an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on this hyperplane, we reduce the dimension of the dataset from \textvar{n} to \textvar{d}. This approach, which is over 100 years old but omnipresent in modern data science, is called \textdef{principal component analysis (PCA)}{principal component analysis (PCA)}{an approach used for finding the lower-dimensional hyperplane through a collection of data that minimizes the sum of squared distances from the points to their projections on the hyperplane}.
 
 \begin{figure}[p]
 \centering
@@ -901,7 +895,7 @@ The best known classification algorithms for WBC image analysis use a technique 
 \label{fig:components_of_neuron}
 \end{figure}
 
-In 1943, Warren McCulloch (a neuroscientist) and Walter Pitts (a logician) devised an artificial model of a neuron that is now called a \textdef{McCulloch-Pitts neuron}{McCulloch-Pitts neuron}{an early model of a neuron that aggregates a collection of input binary variables and fires a 1 or 0 based on whether the sum of inputs exceeds some fixed threshold}. A McCulloch-Pitts neuron has a fixed threshold \textvar{b} and takes as input \textvar{n} \textdefnogloss{binary variables} $x_1, \ldots, x_n$, where each of these variables is equal to either 0 or 1. The neuron outputs 1 if $x_1 + \cdots + x_n \geq b$; otherwise, it returns 0. If a McCulloch-Pitts neuron outputs 1, then we say that it \textdefnogloss{fires}. The McCulloch-Pitts neuron with \textvar{n} equal to 2 and \textvar{b} equal to 2 is shown in \autoref{fig:MP_neuron}. The only way that this neuron will fire is if both inputs $x_1$ and $x_2$ are equal to 1.\\
+In 1943, Warren McCulloch (a neuroscientist) and Walter Pitts (a logician) devised an artificial model of a neuron that is now called a \textdef{McCulloch-Pitts neuron}{McCulloch-Pitts neuron}{an early model of a neuron that aggregates a collection of input binary variables and fires 1 or 0 based on whether the sum of inputs exceeds some fixed threshold}. A McCulloch-Pitts neuron has a fixed threshold \textvar{b} and takes as input \textvar{n} \textdefnogloss{binary variables} $x_1, \ldots, x_n$, where each of these variables is equal to either 0 or 1. The neuron outputs 1 if $x_1 + \cdots + x_n \geq b$; otherwise, it returns 0. If a McCulloch-Pitts neuron outputs 1, then we say that it \textdefnogloss{fires}. The McCulloch-Pitts neuron with \textvar{n} equal to 2 and \textvar{b} equal to 2 is shown in \autoref{fig:MP_neuron}. The only way that this neuron will fire is if both inputs $x_1$ and $x_2$ are equal to 1.\\
 
 \begin{note}[%
 The mathematically astute reader may have noticed that the output of the McCulloch-Pitts neuron in \autoref{fig:MP_neuron} is identical to the logical proposition $(x_1~\texttt{AND}~x_2)$, which explains why these neurons started as a collaboration between a neuroscientist and a logician.
@@ -915,7 +909,7 @@ The mathematically astute reader may have noticed that the output of the McCullo
 \label{fig:MP_neuron}
 \end{figure}
 
-In 1958, Frank Rosenblatt generalized the McCulloch-Pitts neuron into a \textdef{perceptron}{perceptron}{an artificial neuron that aggregates a weighted average of binary input variables and that outputs 1 if this average is greater than some fixed threshold and 0 otherwise}. This artificial neuron also has a threshold \textvar{b} and \textvar{n} binary input variables $x_i$, but it includes a collection of constant weights $w_i$, and the neuron fires when the weighted sum $w_1 \cdot x_1 + w_2 \cdot x_2 + \cdots + w_n \cdot x_n$ is at least equal to \textvar{b} (\autoref{fig:perceptron}).\\
+In 1958, Frank Rosenblatt generalized the McCulloch-Pitts neuron into a \textdef{perceptron}{perceptron}{an artificial neuron that aggregates a weighted average of binary input variables and that outputs 1 if this average is greater than some fixed threshold and that outputs 0 otherwise}. This artificial neuron also has a threshold \textvar{b} and \textvar{n} binary input variables $x_i$, but it includes a collection of constant weights $w_i$, and the neuron fires when the weighted sum $w_1 \cdot x_1 + w_2 \cdot x_2 + \cdots + w_n \cdot x_n$ is at least equal to \textvar{b} (\autoref{fig:perceptron}).\\
 
 \begin{note}[%
 A McCulloch-Pitts neuron is a perceptron for which all the $w_i$ are equal to 1.
