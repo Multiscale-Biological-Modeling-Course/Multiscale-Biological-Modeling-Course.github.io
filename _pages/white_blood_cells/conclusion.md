@@ -38,7 +38,7 @@ The McCulloch-Pitts neuron with *n* equal to 2 and *b* equal to 2 is shown in th
 
 <figure>
 	<a href="../assets/images/MP_neuron.png"><img src="../assets/images/600px/MP_neuron.png"></a>
-	<figcaption>A McCullough-Pitts neuron with <em>n</em> equal to 2 and *b* equal to 2. The neuron fires precisely when both input variables are equal to 1; if either input variable is equal to 0, then <em>x</em><sub>1</sub> + <em>x</em><sub>2</sub> will be less than *b* and the neuron will not fire (i.e., it will output 0).</figcaption>
+	<figcaption>A McCullough-Pitts neuron with <em>n</em> equal to 2 and *b* equal to 2. The neuron fires when <em>x</em><sub>1</sub> + <em>x</em><sub>2</sub> is at least equal to *b*, which occurs precisely when both input variables are equal to 1; if either input variable is equal to 0, then <em>x</em><sub>1</sub> + <em>x</em><sub>2</sub> will be less than *b* and the neuron will not fire (i.e., it will output 0).</figcaption>
 </figure>
 
 **Note:** The mathematically astute reader may have noticed that the output of the McCulloch-Pitts neuron in the figure above is identical to the logical proposition *x*<sub>1</sub> `AND` *x*<sub>2</sub>, which explains why these neurons started as a collaboration between a neuroscientist and a logician.
