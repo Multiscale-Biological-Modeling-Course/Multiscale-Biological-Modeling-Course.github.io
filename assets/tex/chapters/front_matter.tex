@@ -1,12 +1,21 @@
-\clearpage\null
-\thispagestyle{empty}
-\AddToShipoutPictureBG*{% Add picture to current page
-  \AtStockLowerLeft{% Add picture to lower-left corner of paper stock
-    \includegraphics[width=\stockwidth]{../images/front_cover}}
-}
-\addtocounter{page}{-1}
+% Cover 
 
-\clearpage
+%\clearpage\null
+%\thispagestyle{empty}
+%\AddToShipoutPictureBG*{% Add picture to current page
+%  \AtStockLowerLeft{% Add picture to lower-left corner of paper stock
+%    \includegraphics[width=\stockwidth]{../images/front_cover}}
+%}
+%\addtocounter{page}{-1}
+%
+%\clearpage
+
+% Blank page if cover page is used 
+
+%\newpage
+%
+%\thispagestyle{empty}
+
 
 % Title page
 
@@ -19,7 +28,6 @@
 \addtocounter{page}{-1}
 
 \newpage
-
 
 \thispagestyle{empty}
 
@@ -57,6 +65,10 @@ Pittsburgh, PA
 
 % Welcome
 
+\newpage \phantom{}
+\thispagestyle{empty}
+\addtocounter{page}{-1}
+
 \newpage
 \phantomsection
 \chapter{Welcome!}
@@ -89,6 +101,9 @@ Thank you for joining us. I hope that you enjoy this short tour of biological mo
 \clearpage
 \phantomsection
 
+\newpage
+\phantom{x}
+\thispagestyle{empty}
 
 \newpage
 \phantomsection
