@@ -187,14 +187,12 @@ Nick Connors & Pavel Pevzner\\
 \end{tabular}
 \end{center}
 
-%
-%\vspace{\baselineskip}
-%
-%\begin{minipage}{\textwidth}
-%\raggedleft\noindent\parbox{0.18\textwidth}{\raggedright\itshape P.\,C. and P.\,P.\\
-%May 2018
-%}
-%\end{minipage}
-
-\newpage \phantom{}
+\clearpage\null
 \thispagestyle{empty}
+\AddToShipoutPictureBG*{% Add picture to current page
+  \AtStockLowerLeft{% Add picture to lower-left corner of paper stock
+    \includegraphics[width=\stockwidth]{../images_CMYK/title_only}}
+}
+
+%\newpage \phantom{}
+%\thispagestyle{empty}
