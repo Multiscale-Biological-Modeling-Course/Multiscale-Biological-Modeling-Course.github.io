@@ -39,7 +39,7 @@ When we examine the bacterium's movement under a microscope, we see it alternate
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/chemotaxis_intro_runtumble.png}
+\includegraphics[width = 0.6\textwidth]{../images/chemotaxis_intro_runtumble}
 \caption{The run and tumble mechanism of bacterial movement produces a random walk (bottom left).}
 \label{fig:chemotaxis_intro_runtumble}
 \end{figure}
@@ -76,7 +76,7 @@ In the case of chemotaxis, \textit{E.~coli} has receptor proteins that detect at
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_signal.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_signal}
 \caption{A high-level overview of the chemotaxis signaling pathway. The red circles labeled \textit{L} represent attractant ligands. When these ligands bind to receptors, a signal is transduced inside the cell via a series of enzymes, which eventually influences the rotation direction of a flagellum.}
 \label{fig:chemotaxis_signal}
 \end{figure}
@@ -333,7 +333,7 @@ $\mathrm{Pr}(LT \rightarrow L + T) = \dfrac{r_\text{dissociate}}{r_\text{bind} +
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_visualizessa.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_visualizessa}
 \caption{A visualization of a single reaction event used by the Gillespie algorithm for ligand-receptor binding and dissociation. Red circles represent ligands (\textvar{L}), and orange wedges represent receptors (\textvar{T}). The wait time for the next reaction is drawn from an exponential distribution with mean $\text{1}/(\textvar{r}_\text{bind} + \textvar{r}_\text{dissociate})$, where $\textvar{r}_\text{bind}$ and $\textvar{r}_\text{dissociate}$ are the rates of the binding and dissociation reactions, respectively. The probability of this event corresponding to a binding or dissociation reaction is proportional to the rate of the respective reaction.}
 \label{fig:chemotaxis_visualizessa}
 \end{figure}
@@ -361,7 +361,7 @@ Earlier in this chapter, we showed an example in which a system with 10,000 free
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.8\textwidth]{../images/chemotaxis_tutorial4_ssa_vscode.png}
+\includegraphics[width = 0.8\textwidth]{../images/chemotaxis_tutorial4_ssa_vscode}
 \caption{A concentration plot over time for ligand-receptor dynamics via a simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in $\text{molecules}/\text{µm}^\text{3}$) on the y-axis. The molecules quickly reach steady state concentrations that match those identified by hand.}
 \label{fig:chemotaxis_tutorial4_ssa}
 \end{figure}
@@ -390,7 +390,7 @@ A high-level view of the transduction pathway for chemotaxis is shown in \autore
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxisphosnew.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxisphosnew}
 \caption{A high-level summary of the chemotaxis transduction pathway. A ligand binding signal is propagated through CheA and CheY phosphorylation, which leads to a response of clockwise flagellar rotation. The blue curved arrow denotes phosphorylation, the grey curved arrow denotes dephosphorylation, and the blue dashed arrow denotes a chemical interaction. Our figure offers a simplified view of \href{http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html}{Parkinson lab} illustrations.}
 \label{fig:chemotaxisphosnew}
 \end{figure}
@@ -430,9 +430,9 @@ Once we have built this model, we would like to see what happens when we change 
 \begin{figure}[hp]
 \centering
 \mySfFamily
-\includegraphics[width = 0.65\textwidth]{../images/chemotaxis_tutorial5_vscode.png}\\[1ex]
-\includegraphics[width = 0.65\textwidth]{../images/chemotaxis_tutorial6_vscode.png}\\[1ex]
-\includegraphics[width = 0.65\textwidth]{../images/chemotaxis_tutorial7_vscode.png}
+\includegraphics[width = 0.65\textwidth]{../images/chemotaxis_tutorial5_vscode}\\[1ex]
+\includegraphics[width = 0.65\textwidth]{../images/chemotaxis_tutorial6_vscode}\\[1ex]
+\includegraphics[width = 0.65\textwidth]{../images/chemotaxis_tutorial7_vscode}
 \caption{Molecular concentrations over time (in seconds) in a chemotaxis simulation for three different initial unbound attractant ligand concentrations: no attractant ligand (top), 5,000 ligand particles (middle), and 100,000 ligand particles (bottom). Note that the simulated cell's bound ligand concentration (green) achieves equilibrium very quickly in each case.}
 \label{fig:chemotaxis_concentrations}
 \end{figure}
@@ -483,7 +483,7 @@ Just as the phosphorylation of CheY can be reversed, MCP methylation can be undo
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_wholestory.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_wholestory}
 \caption{The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates MCPs, while CheR demethylates MCPs. Blue lines denote phosphorylation, grey lines denote dephosphorylation, green arrows denote methylation, and red arrows denote demethlyation.}
 \label{fig:chemotaxis_wholestory}
 \end{figure}
@@ -522,9 +522,9 @@ In \autoref{fig:chemotaxis_tutorial_adaptation} (top left), we add a relatively 
 \mySfFamily
 \tabcolsep = 2em
 \begin{tabular}{c c}
-\includegraphics[width = 0.4\textwidth]{../images/chemotaxis_tutorial_oneadd1e4_vscode.png} & 
-\includegraphics[width = 0.4\textwidth]{../images/chemotaxis_tutorial_oneadd1e6_vscode.png}\\[1ex]
-\multicolumn{2}{c}{\includegraphics[width = 0.4\textwidth]{../images/chemotaxis_tutorial_oneadd1e8_vscode.png}}
+\includegraphics[width = 0.4\textwidth]{../images/chemotaxis_tutorial_oneadd1e4_vscode} & 
+\includegraphics[width = 0.4\textwidth]{../images/chemotaxis_tutorial_oneadd1e6_vscode}\\[1ex]
+\multicolumn{2}{c}{\includegraphics[width = 0.4\textwidth]{../images/chemotaxis_tutorial_oneadd1e8_vscode}}
 \end{tabular}
 \caption{Molecular concentrations over time (in seconds) in a chemotaxis simulation for a variety of initial attractant ligand particle numbers: 10,000 (top left), 1,000,000 (top right), and 100,000,000 (bottom). initial attractant ligand particles. Phosphorylated CheY, whose concentration is a proxy for tumbling frequency, is shown in orange.}
 \label{fig:chemotaxis_tutorial_adaptation}
@@ -556,7 +556,7 @@ To model a ligand concentration $[L]$ that is increasing exponentially, we will 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_addition01_vscode.png}
+\includegraphics[width = 0.7\textwidth]{../images/chemotaxis_tutorial_addition01_vscode}
 \caption{A plot of molecular concentrations over time (in seconds) when the concentration of ligand grows exponentially according to the formula  $[\textvar{L}] = \textvar{l}_\text{0} \cdot \textvar{e}^{\textvar{k} \cdot \textvar{t}}$ with $\textvar{l}_\text{0} = \text{1000}$ and $\textvar{k} = \text{0.1}$. The concentration of bound ligand (blue) quickly hits saturation, which causes a minimum in phosphorylated CheY (orange), and therefore a low tumbling frequency. In response, the cell increases the methylation of receptors, which increases the concentration of phosphorylated CheY back to equilibrium.}
 \label{fig:chemotaxis_tutorial_addition01}
 \end{figure}
@@ -566,7 +566,7 @@ To model a ligand concentration $[L]$ that is increasing exponentially, we will 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.8\textwidth]{../images/chemotaxis_tutorial_addition03.png}
+\includegraphics[width = 0.8\textwidth]{../images/chemotaxis_tutorial_addition03}
 \caption{Plots of the concentration of phosphorylated CheY over time (in seconds) for different growth rates \textvar{k} of ligand concentration, assuming that this concentration grows exponentially according to the formula  $[\textvar{L}] = \textvar{l}_\text{0} \cdot \textvar{e}^{\textvar{k} \cdot \textvar{t}}$ with $\textvar{l}_\text{0} = \text{1000}$. The larger the value of \textvar{k}, the steeper the initial drop in the concentration of phosphorylated CheY, and the faster that methylation returns the concentration of phosphorylated CheY to equilibrium. The same equilibrium is obtained regardless of the value of \textvar{k}.}
 \label{fig:chemotaxis_tutorial_addition03}
 \end{figure}
@@ -660,7 +660,7 @@ As with the first strategy, our simulated cell alternates between tumbling and r
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_traj_compare_uniform.png}
+\includegraphics[width = 0.85\textwidth]{../images/chemotaxis_traj_compare_uniform}
 \caption{Three sample trajectories for the standard random walk strategy (left) and chemotactic random walk strategy (right) with a default tumbling frequency of one second. Redder regions correspond to higher concentrations of ligand, with a goal having maximum concentration at the point $(\text{1,500}, \text{1,500})$, which is indicated with a blue square. Each particle's walk is colored from darker to lighter colors across the time frame of its trajectory.}
 \label{fig:chemotaxis_traj_compare_uniform}
 \end{figure}
@@ -670,7 +670,7 @@ We should be wary of such a small sample size. To confirm that what we observed 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.8\textwidth]{../images/chemotaxis_performance_compare_uniform.png}
+\includegraphics[width = 0.8\textwidth]{../images/chemotaxis_performance_compare_uniform}
 \caption{Distance to the goal plotted over time for 500 simulated particles following the standard random walk strategy (pink) and the chemotactic random walk strategy (green). The dark lines indicate the average distance over all simulations, and the shaded area around each line represents one standard deviation from the average.}
 \label{fig:chemotaxis_performance_compare_uniform}
 \end{figure}
@@ -690,7 +690,7 @@ A tiny change to a simple, unsuccessful randomized algorithm can therefore produ
 \mySfFamily
 \tabcolsep = 0.5em
 \begin{tabular}{c c}
-\includegraphics[width = 0.4\textwidth]{../images/chemotaxis_traj_0.2_uniform.png} & \includegraphics[width = 0.4\textwidth]{../images/chemotaxis_traj_5.0_uniform.png}
+\includegraphics[width = 0.4\textwidth]{../images/chemotaxis_traj_0.2_uniform} & \includegraphics[width = 0.4\textwidth]{../images/chemotaxis_traj_5.0_uniform}
 \end{tabular}
 \caption{Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average run time between tumbles $\textvar{t}_\text{0}$ of 0.2 seconds (left) and 5.0 seconds (right).}
 \label{fig:chemotaxis_traj_low_high_tumbling}
@@ -703,7 +703,7 @@ A tiny change to a simple, unsuccessful randomized algorithm can therefore produ
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.8\textwidth]{../images/chemotaxis_performance_uniform.png}
+\includegraphics[width = 0.8\textwidth]{../images/chemotaxis_performance_uniform}
 \caption{Distance to the goal plotted over time for 500 simulated particles using a variety of different values of $\textvar{t}_\text{0}$. As in \autoref{fig:chemotaxis_performance_compare_uniform}, dark lines indicate the average distance over all simulations, and the shaded area around each line represents one standard deviation from the average.}
 \label{fig:chemotaxis_performance_uniform}
 \end{figure}
