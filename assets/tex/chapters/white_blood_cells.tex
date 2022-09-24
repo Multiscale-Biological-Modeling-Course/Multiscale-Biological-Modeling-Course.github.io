@@ -8,7 +8,7 @@
 %\thispagestyle{empty}
 %\AddToShipoutPictureBG*{% Add picture to current page
 %  \AtStockLowerLeft{% Add picture to lower-left corner of paper stock
-%    \includegraphics[width=\stockwidth]{images/CMYK_ed3/cover/alignment_final}}
+%    \includegraphics[width=\stockwidth]{images_CMYK/CMYK_ed3/cover/alignment_final}}
 %}
 %\addtocounter{page}{-1}
 %\clearpage
@@ -27,7 +27,7 @@ The classic device used for counting blood cells is the \textdefnogloss{hemocyto
 \centering
 \tabcolsep = 1em
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/hemocytometer}
+\includegraphics[width = 0.7\textwidth]{../images_CMYK/hemocytometer}
 \caption{(Left) A schematic of a 3 mm by 3 mm hemocytometer, showing grid lines with differing widths. (Right) A hypothetical blood smear within a 0.25 mm by 0.25 mm square, which contains a volume of blood equaling 0.00000625 mL. Red cells are RBCs, and purple cells are WBCs. By counting the number of cells in a region of squares having known volume, researchers can estimate the counts of cells per unit volume of blood.}
 \label{fig:hemocytometer}
 \end{figure}
@@ -49,7 +49,7 @@ We will work with a \href{https://github.com/Shenggan/BCCD_Dataset}{publicly ava
 \tabcolsep = 1em
 \mySfFamily
 \begin{tabular}{c c c}
-\includegraphics[width = 0.25\textwidth]{../images/neutrophil} & \includegraphics[width = 0.25\textwidth]{../images/monocyte} & \includegraphics[width = 0.25\textwidth]{../images/lymphocyte}
+\includegraphics[width = 0.25\textwidth]{../images_CMYK/neutrophil} & \includegraphics[width = 0.25\textwidth]{../images_CMYK/monocyte} & \includegraphics[width = 0.25\textwidth]{../images_CMYK/lymphocyte}
 \end{tabular}
 \caption{Three images from the blood cell image dataset showing three types of WBCs. In our dataset, these cells correspond to image IDs 3, 15, and 20. (Left) A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family. (Center) A monocyte with a single, irregularly-shaped nucleus. (Right) A lymphocyte with a small, round nucleus.}
 \label{fig:three_families}
@@ -80,7 +80,7 @@ A few colors are shown in \autoref{fig:RGB_color_chart} along with their RGB equ
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.55\textwidth]{../images/RGB_color_chart}
+\includegraphics[width = 0.55\textwidth]{../images_CMYK/RGB_color_chart}
 \caption{A collection of colors along with their RGB codes. This table corresponds to mixing colors of light instead of pigment, which causes some non-intuitive effects; for example, yellow is formed by mixing equal parts red and green. The last six colors appear muted because they only receive half of a given color value compared to a color that receives 256 units. If all three colors are mixed in equal proportions, then we obtain a color on the gray scale between white (255, 255, 255) and black (0, 0, 0).}
 \label{fig:RGB_color_chart}
 \end{figure}
@@ -100,7 +100,7 @@ We will \textdefnogloss{binarize} each blood cell image by coloring a pixel whit
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.4\textwidth]{../images/neutrophil_binarized_blue}
+\includegraphics[width = 0.4\textwidth]{../images_CMYK/neutrophil_binarized_blue}
 \caption{A binarized version of the granulocyte image from \autoref{fig:three_families} (left). A pixel is colored white if it has a blue value of 153 or greater, and a pixel is colored black otherwise. The region with the nucleus is not clearly visible because much of the original image's background is light, and so its pixels have large red, green, and blue values.}
 \label{fig:neutrophil_binarized_blue}
 \end{figure}
@@ -116,7 +116,7 @@ We were unable to distinguish between the image background and the WBC nucleus u
  \tabcolsep = 1em
 \mySfFamily
 \begin{tabular}{c c}
-\includegraphics[width = 0.4\textwidth]{../images/neutrophil_binarized_green} & \includegraphics[width = 0.4\textwidth]{../images/neutrophil_binarized_red}
+\includegraphics[width = 0.4\textwidth]{../images_CMYK/neutrophil_binarized_green} & \includegraphics[width = 0.4\textwidth]{../images_CMYK/neutrophil_binarized_red}
 \end{tabular}
 \caption{Two more binarized versions of the granulocyte image from \autoref{fig:three_families} (left), based on the green and red channels.  (Left) A binarization in which a pixel is colored white if it has a green value less than or equal to 153, and a pixel is colored black otherwise. (Right) A binarization in which a pixel is turned white if it has a red value less than or equal to 166, and a pixel is colored black otherwise.}
 \label{fig:neutrophil_binarized_other_colors}
@@ -131,7 +131,7 @@ This insight gives us an idea: if each of the three binarized images based on th
 \tabcolsep = 1em
 \mySfFamily
 \begin{tabular}{c c}
-\includegraphics[width = 0.4\textwidth]{../images/monocyte_binarized} & \includegraphics[width = 0.4\textwidth]{../images/lymphocyte_binarized}
+\includegraphics[width = 0.4\textwidth]{../images_CMYK/monocyte_binarized} & \includegraphics[width = 0.4\textwidth]{../images_CMYK/lymphocyte_binarized}
 \end{tabular}
 \caption{Image segmentation of the monocyte (left) and lymphocyte (right) from images from \autoref{fig:three_families} (center) and \autoref{fig:three_families} (right), respectively.}
 \label{fig:segmentation}
@@ -144,7 +144,7 @@ At the same time, no segmentation pipeline is perfect; \autoref{fig:segmentation
 \tabcolsep = 1em
 \mySfFamily
 \begin{tabular}{c c}
-\includegraphics[width = 0.4\textwidth]{../images/WBC_167} & \includegraphics[width = 0.4\textwidth]{../images/WBC_167_segmentation}
+\includegraphics[width = 0.4\textwidth]{../images_CMYK/WBC_167} & \includegraphics[width = 0.4\textwidth]{../images_CMYK/WBC_167_segmentation}
 \end{tabular}
 \caption{(Left) An image of a WBC (ID: 167). (Right) The binarization of this image, showing that the nucleus is not correctly identified during segmentation using the parameters described in the text.}
 \label{fig:segmentation_imperfect}
@@ -172,7 +172,7 @@ A classical dataset used for motivating classification is the \textdef{iris flow
 \tabcolsep = 1em
 \mySfFamily
 \begin{tabular}{c c c}
-\includegraphics[width = 0.25\textwidth]{../images/Iris_setosa_2} & \includegraphics[width = 0.25\textwidth]{../images/Iris_versicolor} & \includegraphics[width = 0.25\textwidth]{../images/Iris_virginica}
+\includegraphics[width = 0.25\textwidth]{../images_CMYK/Iris_setosa_2} & \includegraphics[width = 0.25\textwidth]{../images_CMYK/Iris_versicolor} & \includegraphics[width = 0.25\textwidth]{../images_CMYK/Iris_virginica}
 \end{tabular}
 \caption{Representative images of the three species of iris included in Anderson's iris flower dataset. (Left) \textit{Iris setosa}. (Center)  \textit{Iris versicolor}. (Right) \textit{Iris virginica}.}
 \label{fig:iris_flowers}
@@ -219,7 +219,7 @@ If we were to use only two of the four features in the iris flower dataset, then
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/iris_petal_data}
+\includegraphics[width = 0.7\textwidth]{../images_CMYK/iris_petal_data}
 \caption{Petal width (x-axis) plotted against width (y-axis) for each of the flowers in the iris flower dataset, with data points colored by species. Although there were fifty flowers from each species, there are not fifty points corresponding to every species because some flowers have the same petal length and width and therefore occupy the same point.}
 \label{fig:iris_petal_data}
 \end{figure}
@@ -241,7 +241,7 @@ Consider the gray point with unknown class in \autoref{fig:knn_neighborhood}. Sh
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/knn_neighborhood}
+\includegraphics[width = 0.6\textwidth]{../images_CMYK/knn_neighborhood}
 \caption{An unknown point (gray) along with a collection of nearby points belonging to two classes, colored green and blue.}
 \label{fig:knn_neighborhood}
 \end{figure}
@@ -255,7 +255,7 @@ In the ongoing example, if we were using \textvar{k} equal to 1, then we would a
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/knn_neighborhood_k=1}
+\includegraphics[width = 0.6\textwidth]{../images_CMYK/knn_neighborhood_k=1}
 \caption{When \textvar{k} is equal to 1, k-NN classifies an unknown point according to the point of known class that is nearest; for this reason, the gray point with unknown class would be assigned to the green class. (Bottom)}
 \label{fig:knn_neighborhood_k=1}
 \end{figure}
@@ -263,7 +263,7 @@ In the ongoing example, if we were using \textvar{k} equal to 1, then we would a
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/knn_neighborhood_k=4}
+\includegraphics[width = 0.6\textwidth]{../images_CMYK/knn_neighborhood_k=4}
 \caption{When \textvar{k} is equal to 4, k-NN classifies the gray point as blue, since three of its four closest neighbors are blue.}
 \label{fig:knn_neighborhood_k=4}
 \end{figure}
@@ -367,7 +367,7 @@ One way of aligning a collection of images is to first identify the \textdef{maj
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/three_similar_shapes_unaligned}
+\includegraphics[width = 0.85\textwidth]{../images_CMYK/three_similar_shapes_unaligned}
 \caption{Three similar shapes, with their major axes highlighted in gray.}
 \label{fig:three_similar_shapes_unaligned}
 \end{figure}
@@ -377,7 +377,7 @@ Aligning the major axes of these similar shapes reveals their similarities (\aut
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.3\textwidth]{../images/three_similar_shapes_aligned}
+\includegraphics[width = 0.3\textwidth]{../images_CMYK/three_similar_shapes_aligned}
 \caption{Aligning the three images from \autoref{fig:three_similar_shapes_unaligned} so that their major axes overlap allows us to see similarities between the shapes as well as build shape vectors for them having a consistent frame of reference.}
 \label{fig:three_similar_shapes_aligned}
 \end{figure}
@@ -405,7 +405,7 @@ Consider a circle inscribed in a square (\autoref{fig:inscribed_circle_and_spher
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.8\textwidth]{../images/inscribed_circle_and_sphere}
+\includegraphics[width = 0.8\textwidth]{../images_CMYK/inscribed_circle_and_sphere}
 \caption{A circle inscribed in a square takes up more of the square (78.5 percent) than a sphere inscribed in a cube (52.4 percent).}
 \label{fig:inscribed_circle_and_sphere}
 \end{figure}
@@ -439,7 +439,7 @@ We will introduce dimension reduction using the iris flower dataset. Although th
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.67\textwidth]{../images/iris_petal_data_unlabeled}
+\includegraphics[width = 0.67\textwidth]{../images_CMYK/iris_petal_data_unlabeled}
 \caption{Petal width (x-axis) plotted against petal width (y-axis) for all flowers in the iris flower dataset.}
 \label{fig:iris_petal_data_unlabeled}
 \end{figure}
@@ -449,7 +449,7 @@ A line drawn through the center of the data (\autoref{fig:iris_flowers_regressio
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.67\textwidth]{../images/iris_flowers_regression_line}
+\includegraphics[width = 0.67\textwidth]{../images_CMYK/iris_flowers_regression_line}
 \caption{A line passing through the data from \autoref{fig:iris_petal_data_unlabeled}. The line tells us approximately how wide we can expect an iris petal to be given the petal's width, and vice-versa.}
 \label{fig:iris_flowers_regression_line}
 \end{figure}
@@ -467,7 +467,7 @@ Given a line, we use $L(x)$ to denote the y-coordinate of the point on the line 
 \mySfFamily
 \tabcolsep = 2em
 \begin{tabular}{c c}
-\includegraphics[width = 0.36\textwidth]{../images/residuals_y_coordinates} & \includegraphics[width = 0.36\textwidth]{../images/residuals_x_coordinates}
+\includegraphics[width = 0.36\textwidth]{../images_CMYK/residuals_y_coordinates} & \includegraphics[width = 0.36\textwidth]{../images_CMYK/residuals_x_coordinates}
 \end{tabular}
 \caption{(Left) An example line and data points with a visual depiction of the points' residuals (dashed lines), which visualize the differences in actual y-values and those estimated by the line. The absolute value of a residual is the length of its dashed line, and the sign of a residual corresponds to whether it lies above or below the line. (Right) If \textvar{x} is the dependent variable, then the residuals with respect to a line become the horizontal distances between data points and the line, and linear regression finds the line that minimizes the sum of the squares of these horizontal residuals over all possible lines through the data.}
 \label{fig:residuals_both_directions}
@@ -492,7 +492,7 @@ Instead of considering residuals based on distances to the line in only the x-di
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.36\textwidth]{../images/residuals_projections}
+\includegraphics[width = 0.36\textwidth]{../images_CMYK/residuals_projections}
 \caption{A line along with a collection of data points; dashed lines show the shortest segments connecting each data point to its projection onto the line, which is the point on the line that is closest to the data point.}
 \label{fig:residuals_projections}
 \end{figure}
@@ -508,8 +508,8 @@ Say that we wanted to generalize these ideas to three-dimensional space. The fir
 \mySfFamily
 \tabcolsep = 1em
 \begin{tabular}{m{0.4\textwidth} m{0.4\textwidth}}
-\includegraphics[width = 0.4\textwidth]{../images/three_dimensional_pca} &
-\includegraphics[width = 0.4\textwidth]{../images/three_dimensional_pca_plane}
+\includegraphics[width = 0.4\textwidth]{../images_CMYK/three_dimensional_pca} &
+\includegraphics[width = 0.4\textwidth]{../images_CMYK/three_dimensional_pca_plane}
 \end{tabular}
 \caption{(Left) A collection of seven points, each labeled with a different color. Each point is projected onto the plane that minimizes the sum of squared distances between points and the plane. The line indicated is the first principal component of the data; this line lies within the plane, which is the case for any dataset. (Right) A reorientation of the plane such that the first principal component is shown as the x-axis, with colored points corresponding to the projections onto the plane from the left figure. The y-axis is known as the ``second principal component'' of the data.}
 \label{fig:three_dimensional_pca}
@@ -520,8 +520,8 @@ Our three-dimensional minds will not permit us the intuition needed to visualize
 \begin{figure}[p]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/cellorg_pca_graph}\\[4ex]
-\includegraphics[width = 0.7\textwidth]{../images/cellorg_pca_graph_cell}
+\includegraphics[width = 0.7\textwidth]{../images_CMYK/cellorg_pca_graph}\\[4ex]
+\includegraphics[width = 0.7\textwidth]{../images_CMYK/cellorg_pca_graph_cell}
 \caption{(Top) The projection of each WBC shape vector onto a three-dimensional PCA hyperplane (\textvar{d} = 3). (Bottom) The same shape space, with granulocytes subdivided into basophils, eosinophils, and neutrophils.}
 \label{fig:cellorg_pca_graph}
 \end{figure}
@@ -644,7 +644,7 @@ First, we define some terms. A \textdef{true positive}{true positive}{a positive
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/medical_test_confusion_matrix}
+\includegraphics[width = 0.7\textwidth]{../images_CMYK/medical_test_confusion_matrix}
 \caption{The locations of true positives, true positives, true negatives, and false negatives in the confusion matrix associated with a medical test. Correct predictions are shown in green, and incorrect predictions are shown in red.}
 \label{fig:medical_test_confusion_matrix}
 \end{figure}
@@ -669,7 +669,7 @@ In what follows, we will work with the confusion matrix in \autoref{fig:medical_
 %\begin{figure}[h]
 %\centering
 %\mySfFamily
-%\includegraphics[width = 0.7\textwidth]{../images/medical_test_confusion_matrix_hypothetical}
+%\includegraphics[width = 0.7\textwidth]{../images_CMYK/medical_test_confusion_matrix_hypothetical}
 %\caption{A hypothetical COVID test confusion matrix.}
 %\label{fig:medical_test_confusion_matrix_hypothetical}
 %\end{figure}
@@ -890,7 +890,7 @@ The best known classification algorithms for WBC image analysis use a technique 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/components_of_neuron}\\[4ex]
+\includegraphics[width = 0.7\textwidth]{../images_CMYK/components_of_neuron}\\[4ex]
 \caption{The components of a neuron. Electrical signals are passed down axons and exchanged at terminal boundaries between neurons.}
 \label{fig:components_of_neuron}
 \end{figure}
@@ -904,7 +904,7 @@ The mathematically astute reader may have noticed that the output of the McCullo
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/MP_neuron}
+\includegraphics[width = 0.6\textwidth]{../images_CMYK/MP_neuron}
 \caption{A McCullough-Pitts neuron with \textvar{n} equal to 2 and \textvar{b} equal to 2. The neuron will fire (i.e., output 1) when $x_1 + x_2$ is at least equal to \textvar{b}, which occurs precisely when both input variables are equal to 1; if either input variable is equal to 0, then $x_1 + x_2$ will be less than \textvar{b} and the neuron will not fire (i.e., it will output 0).}
 \label{fig:MP_neuron}
 \end{figure}
@@ -918,7 +918,7 @@ A McCulloch-Pitts neuron is a perceptron for which all the $w_i$ are equal to 1.
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.64\textwidth]{../images/perceptron}
+\includegraphics[width = 0.64\textwidth]{../images_CMYK/perceptron}
 \caption{A perceptron with two input variables. The perceptron includes a constant threshold and constant weights $\textvar{w}_\text{1}$ and $\textvar{w}_\text{2}$. The perceptron outputs 1 when the weighted sum $\textvar{w}_\text{1} \cdot \textvar{x}_\text{1} + \textvar{w}_\text{2} \cdot \textvar{x}_\text{2}$ is greater than or equal to \textvar{b}, and it outputs 0 otherwise.}
 \label{fig:perceptron}
 \end{figure}
@@ -928,7 +928,7 @@ The modern concept of an artificial neuron (\autoref{fig:activation_function}) g
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.68\textwidth]{../images/activation_function}
+\includegraphics[width = 0.68\textwidth]{../images_CMYK/activation_function}
 \caption{A general form of an artificial neuron for two input variables $\textvar{x}_\text{1}$ and $\textvar{x}_\text{2}$, two constant weights $\textvar{w}_\text{1}$ and $\textvar{w}_\text{2}$, a bias \textvar{b}, and an activation function \textvar{f}. The output of the neuron, rather than being strictly 0 or 1, is $\textvar{f}(\textvar{w}_\text{1} \cdot \textvar{x}_\text{1} + \textvar{w}_\text{2} \cdot \textvar{x}_\text{2} - b)$.}
 \label{fig:activation_function}
 \end{figure}
@@ -940,7 +940,7 @@ A commonly used activation function is the \textdefnogloss{logistic function}, $
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/logistic_function}
+\includegraphics[width = 0.7\textwidth]{../images_CMYK/logistic_function}
 \caption{A plot of the logistic function $\textvar{f}(\textvar{x}) = \text{1}/(\text{1}+\textvar{e}^{-\textvar{x}})$, an increasing function whose values range between 0 and 1.}
 \label{fig:logistic_function}
 \end{figure}
@@ -957,7 +957,7 @@ The outputs of mathematical functions can be used as inputs to other functions v
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/neural_network_wbc}
+\includegraphics[width = 0.85\textwidth]{../images_CMYK/neural_network_wbc}
 \caption{An illustration of a potential neural network used for WBC image classification. This network assumes that each WBC is represented by \textvar{n} features, which serve as the input variables for the network. A number of hidden layers of additional neurons may be used, with connections between some of the neurons in adjacent layers. A final output layer of three neurons corresponds to each of the three WBC classes; our hope is that the weights of the neurons in the network are chosen so that the appropriate neuron outputs a value close to 1 corresponding to an image's class, and that the other two neurons output values close to 0.}
 \label{fig:neural_network_wbc}
 \end{figure}
@@ -1049,7 +1049,7 @@ This example provides another reason why we reduce the dimension of a dataset wh
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/curse_of_dimensionality_two_irises}
+\includegraphics[width = 0.7\textwidth]{../images_CMYK/curse_of_dimensionality_two_irises}
 \caption{Petal length (x-axis) plotted against petal width (y-axis) for two flowers in the iris flower dataset. Because of random chance and small sample size, these two flowers demonstrate an inverse correlation between petal length and width, the opposite of the true correlation found in \autoref{fig:iris_flowers_regression_line}.}
 \label{fig:curse_of_dimensionality_two_irises}
 \end{figure}

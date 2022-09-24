@@ -63,7 +63,7 @@ DNA can therefore be thought of as a blueprint for storing information that flow
 
 \vspace{8ex}
 
-\includegraphics[width = 0.6\textwidth]{../images/central_dogma}
+\includegraphics[width = 0.6\textwidth]{../images_CMYK/central_dogma}
 \caption{(Top) The genetic code, which dictates the conversion of RNA codons into amino acids. Three codons (\textnucl{UAA}, \textnucl{UAG}, and \textnucl{UGA}) do not have a corresponding amino acid and are called stop codons because when encountered they serve to halt translation. (Bottom) The central dogma of molecular biology states that genetic information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA and that then serve some purpose in the cell.}
 \label{fig:central_dogma}
 \end{figure}
@@ -86,7 +86,7 @@ Transcription factors are vital for the cell's response to its environment becau
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.6\textwidth]{../images/signal_pathway}
+\includegraphics[width = 0.6\textwidth]{../images_CMYK/signal_pathway}
 \caption{A cell receiving a signal, which triggers a response in which this signal is ``transduced'' into the cell, resulting in transcription of a gene.}
 \label{fig:transduction}
 \end{figure}
@@ -107,7 +107,7 @@ A natural question, then, is to find the set of genes to which a transcription f
 \begin{figure}[hp]
 \centering
 \mySfFamily
-\includegraphics[width = 0.56\textwidth]{../images/ChIP-seq_workflow}
+\includegraphics[width = 0.56\textwidth]{../images_CMYK/ChIP-seq_workflow}
 \caption{A visual overview of ChIP-seq, which is detailed in the main text.}
 \label{fig:ChIP-seq_workflow}
 \end{figure}
@@ -145,7 +145,7 @@ Do you notice anything interesting about the network in \autoref{fig:e_coli_tf_n
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/e_coli_tf_network_blue_orange}
+\includegraphics[width = 0.7\textwidth]{../images_CMYK/e_coli_tf_network_blue_orange}
 \caption{A subset of the \textit{E. coli} transcription factor network. An edge from \textvar{X} to \textvar{Y} denotes that \textvar{X} is a transcription factor that regulates \textvar{Y}. Edges corresponding to activation are colored blue, and edges corresponding to repression are colored orange. All genes in the subset of the network shown are transcription factors, so that edges represent transcription factors that regulate other transcription factors.}
 \label{fig:e_coli_tf_network}
 \end{figure}
@@ -161,7 +161,7 @@ A transcription factor is a protein, which means that because of the central dog
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/autoregulation_example}
+\includegraphics[width = 0.85\textwidth]{../images_CMYK/autoregulation_example}
 \caption{A simplified illustration of autoregulation, in which a gene is transcribed into messenger RNA (mRNA) and then translated into a transcription factor protein, and then this transcription factor regulates the same gene, producing a feedback loop. ``Protein'' labels the transcription factor binding factor protein, which binds to the DNA encoding this transcription factor, labeled by ``Gene''.}
 \label{fig:autoregulation_example}
 \end{figure}
@@ -225,7 +225,7 @@ We will simulate a ``race'' to the \textdef{steady state}{steady state}{also cal
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/two_cells}
+\includegraphics[width = 0.7\textwidth]{../images_CMYK/two_cells}
 \caption{The two cells that we wish to simulate. In the first cell (left), \textvar{X} only activates \textvar{Y}; in the second cell (right), \textvar{Y} also negatively autoregulates.}
 \label{fig:two_cells}
 \end{figure}
@@ -261,7 +261,7 @@ Although we are using a particle-based model to mimic regulation, it does not im
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/cellblender_nar_unequal_chart_white}
+\includegraphics[width = 0.85\textwidth]{../images_CMYK/cellblender_nar_unequal_chart_white}
 \caption{A plot of the concentration of \textvar{Y} particles over time across two simulations. In the first cell (red), we only have activation of \textvar{Y} by \textvar{X}, whereas in the second cell (yellow), we keep all parameters fixed but add a reaction simulating the negative autoregulation of \textvar{Y}.}
 \label{fig:nar_unequal_chart}
 \end{figure}
@@ -279,7 +279,7 @@ We should keep a number of parameters constant across the two simulations becaus
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/cellblender_nar_equal_chart_white}
+\includegraphics[width = 0.85\textwidth]{../images_CMYK/cellblender_nar_equal_chart_white}
 \caption{A plot of the concentration of \textvar{Y} particles across the same two simulations from \autoref{fig:nar_unequal_chart}. In contrast to \autoref{fig:nar_unequal_chart}, in the second simulation (yellow), we increase the rate of the reaction $\textvar{X} \rightarrow \textvar{X} + \textvar{Y}$.  As a result, the two simulated cells have approximately the same steady state concentration of \textvar{Y}, and the simulation that includes negative autoregulation reaches steady state more quickly.}
 \label{fig:nar_equal_chart}
 \end{figure}
@@ -302,7 +302,7 @@ The answer lies in another transcription factor network motif called the \textde
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.45\textwidth]{../images/feed-forward_loop}
+\includegraphics[width = 0.45\textwidth]{../images_CMYK/feed-forward_loop}
 \caption{The feedforward loop (FFL) motif. \textvar{X} regulates both \textvar{Y} and \textvar{Z}, and \textvar{Y} regulates \textvar{Z}.}
 \label{fig:feed-forward_loop}
 \end{figure}
@@ -312,7 +312,7 @@ The answer lies in another transcription factor network motif called the \textde
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.45\textwidth]{../images/type-1_incoherent_feed-forward_loop}
+\includegraphics[width = 0.45\textwidth]{../images_CMYK/type-1_incoherent_feed-forward_loop}
 \caption{The incoherent feed-forward loop network motif. \textvar{X} activates \textvar{Y} and \textvar{Z} (edges are labeled with ``+'') while \textvar{Y} represses \textvar{Z} (edges are labeled with ``-'').}
 \label{fig:type-1_incoherent_feed-forward_loop}
 \end{figure}
@@ -336,7 +336,7 @@ Furthermore, to obtain a mathematically controlled comparison, the reaction $\te
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/cellblender_ffl_white}
+\includegraphics[width = 0.85\textwidth]{../images_CMYK/cellblender_ffl_white}
 \caption{The concentration of \textvar{Z} in the two simulations. Simple activation of \textvar{Z} by \textvar{X} is shown in blue, and the type-1 incoherent FFL is shown in purple.}
 \label{fig:ffl_chart}
 \end{figure}
@@ -350,7 +350,7 @@ We can interpret from the model why the FFL allows for a fast response time as w
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images/damped_oscillator}
+\includegraphics[width = 0.7\textwidth]{../images_CMYK/damped_oscillator}
 \caption{In a damped oscillation, the value of some variable (shown on the y-axis) oscillates back and forth around an asymptotic value while the amplitude decreases over time (shown on the x-axis).}
 \label{fig:damped_oscillator}
 \end{figure}
@@ -379,7 +379,7 @@ The \textdef{repressilator}{repressilator motif}{a transcription factor network 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.3\textwidth]{../images/repressilator}
+\includegraphics[width = 0.3\textwidth]{../images_CMYK/repressilator}
 \caption{The repressilator motif for three particles \textvar{X}, \textvar{Y}, and \textvar{Z}. \textvar{X} represses \textvar{Y}, which represses \textvar{Z}, which in turn represses \textvar{X}, forming a feedback loop.}
 \label{fig:repressilator}
 \end{figure}
@@ -411,7 +411,7 @@ Why do you think that the repressilator motif leads to a pattern of oscillations
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/cellblender_repressilator_white}
+\includegraphics[width = 0.85\textwidth]{../images_CMYK/cellblender_repressilator_white}
 \caption{Modeling the repressilator's concentration of each particle over time; \textvar{X} is shown in yellow, \textvar{Y} is shown in red, and \textvar{Z} is shown in blue.}
 \label{fig:repressilator_chart}
 \end{figure}
@@ -472,7 +472,7 @@ We will further discuss the technical details required to implement a well-mixed
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images/nf_sim_interrupted_chart_spike}
+\includegraphics[width = 0.85\textwidth]{../images_CMYK/nf_sim_interrupted_chart_spike}
 \caption{A plot of particle concentrations in the well-mixed repressilator model over time. Adding a significant number of \textvar{Y} particles to our simulation (the second blue peak) produces little ultimate disturbance to the concentrations of the three particles, which return to normal oscillations within a single cycle.}
 \label{fig:nf_sim_interrupted_chart}
 \end{figure}
@@ -486,7 +486,7 @@ We might hypothesize that this process would continue, with a tall peak in the c
 %\begin{figure}[h]
 %\centering
 %\mySfFamily
-%\includegraphics[width = 0.85\textwidth]{../images/nf_sim_interrupted_chart_spike}
+%\includegraphics[width = 0.85\textwidth]{../images_CMYK/nf_sim_interrupted_chart_spike}
 %\caption{A larger sudden increase in the concentration of \textvar{Y} particles than in \autoref{fig:nf_sim_interrupted_chart} still does not produce a substantive change in the system over time.}
 %\label{fig:nf_sim_interrupted_chart_spike}
 %\end{figure}
@@ -574,7 +574,7 @@ How many feedforward loops would you expect to see in a random network having th
 
 %More complex motifs may require more computational power to discover.
 %
-%[![image-center](../assets/images/600px/s_cerevisiae_tf_network){: .align-center}](../assets/images/s_cerevisiae_tf_network)
+%[![image-center](../assets/images_CMYK/600px/s_cerevisiae_tf_network){: .align-center}](../assets/images_CMYK/s_cerevisiae_tf_network)
 %Example of different motifs within the *S. Cerevisiae* network.[^scNetwork]
 %{: style="text-align: center; font-size: medium;"}
 
