@@ -41,13 +41,13 @@ Instead, we will reduce the number of dimensions of our shape space without remo
 We will introduce dimension reduction using the iris flower dataset that we introduced when discussing [classification](classification). Although this dataset has four features, we will focus again on only petal length and width, which we plot against each other in the figure below. We can trust our eyes to notice the clear pattern: as iris petal width increases, petal length tends to increase as well.
 
 [![image-center](../assets/images/600px/iris_petal_data_unlabeled.png){: .align-center}](../assets/images/iris_petal_data_unlabeled.png)
-Petal width (x-axis) plotted against petal width (y-axis) for all flowers in the iris flower dataset.
+Petal length (x-axis) plotted against petal width (y-axis) for all flowers in the iris flower dataset.
 {: style="font-size: medium;"}
 
 A line drawn through the center of the data (see figure below) provides a reasonable estimate of a flower's petal width given its length, and vice-versa. This line, a one-dimensional object, therefore approximates a collection of points in two dimensions.
 
 [![image-center](../assets/images/600px/iris_flowers_regression_line.png){: .align-center}](../assets/images/iris_flowers_regression_line.png)
-A line passing through the plot of iris petal length against petal width. The line tells us approximately how wide we can expect an iris petal to be given the petal's width, and vice-versa.
+A line passing through the plot of iris petal length against petal width. The line tells us approximately how long we can expect an iris petal to be given the petal's width, and vice-versa.
 {: style="font-size: medium;"}
 
 **STOP:** How could we have determined the line in the figure above?
