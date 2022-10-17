@@ -19,7 +19,7 @@ In this chapter, we will introduce a particle simulation model based on Turing's
 \FloatBarrier
 \phantomsection
 
-\section{An Overview of Random Walks}
+\section{Random Walks Model Diffusion}
 \label{sec:an_overview_of_random_walks}
 \phantomsection
 
@@ -80,10 +80,10 @@ We will work with a two-dimensional simulation, but in a three-dimensional syste
 
 Second, \textvar{B} particles are removed from the system at a constant \textdefnogloss{kill rate} \textvar{k}. As a result of the kill reaction, the number of \textvar{B} particles in the system decreases by a factor of \textvar{k} in a given time step. That is, the more \textvar{B} particles that are present, the more \textvar{B} particles are removed.
 
-Third, our reaction-diffusion system includes the following reaction involving both particle types. The particles on the left side of this reaction are called \textdef{reactants}{reactants}{substances taking part in a reaction} and the particles on the right side are called \textdef{products}{products}{substances resulting from a reaction}.
+Third, our reaction-diffusion system includes the following reaction involving both particle types. The particles on the left side of this reaction are called \textdef{reactants}{reactants}{substances taking part in a reaction} and the particles on the right side are called \textdef{products}{products}{substances resulting from a reaction}:
 
 \begin{center}
-$A + 2B \rightarrow 3B$
+$A + 2B \rightarrow 3B$\,.
 \end{center}
 
 \noindent To simulate this reaction on a particle level, if an \textvar{A} particle and two \textvar{B} particles collide with each other, then the \textvar{A} particle has some fixed probability of being replaced by a third \textvar{B} particle, which could vary in practice based on the presence of a catalyst and the orientation of the particles when they collide. This probability directly relates to the \textit{rate} at which the reaction occurs, denoted \textvar{r}. This third reaction is why we compared \textvar{A} to prey and \textvar{B} to predators, since we may like to conceptualize the reaction as two \textvar{B} particles consuming an \textvar{A} particle and producing a new offspring \textvar{B} particle.\\
@@ -99,9 +99,9 @@ $A + 2B \rightarrow 3B$
 \label{fig:three_reactions}
 \end{figure}
 
-Before continuing, we call your attention to a slight difference between the feed and kill reactions. In the former reaction, the concentration of \textvar{A} particles increases by a constant quantity in each time step. In the latter reaction, the concentration of \textvar{B} particles decreases by a constant factor multiplied by the current concentration of \textvar{B} particles. If we were using calculus to model this system, then letting [\textvar{A}] and [\textvar{B}] denote the concentrations of the two particle types, we would represent the feed and kill reactions by the following two differential equations:
+Before continuing, we call your attention to a slight difference between the feed and kill reactions. In the feed reaction, the concentration of \textvar{A} particles increases by a constant quantity in each time step. In the kill reaction, the concentration of \textvar{B} particles decreases by a constant factor multiplied by the current concentration of \textvar{B} particles. If we were using calculus to model this system, then letting [\textvar{A}] and [\textvar{B}] denote the concentrations of the two particle types, we would represent the feed and kill reactions by the following two differential equations:
 \begin{align*}
-\dfrac{\mathrm{d}[A]}{\mathrm{d}t} & = f\\[1ex]
+\dfrac{\mathrm{d}[A]}{\mathrm{d}t} & = f\,;\\[1ex]
 \dfrac{\mathrm{d}[B]}{\mathrm{d}t} & = k \cdot [B]\,.
 \end{align*}
 
@@ -233,7 +233,7 @@ Research dating to the 1920s has studied the patterns that humans see during vis
 \label{fig:form_constants}
 \end{figure}
 
-Over five decades after Klüver's work, researchers would determine that form constants originate from simpler linear \textit{stripes} of cellular activation patterns in the retina. When the brain passes these linear patterns from the retina, which is circular, to a rectangular field of view interpreted by the visual cortex, it contorts these stripes into form constants. Some researchers believe that the patterns in the retina caused by hallucinations are in fact Turing patterns and can be explained by a reaction-diffusion model in which one type of neuron acts as a predator and another acts as prey, but this hypothesis remains unresolved.\\
+Over five decades after Klüver's work, researchers would determine that form constants originate from simpler linear \textit{stripes} of cellular activation patterns in the retina. When the brain passes these linear patterns from the circular retina to the rectangular field of view interpreted by the visual cortex, it contorts these stripes into form constants. Some researchers believe that the patterns in the retina caused by hallucinations are in fact Turing patterns and can be explained by a reaction-diffusion model in which one type of neuron acts as a predator and another acts as prey, but this hypothesis remains unresolved.\\
 
 \FloatBarrier
 \phantomsection
@@ -388,8 +388,8 @@ Third, we have the reproduction reaction $\textvar{A} + 2\textvar{B} \rightarrow
 
 We now just need to combine these reactions with diffusion. Say that as the result of diffusion, the change in its concentrations are $\Delta A$ and $\Delta B$, where a negative number represents particles leaving the cell, and a positive number represents particles entering the cell. Then in the next time step, the particle concentrations $[\textvar{A}]_{\text{new}}$ and $[\textvar{B}]_{\text{new}}$ are given by the following equations:
 \begin{align*}
-[A]_{\text{new}} & = [A] + \Delta A + f \cdot (1-[A]) - r \cdot [A] \cdot [B]^2\\
-[B]_{\text{new}} & = [B] + \Delta B - k \cdot [B] + r \cdot [A] \cdot [B]^2,.
+[A]_{\text{new}} & = [A] + \Delta A + f \cdot (1-[A]) - r \cdot [A] \cdot [B]^2\,;\\
+[B]_{\text{new}} & = [B] + \Delta B - k \cdot [B] + r \cdot [A] \cdot [B]^2\,.
 \end{align*}
 
 \noindent Applying these reaction-diffusion computations over all cells in parallel and over many generations constitutes a cellular automaton called the \textdef{Gray-Scott model}{Gray-Scott model}{a cellular automaton model generating Turing patterns}.

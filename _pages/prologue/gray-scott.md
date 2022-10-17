@@ -29,7 +29,7 @@ Third, we have the reproduction reaction *A* + 2*B* → 3*B*, which takes place 
 
 We now just need to combine these reactions with diffusion. Say that as the result of diffusion, the change in its concentrations are Δ*A* and Δ*B*, where a negative number represents particles leaving the cell, and a positive number represents particles entering the cell. Then in the next time step, the particle concentrations [*A*]<sub>new</sub> and [*B*]<sub>new</sub> are given by the following equations:
 
-[*A*]<sub>new</sub> = [*A*] + Δ*A* +  *f*(1-[*A*]) - *r* · [*A*] · [*B*]<sup>2</sup>
+[*A*]<sub>new</sub> = [*A*] + Δ*A* +  *f*(1-[*A*]) - *r* · [*A*] · [*B*]<sup>2</sup>;
 
 [*B*]<sub>new</sub> = [*B*] + Δ*B* - *k* · [*B*] + *r* · [*A*] · [*B*]<sup>2</sup>.
 

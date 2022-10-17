@@ -37,9 +37,9 @@ We now will add three reactions to our system. First, *A* particles are added in
 
 Second, *B* particles are removed from the system at a constant **kill rate** *k*. As a result of the kill reaction, the number of *B* particles in the system decreases by a factor of *k* in a given time step. That is, the more *B* particles that are present, the more *B* particles are removed.
 
-Third, our reaction-diffusion system includes the following reaction involving both particle types. The particles on the left side of this reaction are called **reactants** and the particles on the right side are called **products**.
+Third, our reaction-diffusion system includes the following reaction involving both particle types. The particles on the left side of this reaction are called **reactants** and the particles on the right side are called **products**:
 
-<p><center><em>A</em> + 2<em>B</em> → 3<em>B</em></center></p>
+<p><center><em>A</em> + 2<em>B</em> → 3<em>B</em></center>.</p>
 
 To simulate this reaction on a particle level, if an *A* particle and two *B* particles collide with each other, then the *A* particle has some fixed probability of being replaced by a third *B* particle, which could vary in practice based on the presence of a catalyst and the orientation of the particles when they collide. This probability directly relates to the *rate* at which the reaction occurs, denoted *r*. This third reaction is why we compared *A* to prey and *B* to predators, since we may like to conceptualize the reaction as two *B* particles consuming an *A* particle and producing a new offspring *B* particle.
 
@@ -47,13 +47,11 @@ The three reactions defining our system are summarized by the figure below.
 
 {% include gallery caption="A visualization of our reaction-diffusion system at a moment in time showing updates due to reactions. (Left) The system contains both types of particles and two collisions. The two *A* particles shown with dashed lines are not yet present. (Right) Two of the *A* particles are fed into the system, two of the *B* particles die out, and a B particle replaces an *A* particle after the collision of two *B* particles and an *A* particle." %}
 
-Before continuing, we call your attention to a slight difference between the feed and kill reactions. In the former reaction, the concentration of *A* particles increases by a constant quantity in each time step. In the latter reaction, the concentration of *B* particles decreases by a constant factor multiplied by the current concentration of *B* particles. If we were using calculus to model this system, then letting [*A*] and [*B*] denote the concentrations of the two particle types, we would represent the feed and kill reactions by the following two differential equations:
+Before continuing, we call your attention to a slight difference between the feed and kill reactions. In the feed reaction, the concentration of *A* particles increases by a constant quantity in each time step. In the kill reaction, the concentration of *B* particles decreases by a constant factor multiplied by the current concentration of *B* particles. If we were using calculus to model this system, then letting [*A*] and [*B*] denote the concentrations of the two particle types, we would represent the feed and kill reactions by the following two differential equations:
 
 <p><center>
-<em>d</em>[<em>A</em>]/<em>dt</em> = <em>f</em>
+<em>d</em>[<em>A</em>]/<em>dt</em> = <em>f</em>;
 </center></p>
-
-and
 
 <p><center>
 <em>d</em>[<em>B</em>]/<em>dt</em> = -<em>k</em> · [<em>B</em>].
@@ -120,7 +118,7 @@ Research dating to the 1920s has studied the patterns that humans see during vis
 A few of Heinrich Klüver's form constants. Image courtesy: Lisa Diez, Wikimedia Commons.
 {: style="font-size: medium;"}
 
-Over five decades after Klüver's work, researchers would determine that form constants originate from simpler linear *stripes* of cellular activation patterns in the retina. When the brain passes these linear patterns from the retina, which is circular, to a rectangular field of view interpreted by the visual cortex, it contorts these stripes into form constants.[^cowan] Some researchers[^quanta] believe that the patterns in the retina caused by hallucinations are in fact Turing patterns and can be explained by a reaction-diffusion model in which one type of neuron acts as a predator and another acts as prey, but this hypothesis remains unresolved.
+Over five decades after Klüver's work, researchers would determine that form constants originate from simpler linear *stripes* of cellular activation patterns in the retina. When the brain passes these linear patterns from the circular retina to the rectangular field of view interpreted by the visual cortex, it contorts these stripes into form constants.[^cowan] Some researchers[^quanta] believe that the patterns in the retina caused by hallucinations are in fact Turing patterns and can be explained by a reaction-diffusion model in which one type of neuron acts as a predator and another acts as prey, but this hypothesis remains unresolved.
 
 ## Streamlining our simulations
 
