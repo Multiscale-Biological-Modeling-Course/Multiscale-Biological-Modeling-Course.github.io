@@ -16,9 +16,9 @@ We could imagine many ideas for how the immortals could reunite. For example, th
 
 But Munroe provides a solution that is both sophisticated and elegant. He argues that without additional information, the immortals should walk randomly, leaving markers in their wake pointing in the direction that they travel, and resting frequently. If one immortal finds the other's trail, then they should follow it, resting less and traveling faster, until some time has expired or they lose the trail.
 
-In the previous two chapters, we have harnessed the power of randomness to answer practical questions. Munroe's approach exemplifies a \textdef{randomized algorithm}{random algorithm}{a method that uses randomness to solve (or approximately solve) a problem}, or a method that uses randomness to solve a problem. In fact, this algorithm is inspired by nature; Munroe calls the approach ``be an ant'' because it mimics how ants explore their environment for resources. In this chapter, we will see that the Lost Immortals algorithm is also similar to the method of exploration taken by a much smaller organism: our old friend \textit{E.~coli}.
+In the previous two chapters, we have harnessed the power of randomness to answer practical questions. Munroe's approach exemplifies a \textdef{randomized algorithm}{random algorithm}{a method that uses randomness to solve (or approximately solve) a problem}, or a method that uses randomness to solve a problem. In fact, his algorithm is inspired by nature; Munroe calls the approach ``be an ant'' because it mimics how ants explore their environment for resources. In this chapter, we will see that the lost immortals' algorithm is also similar to the method of exploration taken by a much smaller organism: our old friend \textit{E.~coli}.
 
-Like other prokaryotes, \textit{E.~coli} is tiny, with a rod-shaped body that is 2 µm long and 0.25 to 1 µm wide. In exploring a vast world with sparse resources, \textit{E.~coli} finds itself in a situation comparable to that of Munroe's immortals.
+Like other prokaryotes, \textit{E.~coli} is tiny, with a rod-shaped body that is 2 µm long and 0.25 to 1 µm wide. In exploring a vast world with sparse resources, \textit{E.~coli} finds itself in a situation comparable to that of the lost immortals.
 
 The movement of organisms like \textit{E.~coli} in response to a chemical stimulus is called \textdef{chemotaxis}{chemotaxis}{the movement of an organism in response to a chemical stimulus}. \textit{E.~coli} and other bacteria have evolved to move toward \textdefnogloss{attractants} like glucose and electron acceptors and move away from \textdefnogloss{repellents} like Ni\textsuperscript{2+} and Co\textsuperscript{2+}.
 
@@ -361,10 +361,12 @@ Earlier in this chapter, we showed an example in which a system with 10,000 free
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.8\textwidth]{../images_CMYK/chemotaxis_tutorial4_ssa_vscode}
+\includegraphics[width = 0.87\textwidth]{../images_CMYK/chemotaxis_tutorial4_ssa_vscode}
 \caption{A concentration plot over time for ligand-receptor dynamics via a simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in $\text{molecules}/\text{µm}^\text{3}$) on the y-axis. The molecules quickly reach steady state concentrations that match those identified by hand.}
 \label{fig:chemotaxis_tutorial4_ssa}
 \end{figure}
+
+\newpage
 
 This simple ligand-receptor model is just the beginning of our study of chemotaxis. In the next section, we will delve into the complex biochemical details of chemotaxis. Furthermore, we will see that the Gillespie algorithm for stochastic simulations will scale easily as our model of this system grows more complex.\\
 
@@ -390,13 +392,13 @@ A high-level view of the transduction pathway for chemotaxis is shown in \autore
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.85\textwidth]{../images_CMYK/chemotaxisphosnew}
+\includegraphics[width = 0.87\textwidth]{../images_CMYK/chemotaxisphosnew}
 \caption{A high-level summary of the chemotaxis transduction pathway. A ligand binding signal is propagated through CheA and CheY phosphorylation, which leads to a response of clockwise flagellar rotation. The blue curved arrow denotes phosphorylation, the grey curved arrow denotes dephosphorylation, and the blue dashed arrow denotes a chemical interaction. Our figure offers a simplified view of \href{http://chemotaxis.biology.utah.edu/Parkinson_Lab/projects/ecolichemotaxis/ecolichemotaxis.html}{Parkinson lab} illustrations.}
 \label{fig:chemotaxisphosnew}
 \end{figure}
 
 
-On the interior of the cellular membrane, MCPs form complexes with two proteins called \textbf{CheW} and \textbf{CheA}. In the absence of MCP-ligand binding, this complex is more stable, and the CheA molecule \textdef{autophosphorylates}{autophosphorylation}{the process of a molecule adding a phosphoryl group to itself}, meaning that it adds a phosphoryl group taken from ATP to \textit{itself} --- a concept that might seem mystical if you have not already followed our discussion of autoregulation in \autoref{chapter:motifs}.
+On the interior of the cellular membrane, MCPs form complexes with two proteins called \textbf{CheW} and \textbf{CheA}. In the absence of MCP-ligand binding, this complex is more stable, and the CheA molecule \textdef{autophosphorylates}{autophosphorylation}{the process of a molecule adding a phosphoryl group to itself}, meaning that it adds a phosphoryl group taken from ATP to \textit{itself} --- a concept that might seem mystical if you had not already followed our discussion of autoregulation in \autoref{chapter:motifs}.
 
 A phosphorylated CheA protein can pass on its phosphoryl group to a molecule called \textbf{CheY}, which interacts with the flagellum in the following way. Each flagellum has a protein complex called the \textdef{flagellar motor switch}{flagellar motor switch}{a protein complex on a flagellum that is responsible for controlling the direction of flagellar rotation} that is responsible for controlling the direction of flagellar rotation. The interaction of this protein complex with phosphorylated CheY induces a change of flagellar rotation from counter-clockwise to clockwise. As we discussed earlier in the chapter, this change in flagellar rotation causes the bacterium to tumble, which in the absence of an increase in attractant occurs every 1 to 1.5 seconds.
 
@@ -417,7 +419,7 @@ We would like to use the Gillespie algorithm to simulate the reactions driving c
 
 This model will be more complicated than any we have introduced thus far. We will need to account for both bound and unbound MCP molecules, as well as phosphorylated and unphosphorylated CheA and CheY enzymes. We will also need to model CheA phosphorylation reactions, which depend on the current concentrations of bound and unbound MCP molecules. We will at least make the simplifying assumption that the MCP receptor is permanently bound to CheA and CheW, so that we do not need to represent these molecules individually. In other words, rather than thinking about CheA autophosphorylating, we will think about the receptor that includes CheA autophosphorylating.
 
-We will need six reactions. Two reversible reactions represent ligand-receptor binding, one for phosphorylated receptors, and another for unphosphorylated receptors. Two reactions represent MCP phosphorylation and take place at different rates based on whether the MCP is bound to a ligand (in our model, the phosphorylation rate is five times greater when the MCP is unbound). One reaction represents phosphorylation of CheY, and another reaction models dephosphorylation, which is mediated by the CheZ enzyme.
+We will need six reactions. Two reversible reactions represent ligand-receptor binding: one for phosphorylated receptors, and another for unphosphorylated receptors. Two reactions represent MCP phosphorylation and take place at different rates based on whether the MCP is bound to a ligand (in our model, the phosphorylation rate is five times greater when the MCP is unbound). One reaction represents phosphorylation of CheY, and another reaction models dephosphorylation, which is mediated by the CheZ enzyme.
 
 Once we have built this model, we would like to see what happens when we change the concentrations of the ligand. Ideally, the bacterium should be able to distinguish different ligand concentrations. That is, the higher the concentration of an attractant ligand, the lower the concentration of phosphorylated CheY (and the lower the tumbling frequency of the bacterium that we are simulating). But will the model reflect this behavior?\tutorial[chemotaxis/tutorial_phos]
 
@@ -526,7 +528,7 @@ In \autoref{fig:chemotaxis_tutorial_adaptation} (top left), we add a relatively 
 \includegraphics[width = 0.4\textwidth]{../images_CMYK/chemotaxis_tutorial_oneadd1e6_vscode}\\[1ex]
 \multicolumn{2}{c}{\includegraphics[width = 0.4\textwidth]{../images_CMYK/chemotaxis_tutorial_oneadd1e8_vscode}}
 \end{tabular}
-\caption{Molecular concentrations over time (in seconds) in a chemotaxis simulation for a variety of initial attractant ligand particle numbers: 10,000 (top left), 1,000,000 (top right), and 100,000,000 (bottom). Phosphorylated CheY, whose concentration is a proxy for tumbling frequency, is shown in orange.}
+\caption{Molecular concentrations over time (in seconds) in a chemotaxis simulation for a variety of initial attractant ligand particle numbers: 10,000 (top left), 1,000,000 (top right), and 100,000,000 (bottom). The concentration of CheY, a proxy for tumbling frequency, is shown in orange.}
 \label{fig:chemotaxis_tutorial_adaptation}
 \end{figure}
 
@@ -549,7 +551,7 @@ We will modify our model by increasing the concentration of the attractant ligan
 %\phantomsection
 %\subsection{Steady state tumbling frequency is robust}
 
-To model a ligand concentration $[L]$ that is increasing exponentially, we will use the function $[L] = l_0 \cdot e^{k \cdot t}$, where $e$ is Euler's number ($e = 2.71828\ldots$), $k$ is a positive constant dictating the rate of exponential growth, $l_0$ is the initial concentration, and $t$ is the time. The parameter $k$ represents the steepness of the gradient, since the higher the value of $k$, the faster the growth in the ligand concentration $[L]$.
+To model a ligand concentration $[L]$ that is increasing exponentially, we will use the function $[L] = l_0 \cdot e^{k \cdot t}$, where $e$ is Euler's number ($e = 2.71828\ldots$), $k$ is a positive constant dictating the rate of exponential growth, $l_0$ is the initial concentration, and $t$ is time. The parameter $k$ represents the steepness of the gradient, since the higher the value of $k$, the faster the growth in the ligand concentration $[L]$.
 
 \autoref{fig:chemotaxis_tutorial_addition01} shows the concentration over time of phosphorylated CheY (orange) when $l_0 = 1000$ and $k = 0.1$. The concentration of phosphorylated CheY, and therefore the tumbling frequency, still decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (the plateau in the blue curve), receptor methylation causes the concentration of phosphorylated CheY to return to its equilibrium. For these values of $l_0$ and $k$, the outcome is similar to when we provided an instantaneous increase in ligand, although the cell takes longer to reach its minimum concentration of phosphorylated CheY because the attractant concentration is increasing gradually.
 
