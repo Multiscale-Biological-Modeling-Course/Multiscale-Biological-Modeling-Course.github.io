@@ -10,7 +10,7 @@ image: "../assets/images/repressilator_chart.png"
 
 ## The transcription factor network of *E. coli*
 
-Once we know which genes each transcription factor regulates, we can consolidate this information into a **transcription factor network**. The nodes in the network represent an organism's proteins, and we connect *X* to *Y* with an edge if *X* is a transcription factor that regulates the expression of protein *Y*. These edges are one-way connections; any node can have an edge leading into it, but only a transcription factor can have an edge leaving it.
+Once we know which genes each transcription factor regulates, we can consolidate this information into a **transcription factor network**. The nodes in the network represent an organism's proteins, and an edge connects *X* to *Y* if *X* is a transcription factor that regulates the expression of protein *Y*. These edges are one-way connections; any node can have an edge leading into it, but only a transcription factor can have an edge leaving it.
 
 The figure below shows a portion of the transcription factor network for *Escherichia coli*, the workhorse model organism of bacterial study. The complete network, which is the sum of over two decades of biological research, consists of thousands of genes and around 300 transcription factors[^tfNumber]. Because of the size of this network, it forms what computational biologists affectionally call a "hairball", or a network with so many connections that it is functionally impossible to analyze visually. For this reason, we will need to use computational approaches to study this network.
 

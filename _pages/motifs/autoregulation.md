@@ -46,7 +46,7 @@ In the following tutorial, we write some code to count the number of loops in th
 
 In a random network containing *n* nodes, the probability that a given edge is a loop is 1/*n*. Therefore, if the network has *e* edges, then we would on average see *e*/*n* loops in the network. In our case, *n* is 197 and *e* is 477; therefore, on average, we expect to see 197/497 ≈ 2.42 loops in a random network. Yet the real network of *E. coli* transcription factors that regulate each other contains 130 loops!
 
-Furthermore, in a random network, we would expect about half of the edges correspond to activation, and the other half correspond to repression. But if you followed the preceding tutorial, then you know that of the 130 loops in the *E. coli* network, 35 correspond to activation and 95 correspond to repression. Just as you would be surprised to flip a coin 130 times and see “heads” 95 times, the cell must be negatively autoregulating for some reason.
+Furthermore, in a random network, we would expect that about half of the edges correspond to activation, and the other half correspond to repression. But if you followed the preceding tutorial, then you know that of the 130 loops in the *E. coli* network, 35 correspond to activation and 95 correspond to repression. Just as you would be surprised to flip a coin 130 times and see “heads” 95 times, the cell must be negatively autoregulating for some reason.
 
 Not only is autoregulation an important feature of transcription factors, but these transcription factors tend to *negatively* autoregulate. Why in the world would organisms have evolved the process of autoregulation only for a transcription factor to *slow down* its own transcription? In the next lesson, we will begin to unravel the mystery.
 
