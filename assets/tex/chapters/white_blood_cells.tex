@@ -256,7 +256,7 @@ In the ongoing example, if we were using \textvar{k} equal to 1, then we would a
 \centering
 \mySfFamily
 \includegraphics[width = 0.6\textwidth]{../images_CMYK/knn_neighborhood_k=1}
-\caption{When \textvar{k} is equal to 1, k-NN classifies an unknown point according to the point of known class that is nearest; for this reason, the gray point with unknown class would be assigned to the green class. (Bottom)}
+\caption{When \textvar{k} is equal to 1, k-NN classifies an unknown point according to the point of known class that is nearest; for this reason, the gray point with unknown class would be assigned to the green class.}
 \label{fig:knn_neighborhood_k=1}
 \end{figure}
 
@@ -311,7 +311,7 @@ Imagine that you are an interstellar traveler to Earth and come across the ruins
 \end{figure}
 
 \begin{qbox}[%
-If you know the location of New York, how could you use the information in \autoref{fig:atlas} to find the other cities?
+If you know the locations of New York and Seattle, how could you use the information in \autoref{fig:atlas} to find the other cities?
 ]\end{qbox}
 
 This seemingly contrived example has a real archaeological counterpart. In 2019, researchers used commercial records that had been engraved by Assyrian merchants onto 19th Century BCE stone tablets in order to estimate distances between pairs of Bronze age cities in present-day Turkey. Using this ``atlas'' of sorts, they estimated the locations of lost cities.
@@ -344,7 +344,7 @@ $\text{RMSD}(\mathbf{s}, \mathbf{t}) = \sqrt{\dfrac{1}{n} \cdot \left[d(s_1, t_1
 
 It is tempting to take the vectorization of every shape as our desired shape space. If this were the case, then we would hope that images of similarly shaped nuclei would have low RMSD and that the more dissimilar two nuclei become, the higher the RMSD of their shape vectors. The potential issues with this assumption are the same as those encountered when discussing protein structures, which we now review.
 
-On the one hand, recall the danger from undersampling from \autoref{fig:circle_square_undersampling}, so that we must ensure that the number of points that we sample from the object boundary is sufficiently high to avoid dissimilar shapes from having low RMSD. On the other hand, we could have very similar shapes whose RMSD winds up being high. For example, recall the shapes in \autoref{fig:two_shapes}, which are identical, but one has been flipped and rotated. If we were to vectorize these shapes as they are now in the same way (say, by starting at the top of the shape and proceeding clockwise), then we would obtain two vectors with high RMSD.
+On the one hand, recall the danger of undersampling from \autoref{fig:circle_square_undersampling}, so that we must ensure that the number of points that we sample from the object boundary is sufficiently high to avoid dissimilar shapes from having low RMSD. On the other hand, we could have very similar shapes whose RMSD winds up being high. For example, recall the shapes in \autoref{fig:two_shapes}, which are identical, but one has been flipped and rotated. If we were to vectorize these shapes as they are now in the same way (say, by starting at the top of the shape and proceeding clockwise), then we would obtain two vectors with high RMSD.
 
 We handled the latter issue in our work on protein structure comparison by introducing the Kabsch algorithm, which identified the best rotation of one shape into another that would minimize the RMSD of the resulting shape vectors. And yet what makes our work here more complicated is that we are not comparing  two WBC image shape vectors, we are comparing hundreds.
 
@@ -355,6 +355,8 @@ Statisticians have devised a collection of approaches called multi-dimensional s
 \begin{qbox}[%
 If we have \textvar{m} cellular images, then how many times will we need to compute the distance between a pair of images?
 ]\end{qbox}
+
+\vspace{-\baselineskip}
 
 \FloatBarrier
 \phantomsection
@@ -460,7 +462,7 @@ How could we have determined the line in \autoref{fig:iris_flowers_regression_li
 
 Long ago in math class, you may have learned how to choose a line to best approximate a two-dimensional dataset using \textdefnogloss{linear regression}, which we will now briefly describe. In linear regression, we first establish one variable as the \textit{dependent} variable, which is typically assigned to the y-axis. In our iris flower example, the dependent variable is petal width.
 
-Given a line, we use $L(x)$ to denote the y-coordinate of the point on the line corresponding to a given x-coordinate. For this line, we can then define the \textdefnogloss{residual} of a data point $(x, y)$ as the difference $y - L(x)$ between its y-coordinate and the y-coordinate one the line corresponding to \textvar{x}. If a residual is positive, then the data point lies ``above'' the line, and if the residual is negative, then the point lies ``below'' the line (\autoref{fig:residuals_both_directions} (left)).\\
+Given a line, we use $L(x)$ to denote the y-coordinate of the point on the line corresponding to a given x-coordinate. For this line, we can then define the \textdefnogloss{residual} of a data point $(x, y)$ as the difference $y - L(x)$ between its y-coordinate and the y-coordinate one the line corresponding to \textvar{x}. If a residual is positive, then the data point lies ``above'' the line, and if the residual is negative, then the point lies ``below'' the line (\autoref{fig:residuals_both_directions} (left)).
 
 \begin{figure}[h]
 \centering
@@ -511,11 +513,11 @@ Say that we wanted to generalize these ideas to three-dimensional space. The fir
 \includegraphics[width = 0.4\textwidth]{../images_CMYK/three_dimensional_pca} &
 \includegraphics[width = 0.4\textwidth]{../images_CMYK/three_dimensional_pca_plane}
 \end{tabular}
-\caption{(Left) A collection of seven points, each labeled with a different color. Each point is projected onto the plane that minimizes the sum of squared distances between points and the plane. The line indicated is the first principal component of the data; this line lies within the plane, which is the case for any dataset. (Right) A reorientation of the plane such that the first principal component is shown as the x-axis, with colored points corresponding to the projections onto the plane from the left figure. The y-axis is known as the ``second principal component'' of the data.}
+\caption{(Left) A collection of seven points, each labeled with a different color. Each point is projected onto the plane that minimizes the sum of squared distances between points and the plane. The line indicated is the first principal component of the data; this line lies within the plane, which is the case for any dataset. (Right) A reorientation of the plane such that the first principal component is shown as the x-axis, with colored points corresponding to the projections onto the plane from the left figure. The y-axis of this plane is known as the ``second principal component'' of the data.}
 \label{fig:three_dimensional_pca}
 \end{figure}
 
-Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but we can generalize these concepts mathematically. Given a collection of \textvar{m} data points (or vectors) in \textvar{n}-dimensional space, we are looking for a \textvar{d}-dimensional \textdef{hyperplane}{hyperplane}{an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space}, or an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on this hyperplane, we reduce the dimension of the dataset from \textvar{n} to \textvar{d}. This approach, which is over 100 years old but omnipresent in modern data science, is called \textdef{principal component analysis (PCA)}{principal component analysis (PCA)}{an approach used for finding the lower-dimensional hyperplane through a collection of data that minimizes the sum of squared distances from the points to their projections on the hyperplane}.
+Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but we can generalize these concepts mathematically. Given a collection of \textvar{m} data points (or vectors) in \textvar{n}-dimensional space, we are looking for a \textvar{d}-dimensional \textdef{hyperplane}{hyperplane}{an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space}, or an embedding of \textvar{d}-dimensional space inside \textvar{n}-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on this hyperplane, we reduce the dimension of the dataset from \textvar{n} to \textvar{d}. This approach, which is over 100 years old but omnipresent in modern data science, is called \textdef{principal component analysis (PCA)}{principal component analysis (PCA)}{an approach used for finding the lower dimensional hyperplane through a collection of data that minimizes the sum of squared distances from the points to their projections on the hyperplane}.
 
 \begin{figure}[p]
 \centering
@@ -639,12 +641,12 @@ What other metrics could we design to measure a classifier's success?
 
 To motivate our discussion of other classifier metrics, we will continue with the analogy of medical tests, which can be thought of as classifiers with two classes (positive or negative).
 
-First, we define some terms. A \textdef{true positive}{true positive}{a positive test in an individual who is positive for the condition} is a positive test in a patient that has the condition; a \textdef{false positive}{false positive}{a positive test in an individual who is negative for the condition} is a positive test in a patient that does not have the condition; a \textdef{true negative}{true negative}{a negative test in an individual who is negative for the condition} is a negative test in a patient that does not have the condition; and a \textdef{false negative}{false negative}{a negative test in an individual who is positive for the condition} is a negative test in a patient that does have the condition. \autoref{fig:medical_test_confusion_matrix} shows the locations of these four terms in the two-class confusion matrix for the test.\\
+First, we define some terms. A \textdef{true positive}{true positive}{a positive test in an individual who is positive for the condition} is a positive test in a patient that has the condition; a \textdef{false positive}{false positive}{a positive test in an individual who is negative for the condition} is a positive test in a patient that does not have the condition; a \textdef{true negative}{true negative}{a negative test in an individual who is negative for the condition} is a negative test in a patient that does not have the condition; and a \textdef{false negative}{false negative}{a negative test in an individual who is positive for the condition} is a negative test in a patient that does have the condition. \autoref{fig:medical_test_confusion_matrix} shows the locations of these four terms in the two-class confusion matrix for the test.
 
 \begin{figure}[h]
 \centering
 \mySfFamily
-\includegraphics[width = 0.7\textwidth]{../images_CMYK/medical_test_confusion_matrix}
+\includegraphics[width = 0.65\textwidth]{../images_CMYK/medical_test_confusion_matrix}
 \caption{The locations of true positives, false positives, true negatives, and false negatives in the confusion matrix associated with a medical test. Correct predictions are shown in green, and incorrect predictions are shown in red.}
 \label{fig:medical_test_confusion_matrix}
 \end{figure}
@@ -687,7 +689,7 @@ How could we trick a test to have recall, specificity, or precision close to 1?
 Just like accuracy, each of the above three of metrics is imperfect on its own and can be fooled by a frivolous test that always returns positive or negative. However, a frivolous test cannot score well on all these metrics at the same time. Therefore, in practice we will examine all these metrics, as well as accuracy, when assessing the quality of a classifier.\\
 
 \begin{qbox}[%
-Consider a dataset of 201,500 patients, 1,500 of whom have a condition. Compute the recall, specificity, and precision of a medical test that always returns negative. How do these metrics compare against those of the hypothetical test in \autoref{fig:medical_test_confusion_matrix_hypothetical}?
+Consider a dataset of 201,500 patients, 1,500 of whom have a condition. Compute the recall, specificity, and precision of a medical test that always returns negative.
 ]\end{qbox}
 
 You may find all these terms difficult to keep straight. You are not alone! An entire generation of scientists make copious trips to the \href{https://en.wikipedia.org/wiki/Precision_and_recall#Definition_(classification_context)}{Wikipedia page} describing these and other classification metrics. After all, it's called a confusion matrix for a reason\ldots
@@ -785,9 +787,9 @@ The confusion matrix shown in \autoref{fig:wbc_cellorganizer} (top) is the resul
 \label{fig:wbc_cellorganizer}
 \end{figure}
 
-If you explored the preceding tutorial, then you may wish to verify that the three values of \textvar{d}, \textvar{k}, \textvar{f} in \autoref{fig:wbc_cellorganizer} appear to be close to optimal, in that changing them does not improve the resulting classification metrics. We will examine why this is the case.
+If you explored the preceding tutorial, then you may wish to verify that the three values of \textvar{d}, \textvar{k}, and \textvar{f} in \autoref{fig:wbc_cellorganizer} appear to be close to optimal, in that changing them does not improve the resulting classification metrics. We will examine why this is the case.
 
-We start with \textvar{d}. If we set \textvar{d} too large, then once again the curse of dimension strikes. Using \textvar{d} equal to 344 (with \textvar{k} equal to 1 and \textvar{f} equal to 10) produces the baffling confusion matrix in \autoref{fig:wbc_baffling_confusion_matrix}, in which every element in the space is somehow closest to a lymphocyte.\\
+We start with \textvar{d}. If we set \textvar{d} too large, then once again the curse of dimension strikes. Using \textvar{d} equal to 344 (with \textvar{k} equal to 1 and \textvar{f} equal to 10) produces the baffling confusion matrix in \autoref{fig:wbc_baffling_confusion_matrix}, in which every element in the space is somehow closest to a lymphocyte.
 
 \begin{figure}[h]
 \centering
@@ -964,15 +966,15 @@ The outputs of mathematical functions can be used as inputs to other functions v
 
 We have discussed converting each object \textvar{x} in a dataset (such as our WBC image dataset) into a feature vector $(x_1, x_2, \ldots, x_n)$ representing each of the \textvar{n} feature values of \textvar{x}. In \autoref{fig:neural_network_wbc}, these \textvar{n} variables of the data's feature vectors become the \textvar{n} input variables of the neural network.
 
-We typically then connect all the input variables to most or all of a collection of (possibly many) artificial neurons, called a \textdefnogloss{hidden layer}, which is shown for simplicity as a gray box in \autoref{fig:neural_network_wbc}. If we have \textvar{m} artificial neurons in the hidden layer, and \textvar{n} input variables, then we will have $m$ bias constants as well as $m \cdot n$ weights, each one assigned to an edge connecting an input variable to a hidden layer neuron (all these edges are indicated by dashed edges in \autoref{fig:neural_network_wbc}). Our model has quickly accumulated an enormous number of parameters!
+We typically then connect all the input variables to most or all of a collection of (possibly many) artificial neurons, called a \textdefnogloss{hidden layer}, which is shown for simplicity as a gray box in \autoref{fig:neural_network_wbc}. If we have \textvar{m} artificial neurons in the hidden layer and \textvar{n} input variables, then we will have $m$ bias constants as well as $m \cdot n$ weights, each one assigned to an edge connecting an input variable to a hidden layer neuron (all these edges are indicated by dashed edges in \autoref{fig:neural_network_wbc}). Our model has quickly accumulated an enormous number of parameters!
 
-The first hidden layer of neurons may then be connected as inputs to neurons in another hidden layer, which are connected to neurons in another layer, and so on. As a result, practical neural networks may have several hidden layers with thousands of neurons, each with their own biases, input weights, and even different activation functions. The most common usage of the term \textdef{deep learning}{deep learning}{an approach that applies neural networks with multiple hidden layers to analyze datasets} refers to solving problems using neural networks having several hidden layers; the discussion of the many challenges in designing neural networks for deep learning would cover an entire book much longer than this one.\\
+The first hidden layer of neurons may then be connected as inputs to neurons in another hidden layer, which are connected to neurons in another layer, and so on. As a result, practical neural networks may have several hidden layers with thousands of neurons, each with their own biases, input weights, and even different activation functions. The most common usage of the term \textdef{deep learning}{deep learning}{an approach that applies neural networks with multiple hidden layers to analyze datasets} refers to solving problems using neural networks having several hidden layers; the discussion of the many challenges in designing neural networks for deep learning would fill an entire book.\\
 
 \begin{qbox}[%
 Say that a neural network has 100 input variables, three output neurons, and four hidden layers of 1000 neurons each. Say also that every neuron in one layer is connected as an input to every neuron in the next layer. How many bias parameters will this network have? How many weight parameters will this network have?
 ]\end{qbox}
 
-The remaining question is what the output of our neural network should be. If we would like to apply the network to classify our data into \textvar{k} classes, then we typically will connect the final hidden layer of neurons to \textvar{k} \textdefnogloss{output neurons}. Ideally, if we know that a data point \textvar{x} belongs to the \textvar{i}-th class, then when we use the values of its feature vector as input to the network, we would like for the \textvar{i}-th output neuron to output a value close to 1, and all other output neurons to output a value close to 0. For a neural network to correctly classify objects in our dataset, we must find such an ideal choice for the biases of each neuron and the weights assigned to input variables at each neuron --- assuming that we have decided on which activation function(s) to use for the network's neurons. We will now define quantitatively what makes a given choice of neural network parameters suitable for classification.\\
+The remaining question is what the output of our neural network should be. If we would like to apply the network to classify our data into \textvar{k} classes, then we typically will connect the final hidden layer of neurons to \textvar{k} \textdefnogloss{output neurons}. Ideally, if we know that a data point \textvar{x} belongs to the \textvar{i}-th class, then when we use the values of its feature vector as input to the network, we would like for the \textvar{i}-th output neuron to output a value close to 1, and for all other output neurons to output a value close to 0. For a neural network to correctly classify objects in our dataset, we must find such an ideal choice for the biases of each neuron and the weights assigned to input variables at each neuron --- assuming that we have decided on which activation function(s) to use for the network's neurons. We will now define quantitatively what makes a given choice of neural network parameters suitable for classification.\\
 
 \phantomsection
 \subsection{Defining the best choice of parameters for a neural network}
@@ -1009,7 +1011,7 @@ At the time of writing, neural networks are wildly popular, but they have their 
 
 Once we have decided on an architecture, the neural network has so many bias and weight parameters that even with access to a supercomputer, it may be difficult to find values for these parameters that perform even reasonably well on the training set; the situation of having parameters with high RMSD for the training set is called ``underfitting''. Even if we build a neural network having low mean RMSD for the training set, the neural network may perform horribly on the test set, which is called ``overfitting'' and offers yet another instance of the curse of dimensionality.
 
-Despite these potential concerns with building effective neural networks, they are starting to show promise of making significant progress in solving biological problems. AlphaFold, which we introduced in \autoref{chapter:coronavirus}, is powered by neural networks that contain 21 million parameters.  Yet although AlphaFold has revolutionized the study of protein folding, just as many problems exist for which neural networks are struggling to make progress over existing methods. Biology largely remains, like the environment of a lonely bacterium, an untouched universe waiting to be explored.
+Despite these potential concerns with neural networks, they are starting to show promise of making significant progress in solving biological problems. AlphaFold, which we introduced in \autoref{chapter:coronavirus}, is powered by neural networks that contain 21 million parameters.  Yet although AlphaFold has revolutionized the study of protein folding, just as many problems exist for which neural networks are struggling to make progress over existing methods. Biology largely remains, like the environment of a lonely bacterium, an untouched universe waiting to be explored.
 
 \FloatBarrier
 
@@ -1087,4 +1089,3 @@ Apply the same pipeline as the one used to produce \autoref{fig:wbc_cellorganize
 %\begin{exercise}[%
 %Neural network exercise on WBC image dataset?
 %]\end{exercise}
-

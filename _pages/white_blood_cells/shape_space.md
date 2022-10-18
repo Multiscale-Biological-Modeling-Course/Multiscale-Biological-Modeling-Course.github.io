@@ -21,7 +21,7 @@ Imagine that you are a traveler to Earth and come across the ruins of New York C
 | **Houston** | 1628 | 1547 | 1388 | 1189 | 0 | 2340 |
 | **Seattle** | 2852 | 1135 | 2502 | 3300 | 2340 | 0 |
 
-**STOP:** If you know the location of New York, how could you use the information in the table above to find the other cities?
+**STOP:** If you know the locations of New York and Seattle, how could you use the information in the table above to find the other cities?
 {: .notice--primary}
 
 This seemingly contrived example has a real archaeological counterpart. In 2019, researchers used commercial records that had been engraved by Assyrian merchants onto 19th Century BCE stone tablets in order to estimate distances between pairs of lost Bronze age cities in present-day Turkey. Using this "atlas" of sorts, they estimated the locations of the lost cities.[^Barjamovich2019]
