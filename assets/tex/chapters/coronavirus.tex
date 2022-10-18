@@ -930,8 +930,8 @@ When predicting the structure of a protein, we searched for the tertiary structu
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.85\textwidth]{../images_CMYK/NAMDEnergy2}
-	\caption{ACE2 interaction energies of the chimeric SARS-CoV-2 RBD (left) and SARS-CoV RBD (right). The PDB files contain two biological assemblies, or instances, of the corresponding structure. The first instance includes chain A (ACE2) and chain E (RBD), and the second instance includes chain B (ACE2) and chain F (RBD). The overall interactive energies between the RBD and ACE2 are shown in the first two rows (green). Remaining rows show interaction energies for regions of interest: the loop site (yellow), hotspot 31 (red), and hotspot 353 (gray). Total energy is computed as the sum of electrostatic interactions and van der Waals (vdW) forces.}
+	\includegraphics[width = 0.85\textwidth]{../images_CMYK/NAMDEnergy2_edited}
+	\caption{ACE2 interaction energies of the chimeric SARS-CoV-2 RBD (left) and SARS-CoV RBD (right). The PDB files contain two biological assemblies, or instances, of the corresponding structure. The first instance includes chain A (ACE2) and chain E (RBD), and the second instance includes chain B (ACE2) and chain F (RBD). The overall interactive energies between the RBD and ACE2 are shown in the first two rows (green). Remaining rows show interaction energies for regions of interest: the loop site (blue), hotspot 31 (red), and hotspot 353 (purple). Total energy is computed as the sum of electrostatic interactions and van der Waals (vdW) forces.}
 	\label{fig:NAMDEnergy2}
 \end{figure}
 
@@ -979,7 +979,7 @@ We will introduce GNMs using our old friend human hemoglobin (PDB entry: \href{h
 	\tabcolsep = 1.5em
 	\mySfFamily
 	\begin{tabular}{c c}
-		\includegraphics[width = 0.3\textwidth]{../images_CMYK/hemoglobin} & \includegraphics[width = 0.3\textwidth]{../images_CMYK/hemoglobin_network}
+		\includegraphics[width = 0.4\textwidth]{../images_CMYK/hemoglobin} & \includegraphics[width = 0.4\textwidth]{../images_CMYK/hemoglobin_network}
 	\end{tabular}
 	\caption{Conversion of human hemoglobin (left) into a network of nodes and springs (right) in which two nodes are connected by a spring if they are within a threshold distance of 7.3 angstroms.}
 	\label{fig:hemoglobin_enm}
@@ -1087,8 +1087,8 @@ Just as a piece of music can have one instrument that is much louder than anothe
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.7\textwidth]{../images_CMYK/hemoglobin_slowest_mode}\\[3ex]
-	\includegraphics[width = 0.7\textwidth]{../images_CMYK/hemoglobin_mode_shape_avg}
+	\includegraphics[width = 0.7\textwidth]{../images_CMYK/hemoglobin_slowest_mode_edited}\\[3ex]
+	\includegraphics[width = 0.7\textwidth]{../images_CMYK/hemoglobin_mode_shape_avg_edited}
 	\caption{(Top) A mode shape plot of the slowest mode for human hemoglobin, separated over each of the four chains (subunits), shows that the four chains have a similar slowest mode. (Bottom) The average mode shape of the slowest ten modes for each of the four human hemoglobin subunits using GNM. Note that the plots for $\alpha$ subunits (chains A and C) and $\beta$ subunits (chains B and D) differ more than when considering only the slowest mode.}
 	\label{fig:hemoglobin_mode_shape}
 \end{figure}
@@ -1108,9 +1108,9 @@ We are now ready to apply what we have learned  to build a GNM for the SARS-CoV 
 	\mySfFamily
 	\includegraphics[width = 0.85\textwidth]{../images_CMYK/CrossCorr}\\[2ex]
 	\begin{tabular}{c c}
-	\includegraphics[width = 0.38\textwidth]{../images_CMYK/spike_slowmode_SARS-CoV-2} & \includegraphics[width = 0.38\textwidth]{../images_CMYK/spike_slowmode_SARS-CoV}
+	\includegraphics[width = 0.38\textwidth]{../images_CMYK/spike_slowmode_SARS-CoV-2_edited} & \includegraphics[width = 0.38\textwidth]{../images_CMYK/spike_slowmode_SARS-CoV_edited}
 	\end{tabular}
-	\caption{(Top) The cross-correlation heat maps of the SARS-CoV-2 spike protein (top-left), SARS-CoV spike protein (top right), single chain of the SARS-CoV-2 spike protein (bottom left), and single-chain of the SARS-CoV spike protein (bottom right). (Bottom) Average mode shape of the slowest ten modes of SARS-CoV-2 Spike (left) and SARS-CoV Spike (right). The first peak corresponds to the N-Terminal Domain (NTD), and the second peak corresponds to the RBD. Above the mode shape plots, the viral spike proteins are colored according to the value of mode shape, with high values colored red and indicating greater predicted flexibility; note that the SARS-CoV-2 NTD is predicted to be more flexible than that of SARS-CoV.}
+	\caption{(Top) The cross-correlation heat maps of the SARS-CoV-2 spike protein (top-left), SARS-CoV spike protein (top right), single chain of the SARS-CoV-2 spike protein (bottom left), and single-chain of the SARS-CoV spike protein (bottom right). (Bottom) Average mode shape of the slowest ten modes of SARS-CoV-2 spike (left) and SARS-CoV spike (right). The first peak corresponds to the N-Terminal Domain (NTD), and the second peak corresponds to the RBD. Above the mode shape plots, the viral spike proteins are colored according to the value of mode shape, with high values colored red and indicating greater predicted flexibility; note that the SARS-CoV-2 NTD is predicted to be more flexible than that of SARS-CoV.}
 	\label{fig:spike_crosscorr_slowmode}
 \end{figure}
 
