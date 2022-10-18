@@ -45,7 +45,7 @@ Another reason why protein structure prediction is so difficult is because a pol
 As shown in the figure below, an amino acid comprises four parts. In the center, a carbon atom (called the **alpha carbon**) is connected to four different molecules: a hydrogen atom (H), a **carboxyl group** (–COOH), an **amino group** (-NH<sub>2</sub>), and a **side chain** (denoted "R" and often called an **R group**). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) up to -C<sub>8</sub>H<sub>7</sub>N (tryptophan).
 
 [![image-center](../assets/images/600px/AminoAcid.png){: .align-center width="300px"}](../assets/images/AminoAcid.png)
-An amino acid consists of a central, alpha carbon attached to a hydrogen atom, a side group, a carboxyl group, and an amino group.
+An amino acid consists of a central alpha carbon attached to a hydrogen atom, a side group, a carboxyl group, and an amino group.
 {: style="font-size: medium;"}
 
 To form a polypeptide chain, consecutive amino acids are linked together during a condensation reaction in which the amino group of one amino acid is joined to the carboxyl group of another, while a water molecule (H<sub>2</sub>O) is expelled (see figure below).

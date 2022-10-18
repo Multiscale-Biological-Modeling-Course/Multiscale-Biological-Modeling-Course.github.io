@@ -178,7 +178,7 @@ As shown in \autoref{fig:AminoAcid}, an amino acid comprises four parts. In the 
 	\centering
 	\mySfFamily
 	\includegraphics[width = 0.4\textwidth]{../images_CMYK/AminoAcid}
-	\caption{An amino acid consists of a central, alpha carbon attached to a hydrogen atom, a side group, a carboxyl group, and an amino group.}
+	\caption{An amino acid consists of a central alpha carbon attached to a hydrogen atom, a side group, a carboxyl group, and an amino group.}
 	\label{fig:AminoAcid}
 \end{figure}
 
@@ -331,12 +331,12 @@ Biochemical research has contributed to the development of scoring functions cal
 
 The formulation of protein structure prediction as an optimization problem may not strike you as similar to anything that we have seen before in this book. However, consider once more a bacterium exploring an environment for food. Every point in the bacterium's ``search space'' is characterized by a concentration of attractant, and the bacterium's goal is to reach the point of maximum attractant concentration.
 
-In the case of structure prediction, our search space is the collection of all possible conformations of a given protein, and each point in this search space represents a single conformation with an associated potential energy.  Just as we imagined a ball rolling down a hill to find lower energy in \autoref{fig:EnergyCartoon}, we can now imagine exploring the search space of all conformations of a polypeptide to find the conformation having lowest energy. The general problem of exploring a search space to find a point minimizing some function is illustrated in \autoref{fig:energy_landscape}, in which the height of each point represents the value of the function at that point, and our goal is to find the lowest point in the space.\\
+In the case of structure prediction, our search space is the collection of all possible conformations of a given protein, and each point in this search space represents a single conformation with an associated potential energy.  Just as we imagined a ball rolling down a hill to find lower energy in \autoref{fig:EnergyCartoon}, we can now imagine exploring the search space of all conformations of a polypeptide to find the conformation having lowest energy. The general problem of exploring a search space to find a point minimizing some function is illustrated in \autoref{fig:energy_landscape}, in which the height of each point represents the value of the function at that point, and our goal is to find the lowest point in the space.
 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.7\textwidth]{../images_CMYK/energy_landscape}
+	\includegraphics[width = 0.85\textwidth]{../images_CMYK/energy_landscape}
 	\caption{Optimization problems can be thought of as exploring a landscape, in which the height of a point is the value of the function that we wish to optimize. Finding the highest or lowest point in this landscape corresponds to maximizing or minimizing the function over the search space.}
 	\label{fig:energy_landscape}
 \end{figure}
@@ -617,7 +617,9 @@ Earlier in this chapter, we used protein structure prediction software to predic
 	\label{fig:quark_rmsd_table}
 \end{figure}
 
-We also used GalaxyWeb to predict the structure of the SARS-CoV-2 spike protein's RBD, Robetta to predict the structure of a single chain, and SWISS-MODEL to predict the structure of the entire protein. \autoref{fig:sars-cov-2_rmsd_table} compiles the RMSD of structures predicted by this homology modeling software against experimental results.\\
+We also used GalaxyWeb to predict the structure of the SARS-CoV-2 spike protein's RBD, Robetta to predict the structure of a single chain, and SWISS-MODEL to predict the structure of the entire protein. \autoref{fig:sars-cov-2_rmsd_table} compiles the RMSD of structures predicted by this homology modeling software against experimental results.
+
+The GalaxyWEB models have an excellent RMSD score and can be considered very accurate. Note that their RMSD is more than an order of magnitude lower than the RMSD computed for our \textit{ab initio} predictions of hemoglobin subunit alpha, despite the fact that the RBD is longer (229 amino acids). As for the other two software resources, although the RMSD values are higher than those of GalaxyWEB, keep in mind that a single chain of the spike protein is 1,281 amino acids long, and so the sensitivity of RMSD to slight changes should give us confidence that our models are on the right track.\\
 
 \begin{figure}[h]
 	\centering
@@ -643,7 +645,7 @@ We also used GalaxyWeb to predict the structure of the SARS-CoV-2 spike protein'
 	\label{fig:sars-cov-2_rmsd_table}
 \end{figure}
 
-The GalaxyWEB models have an excellent RMSD score and can be considered very accurate. Note that their RMSD is more than an order of magnitude lower than the RMSD computed for our \textit{ab initio} predictions of hemoglobin subunit alpha, despite the fact that the RBD is longer (229 amino acids). As for the other two software resources, although the RMSD values are higher than those of GalaxyWEB, keep in mind that a single chain of the spike protein is 1,281 amino acids long, and so the sensitivity of RMSD to slight changes should give us confidence that our models are on the right track.\\
+
 
 \begin{qbox}[%
 	Which do you think performed more accurately on our predictions: SWISS-MODEL or Robetta?
