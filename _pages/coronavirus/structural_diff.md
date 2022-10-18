@@ -31,7 +31,7 @@ Structural differences are challenging to show with a 2-D image, but if you foll
 {: .notice--primary}
 
 [![image-center](../assets/images/600px/Ridge.png){: .align-center}](../assets/images/Ridge.png)
-A visualization of the loop in the ACE2-binding ridge that is conformationally different between SARS-CoV-2 (left) and SARS-CoV (right). The coronavirus RBD is shown at the top in purple, and ACE2 is shown at the top in green. Structural differences cause certain amino acid residues, which are highlighted in various colors and described in the main text, to behave differently when ACE2 contacts each of the two viruses.
+A visualization of the loop in the ACE2-binding ridge that is conformationally different between SARS-CoV-2 (left) and SARS-CoV (right). The coronavirus RBD is shown at the bottom in purple, and ACE2 is shown at the top in green. Structural differences cause certain amino acid residues, which are highlighted in various colors and described in the main text, to behave differently when ACE2 contacts each of the two viruses.
 {: style="font-size: medium;"}
 
 In what follows, we use a three-letter identifier for an amino acid followed by a number to indicate the identity of that amino acid followed by its position within the protein sequence. For example, the phenylalanine at position 486 of the SARS-CoV-2 spike protein will be called Phe486.
@@ -48,7 +48,7 @@ Although the interaction with the hydrophobic pocket is the most critical differ
 {: .notice--primary}
 
 [![image-center](../assets/images/600px/Hotspot31.png){: .align-center}](../assets/images/Hotspot31.png)
-Visualizations of hotspot 31 in SARS-CoV-2 (left) and SARS-CoV (right). The coronavirus RBD is shown at the top in purple, and ACE2 is shown at the top in green. In SARS-CoV, hotspot 31 corresponds to a salt bridge (red), which is broken in SARS-CoV-2 to form a new hydrogen bond with Gln493 (blue)
+Visualizations of hotspot 31 in SARS-CoV-2 (left) and SARS-CoV (right). The coronavirus RBD is shown at the bottom in purple, and ACE2 is shown at the top in green. In SARS-CoV, hotspot 31 corresponds to a salt bridge (red), which is broken in SARS-CoV-2 to form a new hydrogen bond with Gln493 (blue)
 {: style="font-size: medium;"}
 
 The figure above shows how the salt bridge differs in the two viruses. In SARS-CoV, shown on the right, the two residues point towards each other because in the RBM, Tyr442 (colored yellow) supports the salt bridge between Lys31 and Glu35 on ACE2. In SARS-CoV-2, shown on the left, the corresponding amino acid is the less bulky Leu455 (yellow), which provides less support to Lys31. This causes the salt bridge to break, so that Lys31 and Glu35 in ACE2 point in parallel toward Gln493 (colored blue) on the RBD, forming hydrogen bonds with the spike protein.[^Shang].
