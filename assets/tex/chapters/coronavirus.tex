@@ -162,8 +162,13 @@ Continuing with our hemoglobin example, \autoref{fig:SequenceStructureExample} c
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.85\textwidth]{../images_CMYK/SequenceStructureExample}
-	\caption{(Top) An amino acid sequence comparison of the first 40 (out of 140) amino acids of hemoglobin subunit alpha for three species: human (PDB entry: \href{https://www.rcsb.org/structure/1si4}{1si4}), shortfin mako shark (PDB entry: \href{https://www.rcsb.org/structure/3mkb}{3mkb}), and emu (PDB entry: \href{https://www.rcsb.org/structure/3wtg}{3wtg}). A column is colored blue if all three species have the same amino acid, white if two species have the same amino acid, and red if all amino acids are different. Sequence identity calculates the number of positions in two amino acid sequences that share the same amino acid. (Bottom) Side by side comparisons of the 3-D structures of the three proteins. The final figure on the right superimposes the first three structures to highlight that they are virtually identical.}
+	\begin{tabular}{r c}
+    	\textbf{Human} & \texttt{VLS\Red{P}ADKTN\Red{V}KA\Red{AWG}K\Red{V}G\Red{A}HA\Red{G}EYGAEALER\Red{M}F\Red{LSF}P\Red{T}TK}\\
+	\textbf{Mako Shark} & \texttt{\Red{AFTGVERSTIG}A\Red{IAKILASTP}E\Red{A}YGAEAL\Red{A}RLF\Red{A}T\Red{H}P\Red{GA}K}\\
+	\textbf{Emu} & \texttt{VLSA\Red{A}DKTN\Red{T}K\Red{SVFA}K\Red{I}G\Red{P}HAEEYGAE\Red{T}LERLF\Red{T}T\Red{Y}P\Red{Q}TK}\\[2ex]
+	\end{tabular}
+	\includegraphics[width = 0.85\textwidth]{../images_CMYK/SequenceStructureExample_cropped}
+	\caption{(Top) An amino acid sequence comparison of the first 40 (out of 140) amino acids of hemoglobin subunit alpha for three species: human (PDB entry: \href{https://www.rcsb.org/structure/1si4}{1si4}), shortfin mako shark (PDB entry: \href{https://www.rcsb.org/structure/3mkb}{3mkb}), and emu (PDB entry: \href{https://www.rcsb.org/structure/3wtg}{3wtg}). An amino acid is colored red if it differs from the majority amino acid in the corresponding column (or if there is no such majority). At the level of sequence, we can therefore see significant differences between the three species. (Bottom) Side by side comparisons of the 3-D structures of the three proteins. The final figure on the right superimposes the first three structures to highlight that they are virtually identical.}
 	\label{fig:SequenceStructureExample}
 \end{figure}
 
@@ -177,7 +182,7 @@ As shown in \autoref{fig:AminoAcid}, an amino acid comprises four parts. In the 
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.4\textwidth]{../images_CMYK/AminoAcid}
+	\includegraphics[width = 0.3\textwidth]{../images_CMYK/AminoAcid}
 	\caption{An amino acid consists of a central alpha carbon attached to a hydrogen atom, a side group, a carboxyl group, and an amino group.}
 	\label{fig:AminoAcid}
 \end{figure}
@@ -198,7 +203,7 @@ However, the bonds \textit{within} an amino acid, joining the alpha carbon to it
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.25\textwidth]{../images_CMYK/torsion_angles}
+	\includegraphics[width = 0.28\textwidth]{../images_CMYK/torsion_angles}
 	\caption{A polypeptide chain of multiple amino acids with the torsion angles $\phi$ and $\psi$ indicated. The angle ω indicates the angle of the peptide bond, which is typically 180\textdegree.}
 	\label{fig:torsion_angles}
 \end{figure}
@@ -208,7 +213,7 @@ A good analogy for polypeptide flexibility is the ``Rubik's Twist'' puzzle, whic
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-	\includegraphics[width = 0.75\textwidth]{../images_CMYK/rubiks_twist_four_panel}
+	\includegraphics[width = 0.85\textwidth]{../images_CMYK/rubiks_twist_four_panel}
 	\caption{Each section of the Rubik's Twist puzzle can be rotated, allowing the toy to take on many different conformations, such as a ball (bottom right).}
 	\label{fig:rubiks_twist_four_panel}
 \end{figure}
@@ -831,7 +836,7 @@ By computing Qres at every position of the two coronavirus RBD regions, we can f
 \begin{figure}[h]
 	\centering
 	\mySfFamily
-		\includegraphics[width = 0.85\textwidth]{../images_CMYK/QresResult} \\
+		\includegraphics[width = 0.85\textwidth]{../images_CMYK/QresResult_trimmed} \\
 	\caption{A snapshot of the sequence alignment between the SARS-CoV RBD (first row) and the SARS-CoV-2 chimeric RBD (second row). Columns are colored along a spectrum from blue (high Qres) to red (low Qres), with positions that correspond to an inserted or deleted amino acid colored red. The region with low Qres corresponds to amino acids at positions 476 to 485 in the SARS-CoV-2 spike protein.}
 	\label{fig:QresResult}
 \end{figure}
@@ -1131,7 +1136,7 @@ We will not delve into the mathematical intricacies of ANM calculations, but we 
 		\includegraphics[width = 0.25\textwidth]{../images_CMYK/2ajf_animation1_cropped} & \includegraphics[width = 0.25\textwidth]{../images_CMYK/2ajf_animation2_cropped} & \includegraphics[width = 0.25\textwidth]{../images_CMYK/2ajf_animation3_cropped} \\[3ex]
 		\includegraphics[width = 0.25\textwidth]{../images_CMYK/6vw1_animation1_cropped} & \includegraphics[width = 0.25\textwidth]{../images_CMYK/6vw1_animation2_cropped} & \includegraphics[width = 0.25\textwidth]{../images_CMYK/6vw1_animation3_cropped}
 	\end{tabular}
-	\caption{(Top) Snapshots of an ANM analysis animation of the SARS-CoV spike RBD, shown at left, and ACE2, shown at right (PDB entry: \href{https://www.rcsb.org/structure/2ajf}{2ajf}). (Bottom) Snapshots of an ANM analysis animation of the SARS-CoV-2 spike chimeric RBD and ACE2 (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}).}
+	\caption{(Top) Snapshots of an ANM analysis animation of the SARS-CoV spike RBD, shown at left in each image, and ACE2, shown at right in each image (PDB entry: \href{https://www.rcsb.org/structure/2ajf}{2ajf}). (Bottom) Snapshots of an ANM analysis animation of the SARS-CoV-2 spike chimeric RBD and ACE2 (PDB entry: \href{https://www.rcsb.org/structure/6vw1}{6vw1}).}
 	\label{fig:coronavirus_anm_animation}
 \end{figure}
 
