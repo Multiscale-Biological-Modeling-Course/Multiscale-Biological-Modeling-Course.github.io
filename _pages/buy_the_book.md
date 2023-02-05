@@ -1,6 +1,6 @@
 ---
 permalink: /buy_the_book/
-title: "Preorder the Book"
+title: "Biological Modeling: A Short Tour"
 image: "assets/images/f38_k61_high-res.png"
 description: Preorder the print companion of Biological Modeling.
 comments: false
