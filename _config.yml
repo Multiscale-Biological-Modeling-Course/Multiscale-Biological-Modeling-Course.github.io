@@ -32,12 +32,15 @@ author:
   avatar: "/assets/images/600px/compeau_phillip.JPG"
   bio: "Online education founder. Proud to have built *Biological Modeling* with my students." # Note: Markdown is allowed
   links:
+    - label: "Get the print book"
+      icon: "fas fa-fw fa-book"
+      url: "https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W"
+    - label: "Get the E-book"
+      icon: "fas fa-fw fa-solid fa-tablet-screen-button"
+      url: "https://leanpub.com/biologicalmodeling"
     - label: "Personal website"
       icon: "fas fa-fw fa-link"
       url: "http://compeau.cbd.cmu.edu"
-    - label: "Get the book"
-      icon: "fas fa-fw fa-book"
-      url: "https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/phillipcompeau"
