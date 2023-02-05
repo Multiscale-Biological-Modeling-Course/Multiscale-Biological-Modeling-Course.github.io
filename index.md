@@ -17,8 +17,8 @@ header:
   actions:
     - label: "Start learning!"
       url: "/prologue/"
-    - label: "Preorder the book!"
-      url: "https://www.indiegogo.com/projects/biological-modeling-a-short-tour/x/28195870#/"
+    - label: "Get the book!"
+      url: "https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W"
 ---
 
 ## Welcome to Biological Modeling!
@@ -53,9 +53,14 @@ Our course contents are found below.
 
 This course was lovingly put together by a professor and a team of wonderful students in Carnegie Mellon University's <a href="https://cbd.cmu.edu" target="_blank">Computational Biology Department</a>. You can meet us on our [Meet the Team](meet-the-team) page.
 
-## Preorder the book
+## Get the book
 
-We are producing a textbook companion to this course, called <em>Biological Modeling: A Short Tour</em>. Its pending publication in spring 2022 was graciously funded by the community at <a href="https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour" target="_blank">Kickstarter</a>; if you would still like to preorder the book at its introductory price (and receive a complementary E-book), we are continuing to take pre-orders during winter 2022 on <a href="https://www.indiegogo.com/projects/biological-modeling-a-short-tour/x/28195870#/" target="_blank">Indiegogo</a>.
+*Biological Modeling* has an official textbook companion, called <em>Biological Modeling: A Short Tour</em>.
+
+* Print book: Get it from <a href="https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W" target="_blank">Amazon</a>!
+* E-book: Get it from <a href="https://leanpub.com/biologicalmodeling" target="_blank">Leanpub</a>!
+
+The publication of <em>Biological Modeling: A Short Tour</em> was graciously funded by a community of backers at <a href="https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour" target="_blank">Kickstarter</a> and <a href="https://www.indiegogo.com/projects/biological-modeling-a-short-tour/x/28195870#/" target="_blank">Indiegogo</a>.
 
 ## Course survey and contact form
 
