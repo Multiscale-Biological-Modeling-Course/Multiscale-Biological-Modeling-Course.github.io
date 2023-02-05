@@ -7,9 +7,17 @@ comments: false
 share: false
 ---
 
-We are producing a textbook companion to this course called *Biological Modeling: A Short Tour*, which will be available in spring 2022 in both print and electronic formats. The book will follow the core content of the course, while the tutorials --- which may change frequently in the future --- will be hosted on this website.
+We are happy to let you know that the text companion to this course, *Biological Modeling: A Short Tour*, is available in both print and electronic formats!
 
-Publication of the book was graciously funded via <a href="https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour" target="_blank">Kickstarter</a>. You can still preorder the book at an exclusive introductory price on <a href="https://www.indiegogo.com/projects/biological-modeling-a-short-tour/x/28195870#/" target="_blank">Indiegogo</a>, or buy the E-book and start reading today at <a href="https://leanpub.com/biologicalmodeling" target="_blank">Leanpub</a>.
+* Print book: Get it from <a href="https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W" target="_blank">Amazon</a>!
+* E-book: Get it from <a href="https://leanpub.com/biologicalmodeling" target="_blank">Leanpub</a>!
 
-**Note:** Print copies of the book are only available to backers in North America at this time. If you are outside North America, you can still preorder an electronic copy of the book. If the campaign is successful, we will be providing the book to international markets; please let us know if you'd like to be notified when the book is published by joining our international mailing list at <a href="https://forms.gle/SHQXvjpbPPWKYHuU8" target="_blank">https://forms.gle/SHQXvjpbPPWKYHuU8</a>.
-{: .notice--info}
+## About the book
+
+*Biological Modeling: A Short Tour* offers readers a deep but concise exploration of topics in modeling biological systems at multiple scales. Each chapter poses a single biological question, from why zebras have stripes, to how bacteria explore their world intelligently, to why the SARS-CoV-2 spike protein was so effective at binding to human cells. The book then introduces the modeling concepts needed to answer this question. Some talented students at Carnegie Mellon University who helped build the Biological Modeling project appear in the book as chapter co-authors.
+
+*Biological Modeling: A Short Tour* follows the core content of the course, whereas the tutorials powering this core content are hosted on this website.
+
+## Crowdfunding the publication of our book
+
+Publication of *Biological Modeling: A Short Tour* was graciously funded by hundreds of wonderful backers via <a href="https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour" target="_blank">Kickstarter</a>.
