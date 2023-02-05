@@ -7,7 +7,7 @@ description: The textbook companion of Biological Modeling.
 comments: false
 share: false
 header:
-  overlay_image: "../assets/images/cover_background_banner.jpg"
+  overlay_image: "../assets/images/cover_background_stretched.jpg"
   overlay_filter: 0.3
 author_profile: true # add author to page
 ---
