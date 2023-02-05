@@ -36,7 +36,7 @@ author:
       icon: "fas fa-fw fa-book"
       url: "https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W"
     - label: "Get the E-book"
-      icon: "fas fa-fw fa-solid fa-tablet-screen-button"
+      icon: "fas fa-fw fa-tablet-screen-button"
       url: "https://leanpub.com/biologicalmodeling"
     - label: "Personal website"
       icon: "fas fa-fw fa-link"
