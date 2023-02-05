@@ -14,7 +14,7 @@ share: false
 
   <div class="column">
     <div class="card">
-      <img src="../assets/images/600px/compeau_phillip_2023.JPG" alt="Phillip Compeau" style="display:block; margin:auto; width:256px; border-radius:50%">
+      <img src="../assets/images/600px/compeau_phillip_2023.jpg" alt="Phillip Compeau" style="display:block; margin:auto; width:256px; border-radius:50%">
       <div class="container">
         <h2>Phillip Compeau</h2>
         <p class="title">Founder and Director</p>
