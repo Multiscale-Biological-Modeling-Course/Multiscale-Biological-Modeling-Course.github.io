@@ -1,5 +1,5 @@
 main:
-  - title: "Take the Course"
+  - title: "Contents"
     sublinks:
       - title: "<b>Prologue:</b> Random walks and Turing patterns"
         url: /prologue/
@@ -11,7 +11,7 @@ main:
         url: /coronavirus/home
       - title: "<b>Module 4:</b> Training a computer to classify white blood cells"
         url: /white_blood_cells/home
-  - title: "Order the Book"
+  - title: "Get the Book"
     url: /buy_the_book/
   - title: "Team"
     url: /meet-the-team/
