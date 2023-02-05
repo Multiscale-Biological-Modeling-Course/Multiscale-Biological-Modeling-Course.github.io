@@ -1,11 +1,18 @@
 ---
 permalink: /buy_the_book/
 title: "Biological Modeling: A Short Tour"
-image: "assets/images/f38_k61_high-res.png"
-description: Preorder the print companion of Biological Modeling.
+excerpt: "The textbook companion to Biological Modeling"
+image: "assets/images/cover_background_narrow.jpg"
+description: The textbook companion of Biological Modeling.
 comments: false
 share: false
+header:
+  overlay_image: "../assets/images/cover_background_wide.jpg"
+  overlay_filter: 0.3
+author_profile: true # add author to page
 ---
+
+
 
 We are happy to let you know that the text companion to this course, *Biological Modeling: A Short Tour*, is available in both print and electronic formats!
 
