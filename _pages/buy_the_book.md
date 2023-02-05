@@ -7,7 +7,7 @@ description: The textbook companion of Biological Modeling.
 comments: false
 share: false
 header:
-  overlay_image: "../assets/images/cover_background_wide.jpg"
+  overlay_image: "../assets/images/cover_background_banner.jpg"
   overlay_filter: 0.3
 author_profile: true # add author to page
 ---
@@ -19,7 +19,7 @@ We are happy to let you know that the text companion to this course, *Biological
 * Print book: Get it from <a href="https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W" target="_blank">Amazon</a>!
 * E-book: Get it from <a href="https://leanpub.com/biologicalmodeling" target="_blank">Leanpub</a>!
 
-[![image-center](assets/images/cover_3d_paperback.jpg){: .align-center}](../assets/images/cover_3d_paperback.jpg)
+[![image-center](../assets/images/cover_3d_paperback.jpg){: .align-center}](../assets/images/cover_3d_paperback.jpg)
 
 ## About the book
 
