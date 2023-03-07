@@ -16,8 +16,8 @@ author_profile: true # add author to page
 
 We are happy to let you know that the text companion to this course, *Biological Modeling: A Short Tour*, is available in both print and electronic formats!
 
-* Print book: Get it from <a href="https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W" target="_blank">Amazon</a>!
-* E-book: Get it from <a href="https://leanpub.com/biologicalmodeling" target="_blank">Leanpub</a>!
+* Print book: Get it from <a href="https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W" target="_blank">Amazon</a>.
+* E-book: Get it from <a href="https://leanpub.com/biologicalmodeling" target="_blank">Leanpub</a>.
 
 [![image-center](../assets/images/600px/cover_3d_paperback.jpg){: .align-center}](https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W)
 
@@ -29,4 +29,4 @@ We are happy to let you know that the text companion to this course, *Biological
 
 ## Crowdfunding the publication of our book
 
-Publication of *Biological Modeling: A Short Tour* was graciously funded by hundreds of wonderful backers via <a href="https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour" target="_blank">Kickstarter</a>.
+Publication of *Biological Modeling: A Short Tour* was graciously funded by several hundreds backers via <a href="https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour" target="_blank">Kickstarter</a> and <a href="https://www.indiegogo.com/projects/biological-modeling-a-short-tour" target="_blank">Indiegogo</a>. We are eternally grateful to these supporters who brought the book to life.
