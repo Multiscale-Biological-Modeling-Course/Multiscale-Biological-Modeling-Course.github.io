@@ -11,8 +11,6 @@ main:
         url: /coronavirus/home
       - title: "<b>Module 4:</b> Training a computer to classify white blood cells"
         url: /white_blood_cells/home
-  - title: "Get the Book"
-    url: /buy_the_book/
   - title: "Team"
     url: /meet-the-team/
   - title: "Contact"

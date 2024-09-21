@@ -47,11 +47,13 @@ author:
 search: true
 search_provider: algolia
 
+
 # Allow comments
-comments:
-  provider: "disqus"
-  disqus:
-    shortname: "biological-modeling"
+# comments:
+#  provider: "disqus"
+#  disqus:
+#    shortname: "biological-modeling"
+
 
 # Build settings
 markdown: kramdown
