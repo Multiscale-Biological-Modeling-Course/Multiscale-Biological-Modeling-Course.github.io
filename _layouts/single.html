@@ -37,18 +37,21 @@ layout: default
       {% endunless %}
 
       <section class="page__content" itemprop="text">
-        <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
+        <aside class="sidebar__right sticky">
+    
+          <!-- Call to Action Buttons (always visible) -->
+          <a href="https://leanpub.com/biologicalmodeling" class="btn btn--primary btn--large" style="font-size: 100%; text-align: center;" target="">Get the E-Book (now only $9.95!)</a>
+
+          <a href="https://www.amazon.com/dp/B0BT6B2B8W" class="btn btn--primary btn--large" style="font-size: 100%; text-align: center;" target="">Get the Print Book</a>
+      
           <!-- Table of Contents (if present) -->
           {% if page.toc %}
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
             </nav>
-          {% endif %}
-          
-          <!-- Call to Action Button (always visible) -->
-          <a href="https://www.amazon.com/dp/B0BT6B2B8W" class="btn btn--primary btn--large" style="font-size: 100%; text-align: center;" target="_blank">Buy the Book</a>
-        </aside>      
+          {% endif %}   
+        </aside>    
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
