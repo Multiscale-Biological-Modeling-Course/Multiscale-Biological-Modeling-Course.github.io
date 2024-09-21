@@ -45,6 +45,10 @@ layout: default
             </nav>
           </aside>
         {% endif %}
+        <!-- Call to Action Button -->
+        <aside class="cta-button">
+          <a href="your-link-here" class="button">Call to Action</a>
+        </aside>
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
