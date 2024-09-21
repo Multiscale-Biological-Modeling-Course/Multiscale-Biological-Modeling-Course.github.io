@@ -39,13 +39,15 @@ layout: default
       <section class="page__content" itemprop="text">
         <aside class="sidebar__right sticky">
     
-          <!-- Call to Action Buttons (always visible) -->
+          <!-- Call to Action Buttons (visible on most pages) -->
+          {% unless page.exclude_book_buttons %}
           <center>
-          <a href="https://leanpub.com/biologicalmodeling" class="btn btn--primary btn--large" style="font-size: 100%; text-align: center;" target="_blank">Get the E-Book ($9.95)</a>
+          <a href="https://leanpub.com/biologicalmodeling" class="btn btn--primary btn--large" style="font-size: 100%; text-align: center;" target="_blank">Get the E-Book</a>
 
           <a href="https://www.amazon.com/dp/B0BT6B2B8W" class="btn btn--primary btn--large" style="font-size: 100%; text-align: center;" target="_blank">Get the Print Book</a>
           </center>
-      
+          {% endunless %}
+
           <!-- Table of Contents (if present) -->
           {% if page.toc %}
             <nav class="toc">
