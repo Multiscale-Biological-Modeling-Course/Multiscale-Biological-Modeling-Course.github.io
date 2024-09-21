@@ -44,11 +44,9 @@ layout: default
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
             </nav>
           </aside>
+          <!-- Call to Action Button -->
+          <a href="https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W" class="btn btn--primary btn--large" style="font-size: 100%; text-align: center;">Buy the Book</a>
         {% endif %}
-        <!-- Call to Action Button -->
-        <aside class="cta-button">
-          <a href="your-link-here" class="button">Call to Action</a>
-        </aside>
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
