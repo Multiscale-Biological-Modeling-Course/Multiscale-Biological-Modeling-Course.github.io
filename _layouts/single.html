@@ -105,3 +105,55 @@ layout: default
   {% endif %}
   -->
 </div>
+
+<!-- Popup HTML -->
+<div id="book-popup" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background-color: #fff; border: 1px solid #ccc; z-index: 9999;">
+  <h3>Buy the Book</h3>
+  <p>Choose your preferred format:</p>
+  <a href="https://leanpub.com/biologicalmodeling" target="_blank" style="margin-right: 10px;">Buy e-Book</a>
+  <a href="https://www.amazon.com/dp/B0BT6B2B8W" target="_blank">Buy Print Book</a>
+  <br><br>
+  <button onclick="closePopup()">Close</button>
+</div>
+<div id="popup-overlay" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 9998;"></div>
+
+<!-- JavaScript to trigger popup with a 60-second delay and show it once per day -->
+<script>
+  function openPopup() {
+      document.getElementById('book-popup').style.display = 'block';
+      document.getElementById('popup-overlay').style.display = 'block';
+  }
+
+  function closePopup() {
+      document.getElementById('book-popup').style.display = 'none';
+      document.getElementById('popup-overlay').style.display = 'none';
+  }
+
+  function setPopupCookie(name, value, days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      var expires = "expires=" + date.toUTCString();
+      document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  }
+
+  function getPopupCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+  }
+
+  // Show popup after 60 seconds, but only once per day
+  window.onload = function () {
+      if (!getPopupCookie('popupShown')) {
+          setTimeout(function () {
+              openPopup();
+              setPopupCookie('popupShown', 'true', 1);  // Set cookie for 1 day
+          }, 60000);  // 60,000 milliseconds = 60 seconds
+      }
+  };
+</script>
