@@ -9,16 +9,14 @@ related: false
 comments: false
 author_profile: true
 
-excerpt: "A free course in modeling biological systems at multiple scales."
+excerpt: "Power up your computational and machine learning skills with our free course on modeling biological systems."
 header:
   overlay_image: "assets/images/600px/f38_k61_high-res.png"
-  overlay_filter: 0.4
+  overlay_filter: 0.5
   # caption: "Photo credit: [**foo**](blah.com)"
   actions:
     - label: "Start learning!"
       url: "/prologue/"
-    - label: "Get the book!"
-      url: "https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W"
 ---
 
 ## Welcome to Biological Modeling!
