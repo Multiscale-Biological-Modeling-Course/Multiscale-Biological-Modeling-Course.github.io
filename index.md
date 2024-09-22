@@ -12,7 +12,7 @@ author_profile: true
 excerpt: "Power up your computational and machine learning skills with our free course on modeling biological systems."
 header:
   overlay_image: "assets/images/600px/f38_k61_high-res.png"
-  overlay_filter: 0.5
+  overlay_filter: 0.6
   # caption: "Photo credit: [**foo**](blah.com)"
   actions:
     - label: "Start learning!"
