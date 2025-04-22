@@ -1,4 +1,29 @@
 ---
+title: “Biological Modeling”
+layout: splash
+description: “A free course in biological modeling at multiple scales.”
+image: "/assets/images/600px/f38_k61_high-res.png"
+
+# ■ SPLASH SETTINGS ■
+splash_image: "/assets/images/600px/f38_k61-high-res.png"   # hero background
+splash_filter: 0.6                                         # darkening overlay
+splash_title: "Biological Modeling"                        # big headline
+splash_subtitle: "Power up your computational and machine learning skills with our free course on modeling biological systems."
+splash_cta:
+  - title: "Start the Prologue"                           
+    url:   "/prologue/"
+  - title: "View All Modules"
+    url:   "/contents/"
+
+# ■ HIDE EVERYTHING ELSE ■
+toc:       false      # no in‑page TOC
+related:   false      # no related posts box
+comments:  false      # no comment form
+author_profile: false # no sidebar author block
+---
+
+<!--
+---
 title: <em>Biological Modeling</em>
 layout: single
 description: A free course in biological modeling at multiple scales.
@@ -18,6 +43,7 @@ header:
     - label: "Start learning!"
       url: "/prologue/"
 ---
+
 
 ## Welcome to Biological Modeling!
 
@@ -103,3 +129,4 @@ If you are a biological modeling researcher and want to learn more about how the
 ### Another textbook on biological modeling
 
 A colleague at Carnegie Mellon University, Russell Schwartz, authored a textbook called <a href="https://mitpress.mit.edu/books/biological-modeling-and-simulation" target="_blank">Biological Modeling and Simulation</a> that you may enjoy. Dr. Schwartz's book focuses on a different collection of modeling topics than this work.
+-->
