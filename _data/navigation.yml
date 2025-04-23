@@ -21,7 +21,7 @@ prologue:
     children:
       - title: "Introduction: Alan Turing and the zebra's stripes<br><br>"
         url: /prologue/
-      - title: "An overview of random walks<br><br>"
+      - title: "Random walks model diffusion<br><br>"
         url: /prologue/random_walk
       - title: "A reaction-diffusion model generating Turing patterns<br><br>"
         url: /prologue/reaction-diffusion
