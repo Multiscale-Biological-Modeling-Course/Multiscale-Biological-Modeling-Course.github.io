@@ -7,8 +7,10 @@ header:
   overlay_filter: "0.6"
   overlay_image: /assets/images/600px/f38_k61_high-res.png
   actions:
-    - label: "Start learning!"
+    - label: "Start learning"
       url: "/prologue/"
+    - label: "Download the E-book"
+    - label: "Get the print book"
 excerpt: "Take our free course in biological modeling at multiple scales."
 intro: 
   - excerpt: 'Power up your computational and machine learning skills with our free course on modeling biological systems.'
