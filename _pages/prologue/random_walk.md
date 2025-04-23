@@ -1,6 +1,7 @@
 ---
 permalink: /prologue/random_walk
 title: "Random Walks Model Diffusion"
+excerpt: "Prologue: Random Walks and Turing Patterns"
 sidebar:
  nav: "prologue"
 toc: true
@@ -8,7 +9,6 @@ toc_sticky: true
 header:
   overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
   overlay_filter: 0.3
-  caption: "Prologue: Random Walks and Turing Patterns"
 image: "../assets/images/gray_scott_jupyter_high-res.png"
 ---
 
