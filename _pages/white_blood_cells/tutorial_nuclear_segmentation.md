@@ -1,10 +1,14 @@
 ---
 permalink: /white_blood_cells/tutorial_nuclear_segmentation
 title: "Software Tutorial: Segmenting Nuclei from Cellular Images"
+excerpt: "Module 4: Training a Computer to Classify White Blood Cells"
 sidebar:
  nav: "white_blood_cells"
 toc: true
 toc_sticky: true
+header:
+  overlay_image: "../assets/images/normal_adult_blood_smear.JPG"
+  overlay_filter: 0.3
 image: "../assets/images/normal_adult_blood_smear.JPG"
 ---
 
