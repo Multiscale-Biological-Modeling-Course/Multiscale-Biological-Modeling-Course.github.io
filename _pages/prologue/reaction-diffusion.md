@@ -1,11 +1,15 @@
 ---
 permalink: /prologue/reaction-diffusion
 title: "A Reaction-Diffusion Model Generating Turing Patterns"
+excerpt: "Prologue: Random Walks and Turing Patterns"
 sidebar:
  nav: "prologue"
 toc: true
 toc_sticky: true
 image: "../assets/images/gray_scott_jupyter_high-res.png"
+header:
+  overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
+  overlay_filter: 0.3
 gallery:
   - url: ../assets/images/reaction-diffusion_three_reactions_before.png
     image_path: ../assets/images/600px/reaction-diffusion_three_reactions_before.png

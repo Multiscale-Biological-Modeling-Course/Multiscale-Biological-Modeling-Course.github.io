@@ -13,6 +13,7 @@ header:
       url: "https://leanpub.com/biologicalmodeling"
     - label: "Get the print book"
       url: "https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W"
+  <a class="btn btn--primary" href="https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W" target="_blank" rel="noopener noreferrer">Test button</a>
 excerpt: "Power up your computational and machine learning skills with our free course on modeling biological systems at multiple scales."
 prologue:
   - image_path: /assets/images/gray_scott_jupyter_high-res.png

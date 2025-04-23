@@ -1,10 +1,14 @@
 ---
 permalink: /prologue/diffusion_automaton
 title: "A Coarse-Grained Model of Particle Diffusion"
+excerpt: "Prologue: Random Walks and Turing Patterns"
 sidebar:
  nav: "prologue"
 toc: true
 toc_sticky: true
+header:
+  overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
+  overlay_filter: 0.3
 image: "../assets/images/gray_scott_jupyter_high-res.png"
 gallery:
   - url: ../assets/images/initial_A_concentration.png

@@ -1,9 +1,13 @@
 ---
 permalink: /prologue/tutorial-diffusion
 title: "Software Tutorial: Building a Diffusion Cellular Automaton"
+excerpt: "Prologue: Random Walks and Turing Patterns"
 sidebar:
  nav: "prologue"
  nav: "prologue"
+header:
+  overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
+  overlay_filter: 0.3
 image: "../assets/images/gray_scott_jupyter_high-res.png"
 ---
 

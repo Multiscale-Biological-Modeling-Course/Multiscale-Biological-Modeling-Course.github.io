@@ -1,11 +1,15 @@
 ---
 permalink: /prologue/tutorial-random-walk
 title: "Software Tutorial: Simulating Particle Diffusion"
+excerpt: "Prologue: Random Walks and Turing Patterns"
 sidebar:
  nav: "prologue"
  nav: "prologue"
 toc: true
 toc_sticky: true
+header:
+  overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
+  overlay_filter: 0.3
 image: "../assets/images/gray_scott_jupyter_high-res.png"
 ---
 
