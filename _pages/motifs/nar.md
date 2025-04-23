@@ -1,10 +1,14 @@
 ---
 permalink: /motifs/nar
 title: "The Negative Autoregulation Motif"
+excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
 sidebar:
  nav: "motifs"
 toc: true
 toc_sticky: true
+header:
+  overlay_image: "../assets/images/repressilator_chart.png"
+  overlay_filter: 0.3
 image: "../assets/images/repressilator_chart.png"
 ---
 

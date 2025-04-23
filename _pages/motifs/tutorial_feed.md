@@ -1,8 +1,12 @@
 ---
 permalink: /motifs/tutorial_feed
 title: "Software Tutorial: Implementing the Feed-Forward Loop Motif"
+excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
 sidebar:
  nav: "motifs"
+header:
+  overlay_image: "../assets/images/repressilator_chart.png"
+  overlay_filter: 0.3
 image: "../assets/images/repressilator_chart.png"
 ---
 
