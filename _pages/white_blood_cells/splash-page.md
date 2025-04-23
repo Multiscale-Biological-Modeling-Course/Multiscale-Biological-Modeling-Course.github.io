@@ -1,15 +1,15 @@
 ---
-title: "Splash Page"
+title: "Biological Modeling"
 layout: splash
 permalink: /splash-page/
 header:
   overlay_color: "#000"
-  overlay_filter: "0.5"
-  overlay_image: /assets/splash/coffee.jpeg
+  overlay_filter: "0.6"
+  overlay_image: /assets/images/600px/f38_k61_high-res.png
   actions:
-    - label: "Download"
-      url: "#test-link"
-excerpt: "Bacon ipsum dolor sit amet salami ham hock ham, hamburger corned beef short ribs kielbasa biltong t-bone drumstick tri-tip tail sirloin pork chop."
+    - label: "Start learning!"
+      url: "/prologue/"
+excerpt: "Take our free course in biological modeling at multiple scales."
 intro: 
-  - excerpt: 'Nullam suscipit et nam, tellus velit pellentesque at malesuada, enim eaque. Quis nulla, netus tempor in diam gravida tincidunt, *proin faucibus* voluptate felis id sollicitudin. Centered with `type="center"`'
+  - excerpt: 'Power up your computational and machine learning skills with our free course on modeling biological systems.'
 ---
