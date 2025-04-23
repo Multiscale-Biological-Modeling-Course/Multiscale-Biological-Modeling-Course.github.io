@@ -1,17 +1,21 @@
 ---
-title: "Splash Page"
-layout: splash
-permalink: /splash-page/
+title: <em>Biological Modeling</em>
+layout: single
+description: A free course in biological modeling at multiple scales.
+image: "/assets/images/600px/f38_k61_high-res.png"
+toc: true
+toc_sticky: true
+related: false
+comments: false
+author_profile: true
+
+excerpt: "Power up your computational and machine learning skills with our free course on modeling biological systems."
 header:
-  overlay_color: "#000"
-  overlay_filter: "0.6"
-  overlay_image: /assets/images/600px/f38_k61_high-res.png
+  overlay_image: "assets/images/600px/f38_k61_high-res.png"
+  overlay_filter: 0.6
   actions:
     - label: "Start learning!"
       url: "/prologue/"
-excerpt: "Take our free course in biological modeling at multiple scales."
-intro: 
-  - excerpt: 'Power up your computational and machine learning skills with our free course on modeling biological systems.'
 ---
 
 
