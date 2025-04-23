@@ -10,11 +10,10 @@ header:
     - label: "Start learning"
       url: "/prologue/"
     - label: "Download the E-book"
-        url: "foo"
+      url: "https://leanpub.com/biologicalmodeling"
     - label: "Get the print book"
-excerpt: "Take our free course in biological modeling at multiple scales."
-intro: 
-  - excerpt: 'Power up your computational and machine learning skills with our free course on modeling biological systems.'
+      url: "https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W"
+excerpt: "Power up your computational and machine learning skills with our free course on modeling biological systems at multiple scales."
 prologue:
   - image_path: /assets/images/gray_scott_jupyter_high-res.png
     title: "Prologue: Random walks and Turing patterns"
@@ -51,8 +50,6 @@ chapter_4:
     btn_label: "Read More"
     btn_class: "btn--primary"
 ---
-
-{% include feature_row id="intro" type="center" %}
 
 {% include feature_row id="prologue" type="left" %}
 
