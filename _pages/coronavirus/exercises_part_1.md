@@ -1,10 +1,14 @@
 ---
 permalink: /coronavirus/exercises_part_1
 title: "Coronavirus Exercises Part 1"
+excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
+header:
+  overlay_image: "../assets/images/SARS_spike_proteins.jpg"
+  overlay_filter: 0.3
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 

@@ -1,8 +1,12 @@
 ---
 permalink: /coronavirus/conclusion_part_1
 title: "Part 1 Conclusion: Protein Structure Prediction is Solved?"
+excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"
+header:
+  overlay_image: "../assets/images/SARS_spike_proteins.jpg"
+  overlay_filter: 0.3
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 

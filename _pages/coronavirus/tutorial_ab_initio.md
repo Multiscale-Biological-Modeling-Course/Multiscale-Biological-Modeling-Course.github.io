@@ -1,8 +1,12 @@
 ---
 permalink: /coronavirus/tutorial_ab_initio
 title: "Software Tutorial: Using ab initio Modeling to Predict the Structure of Hemoglobin Subunit Alpha"
+excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"
+header:
+  overlay_image: "../assets/images/SARS_spike_proteins.jpg"
+  overlay_filter: 0.3
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 

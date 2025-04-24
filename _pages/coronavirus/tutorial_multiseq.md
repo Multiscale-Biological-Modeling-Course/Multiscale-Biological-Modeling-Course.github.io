@@ -1,10 +1,14 @@
 ---
 permalink: /coronavirus/tutorial_multiseq
 title: "Software Tutorial: Finding Local Differences in the SARS-CoV and SARS-CoV-2 Spike Protein Structures"
+excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"
 toc: true
 toc_sticky: true
+header:
+  overlay_image: "../assets/images/SARS_spike_proteins.jpg"
+  overlay_filter: 0.3
 image: "../assets/images/SARS_spike_proteins.jpg"
 ---
 
