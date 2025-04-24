@@ -21,7 +21,7 @@ share: false
         <p markdown="1"> Phillip Compeau is an Associate Teaching Professor and the Assistant Department Head in the [Computational Biology Department](http://cbd.cmu.edu) at Carnegie Mellon University. He directs the [undergraduate program in computational biology](http://www.cbd.cmu.edu/education/bs-in-computational-biology/) and co-directs the [Precollege Program in Computational Biology](http://www.cbd.cmu.edu/education/pre-college-program-in-computational-biology/), both of which he co-founded.
 
 Phillip is passionate about open online education, and his education projects have reached hundreds of thousands of learners around the world. He is the co-author of [Bioinformatics Algorithms: An Active Learning Approach](http://bioinformaticsalgorithms.org), which has been adopted by 200 instructors in 40 countries, and which powers the popular [Bioinformatics Specialization on Coursera](https://www.coursera.org/specializations/bioinformatics). He co-founded the learning platform [Rosalind](http://rosalind.info) for learning programming, bioinformatics, and algorithms through independent problem solving. He founded [Programming for Lovers](http://compeau.cbd.cmu.edu/programming-for-lovers/), an online course in introductory programming motivated by fun scientific applications.</p>
-        <p><button class="button" href="http://compeau.cbd.cmu.edu">Home Page</button></p>
+        <p><button class="button" href="https://compeau.cbd.cmu.edu">Home Page</button></p>
       </div>
     </div>
   </div>
