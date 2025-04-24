@@ -1,10 +1,14 @@
 ---
 permalink: /chemotaxis/tutorial_lr
 title: "Software Tutorial: Getting Started with BioNetGen and Modeling Ligand-Receptor Dynamics"
+excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
 sidebar:
  nav: "chemotaxis"
 toc: true
 toc_sticky: true
+header:
+  overlay_image: "../assets/images/chemotaxis_traj_1.0_uniform.png"
+  overlay_filter: 0.3
 image: "../assets/images/chemotaxis_traj_1.0.png"
 ---
 
