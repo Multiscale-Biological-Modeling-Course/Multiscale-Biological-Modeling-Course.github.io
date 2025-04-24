@@ -38,9 +38,6 @@ author:
     - label: "More cool stuff on my website"
       icon: "fas fa-fw fa-link"
       url: "http://compeau.cbd.cmu.edu"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://x.com/phillipcompeau"
 
 
 # Search
