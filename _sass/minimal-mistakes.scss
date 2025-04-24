@@ -69,12 +69,16 @@ iframe {
   background-color: #555;
 }
 
-// ------------------------------------------------------------
-// Custom widths for both sidebars
-// ------------------------------------------------------------
-$right-sidebar-width-narrow: 260px;   // shows ≥ 1024 px
-$right-sidebar-width:        360px;   // shows ≥ 1280 px
-$right-sidebar-width-wide:   460px;   // if you use .wide pages
+// -----------------------------------------------------------------------------
+// Custom width variables – must appear before the theme's @imports
+// -----------------------------------------------------------------------------
+$right-sidebar-width-narrow: 260px;
+$right-sidebar-width:        360px;
+$right-sidebar-width-wide:   460px;
+
+// Optional: widen overall page container
+$max-width: 1440px; // bump to taste
+
 
 
 /* Variables */
