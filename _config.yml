@@ -65,7 +65,9 @@ include:
   - _pages
 
 exclude:
-  - _pages/assets/images_CMYK
+  - /assets/images_CMYK
+  - /assets/old
+  - /assets/tex
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
