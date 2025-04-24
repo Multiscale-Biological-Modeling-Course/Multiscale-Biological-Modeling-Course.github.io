@@ -2,7 +2,6 @@
 permalink: /prologue/random_walk
 title: "Random Walks Model Diffusion"
 excerpt: "Prologue: Random Walks and Turing Patterns"
-excerpt: "Prologue: Random Walks and Turing Patterns"
 sidebar:
  nav: "prologue"
 toc: true
