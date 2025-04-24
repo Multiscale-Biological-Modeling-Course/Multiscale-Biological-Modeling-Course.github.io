@@ -358,9 +358,14 @@
      Navigation list
      ========================================================================== */
 
+// make the sidebar area wider
+.sidebar {
+  width: 300px !important; // default is 260px
+}
+
 .nav__list {
   margin-bottom: 1.5em;
-  padding: 1rem 1.5rem !important;
+  padding: 1rem 1.5rem !important; // add padding around navigation sidebar
   line-height: 1.7 !important;
 
   input[type="checkbox"],
