@@ -69,18 +69,6 @@ iframe {
   background-color: #555;
 }
 
-// -----------------------------------------------------------------------------
-// Custom width variables – must appear before the theme's @imports
-// -----------------------------------------------------------------------------
-$right-sidebar-width-narrow: 260px;
-$right-sidebar-width:        360px;
-$right-sidebar-width-wide:   460px;
-
-// Optional: widen overall page container
-$max-width: 1440px; // bump to taste
-
-
-
 /* Variables */
 @import "minimal-mistakes/variables";
 
@@ -115,7 +103,3 @@ $max-width: 1440px; // bump to taste
 @import "minimal-mistakes/archive";
 @import "minimal-mistakes/sidebar";
 @import "minimal-mistakes/print";
-
-/* Custom styles */
-@import "custom/layout-overrides";
-
