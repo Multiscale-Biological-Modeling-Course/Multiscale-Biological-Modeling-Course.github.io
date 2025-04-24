@@ -8,7 +8,3 @@ $right-sidebar-width-wide:   460px;
 // ---------- 2. Theme imports (leave exactly as-is) ----------
 @import "minimal-mistakes/skins/default"; // or whatever skin you use
 @import "minimal-mistakes";
-
-// ---------- 3. Little breathing-room tweak ----------
-.sidebar        { margin-inline-end: 2rem; }  // space between left sidebar & text
-.sidebar__right { margin-inline-start: 2rem; } // space between right sidebar & text
