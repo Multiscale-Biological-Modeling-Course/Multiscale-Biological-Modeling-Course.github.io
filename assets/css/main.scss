@@ -11,13 +11,6 @@ search: false
     font-size: $type-size-2;
   }
 
-/* === More space to the left of the main content column === */
-@media (min-width: 1024px) {
-    .page__content {
-      padding-left: 200px;  // adjust this to your liking
-    }
-  }
-  
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
