@@ -1,6 +1,7 @@
 ---
 permalink: /white_blood_cells/tutorial_nuclear_segmentation
 title: "Software Tutorial: Segmenting Nuclei from Cellular Images"
+description: "Tutorial: segment cell nuclei with automated thresholding and watershed, exporting masks for downstream leukocyte analysis."
 excerpt: "Module 4: Training a Computer to Classify White Blood Cells"
 sidebar:
  nav: "white_blood_cells"

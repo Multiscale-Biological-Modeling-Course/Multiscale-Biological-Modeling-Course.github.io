@@ -1,6 +1,7 @@
 ---
 permalink: /white_blood_cells/pca
 title: "Principal Components Analysis"
+description: "Apply PCA to white-blood-cell shape data, capturing major variation modes and reducing dimensionality before classification."
 excerpt: "Module 4: Training a Computer to Classify White Blood Cells"
 sidebar:
  nav: "white_blood_cells"

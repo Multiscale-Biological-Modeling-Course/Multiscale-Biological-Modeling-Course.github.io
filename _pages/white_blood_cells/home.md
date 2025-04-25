@@ -1,7 +1,7 @@
 ---
 permalink: /white_blood_cells/home
 title: "Module 4: Training a Computer to Classify White Blood Cells"
-description: Learn how to train a computer to identify cells in images and classify these images into categories.
+description: "Start Module 4: learn how to segment, analyze, and classify white-blood-cell images with PCA, K-NN, and machine-learning workflows."
 sidebar:
  nav: "white_blood_cells"
 image: "../assets/images/normal_adult_blood_smear.JPG"

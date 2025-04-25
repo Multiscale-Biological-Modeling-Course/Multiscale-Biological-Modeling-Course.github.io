@@ -1,6 +1,7 @@
 ---
 permalink: /white_blood_cells/tutorial_image_classification
 title: "Software Tutorial: Training a Classifier on an Image Shape Space"
+description: "Tutorial: build a K-NN classifier in Python to label leukocyte images using shape-space coordinates derived from PCA."
 excerpt: "Module 4: Training a Computer to Classify White Blood Cells"
 sidebar:
  nav: "white_blood_cells"

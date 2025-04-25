@@ -1,6 +1,7 @@
 ---
 permalink: /white_blood_cells/shape_space
 title: "Shape Spaces"
+description: "Explore shape space: represent cell outlines numerically to compare white-blood-cell morphology across thousands of images."
 excerpt: "Module 4: Training a Computer to Classify White Blood Cells"
 sidebar:
  nav: "white_blood_cells"

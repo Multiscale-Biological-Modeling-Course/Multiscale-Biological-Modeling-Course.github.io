@@ -1,6 +1,7 @@
 ---
 permalink: /white_blood_cells/exercises
 title: "Classification and Image Analysis Exercises"
+description: "Exercises: practice segmentation, PCA, and K-NN classification on white-blood-cell images to reinforce module concepts."
 excerpt: "Module 4: Training a Computer to Classify White Blood Cells"
 sidebar:
  nav: "white_blood_cells"

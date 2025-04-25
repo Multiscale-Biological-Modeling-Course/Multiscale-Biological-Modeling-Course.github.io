@@ -1,6 +1,7 @@
 ---
 permalink: /white_blood_cells/conclusion
 title: "Conclusion: Toward Deep Learning"
+description: "Conclusion: traditional ML lays groundwork for deep-learning approaches to automated white-blood-cell identification."
 excerpt: "Module 4: Training a Computer to Classify White Blood Cells"
 sidebar:
  nav: "white_blood_cells"
