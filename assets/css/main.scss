@@ -20,16 +20,15 @@ search: false
     }
   }
 
-  /* Fix sidebar */
   @media (min-width: 1024px) {
+    /* let the right sidebar float normally and add space */
     .sidebar__right {
-      position: static;     /* instead of absolute */
-      float: right;         /* now it floats normally */
-      width: 300px;
-      margin-left: 2rem;    /* give it breathing room from the page__content */
-      margin-right: 0;      /* no negative margin */
-      padding-left: 1em;
-      z-index: 10;
+     position: static !important;   /* was absolute */
+     float: right !important;
+     width: 360px !important;       /* same as the $right-sidebar-width */
+     margin-left: 50px !important;  /* breathing-room FROM the article */
+      margin-right: 0 !important;    /* no negative pull */
+     padding-left: 1em;
     }
   }
   
