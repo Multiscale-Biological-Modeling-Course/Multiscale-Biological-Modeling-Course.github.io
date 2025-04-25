@@ -10,6 +10,10 @@ search: false
     font-family: $global-font-family;
     font-size: $type-size-4;
   }
+
+.page__content {
+    padding-left: 200px;
+}
   
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
