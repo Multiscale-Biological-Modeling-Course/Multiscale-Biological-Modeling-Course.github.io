@@ -8,9 +8,9 @@ sidebar:
 toc: true
 toc_sticky: true
 header:
-  overlay_image: "../assets/images/chemotaxis_traj_1.0_uniform.png"
+  overlay_image: "../assets/images/ecoli_glucose.png"
   overlay_filter: 0.3
-image: "../assets/images/chemotaxis_traj_1.0.png"
+image: "../assets/images/ecoli_glucose.png"
 ---
 
 In the [previous tutorial](tutorial_gradient), we simulated the behavior of a bacterium moving up the concentration gradient. In this tutorial, we will simulate the opposite - when the bacterium is not in luck and moves down a concentration gradient.

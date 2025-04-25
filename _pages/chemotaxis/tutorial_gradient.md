@@ -8,9 +8,9 @@ sidebar:
 toc: true
 toc_sticky: true
 header:
-  overlay_image: "../assets/images/chemotaxis_traj_1.0_uniform.png"
+  overlay_image: "../assets/images/ecoli_glucose.png"
   overlay_filter: 0.3
-image: "../assets/images/chemotaxis_traj_1.0.png"
+image: "../assets/images/ecoli_glucose.png"
 ---
 
 In the [previous tutorial](tutorial_adaptation), we modeled how bacteria react and adapt to a one-time addition of attractants. In real life, bacteria don't suddenly drop into an environment with more attractants; instead, they explore a variable environment. In this tutorial, we will adapt our model to simulate a bacterium as it travels up an exponentially increasing concentration gradient.

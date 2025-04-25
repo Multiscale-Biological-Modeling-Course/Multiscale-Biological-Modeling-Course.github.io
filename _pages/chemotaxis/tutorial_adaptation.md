@@ -8,9 +8,9 @@ sidebar:
 toc: true
 toc_sticky: true
 header:
-  overlay_image: "../assets/images/chemotaxis_traj_1.0_uniform.png"
+  overlay_image: "../assets/images/ecoli_glucose.png"
   overlay_filter: 0.3
-image: "../assets/images/chemotaxis_traj_1.0.png"
+image: "../assets/images/ecoli_glucose.png"
 ---
 
 In this tutorial, we will extend the BioNetGen model covered in the [phosphorylation tutorial](tutorial_phos) to add the methylation mechanisms described in the main text to our ongoing model of bacterial chemotaxis. Our model will be based on the [model](https://www.pnas.org/content/94/14/7263) by Spiro et al.[^Spiro1997]

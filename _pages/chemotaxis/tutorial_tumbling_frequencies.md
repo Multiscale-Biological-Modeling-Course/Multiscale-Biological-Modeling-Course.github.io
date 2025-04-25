@@ -8,9 +8,9 @@ sidebar:
 toc: true
 toc_sticky: true
 header:
-  overlay_image: "../assets/images/chemotaxis_traj_1.0_uniform.png"
+  overlay_image: "../assets/images/ecoli_glucose.png"
   overlay_filter: 0.3
-image: "../assets/images/chemotaxis_traj_1.0.png"
+image: "../assets/images/ecoli_glucose.png"
 ---
 
 In this tutorial, we will run a comparison of the chemotactic random walk over a variety of different background tumbling frequencies. Are some frequencies better than others at helping the bacterium reach the goal?
