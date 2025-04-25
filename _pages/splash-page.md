@@ -51,6 +51,56 @@ chapter_4:
     btn_class: "btn--primary"
 ---
 
+## Welcome to Biological Modeling!
+
+Have you ever wondered ...
+* why zebras have stripes?
+* how your cells can perform complex tasks without intelligence?
+* why the original SARS coronavirus fizzled out but SARS-CoV-2 spread like wildfire around the planet?
+* how algorithms can be trained to “see” as well as a human?
+
+In this free course, we will build models of biological systems that are relatively simple but nevertheless provide us with deep, fascinating insights into how biological systems operate and how to answer these questions.
+
+Our course contents are found below.
+
+## Acknowledgements
+
+This online course is a training and dissemination effort for the <a href="https://mmbios.pitt.edu" target="_blank">National Center for Multiscale Modeling of Biological Systems (MMBioS)</a>. It is supported by the National Institutes of Health (grant ID: P41 GM103712).
+
+We would first and foremost like to thank everyone working on MMBioS software; their work allowed this project to come about. Chiefly, thank you to the other members of our training and dissemination team (Alex Ropelewski, Joe Ayoob, and Rozita Laghaei) as well as the head of the MMBioS consortium, Jim Faeder.
+
+We are also very grateful to Wendy Velasquez Ebanks, Julien Gomez, Yanjing Li, Ulani Qi, Aditya Parekh, and Shalini Panthangi, who provided additional work on the course during its conception.
+
+Module 1 was in part inspired by Uri Alon's research and superlative book <a href="https://www.amazon.com/Introduction-Systems-Biology-Mathematical-Computational/dp/1439837171" target="_blank"><i>An Introduction to Systems Biology</i></a>, a landmark biological textbook that we strongly recommend if you are interested in a greater discussion of biological network motifs.
+
+Special thanks to Jiayi Shou for the analogy in Module 3 of new protein companies rising like "bamboo shoots after the rain".
+
+The cover image on Module 4 was created by Keith Chambers.
+
+Finally, the website design was built using Michael Rose's excellent <a href="https://mmistakes.github.io/minimal-mistakes/" target="_blank">Minimal Mistakes</a> theme.
+
+## You might also enjoy...
+
+If you like this course, then we would suggest some additional resources below.
+
+### Additional open educational materials in computational biology and programming
+
+We think you would love some of the other free education projects developed by the project founder.  We list these resources below.
+
+* <a href="https://bioinformaticsalgorithms.org" target="_blank">Bioinformatics Algorithms: An Active Learning Approach</a>: A best-seller in its field, this textbook has been adopted by over 170 instructors in 40 countries around the world. It has also been used as the basis of the <a href="https://www.coursera.org/specializations/bioinformatics" target="_blank">Bioinformatics Specialization</a> on Coursera, which has reached hundreds of thousands of online learners. The first several chapters of the book is available for free on the textbook website.
+
+* <a href="http://rosalind.info" target="_blank">Rosalind</a>: An open platform for learning bioinformatics independently through problem solving.
+
+* <a href="http://compeau.cbd.cmu.edu/programming-for-lovers/" target="_blank">Programming for Lovers</a>: An open course in introductory programming aimed at science students. The course is still in development.
+
+### MMBioS Training Workshops
+
+If you are a biological modeling researcher and want to learn more about how the software resources presented here can be applied to your work, please check out the <a href="https://mmbios.pitt.edu/outreach/workshops" target="_blank">workshops</a> organized as part of the MMBioS project to which this course belongs.
+
+### Another textbook on biological modeling
+
+A colleague at Carnegie Mellon University, Russell Schwartz, authored a textbook called <a href="https://mitpress.mit.edu/books/biological-modeling-and-simulation" target="_blank">Biological Modeling and Simulation</a> that you may enjoy. Dr. Schwartz's book focuses on a different collection of modeling topics than this work.
+
 {% include feature_row id="prologue" type="left" %}
 
 {% include feature_row id="chapter_1" type="right" %}
