@@ -11,7 +11,7 @@ We would love to hear from you if you are a learner who is interested in providi
 
 If you are an instructor who is interested in adopting this course in your own teaching, whether in full or in individual pieces, please let us know as we are forming a network of instructors adopting this course.
 
-Please do not hesitate to contact us. We look forward to hearing from you!
+We look forward to hearing from you!
 
 ## Contact Form
 
