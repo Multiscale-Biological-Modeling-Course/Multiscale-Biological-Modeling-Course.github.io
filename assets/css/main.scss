@@ -21,23 +21,6 @@ search: false
   .page__content > *:first-child { margin-top: 0 !important; }
 }
 
-/* The following fix tries to fix it in the case that we don't have an h1 at the top of page. */
-/* ---------------------------------------------------------------
-   Get rid of the tall gap when the article starts with a heading
-   --------------------------------------------------------------- */
-   @media (min-width: 64em) {                    /* desktop and up */
-    .page__content {
-      padding-top: 0;                           /* no extra padding */
-      overflow: auto;                           /* new BFC → stops margin-collapse  */
-    }
-  
-    /* remove top margin on whatever the VERY FIRST child is */
-    .page__content > *:first-child {
-      margin-block-start: 0 !important;         /* modern logical prop */
-      margin-top: 0 !important;                 /* fallback */
-    }
-  }
-
 /* === More space to the left of the main content column === */
 @media (min-width: 1024px) {
     .page__content {
