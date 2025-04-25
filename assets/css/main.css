@@ -5,5 +5,12 @@ search: false
 
 @charset "utf-8";
 
+/* Trying font size changes */
+.page__lead {
+    font-family: $global-font-family;
+    font-size: $type-size-4;
+  }
+  
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
