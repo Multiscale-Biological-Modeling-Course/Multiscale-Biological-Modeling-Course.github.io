@@ -21,24 +21,6 @@ search: false
   .page__content > *:first-child { margin-top: 0 !important; }
 }
 
-/* Make left sidebar wider */
-$left-sidebar-wide:   320px;   // ≥ 1024 px
-$left-sidebar-xwide:  380px;   // ≥ 1280 px
-
-@media (min-width: 64em) {     /* 64 em ≈ 1024 px — theme’s “large” */
-  .sidebar {
-    width:  $left-sidebar-wide !important;     /* make it wider   */
-    max-width: $left-sidebar-wide !important;  /* just in case    */
-  }
-}
-
-@media (min-width: 80em) {     /* 80 em ≈ 1280 px — theme’s “x-large” */
-  .sidebar {
-    width:  $left-sidebar-xwide !important;
-    max-width: $left-sidebar-xwide !important;
-  }
-}
-
 /* === More space to the left of the main content column === */
 @media (min-width: 1024px) {
     .page__content {
