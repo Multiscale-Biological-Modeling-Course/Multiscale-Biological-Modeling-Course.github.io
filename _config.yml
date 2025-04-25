@@ -35,9 +35,15 @@ author:
     - label: "Follow me on LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/phillipcompeau/"
-    - label: "More cool stuff on my website"
+    - label: "Programming for Lovers"
+      icon: "fas fa-fw fa-heart"
+      url: "https://programmingforlovers.com"
+    - label: "Bioinformatics Algorithms"
       icon: "fas fa-fw fa-link"
-      url: "http://compeau.cbd.cmu.edu"
+      url: "https://bioinformaticsalgorithms.org"
+    - label: "Rosalind"
+      icon: "fas fa-fw fa-link"
+      url: "https://rosalind.info"
 
 
 # Search
