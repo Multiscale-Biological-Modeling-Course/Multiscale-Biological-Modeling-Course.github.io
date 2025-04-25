@@ -45,10 +45,10 @@ layout: default
               <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
               {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
             </nav>
+            <br>
           {% endif %}  
           <!-- Call to Action Buttons (visible on most pages) -->
           {% unless page.exclude_book_buttons %}
-          <br>
           <center>
           <a href="https://leanpub.com/biologicalmodeling" class="btn btn--primary btn--large" style="font-size: 100%; text-align: center;" target="_blank">Get the E-Book</a>
 
