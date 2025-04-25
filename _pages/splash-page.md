@@ -30,7 +30,7 @@ chapter_1:
     btn_class: "btn--primary"
 chapter_2:
   - image_path: /assets/images/chemotaxis_traj_1.0_uniform.png
-    title: "Module 2: Unpacking *E. coli*’s genius exploration algorithm"
+    title: "Module 2: Unpacking E. coli’s genius exploration algorithm"
     excerpt: "How can cells perform complex tasks without intelligence?"
     url: "/chemotaxis/home"
     btn_label: "Read More"
@@ -50,14 +50,6 @@ chapter_4:
     btn_label: "Read More"
     btn_class: "btn--primary"
 ---
-
-# Welcome to Biological Modeling!
-
-
-* 
-* 
-
-
 
 # Contents
 
