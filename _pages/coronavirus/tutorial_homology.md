@@ -1,6 +1,7 @@
 ---
 permalink: /coronavirus/tutorial_homology
 title: "Software Tutorial: Using Homology Modeling to Predict the Structure of the SARS-CoV-2 Spike Protein"
+description: "Tutorial: build a SARS-CoV-2 spike 3-D model via homology modelingâ€”template search, alignment, loop refinement, and validation steps."
 excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"

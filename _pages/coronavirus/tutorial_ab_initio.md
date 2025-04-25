@@ -1,6 +1,7 @@
 ---
 permalink: /coronavirus/tutorial_ab_initio
 title: "Software Tutorial: Using ab initio Modeling to Predict the Structure of Hemoglobin Subunit Alpha"
+description: "Hands-on tutorial: predict hemoglobin α-chain structure ab initio with Rosetta, stepping through fragment picking, folding, and scoring."
 excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"

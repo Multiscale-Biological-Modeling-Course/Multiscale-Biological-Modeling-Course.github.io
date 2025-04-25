@@ -1,6 +1,7 @@
 ---
 permalink: /coronavirus/conclusion_part_2
 title: "Part 2 Conclusion: Bamboo Shoots After the Rain"
+description: "Looking ahead: AI and experimental advances promise many protein structures; how will that reshape coronavirus research and drug design?"
 excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"

@@ -1,6 +1,7 @@
 ---
 permalink: /coronavirus/tutorial_GNM
 title: "Software Tutorial: Analyzing Coronavirus Spike Proteins Using GNM"
+description: "Hands-on tutorial: use Gaussian Network Models to analyze flexibility of coronavirus spike proteins and interpret fluctuation profiles."
 excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"

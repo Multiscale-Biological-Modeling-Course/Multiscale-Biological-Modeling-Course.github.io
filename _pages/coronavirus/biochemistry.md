@@ -1,6 +1,7 @@
 ---
 permalink: /coronavirus/biochemistry
 title: Protein Biochemistry
+description: "Review coronavirus spike protein biochemistry and its implications for entry, immunity, and therapeutics."
 excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"

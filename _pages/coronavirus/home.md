@@ -1,7 +1,7 @@
 ---
 permalink: /coronavirus/home
 title: "Module 3: Analyzing the Coronavirus Spike Protein"
-description: Learn how to predict the structure of a protein, and then compare the spike proteins of pandemic-causing coronaviruses.
+description: "Start Module 3: walk through coronavirus spike-protein structure prediction, dynamics, and mutation analysis with hands-on bioinformatics tools."
 sidebar:
  nav: "coronavirus"
 toc: true

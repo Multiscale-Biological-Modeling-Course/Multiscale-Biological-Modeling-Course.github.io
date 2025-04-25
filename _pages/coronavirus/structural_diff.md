@@ -1,6 +1,7 @@
 ---
 permalink: /coronavirus/structural_differences
 title: "Analysis of Structural Protein Differences"
+description: "Visualize structural differences between coronavirus spike variants, mapping key hotspots onto the 3-D model to explain altered binding."
 excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"

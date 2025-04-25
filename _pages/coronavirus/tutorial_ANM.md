@@ -1,6 +1,7 @@
 ---
 permalink: /coronavirus/tutorial_ANM
 title: "Software Tutorial: Adding Directionality to Spike Protein GNM Simulations Using ANM"
+description: "Tutorial: add directionality to spike-protein dynamics using Anisotropic Network Models, revealing collective motions that enable fusion."
 excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"

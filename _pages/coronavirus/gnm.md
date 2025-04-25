@@ -1,6 +1,7 @@
 ---
 permalink: /coronavirus/gnm
 title: "From Static Protein Analysis to Molecular Dynamics"
+description: "Use Gaussian Network Models to predict flexible regions in coronavirus spike proteins, linking residue fluctuations to functional motions."
 excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"

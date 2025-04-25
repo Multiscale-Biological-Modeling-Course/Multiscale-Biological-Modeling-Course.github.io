@@ -1,6 +1,7 @@
 ---
 permalink: /coronavirus/structure_intro
 title: Protein Structure Prediction is Difficult
+description: "Why is protein structure prediction hard? Discover experimental limits, computational advances, and the stakes for coronavirus spike research."
 excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"

@@ -1,6 +1,7 @@
 ---
 permalink: /coronavirus/accuracy
 title: "Protein Structure Comparison"
+description: "Assess protein-structure accuracy: compare predicted and experimental spike models using RMSD, TM-score, and validation tools."
 excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"

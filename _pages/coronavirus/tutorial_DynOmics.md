@@ -1,6 +1,7 @@
 ---
 permalink: /coronavirus/tutorial_DynOmics
 title: "Software Tutorial: Integrating Molecular Dynamics Analyses with DynOmics"
+description: "Integrate molecular-dynamics results with DynOmics to analyze coronavirus spike flexibility, conformational shifts, and mutation impacts."
 excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"

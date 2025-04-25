@@ -1,6 +1,7 @@
 ---
 permalink: /coronavirus/conclusion_part_1
 title: "Part 1 Conclusion: Protein Structure Prediction is Solved?"
+description: "Conclusion: protein-structure prediction has leapt forward, yet challenges remain in accuracy assessment and dynamic modeling of spikes."
 excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"

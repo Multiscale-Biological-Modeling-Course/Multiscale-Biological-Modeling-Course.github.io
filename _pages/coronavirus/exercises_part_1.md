@@ -1,6 +1,7 @@
 ---
 permalink: /coronavirus/exercises_part_1
 title: "Coronavirus Exercises Part 1"
+description: "Exercises: practice sequence alignment, homology modeling, and glycan mapping on coronavirus spike proteins to reinforce chapter concepts."
 excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"

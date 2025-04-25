@@ -1,6 +1,7 @@
 ---
 permalink: /coronavirus/tutorial_multiseq
 title: "Software Tutorial: Finding Local Differences in the SARS-CoV and SARS-CoV-2 Spike Protein Structures"
+description: "Tutorial: use MultiSeq to pinpoint local structural differences between SARS-CoV and SARS-CoV-2 spike proteins for functional insight."
 excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"

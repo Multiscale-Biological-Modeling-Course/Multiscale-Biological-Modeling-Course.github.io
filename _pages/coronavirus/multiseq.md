@@ -1,6 +1,7 @@
 ---
 permalink: /coronavirus/multiseq
 title: "Finding Local Differences in Protein Structures with Qres"
+description: "Compare spike sequences across coronaviruses with MultiSeq, zooming into variable hotspots that shape host specificity and immune escape."
 excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
 sidebar:
  nav: "coronavirus"
