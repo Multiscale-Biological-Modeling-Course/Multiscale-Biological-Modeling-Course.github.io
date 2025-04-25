@@ -1,6 +1,7 @@
 ---
 permalink: /prologue/random_walk
 title: "Random Walks Model Diffusion"
+description: "Learn how unbiased particle steps approximate diffusion and discover statistics that connect random walks to concentration gradients."
 excerpt: "Prologue: Random Walks and Turing Patterns"
 sidebar:
  nav: "prologue"

@@ -1,6 +1,7 @@
 ---
 permalink: /prologue/
 title: "Prologue: Random Walks and Turing Patterns"
+description: "Start our course: explore random walks that model diffusion and reaction diffusion systems that create striking Turing patterns."
 sidebar:
  nav: "prologue"
 image: "../assets/images/gray_scott_jupyter_high-res.png"

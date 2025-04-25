@@ -1,6 +1,7 @@
 ---
 permalink: /prologue/tutorial-random-walk
 title: "Software Tutorial: Simulating Particle Diffusion"
+description: "Tutorial: simulate many random walkers in Python, track mean squared displacement, and watch diffusion appear."
 excerpt: "Prologue: Random Walks and Turing Patterns"
 sidebar:
  nav: "prologue"

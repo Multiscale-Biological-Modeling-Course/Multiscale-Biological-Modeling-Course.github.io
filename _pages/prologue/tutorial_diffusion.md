@@ -1,6 +1,7 @@
 ---
 permalink: /prologue/tutorial-diffusion
 title: "Software Tutorial: Building a Diffusion Cellular Automaton"
+description: "Tutorial: code a lattice diffusion automaton in Python, simulate spread from a source, and visualize concentration heat maps."
 excerpt: "Prologue: Random Walks and Turing Patterns"
 sidebar:
  nav: "prologue"
