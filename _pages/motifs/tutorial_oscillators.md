@@ -1,6 +1,7 @@
 ---
 permalink: /motifs/tutorial_oscillators
 title: "Software Tutorial: Implementing the Repressilator"
+description: "Tutorial: code the repressilator and other gene-network oscillators, explore parameter sweeps, and visualize sustained rhythmic behavior."
 excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
 sidebar:
  nav: "motifs"

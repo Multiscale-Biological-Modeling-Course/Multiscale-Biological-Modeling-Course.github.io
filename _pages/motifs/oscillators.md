@@ -1,6 +1,7 @@
 ---
 permalink: /motifs/oscillators
 title: "Biological Oscillators"
+description: "From circadian clocks to the repressilator: learn how coupled motifs form biological oscillators and what makes them robust."
 excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
 sidebar:
  nav: "motifs"

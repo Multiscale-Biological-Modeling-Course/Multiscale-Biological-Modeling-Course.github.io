@@ -1,7 +1,7 @@
 ---
 permalink: /motifs/home
 title: "Module 1: Finding Motifs in Transcription Factor Networks"
-description: Learn to comb through biological networks to find network "motifs" that have evolved to occur surprisingly often and drive cellular processes.
+description: "Start Module 1: discover recurrent network motifs in transcription-factor networks and why they underpin robust biological regulation."
 sidebar:
  nav: "motifs"
 image: "../assets/images/repressilator_chart.png"

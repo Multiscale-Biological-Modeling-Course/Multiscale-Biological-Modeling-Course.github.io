@@ -1,6 +1,7 @@
 ---
 permalink: /motifs/tutorial_nar_mathematically_controlled
 title: "Software Tutorial: Ensuring a mathematically controlled simulation for comparing simple regulation to negative autoregulation"
+description: "Tutorial: mine transcription-factor networks for feedback loops using Python: detect cycles, classify motif types, and visualize gene circuits."
 excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
 sidebar:
  nav: "motifs"

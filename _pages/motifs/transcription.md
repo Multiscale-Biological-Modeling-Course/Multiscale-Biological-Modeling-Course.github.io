@@ -1,6 +1,7 @@
 ---
 permalink: /motifs/transcription
 title: "Transcription and DNA-Protein Binding"
+description: "Review transcription-regulation basics: DNA-binding proteins, promoter architecture, and how genes communicate in regulatory networks."
 excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
 sidebar:
  nav: "motifs"
