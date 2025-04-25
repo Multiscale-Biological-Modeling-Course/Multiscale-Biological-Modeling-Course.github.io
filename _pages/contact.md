@@ -7,9 +7,7 @@ comments: false
 share: false
 ---
 
-Work on this project is ongoing. If you have any questions about the project, please use the form below. To report typos or bugs, please use the Disqus comments on the page corresponding to the issue.
-
-We would be happy to hear from you if you are a learner who is interested in providing a testimonial about how this course has been useful to you.
+We would love to hear from you if you are a learner who is interested in providing a testimonial about how this course has been useful to you.
 
 If you are an instructor who is interested in adopting this course in your own teaching, whether in full or in individual pieces, please let us know as we are forming a network of instructors adopting this course.
 
