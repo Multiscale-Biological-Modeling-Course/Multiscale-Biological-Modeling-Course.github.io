@@ -389,7 +389,7 @@
         top: 1.25em;
         width: 0.75em;
         height: 0.125em;
-        line-height: 10;
+        line-height: 1;
         background-color: $gray;
         -webkit-transition: 0.2s ease-out;
         transition: 0.2s ease-out;
@@ -486,6 +486,20 @@
     transform: translate(0, 10%);
   }
 }
+
+/* -------------------------------------------------------------
+   Extra vertical space between items in the left-sidebar TOC
+   ------------------------------------------------------------- */
+   @media (min-width: $large) {        // desktop and up; drop the media
+    .nav__list .nav__items > li {     // each list item
+      margin-bottom: 0.6rem;          // tweak this value to taste
+    }
+  
+    /* keep the last item from getting extra blank space */
+    .nav__list .nav__items > li:last-child {
+      margin-bottom: 0;
+    }
+  }
 
 @include breakpoint(max-width($large - 1px)) {
   .nav__list input:checked ~ .nav__items {
