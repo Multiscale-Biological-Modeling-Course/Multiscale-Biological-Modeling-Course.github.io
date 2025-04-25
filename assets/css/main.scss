@@ -19,6 +19,12 @@ search: false
       margin-right: 50px;
     }
   }
+
+  @media (min-width: 1024px) {
+    .sidebar__right {
+      margin-left: 50px; // controls spacing from content
+    }
+  }
   
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
