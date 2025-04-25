@@ -15,6 +15,12 @@ search: false
   }
 */
 
+/* Main content is too low. The following fixes move it up to be level with the sidebars. */
+@media (min-width: 64em) {   /* 64 em ≈ 1024 px */
+  .page__content            { padding-top: 0 !important; }
+  .page__content > *:first-child { margin-top: 0 !important; }
+}
+
 /* Make left sidebar wider */
 $left-sidebar-wide:   320px;   // ≥ 1024 px
 $left-sidebar-xwide:  380px;   // ≥ 1280 px
