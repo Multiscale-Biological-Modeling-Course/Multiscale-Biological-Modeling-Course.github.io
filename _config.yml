@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: "Biological Modeling"
 subtitle: "A Free Online Course"
-masthead_title: "Biological Modeling" # combine title and subtitle in masthead
+masthead_title: "<em>Biological Modeling</em>" # combine title and subtitle in masthead
 logo: "/assets/images/200px/gray_scott_jupyter_high-res.png"
 url: "https://biologicalmodeling.org"
 email:
