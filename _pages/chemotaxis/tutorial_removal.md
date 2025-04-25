@@ -1,6 +1,7 @@
 ---
 permalink: /chemotaxis/tutorial_removal
 title: "Software Tutorial: Traveling Down an Attractant Gradient"
+description: "Model how a bacterium responds when attractant is removedâ€”traveling down a gradientâ€”and observe adaptation limits in chemotaxis."
 excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
 sidebar:
  nav: "chemotaxis"

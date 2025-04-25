@@ -1,6 +1,7 @@
 ---
 permalink: /chemotaxis/tutorial_adaptation
 title: "Software Tutorial: Modeling bacterial adaptation to changing attractant"
+description: "Hands-on tutorial: build a BioNetGen model of bacterial adaptation, simulating methylation, phosphorylation, and feedback in chemotaxis signaling."
 excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
 sidebar:
  nav: "chemotaxis"

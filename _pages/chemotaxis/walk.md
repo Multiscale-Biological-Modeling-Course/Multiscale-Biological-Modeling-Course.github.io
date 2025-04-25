@@ -1,6 +1,7 @@
 ---
 permalink: /chemotaxis/walk
 title: "E. coli Explores its World Via a Random Walk"
+description: "Explore the physics of E. coli runs and tumbles and how a constant tumbling rate powers an efficient exploratory random walk."
 excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
 sidebar:
  nav: "chemotaxis"

@@ -1,6 +1,7 @@
 ---
 permalink: /chemotaxis/tutorial_phos
 title: "Software Tutorial: Adding Phosphorylation to our BioNetGen Model"
+description: "Extend your BioNetGen chemotaxis model with phosphorylation reactions, tracing signal flow from CheA autophosphorylation onward."
 excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
 sidebar:
  nav: "chemotaxis"

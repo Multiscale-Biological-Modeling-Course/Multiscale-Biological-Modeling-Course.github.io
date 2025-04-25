@@ -1,6 +1,7 @@
 ---
 permalink: /chemotaxis/tutorial_purerandom
 title: "Software Tutorial: Modeling a Pure Random Walk Strategy"
+description: "Simulate a pure random walk and compare it to chemotactic strategies, revealing why unbiased movement canâ€™t guide bacteria to food."
 excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
 sidebar:
  nav: "chemotaxis"

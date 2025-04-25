@@ -1,6 +1,7 @@
 ---
 permalink: /chemotaxis/adaptation
 title: "Methylation Helps a Bacterium Adapt to Differing Concentrations"
+description: "Discover how E. coli adjusts to new environments by chemotaxis, with models that reveal its sensory pathways and adaptive behavior."
 excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
 toc: true
 toc_sticky: true

@@ -1,6 +1,7 @@
 ---
 permalink: /chemotaxis/exercises
 title: "Exercises"
+description: "Hands-on exercises in chemotaxis, stochastic modeling, and biochemical networks to reinforce scientific and computational skills."
 excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
 sidebar:
  nav: "chemotaxis"

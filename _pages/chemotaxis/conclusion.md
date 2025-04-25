@@ -1,6 +1,7 @@
 ---
 permalink: /chemotaxis/conclusion
 title: "Conclusion: The Beauty of *E. coli*'s Robust Randomized Exploration Algorithm"
+description: "Key takeaways on bacterial chemotaxis plus open questions about noise, adaptation, and how cells make directional choices."
 excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
 sidebar:
  nav: "chemotaxis"

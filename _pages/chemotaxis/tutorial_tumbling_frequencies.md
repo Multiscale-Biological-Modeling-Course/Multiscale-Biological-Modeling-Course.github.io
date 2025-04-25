@@ -1,6 +1,7 @@
 ---
 permalink: /chemotaxis/tutorial_tumbling_frequencies
 title: "Software Tutorial: Comparing different chemotaxis default tumbling frequencies"
+description: "Compare default tumbling frequencies to discover which values maximize chemotactic efficiency in varied environments."
 excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
 sidebar:
  nav: "chemotaxis"

@@ -1,6 +1,7 @@
 ---
 permalink: /chemotaxis/tutorial_walk
 title: "Chemotactic random walk"
+description: "Program a chemotactic random walk that biases runs toward higher attractant by integrating sensor history with movement choices."
 excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
 sidebar:
  nav: "chemotaxis"

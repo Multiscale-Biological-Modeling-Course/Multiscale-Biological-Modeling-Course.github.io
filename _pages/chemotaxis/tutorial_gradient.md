@@ -1,6 +1,7 @@
 ---
 permalink: /chemotaxis/tutorial_gradient
 title: "Software Tutorial: Traveling Up an Attractant Gradient"
+description: "Hands-on tutorial: program a bacteriumâ€™s biased random walk up a chemoattractant gradient, integrating sensor adaptation with movement simulation."
 excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
 sidebar:
  nav: "chemotaxis"
