@@ -20,9 +20,16 @@ search: false
     }
   }
 
+  /* Fix sidebar */
   @media (min-width: 1024px) {
     .sidebar__right {
-      margin-left: 50px; // controls spacing from content
+      position: static;     /* instead of absolute */
+      float: right;         /* now it floats normally */
+      width: 300px;
+      margin-left: 2rem;    /* give it breathing room from the page__content */
+      margin-right: 0;      /* no negative margin */
+      padding-left: 1em;
+      z-index: 10;
     }
   }
   
