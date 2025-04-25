@@ -21,6 +21,21 @@ search: false
   .page__content > *:first-child { margin-top: 0 !important; }
 }
 
+/* The following is intended for pages that don't have an h1 */
+/* ------------------------------------------------------------------
+   Pull article up so it aligns with sidebars *when* there's a hero.
+   ------------------------------------------------------------------ */
+   @media (min-width: 64em) {               /* 64 em ≈ 1024 px */
+    .page__hero + .page__inner-wrap {
+      margin-top: 0 !important;            /* kill the 1.5 rem gap */
+    }
+  
+    /* also remove the first element’s own top margin */
+    .page__hero + .page__inner-wrap .page__content > *:first-child {
+      margin-top: 0 !important;
+    }
+  }
+
 /* === More space to the left of the main content column === */
 @media (min-width: 1024px) {
     .page__content {
