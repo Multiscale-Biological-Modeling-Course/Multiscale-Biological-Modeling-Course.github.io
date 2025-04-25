@@ -20,17 +20,19 @@ search: false
     }
   }
 
-  @media (min-width: 1024px) {
-    /* let the right sidebar float normally and add space */
-    .sidebar__right {
-     position: static !important;   /* was absolute */
-     float: right !important;
-     width: 360px !important;       /* same as the $right-sidebar-width */
-     margin-left: 50px !important;  /* breathing-room FROM the article */
-      margin-right: 0 !important;    /* no negative pull */
-     padding-left: 1em;
-    }
+  /* ≥ 1024 px  (sidebar is 200 px) */
+@media (min-width: 64em) {
+  .sidebar__right {            /* still sticky, still floats right   */
+    margin-right: calc(-200px - var(--sidebar-gap)) !important;
   }
+}
+
+/* ≥ 1280 px  (sidebar is 300 px) */
+@media (min-width: 80em) {
+  .sidebar__right {
+    margin-right: calc(-300px - var(--sidebar-gap)) !important;
+  }
+}
   
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
