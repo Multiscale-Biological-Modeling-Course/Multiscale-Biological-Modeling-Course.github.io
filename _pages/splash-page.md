@@ -55,13 +55,23 @@ chapter_4:
 
 Have you ever wondered ...
 * why zebras have stripes?
-* how your cells can perform complex tasks without intelligence?
+* how cells can perform complex tasks without intelligence?
 * why the original SARS coronavirus fizzled out but SARS-CoV-2 spread like wildfire around the planet?
 * how algorithms can be trained to “see” as well as a human?
 
 In this free course, we will build models of biological systems that are relatively simple but nevertheless provide us with deep, fascinating insights into how biological systems operate and how to answer these questions.
 
-Our course contents are found below.
+## Contents
+
+{% include feature_row id="prologue" type="left" %}
+
+{% include feature_row id="chapter_1" type="right" %}
+
+{% include feature_row id="chapter_2" type="left" %}
+
+{% include feature_row id="chapter_3" type="right" %}
+
+{% include feature_row id="chapter_4" type="left" %}
 
 ## Acknowledgements
 
@@ -78,16 +88,4 @@ Special thanks to Jiayi Shou for the analogy in Module 3 of new protein companie
 The cover image on Module 4 was created by Keith Chambers.
 
 Finally, the website design was built using Michael Rose's excellent <a href="https://mmistakes.github.io/minimal-mistakes/" target="_blank">Minimal Mistakes</a> theme.
-
-
-{% include feature_row id="prologue" type="left" %}
-
-{% include feature_row id="chapter_1" type="right" %}
-
-{% include feature_row id="chapter_2" type="left" %}
-
-{% include feature_row id="chapter_3" type="right" %}
-
-{% include feature_row id="chapter_4" type="left" %}
-
 
