@@ -7,7 +7,7 @@ sidebar:
 image: "../assets/images/ecoli_glucose.png"
 excerpt: "by Shuanger Li and Phillip Compeau"
 header:
-  overlay_image: "../assets/images/chemotaxis_traj_1.0_uniform.png"
+  overlay_image: "../assets/images/ecoli_glucose.png"
   overlay_filter: 0.3
 author_profile: true # add author to page
 ---
