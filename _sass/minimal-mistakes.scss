@@ -69,14 +69,6 @@ iframe {
   background-color: #555;
 }
 
-/* === more line-spacing inside wrapped sidebar links === */
-@media (min-width: 1024px) {          /* desktop only; drop the media query if you want it everywhere */
-  .sidebar .nav__item > a {           /* each left-sidebar link */
-    line-height: 13.5;                /* default is ~1.2 — raise until it feels right */
-    /* OR, if you prefer: padding: 0.15rem 0;  (instead of line-height) */
-  }
-}
-
 /* Variables */
 @import "minimal-mistakes/variables";
 
