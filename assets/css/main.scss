@@ -1,0 +1,7 @@
+/* add comfy padding *inside* both sidebars */
+@media (min-width: 1024px) {
+    .sidebar,
+    .sidebar__right {
+      padding: 0 1.5rem;   // left-and-right padding
+    }
+  }
