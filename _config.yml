@@ -39,10 +39,10 @@ author:
       icon: "fas fa-fw fa-heart"
       url: "https://programmingforlovers.com"
     - label: "Bioinformatics Algorithms"
-      icon: "fas fa-fw fa-link"
+      icon: "fas fa-fw fa-dna"
       url: "https://bioinformaticsalgorithms.org"
     - label: "Rosalind"
-      icon: "fas fa-fw fa-link"
+      icon: "fas fa-fw fa-laptop"
       url: "https://rosalind.info"
 
 
