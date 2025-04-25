@@ -17,7 +17,7 @@ excerpt: "Power up your computational and machine learning skills with our free 
 prologue:
   - image_path: /assets/images/gray_scott_jupyter_high-res.png
     title: "Prologue: Random walks and Turing patterns"
-    excerpt: "Left-aligned image centered with"
+    excerpt: "Have you ever wondered why zebras have stripes?"
     url: "/prologue/"
     btn_label: "Read More"
     btn_class: "btn--primary"
@@ -31,37 +31,35 @@ chapter_1:
 chapter_2:
   - image_path: /assets/images/chemotaxis_traj_1.0_uniform.png
     title: "Module 2: Unpacking *E. coli*’s genius exploration algorithm"
-    excerpt: "Left-aligned image centered with"
+    excerpt: "How can cells perform complex tasks without intelligence?"
     url: "/chemotaxis/home"
     btn_label: "Read More"
     btn_class: "btn--primary"
 chapter_3:
   - image_path: /assets/images/SARS_spike_proteins.jpg
     title: "Module 3: Analyzing the coronavirus spike protein"
-    excerpt: "Right-aligned image with ``"
+    excerpt: "Why did the original SARS coronavirus fizzle out but SARS-CoV-2 spread like wildfire around the planet?"
     url: "/coronavirus/home"
     btn_label: "Read More"
     btn_class: "btn--primary"
 chapter_4:
   - image_path: /assets/images/normal_adult_blood_smear.JPG
     title: "Module 4: Training a computer to classify white blood cells"
-    excerpt: "Left-aligned image centered with"
+    excerpt: "How can algorithms be trained to see as well as a human?"
     url: "/white_blood_cells/home"
     btn_label: "Read More"
     btn_class: "btn--primary"
 ---
 
-## Welcome to Biological Modeling!
+# Welcome to Biological Modeling!
 
-Have you ever wondered ...
-* why zebras have stripes?
-* how cells can perform complex tasks without intelligence?
-* why the original SARS coronavirus fizzled out but SARS-CoV-2 spread like wildfire around the planet?
-* how algorithms can be trained to “see” as well as a human?
 
-In this free course, we will build models of biological systems that are relatively simple but nevertheless provide us with deep, fascinating insights into how biological systems operate and how to answer these questions.
+* 
+* 
 
-## Contents
+
+
+# Contents
 
 {% include feature_row id="prologue" type="left" %}
 
@@ -73,7 +71,7 @@ In this free course, we will build models of biological systems that are relativ
 
 {% include feature_row id="chapter_4" type="left" %}
 
-## Acknowledgements
+# Acknowledgements
 
 This online course is a training and dissemination effort for the <a href="https://mmbios.pitt.edu" target="_blank">National Center for Multiscale Modeling of Biological Systems (MMBioS)</a>. It is supported by the National Institutes of Health (grant ID: P41 GM103712).
 
