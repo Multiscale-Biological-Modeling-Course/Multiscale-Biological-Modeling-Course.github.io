@@ -4,7 +4,7 @@ title: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
 description: "Start Module 2: explore E. coli chemotaxis, from signaling to movement, with interactive models and tutorials that reveal its exploration algorithm."
 sidebar:
  nav: "chemotaxis"
-image: "../assets/images/chemotaxis_traj_1.0_uniform.png"
+image: "../assets/images/ecoli_glucose.png"
 excerpt: "by Shuanger Li and Phillip Compeau"
 header:
   overlay_image: "../assets/images/chemotaxis_traj_1.0_uniform.png"
