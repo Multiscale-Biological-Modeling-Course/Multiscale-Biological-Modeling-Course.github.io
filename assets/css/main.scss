@@ -17,11 +17,11 @@ search: false
 
 /* Change color of social share icons*/
 .social-share-icons i {
-  color: #555; /* Dark gray */
+  color: #555 !important; /* Dark gray */
 }
 
 .social-share-icons i:hover {
-  color: #222; /* Even darker on hover */
+  color: #222 !important; /* Even darker on hover */
 }
 
 /* Main content is too low. The following fixes move it up to be level with the sidebars. */

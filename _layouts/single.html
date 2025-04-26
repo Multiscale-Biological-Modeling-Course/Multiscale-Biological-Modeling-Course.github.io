@@ -56,23 +56,32 @@ layout: default
           </center>
           {% endunless %}
           <div class="social-share-icons" style="margin-top: 1rem; text-align: center;">
-            <p><strong>Share this page</strong></p>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}" target="_blank" rel="noopener" style="margin: 0 0.5rem;">
+            <p><strong><em>Share us!</em></strong></p>
+          
+            {% assign linkedin_text = "Check out this free educational website on biological modeling. It's ideal for students, educators, and science lovers." | url_encode %}
+            {% assign x_text = "Check out this awesome free educational platform on biological modeling!" | url_encode %}
+            {% assign reddit_text = "I found a free website that teaches biological modeling through hands-on projects. Worth checking out!" | url_encode %}
+          
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ linkedin_text }}" target="_blank" rel="noopener" style="margin: 0 0.5rem;">
               <i class="fab fa-linkedin fa-lg"></i>
             </a>
-            <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}" target="_blank" rel="noopener" style="margin: 0 0.5rem;">
-              <i class="fab fa-x-twitter fa-lg"></i>
+          
+            <a href="https://twitter.com/intent/tweet?text={{ x_text }}&url={{ page.url | absolute_url }}" target="_blank" rel="noopener" style="margin: 0 0.5rem;">
+              <i class="fab fa-twitter fa-lg"></i>
             </a>
-            <a href="https://www.reddit.com/submit?url={{ page.url | absolute_url }}" target="_blank" rel="noopener" style="margin: 0 0.5rem;">
+          
+            <a href="https://www.reddit.com/submit?url={{ page.url | absolute_url }}&title={{ reddit_text }}" target="_blank" rel="noopener" style="margin: 0 0.5rem;">
               <i class="fab fa-reddit fa-lg"></i>
             </a>
+          
             <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" rel="noopener" style="margin: 0 0.5rem;">
               <i class="fab fa-facebook fa-lg"></i>
             </a>
+          
             <a href="{{ page.url | absolute_url }}" target="_blank" rel="noopener" style="margin: 0 0.5rem;">
               <i class="fas fa-link fa-lg"></i>
             </a>
-          </div> 
+          </div>
         </aside>    
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
