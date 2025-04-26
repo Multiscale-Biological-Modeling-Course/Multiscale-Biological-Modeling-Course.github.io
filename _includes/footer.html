@@ -1,21 +1,37 @@
-<!-- <div class="page__footer-follow">
-  <hr>
-  <div>
-  <a href="http://cbd.cmu.edu" target="_blank"><img src="../assets/images/600px/CMU_CBD_logos.png" width = "40%" height = "40%" align="left" alt="CBD Logo">
+<footer class="page__footer">
+  <div class="wrapper">
+
+    <!-- Row 1  Logo + quick nav -->
+    <div class="footer__top">
+      <div class="footer__brand">
+        <img src="{{ '/assets/images/cmu-wordmark-light.svg' | relative_url }}" alt="Carnegie Mellon University" height="40">
+      </div>
+
+      <nav class="footer__links">
+        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/course-map/' | relative_url }}">Course Map</a>
+        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        <a href="https://leanpub.com/biologicalmodeling" target="_blank" rel="noopener">Get the E-Book</a>
+      </nav>
+    </div>
+
+    <!-- Row 2  Social icons -->
+    <div class="footer__social">
+      <a href="https://github.com/biologicalmodeling" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/company/biologicalmodeling" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/biomodeling" aria-label="X / Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <!-- Row 3  License and copyright -->
+    <div class="footer__license">
+      <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Biological Modeling</span>
+      is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">
+        CC BY-NC 4.0
+      </a>.
+      <br>
+      © {{ site.time | date: "%Y" }} Carnegie Mellon University
+    </div>
+
   </div>
-  <center>
-  <table>
-    <tr>
-      <td><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
-        </td>
-        <td>
-          <p style = "color:black"><small>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.</small></a>
-        </td>
-        <td>
-          <a href="https://forms.gle/egmmBxGtBciDPYNS8" target="_blank"><img src="../assets/images/600px/survey.png" width = "40%" height = "40%" align="right"></a>
-        </td>
-      </tr>
-  </table>
-  </center>
-</div>
--->
+</footer>

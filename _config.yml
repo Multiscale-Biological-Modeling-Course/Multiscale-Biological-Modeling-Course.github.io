@@ -113,11 +113,7 @@ algolia:
   search_only_api_key: 809cb9cee21df5bf9f0e36e4af371cfe
   powered_by: true
 
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+footer: custom
 
 defaults:
   # _pages

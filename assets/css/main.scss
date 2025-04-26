@@ -66,3 +66,34 @@ search: false
     margin-right: calc(-300px - var(--sidebar-gap));
   }
 }
+
+/* Footer updates */
+
+/* Footer styling */
+.page__footer {
+  background: #f7f7f7;   /* same gray used by Minimal Mistakes call-outs */
+  font-size: 0.9rem;
+  padding: 2rem 0;
+}
+
+.footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.footer__links a {
+  margin-right: 1.25rem;
+}
+
+.footer__social a {
+  color: #555 !important;
+  margin-right: 0.75rem;
+  font-size: 1.4rem;
+}
+
+.footer__social a:hover { color: #222 !important; }
+
+.footer__license { text-align: center; margin-top: 1rem; }
