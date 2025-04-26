@@ -8,49 +8,61 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-/* Trying font size changes
+/* === Font size changes for page leads (optional) === */
+/*
 .page__lead {
-    font-family: $global-font-family;
-    font-size: $type-size-2;
-  }
+  font-family: $global-font-family;
+  font-size: $type-size-2;
+}
 */
 
-/* Change color of social share icons*/
-.social-share-icons i {
-  color: #555 !important; /* Dark gray */
+/* === Social Share Icons Styling === */
+.social-share-icons a {
+  color: #555 !important; /* Dark gray icons */
+  text-decoration: none !important; /* Remove blue underline */
 }
 
-.social-share-icons i:hover {
-  color: #222 !important; /* Even darker on hover */
+.social-share-icons a:hover {
+  color: #222 !important; /* Even darker gray on hover */
+  text-decoration: none !important;
 }
 
-/* Main content is too low. The following fixes move it up to be level with the sidebars. */
-@media (min-width: 64em) {   /* 64 em ≈ 1024 px */
-  .page__content            { padding-top: 0 !important; }
-  .page__content > *:first-child { margin-top: 0 !important; }
+.social-share-icons a:hover i {
+  transform: scale(1.15); /* Slight pop effect on hover */
+  transition: transform 0.2s ease;
 }
 
-/* === More space to the left of the main content column === */
+/* === Layout Adjustments: Main Content Alignment === */
+@media (min-width: 64em) { /* 64em ≈ 1024px */
+  .page__content {
+    padding-top: 0 !important; /* Move content up */
+  }
+  .page__content > *:first-child {
+    margin-top: 0 !important;
+  }
+}
+
+/* === More Horizontal Space Around Main Content === */
 @media (min-width: 1024px) {
-    .page__content {
-      padding-left: 50px;
-      margin-right: 50px;
-    }
+  .page__content {
+    padding-left: 50px;
+    margin-right: 50px;
   }
+}
 
-  :root { --sidebar-gap: 2rem; }   /* change once, use everywhere */
+:root {
+  --sidebar-gap: 2rem; /* Define sidebar gap once */
+}
 
-  /* ≥ 1024 px  (sidebar is 200 px) */
-  @media (min-width: 64em) {
-    .sidebar__right {            /* still sticky, still floats right   */
-      margin-right: calc(-200px - var(--sidebar-gap));
-    }
+/* === Sidebar Margin Adjustments === */
+@media (min-width: 64em) {
+  .sidebar__right {
+    margin-right: calc(-200px - var(--sidebar-gap));
   }
-  
-  /* ≥ 1280 px  (sidebar is 300 px) */
-  @media (min-width: 80em) {
-    .sidebar__right {
-      margin-right: calc(-300px - var(--sidebar-gap));
-    }
+}
+
+@media (min-width: 80em) {
+  .sidebar__right {
+    margin-right: calc(-300px - var(--sidebar-gap));
   }
-  
+}
