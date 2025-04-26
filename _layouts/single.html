@@ -49,11 +49,21 @@ layout: default
           {% endif %}  
           <!-- Call to Action Buttons (visible on most pages) -->
           {% unless page.exclude_book_buttons %}
-          <center>
-          <a href="https://leanpub.com/biologicalmodeling" class="btn btn--primary btn--large" style="font-size: 100%; text-align: center;" target="_blank">Get the E-Book</a>
-
-          <a href="https://www.amazon.com/dp/B0BT6B2B8W" class="btn btn--primary btn--large" style="font-size: 100%; text-align: center;" target="_blank">Get the Print Book</a>
-          </center>
+          <div class="sidebar-cta">
+            <a href="https://leanpub.com/biologicalmodeling"
+               class="btn btn--store"
+               target="_blank" rel="noopener">
+              <img src="{{ '/assets/images/leanpub-logo.svg' | relative_url }}" class="store-icon" alt="" />
+              Leanpub&nbsp;E-book
+            </a>
+          
+            <a href="https://www.amazon.com/dp/B0BT6B2B8W"
+               class="btn btn--store"
+               target="_blank" rel="noopener">
+              <i class="fab fa-amazon store-icon" aria-hidden="true"></i>
+              Amazon&nbsp;Print
+            </a>
+          </div>
           {% endunless %}
           <div class="social-share-icons" style="margin-top: 1rem; text-align: center;">
             <h2><strong><em>Share us!</em></strong></h2>

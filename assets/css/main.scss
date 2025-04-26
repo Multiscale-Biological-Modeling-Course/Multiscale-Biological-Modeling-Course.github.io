@@ -67,6 +67,32 @@ search: false
   }
 }
 
+/* ---- Sidebar CTA buttons ---- */
+.sidebar-cta {
+  text-align:center;
+  margin: 1.5rem 0 2rem;
+}
+.btn--store {
+  display:inline-flex; align-items:center; justify-content:center;
+  background:#f4f4f4;           /* subtle gray */
+  color:#000;                   /* black text */
+  border:1px solid #ddd;
+  border-radius:6px;
+  font-size:.95rem;
+  font-weight:600;
+  padding:.65rem 1.1rem;
+  margin-bottom:.8rem;
+  transition:background .2s ease, transform .2s ease;
+  width: 100%;                  /* full-width in narrow sidebar */
+}
+.btn--store:hover {
+  background:#e6e6e6;
+  transform:translateY(-2px);
+}
+.store-icon {
+  height:1rem; margin-right:.45rem;
+}
+
 /* Footer updates */
 
 /* Footer styling */
