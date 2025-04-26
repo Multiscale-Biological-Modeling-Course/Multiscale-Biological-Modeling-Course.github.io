@@ -128,6 +128,35 @@ search: false
 
 .footer__license { text-align: center; margin-top: 1rem; }
 
+/* Footer ----------------------------------------------------- */
+.page__footer         { background:#f2f2f2; color:#333; padding:1.5rem 0; }
+.page__footer a       { color:#000; text-decoration:none; }
+.page__footer a:hover { text-decoration:underline; }
+
+.footer               { font-size:.9rem; }
+.footer__row {
+  display:flex; flex-wrap:wrap; align-items:center;
+  justify-content:space-between; gap:1.5rem;
+}
+
+/* Nav links */
+.footer__nav a { margin:0 .9rem; }
+
+/* Store icons (Amazon FA icon + Leanpub image) */
+.footer__stores a  { margin-left:.9rem; display:inline-flex; align-items:center; }
+.footer__stores i,
+.footer__stores img { font-size:1.4rem; height:1.4rem; }
+
+/* License line */
+.footer__license { text-align:center; margin-top:1rem; }
+
+/* Mobile */
+@media (max-width:40em){
+  .footer__row { flex-direction:column; text-align:center; }
+  .footer__nav a{ display:inline-block; margin:.3rem .6rem; }
+  .footer__stores { margin-top:.6rem; }
+}
+
 /* ==== Book-support modal ==== */
 .bm-backdrop {
   display: none;
