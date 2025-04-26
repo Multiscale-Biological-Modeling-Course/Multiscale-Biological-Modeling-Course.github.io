@@ -54,7 +54,25 @@ layout: default
 
           <a href="https://www.amazon.com/dp/B0BT6B2B8W" class="btn btn--primary btn--large" style="font-size: 100%; text-align: center;" target="_blank">Get the Print Book</a>
           </center>
-          {% endunless %} 
+          {% endunless %}
+          <div class="social-share-icons" style="margin-top: 1rem; text-align: center;">
+            <p><strong>Share this page</strong></p>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}" target="_blank" rel="noopener" style="margin: 0 0.5rem;">
+              <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}" target="_blank" rel="noopener" style="margin: 0 0.5rem;">
+              <i class="fab fa-twitter fa-2x"></i>
+            </a>
+            <a href="https://www.reddit.com/submit?url={{ page.url | absolute_url }}" target="_blank" rel="noopener" style="margin: 0 0.5rem;">
+              <i class="fab fa-reddit fa-2x"></i>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" rel="noopener" style="margin: 0 0.5rem;">
+              <i class="fab fa-facebook fa-2x"></i>
+            </a>
+            <a href="{{ page.url | absolute_url }}" target="_blank" rel="noopener" style="margin: 0 0.5rem;">
+              <i class="fas fa-link fa-2x"></i>
+            </a>
+          </div> 
         </aside>    
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
