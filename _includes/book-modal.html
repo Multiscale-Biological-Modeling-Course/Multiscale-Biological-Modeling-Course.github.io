@@ -8,9 +8,8 @@
       </button>
   
       <h3 id="bm-title">Enjoying <em>Biological Modeling</em>?</h3>
-      <p>
-        Help us keep the course free by grabbing our companion textbook.
-        Choose the Leanpub e-book or the Amazon print edition.
+      <p class="bm-blurb">
+        Help keep the course free. Grab the companion E-book from Leanpub or the print version from Amazon.
       </p>
   
       <!-- CTA buttons -->
@@ -18,7 +17,6 @@
         <a href="https://leanpub.com/biologicalmodeling"
            class="btn btn--primary btn--large bm-btn"
            target="_blank" rel="noopener">
-          <img src="{{ '/assets/images/leanpub-logo.svg' | relative_url }}" class="bm-icon" alt="" />
           Buy on&nbsp;Leanpub ($9.95)
         </a>
   
@@ -30,9 +28,9 @@
         </a>
       </div>
   
-      <!-- Social share (same icons you use in sidebar) -->
+      <!-- Social share (same icons we use in sidebar) -->
       <div class="bm-share">
-        <span>Share:</span>
+        <span class="bm-share__label">Share our project:</span>
         {% assign linkedin_text = "Explore this free biological-modeling course!" | url_encode %}
         {% assign x_text       = "Check out this awesome free resource on biological modeling!" | url_encode %}
         {% assign reddit_text  = "Great free website that teaches biological modeling through projects." | url_encode %}

@@ -165,9 +165,37 @@ search: false
 .bm-btn   { margin: .4rem 0; display: inline-flex; align-items: center; }
 .bm-icon  { height: 1.25rem; margin-right: .4rem; }
 
-.bm-share {
-  margin-top: 1.25rem; font-size: .9rem;
+/* === additions / replacements for the modal === */
+
+/* slightly larger body text inside modal */
+.bm-blurb {               /* add this rule */
+  font-size: 1.05rem;
+  line-height: 1.45;
 }
-.bm-share span { margin-right: .4rem; }
-.bm-share a   { color:#555 !important; margin: 0 .3rem; }
-.bm-share a:hover { color:#222 !important; }
+
+/* label “Share the project:” */
+.bm-share__label {        /* add this rule */
+  margin-right: .5rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ----- replace the old .bm-share rules below ----- */
+.bm-share {
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* bigger icons + pop-on-hover */
+.bm-share a {
+  color: #555 !important;
+  margin: 0 .4rem;
+  font-size: 1.6rem;          /* larger icon size */
+  transition: transform .2s ease;
+}
+.bm-share a:hover {
+  color: #222 !important;
+  transform: scale(1.25);     /* hover pop */
+}
