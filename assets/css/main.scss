@@ -148,7 +148,17 @@ search: false
 .footer__stores img { font-size:1.4rem; height:1.4rem; }
 
 /* License line */
-.footer__license { text-align:center; margin-top:1rem; }
+.footer__license {
+  text-align:center;
+  margin-top:1rem;
+  color: #333 !important;   /* dark text */
+  opacity: 1 !important;    /* override theme’s 0.6 */
+}
+
+/* ensure the CC link is dark too */
+.footer__license a {
+  color: #000 !important;
+}
 
 /* Mobile */
 @media (max-width:40em){
