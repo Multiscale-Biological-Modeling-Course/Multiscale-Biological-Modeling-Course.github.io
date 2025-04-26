@@ -1,6 +1,7 @@
 ---
 permalink: /prologue/diffusion_automaton
 title: "A Coarse-Grained Model of Particle Diffusion"
+description: "Model diffusion with a coarse-grained cellular automaton that averages particle motion into lattice concentrations and shows smooth spreading patterns."
 excerpt: "Prologue: Random Walks and Turing Patterns"
 sidebar:
  nav: "prologue"

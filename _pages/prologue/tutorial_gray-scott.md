@@ -1,6 +1,7 @@
 ---
 permalink: /prologue/gs-jupyter
 title: "Software Tutorial: Implementing the Gray-Scott Reaction-Diffusion Automaton"
+description: "Tutorial: implement the Gray Scott reaction diffusion model in Python, explore feed and kill parameters, and render spots, stripes, and mazes."
 excerpt: "Prologue: Random Walks and Turing Patterns"
 sidebar:
  nav: "prologue"

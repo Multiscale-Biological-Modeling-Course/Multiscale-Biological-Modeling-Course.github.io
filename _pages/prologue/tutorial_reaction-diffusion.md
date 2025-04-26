@@ -1,6 +1,7 @@
 ---
 permalink: /prologue/turing-cellblender
 title: "Software Tutorial: Generating Turing Patterns with a Reaction-Diffusion Simulation"
+description: "Tutorial: build a reaction diffusion simulator that couples chemistry with diffusion to generate Turing patterns like spots and stripes."
 excerpt: "Prologue: Random Walks and Turing Patterns"
 sidebar:
  nav: "prologue"
