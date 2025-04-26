@@ -97,3 +97,47 @@ search: false
 .footer__social a:hover { color: #222 !important; }
 
 .footer__license { text-align: center; margin-top: 1rem; }
+
+/* ==== Book-support modal ==== */
+.bm-backdrop {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.55);
+  z-index: 9998;
+}
+
+.bm-modal[aria-hidden="true"]  { display: none; }
+.bm-modal[aria-hidden="false"] { 
+  display: flex;
+  position: fixed; inset: 0;
+  align-items: center; justify-content: center;
+  z-index: 9999;
+}
+
+.bm-dialog {
+  background: #fff;
+  max-width: 560px;
+  width: 92%;
+  padding: 2rem 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.25);
+  text-align: center;
+  position: relative;
+}
+
+.bm-close {
+  position: absolute; top: .8rem; right: .8rem;
+  background: none; border: none;
+  font-size: 1.25rem; color: #666; cursor: pointer;
+}
+
+.bm-cta { margin-top: 1.5rem; }
+.bm-btn   { margin: .4rem 0; display: inline-flex; align-items: center; }
+.bm-icon  { height: 1.25rem; margin-right: .4rem; }
+
+.bm-share {
+  margin-top: 1.25rem; font-size: .9rem;
+}
+.bm-share span { margin-right: .4rem; }
+.bm-share a   { color:#555 !important; margin: 0 .3rem; }
+.bm-share a:hover { color:#222 !important; }

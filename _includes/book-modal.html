@@ -1,0 +1,75 @@
+<!-- Book-support modal -->
+<div id="book-modal" class="bm-modal" aria-hidden="true">
+    <div class="bm-dialog" role="dialog" aria-labelledby="bm-title">
+  
+      <!-- close “X” -->
+      <button class="bm-close" aria-label="Close" onclick="bmClose()">
+        <i class="fas fa-times"></i>
+      </button>
+  
+      <h3 id="bm-title">Enjoying <em>Biological Modeling</em>?</h3>
+      <p>
+        Help us keep the course free by grabbing our companion textbook.
+        Choose the Leanpub e-book or the Amazon print edition.
+      </p>
+  
+      <!-- CTA buttons -->
+      <div class="bm-cta">
+        <a href="https://leanpub.com/biologicalmodeling"
+           class="btn btn--primary btn--large bm-btn"
+           target="_blank" rel="noopener">
+          <img src="{{ '/assets/images/leanpub-logo.svg' | relative_url }}" class="bm-icon" alt="" />
+          Buy on&nbsp;Leanpub ($9.95)
+        </a>
+  
+        <a href="https://www.amazon.com/dp/B0BT6B2B8W"
+           class="btn btn--primary btn--large bm-btn"
+           target="_blank" rel="noopener">
+          <i class="fab fa-amazon bm-icon" aria-hidden="true"></i>
+          Buy on&nbsp;Amazon
+        </a>
+      </div>
+  
+      <!-- Social share (same icons you use in sidebar) -->
+      <div class="bm-share">
+        <span>Share:</span>
+        {% assign linkedin_text = "Explore this free biological-modeling course!" | url_encode %}
+        {% assign x_text       = "Check out this awesome free resource on biological modeling!" | url_encode %}
+        {% assign reddit_text  = "Great free website that teaches biological modeling through projects." | url_encode %}
+  
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ linkedin_text }}" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/intent/tweet?text={{ x_text }}&url={{ page.url | absolute_url }}" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.reddit.com/submit?url={{ page.url | absolute_url }}&title={{ reddit_text }}" target="_blank" rel="noopener"><i class="fab fa-reddit"></i></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+        <a href="{{ page.url | absolute_url }}"><i class="fas fa-link"></i></a>
+      </div>
+  
+    </div>
+  </div>
+  
+  <div id="bm-backdrop" class="bm-backdrop" onclick="bmClose()"></div>
+
+
+  <script>
+    function bmOpen() {
+      document.getElementById('book-modal' ).setAttribute('aria-hidden','false');
+      document.getElementById('bm-backdrop').style.display = 'block';
+    }
+    function bmClose() {
+      document.getElementById('book-modal' ).setAttribute('aria-hidden','true');
+      document.getElementById('bm-backdrop').style.display = 'none';
+    }
+    function bmSetCookie(days) {
+      const d = new Date();
+      d.setTime(d.getTime()+ days*864e5);
+      document.cookie = "bmShown=true; expires="+d.toUTCString()+"; path=/";
+    }
+    function bmGetCookie() {
+      return document.cookie.split(';').some(c=>c.trim().startsWith("bmShown="));
+    }
+    window.addEventListener('load', () => {
+      if (!bmGetCookie()) {
+        setTimeout(() => { bmOpen(); bmSetCookie(1); }, 60000); // 60 s then once/day
+      }
+    });
+    </script>
