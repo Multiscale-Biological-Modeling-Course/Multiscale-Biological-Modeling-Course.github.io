@@ -70,6 +70,36 @@ search: false
 /* Footer updates */
 
 /* Footer styling */
+/* Footer ----------------------------------------------------------- */
+.page__footer         { background:#f2f2f2; color:#333; padding:1.5rem 0; }
+.page__footer a       { color:#0366d6; text-decoration:none; }
+.page__footer a:hover { text-decoration:underline; }
+
+.footer { font-size:.9rem; }
+
+/* first row */
+.footer__row {
+  display:flex; flex-wrap:wrap;
+  align-items:center; justify-content:space-between;
+  gap:1.25rem;
+}
+
+.footer__nav a { margin-right:1.25rem; }
+
+.footer__social a {
+  color:#555 !important; margin-left:.75rem; font-size:1.3rem;
+}
+.footer__social a:hover { color:#222 !important; }
+
+/* license */
+.footer__license { text-align:center; margin-top:1rem; }
+
+/* shrink vertical space on very small screens */
+@media (max-width:40em){
+  .footer__row { flex-direction:column; text-align:center; }
+  .footer__nav a { display:inline-block; margin:.3rem .6rem; }
+}
+
 .page__footer {
   background: #f7f7f7;   /* same gray used by Minimal Mistakes call-outs */
   font-size: 0.9rem;

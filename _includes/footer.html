@@ -1,37 +1,35 @@
 <footer class="page__footer">
-  <div class="wrapper">
+  <div class="wrapper footer">
+    <div class="footer__row">
 
-    <!-- Row 1  Logo + quick nav -->
-    <div class="footer__top">
+      <!-- Brand (swap src if you have a CMU SVG/PNG) -->
       <div class="footer__brand">
-        <img src="{{ '/assets/images/cmu-wordmark-light.svg' | relative_url }}" alt="Carnegie Mellon University" height="40">
+        <img src="{{ '/assets/images/cmu-wordmark-light.svg' | relative_url }}"
+             alt="Carnegie Mellon University" height="28" />
       </div>
 
-      <nav class="footer__links">
-        <a href="{{ '/about/' | relative_url }}">About</a>
+      <!-- Quick nav -->
+      <nav class="footer__nav">
+        <a href="{{ '/about/'      | relative_url }}">About</a>
         <a href="{{ '/course-map/' | relative_url }}">Course Map</a>
-        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        <a href="{{ '/contact/'    | relative_url }}">Contact</a>
         <a href="https://leanpub.com/biologicalmodeling" target="_blank" rel="noopener">Get the E-Book</a>
       </nav>
+
+      <!-- Social -->
+      <div class="footer__social">
+        <a href="https://github.com/biologicalmodeling" aria-label="GitHub"  target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/company/biologicalmodeling" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/biomodeling" aria-label="X / Twitter"  target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+      </div>
+
     </div>
 
-    <!-- Row 2  Social icons -->
-    <div class="footer__social">
-      <a href="https://github.com/biologicalmodeling" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/company/biologicalmodeling" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-      <a href="https://twitter.com/biomodeling" aria-label="X / Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
-    </div>
-
-    <!-- Row 3  License and copyright -->
     <div class="footer__license">
-      <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Biological Modeling</span>
-      is licensed under
-      <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">
-        CC BY-NC 4.0
-      </a>.
+      Biological Modeling is licensed under
+      <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>.
       <br>
-      © {{ site.time | date: "%Y" }} Carnegie Mellon University
+      © {{ site.time | date: '%Y' }} Carnegie Mellon University
     </div>
-
   </div>
 </footer>
