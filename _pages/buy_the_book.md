@@ -3,7 +3,7 @@ permalink: /buy_the_book/
 title: "Biological Modeling: A Short Tour"
 excerpt: "The textbook companion to Biological Modeling"
 image: "assets/images/cover_background_narrow.jpg"
-description: The textbook companion of Biological Modeling.
+description: "Get the Biological Modeling textbook: discover key concepts in systems biology, data analysis, and computational modeling."
 comments: false
 share: false
 header:

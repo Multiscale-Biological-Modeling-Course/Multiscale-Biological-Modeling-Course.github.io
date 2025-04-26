@@ -1,7 +1,7 @@
 ---
 title: <em>Biological Modeling</em>
 layout: single
-description: A free course in biological modeling at multiple scales.
+description: "Welcome to Biological Modeling: free lessons and tutorials that blend computation with life science, plus a companion textbook."
 image: "/assets/images/600px/f38_k61_high-res.png"
 toc: true
 toc_sticky: true

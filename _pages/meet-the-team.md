@@ -2,7 +2,7 @@
 permalink: /meet-the-team/
 title: "Meet the Team"
 image: "assets/images/f38_k61_high-res.png"
-description: Meet the development team for Biological Modeling, a free online course.
+description: "Meet the educators behind Biological Modeling, who are passionate about making science education accessible."
 layout: splash
 comments: false
 share: false

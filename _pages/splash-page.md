@@ -1,5 +1,6 @@
 ---
 title: "Biological Modeling"
+description: "Welcome to Biological Modeling: free lessons and tutorials that blend computation with life science, plus a companion textbook."
 layout: splash
 permalink: /splash-page/
 header:
