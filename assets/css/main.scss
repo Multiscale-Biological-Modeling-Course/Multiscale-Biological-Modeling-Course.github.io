@@ -335,6 +335,14 @@ search: false
 .bm-btn   { margin: .4rem 0; display: inline-flex; align-items: center; }
 .bm-icon  { height: 1.25rem; margin-right: .4rem; }
 
+/* cover image inside modal */
+.bm-cover {
+  max-width: 160px;
+  width: 60%;
+  margin: 0 auto 1.1rem;
+  display: block;
+}
+
 /* === additions / replacements for the modal === */
 
 /* slightly larger body text inside modal */
