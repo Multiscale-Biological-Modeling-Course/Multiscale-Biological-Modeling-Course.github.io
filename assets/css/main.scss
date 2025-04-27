@@ -409,16 +409,32 @@ search: false
 }
 .bm-copy:hover { color:#c41230; }
 
+/* copy-to-clipboard icon in sidebar */
+.copy-link-btn {
+  background:none;
+  border:none;
+  outline:none;
+  padding:0;
+  color:#555;
+  font-size:1.4rem;
+  cursor:pointer;
+  margin:0 .5rem;
+  transition:color .2s ease, transform .2s ease;
+}
+.copy-link-btn:hover { color:#c10814; transform:scale(1.15); }
+
+/* “Copied!” toast — shared by modal and sidebar */
 .bm-copied {
-  font-size:.85rem; color:#28a745; /* green tick text */
-  margin-left:.5rem; opacity:0; transition:opacity .2s ease;
+  opacity:0;
+  font-size:.8rem;
+  color:#28a745;
+  margin-left:.4rem;
+  transition:opacity .2s ease;
 }
 .bm-copied.show { opacity:1; }
 
 /* Author-box links — red hover colour + red underline */
 .author__urls a {
-  text-decoration: underline;
-  text-decoration-color: rgba(0,0,0,.35);   /* subtle gray underline by default */
   transition: color .2s ease, text-decoration-color .2s ease;
 }
 

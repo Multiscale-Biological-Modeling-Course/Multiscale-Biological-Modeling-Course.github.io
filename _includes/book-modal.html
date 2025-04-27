@@ -82,18 +82,15 @@
 
 <!-- this is for copying a link to the clipboard for sharing -->
 <script>
-    function bmCopyLink() {
-      const url = window.location.href;
-      navigator.clipboard.writeText(url)
-        .then(() => {
-          const note = document.getElementById('bm-copied');
-          note.setAttribute('aria-hidden','false');
-          note.classList.add('show');
-          setTimeout(()=>{                  // hide after 2 s
-            note.classList.remove('show');
-            note.setAttribute('aria-hidden','true');
-          }, 2000);
-        })
-        .catch(() => alert('Copy failed – please copy manually'));
-    }
-    </script>
+    function bmCopyLink(){
+  const url = window.location.href;
+  navigator.clipboard.writeText(url).then(()=>{
+    document.querySelectorAll('.bm-copied').forEach(el=>{
+      el.setAttribute('aria-hidden','false');
+      el.classList.add('show');
+      setTimeout(()=>{ el.classList.remove('show');
+                       el.setAttribute('aria-hidden','true'); }, 2000);
+    });
+  }).catch(()=>alert('Copy failed – please copy manually'));
+}
+</script>
