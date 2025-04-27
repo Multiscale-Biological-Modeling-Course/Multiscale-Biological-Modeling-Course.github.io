@@ -19,14 +19,14 @@ author_profile: true
 prologue:
   - image_path: /assets/images/gray_scott_jupyter_high-res.png
     title: "Prologue: Random walks and Turing patterns"
-    excerpt: "Have you ever wondered why zebras have stripes? In the course prologue, we will see how a simple predator-prey dynamic at the level of particles can result in a reaction-diffusion system in which stripes and spots appear spontaneously from random interactions."
+    excerpt: "Have you ever wondered why zebras have stripes? In the course prologue, we’ll explore how simple predator-prey interactions at the microscopic level can give rise to reaction-diffusion systems, where stripes and spots spontaneously emerge from random motion."
     url: "/prologue/"
     btn_label: "Read More"
     btn_class: "btn--primary"
 chapter_1:
   - image_path: /assets/images/repressilator_chart.png
     title: "Module 1: Finding motifs in transcription factor networks"
-    excerpt: "When we study transcription factors, Proteins serving as master gene regulators in the cell.  we find remarkable and surprising patterns in how they regulate each other. For example, even in simple organisms, transcription factors will often regulate themselves. In this module, we build models to help us explain why patterns of gene regulation have arisen from an evolutionary perspective."
+    excerpt: "Transcription factors are proteins that serve as master gene regulators in the cell. When we study how they interact, we uncover remarkable patterns like oscillations that arise from simple behavior. In this module, we will build models to explain why these regulatory patterns have evolved."
     url: "/motifs/home"
     btn_label: "Read More"
     btn_class: "btn--primary"
@@ -52,16 +52,6 @@ chapter_4:
     btn_label: "Read More"
     btn_class: "btn--primary"
 ---
-
-* [Prologue: Random walks and Turing patterns](../prologue/) (with software tutorials featuring <a href="https://mcell.org" target="_blank">MCell and CellBlender</a>)
-
-* [Module 1: Finding motifs in transcription factor networks](../motifs/home) (with software tutorials featuring <a href="https://mcell.org" target="_blank">MCell and CellBlender</a>)
-
-* [Module 2: Unpacking E. coli's genius exploration algorithm](../chemotaxis/home) (with software tutorials featuring <a href="http://bionetgen.org" target="_blank">BioNetGen</a>)
-
-* [Module 3: Analyzing the coronavirus spike protein](../coronavirus/home) (with software tutorials featuring <a href="http://prody.csb.pitt.edu" target="_blank">ProDy</a> and affiliated tools)
-
-* [Module 4: Training a computer to classify white blood cells](../white_blood_cells/home) (with software tutorials featuring <a href="http://www.cellorganizer.org" target="_blank">CellOrganizer</a>)
 
 # Contents
 
