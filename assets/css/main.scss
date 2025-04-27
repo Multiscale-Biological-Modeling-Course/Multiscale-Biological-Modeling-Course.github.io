@@ -93,7 +93,21 @@ search: false
   height:1rem; margin-right:.45rem;
 }
 
+/* sidebar Buy-the-Book buttons : red text on hover */
+.btn--book:hover {
+  background:#e8e8e8;     /* keep subtle lift */
+  color:#c41230 !important; /* CMU red text */
+}
+
+/* if you want the Font-Awesome Amazon icon to change too */
+.btn--book:hover .fa-amazon { color:#c41230 !important; }
+
 /* Footer updates */
+
+/* footer link color on hover */
+.page__footer a:hover {
+  color:#c41230 !important;   /* CMU red */
+}
 
 /* Footer styling */
 /* Footer ----------------------------------------------------------- */
