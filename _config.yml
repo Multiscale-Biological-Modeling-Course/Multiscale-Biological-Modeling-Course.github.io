@@ -57,6 +57,10 @@ search_provider: algolia
 #  disqus:
 #    shortname: "biological-modeling"
 
+# include header
+head:
+  custom_includes:
+    - head.html
 
 # Build settings
 markdown: kramdown
