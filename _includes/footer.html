@@ -4,24 +4,23 @@
     <!-- ——— 1st row ——— -->
     <div class="footer__row">
 
-      <!-- Brand (or text if logo unavailable) -->
+      <!-- Brand (linked to cmu.edu) -->
       <div class="footer__brand">
-        <a href="https://cmu.edu" target="_blank"><img src="{{ '/assets/images/cmu_horizontal_red.png' | relative_url }}" alt="Carnegie Mellon University" height="28"></a>
+        <a href="https://cmu.edu" target="_blank" rel="noopener">
+          <img src="{{ '/assets/images/cmu_horizontal_red.png' | relative_url }}" alt="Carnegie Mellon University" height="36">
+        </a>
       </div>
 
-      <!-- Quick nav: five modules + team + contact -->
+      <!-- Simple nav: home, team, contact -->
       <nav class="footer__nav">
-        <a href="{{ '/prologue/'  | relative_url }}">Prologue</a>
-        <a href="{{ '/chemotaxis/home/'  | relative_url }}">Module&nbsp;1</a>
-        <a href="{{ '/coronavirus/home/' | relative_url }}">Module&nbsp;2</a>
-        <a href="{{ '/motifs/home/'      | relative_url }}">Module&nbsp;3</a>
-        <a href="{{ '/wbc/home/'         | relative_url }}">Module&nbsp;4</a>
-        <a href="{{ '/about/team/'       | relative_url }}">Team</a>
-        <a href="{{ '/contact/'          | relative_url }}">Contact</a>
+        <a href="{{ '/'               | relative_url }}">Home</a>
+        <a href="{{ '/about/team/'     | relative_url }}">Team</a>
+        <a href="{{ '/contact/'        | relative_url }}">Contact</a>
       </nav>
 
-      <!-- Store links (Amazon + Leanpub) instead of social media -->
+      <!-- Store links with label -->
       <div class="footer__stores">
+        <span>Buy the Book:</span>
         <a href="https://www.amazon.com/dp/B0BT6B2B8W" aria-label="Buy on Amazon" target="_blank" rel="noopener">
           <i class="fab fa-amazon"></i>
         </a>
@@ -37,7 +36,7 @@
       <em>Biological Modeling</em> is licensed under
       <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC&nbsp;BY-NC&nbsp;4.0</a>.
       <br>
-      © {{ site.time | date: '%Y' }} <a href="https://compeau.cbd.cmu.edu" target="_blank">Phillip Compeau</a>
+      © {{ site.time | date: '%Y' }} <a href="https://compeau.cbd.cmu.edu" target="_blank" rel="noopener">Phillip Compeau</a>
     </div>
 
   </div><!-- /.wrapper -->
