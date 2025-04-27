@@ -30,7 +30,7 @@ minimal_mistakes_skin: contrast
 author:
   name: "Phillip Compeau"
   avatar: "/assets/images/600px/compeau_phillip_2023.jpg"
-  bio: "CMU professor and online education founder. Proud to have built *Biological Modeling* with my students." # Note: Markdown is allowed
+  bio: "Professor at CMU and online education founder. Proud to have built *Biological Modeling* with my students." # Note: Markdown is allowed
   links:
     - label: "Follow me on LinkedIn"
       icon: "fab fa-fw fa-linkedin"
