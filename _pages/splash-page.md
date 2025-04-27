@@ -53,8 +53,6 @@ chapter_4:
     btn_class: "btn--primary"
 ---
 
-# Contents
-
 {% include feature_row id="prologue" type="left" %}
 
 {% include feature_row id="chapter_1" type="right" %}
