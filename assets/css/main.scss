@@ -414,3 +414,16 @@ search: false
   margin-left:.5rem; opacity:0; transition:opacity .2s ease;
 }
 .bm-copied.show { opacity:1; }
+
+/* Author-box links — red hover colour + red underline */
+.author__urls a {
+  text-decoration: underline;
+  text-decoration-color: rgba(0,0,0,.35);   /* subtle gray underline by default */
+  transition: color .2s ease, text-decoration-color .2s ease;
+}
+
+.author__urls a:hover,
+.author__urls a:focus {
+  color: #c10814 !important;                /* your new red */
+  text-decoration-color: #c10814 !important;/* underline turns same red */
+}
