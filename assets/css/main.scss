@@ -23,7 +23,7 @@ search: false
 }
 
 .social-share-icons a:hover {
-  color: #c41230 !important; /* Red on hover */
+  color: #c10814 !important; /* Red on hover */
   text-decoration: none !important;
 }
 
@@ -96,18 +96,18 @@ search: false
 /* sidebar Buy-the-Book buttons : red text on hover */
 .btn--book:hover {
   background:#e8e8e8;     /* keep subtle lift */
-  color:#c41230 !important; /* CMU red text */
+  color:#c10814 !important; /* CMU red text */
 }
 
 /* if you want the Font-Awesome Amazon icon to change too */
-.btn--book:hover .fa-amazon { color:#c41230 !important; }
+.btn--book:hover .fa-amazon { color:#c10814 !important; }
 
 /* ---- Buy-the-Book buttons ---------------------------------- */
 .btn--book,
 .btn--book:visited                { color:#000 !important; }   /* normal state */
 
-.btn--book:hover                  { color:#c41230 !important; } /* CMU red */
-.btn--book:hover .fa-amazon       { color:#c41230 !important; } /* Amazon icon */
+.btn--book:hover                  { color:#c10814 !important; } /* CMU red */
+.btn--book:hover .fa-amazon       { color:#c10814 !important; } /* Amazon icon */
 .btn--book:hover img.book-icon    { filter: hue-rotate(-15deg) saturate(180%); }
 /* ^ optional: nudges Leanpub PNG toward red; delete if you prefer no change */
 
@@ -125,7 +125,7 @@ search: false
 }
 .sidebar-book .btn--book:hover {
   background:#e8e8e8;
-  color:#c41230 !important;        /* CMU red */
+  color:#c10814 !important;        /* CMU red */
   transform:translateY(-2px);
 }
 
@@ -135,13 +135,13 @@ search: false
   margin-right:.45rem;
   height:1.1rem;
 }
-.sidebar-book .btn--book:hover .fa-amazon { color:#c41230 !important; }
+.sidebar-book .btn--book:hover .fa-amazon { color:#c10814 !important; }
 
 /* Footer updates */
 
 /* footer link color on hover */
 .page__footer a:hover {
-  color:#c41230 !important;   /* CMU red */
+  color:#c10814 !important;   /* CMU red */
 }
 
 /* Footer styling */
@@ -173,7 +173,7 @@ search: false
 }
 
 .footer__nav a:hover {
-  color: #c41230; /* CMU red hover */
+  color: #c10814; /* CMU red hover */
   text-decoration: underline;
 }
 
@@ -191,7 +191,7 @@ search: false
 }
 
 .footer__stores a:hover {
-  color: #c41230;
+  color: #c10814;
 }
 
 .footer__license {
@@ -206,7 +206,7 @@ search: false
 }
 
 .footer__license a:hover {
-  color: #c41230;
+  color: #c10814;
 }
 
 /* Responsive tweak */
@@ -255,7 +255,7 @@ search: false
   font-size: 1.4rem;
 }
 
-.footer__social a:hover { color: #c41230 !important; }
+.footer__social a:hover { color: #c10814 !important; }
 
 .footer__license { text-align: center; margin-top: 1rem; }
 
@@ -374,7 +374,7 @@ search: false
   transition: transform .2s ease;
 }
 .bm-share a:hover {
-  color: #c41230 !important;
+  color: #c10814 !important;
   transform: scale(1.25);     /* hover pop */
 }
 
@@ -385,5 +385,5 @@ search: false
 .greedy-nav__toggle .navicon,
 .greedy-nav__toggle .navicon:before,
 .greedy-nav__toggle .navicon:after {
-  background-color: #c41230 !important;   /* CMU red bars */
+  background-color: #c10814 !important;   /* CMU red bars */
 }
