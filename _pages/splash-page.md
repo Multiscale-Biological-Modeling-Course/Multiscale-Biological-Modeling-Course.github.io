@@ -18,7 +18,7 @@ excerpt: "Power up your computational and machine learning skills with our free 
 prologue:
   - image_path: /assets/images/gray_scott_jupyter_high-res.png
     title: "Prologue: Random walks and Turing patterns"
-    excerpt: "Have you ever wondered why zebras have stripes?"
+    excerpt: "Have you ever wondered why zebras have stripes? In the course prologue, we will see how a simple predator-prey dynamic at the level of particles can result in a reaction-diffusion system in which stripes and spots appear spontaneously from random interactions."
     url: "/prologue/"
     btn_label: "Read More"
     btn_class: "btn--primary"
@@ -30,7 +30,7 @@ chapter_1:
     btn_label: "Read More"
     btn_class: "btn--primary"
 chapter_2:
-  - image_path: /assets/images/chemotaxis_traj_1.0_uniform.png
+  - image_path: /assets/images/ecoli_glucose.png
     title: "Module 2: Unpacking E. coli’s genius exploration algorithm"
     excerpt: "How can cells perform complex tasks without intelligence?"
     url: "/chemotaxis/home"
@@ -51,6 +51,16 @@ chapter_4:
     btn_label: "Read More"
     btn_class: "btn--primary"
 ---
+
+* [Prologue: Random walks and Turing patterns](../prologue/) (with software tutorials featuring <a href="https://mcell.org" target="_blank">MCell and CellBlender</a>)
+
+* [Module 1: Finding motifs in transcription factor networks](../motifs/home) (with software tutorials featuring <a href="https://mcell.org" target="_blank">MCell and CellBlender</a>)
+
+* [Module 2: Unpacking E. coli's genius exploration algorithm](../chemotaxis/home) (with software tutorials featuring <a href="http://bionetgen.org" target="_blank">BioNetGen</a>)
+
+* [Module 3: Analyzing the coronavirus spike protein](../coronavirus/home) (with software tutorials featuring <a href="http://prody.csb.pitt.edu" target="_blank">ProDy</a> and affiliated tools)
+
+* [Module 4: Training a computer to classify white blood cells](../white_blood_cells/home) (with software tutorials featuring <a href="http://www.cellorganizer.org" target="_blank">CellOrganizer</a>)
 
 # Contents
 
