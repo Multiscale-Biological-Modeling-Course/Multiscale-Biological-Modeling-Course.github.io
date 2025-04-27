@@ -23,7 +23,7 @@ search: false
 }
 
 .social-share-icons a:hover {
-  color: #c41230 !important; /* Even darker gray on hover */
+  color: #c41230 !important; /* Red on hover */
   text-decoration: none !important;
 }
 
@@ -376,4 +376,14 @@ search: false
 .bm-share a:hover {
   color: #c41230 !important;
   transform: scale(1.25);     /* hover pop */
+}
+
+/* ----- Fix hamburger (navicon) visibility ------------------- */
+.greedy-nav__toggle .navicon {            /* middle bar */
+  background: transparent;                /* remove red fill */
+}
+.greedy-nav__toggle .navicon,
+.greedy-nav__toggle .navicon:before,
+.greedy-nav__toggle .navicon:after {
+  background-color: #c41230 !important;   /* CMU red bars */
 }
