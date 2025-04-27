@@ -92,3 +92,20 @@ Phillip is passionate about open online education, and his education projects ha
 
 
 </div>
+
+# Acknowledgements
+
+This online course is a training and dissemination effort for the <a href="https://mmbios.pitt.edu" target="_blank">National Center for Multiscale Modeling of Biological Systems (MMBioS)</a>. It is supported by the National Institutes of Health (grant ID: P41 GM103712).
+
+We would first and foremost like to thank everyone working on MMBioS software; their work allowed this project to come about. Chiefly, thank you to the other members of our training and dissemination team (Alex Ropelewski, Joe Ayoob, and Rozita Laghaei) as well as the head of the MMBioS consortium, Jim Faeder.
+
+We are also very grateful to Wendy Velasquez Ebanks, Julien Gomez, Yanjing Li, Ulani Qi, Aditya Parekh, and Shalini Panthangi, who provided additional work on the course during its conception.
+
+Module 1 was in part inspired by Uri Alon's research and superlative book <a href="https://www.amazon.com/Introduction-Systems-Biology-Mathematical-Computational/dp/1439837171" target="_blank"><i>An Introduction to Systems Biology</i></a>, a landmark biological textbook that we strongly recommend if you are interested in a greater discussion of biological network motifs.
+
+Special thanks to Jiayi Shou for the analogy in Module 3 of new protein companies rising like "bamboo shoots after the rain".
+
+The cover image on Module 4 was created by Keith Chambers.
+
+Finally, the website design was built using Michael Rose's excellent <a href="https://mmistakes.github.io/minimal-mistakes/" target="_blank">Minimal Mistakes</a> theme.
+
