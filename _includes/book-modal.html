@@ -45,7 +45,10 @@
         <a href="https://twitter.com/intent/tweet?text={{ x_text }}&url={{ page.url | absolute_url }}"                 target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
         <a href="https://www.reddit.com/submit?url={{ page.url | absolute_url }}&title={{ reddit_text }}"             target="_blank" rel="noopener"><i class="fab fa-reddit"></i></a>
         <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}"                           target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
-        <a href="{{ page.url | absolute_url }}"><i class="fas fa-link"></i></a>
+        <button class="bm-copy" aria-label="Copy page link" onclick="bmCopyLink()">
+            <i class="fas fa-link"></i>
+          </button>
+          <span id="bm-copied" class="bm-copied" aria-hidden="true">Copied!</span>
       </div>
   
     </div>
@@ -75,4 +78,22 @@
         setTimeout(() => { bmOpen(); bmSetCookie(1); }, 60000); // 60 s then once/day
       }
     });
+    </script>
+
+<!-- this is for copying a link to the clipboard for sharing -->
+<script>
+    function bmCopyLink() {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url)
+        .then(() => {
+          const note = document.getElementById('bm-copied');
+          note.setAttribute('aria-hidden','false');
+          note.classList.add('show');
+          setTimeout(()=>{                  // hide after 2 s
+            note.classList.remove('show');
+            note.setAttribute('aria-hidden','true');
+          }, 2000);
+        })
+        .catch(() => alert('Copy failed – please copy manually'));
+    }
     </script>

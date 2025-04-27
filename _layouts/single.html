@@ -90,9 +90,10 @@ layout: default
               <i class="fab fa-facebook fa-lg"></i>
             </a>
           
-            <a href="{{ page.url | absolute_url }}" target="_blank" rel="noopener" style="margin: 0 0.5rem;">
-              <i class="fas fa-link fa-lg"></i>
-            </a>
+            <button class="copy-link-btn" aria-label="Copy page link" onclick="bmCopyLink()">
+               <i class="fas fa-link fa-lg"></i>
+            </button>
+            <span id="sb-copied" class="bm-copied" aria-hidden="true">Copied!</span>
           </div>
         </aside>    
         {{ content }}

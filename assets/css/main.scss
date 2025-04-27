@@ -392,3 +392,17 @@ search: false
 .site-nav-toggle i.fa-bars {
   color: #fff !important;     /* white bars */
 }
+
+/* copy-link button + "Copied!" toast inside modal */
+.bm-copy {
+  background:none; border:none; color:#555;
+  font-size:1.4rem; cursor:pointer; margin-left:.4rem;
+  transition:color .2s ease;
+}
+.bm-copy:hover { color:#c41230; }
+
+.bm-copied {
+  font-size:.85rem; color:#28a745; /* green tick text */
+  margin-left:.5rem; opacity:0; transition:opacity .2s ease;
+}
+.bm-copied.show { opacity:1; }
