@@ -387,3 +387,8 @@ search: false
 .greedy-nav__toggle .navicon:after {
   background-color: #c10814 !important;   /* CMU red bars */
 }
+
+/* hamburger (site-nav toggle) — white bars on red square */
+.site-nav-toggle i.fa-bars {
+  color: #fff !important;     /* white bars */
+}
