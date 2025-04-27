@@ -14,7 +14,7 @@ header:
       url: "https://leanpub.com/biologicalmodeling"
     - label: "Get the print book"
       url: "https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W"
-excerpt: "Power up your computational and machine learning skills with our free course on modeling biological systems at multiple scales."
+excerpt: "Power up your computational and machine learning skills with our free course on modeling biological systems."
 author_profile: true
 prologue:
   - image_path: /assets/images/gray_scott_jupyter_high-res.png
@@ -26,7 +26,7 @@ prologue:
 chapter_1:
   - image_path: /assets/images/repressilator_chart.png
     title: "Module 1: Finding motifs in transcription factor networks"
-    excerpt: "Transcription factors are proteins that serve as master gene regulators in the cell. When we study how they interact, we uncover remarkable patterns like oscillations that arise from simple behavior. In this module, we will build models to explain why these regulatory patterns have evolved."
+    excerpt: "Transcription factors are proteins serving as master gene regulators in the cell. When we study how transcription factors interact, we uncover remarkable patterns like oscillations that arise from simple behavior. In this module, we will build models to explain why these regulatory patterns have evolved."
     url: "/motifs/home"
     btn_label: "Read More"
     btn_class: "btn--primary"
