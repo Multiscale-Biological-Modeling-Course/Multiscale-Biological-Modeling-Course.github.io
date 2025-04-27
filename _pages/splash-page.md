@@ -31,7 +31,7 @@ chapter_1:
     btn_label: "Read More"
     btn_class: "btn--primary"
 chapter_2:
-  - image_path: /assets/images/ecoli_glucose.png
+  - image_path: /assets/images/ecoli_glucose_banner.png
     title: "Module 2: Unpacking E. coli’s genius exploration algorithm"
     excerpt: "In bacteria, a single-celled organism explores its environment using an approach that seems intelligent, and yet it can be broken down into a series of chemical reactions. When a bacterium senses a change, it propagates that information through a sequence of internal reactions that adjust its behavior. In this module, we’ll model these processes and see how even when we perturb them, the bacterium still manages to return to its original exploration strategy."
     url: "/chemotaxis/home"
