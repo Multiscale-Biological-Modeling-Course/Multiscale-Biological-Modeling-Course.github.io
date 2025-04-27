@@ -454,6 +454,15 @@ search: false
 }
 .bm-copied.show { opacity:1; }
 
+/* === Make sidebar scrollable when its content is taller than the viewport === */
+@media (min-width: 64em) {          /* only on wide layouts where the sidebar shows */
+  .sidebar__right {
+    max-height: calc(100vh - 4rem); /* 4 rem ≈ masthead + breathing room; tweak if needed */
+    overflow-y: auto;               /* vertical scrollbar appears as required */
+    overscroll-behavior: contain;   /* prevents page from bouncing while you scroll sidebar */
+  }
+}
+
 /* Author-box links — red hover colour + red underline */
 .author__urls a {
   transition: color .2s ease, text-decoration-color .2s ease;
