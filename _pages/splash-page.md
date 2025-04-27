@@ -17,7 +17,7 @@ header:
 excerpt: "Power up your computational and machine learning skills with our free course on modeling biological systems."
 author_profile: true
 prologue:
-  - image_path: /assets/images/gray_scott_jupyter_high-res.png
+  - image_path: /assets/images/gray_scott_jupyter_high-res_banner.png
     title: "Prologue: Random walks and Turing patterns"
     excerpt: "Have you ever wondered why zebras have stripes? In the course prologue, we’ll explore how simple predator-prey interactions at the microscopic level can give rise to reaction-diffusion systems, where stripes and spots spontaneously emerge from random motion."
     url: "/prologue/"
@@ -38,14 +38,14 @@ chapter_2:
     btn_label: "Read More"
     btn_class: "btn--primary"
 chapter_3:
-  - image_path: /assets/images/SARS_spike_proteins.jpg
+  - image_path: /assets/images/SARS_spike_proteins_banner.jpg
     title: "Module 3: Analyzing the coronavirus spike protein"
     excerpt: "Why did the original SARS coronavirus fizzle out but SARS-CoV-2 spread like wildfire around the planet? Much of the answer lies in how effectively the virus can infect human cells by binding its spike protein to an enzyme on their surface. Can we predict a protein’s structure, and therefore its function, without performing any experiments? And how can we compare proteins (say,  spike proteins across related coronaviruses) to determine why one virus infects humans more efficiently than another?"
     url: "/coronavirus/home"
     btn_label: "Read More"
     btn_class: "btn--primary"
 chapter_4:
-  - image_path: /assets/images/normal_adult_blood_smear.JPG
+  - image_path: /assets/images/normal_adult_blood_smear_banner.JPG
     title: "Module 4: Training a computer to classify white blood cells"
     excerpt: "How can algorithms be trained to see as well as a human? By tackling the real-world challenge of classifying white blood cells into categories, a common task in medicine, we will see how computers can make automated decisions. We’ll start by segmenting images to isolate the white blood cells. Then, we will apply classic machine learning algorithms to cluster them based on shape, ultimately allowing us to classify them into distinct types."
     url: "/white_blood_cells/home"
