@@ -423,6 +423,27 @@ search: false
 }
 .copy-link-btn:hover { color:#c10814; transform:scale(1.15); }
 
+/* ========== sidebar copy-link icon: size match, no border ========== */
+.social-share-icons .copy-link-btn {
+  background:none !important;
+  border:none !important;
+  outline:none !important;
+  padding:0 !important;
+  margin:0 .5rem;
+  color:#555;
+  cursor:pointer;
+  transition:color .2s ease, transform .2s ease;
+}
+
+/* icon inherits the same size as other fa-lg glyphs */
+.social-share-icons .copy-link-btn i { font-size:1em; }
+
+/* hover behaviour (same red + pop) */
+.social-share-icons .copy-link-btn:hover {
+  color:#c10814;
+  transform:scale(1.15);
+}
+
 /* “Copied!” toast — shared by modal and sidebar */
 .bm-copied {
   opacity:0;
