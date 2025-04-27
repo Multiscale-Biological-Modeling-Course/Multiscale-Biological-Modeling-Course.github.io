@@ -23,7 +23,7 @@ search: false
 }
 
 .social-share-icons a:hover {
-  color: #222 !important; /* Even darker gray on hover */
+  color: #c41230 !important; /* Even darker gray on hover */
   text-decoration: none !important;
 }
 
@@ -191,7 +191,7 @@ search: false
 }
 
 .footer__stores a:hover {
-  color: #222;
+  color: #c41230;
 }
 
 .footer__license {
@@ -255,7 +255,7 @@ search: false
   font-size: 1.4rem;
 }
 
-.footer__social a:hover { color: #222 !important; }
+.footer__social a:hover { color: #c41230 !important; }
 
 .footer__license { text-align: center; margin-top: 1rem; }
 
@@ -374,6 +374,6 @@ search: false
   transition: transform .2s ease;
 }
 .bm-share a:hover {
-  color: #222 !important;
+  color: #c41230 !important;
   transform: scale(1.25);     /* hover pop */
 }
