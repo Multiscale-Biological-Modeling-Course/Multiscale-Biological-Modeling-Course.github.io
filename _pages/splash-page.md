@@ -15,6 +15,7 @@ header:
     - label: "Get the print book"
       url: "https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W"
 excerpt: "Power up your computational and machine learning skills with our free course on modeling biological systems at multiple scales."
+author_profile: true
 prologue:
   - image_path: /assets/images/gray_scott_jupyter_high-res.png
     title: "Prologue: Random walks and Turing patterns"
@@ -25,7 +26,7 @@ prologue:
 chapter_1:
   - image_path: /assets/images/repressilator_chart.png
     title: "Module 1: Finding motifs in transcription factor networks"
-    excerpt: "Right-aligned image with ``"
+    excerpt: "When we study transcription factors, Proteins serving as master gene regulators in the cell.  we find remarkable and surprising patterns in how they regulate each other. For example, even in simple organisms, transcription factors will often regulate themselves. In this module, we build models to help us explain why patterns of gene regulation have arisen from an evolutionary perspective."
     url: "/motifs/home"
     btn_label: "Read More"
     btn_class: "btn--primary"
