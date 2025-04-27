@@ -389,6 +389,14 @@ search: false
 }
 
 /* hamburger (site-nav toggle) — white bars on red square */
+/*option 1 */
+.site-nav-toggle .navicon__menu,
+.site-nav-toggle .navicon__menu:before,
+.site-nav-toggle .navicon__menu:after {
+  background: #fff !important;   /* three white bars */
+}
+
+/* option 2*/
 .site-nav-toggle i.fa-bars {
   color: #fff !important;     /* white bars */
 }
