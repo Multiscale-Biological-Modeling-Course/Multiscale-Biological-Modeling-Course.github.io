@@ -19,7 +19,7 @@ author_profile: true
 prologue:
   - image_path: /assets/images/gray_scott_jupyter_high-res_banner.png
     title: "Prologue: Random walks and Turing patterns"
-    excerpt: "Have you ever wondered why zebras have stripes? In the course prologue, we’ll explore how simple predator-prey interactions at the microscopic level can give rise to reaction-diffusion systems, where stripes and spots spontaneously emerge from random motion."
+    excerpt: "Have you ever wondered why zebras have stripes? In the course prologue, we’ll explore how simple predator-prey interactions at the microscopic level can give rise to reaction-diffusion systems, where beautiful and complex stripes and spots spontaneously emerge from random motion."
     url: "/prologue/"
     btn_label: "Read More"
     btn_class: "btn--primary"
