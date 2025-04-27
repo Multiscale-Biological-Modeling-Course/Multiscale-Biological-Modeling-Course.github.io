@@ -111,6 +111,32 @@ search: false
 .btn--book:hover img.book-icon    { filter: hue-rotate(-15deg) saturate(180%); }
 /* ^ optional: nudges Leanpub PNG toward red; delete if you prefer no change */
 
+/* ---------- Sidebar book buttons ---------------------------- */
+.sidebar-book .btn--book {
+  display:inline-flex; align-items:center; justify-content:center;
+  width:100%;
+  background:#f4f4f4;
+  color:#000 !important;
+  border:1px solid #ddd; border-radius:6px;
+  font-size:.95rem; font-weight:600;
+  padding:.65rem 1.1rem; margin-bottom:.8rem;
+  text-decoration:none;
+  transition:background .2s ease, transform .2s ease, color .2s ease;
+}
+.sidebar-book .btn--book:hover {
+  background:#e8e8e8;
+  color:#c41230 !important;        /* CMU red */
+  transform:translateY(-2px);
+}
+
+/* Ensure icons inherit hover colour */
+.sidebar-book .btn--book .fa-amazon,
+.sidebar-book .btn--book img {
+  margin-right:.45rem;
+  height:1.1rem;
+}
+.sidebar-book .btn--book:hover .fa-amazon { color:#c41230 !important; }
+
 /* Footer updates */
 
 /* footer link color on hover */
