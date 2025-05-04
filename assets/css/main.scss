@@ -137,12 +137,25 @@ search: false
 }
 .sidebar-book .btn--book:hover .fa-amazon { color:#c10814 !important; }
 
+/* Header updates */
+
+/* === Sticky header (masthead) =============================== */
+.masthead {
+  position: sticky;   /* or `fixed` if you prefer it always visible */
+  top: 0;
+  z-index: 1000;      /* above page & sidebar */
+  background: #fff;   /* keeps text readable while scrolling */
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);  /* subtle divider */
+}
+
 /* Footer updates */
 
 /* footer link color on hover */
 .page__footer a:hover {
   color:#c10814 !important;   /* CMU red */
 }
+
+
 
 /* Footer styling */
 /* Footer ----------------------------------------------------------- */
