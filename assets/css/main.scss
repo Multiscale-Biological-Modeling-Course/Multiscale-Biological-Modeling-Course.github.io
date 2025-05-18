@@ -515,8 +515,8 @@ body > #page {
 @media (min-width: 64em) {
   .sidebar__left.sticky,
   .sidebar__right.sticky {
-    top: calc(var(--masthead-height) + 0.5rem);     /* 0.5 rem breathing room */
-    max-height: calc(100vh - var(--masthead-height) - 1rem);
+    top: calc(var(--masthead-height) + 1.5rem);     /* breathing room */
+    max-height: calc(100vh - var(--masthead-height) - 2rem);
     overflow-y: auto;
   }
 }
