@@ -3,7 +3,6 @@ permalink: /contact/
 title: "Contact Us"
 image: "assets/images/f38_k61_high-res.png"
 description: "Questions or feedback? Reach out to the Biological Modeling team by email or social media, and we'll get back to you promptly."
-
 comments: false
 share: false
 ---
