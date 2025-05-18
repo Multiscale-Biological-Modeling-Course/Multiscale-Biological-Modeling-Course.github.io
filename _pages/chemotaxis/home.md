@@ -12,7 +12,7 @@ header:
 author_profile: true # add author to page
 ---
 
-# The lost immortals
+## The lost immortals
 
 The book <a href="https://what-if.xkcd.com/" target="_blank"><em>What If?</em></a>[^Munroe], by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these situations occurred. One such hypothetical, called “Lost Immortals”, ponders how two immortal humans might find each other if they were stranded in different locations of an uninhabited planet.
 

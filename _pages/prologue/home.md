@@ -12,7 +12,7 @@ header:
 author_profile: true # add author to page
 ---
 
-# Introduction: Alan Turing and the Zebra's Stripes
+## Introduction: Alan Turing and the Zebra's Stripes
 
 If you are familiar with Alan Turing, then you might be surprised that a famous computer scientist would appear in the first sentence of a book on biological modeling. After all, he is best known for two achievements that have nothing to do with biology. In 1936, Turing theorized a primitive computer consisting of a tape of cells along with a machine that writes symbols on the tape according to a set of predetermined set of rules; this "Turing machine" [^numbers] is simple but nevertheless has been proven capable of solving any problem that a modern computer can solve. Then, during World War II, Turing worked with Allied cryptographers at Bletchley Park to devise machines that broke several German ciphers.
 
