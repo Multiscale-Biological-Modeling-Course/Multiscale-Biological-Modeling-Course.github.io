@@ -1,5 +1,6 @@
 ---
 title: "Biological Modeling"
+tagline: "A Free Online Course"
 description: "Welcome to Biological Modeling: free lessons and tutorials that blend computation with life science, plus a companion textbook."
 layout: splash
 header:
