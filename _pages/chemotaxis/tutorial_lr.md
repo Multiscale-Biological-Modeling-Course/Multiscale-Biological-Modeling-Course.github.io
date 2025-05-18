@@ -52,20 +52,20 @@ Equilibrium is reached when `k_lr_bind [L][T]` = `k_lr_dis[L.T]`. Our goal in th
 
 To use BioNetGen, first create a folder called `EColiSimulations` in an appropriate location on your computer. Next, open VSCode, and select `File > Open Folder`, and open the folder you just created.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial1_VSCode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial1_VSCode.png)
+[![Initial BioNetGen file created in VS Code](../assets/images/600px/chemotaxis_tutorial1_VSCode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial1_VSCode.png)
 
 In this directory, create a new file by selecting the `File > New Text File`. Save the file as  `ligand_receptor.bngl`. Now you should be able to start building our model in this file using the code that follows in this tutorial.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial2_VSCode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial2_VSCode.png)
+[![Expanded model shown in Visual Studio Code](../assets/images/600px/chemotaxis_tutorial2_VSCode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial2_VSCode.png)
 
 <!-- Old Instructions -->
 <!-- First, open RuleBender and select `File > New BioNetGen Project`.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial1.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial1.png)
+[![Simulation results for first ligand-receptor binding](../assets/images/600px/chemotaxis_tutorial1.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial1.png)
 
 Save your file as `ligand_receptor.BioNetGenl`. Now you should be able to start coding on line 1.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial2.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial2.png) -->
+[![System state after ligand binding event](../assets/images/600px/chemotaxis_tutorial2.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial2.png) -->
 
 ## Specifying molecule types
 
@@ -159,7 +159,7 @@ end parameters
 
 If you save your file, then you should see a "contact map" in the upper right corner of the window indicating the potential binding of `L` and `T`. This contact map is currently very simplistic, but for more complicated simulations it can help visualize the interaction of species in the system.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial3.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial3.png)
+[![Complete output after CheY phosphorylation reaction](../assets/images/600px/chemotaxis_tutorial3.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial3.png)
 
 ## Specifying simulation commands
 
@@ -223,18 +223,18 @@ simulate({method=>"ssa", t_end=>1, n_steps=>100})
 
 We are now ready to run our simulation. To do so, click the `Run BNG` button on the top right of your VS Code window (see screenshot below). You should see a terminal appear on the bottom of the window, which will show you the progress of the simulation. The output of the program is stored in a folder located in the working directory, named `ligand_receptor`.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial2.1_VSCode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial2.1_VSCode.png)
+[![Updated phosphorylation model in Visual Studio Code step 2.1](../assets/images/600px/chemotaxis_tutorial2.1_VSCode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial2.1_VSCode.png)
 
 To visualize the results, open the file `ligand_receptor.gdat` stored inside the folder. With this file open, click on the `CLI Plotting` button on the top right corner of the VS Code window.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial2.2_VSCode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial2.2_VSCode.png)
+[![Updated phosphorylation model step 2.2](../assets/images/600px/chemotaxis_tutorial2.2_VSCode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial2.2_VSCode.png)
 
 <!-- Old Instructions -->
 <!-- We are now ready to run our simulation. To do so, visit `Simulation` at the right side of the contact map and click `Run`. You can then visualize the results of the simulation, showing changes in concentration over time. These results are also stored as a .gdat file in the folder `result/your time of simulation`. -->
 
 It is also possible to create an interactive plot from the results. Open the file `ligand_receptor.gdat`, and click on the "built-in plotting" botton located next to the "CLI Plotting" button you used to create the figure. The following interactive plot will be created:
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial2.3_VSCode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial2.3_VSCode.png)
+[![Updated phosphorylation model step 2.3](../assets/images/600px/chemotaxis_tutorial2.3_VSCode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial2.3_VSCode.png)
 
 Is the result you obtain what you expected? In the main text, we will return to this question and then learn more about the details of bacterial chemotaxis in order to expand our BioNetGen model into one that fully reflects these details.
 
