@@ -84,7 +84,6 @@ Now for the magic moment. Click `Start`. The classifier should run very quickly,
 
 [![Weka classification output showing confusion matrix and accuracy metrics](../assets/images/600px/classifier_output_all_pca_variables.png){: .align-center loading="lazy"}](../assets/images/classifier_output_all_pca_variables.png)
 
-
 The results are horrible! Every image in our dataset has been assigned as a lymphocyte. What could have gone wrong?
 
 ### Reducing the number of dimensions considered
