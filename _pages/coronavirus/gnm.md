@@ -19,7 +19,7 @@ You may think that simulating the movements of proteins with hundreds of amino a
 
 A protein's molecular bonds are constantly vibrating, stretching and compressing, much like that of the oscillating mass-spring system shown in the figure below. Bonded atoms are held at a specific distance apart due to the attraction and repulsion of the negatively charged electrons and positively charged nucleus. If you were to push the atoms closer together or pull them farther apart, then they would "bounce back" to their equilibrium.
 
-[![image-center](../assets/images/600px/mass-spring_first_frame.png){: .align-center loading="lazy"}](../assets/images/mass-spring.gif)
+[![Initial frame of mass-spring simulation](../assets/images/600px/mass-spring_first_frame.png){: .align-center loading="lazy"}](../assets/images/mass-spring.gif)
 A mass-spring system in which a mass is attached to the end of a spring. The more that we move the mass from its equilibrium, the more that it will be repelled back toward equilibrium. Image courtesy: [flippingphysics.com](http://flippingphysics.com).
 {: style="font-size: medium;"}
 
@@ -29,7 +29,7 @@ In an **elastic network model (ENM)**, we imagine nearby alpha carbons of a prot
 
 We will introduce GNMs using our old friend human hemoglobin (<a href="https://www.rcsb.org/structure/1a3n" target="_blank">1A3N.pdb</a>). We first convert hemoglobin into a network of nodes and springs, in which each alpha carbon is given by a node, and two alpha carbons are connected by a string if they are within a threshold distance; the figure below uses a threshold value of 7.3 angstroms.
 
-[![image-center](../assets/images/600px/hemoglobin_enm.png){: .align-center loading="lazy"}](../assets/images/hemoglobin_enm.png)
+[![Elastic network model of hemoglobin](../assets/images/600px/hemoglobin_enm.png){: .align-center loading="lazy"}](../assets/images/hemoglobin_enm.png)
 Conversion of human hemoglobin (left) into a network of nodes and springs (right) in which two nodes are connected by a spring if they are within a threshold distance of 7.3 angstroms.
 {: style="font-size: medium;"}
 
@@ -41,7 +41,7 @@ Although atomic fluctuations are powered by randomness, the movements of protein
 
 As illustrated in the figure below, the variable vector $$\mathbf{R_{ij}}$$ represents the distance between nodes *i* and *j*. The equilibrium position of node \textvar{i} is represented by the vector $$\mathbf{R_i^0}$$, and its displacement from equilibrium is denoted by the (variable) vector $$ \mathbf{\mathbf{\Delta R_i}}$$. The distance between node \textvar{i} and node \textvar{j} at equilibrium is denoted by the vector $$\mathbf{R_{ij}^0}$$, which is equal to $$\mathbf{R_j^0} - \mathbf{R_i^0}$$.
 
-[![image-center](../assets/images/600px/gaussian_fluctuations.png){: .align-center loading="lazy"}](../assets/images/gaussian_fluctuations.png)
+[![Plot showing Gaussian fluctuations in residues](../assets/images/600px/gaussian_fluctuations.png){: .align-center loading="lazy"}](../assets/images/gaussian_fluctuations.png)
 (Left) A small network of nodes connected by springs deriving from a protein structure. The distance between two nodes *i* and *j* is denoted by the variable $$ \mathbf{R_{ij}} $$. (Right) Zooming in on two nodes *i* and *j* that are within the threshold distance and therefore connected by a spring. The equilibrium positions of node *i* and node *j* are represented by the distance vectors $$ \mathbf{R_i^0} $$ and $$ \mathbf{R_j^0} $$, with the distance between them denoted $$ \mathbf{R_{ij}^0} $$, which is equal to $$ \mathbf{R_j^0} - \mathbf{R_i^0} $$. The vectors $$ \mathbf{\mathbf{\Delta R_i}} $$ and $$ \mathbf{\mathbf{\Delta R_j}} $$ represent the nodes' respective changes from equilibrium. Image courtesy: Ahmet Bakan.
 {: style="font-size: medium;"}
 
@@ -65,7 +65,7 @@ After normalization, the cross-correlation ranges from -1 to 1. A cross-correlat
 
 After computing the cross-correlation of every pair of alpha carbons in a protein structure with *n* residues, we obtain an *n* × *n* **cross-correlation matrix** *C* such that *C*(*i*, *j*) is the cross-correlation between amino acids *i* and *j*. We can visualize this matrix using a **heat map**, in which we color matrix values along a spectrum from blue (-1) to red (1). The heat map for the cross-correlation matrix of human hemoglobin is shown in the figure below.
 
-[![image-center](../assets/images/600px/hemoglobin_cc.png){: .align-center loading="lazy" width="400px"}](../assets/images/hemoglobin_cc.png)
+[![Cross-correlation matrix for hemoglobin dynamics](../assets/images/600px/hemoglobin_cc.png){: .align-center loading="lazy" width="400px"}](../assets/images/hemoglobin_cc.png)
 The normalized cross-correlation heat map of human hemoglobin (PDB: 1A3N). Red regions indicate correlated residue pairs which move in the same direction; blue regions indicate anti-correlated residue pairs which move in opposite directions.
 {: style="font-size: medium;"}
 
@@ -90,7 +90,7 @@ Once we have computed theoretical B-factors, we can compare them against experim
 
 It is beyond the scope of this work, but the theoretical B-factors are given byIn other words, once we can estimate the mean-square fluctuations $$\langle \mathbf{\Delta R_i}, \mathbf{\Delta R_i} \rangle $$, the theoretical B-factor of the *i*-th alpha carbon is equal to a constant times this inner product. This theoretical B-factor tends to correlate well with theoretical B-factors in practice.[^Yang2]
 
-[![image-center](../assets/images/600px/hemoglobin_b_factors.png){: .align-center loading="lazy"}](../assets/images/hemoglobin_b_factors.png)
+[![Comparison of computed and experimental B-factors](../assets/images/600px/hemoglobin_b_factors.png){: .align-center loading="lazy"}](../assets/images/hemoglobin_b_factors.png)
 (Top): Human hemoglobin colored according to theoretical B-factors calculated from GNM (left) and experimental B-factors (right). Blue indicates low B-factors, and red indicates high B-factors. Subunit α<sub>1</sub> is located at the top left quarter of the protein. (Bottom): A 2-D plot comparing the theoretical (blue) and experimental (black) B-factors of subunit α<sub>1</sub>.  The theoretical and experimental B-factors are correlated with a coefficient of 0.63.
 {: style="font-size: medium;"}
 
@@ -104,7 +104,7 @@ The mathematical details are complicated, but by deconvolving a protein's moveme
 
 Just as a piece of music can have one instrument that is much louder than another, some of the oscillations contributing to an object's vibrations may be more significant than others. NMA also determines the degree to which each mode contributes to the overall fluctuations of a protein; the mode contributing the most is called the **slowest mode** of the protein. The figure below shows a mode shape plot of the slowest mode for each of the four subunits of human hemoglobin and reveals that all four subunits have similar mode shape for the slowest mode.
 
-[![image-center](../assets/images/600px/hemoglobin_mode_shape.png){: .align-center loading="lazy"}](../assets/images/hemoglobin_mode_shape.png)
+[![Shape of hemoglobin in a specific mode](../assets/images/600px/hemoglobin_mode_shape.png){: .align-center loading="lazy"}](../assets/images/hemoglobin_mode_shape.png)
 (Top) Visualization of human hemoglobin colored based on GNM slow mode shape for the slowest mode (left) and the average of the ten slowest modes (right), or the ten modes that contribute the most to the square fluctuation. Regions of high mobility are colored red, corresponding to peaks in the mode shape plot. (Bottom) A mode shape plot of the slowest mode for human hemoglobin, separated over each of the four chains, shows that the four chains have a similar slowest mode.
 {: style="font-size: medium;"}
 
@@ -112,7 +112,7 @@ Similar to cross-correlation, analyzing a protein's mode shapes will give insigh
 
 We should consult more than just a single mode when completing a full analysis of a protein's molecular dynamics. Below is the slow mode plot averaging the "slowest" ten modes of hemoglobin, meaning the ten modes that have the greatest effect on mean fluctuation. Unlike when we examined only the slowest mode, we can now see a stark difference when comparing α subunits (chains A and C) to β subunits (chains B and D).
 
-[![image-center](../assets/images/600px/hemoglobin_mode_shape_avg.png){: .align-center loading="lazy"}](../assets/images/hemoglobin_mode_shape_avg.png)
+[![Average of shape modes in hemoglobin](../assets/images/600px/hemoglobin_mode_shape_avg.png){: .align-center loading="lazy"}](../assets/images/hemoglobin_mode_shape_avg.png)
 The average mode shape of the slowest ten modes for each of the four human hemoglobin subunits using GNM. Note that the plots for α subunits (chains A and C) and β subunits (chains B and D) differ more than when considering only the slowest mode.
 {: style="font-size: medium;"}
 
@@ -125,19 +125,19 @@ We are now ready to apply what we have learned  to build a GNM for the SARS-CoV 
 
 The figure below shows the cross-correlation heat maps of SARS-CoV and SARS-CoV-2 spike proteins, indicating that these proteins may have similar dynamics.
 
-[![image-center](../assets/images/600px/CrossCorr.png){: .align-center loading="lazy"}](../assets/images/CrossCorr.png)
+[![Cross-correlation matrix of molecular motion](../assets/images/600px/CrossCorr.png){: .align-center loading="lazy"}](../assets/images/CrossCorr.png)
 The cross-correlation heat maps of the SARS-CoV-2 spike protein (top-left), SARS-CoV spike protein (top-right), single chain of the SARS-CoV-2 spike protein (bottom-left), and single-chain of the SARS-CoV spike protein (bottom-right).
 {: style="font-size: medium;"}
 
 The next figure shows the mode shape plot for the slowest mode of the two proteins. The protein region between positions 200 and 500 of the spike protein is the most mobile and overlaps with the RBD region, found between residues 331 to 524.
 
-[![image-center](../assets/images/600px/SlowMode.png){: .align-center loading="lazy"}](../assets/images/SlowMode.png)
+[![Depiction of slow collective motion mode](../assets/images/600px/SlowMode.png){: .align-center loading="lazy"}](../assets/images/SlowMode.png)
 (Top) A mode shape plot for the slowest mode of the SARS-CoV-2 spike protein (left) and SARS-CoV spike protein (right). (Bottom) A mode shape plot for the slowest mode of a single chain of the SARS-CoV-2 spike protein (left) and a single chain of the SARS-CoV spike protein (right). Note that the plot on the right is inverted compared to the one on the left because of a choice made by the software, but the two plots have the same shape if we consider the absolute value. These plots show that the two viruses have similar dynamics, and that residues 200 – 500 fluctuate the most, a region that overlaps heavily with the RBD.
 {: style="font-size: medium;"}
 
 We can also examine the mode shape plot for the average of the slowest ten modes for the two spike proteins (see figure below). Using this plot, we color flexible parts of the protein red and inflexible parts of the protein blue.
 
-[![image-center](../assets/images/600px/spike_slowmode_comparison.png){: .align-center loading="lazy"}](../assets/images/spike_slowmode_comparison.png)
+[![Comparison of slow mode between spike protein variants](../assets/images/600px/spike_slowmode_comparison.png){: .align-center loading="lazy"}](../assets/images/spike_slowmode_comparison.png)
 Average mode shape of the slowest ten modes of SARS-CoV-2 Spike (left) and SARS-CoV Spike (right). The first peak corresponds to the N-Terminal Domain (NTD) and the second peak corresponds to the RBD. Above the mode shape plots, the viral spike proteins are colored according to the value of mode shape, with high values colored red and indicating greater predicted flexibility; note that the SARS-CoV-2 NTD is predicted to be more flexible than that of SARS-CoV.
 {: style="font-size: medium;"}
 

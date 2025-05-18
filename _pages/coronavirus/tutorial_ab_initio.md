@@ -24,7 +24,7 @@ Then, [download the primary sequence](../_pages/coronavirus/files/Human_Hemoglob
 2. Add your email address and password.
 3. Click `Run QUARK`.
 
-[![image-center](../assets/images/600px/QuarkTutorial.png){: .align-center loading="lazy"}](../assets/images/QuarkTutorial.png)
+[![QUARK tutorial interface for ab initio modeling](../assets/images/600px/QuarkTutorial.png){: .align-center loading="lazy"}](../assets/images/QuarkTutorial.png)
 {: style="font-size: medium;"}
 
 Even though this is a short protein, it will take at least a few hours to run your submission, depending on server load. When your job has finished, you will receive an email notification and be able to download the results. In the meantime, you may like to join us back in the main text.

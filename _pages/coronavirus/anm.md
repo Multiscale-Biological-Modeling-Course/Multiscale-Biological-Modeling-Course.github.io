@@ -19,7 +19,7 @@ The generalization of a Gaussian network model, in which we attempt to determine
 
 We will not delve into the mathematical intricacies of ANM calculations, but we will use ANMs to create animations visualizing protein fluctuations. For example, click on the animation below to see a video of estimated hemoglobin fluctuations produced from ANM. We can see that the left and right side of the protein are more flexible than the rest of the protein and twist in opposite directions.
 
-[![image-center](../assets/images/600px/hemoglobin_anm_2.gif){: .align-center loading="lazy"}](../assets/images/hemoglobin_anm_2.gif)
+[![Animated modes of hemoglobin from ANM analysis](../assets/images/600px/hemoglobin_anm_2.gif){: .align-center loading="lazy"}](../assets/images/hemoglobin_anm_2.gif)
 Collective motions of the slowest mode in human hemoglobin from ANM calculations using DynOmics.
 {: style="font-size: medium;"}
 

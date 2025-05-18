@@ -25,13 +25,13 @@ Instead of using RMSD, CASP scores a predicted structure against a known structu
 
 We will show a few plots to illustrate the decisiveness of AlphaFold's CASP victory. The first graph, which is shown in the figure below, compares the GDT scores of AlphaFold against the second-place algorithm (a product of David Baker's laboratory, which developed the Robetta and Rosetta@Home software).
 
-[![image-center](../assets/images/600px/AlphaFold2_BAKER.png){: .align-center loading="lazy"}](../assets/images/AlphaFold2_BAKER.png)
+[![AlphaFold2 predicted structure compared to BAKER lab model](../assets/images/600px/AlphaFold2_BAKER.png){: .align-center loading="lazy"}](../assets/images/AlphaFold2_BAKER.png)
 A plot of GDT scores for the AlphaFold2 (blue) and Baker lab (orange) submissions over all proteins in the CASP14 contest. AlphaFold2 finished first in CASP14, and Baker lab finished second. Image courtesy: <a href="https://bit.ly/39Mnym3" target="_blank">Mohammed al Quraishi</a>.
 {: style="font-size: medium;"}
 
 We can appreciate the size of the margin of victory in the above figure if we compare it against the difference between the second and third place competitors, shown in the figure below.
 
-[![image-center](../assets/images/600px/BAKER_Zhang.png){: .align-center loading="lazy"}](../assets/images/BAKER_Zhang.png)
+[![Comparison of BAKER and Zhang models](../assets/images/600px/BAKER_Zhang.png){: .align-center loading="lazy"}](../assets/images/BAKER_Zhang.png)
 A plot of GDT scores for the Baker lab (blue) and Zhang lab (orange) submissions for all proteins in the CASP14 contest. Baker lab finished second in CASP14, and Zhang lab finished third. Image courtesy: <a href="https://bit.ly/39Mnym3" target="_blank">Mohammed al Quraishi</a>.
 {: style="font-size: medium;"}
 
@@ -39,7 +39,7 @@ For each protein in the CASP14 contest, we can also compute each algorithm's **z
 
 Summing all of an algorithm's positive z-scores gives a reasonable metric for the relative quality of an algorithm compared to its competitors. If this sum of z-scores is large, then the algorithm performed significantly above average on the prediction of some proteins. The figure below shows the sum of z-scores for all CASP14 participants and reiterates the margin of AlphaFold's victory, since its sum of z-scores is twice that of the second place algorithm.
 
-[![image-center](../assets/images/600px/CASP14_overall_results.png){: .align-center loading="lazy"}](../assets/images/CASP14_overall_results.png)
+[![CASP14 competition results overview chart](../assets/images/600px/CASP14_overall_results.png){: .align-center loading="lazy"}](../assets/images/CASP14_overall_results.png)
 A bar chart plotting the sum of z-scores for every entrant in the CASP14 contest. AlphaFold2 is shown on the far left; its sum of z-scores is over double that of the second-place submission. Source: <a href="https://predictioncenter.org/casp14/zscores_final.cgi" target="_blank">https://predictioncenter.org/casp14/zscores_final.cgi</a>.
 {: style="font-size: medium;"}
 

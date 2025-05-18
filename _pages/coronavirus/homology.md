@@ -30,7 +30,7 @@ Another way to perform homology modeling is to account for variance in similarit
 
 The phenomenon of conserved and variable regions also occurs within individual genes. The following figure shows that within a spike protein subunit, the S2 domain is 90% similar between the two viruses, whereas the S1 domain is only 64% similar. Furthermore, the S1 domain divides into two subunits of differing similarity.
 
-[![image-center](../assets/images/600px/spike_protein_similarity.png){: .align-center loading="lazy"}](../assets/images/spike_protein_similarity.png)
+[![Spike protein similarity between coronavirus strains](../assets/images/600px/spike_protein_similarity.png){: .align-center loading="lazy"}](../assets/images/spike_protein_similarity.png)
 Variable and conserved regions in the SARS-CoV and SARS-CoV-2 spike proteins. The S1 domain tends to be more variable, whereas the S2 domain is more conserved. In this figure, "NTD" stands for "N-terminal domain" and "RBD" stands for "receptor binding domain", two subunits of the S1 domain.
 {: style="font-size: medium;"}
 

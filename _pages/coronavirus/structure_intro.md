@@ -39,7 +39,7 @@ The prediction of protein structure from amino acid sequence is challenging beca
 
 Continuing with our hemoglobin example, the following figure compares the sequences and structures of hemoglobin subunit alpha taken from three species: humans (PDB: [1si4](https://www.rcsb.org/structure/1SI4)), shortfin mako sharks (PDB: [3mkb](https://www.rcsb.org/structure/3mkb)), and emus (PDB: [3wtg](https://www.rcsb.org/structure/3wtg)). Hemoglobin is the oxygen-transport protein in the blood, consisting of two alpha "subunit" proteins and two beta subunit proteins that combine into a protein complex; because hemoglobin is well-studied and much shorter than the SARS-CoV-2 spike protein (the alpha and beta subunits are only 140 and 147 amino acids long, respectively), we will use it as an example throughout this module. The alpha subunits for the three species are markedly different in terms of amino acid sequence, and yet their 3-D structures are essentially identical.
 
-[![image-center](../assets/images/600px/SequenceStructureExample.png){: .align-center loading="lazy"}](../assets/images/SequenceStructureExample.png)
+[![Example showing sequence-structure relationship](../assets/images/600px/SequenceStructureExample.png){: .align-center loading="lazy"}](../assets/images/SequenceStructureExample.png)
 (Top) An amino acid sequence comparison of the first 40 (out of 140) amino acids of hemoglobin subunit alpha for three species: human, shortfin mako shark, and emu. A column is colored blue if all three species have the same amino acid, white if two species have the same amino acid, and red if all amino acids are different. Sequence identity calculates the number of positions in two amino acid sequences that share the same amino acid. (Bottom) Side by side comparisons of the 3-D structures of the three proteins. The final figure on the right superimposes the first three structures to highlight that they are virtually identical.
 {: style="font-size: medium;"}
 
@@ -49,25 +49,25 @@ Another reason why protein structure prediction is so difficult is because a pol
 
 As shown in the figure below, an amino acid comprises four parts. In the center, a carbon atom (called the **alpha carbon**) is connected to four different molecules: a hydrogen atom (H), a **carboxyl group** (–COOH), an **amino group** (-NH<sub>2</sub>), and a **side chain** (denoted "R" and often called an **R group**). The side chain is a molecule that differs between different amino acids and ranges in mass from a single hydrogen atom (glycine) up to -C<sub>8</sub>H<sub>7</sub>N (tryptophan).
 
-[![image-center](../assets/images/600px/AminoAcid.png){: .align-center loading="lazy" width="300px"}](../assets/images/AminoAcid.png)
+[![Structure of a single amino acid](../assets/images/600px/AminoAcid.png){: .align-center loading="lazy" width="300px"}](../assets/images/AminoAcid.png)
 An amino acid consists of a central alpha carbon attached to a hydrogen atom, a side group, a carboxyl group, and an amino group.
 {: style="font-size: medium;"}
 
 To form a polypeptide chain, consecutive amino acids are linked together during a condensation reaction in which the amino group of one amino acid is joined to the carboxyl group of another, while a water molecule (H<sub>2</sub>O) is expelled (see figure below).
 
-[![image-center](../assets/images/600px/dipeptide_reaction.png){: .align-center loading="lazy"}](../assets/images/dipeptide_reaction.png)
+[![Reaction forming a dipeptide from two amino acids](../assets/images/600px/dipeptide_reaction.png){: .align-center loading="lazy"}](../assets/images/dipeptide_reaction.png)
 A condensation reaction joins two amino acids into a "dipeptide" by joining the amino group of one amino acid to the carboxyl group of the other, with a water molecule expelled. Source: [https://bit.ly/3q0Ph8V](https://bit.ly/3q0Ph8V).
 {: style="font-size: medium;"}
 
 The resulting bond that is produced between the carbon atom of one amino acid's carboxyl group and the nitrogen atom of the next amino acid's amino group, called a **peptide bond**, is very strong. The peptide has very little rotation around this bond, which is almost always locked at 180°. As peptide bonds are formed between adjacent amino acids, the polypeptide chain takes shape, as shown in the figure below.
 
-[![image-center](../assets/images/600px/Backbone.png){: .align-center loading="lazy"}](../assets/images/Backbone.png)
+[![Backbone structure of a protein](../assets/images/600px/Backbone.png){: .align-center loading="lazy"}](../assets/images/Backbone.png)
 A polypeptide chain formed of three amino acids.
 {: style="font-size: medium;"}
 
 However, the bonds *within* an amino acid, joining the alpha carbon to its carboxyl group and amino group, are not as rigid, and the polypeptide is free to rotate around these two bonds. This rotation produces two angles of interest, called the **phi angle (φ)** and **psi angle (ψ)** (see figure below), which are formed at the alpha carbon's connections to its amino group and carboxyl group, respectively.
 
-[![image-center](../assets/images/600px/torsion_angles.png){: .align-center loading="lazy" width="400px"}](../assets/images/torsion_angles.png)
+[![Torsion angles in protein backbone](../assets/images/600px/torsion_angles.png){: .align-center loading="lazy" width="400px"}](../assets/images/torsion_angles.png)
 A polypeptide chain of multiple amino acids with the torsion angles φ and ψ indicated. The angle ω indicates the angle of the peptide bond, which is typically 180°. Image courtesy: Adam Rędzikowski.
 {: style="font-size: medium;"}
 

@@ -63,7 +63,7 @@ $$ \Gamma_{ii} = -\sum_j \Gamma_{ij} $$
 
 In other words, if residue *i* and *j* are connected to each other in the network, then the value of the (*i*, *j*)-th entry in the matrix will be -1. If these two residues are not connected, the the entry will be 0. The (*i*, *j*)-th entry on the main diagonal of $$ \Gamma $$, is equal to the total number of connections of residue *i*. The figure below shows an example Kirchhoff matrix for a small network.
 
-[![image-center](../assets/images/600px/kirchhoff_example.png){: .align-center loading="lazy"}](../assets/images/kirchhoff_example.png)
+[![Kirchhoff matrix example](../assets/images/600px/kirchhoff_example.png){: .align-center loading="lazy"}](../assets/images/kirchhoff_example.png)
 An example network (left) with its the corresponding Kirchhoff matrix (right).
 {: style="font-size: medium;"}
 
@@ -105,7 +105,7 @@ In[#]: showContactMap(gnm);
 
 This command should produce the following plot.
 
-[![image-center](../assets/images/600px/SARS-CoV-2_ChainA_Contact_20A.png){: .align-center loading="lazy"}](../assets/images/SARS-CoV-2_ChainA_Contact_20A.png)
+[![Contact map for SARS-CoV-2 Chain A at 20Å](../assets/images/600px/SARS-CoV-2_ChainA_Contact_20A.png){: .align-center loading="lazy"}](../assets/images/SARS-CoV-2_ChainA_Contact_20A.png)
 {: style="font-size: medium;"}
 
 Next, we produce a cross-correlation plot with the following command.
@@ -115,7 +115,7 @@ In[#]: showCrossCorr(gnm);
 
 The plot is found below.
 
-[![image-center](../assets/images/600px/SARS-CoV-2_ChainA_CrossCorr_20A.png){: .align-center loading="lazy"}](../assets/images/SARS-CoV-2_ChainA_CrossCorr_20A.png)
+[![Cross-correlation matrix at 20Å](../assets/images/600px/SARS-CoV-2_ChainA_CrossCorr_20A.png){: .align-center loading="lazy"}](../assets/images/SARS-CoV-2_ChainA_CrossCorr_20A.png)
 {: style="font-size: medium;"}
 
 Finally, we use the following command to produce a shape plot for the slowest mode identified by GNM.
@@ -127,7 +127,7 @@ In[#]: grid();
 
 This mode shape plot is shown in the figure below.
 
-[![image-center](../assets/images/600px/SARS-CoV-2_ChainA_SlowMode_20A.png){: .align-center loading="lazy"}](../assets/images/SARS-CoV-2_ChainA_SlowMode_20A.png)
+[![Slow mode representation of SARS-CoV-2 dynamics](../assets/images/600px/SARS-CoV-2_ChainA_SlowMode_20A.png){: .align-center loading="lazy"}](../assets/images/SARS-CoV-2_ChainA_SlowMode_20A.png)
 {: style="font-size: medium;"}
 
 Now that we have produced our plots, we are ready to head back to the main text and analyze our results.
