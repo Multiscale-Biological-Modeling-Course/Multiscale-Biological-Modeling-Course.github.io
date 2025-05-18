@@ -14,14 +14,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: "Biological Modeling"
-subtitle: "A Free Online Course"
+subtitle: "A Free Course in Computational Biology"
 masthead_title: "<em>Biological Modeling</em>" # combine title and subtitle in masthead
 logo: "/assets/images/200px/gray_scott_jupyter_high-res.png"
 url: "https://biologicalmodeling.org"
 email:
 locale: "en-US"
 description: >- # this means to ignore newlines until "baseurl:"
-  A free and open online course.
+  Power up your computational and machine learning skills with our free course on modeling biological systems.
 twitter_username: phillipcompeau
 github_username: phcompeau
 minimal_mistakes_skin: contrast
