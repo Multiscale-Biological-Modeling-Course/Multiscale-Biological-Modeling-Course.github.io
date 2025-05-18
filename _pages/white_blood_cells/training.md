@@ -26,7 +26,8 @@ gallery:
     title: "A lymphocyte with a small, round nucleus."
 ---
 
-## Cross validation
+## Cross validation for WBC shape-space evaluation
+
 
 We are nearly ready to apply k-NN to a dimension-reduced shape space of WBC nuclear images. However, we already know the correct class of every image in our dataset.
 
@@ -39,7 +40,7 @@ Yet it remains unclear which subset of the data we should use as a validation se
 
 In **cross validation**, we divide our data into a collection of *f* (approximately) equally sized groups called **folds**. We use one of these folds as a validation set, keeping track of which objects the classification algorithm classifies correctly, and then we start over with a different fold as our validation set. In this way, every element in our dataset will get used as a member of a validation set exactly once.
 
-## A first attempt at quantifying the success of a classifier
+## A first attempt at quantifying classifier performance on the iris dataset
 
 Before we can apply cross validation to WBC images, we should discuss how to quantify the performance of the classifier. The table below shows the result of applying k-NN to the iris flower dataset, using *k* equal to 3 and cross validation with *f* equal to 10 (since there are 150 flowers, each fold contains 15 flowers). This table is called a **confusion matrix**, because it helps us visualize whether we are "confusing" the class assignment of an object.
 
