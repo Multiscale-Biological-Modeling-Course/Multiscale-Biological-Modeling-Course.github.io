@@ -30,11 +30,11 @@ We say that a neural network with input variables *x*<sub>1</sub>, …, *x*<sub>
 **Exercise:** Consider the three points *x* = (−8, 1), *y* = (7, 6), and *z* = (10, −2). Say that the distances from these points to some point *w* with unknown location are as follows: *d*(*x*,*w*) = 13; *d*(*y*,*w*) = 3; *d*(*z*,*w*) = 10. Where is *w*?
 {: .notice--success}
 
-## More on the curse of dimensionality
+## Illustrating the curse of dimensionality with two iris samples
 
 Intuitively, we would like to have a large number of features in our data (i.e., a large dimension of *n* in each data point's feature vector). Yet consider the figure below, which plots the petal width and length of only two iris flowers. It would be a horrible idea to extrapolate anything from the line connecting these two points, as it indicates that these two variables are inversely coordinated, which is the *opposite* of the true correlation that we found in the [main text](pca#dimension-reduction-with-principal-components-analysis).
 
-[![image-center](../assets/images/600px/curse_of_dimensionality_two_irises.png){: .align-center}](../assets/images/curse_of_dimensionality_two_irises.png)
+[![Plot of petal length vs width for two iris flowers illustrating inverse-correlation noise](../assets/images/600px/curse_of_dimensionality_two_irises.png){: .align-center}](../assets/images/curse_of_dimensionality_two_irises.png)
 Petal length (x-axis) plotted against petal width (y-axis) for two flowers in the iris flower dataset. Because of random chance and small sample size, these two flowers demonstrate an inverse correlation between petal length and width, the opposite of the true correlation found in the main text.
 {: style="font-size: medium;"}
 
@@ -43,7 +43,7 @@ This example provides another reason why we reduce the dimension of a dataset wh
 **Exercise:** What is the minimum number of points in three-dimensional space such that we cannot guarantee that there is some plane containing them all? Provide a conjecture as to the minimum number of points in *n*-dimensional space such that we cannot guarantee that there is some *d*-dimensional hyperplane containing them all.
 {: .notice--success}
 
-## Irises, PCA, and feature selection
+## PCA and feature selection on the iris dataset
 
 **Exercise:** The [iris flower dataset](../downloads/iris.csv) has four features. Apply PCA with *d* = 2 to reduce the dimension of this dataset. Then, apply k-NN with *k* equal to 1 and cross validation with *f* equal to 10 to the resulting vectors of reduced dimension to obtain a confusion matrix. What are the accuracy, recall, specificity, and precision? How do they compare against the results of using all four iris features that we found [earlier](training#a-first-attempt-at-quantifying-the-success-of-a-classifier)?
 {: .notice--success}

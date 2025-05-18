@@ -14,19 +14,19 @@ image: "../assets/images/normal_adult_blood_smear.JPG"
 gallery:
   - url: ../assets/images/600px/neutrophil.png
     image_path: ../assets/images/neutrophil.png
-    alt: "Neutrophil"
+    alt: "Neutrophil with multilobular nucleus highlighting granulocyte morphology"
     title: "A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family."
   - url: ../assets/images/600px/monocyte.png
     image_path: ../assets/images/monocyte.png
-    alt: "Monocyte"
+    alt: "Monocyte featuring a single, kidney-shaped nucleus"
     title: "A monocyte with a single, irregularly-shaped nucleus."
   - url: ../assets/images/600px/lymphocyte.png
     image_path: ../assets/images/lymphocyte.png
-    alt: "Lymphocyte"
+    alt: "Lymphocyte showing a small, round nucleus typical of lymphoid cells"
     title: "A lymphocyte with a small, round nucleus."
 ---
 
-## A brief introduction to artificial neurons
+## Introduction to artificial neuron models
 
 The best known classification algorithms for WBC image analysis[^Habibzadeh_2018] use a technique called **deep learning**. You have probably seen this term wielded with reverence, and so in this chapter's conclusion, we will briefly explain what it means and how it can be applied to classification.
 
@@ -78,7 +78,7 @@ A commonly used activation function is the **logistic function**, *f*(*x*) = 1/(
 **STOP:** Because of its simplicity, researchers now often use a "rectifier" activation function: *f*(*x*) = max(0, *x*). What does the graph of this function look like? What is the activation function used by a perceptron, and how does it differ from the rectifier function?
 {: .notice--primary}
 
-## Framing a classification problem using neural networks
+## Framing the WBC classification problem with neural networks
 
 The outputs of mathematical functions can be used as inputs to other functions via function composition. For example, if *f*(*x*) = 2*x*-1, *g*(*x*) = *e*<sup>*x*</sup>, and *h*(*x*) = cos(*x*), then *h*(*g*(*f*(*x*))) = cos(*e*<sup>2*x*-1</sup>). Similarly, we can use artificial neurons as building blocks by linking them together, with the outputs of some neurons serving as inputs to other neurons. Linking neurons in this way produces a **neural network** such as the one shown in the figure below, which we will take time to explain.
 

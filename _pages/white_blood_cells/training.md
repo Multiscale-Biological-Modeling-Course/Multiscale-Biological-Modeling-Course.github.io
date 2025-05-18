@@ -14,15 +14,15 @@ image: "../assets/images/normal_adult_blood_smear.JPG"
 gallery:
   - url: ../assets/images/600px/neutrophil.png
     image_path: ../assets/images/neutrophil.png
-    alt: "Neutrophil"
+    alt: "Neutrophil example image illustrating granulocyte morphology"
     title: "A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family."
   - url: ../assets/images/600px/monocyte.png
     image_path: ../assets/images/monocyte.png
-    alt: "Monocyte"
+    alt: "Monocyte example image illustrating monocyte morphology"
     title: "A monocyte with a single, irregularly-shaped nucleus."
   - url: ../assets/images/600px/lymphocyte.png
     image_path: ../assets/images/lymphocyte.png
-    alt: "Lymphocyte"
+    alt: "Lymphocyte example image illustrating lymphocyte morphology"
     title: "A lymphocyte with a small, round nucleus."
 ---
 

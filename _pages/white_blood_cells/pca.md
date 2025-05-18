@@ -19,7 +19,7 @@ Things get weird in multi-dimensional space.
 
 Consider a circle inscribed in a square, as shown in the figure below. The ratio of the area of the circle to the area of the square is π/4 ≈ 0.785, regardless of the square's side length. When we move to three dimensions and have a sphere inscribed in a cube, the ratio of the volume of the sphere to the volume of the cube is (4π/3)/8 ≈ 0.524.
 
-[![image-center](../assets/images/600px/inscribed_circle_and_sphere.png){: .align-center}](../assets/images/inscribed_circle_and_sphere.png)
+[![circle inscribed in square vs. sphere inscribed in cube illustrating volume ratios in 2D and 3D](../assets/images/600px/inscribed_circle_and_sphere.png){: .align-center}](../assets/images/inscribed_circle_and_sphere.png)
 A circle inscribed in a square takes up more of the square (78.5 percent) than a sphere inscribed in a cube (52.4 percent).
 {: style="font-size: medium;"}
 
@@ -45,13 +45,13 @@ Instead, we will reduce the number of dimensions of our shape space without remo
 
 We will introduce dimension reduction using the iris flower dataset that we introduced when discussing [classification](classification). Although this dataset has four features, we will focus again on only petal length and width, which we plot against each other in the figure below. We can trust our eyes to notice the clear pattern: as iris petal width increases, petal length tends to increase as well.
 
-[![image-center](../assets/images/600px/iris_petal_data_unlabeled.png){: .align-center}](../assets/images/iris_petal_data_unlabeled.png)
+[![Scatter plot of iris petal length vs. width for all flowers](../assets/images/600px/iris_petal_data_unlabeled.png){: .align-center}](../assets/images/iris_petal_data_unlabeled.png)
 Petal length (x-axis) plotted against petal width (y-axis) for all flowers in the iris flower dataset.
 {: style="font-size: medium;"}
 
 A line drawn through the center of the data (see figure below) provides a reasonable estimate of a flower's petal width given its length, and vice-versa. This line, a one-dimensional object, therefore approximates a collection of points in two dimensions.
 
-[![image-center](../assets/images/600px/iris_flowers_regression_line.png){: .align-center}](../assets/images/iris_flowers_regression_line.png)
+[![Iris petal data regression line showing best‐fit relationship](../assets/images/600px/iris_flowers_regression_line.png){: .align-center}](../assets/images/iris_flowers_regression_line.png)
 A line passing through the plot of iris petal length against petal width. The line tells us approximately how long we can expect an iris petal to be given the petal's width, and vice-versa.
 {: style="font-size: medium;"}
 
@@ -62,7 +62,7 @@ Long ago in math class, you may have learned how to choose a line to best approx
 
 Given a line, we use *L*(*x*) to denote the *y*-coordinate of the point on the line corresponding to a given *x*-coordinate. For this line, we can then define the **residual** of a data point (*x*, *y*) as the difference *y* - *L*(*x*) between its *y*-coordinate and the *y*-coordinate on the line corresponding to *x*. If a residual is positive, then the data point lies "above" the line, and if the residual is negative, then the point lies "below" the line (see figure below).
 
-[![image-center](../assets/images/600px/residuals_y_coordinates.png){: .align-center width="300px"}](../assets/images/residuals_y_coordinates.png)
+[![visualization of vertical residuals from regression line](../assets/images/600px/residuals_y_coordinates.png){: .align-center width="300px"}](../assets/images/residuals_y_coordinates.png)
 An example line and data points with a visual depiction of the points' residuals (dashed lines), which visualize the differences in actual y-values and those estimated by the line. The absolute value of a residual is the length of its dashed line, and the sign of a residual corresponds to whether it lies above or below the line.
 {: style="font-size: medium;"}
 
@@ -70,7 +70,7 @@ As the line changes, so will the points' residuals. The smaller the residuals be
 
 Linear regression is not the only way to fit a line to a collection of data. Choosing petal width as the dependent variable makes sense if we want to explain petal width as a function of petal length, but if we were to make petal length the dependent variable instead, then linear regression would minimize the sum of squared residuals in the *x*-direction, as illustrated in the figure below.
 
-[![image-center](../assets/images/600px/residuals_x_coordinates.png){: .align-center width="300px"}](../assets/images/residuals_x_coordinates.png)
+[![visualization of horizontal residuals when x is dependent variable](../assets/images/600px/residuals_x_coordinates.png){: .align-center width="300px"}](../assets/images/residuals_x_coordinates.png)
 If *x* is the dependent variable, then the residuals with respect to a line become the horizontal distances between points and the line, and linear regression finds the line that minimizes the sum of the squares of these horizontal residuals over all possible lines through the data.
 {: style="font-size: medium;"}
 
@@ -86,7 +86,7 @@ Instead of considering residuals based on distances to the line in only the x-di
 
 Instead of considering residuals based on distances to the line in only the *x*-direction or the *y*-direction, we can instead examine the distances from our data points to the line, as shown in the figure below. The line minimizing the sum of the squares of these distances treats each of the two variables equally and is called the **first principal component** of the data.
 
-[![image-center](../assets/images/600px/residuals_projections.png){: .align-center width="300px"}](../assets/images/residuals_projections.png)
+[![projection of points onto line showing squared‐distance minimization](../assets/images/600px/residuals_projections.png){: .align-center width="300px"}](../assets/images/residuals_projections.png)
 A line along with a collection of points; dashed lines show the shortest segments connecting each data point to its projection onto the line, which is the point on the line that is closest to the data point.
 {: style="font-size: medium;"}
 
@@ -94,7 +94,7 @@ The first principal component is often said to be the line that "explains the mo
 
 The following animated GIF shows a line rotating through a collection of data points, with the distance from each point to the line shown in red. As the line rotates, we can see the distances from the points to the line change.
 
-[![image-center](../assets/images/600px/pca_rotating_line_first_frame.png){: .align-center}](../assets/images/pca_rotating_line.gif)
+[![first frame of animated PCA rotation illustrating distance changes](../assets/images/600px/pca_rotating_line_first_frame.png){: .align-center}](../assets/images/pca_rotating_line_first_frame.png)
 An animated GIF showing that the distances from points to their projections onto a line change as the line rotates. The line of best fit is the one in which the sum of the square of these distances is minimized.  Source: amoeba, StackExchange user.[^amoeba]
 {: style="font-size: medium;"}
 

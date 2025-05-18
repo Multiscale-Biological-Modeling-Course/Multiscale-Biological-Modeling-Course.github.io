@@ -14,16 +14,16 @@ image: "../assets/images/normal_adult_blood_smear.JPG"
 gallery:
   - url: ../assets/images/600px/neutrophil_binarized_green.png
     image_path: ../assets/images/neutrophil_binarized_green.png
-    alt: "Neutrophil"
+    alt: "Binarized neutrophil using green-channel threshold ≤ 153"
     title: "A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family."
   - url: ../assets/images/600px/neutrophil_binarized_red.png
     image_path: ../assets/images/neutrophil_binarized_red.png
-    alt: "Monocyte"
+    alt: "Binarized neutrophil using red-channel threshold"
     title: "A monocyte with a single, irregularly-shaped nucleus."
 gallery2:
   - url: ../assets/images/600px/monocyte_binarized.png
     image_path: ../assets/images/monocyte_binarized.png
-    alt: "Segmented monocyte"
+    alt: "Binarized monocyte nucleus combining multiple color thresholds."
     title: "Image segmentation of the monocyte corresponding to ID 15 in the provided dataset."
   - url: ../assets/images/600px/lymphocyte_binarized.png
     image_path: ../assets/images/lymphocyte_binarized.png
@@ -52,7 +52,7 @@ Researchers have developed many algorithms for cellular image segmentation, but 
 
 What makes the WBC nucleus so easy for a human to spot in the above blood cell? You may be screaming, “It is dark blue! How hard could it be?” But to train a computer to segment images by color, we should first understand how the computer encodes color in images.
 
-## The RGB color model
+## Using the RGB color model for segmentation
 
 In the **RGB color model**, every rectangular pixel on a computer screen emits a single color formed as a mixture of differing amounts of the three primary colors of light: red, green, and blue (hence the acronym “RGB”). The intensity of each primary color in a pixel is expressed as an integer between 0 and 255, inclusively, with larger integers corresponding to greater intensities.
 
@@ -68,7 +68,7 @@ The RGB model gives us an idea for segmenting a WBC nucleus. If we scan through 
 **STOP:** You can find a color picker in `Utilities > Digital Color Meter` (Mac OS X) or by using <a href="https://getsharex.com" target="_blank">ShareX</a> (Windows). Open your color picker, and hover the picker over different parts of the granulocyte image above. What are the typical RGB values for the WBC nucleus, and how do these RGB values differ from those of the RBCs and the image background?
 {: .notice--primary}
 
-## Binarizing an image based on a color threshold
+## Binarizing images via single-channel color thresholds
 
 We will **binarize** each blood cell image by coloring a pixel white if its blue value is above some threshold, and coloring a pixel black if its blue value is beneath some threshold.
 

@@ -13,19 +13,19 @@ author_profile: true # add author to page
 gallery:
   - url: ../assets/images/600px/neutrophil.png
     image_path: ../assets/images/neutrophil.png
-    alt: "Neutrophil"
+    alt: "Neutrophil with multilobular nucleus highlighting granulocyte morphology"
     title: "A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family."
   - url: ../assets/images/600px/monocyte.png
     image_path: ../assets/images/monocyte.png
-    alt: "Monocyte"
+    alt: "Monocyte featuring a single, kidney-shaped nucleus"
     title: "A monocyte with a single, irregularly-shaped nucleus."
   - url: ../assets/images/600px/lymphocyte.png
     image_path: ../assets/images/lymphocyte.png
-    alt: "Lymphocyte"
+    alt: "Lymphocyte showing a small, round nucleus typical of lymphoid cells"
     title: "A lymphocyte with a small, round nucleus."
 ---
 
-# Introduction: How Are Blood Cells Counted?
+# Introduction: Segmenting and counting white blood cells
 
 Your doctor sometimes counts your blood cells to ensure that they are within healthy ranges as part of a complete blood count. These cells comprise **red blood cells (RBCs)**, which transport oxygen via the hemoglobin protein, and **white blood cells (WBCs)**, which help identify and attack foreign cells as part of your immune system.
 

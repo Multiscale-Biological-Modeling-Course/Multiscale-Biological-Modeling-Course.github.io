@@ -33,7 +33,7 @@ This seemingly contrived example has a real archaeological counterpart. In 2019,
 
 You may be confused as to why biologists should care about stone tablets and lost cities. For now, we will return to our problem of classifying segmented WBC images by family.
 
-## Vectorizing a segmented image
+## Vectorizing segmented WBC images
 
 As we mentioned in the [previous lesson](classification), we would like to apply k-NN to our example of segmented WBC images. Yet k-NN first requires each object to be represented by a feature vector, and so we need some way of converting a WBC image into a feature vector. In this way, we can produce a **shape space**, or an assignment of (cellular image) shapes to points in multi-dimensional space.
 
@@ -56,7 +56,7 @@ On the one hand, we need to ensure that the number of points that we sample from
 
 On the other hand, we could have very similar shapes whose RMSD winds up being high. For example, recall the shapes in the figure below, which are identical, but one has been flipped and rotated. If we were to vectorize these shapes as they are now in the same way (say, by starting at the top of the shape and proceeding clockwise), then we would obtain two vectors with high RMSD.
 
-[![image-center](../assets/images/600px/two_shapes.png){: .align-center}](../assets/images/two_shapes.png)
+[![two identical shapes flipped and rotated illustrating alignment need](../assets/images/600px/two_shapes.png){: .align-center}](../assets/images/two_shapes.png)
 Two identical shapes, with one shape flipped and rotated. Vectorizing these shapes without first correctly aligning them will produce two vectors with high RMSD.
 {: style="font-size: medium;"}
 
@@ -78,13 +78,13 @@ Unfortunately, for a large image dataset, computing the distance between every p
 
 One way of aligning a collection of images is to first identify the **major axis** of each image, which is the longest line segment that connects two points on the outside of the image and crosses through the image's center of mass. The figure below shows the major axis for a few similar shapes.
 
-[![image-center](../assets/images/600px/three_similar_shapes_unaligned.png){: .align-center}](../assets/images/three_similar_shapes_unaligned.png)
+[![three similar shapes with highlighted major axes before alignment](../assets/images/600px/three_similar_shapes_unaligned.png){: .align-center}](../assets/images/three_similar_shapes_unaligned.png)
 Three similar shapes, with their major axes highlighted in gray.
 {: style="font-size: medium;"}
 
 Aligning the major axes of these similar shapes reveals their similarities (see figure below). These images are ready to be vectorized (say, starting from the point on the right side of an image's major axis and proceeding counterclockwise). The resulting vectors will have low RMSD because corresponding points on the shapes will be nearby.
 
-[![image-center](../assets/images/600px/three_similar_shapes_aligned.png){: .align-center width="300px"}](../assets/images/three_similar_shapes_aligned.png)
+[![three shapes aligned along major axes illustrating consistent orientation](../assets/images/600px/three_similar_shapes_aligned.png){: .align-center width="300px"}](../assets/images/three_similar_shapes_aligned.png)
 Aligning the three images from the previous figure so that their major axes overlap allows us to see similarities between the shapes as well as build shape vectors for them having a consistent frame of reference.
 {: style="font-size: medium;"}
 
