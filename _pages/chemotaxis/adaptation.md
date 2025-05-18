@@ -42,7 +42,7 @@ Just as the phosphorylation of CheY can be reversed, MCP methylation can be undo
 
 The figure below adds CheR and CheB to provide a complete picture of the core pathways influencing chemotaxis. To model these pathways and see how our simulated bacterial system responds to different relative attractant concentrations, we will need to add quite a few molecules and reactions to our current model.
 
-[![image-center](../assets/images/600px/chemotaxis_wholestory.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_wholestory.png)
+[![Overview of chemotaxis signal transduction pathway](../assets/images/600px/chemotaxis_wholestory.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_wholestory.png)
 The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates MCPs, while CheR demethylates MCPs. Blue lines denote phosphorylation, grey lines denote dephosphorylation, green arrows denote methylation, and red arrows denote demethlyation. Image modified from <a href="https://chemotaxis.biology.utah.edu/projects/projects.html">Parkinson Lab</a>'s illustrations.
 {: style="font-size: medium;"}
 
@@ -69,31 +69,31 @@ In the figures that follow, we plot the concentration over time of each molecule
 
 First, we add a relatively small amount of attractant, setting *l*<sub>0</sub> equal to 10,000. The system returns so quickly to an equilibrium in phosphorylated CheY that it is difficult to imagine that the attractant has had any effect on tumbling frequency.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e4_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_oneadd1e4_vscode.png)
+[![Visual output after adding attractant at 1e4](../assets/images/600px/chemotaxis_tutorial_oneadd1e4_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_oneadd1e4_vscode.png)
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 10,000 initial attractant ligand particles.
 {: style="font-size: medium;"}
 
 If instead *l*<sub>0</sub> is equal to 100,000, then we obtain the figure below. After an initial drop in the concentration of phosphorylated CheY, it returns to equilibrium after a few minutes.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e5_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_oneadd1e5_vscode.png)
+[![Visual output after adding attractant at 1e5](../assets/images/600px/chemotaxis_tutorial_oneadd1e5_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_oneadd1e5_vscode.png)
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100,000 initial attractant ligand particles.
 {: style="font-size: medium;"}
 
 When we increase *l*<sub>0</sub> by another factor of ten to 1 million, the initial drop is more pronounced, but the system returns just as quickly to equilibrium. Note how much higher the concentration of methylated receptors are in this figure compared to the previous figure; however, there are still a significant concentration of receptors with low methylation, indicating that the system may be able to handle an even larger jolt of attractant.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e6_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_oneadd1e6_vscode.png)
+[![Visual output after adding attractant at 1e6](../assets/images/600px/chemotaxis_tutorial_oneadd1e6_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_oneadd1e6_vscode.png)
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with one million initial attractant ligand particles.
 {: style="font-size: medium;"}
 
 When we set *l*<sub>0</sub> equal to 10 million, we give the system this bigger jolt. Once again, the model returns to its previous CheY equilibrium after a few minutes.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e7_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_oneadd1e7_vscode.png)
+[![Visual output after adding attractant at 1e7](../assets/images/600px/chemotaxis_tutorial_oneadd1e7_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_oneadd1e7_vscode.png)
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with ten million initial attractant ligand particles.
 {: style="font-size: medium;"}
 
 Finally, with *l*<sub>0</sub> equal to 100 million, we see what we might expect: the steepest drop in phosphorylated CheY yet, but a system that is able to return to equilibrium after a few minutes.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd1e8_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_oneadd1e8_vscode.png)
+[![Visual output after adding attractant at 1e8](../assets/images/600px/chemotaxis_tutorial_oneadd1e8_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_oneadd1e8_vscode.png)
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) in a BioNetGen chemotaxis simulation with 100 million initial attractant ligand particles.
 {: style="font-size: medium;"}
 
@@ -116,13 +116,13 @@ To model a ligand concentration [*L*] that is increasing exponentially, we will 
 
 For example, the following figure shows the concentration over time of phosphorylated CheY (orange) when *l*<sub>0</sub> = 1000 and *k* = 0.1. The concentration of phosphorylated CheY, and therefore the tumbling frequency, still decreases sharply as the ligand concentration increases, but after all ligands become bound to receptors (the plateau in the blue curve), receptor methylation causes the concentration of phosphorylated CheY to return to its equilibrium. For these values of *l*<sub>0</sub> and *k*, the outcome is similar to when we provided an instantaneous increase in ligand, although the cell takes longer to reach its minimum concentration of phosphorylated CheY because the attractant concentration is increasing gradually.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_addition01_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_addition01_vscode.png)
+[![Chemotaxis model showing ligand addition phase 1](../assets/images/600px/chemotaxis_tutorial_addition01_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_addition01_vscode.png)
 Plots of relevant molecule concentrations in our model (in number of molecules in the cell) over time (in seconds) when the concentration of ligand grows exponentially with *l*<sub>0</sub> = 1000 and *k* = 0.1. The concentration of bound ligand (shown in red) quickly hits saturation, which causes a minimum in phosphorylated CheY (orange), and therefore a low tumbling frequency. To respond, the cell increases the methylation of receptors, which boosts the concentration of phosphorylated CheY back to equilibrium.
 {: style="font-size: medium;"}
 
 The following figure shows the results of multiple simulations in which we vary the growth parameter *k* and plot only the concentration of phosphorylated CheY over time. The larger the value of *k*, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_addition03.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_addition03.png)
+[![Chemotaxis model after additional ligand exposure](../assets/images/600px/chemotaxis_tutorial_addition03.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_addition03.png)
 Plots of the concentration of phosphorylated CheY over time (in seconds) for different growth rates *k* of ligand concentration. The larger the value of *k*, the steeper the initial drop in the concentration of phosphorylated CheY, and the faster that methylation returns the concentration of phosphorylated CheY to equilibrium. The same equilibrium is obtained regardless of the value of *k*.
 {: style="font-size: medium;"}
 

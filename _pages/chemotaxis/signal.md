@@ -24,7 +24,7 @@ For example, transcription factors, which we discussed in the [previous module](
 
 In the case of chemotaxis, *E. coli* has receptor proteins that detect attractants such as glucose by binding to and forming a complex with these attractant **ligands**. The bacterium also contains receptors to detect repellents, but we will focus on modeling the binding of a single type of receptor to a single type of attractant ligand.  In later lessons, we will enter the cell and model the cascade of reactions after this binding has occurred, as shown in the figure below, which cause a change in the rotation of one or more flagella.
 
-[![image-center](../assets/images/600px/chemotaxis_signal.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_signal.png)
+[![Diagram of ligand-receptor signal transduction in E. coli](../assets/images/600px/chemotaxis_signal.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_signal.png)
 A high-level overview of the chemotaxis signaling pathway. The red circles labeled *L* represent attractant ligands. When these ligands bind to receptors, a signal is transduced inside the cell via a series of enzymes, which eventually influences the rotation direction of a flagellum.
 {: style="font-size: medium;"}
 
