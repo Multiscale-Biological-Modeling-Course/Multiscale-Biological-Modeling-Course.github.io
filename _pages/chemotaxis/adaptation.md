@@ -3,14 +3,13 @@ permalink: /chemotaxis/adaptation
 title: "Methylation Helps a Bacterium Adapt to Differing Concentrations"
 description: "Discover how E. coli adjusts to new environments by chemotaxis, with models that reveal its sensory pathways and adaptive behavior."
 excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
-toc: true
-toc_sticky: true
 sidebar:
  nav: "chemotaxis"
 toc: true
 toc_sticky: true
 header:
   overlay_image: "../assets/images/ecoli_glucose.png"
+  image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
   overlay_filter: 0.3
 image: "../assets/images/ecoli_glucose.png"
 ---
