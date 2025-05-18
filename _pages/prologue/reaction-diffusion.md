@@ -16,10 +16,12 @@ gallery:
     image_path: ../assets/images/600px/reaction-diffusion_three_reactions_before.png
     alt: "Before picture of reaction-diffusion system"
     title: "A collection of particles in our reaction-diffusion system."
+    loading: "lazy"
   - url: ../assets/images/reaction-diffusion_three_reactions_after.png
     image_path: ../assets/images/600px/reaction-diffusion_three_reactions_after.png
     alt: "After picture of reaction-diffusion system"
     title: "The system after some A particles are fed into the system, some B particles are killed, and the collision of an A particle and two B particles produces a third B particle."
+    loading: "lazy"
 ---
 
 ## From random walks to reaction-diffusion

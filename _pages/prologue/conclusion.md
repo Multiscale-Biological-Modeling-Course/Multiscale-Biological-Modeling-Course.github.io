@@ -16,10 +16,12 @@ gallery:
     image_path: ../assets/images/600px/Juvenile_Mbu_pufferfish.jpg
     alt: "Juvenile Mbu pufferfish"
     title: "A juvenile Mbu pufferfish with a very familiar pattern."
+    loading: "lazy"
   - url: ../assets/images/Giant_Puffer_fish_skin_pattern.jpg
     image_path: ../assets/images/600px/Giant_Puffer_fish_skin_pattern.jpg
     alt: "Adult Mbu pufferfish"
     title: "An adult Mbu Pufferfish exhibiting another familiar pattern."
+    loading: "lazy"
 ---
 
 In both the particle-based and automaton model for Turing patterns, we observed that the model is **fine-tuned**, meaning that very slight changes in parameter values can lead to significant changes in the system. These changes could convert spots to stripes, or they could influence how clearly defined the boundaries of the Turing patterns are.

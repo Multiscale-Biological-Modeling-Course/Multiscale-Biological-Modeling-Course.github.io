@@ -16,28 +16,34 @@ gallery:
     image_path: ../assets/images/neutrophil_binarized_green.png
     alt: "Binarized neutrophil using green-channel threshold ≤ 153"
     title: "A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family."
+    loading: "lazy"
   - url: ../assets/images/600px/neutrophil_binarized_red.png
     image_path: ../assets/images/neutrophil_binarized_red.png
     alt: "Binarized neutrophil using red-channel threshold"
     title: "A monocyte with a single, irregularly-shaped nucleus."
+    loading: "lazy"
 gallery2:
   - url: ../assets/images/600px/monocyte_binarized.png
     image_path: ../assets/images/monocyte_binarized.png
     alt: "Binarized monocyte nucleus combining multiple color thresholds."
     title: "Image segmentation of the monocyte corresponding to ID 15 in the provided dataset."
+    loading: "lazy"
   - url: ../assets/images/600px/lymphocyte_binarized.png
     image_path: ../assets/images/lymphocyte_binarized.png
     alt: "Segmented lymphocyte"
     title: "Image segmentation of the lymphocyte corresponding to ID 20 in the provided dataset."
+    loading: "lazy"
 gallery3:
   - url: ../assets/images/600px/WBC_167.png
     image_path: ../assets/images/WBC_167.png
     alt: "White blood cell image."
     title: "An image of a WBC (ID: 167)."
+    loading: "lazy"
   - url: ../assets/images/600px/WBC_167_segmentation.png
     image_path: ../assets/images/WBC_167_segmentation.png
     alt: "Binarized white blood cell."
     title: "The binarization of this image, showing that the nucleus is not correctly identified during segmentation using the parameters from the tutorial."
+    loading: "lazy"
 ---
 
 ## Image segmentation requires a tailored approach

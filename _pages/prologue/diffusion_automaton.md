@@ -16,14 +16,17 @@ gallery:
     image_path: ../assets/images/600px/initial_A_concentration.png
     alt: "Initial diffusion automaton"
     title: "The system contains a maximum concentration of particles in the central square."
+    loading: "lazy"
   - url: ../assets/images/A_concentration_one_time_step.png
     image_path: ../assets/images/600px/A_concentration_one_time_step.png
     alt: "Diffusion automaton after one time step"
     title: "The system after one time step."
+    loading: "lazy"
   - url: ../assets/images/A_concentration_two_time_steps_complete.png
     image_path: ../assets/images/600px/A_concentration_two_time_steps_complete.png
     alt: "Diffusion automaton after two time steps"
     title: "The system after two time steps."
+    loading: "lazy"
 ---
 
 ## A coarse-grained model of single particle diffusion

@@ -16,14 +16,17 @@ gallery:
     image_path: ../assets/images/neutrophil.png
     alt: "Neutrophil with multilobular nucleus highlighting granulocyte morphology"
     title: "A specific subtype of granulocyte called a neutrophil, illustrating the multilobular structure of this WBC family."
+    loading: "lazy"
   - url: ../assets/images/600px/monocyte.png
     image_path: ../assets/images/monocyte.png
     alt: "Monocyte featuring a single, kidney-shaped nucleus"
     title: "A monocyte with a single, irregularly-shaped nucleus."
+    loading: "lazy"
   - url: ../assets/images/600px/lymphocyte.png
     image_path: ../assets/images/lymphocyte.png
     alt: "Lymphocyte showing a small, round nucleus typical of lymphoid cells"
     title: "A lymphocyte with a small, round nucleus."
+    loading: "lazy"
 ---
 
 ## Introduction to artificial neuron models
