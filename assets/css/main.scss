@@ -486,3 +486,38 @@ search: false
   color: #c10814 !important;                /* your new red */
   text-decoration-color: #c10814 !important;/* underline turns same red */
 }
+
+/* -----------------------------------------------------------
+   Sticky header + sidebars: keep content from sliding under masthead
+   ----------------------------------------------------------- */
+
+/* ❶ Define the masthead height once */
+:root {
+  --masthead-height: 64px;   /* adjust if your bar is taller/shorter */
+}
+
+/* ❷ Make header sticky (already done, but include here for clarity) */
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;                 /* solid backdrop */
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+
+/* ❸ Push the main page content down so it isn't hidden */
+body > #main,
+body > #page   {                    /* whichever wrapper you use */
+  padding-top: var(--masthead-height);
+}
+
+/* ❹ Tell sticky sidebars to start *below* the header
+      and give them a viewport-aware height                */
+@media (min-width: 64em) {          /* only wide layouts with sidebars */
+  .sidebar__left.sticky,
+  .sidebar__right.sticky {
+    top: calc(var(--masthead-height) + 1rem);          /* 1 rem breathing room */
+    max-height: calc(100vh - var(--masthead-height) - 2rem);
+    overflow-y: auto;
+  }
+}
