@@ -8,12 +8,8 @@ header:
   overlay_filter: "0.6"
   overlay_image: /assets/images/600px/f38_k61_high-res.png
   actions:
-    - label: "Start learning"
+    - label: "Start learning!"
       url: "/prologue/"
-    - label: "Download the E-book"
-      url: "https://leanpub.com/biologicalmodeling"
-    - label: "Get the print book"
-      url: "https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W"
 excerpt: "Power up your computational and machine learning skills with our free course on modeling biological systems."
 prologue:
   - image_path: /assets/images/gray_scott_jupyter_high-res_banner.png
