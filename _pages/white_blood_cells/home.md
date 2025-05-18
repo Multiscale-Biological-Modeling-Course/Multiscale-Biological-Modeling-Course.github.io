@@ -25,7 +25,7 @@ gallery:
     title: "A lymphocyte with a small, round nucleus."
 ---
 
-# Introduction: Segmenting and counting white blood cells
+## Introduction: Segmenting and counting white blood cells
 
 Your doctor sometimes counts your blood cells to ensure that they are within healthy ranges as part of a complete blood count. These cells comprise **red blood cells (RBCs)**, which transport oxygen via the hemoglobin protein, and **white blood cells (WBCs)**, which help identify and attack foreign cells as part of your immune system.
 
