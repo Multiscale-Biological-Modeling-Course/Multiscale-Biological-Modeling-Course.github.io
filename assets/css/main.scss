@@ -524,12 +524,18 @@ body > #page {
 /* -----------------------------------------------------------------
    Offset the LEFT sidebar by the masthead height as well
    -----------------------------------------------------------------*/
-@media (min-width: 64em) {           /* wide layouts with sidebars */
-  .sidebar__left {                   /* left column (table-of-contents/nav) */
-    position: sticky;                /* make sure it can stick */
-    top: calc(var(--masthead-height) + 0.5rem);   /* same gap as right */
-    max-height: calc(100vh - var(--masthead-height) - 1rem);
-    overflow-y: auto;                /* add scroll when needed */
+/* ---------- Offset the LEFT sidebar below the sticky header ---------- */
+@media (min-width: 64em) {
+
+  /* Minimal Mistakes can output any of these:  .sidebar ,  .sidebar__left ,
+     or  .page__sidebar  depending on layout and version                 */
+  aside.sidebar,
+  .sidebar__left,
+  .page__sidebar {
+    position: sticky !important;                                /* ensure it can stick */
+    top: calc(var(--masthead-height) + 0.5rem) !important;      /* start BELOW header */
+    max-height: calc(100vh - var(--masthead-height) - 1rem) !important;
+    overflow-y: auto !important;
     overscroll-behavior: contain;
   }
 }
