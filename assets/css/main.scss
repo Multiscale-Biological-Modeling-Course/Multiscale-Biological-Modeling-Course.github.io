@@ -520,3 +520,16 @@ body > #page {
     overflow-y: auto;
   }
 }
+
+/* -----------------------------------------------------------------
+   Offset the LEFT sidebar by the masthead height as well
+   -----------------------------------------------------------------*/
+@media (min-width: 64em) {           /* wide layouts with sidebars */
+  .sidebar__left {                   /* left column (table-of-contents/nav) */
+    position: sticky;                /* make sure it can stick */
+    top: calc(var(--masthead-height) + 0.5rem);   /* same gap as right */
+    max-height: calc(100vh - var(--masthead-height) - 1rem);
+    overflow-y: auto;                /* add scroll when needed */
+    overscroll-behavior: contain;
+  }
+}
