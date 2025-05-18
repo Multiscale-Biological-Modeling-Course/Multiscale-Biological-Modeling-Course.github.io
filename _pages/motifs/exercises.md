@@ -23,7 +23,7 @@ To compute a p-value associated with the frequency of negative autoregulation, w
 
 Say that we observe four coin flips. Then there are 16 equally likely outcomes, shown in the table below.
 
-[![image-center](../assets/images/600px/coin_flip_table.png){: .align-center loading="lazy"}](../assets/images/coin_flip_table.png)
+[![Table showing coin flip probabilities](../assets/images/600px/coin_flip_table.png){: .align-center loading="lazy"}](../assets/images/coin_flip_table.png)
 The 16 possible sequences resulting from flipping a coin four times.
 {: style="text-align: center; font-size: medium;"}
 
@@ -59,7 +59,7 @@ This expression gives us our desired p-value.
 
 There are eight types of feed-forward loops based on the eight different ways in which we can label the edges in the network with a "+" or a "-" based on activation or repression.
 
-[![image-center](../assets/images/600px/ffl_types.png){: .align-center loading="lazy"}](../assets/images/ffl_types.png)
+[![Diagram of different feed-forward loop types](../assets/images/600px/ffl_types.png){: .align-center loading="lazy"}](../assets/images/ffl_types.png)
 The eight types of feed-forward loops.[^ffl]
 {: style="text-align: center; font-size: medium;"}
 

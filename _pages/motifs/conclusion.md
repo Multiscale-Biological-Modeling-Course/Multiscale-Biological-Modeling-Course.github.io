@@ -40,7 +40,7 @@ We will further discuss the technical details required to implement a well-mixed
 
 The figure below shows plots over time of particle concentrations in our well-mixed simulation of the repressilator. (Note that these plots are less noisy than the ones that we produced previously because we are assuming a well-mixed environment.)  Midway through this simulation, we greatly increase the concentration of *Y* particles.
 
-[![image-center](../assets/images/600px/nf_sim_interrupted_chart.png){: .align-center loading="lazy"}](../assets/images/nf_sim_interrupted_chart.png)
+[![Simulation chart showing interrupted signal output](../assets/images/600px/nf_sim_interrupted_chart.png){: .align-center loading="lazy"}](../assets/images/nf_sim_interrupted_chart.png)
 A plot of particle concentrations in the well-mixed repressilator model over time. Adding a significant number of *Y* particles to our simulation (the second blue peak) produces little ultimate disturbance to the concentrations of the three particles, which return to normal oscillations within a single cycle.
 {: style="font-size: medium;"}
 
@@ -50,7 +50,7 @@ We might hypothesize that this process would continue, with a tall peak in the c
 
 Even with a much larger jolt to the concentration of *Y*, the concentrations of the three particles return to normal oscillations very quickly, as shown below.
 
-[![image-center](../assets/images/600px/nf_sim_interrupted_chart_spike.png){: .align-center loading="lazy"}](../assets/images/nf_sim_interrupted_chart_spike.png)
+[![Zoomed-in spike in interrupted signal output](../assets/images/600px/nf_sim_interrupted_chart_spike.png){: .align-center loading="lazy"}](../assets/images/nf_sim_interrupted_chart_spike.png)
 A larger increase in the concentration of *Y* particles than in the previous figure does not produce a substantive change in the system.
 {: style="font-size: medium;"}
 

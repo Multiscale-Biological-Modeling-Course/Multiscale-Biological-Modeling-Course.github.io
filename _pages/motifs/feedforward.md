@@ -19,7 +19,7 @@ In the [previous lesson](nar), we saw that negative autoregulation can be used t
 
 The answer lies in another transcription factor network motif called the **feedforward loop** (**FFL**). An FFL, shown in the figure below, is a network substructure in which *X* is connected to both *Y* and *Z*, and *Y* is connected to *Z*. Calling the FFL motif a "loop" is a misnomer. Rather, it is a small network structure with two paths from *X* to *Z*; one via direct regulation of *Z* by *X*, and another with an intermediate transcription factor *Y*. Note that *X* and *Y* must be transcription factors because they have edges leading out from them, but *Z* does not have to be a transcription factor (and typically is not).
 
-[![image-center](../assets/images/600px/feed-forward_loop.png){: .align-center loading="lazy" width="300px"}](../assets/images/feed-forward_loop.png)
+[![Diagram of a coherent feed-forward loop](../assets/images/600px/feed-forward_loop.png){: .align-center loading="lazy" width="300px"}](../assets/images/feed-forward_loop.png)
 The FFL motif. *X* regulates both *Y* and *Z*, and *Y* regulates *Z*.
 {: style="font-size: medium;"}
 
@@ -28,7 +28,7 @@ There are 42 FFLs in the transcription factor network of *E. coli*[^ffl], of whi
 **STOP:** How could we simulate a type-1 incoherent feedforward loop with a particle-based reaction-diffusion model akin to the simulation that we used for negative autoregulation? What would we compare this simulation against?
 {: .notice--primary}
 
-[![image-center](../assets/images/600px/type-1_incoherent_feed-forward_loop.png){: .align-center loading="lazy" width="300px"}](../assets/images/type-1_incoherent_feed-forward_loop.png)
+[![Diagram of a type-1 incoherent feed-forward loop](../assets/images/600px/type-1_incoherent_feed-forward_loop.png){: .align-center loading="lazy" width="300px"}](../assets/images/type-1_incoherent_feed-forward_loop.png)
 The incoherent feed-forward loop network motif. *X* activates *Y* and *Z* (the associated edges are labeled with "+"), while *Y* represses *Z* (the associated edge is labeled with "-").
 {: style="font-size: medium;"}
 
@@ -49,7 +49,7 @@ If you are feeling adventurous, then you may like to adapt the [negative autoreg
 
 The figure below shows a plot visualizing the concentration of *Z* across the two simulations. As with negative autoregulation, the type-1 incoherent FFL allows the cell to ramp up production of a protein *Z* to steady state much faster than it could under simple regulation.
 
-[![image-center](../assets/images/600px/ffl_chart_2.png){: .align-center loading="lazy"}](../assets/images/ffl_chart_2.png)
+[![Output chart of a feed-forward loop response](../assets/images/600px/ffl_chart_2.png){: .align-center loading="lazy"}](../assets/images/ffl_chart_2.png)
 The concentration of *Z* in the two simulations. Simple activation of *Z* by *X* is shown in blue, and the type-1 incoherent FFL is shown in purple.
 {: style="font-size: medium;"}s
 
@@ -60,7 +60,7 @@ We can interpret from the model why the FFL allows for a fast response time as w
 
 The figure above is reminiscent of a **damped oscillation** process like the one in the figure below, in which the concentration of a particle oscillates above and below a steady state, while the amplitude of the wave gets smaller and smaller. We wonder: is it possible for a network motif to produce more of a true "wave" without dampening?
 
-[![image-center](../assets/images/600px/damped_oscillator.png){: .align-center loading="lazy"}](../assets/images/damped_oscillator.png)
+[![Plot of damped oscillator behavior](../assets/images/600px/damped_oscillator.png){: .align-center loading="lazy"}](../assets/images/damped_oscillator.png)
 In a damped oscillation, the value of some variable (shown on the y-axis) oscillates back and forth around an asymptotic value while the amplitude decreases over time (shown on the x-axis).[^dampedOscillator]
 {: style="font-size: medium;"}
 

@@ -22,7 +22,7 @@ Now go to `CellBlender > Reactions` to scale up the simple regulation reaction i
 
 Next go to `CellBlender > Run Simulation` and ensure that the following options are selected:
 
-[![image-center](../assets/images/600px/motifs_norm7.png){: .align-center loading="lazy"}](../assets/images/motifs_norm7.png)
+[![Final stage of molecule distribution in CellBlender](../assets/images/600px/motifs_norm7.png){: .align-center loading="lazy"}](../assets/images/motifs_norm7.png)
 
 1. Set the number of iterations to `20000`.
 2. Ensure the time step is set as `1e-6`.
@@ -30,7 +30,7 @@ Next go to `CellBlender > Run Simulation` and ensure that the following options 
 
 Click `CellBlender > Reload Visualization Data`. You have the option of watching the animation within the Blender window by clicking the play button at the bottom of the screen.
 
-[![image-center](../assets/images/600px/motifs_norm8.png){: .align-center loading="lazy"}](../assets/images/motifs_norm8.png)
+[![Rendering of molecule trajectories using CellBlender](../assets/images/600px/motifs_norm8.png){: .align-center loading="lazy"}](../assets/images/motifs_norm8.png)
 
 Now go back to `CellBlender > Plot Output Settings` and scroll to the bottom to click `Plot`; this should produce a plot. How does your plot
 

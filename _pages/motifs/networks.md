@@ -21,7 +21,7 @@ The figure below shows a portion of the transcription factor network for *Escher
 
 Note that the edges in the *E. coli* transcription factor network below have different colors. An edge connecting *X* to *Y* is colored blue if *X* activates *Y*, and it is colored orange if *X* represses *Y*. (Alternatively, we could label the edges with a "+" or "-".)
 
-[![image-center](../assets/images/600px/e_coli_tf_network_blue_orange.png){: .align-center loading="lazy"}](../assets/images/e_coli_tf_network_blue_orange.png)
+[![E. coli transcription factor network in blue and orange](../assets/images/600px/e_coli_tf_network_blue_orange.png){: .align-center loading="lazy"}](../assets/images/e_coli_tf_network_blue_orange.png)
 A subset of the *E. coli* transcription factor network[^eColiNetwork] (click to enlarge). An edge from *X* to *Y* denotes that *X* is a transcription factor that regulates *Y*. Edges corresponding to activation are colored blue, and edges corresponding to repression are colored orange.
 {: style="font-size: medium;"}
 
@@ -34,7 +34,7 @@ You may have noticed that the *E. coli* transcription factor network has surpris
 
 A transcription factor is a protein, which means that because of the central dogma, the transcription factor is produced as the result of transcription and translation of a gene appearing in an organism's DNA. In **autoregulation**, illustrated in the figure below, the transcription factor protein then binds to the DNA in the region preceding the gene that encodes the very *same* transcription factor. This type of *feedback* is a beautiful and surprising feature of a simple biological system.
 
-[![image-center](../assets/images/600px/autoregulation_example.png){: .align-center loading="lazy"}](../assets/images/autoregulation_example.png)
+[![Example of autoregulation in gene networks](../assets/images/600px/autoregulation_example.png){: .align-center loading="lazy"}](../assets/images/autoregulation_example.png)
 A simplified illustration of autoregulation, in which a gene is transcribed into messenger RNA (mRNA) and then translated into a transcription factor protein, and then this transcription factor regulates the same gene, producing a feedback loop. "Protein" labels the transcription factor binding factor protein, which binds to the DNA encoding this transcription factor, labeled by "Gene".
 {: style="font-size: medium;"}
 
