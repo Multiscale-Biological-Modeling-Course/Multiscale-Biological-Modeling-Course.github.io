@@ -19,7 +19,7 @@ Theodosius Dobzhansky famously wrote that "nothing in biology makes sense except
 
 We will simulate a "race" to the **steady state**, or **equilibrium**, concentration of a transcription factor *Y* in two cells, shown in the figure below. In the first cell, a transcription factor *X* activates *Y*; in the second cell, *Y* also negatively autoregulates. Our premise is that the cell that reaches the steady state faster can respond more quickly to its environment and is therefore more fit for survival.
 
-[![image-center](../assets/images/600px/two_cells.png){: .align-center}](../assets/images/two_cells.png)
+[![image-center](../assets/images/600px/two_cells.png){: .align-center loading="lazy"}](../assets/images/two_cells.png)
 The two cells that we wish to simulate. In the first cell (left), *X* only activates *Y*; in the second cell (right), *Y* also negatively autoregulates.
 {: style="font-size: medium;"}
 
@@ -50,7 +50,7 @@ To recap, both simulated cells will include an initial concentration of *X* at s
 
 If you followed the above tutorial, then you were likely disappointed in the second cell and its negative autoregulating transcription factor *Y*. shows a plot over time of the concentration of *Y* particles in the two simulated cells, using yellow for the first cell and blue for the second cell.
 
-[![image-center](../assets/images/600px/nar_unequal_chart_2.png){: .align-center}](../assets/images/nar_unequal_chart_2.png)
+[![image-center](../assets/images/600px/nar_unequal_chart_2.png){: .align-center loading="lazy"}](../assets/images/nar_unequal_chart_2.png)
 A plot of the concentration of Y particles over time across two simulations. In the first cell (red), we only have activation of *Y* by *X*, whereas in the second cell (yellow), we keep all parameters fixed but add a reaction simulating the negative autoregulation of *Y*.
 {: style="font-size: medium;"}
 
@@ -70,7 +70,7 @@ We should keep a number of parameters constant  across the two simulations becau
 
 The figure below plots the concentration over time of *Y* particles for the two simulated cells after ensuring a mathematically controlled comparison, in which the rate of the reaction *X* → *X* + *Y* has been increased in the second cell. This figure shows that the two simulated cells now have approximately the same steady state concentration of *Y*. However, the second cell reaches this concentration faster; that is, its **response time** to the external stimulus that caused an increase in the production of *Y* is shorter.
 
-[![image-center](../assets/images/600px/nar_equal_chart_2.png){: .align-center}](../assets/images/nar_equal_chart_2.png)
+[![image-center](../assets/images/600px/nar_equal_chart_2.png){: .align-center loading="lazy"}](../assets/images/nar_equal_chart_2.png)
 A comparison of the concentration of *Y* particles across the same two simulations from the previous figure. This time, in the second simulation (yellow), we increase the rate of the reaction *X* → *X* + *Y*.  As a result, the two simulations have approximately the same steady state concentration of *Y*, and the simulation that includes negative autoregulation reaches steady state more quickly.
 {: style="font-size: medium;"}
 

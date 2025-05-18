@@ -19,7 +19,7 @@ We will also add **compartmentalization** to our model, which will allow us to d
 
 Finally, after running our model, we will see how methylation can be used to help the bacterium adapt to a relative change in attractant concentration. For reference, consult the figure below, reproduced from the main text, for an overview of the chemotaxis pathway.
 
-[![image-center](../assets/images/600px/chemotaxis_wholestory.png){: .align-center}](../assets/images/chemotaxis_wholestory.png)
+[![image-center](../assets/images/600px/chemotaxis_wholestory.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_wholestory.png)
 The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates MCPs, while CheR demethylates MCPs. Blue lines denote phosphorylation, grey lines denote dephosphorylation, and the green arrow denotes methylation. Image modified from <a href="https://chemotaxis.biology.utah.edu/projects/projects.html">Parkinson Lab</a>'s illustrations.
 {: style="font-size: medium;"}
 
@@ -369,15 +369,15 @@ simulate({method=>"ssa", t_end=>800, n_steps=>800})
 
 Now save your file and run the simulation by clicking on the `Run BNG` button. The results will be saved in a new folder called `adaptation/TIMESTAMP` contained in the current directory. Rename the newly created folder from the time stamp to `L0_0`.
 
-[![image-center](../assets/images/600px/tutorial_adaptation_vscode1.png){: .align-center}](../assets/images/tutorial_adaptation_vscode1.png)
+[![image-center](../assets/images/600px/tutorial_adaptation_vscode1.png){: .align-center loading="lazy"}](../assets/images/tutorial_adaptation_vscode1.png)
 
 Next, open the newly created `adaptation.gdat` file in your results folder and create a plot by clicking the `Built-in plotting` button.
 
-[![image-center](../assets/images/600px/tutorial_adaptation_vscode2.png){: .align-center}](../assets/images/tutorial_adaptation_vscode2.png)
+[![image-center](../assets/images/600px/tutorial_adaptation_vscode2.png){: .align-center loading="lazy"}](../assets/images/tutorial_adaptation_vscode2.png)
 
 Because the model is at equilibrium, we will see the seemingly boring plot shown below.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd0_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial_oneadd0_vscode.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial_oneadd0_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_oneadd0_vscode.png)
 
 Things get interesting when we change the initial concentration of ligand to see how the simulated bacterium will adapt. Run your simulation with `L0` = `1e6`. What happens to CheY activity? What happens to the concentration of receptors at different methylation states?
 

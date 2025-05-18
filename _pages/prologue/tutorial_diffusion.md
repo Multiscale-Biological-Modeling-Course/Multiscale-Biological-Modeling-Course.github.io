@@ -50,7 +50,7 @@ images = []
 
 To simulate the diffusion process, we will rely upon an imported **convolution function**. The convolve function will use a specified 3 x 3 **laplacian matrix** to simulate diffusion as discussed in the main text. Specifically, the convolve function in this case takes two matrices, `mtx` and `lapl`, and uses `lapl` as a set of multipliers for each square in `mtx`. We can see this operation in action in the image below.
 
-[![image-center](../assets/images/600px/matrix_convolution.png){: .align-center}](../assets/images/matrix_convolution.png)
+[![image-center](../assets/images/600px/matrix_convolution.png){: .align-center loading="lazy"}](../assets/images/matrix_convolution.png)
 A single step in the convolution function which takes the first matrix and adds up each cell multiplied by the number in the second matrix. Here we see (0 * 0) + (2 * ¼) + (0 * 0) + (3 * ¼) + (1 * -1) + (2 * ¼) + (1 * 0) + (1 * ¼) +(1 * 0) = 1
 {: style="font-size: medium;"}
 

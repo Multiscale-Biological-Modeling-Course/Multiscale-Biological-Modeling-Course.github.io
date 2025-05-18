@@ -15,7 +15,7 @@ image: "../assets/images/ecoli_glucose.png"
 
 In this tutorial, we will extend the BioNetGen model covered in the [ligand-receptor tutorial](tutorial_lr) to add the phosphorylation chemotaxis mechanisms described in the main text, shown in the figure reproduced below.
 
-[![image-center](../assets/images/600px/chemotaxisphosnew.png){: .align-center}](../assets/images/chemotaxisphosnew.png)
+[![image-center](../assets/images/600px/chemotaxisphosnew.png){: .align-center loading="lazy"}](../assets/images/chemotaxisphosnew.png)
 
 To get started, open Visual Studio Code, and click `File > Open Folder...`. Open the `EColiSimulations` folder from the [previous tutorial](tutorial_lr). Create a copy of your file from the ligand-receptor tutorial and save it as `phosphorylation.bngl`. If you would rather not follow along below, you can download a completed BioNetGen file here:
 <a href="../downloads/downloadable/phosphorylation.bngl" download="phosphorylation.bngl">phosphorylation.bngl</a>
@@ -199,11 +199,11 @@ simulate({method=>"ssa", t_end=>3, n_steps=>100})
 
 Now save your file and run the simulation by clicking the `Run BNG` button. The results will be saved in a new folder called `phosphorylation/TIMESTAMP` contained in the current directory. Rename the folder within `phosphorylation` from the time stamp to `L0`. 
 
-[![image-center](../assets/images/600px/tutorial_phos_vscode1.png){: .align-center}](../assets/images/tutorial_phos_vscode1.png)
+[![image-center](../assets/images/600px/tutorial_phos_vscode1.png){: .align-center loading="lazy"}](../assets/images/tutorial_phos_vscode1.png)
 
 Open the newly created `phosphorylation.gdat` file within this folder, and plot the data by clicking on `Built-in plotting`. What do you observe?
 
-[![image-center](../assets/images/600px/tutorial_phos_vscode2.png){: .align-center}](../assets/images/tutorial_phos_vscode2.png)
+[![image-center](../assets/images/600px/tutorial_phos_vscode2.png){: .align-center loading="lazy"}](../assets/images/tutorial_phos_vscode2.png)
 
 When we add ligand molecules into the system, as we did in the tutorial for [ligand-receptor dynamics](tutorial_lr), the concentration of bound receptors should increase. What will happen to the concentration of phosphorylated CheA, and phosphorylated CheY? What will happen to steady state concentrations?
 

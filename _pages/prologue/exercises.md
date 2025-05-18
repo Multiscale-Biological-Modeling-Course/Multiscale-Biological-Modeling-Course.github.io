@@ -32,7 +32,7 @@ When you feel the warmth of sunshine, the photons colliding with your skin have 
 
 Earlier in this module, we showed a grid of cells containing concentrations of two particles *A* and *B* that start with concentration equal to 1 in the central square and diffuse according to the rates *d*<sub><em>A</em></sub> = 0.2 and *d*<sub><em>B</em></sub> = 0.1. In a "STOP" question, we asked you to update this grid, reproduced below, after another time step of diffusion.
 
-[![image-center](../assets/images/600px/two_particle_concentration_diffusion.png){: .align-center width="300px"}](../assets/images/two_particle_concentration_diffusion.png)
+[![image-center](../assets/images/600px/two_particle_concentration_diffusion.png){: .align-center loading="lazy" width="300px"}](../assets/images/two_particle_concentration_diffusion.png)
 A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> that start at maximum concentration in the central square and diffuse at rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by the ordered pair ([<em>A</em>], [<em>B</em>]).
 {: style="font-size: medium;"}
 
@@ -54,7 +54,7 @@ Both our particle simulator and the Gray-Scott model used a reaction *A* + 2*B* 
 
 Recall the figure below, which shows how changing feed and kill rates affect Turing patterns.
 
-[![image-center](../assets/images/600px/xmorphia-parameter-map.jpg){: .align-center width="400px"}](../assets/images/xmorphia-parameter-map.jpg)
+[![image-center](../assets/images/600px/xmorphia-parameter-map.jpg){: .align-center loading="lazy" width="400px"}](../assets/images/xmorphia-parameter-map.jpg)
 Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns obtained in the Gray-Scott model. Each small square shows the patterns obtained from a given choice of feed and kill rate. Note that many choices of parameters do not produce Turing patterns, which only result from a narrow "sweet spot" band of parameter choices.
 {: style="font-size: medium;"}
 

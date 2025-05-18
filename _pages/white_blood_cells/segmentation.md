@@ -44,7 +44,7 @@ gallery3:
 
 We begin our work by discussing how to segment WBC nuclei from blood cell images like the one below, reproduced from the [introduction](home).
 
-[![image-center](../assets/images/600px/neutrophil.png){: .align-center width="300px"}](../assets/images/neutrophil.png)
+[![image-center](../assets/images/600px/neutrophil.png){: .align-center loading="lazy" width="300px"}](../assets/images/neutrophil.png)
 The granulocyte presented in the introduction (having ID 3 in our dataset).
 {: style="font-size: medium;"}
 
@@ -58,7 +58,7 @@ In the **RGB color model**, every rectangular pixel on a computer screen emits a
 
 A few colors are shown in the figure below along with their RGB equivalents; for example, magenta corresponds to equal parts red and blue. Note that a color like (128, 0, 0) contains only red but appears duskier than (256, 0, 0) because the red in that pixel is less intense.
 
-[![image-center](../assets/images/600px/RGB_color_chart.png){: .align-center}](../assets/images/RGB_color_chart.png)
+[![image-center](../assets/images/600px/RGB_color_chart.png){: .align-center loading="lazy"}](../assets/images/RGB_color_chart.png)
 
 A collection of colors along with their RGB codes. This table corresponds to mixing colors of light instead of pigment, which causes some non-intuitive effects; for example, yellow is formed by mixing equal parts red and green. The last six colors appear muted because they only receive half of a given color value compared to a color that receives 256 units. If all three colors are mixed in equal proportions, then we obtain a color on the gray scale between white (255, 255, 255) and black (0, 0, 0). Source: <a href="https://excelatfinance.com/xlf/xlf-colors-1.php" target="_blank">Excel at Finance</a>.
 {: style="font-size: medium;"}
@@ -74,7 +74,7 @@ We will **binarize** each blood cell image by coloring a pixel white if its blue
 
 The binarized version of the above granulocyte image using the threshold value of 153 is shown in the figure below. Unfortunately, we cannot clearly see the WBC nucleus in this binarized image because although the nucleus's pixels have high blue values, so do those of the image's background, which have high intensities of red, green, and blue, producing the background's light appearance.
 
-[![image-center](../assets/images/600px/neutrophil_binarized_blue.png){: .align-center width="300px"}](../assets/images/neutrophil_binarized_blue.png)
+[![image-center](../assets/images/600px/neutrophil_binarized_blue.png){: .align-center loading="lazy" width="300px"}](../assets/images/neutrophil_binarized_blue.png)
 
 A binarized version of the granulocyte image from the previous figure (having image ID 3 in our dataset). A pixel is colored white if it has a blue value of 153 or greater, and a pixel is colored black otherwise. The region with the nucleus is not clearly visible because much of the original image's background is light, and so its pixels have large red, green, and blue values.
 {: style="font-size: medium;"}

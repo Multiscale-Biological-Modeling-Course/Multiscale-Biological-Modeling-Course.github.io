@@ -16,14 +16,17 @@ gallery:
     image_path: ../assets/images/Iris_setosa_2.jpg
     alt: "Iris setosa"
     title: "Iris setosa."
+    loading: "lazy"
   - url: ../assets/images/600px/Iris_versicolor.jpg
     image_path: ../assets/images/Iris_versicolor.jpg
     alt: "Iris versicolor"
     title: "Iris versicolor."
+    loading: "lazy"
   - url: ../assets/images/600px/Iris_virginica.jpg
     image_path: ../assets/images/Iris_virginica.jpg
     alt: "Iris virginica"
     title: "Iris virginica."
+    loading: "lazy"
 ---
 
 ## The classification problem and the iris flower dataset
@@ -61,7 +64,7 @@ A table containing values of the four features for twelve members of the iris fl
 
 If we were to use only two of the four features in the iris flower dataset, then a flower's feature values *x* and *y* could be represented as a point in two-dimensional space (*x*, *y*). The figure below shows such a plot for the features of petal length (x-axis) and petal width (y-axis).
 
-[![Scatter plot of iris petal length vs width colored by species](../assets/images/600px/iris_petal_data.png){: .align-center}](../assets/images/iris_petal_data.png)
+[![Scatter plot of iris petal length vs width colored by species](../assets/images/600px/iris_petal_data.png){: .align-center loading="lazy" loading="lazy"}](../assets/images/iris_petal_data.png)
 Petal length (x-axis) plotted against width (y-axis) for each of the flowers in the iris flower dataset, with data points colored by species. Although there were fifty flowers from each species, there are not fifty points corresponding to every species because some flowers have the same petal length and width and therefore occupy the same point.
 {: style="font-size: medium;"}
 
@@ -76,7 +79,7 @@ Our hope is that for datasets other than the iris flower dataset, elements from 
 **STOP:** Consider the gray point with unknown class in the figure below. Should it be assigned to the class of the green points or to the class of the blue points?
 {: .notice--primary}
 
-[![Unknown gray point with nearby green and blue points illustrating the k-NN idea](../assets/images/600px/knn_neighborhood.png){: .align-center}](../assets/images/knn_neighborhood.png)
+[![Unknown gray point with nearby green and blue points illustrating the k-NN idea](../assets/images/600px/knn_neighborhood.png){: .align-center loading="lazy" loading="lazy"}](../assets/images/knn_neighborhood.png)
 An unknown point (gray) along with a collection of nearby points belonging to two classes, colored green and blue.
 {: style="font-size: medium;"}
 
@@ -86,13 +89,13 @@ We will discuss a simple but powerful classification algorithm called **k-neares
 
 In the ongoing example, if we were using *k* equal to 1, then we would assign the unknown point to the green class (see figure below).
 
-[![k-NN with k = 1 assigns the gray point to the green class](../assets/images/600px/knn_neighborhood_k=1.png){: .align-center}](../assets/images/knn_neighborhood_k=1.png)
+[![k-NN with k = 1 assigns the gray point to the green class](../assets/images/600px/knn_neighborhood_k=1.png){: .align-center loading="lazy" loading="lazy"}](../assets/images/knn_neighborhood_k=1.png)
 When *k* is equal to 1, k-NN classifies an unknown point according to the point of known class that is nearest; for this reason, the gray point above with unknown class would be assigned to the green class.
 {: style="font-size: medium;"}
 
 However, with the same data and *k* equal to 4, the figure below shows that a majority of the *k* nearest neighbors are blue, and so we classify the unknown point as blue. This example reinforces a theme of this course, that the results of an algorithm can be sensitive to our choice of parameters.
 
-[![k-NN with k = 4 assigns the gray point to the blue class](../assets/images/600px/knn_neighborhood_k=4.png){: .align-center}](../assets/images/knn_neighborhood_k=4.png)
+[![k-NN with k = 4 assigns the gray point to the blue class](../assets/images/600px/knn_neighborhood_k=4.png){: .align-center loading="lazy" loading="lazy"}](../assets/images/knn_neighborhood_k=4.png)
 When using k-NN with *k* equal to 4, k-NN classifies the unknown point as blue, since three of its four closest neighbors are blue.
 {: style="font-size: medium;"}
 

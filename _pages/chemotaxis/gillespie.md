@@ -70,7 +70,7 @@ and the probability that it corresponds to a dissociation reaction is
 
 Pr(*LT* → *L* + *T*) = *r*<sub>dissociate</sub>/(*r*<sub>bind</sub> + *r*<sub>dissociate</sub>).
 
-[![image-center](../assets/images/600px/chemotaxis_visualizessa.png){: .align-center}](../assets/images/chemotaxis_visualizessa.png)
+[![image-center](../assets/images/600px/chemotaxis_visualizessa.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_visualizessa.png)
 A visualization of a single reaction event used by the Gillespie algorithm for ligand-receptor binding and dissociation. Red circles represent ligands (*L*), and orange wedges represent receptors (*T*). The wait time for the next reaction is drawn from an exponential distribution with mean 1/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>). The probability of this event corresponding to a binding or dissociation reaction is proportional to the rate of the respective reaction.
 {: style="font-size: medium;"}
 
@@ -95,7 +95,7 @@ Our model uses the same number of initial molecules and the same reaction rates.
 
 The figure below demonstrates that the Gillespie algorithm quickly converges quickly to the same values calculated just above. Furthermore, the system reaches steady state in a fraction of a second.
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial4_ssa_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial4_ssa_vscode.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial4_ssa_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial4_ssa_vscode.png)
 A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in molecules/µm<sup>3</sup>) on the y-axis. The molecules quickly reach steady state concentrations that match those identified by hand.
 {: style="font-size: medium;"}
 

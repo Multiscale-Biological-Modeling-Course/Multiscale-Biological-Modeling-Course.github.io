@@ -22,19 +22,19 @@ To run SWISS-MODEL, first download the sequence of the spike protein chain: <a h
 
 Next, go to the main <a href="https://swissmodel.expasy.org/" target="_blank">SWISS-MODEL website</a> and click `Start Modeling`.
 
-[![image-center](../assets/images/600px/SWISS1.png){: .align-center}](../assets/images/SWISS1.png)
+[![image-center](../assets/images/600px/SWISS1.png){: .align-center loading="lazy"}](../assets/images/SWISS1.png)
 {: style="font-size: medium;"}
 
 On the next page, copy and paste the sequence into the `Target Sequence(s):` box. Name your project and enter an email address to get a notification of when your results are ready. Finally, click `Build Model` to submit the job request. Note that you do not need to specify that you want to use the SARS-CoV spike protein as a template because the software will automatically search for a template for you.
 
-[![image-center](../assets/images/600px/SWISS2.png){: .align-center}](../assets/images/SWISS2.png)
+[![image-center](../assets/images/600px/SWISS2.png){: .align-center loading="lazy"}](../assets/images/SWISS2.png)
 {: style="font-size: medium;"}
 
 Your results may take between an hour and a day to finish depending on how busy the server is. (In the meantime, feel free to run the remaining software.) When you receive an email notification, follow the link provided and you can download the final models.
 
 When we ran our own job, SWISS-MODEL did indeed use one of the PDB entries of SARS-CoV spike protein as its template (PDB: <a href="https://www.rcsb.org/structure/6CRX" target="_blank">6crx</a>) and correctly recognized that the template was a homotrimer. As a result, the software predicted a complete spike protein with all three chains included. An image of our results can be seen below. You can also <a href="../_pages/coronavirus/files/SWISS_Model.zip" download>download</a> our results. We will discuss how to interpret these results and the `.pdb` file format when we return to the main text.
 
-[![image-center](../assets/images/600px/SWISSResults.png){: .align-center}](../assets/images/SWISSResults.png)
+[![image-center](../assets/images/600px/SWISSResults.png){: .align-center loading="lazy"}](../assets/images/SWISSResults.png)
 Structures of the three models of this protein reported by SWISS-MODEL. The superimposed structure of all three models is shown on the bottom right.
 {: style="font-size: medium;"}
 
@@ -45,19 +45,19 @@ First, if you have not already done so, download the sequence of the chain: <a h
 
 Next, visit <a href="https://robetta.bakerlab.org/" target="_blank">Robetta</a> and register for an account.
 
-[![image-center](../assets/images/600px/Robetta1.png){: .align-center}](../assets/images/Robetta1.png)
+[![image-center](../assets/images/600px/Robetta1.png){: .align-center loading="lazy"}](../assets/images/Robetta1.png)
 {: style="font-size: medium;"}
 
 Then, click `Structure Prediction > Submit`.
 
-[![image-center](../assets/images/600px/Robetta2.png){: .align-center}](../assets/images/Robetta2.png)
+[![image-center](../assets/images/600px/Robetta2.png){: .align-center loading="lazy"}](../assets/images/Robetta2.png)
 {: style="font-size: medium;"}
 
 Create a name for the job, i.e. "SARS-CoV-2 Spike Chain". Copy and paste the downloaded sequence into the `Protein sequence` box. Check `CM only` (for homology modeling), complete the arithmetic problem provided to prove you are human, and then click `Submit`.
 
 You should receive an email notification with a link to results after between an hour and a day. In our own run, unlike SWISS-MODEL, Robetta did not deduce that the input protein was a trimer and only predicted a single chain. The structure of the results from our own run of Robetta are shown in the figure below. You can also <a href="../_pages/coronavirus/files/Robetta_Model.zip" download>download</a> our results if you like.
 
-[![image-center](../assets/images/600px/RobettaResults.png){: .align-center}](../assets/images/RobettaResults.png)
+[![image-center](../assets/images/600px/RobettaResults.png){: .align-center loading="lazy"}](../assets/images/RobettaResults.png)
 The homology models produced by Robetta of one of the chains of the SARS-CoV-2 spike protein. The superimposition of all structures is shown on the bottom right.
 {: style="font-size: medium;"}
 
@@ -70,17 +70,17 @@ First, <a href="../_pages/coronavirus/files/CoV2SpikeRBDSeq.txt" download>downlo
 
 Then, visit the <a href="http://galaxy.seoklab.org/" target="_blank">GalaxyWEB</a> homepage. At the top, click `Services > TBM`.
 
-[![image-center](../assets/images/600px/Galaxy1.png){: .align-center}](../assets/images/Galaxy1.png)
+[![image-center](../assets/images/600px/Galaxy1.png){: .align-center loading="lazy"}](../assets/images/Galaxy1.png)
 {: style="font-size: medium;"}
 
 Enter a job name, i.e. `SARS-CoV-2 RBD`. Enter an email address and then copy and paste the RBD sequence into the `SEQUENCE` box. Finally, click `Submit`.
 
-[![image-center](../assets/images/600px/Galaxy2.png){: .align-center}](../assets/images/Galaxy2.png)
+[![image-center](../assets/images/600px/Galaxy2.png){: .align-center loading="lazy"}](../assets/images/Galaxy2.png)
 {: style="font-size: medium;"}
 
 You should receive an email notification within a day with a link to your results. The results of our run of GalaxyWEB along with the validated structure of the SARS-CoV-2 RBD (PDB entry: <a href="http://www.rcsb.org/structure/6LZG" target="_blank">6lzg</a>) are visualized in the figure below. You can also <a href="../_pages/coronavirus/files/GalaxyWEB_Models.zip" download>download</a> our results if you like.
 
-[![image-center](../assets/images/600px/GalaxyResults.png){: .align-center}](../assets/images/GalaxyResults.png)
+[![image-center](../assets/images/600px/GalaxyResults.png){: .align-center loading="lazy"}](../assets/images/GalaxyResults.png)
 Homology models predicted by GalaxyWEB for the SARS-CoV-2 spike protein RBD. The superimposition of all these structures is shown on the bottom right.
 {: style="font-size: medium;"}
 

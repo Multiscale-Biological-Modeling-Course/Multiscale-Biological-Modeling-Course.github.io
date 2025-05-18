@@ -205,11 +205,11 @@ simulate({method=>"ssa", t_end=>1000, n_steps=>500})
 
 Now save your file and run the simulation by clicking on the `Run BNG` button. The results will be saved in a new folder called `addition/TIME` contained in the current directory. Rename the folder from the timestamp to the value of `k_add`, `0.1`.
 
-[![image-center](../assets/images/600px/tutorial_addition_vscode1.png){: .align-center}](../assets/images/tutorial_addition_vscode1.png)
+[![image-center](../assets/images/600px/tutorial_addition_vscode1.png){: .align-center loading="lazy"}](../assets/images/tutorial_addition_vscode1.png)
 
 Open the newly created `addition.gdat` file and create a plot by clicking the `Built-in plotting` button.
 
-[![image-center](../assets/images/600px/tutorial_addition_vscode2.png){: .align-center}](../assets/images/tutorial_addition_vscode2.png)
+[![image-center](../assets/images/600px/tutorial_addition_vscode2.png){: .align-center loading="lazy"}](../assets/images/tutorial_addition_vscode2.png)
 
 What happens to the concentration of phosphorylated CheY?
 

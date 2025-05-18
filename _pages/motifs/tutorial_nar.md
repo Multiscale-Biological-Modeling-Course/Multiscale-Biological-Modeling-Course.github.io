@@ -22,7 +22,7 @@ In this tutorial, we will compare simple against negative autoregulation using a
 
 Then go to `CellBlender > Molecules` and create the following molecules:
 
-[![image-center](../assets/images/600px/motifs_norm1.png){: .align-center}](../assets/images/motifs_norm1.png)
+[![image-center](../assets/images/600px/motifs_norm1.png){: .align-center loading="lazy"}](../assets/images/motifs_norm1.png)
 
 1. Click the `+` button.
 2. Select a color (such as yellow).
@@ -40,7 +40,7 @@ Repeat the above steps as needed to make sure that both of the following molecul
 
 Now go to `CellBlender > Molecule Placement` to set the following sites to release our molecules:
 
-[![image-center](../assets/images/600px/motifs_norm3.png){: .align-center}](../assets/images/motifs_norm3.png)
+[![image-center](../assets/images/600px/motifs_norm3.png){: .align-center loading="lazy"}](../assets/images/motifs_norm3.png)
 
 1. Click the `+` button.
 2. Select or type in the molecule `X1`.
@@ -49,7 +49,7 @@ Now go to `CellBlender > Molecule Placement` to set the following sites to relea
 
 Finally, we set reactions. Go to `CellBlender > Reactions` and define the following reactions:
 
-[![image-center](../assets/images/600px/motifs_norm4.png){: .align-center}](../assets/images/motifs_norm4.png)
+[![image-center](../assets/images/600px/motifs_norm4.png){: .align-center loading="lazy"}](../assets/images/motifs_norm4.png)
 
 1. Click the `+` button.
 2. Under reactants, type `X1’` (note the apostrophe).
@@ -65,7 +65,7 @@ Repeat the above steps as needed to ensure the following reactions are present.
 
 Go to `CellBlender > Plot Output Settings` to ensure that we will be able to plot the concentrations of our particles over time.
 
-[![image-center](../assets/images/600px/motifs_norm6.png){: .align-center}](../assets/images/motifs_norm6.png)
+[![image-center](../assets/images/600px/motifs_norm6.png){: .align-center loading="lazy"}](../assets/images/motifs_norm6.png)
 
 1. Click the `+` button.
 2. Set the molecule name as `Y1`.
@@ -76,7 +76,7 @@ Go to `CellBlender > Plot Output Settings` to ensure that we will be able to plo
 
 We are ready to run our simulation! Visit `CellBlender > Run Simulation` and select the following options:
 
-[![image-center](../assets/images/600px/motifs_norm7.png){: .align-center}](../assets/images/motifs_norm7.png)
+[![image-center](../assets/images/600px/motifs_norm7.png){: .align-center loading="lazy"}](../assets/images/motifs_norm7.png)
 
 1. Set the number of iterations to `20000`.
 2. Ensure the time step is set as `1e-6`.
@@ -84,13 +84,13 @@ We are ready to run our simulation! Visit `CellBlender > Run Simulation` and sel
 
 Once the simulation has run, click `CellBlender > Reload Visualization Data` to visualize the outcome.
 
-[![image-center](../assets/images/600px/motifs_norm8.png){: .align-center}](../assets/images/motifs_norm8.png)
+[![image-center](../assets/images/600px/motifs_norm8.png){: .align-center loading="lazy"}](../assets/images/motifs_norm8.png)
 
 You have the option of watching the animation within the Blender window by clicking the play button at the bottom of the screen.
 
 Now return to `CellBlender > Plot Output Settings` and scroll to the bottom to click `Plot`.
 
-[![image-center](../assets/images/600px/motifs_norm9.png){: .align-center}](../assets/images/motifs_norm9.png)
+[![image-center](../assets/images/600px/motifs_norm9.png){: .align-center loading="lazy"}](../assets/images/motifs_norm9.png)
 
 You should be able to see `Y` reach a steady state, at which the number of particles essentially levels off subject to some noise.
 
@@ -102,7 +102,7 @@ Now that we have simulated simple regulation, we will implement negative autoreg
 
 Go to `CellBlender > Molecules` and create the following molecules:
 
-[![image-center](../assets/images/600px/motifs_norm1.png){: .align-center}](../assets/images/motifs_norm1.png)
+[![image-center](../assets/images/600px/motifs_norm1.png){: .align-center loading="lazy"}](../assets/images/motifs_norm1.png)
 
 1. Click the `+` button.
 2. Select a color (such as yellow).
@@ -122,7 +122,7 @@ Repeat the above steps to make sure that we have all of the following molecules 
 
 Now go to `CellBlender > Molecule Placement` to set the following molecule release sites:
 
-[![image-center](../assets/images/600px/motifs_norm3.png){: .align-center}](../assets/images/motifs_norm3.png)
+[![image-center](../assets/images/600px/motifs_norm3.png){: .align-center loading="lazy"}](../assets/images/motifs_norm3.png)
 
 1. Click the `+` button.
 2. Select or type in the molecule `X2`.
@@ -138,7 +138,7 @@ You should now have the following release sites.
 
 Next go to `CellBlender > Reactions` to create the following reactions:
 
-[![image-center](../assets/images/600px/motifs_norm4.png){: .align-center}](../assets/images/motifs_norm4.png)
+[![image-center](../assets/images/600px/motifs_norm4.png){: .align-center loading="lazy"}](../assets/images/motifs_norm4.png)
 
 1. Click the `+` button.
 2. Under reactants, type `X2’` (the apostrophe is important).
@@ -157,7 +157,7 @@ Repeat the above steps as needed to ensure that you have the following reactions
 
 Go to `CellBlender > Plot Output Settings` to set up a plot as follows:
 
-[![image-center](../assets/images/600px/motifs_norm6.png){: .align-center}](../assets/images/motifs_norm6.png)
+[![image-center](../assets/images/600px/motifs_norm6.png){: .align-center loading="lazy"}](../assets/images/motifs_norm6.png)
 
 1. Click the `+` button.
 2. Set the molecule name as `Y2`.
@@ -175,7 +175,7 @@ You should now have both `Y1` and `Y2` plotted.
 
 We are now ready to run the simulation comparing simple regulation and negative autoregulation. To do so, go to `CellBlender > Run Simulation` and do the following:
 
-[![image-center](../assets/images/600px/motifs_norm7.png){: .align-center}](../assets/images/motifs_norm7.png)
+[![image-center](../assets/images/600px/motifs_norm7.png){: .align-center loading="lazy"}](../assets/images/motifs_norm7.png)
 
 1. Set the number of iterations to `20000`.
 2. Ensure the time step is set as `1e-6`.
@@ -183,13 +183,13 @@ We are now ready to run the simulation comparing simple regulation and negative 
 
 Click `CellBlender > Reload Visualization Data` to visualize the result of the simulation.
 
-[![image-center](../assets/images/600px/motifs_norm8.png){: .align-center}](../assets/images/motifs_norm8.png)
+[![image-center](../assets/images/600px/motifs_norm8.png){: .align-center loading="lazy"}](../assets/images/motifs_norm8.png)
 
 You have the option of watching the animation within the Blender window by clicking the play button at the bottom of the screen.
 
 Now return to `CellBlender > Plot Output Settings` and scroll to the bottom to click `Plot`.
 
-[![image-center](../assets/images/600px/motifs_norm9.png){: .align-center}](../assets/images/motifs_norm9.png)
+[![image-center](../assets/images/600px/motifs_norm9.png){: .align-center loading="lazy"}](../assets/images/motifs_norm9.png)
 
 A plot should appear in which the plot of *Y* over time assuming simple regulation is shown in red, and the plot of *Y* if negatively autoregulated is shown in yellow.
 

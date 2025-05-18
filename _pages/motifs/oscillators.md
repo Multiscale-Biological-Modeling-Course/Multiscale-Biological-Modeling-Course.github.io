@@ -25,7 +25,7 @@ Researchers have identified many network motifs that facilitate oscillation, som
 
 The **repressilator motif**[^repress] is shown in the figure below. In this motif, all three proteins are transcription factors, and they form a cycle in which *X* represses *Y*, *Y* represses *Z*, and *Z* represses *X*. The repressilator forms a feedback loop, but nothing *a priori* about this motif indicates that it would lead to oscillation.
 
-[![image-center](../assets/images/600px/repressilator.png){: .align-center width="250px"}](../assets/images/repressilator.png)
+[![image-center](../assets/images/600px/repressilator.png){: .align-center loading="lazy" width="250px"}](../assets/images/repressilator.png)
 The repressilator motif for three particles <em>X</em>, <em>Y</em>, and <em>Z</em>. <em>X</em> represses <em>Y</em>, which represses <em>Z</em>, which in turn represses <em>X</em>, forming a feedback loop.
 {: style="font-size: medium;"}
 
@@ -52,7 +52,7 @@ The figure below plots the concentration over time of *X*, *Y*, and *Z* particle
 **STOP:** Why do you think that the repressilator motif leads to a pattern of oscillations?
 {: .notice--primary}
 
-[![image-center](../assets/images/600px/repressilator_chart_2.png){: .align-center}](../assets/images/repressilator_chart_2.png)
+[![image-center](../assets/images/600px/repressilator_chart_2.png){: .align-center loading="lazy"}](../assets/images/repressilator_chart_2.png)
 Modeling the repressilator's concentration of each particle over time; *X* is shown in yellow, *Y* is shown in red, and *Z* is shown in blue.
 {: style="font-size: medium;"}
 

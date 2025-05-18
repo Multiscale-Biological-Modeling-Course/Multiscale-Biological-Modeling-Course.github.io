@@ -75,13 +75,13 @@ In the following tutorial, we will adapt the Jupyter notebook that we built in t
 
 The following figure visualizes the trajectories of three cells over 500 seconds using strategy 1 (left) and strategy 2 (right) with a default tumbling frequency *t*<sub>0</sub> of one second. Unlike the cells following strategy 1, the cells following strategy 2 quickly hone in on the goal and remain near it.
 
-[![image-center](../assets/images/600px/chemotaxis_traj_compare_uniform.png){: .align-center}](../assets/images/chemotaxis_traj_compare_uniform.png)
+[![image-center](../assets/images/600px/chemotaxis_traj_compare_uniform.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_traj_compare_uniform.png)
 Three sample trajectories for the standard random walk strategy (left) and chemotactic random walk strategy (right). The standard random walk strategy is shown on the left, and the chemotactic random walk is shown on the right. Redder regions correspond to higher concentrations of ligand, with a goal having maximum concentration at the point (1500, 1500), which is indicated with a blue square. Each particle's walk is colored from darker to lighter colors across the time frame of its trajectory.
 {: style="font-size: medium;"}
 
 We should be wary of such a small sample size. To confirm that what we observed in these trajectories is true in general, we will compare the two strategies over many simulations. The following figure visualizes the particle's average distance to the goal over 500 simulations for both strategies and confirms our previous observation that strategy 2 is effective at guiding the simulated particle to the goal. And yet the direction of travel in this strategy is *random*, so why would this strategy be so successful?
 
-[![image-center](../assets/images/600px/chemotaxis_performance_compare_uniform.png){: .align-center}](../assets/images/chemotaxis_performance_compare_uniform.png)
+[![image-center](../assets/images/600px/chemotaxis_performance_compare_uniform.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_performance_compare_uniform.png)
 Distance to the goal plotted over time for 500 simulated particles following the standard random walk strategy (pink) and the chemotactic random walk strategy (green). The dark lines indicate the average distance over all simulations, and the shaded area around each line represents one standard deviation from the average.
 {: style="font-size: medium;"}
 
@@ -96,25 +96,25 @@ A tiny change to a simple, unsuccessful randomized algorithm can therefore produ
 
 The following figures show three trajectories for a few different values of *t*<sub>0</sub> and a simulation that lasts for 800 seconds. First, we set *t*<sub>0</sub> equal to 0.2 seconds and see that the simulated bacteria are not able to walk far enough in a single step to head toward the goal.
 
-[![image-center](../assets/images/600px/chemotaxis_traj_0.2_uniform.png){: .align-center}](../assets/images/chemotaxis_traj_0.2_uniform.png)
+[![image-center](../assets/images/600px/chemotaxis_traj_0.2_uniform.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_traj_0.2_uniform.png)
 Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average run time between tumbles *t*<sub>0</sub> of 0.2 seconds.
 {: style="font-size: medium;"}
 
 If we increase *t*<sub>0</sub> to 5.0 seconds, then cells can run for so long that they may run past the goal without being able to brake by tumbling.
 
-[![image-center](../assets/images/600px/chemotaxis_traj_5.0_uniform.png){: .align-center}](../assets/images/chemotaxis_traj_5.0_uniform.png)
+[![image-center](../assets/images/600px/chemotaxis_traj_5.0_uniform.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_traj_5.0_uniform.png)
 Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average run time between tumbles *t*<sub>0</sub> of 5.0 seconds.
 {: style="font-size: medium;"}
 
 When we set *t*<sub>0</sub> equal to 1.0, then the figure below shows a "Goldilocks" effect in which the simulated bacterium can run for long enough at a time to head quickly toward the goal, and it tumbles frequently enough to keep it near the goal.
 
-[![image-center](../assets/images/600px/chemotaxis_traj_1.0_uniform.png){: .align-center}](../assets/images/chemotaxis_traj_1.0_uniform.png)
+[![image-center](../assets/images/600px/chemotaxis_traj_1.0_uniform.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_traj_1.0_uniform.png)
 Three sample trajectories of a simulated cell following the chemotactic random walk strategy with an average run time between tumbles *t*<sub>0</sub> of 1.0 seconds.
 {: style="font-size: medium;" }
 
 The figure below visualizes average particle distance to the goal over time for 500 particles using a variety of choices of *t*<sub>0</sub>. It confirms that tumbling every second by default is "just right" for finding an attractant.
 
-[![image-center](../assets/images/600px/chemotaxis_performance_uniform.png){: .align-center}](../assets/images/chemotaxis_performance_uniform.png)
+[![image-center](../assets/images/600px/chemotaxis_performance_uniform.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_performance_uniform.png)
 Average distance to the goal over time for 500 cells. Each colored line indicates the average distance to the goal over time for a different value of *t*<sub>0</sub>; the shaded area represents one standard deviation.
 {: style="font-size: medium;"}
 

@@ -206,11 +206,11 @@ simulate({method=>"ssa", t_end=>1800, n_steps=>1800})
 
 Now save your file and run the simulation by clicking `Run BNG`. The results will be saved in a new folder called `removal/TIME` contained in the current directory. Rename the folder from the timestamp to the value of `k_gone`, `0.3`. 
  
-[![image-center](../assets/images/600px/tutorial_removal_vscode1.png){: .align-center}](../assets/images/tutorial_removal_vscode1.png)
+[![image-center](../assets/images/600px/tutorial_removal_vscode1.png){: .align-center loading="lazy"}](../assets/images/tutorial_removal_vscode1.png)
 
 Open the newly created `removal.gdat` file and create a plot by clicking the `Built-in plotting` button.
 
-[![image-center](../assets/images/600px/tutorial_removal_vscode2.png){: .align-center}](../assets/images/tutorial_removal_vscode2.png)
+[![image-center](../assets/images/600px/tutorial_removal_vscode2.png){: .align-center loading="lazy"}](../assets/images/tutorial_removal_vscode2.png)
 
 What happens to the concentration of phosphorylated CheY? Are the concentrations of complexes at different methylation states restored to their levels before adding ligands to the `adaptation.bngl` model?
 

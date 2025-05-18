@@ -17,7 +17,7 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 In the main text, we noted that the center of some shapes can be computed mathematically. Consider the semicircular arc shown in the figure below, with endpoints (-1, 0) and (1, 0).
 
-[![image-center](../assets/images/600px/semicircular_arc.png){: .align-center width="300px"}](../assets/images/semicircular_arc.png)
+[![image-center](../assets/images/600px/semicircular_arc.png){: .align-center loading="lazy" width="300px"}](../assets/images/semicircular_arc.png)
 A semicircular arc with radius 1 corresponding to a circle whose center is at the origin.
 {: style="font-size: medium;"}
 
@@ -31,7 +31,7 @@ A semicircular arc with radius 1 corresponding to a circle whose center is at th
 
 Consider the two shapes shown in the figure below with vectorizations of eight points each.
 
-[![image-center](../assets/images/600px/rmsd_exercise.png){: .align-center}](../assets/images/rmsd_exercise.png)
+[![image-center](../assets/images/600px/rmsd_exercise.png){: .align-center loading="lazy"}](../assets/images/rmsd_exercise.png)
 Two hypothetical protein structures with vectorizations into eight points each.
 {: style="text-align: center; font-size: medium;"}
 

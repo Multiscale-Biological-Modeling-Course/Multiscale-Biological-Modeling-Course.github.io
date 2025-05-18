@@ -17,51 +17,51 @@ Before starting, make sure that you have installed VMD and know how to load mole
 
 First, load the SARS-CoV-2 spike protein/ACE2 enzyme complex (<a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>) into VMD. Then, start up NMWiz by clicking `Extensions > Analysis > Normal Mode Wizard`.
 
-[![image-center](../assets/images/600px/ANM1.png){: .align-center}](../assets/images/ANM1.png)
+[![image-center](../assets/images/600px/ANM1.png){: .align-center loading="lazy"}](../assets/images/ANM1.png)
 {: style="font-size: medium;"}
 
 A small window will open. Select `ProDy Interface`.
 
-[![image-center](../assets/images/600px/ANM2.png){: .align-center width="200px"}](../assets/images/ANM2.png)
+[![image-center](../assets/images/600px/ANM2.png){: .align-center loading="lazy" width="200px"}](../assets/images/ANM2.png)
 {: style="font-size: medium;"}
 
 We want to focus on the RBD of SARS-CoV-2, so we need to choose a new selection. In `ProDy Interface`, change `Selection` to `protein and chain F` and click `Select`. Next, make sure that `ANM calculation` is selected for `ProDy job:`. Check the box for `write and load cross-correlations heatmap`. Finally, click `Submit Job`.
 
-[![image-center](../assets/images/600px/ANM3.png){: .align-center width="300px"}](../assets/images/ANM3.png)
+[![image-center](../assets/images/600px/ANM3.png){: .align-center loading="lazy" width="300px"}](../assets/images/ANM3.png)
 {: style="font-size: medium;"}
 
 **Note:** Let the program run and do not click any of the VMD windows, as this may cause the program to crash or become unresponsive. The job can take between a few seconds and a few minutes. When the job is complete, you will see a new window `NMWiz - 6vw1_anm ...` and the cross=correlation heatmap appear.
 {: .notice--info}
 
-[![image-center](../assets/images/600px/ANM4.png){: .align-center width="300px"}](../assets/images/ANM4.png)
+[![image-center](../assets/images/600px/ANM4.png){: .align-center loading="lazy" width="300px"}](../assets/images/ANM4.png)
 {: style="font-size: medium;"}
 
-[![image-center](../assets/images/600px/ANM5.png){: .align-center width="400px"}](../assets/images/ANM5.png)
+[![image-center](../assets/images/600px/ANM5.png){: .align-center loading="lazy" width="400px"}](../assets/images/ANM5.png)
 {: style="font-size: medium;"}
 
 Now that the ANM calculations are completed, you will see the visualization displayed in `VMD Main`. Disable the original visualization of `6vw1` by double-clicking on the letter `D`. The letter will change red to indicate that it has been disabled.
 
-[![image-center](../assets/images/600px/ANM6.png){: .align-center width="400px"}](../assets/images/ANM6.png)
+[![image-center](../assets/images/600px/ANM6.png){: .align-center loading="lazy" width="400px"}](../assets/images/ANM6.png)
 {: style="font-size: medium;"}
 
 In `OpenGL Display`, you can see the protein with numerous arrows representing the calculated fluctuations.
 
-[![image-center](../assets/images/600px/ANM7.png){: .align-center width="400px"}](../assets/images/ANM7.png)
+[![image-center](../assets/images/600px/ANM7.png){: .align-center loading="lazy" width="400px"}](../assets/images/ANM7.png)
 {: style="font-size: medium;"}
 
 To visualize the protein movements as described by the arrows, we need to create the animation. Return to the `NMWiz - 6vw1_anm...` window and click `Make` next to `Animations`.
 
-[![image-center](../assets/images/600px/ANM8.png){: .align-center width="300px"}](../assets/images/ANM8.png)
+[![image-center](../assets/images/600px/ANM8.png){: .align-center loading="lazy" width="300px"}](../assets/images/ANM8.png)
 {: style="font-size: medium;"}
 
 `VMD Main` should now show a new row for the animation.
 
-[![image-center](../assets/images/600px/ANM9.png){: .align-center width="400px"}](../assets/images/ANM9.png)
+[![image-center](../assets/images/600px/ANM9.png){: .align-center loading="lazy" width="400px"}](../assets/images/ANM9.png)
 {: style="font-size: medium;"}
 
 The animation should also be visible in `OpenGL Display`. However, the previous visualizations are somewhat in the way. We can disable them in the same way as before by double-clicking the letter `D`.
 
-[![image-center](../assets/images/600px/ANM10.png){: .align-center}](../assets/images/ANM10.png)
+[![image-center](../assets/images/600px/ANM10.png){: .align-center loading="lazy"}](../assets/images/ANM10.png)
 {: style="font-size: medium;"}
 
 

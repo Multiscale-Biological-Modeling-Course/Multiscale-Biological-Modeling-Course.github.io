@@ -19,7 +19,7 @@ DNA is a double-stranded molecule consisting of the four nucleobases adenine, cy
 
 The RNA transcript is then **translated** into the amino acid sequence of a protein. Because there are four different nucleobases but twenty amino acids, RNA is translated in **codons**, or triplets of nucleobases, according to a mapping called the **genetic code** (see figure below).
 
-[![image-center](../assets/images/600px/genetic_code.png){: .align-center width="300px"}](../assets/images/genetic_code.png)
+[![image-center](../assets/images/600px/genetic_code.png){: .align-center loading="lazy" width="300px"}](../assets/images/genetic_code.png)
 The genetic code, which dictates the conversion of RNA codons into amino acids. Codons are read from the inside of the figure outward. Image courtesy J_Alves, Open Clip Art.
 {: style="font-size: medium;"}
 
@@ -28,7 +28,7 @@ DNA can therefore be thought of as a blueprint for storing information that flow
 **Note:** Like any dogma, there are times in which the central dogma of molecular biology is violated. If you are interested in an example, consider Chapter 4 of <a href="https://www.bioinformaticsalgorithms.org/bioinformatics-chapter-4" target="_blank"><em>Bioinformatics Algorithms</em></a>.
 {: .notice--info}
 
-[![image-center](../assets/images/600px/central_dogma.png){: .align-center}](../assets/images/central_dogma.png)
+[![image-center](../assets/images/600px/central_dogma.png){: .align-center loading="lazy"}](../assets/images/central_dogma.png)
 The central dogma of molecular biology states that genetic information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA and that then serve some purpose in the cell.
 {: style="font-size: medium;"}
 
@@ -42,7 +42,7 @@ Because of the central dogma, transcription factors are involved in a feedback l
 
 Transcription factors are vital for the cell's response to its environment because extracellular stimuli can activate a transcription factor via a system of signaling molecules that convey a signal through relay molecules to the transcription factor (see figure below). Only when the transcription factor is activated will it regulate its target gene(s).
 
-[![image-center](../assets/images/600px/signal_pathway.jpg){: .align-center width="400px"}](../assets/images/signal_pathway.jpg)
+[![image-center](../assets/images/600px/signal_pathway.jpg){: .align-center loading="lazy" width="400px"}](../assets/images/signal_pathway.jpg)
 A cell receiving a signal which triggers a response in which this signal is "transduced" into the cell, resulting in transcription of a gene. We will discuss signal transduction in greater detail in a future module.[^signalResponse]
 {: style="font-size: medium;"}
 
@@ -61,7 +61,7 @@ The question is how to isolate the fragments of DNA that are bound to a transcri
 
 In a final step, the protein is unlinked from the DNA, leaving a collection of DNA fragments that were previously bound to a single protein. Each fragment is read using DNA sequencing to determine its order of nucleotides, which is then queried against the genome to determine the gene(s) that the fragment precedes. When the protein is a transcription factor, we can therefore hypothesize that these are the genes that the transcription factor regulates!
 
-[![image-center](../assets/images/600px/ChIP-seq_workflow.png){: .align-center width="400px"}](../assets/images/ChIP-seq_workflow.png)
+[![image-center](../assets/images/600px/ChIP-seq_workflow.png){: .align-center loading="lazy" width="400px"}](../assets/images/ChIP-seq_workflow.png)
 An overview of ChIP-seq. Figure courtesy Jkwchui, Wikimedia Commons user.
 {: style="font-size: medium;"}
 

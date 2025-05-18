@@ -25,7 +25,7 @@ For many cellular responses, including bacterial chemotaxis, a sequence of phosp
 
 A high-level view of the transduction pathway for chemotaxis is shown in the figure below. The cell membrane receptors that we have been working with are called **methyl-accepting chemotaxis proteins (MCPs)**, and they bridge the cellular membrane, binding both to ligand stimuli in the cell exterior and to other proteins on the inside of the cell. The pathway also includes a number of additional proteins, which all start with the prefix "Che" (short for "chemotaxis").
 
-[![image-center](../assets/images/600px/chemotaxisphosnew.png){: .align-center}](../assets/images/chemotaxisphosnew.png)
+[![image-center](../assets/images/600px/chemotaxisphosnew.png){: .align-center loading="lazy"}](../assets/images/chemotaxisphosnew.png)
 A summary of the chemotaxis transduction pathway. A ligand binding signal is propagated through CheA and CheY phosphorylation, which leads to a response of clockwise flagellar rotation. The blue curved arrow denotes phosphorylation, the grey curved arrow denotes dephosphorylation, and the blue dashed arrow denotes a chemical interaction. Our figure is a simplified view of <a href="https://chemotaxis.biology.utah.edu/projects/projects.html">Parkinson Lab</a> illustrations.
 {: style="font-size: medium;"}
 
@@ -59,11 +59,11 @@ But does higher attractant concentration in our model really lead to a lower con
 
 The top panel of the following figure shows the concentrations of phosphorylated CheA and CheY in a system at equilibrium in the absence of ligand. As we might expect, these concentrations remain at steady state (with some healthy noise), and so the cell stays at its background tumbling frequency. The addition of 5,000 attractant ligand molecules increases the concentration of bound receptors, therefore leading to less CheA autophosphorylation and less phosphorylated CheY (middle panel). If we instead have 100,000 initial attractant molecules, then we see an even more drastic decrease in phosphorylated CheA and CheY (bottom panel).
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial5_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial5_vscode.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial5_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial5_vscode.png)
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial6_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial6_vscode.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial6_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial6_vscode.png)
 
-[![image-center](../assets/images/600px/chemotaxis_tutorial7_vscode.png){: .align-center}](../assets/images/chemotaxis_tutorial7_vscode.png)
+[![image-center](../assets/images/600px/chemotaxis_tutorial7_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial7_vscode.png)
 Molecular concentrations over time (in seconds) in a chemotaxis simulation for three different initial unbound attractant ligand concentrations: no attractant ligand (top), 5,000 ligand particles (middle), and 100,000 ligand particles (bottom). Note that the simulated cell's bound ligand concentration (green) achieves equilibrium very quickly in each case.
 {: style="font-size: medium;"}
 

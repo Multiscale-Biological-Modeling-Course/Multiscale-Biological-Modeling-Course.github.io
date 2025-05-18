@@ -35,7 +35,7 @@ Structural differences are challenging to show with a 2-D image, but if you foll
 **STOP:** See if you can identify the major structural difference between the proteins in the figure below. Hint: look at the yellow residue.
 {: .notice--primary}
 
-[![image-center](../assets/images/600px/Ridge.png){: .align-center}](../assets/images/Ridge.png)
+[![image-center](../assets/images/600px/Ridge.png){: .align-center loading="lazy"}](../assets/images/Ridge.png)
 A visualization of the loop in the ACE2-binding ridge that is conformationally different between SARS-CoV-2 (left) and SARS-CoV (right). The coronavirus RBD is shown at the bottom in purple, and ACE2 is shown at the top in green. Structural differences cause certain amino acid residues, which are highlighted in various colors and described in the main text, to behave differently when ACE2 contacts each of the two viruses.
 {: style="font-size: medium;"}
 
@@ -52,7 +52,7 @@ Although the interaction with the hydrophobic pocket is the most critical differ
 **STOP:** Once again, see if you can spot the differences between SARS-CoV-2 and SARS-CoV.
 {: .notice--primary}
 
-[![image-center](../assets/images/600px/Hotspot31.png){: .align-center}](../assets/images/Hotspot31.png)
+[![image-center](../assets/images/600px/Hotspot31.png){: .align-center loading="lazy"}](../assets/images/Hotspot31.png)
 Visualizations of hotspot 31 in SARS-CoV-2 (left) and SARS-CoV (right). The coronavirus RBD is shown at the bottom in purple, and ACE2 is shown at the top in green. In SARS-CoV, hotspot 31 corresponds to a salt bridge (red), which is broken in SARS-CoV-2 to form a new hydrogen bond with Gln493 (blue)
 {: style="font-size: medium;"}
 
@@ -62,7 +62,7 @@ The figure above shows how the salt bridge differs in the two viruses. In SARS-C
 
 Finally, we consider **hotspot 353**, which involves another salt bridge, this one connecting Lys353 and Asp38 in ACE2. In this region, the difference between the residues is so subtle that it takes a keen eye to notice them in the figure below.
 
-[![image-center](../assets/images/600px/Hotspot353.png){: .align-center}](../assets/images/Hotspot353.png)
+[![image-center](../assets/images/600px/Hotspot353.png){: .align-center loading="lazy"}](../assets/images/Hotspot353.png)
 Visualizations of hotspot 353 in SARS-CoV-2 (left) and SARS-CoV (right). The RBD is shown in purple, and ACE2 is shown in green. In SARS-CoV, the RBD residue Thr487 (yellow) stabilizes the salt bridge between ACE2 residues Lys 353 and Asp38 (red). In SARS-CoV-2, the corresponding RBD residue Asn501 (yellow) provides less support, causing ACE2 residue Lys353 (red residue on the left) to be in a slightly different conformation and form a new hydrogen bond with the RBD.[^Shang]
 {: style="font-size: medium;"}
 
@@ -86,7 +86,7 @@ In the following tutorial, we will compute the energy of the bound spike protein
 
 The table below shows the interaction energies for each of our three regions of interest as well as the total energy of the RBD-ACE2 complex for both SARS-CoV and SARS-CoV-2. The overall attractive interaction energy between the RBD and ACE2 is lower for SARS-CoV-2 than for SARS-CoV, which supports previous studies that have found the SARS-CoV-2 spike protein to have higher affinity with ACE2.
 
-[![image-center](../assets/images/600px/NAMDEnergy2.png){: .align-center}](../assets/images/NAMDEnergy2.png)
+[![image-center](../assets/images/600px/NAMDEnergy2.png){: .align-center loading="lazy"}](../assets/images/NAMDEnergy2.png)
 ACE2 interaction energies of the chimeric SARS-CoV-2 RBD (left) and SARS-CoV RBD (right). The PDB files contain two biological assemblies, or instances, of the corresponding structure. The first instance includes chain A (ACE2) and chain E (RBD), and the second instance includes chain B (ACE2) and chain F (RBD). The overall interactive energies between the RBD and ACE2 are shown in the first two rows (green). Remaining rows show interaction energies for regions of interest: the loop site (yellow), hotspot 31 (red), and hotspot 353 (gray). Total energy is computed as the sum of electrostatic interactions and van der Waals (vdW) forces.
 {: style="font-size: medium;"}
 

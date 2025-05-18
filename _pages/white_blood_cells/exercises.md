@@ -34,7 +34,7 @@ We say that a neural network with input variables *x*<sub>1</sub>, …, *x*<sub>
 
 Intuitively, we would like to have a large number of features in our data (i.e., a large dimension of *n* in each data point's feature vector). Yet consider the figure below, which plots the petal width and length of only two iris flowers. It would be a horrible idea to extrapolate anything from the line connecting these two points, as it indicates that these two variables are inversely coordinated, which is the *opposite* of the true correlation that we found in the [main text](pca#dimension-reduction-with-principal-components-analysis).
 
-[![Plot of petal length vs width for two iris flowers illustrating inverse-correlation noise](../assets/images/600px/curse_of_dimensionality_two_irises.png){: .align-center}](../assets/images/curse_of_dimensionality_two_irises.png)
+[![Plot of petal length vs width for two iris flowers illustrating inverse-correlation noise](../assets/images/600px/curse_of_dimensionality_two_irises.png){: .align-center loading="lazy"}](../assets/images/curse_of_dimensionality_two_irises.png)
 Petal length (x-axis) plotted against petal width (y-axis) for two flowers in the iris flower dataset. Because of random chance and small sample size, these two flowers demonstrate an inverse correlation between petal length and width, the opposite of the true correlation found in the main text.
 {: style="font-size: medium;"}
 

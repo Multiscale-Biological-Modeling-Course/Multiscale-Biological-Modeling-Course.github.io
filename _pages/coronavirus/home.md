@@ -56,7 +56,7 @@ As for Dr. Li? Despite warning against the risk of the new virus, he contracted 
 
 The viruses causing the two outbreaks, **SARS coronavirus (SARS-CoV)** and **SARS coronavirus 2 (SARS-CoV-2)** are both **coronaviruses**, which means that their outer membranes are covered in a layer of **spike proteins** that cause them to look like the sun's corona during an eclipse (see figure below).
 
-[![image-center](../assets/images/600px/coronavirus.png){: .align-center}](../assets/images/coronavirus.png)
+[![image-center](../assets/images/600px/coronavirus.png){: .align-center loading="lazy"}](../assets/images/coronavirus.png)
 Coronaviruses as seen under a microscope. The fuzzy blobs on the cell surface are spike proteins, which the virus uses to gain entry to host cells. Figure courtesy F. Murphy and S. Whitfield, CDC[^coronaimage].
 {: style="font-size: medium;"}
 
@@ -64,7 +64,7 @@ When viewed under a microscope, the two viruses look identical, and they use the
 
 In this module, we will place ourselves in the shoes of early SARS-CoV-2 researchers studying the new virus in early 2020. The virus's genome, consisting of nearly 30,000 nucleotides, was published on January 10[^Genome][^Annotation], and an annotation of this genome identifying the location of the virus's genes is shown in the figure below. Upon sequence comparison, SARS-CoV-2 was found to be related to several coronaviruses isolated from bats and distantly related to SARS-CoV.
 
-[![image-center](../assets/images/600px/SARSCoV2Annotation.png){: .align-center}](../assets/images/SARSCoV2Annotation.png)
+[![image-center](../assets/images/600px/SARSCoV2Annotation.png){: .align-center loading="lazy"}](../assets/images/SARSCoV2Annotation.png)
 An annotated genome of SARS-CoV-2, with rectangles showing the location of areas encoding RNA or protein. The spike protein, found at the bottom of this image, is labeled "S" and begins at nucleotide position 21,563. Accessed from GenBank: [https://go.usa.gov/xfzMM](https://go.usa.gov/xfzMM).
 {: style="font-size: medium;"}
 
@@ -106,7 +106,7 @@ Predicting the folded structure of a polypeptide is called the **protein structu
 
 Why do we care about protein structure? Knowing a protein's structure is essential to determining its function and how it interacts with other proteins or molecules in its environment. After all, we still do not know the function of a few thousand human genes, and Figure 1.4 shows the huge variety of protein shapes in the 2020 “proteins of the month” named by the **Protein Data Bank (PDB)**. (Note that the June 2020 winner is the SARS-CoV-2 spike protein.)
 
-[![image-center](../assets/images/600px/different_protein_shapes_2020.jpg){: .align-center}](../assets/images/different_protein_shapes_2020.jpg)
+[![image-center](../assets/images/600px/different_protein_shapes_2020.jpg){: .align-center loading="lazy"}](../assets/images/different_protein_shapes_2020.jpg)
 Each "molecule of the month" in 2020 named by the PDB. These proteins have widely varying shapes and accomplish a wide variety of cellular tasks. The SARS-CoV-2 spike protein was the molecule of the month in June. Image courtesy: David Goodsell.
 {: style="font-size: medium;"}
 

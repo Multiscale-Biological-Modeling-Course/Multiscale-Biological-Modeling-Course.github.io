@@ -23,7 +23,7 @@ The formulation of protein structure prediction as an optimization problem may n
 
 In the case of structure prediction, our search space is the collection of all possible conformations of a given protein, and each point in this search space represents a single conformation with an associated potential energy.   Just as we imagined a ball rolling down a hill to find lower energy, we can now imagine exploring the search space of all conformations of a polypeptide to find the conformation having lowest energy. The general problem of exploring a search space to find a point minimizing some function is illustrated in the figure below, in which the height of each point represents the value of the function at that point, and our goal is to find the lowest point in the space.
 
-[![image-center](../assets/images/600px/energy_landscape.png){: .align-center}](../assets/images/energy_landscape.png)
+[![image-center](../assets/images/600px/energy_landscape.png){: .align-center loading="lazy"}](../assets/images/energy_landscape.png)
 Optimization problems can be thought of as exploring a landscape, in which the height of a point is the value of the function that we wish to optimize. Finding the highest or lowest point in this landscape corresponds to maximizing or minimizing the function over the search space. Image courtesy: David Beamish.
 {: style="font-size: medium;"}
 
@@ -55,7 +55,7 @@ Levinthal's paradox means that the search space of all possible structures for a
 
 The figure below shows the top five predicted human hemoglobin subunit alpha structures returned by QUARK as well as the protein's experimentally verified structure, and an average of these six structures. It takes a keen eye to see any differences between these structures. We conclude that *ab initio* prediction can be accurate.
 
-[![image-center](../assets/images/600px/ab_initio_results.png){: .align-center}](../assets/images/ab_initio_results.png)
+[![image-center](../assets/images/600px/ab_initio_results.png){: .align-center loading="lazy"}](../assets/images/ab_initio_results.png)
 The experimentally verified protein structure of human hemoglobin subunit alpha (top left) along with five models of this protein produced by QUARK from the protein's primary sequence, all of which are nearly indistinguishable from the verified structure with the naked eye.
 {: style="font-size: medium;"}
 

@@ -89,13 +89,13 @@ To motivate our discussion of other classifier metrics, we will continue with th
 
 First, we define some terms. A **true positive** is a positive test in a patient that has the condition; a **false positive** is a positive test in a patient that does not have the condition; a **true negative** is a negative test in a patient that does not have the condition; and a **false negative** is a negative test in a patient that does have the condition. The table below shows the locations of these four terms in the two-class confusion matrix for the test.
 
-[![image-center](../assets/images/600px/medical_test_confusion_matrix.png){: .align-center}](../assets/images/medical_test_confusion_matrix.png)
+[![image-center](../assets/images/600px/medical_test_confusion_matrix.png){: .align-center loading="lazy"}](../assets/images/medical_test_confusion_matrix.png)
 The locations of true positives, false positives, true negatives, and false negatives in the confusion matrix associated with a medical test. Correct predictions are shown in green, and incorrect predictions are shown in red.
 {: style="font-size: medium;"}
 
 In what follows, we will work with the confusion matrix for a hypothetical medical test shown in the figure below.
 
-[![image-center](../assets/images/600px/medical_test_confusion_matrix_hypothetical.png){: .align-center}](../assets/images/medical_test_confusion_matrix_hypothetical.png)
+[![image-center](../assets/images/600px/medical_test_confusion_matrix_hypothetical.png){: .align-center loading="lazy"}](../assets/images/medical_test_confusion_matrix_hypothetical.png)
 A hypothetical medical test confusion matrix.
 {: style="font-size: medium;"}
 

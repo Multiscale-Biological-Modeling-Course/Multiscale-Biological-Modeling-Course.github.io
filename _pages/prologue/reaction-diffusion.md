@@ -108,7 +108,7 @@ The Turing patterns that emerged from our particle simulations are a testament t
 
 You may still be skeptical, since the patterns in the above videos do not have the concrete boundaries that we might expect of animal stripes and spots. Yet when we examine the skin an animal exhibiting Turing patterns, we see the effect of a pointillist painting: the patterns that we infer on a higher level are just the net result of many varied individual points. The figure below shows an example of this effect for zebrafish skin.
 
-[![image-center](../assets/images/600px/zebrafish_zoom.jpg){: .align-center}](../assets/images/zebrafish_zoom.jpg)
+[![image-center](../assets/images/600px/zebrafish_zoom.jpg){: .align-center loading="lazy"}](../assets/images/zebrafish_zoom.jpg)
 Zooming in on the striped skin of a zebrafish shows that each stripe is formed of many differently colored cells, and that the boundaries of the stripes are more variable than they may seem at lower resolution. Image courtesy: JenniferOwen, Wikimedia Commons (adapted by Kit Yates).
 {: style="font-size: medium;"}
 
@@ -119,7 +119,7 @@ The particle simulations in the previous subsection may evoke the adjective "tri
 
 Research dating to the 1920s has studied the patterns that humans see during visual hallucinations, which Heinrich Klüver named **form constants** after studying patients who had taken mescaline.[^kluver] These patterns, such as cobwebs, tunnels, and spirals, occur across many individuals, regardless of the cause of their hallucinations.
 
-[![image-center](../assets/images/600px/form_constants.png){: .align-center}](../assets/images/form_constants.png)
+[![image-center](../assets/images/600px/form_constants.png){: .align-center loading="lazy"}](../assets/images/form_constants.png)
 A few of Heinrich Klüver's form constants. Image courtesy: Lisa Diez, Wikimedia Commons.
 {: style="font-size: medium;"}
 
