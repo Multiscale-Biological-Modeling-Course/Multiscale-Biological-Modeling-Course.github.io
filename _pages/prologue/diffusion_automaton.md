@@ -39,13 +39,13 @@ We will grid off a two-dimensional plane into blocks and store only the *concent
 
 We will begin with an example of the diffusion of only *A* particles; we will later add *B* particles as well as reactions to our model. Say that the particles have concentration equal to 1 in the central cell of the grid and 0 everywhere else, as shown below.
 
-[![image-center](../assets/images/600px/initial_A_concentration.png){: .align-center loading="lazy" width="300px"}](../assets/images/initial_A_concentration.png)
+[![Initial concentration map of chemical A](../assets/images/600px/initial_A_concentration.png){: .align-center loading="lazy" width="300px"}](../assets/images/initial_A_concentration.png)
 A 5 x 5 grid showing hypothetical initial concentrations of *A* particles. Cells are labeled by decimal numbers representing their concentration of *A* particles. The central cell has maximum concentration, and no particles are contained in any other cell.
 {: style="font-size: medium;"}
 
 We will now update the grid of cells after one time step to mimic particle diffusion. To do so, we will spread out the concentration of particles in each square to its eight neighbors. For example, we could assume that 20% of the current cell's concentration diffuses to each of its four adjacent neighbors, and that 5% of the cell's concentration diffuses to each of its four diagonal neighbors. Because the central square in our ongoing example is the only cell with nonzero concentration, the updated concentrations after a single time step are shown in the following figure.
 
-[![image-center](../assets/images/600px/A_concentration_one_time_step.png){: .align-center loading="lazy" width="300px"}](../assets/images/A_concentration_one_time_step.png)
+[![Concentration of chemical A after one time step](../assets/images/600px/A_concentration_one_time_step.png){: .align-center loading="lazy" width="300px"}](../assets/images/A_concentration_one_time_step.png)
 A grid showing an update to the system in the previous figure after diffusion of particles after a single time step.
 {: style="font-size: medium;"}
 
@@ -60,7 +60,7 @@ Finally, the central square has no particles after one step, but it will receive
 
 In summary, the central nine squares after two time steps are as shown in the following figure.
 
-[![image-center](../assets/images/600px/A_concentration_two_time_steps_partial.png){: .align-center loading="lazy" width="300px"}](../assets/images/A_concentration_two_time_steps_partial.png)
+[![Partial concentration map of A after two time steps](../assets/images/600px/A_concentration_two_time_steps_partial.png){: .align-center loading="lazy" width="300px"}](../assets/images/A_concentration_two_time_steps_partial.png)
 A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled "?" are left as an exercise for the reader.
 {: style="font-size: medium;"}
 
@@ -79,7 +79,7 @@ Our solution is to slow down the diffusion process by adding a parameter <em>d</
 
 Revisiting our original example, say that <em>d</em><sub><em>A</em></sub> is equal to 0.2. After the first time step, only 20% of the central cell's particles will be spread to its neighbors. Of these particles, 5% will be spread to each diagonal neighbor, and 20% will be spread to each adjacent neighbor. The figure below illustrates that after one time step, the central square has concentration equal to 0.8, its adjacent neighbors have concentration equal to 0.2<em>d</em><sub><em>A</em></sub> = 0.04, and its diagonal neighbors have concentration equal to 0.05<em>d</em><sub><em>A</em></sub> = 0.01.
 
-[![image-center](../assets/images/600px/A_concentration_slower_diffusion.png){: .align-center loading="lazy" width="300px"}](../assets/images/A_concentration_slower_diffusion.png)
+[![A concentration profile with slower diffusion rate](../assets/images/600px/A_concentration_slower_diffusion.png){: .align-center loading="lazy" width="300px"}](../assets/images/A_concentration_slower_diffusion.png)
 An updated grid of cells showing the concentration of <em>A</em> particles after one time step if <em>d</em><sub><em>A</em></sub> = 0.2.
 {: style="font-size: medium;"}
 
@@ -87,7 +87,7 @@ An updated grid of cells showing the concentration of <em>A</em> particles after
 
 We now will add *B* particles to the simulation, which we assume also start with concentration equal to 1 in the central square and 0 elsewhere. Recall that *B*, our "predator" molecule, diffuses half as fast as *A*, the "prey" molecule. If we set the diffusion rate <em>d</em><sub><em>B</em></sub> equal to 0.1, then our cells after a time step will be updated as shown in the figure below. This figure represents the concentration of the two particles in each cell as an ordered pair ([*A*], [*B*]).
 
-[![image-center](../assets/images/600px/two_particle_concentration_diffusion.png){: .align-center loading="lazy" width="300px"}](../assets/images/two_particle_concentration_diffusion.png)
+[![Diffusion profile for two initial particle sources](../assets/images/600px/two_particle_concentration_diffusion.png){: .align-center loading="lazy" width="300px"}](../assets/images/two_particle_concentration_diffusion.png)
 A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> that start at maximum concentration in the central square and diffuse at rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by the ordered pair ([<em>A</em>], [<em>B</em>]).
 {: style="font-size: medium;"}
 
@@ -105,7 +105,7 @@ First, we will consolidate the information stored in a cell about the concentrat
 
 Next, we color each cell according to its value of [*B*]/([*A*] + [*B*]) using a color spectrum like those shown in the figure below. We will use the `Spectral` color map, meaning that if a cell has a value close to 0 (relatively few predators), then it will be colored red, while if it has a value close to the maximum value of [*B*]/([*A*] + [*B*]) (relatively many predators), then it will be colored dark blue.
 
-[![image-center](../assets/images/600px/matplotlib_colormap.png){: .align-center loading="lazy"}](../assets/images/matplotlib_colormap.png)
+[![Matplotlib color map used to visualize diffusion](../assets/images/600px/matplotlib_colormap.png){: .align-center loading="lazy"}](../assets/images/matplotlib_colormap.png)
 
 When we color each cell over many time steps, we can animate the automaton to see how it changes over time. We are now ready for the following tutorial, in which we will implement and visualize our diffusion automaton using a **Jupyter notebook**.
 
@@ -117,7 +117,7 @@ The video below shows an animation of a 101 x 101 board with <em>d</em><sub><em>
 **Note:** Particles technically "fall off" the sides of the board in the figure below, meaning that a given particle’s total concentration across all cells decreases over time.
 {: .notice--info}
 
-[![image-center](../assets/images/600px/diffusion_movie_first_frame.png){: .align-center loading="lazy"}](../assets/images/diffusion_movie.gif)
+[![First frame of diffusion simulation movie](../assets/images/600px/diffusion_movie_first_frame.png){: .align-center loading="lazy"}](../assets/images/diffusion_movie.gif)
 
 [Next lesson](gray-scott){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

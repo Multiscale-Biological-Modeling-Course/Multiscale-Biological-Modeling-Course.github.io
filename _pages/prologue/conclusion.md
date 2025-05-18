@@ -28,7 +28,7 @@ In both the particle-based and automaton model for Turing patterns, we observed 
 
 The figure below shows how the Turing patterns produced by the Gray-Scott model change as the kill and feed rates vary. The square at position (*x*, *y*) shows the pattern obtained as the result of a Gray-Scott simulation with kill rate *x* and feed rate *y*. Notice how much the patterns change! You may like to tweak the parameters of the Gray-Scott simulation from the [previous lesson](gray-scott) to see if you can reproduce these differing patterns.
 
-[![image-center](../assets/images/600px/xmorphia-parameter-map.jpg){: .align-center loading="lazy" width="400px"}](../assets/images/xmorphia-parameter-map.jpg)
+[![Parameter map showing morphological outcomes from Xmorphia model](../assets/images/600px/xmorphia-parameter-map.jpg){: .align-center loading="lazy" width="400px"}](../assets/images/xmorphia-parameter-map.jpg)
 Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns obtained in the Gray-Scott model. Each small square shows the patterns obtained from a given choice of feed and kill rate.  Note that many choices of parameters do not produce Turing patterns, which only result from a narrow "sweet spot" band of parameter choices. Image courtesy: Robert Munafo.[^robert]
 {: style="font-size: medium;"}
 
