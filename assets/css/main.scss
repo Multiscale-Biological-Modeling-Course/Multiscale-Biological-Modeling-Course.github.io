@@ -491,33 +491,32 @@ search: false
    Sticky header + sidebars: keep content from sliding under masthead
    ----------------------------------------------------------- */
 
-/* ❶ Define the masthead height once */
+/* ❶ Set the real masthead height */
 :root {
-  --masthead-height: 64px;   /* adjust if your bar is taller/shorter */
+  --masthead-height: 80px;   /* measured header height */
 }
 
-/* ❷ Make header sticky (already done, but include here for clarity) */
+/* ❷ Header stickiness (already set) */
 .masthead {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #fff;                 /* solid backdrop */
+  background: #fff;
   box-shadow: 0 2px 6px rgba(0,0,0,.08);
 }
 
-/* ❸ Push the main page content down so it isn't hidden */
+/* ❸ Push main page content */
 body > #main,
-body > #page   {                    /* whichever wrapper you use */
+body > #page {
   padding-top: var(--masthead-height);
 }
 
-/* ❹ Tell sticky sidebars to start *below* the header
-      and give them a viewport-aware height                */
-@media (min-width: 64em) {          /* only wide layouts with sidebars */
+/* ❹ Offset sticky sidebars */
+@media (min-width: 64em) {
   .sidebar__left.sticky,
   .sidebar__right.sticky {
-    top: calc(var(--masthead-height) + 1rem);          /* 1 rem breathing room */
-    max-height: calc(100vh - var(--masthead-height) - 2rem);
+    top: calc(var(--masthead-height) + 0.5rem);     /* 0.5 rem breathing room */
+    max-height: calc(100vh - var(--masthead-height) - 1rem);
     overflow-y: auto;
   }
 }
