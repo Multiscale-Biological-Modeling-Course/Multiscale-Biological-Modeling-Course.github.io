@@ -1,8 +1,10 @@
 ---
 title: "Biological Modeling"
-tagline: "A Free Online Course"
-description: "Welcome to Biological Modeling: free lessons and tutorials that blend computation with life science, plus a companion textbook."
+subtitle: "A Free Online Course in Computational Biology"
 layout: splash
+description: "Power up your computational and machine learning skills with our free course on modeling biological systems."
+excerpt: "Learn how biology works through computational modeling. Our open-access online course helps you explore the wonder of life across multiple scales."
+
 header:
   overlay_color: "#000"
   overlay_filter: "0.6"
@@ -10,7 +12,7 @@ header:
   actions:
     - label: "Start learning!"
       url: "/prologue/"
-excerpt: "Power up your computational and machine learning skills with our free course on modeling biological systems."
+
 prologue:
   - image_path: /assets/images/gray_scott_jupyter_high-res_banner.png
     title: "Prologue: Random walks and Turing patterns"
