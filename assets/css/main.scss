@@ -493,7 +493,7 @@ search: false
 
 /* ❶ Set the real masthead height */
 :root {
-  --masthead-height: 80px;   /* measured header height */
+  --masthead-height: 120px;   /* measured header height */
 }
 
 /* ❷ Header stickiness (already set) */
@@ -515,8 +515,8 @@ body > #page {
 @media (min-width: 64em) {
   .sidebar__left.sticky,
   .sidebar__right.sticky {
-    top: calc(var(--masthead-height) + 1.5rem);     /* breathing room */
-    max-height: calc(100vh - var(--masthead-height) - 2rem);
+    top: calc(var(--masthead-height) + 0.5rem);     /* breathing room */
+    max-height: calc(100vh - var(--masthead-height) - 1rem);
     overflow-y: auto;
   }
 }
