@@ -3,7 +3,7 @@ title: "Biological Modeling"
 subtitle: "A Free Online Course in Computational Biology"
 layout: splash
 description: "Power up your computational and machine learning skills with our free course on modeling biological systems."
-excerpt: "Learn how biology works through computational modeling. Our open-access online course helps you explore the wonder of life across multiple scales."
+excerpt: "Explore biological systems at multiple scales with our free computational biology course."
 
 header:
   overlay_color: "#000"
