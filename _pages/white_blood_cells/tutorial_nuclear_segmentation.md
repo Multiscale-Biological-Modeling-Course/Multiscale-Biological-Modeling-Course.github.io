@@ -188,9 +188,8 @@ print(noquote("DONE!"))
 
 After we have run our R file, you will notice the creation of three directories of the form: `SegImgs_1`, `ColNuc_1`, and `BWImgs_1` within the `Data` folder. If the run completed correctly, then you should see the segmented images in `SegImgs_1`, like the image shown in the figure below. However, these images are not technically *binarized* because they exist in grayscale, in which each pixel receives a value between 0 (black) and 255 (white).
 
-[![image-center](../assets/images/600px/cellorg_segmented.png){: .align-center loading="lazy"}](../assets/images/cellorg_segmented.png)
-The greyscale segmented nucleus of `BloodImage_00001.jpg`.
-{: style="font-size: medium;"}
+[![grayscale segmented nucleus of blood image showing white nucleus on black background](../assets/images/600px/cellorg_segmented.png){: .align-center loading="lazy"}](../assets/images/cellorg_segmented.png)
+
 
 ### Binarizing Segmented Images
 
@@ -210,7 +209,7 @@ WBC_imgBin
 
 As a result, the `BWImgs_1` directory will now contain binarized TIFF versions of the segmented images. Furthermore, the `ColNuc_1` directory will now contain TIFF versions of the segmented images like the one below, such that the nucleus is in color and the background is in black. We will not be using these images in future tutorials, but they provide an indication that our segmentation was mostly successful.
 
-[![image-center](../assets/images/600px/cellorg_segmented_color.png){: .align-center loading="lazy"}](../assets/images/cellorg_segmented_color.png)
+[![color segmented nucleus of WBC with original nucleus hues on black background](../assets/images/600px/cellorg_segmented_color.png){: .align-center loading="lazy"}](../assets/images/cellorg_segmented_color.png)
 Nuclear segmentation of `BloodImage_00001.jpg` with color retained in the nucleus.
 {: style="font-size: medium;"}
 

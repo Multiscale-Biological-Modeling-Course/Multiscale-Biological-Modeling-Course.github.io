@@ -35,7 +35,7 @@ cd /Applications/cellorganizer-master
 
 Once you have navigated into this folder, you will see the contents of your CellOrganizer directory appear under the `Current Directory` window in MATLAB, as shown below.
 
-[![image-center](../assets/images/600px/CellOrganizer_installation_directory.png){: .align-center loading="lazy" width="400px"}](../assets/images/CellOrganizer_installation_directory.png)
+[![MATLAB Current Directory showing extracted CellOrganizer folder with setup.m and subdirectories](../assets/images/600px/CellOrganizer_installation_directory.png){: .align-center loading="lazy" width="400px"}](../assets/images/CellOrganizer_installation_directory.png)
 {: style="font-size: medium;"}
 
 You are now ready to install CellOrganizer by running `setup.m`. To do so, enter the following command into the MATLAB command window.

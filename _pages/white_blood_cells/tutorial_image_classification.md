@@ -25,28 +25,29 @@ To convert our current PCA pipeline coordinates to a format to be used in Weka, 
 
 Open Weka and navigate to `Tools --> ArffViewer`.
 
-[![image-center](../assets/images/600px/cellorg_step_2.png){: .align-center loading="lazy"}](../assets/images/cellorg_step_2.png)
+[![ArffViewer showing PCA CSV data loaded into Weka](../assets/images/600px/cellorg_step_2.png){: .align-center loading="lazy"}](../assets/images/cellorg_step_2.png)
 
 
 Then navigate to `File --> Open`.
 
-[![image-center](../assets/images/600px/cellorg_step_3.png){: .align-center loading="lazy" width="300px"}](../assets/images/cellorg_step_3.png)
+[![Weka ArffViewer File→Open dialog set to CSV data files](../assets/images/600px/cellorg_step_3.png){: .align-center loading="lazy" width="300px"}](../assets/images/cellorg_step_3.png)
+
 
 Change the `Files of Type` option to `CSV data files`.
 
-[![image-center](../assets/images/600px/cellorg_step_4.png){: .align-center loading="lazy"}](../assets/images/cellorg_step_4.png)
+[![Weka ArffViewer format selector showing “CSV data files” option](../assets/images/600px/cellorg_step_4.png){: .align-center loading="lazy"}](../assets/images/cellorg_step_4.png)
 
 Find (or download) the <a href='../downloads/WBC_PCA.csv'>WBC_PCA.csv</a> file in your `Step4_Visualization` folder and click `Open`.
 
-[![image-center](../assets/images/600px/cellorg_step_5.png){: .align-center loading="lazy"}](../assets/images/cellorg_step_5.png)
+[![ArffViewer displaying WBC_PCA.csv contents before save-as](../assets/images/600px/cellorg_step_5.png){: .align-center loading="lazy"}](../assets/images/cellorg_step_5.png)
 
 Once all the data is loaded on screen, navigate to `File --> Save as …`.
 
-[![image-center](../assets/images/600px/cellorg_step_6.png){: .align-center loading="lazy"}](../assets/images/cellorg_step_6.png)
+[![ArffViewer Save As dialog with .arff filename ready to save](../assets/images/600px/cellorg_step_6.png){: .align-center loading="lazy"}](../assets/images/cellorg_step_6.png)
 
 Remove the `.csv` extension in the `File Name` field, and click `Save`.
 
-[![image-center](../assets/images/600px/cellorg_step_7.png){: .align-center loading="lazy"}](../assets/images/cellorg_step_7.png)
+[![Confirmation that WBC_PCA.arff was saved successfully](../assets/images/600px/cellorg_step_7.png){: .align-center loading="lazy"}](../assets/images/cellorg_step_7.png)
 
 As a result, our PCA pipeline coordinates have now been converted to the file format that Weka accepts for further classification. This file should be saved as `WBC_PCA.arff` in the `Step4_Visualization` subfolder of the `WBC_CellClass` folder.
 
@@ -56,11 +57,11 @@ Now that we have the PCA dataset in the correct format, click `Exit` to return t
 
 You should now be at the `Weka GUI Chooser` window that shows at the application's startup. Under `Applications`, click `Explorer` to bring up the `Weka Explorer` window. This is the main window that we will use to run our classifier.
 
-[![image-center](../assets/images/600px/weka_explorer.png){: .align-center loading="lazy"}](../assets/images/weka_explorer.png)
+[![Weka Explorer main window showing application icons](../assets/images/600px/weka_explorer.png){: .align-center loading="lazy"}](../assets/images/weka_explorer.png)
 
 Next, we need to load our `WBC_PCA.arff` file that we just created. At the top left of the window, click `Open file...` Navigate to the location of your `WBC_PCA.arff` file (the default location would be `Desktop/WBC_PCAPipeline/Step4_Visualization`). When we do so, we should see the data loaded into the window, as shown in the figure below.
 
-[![image-center](../assets/images/600px/weka_explorer_data.png){: .align-center loading="lazy"}](../assets/images/weka_explorer_data.png)
+[![Weka Explorer showing PCA data columns loaded into Explorer](../assets/images/600px/weka_explorer_data.png){: .align-center loading="lazy"}](../assets/images/weka_explorer_data.png)
 
 We want to ensure that Weka only considers the variables that are relevant for classifying the images by family. For this analysis, we won't need the `FILENAME` name or the `TYPE` variables (if we were to include them, Weka would try to use them as one of the coordinates of our shape space vectors). So, click the checkboxes next to these two vectors, and click `Remove` to exclude them from consideration.
 
@@ -68,7 +69,7 @@ Let's classify! Click the `Classify` tab at the top of the explorer window. Near
 
 If you're curious what `ZeroR` means, it is the clown classifier from the [main text](training) that assigns every object to the class containing the most elements. Let's not use this classifier! Instead, click `Choose`, which will bring up a menu of folders as shown below.
 
-[![image-center](../assets/images/600px/classifier_list.png){: .align-center loading="lazy" width="400"}](../assets/images/classifier_list.png)
+[![Weka Explorer Classify→Choose menu listing available classifiers](../assets/images/600px/classifier_list.png){: .align-center loading="lazy" width="400"}](../assets/images/classifier_list.png)
 
 The k-NN classifer is contained under `lazy > IBK`. Select `IBK`, and you will be taken back to the explorer window, except that next to `Choose` you should now see `IBK` followed by a collection of parameters. The only parameter that we need for k-NN is the value of *k* (the number of nearest neighbors to consider when assigning a class to an object), which by default is set to 1 as indicated by `-K 1`.
 
@@ -81,7 +82,8 @@ Finally, beneath `More options`, we will see `(Num) Var344`. This is the variabl
 
 Now for the magic moment. Click `Start`. The classifier should run very quickly, and the results will show in the main window to the right and are reproduced below.
 
-[![image-center](../assets/images/600px/classifier_output_all_pca_variables.png){: .align-center loading="lazy"}](../assets/images/classifier_output_all_pca_variables.png)
+[![Weka classification output showing confusion matrix and accuracy metrics](../assets/images/600px/classifier_output_all_pca_variables.png){: .align-center loading="lazy"}](../assets/images/classifier_output_all_pca_variables.png)
+
 
 The results are horrible! Every image in our dataset has been assigned as a lymphocyte. What could have gone wrong?
 
