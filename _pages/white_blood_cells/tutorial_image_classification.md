@@ -11,6 +11,7 @@ header:
   overlay_image: "../assets/images/normal_adult_blood_smear.JPG"
   overlay_filter: 0.3
 image: "../assets/images/normal_adult_blood_smear.JPG"
+image_alt: "Microscope image showing white blood cells stained purple among red blood cells."
 ---
 
 ### Installing Weka
