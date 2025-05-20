@@ -8,10 +8,10 @@ sidebar:
 toc: true
 toc_sticky: true
 image: "../assets/images/gray_scott_jupyter_high-res.png"
-image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 header:
   overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
   overlay_filter: 0.3
+  image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 gallery:
   - url: ../assets/images/reaction-diffusion_three_reactions_before.png
     image_path: ../assets/images/600px/reaction-diffusion_three_reactions_before.png

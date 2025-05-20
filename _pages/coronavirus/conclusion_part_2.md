@@ -10,8 +10,8 @@ toc_sticky: true
 header:
   overlay_image: "../assets/images/SARS_spike_proteins.jpg"
   overlay_filter: 0.3
+  image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 image: "../assets/images/SARS_spike_proteins.jpg"
-image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 ---
 
 This chapter has been quite a journey. We began with a discussion of the fundamental problem of determining a protein's structure. Because experimental methods for identifying protein structure are costly and time consuming, we transitioned to cover algorithmic approaches that do a good job of predicting a protein's structure from its sequence of amino acids.

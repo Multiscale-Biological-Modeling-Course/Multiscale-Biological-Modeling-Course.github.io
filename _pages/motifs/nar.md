@@ -10,8 +10,8 @@ toc_sticky: true
 header:
   overlay_image: "../assets/images/repressilator_chart.png"
   overlay_filter: 0.3
+  image_alt: "Chart of the concentrations of three particles involved in the repressilator, a synthetic biological oscillating system."
 image: "../assets/images/repressilator_chart.png"
-image_alt: "Chart of the concentrations of three particles involved in the repressilator, a synthetic biological oscillating system."
 ---
 
 ## Simulating transcriptional regulation with a reaction-diffusion model

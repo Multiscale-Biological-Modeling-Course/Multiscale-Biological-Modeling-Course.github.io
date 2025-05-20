@@ -5,11 +5,11 @@ description: "Start Module 4: learn how to segment, analyze, and classify white-
 sidebar:
  nav: "white_blood_cells"
 image: "../assets/images/normal_adult_blood_smear.JPG"
-image_alt: "Microscope image showing white blood cells stained purple among red blood cells."
 excerpt: "by Phillip Compeau (with software tutorials featuring Nicole Matamala)"
 header:
   overlay_image: "../assets/images/normal_adult_blood_smear.JPG"
   overlay_filter: 0.3
+  image_alt: "Microscope image showing white blood cells stained purple among red blood cells."
 author_profile: true # add author to page
 gallery:
   - url: ../assets/images/600px/neutrophil.png

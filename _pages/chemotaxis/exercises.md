@@ -10,6 +10,7 @@ sidebar:
 header:
   overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
   overlay_filter: 0.3
+  image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
 image: "../assets/images/gray_scott_jupyter_high-res.png"
 ---
 

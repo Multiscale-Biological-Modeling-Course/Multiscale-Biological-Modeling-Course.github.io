@@ -12,7 +12,6 @@ header:
   image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
   overlay_filter: 0.3
 image: "../assets/images/ecoli_glucose.png"
-image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
 ---
 
 ## Cells detect and transduce signals via receptor proteins

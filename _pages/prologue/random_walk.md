@@ -10,8 +10,8 @@ toc_sticky: true
 header:
   overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
   overlay_filter: 0.3
+  image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 image: "../assets/images/gray_scott_jupyter_high-res.png"
-image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 ---
 
 ## The wanderlust of a randomly walking particle

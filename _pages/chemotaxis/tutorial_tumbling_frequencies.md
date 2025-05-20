@@ -12,7 +12,6 @@ header:
   image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
   overlay_filter: 0.3
 image: "../assets/images/ecoli_glucose.png"
-image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
 ---
 
 In this tutorial, we will run a comparison of the chemotactic random walk over a variety of different background tumbling frequencies. Are some frequencies better than others at helping the bacterium reach the goal?

@@ -9,8 +9,8 @@ sidebar:
 header:
   overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
   overlay_filter: 0.3
+  image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 image: "../assets/images/gray_scott_jupyter_high-res.png"
-image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 ---
 
 The following tutorial will use a Jupyter Notebook to implement the Gray-Scott model. It requires a familiarity with Python, and installation instructions can be found in our coarse-grained [diffusion tutorial](tutorial-diffusion). You may also download the completed tutorial file <a href="../tutorials/Gray-Scott.ipynb" download="Gray-Scott.ipynb">here</a>.

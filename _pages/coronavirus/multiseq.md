@@ -10,8 +10,8 @@ toc_sticky: true
 header:
   overlay_image: "../assets/images/SARS_spike_proteins.jpg"
   overlay_filter: 0.3
+  image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 image: "../assets/images/SARS_spike_proteins.jpg"
-image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 ---
 
 In part 1 of this module, we used a variety of existing software resources to predict the structure of the SARS-CoV-2 spike protein from its amino acid sequence. We then discussed how to compare our predicted structures against the experimentally confirmed structure of the protein.

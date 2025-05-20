@@ -7,11 +7,11 @@ sidebar:
 toc: true
 toc_sticky: true
 image: "../assets/images/SARS_spike_proteins.jpg"
-image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 excerpt: "by Chris Lee and Phillip Compeau"
 header:
   overlay_image: "../assets/images/SARS_spike_proteins.jpg"
   overlay_filter: 0.3
+  image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 author_profile: true # add author to page
 ---
 

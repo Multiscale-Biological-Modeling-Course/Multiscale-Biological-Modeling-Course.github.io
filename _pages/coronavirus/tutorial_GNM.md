@@ -8,8 +8,8 @@ sidebar:
 header:
   overlay_image: "../assets/images/SARS_spike_proteins.jpg"
   overlay_filter: 0.3
+  image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 image: "../assets/images/SARS_spike_proteins.jpg"
-image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 ---
 
 In this tutorial, we will be performing GNM calculations on one of the chains in the SARS-CoV-2 spike protein (<a href="http://www.rcsb.org/structure/6VXX" target="_blank">6vxx</a>) and then visualizing the results using the plots that we discussed in the [main text](gnm#an-introduction-to-gaussian-network-models).

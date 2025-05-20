@@ -9,8 +9,8 @@ sidebar:
 header:
   overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
   overlay_filter: 0.3
+  image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 image: "../assets/images/gray_scott_jupyter_high-res.png"
-image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 ---
 
 In this tutorial, we will use Python to build a Jupyter notebook. We suggest only following the tutorial closely if you are familiar with Python or programming in general. If you have not installed Python, then the following software and packages will need to be installed:

@@ -10,8 +10,8 @@ toc_sticky: true
 header:
   overlay_image: "../assets/images/SARS_spike_proteins.jpg"
   overlay_filter: 0.3
+  image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 image: "../assets/images/SARS_spike_proteins.jpg"
-image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 ---
 
 In this lesson, we will compare the results of the SARS-CoV-2 spike protein prediction from the previous lesson against each other and against the protein's empirically validated structure. To do so, we need a method of comparing two structures.
