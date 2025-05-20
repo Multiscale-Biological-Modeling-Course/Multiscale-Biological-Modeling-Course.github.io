@@ -12,6 +12,7 @@ header:
   image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
   overlay_filter: 0.3
 image: "../assets/images/ecoli_glucose.png"
+image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
 ---
 
 In this tutorial, we will extend the BioNetGen model covered in the [phosphorylation tutorial](tutorial_phos) to add the methylation mechanisms described in the main text to our ongoing model of bacterial chemotaxis. Our model will be based on the [model](https://www.pnas.org/content/94/14/7263) by Spiro et al.[^Spiro1997]

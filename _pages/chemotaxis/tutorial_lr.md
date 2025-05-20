@@ -12,6 +12,7 @@ header:
   image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
   overlay_filter: 0.3
 image: "../assets/images/ecoli_glucose.png"
+image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
 ---
 
 This collection of tutorials will gradually build up from scratch a chemotaxis simulation using [BioNetGen](http://bionetgen.org).

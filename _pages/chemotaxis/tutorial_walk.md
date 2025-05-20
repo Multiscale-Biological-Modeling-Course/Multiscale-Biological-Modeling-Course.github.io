@@ -12,6 +12,7 @@ header:
   image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
   overlay_filter: 0.3
 image: "../assets/images/ecoli_glucose.png"
+image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
 ---
 
 In a [previous tutorial](tutorial_purerandom), we simulated the movement of a cell moving randomly throughout two-dimensional space in a sequence of steps. At each step, the next direction of the cell's movement is chosen completely randomly. We called this simple algorithm "strategy 1" in the [main text](conclusion).

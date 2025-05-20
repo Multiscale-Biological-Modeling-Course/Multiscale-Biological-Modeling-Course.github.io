@@ -12,6 +12,7 @@ header:
   image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
   overlay_filter: 0.3
 image: "../assets/images/ecoli_glucose.png"
+image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
 ---
 
 In this tutorial, we will simulate a random walk and take a look at how well this allows a bacterium to reach a goal. You might not anticipate that the random walk will do a very good job of this --- and you would not be wrong --- but it will give us a baseline simple strategy to compare against a more advanced random walk strategy.

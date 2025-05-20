@@ -12,6 +12,7 @@ header:
   image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
   overlay_filter: 0.3
 image: "../assets/images/chemotaxis_traj_1.0.png"
+image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
 ---
 
 ## Bacterial runs and tumbles
