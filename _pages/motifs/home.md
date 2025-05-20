@@ -5,6 +5,7 @@ description: "Start Module 1: discover recurrent network motifs in transcription
 sidebar:
  nav: "motifs"
 image: "../assets/images/repressilator_chart.png"
+image_alt: "Chart of the concentrations of three particles involved in the repressilator, a synthetic biological oscillating system."
 excerpt: "by Noah Lee and Phillip Compeau"
 header:
   overlay_image: "../assets/images/repressilator_chart.png"

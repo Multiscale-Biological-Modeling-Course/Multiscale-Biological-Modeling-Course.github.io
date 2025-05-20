@@ -9,6 +9,7 @@ header:
   overlay_image: "../assets/images/repressilator_chart.png"
   overlay_filter: 0.3
 image: "../assets/images/repressilator_chart.png"
+image_alt: "Chart of the concentrations of three particles involved in the repressilator, a synthetic biological oscillating system."
 ---
 
 In this tutorial, we will see what happens when we make a sudden change to the concentration of one of the repressilator particles in the middle of the simulation. This is difficult to do with CellBlender, and so we will instead use this opportunity to transition to a "particle-free" tool called **NFSim** that does have the desired functionality. We will say much more about particle-free modeling, in which we do not have to track the movements of individual particles to track their concentrations, in a future module.

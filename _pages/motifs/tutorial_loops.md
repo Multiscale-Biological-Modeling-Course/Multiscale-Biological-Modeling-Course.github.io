@@ -9,6 +9,7 @@ header:
   overlay_image: "../assets/images/repressilator_chart.png"
   overlay_filter: 0.3
 image: "../assets/images/repressilator_chart.png"
+image_alt: "Chart of the concentrations of three particles involved in the repressilator, a synthetic biological oscillating system."
 ---
 
 In this tutorial, we will build a Jupyter Notebook to analyze loops in the *E. coli* transcription factor network, which can be downloaded <a href="../downloads/network_tf_tf_clean.txt" download="network_tf_tf_clean.txt">here</a>. If you would like to jump to the end of the analysis, you can download the complete Jupyter Notebook <a href="../downloads/Network_Demo.ipynb" download="Network_Demo.ipynb">here</a>.

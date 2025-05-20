@@ -11,6 +11,7 @@ header:
   overlay_image: "../assets/images/repressilator_chart.png"
   overlay_filter: 0.3
 image: "../assets/images/repressilator_chart.png"
+image_alt: "Chart of the concentrations of three particles involved in the repressilator, a synthetic biological oscillating system."
 ---
 
 **Note:** We are currently in the process of updating this tutorial to the latest version of MCell, CellBlender, and Blender. This tutorial works with MCell3, CellBlender 3.5.1, and Blender 2.79. Please see a [previous tutorial](../prologue/tutorial-random-walk) for a link to download these versions.
