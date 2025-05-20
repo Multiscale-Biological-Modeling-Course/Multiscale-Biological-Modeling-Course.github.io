@@ -1,36 +1,62 @@
 ---
-permalink: /prologue/
-title: "Prologue: Random Walks and Turing Patterns"
-description: "Start our course: explore random walks that model diffusion and reaction diffusion systems that create striking Turing patterns."
+permalink: /chemotaxis/home
+title: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
+description: "Start Module 2: explore E. coli chemotaxis, from signaling to movement, with interactive models and tutorials that reveal its exploration algorithm."
 sidebar:
- nav: "prologue"
-image: "../assets/images/gray_scott_jupyter_high-res.png"
-excerpt: "by Noah Lee, Mert Inan, and Phillip Compeau"
+ nav: "chemotaxis"
+image: "../assets/images/ecoli_glucose.png"
+image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
+excerpt: "by Shuanger Li and Phillip Compeau"
 header:
+  overlay_image: "../assets/images/ecoli_glucose.png"
+  image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
   overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
   overlay_filter: 0.3
 author_profile: true # add author to page
 ---
 
-## Introduction: Alan Turing and the Zebra's Stripes
+## The lost immortals
 
-If you are familiar with Alan Turing, then you might be surprised that a famous computer scientist would appear in the first sentence of a book on biological modeling. After all, he is best known for two achievements that have nothing to do with biology. In 1936, Turing theorized a primitive computer consisting of a tape of cells along with a machine that writes symbols on the tape according to a set of predetermined set of rules; this "Turing machine" [^numbers] is simple but nevertheless has been proven capable of solving any problem that a modern computer can solve. Then, during World War II, Turing worked with Allied cryptographers at Bletchley Park to devise machines that broke several German ciphers.
+The book <a href="https://what-if.xkcd.com/" target="_blank"><em>What If?</em></a>[^Munroe], by Randall Munroe, compiles a collection of crazy scientific hypotheticals, paired with thorough discussions of what might happen if these situations occurred. One such hypothetical, called “Lost Immortals”, ponders how two immortal humans might find each other if they were stranded in different locations of an uninhabited planet.
 
-[![Portrait of Alan Turing, National Portrait Gallery](../assets/images/600px/alan_turing_npg_cc.jpg){: .align-center loading="lazy"}](../assets/images/alan_turing_npg_cc.jpg)
-Alan Turing in 1951. © National Portrait Gallery, London.
-{: style="font-size: medium; text-align: center;"}
+We could imagine many ideas for how the immortals could reunite. For example, they could avoid the interiors of continents by moving to the coastlines. If they are allowed to discuss how to find each other in advance, then they could agree to meet at the planet's North Pole --- assuming that the planet lacks polar bears.
 
-Yet in 1952, two years before his untimely demise, Turing published his only paper on biochemistry, which addressed the question: "Why do zebras have stripes?"[^morphogenesis] He was not asking why zebras have *evolved* to have stripes — this question was unsolved in Turing’s time, and recent research has indicated that the stripes may be helpful in warding off flies. Rather, Turing was interested in what biochemical mechanism could produce the stripes that we see on a zebra’s coat. And he reasoned that just as a simple machine can emulate a computer, some limited set of molecular "rules" could cause stripes to appear on a zebra’s coat.
+But Munroe provides a solution that is both sophisticated and elegant. He argues that without additional information, the immortals should walk randomly, leaving markers in their wake pointing in the direction that they travel, and resting frequently. If one immortal finds the other's trail, then they should follow it, resting less and traveling faster, until some time has expired or they lose the trail.
 
-In this prologue, we will introduce a particle simulation model based on Turing's ideas. We will be see that a system built on very simple rules and even *randomness* can nevertheless produce emergent behavior that is complex and elegant. And we will explore how this model can be tweaked to provide a hypothesis for the origin of not just the zebra's stripes but also the leopard's spots.
+In the previous two modules, we have harnessed the power of randomness to answer to practical questions. Munroe's approach exemplifies a **randomized algorithm**, or a method that uses randomness to solve a problem.
 
-[Next lesson](random_walk){: .btn .btn--primary .btn--large}
-{: style="font-size: 100%; text-align: center;"}
+In fact, Munroe's randomized algorithm is inspired by nature; he calls his approach "be an ant" because it mimics how ants explore their environment for resources.  However, in this module, we will see that the lost immortals' algorithm is also similar to the method of exploration taken by a much smaller organism: our old friend *E. coli*.
 
-[^numbers]: Turing, Alan M. (1936), "On Computable Numbers, with an Application to the Entscheidungsproblem", Proceedings of the London Mathematical Society, Ser. 2, Vol. 42: 230-265.
+Like other prokaryotes, *E. coli* is tiny, with a rod-shaped body that is 2µm long and 0.25 to 1µm wide.[^Pierucci1978] In exploring a vast world with sparse resources, *E. coli* finds itself in a situation comparable to that of the lost immortals.
 
-[^weizenbaum]: Weizenbaum, Joseph (1976), Computer Power and Human Reason (New York: W.H. Freeman).
+The video below shows a collection of *E. coli* surrounding a sugar crystal. Think of this video the next time you leave a slice of cake out overnight on the kitchen counter!
 
-[^morphogenesis]: Turing, Alan (1952). "The Chemical Basis of Morphogenesis" (PDF). Philosophical Transactions of the Royal Society of London B. 237 (641): 37–72. Bibcode:1952RSPTB.237...37T. doi:10.1098/rstb.1952.0012. JSTOR 92463.
+{% include video id="F6QMU3KD7zw" provider="youtube" %}
 
-[^zebra]: Caro, T., Izzo, A., Reiner, R. C., Walker, H., & Stankowich, T. (2014). The function of zebra stripes. Nature Communications, 5(1), 1–10. https://doi.org/10.1038/ncomms4535
+The movement of organisms like the bacteria in the above video in response to a chemical stimulus is called **chemotaxis**. *E. coli* and other bacteria have evolved to move toward **attractants** like glucose and electron acceptors and move away from **repellents** like Ni<sup>2+</sup> and Co<sup>2+</sup>.
+
+In this module, we will delve into chemotaxis and ask a number of questions. How does a simple organism like *E. coli* sense an attractant or repellent in its environment? How does the bacterium change its internal state accordingly? How can we model the bacterium's response? And how does the bacterium's behavior translate into an "algorithm" that it uses to explore its environment?
+
+[Next lesson](walk){: .btn .btn--primary .btn--large}
+
+[^Munroe]: Randall Munroe. What If? [Available online](https://what-if.xkcd.com/)
+
+[^Pierucci1978]: Pierucci O. 1978. Dimensions of *Escherichia coli* at various growth rates: Model of envelope growth. Journal of Bacteriology 135(2):559-574. [Available online](https://jb.asm.org/content/jb/135/2/559.full.pdf)
+
+[^Sim2017]: Sim M, Koirala S, Picton D, Strahl H, Hoskisson PA, Rao CV, Gillespie CS, Aldridge PD. 2017. Growth rate control of flagellar assembly in *Escherichia coli* strain RP437. Scientific Reports 7:41189. [Available online](https://www.nature.com/articles/srep41189#:~:text=Escherichia%20coli%20is%20a%20prominent,distributed%20across%20the%20cell%20surface.)
+
+[^Baker2005]: Baker MD, Wolanin PM, Stock JB. 2005. Signal transduction in bacterial chemotaxis. BioEssays 28:9-22. [Available online](https://pubmed.ncbi.nlm.nih.gov/16369945/)
+
+[^Weis1990]: Weis RM, Koshland DE. 1990. Chemotaxis in *Escherichia coli* proceeds efficiently from different initial tumble frequencies. Journal of Bacteriology 172:2. [Available online](https://jb.asm.org/content/jb/172/2/1099.full.pdf)
+
+[^Berg2000]: Berg HC. 2000. Motile behavior of bacteria. Physics today 53(1):24. [Available online](https://physicstoday.scitation.org/doi/pdf/10.1063/1.882934)
+
+[^Achouri2015]: Achouri S, Wright JA, Evans L, Macleod C, Fraser G, Cicuta P, Bryant CE. 2015. The frequency and duration of *Salmonella* macrophage adhesion events determines infection efficiency. Philosophical transactions B 370(1661). [Available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4275903/)
+
+[^Turner2016]: Turner L, Ping L, Neubauer M, Berg HC. 2016. Visualizing flagella while tracking bacteria. Biophysical Journal 111(3):630--639.[Available online](https://pubmed.ncbi.nlm.nih.gov/27508446/)
+
+[^Parkinson2015]: Parkinson JS, Hazelbauer, Falke JJ. 2015. Signaling and sensory adaptation in *Escherichia coli* chemoreceptors: 2015 update. [Available online](https://www.sciencedirect.com/science/article/abs/pii/S0966842X15000578)
+
+[^Yang2019]: Yang W, Cassidy CK, Ames P, Diebolder CA, Schulten K, Luthey-Schulten Z, Parkinson JS, Briegel A. 2019. *In situ* confomraitonal changes of the *Escherichia coli* serine chemoreceptor in different signaling states. mBio. [Available online](https://mbio.asm.org/content/10/4/e00973-19/article-info)
+
+[^Saragosti2001]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2001. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)
