@@ -10,7 +10,6 @@ excerpt: "by Shuanger Li and Phillip Compeau"
 header:
   overlay_image: "../assets/images/ecoli_glucose.png"
   image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
-  overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
   overlay_filter: 0.3
 author_profile: true # add author to page
 ---
