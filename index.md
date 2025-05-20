@@ -9,6 +9,7 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.6"
   overlay_image: /assets/images/600px/f38_k61_high-res.png
+  image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
   actions:
     - label: "Start learning!"
       url: "/prologue/"

@@ -11,6 +11,7 @@ header:
   overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
   overlay_filter: 0.3
 image: "../assets/images/gray_scott_jupyter_high-res.png"
+image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 gallery:
   - url: ../assets/images/initial_A_concentration.png
     image_path: ../assets/images/600px/initial_A_concentration.png
