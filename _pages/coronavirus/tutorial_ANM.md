@@ -9,6 +9,7 @@ header:
   overlay_image: "../assets/images/SARS_spike_proteins.jpg"
   overlay_filter: 0.3
 image: "../assets/images/SARS_spike_proteins.jpg"
+image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 ---
 
 In this tutorial, we will use **Normal Mode Wizard (NMWiz)**, a VMD plugin that serves as a GUI for ProDy, to perform ANM analysis on the SARS-CoV-2 RBD. We will visualize the results in a cross-correlation map and square fluctuation plot and then produce ANM animations showing the predicted range of motion of the SARS-CoV-2 spike RBD.

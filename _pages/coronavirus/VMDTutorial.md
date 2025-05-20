@@ -11,6 +11,7 @@ header:
   overlay_image: "../assets/images/SARS_spike_proteins.jpg"
   overlay_filter: 0.3
 image: "../assets/images/SARS_spike_proteins.jpg"
+image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 ---
 
 This is a short tutorial on how to use VMD to visualize molecules and perform some basic analysis. Before you start, make sure to have downloaded and installed <a href="https://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD" target="_blank">VMD</a>.

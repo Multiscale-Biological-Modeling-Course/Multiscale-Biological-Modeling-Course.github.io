@@ -11,6 +11,7 @@ header:
   overlay_image: "../assets/images/SARS_spike_proteins.jpg"
   overlay_filter: 0.3
 image: "../assets/images/SARS_spike_proteins.jpg"
+image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 ---
 
 ## Comparing structures with Qres

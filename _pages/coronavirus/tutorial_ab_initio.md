@@ -9,6 +9,7 @@ header:
   overlay_image: "../assets/images/SARS_spike_proteins.jpg"
   overlay_filter: 0.3
 image: "../assets/images/SARS_spike_proteins.jpg"
+image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 ---
 
 In this software tutorial, we will use the popular *ab initio* modeling software called QUARK. Because of the complexity of *ab initio* algorithms, QUARK limits us to polypeptides with at most 200 amino acids, and so rather than determining the structure of the SARS-CoV-2 spike protein (each monomer has 1281 amino acids), we will work with hemoglobin subunit alpha (PDB entry [1si4](https://www.rcsb.org/structure/1sI4)), which is only 141 amino acids long.

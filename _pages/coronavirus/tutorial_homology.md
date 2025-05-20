@@ -11,6 +11,7 @@ header:
   overlay_image: "../assets/images/SARS_spike_proteins.jpg"
   overlay_filter: 0.3
 image: "../assets/images/SARS_spike_proteins.jpg"
+image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 ---
 
 In this software tutorial, we will apply three popular software resources (SWISS-MODEL, Robetta, and GalaxyWEB) that use homology modeling to predict the structure of the SARS-CoV-2 spike protein. Recall from the main text that this protein is a homotrimer, meaning that it consists of three identical protein structures called chains. In what follows, we will predict the sequence of a single chain.

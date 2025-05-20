@@ -9,6 +9,7 @@ header:
   overlay_image: "../assets/images/SARS_spike_proteins.jpg"
   overlay_filter: 0.3
 image: "../assets/images/SARS_spike_proteins.jpg"
+image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 ---
 
 In this tutorial, we will be using a publicly available web server, DynOmics, produced by Dr. Hongchun Li and colleagues at the University of Pittsburgh School of Medicine. This server is dedicated to performing molecular dynamics analysis by integrating the GNM and ANM models that we learned about in the [main text](anm).
