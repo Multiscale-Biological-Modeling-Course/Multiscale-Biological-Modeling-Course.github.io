@@ -1,11 +1,11 @@
 ---
 permalink: /meet-the-team/
 title: "Meet the Team"
-image: "assets/images/f38_k61_high-res.png"
+image: "assets/images/f38_k61_compressed.webp"
 header:
   overlay_color: "#000"
   overlay_filter: "0.6"
-  overlay_image: /assets/images/600px/f38_k61_high-res.png
+  overlay_image: /assets/images/600px/f38_k61_compressed.webp
   image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 description: "Meet the educators behind Biological Modeling, who are passionate about making science education accessible."
 layout: splash
