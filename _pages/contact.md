@@ -2,7 +2,6 @@
 permalink: /contact/
 title: "Contact Us"
 image: "assets/images/f38_k61_high-res.png"
-image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 description: "Questions or feedback? Reach out to the Biological Modeling team by email or social media, and we'll get back to you promptly."
 comments: false
 share: false
