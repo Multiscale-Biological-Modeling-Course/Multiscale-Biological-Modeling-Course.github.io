@@ -13,8 +13,6 @@ comments: false
 share: false
 ---
 
-# Meet the Team
-
 <div class="row">
 
   <div class="column">

@@ -13,8 +13,6 @@ author_profile: true # add author to page
 exclude_book_buttons: true # remove buy the book buttons
 ---
 
-## Buy the book
-
 We are happy to let you know that the text companion to this course, *Biological Modeling: A Short Tour*, is available in both print and electronic formats!
 
 * Print book: Get it from <a href="https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W" target="_blank">Amazon</a>.
