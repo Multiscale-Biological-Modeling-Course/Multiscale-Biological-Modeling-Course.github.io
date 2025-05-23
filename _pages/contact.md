@@ -1,14 +1,14 @@
 ---
 permalink: /contact/
 title: "Contact Us"
-image: "assets/images/f38_k61_compressed.webp"
+image: "assets/images/f38_k61_compressed.jpg"
 description: "Questions or feedback? Reach out to the Biological Modeling team by email or social media, and we'll get back to you promptly."
 comments: false
 share: false
 header:
   overlay_color: "#000"
   overlay_filter: "0.6"
-  overlay_image: /assets/images/600px/f38_k61_compressed.webp
+  overlay_image: /assets/images/f38_k61_compressed.webp
   image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 ---
 
