@@ -1,7 +1,7 @@
 ---
 permalink: /motifs/tutorial_loops
 title: "Software Tutorial: Hunting for Loops in Transcription Factor Networks"
-description: "Tutorial: mine transcription-factor networks for feedback loops using Python: detect cycles, classify motif types, and visualize gene circuits."
+description: "Build a Jupyter notebook to scan the E. coli transcription-factor network for feedback loops and quantify their prevalence."
 excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
 sidebar:
  nav: "motifs"
