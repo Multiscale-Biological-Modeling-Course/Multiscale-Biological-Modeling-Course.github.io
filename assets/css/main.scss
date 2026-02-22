@@ -533,6 +533,16 @@ body > #page {
   padding-top: var(--masthead-height);
 }
 
+/* ❺ Tighten the gap between hero and content */
+.main--has-hero .page,
+.main--has-hero .page__inner-wrap {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+.main--has-hero .page__content {
+  padding-top: 0.75rem !important;
+}
+
 /* ❹ Offset sticky sidebars */
 @media (min-width: 64em) {
   .sidebar__left.sticky,
