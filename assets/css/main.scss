@@ -737,6 +737,45 @@ figcaption,
   text-indent: -1.5em;
 }
 
+/* === Callout / notice-box enhancements === */
+/* Colored left border + matching label color for each notice type */
+
+.notice--primary {
+  border-left: 4px solid #c10814;
+  border-radius: 0 4px 4px 0;
+  p > strong:first-child { color: #c10814; }
+}
+
+.notice--info {
+  border-left: 4px solid #2980a8;
+  border-radius: 0 4px 4px 0;
+  p > strong:first-child { color: #2980a8; }
+}
+
+.notice--success {
+  border-left: 4px solid #399539;
+  border-radius: 0 4px 4px 0;
+  p > strong:first-child { color: #399539; }
+}
+
+.notice--warning {
+  border-left: 4px solid #c17205;
+  border-radius: 0 4px 4px 0;
+  p > strong:first-child { color: #c17205; }
+}
+
+.notice--danger {
+  border-left: 4px solid #d65652;
+  border-radius: 0 4px 4px 0;
+  p > strong:first-child { color: #d65652; }
+}
+
+.notice {
+  border-left: 4px solid #777;
+  border-radius: 0 4px 4px 0;
+  p > strong:first-child { color: #555; }
+}
+
 /* === Article share bar (bottom of content) === */
 .article-share {
   display: flex;
