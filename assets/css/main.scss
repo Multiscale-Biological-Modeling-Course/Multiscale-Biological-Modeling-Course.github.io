@@ -168,11 +168,45 @@ code, pre, kbd, samp {
 
 /* === Sticky header (masthead) =============================== */
 .masthead {
-  position: sticky;   /* or `fixed` if you prefer it always visible */
+  position: sticky;
   top: 0;
-  z-index: 1000;      /* above page & sidebar */
-  background: #fff;   /* keeps text readable while scrolling */
-  box-shadow: 0 2px 8px rgba(0,0,0,.08);  /* subtle divider */
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+/* Nav links: slightly bolder, dark gray */
+.greedy-nav a:not(.site-title) {
+  font-weight: 500;
+  color: #222 !important;
+  font-size: 0.95rem;
+}
+
+.greedy-nav a:not(.site-title):hover {
+  color: #c10814 !important;
+}
+
+/* "Get the Book" — red pill CTA so it stands out */
+.greedy-nav a[href="/buy_the_book/"] {
+  background: #c10814;
+  color: #fff !important;
+  padding: 0.3em 0.9em;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.greedy-nav a[href="/buy_the_book/"]:hover {
+  background: #a0060f;
+  color: #fff !important;
+}
+
+/* Search icon: match nav link gray, red on hover */
+.search__toggle {
+  color: #222 !important;
+}
+.search__toggle:hover {
+  color: #c10814 !important;
 }
 
 /* Footer updates */
