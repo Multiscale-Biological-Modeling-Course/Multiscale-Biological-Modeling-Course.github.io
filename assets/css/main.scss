@@ -596,7 +596,7 @@ body > #page {
   }
 }
 
-/* === Email signup section (homepage) === */
+/* === Email signup section (homepage + book page) === */
 .email-signup {
   text-align: center;
   padding: 3rem 1.5rem;
@@ -604,6 +604,14 @@ body > #page {
   max-width: 560px;
   background: #f9f9f9;
   border-radius: 8px;
+
+  /* Prominent variant used at the top of the book page */
+  &.email-signup--prominent {
+    background: #fff;
+    border: 2px solid #c10814;
+    box-shadow: 0 4px 16px rgba(193, 8, 20, 0.1);
+    margin-bottom: 2.5rem;
+  }
 
   h2 {
     margin-top: 0;
