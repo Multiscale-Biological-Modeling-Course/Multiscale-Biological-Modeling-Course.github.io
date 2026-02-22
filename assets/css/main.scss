@@ -569,7 +569,7 @@ body > #page {
   .sidebar__left,
   .page__sidebar {
     position: sticky !important;
-    top: calc(var(--masthead-height) + 0.5rem) !important;
+    top: calc(var(--masthead-height) + 2rem) !important; /* extra buffer so masthead never clips top item */
     align-self: flex-start !important; /* required for sticky inside flex containers */
     overflow-x: hidden !important;
     /* No max-height / overflow-y: sidebar extends to full height, no internal scrolling */
@@ -823,7 +823,7 @@ figcaption,
   padding-top: 0.05rem !important;
   padding-bottom: 0.05rem !important;
   font-size: 0.8rem !important;
-  line-height: 1.3 !important;
+  line-height: 1.15 !important;
   white-space: normal;
   overflow-wrap: break-word;
   word-break: break-word;
@@ -833,6 +833,7 @@ figcaption,
   margin-top: 0.75rem !important;
   margin-bottom: 0.15rem !important;
   font-size: 0.68rem !important;
+  line-height: 1.1 !important;
   cursor: pointer;
   user-select: none;
   display: flex;
