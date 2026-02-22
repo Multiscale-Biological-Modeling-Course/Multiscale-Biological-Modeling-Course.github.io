@@ -757,6 +757,16 @@ body > #page {
   color: #888;
 }
 
+/* === Homepage feature rows: left-align text on right-image rows === */
+/* MM's type="right" centers text by default — override for consistency */
+.feature__item--right .archive__item-body {
+  text-align: left;
+}
+.feature__item--right .archive__item-title,
+.feature__item--right .archive__item-excerpt {
+  text-align: left;
+}
+
 /* === Figure caption hanging indents === */
 .page__content p[style*="font-size"],
 figcaption,
@@ -851,8 +861,11 @@ figcaption,
 
 .nav__list .nav__item a,
 .nav__list .nav__item .nav__link {
+  display: block !important;
   padding-top: 0.05rem !important;
   padding-bottom: 0.05rem !important;
+  padding-left: 1em !important;   /* hanging indent: all lines indented */
+  text-indent: -1em !important;   /* hanging indent: first line pulled back flush */
   font-size: 0.8rem !important;
   line-height: 1.15 !important;
   white-space: normal;
