@@ -73,11 +73,7 @@
     function bmGetCookie() {
       return document.cookie.split(';').some(c=>c.trim().startsWith("bmShown="));
     }
-    window.addEventListener('load', () => {
-      if (!bmGetCookie()) {
-        setTimeout(() => { bmOpen(); bmSetCookie(1); }, 60000); // 60 s then once/day
-      }
-    });
+    // Auto-popup removed. Modal is available via bmOpen() if needed.
     </script>
 
 <!-- this is for copying a link to the clipboard for sharing -->
