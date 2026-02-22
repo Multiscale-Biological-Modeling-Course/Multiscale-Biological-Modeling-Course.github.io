@@ -11,6 +11,8 @@ header:
   overlay_filter: 0.3
 author_profile: true
 exclude_book_buttons: true
+---
+
 <div id="signup" class="email-signup email-signup--prominent">
   <h2>Get the e-book free</h2>
   <p>Join the Philomath mailing list and we'll send you a free copy of <em>Biological Modeling: A Short Tour</em> right away.</p>
