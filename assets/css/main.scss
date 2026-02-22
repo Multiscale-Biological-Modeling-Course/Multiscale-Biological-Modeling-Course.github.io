@@ -186,19 +186,16 @@ code, pre, kbd, samp {
   color: #c10814 !important;
 }
 
-/* "Get the Book" — red pill CTA so it stands out */
+/* "Get the Book" — bold red text, no pill */
 .greedy-nav a[href="/buy_the_book/"] {
-  background: #c10814;
-  color: #fff !important;
-  padding: 0.3em 0.9em;
-  border-radius: 20px;
-  font-weight: 600;
-  transition: background 0.2s ease;
+  color: #c10814 !important;
+  font-weight: 700;
+  text-decoration: none !important;
 }
 
 .greedy-nav a[href="/buy_the_book/"]:hover {
-  background: #a0060f;
-  color: #fff !important;
+  color: #a0060f !important;
+  text-decoration: none !important;
 }
 
 /* Search icon: match nav link gray, red on hover */
