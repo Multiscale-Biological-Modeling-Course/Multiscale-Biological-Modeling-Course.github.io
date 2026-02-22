@@ -755,11 +755,12 @@ body > #page {
 
   /* Chevron via ::after */
   &::after {
-    content: '▾';
-    font-size: 0.75em;
-    margin-left: 0.4rem;
+    content: '▼';
+    font-size: 1rem;
+    margin-left: 0.5rem;
     transition: transform 0.2s ease;
     flex-shrink: 0;
+    display: inline-block;
   }
 
   &[aria-expanded="false"]::after {
