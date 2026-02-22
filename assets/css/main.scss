@@ -22,7 +22,7 @@ body,
 .page__content li,
 .page__content td,
 .page__content blockquote {
-  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -606,16 +606,25 @@ body > #page {
   letter-spacing: 0.05em;
 }
 
-/* Free e-book button: accent it differently from the paid buttons */
-.btn--book-free {
+/* Free e-book button — compound selector beats :visited specificity */
+.sidebar-book .btn--book.btn--book-free,
+.sidebar-book .btn--book.btn--book-free:visited,
+.sidebar-book .btn--book.btn--book-free:link {
   background: #c10814 !important;
   color: #fff !important;
-  border-color: #c10814 !important;
+  border: none !important;
+  box-shadow: 0 2px 6px rgba(193, 8, 20, 0.35);
+}
 
-  &:hover {
-    background: #a0060f !important;
-    border-color: #a0060f !important;
-  }
+.sidebar-book .btn--book.btn--book-free:hover {
+  background: #a0060f !important;
+  color: #fff !important;
+  box-shadow: 0 3px 10px rgba(193, 8, 20, 0.45);
+}
+
+/* Icon inside the free button also needs to be white */
+.sidebar-book .btn--book.btn--book-free .fa-envelope {
+  color: #fff !important;
 }
 
 /* === Email signup section (homepage + book page) === */
@@ -732,9 +741,9 @@ body > #page {
 }
 
 .footer__philomath-logo {
-  height: 36px;
+  height: 56px;
   width: auto;
-  opacity: 0.75;
+  opacity: 0.8;
   transition: opacity 0.2s ease;
 
   &:hover {
