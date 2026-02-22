@@ -16,6 +16,27 @@ search: false
 }
 */
 
+/* === Typography === */
+body,
+.page__content p,
+.page__content li,
+.page__content td,
+.page__content blockquote {
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.page__title,
+.archive__item-title,
+.sidebar-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Keep navigation, UI chrome, and code in their own fonts */
+code, pre, kbd, samp {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
 /* === Social Share Icons Styling === */
 .social-share-icons a {
   color: #555 !important; /* Dark gray icons */
@@ -667,4 +688,56 @@ body > #page {
   margin-top: 0.75rem;
   font-size: 0.82rem;
   color: #888;
+}
+
+/* === Article share bar (bottom of content) === */
+.article-share {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+}
+
+.article-share__label {
+  font-size: 0.82rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: 0.25rem;
+}
+
+.article-share a,
+.article-share .copy-link-btn {
+  color: #555;
+  font-size: 1.2rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  text-decoration: none !important;
+}
+
+.article-share a:hover,
+.article-share .copy-link-btn:hover {
+  color: #c10814;
+  transform: scale(1.2);
+}
+
+/* === Philomath footer === */
+.footer__philomath {
+  text-align: center;
+  padding: 1rem 0 0.5rem;
+  border-top: 1px solid #e8e8e8;
+  margin-top: 0.75rem;
+}
+
+.footer__philomath-logo {
+  height: 36px;
+  width: auto;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+  }
 }
