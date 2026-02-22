@@ -554,10 +554,11 @@ body > #page {
   aside.sidebar,
   .sidebar__left,
   .page__sidebar {
-    position: sticky !important;                                /* ensure it can stick */
-    top: calc(var(--masthead-height) + 0.5rem) !important;      /* start BELOW header */
+    position: sticky !important;
+    top: calc(var(--masthead-height) + 0.5rem) !important;
     max-height: calc(100vh - var(--masthead-height) - 1rem) !important;
     overflow-y: auto !important;
+    overflow-x: hidden !important;
     overscroll-behavior: contain;
   }
 }
@@ -734,13 +735,21 @@ body > #page {
 
 /* === Left sidebar nav — tighter spacing + collapsible sections === */
 
+/* Suppress the <br><br> tags baked into navigation.yml entries */
+.nav__list br {
+  display: none;
+}
+
 /* Reduce vertical rhythm throughout the nav */
 .nav__list .nav__item a,
 .nav__list .nav__item .nav__link {
-  padding-top: 0.18rem !important;
-  padding-bottom: 0.18rem !important;
+  padding-top: 0.1rem !important;
+  padding-bottom: 0.1rem !important;
   font-size: 0.8rem !important;
-  line-height: 1.35 !important;
+  line-height: 1.3 !important;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .nav__list .nav__sub-title {
