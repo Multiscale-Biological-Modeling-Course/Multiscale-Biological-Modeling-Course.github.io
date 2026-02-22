@@ -566,6 +566,36 @@ body > #page {
   /* leave default sizes alone */
 }
 
+/* === Sidebar book CTA extras === */
+.sidebar-book-blurb {
+  font-size: 0.82rem;
+  color: #555;
+  text-align: center;
+  margin: 0.25rem 0 0.75rem;
+  line-height: 1.4;
+}
+
+.sidebar-book-or {
+  font-size: 0.78rem;
+  color: #888;
+  text-align: center;
+  margin: 0.75rem 0 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Free e-book button: accent it differently from the paid buttons */
+.btn--book-free {
+  background: #c10814 !important;
+  color: #fff !important;
+  border-color: #c10814 !important;
+
+  &:hover {
+    background: #a0060f !important;
+    border-color: #a0060f !important;
+  }
+}
+
 /* === Email signup section (homepage) === */
 .email-signup {
   text-align: center;

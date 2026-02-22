@@ -13,7 +13,11 @@ author_profile: true
 exclude_book_buttons: true
 ---
 
-*Biological Modeling: A Short Tour* is now available in both print and e-book formats.
+## Get the e-book free
+
+[Sign up for our mailing list](#signup) and we'll email you a free copy immediately.
+
+## Or buy a copy
 
 * **E-book ($9.95):** [Buy on Leanpub](https://leanpub.com/biologicalmodeling){:target="_blank"}
 * **Print edition:** [Buy on Amazon](https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W){:target="_blank"}
@@ -45,3 +49,20 @@ Each chapter is co-authored with talented Carnegie Mellon University students wh
 ## Backed by hundreds of supporters
 
 Publication of *Biological Modeling: A Short Tour* was funded by several hundred backers through [Kickstarter](https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour){:target="_blank"} and [Indiegogo](https://www.indiegogo.com/projects/biological-modeling-a-short-tour){:target="_blank"}. We are grateful to every supporter who helped bring the book to life.
+
+---
+
+<div id="signup" class="email-signup">
+  <h2>Get the e-book free</h2>
+  <p>Sign up for our mailing list and we'll send you a free copy of <em>Biological Modeling: A Short Tour</em> right away.</p>
+  <!-- Mailchimp embed: replace ACTION_URL with the action= value from your Mailchimp embedded form -->
+  <form action="ACTION_URL" method="post" target="_blank" class="email-signup__form">
+    <input type="email" name="EMAIL" placeholder="Your email address" required class="email-signup__input">
+    <!-- Mailchimp bot-prevention field — do not remove -->
+    <div style="position:absolute;left:-5000px;" aria-hidden="true">
+      <input type="text" name="b_REPLACE_WITH_MAILCHIMP_HIDDEN_FIELD" tabindex="-1" value="">
+    </div>
+    <button type="submit" class="email-signup__btn">Send me the book</button>
+  </form>
+  <p class="email-signup__note">No spam. Unsubscribe any time.</p>
+</div>

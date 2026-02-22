@@ -51,19 +51,27 @@ layout: default
           {% unless page.exclude_book_buttons %}
           <div class="sidebar-book">
 
-            <center><h2 class="sidebar-heading"><em>Get the book!</em></h2></center>          
+            <center><h2 class="sidebar-heading"><em>Get the book free!</em></h2></center>
+            <p class="sidebar-book-blurb">Sign up for our mailing list and receive a free copy of the companion e-book.</p>
+            <a href="/buy_the_book/#signup"
+               class="btn--book btn--book-free">
+               <i class="fas fa-envelope book-icon" aria-hidden="true"></i>
+               Get free e-book
+            </a>
+
+            <p class="sidebar-book-or">or buy a copy:</p>
             <a href="https://leanpub.com/biologicalmodeling"
                class="btn--book"
                target="_blank" rel="noopener">
                <img src="{{ '/assets/images/leanpub.png' | relative_url }}" class="book-icon" alt="">
-               E-book (Leanpub)
+               Leanpub ($9.95)
             </a>
-          
+
             <a href="https://www.amazon.com/dp/B0BT6B2B8W"
                class="btn--book"
                target="_blank" rel="noopener">
                <i class="fab fa-amazon book-icon" aria-hidden="true"></i>
-               Print Companion
+               Print (Amazon)
             </a>
           </div>
           {% endunless %}
