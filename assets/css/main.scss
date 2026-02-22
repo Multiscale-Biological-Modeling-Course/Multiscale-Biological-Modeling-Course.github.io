@@ -732,6 +732,51 @@ body > #page {
   transform: scale(1.2);
 }
 
+/* === Left sidebar nav — tighter spacing + collapsible sections === */
+
+/* Reduce vertical rhythm throughout the nav */
+.nav__list .nav__item a,
+.nav__list .nav__item .nav__link {
+  padding-top: 0.18rem !important;
+  padding-bottom: 0.18rem !important;
+  font-size: 0.8rem !important;
+  line-height: 1.35 !important;
+}
+
+.nav__list .nav__sub-title {
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.15rem !important;
+  font-size: 0.68rem !important;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Chevron via ::after */
+  &::after {
+    content: '▾';
+    font-size: 0.75em;
+    margin-left: 0.4rem;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  &[aria-expanded="false"]::after {
+    transform: rotate(-90deg);
+  }
+}
+
+/* Collapsed state — hide the child list */
+.nav-section--collapsed {
+  display: none !important;
+}
+
+/* Hover highlight on section titles to reinforce clickability */
+.nav__list .nav__sub-title:hover {
+  color: #c10814;
+}
+
 /* === Philomath footer === */
 .footer__philomath {
   text-align: center;

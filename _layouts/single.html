@@ -117,3 +117,53 @@ layout: default
 </div>
 
 {% include book-modal.html %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const path = window.location.pathname;
+  const isTutorial = path.includes('tutorial');
+  const isExercise = path.includes('exercise');
+
+  document.querySelectorAll('.nav__sub-title').forEach(function (title) {
+    const ul = title.nextElementSibling;
+    if (!ul || ul.tagName !== 'UL') return;
+
+    const titleText = title.textContent.toLowerCase();
+    const isTutorialSection = titleText.includes('tutorial');
+    const isExerciseSection  = titleText.includes('exercise');
+
+    // A section that contains the active link must never auto-collapse
+    const hasActive = ul.querySelector('.active') !== null;
+
+    // Auto-collapse logic:
+    //   reading page  → collapse tutorials (and exercises)
+    //   tutorial page → collapse core reading
+    //   exercise page → leave both visible
+    let collapse = false;
+    if (!hasActive) {
+      if (!isTutorial && !isExercise && (isTutorialSection || isExerciseSection)) collapse = true;
+      if (isTutorial && !isTutorialSection) collapse = true;
+    }
+
+    if (collapse) {
+      ul.classList.add('nav-section--collapsed');
+      title.setAttribute('aria-expanded', 'false');
+    } else {
+      title.setAttribute('aria-expanded', 'true');
+    }
+
+    title.setAttribute('role', 'button');
+    title.setAttribute('tabindex', '0');
+
+    function toggle() {
+      const collapsed = ul.classList.toggle('nav-section--collapsed');
+      title.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+    }
+
+    title.addEventListener('click', toggle);
+    title.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+});
+</script>
