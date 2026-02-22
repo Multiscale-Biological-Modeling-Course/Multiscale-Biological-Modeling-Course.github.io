@@ -1,6 +1,6 @@
 ---
 permalink: /buy_the_book/
-title: "Biological Modeling: A Short Tour"
+title: "Get the Book"
 excerpt: "The textbook companion to Biological Modeling"
 image: "assets/images/cover_background_narrow.jpg"
 description: "Get the Biological Modeling textbook: discover key concepts in systems biology, data analysis, and computational modeling."
@@ -9,23 +9,39 @@ share: false
 header:
   overlay_image: "../assets/images/cover_background_stretched.jpg"
   overlay_filter: 0.3
-author_profile: true # add author to page
-exclude_book_buttons: true # remove buy the book buttons
+author_profile: true
+exclude_book_buttons: true
 ---
 
-We are happy to let you know that the text companion to this course, *Biological Modeling: A Short Tour*, is available in both print and electronic formats!
+*Biological Modeling: A Short Tour* is now available in both print and e-book formats.
 
-* Print book: Get it from <a href="https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W" target="_blank">Amazon</a>.
-* E-book: Get it from <a href="https://leanpub.com/biologicalmodeling" target="_blank">Leanpub</a>.
+* **E-book ($9.95):** [Buy on Leanpub](https://leanpub.com/biologicalmodeling){:target="_blank"}
+* **Print edition:** [Buy on Amazon](https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W){:target="_blank"}
 
 [![3D cover of the book Biological Modeling showing front, spine, and back](../assets/images/600px/cover_3d_paperback.jpg){: .align-center loading="lazy"}](https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W)
 
-## About the book
+## Why the book?
 
-*Biological Modeling: A Short Tour* offers readers a deep but concise exploration of topics in modeling biological systems at multiple scales. Each chapter poses a single biological question, from why zebras have stripes, to how bacteria explore their world intelligently, to why the SARS-CoV-2 spike protein was so effective at binding to human cells. The book then introduces the modeling concepts needed to answer this question. Some talented students at Carnegie Mellon University who helped build the Biological Modeling project appear in the book as chapter co-authors.
+The free course on this website is comprehensive — but it's also large, full of software tutorials, and built for screen-by-screen reading. The book offers something different:
 
-*Biological Modeling: A Short Tour* follows the core content of the course, whereas the tutorials powering this core content are hosted on this website.
+* **One clean narrative.** Each chapter poses a single compelling biological question and answers it through mathematical modeling — no sidebars, no installation guides, just the story.
+* **Read anywhere.** The e-book works offline on any device. The print edition travels with you.
+* **A reference you can search, highlight, and annotate.** Much easier to revisit than a website spread across dozens of pages.
+* **Beautiful figures.** Every illustration from the course, laid out for the page in full color.
+* **Support free education.** Your purchase helps keep this course free for everyone.
 
-## Crowdfunding the publication of our book
+## What's inside
 
-Publication of *Biological Modeling: A Short Tour* was graciously funded by several hundreds backers via <a href="https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour" target="_blank">Kickstarter</a> and <a href="https://www.indiegogo.com/projects/biological-modeling-a-short-tour" target="_blank">Indiegogo</a>. We are eternally grateful to these supporters who brought the book to life.
+*Biological Modeling: A Short Tour* follows the conceptual core of the course across five chapters:
+
+1. **Prologue** — Why do zebras have stripes? We model Turing patterns emerging from reaction-diffusion systems.
+2. **Module 1** — How do cells regulate their own genes? We explore transcription factor networks and the motifs that evolution has discovered.
+3. **Module 2** — How does a single-celled bacterium navigate its world intelligently? We decode *E. coli*'s chemotaxis algorithm.
+4. **Module 3** — Why did SARS-CoV-2 spread so much more effectively than the original SARS? We compare coronavirus spike proteins using structural biology and molecular dynamics.
+5. **Module 4** — How can computers be trained to see as well as a human? We build a classifier for white blood cell images using machine learning.
+
+Each chapter is co-authored with talented Carnegie Mellon University students who helped build the Biological Modeling project.
+
+## Backed by hundreds of supporters
+
+Publication of *Biological Modeling: A Short Tour* was funded by several hundred backers through [Kickstarter](https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour){:target="_blank"} and [Indiegogo](https://www.indiegogo.com/projects/biological-modeling-a-short-tour){:target="_blank"}. We are grateful to every supporter who helped bring the book to life.
