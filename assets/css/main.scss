@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6,
 .page__title,
 .archive__item-title,
 .sidebar-heading {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif !important;
 }
 
 /* Keep navigation, UI chrome, and code in their own fonts */
