@@ -548,11 +548,10 @@ body > #page {
   padding-top: 0.75rem !important;
 }
 
-/* ❹ Offset sticky sidebars */
+/* ❹ Offset sticky sidebars — right sidebar only (left handled separately below) */
 @media (min-width: 64em) {
-  .sidebar__left.sticky,
   .sidebar__right.sticky {
-    top: calc(var(--masthead-height) + 0.5rem);     /* breathing room */
+    top: calc(var(--masthead-height) + 0.5rem);
     max-height: calc(100vh - var(--masthead-height) - 1rem);
     overflow-y: auto;
   }
@@ -571,24 +570,22 @@ body > #page {
   .page__sidebar {
     position: sticky !important;
     top: calc(var(--masthead-height) + 0.5rem) !important;
-    max-height: calc(100vh - var(--masthead-height) - 1rem) !important;
-    overflow-y: auto !important;
+    align-self: flex-start !important; /* required for sticky inside flex containers */
     overflow-x: hidden !important;
-    overscroll-behavior: contain;
+    /* No max-height / overflow-y: sidebar extends to full height, no internal scrolling */
     width: clamp(220px, 22vw, 300px) !important; /* grows with viewport, never crushed */
     margin-left: -1rem !important;               /* reclaim some of the page left gutter */
   }
 }
 
-/* === final nudge: make the INNER left-sidebar container respect the header height === */
+/* Inner sidebar: no sticky — outer element handles it; no overflow either */
 @media (min-width: 64em) {
   .sidebar__left .sidebar__inner,
   .sidebar      .sidebar__inner,
   .page__sidebar .sidebar__inner {
-    position: sticky !important;
-    top: calc(var(--masthead-height) + 0.5rem) !important;
-    max-height: calc(100vh - var(--masthead-height) - 1rem) !important;
-    overflow-y: auto !important;
+    position: static !important;
+    max-height: none !important;
+    overflow-y: visible !important;
   }
 }
 
