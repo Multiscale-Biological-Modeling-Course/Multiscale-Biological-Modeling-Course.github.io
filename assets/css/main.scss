@@ -133,14 +133,19 @@ code, pre, kbd, samp {
 /* ^ optional: nudges Leanpub PNG toward red; delete if you prefer no change */
 
 /* ---------- Sidebar book buttons ---------------------------- */
+.sidebar-book .sidebar-heading {
+  font-size: 1rem !important;
+  margin: 0 0 0.15rem !important;
+}
+
 .sidebar-book .btn--book {
   display:inline-flex; align-items:center; justify-content:center;
   width:100%;
   background:#f4f4f4;
   color:#000 !important;
   border:1px solid #ddd; border-radius:6px;
-  font-size:.95rem; font-weight:600;
-  padding:.65rem 1.1rem; margin-bottom:.8rem;
+  font-size:.85rem; font-weight:600;
+  padding:.4rem .7rem; margin-bottom:.5rem;
   text-decoration:none;
   transition:background .2s ease, transform .2s ease, color .2s ease;
 }
@@ -603,20 +608,32 @@ body > #page {
 
 /* === Sidebar book CTA extras === */
 .sidebar-book-blurb {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: #555;
   text-align: center;
-  margin: 0.25rem 0 0.75rem;
-  line-height: 1.4;
+  margin: 0.1rem 0 0.4rem;
+  line-height: 1.3;
 }
 
 .sidebar-book-or {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   color: #888;
   text-align: center;
-  margin: 0.75rem 0 0.25rem;
+  margin: 0.3rem 0 0.2rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+.sidebar-book-paid {
+  display: flex;
+  gap: 0.4rem;
+
+  .btn--book {
+    flex: 1;
+    font-size: 0.78rem;
+    padding: .35rem .3rem;
+    justify-content: center;
+  }
 }
 
 /* Free e-book button — compound selector beats :visited specificity */
