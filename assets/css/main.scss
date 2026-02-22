@@ -710,6 +710,14 @@ body > #page {
   color: #888;
 }
 
+/* === Figure caption hanging indents === */
+.page__content p[style*="font-size"],
+figcaption,
+.caption {
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
+
 /* === Article share bar (bottom of content) === */
 .article-share {
   display: flex;
@@ -775,7 +783,7 @@ body > #page {
   /* Chevron via ::after */
   &::after {
     content: '▼';
-    font-size: 1rem;
+    font-size: 0.7rem;
     margin-left: 0.5rem;
     transition: transform 0.2s ease;
     flex-shrink: 0;
