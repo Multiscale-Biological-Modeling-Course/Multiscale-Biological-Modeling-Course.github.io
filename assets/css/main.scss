@@ -47,8 +47,8 @@ figcaption a:hover { color: #a0060f; }
   color: #fff !important;
 }
 
-/* Hide the excerpt text rendered in header overlays */
-.page__hero--overlay .page__lead {
+/* Hide the excerpt text in header overlays on content pages (not homepage) */
+.layout--single .page__hero--overlay .page__lead {
   display: none;
 }
 
