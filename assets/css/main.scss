@@ -838,23 +838,28 @@ figcaption,
   display: none;
 }
 
-/* Reduce vertical rhythm throughout the nav */
-.nav__list .nav__item {
-  margin-bottom: 1rem;
+/* Spacing and hanging indent for nav items */
+/* HTML structure: nav.nav__list > ul.nav__items > li > a (no .nav__item class) */
+.nav__list .nav__items li {
+  margin-bottom: 0.6rem;
 }
 
-.nav__list .nav__item a,
-.nav__list .nav__item .nav__link {
+.nav__list .nav__items li a {
   display: block !important;
-  padding-top: 0.05rem !important;
-  padding-bottom: 0.05rem !important;
-  padding-left: 1em !important;   /* hanging indent: all lines indented */
-  text-indent: -1em !important;   /* hanging indent: first line pulled back flush */
+  padding-left: 1em !important;   /* all lines indented */
+  text-indent: -1em !important;   /* first line pulled flush: creates hanging indent */
+  margin-left: 0 !important;      /* reset theme's negative margin on active items */
   font-size: 0.8rem !important;
-  line-height: 1.15 !important;
+  line-height: 1.3 !important;
   white-space: normal;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+
+/* Reset theme's .active negative margin so hanging indent stays correct */
+.nav__list .nav__items .active {
+  margin-left: 0 !important;
+  padding-left: 1em !important;
 }
 
 .nav__list .nav__sub-title {

@@ -1497,3 +1497,24 @@ body > #main:not(.main--has-hero), body > #page { padding-top: var(--masthead-he
 .footer__philomath { text-align: center; padding: 1rem 0 0.5rem; border-top: 1px solid #e8e8e8; margin-top: 0.75rem; }
 .footer__philomath-logo { height: 47px; width: auto; opacity: 0.8; transition: opacity 0.2s ease; }
 .footer__philomath-logo:hover { opacity: 1; }
+
+/* === CORRECTED: nav item selectors (was .nav__item, actual HTML uses .nav__items li) === */
+.nav__list .nav__items li {
+  margin-bottom: 0.6rem;
+}
+.nav__list .nav__items li a {
+  display: block !important;
+  padding-left: 1em !important;
+  text-indent: -1em !important;
+  margin-left: 0 !important;
+  font-size: 0.8rem !important;
+  line-height: 1.3 !important;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+/* Reset theme's negative margin on the active link so hanging-indent stays correct */
+.nav__list .nav__items .active {
+  margin-left: 0 !important;
+  padding-left: 1em !important;
+}
