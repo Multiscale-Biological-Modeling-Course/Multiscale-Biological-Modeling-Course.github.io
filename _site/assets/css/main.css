@@ -1518,3 +1518,11 @@ body > #main:not(.main--has-hero), body > #page { padding-top: var(--masthead-he
   margin-left: 0 !important;
   padding-left: 1em !important;
 }
+
+/* === FIX: remove negative left margin causing horizontal scroll === */
+@media (min-width: 64em) {
+  div.sidebar.sticky {
+    margin-left: 0 !important;
+    overflow-x: hidden !important;
+  }
+}

@@ -599,8 +599,7 @@ body > #page {
     top: calc(var(--masthead-height) + 1rem) !important; /* must exceed masthead height */
     max-height: calc(100vh - var(--masthead-height) - 2rem) !important;
     overflow-y: auto !important;
-    width: clamp(220px, 22vw, 300px) !important; /* grows with viewport, never crushed */
-    margin-left: -1rem !important;               /* reclaim some of the page left gutter */
+    overflow-x: hidden !important; /* prevent horizontal scrollbar from overflow-y: auto */
   }
 }
 
