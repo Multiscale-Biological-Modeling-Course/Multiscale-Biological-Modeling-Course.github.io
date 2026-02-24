@@ -17,7 +17,7 @@ share: false
 
   <div class="column">
     <div class="card">
-      <img src="../assets/images/600px/compeau_phillip_2023.jpg" alt="Picture of Phillip Compeau, Founder and Director of Biological Modeling" loading="lazy" style="display:block; margin:auto; width:256px; border-radius:50%">
+      <div class="card__photo"><img src="../assets/images/600px/compeau_phillip_2023.jpg" alt="Picture of Phillip Compeau, Founder and Director of Biological Modeling" loading="lazy"></div>
       <div class="container">
         <h2>Phillip Compeau</h2>
         <p class="title">Founder and Director</p>
@@ -31,7 +31,7 @@ Phillip is passionate about open online education, and his education projects ha
 
   <div class="column">
     <div class="card">
-      <img src="../assets/images/600px/lee_noah.png" alt="Portrait of Noah Yann Lee, Web Designer & Content Developer" loading="lazy" style="display:block; margin:auto; width:256px; border-radius:50%">
+      <div class="card__photo"><img src="../assets/images/600px/lee_noah.png" alt="Portrait of Noah Yann Lee, Web Designer & Content Developer" loading="lazy"></div>
       <div class="container">
         <h2>Noah Yann Lee</h2>
         <p class="title">Web Designer &amp; Content Developer</p>
@@ -46,7 +46,7 @@ Phillip is passionate about open online education, and his education projects ha
 
   <div class="column">
     <div class="card">
-      <img src="../assets/images/600px/lee_chris.jpg" alt="Portrait of Chris Lee, Content Developer" loading="lazy" style="display:block; margin:auto; width:256px; border-radius:50%">
+      <div class="card__photo"><img src="../assets/images/600px/lee_chris.jpg" alt="Portrait of Chris Lee, Content Developer" loading="lazy"></div>
       <div class="container">
         <h2>Chris Lee</h2>
         <p class="title">Content Developer</p>
@@ -57,7 +57,7 @@ Phillip is passionate about open online education, and his education projects ha
 
   <div class="column">
     <div class="card">
-      <img src="../assets/images/600px/li_shuanger.png" alt="Portrait of Shuanger Li, Content Developer" loading="lazy" style="display:block; margin:auto; width:256px; border-radius:50%">
+      <div class="card__photo"><img src="../assets/images/600px/li_shuanger.png" alt="Portrait of Shuanger Li, Content Developer" loading="lazy"></div>
       <div class="container">
         <h2>Shuanger Li</h2>
         <p class="title">Content Developer</p>
@@ -73,7 +73,7 @@ Phillip is passionate about open online education, and his education projects ha
 
   <div class="column">
     <div class="card">
-      <img src="../assets/images/600px/inan_mert.jpg" alt="Portrait of Mert Inan, Content Developer" loading="lazy" style="display:block; margin:auto; width:256px; border-radius:50%">
+      <div class="card__photo"><img src="../assets/images/600px/inan_mert.jpg" alt="Portrait of Mert Inan, Content Developer" loading="lazy"></div>
       <div class="container">
         <h2>Mert Inan</h2>
         <p class="title">Content Developer</p>
@@ -84,7 +84,7 @@ Phillip is passionate about open online education, and his education projects ha
 
   <div class="column">
     <div class="card">
-      <img src="../assets/images/600px/matamala_nicole.jpg" alt="Portrait of Nicole Matamala, Content Developer" loading="lazy" style="display:block; margin:auto; width:256px; border-radius:50%">
+      <div class="card__photo"><img src="../assets/images/600px/matamala_nicole.jpg" alt="Portrait of Nicole Matamala, Content Developer" loading="lazy"></div>
       <div class="container">
         <h2>Nicole Matamala</h2>
         <p class="title">Content Developer</p>

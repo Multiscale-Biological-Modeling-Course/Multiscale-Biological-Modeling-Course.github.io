@@ -762,6 +762,74 @@ figcaption,
   text-indent: -1.5em;
 }
 
+/* === Team page card redesign === */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: stretch;
+}
+.column {
+  flex: 1 1 calc(50% - 1rem);
+  min-width: 280px;
+  float: none;
+  padding: 0;
+  display: flex;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+  border-top: 3px solid #c10814;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.13);
+  transform: translateY(-3px);
+}
+.card__photo {
+  background: #f5f5f7;
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+}
+.card__photo img {
+  display: block !important;
+  margin: 0 auto !important;
+  width: 180px !important;
+  border-radius: 50% !important;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+.card .container {
+  flex: 1;
+  padding: 1.5rem 1.75rem 2rem;
+}
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 0.3rem;
+  font-size: 1.25rem;
+}
+.card p.title {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #c10814;
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+@media (max-width: 650px) {
+  .row { gap: 1rem; }
+  .column { flex: 1 1 100%; }
+}
+
 /* === Callout / notice-box enhancements === */
 /* Colored left border + matching label color for each notice type */
 
