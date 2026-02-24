@@ -1338,7 +1338,7 @@ code, pre, kbd, samp {
 @media (min-width: 80em) { .sidebar__right { margin-right: calc(-300px - var(--sidebar-gap)); } }
 
 /* === Sticky masthead === */
-.masthead { position: sticky; top: 0; z-index: 1000; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.08); }
+.masthead { position: sticky; top: 0; z-index: 1000; background: #fff; box-shadow: 0 3px 14px rgba(0,0,0,0.13); }
 .greedy-nav a:not(.site-title) { font-weight: 500; color: #222 !important; font-size: 0.95rem; }
 .greedy-nav a:not(.site-title):hover { color: #c10814 !important; }
 .greedy-nav a[href="/buy_the_book/"] { color: #c10814 !important; font-weight: 700; text-decoration: none !important; }
@@ -1352,6 +1352,9 @@ code, pre, kbd, samp {
 body > #main:not(.main--has-hero), body > #page { padding-top: var(--masthead-height); }
 .main--has-hero .page, .main--has-hero .page__inner-wrap { padding-top: 0 !important; margin-top: 0 !important; }
 .main--has-hero .page__content { padding-top: 0.75rem !important; }
+
+/* === Anchor links clear sticky masthead === */
+html { scroll-padding-top: calc(var(--masthead-height) + 1rem); }
 
 /* === FIX: LEFT sidebar sticky — correct top so masthead never clips it === */
 @media (min-width: 64em) {

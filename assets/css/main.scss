@@ -600,7 +600,7 @@ code, pre, kbd, samp {
   top: 0;
   z-index: 1000;
   background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,.08);
+  box-shadow: 0 3px 14px rgba(0,0,0,0.13);
 }
 
 /* ❸ Push main page content — only when no hero image provides the spacing */
@@ -617,6 +617,11 @@ body > #page {
 }
 .main--has-hero .page__content {
   padding-top: 0.75rem !important;
+}
+
+/* ❻ Anchor links clear the sticky masthead */
+html {
+  scroll-padding-top: calc(var(--masthead-height) + 1rem);
 }
 
 /* ❹ Offset sticky sidebars — right sidebar only (left handled separately below) */
