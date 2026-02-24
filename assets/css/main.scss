@@ -592,31 +592,15 @@ body > #page {
    Offset the LEFT sidebar by the masthead height as well
    -----------------------------------------------------------------*/
 /* ---------- Offset the LEFT sidebar below the sticky header ---------- */
+/* The left sidebar is rendered as <div class="sidebar sticky"> */
 @media (min-width: 64em) {
-
-  /* Minimal Mistakes can output any of these:  .sidebar ,  .sidebar__left ,
-     or  .page__sidebar  depending on layout and version                 */
-  aside.sidebar,
-  .sidebar__left,
-  .page__sidebar {
+  div.sidebar.sticky {
     position: sticky !important;
-    top: calc(var(--masthead-height) + 2rem) !important; /* extra buffer so masthead never clips top item */
-    align-self: flex-start !important; /* required for sticky inside flex containers */
-    overflow-x: hidden !important;
-    /* No max-height / overflow-y: sidebar extends to full height, no internal scrolling */
+    top: calc(var(--masthead-height) + 1rem) !important; /* must exceed masthead height */
+    max-height: calc(100vh - var(--masthead-height) - 2rem) !important;
+    overflow-y: auto !important;
     width: clamp(220px, 22vw, 300px) !important; /* grows with viewport, never crushed */
     margin-left: -1rem !important;               /* reclaim some of the page left gutter */
-  }
-}
-
-/* Inner sidebar: no sticky — outer element handles it; no overflow either */
-@media (min-width: 64em) {
-  .sidebar__left .sidebar__inner,
-  .sidebar      .sidebar__inner,
-  .page__sidebar .sidebar__inner {
-    position: static !important;
-    max-height: none !important;
-    overflow-y: visible !important;
   }
 }
 
