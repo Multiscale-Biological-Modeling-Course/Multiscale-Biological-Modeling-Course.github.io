@@ -16,6 +16,31 @@ search: false
 }
 */
 
+/* === Replace blue links with CMU red === */
+a {
+  color: #c10814;
+}
+a:visited {
+  color: #9a1020;
+}
+a:hover,
+a:focus {
+  color: #a0060f;
+  text-decoration: underline;
+}
+figcaption a:hover { color: #a0060f; }
+
+/* Keep UI-chrome links at their intended colors */
+.masthead a,
+.greedy-nav a,
+.nav__list a,
+.page__footer a,
+.btn,
+.btn:visited,
+.author__urls a {
+  color: inherit;
+}
+
 /* === Typography === */
 body,
 .page__content p,
