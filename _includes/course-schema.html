@@ -1,0 +1,88 @@
+{% comment %}
+  JSON-LD structured data for biologicalmodeling.org.
+  - Home page  → Course schema
+  - All other pages → LearningResource schema
+{% endcomment %}
+
+{% if page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Biological Modeling: A Free Online Course in Computational Biology",
+  "description": "{{ site.description | strip_html | strip_newlines | escape }}",
+  "url": "{{ site.url }}",
+  "isAccessibleForFree": true,
+  "inLanguage": "en-US",
+  "educationalLevel": "undergraduate",
+  "provider": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "url": "{{ site.author.home }}"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseSchedule": {
+      "@type": "Schedule",
+      "repeatFrequency": "self-paced"
+    }
+  },
+  "syllabusSections": [
+    {
+      "@type": "Syllabus",
+      "name": "Prologue: Random Walks and Turing Patterns",
+      "url": "{{ site.url }}/prologue/"
+    },
+    {
+      "@type": "Syllabus",
+      "name": "Module 1: Finding Motifs in Transcription Factor Networks",
+      "url": "{{ site.url }}/motifs/home"
+    },
+    {
+      "@type": "Syllabus",
+      "name": "Module 2: Unpacking E. coli's Genius Exploration Algorithm",
+      "url": "{{ site.url }}/chemotaxis/home"
+    },
+    {
+      "@type": "Syllabus",
+      "name": "Module 3: Analyzing the Coronavirus Spike Protein",
+      "url": "{{ site.url }}/coronavirus/home"
+    },
+    {
+      "@type": "Syllabus",
+      "name": "Module 4: Training a Computer to Classify White Blood Cells",
+      "url": "{{ site.url }}/white_blood_cells/home"
+    }
+  ]
+}
+</script>
+{% elsif page.title %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "{{ page.title | strip_html | escape }}",
+  {% if page.description %}"description": "{{ page.description | strip_html | strip_newlines | escape }}",{% endif %}
+  "url": "{{ site.url }}{{ page.url }}",
+  "isAccessibleForFree": true,
+  "inLanguage": "en-US",
+  "learningResourceType": "lesson",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "url": "{{ site.author.home }}"
+  },
+  "isPartOf": {
+    "@type": "Course",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}"
+  }
+}
+</script>
+{% endif %}
