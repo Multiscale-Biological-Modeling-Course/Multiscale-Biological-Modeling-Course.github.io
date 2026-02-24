@@ -768,7 +768,7 @@ body > #page {
 }
 
 /* === Figure caption hanging indents === */
-.page__content p[style*="font-size"],
+.page__content p[style*="font-size"]:not(:has(.btn)),
 figcaption,
 .caption {
   padding-left: 1.5em;
