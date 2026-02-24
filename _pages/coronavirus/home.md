@@ -7,7 +7,7 @@ sidebar:
 toc: true
 toc_sticky: true
 image: "../assets/images/SARS_spike_proteins.jpg"
-excerpt: "by Chris Lee and Phillip Compeau"
+excerpt: "Introduction to protein structure prediction and analysis using the SARS-CoV-2 coronavirus spike protein and ACE2 receptor binding as a case study."
 header:
   overlay_image: "../assets/images/SARS_spike_proteins.jpg"
   overlay_filter: 0.3

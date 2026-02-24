@@ -5,7 +5,7 @@ description: "Start Module 4: learn how to segment, analyze, and classify white-
 sidebar:
  nav: "white_blood_cells"
 image: "../assets/images/normal_adult_blood_smear.JPG"
-excerpt: "by Phillip Compeau (with software tutorials featuring Nicole Matamala)"
+excerpt: "Introduction to image analysis and machine learning for classifying white blood cells, combining computational biology with computer vision."
 header:
   overlay_image: "../assets/images/normal_adult_blood_smear.JPG"
   overlay_filter: 0.3

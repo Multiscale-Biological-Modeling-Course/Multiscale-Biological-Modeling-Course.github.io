@@ -2,7 +2,7 @@
 permalink: /motifs/exercises
 title: "Network Motifs Exercises"
 description: "Exercises: identify motifs, model negative feedback, and analyze oscillatory circuits to reinforce network-motif concepts."
-excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
+excerpt: "Practice problems on transcription factor networks, network motifs, negative autoregulation, feedforward loops, and biological oscillators."
 sidebar:
  nav: "motifs"
 header:

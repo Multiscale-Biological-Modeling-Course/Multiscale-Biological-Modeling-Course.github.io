@@ -2,7 +2,7 @@
 permalink: /coronavirus/tutorial_rmsd
 title: "Software Tutorial: Using RMSD to Compare the Predicted SARS-CoV-2 Spike Protein Against its Experimentally Validated Structure"
 description: "Tutorial: calculate RMSD to compare predicted SARS-CoV-2 spike models against experimental structures and gauge prediction accuracy."
-excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
+excerpt: "Tutorial: use RMSD to quantitatively compare a predicted SARS-CoV-2 spike protein structure against its experimentally determined PDB structure."
 sidebar:
  nav: "coronavirus"
 toc: true

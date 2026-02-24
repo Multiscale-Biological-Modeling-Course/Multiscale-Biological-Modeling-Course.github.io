@@ -2,7 +2,7 @@
 permalink: /coronavirus/glycans
 title: "Glycans"
 description: "Explore how complex glycans shield coronavirus spike proteins, influence immune evasion, and inform next-gen vaccine design."
-excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
+excerpt: "Explore glycosylation of the SARS-CoV-2 spike protein: how N-linked glycan chains shield the virus from antibody-mediated immune recognition."
 sidebar:
  nav: "coronavirus"
 header:

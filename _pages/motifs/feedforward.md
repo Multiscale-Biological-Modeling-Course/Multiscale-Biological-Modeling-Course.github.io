@@ -2,7 +2,7 @@
 permalink: /motifs/feedforward
 title: "The Feedforward Loop Motif"
 description: "Decode the feedforward-loop motif: coherent vs. incoherent types, signal filtering, and timing control in gene-regulatory networks."
-excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
+excerpt: "Analyze the feedforward loop motif: a three-node pattern in gene regulatory networks that filters transient signals and accelerates steady-state responses."
 sidebar:
  nav: "motifs"
 toc: true

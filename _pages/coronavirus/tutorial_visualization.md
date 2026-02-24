@@ -2,7 +2,7 @@
 permalink: /coronavirus/tutorial_visualization
 title: "Software Tutorial: Visualizing Specific Regions of Interest within the Spike Protein Structure"
 description: "Tutorial: visualize key regions of coronavirus spike proteins in VMD; highlight epitopes, fusion core, glycans, and mutation sites."
-excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
+excerpt: "Tutorial: visualize specific regions of interest within the coronavirus spike protein structure using VMD selection language and rendering tools."
 sidebar:
  nav: "coronavirus"
 header:

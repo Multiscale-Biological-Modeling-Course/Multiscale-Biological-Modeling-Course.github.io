@@ -2,7 +2,7 @@
 permalink: /motifs/tutorial_nar
 title: "Software Tutorial: Comparing Simple Regulation to Negative Autoregulation"
 description: "Tutorial: model negative autoregulation in genes, simulate responses to stimuli, and compare speed and noise with non-regulated circuits."
-excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
+excerpt: "Tutorial: simulate simple regulation versus negative autoregulation to compare response time and expression noise using differential equation models."
 sidebar:
  nav: "motifs"
 toc: true

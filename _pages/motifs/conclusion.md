@@ -2,7 +2,7 @@
 permalink: /motifs/conclusion
 title: "Conclusion: The Robustness of Biological Oscillators"
 description: "Conclusion: network motifs create reliable behavior; see how feedback speed, buffering, and modularity emerge across biology."
-excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
+excerpt: "Understand why biological oscillators like the repressilator are robust to parameter perturbations — a hallmark of evolved gene regulatory networks."
 sidebar:
  nav: "motifs"
 toc: true

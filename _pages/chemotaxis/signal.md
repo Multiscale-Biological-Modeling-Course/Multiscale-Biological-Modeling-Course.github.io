@@ -2,7 +2,7 @@
 permalink: /chemotaxis/signal
 title: "Signaling and Ligand-Receptor Dynamics"
 description: "Analyze ligand-receptor dynamics in E. coli chemotaxis, using reversible reaction models to link external signals to intracellular responses."
-excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
+excerpt: "Explore ligand-receptor dynamics in E. coli chemotaxis signaling: how transmembrane receptors detect attractants and relay intracellular phosphorylation signals."
 sidebar:
  nav: "chemotaxis"
 toc: true

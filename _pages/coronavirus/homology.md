@@ -2,7 +2,7 @@
 permalink: /coronavirus/homology
 title: Homology Modeling
 description: "Learn homology modeling: build a 3-D SARS-CoV-2 spike model by aligning it to known coronavirus structures and refining missing loops."
-excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
+excerpt: "Learn homology modeling: predicting a protein's 3D structure by leveraging sequence similarity to proteins with known experimentally determined structures."
 sidebar:
  nav: "coronavirus"
 toc: true

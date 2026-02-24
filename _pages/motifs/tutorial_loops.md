@@ -2,7 +2,7 @@
 permalink: /motifs/tutorial_loops
 title: "Software Tutorial: Hunting for Loops in Transcription Factor Networks"
 description: "Build a Jupyter notebook to scan the E. coli transcription-factor network for feedback loops and quantify their prevalence."
-excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
+excerpt: "Tutorial: search real transcription factor network data for autoregulation and recurring motifs using network analysis and graph algorithms."
 sidebar:
  nav: "motifs"
 header:

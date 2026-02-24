@@ -2,7 +2,7 @@
 permalink: /coronavirus/biochemistry
 title: Protein Biochemistry
 description: "Review coronavirus spike protein biochemistry and its implications for entry, immunity, and therapeutics."
-excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
+excerpt: "Review protein biochemistry: amino acid chemistry, protein folding, primary through quaternary structure, and how sequence determines 3D structure."
 sidebar:
  nav: "coronavirus"
 toc: true

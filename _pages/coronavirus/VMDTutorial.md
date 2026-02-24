@@ -2,7 +2,7 @@
 permalink: /coronavirus/VMDTutorial
 title: "VMD Tutorial"
 description: "Quick VMD guide: navigate, color, and analyze coronavirus spike structures, use selection commands, and create movies for presentations."
-excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
+excerpt: "Introduction to VMD (Visual Molecular Dynamics): how to load, visualize, and analyze protein structures including the SARS-CoV-2 spike protein."
 sidebar:
  nav: "coronavirus"
 toc: true

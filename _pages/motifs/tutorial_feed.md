@@ -2,7 +2,7 @@
 permalink: /motifs/tutorial_feed
 title: "Software Tutorial: Implementing the Feed-Forward Loop Motif"
 description: "Hands-on tutorial: code a feedforward loop in Python, simulate coherent/incoherent variants, and visualize dynamic responses."
-excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
+excerpt: "Tutorial: implement and simulate the feedforward loop motif in a gene regulatory network using differential equation and stochastic modeling."
 sidebar:
  nav: "motifs"
 header:

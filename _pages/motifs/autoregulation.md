@@ -2,7 +2,7 @@
 permalink: /motifs/autoregulation
 title: "Gene Autoregulation is Surprisingly Frequent"
 description: "Gene autoregulation is common: see how feedback speeds responses, dampens noise, and is detected statistically in genomic datasets."
-excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
+excerpt: "Discover why negative autoregulation — where a gene product represses its own transcription — is a surprisingly common and functional network motif."
 sidebar:
  nav: "motifs"
 toc: true

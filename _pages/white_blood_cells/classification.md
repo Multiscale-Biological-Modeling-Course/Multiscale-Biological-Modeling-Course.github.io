@@ -2,7 +2,7 @@
 permalink: /white_blood_cells/classification
 title: "An Overview of Classification and k-Nearest Neighbors"
 description: "See how k-nearest neighbors and other classifiers distinguish leukocyte types based on shape and intensity features."
-excerpt: "Module 4: Training a Computer to Classify White Blood Cells"
+excerpt: "Overview of classification algorithms including k-nearest neighbors (k-NN) applied to categorizing white blood cell types by morphological features."
 sidebar:
  nav: "white_blood_cells"
 toc: true

@@ -5,7 +5,7 @@ description: "Start Module 1: discover recurrent network motifs in transcription
 sidebar:
  nav: "motifs"
 image: "../assets/images/repressilator_chart.png"
-excerpt: "by Noah Lee and Phillip Compeau"
+excerpt: "Introduction to biological network motifs: how recurrent patterns in transcription factor networks underpin robust gene regulation in cells."
 header:
   overlay_image: "../assets/images/repressilator_chart.png"
   overlay_filter: 0.3

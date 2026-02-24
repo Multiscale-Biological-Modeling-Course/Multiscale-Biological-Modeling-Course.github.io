@@ -2,7 +2,7 @@
 permalink: /coronavirus/anm
 title: "Anisotropic Network Models"
 description: "Dive into Anisotropic Network Models: capture directional motions in spike proteins to understand hinge points and potential drug sites."
-excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
+excerpt: "Use Anisotropic Network Models (ANM) to predict the directional motions and conformational changes of the SARS-CoV-2 spike protein."
 sidebar:
  nav: "coronavirus"
 toc: true

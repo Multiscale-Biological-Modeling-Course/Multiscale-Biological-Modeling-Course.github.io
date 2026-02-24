@@ -2,7 +2,7 @@
 permalink: /chemotaxis/tutorial_walk
 title: "Chemotactic random walk"
 description: "Program a chemotactic random walk that biases runs toward higher attractant by integrating sensor history with movement choices."
-excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
+excerpt: "Tutorial: simulate E. coli's chemotactic random walk in BioNetGen and compare its gradient-climbing efficiency to a pure random walk."
 sidebar:
  nav: "chemotaxis"
 toc: true

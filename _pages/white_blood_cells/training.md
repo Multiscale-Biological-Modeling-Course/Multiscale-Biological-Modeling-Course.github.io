@@ -2,7 +2,7 @@
 permalink: /white_blood_cells/training
 title: "Classifying White Blood Cell Images"
 description: "Step-by-step guide: train a classifier on segmented cell images, tune hyperparameters, and evaluate accuracy on test data."
-excerpt: "Module 4: Training a Computer to Classify White Blood Cells"
+excerpt: "Train and evaluate a k-nearest neighbors classifier on white blood cell image shape spaces to automatically distinguish granulocytes from other cell types."
 sidebar:
  nav: "white_blood_cells"
 toc: true

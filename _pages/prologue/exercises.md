@@ -2,7 +2,7 @@
 permalink: /prologue/exercises
 title: "Turing Pattern Exercises"
 description: "Exercises: calculate mean squared displacement, tune Gray-Scott parameters, and explore new reaction diffusion behaviors."
-excerpt: "Prologue: Random Walks and Turing Patterns"
+excerpt: "Practice problems on Turing patterns, random walks, reaction-diffusion systems, and the Gray-Scott cellular automaton model."
 sidebar:
  nav: "prologue"
  toc: true

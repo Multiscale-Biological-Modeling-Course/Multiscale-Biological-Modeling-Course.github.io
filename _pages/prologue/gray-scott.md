@@ -2,7 +2,7 @@
 permalink: /prologue/gray-scott
 title: "The Gray-Scott Model: A Turing Pattern Cellular Automaton"
 description: "Dive into the Gray-Scott cellular automaton. Adjust feed and kill rates to simulate stripes, spots, and labyrinths."
-excerpt: "Prologue: Random Walks and Turing Patterns"
+excerpt: "Implement the Gray-Scott reaction-diffusion model as a cellular automaton and generate Turing patterns by tuning feed rate and kill rate parameters."
 sidebar:
  nav: "prologue"
 toc: true

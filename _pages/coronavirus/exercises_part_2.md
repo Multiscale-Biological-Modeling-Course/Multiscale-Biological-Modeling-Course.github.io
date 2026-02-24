@@ -2,7 +2,7 @@
 permalink: /coronavirus/exercises_part_2
 title: "Coronavirus Exercises Part 2"
 description: "Exercises: run GNM, ANM, and molecular-dynamics analyses on spike variants, interpreting flexibility profiles and structural differences."
-excerpt: "Module 3: Analyzing the Coronavirus Spike Protein"
+excerpt: "Practice problems on molecular dynamics, glycan shielding, structural differences in SARS coronavirus spike proteins, and ACE2 receptor binding."
 sidebar:
  nav: "coronavirus"
 toc: true

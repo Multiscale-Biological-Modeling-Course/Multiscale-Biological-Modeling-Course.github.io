@@ -2,7 +2,7 @@
 permalink: /white_blood_cells/tutorial_shape_space_docker
 title: "Software Tutorial: Generalizing and Visualizing an Image Shape Space After Applying PCA (in Docker)"
 description: "Docker-based tutorial: compute a PCA shape space for cell images, visualize clusters, and run analyses reproducibly."
-excerpt: "Module 4: Training a Computer to Classify White Blood Cells"
+excerpt: "Tutorial: generalize and visualize a white blood cell image shape space after applying PCA, using a Docker container for reproducible analysis."
 sidebar:
  nav: "white_blood_cells"
 toc: false

@@ -2,7 +2,7 @@
 permalink: /white_blood_cells/tutorial_shape_space
 title: "Software Tutorial: Generalizing and Visualizing an Image Shape Space After Applying PCA"
 description: "Tutorial: generalize and visualize image shape space: apply PCA, plot principal components, and explore cell-type clusters."
-excerpt: "Module 4: Training a Computer to Classify White Blood Cells"
+excerpt: "Tutorial: build and visualize a white blood cell image shape space by extracting morphological features and applying PCA for dimensionality reduction."
 sidebar:
  nav: "white_blood_cells"
 toc: true

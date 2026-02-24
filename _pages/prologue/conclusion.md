@@ -2,7 +2,7 @@
 permalink: /prologue/conclusion
 title: "Conclusion: Turing Patterns are Fine-Tuned"
 description: "Conclusion: Turing patterns require fine tuning yet show how cells and chemicals can self-organize into complex spatial motifs."
-excerpt: "Prologue: Random Walks and Turing Patterns"
+excerpt: "Explore how Turing patterns are fine-tuned: tiny parameter changes in the Gray-Scott model convert spots to stripes, with implications for biological patterning."
 sidebar:
  nav: "prologue"
  toc: true

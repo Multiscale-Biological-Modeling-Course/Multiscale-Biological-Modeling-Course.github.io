@@ -2,7 +2,7 @@
 permalink: /prologue/tutorial-random-walk
 title: "Software Tutorial: Simulating Particle Diffusion"
 description: "Tutorial: simulate many random walkers in Python, track mean squared displacement, and watch diffusion appear."
-excerpt: "Prologue: Random Walks and Turing Patterns"
+excerpt: "Step-by-step tutorial for simulating particle diffusion using random walks in MCell and CellBlender."
 sidebar:
  nav: "prologue"
  nav: "prologue"

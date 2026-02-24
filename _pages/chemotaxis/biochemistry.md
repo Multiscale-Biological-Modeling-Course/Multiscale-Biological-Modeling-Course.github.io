@@ -2,7 +2,7 @@
 permalink: /chemotaxis/biochemistry
 title: "A Biochemically Accurate Model of Bacterial Chemotaxis"
 description: "Unpack the molecular machinery behind E. coli chemotaxis, from receptor binding to signaling cascades that steer bacterial motion"
-excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
+excerpt: "Build a biochemically accurate model of E. coli chemotaxis, including CheA, CheY, CheB, and CheR interactions that drive run-tumble behavior."
 sidebar:
  nav: "chemotaxis"
 toc: true

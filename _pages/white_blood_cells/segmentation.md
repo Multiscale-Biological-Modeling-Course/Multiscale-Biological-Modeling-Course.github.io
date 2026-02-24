@@ -2,7 +2,7 @@
 permalink: /white_blood_cells/segmentation
 title: "Segmenting White Blood Cell Images"
 description: "Segment white-blood-cell images using thresholding to isolate cells for downstream analysis."
-excerpt: "Module 4: Training a Computer to Classify White Blood Cells"
+excerpt: "Learn image segmentation techniques to isolate white blood cell nuclei from microscopy images as the first step in automated cell classification."
 sidebar:
  nav: "white_blood_cells"
 toc: true

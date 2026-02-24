@@ -2,7 +2,7 @@
 permalink: /motifs/tutorial_nar_mathematically_controlled
 title: "Software Tutorial: Ensuring a mathematically controlled simulation for comparing simple regulation to negative autoregulation"
 description: "Tutorial: build a mathematically controlled comparison for negative autoregulation, quantifying response time, overshoot, and noise resilience."
-excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
+excerpt: "Tutorial: design a mathematically controlled simulation to isolate the effect of negative autoregulation from confounding parameter differences."
 sidebar:
  nav: "motifs"
 header:

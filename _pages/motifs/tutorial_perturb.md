@@ -2,7 +2,7 @@
 permalink: /motifs/tutorial_perturb
 title: "Software Tutorial: Perturbing the Repressilator"
 description: "Tutorial: perturb the repressilator, a simple biological oscillator, and analyze how oscillation period and amplitude adapt."
-excerpt: "Module 1: Finding Motifs in Transcription Factor Networks"
+excerpt: "Tutorial: perturb the repressilator model parameters to test and quantify the robustness of biological oscillators in gene regulatory networks."
 sidebar:
  nav: "motifs"
 header:

@@ -5,7 +5,7 @@ description: "Start our course: explore random walks that model diffusion and re
 sidebar:
  nav: "prologue"
 image: "../assets/images/gray_scott_jupyter_high-res.png"
-excerpt: "by Noah Lee, Mert Inan, and Phillip Compeau"
+excerpt: "Learn how random walks model particle diffusion and how reaction-diffusion systems self-organize into striking Turing patterns like stripes and spots."
 header:
   overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
   overlay_filter: 0.3

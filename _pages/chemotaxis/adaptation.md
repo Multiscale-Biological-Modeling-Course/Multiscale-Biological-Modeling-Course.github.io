@@ -2,7 +2,7 @@
 permalink: /chemotaxis/adaptation
 title: "Methylation Helps a Bacterium Adapt to Differing Concentrations"
 description: "Discover how E. coli adjusts to new environments by chemotaxis, with models that reveal its sensory pathways and adaptive behavior."
-excerpt: "Module 2: Unpacking E. coli’s Genius Exploration Algorithm"
+excerpt: "Discover how receptor methylation and demethylation allow E. coli to adapt across a wide range of attractant concentrations, restoring baseline tumbling."
 sidebar:
  nav: "chemotaxis"
 toc: true
