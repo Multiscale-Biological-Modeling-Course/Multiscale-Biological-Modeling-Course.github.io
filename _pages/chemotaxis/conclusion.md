@@ -1,5 +1,5 @@
 ---
-permalink: /prologue/conclusion
+permalink: /chemotaxis/conclusion
 title: "Conclusion: Turing Patterns are Fine-Tuned"
 description: "Conclusion: Turing patterns require fine tuning yet show how cells and chemicals can self-organize into complex spatial motifs."
 excerpt: "Prologue: Random Walks and Turing Patterns"

@@ -61,6 +61,10 @@ code, pre, kbd, samp {
   .page__content > *:first-child {
     margin-top: 0 !important;
   }
+  /* Cap overall page width so content stays readable on wide screens */
+  #main {
+    max-width: 1200px !important;
+  }
 }
 
 /* === More Horizontal Space Around Main Content === */

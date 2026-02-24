@@ -1526,3 +1526,10 @@ body > #main:not(.main--has-hero), body > #page { padding-top: var(--masthead-he
     overflow-x: hidden !important;
   }
 }
+
+/* === Cap main content width for readability on wide screens === */
+@media (min-width: 64em) {
+  #main {
+    max-width: 1200px !important;
+  }
+}
