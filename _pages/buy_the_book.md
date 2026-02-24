@@ -9,6 +9,7 @@ share: false
 header:
   overlay_image: "../assets/images/cover_background_stretched.jpg"
   overlay_filter: 0.3
+  image_alt: "Cover of Biological Modeling: A Short Tour, the companion textbook to this free online course."
 author_profile: true
 exclude_book_buttons: true
 ---
