@@ -1119,6 +1119,32 @@ figcaption,
   .mob-tab[aria-pressed="true"] {
     background: #a0060f;
   }
+
+  /* Gap between the two tab buttons */
+  #mob-tabs .mob-tab + .mob-tab {
+    margin-top: 12px;
+  }
+
+  /* Close button inside each drawer */
+  .mob-drawer-close {
+    display: block;
+    margin-left: auto;
+    margin-bottom: 0.75rem;
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.3rem;
+    line-height: 1;
+    padding: 2px 8px;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.15s, border-color 0.15s;
+  }
+
+  .mob-drawer-close:hover {
+    color: #c10814;
+    border-color: #c10814;
+  }
 }
 
 /* Hide mobile UI elements on wider screens */

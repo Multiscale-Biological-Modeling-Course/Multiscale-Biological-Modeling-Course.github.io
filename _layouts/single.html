@@ -220,6 +220,26 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'Escape') closeAll();
   });
 
+  /* Close any drawer when a link inside it is clicked */
+  [leftSb, rightSb].forEach(function (sb) {
+    if (!sb) return;
+    sb.addEventListener('click', function (e) {
+      if (e.target.closest('a')) closeAll();
+    });
+  });
+
+  /* Inject a close button (×) at the top of each drawer */
+  function addCloseBtn(sb) {
+    var btn = document.createElement('button');
+    btn.className = 'mob-drawer-close';
+    btn.setAttribute('aria-label', 'Close panel');
+    btn.innerHTML = '&times;';
+    btn.addEventListener('click', closeAll);
+    sb.insertBefore(btn, sb.firstChild);
+  }
+  if (leftSb)  addCloseBtn(leftSb);
+  if (rightSb) addCloseBtn(rightSb);
+
   /* Chapter nav tab → left drawer */
   if (leftSb) {
     chapTab = document.createElement('button');
