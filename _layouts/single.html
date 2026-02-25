@@ -313,7 +313,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'Escape' && lb.style.display === 'flex') closeLightbox();
   });
 
-  /* Attach to every anchor that wraps an img and links to an image file */
+  /* Attach to every anchor that wraps an img and links to an image file.
+     Use capture phase so stopImmediatePropagation() prevents the theme's
+     Magnific Popup handler (bubble phase) from also firing on the same click. */
   document.querySelectorAll('p > a, figure > a').forEach(function (link) {
     if (!link.querySelector('img')) return;
     var href = link.getAttribute('href') || '';
@@ -322,15 +324,42 @@ document.addEventListener('DOMContentLoaded', function () {
     link.style.cursor = 'zoom-in';
     link.addEventListener('click', function (e) {
       e.preventDefault();
+      e.stopImmediatePropagation(); /* block Magnific Popup */
 
-      /* Look for a caption in the next sibling <p> */
+      /* Find the caption.
+         Kramdown often places the image link and its caption text in the
+         same <p> element (no blank line between them in the source).
+         First look for text/inline content inside the parent <p> that
+         comes AFTER the <a> tag; fall back to the next sibling <p>. */
       var parent = link.closest('p, figure');
-      var next = parent ? parent.nextElementSibling : null;
-      lbCap.innerHTML = (next && next.tagName === 'P') ? next.innerHTML : '';
+      var caption = '';
 
+      if (parent) {
+        /* Collect everything after the <a> inside the same parent */
+        var afterLink = '';
+        var found = false;
+        parent.childNodes.forEach(function (node) {
+          if (node === link) { found = true; return; }
+          if (!found) return;
+          afterLink += (node.nodeType === 3)
+            ? node.textContent          /* plain text node */
+            : node.outerHTML;           /* inline element */
+        });
+        afterLink = afterLink.trim();
+
+        if (afterLink) {
+          caption = afterLink;
+        } else {
+          /* Nothing after the link in the same paragraph — try next sibling */
+          var next = parent.nextElementSibling;
+          if (next && next.tagName === 'P') caption = next.innerHTML;
+        }
+      }
+
+      lbCap.innerHTML = caption;
       lbImg.src = href;
       lb.style.display = 'flex';
-    });
+    }, true); /* true = capture phase */
   });
 });
 </script>
