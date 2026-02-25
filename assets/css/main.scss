@@ -790,8 +790,9 @@ html {
 .page__content p[style*="font-size"]:not(:has(.btn)),
 figcaption,
 .caption {
-  padding-left: 1.5em;
-  text-indent: -1.5em;
+  padding-left: 2.25em;
+  text-indent: -2.25em;
+  padding-right: 2.25em;
 }
 
 /* === Team page card redesign === */
