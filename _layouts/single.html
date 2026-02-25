@@ -79,6 +79,30 @@ layout: default
           {% endunless %}
         </aside>
 
+        {% unless page.exclude_book_buttons %}
+        <!-- Mobile-only compact book CTA (desktop uses the sidebar version) -->
+        <div class="mob-book-cta">
+          <span class="mob-book-cta__label"><em>Get the book free!</em></span>
+          <div class="mob-book-cta__btns">
+            <a href="http://eepurl.com/iC9DSg"
+               class="mob-book-cta__btn mob-book-cta__btn--free"
+               target="_blank" rel="noopener">
+              <i class="fas fa-envelope" aria-hidden="true"></i> Free e-book
+            </a>
+            <a href="https://leanpub.com/biologicalmodeling"
+               class="mob-book-cta__btn"
+               target="_blank" rel="noopener">
+              <img src="{{ '/assets/images/leanpub.png' | relative_url }}" class="book-icon" alt=""> Leanpub
+            </a>
+            <a href="https://www.amazon.com/dp/B0BT6B2B8W"
+               class="mob-book-cta__btn"
+               target="_blank" rel="noopener">
+              <i class="fab fa-amazon" aria-hidden="true"></i> Amazon
+            </a>
+          </div>
+        </div>
+        {% endunless %}
+
         {{ content }}
 
         <!-- Share bar — shown after reading, where it belongs -->
