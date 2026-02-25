@@ -187,3 +187,60 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
+
+<script>
+/* Figure lightbox — shows full-size image + caption on click */
+document.addEventListener('DOMContentLoaded', function () {
+  /* Build overlay */
+  var lb = document.createElement('div');
+  lb.id = 'fig-lightbox';
+  lb.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:10000;align-items:center;justify-content:center;flex-direction:column;cursor:zoom-out;padding:1.5rem;';
+
+  var lbImg = document.createElement('img');
+  lbImg.style.cssText = 'max-width:90vw;max-height:80vh;object-fit:contain;border-radius:4px;cursor:default;box-shadow:0 4px 32px rgba(0,0,0,0.6);';
+
+  var lbCap = document.createElement('div');
+  lbCap.style.cssText = 'color:#ddd;font-size:0.85rem;font-family:Georgia,serif;text-align:center;max-width:80vw;margin-top:0.9rem;padding:0;line-height:1.5;';
+
+  var lbStyle = document.createElement('style');
+  lbStyle.textContent = '#fig-lightbox a { color: #e88; }';
+
+  lb.appendChild(lbImg);
+  lb.appendChild(lbCap);
+  document.head.appendChild(lbStyle);
+  document.body.appendChild(lb);
+
+  function closeLightbox() {
+    lb.style.display = 'none';
+    lbImg.src = '';
+  }
+
+  /* Close when clicking outside the image */
+  lb.addEventListener('click', function (e) {
+    if (e.target !== lbImg) closeLightbox();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lb.style.display === 'flex') closeLightbox();
+  });
+
+  /* Attach to every anchor that wraps an img and links to an image file */
+  document.querySelectorAll('p > a, figure > a').forEach(function (link) {
+    if (!link.querySelector('img')) return;
+    var href = link.getAttribute('href') || '';
+    if (!/\.(png|jpe?g|gif|webp|svg)(\?.*)?$/i.test(href)) return;
+
+    link.style.cursor = 'zoom-in';
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      /* Look for a caption in the next sibling <p> */
+      var parent = link.closest('p, figure');
+      var next = parent ? parent.nextElementSibling : null;
+      lbCap.innerHTML = (next && next.tagName === 'P') ? next.innerHTML : '';
+
+      lbImg.src = href;
+      lb.style.display = 'flex';
+    });
+  });
+});
+</script>

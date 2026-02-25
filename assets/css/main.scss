@@ -786,12 +786,11 @@ html {
   text-align: left;
 }
 
-/* === Figure caption hanging indents === */
+/* === Figure caption left indent === */
 .page__content p[style*="font-size"]:not(:has(.btn)),
 figcaption,
 .caption {
   padding-left: 2.25em;
-  text-indent: -2.25em;
   padding-right: 2.25em;
 }
 
