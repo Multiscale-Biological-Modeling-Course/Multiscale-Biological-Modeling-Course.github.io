@@ -1,0 +1,274 @@
+/* epub.css — Biological Modeling: A Short Tour
+   Companion stylesheet for make4ht epub3 build.
+   Colors derived from CMYK originals in biological_modeling.tex.
+*/
+
+/* ── General typography ─────────────────────────────────────────────────── */
+
+body {
+  font-size: 1em;
+  line-height: 1.6;
+  max-width: 50em;
+  margin: 0 auto;
+  padding: 0 1em;
+  color: #111;
+}
+
+p {
+  margin: 0.6em 0 0.8em;
+  text-indent: 1.2em;
+}
+
+/* Remove indent from paragraphs that directly follow headings or blocks */
+h1 + p, h2 + p, h3 + p, h4 + p,
+.box + p, .theorem + p, blockquote + p,
+div + p {
+  text-indent: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: sans-serif;
+  line-height: 1.2;
+  margin-top: 1.5em;
+  margin-bottom: 0.4em;
+}
+
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.4em; text-align: center; }
+h3 { font-size: 1.2em; font-style: italic; }
+h4 { font-size: 1.05em; }
+
+/* ── Chapter subtitle (\chapsubhead) ────────────────────────────────────── */
+.chapsubhead {
+  display: block;
+  font-family: sans-serif;
+  font-style: italic;
+  font-size: 0.95em;
+  color: #555;
+  margin-top: 0.25em;
+}
+
+/* ── Figures ────────────────────────────────────────────────────────────── */
+
+figure {
+  text-align: center;
+  margin: 1.5em auto;
+  max-width: 100%;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+figcaption {
+  font-family: sans-serif;
+  font-size: 0.85em;
+  margin-top: 0.4em;
+  color: #333;
+}
+
+/* ── Colored box base ───────────────────────────────────────────────────── */
+
+.box {
+  padding: 0.75em 1em;
+  margin: 1em 0 1.2em;
+  border-radius: 4px;
+  line-height: 1.5;
+}
+
+/* CMYK originals converted to sRGB:
+   lovelylightgray: cmyk(0,0,0,0.098)   → #E8E8E8
+   palepink:        cmyk(0.01,0.17,0.06,0) → #F7DCE3
+   paleblue:        cmyk(0.13,0.04,0,0)  → #DDEAFF
+   palepurple:      cmyk(0.11,0.15,0,0)  → #E2DAF7
+   palegreen:       cmyk(0.15,0,0.15,0)  → #D9F7D9
+*/
+
+.graybox   { background-color: #e8e8e8; }
+.pinkbox   { background-color: #f7dce3; }
+.bluebox   { background-color: #ddeaff; }
+.purplebox { background-color: #e2daf7; }
+.greenbox  { background-color: #d9f7d9; }
+
+/* ── Box label typography ───────────────────────────────────────────────── */
+
+.box-label {
+  font-weight: bold;
+  margin-right: 0.2em;
+}
+
+.stop-label     { color: #cc0000; }   /* STOP: */
+.note-label     { color: #1a3acc; }   /* Note: */
+.exercise-label { color: #1a7a3c; }   /* Exercise: */
+
+/* ── Tutorial link (inline laptop icon) ─────────────────────────────────── */
+
+.tutorial-link {
+  text-decoration: none;
+  font-size: 1.1em;
+  margin-left: 0.15em;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.tutorial-link:hover {
+  opacity: 0.75;
+}
+
+/* ── Text color classes (dvipsnames → sRGB) ─────────────────────────────── */
+
+/* Grays */
+.color-lightgray  { color: #bfbfbf; }
+.color-medgray    { color: #666; }
+.color-gray       { color: #808080; }
+.color-darkgray   { color: #4d4d4d; }
+
+/* Reds */
+.color-red        { color: #ff0000; }          /* Red (dvipsnames) */
+.color-orangered  { color: #ff4500; }          /* OrangeRed */
+.color-rawsienna  { color: #c47c4b; }          /* RawSienna */
+
+/* Blues */
+.color-blue       { color: #0060bf; }          /* RoyalBlue */
+.color-lightblue  { color: #007fc2; }          /* Cerulean */
+.color-blueviolet { color: #5b3f9e; }          /* BlueViolet */
+
+/* Greens */
+.color-green      { color: #009900; }          /* ForestGreen */
+.color-lightgreen { color: #00a86b; }          /* JungleGreen */
+.color-olivegreen { color: #5a7a00; }          /* OliveGreen */
+.color-emerald    { color: #009a6e; }          /* Emerald */
+
+/* Purples / pinks */
+.color-purple     { color: #800080; }          /* Purple */
+.color-pink       { color: #e03080; }          /* Rhodamine */
+
+/* Oranges / yellows / browns */
+.color-orange     { color: #ff7f00; }          /* Orange */
+.color-yellow     { color: #f4b942; }          /* Dandelion */
+.color-brown      { color: #804000; }          /* Brown */
+
+.color-black      { color: #000; }
+
+/* Bold variants */
+.color-red.bold,    b.color-red    { font-weight: bold; }
+.color-blue.bold,   b.color-blue   { font-weight: bold; }
+.color-green.bold,  b.color-green  { font-weight: bold; }
+.color-purple.bold, b.color-purple { font-weight: bold; }
+
+/* ── Monospace / nucleotide / sequence ──────────────────────────────────── */
+
+.nucl {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+}
+
+.sequence {
+  display: block;
+  text-align: center;
+  margin: 0.75em 0;
+}
+
+.sequence pre {
+  display: inline-block;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+/* ── Theorem environments ───────────────────────────────────────────────── */
+
+.theorem {
+  border-left: 3px solid #888;
+  padding: 0.4em 0.4em 0.4em 1em;
+  margin: 1em 0;
+  font-style: italic;
+}
+
+.theorem-name,
+.theorem > b:first-child,
+.theorem > strong:first-child {
+  font-weight: bold;
+  font-style: normal;
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+/* ── Block quote / itquote ───────────────────────────────────────────────── */
+
+.itquote,
+blockquote.itquote {
+  border-left: 2px solid #ccc;
+  padding-left: 1em;
+  margin: 1em 2em;
+  font-style: italic;
+  color: #444;
+}
+
+/* ── Tables ─────────────────────────────────────────────────────────────── */
+
+table {
+  border-collapse: collapse;
+  margin: 1em auto;
+  font-size: 0.92em;
+  max-width: 100%;
+}
+
+td, th {
+  padding: 0.35em 0.6em;
+  border: 1px solid #ccc;
+  vertical-align: top;
+}
+
+th {
+  background-color: #e8e8e8;
+  font-weight: bold;
+}
+
+/* Gray column (colorbox b column type) */
+.gray-col { background-color: #e8e8e8; }
+
+/* ── Definition / textdef ────────────────────────────────────────────────── */
+
+.definition {
+  font-weight: bold;
+}
+
+/* ── Dedications ─────────────────────────────────────────────────────────── */
+
+.dedication {
+  text-align: right;
+  font-style: italic;
+  margin: 4em auto;
+  max-width: 66%;
+}
+
+/* ── Table of contents ───────────────────────────────────────────────────── */
+
+.toc a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.toc li {
+  margin: 0.25em 0;
+}
+
+/* ── Math (MathML — epub3 native) ────────────────────────────────────────── */
+/* MathML renders natively in epub3; no extra CSS needed beyond these hints */
+
+math {
+  font-size: 1em;
+}
+
+/* ── Links ───────────────────────────────────────────────────────────────── */
+
+a { color: #0060bf; }
+a:hover { text-decoration: underline; }
