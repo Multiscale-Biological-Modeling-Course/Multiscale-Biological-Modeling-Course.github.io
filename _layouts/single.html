@@ -189,6 +189,76 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <script>
+/* Mobile sidebar drawers — Chapters (left) and On Page (right) */
+(function () {
+  var leftSb  = document.querySelector('.sidebar.sticky');
+  var rightSb = document.querySelector('.sidebar__right.sticky');
+  if (!leftSb && !rightSb) return;
+
+  /* Backdrop */
+  var bd = document.createElement('div');
+  bd.id = 'mob-backdrop';
+  document.body.appendChild(bd);
+
+  /* Tab container */
+  var tabWrap = document.createElement('div');
+  tabWrap.id = 'mob-tabs';
+  document.body.appendChild(tabWrap);
+
+  var chapTab, tocTab;
+
+  function closeAll() {
+    bd.classList.remove('mob-visible');
+    if (leftSb)   leftSb.classList.remove('mob-open');
+    if (rightSb)  rightSb.classList.remove('mob-open');
+    if (chapTab)  chapTab.setAttribute('aria-pressed', 'false');
+    if (tocTab)   tocTab.setAttribute('aria-pressed', 'false');
+  }
+
+  bd.addEventListener('click', closeAll);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeAll();
+  });
+
+  /* Chapter nav tab → left drawer */
+  if (leftSb) {
+    chapTab = document.createElement('button');
+    chapTab.className = 'mob-tab';
+    chapTab.textContent = 'Chapters';
+    chapTab.setAttribute('aria-label', 'Toggle chapter navigation');
+    chapTab.setAttribute('aria-pressed', 'false');
+    chapTab.addEventListener('click', function () {
+      var opening = !leftSb.classList.contains('mob-open');
+      closeAll();
+      if (opening) {
+        leftSb.classList.add('mob-open');
+        bd.classList.add('mob-visible');
+        chapTab.setAttribute('aria-pressed', 'true');
+      }
+    });
+    tabWrap.appendChild(chapTab);
+  }
+
+  /* TOC tab → right drawer */
+  if (rightSb) {
+    tocTab = document.createElement('button');
+    tocTab.className = 'mob-tab';
+    tocTab.textContent = 'On Page';
+    tocTab.setAttribute('aria-label', 'Toggle table of contents');
+    tocTab.setAttribute('aria-pressed', 'false');
+    tocTab.addEventListener('click', function () {
+      var opening = !rightSb.classList.contains('mob-open');
+      closeAll();
+      if (opening) {
+        rightSb.classList.add('mob-open');
+        bd.classList.add('mob-visible');
+        tocTab.setAttribute('aria-pressed', 'true');
+      }
+    });
+    tabWrap.appendChild(tocTab);
+  }
+})();
+
 /* Figure lightbox — shows full-size image + caption on click */
 document.addEventListener('DOMContentLoaded', function () {
   /* Build overlay */
