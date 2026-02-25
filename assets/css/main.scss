@@ -1049,6 +1049,11 @@ figcaption,
   color: #c10814;
 }
 
+/* Highlight the active section's header */
+.nav__list .nav__sub-title--active {
+  color: #c10814 !important;
+}
+
 /* === Philomath footer === */
 .footer__philomath {
   text-align: center;

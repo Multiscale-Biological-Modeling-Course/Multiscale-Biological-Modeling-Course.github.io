@@ -183,6 +183,9 @@ document.addEventListener('DOMContentLoaded', function () {
       title.setAttribute('aria-expanded', 'true');
     }
 
+    // Highlight the section header that owns the current page
+    if (hasActive) title.classList.add('nav__sub-title--active');
+
     title.setAttribute('role', 'button');
     title.setAttribute('tabindex', '0');
 

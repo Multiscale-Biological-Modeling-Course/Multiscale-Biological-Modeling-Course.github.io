@@ -7,8 +7,8 @@ xmlns:opf="http://www.idpf.org/2007/opf">
 <dc:language>en</dc:language> 
 <dc:identifier id="dcidid" >http://example.com/biological_modeling_epub</dc:identifier> 
 <dc:creator>Anonymous</dc:creator> 
-<dc:date>2026-02-25T17:10:00Z</dc:date>  
-<meta property="dcterms:modified">2026-02-25T17:10:00Z</meta></metadata>   
+<dc:date>2026-02-25T17:14:00Z</dc:date>  
+<meta property="dcterms:modified">2026-02-25T17:14:00Z</meta></metadata>   
 <manifest> 
 <item id="ncx" href="biological_modeling_epub.ncx" media-type="application/x-dtbncx+xml" /> 
 <item id="stylesheet" href="biological_modeling_epub.css" media-type="text/css"/> 
