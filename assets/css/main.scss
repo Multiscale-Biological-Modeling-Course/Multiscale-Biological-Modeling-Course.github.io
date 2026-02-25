@@ -47,6 +47,17 @@ figcaption a:hover { color: #a0060f; }
   color: #fff !important;
 }
 
+/* Inverse buttons (e.g. Follow) have a white background — restore dark text */
+.btn--inverse,
+.btn--inverse:visited {
+  color: #3d4144 !important;
+}
+/* On hover the background fills dark, so white text is correct again */
+.btn--inverse:hover,
+.btn--inverse:focus {
+  color: #fff !important;
+}
+
 /* Hide the excerpt text in header overlays on content pages (not homepage) */
 .layout--single .page__hero--overlay .page__lead {
   display: none;

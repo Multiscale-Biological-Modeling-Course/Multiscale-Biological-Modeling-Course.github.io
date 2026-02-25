@@ -259,8 +259,8 @@ document.addEventListener('DOMContentLoaded', function () {
     tabWrap.appendChild(chapTab);
   }
 
-  /* TOC tab → right drawer */
-  if (rightSb) {
+  /* TOC tab → right drawer (only when a real TOC is present) */
+  if (rightSb && rightSb.querySelector('.toc')) {
     tocTab = document.createElement('button');
     tocTab.className = 'mob-tab';
     tocTab.textContent = 'On Page';
