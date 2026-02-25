@@ -111,22 +111,6 @@ code, pre, kbd, samp {
   }
 }
 
-:root {
-  --sidebar-gap: 2rem; /* Define sidebar gap once */
-}
-
-/* === Sidebar Margin Adjustments === */
-@media (min-width: 64em) {
-  .sidebar__right {
-    margin-right: calc(-200px - var(--sidebar-gap));
-  }
-}
-
-@media (min-width: 80em) {
-  .sidebar__right {
-    margin-right: calc(-300px - var(--sidebar-gap));
-  }
-}
 
 /* ---- Sidebar CTA buttons ---- */
 .sidebar-cta {
@@ -627,7 +611,6 @@ html {
 /* ❹ Offset sticky sidebars — right sidebar only (left handled separately below) */
 @media (min-width: 64em) {
   .sidebar__right.sticky {
-    right: auto; /* neutralise right: 0 carried over from the theme's position:absolute base rule */
     top: calc(var(--masthead-height) + 0.5rem);
     max-height: calc(100vh - var(--masthead-height) - 1rem);
     overflow-y: auto;
