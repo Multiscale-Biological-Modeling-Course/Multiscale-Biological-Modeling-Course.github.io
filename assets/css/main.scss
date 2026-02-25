@@ -871,51 +871,81 @@ figcaption,
 }
 
 /* === Callout / notice-box enhancements === */
-/* Restore full body font size (theme contrast skin sets 0.75em !important) */
-/* Use descendant strong:first-child so it matches both rendering patterns:
-   - Kramdown IAL: <p class="notice--*"><strong>Label:</strong> …</p>
-   - Liquid/div:   <div class="notice--*"><p><strong>Label:</strong> …</p></div> */
+/* Restore full body font size (theme contrast skin sets 0.75em !important).
+   Background tints + FA icons on the opening label word.
+   Selector covers both rendering patterns:
+     Kramdown IAL → <p class="notice--*"><strong>Label:</strong> …</p>
+     Liquid/div   → <div class="notice--*"><p><strong>Label:</strong> …</p></div> */
+
+/* Shared icon base */
+.notice--primary,
+.notice--info,
+.notice--success,
+.notice--warning,
+.notice--danger,
+.notice {
+  font-size: 1em !important;
+  border-radius: 0 4px 4px 0;
+
+  strong:first-child::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 0.4em;
+  }
+}
 
 .notice--primary {
   border-left: 4px solid #c10814;
-  border-radius: 0 4px 4px 0;
-  font-size: 1em !important;
-  strong:first-child { color: #c10814; }
+  background-color: rgba(193, 8, 20, 0.05);
+  strong:first-child {
+    color: #c10814;
+    &::before { content: "\f06a"; } /* fa-exclamation-circle */
+  }
 }
 
 .notice--info {
   border-left: 4px solid #2980a8;
-  border-radius: 0 4px 4px 0;
-  font-size: 1em !important;
-  strong:first-child { color: #2980a8; }
+  background-color: rgba(41, 128, 168, 0.05);
+  strong:first-child {
+    color: #2980a8;
+    &::before { content: "\f05a"; } /* fa-info-circle */
+  }
 }
 
 .notice--success {
   border-left: 4px solid #399539;
-  border-radius: 0 4px 4px 0;
-  font-size: 1em !important;
-  strong:first-child { color: #399539; }
+  background-color: rgba(57, 149, 57, 0.05);
+  strong:first-child {
+    color: #399539;
+    &::before { content: "\f058"; } /* fa-check-circle */
+  }
 }
 
 .notice--warning {
   border-left: 4px solid #c17205;
-  border-radius: 0 4px 4px 0;
-  font-size: 1em !important;
-  strong:first-child { color: #c17205; }
+  background-color: rgba(193, 114, 5, 0.05);
+  strong:first-child {
+    color: #c17205;
+    &::before { content: "\f071"; } /* fa-exclamation-triangle */
+  }
 }
 
 .notice--danger {
   border-left: 4px solid #d65652;
-  border-radius: 0 4px 4px 0;
-  font-size: 1em !important;
-  strong:first-child { color: #d65652; }
+  background-color: rgba(214, 86, 82, 0.05);
+  strong:first-child {
+    color: #d65652;
+    &::before { content: "\f28d"; } /* fa-stop-circle */
+  }
 }
 
 .notice {
   border-left: 4px solid #777;
-  border-radius: 0 4px 4px 0;
-  font-size: 1em !important;
-  strong:first-child { color: #555; }
+  background-color: rgba(119, 119, 119, 0.05);
+  strong:first-child {
+    color: #555;
+    &::before { content: "\f0eb"; } /* fa-lightbulb */
+  }
 }
 
 /* === Article share bar (bottom of content) === */
