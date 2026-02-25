@@ -1,8 +1,8 @@
 #!/bin/bash
-# build_epub.sh — Build biological_modeling.epub from LaTeX source using make4ht
+# build_epub.sh — Build biological_modeling.epub from LaTeX source using tex4ebook
 # Usage: bash build_epub.sh [--clean]
 #
-# Requires: MacTeX with make4ht, bibtex, makeglossaries
+# Requires: MacTeX with tex4ebook, bibtex, makeglossaries
 # Output:   assets/ebook/biological_modeling.epub
 
 set -euo pipefail
@@ -24,14 +24,14 @@ if [[ "${1:-}" == "--clean" ]]; then
 fi
 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "Building EPUB from LaTeX source..."
+echo "Building EPUB3 from LaTeX source..."
 echo "Working directory: $TEXDIR"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-# ── Pass 1: initial make4ht run (generates .aux, .bcf, .glo) ─────────────
+# ── Pass 1: initial tex4ebook run (generates .aux, .bcf, .glo) ───────────
 echo ""
-echo "[1/4] First make4ht pass (generates aux files)..."
-"$TEXBIN/make4ht" \
+echo "[1/4] First tex4ebook pass (generates aux files)..."
+"$TEXBIN/tex4ebook" \
   --format epub3 \
   --config "$CFGFILE" \
   --mode draft \
@@ -53,10 +53,10 @@ echo "[3/4] Running makeglossaries..."
   echo "  (makeglossaries had warnings — continuing)"
 }
 
-# ── Pass 2: final make4ht run (resolves all references) ───────────────────
+# ── Pass 2: final tex4ebook run (resolves all references) ─────────────────
 echo ""
-echo "[4/4] Final make4ht pass (builds EPUB)..."
-"$TEXBIN/make4ht" \
+echo "[4/4] Final tex4ebook pass (builds EPUB)..."
+"$TEXBIN/tex4ebook" \
   --format epub3 \
   --config "$CFGFILE" \
   "$MAINFILE.tex" \
