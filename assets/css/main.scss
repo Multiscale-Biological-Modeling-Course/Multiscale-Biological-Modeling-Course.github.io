@@ -114,7 +114,7 @@ code, pre, kbd, samp {
 /* === Gap between main content text and right sidebar === */
 @media (min-width: 64em) {
   .sidebar__right {
-    margin-left: 1.5rem;
+    padding-left: 2rem; /* overrides theme's 1em; creates visual gap before TOC/book-promo boxes */
   }
 }
 
