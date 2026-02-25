@@ -491,11 +491,11 @@ code, pre, kbd, samp {
   transform: scale(1.25);     /* hover pop */
 }
 
-/* ----- Hamburger icon: CMU red bars ------------------- */
+/* ----- Hamburger icon: white bars on red button ------------------- */
 .greedy-nav__toggle .navicon,
 .greedy-nav__toggle .navicon:before,
 .greedy-nav__toggle .navicon:after {
-  background-color: #c10814 !important;   /* CMU red bars */
+  background-color: #fff !important;
 }
 
 /* When menu is open (.close class added by JS), hide the middle bar
