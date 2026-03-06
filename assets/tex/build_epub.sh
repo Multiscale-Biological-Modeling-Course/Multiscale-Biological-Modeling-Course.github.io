@@ -60,7 +60,8 @@ echo "[4/4] Final tex4ebook pass (builds EPUB)..."
   --format epub3 \
   --config "$CFGFILE" \
   "$MAINFILE.tex" \
-  "mathml,charset=utf-8"
+  "mathml,charset=utf-8" \
+  || true   # tex4ebook exits non-zero on TeX warnings/errors even when EPUB is produced;
 
 # ── Copy output ───────────────────────────────────────────────────────────
 if [[ -f "$MAINFILE.epub" ]]; then
