@@ -38,6 +38,12 @@ search: false
   text-align: left;
   cursor: pointer;
   display: block;
+  outline: none;
+
+  &:focus-visible {
+    outline: 2px solid #1d3557;
+    outline-offset: 2px;
+  }
 
   .nav__title {
     margin: 0;
