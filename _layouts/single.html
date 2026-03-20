@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+<div id="reading-progress-bar"></div>
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
@@ -409,4 +410,17 @@ document.addEventListener('DOMContentLoaded', function () {
     menu.hidden = expanded;
   });
 });
+</script>
+
+<script>
+/* Reading progress bar */
+(function () {
+  var bar = document.getElementById('reading-progress-bar');
+  if (!bar) return;
+  window.addEventListener('scroll', function () {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
+  }, { passive: true });
+})();
 </script>
