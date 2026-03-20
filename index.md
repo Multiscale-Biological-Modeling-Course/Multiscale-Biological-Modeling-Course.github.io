@@ -6,6 +6,7 @@ excerpt: "Explore biological systems at multiple scales with our free computatio
 
 header:
   overlay_color: "#000"
+  overlay_image: /assets/images/turing_hero_poster.jpg
   overlay_filter: "0.75"
   actions:
     - label: "Start learning!"
@@ -119,6 +120,7 @@ header:
     vid.autoplay = true;
     vid.muted    = true;
     vid.loop     = true;
+    vid.poster   = '/assets/images/turing_hero_poster.jpg';
     vid.setAttribute('playsinline', '');
     vid.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;filter:brightness(0.55);';
     var src = document.createElement('source');
