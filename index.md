@@ -13,7 +13,7 @@ header:
       url: "/prologue/"
 
 prologue:
-  - image_path: /assets/images/Juvenile_Mbu_pufferfish.jpg
+  - image_path: /assets/images/Giant_Puffer_fish_skin_pattern.jpg
     title: "Prologue: Random walks and Turing patterns"
     excerpt: "Have you ever wondered why zebras have stripes? In the course prologue, we’ll explore how simple predator-prey interactions at the microscopic level can give rise to reaction-diffusion systems, where beautiful and complex stripes and spots spontaneously emerge from random motion."
     url: "/prologue/"
