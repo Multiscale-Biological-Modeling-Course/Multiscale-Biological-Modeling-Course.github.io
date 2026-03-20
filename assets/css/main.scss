@@ -1175,7 +1175,7 @@ figcaption,
     z-index: 2001 !important;
     background: #fff !important;
     padding: 1.25rem 1rem !important;
-    box-shadow: 4px 0 24px rgba(0,0,0,0.18) !important;
+    box-shadow: 8px 0 48px rgba(0,0,0,0.35) !important;
     transition: left 0.25s ease !important;
     border-right: 1px solid #e8e8e8 !important;
     color: #222 !important;
@@ -1226,7 +1226,7 @@ figcaption,
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.08);
     z-index: 2000;
     cursor: pointer;
   }
