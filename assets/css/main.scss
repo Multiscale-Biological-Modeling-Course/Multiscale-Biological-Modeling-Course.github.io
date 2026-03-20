@@ -1178,6 +1178,21 @@ figcaption,
     box-shadow: 4px 0 24px rgba(0,0,0,0.18) !important;
     transition: left 0.25s ease !important;
     border-right: 1px solid #e8e8e8 !important;
+    color: #222 !important;
+  }
+
+  /* Override contrast skin's dark nav colors inside the mobile drawer */
+  .sidebar.sticky .nav__list,
+  .sidebar.sticky .nav__items,
+  .sidebar.sticky .nav__sub-title,
+  .sidebar.sticky .nav__items li,
+  .sidebar.sticky .nav__items li a {
+    background: #fff !important;
+    color: #222 !important;
+  }
+
+  .sidebar.sticky .nav__items li a:hover {
+    color: #c10814 !important;
   }
 
   .sidebar.sticky.mob-open {
