@@ -44,17 +44,23 @@ search: false
   }
 }
 
-/* === Replace blue links with CMU red === */
+/* === Standardize all reds to CMU red (#c10814) === */
 a {
   color: #c10814;
 }
 a:visited {
-  color: #9a1020;
+  color: #c10814;
 }
 a:hover,
 a:focus {
   color: #a0060f;
   text-decoration: underline;
+}
+
+/* Force TOC "On this page" header to use CMU red */
+.toc .nav__title,
+.toc__toggle .nav__title {
+  background: #c10814 !important;
 }
 figcaption a:hover { color: #a0060f; }
 
