@@ -1446,16 +1446,39 @@ figcaption,
   font-family: 'Outfit', sans-serif !important;
 }
 
-/* Masthead site title + nav links — Outfit font only, no other overrides */
+/* Masthead — navy background + Outfit font */
+.masthead {
+  background: #1d3557 !important;
+  border-bottom: none !important;
+}
+
 .site-title,
+.site-title:visited,
 .greedy-nav .visible-links a,
 .greedy-nav .hidden-links a {
   font-family: 'Outfit', sans-serif !important;
+  color: #fff !important;
 }
 
 .greedy-nav .visible-links a,
 .greedy-nav .visible-links a:hover {
   text-decoration: none !important;
+}
+
+.greedy-nav .visible-links a:hover {
+  color: rgba(255,255,255,0.75) !important;
+}
+
+.greedy-nav button {
+  color: #fff !important;
+}
+
+/* Hero "Start learning!" button hover */
+.page__hero--overlay .btn--light-outline:hover,
+.page__hero--overlay .btn:hover {
+  background: #fff !important;
+  color: #111 !important;
+  border-color: #fff !important;
 }
 
 /* ============================================================
@@ -1619,7 +1642,6 @@ figcaption,
 }
 
 .hc-card__excerpt {
-  font-family: 'Outfit', sans-serif;
   font-size: 0.95rem;
   color: #555;
   line-height: 1.62;
@@ -1656,6 +1678,7 @@ figcaption,
 }
 
 .hc-about__quote {
+  font-family: 'Outfit', sans-serif;
   font-size: 1.1rem;
   line-height: 1.65;
   color: #111;
