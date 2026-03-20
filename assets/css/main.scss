@@ -1446,7 +1446,8 @@ figcaption,
   font-family: 'Outfit', sans-serif !important;
 }
 
-/* Masthead — navy background + Outfit font */
+/* Masthead — navy background + Outfit font, no logo icon */
+.site-logo { display: none !important; }
 .masthead,
 .masthead__inner-wrap,
 .greedy-nav {
@@ -1457,13 +1458,16 @@ figcaption,
 .site-title,
 .site-title:visited,
 .greedy-nav .visible-links a,
-.greedy-nav .visible-links a:visited,
-.greedy-nav .hidden-links a,
-.masthead__menu-item a,
-.masthead a {
+.greedy-nav .visible-links a:visited {
   font-family: 'Outfit', sans-serif !important;
   font-style: normal !important;
   color: #fff !important;
+}
+
+.greedy-nav .hidden-links a {
+  font-family: 'Outfit', sans-serif !important;
+  font-style: normal !important;
+  color: #111 !important;
 }
 
 .greedy-nav .visible-links a,
