@@ -1446,11 +1446,10 @@ figcaption,
   font-family: 'Outfit', sans-serif !important;
 }
 
-/* Masthead site title + nav links */
-.masthead__inner-wrap,
+/* Masthead site title + nav links — Outfit font only, no other overrides */
 .site-title,
-.greedy-nav a,
-.greedy-nav .visible-links a {
+.greedy-nav .visible-links a,
+.greedy-nav .hidden-links a {
   font-family: 'Outfit', sans-serif !important;
 }
 
