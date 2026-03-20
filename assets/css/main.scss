@@ -1137,8 +1137,27 @@ figcaption,
   color: #c10814 !important;
 }
 
+/* === Hero chapter label === */
+.hero-chapter-label {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0 0 0.55rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 /* === TOC active section highlight === */
-.toc__menu a.toc-active {
+.toc__menu a,
+.toc__menu a:visited {
+  color: inherit !important;
+}
+
+.toc__menu a.toc-active,
+.toc__menu a.toc-active:visited {
   color: #1d3557 !important;
   font-weight: 700;
   border-left: 2px solid #1d3557;

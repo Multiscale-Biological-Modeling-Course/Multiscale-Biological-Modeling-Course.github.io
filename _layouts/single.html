@@ -8,6 +8,33 @@ layout: default
 {% elsif page.header.video.id and page.header.video.provider %}
   {% include page__hero_video.html %}
 {% endif %}
+{% if page.sidebar.nav %}
+<script>
+(function () {
+  var labels = {
+    'prologue':          'Prologue',
+    'motifs':            'Module 1',
+    'chemotaxis':        'Module 2',
+    'coronavirus':       'Module 3',
+    'white_blood_cells': 'Module 4'
+  };
+  var label = labels['{{ page.sidebar.nav }}'];
+  if (!label) return;
+  function inject() {
+    var title = document.querySelector('.page__hero--overlay .page__title');
+    if (!title) return;
+    var el = document.createElement('p');
+    el.className = 'hero-chapter-label';
+    el.textContent = label;
+    title.parentNode.insertBefore(el, title);
+  }
+  if (document.readyState === 'loading')
+    document.addEventListener('DOMContentLoaded', inject);
+  else
+    inject();
+})();
+</script>
+{% endif %}
 
 {% if page.url != "/" and site.breadcrumbs %}
   {% unless paginator %}
@@ -256,10 +283,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'Escape') closeAll();
   });
 
-  /* Close any drawer when a link inside it is clicked — delay so scroll fires first */
+  /* Clicks inside a drawer: navigate on links, but never bubble to backdrop */
   [leftSb, rightSb].forEach(function (sb) {
     if (!sb) return;
     sb.addEventListener('click', function (e) {
+      e.stopPropagation();
       if (e.target.closest('a')) setTimeout(closeAll, 80);
     });
   });
