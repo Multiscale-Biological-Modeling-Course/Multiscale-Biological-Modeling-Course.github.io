@@ -41,9 +41,15 @@ layout: default
 
           <!-- Table of Contents (if present) -->
           {% if page.toc %}
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
-              {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
+            <nav class="toc toc--collapsed">
+              <header>
+                <button class="toc__toggle" aria-expanded="false" aria-controls="toc-menu">
+                  <h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }} <i class="fas fa-chevron-down toc__chevron"></i></h4>
+                </button>
+              </header>
+              <div id="toc-menu" hidden>
+                {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
+              </div>
             </nav>
             <br>
           {% endif %}  
@@ -388,6 +394,19 @@ document.addEventListener('DOMContentLoaded', function () {
       lbImg.src = href;
       lb.style.display = 'flex';
     }, true); /* true = capture phase */
+  });
+});
+</script>
+<script>
+/* Collapsible TOC */
+document.addEventListener('DOMContentLoaded', function () {
+  var btn = document.querySelector('.toc__toggle');
+  if (!btn) return;
+  var menu = document.getElementById('toc-menu');
+  btn.addEventListener('click', function () {
+    var expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    menu.hidden = expanded;
   });
 });
 </script>

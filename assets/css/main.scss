@@ -16,6 +16,34 @@ search: false
 }
 */
 
+/* === Collapsible TOC === */
+.toc__toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: block;
+
+  .nav__title {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .toc__chevron {
+    font-size: 0.75em;
+    margin-left: 0.5em;
+    transition: transform 0.2s ease;
+  }
+
+  &[aria-expanded="true"] .toc__chevron {
+    transform: rotate(180deg);
+  }
+}
+
 /* === Replace blue links with CMU red === */
 a {
   color: #c10814;
