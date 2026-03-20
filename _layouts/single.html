@@ -256,11 +256,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'Escape') closeAll();
   });
 
-  /* Close any drawer when a link inside it is clicked */
+  /* Close any drawer when a link inside it is clicked — delay so scroll fires first */
   [leftSb, rightSb].forEach(function (sb) {
     if (!sb) return;
     sb.addEventListener('click', function (e) {
-      if (e.target.closest('a')) closeAll();
+      if (e.target.closest('a')) setTimeout(closeAll, 80);
     });
   });
 
@@ -430,6 +430,50 @@ document.addEventListener('DOMContentLoaded', function () {
     var docHeight = document.documentElement.scrollHeight - window.innerHeight;
     bar.style.width = (docHeight > 0 ? (scrollTop / docHeight) * 100 : 0) + '%';
   }, { passive: true });
+})();
+</script>
+
+<script>
+/* TOC active section highlighting */
+(function () {
+  var tocLinks = Array.from(document.querySelectorAll('.toc__menu a[href^="#"]'));
+  if (!tocLinks.length) return;
+
+  var headings = tocLinks.map(function (a) {
+    return document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1)));
+  }).filter(Boolean);
+
+  if (!headings.length) return;
+
+  var activeId = null;
+  function setActive(id) {
+    if (id === activeId) return;
+    activeId = id;
+    tocLinks.forEach(function (a) {
+      var match = a.getAttribute('href') === '#' + id ||
+                  a.getAttribute('href') === '#' + encodeURIComponent(id);
+      a.classList.toggle('toc-active', match);
+    });
+  }
+
+  var mastheadH = parseFloat(getComputedStyle(document.documentElement)
+    .getPropertyValue('--masthead-height')) || 90;
+
+  function onScroll() {
+    var best = null, bestDist = Infinity;
+    headings.forEach(function (h) {
+      var top = h.getBoundingClientRect().top - mastheadH - 24;
+      if (top <= 0 && Math.abs(top) < bestDist) {
+        bestDist = Math.abs(top);
+        best = h.id;
+      }
+    });
+    if (!best) best = headings[0].id;
+    setActive(best);
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 })();
 </script>
 

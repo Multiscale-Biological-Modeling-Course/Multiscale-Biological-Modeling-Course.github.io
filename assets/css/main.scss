@@ -1137,6 +1137,15 @@ figcaption,
   color: #c10814 !important;
 }
 
+/* === TOC active section highlight === */
+.toc__menu a.toc-active {
+  color: #1d3557 !important;
+  font-weight: 700;
+  border-left: 2px solid #1d3557;
+  padding-left: 0.4em;
+  transition: color 0.2s ease;
+}
+
 /* === Philomath footer === */
 .footer__philomath {
   text-align: center;
