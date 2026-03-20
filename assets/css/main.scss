@@ -1457,7 +1457,10 @@ figcaption,
 .site-title,
 .site-title:visited,
 .greedy-nav .visible-links a,
-.greedy-nav .hidden-links a {
+.greedy-nav .visible-links a:visited,
+.greedy-nav .hidden-links a,
+.masthead__menu-item a,
+.masthead a {
   font-family: 'Outfit', sans-serif !important;
   font-style: normal !important;
   color: #fff !important;
@@ -1578,6 +1581,7 @@ figcaption,
 }
 
 .hc-prologue__title {
+  font-family: 'Outfit', sans-serif;
   font-size: 1.45rem;
   font-weight: 700;
   line-height: 1.22;
@@ -1637,6 +1641,7 @@ figcaption,
 }
 
 .hc-card__title {
+  font-family: 'Outfit', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.25;
