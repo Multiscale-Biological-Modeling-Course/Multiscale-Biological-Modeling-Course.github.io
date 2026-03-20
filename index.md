@@ -62,9 +62,124 @@ chapter_4:
 {% include feature_row id="chapter_4" type="left" %}
 
 <div class="email-signup">
-  <h2>Get the e-book free</h2>
-  <p>Join the Philomath mailing list and we'll send you a free copy of <em>Biological Modeling: A Short Tour</em> — the companion book to this course.</p>
-  <a href="http://eepurl.com/iC9DSg" class="email-signup__btn" target="_blank" rel="noopener">Join Philomath &amp; get the book</a>
+  <h2>Stay connected</h2>
+  <p>Join thousands of Philomath learners across our courses.</p>
+  <a href="http://eepurl.com/iC9DSg" class="email-signup__btn" target="_blank" rel="noopener">Join our mailing list</a>
   <p class="email-signup__note">No spam. Unsubscribe any time.</p>
 </div>
+
+<script>
+/* Live Gray-Scott Turing pattern canvas in hero */
+(function () {
+  function init() {
+    var hero = document.querySelector('.page__hero--overlay');
+    if (!hero) return;
+
+    var canvas = document.createElement('canvas');
+    canvas.style.cssText = [
+      'position:absolute', 'top:0', 'left:0',
+      'width:100%', 'height:100%',
+      'z-index:-1',
+      'opacity:0',
+      'transition:opacity 2s ease'
+    ].join(';');
+    hero.style.position = 'relative';
+    hero.style.overflow = 'hidden';
+    hero.insertBefore(canvas, hero.firstChild);
+
+    canvas.width  = hero.offsetWidth  || 1200;
+    canvas.height = hero.offsetHeight || 500;
+
+    /* Simulation grid sized to hero aspect ratio */
+    var SW = 200, SH = Math.max(60, Math.round(200 * canvas.height / canvas.width));
+    var N  = SW * SH;
+    var u  = new Float32Array(N).fill(1), v  = new Float32Array(N),
+        nu = new Float32Array(N),         nv = new Float32Array(N);
+
+    /* Random seeds */
+    for (var s = 0; s < 160; s++) {
+      var cx = (Math.random() * SW) | 0, cy = (Math.random() * SH) | 0;
+      for (var dy = -2; dy <= 2; dy++) for (var dx = -2; dx <= 2; dx++) {
+        var pi = ((cy+dy+SH)%SH)*SW + (cx+dx+SW)%SW;
+        u[pi] = 0.5 + (Math.random() - 0.5) * 0.2;
+        v[pi] = 0.25 + (Math.random() - 0.5) * 0.2;
+      }
+    }
+
+    /* Gray-Scott parameters: f38_k61 stripe regime */
+    var F = 0.038, k = 0.061, Du = 0.2097, Dv = 0.105;
+
+    function step() {
+      var tmp;
+      for (var y = 0; y < SH; y++) {
+        var yp = ((y-1+SH)%SH)*SW, yn = ((y+1)%SH)*SW, yc = y*SW;
+        for (var x = 0; x < SW; x++) {
+          var i = yc+x, ui = u[i], vi = v[i];
+          var lu = u[yp+x]+u[yn+x]+u[yc+(x-1+SW)%SW]+u[yc+(x+1)%SW]-4*ui;
+          var lv = v[yp+x]+v[yn+x]+v[yc+(x-1+SW)%SW]+v[yc+(x+1)%SW]-4*vi;
+          var uvv = ui*vi*vi;
+          nu[i] = ui + Du*lu - uvv + F*(1-ui);
+          nv[i] = vi + Dv*lv + uvv - (F+k)*vi;
+        }
+      }
+      tmp=u; u=nu; nu=tmp; tmp=v; v=nv; nv=tmp;
+    }
+
+    /* Offscreen canvas for the sim pixels */
+    var off = document.createElement('canvas');
+    off.width = SW; off.height = SH;
+    var oCtx = off.getContext('2d');
+    var img  = oCtx.createImageData(SW, SH);
+    var pix  = img.data;
+    var ctx  = canvas.getContext('2d');
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+
+    /* Colormap: dark brown → orange → amber (matching the site's existing image) */
+    function render() {
+      for (var i = 0; i < N; i++) {
+        var t = Math.max(0, Math.min(1, v[i] * 5));
+        var r, g, b, p = i << 2;
+        if (t < 0.4) {
+          var s = t / 0.4;
+          r = (15 + 145*s)|0; g = (3 + 37*s)|0; b = 0;
+        } else if (t < 0.75) {
+          var s = (t - 0.4) / 0.35;
+          r = (160 + 70*s)|0; g = (40 + 100*s)|0; b = 0;
+        } else {
+          var s = (t - 0.75) / 0.25;
+          r = (230 + 25*s)|0; g = (140 + 90*s)|0; b = (150*s)|0;
+        }
+        pix[p]=r; pix[p+1]=g; pix[p+2]=b; pix[p+3]=255;
+      }
+      oCtx.putImageData(img, 0, 0);
+      ctx.drawImage(off, 0, 0, canvas.width, canvas.height);
+    }
+
+    var frame = 0, active = true;
+    function animate() {
+      if (!active) return;
+      /* Burn in fast, then cruise */
+      var steps = frame < 250 ? 14 : 4;
+      for (var i = 0; i < steps; i++) step();
+      render();
+      if (frame === 250) canvas.style.opacity = '1';
+      frame++;
+      requestAnimationFrame(animate);
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      active = !document.hidden;
+      if (active) animate();
+    });
+
+    animate();
+  }
+
+  if (document.readyState === 'loading')
+    document.addEventListener('DOMContentLoaded', init);
+  else
+    init();
+})();
+</script>
 
