@@ -741,7 +741,7 @@ html {
 
 /* === Sidebar book CTA extras === */
 .sidebar-book-blurb {
-  font-size: 0.78rem;
+  font-size: 0.70rem;
   color: #555;
   text-align: center;
   margin: 0.1rem 0 0.4rem;
@@ -769,25 +769,24 @@ html {
   }
 }
 
-/* Free e-book button — compound selector beats :visited specificity */
+/* Mailing list button — neutral gray, matches store buttons */
 .sidebar-book .btn--book.btn--book-free,
 .sidebar-book .btn--book.btn--book-free:visited,
 .sidebar-book .btn--book.btn--book-free:link {
-  background: #c10814 !important;
-  color: #fff !important;
-  border: none !important;
-  box-shadow: 0 2px 6px rgba(193, 8, 20, 0.35);
+  background: #f4f4f4 !important;
+  color: #000 !important;
+  border: 1px solid #ddd !important;
+  box-shadow: none;
+  margin-bottom: 1.4rem !important;
 }
 
 .sidebar-book .btn--book.btn--book-free:hover {
-  background: #a0060f !important;
-  color: #fff !important;
-  box-shadow: 0 3px 10px rgba(193, 8, 20, 0.45);
+  background: #e8e8e8 !important;
+  color: #c10814 !important;
 }
 
-/* Icon inside the free button also needs to be white */
 .sidebar-book .btn--book.btn--book-free .fa-envelope {
-  color: #fff !important;
+  color: inherit !important;
 }
 
 /* === Email signup section (homepage + book page) === */
