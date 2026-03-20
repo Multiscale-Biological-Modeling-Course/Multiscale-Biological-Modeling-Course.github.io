@@ -111,8 +111,8 @@ chapter_4:
       }
     }
 
-    /* Gray-Scott parameters matching the pre-rendered video */
-    var F = 0.034, k = 0.095, Du = 0.2, Dv = 0.1;
+    /* Gray-Scott parameters tuned for the 4-neighbour Laplacian */
+    var F = 0.038, k = 0.061, Du = 0.2097, Dv = 0.105;
 
     function step() {
       var tmp;
