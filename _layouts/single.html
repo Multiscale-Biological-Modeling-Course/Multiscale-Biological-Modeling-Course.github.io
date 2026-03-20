@@ -26,7 +26,7 @@ layout: default
     var el = document.createElement('p');
     el.className = 'hero-chapter-label';
     el.textContent = label;
-    title.parentNode.insertBefore(el, title);
+    title.parentNode.insertBefore(el, title.nextSibling);
   }
   if (document.readyState === 'loading')
     document.addEventListener('DOMContentLoaded', inject);

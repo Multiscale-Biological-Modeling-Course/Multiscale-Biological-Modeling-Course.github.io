@@ -1140,14 +1140,19 @@ figcaption,
 /* === Hero chapter label === */
 .hero-chapter-label {
   display: inline-block;
-  font-size: 0.6rem;
+  font-size: 0.6rem !important;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
-  margin: 0 0 0.55rem;
-  padding-bottom: 0.45rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.72) !important;
+  margin: 0.4rem 0 0 !important;
+  padding-top: 0.4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: none;
+}
+
+@media (max-width: 767px) {
+  .hero-chapter-label { display: none !important; }
 }
 
 /* === TOC active section highlight === */
