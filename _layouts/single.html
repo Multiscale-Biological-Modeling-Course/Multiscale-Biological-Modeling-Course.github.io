@@ -23,6 +23,8 @@ layout: default
   function inject() {
     var title = document.querySelector('.page__hero--overlay .page__title');
     if (!title) return;
+    title.textContent = title.textContent.replace(/^(Prologue|Module\s*\d+)\s*:\s*/i, '');
+
     var el = document.createElement('p');
     el.className = 'hero-chapter-label';
     el.textContent = label;

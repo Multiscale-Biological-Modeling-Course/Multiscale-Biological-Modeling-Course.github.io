@@ -739,6 +739,13 @@ html {
   padding-bottom: 3rem;
 }
 
+@media (max-width: 767px) {
+  .layout--single .page__hero--overlay {
+    max-height: none;
+    padding-bottom: 2rem;
+  }
+}
+
 /* Keep the homepage (“splash”) hero large */
 .layout--home .page__hero--overlay,
 .layout--splash .page__hero--overlay {
