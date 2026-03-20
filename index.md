@@ -69,129 +69,25 @@ chapter_4:
 </div>
 
 <script>
-/* Live Gray-Scott Turing pattern canvas in hero */
+/* Inject Turing pattern video into hero */
 (function () {
   function init() {
     var hero = document.querySelector('.page__hero--overlay');
     if (!hero) return;
-
-    var canvas = document.createElement('canvas');
-    canvas.style.cssText = [
-      'position:absolute', 'top:0', 'left:0',
-      'width:100%', 'height:100%',
-      'z-index:-1',
-      'opacity:0',
-      'transition:opacity 2s ease'
-    ].join(';');
+    var vid = document.createElement('video');
+    vid.autoplay = true;
+    vid.muted    = true;
+    vid.loop     = true;
+    vid.setAttribute('playsinline', '');
+    vid.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;';
+    var src = document.createElement('source');
+    src.src  = '/assets/images/turing_hero_web.mp4';
+    src.type = 'video/mp4';
+    vid.appendChild(src);
     hero.style.position = 'relative';
     hero.style.overflow = 'hidden';
-    hero.insertBefore(canvas, hero.firstChild);
-
-    canvas.width  = hero.offsetWidth  || 1200;
-    canvas.height = hero.offsetHeight || 500;
-
-    /* Simulation grid sized to hero aspect ratio */
-    var SW = 200, SH = Math.max(60, Math.round(200 * canvas.height / canvas.width));
-    var N  = SW * SH;
-    var u  = new Float32Array(N).fill(1), v  = new Float32Array(N),
-        nu = new Float32Array(N),         nv = new Float32Array(N);
-
-    /* Seed entire grid with low noise so stripes emerge quickly everywhere */
-    for (var i = 0; i < N; i++) {
-      u[i] = 1.0 - Math.random() * 0.05;
-      v[i] = Math.random() * 0.02;
-    }
-    /* Dense concentrated seeds to nucleate stripe formation */
-    for (var s = 0; s < 400; s++) {
-      var cx = (Math.random() * SW) | 0, cy = (Math.random() * SH) | 0;
-      for (var dy = -3; dy <= 3; dy++) for (var dx = -3; dx <= 3; dx++) {
-        var pi = ((cy+dy+SH)%SH)*SW + (cx+dx+SW)%SW;
-        u[pi] = 0.5 + (Math.random() - 0.5) * 0.2;
-        v[pi] = 0.25 + (Math.random() - 0.5) * 0.2;
-      }
-    }
-
-    /* Gray-Scott parameters tuned for the 4-neighbour Laplacian */
-    var F = 0.038, k = 0.061, Du = 0.2097, Dv = 0.105;
-
-    function step() {
-      var tmp;
-      for (var y = 0; y < SH; y++) {
-        var yp = ((y-1+SH)%SH)*SW, yn = ((y+1)%SH)*SW, yc = y*SW;
-        for (var x = 0; x < SW; x++) {
-          var i = yc+x, ui = u[i], vi = v[i];
-          var lu = u[yp+x]+u[yn+x]+u[yc+(x-1+SW)%SW]+u[yc+(x+1)%SW]-4*ui;
-          var lv = v[yp+x]+v[yn+x]+v[yc+(x-1+SW)%SW]+v[yc+(x+1)%SW]-4*vi;
-          var uvv = ui*vi*vi;
-          nu[i] = ui + Du*lu - uvv + F*(1-ui);
-          nv[i] = vi + Dv*lv + uvv - (F+k)*vi;
-        }
-      }
-      tmp=u; u=nu; nu=tmp; tmp=v; v=nv; nv=tmp;
-    }
-
-    /* Offscreen canvas for the sim pixels */
-    var off = document.createElement('canvas');
-    off.width = SW; off.height = SH;
-    var oCtx = off.getContext('2d');
-    var img  = oCtx.createImageData(SW, SH);
-    var pix  = img.data;
-    var ctx  = canvas.getContext('2d');
-    ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = 'high';
-
-    /* Spectral colormap (matches matplotlib's Spectral used in the rendered video) */
-    var spectralStops = [
-      [158,  1,  66], [213, 62,  79], [244, 109,  67], [253, 174,  97],
-      [254, 224, 139], [255, 255, 191], [230, 245, 152], [171, 221, 164],
-      [102, 194, 165], [ 50, 136, 189], [ 94,  79, 162]
-    ];
-    function spectral(t) {
-      t = Math.max(0, Math.min(1, t));
-      var s = t * 10, i = Math.min(9, s | 0), f = s - i;
-      var a = spectralStops[i], b = spectralStops[i + 1];
-      return [(a[0] + (b[0]-a[0])*f)|0, (a[1] + (b[1]-a[1])*f)|0, (a[2] + (b[2]-a[2])*f)|0];
-    }
-
-    var ratio = new Float32Array(N);
-    function render() {
-      /* Compute B/(A+B) and auto-normalize to full colormap range, like matplotlib */
-      var vmin = 1, vmax = 0;
-      for (var i = 0; i < N; i++) {
-        ratio[i] = v[i] / (u[i] + v[i] || 1);
-        if (ratio[i] < vmin) vmin = ratio[i];
-        if (ratio[i] > vmax) vmax = ratio[i];
-      }
-      var range = vmax - vmin || 1;
-      for (var i = 0; i < N; i++) {
-        var rgb = spectral((ratio[i] - vmin) / range);
-        var p = i << 2;
-        pix[p]=rgb[0]; pix[p+1]=rgb[1]; pix[p+2]=rgb[2]; pix[p+3]=255;
-      }
-      oCtx.putImageData(img, 0, 0);
-      ctx.drawImage(off, 0, 0, canvas.width, canvas.height);
-    }
-
-    var frame = 0, active = true;
-    function animate() {
-      if (!active) return;
-      /* Burn in fast, then cruise */
-      var steps = frame < 500 ? 20 : 4;
-      for (var i = 0; i < steps; i++) step();
-      render();
-      if (frame === 500) canvas.style.opacity = '1';
-      frame++;
-      requestAnimationFrame(animate);
-    }
-
-    document.addEventListener('visibilitychange', function () {
-      active = !document.hidden;
-      if (active) animate();
-    });
-
-    animate();
+    hero.insertBefore(vid, hero.firstChild);
   }
-
   if (document.readyState === 'loading')
     document.addEventListener('DOMContentLoaded', init);
   else
