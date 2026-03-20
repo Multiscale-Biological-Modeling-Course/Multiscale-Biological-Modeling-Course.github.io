@@ -1447,7 +1447,9 @@ figcaption,
 }
 
 /* Masthead — navy background + Outfit font */
-.masthead {
+.masthead,
+.masthead__inner-wrap,
+.greedy-nav {
   background: #1d3557 !important;
   border-bottom: none !important;
 }
@@ -1457,6 +1459,7 @@ figcaption,
 .greedy-nav .visible-links a,
 .greedy-nav .hidden-links a {
   font-family: 'Outfit', sans-serif !important;
+  font-style: normal !important;
   color: #fff !important;
 }
 
