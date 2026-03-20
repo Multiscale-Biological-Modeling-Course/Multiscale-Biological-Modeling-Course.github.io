@@ -1261,7 +1261,7 @@ figcaption,
     inset: 0;
     background: transparent;
     z-index: 2000;
-    cursor: pointer;
+    pointer-events: none;
   }
 
   #mob-backdrop.mob-visible {

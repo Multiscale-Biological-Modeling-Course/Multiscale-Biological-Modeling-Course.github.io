@@ -278,7 +278,16 @@ document.addEventListener('DOMContentLoaded', function () {
     if (tocTab)   tocTab.setAttribute('aria-pressed', 'false');
   }
 
-  bd.addEventListener('click', closeAll);
+  /* Close when tapping outside the open drawer */
+  document.addEventListener('click', function (e) {
+    var anyOpen = (leftSb && leftSb.classList.contains('mob-open')) ||
+                  (rightSb && rightSb.classList.contains('mob-open'));
+    if (!anyOpen) return;
+    if (leftSb  && leftSb.contains(e.target))  return;
+    if (rightSb && rightSb.contains(e.target)) return;
+    if (tabWrap && tabWrap.contains(e.target))  return;
+    closeAll();
+  });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeAll();
   });
