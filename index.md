@@ -77,17 +77,14 @@ chapter_4:
     vid.muted    = true;
     vid.loop     = true;
     vid.setAttribute('playsinline', '');
-    vid.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;';
+    vid.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;filter:brightness(0.4);';
     var src = document.createElement('source');
     src.src  = '/assets/images/turing_hero_web.mp4';
     src.type = 'video/mp4';
     vid.appendChild(src);
-    var overlay = document.createElement('div');
-    overlay.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.55);z-index:0;';
     hero.style.position = 'relative';
     hero.style.overflow = 'hidden';
     hero.insertBefore(vid, hero.firstChild);
-    hero.insertBefore(overlay, hero.children[1]);
   }
   if (document.readyState === 'loading')
     document.addEventListener('DOMContentLoaded', init);
