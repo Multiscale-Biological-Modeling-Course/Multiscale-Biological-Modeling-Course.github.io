@@ -7,9 +7,7 @@ excerpt: "Explore biological systems at multiple scales with our free computatio
 
 header:
   overlay_color: "#000"
-  overlay_filter: "0.6"
-  overlay_image: /assets/images/f38_k61_compressed.webp
-  image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
+  overlay_filter: "0.75"
   actions:
     - label: "Start learning!"
       url: "/prologue/"
@@ -84,9 +82,12 @@ chapter_4:
     src.src  = '/assets/images/turing_hero_web.mp4';
     src.type = 'video/mp4';
     vid.appendChild(src);
+    var overlay = document.createElement('div');
+    overlay.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.55);z-index:0;';
     hero.style.position = 'relative';
     hero.style.overflow = 'hidden';
     hero.insertBefore(vid, hero.firstChild);
+    hero.insertBefore(overlay, hero.children[1]);
   }
   if (document.readyState === 'loading')
     document.addEventListener('DOMContentLoaded', init);
