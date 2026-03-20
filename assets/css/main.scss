@@ -733,10 +733,10 @@ html {
 
 /* Make interior-page heroes shorter */
 .layout--single .page__hero--overlay {
-  min-height: 220px;        /* was 400-480px */
-  max-height: 260px;        /* stops very tall screens stretching it */
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  min-height: 240px;
+  max-height: 300px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 /* Keep the homepage (“splash”) hero large */
