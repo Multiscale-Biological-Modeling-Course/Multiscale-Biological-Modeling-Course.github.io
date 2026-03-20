@@ -15,15 +15,15 @@ exclude_book_buttons: true
 ---
 
 <div id="signup" class="email-signup email-signup--prominent">
-  <h2>Get the e-book free</h2>
-  <p>Join the Philomath mailing list and we'll send you a free copy of <em>Biological Modeling: A Short Tour</em> right away.</p>
-  <a href="http://eepurl.com/iC9DSg" class="email-signup__btn" target="_blank" rel="noopener">Join Philomath &amp; get the book</a>
+  <h2>Stay connected</h2>
+  <p>Join thousands of Philomath learners across our courses.</p>
+  <a href="http://eepurl.com/iC9DSg" class="email-signup__btn" target="_blank" rel="noopener">Join our mailing list</a>
   <p class="email-signup__note">No spam. Unsubscribe any time.</p>
 </div>
 
 [![3D cover of the book Biological Modeling showing front, spine, and back](../assets/images/600px/cover_3d_paperback.jpg){: .align-center loading="lazy"}](https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W)
 
-## Or buy a copy
+## Get the book
 
 * **E-book ($9.95):** [Buy on Leanpub](https://leanpub.com/biologicalmodeling){:target="_blank"}
 * **Print edition:** [Buy on Amazon](https://www.amazon.com/Biological-Modeling-Short-Phillip-Compeau/dp/B0BT6B2B8W){:target="_blank"}
