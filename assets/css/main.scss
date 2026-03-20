@@ -1226,7 +1226,7 @@ figcaption,
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.08);
+    background: transparent;
     z-index: 2000;
     cursor: pointer;
   }
@@ -1272,6 +1272,20 @@ figcaption,
   .mob-tab:hover,
   .mob-tab[aria-pressed="true"] {
     background: #a0060f;
+  }
+
+  .mob-tab--toc {
+    background: #1d3557;
+  }
+
+  .mob-tab--toc:hover,
+  .mob-tab--toc[aria-pressed="true"] {
+    background: #15253f;
+  }
+
+  /* Hide book CTA inside the right mobile drawer — use mob-book-cta instead */
+  .sidebar__right.sticky .sidebar-book {
+    display: none !important;
   }
 
   /* Gap between the two tab buttons */

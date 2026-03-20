@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* TOC tab → right drawer (only when a real TOC is present) */
   if (rightSb && rightSb.querySelector('.toc')) {
     tocTab = document.createElement('button');
-    tocTab.className = 'mob-tab';
+    tocTab.className = 'mob-tab mob-tab--toc';
     tocTab.textContent = 'On Page';
     tocTab.setAttribute('aria-label', 'Toggle table of contents');
     tocTab.setAttribute('aria-pressed', 'false');
