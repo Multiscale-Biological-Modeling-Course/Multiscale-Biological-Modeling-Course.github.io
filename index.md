@@ -96,10 +96,15 @@ chapter_4:
     var u  = new Float32Array(N).fill(1), v  = new Float32Array(N),
         nu = new Float32Array(N),         nv = new Float32Array(N);
 
-    /* Random seeds */
-    for (var s = 0; s < 160; s++) {
+    /* Seed entire grid with low noise so stripes emerge quickly everywhere */
+    for (var i = 0; i < N; i++) {
+      u[i] = 1.0 - Math.random() * 0.05;
+      v[i] = Math.random() * 0.02;
+    }
+    /* Dense concentrated seeds to nucleate stripe formation */
+    for (var s = 0; s < 400; s++) {
       var cx = (Math.random() * SW) | 0, cy = (Math.random() * SH) | 0;
-      for (var dy = -2; dy <= 2; dy++) for (var dx = -2; dx <= 2; dx++) {
+      for (var dy = -3; dy <= 3; dy++) for (var dx = -3; dx <= 3; dx++) {
         var pi = ((cy+dy+SH)%SH)*SW + (cx+dx+SW)%SW;
         u[pi] = 0.5 + (Math.random() - 0.5) * 0.2;
         v[pi] = 0.25 + (Math.random() - 0.5) * 0.2;
@@ -160,10 +165,10 @@ chapter_4:
     function animate() {
       if (!active) return;
       /* Burn in fast, then cruise */
-      var steps = frame < 250 ? 14 : 4;
+      var steps = frame < 500 ? 20 : 4;
       for (var i = 0; i < steps; i++) step();
       render();
-      if (frame === 250) canvas.style.opacity = '1';
+      if (frame === 500) canvas.style.opacity = '1';
       frame++;
       requestAnimationFrame(animate);
     }
