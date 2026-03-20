@@ -1,110 +1,76 @@
 """
-Gray-Scott reaction-diffusion simulation → hero video.
+Gray-Scott reaction-diffusion → hero video.
+Based directly on tutorials/Gray-Scott.ipynb
 
-Output: turing_hero.mp4  (drop into assets/images/)
-
-Run with:  conda run python3 scripts/make_turing_video.py
+Run with:  conda run python3 make_turing_video.py
+Output:    turing_hero.mp4
 """
 
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 import numpy as np
+from scipy import signal
 import imageio
-from matplotlib.colors import LinearSegmentedColormap
 
-# ---------------------------------------------------------------------------
-# Settings
-# ---------------------------------------------------------------------------
-W, H       = 400, 200      # simulation grid (2:1 matches hero banner)
-F, k       = 0.038, 0.061  # stripe regime (f38_k61)
-Du, Dv     = 0.2097, 0.105
-dt         = 1.0
+# _*_*_*_*_*_*_*_*_* GRID PROPERTIES *_*_*_*_*_*_*_*_*_*
+grid_h    = 201   # Needs to be odd
+grid_w    = 401   # ~2:1 aspect ratio to match widescreen hero
+numIter   = 50000
+seed_size = 11    # Needs to be an odd number
 
-WARMUP_STEPS  = 8000   # simulation steps before recording starts
-RECORD_STEPS  = 8      # simulation steps between each recorded frame
-FPS           = 30
-DURATION_SECS = 20     # video length; loops seamlessly
-RENDER_W      = 1920   # output pixel width
-RENDER_H      = 960    # output pixel height
-OUTPUT        = "assets/images/turing_hero.mp4"
+A = np.ones((grid_h, grid_w))
+B = np.zeros((grid_h, grid_w))
 
-# ---------------------------------------------------------------------------
-# Initialization: background noise + dense seeds
-# ---------------------------------------------------------------------------
-rng = np.random.default_rng(42)
+# Seed the predators in the centre
+cy, cx = grid_h // 2, grid_w // 2
+half   = seed_size // 2
+A[cy-half:cy+half+1, cx-half:cx+half+1] = 0.5 * np.ones((seed_size, seed_size))
+B[cy-half:cy+half+1, cx-half:cx+half+1] = 0.25 * np.ones((seed_size, seed_size))
 
-u = np.ones((H, W))  + rng.uniform(-0.02, 0.02, (H, W))
-v = np.zeros((H, W)) + rng.uniform(0, 0.01, (H, W))
+# _*_*_*_*_*_*_*_*_* SIMULATION VARIABLES *_*_*_*_*_*_*_*_*_*
+f    = 0.034
+k    = 0.095
+dt   = 1.0
+dA   = 0.2
+dB   = 0.1
+lapl = np.array([[0.05, 0.2, 0.05],
+                 [0.2, -1.0, 0.2],
+                 [0.05, 0.2, 0.05]])
 
-# Nucleation sites
-for _ in range(500):
-    cx, cy = rng.integers(0, W), rng.integers(0, H)
-    r = 4
-    ys = np.arange(cy - r, cy + r + 1)[:, None] % H
-    xs = np.arange(cx - r, cx + r + 1)[None, :] % W
-    u[ys, xs] = 0.5 + rng.uniform(-0.1, 0.1, (2*r+1, 2*r+1))
-    v[ys, xs] = 0.25 + rng.uniform(-0.1, 0.1, (2*r+1, 2*r+1))
+plot_iter = 50   # save a frame every 50 iterations (matches original notebook)
+FPS       = 20
+OUTPUT    = "turing_hero.mp4"
 
-np.clip(u, 0, 1, out=u)
-np.clip(v, 0, 1, out=v)
+# _*_*_*_*_*_*_*_*_* SIMULATE + RECORD *_*_*_*_*_*_*_*_*_*
+print("Running simulation...")
+images = []
 
-# ---------------------------------------------------------------------------
-# Simulation (fully vectorized with numpy)
-# ---------------------------------------------------------------------------
-def laplacian(Z):
-    return (np.roll(Z, 1, axis=0) + np.roll(Z, -1, axis=0) +
-            np.roll(Z, 1, axis=1) + np.roll(Z, -1, axis=1) - 4 * Z)
+for iter in range(numIter):
+    A_new = A + (dA * signal.convolve2d(A, lapl, mode='same', boundary='fill', fillvalue=0)
+                 - (A * B * B) + (f * (1 - A))) * dt
+    B_new = B + (dB * signal.convolve2d(B, lapl, mode='same', boundary='fill', fillvalue=0)
+                 + (A * B * B) - (k * B)) * dt
+    A = np.copy(A_new)
+    B = np.copy(B_new)
 
-def step(u, v):
-    uvv = u * v * v
-    u += dt * (Du * laplacian(u) - uvv + F * (1 - u))
-    v += dt * (Dv * laplacian(v) + uvv - (F + k) * v)
-    np.clip(u, 0, 1, out=u)
-    np.clip(v, 0, 1, out=v)
-    return u, v
+    if iter % plot_iter == 0:
+        fig, ax = plt.subplots(figsize=(19.2, 9.6), dpi=100)
+        fig.subplots_adjust(0, 0, 1, 1)
+        ax.imshow(B / (A + B), cmap='Spectral', interpolation='bilinear')
+        ax.axis('off')
+        fig.canvas.draw()
+        buf = np.frombuffer(fig.canvas.tostring_argb(), dtype=np.uint8)
+        buf = buf.reshape(fig.canvas.get_width_height()[::-1] + (4,))
+        buf = buf[:, :, [1, 2, 3]]  # ARGB → RGB
+        images.append(buf)
+        plt.close(fig)
 
-# Warm up
-print(f"Warming up ({WARMUP_STEPS} steps)...")
-for i in range(WARMUP_STEPS):
-    u, v = step(u, v)
-    if (i + 1) % 1000 == 0:
-        print(f"  {i + 1}/{WARMUP_STEPS}")
+        if iter % 500 == 0:
+            print(f"  iter {iter}/{numIter}  ({len(images)} frames so far)")
 
-# ---------------------------------------------------------------------------
-# Colormap: dark brown → orange → amber  (matches existing site palette)
-# ---------------------------------------------------------------------------
-cmap = LinearSegmentedColormap.from_list("turing", [
-    ( 15/255,   3/255,   0/255),   # near-black brown
-    (160/255,  40/255,   0/255),   # deep orange
-    (230/255, 140/255,   0/255),   # amber
-    (255/255, 230/255, 150/255),   # pale cream
-])
-
-def v_to_rgb(v_grid):
-    """Map v concentrations to uint8 RGB frame."""
-    t = np.clip(v_grid * 5, 0, 1)   # stretch contrast
-    rgba = cmap(t)                    # (H, W, 4) float32
-    rgb  = (rgba[:, :, :3] * 255).astype(np.uint8)
-    # Scale up to output resolution
-    from PIL import Image
-    img = Image.fromarray(rgb)
-    img = img.resize((RENDER_W, RENDER_H), Image.BILINEAR)
-    return np.array(img)
-
-# ---------------------------------------------------------------------------
-# Render frames
-# ---------------------------------------------------------------------------
-n_frames = FPS * DURATION_SECS
-print(f"\nRendering {n_frames} frames at {FPS}fps ({DURATION_SECS}s)...")
-
-with imageio.get_writer(OUTPUT, fps=FPS,
-                        codec="libx264",
-                        quality=8,
-                        macro_block_size=1) as writer:
-    for f_idx in range(n_frames):
-        for _ in range(RECORD_STEPS):
-            u, v = step(u, v)
-        writer.append_data(v_to_rgb(v))
-        if (f_idx + 1) % FPS == 0:
-            print(f"  {f_idx + 1}/{n_frames} frames")
-
-print(f"\nDone → {OUTPUT}")
-print("Now add it to index.md hero — ask Claude to wire it up!")
+print(f"\nSaving {len(images)} frames → {OUTPUT}")
+imageio.mimsave(OUTPUT, images, fps=FPS, codec='libx264', quality=8,
+                macro_block_size=1)
+print(f"Done → {OUTPUT}")
+print("Drop it in assets/images/ and tell Claude!")
