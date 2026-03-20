@@ -309,6 +309,13 @@ document.addEventListener('DOMContentLoaded', function () {
         rightSb.classList.add('mob-open');
         bd.classList.add('mob-visible');
         tocTab.setAttribute('aria-pressed', 'true');
+        /* Auto-expand the TOC so contents are immediately visible */
+        var tocBtn  = rightSb.querySelector('.toc__toggle');
+        var tocMenu = document.getElementById('toc-menu');
+        if (tocBtn && tocMenu) {
+          tocBtn.setAttribute('aria-expanded', 'true');
+          tocMenu.hidden = false;
+        }
       }
     });
     tabWrap.appendChild(tocTab);
