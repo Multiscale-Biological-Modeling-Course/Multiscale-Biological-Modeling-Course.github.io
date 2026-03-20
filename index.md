@@ -85,7 +85,7 @@ header:
   <div class="hc-about hc-reveal">
     <img class="hc-about__photo" src="/assets/images/compeau_phillip_2023.jpg" alt="Phillip Compeau">
     <div class="hc-about__body">
-      <p class="hc-about__quote">Each module in this course is built around a real question in computational biology, and we use real tools to solve it. Bringing this work to the world with a student team has been one of the great joys of my career.</p>
+      <p class="hc-about__quote">Each module in Biological Modeling is built around a real question in computational biology, and we use real tools to solve it. Bringing this work to the world with a student team has been one of the great joys of my career.</p>
       <div class="hc-about__attr">
         <strong class="hc-about__name">Phillip Compeau</strong>
         Professor at Carnegie Mellon University
