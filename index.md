@@ -111,8 +111,8 @@ chapter_4:
       }
     }
 
-    /* Gray-Scott parameters: f38_k61 stripe regime */
-    var F = 0.038, k = 0.061, Du = 0.2097, Dv = 0.105;
+    /* Gray-Scott parameters matching the pre-rendered video */
+    var F = 0.034, k = 0.095, Du = 0.2, Dv = 0.1;
 
     function step() {
       var tmp;
@@ -140,22 +140,33 @@ chapter_4:
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = 'high';
 
-    /* Colormap: dark brown → orange → amber (matching the site's existing image) */
+    /* Spectral colormap (matches matplotlib's Spectral used in the rendered video) */
+    var spectralStops = [
+      [158,  1,  66], [213, 62,  79], [244, 109,  67], [253, 174,  97],
+      [254, 224, 139], [255, 255, 191], [230, 245, 152], [171, 221, 164],
+      [102, 194, 165], [ 50, 136, 189], [ 94,  79, 162]
+    ];
+    function spectral(t) {
+      t = Math.max(0, Math.min(1, t));
+      var s = t * 10, i = Math.min(9, s | 0), f = s - i;
+      var a = spectralStops[i], b = spectralStops[i + 1];
+      return [(a[0] + (b[0]-a[0])*f)|0, (a[1] + (b[1]-a[1])*f)|0, (a[2] + (b[2]-a[2])*f)|0];
+    }
+
+    var ratio = new Float32Array(N);
     function render() {
+      /* Compute B/(A+B) and auto-normalize to full colormap range, like matplotlib */
+      var vmin = 1, vmax = 0;
       for (var i = 0; i < N; i++) {
-        var t = Math.max(0, Math.min(1, v[i] * 5));
-        var r, g, b, p = i << 2;
-        if (t < 0.4) {
-          var s = t / 0.4;
-          r = (15 + 145*s)|0; g = (3 + 37*s)|0; b = 0;
-        } else if (t < 0.75) {
-          var s = (t - 0.4) / 0.35;
-          r = (160 + 70*s)|0; g = (40 + 100*s)|0; b = 0;
-        } else {
-          var s = (t - 0.75) / 0.25;
-          r = (230 + 25*s)|0; g = (140 + 90*s)|0; b = (150*s)|0;
-        }
-        pix[p]=r; pix[p+1]=g; pix[p+2]=b; pix[p+3]=255;
+        ratio[i] = v[i] / (u[i] + v[i] || 1);
+        if (ratio[i] < vmin) vmin = ratio[i];
+        if (ratio[i] > vmax) vmax = ratio[i];
+      }
+      var range = vmax - vmin || 1;
+      for (var i = 0; i < N; i++) {
+        var rgb = spectral((ratio[i] - vmin) / range);
+        var p = i << 2;
+        pix[p]=rgb[0]; pix[p+1]=rgb[1]; pix[p+2]=rgb[2]; pix[p+3]=255;
       }
       oCtx.putImageData(img, 0, 0);
       ctx.drawImage(off, 0, 0, canvas.width, canvas.height);
