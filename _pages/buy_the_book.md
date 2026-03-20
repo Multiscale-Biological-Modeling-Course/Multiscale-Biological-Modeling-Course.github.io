@@ -7,9 +7,10 @@ description: "Get the Biological Modeling textbook: discover key concepts in sys
 comments: false
 share: false
 header:
-  overlay_image: "../assets/images/cover_background_stretched.jpg"
-  overlay_filter: 0.3
-  image_alt: "Cover of Biological Modeling: A Short Tour, the companion textbook to this free online course."
+  overlay_color: "#000"
+  overlay_filter: "0.6"
+  overlay_image: /assets/images/f38_k61_compressed.webp
+  image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 author_profile: true
 exclude_book_buttons: true
 ---

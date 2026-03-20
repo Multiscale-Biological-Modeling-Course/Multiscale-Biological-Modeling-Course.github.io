@@ -16,6 +16,24 @@ search: false
 }
 */
 
+/* === Scroll-triggered fade-in animations === */
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* === Reading progress bar === */
 #reading-progress-bar {
   position: fixed;
