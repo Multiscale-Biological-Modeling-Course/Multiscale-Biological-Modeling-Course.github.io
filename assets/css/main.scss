@@ -1144,15 +1144,12 @@ figcaption,
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72) !important;
+  color: #fff !important;
   margin: 0.4rem 0 0 !important;
   padding-top: 0.4rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-bottom: none;
-}
-
-@media (max-width: 767px) {
-  .hero-chapter-label { display: none !important; }
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* === TOC active section highlight === */
