@@ -1,0 +1,80 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<div class="sp-page">
+
+  <!-- Search hero -->
+  <div class="sp-hero">
+    <div class="sp-hero__inner">
+      <p class="sp-hero__eyebrow">Biological Modeling</p>
+      <h1 class="sp-hero__title">Search the Course</h1>
+      <p class="sp-hero__sub">Explore every lesson, tutorial, and concept across all four modules</p>
+      <div class="sp-hero__form">
+        <svg class="sp-hero__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="search"
+          id="search-input"
+          class="sp-hero__input"
+          placeholder='Try "chemotaxis", "Turing patterns", "spike protein" …'
+          autocomplete="off"
+          spellcheck="false"
+          autofocus
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- Body: empty-state prompt OR results -->
+  <div class="sp-body">
+
+    <!-- Shown when input is empty -->
+    <div class="sp-prompt" id="sp-prompt">
+      <p class="sp-prompt__label">Jump to a module</p>
+      <div class="sp-prompt__grid">
+
+        <a class="sp-chip" href="/prologue/">
+          <span class="sp-chip__tag">Prologue</span>
+          <span class="sp-chip__title">Random Walks &amp; Turing Patterns</span>
+          <span class="sp-chip__arrow">→</span>
+        </a>
+
+        <a class="sp-chip" href="/motifs/home">
+          <span class="sp-chip__tag">Module 1</span>
+          <span class="sp-chip__title">Finding Motifs in Transcription Factor Networks</span>
+          <span class="sp-chip__arrow">→</span>
+        </a>
+
+        <a class="sp-chip" href="/chemotaxis/home">
+          <span class="sp-chip__tag">Module 2</span>
+          <span class="sp-chip__title">Unpacking E. coli's Genius Exploration Algorithm</span>
+          <span class="sp-chip__arrow">→</span>
+        </a>
+
+        <a class="sp-chip" href="/coronavirus/home">
+          <span class="sp-chip__tag">Module 3</span>
+          <span class="sp-chip__title">Analyzing the Coronavirus Spike Protein</span>
+          <span class="sp-chip__arrow">→</span>
+        </a>
+
+        <a class="sp-chip" href="/white_blood_cells/home">
+          <span class="sp-chip__tag">Module 4</span>
+          <span class="sp-chip__title">Training a Computer to Classify White Blood Cells</span>
+          <span class="sp-chip__arrow">→</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Algolia results rendered here -->
+    <div id="search-results" class="sp-results" style="display:none"></div>
+
+  </div><!-- /.sp-body -->
+
+</div><!-- /.sp-page -->
+
+{% include search/algolia_search_scripts.html %}

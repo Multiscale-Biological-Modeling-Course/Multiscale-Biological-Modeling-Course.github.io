@@ -1,0 +1,64 @@
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.js"></script>
+<script>
+(function () {
+  var prompt  = document.getElementById('sp-prompt');
+  var results = document.getElementById('search-results');
+
+  var search = instantsearch({
+    appId:     '{{ site.algolia.application_id }}',
+    apiKey:    '{{ site.algolia.search_only_api_key }}',
+    indexName: '{{ site.algolia.index_name }}',
+    searchFunction: function (helper) {
+      var q = helper.state.query;
+      if (!q || q.trim() === '') {
+        prompt.style.display  = 'block';
+        results.style.display = 'none';
+        results.innerHTML     = '';
+        return;
+      }
+      prompt.style.display  = 'none';
+      results.style.display = 'block';
+      helper.search();
+    }
+  });
+
+  /* Wire our custom input — searchBox widget would replace it */
+  var input = document.getElementById('search-input');
+  input.addEventListener('input', function () {
+    search.helper.setQuery(this.value).search();
+  });
+
+  /* Hits widget */
+  search.addWidget(
+    instantsearch.widgets.hits({
+      container: '#search-results',
+      cssClasses: { root: 'sp-hits' },
+      templates: {
+        item: function (hit) {
+          var title   = instantsearch.highlight({ attribute: 'title',   hit: hit }) || hit.title   || 'Untitled';
+          var excerpt = instantsearch.highlight({ attribute: 'content', hit: hit }) || hit.excerpt || '';
+          var url     = '{{ site.url }}' + (hit.url || '/');
+          return (
+            '<a class="sp-hit" href="' + url + '">' +
+              '<div class="sp-hit__title">' + title + '</div>' +
+              (excerpt ? '<div class="sp-hit__excerpt">' + excerpt + '</div>' : '') +
+            '</a>'
+          );
+        },
+        empty: function (query) {
+          return (
+            '<div class="sp-empty">' +
+              '<p class="sp-empty__msg">No results for <strong>&ldquo;' + query.query + '&rdquo;</strong></p>' +
+              '<p class="sp-empty__hint">Try a shorter term or browse a module above.</p>' +
+            '</div>'
+          );
+        }
+      }
+    })
+  );
+
+  search.start();
+  /* Trigger once so searchFunction runs and hides results on load */
+  search.helper.setQuery('').search();
+})();
+</script>
