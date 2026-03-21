@@ -28,10 +28,11 @@ exclude_book_buttons: true
       </a>
     </div>
     <div class="book-hero__pitch">
-      <p class="book-hero__eyebrow">Companion to the Free Course</p>
+      <p class="book-hero__eyebrow">The Course Companion</p>
       <h2 class="book-hero__title">Biological Modeling:<br>A Short Tour</h2>
       <p class="book-hero__subtitle">by Phillip Compeau</p>
-      <p class="book-hero__desc">Five chapters. Five biological mysteries. One clean narrative — no installation guides, no sidebars, just the science and the math that illuminates it.</p>
+      <p class="book-hero__subtitle book-hero__contributors">with Noah Yann Lee, Chris Lee, Shuanger Li, and Mert Inan</p>
+      <p class="book-hero__desc">Five chapters. Five biological mysteries. One clean narrative: no installation guides, no sidebars, just the science and the math that illuminates it.</p>
       <div class="book-ctas">
         <a class="book-cta book-cta--primary" href="https://leanpub.com/biologicalmodeling" target="_blank" rel="noopener">
           <span class="book-cta__label">E-book</span>
@@ -42,7 +43,7 @@ exclude_book_buttons: true
           <span class="book-cta__price">Buy on Amazon</span>
         </a>
       </div>
-      <p class="book-hero__support">Your purchase helps keep the free course free for everyone.</p>
+      <p class="book-hero__support">Your purchase helps keep the course free for everyone.</p>
     </div>
   </div>
 
