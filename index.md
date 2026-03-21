@@ -88,7 +88,7 @@ header:
       <p class="hc-about__quote">Each module in Biological Modeling is built around a real question in computational biology, and we use real tools to solve it. Bringing this work to the world with a student team has been one of the great joys of my career.</p>
       <div class="hc-about__attr">
         <strong class="hc-about__name">Phillip Compeau</strong>
-        Founder of Biological Modeling &amp; Professor at Carnegie Mellon University
+        Founder of Biological Modeling<br>Professor at Carnegie Mellon University
         <div class="hc-about__links">
           <a href="https://compeau.cbd.cmu.edu" target="_blank" rel="noopener" title="Personal site">
             <svg style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
