@@ -1543,6 +1543,11 @@ figcaption,
   color: #555 !important;
 }
 
+.greedy-nav .hidden-links .dropdown-content li.active a {
+  color: #c10814 !important;
+  font-weight: 600 !important;
+}
+
 .site-title,
 .site-title:visited,
 .greedy-nav .visible-links > li > a,
@@ -1558,6 +1563,11 @@ figcaption,
 .greedy-nav .visible-links .dropdown-content a:hover {
   color: #111 !important;
   font-family: 'Outfit', sans-serif !important;
+}
+
+.greedy-nav .visible-links .dropdown-content li.active a {
+  color: #c10814 !important;
+  font-weight: 600 !important;
 }
 
 .greedy-nav .hidden-links a,
