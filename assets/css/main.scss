@@ -541,6 +541,15 @@ code, pre, kbd, samp {
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
+  outline: none !important;
+  &:focus,
+  &:active,
+  &:focus-visible {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
 }
 
 /* Kill the full-screen white overlay — we don't need it with our nav styling */
