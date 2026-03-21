@@ -43,13 +43,8 @@ exclude_book_buttons: true
           <span class="book-cta__price">Buy on Amazon</span>
         </a>
       </div>
-      <p class="book-hero__support">Your purchase helps keep the course free for everyone.</p>
+      <p class="book-hero__support">Your purchase keeps the course free.</p>
     </div>
-  </div>
-
-  <!-- Why the book -->
-  <div class="book-section">
-    <p class="book-why">The free course is built for guided, step-by-step learning: software tutorials, interactive notebooks, exercises. The book tells the same story without any of that scaffolding. Pure narrative, from question to answer. Your purchase also helps keep the full course free.</p>
   </div>
 
   <!-- What's inside -->
@@ -74,7 +69,7 @@ exclude_book_buttons: true
         <span class="book-chapter__num">Module 2</span>
         <div class="book-chapter__body">
           <strong class="book-chapter__q">How does a bacterium navigate its world intelligently?</strong>
-          <p class="book-chapter__desc">We decode <em>E. coli</em>'s chemotaxis algorithm — a robust, adaptive exploration strategy built from a handful of proteins.</p>
+          <p class="book-chapter__desc">We decode <em>E. coli</em>'s chemotaxis algorithm: a robust, adaptive exploration strategy built from a handful of proteins.</p>
         </div>
       </div>
       <div class="book-chapter">
@@ -88,7 +83,7 @@ exclude_book_buttons: true
         <span class="book-chapter__num">Module 4</span>
         <div class="book-chapter__body">
           <strong class="book-chapter__q">How can computers be trained to see as well as a human?</strong>
-          <p class="book-chapter__desc">We build a classifier for white blood cell images using PCA and machine learning — a real diagnostic pipeline from scratch.</p>
+          <p class="book-chapter__desc">We build a classifier for white blood cell images using PCA and machine learning, constructing a real diagnostic pipeline from scratch.</p>
         </div>
       </div>
     </div>
