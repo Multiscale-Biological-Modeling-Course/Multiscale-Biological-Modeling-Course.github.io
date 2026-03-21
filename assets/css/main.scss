@@ -2007,8 +2007,9 @@ figcaption,
 
 /* Hero */
 .sp-hero {
-  background: #1d3557;
-  padding: 4rem 1.5rem 3.5rem;
+  background: #fff;
+  border-bottom: 1px solid #e8edf4;
+  padding: 3.5rem 1.5rem 3rem;
   text-align: center;
 }
 
@@ -2019,11 +2020,11 @@ figcaption,
 
 .sp-hero__eyebrow {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: #c10814;
   margin: 0 0 0.6rem;
 }
 
@@ -2031,7 +2032,7 @@ figcaption,
   font-family: 'Barlow Condensed', sans-serif;
   font-size: clamp(2.2rem, 6vw, 3.8rem);
   font-weight: 700;
-  color: #fff;
+  color: #1d3557;
   margin: 0 0 0.5rem;
   line-height: 1.1;
   border: none !important;
@@ -2040,7 +2041,7 @@ figcaption,
 .sp-hero__sub {
   font-family: 'Outfit', sans-serif;
   font-size: 1rem;
-  color: rgba(255,255,255,0.65);
+  color: #777;
   margin: 0 0 2rem;
 }
 
@@ -2058,7 +2059,7 @@ figcaption,
   width: 20px;
   height: 20px;
   color: #1d3557;
-  opacity: 0.5;
+  opacity: 0.4;
   pointer-events: none;
 }
 
@@ -2068,14 +2069,17 @@ figcaption,
   font-size: 1.1rem;
   color: #111;
   background: #fff;
-  border: none;
+  border: 2px solid #cdd8e8;
   border-radius: 6px;
   padding: 1rem 1.25rem 1rem 3.2rem;
   outline: none;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
-  transition: box-shadow 0.2s;
-  &:focus { box-shadow: 0 4px 32px rgba(0,0,0,0.35), 0 0 0 3px rgba(193,8,20,0.35); }
-  &::placeholder { color: #aab; }
+  box-shadow: 0 2px 12px rgba(29,53,87,0.07);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  &:focus {
+    border-color: #1d3557;
+    box-shadow: 0 2px 20px rgba(29,53,87,0.12), 0 0 0 3px rgba(29,53,87,0.08);
+  }
+  &::placeholder { color: #b0bbc9; }
 }
 
 /* Body */
