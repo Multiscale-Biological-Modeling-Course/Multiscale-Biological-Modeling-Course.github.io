@@ -42,7 +42,7 @@ search: false
   left: 0;
   width: 0%;
   height: 3px;
-  background: #c10814;
+  background: rgba(255, 255, 255, 0.85);
   z-index: 99999;
   transition: width 0.1s ease;
   pointer-events: none;
@@ -603,6 +603,10 @@ code, pre, kbd, samp {
 .greedy-nav__toggle {
   position: relative;
   z-index: 10001 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 /* Kill the full-screen white overlay — we don't need it with our nav styling */
