@@ -600,9 +600,9 @@ code, pre, kbd, samp {
   display: none !important;
 }
 
-/* Hide the Contents dropdown on mobile — greedy-nav will move other items to hamburger */
+/* On mobile, hide all visible-links — hamburger/hidden-links handles everything */
 @media (max-width: 767px) {
-  .greedy-nav .visible-links .dropdown {
+  .greedy-nav .visible-links {
     display: none !important;
   }
 }
