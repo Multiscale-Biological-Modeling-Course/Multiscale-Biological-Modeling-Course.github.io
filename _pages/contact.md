@@ -6,6 +6,7 @@ description: "Questions or feedback? Reach out to the Biological Modeling team b
 comments: false
 share: false
 exclude_book_buttons: true
+classes: wide
 header:
   overlay_color: "#000"
   overlay_filter: "0.6"
