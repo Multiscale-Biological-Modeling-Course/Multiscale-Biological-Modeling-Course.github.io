@@ -700,7 +700,7 @@ body > #page {
   margin-top: 0 !important;
 }
 .main--has-hero .page__content {
-  padding-top: 0.75rem !important;
+  padding-top: 0 !important;
 }
 
 /* ❻ Anchor links clear the sticky masthead */
@@ -1464,7 +1464,11 @@ figcaption,
   color: #fff !important;
 }
 
-.greedy-nav .hidden-links a {
+.greedy-nav .hidden-links a,
+.greedy-nav .hidden-links a:visited,
+.greedy-nav .hidden-links a:hover,
+.greedy-nav .hidden-links li a,
+.greedy-nav .hidden-links li a:visited {
   font-family: 'Outfit', sans-serif !important;
   font-style: normal !important;
   color: #111 !important;
@@ -1498,7 +1502,7 @@ figcaption,
 .home-cards {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 4rem;
+  padding: 0.5rem 1.5rem 4rem;
 }
 
 /* Shared image label overlay */
