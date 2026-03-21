@@ -38,13 +38,13 @@ aside.sidebar__right.sticky {
     <div class="contact-reason">
       <span class="contact-reason__num">01</span>
       <h3 class="contact-reason__title">Share Your Story</h3>
-      <p class="contact-reason__text">Have you used this course as a learner? We would love to hear how it has shaped your understanding of biological modeling — your testimonial helps others discover it.</p>
+      <p class="contact-reason__text">Used this course as a learner? We'd love to hear how it shaped your understanding of biological modeling — your testimonial helps others find it.</p>
     </div>
 
     <div class="contact-reason">
       <span class="contact-reason__num">02</span>
       <h3 class="contact-reason__title">Adopt the Course</h3>
-      <p class="contact-reason__text">Are you an instructor considering this material for your class? We are building a network of educators and would be glad to welcome you.</p>
+      <p class="contact-reason__text">Considering this material for your class? We're building a network of educators — and we'd be glad to welcome you.</p>
     </div>
 
     <div class="contact-reason">
@@ -62,11 +62,11 @@ aside.sidebar__right.sticky {
       <div class="contact-form__row contact-form__row--split">
         <div class="contact-form__field">
           <label class="contact-form__label" for="first-name">First Name <span class="contact-form__optional">(optional)</span></label>
-          <input class="contact-form__input" type="text" name="first_name" id="first-name" placeholder="Ada">
+          <input class="contact-form__input" type="text" name="first_name" id="first-name" placeholder="Alan">
         </div>
         <div class="contact-form__field">
           <label class="contact-form__label" for="last-name">Last Name <span class="contact-form__optional">(optional)</span></label>
-          <input class="contact-form__input" type="text" name="last_name" id="last-name" placeholder="Lovelace">
+          <input class="contact-form__input" type="text" name="last_name" id="last-name" placeholder="Turing">
         </div>
       </div>
 
