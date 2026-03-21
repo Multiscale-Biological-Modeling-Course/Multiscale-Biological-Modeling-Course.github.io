@@ -589,6 +589,24 @@ code, pre, kbd, samp {
   background-color: transparent !important;
 }
 
+/* Ensure the toggle button sits above the full-screen overlay so the X is visible */
+.greedy-nav__toggle {
+  position: relative;
+  z-index: 10001 !important;
+}
+
+/* Kill the full-screen white overlay — we don't need it with our nav styling */
+.greedy-nav__toggle:before {
+  display: none !important;
+}
+
+/* Hide the Contents dropdown on mobile — greedy-nav will move other items to hamburger */
+@media (max-width: 767px) {
+  .greedy-nav .visible-links .dropdown {
+    display: none !important;
+  }
+}
+
 /* Hide search icon on mobile — only one icon button needed */
 @media (max-width: 767px) {
   .search__toggle {
@@ -1557,7 +1575,7 @@ figcaption,
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #c10814;
-  text-decoration: none;
+  text-decoration: none !important;
   border: 2px solid #c10814;
   padding: 0.4rem 1rem;
   border-radius: 3px;
@@ -1567,7 +1585,7 @@ figcaption,
   &:hover, &:visited:hover {
     background: #c10814;
     color: #fff !important;
-    text-decoration: none;
+    text-decoration: none !important;
   }
   &:visited { color: #c10814; }
 }
