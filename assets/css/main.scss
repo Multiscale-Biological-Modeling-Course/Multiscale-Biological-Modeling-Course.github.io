@@ -2782,6 +2782,15 @@ body.bm-contact .sidebar__right.sticky {
   gap: 1.5rem 2.5rem;
 }
 
+.book-features--three {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem 2rem;
+}
+
+@media (max-width: 700px) {
+  .book-features--three { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 580px) {
   .book-features { grid-template-columns: 1fr; }
 }
