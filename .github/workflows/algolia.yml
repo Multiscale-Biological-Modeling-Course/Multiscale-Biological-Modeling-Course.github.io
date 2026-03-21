@@ -1,0 +1,19 @@
+name: Algolia indexing
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  algolia:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Index content with jekyll-algolia
+        run: bundle exec jekyll algolia
+        env:
+          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
