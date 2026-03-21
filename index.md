@@ -110,9 +110,19 @@ header:
       <h2 class="stay-connected__heading">Stay connected</h2>
       <p class="stay-connected__sub">Join thousands of learners across our growing library of free courses.</p>
     </div>
-    <div class="stay-connected__actions">
-      <a href="http://eepurl.com/iC9DSg" class="stay-connected__btn stay-connected__btn--primary" target="_blank" rel="noopener">Join our mailing list</a>
-    </div>
+    <form class="stay-connected__form" action="https://programmingforlovers.us5.list-manage.com/subscribe/post" method="POST">
+      <input type="hidden" name="u" value="d6c5cf945b9f30b956d8979c0">
+      <input type="hidden" name="id" value="1b53ec2579">
+      <input type="hidden" name="MMERGE5" value="biological-modeling">
+      <!-- honeypot -->
+      <div style="position:absolute;left:-5000px" aria-hidden="true">
+        <input type="text" name="b_d6c5cf945b9f30b956d8979c0_1b53ec2579" tabindex="-1" value="">
+      </div>
+      <div class="stay-connected__fields">
+        <input type="email" name="EMAIL" placeholder="Your email address" required class="stay-connected__input">
+        <button type="submit" class="stay-connected__btn stay-connected__btn--primary">Subscribe</button>
+      </div>
+    </form>
   </div>
 </div>
 
