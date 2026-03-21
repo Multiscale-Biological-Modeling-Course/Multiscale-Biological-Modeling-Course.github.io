@@ -88,6 +88,16 @@ search: false
   }
 }
 
+/* === Text selection color === */
+::selection {
+  background: #f8c7ca;
+  color: #1a1a1a;
+}
+::-moz-selection {
+  background: #f8c7ca;
+  color: #1a1a1a;
+}
+
 /* === Standardize all reds to CMU red (#c10814) === */
 a {
   color: #c10814;
@@ -600,10 +610,17 @@ code, pre, kbd, samp {
   display: none !important;
 }
 
-/* On mobile, hide all visible-links — hamburger/hidden-links handles everything */
+/* On mobile, hide individual nav items and always show the hamburger toggle */
 @media (max-width: 767px) {
-  .greedy-nav .visible-links {
-    display: none !important;
+  .greedy-nav .visible-links > li {
+    visibility: hidden !important;
+    position: absolute !important;
+  }
+  .greedy-nav__toggle {
+    display: flex !important;
+  }
+  .greedy-nav__toggle.hidden {
+    display: flex !important;
   }
 }
 
