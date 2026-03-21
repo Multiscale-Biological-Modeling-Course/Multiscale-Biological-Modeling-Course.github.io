@@ -374,12 +374,14 @@ code, pre, kbd, samp {
   text-decoration: none !important;
 }
 
-/* Search icon: match nav link gray, red on hover */
-.search__toggle {
+/* Search icon: white to match nav, dim on hover.
+   Must outspecific .greedy-nav a:not(.site-title) (0,2,1)
+   so use .greedy-nav a.search__toggle (0,2,1) — same spec, later wins. */
+.greedy-nav a.search__toggle {
   color: #fff !important;
 }
-.search__toggle:hover {
-  color: rgba(255,255,255,0.75) !important;
+.greedy-nav a.search__toggle:hover {
+  color: rgba(255,255,255,0.7) !important;
 }
 
 /* Footer updates */
