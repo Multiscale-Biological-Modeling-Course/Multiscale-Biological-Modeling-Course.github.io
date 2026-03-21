@@ -12,25 +12,84 @@ header:
   image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 ---
 
-We would love to hear from you if you are a learner who is interested in providing a testimonial about how this course has been useful to you.
+<div class="contact-page">
 
-If you are an instructor who is interested in adopting this course in your own teaching, please let us know as we are forming a network of instructors adopting this course.
+  <div class="contact-reasons">
 
-We look forward to hearing from you!
+    <div class="contact-reason">
+      <div class="contact-reason__icon" aria-hidden="true">✦</div>
+      <div class="contact-reason__body">
+        <h3 class="contact-reason__title">Share Your Story</h3>
+        <p class="contact-reason__text">Have you used this course as a learner? We would love to hear how it has shaped your understanding of biological modeling — your testimonial helps others discover it.</p>
+      </div>
+    </div>
 
-## Contact Form
+    <div class="contact-reason">
+      <div class="contact-reason__icon" aria-hidden="true">✦</div>
+      <div class="contact-reason__body">
+        <h3 class="contact-reason__title">Adopt the Course</h3>
+        <p class="contact-reason__text">Are you an instructor considering this course for your class? We are building a network of educators using this material and would be glad to welcome you.</p>
+      </div>
+    </div>
 
-<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/mwkrayyn" method="post">
-  <fieldset id="fs-frm-inputs">
-    <label for="full-name">First Name (optional)</label>
-    <input type="text" name="name" id="first-name" placeholder="First">
-    <label for="full-name">Last Name (optional)</label>
-    <input type="text" name="name" id="last-name" placeholder="Last">
-    <label for="email-address">Email Address</label>
-    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
-    <label for="message">Your Message (optional)</label>
-    <textarea rows="5" name="message" id="message" placeholder="Type your message here."></textarea>
-    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-  </fieldset>
-  <input type="submit" value="Submit">
-</form>
+    <div class="contact-reason">
+      <div class="contact-reason__icon" aria-hidden="true">✦</div>
+      <div class="contact-reason__body">
+        <h3 class="contact-reason__title">Anything Else</h3>
+        <p class="contact-reason__text">Questions, corrections, collaboration ideas, or just a note — we read every message and look forward to hearing from you.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="contact-form-wrap">
+    <p class="contact-form__eyebrow">Send a Message</p>
+    <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/mwkrayyn" method="post" class="contact-form">
+
+      <div class="contact-form__row contact-form__row--split">
+        <div class="contact-form__field">
+          <label class="contact-form__label" for="first-name">First Name <span class="contact-form__optional">(optional)</span></label>
+          <input class="contact-form__input" type="text" name="first_name" id="first-name" placeholder="Ada">
+        </div>
+        <div class="contact-form__field">
+          <label class="contact-form__label" for="last-name">Last Name <span class="contact-form__optional">(optional)</span></label>
+          <input class="contact-form__input" type="text" name="last_name" id="last-name" placeholder="Lovelace">
+        </div>
+      </div>
+
+      <div class="contact-form__row">
+        <div class="contact-form__field">
+          <label class="contact-form__label" for="email-address">Email Address <span class="contact-form__required">*</span></label>
+          <input class="contact-form__input" type="email" name="_replyto" id="email-address" placeholder="you@example.com" required>
+        </div>
+      </div>
+
+      <div class="contact-form__row">
+        <div class="contact-form__field">
+          <label class="contact-form__label" for="contact-reason">I am reaching out as… <span class="contact-form__optional">(optional)</span></label>
+          <select class="contact-form__input contact-form__select" name="reason" id="contact-reason">
+            <option value="" disabled selected>Choose one…</option>
+            <option value="learner">A learner with a testimonial</option>
+            <option value="instructor">An instructor interested in adopting the course</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="contact-form__row">
+        <div class="contact-form__field">
+          <label class="contact-form__label" for="message">Message <span class="contact-form__optional">(optional)</span></label>
+          <textarea class="contact-form__input contact-form__textarea" rows="5" name="message" id="message" placeholder="Tell us what's on your mind…"></textarea>
+        </div>
+      </div>
+
+      <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
+
+      <div class="contact-form__row contact-form__row--submit">
+        <button type="submit" class="contact-form__submit">Send Message <span class="contact-form__arrow" aria-hidden="true">→</span></button>
+      </div>
+
+    </form>
+  </div>
+
+</div>
