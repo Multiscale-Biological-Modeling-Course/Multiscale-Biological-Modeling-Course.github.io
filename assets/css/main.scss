@@ -1905,3 +1905,15 @@ figcaption,
   .hc-about__photo { height: 280px; }
   .hc-about__body { border-left: none; border-top: 4px solid #c10814; }
 }
+
+/* === Tablet: hide sidebar so content leads === */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sidebar {
+    display: none !important;
+  }
+  .page__content,
+  .page__inner-wrap {
+    width: 100% !important;
+    float: none !important;
+  }
+}
