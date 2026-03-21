@@ -2211,6 +2211,17 @@ figcaption,
   &__hint { font-size: 0.9rem; color: #888; }
 }
 
+/* Search mobile */
+@media (max-width: 480px) {
+  .sp-hero { padding: 2.5rem 1.25rem 2.25rem; }
+  .sp-chip {
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+  }
+  .sp-chip__arrow { display: none; }
+  .sp-chip__title { font-size: 0.88rem; }
+}
+
 /* === 404 page === */
 .not-found {
   text-align: center;
@@ -2603,6 +2614,13 @@ body.bm-contact .sidebar__right.sticky {
   max-width: 860px;
   margin: 0 auto;
   padding: 3rem 0 5rem;
+}
+
+@media (max-width: 600px) {
+  .book-page { padding: 2rem 0 4rem; }
+  .book-ctas { gap: 0.6rem; }
+  .book-chapter { gap: 1rem; }
+  .book-backers { padding: 1.25rem 1.25rem; }
 }
 
 /* Hero */
