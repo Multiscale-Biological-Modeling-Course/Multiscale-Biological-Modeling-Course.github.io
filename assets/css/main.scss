@@ -841,6 +841,94 @@ html {
 }
 
 /* === Email signup section (homepage + book page) === */
+/* === Stay Connected band (homepage) === */
+.stay-connected {
+  background: #1d3557;
+  padding: 4rem 1.5rem;
+  margin-top: 0;
+}
+
+.stay-connected__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.stay-connected__label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 0.5rem;
+}
+
+.stay-connected__heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem;
+}
+
+.stay-connected__sub {
+  color: rgba(255,255,255,0.75);
+  font-size: 1rem;
+  margin: 0 0 0.4rem;
+}
+
+.stay-connected__note {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+.stay-connected__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.stay-connected__btn {
+  display: inline-block;
+  padding: 0.7rem 1.8rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  text-decoration: none !important;
+  text-align: center;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+
+  &--primary {
+    background: #c10814;
+    color: #fff !important;
+    border: 2px solid #c10814;
+    &:hover { background: #a0060f; border-color: #a0060f; color: #fff !important; }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: rgba(255,255,255,0.85) !important;
+    border: 2px solid rgba(255,255,255,0.4);
+    &:hover { border-color: #fff; color: #fff !important; }
+  }
+}
+
+@media (max-width: 650px) {
+  .stay-connected__inner { flex-direction: column; align-items: flex-start; }
+  .stay-connected__actions { flex-direction: row; flex-wrap: wrap; }
+}
+
+/* === email-signup (used on other pages, e.g. book page) === */
 .email-signup {
   text-align: center;
   padding: 3rem 1.5rem;

@@ -103,11 +103,19 @@ header:
 
 </div>
 
-<div class="email-signup">
-  <h2>Stay connected</h2>
-  <p>Join thousands of Philomath learners across our courses.</p>
-  <a href="http://eepurl.com/iC9DSg" class="email-signup__btn" target="_blank" rel="noopener">Join our mailing list</a>
-  <p class="email-signup__note">No spam. Unsubscribe any time.</p>
+<div class="stay-connected">
+  <div class="stay-connected__inner">
+    <div class="stay-connected__text">
+      <div class="stay-connected__label">A Philomath Course</div>
+      <h2 class="stay-connected__heading">Stay connected</h2>
+      <p class="stay-connected__sub">Get updates on new modules, tutorials, and courses from Philomath.</p>
+      <p class="stay-connected__note">No spam. Unsubscribe any time.</p>
+    </div>
+    <div class="stay-connected__actions">
+      <a href="http://eepurl.com/iC9DSg" class="stay-connected__btn stay-connected__btn--primary" target="_blank" rel="noopener">Join our mailing list</a>
+      <a href="/buy_the_book/" class="stay-connected__btn stay-connected__btn--secondary">Get the book</a>
+    </div>
+  </div>
 </div>
 
 <script>
