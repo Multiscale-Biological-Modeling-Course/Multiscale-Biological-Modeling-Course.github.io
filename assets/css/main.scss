@@ -2631,8 +2631,8 @@ body.bm-contact .sidebar__right.sticky {
 /* Hero */
 .book-hero {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 3.5rem;
+  grid-template-columns: 300px 1fr;
+  gap: 2.5rem;
   align-items: start;
   margin-bottom: 4rem;
 }
@@ -2657,6 +2657,7 @@ body.bm-contact .sidebar__right.sticky {
   width: 100%;
   border-radius: 4px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+  mix-blend-mode: multiply;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   &:hover { transform: translateY(-4px) rotate(1deg); box-shadow: 0 20px 60px rgba(0,0,0,0.28); }
 }
