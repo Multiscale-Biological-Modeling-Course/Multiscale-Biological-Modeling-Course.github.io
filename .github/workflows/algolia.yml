@@ -13,9 +13,12 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-      - name: Install jekyll-algolia
-        run: gem install jekyll jekyll-algolia
-      - name: Index content with jekyll-algolia
-        run: jekyll algolia
+      - name: Install dependencies
+        run: bundle install
         env:
+          BUNDLE_GEMFILE: .github/Gemfile.algolia
+      - name: Index content with jekyll-algolia
+        run: bundle exec jekyll algolia
+        env:
+          BUNDLE_GEMFILE: .github/Gemfile.algolia
           ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
