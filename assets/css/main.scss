@@ -379,6 +379,8 @@ code, pre, kbd, samp {
    so use .greedy-nav a.search__toggle (0,2,1) — same spec, later wins. */
 .greedy-nav a.search__toggle {
   color: #fff !important;
+  display: inline-flex !important;
+  align-items: center !important;
 }
 .greedy-nav a.search__toggle:hover {
   color: rgba(255,255,255,0.7) !important;
@@ -2357,10 +2359,14 @@ figcaption,
    Contact page
    ============================================================ */
 
-/* Suppress the right sidebar book CTA on the contact page —
-   the page uses exclude_book_buttons: true but we also want
-   the full content width, so ensure the sidebar__right is gone */
-.layout--single.contact-page-layout .sidebar__right {
+/* On the contact page, suppress both sidebars so the two-column
+   layout fills the full content column.
+   - Left .sidebar.sticky: even when empty it floats left at ~200px,
+     causing display:grid (BFC) to start 200px in — that's the whitespace.
+   - Right .sidebar__right: excluded by front matter but the empty aside
+     is still in the DOM; hide it too. */
+body.bm-contact .sidebar.sticky,
+body.bm-contact .sidebar__right.sticky {
   display: none !important;
 }
 
