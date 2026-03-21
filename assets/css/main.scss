@@ -180,6 +180,22 @@ code, pre, kbd, samp {
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
+/* === Content headings: Outfit font with visual hierarchy === */
+.page__content h2 {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  padding-bottom: 0.3em;
+  border-bottom: 2px solid rgba(193, 8, 20, 0.18);
+  margin-top: 2.5em;
+}
+
+.page__content h3 {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 600;
+  color: #1d3557;
+}
+
 /* === Content body: serif for reading comfort === */
 .page__content p,
 .page__content li,
