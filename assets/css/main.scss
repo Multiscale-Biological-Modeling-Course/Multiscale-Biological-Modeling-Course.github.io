@@ -2646,6 +2646,13 @@ body.bm-contact .sidebar__right.sticky {
   .book-hero__img { max-width: 220px; }
 }
 
+.book-hero__cover a {
+  display: block;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
 .book-hero__img {
   width: 100%;
   border-radius: 4px;
