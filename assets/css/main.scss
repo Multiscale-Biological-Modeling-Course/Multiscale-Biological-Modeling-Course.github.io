@@ -376,10 +376,10 @@ code, pre, kbd, samp {
 
 /* Search icon: match nav link gray, red on hover */
 .search__toggle {
-  color: #222 !important;
+  color: #fff !important;
 }
 .search__toggle:hover {
-  color: #c10814 !important;
+  color: rgba(255,255,255,0.75) !important;
 }
 
 /* Footer updates */
