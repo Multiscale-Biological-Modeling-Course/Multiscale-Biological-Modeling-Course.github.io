@@ -794,12 +794,13 @@ html {
 
 .sidebar-book-paid {
   display: flex;
+  flex-direction: column;
   gap: 0.4rem;
 
   .btn--book {
-    flex: 1;
-    font-size: 0.78rem;
-    padding: .35rem .3rem;
+    width: 100%;
+    font-size: 0.82rem;
+    padding: .4rem .6rem;
     justify-content: center;
   }
 }
