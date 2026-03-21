@@ -1455,6 +1455,19 @@ figcaption,
   border-bottom: none !important;
 }
 
+.greedy-nav .hidden-links {
+  background: #fff !important;
+}
+
+.greedy-nav .hidden-links a,
+.greedy-nav .hidden-links a:visited,
+.greedy-nav .hidden-links a:hover,
+.greedy-nav .hidden-links li a,
+.greedy-nav .hidden-links li a:visited {
+  color: #111 !important;
+  background: transparent !important;
+}
+
 .site-title,
 .site-title:visited,
 .greedy-nav .visible-links a,
