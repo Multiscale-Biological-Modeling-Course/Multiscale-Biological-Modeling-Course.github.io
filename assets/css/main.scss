@@ -1505,6 +1505,44 @@ figcaption,
   background: transparent !important;
 }
 
+/* Neutralize the red "Get the Book" style inside the hamburger */
+.greedy-nav .hidden-links a[href="/buy_the_book/"],
+.greedy-nav .hidden-links a[href="/buy_the_book/"]:hover {
+  color: #111 !important;
+  font-weight: 400 !important;
+}
+
+/* "Contents" label in hamburger — style as non-interactive section header */
+.greedy-nav .hidden-links .dropdown > a.dropdown-toggle {
+  font-size: 0.72em !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #888 !important;
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+/* Indent Contents sub-items in the hamburger */
+.greedy-nav .hidden-links .dropdown-content {
+  display: block !important;
+  position: static !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+}
+
+.greedy-nav .hidden-links .dropdown-content li {
+  border-bottom: none !important;
+}
+
+.greedy-nav .hidden-links .dropdown-content li a {
+  padding-left: 2.5rem !important;
+  font-size: 0.9em !important;
+  color: #555 !important;
+}
+
 .site-title,
 .site-title:visited,
 .greedy-nav .visible-links > li > a,
