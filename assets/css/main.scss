@@ -610,15 +610,9 @@ code, pre, kbd, samp {
   display: none !important;
 }
 
-/* On mobile, hide individual nav items and always show the hamburger toggle */
+/* On mobile, always show the hamburger toggle (JS handles moving items) */
 @media (max-width: 767px) {
-  .greedy-nav .visible-links > li {
-    visibility: hidden !important;
-    position: absolute !important;
-  }
-  .greedy-nav__toggle {
-    display: flex !important;
-  }
+  .greedy-nav__toggle,
   .greedy-nav__toggle.hidden {
     display: flex !important;
   }

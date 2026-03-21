@@ -44,3 +44,29 @@
     </div>
   </div>
 </div>
+
+<script>
+/* Force all nav items into the hamburger on mobile */
+$(function() {
+  var $vlinks = $("nav.greedy-nav .visible-links");
+  var $hlinks = $("nav.greedy-nav .hidden-links");
+  var $btn    = $("nav.greedy-nav .greedy-nav__toggle");
+
+  function forceMobileNav() {
+    if ($(window).width() < 768) {
+      while ($vlinks.children().length > 0) {
+        $vlinks.children().last().prependTo($hlinks);
+      }
+      $btn.removeClass('hidden');
+    }
+  }
+
+  setTimeout(forceMobileNav, 50);
+
+  var t;
+  $(window).on('resize.mobileNav', function() {
+    clearTimeout(t);
+    t = setTimeout(forceMobileNav, 50);
+  });
+});
+</script>
