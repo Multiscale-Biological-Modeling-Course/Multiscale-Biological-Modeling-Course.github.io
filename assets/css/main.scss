@@ -350,14 +350,14 @@ code, pre, kbd, samp {
    Site footer
    ============================================================ */
 .page__footer {
-  background: #12243a !important; /* slightly deeper than masthead navy */
-  color: rgba(255,255,255,0.7);
+  background: #1a1a1a !important;
+  color: rgba(255,255,255,0.6);
   padding: 0 !important;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .page__footer a {
-  color: rgba(255,255,255,0.7) !important;
+  color: rgba(255,255,255,0.6) !important;
   text-decoration: none !important;
 }
 
@@ -369,93 +369,58 @@ code, pre, kbd, samp {
 .site-footer__inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 3rem 1.5rem 2.5rem;
+  padding: 2.5rem 1.5rem;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 2rem;
 }
 
-/* CMU logo — left-aligned */
-.site-footer__brand {
+.site-footer__col {
   display: flex;
   align-items: center;
-}
 
-.site-footer__brand--right {
-  justify-content: flex-end;
+  &--center {
+    flex-direction: column;
+    gap: 0.9rem;
+    text-align: center;
+  }
+
+  &--right {
+    justify-content: flex-end;
+  }
 }
 
 .site-footer__logo--cmu {
-  height: 28px;
+  height: 24px;
   width: auto;
-  opacity: 0.85;
+  opacity: 0.7;
   transition: opacity 0.2s;
   &:hover { opacity: 1; }
 }
 
 .site-footer__logo--philomath {
-  height: 32px;
+  height: 28px;
   width: auto;
-  opacity: 0.85;
+  opacity: 0.7;
   transition: opacity 0.2s;
   &:hover { opacity: 1; }
 }
 
-/* Center column */
-.site-footer__center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.9rem;
-}
-
 .site-footer__nav {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1.25rem;
   font-family: ‘Outfit’, sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 500;
 }
 
-.site-footer__book {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.82rem;
-}
-
-.site-footer__book-label {
-  font-family: ‘Barlow Condensed’, sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-}
-
-.site-footer__book-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  color: rgba(255,255,255,0.65) !important;
-  font-size: 0.82rem;
-  &:hover { color: #fff !important; }
-  i { font-size: 1rem; }
-}
-
-/* Bottom bar */
-.site-footer__bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  font-size: 0.78rem;
+.site-footer__legal {
+  font-size: 0.75rem;
   color: rgba(255,255,255,0.35);
+  line-height: 1.6;
   a { color: rgba(255,255,255,0.45) !important; }
   a:hover { color: rgba(255,255,255,0.8) !important; }
   em { font-style: italic; }
@@ -464,17 +429,12 @@ code, pre, kbd, samp {
 @media (max-width: 767px) {
   .site-footer__inner {
     grid-template-columns: 1fr;
+    justify-items: center;
     text-align: center;
-    padding: 2.5rem 1.5rem 2rem;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
   }
-  .site-footer__brand,
-  .site-footer__brand--right {
-    justify-content: center;
-  }
-  .site-footer__bottom {
-    justify-content: center;
-    text-align: center;
-  }
+  .site-footer__col--right { justify-content: center; }
 }
 
 /* ==== Book-support modal ==== */

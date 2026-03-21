@@ -2,49 +2,34 @@
   <div class="site-footer__inner">
 
     <!-- Left: CMU -->
-    <div class="site-footer__brand">
+    <div class="site-footer__col">
       <a href="https://cmu.edu" target="_blank" rel="noopener" aria-label="Carnegie Mellon University">
         <img src="{{ '/assets/images/cmu-wordmark-white.png' | relative_url }}" alt="Carnegie Mellon University" class="site-footer__logo site-footer__logo--cmu">
       </a>
     </div>
 
-    <!-- Center: nav + book -->
-    <div class="site-footer__center">
+    <!-- Center: nav + links -->
+    <div class="site-footer__col site-footer__col--center">
       <nav class="site-footer__nav">
         <a href="{{ '/' | relative_url }}">Home</a>
         <a href="{{ '/meet-the-team/' | relative_url }}">Team</a>
         <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        <a href="{{ '/buy_the_book/' | relative_url }}">Get the Book</a>
       </nav>
-      <div class="site-footer__book">
-        <span class="site-footer__book-label">Get the Book</span>
-        <a href="https://www.amazon.com/dp/B0BT6B2B8W" class="site-footer__book-link" target="_blank" rel="noopener">
-          <i class="fab fa-amazon"></i> Amazon
-        </a>
-        <a href="https://leanpub.com/biologicalmodeling" class="site-footer__book-link" target="_blank" rel="noopener">
-          <img src="{{ '/assets/images/leanpub.png' | relative_url }}" alt="Leanpub" height="14" style="vertical-align:middle;margin-right:4px;">Leanpub
-        </a>
+      <div class="site-footer__legal">
+        <em>Biological Modeling</em> is licensed under
+        <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC&nbsp;BY-NC&nbsp;4.0</a>.
+        &ensp;©&nbsp;{{ site.time | date: '%Y' }}
+        <a href="https://compeau.cbd.cmu.edu" target="_blank" rel="noopener">Phillip Compeau</a>.
       </div>
     </div>
 
     <!-- Right: Philomath -->
-    <div class="site-footer__brand site-footer__brand--right">
+    <div class="site-footer__col site-footer__col--right">
       <a href="https://philomath.press" target="_blank" rel="noopener" aria-label="Philomath">
         <img src="{{ '/assets/images/philomath-wordmark-white.png' | relative_url }}" alt="Philomath" class="site-footer__logo site-footer__logo--philomath">
       </a>
     </div>
 
   </div>
-
-  <!-- Bottom bar -->
-  <div class="site-footer__bottom">
-    <span>
-      <em>Biological Modeling</em> is licensed under
-      <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC&nbsp;BY-NC&nbsp;4.0</a>.
-    </span>
-    <span>
-      © {{ site.time | date: '%Y' }}
-      <a href="https://compeau.cbd.cmu.edu" target="_blank" rel="noopener">Phillip Compeau</a>
-    </span>
-  </div>
-
 </footer>
