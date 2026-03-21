@@ -35,8 +35,9 @@
       cssClasses: { root: 'sp-hits' },
       templates: {
         item: function (hit) {
-          var title   = instantsearch.highlight({ attribute: 'title',   hit: hit }) || hit.title   || 'Untitled';
-          var excerpt = instantsearch.highlight({ attribute: 'content', hit: hit }) || hit.excerpt || '';
+          var title   = (hit._highlightResult && hit._highlightResult.title && hit._highlightResult.title.value) || hit.title || 'Untitled';
+          var excerpt = (hit._highlightResult && hit._highlightResult.content && hit._highlightResult.content.value) || hit.content || hit.excerpt || '';
+          if (excerpt.length > 300) excerpt = excerpt.substring(0, 300) + '…';
           var url     = '{{ site.url }}' + (hit.url || '/');
           return (
             '<a class="sp-hit" href="' + url + '">' +
