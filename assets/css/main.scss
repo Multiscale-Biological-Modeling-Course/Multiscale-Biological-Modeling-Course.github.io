@@ -1670,6 +1670,11 @@ figcaption,
   font-weight: 600 !important;
 }
 
+/* Highlight the "Contents" parent label when a child page is active */
+.greedy-nav .hidden-links .dropdown:has(.active) > a.dropdown-toggle {
+  color: #c10814 !important;
+}
+
 .site-title,
 .site-title:visited,
 .greedy-nav .visible-links > li > a,
