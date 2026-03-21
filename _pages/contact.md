@@ -16,6 +16,21 @@ header:
   image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 ---
 
+<style>
+/* The theme floats article.page to the right at calc(100%-300px),
+   leaving 300px of whitespace on the left. Override it here since
+   the Noah fix that was meant to do this is commented out in main.css. */
+article.page {
+  float: none !important;
+  width: 100% !important;
+  padding-right: 0 !important;
+}
+div.sidebar.sticky,
+aside.sidebar__right.sticky {
+  display: none !important;
+}
+</style>
+
 <div class="contact-page">
 
   <div class="contact-reasons">
