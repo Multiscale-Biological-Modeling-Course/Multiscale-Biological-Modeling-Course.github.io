@@ -1025,15 +1025,15 @@ html {
 .page__content p[style*="font-size"]:not(:has(.btn)),
 figcaption,
 .caption {
-  padding-left: 0;
-  padding-right: 0;
-  text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  text-align: left;
+  font-family: 'Source Serif 4', Georgia, serif !important;
   font-size: 0.8em !important;
-  font-style: italic;
+  font-style: normal;
   color: #666;
   line-height: 1.5;
-  margin-top: 0.4em;
+  margin-top: 0.5em;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* === Team page card redesign === */
