@@ -49,30 +49,7 @@ exclude_book_buttons: true
 
   <!-- Why the book -->
   <div class="book-section">
-    <h3 class="book-section__heading">Why the book?</h3>
-    <div class="book-features book-features--three">
-      <div class="book-feature">
-        <div class="book-feature__icon">◆</div>
-        <div>
-          <strong class="book-feature__title">The science, without the scaffolding</strong>
-          <p class="book-feature__text">The free course is built for step-by-step learning — software setup, interactive notebooks, guided exercises. The book strips all of that away and keeps only what matters: the biology, the mathematics, and the insight that connects them.</p>
-        </div>
-      </div>
-      <div class="book-feature">
-        <div class="book-feature__icon">◆</div>
-        <div>
-          <strong class="book-feature__title">Five questions, five complete answers</strong>
-          <p class="book-feature__text">Each chapter pursues a single open question in biology — why do zebras have stripes? how does a bacterium navigate? — from first principles to a real result. A self-contained arc you can read in an afternoon, not a website spread across dozens of pages.</p>
-        </div>
-      </div>
-      <div class="book-feature">
-        <div class="book-feature__icon">◆</div>
-        <div>
-          <strong class="book-feature__title">Support free education</strong>
-          <p class="book-feature__text">Every purchase helps keep the full course — all four modules, all tutorials, all code — free for everyone, forever. It's the most direct way to say the work was worth it.</p>
-        </div>
-      </div>
-    </div>
+    <p class="book-why">The free course is built for guided, step-by-step learning: software tutorials, interactive notebooks, exercises. The book tells the same story without any of that scaffolding. Pure narrative, from question to answer. Your purchase also helps keep the full course free.</p>
   </div>
 
   <!-- What's inside -->
