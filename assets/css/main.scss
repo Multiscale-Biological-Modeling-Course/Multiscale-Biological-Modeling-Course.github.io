@@ -768,7 +768,10 @@ html {
 /* Keep the homepage (“splash”) hero large */
 .layout--home .page__hero--overlay,
 .layout--splash .page__hero--overlay {
-  /* leave default sizes alone */
+  min-height: 320px;
+  max-height: 420px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 /* === Sidebar book CTA extras === */
