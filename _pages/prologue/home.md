@@ -8,6 +8,7 @@ image: "../assets/images/gray_scott_jupyter_high-res.png"
 excerpt: "Learn how random walks model particle diffusion and how reaction-diffusion systems self-organize into striking Turing patterns like stripes and spots."
 header:
   overlay_image: "../assets/images/gray_scott_jupyter_high-res.png"
+  og_image: "/assets/images/gray_scott_jupyter_high-res.png"
   overlay_filter: 0.3
   image_alt: "Turing pattern stripes produced by the Gray-Scott model, a coarse-grained predator-prey reaction-diffusion system."
 author_profile: true # add author to page

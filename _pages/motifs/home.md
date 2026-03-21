@@ -8,6 +8,7 @@ image: "../assets/images/repressilator_chart.png"
 excerpt: "Introduction to biological network motifs: how recurrent patterns in transcription factor networks underpin robust gene regulation in cells."
 header:
   overlay_image: "../assets/images/repressilator_chart.png"
+  og_image: "/assets/images/repressilator_chart.png"
   overlay_filter: 0.3
   image_alt: "Chart of the concentrations of three particles involved in the repressilator, a synthetic biological oscillating system."
 author_profile: true # add author to page

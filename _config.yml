@@ -18,6 +18,7 @@ subtitle: "A Free Online Course in Computational Biology"
 masthead_title: "<em>Biological Modeling</em>"
 logo: "/assets/images/200px/gray_scott_jupyter_high-res.png"
 url: "https://biologicalmodeling.org"
+og_image: "/assets/images/turing_hero_poster.jpg"
 email:
 locale: "en-US"
 description: >- # this means to ignore newlines until "baseurl:"

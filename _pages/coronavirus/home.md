@@ -10,6 +10,7 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 excerpt: "Introduction to protein structure prediction and analysis using the SARS-CoV-2 coronavirus spike protein and ACE2 receptor binding as a case study."
 header:
   overlay_image: "../assets/images/SARS_spike_proteins.jpg"
+  og_image: "/assets/images/SARS_spike_proteins.jpg"
   overlay_filter: 0.3
   image_alt: "Illustration of a SARS-CoV-2 viral particle covered in spike proteins."
 author_profile: true # add author to page

@@ -8,6 +8,7 @@ image: "../assets/images/normal_adult_blood_smear.JPG"
 excerpt: "Introduction to image analysis and machine learning for classifying white blood cells, combining computational biology with computer vision."
 header:
   overlay_image: "../assets/images/normal_adult_blood_smear.JPG"
+  og_image: "/assets/images/normal_adult_blood_smear.JPG"
   overlay_filter: 0.3
   image_alt: "Microscope image showing white blood cells stained purple among red blood cells."
 author_profile: true # add author to page

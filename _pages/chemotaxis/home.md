@@ -9,6 +9,7 @@ image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal
 excerpt: "Introduction to E. coli bacterial chemotaxis: how a single-celled organism navigates chemical gradients using an elegant molecular random walk algorithm."
 header:
   overlay_image: "../assets/images/ecoli_glucose.png"
+  og_image: "/assets/images/ecoli_glucose.png"
   image_alt: "Microscope image of E. coli cells migrating toward a glucose crystal"
   overlay_filter: 0.3
 author_profile: true # add author to page
