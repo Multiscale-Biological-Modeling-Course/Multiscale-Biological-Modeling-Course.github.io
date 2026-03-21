@@ -2212,3 +2212,19 @@ figcaption,
 @media (prefers-reduced-motion: reduce) {
   .nf-dot { animation: none; }
 }
+
+/* === Next/prev lesson pagination === */
+.pagination--pager {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 600 !important;
+  border-radius: 4px !important;
+  color: #1d3557 !important;
+  border-color: #1d3557 !important;
+  transition: background 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background: #1d3557 !important;
+    color: #fff !important;
+    border-color: #1d3557 !important;
+  }
+}
