@@ -16,68 +16,68 @@ header:
 <div class="home-cards">
 
   <!-- Prologue -->
-  <a class="hc-prologue hc-reveal" href="/prologue/">
-    <div class="hc-img-wrap">
+  <div class="hc-prologue hc-reveal">
+    <a class="hc-img-wrap" href="/prologue/">
       <img class="hc-prologue__img" src="/assets/images/Giant_Puffer_fish_skin_pattern.jpg" alt="Pufferfish skin pattern showing Turing patterns">
       <span class="hc-label">Prologue</span>
-    </div>
+    </a>
     <div class="hc-prologue__body">
       <div class="hc-prologue__title">Random Walks and Turing Patterns</div>
       <div class="hc-prologue__excerpt">Why do zebras have stripes? Simple molecular interactions give rise to reaction-diffusion systems that spontaneously produce the complex, self-organized patterns found across the biological world.</div>
-      <span class="hc-cta">Begin the course</span>
+      <a class="hc-cta" href="/prologue/">Begin the course</a>
     </div>
-  </a>
+  </div>
 
   <!-- 2×2 module grid -->
   <div class="hc-grid">
 
-    <a class="hc-card hc-reveal" style="transition-delay:0.1s" href="/motifs/home">
-      <div class="hc-img-wrap">
+    <div class="hc-card hc-reveal" style="transition-delay:0.1s">
+      <a class="hc-img-wrap" href="/motifs/home">
         <img class="hc-card__img" src="/assets/images/repressilator_chart.png" alt="Repressilator oscillation chart">
         <span class="hc-label">Module 1</span>
-      </div>
+      </a>
       <div class="hc-card__body">
         <div class="hc-card__title">Finding Motifs in Transcription Factor Networks</div>
         <div class="hc-card__excerpt">Transcription factor networks exhibit recurring structural motifs, including oscillators, that appear too often to be coincidental. We'll model these patterns and ask why evolution keeps arriving at the same solutions.</div>
-        <span class="hc-cta">Read more</span>
+        <a class="hc-cta" href="/motifs/home">Read more</a>
       </div>
-    </a>
+    </div>
 
-    <a class="hc-card hc-reveal" style="transition-delay:0.2s" href="/chemotaxis/home">
-      <div class="hc-img-wrap">
+    <div class="hc-card hc-reveal" style="transition-delay:0.2s">
+      <a class="hc-img-wrap" href="/chemotaxis/home">
         <img class="hc-card__img" src="/assets/images/ecoli_glucose_banner.png" alt="E. coli chemotaxis">
         <span class="hc-label">Module 2</span>
-      </div>
+      </a>
       <div class="hc-card__body">
         <div class="hc-card__title">Unpacking E. coli's Genius Exploration Algorithm</div>
         <div class="hc-card__excerpt">Bacteria navigate chemical gradients through a cascade of molecular reactions that produce robust, adaptive behavior. We'll construct a model of this system, introduce perturbations, and examine how the cell maintains its strategy.</div>
-        <span class="hc-cta">Read more</span>
+        <a class="hc-cta" href="/chemotaxis/home">Read more</a>
       </div>
-    </a>
+    </div>
 
-    <a class="hc-card hc-reveal" style="transition-delay:0.1s" href="/coronavirus/home">
-      <div class="hc-img-wrap">
+    <div class="hc-card hc-reveal" style="transition-delay:0.1s">
+      <a class="hc-img-wrap" href="/coronavirus/home">
         <img class="hc-card__img" src="/assets/images/SARS_spike_proteins_banner.jpg" alt="Coronavirus spike protein">
         <span class="hc-label">Module 3</span>
-      </div>
+      </a>
       <div class="hc-card__body">
         <div class="hc-card__title">Analyzing the Coronavirus Spike Protein</div>
         <div class="hc-card__excerpt">Why did SARS-CoV-2 spread so effectively when the original SARS fizzled out? Much of the answer lies in subtle differences in the spike protein, which we can analyze computationally to understand viral infectivity.</div>
-        <span class="hc-cta">Read more</span>
+        <a class="hc-cta" href="/coronavirus/home">Read more</a>
       </div>
-    </a>
+    </div>
 
-    <a class="hc-card hc-reveal" style="transition-delay:0.2s" href="/white_blood_cells/home">
-      <div class="hc-img-wrap">
+    <div class="hc-card hc-reveal" style="transition-delay:0.2s">
+      <a class="hc-img-wrap" href="/white_blood_cells/home">
         <img class="hc-card__img" src="/assets/images/normal_adult_blood_smear_banner.JPG" alt="White blood cell smear">
         <span class="hc-label">Module 4</span>
-      </div>
+      </a>
       <div class="hc-card__body">
         <div class="hc-card__title">Training a Computer to Classify White Blood Cells</div>
         <div class="hc-card__excerpt">Apply classical machine learning to a real diagnostic challenge: segment microscopy images, extract morphological features, and classify white blood cells into clinically relevant categories.</div>
-        <span class="hc-cta">Read more</span>
+        <a class="hc-cta" href="/white_blood_cells/home">Read more</a>
       </div>
-    </a>
+    </div>
 
   </div>
 

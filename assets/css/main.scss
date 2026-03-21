@@ -42,7 +42,8 @@ search: false
   left: 0;
   width: 0%;
   height: 3px;
-  background: rgba(255, 255, 255, 0.85);
+  background: #fff;
+  height: 4px;
   z-index: 99999;
   transition: width 0.1s ease;
   pointer-events: none;
@@ -1565,8 +1566,10 @@ figcaption,
 
 /* Shared image label overlay */
 .hc-img-wrap {
+  display: block;
   position: relative;
   overflow: hidden;
+  text-decoration: none !important;
 }
 
 .hc-label {
@@ -1618,16 +1621,11 @@ figcaption,
   box-shadow: 0 2px 16px rgba(0,0,0,0.08);
   border: 1px solid #e2e2e2;
   margin-bottom: 1.4rem;
-  text-decoration: none !important;
-  color: inherit;
   transition: transform 0.22s ease, box-shadow 0.22s ease;
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 36px rgba(0,0,0,0.13);
-    color: inherit;
-    text-decoration: none !important;
   }
-  &:visited { color: inherit; }
 }
 
 .hc-prologue__img {
@@ -1678,15 +1676,10 @@ figcaption,
   transition: transform 0.22s ease, box-shadow 0.22s ease;
   display: flex;
   flex-direction: column;
-  text-decoration: none !important;
-  color: inherit;
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 36px rgba(0,0,0,0.13);
-    color: inherit;
-    text-decoration: none !important;
   }
-  &:visited { color: inherit; }
   &:hover .hc-card__img { transform: scale(1.04); }
 }
 
