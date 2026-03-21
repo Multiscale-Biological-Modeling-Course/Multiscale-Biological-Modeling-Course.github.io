@@ -5,6 +5,7 @@ image: "assets/images/f38_k61_compressed.jpg"
 description: "Questions or feedback? Reach out to the Biological Modeling team by email or social media, and we'll get back to you promptly."
 comments: false
 share: false
+exclude_book_buttons: true
 header:
   overlay_color: "#000"
   overlay_filter: "0.6"
@@ -17,27 +18,21 @@ header:
   <div class="contact-reasons">
 
     <div class="contact-reason">
-      <div class="contact-reason__icon" aria-hidden="true">✦</div>
-      <div class="contact-reason__body">
-        <h3 class="contact-reason__title">Share Your Story</h3>
-        <p class="contact-reason__text">Have you used this course as a learner? We would love to hear how it has shaped your understanding of biological modeling — your testimonial helps others discover it.</p>
-      </div>
+      <span class="contact-reason__num">01</span>
+      <h3 class="contact-reason__title">Share Your Story</h3>
+      <p class="contact-reason__text">Have you used this course as a learner? We would love to hear how it has shaped your understanding of biological modeling — your testimonial helps others discover it.</p>
     </div>
 
     <div class="contact-reason">
-      <div class="contact-reason__icon" aria-hidden="true">✦</div>
-      <div class="contact-reason__body">
-        <h3 class="contact-reason__title">Adopt the Course</h3>
-        <p class="contact-reason__text">Are you an instructor considering this course for your class? We are building a network of educators using this material and would be glad to welcome you.</p>
-      </div>
+      <span class="contact-reason__num">02</span>
+      <h3 class="contact-reason__title">Adopt the Course</h3>
+      <p class="contact-reason__text">Are you an instructor considering this material for your class? We are building a network of educators and would be glad to welcome you.</p>
     </div>
 
     <div class="contact-reason">
-      <div class="contact-reason__icon" aria-hidden="true">✦</div>
-      <div class="contact-reason__body">
-        <h3 class="contact-reason__title">Anything Else</h3>
-        <p class="contact-reason__text">Questions, corrections, collaboration ideas, or just a note — we read every message and look forward to hearing from you.</p>
-      </div>
+      <span class="contact-reason__num">03</span>
+      <h3 class="contact-reason__title">Anything Else</h3>
+      <p class="contact-reason__text">Questions, corrections, collaboration ideas, or just a note — we read every message and look forward to hearing from you.</p>
     </div>
 
   </div>
@@ -79,7 +74,7 @@ header:
       <div class="contact-form__row">
         <div class="contact-form__field">
           <label class="contact-form__label" for="message">Message <span class="contact-form__optional">(optional)</span></label>
-          <textarea class="contact-form__input contact-form__textarea" rows="5" name="message" id="message" placeholder="Tell us what's on your mind…"></textarea>
+          <textarea class="contact-form__input contact-form__textarea" rows="6" name="message" id="message" placeholder="Tell us what's on your mind…"></textarea>
         </div>
       </div>
 
