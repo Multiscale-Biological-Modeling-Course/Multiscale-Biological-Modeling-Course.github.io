@@ -22,7 +22,7 @@ Finally, after running our model, we will see how methylation can be used to hel
 
 [![Diagram of E. coli chemotaxis pathway including methylation and phosphorylation steps](../assets/images/600px/chemotaxis_wholestory.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_wholestory.png)
 The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates MCPs, while CheR demethylates MCPs. Blue lines denote phosphorylation, grey lines denote dephosphorylation, and the green arrow denotes methylation. Image modified from <a href="https://chemotaxis.biology.utah.edu/projects/projects.html">Parkinson Lab</a>'s illustrations.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 To get started, open Visual Studio Code, and click `File > Open Folder...`. Open the `EColiSimulations` folder from the [first tutorial](tutorial_lr). Create a copy of your file from the [phosphorylation tutorial](tutorial_phos) and save it as `adaptation.bngl`. If you would rather not follow along below, you can download a completed BioNetGen file here: <a href="../downloads/downloadable/adaptation.bngl" download="adaptation.bngl">adaptation.bngl</a>.
 

@@ -30,13 +30,13 @@ From a new Blender file, initialize CellBlender. Delete the existing default cub
 
 [![Initial setup screen for CellBlender simulation](../assets/images/600px/motifs_setup1.png){: .align-center loading="lazy"}](../assets/images/motifs_setup1.png)
 In `CellBlender > Model Objects`, click the `+` symbol to center the cursor. Next press the square “plane” button to create the object. To have CellBlender recognize this object as a model object, press the `+` button. The name of this object is `Plane` by default, although you can change this name and edit the color by selecting the color wheel if you like. A slightly transparent coloring will help with visibility but is not necessary.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Resizing the render preview window so that objects are visible in the center of the screen is recommended. See the following figure for instructions. Then save your file as `CellBlender_Tutorial_Template.blend`.
 
 [![Continued setup of CellBlender scene for random walk](../assets/images/600px/motifs_setup2.png){: .align-center loading="lazy"}](../assets/images/motifs_setup2.png)
 From the View menu, select `Top` to align the view directly overhead. With the plane object selected, follow the arrow over to the object parameters menu (the orange cube) and scale the plane by setting the first two values to “1.5”. Then, hover the mouse over the object and either use ctrl + “+” 6 times or the scroll wheel on your mouse to zoom in.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 ## Navigating the CellBlender window
 

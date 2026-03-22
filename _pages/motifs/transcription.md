@@ -22,7 +22,7 @@ The RNA transcript is then **translated** into the amino acid sequence of a prot
 
 [![image-center](../assets/images/600px/genetic_code.png){: .align-center loading="lazy" width="300px"}](../assets/images/genetic_code.png)
 The genetic code, which dictates the conversion of RNA codons into amino acids. Codons are read from the inside of the figure outward. Image courtesy J_Alves, Open Clip Art.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 DNA can therefore be thought of as a blueprint for storing information that flows from DNA to RNA to protein. This flow of information is called the **central dogma of molecular biology**, illustrated in the figure below.
 
@@ -31,7 +31,7 @@ DNA can therefore be thought of as a blueprint for storing information that flow
 
 [![image-center](../assets/images/600px/central_dogma.png){: .align-center loading="lazy"}](../assets/images/central_dogma.png)
 The central dogma of molecular biology states that genetic information flows from DNA in the nucleus, into the RNA that is transcribed from DNA, and then into proteins that are translated from RNA and that then serve some purpose in the cell.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 ## Transcription factors control gene regulation
 
@@ -45,7 +45,7 @@ Transcription factors are vital for the cell's response to its environment becau
 
 [![image-center](../assets/images/600px/signal_pathway.jpg){: .align-center loading="lazy" width="400px"}](../assets/images/signal_pathway.jpg)
 A cell receiving a signal which triggers a response in which this signal is "transduced" into the cell, resulting in transcription of a gene. We will discuss signal transduction in greater detail in a future module.[^signalResponse]
-{: style="font-size: medium;"}
+{: .img-caption}
 
 In module 2, we will discuss the details of how the cell detects an extracellular signal and conveys it as a response within the cell. For now, we will focus on the relationship between transcription factors and the genes that they regulate.
 
@@ -64,7 +64,7 @@ In a final step, the protein is unlinked from the DNA, leaving a collection of D
 
 [![image-center](../assets/images/600px/ChIP-seq_workflow.png){: .align-center loading="lazy" width="400px"}](../assets/images/ChIP-seq_workflow.png)
 An overview of ChIP-seq. Figure courtesy Jkwchui, Wikimedia Commons user.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 If you would like a different explanation of  may also like to check out the following excellent video on identifying genes regulated by a transcription factor. This video was produced by students in the 2020 <a href="http://www.cbd.cmu.edu/education/pre-college-program-in-computational-biology" target="_blank">PreCollege Program in Computational Biology</a> at Carnegie Mellon. The presenters won an award from their peers for their work, and for good reason!
 

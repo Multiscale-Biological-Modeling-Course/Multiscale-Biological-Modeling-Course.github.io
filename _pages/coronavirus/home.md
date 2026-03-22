@@ -60,7 +60,7 @@ The viruses causing the two outbreaks, **SARS coronavirus (SARS-CoV)** and **SAR
 
 [![Illustration of the coronavirus structure](../assets/images/600px/coronavirus.png){: .align-center loading="lazy"}](../assets/images/coronavirus.png)
 Coronaviruses as seen under a microscope. The fuzzy blobs on the cell surface are spike proteins, which the virus uses to gain entry to host cells. Figure courtesy F. Murphy and S. Whitfield, CDC[^coronaimage].
-{: style="font-size: medium;"}
+{: .img-caption}
 
 When viewed under a microscope, the two viruses look identical, and they use the same mechanism to infect human cells, when the spike protein on the virus surface bonds to the ACE2 enzyme on a human cell's membrane.[^16][^17] So why did SARS fizzle, but SARS-CoV-2, a disease that is on average less harmful[^11][^12] and less deadly to individuals who contract it, transform into a pandemic? The most likely explanation for the ability of SARS-CoV-2 to spread across far more countries and remain a public health threat even in the face of lockdowns is that it spreads more easily; that is, it is more **infectious**. Is there a molecular basis of this increased infectiousness?
 
@@ -68,7 +68,7 @@ In this module, we will place ourselves in the shoes of early SARS-CoV-2 researc
 
 [![Annotated genome of SARS-CoV-2](../assets/images/600px/SARSCoV2Annotation.png){: .align-center loading="lazy"}](../assets/images/SARSCoV2Annotation.png)
 An annotated genome of SARS-CoV-2, with rectangles showing the location of areas encoding RNA or protein. The spike protein, found at the bottom of this image, is labeled "S" and begins at nucleotide position 21,563. Accessed from GenBank: [https://go.usa.gov/xfzMM](https://go.usa.gov/xfzMM).
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Recall from our [discussion of transcription factors](../motifs/transcription) that by the central dogma of molecular biology, DNA is transcribed into RNA, which is then translated into protein. According to the genetic code, triplets of RNA nucleotides called codons are converted into single amino acids. The resulting chain of amino acids is called a **polypeptide**.
 
@@ -110,7 +110,7 @@ Why do we care about protein structure? Knowing a protein's structure is essenti
 
 [![Comparison of various protein structures](../assets/images/600px/different_protein_shapes_2020.jpg){: .align-center loading="lazy"}](../assets/images/different_protein_shapes_2020.jpg)
 Each "molecule of the month" in 2020 named by the PDB. These proteins have widely varying shapes and accomplish a wide variety of cellular tasks. The SARS-CoV-2 spike protein was the molecule of the month in June. Image courtesy: David Goodsell.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 For a more visual example of how protein structure affects protein function, consider the following video of a ribosome (which is a complex of RNA and proteins) translating a messenger RNA into protein. For translation to succeed, the ribosome needs to have a very precise shape, including a "slot" into which the messenger RNA strand can fit.
 

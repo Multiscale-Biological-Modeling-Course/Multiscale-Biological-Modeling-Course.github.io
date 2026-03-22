@@ -212,7 +212,7 @@ As a result, the `BWImgs_1` directory will now contain binarized TIFF versions o
 
 [![color segmented nucleus of WBC with original nucleus hues on black background](../assets/images/600px/cellorg_segmented_color.png){: .align-center loading="lazy"}](../assets/images/cellorg_segmented_color.png)
 Nuclear segmentation of `BloodImage_00001.jpg` with color retained in the nucleus.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **STOP:** Before we return to the main text, try running the segmentation pipeline on a few different values of `r_threshold`, `g_threshold`, and `b_threshold` to see how they change the segmentation results. How could we quantify whether one collection of parameters is better than another? (You should use the values above the last time that you run the R pipeline so that your results will match those in future tutorials.)
 {: .notice--primary}

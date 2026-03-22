@@ -28,7 +28,7 @@ The **repressilator motif**[^repress] is shown in the figure below. In this moti
 
 [![Diagram of the repressilator genetic circuit](../assets/images/600px/repressilator.png){: .align-center loading="lazy" width="250px"}](../assets/images/repressilator.png)
 The repressilator motif for three particles <em>X</em>, <em>Y</em>, and <em>Z</em>. <em>X</em> represses <em>Y</em>, which represses <em>Z</em>, which in turn represses <em>X</em>, forming a feedback loop.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **STOP:** Devise a reaction-diffusion model representing the repressilator.
 {: .notice--primary}
@@ -55,7 +55,7 @@ The figure below plots the concentration over time of *X*, *Y*, and *Z* particle
 
 [![Oscillatory output chart from repressilator model](../assets/images/600px/repressilator_chart_2.png){: .align-center loading="lazy"}](../assets/images/repressilator_chart_2.png)
 Modeling the repressilator's concentration of each particle over time; *X* is shown in yellow, *Y* is shown in red, and *Z* is shown in blue.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Because the concentration of *X* starts out high, with no *Y* or *Z* present, the concentration of *X* briefly increases because its rate of production exceeds its rate of degradation. With no *Y* or *Z* particles present, there are none to degrade or be repressed, and so the concentrations of these particles start increasing as well. However, because *X* particles begin at high concentration, the repression reaction *X* + *Y* → *X* prevents the concentration of Y from growing as fast as the concentration of *Z*.
 

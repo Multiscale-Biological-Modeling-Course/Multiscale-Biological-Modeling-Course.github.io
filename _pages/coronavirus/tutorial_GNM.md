@@ -66,7 +66,7 @@ In other words, if residue *i* and *j* are connected to each other in the networ
 
 [![Kirchhoff matrix example](../assets/images/600px/kirchhoff_example.png){: .align-center loading="lazy"}](../assets/images/kirchhoff_example.png)
 An example network (left) with its the corresponding Kirchhoff matrix (right).
-{: style="font-size: medium;"}
+{: .img-caption}
 
 The Kirchhoff matrix is helpful because applying some matrix algebra to it (specifically, determining its eigenvector decomposition) allows us to estimate the inner products $$ \langle \Delta R_i, \Delta R_j \rangle $$ that power the GNM model.
 
@@ -107,7 +107,7 @@ In[#]: showContactMap(gnm);
 This command should produce the following plot.
 
 [![Contact map for SARS-CoV-2 Chain A at 20Å](../assets/images/600px/SARS-CoV-2_ChainA_Contact_20A.png){: .align-center loading="lazy"}](../assets/images/SARS-CoV-2_ChainA_Contact_20A.png)
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Next, we produce a cross-correlation plot with the following command.
 ~~~ python
@@ -117,7 +117,7 @@ In[#]: showCrossCorr(gnm);
 The plot is found below.
 
 [![Cross-correlation matrix at 20Å](../assets/images/600px/SARS-CoV-2_ChainA_CrossCorr_20A.png){: .align-center loading="lazy"}](../assets/images/SARS-CoV-2_ChainA_CrossCorr_20A.png)
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Finally, we use the following command to produce a shape plot for the slowest mode identified by GNM.
 
@@ -129,7 +129,7 @@ In[#]: grid();
 This mode shape plot is shown in the figure below.
 
 [![Slow mode representation of SARS-CoV-2 dynamics](../assets/images/600px/SARS-CoV-2_ChainA_SlowMode_20A.png){: .align-center loading="lazy"}](../assets/images/SARS-CoV-2_ChainA_SlowMode_20A.png)
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Now that we have produced our plots, we are ready to head back to the main text and analyze our results.
 

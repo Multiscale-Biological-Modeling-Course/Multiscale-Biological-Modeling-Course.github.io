@@ -20,7 +20,7 @@ Recall the following two toy protein structures from the [part 1 exercises](exer
 
 [![Exercise prompt for RMSD computation](../assets/images/600px/rmsd_exercise.png){: .align-center loading="lazy"}](../assets/images/rmsd_exercise.png)
 Two hypothetical protein structures with vectorizations into eight points each.
-{: style="text-align: center; font-size: medium;"}
+{: .img-caption}
 
 The formula for Qres of the i-th sampled point in a protein with N amino acids is reproduced below:
 
@@ -55,7 +55,7 @@ We will perform a short analysis of the SARS-CoV-2 spike protein's interaction e
 In the conclusion of part 2 of this module, we mentioned that the surface of viruses and host cells are “fuzzy” because they are covered by structures called glycans. We will use what we learned about VMD in a [tutorial](tutorial_multiseq) to visualize glycans on the spike protein of both viruses. First, we will need to download the protein structures of the SARS-CoV spike protein (PDB entry: <a href="https://www.rcsb.org/structure/5XLR" target="_blank">5xlr</a> and the SARS-CoV-2 spike protein (PDB entry: <a href="https://www.rcsb.org/structure/6VXX" target="_blank">6vxx</a>. Load each structure into VMD and navigate to `Graphics > Representations`. For VMD, there is no specific keyword to select glycans, and so we will use a workaround with the keywords: `"not protein and not water"`.
 
 [![Glycan structure used in exercise comparison](../assets/images/600px/GlycanImage1.png){: .align-center loading="lazy"}](../assets/images/GlycanImage1.png)
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **Exercise:** Create the representation. Assuming that all the non-proteins are glycans, which structure contains the most number of glycans? Do you think that this supports SARS-CoV-2's higher infectivity compared to SARS-CoV?
 {: .notice--success}

@@ -26,7 +26,7 @@ Say that we observe four coin flips. Then there are 16 equally likely outcomes, 
 
 [![Table showing coin flip probabilities](../assets/images/600px/coin_flip_table.png){: .align-center loading="lazy"}](../assets/images/coin_flip_table.png)
 The 16 possible sequences resulting from flipping a coin four times.
-{: style="text-align: center; font-size: medium;"}
+{: .img-caption}
 
 Each outcome is equally likely, and so we can compute the probability of observing *k* heads in the four flips by counting how many of the 16 cases have *k* heads:
 
@@ -62,7 +62,7 @@ There are eight types of feed-forward loops based on the eight different ways in
 
 [![Diagram of different feed-forward loop types](../assets/images/600px/ffl_types.png){: .align-center loading="lazy"}](../assets/images/ffl_types.png)
 The eight types of feed-forward loops.[^ffl]
-{: style="text-align: center; font-size: medium;"}
+{: .img-caption}
 
 **Exercise:** Modify the Jupyter notebook to count the number of loops of each type in the *E. coli* transcription factor network.
 {: .notice--success}

@@ -59,7 +59,7 @@ On the other hand, we could have very similar shapes whose RMSD winds up being h
 
 [![two identical shapes flipped and rotated illustrating alignment need](../assets/images/600px/two_shapes.png){: .align-center loading="lazy"}](../assets/images/two_shapes.png)
 Two identical shapes, with one shape flipped and rotated. Vectorizing these shapes without first correctly aligning them will produce two vectors with high RMSD.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 We handled the latter issue in our work on protein structure comparison by introducing the Kabsch algorithm, which identified the best rotation of one shape into another that would minimize the RMSD of the resulting vectors. Yet what makes our work here more complicated is that we are not comparing  two WBC image shape vectors, we are comparing hundreds.
 
@@ -81,13 +81,13 @@ One way of aligning a collection of images is to first identify the **major axis
 
 [![three similar shapes with highlighted major axes before alignment](../assets/images/600px/three_similar_shapes_unaligned.png){: .align-center loading="lazy"}](../assets/images/three_similar_shapes_unaligned.png)
 Three similar shapes, with their major axes highlighted in gray.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Aligning the major axes of these similar shapes reveals their similarities (see figure below). These images are ready to be vectorized (say, starting from the point on the right side of an image's major axis and proceeding counterclockwise). The resulting vectors will have low RMSD because corresponding points on the shapes will be nearby.
 
 [![three shapes aligned along major axes illustrating consistent orientation](../assets/images/600px/three_similar_shapes_aligned.png){: .align-center loading="lazy" width="300px"}](../assets/images/three_similar_shapes_aligned.png)
 Aligning the three images from the previous figure so that their major axes overlap allows us to see similarities between the shapes as well as build shape vectors for them having a consistent frame of reference.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **Note:** In practice, when we align shapes along their major axes, we need to consider the flip of each shape across its major axis as well. Handling this issue is beyond the scope of our work here but is discussed in the literature.[^Pincus2007]
 {: .notice--info}

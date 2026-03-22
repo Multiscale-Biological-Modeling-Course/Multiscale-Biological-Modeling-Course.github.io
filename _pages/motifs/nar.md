@@ -22,7 +22,7 @@ We will simulate a "race" to the **steady state**, or **equilibrium**, concentra
 
 [![Diagram showing signaling between two cells](../assets/images/600px/two_cells.png){: .align-center loading="lazy"}](../assets/images/two_cells.png)
 The two cells that we wish to simulate. In the first cell (left), *X* only activates *Y*; in the second cell (right), *Y* also negatively autoregulates.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 We will simulate these two cells using a reaction-diffusion model analogous to the one introduced in the [prologue](../prologue/). For our new model, the "particles" represent the two transcription factors *X* and *Y*.
 
@@ -53,7 +53,7 @@ If you followed the above tutorial, then you were likely disappointed in the sec
 
 [![Simulation result of NAR with unequal input](../assets/images/600px/nar_unequal_chart_2.png){: .align-center loading="lazy"}](../assets/images/nar_unequal_chart_2.png)
 A plot of the concentration of Y particles over time across two simulations. In the first cell (red), we only have activation of *Y* by *X*, whereas in the second cell (yellow), we keep all parameters fixed but add a reaction simulating the negative autoregulation of *Y*.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 By allowing *Y* to slow its own transcription, we wound up with a simulation in which the final concentration of *Y* was *lower*. How could negative autoregulation possibly be useful?
 
@@ -73,7 +73,7 @@ The figure below plots the concentration over time of *Y* particles for the two 
 
 [![Simulation result of NAR with equal input](../assets/images/600px/nar_equal_chart_2.png){: .align-center loading="lazy"}](../assets/images/nar_equal_chart_2.png)
 A comparison of the concentration of *Y* particles across the same two simulations from the previous figure. This time, in the second simulation (yellow), we increase the rate of the reaction *X* → *X* + *Y*.  As a result, the two simulations have approximately the same steady state concentration of *Y*, and the simulation that includes negative autoregulation reaches steady state more quickly.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 The above plots also provide evidence of *why* negative autoregulation may have evolved. The simulated cell that includes negative autoregulation wins the "race" to a steady state concentration of *Y*, and so we can conclude that this cell is more fit for survival than one in which *Y* does not negatively autoregulate. Uri Alon[^Alon] has proposed an excellent analogy of a negatively autoregulating transcription factor as a sports car that has both a powerful engine (corresponding to the higher rate of the reaction producing *Y*) and sensitive brakes (corresponding to negative autoregulation slowing the production of *Y* to reach equilibrium quickly).
 

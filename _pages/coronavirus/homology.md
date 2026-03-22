@@ -33,7 +33,7 @@ The phenomenon of conserved and variable regions also occurs within individual g
 
 [![Spike protein similarity between coronavirus strains](../assets/images/600px/spike_protein_similarity.png){: .align-center loading="lazy"}](../assets/images/spike_protein_similarity.png)
 Variable and conserved regions in the SARS-CoV and SARS-CoV-2 spike proteins. The S1 domain tends to be more variable, whereas the S2 domain is more conserved. In this figure, "NTD" stands for "N-terminal domain" and "RBD" stands for "receptor binding domain", two subunits of the S1 domain.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Some homology modeling algorithms account for variable and conserved regions by assuming that very conserved regions in the two genes correspond to essentially identical structures in the proteins. That is, the structure of our protein of interest in these regions will be the same as those of the template protein. We can then use a **fragment library**, a catalog of known substructures from many proteins, to fill in the structure of non-conserved regions based on structures of fragments whose sequence is similar to these regions. This approach is called **fragment assembly**.
 

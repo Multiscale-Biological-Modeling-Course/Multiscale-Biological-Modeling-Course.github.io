@@ -43,14 +43,14 @@ The output from running the commands in the instructions above is shown below. T
 Open a web browser, and navigate to the URL you copied above. This will open the Jupyter notebook server in your browser, which contains all of the software needed to run CellOrganizer and create our model.
 
 [![Jupyter Notebook home page listing CellOrganizer notebooks after Docker launch](../assets/images/600px/shape_space_docker_img2.png){: .align-center loading="lazy"}](../assets/images/shape_space_docker_img2.png)
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Next, we need to upload our images to the server so that they can be fed as input to the CellOrganizer model. The most straightforward way to do this would be to upload our `WBC_PCAPipeline/Data/BWImgs_1` folder onto the server, but unfortunately we can only upload individual files onto the server. Fortunately, there is a simple workaround - Jupyter notebooks allows us to upload zipped folders, so we can instead upload a zipped folder onto the server which contains all of our images.
 
 First, compress your `BWImgs_1` folder into a `.zip` file by right-clicking on the folder in  File Explorer and selecting `send to > Compressed (zipped) folder`. Next, click the `upload` button near the top-right corner of the Jupyter notebook screen, and double-click on the `BWImgs_1.zip` file you just created. Then, click the `upload` button next to the newly added folder.
 
 [![Jupyter file upload dialog showing BWImgs_1.zip successfully uploaded](../assets/images/600px/shape_space_docker_img3.png){: .align-center loading="lazy"}](../assets/images/shape_space_docker_img3.png)
-{: style="font-size: medium;"}
+{: .img-caption}
 
 We are now ready to start using CellOrganizer! Create a new IPython notebook on the server named `WBC_PCA.ipynb`, and enter the following code into a code cell. We will not do a line-by-line walkthrough of the code here, but feel free to compare it with the corresponding MATLAB code contained in `Step3_ModelGeneration/WBC_PCAModel.m`.
 
@@ -110,12 +110,12 @@ The results of running the Python code above will be a new file called `WBC_PCA.
 Next, start MATLAB, and set the MATLAB path by clicking the button indicated below, and navigating to your `WBC_PCAPipeline/Step3_ModelGeneration` folder.
 
 [![MATLAB Add Folder dialog setting Step3_ModelGeneration path for PCA extraction](../assets/images/600px/shape_space_docker_img4.png){: .align-center loading="lazy"}](../assets/images/shape_space_docker_img4.png)
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Once the path is set, navigate to the Home pane at the top of your MATLAB window, and click on the `New Script` button. This will open up a new script in your editor window.
 
 [![MATLAB Editor showing new script icon to create PCA extraction script](../assets/images/600px/shape_space_docker_img5.png){: .align-center loading="lazy"}](../assets/images/shape_space_docker_img5.png)
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Enter the following lines of MATLAB code into the newly opened file, which extract and save the principal components from your model to a `.csv` file:
 

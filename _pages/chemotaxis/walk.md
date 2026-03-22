@@ -22,7 +22,7 @@ When we examine the bacterium's movement under a microscope, we see it alternate
 
 [![Illustration of E. coli run-and-tumble behavior](../assets/images/600px/chemotaxis_intro_runtumble.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_intro_runtumble.png)
 The run and tumble mechanism of bacterial movement produces a random walk (bottom left). Image courtesy: Sandy Parkinson.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **STOP:** Say that a bacterium travels 20 µm per second, and every second it chooses a random direction in which to travel.  After an hour, approximately how far do we expect it to be from its starting point? (Hint: recall the Random Walk Theorem from the [prologue](../prologue/random_walk).)
 {: .notice--primary}

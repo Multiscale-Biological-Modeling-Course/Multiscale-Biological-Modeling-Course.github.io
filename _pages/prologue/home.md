@@ -20,7 +20,7 @@ If you are familiar with Alan Turing, then you might be surprised that a famous 
 
 [![Portrait of Alan Turing, National Portrait Gallery](../assets/images/600px/alan_turing_npg_cc.jpg){: .align-center loading="lazy"}](../assets/images/alan_turing_npg_cc.jpg)
 Alan Turing in 1951. © National Portrait Gallery, London.
-{: style="font-size: medium; text-align: center;"}
+{: .img-caption}
 
 Yet in 1952, two years before his untimely demise, Turing published his only paper on biochemistry, which addressed the question: "Why do zebras have stripes?"[^morphogenesis] He was not asking why zebras have *evolved* to have stripes — this question was unsolved in Turing’s time, and recent research has indicated that the stripes may be helpful in warding off flies. Rather, Turing was interested in what biochemical mechanism could produce the stripes that we see on a zebra’s coat. And he reasoned that just as a simple machine can emulate a computer, some limited set of molecular "rules" could cause stripes to appear on a zebra’s coat.
 

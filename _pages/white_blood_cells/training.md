@@ -95,13 +95,13 @@ First, we define some terms. A **true positive** is a positive test in a patient
 
 [![image-center](../assets/images/600px/medical_test_confusion_matrix.png){: .align-center loading="lazy"}](../assets/images/medical_test_confusion_matrix.png)
 The locations of true positives, false positives, true negatives, and false negatives in the confusion matrix associated with a medical test. Correct predictions are shown in green, and incorrect predictions are shown in red.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 In what follows, we will work with the confusion matrix for a hypothetical medical test shown in the figure below.
 
 [![image-center](../assets/images/600px/medical_test_confusion_matrix_hypothetical.png){: .align-center loading="lazy"}](../assets/images/medical_test_confusion_matrix_hypothetical.png)
 A hypothetical medical test confusion matrix.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **STOP:** What is the accuracy of this test? How does it compare to the accuracy of a test that returns negative for everyone in the population?
 {: .notice--primary}

@@ -28,7 +28,7 @@ A high-level view of the transduction pathway for chemotaxis is shown in the fig
 
 [![Signal transduction model showing phosphorylation cascade](../assets/images/600px/chemotaxisphosnew.png){: .align-center loading="lazy"}](../assets/images/chemotaxisphosnew.png)
 A summary of the chemotaxis transduction pathway. A ligand binding signal is propagated through CheA and CheY phosphorylation, which leads to a response of clockwise flagellar rotation. The blue curved arrow denotes phosphorylation, the grey curved arrow denotes dephosphorylation, and the blue dashed arrow denotes a chemical interaction. Our figure is a simplified view of <a href="https://chemotaxis.biology.utah.edu/projects/projects.html">Parkinson Lab</a> illustrations.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 On the interior of the cellular membrane, MCPs form complexes with two proteins called **CheW** and **CheA**. In the absence of MCP-ligand binding, this complex is more stable, and the CheA molecule **autophosphorylates**, meaning that it adds a phosphoryl group taken from ATP to *itself* --- a concept that might seem mystical if you had not already followed our discussion of autoregulation in the [previous module](../motifs/autoregulation).
 
@@ -66,7 +66,7 @@ The top panel of the following figure shows the concentrations of phosphorylated
 
 [![Simulation snapshot from tutorial step 7](../assets/images/600px/chemotaxis_tutorial7_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial7_vscode.png)
 Molecular concentrations over time (in seconds) in a chemotaxis simulation for three different initial unbound attractant ligand concentrations: no attractant ligand (top), 5,000 ligand particles (middle), and 100,000 ligand particles (bottom). Note that the simulated cell's bound ligand concentration (green) achieves equilibrium very quickly in each case.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 This model, powered by the Gillespie algorithm, confirms the biological observations that an increase in attractant reduces the concentration of phosphorylated CheY. The reduction takes place remarkably quickly, with the cell attaining a new equilibrium in a fraction of a second.
 

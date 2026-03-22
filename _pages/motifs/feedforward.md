@@ -22,7 +22,7 @@ The answer lies in another transcription factor network motif called the **feedf
 
 [![Diagram of a coherent feed-forward loop](../assets/images/600px/feed-forward_loop.png){: .align-center loading="lazy" width="300px"}](../assets/images/feed-forward_loop.png)
 The FFL motif. *X* regulates both *Y* and *Z*, and *Y* regulates *Z*.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 There are 42 FFLs in the transcription factor network of *E. coli*[^ffl], of which five have the structure below, in which *X* activates *Y*, *X* activates *Z*, and *Y* represses *Z*. This specific form of the FFL motif is  called a **type-1 incoherent feedforward loop** and will be our focus for the rest of the module.
 
@@ -31,7 +31,7 @@ There are 42 FFLs in the transcription factor network of *E. coli*[^ffl], of whi
 
 [![Diagram of a type-1 incoherent feed-forward loop](../assets/images/600px/type-1_incoherent_feed-forward_loop.png){: .align-center loading="lazy" width="300px"}](../assets/images/type-1_incoherent_feed-forward_loop.png)
 The incoherent feed-forward loop network motif. *X* activates *Y* and *Z* (the associated edges are labeled with "+"), while *Y* represses *Z* (the associated edge is labeled with "-").
-{: style="font-size: medium;"}
+{: .img-caption}
 
 ## Modeling a type-1 incoherent feedforward loop
 
@@ -52,7 +52,7 @@ The figure below shows a plot visualizing the concentration of *Z* across the tw
 
 [![Output chart of a feed-forward loop response](../assets/images/600px/ffl_chart_2.png){: .align-center loading="lazy"}](../assets/images/ffl_chart_2.png)
 The concentration of *Z* in the two simulations. Simple activation of *Z* by *X* is shown in blue, and the type-1 incoherent FFL is shown in purple.
-{: style="font-size: medium;"}s
+{: .img-caption}
 
 Note the different pattern to the growth of *Z* than we saw under negative autoregulation. When modeling negative autoregulation, the concentration of the protein approached steady state from below. In the case of the FFL, the concentration of *Z* grows so quickly that it passes its eventual steady state concentration and then returns to this steady state from above.
 
@@ -63,7 +63,7 @@ The figure above is reminiscent of a **damped oscillation** process like the one
 
 [![Plot of damped oscillator behavior](../assets/images/600px/damped_oscillator.png){: .align-center loading="lazy"}](../assets/images/damped_oscillator.png)
 In a damped oscillation, the value of some variable (shown on the y-axis) oscillates back and forth around an asymptotic value while the amplitude decreases over time (shown on the x-axis).[^dampedOscillator]
-{: style="font-size: medium;"}
+{: .img-caption}
 
 [Next lesson](oscillators){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

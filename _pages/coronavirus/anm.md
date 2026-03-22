@@ -22,7 +22,7 @@ We will not delve into the mathematical intricacies of ANM calculations, but we 
 
 [![Animated modes of hemoglobin from ANM analysis](../assets/images/600px/hemoglobin_anm_2.gif){: .align-center loading="lazy"}](../assets/images/hemoglobin_anm_2.gif)
 Collective motions of the slowest mode in human hemoglobin from ANM calculations using DynOmics.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 After we produce an animation like the one in the figure above, we also should attempt to explain it biologically. Human hemoglobin exists in two states: the tense state (T), in which it is not bound to an oxygen molecule, and the relaxed state (R), in which it is oxygenated. Hemoglobin's mobility shown in the above animation corresponds to its ability to transition between these two states, in which salt-bridges and contacts can shift by up to seven angstroms[^Davis]. This significant molecular flexibility exemplifies why we need to study protein dynamics as well as structure.
 

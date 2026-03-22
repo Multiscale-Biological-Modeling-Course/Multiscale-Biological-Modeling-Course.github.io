@@ -37,7 +37,7 @@ Intuitively, we would like to have a large number of features in our data (i.e.,
 
 [![Plot of petal length vs width for two iris flowers illustrating inverse-correlation noise](../assets/images/600px/curse_of_dimensionality_two_irises.png){: .align-center loading="lazy"}](../assets/images/curse_of_dimensionality_two_irises.png)
 Petal length (x-axis) plotted against petal width (y-axis) for two flowers in the iris flower dataset. Because of random chance and small sample size, these two flowers demonstrate an inverse correlation between petal length and width, the opposite of the true correlation found in the main text.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 This example provides another reason why we reduce the dimension of a dataset when the number of objects in our dataset is smaller than the number of features of each object. Furthermore, when fitting a *d*-dimensional hyperplane to a collection of data, we need to be careful with selecting too large of a value of *d*, especially if we do not have many data points.
 

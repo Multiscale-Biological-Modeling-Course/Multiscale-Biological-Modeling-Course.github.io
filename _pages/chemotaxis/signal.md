@@ -26,7 +26,7 @@ In the case of chemotaxis, *E. coli* has receptor proteins that detect attractan
 
 [![Diagram of ligand-receptor signal transduction in E. coli](../assets/images/600px/chemotaxis_signal.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_signal.png)
 A high-level overview of the chemotaxis signaling pathway. The red circles labeled *L* represent attractant ligands. When these ligands bind to receptors, a signal is transduced inside the cell via a series of enzymes, which eventually influences the rotation direction of a flagellum.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 In this lesson, we will discuss how to model ligand-receptor binding.
 

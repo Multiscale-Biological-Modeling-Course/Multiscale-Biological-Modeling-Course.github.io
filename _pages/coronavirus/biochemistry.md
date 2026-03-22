@@ -21,25 +21,25 @@ A protein's **secondary structure** describes its highly regular, repeating inte
 
 [![Secondary structure of hemoglobin protein](../assets/images/600px/hemoglobin_secondary_structure.png){: .align-center loading="lazy"}](../assets/images/hemoglobin_secondary_structure.png)
 The general shape of alpha helices (left) and beta sheets (right), the two most common protein secondary structures. Source: Cornell, B. (n.d.). [https://ib.bioninja.com.au/higher-level/topic-7-nucleic-acids/73-translation/protein-structure.html](https://ib.bioninja.com.au/higher-level/topic-7-nucleic-acids/73-translation/protein-structure.html)
-{: style="font-size: medium;"}
+{: .img-caption}
 
 A protein's **tertiary structure** describes its final 3D shape after the polypeptide chain has folded and is chemically stable. Throughout this module, when discussing the "shape" or "structure" of a protein, we are almost exclusively referring to its tertiary structure. The figure below shows the tertiary structure of human hemoglobin subunit alpha. For the sake of simplicity, this figure does not show the position of every atom in the protein but rather represents the protein shape as a composition of secondary structures.
 
 [![Tertiary structure of hemoglobin molecule](../assets/images/600px/hemoglobin_tertiary_structure.png){: .align-center loading="lazy"}](../assets/images/hemoglobin_tertiary_structure.png)
 The tertiary structure of human hemoglobin subunit alpha. Within the structure are multiple alpha helix secondary structures. Source: <a href="https://www.rcsb.org/structure/1SI4" target="_blank">https://www.rcsb.org/structure/1SI4</a>.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Finally, some proteins have a **quaternary structure**, which describes the protein’s interaction with other copies of itself to form a single functional unit, or a **multimer**. Many proteins do not have a quaternary structure and function as an independent monomer. The figure below shows the quaternary structure of hemoglobin, which is a multimer consisting of two alpha subunits and two beta subunits.
 
 [![Quaternary structure showing hemoglobin subunits](../assets/images/600px/hemoglobin_quaternary_structure.png){: .align-center loading="lazy" width="400px"}](../assets/images/hemoglobin_quaternary_structure.png)
 The quaternary structure of human hemoglobin, which consists of two alpha subunits (shown in red) and two beta subunits (shown in blue). Source: [https://commons.wikimedia.org/wiki/File:1GZX_Haemoglobin.png](https://commons.wikimedia.org/wiki/File:1GZX_Haemoglobin.png).
-{: style="font-size: medium;"}
+{: .img-caption}
 
 As for coronaviruses, the spike protein is a **homotrimer**, meaning that it is formed of three essentially identical units called **chains**, each one translated from the corresponding region of the coronavirus's genome; these chains are colored differently in the figure below. In this module, when discussing the structure of the spike protein, we often are referring to the structure of a single chain.
 
 [![Trimeric structure of SARS-CoV-2 spike protein](../assets/images/600px/spike_protein_homotrimer.png){: .align-center loading="lazy" width="400px"}](../assets/images/spike_protein_homotrimer.png)
 A side and top view of the quaternary structure of the SARS-CoV-2 spike protein homotrimer, with its three chains highlighted using different colors.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 The structural units making up proteins are often hierarchical, and the spike protein is no exception. Each spike protein chain is a **dimer**, consisting of two subunits called **S1** and **S2**. Each of these subunits further divides into **protein domains**, distinct structural units within the protein that fold independently and are typically responsible for a specific interaction or function. For example, the SARS-CoV-2 spike protein has a **receptor binding domain (RBD)** located on the S1 subunit of the spike protein that is responsible for interacting with the human ACE2 enzyme; the rest of the protein does not come into contact with ACE2. We will say more about the RBD soon.
 
@@ -51,7 +51,7 @@ Amino acids' side chain variety causes them to have different chemical propertie
 
 [![Standard amino acid chart with one-letter codes](../assets/images/600px/AminoAcidChart.png){: .align-center loading="lazy"}](../assets/images/AminoAcidChart.png)
 A chart of the twenty amino acid grouped by chemical properties. The side chain of each amino acid is highlighted in blue. Image courtesy: <a href="https://openstax.org/books/biology/pages/1-introduction" target="_blank">OpenStax Biology</a>.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 We can therefore view protein folding as finding the tertiary structure that is the most *stable* given a polypeptide's primary structure. A central theme of the previous module on bacterial chemotaxis was that a system of chemical reactions moves toward equilibrium. The same principle is true of protein folding; when a protein folds into its final structure, it reaches a conformation that is as chemically stable as possible.
 
@@ -65,19 +65,19 @@ As for van der Waals interactions, atoms are dynamic systems, with electrons con
 
 [![Van der Waals surface model (normal)](../assets/images/600px/van_der_waals_normal.png){: .align-center loading="lazy" width="300px"}](../assets/images/van_der_waals_normal.png)
 A carbon-12 atom showing six positively charged protons (green), six neutrally charged neutrons (blue), and six negatively charged electrons (red). Under typical circumstances, the electrons will most likely be distributed uniformly around the nucleus.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 However, due to random chance, the negatively charged electrons in an atom could momentarily be unevenly distributed on one side of the nucleus. This uneven distribution will cause the atom to have a temporary negative charge on the side with the excess electrons and a temporary positive charge on the opposite side. As a result of this charge, one side of the atom may attract only the oppositely charged components of another atom, creating an **induced dipole** in that atom in turn as shown in the figure below. Van der Waals forces refer to the attraction and repulsion between atoms because of induced dipoles.
 
 [![Comparison of van der Waals surfaces in proteins](../assets/images/600px/van_der_waals.png){: .align-center loading="lazy"}](../assets/images/van_der_waals.png)
 Due to random chance, the electrons in the atom on the left have clustered on the left side of the atom, creating a net negative charge on this side of the atom, and therefore a net positive charge on the right side of the atom. This polarity induces a dipole in the atom on the right, whose electrons are attracted because of van der Waals forces.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 As the protein folds, it seeks a conformation of *lowest* total potential energy based on the combination of all the above-mentioned forces. For an analogy, imagine a ball on a slope, as shown in the following figure. The ball will move down the slope unless it is pushed uphill by some outside force, making it unlikely that the ball will wind up at the top of a hill. We will keep this analogy in mind as we return to the problem of protein structure prediction.
 
 [![Cartoon showing molecular energy interactions](../assets/images/600px/EnergyCartoon.png){: .align-center loading="lazy"}](../assets/images/EnergyCartoon.png)
 A ball on a hill offers an analogy for a protein folding into the lowest energy structure. As the ball is more likely to move down into a valley, a protein is more likely to fold into a more stable, lower energy conformation.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 [Next lesson](ab_initio){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

@@ -53,7 +53,7 @@ To simulate the diffusion process, we will rely upon an imported **convolution f
 
 [![Diagram showing matrix convolution process for diffusion](../assets/images/600px/matrix_convolution.png){: .align-center loading="lazy"}](../assets/images/matrix_convolution.png)
 A single step in the convolution function which takes the first matrix and adds up each cell multiplied by the number in the second matrix. Here we see (0 * 0) + (2 * ¼) + (0 * 0) + (3 * ¼) + (1 * -1) + (2 * ¼) + (1 * 0) + (1 * ¼) +(1 * 0) = 1
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Because we’re trying to describe the rate of diffusion over this system, the values in the 3 x 3 laplacian excluding the center sum to 1. In our code, the value in the center is -1 because we’ve specified the *change* in the system with the convolution function i.e. the matrix *dA*, which we then add to the original matrix *A*. Thus the total sum of the laplacian is 0 which means the total change in number of molecules due to diffusion is 0, even if the molecules are moving to new locations. We don’t want any new molecules created due to just diffusion! (This would violate the law of conservation of mass.)
 

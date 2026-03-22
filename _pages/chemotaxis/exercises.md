@@ -35,7 +35,7 @@ Earlier in this module, we showed a grid of cells containing concentrations of t
 
 [![Diffusion profile for two initial particle sources](../assets/images/600px/two_particle_concentration_diffusion.png){: .align-center loading="lazy" width="300px"}](../assets/images/two_particle_concentration_diffusion.png)
 A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> that start at maximum concentration in the central square and diffuse at rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by the ordered pair ([<em>A</em>], [<em>B</em>]).
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **Exercise:** Instead of solely diffusing the particles, update the original grid (in which *A* and *B* have concentration equal to 1 in the central cell) for two time steps according to the Gray-Scott model. Use *f* = 0.03 and *k* = 0.1.
 {: .notice--success}
@@ -57,7 +57,7 @@ Recall the figure below, which shows how changing feed and kill rates affect Tur
 
 [![Parameter map showing morphological outcomes from Xmorphia model](../assets/images/600px/xmorphia-parameter-map.jpg){: .align-center loading="lazy" width="400px"}](../assets/images/xmorphia-parameter-map.jpg)
 Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns obtained in the Gray-Scott model. Each small square shows the patterns obtained from a given choice of feed and kill rate. Note that many choices of parameters do not produce Turing patterns, which only result from a narrow "sweet spot" band of parameter choices.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **Exercise:** Try changing the diffusion rates in the Gray-Scott model to the values of *d*<sub><em>A</em> = 0.1 and *d*<sub><em>B</em> = 0.05. Do the same patterns result? What happens if we make the diffusion rates equal?
 {: .notice--success}

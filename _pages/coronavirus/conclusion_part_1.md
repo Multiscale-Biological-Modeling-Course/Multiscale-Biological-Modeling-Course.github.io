@@ -28,13 +28,13 @@ We will show a few plots to illustrate the decisiveness of AlphaFold's CASP vict
 
 [![AlphaFold2 predicted structure compared to BAKER lab model](../assets/images/600px/AlphaFold2_BAKER.png){: .align-center loading="lazy"}](../assets/images/AlphaFold2_BAKER.png)
 A plot of GDT scores for the AlphaFold2 (blue) and Baker lab (orange) submissions over all proteins in the CASP14 contest. AlphaFold2 finished first in CASP14, and Baker lab finished second. Image courtesy: <a href="https://bit.ly/39Mnym3" target="_blank">Mohammed al Quraishi</a>.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 We can appreciate the size of the margin of victory in the above figure if we compare it against the difference between the second and third place competitors, shown in the figure below.
 
 [![Comparison of BAKER and Zhang models](../assets/images/600px/BAKER_Zhang.png){: .align-center loading="lazy"}](../assets/images/BAKER_Zhang.png)
 A plot of GDT scores for the Baker lab (blue) and Zhang lab (orange) submissions for all proteins in the CASP14 contest. Baker lab finished second in CASP14, and Zhang lab finished third. Image courtesy: <a href="https://bit.ly/39Mnym3" target="_blank">Mohammed al Quraishi</a>.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 For each protein in the CASP14 contest, we can also compute each algorithm's **z-score**, defined as the number of standard deviations that the algorithm's GDT score falls from the mean GDT score over all competitors. For example, a z-score of 1.4 would imply that the approach performed 1.4 standard deviations above the mean, and a z-score of -0.9 would imply that the approach performed 0.9 standard deviations below the mean.
 
@@ -42,7 +42,7 @@ Summing all of an algorithm's positive z-scores gives a reasonable metric for th
 
 [![CASP14 competition results overview chart](../assets/images/600px/CASP14_overall_results.png){: .align-center loading="lazy"}](../assets/images/CASP14_overall_results.png)
 A bar chart plotting the sum of z-scores for every entrant in the CASP14 contest. AlphaFold2 is shown on the far left; its sum of z-scores is over double that of the second-place submission. Source: <a href="https://predictioncenter.org/casp14/zscores_final.cgi" target="_blank">https://predictioncenter.org/casp14/zscores_final.cgi</a>.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 AlphaFold's CASP14 triumph led some scientists --- and media outlets --- to declare that protein structure prediction had finally been solved[^Science]. Yet some critics remained skeptical.
 

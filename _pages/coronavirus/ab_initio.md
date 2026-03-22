@@ -26,7 +26,7 @@ In the case of structure prediction, our search space is the collection of all p
 
 [![Diagram showing a protein folding energy landscape](../assets/images/600px/energy_landscape.png){: .align-center loading="lazy"}](../assets/images/energy_landscape.png)
 Optimization problems can be thought of as exploring a landscape, in which the height of a point is the value of the function that we wish to optimize. Finding the highest or lowest point in this landscape corresponds to maximizing or minimizing the function over the search space. Image courtesy: David Beamish.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 ## A local search algorithm for *ab initio* structure prediction
 
@@ -58,7 +58,7 @@ The figure below shows the top five predicted human hemoglobin subunit alpha str
 
 [![Results of ab initio protein structure prediction](../assets/images/600px/ab_initio_results.png){: .align-center loading="lazy"}](../assets/images/ab_initio_results.png)
 The experimentally verified protein structure of human hemoglobin subunit alpha (top left) along with five models of this protein produced by QUARK from the protein's primary sequence, all of which are nearly indistinguishable from the verified structure with the naked eye.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Yet we also wonder if we can speed up our structure prediction algorithms so that they will scale to a larger protein like the SARS-CoV-2 spike protein. In the next lesson, we will learn about another type of protein structure prediction that uses a database of known structures.
 

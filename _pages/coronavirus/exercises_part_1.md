@@ -20,7 +20,7 @@ In the main text, we noted that the center of some shapes can be computed mathem
 
 [![Semicircular arc geometry for structure exercise](../assets/images/600px/semicircular_arc.png){: .align-center loading="lazy" width="300px"}](../assets/images/semicircular_arc.png)
 A semicircular arc with radius 1 corresponding to a circle whose center is at the origin.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **Exercise:** Determine the center of mass of the shape in the figure above. (**Hint:** finding the x-coordinate of the center of mass is easy, but finding the y-coordinate requires a little calculus.)
 {: .notice--success}
@@ -34,7 +34,7 @@ Consider the two shapes shown in the figure below with vectorizations of eight p
 
 [![Exercise prompt for RMSD computation](../assets/images/600px/rmsd_exercise.png){: .align-center loading="lazy"}](../assets/images/rmsd_exercise.png)
 Two hypothetical protein structures with vectorizations into eight points each.
-{: style="text-align: center; font-size: medium;"}
+{: .img-caption}
 
 **Exercise:** Using the vectorization of the figures indicated, estimate the center of mass of these two protein structures.
 {: .notice--success}

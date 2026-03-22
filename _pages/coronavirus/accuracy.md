@@ -24,7 +24,7 @@ Comparing two protein structures is intrinsically similar to comparing two shape
 {: .notice--primary}
 
 [![Two different 2D shapes used for RMSD comparison](../assets/images/600px/two_shapes.png){: .align-center loading="lazy"}](../assets/images/two_shapes.png)
-{: style="font-size: medium;"}
+{: .img-caption}
 
 If you think you have a good handle on comparing the above two shapes, then it is because humans have very highly evolved eyes and brains. As we will see in the next module, training a computer to detect and differentiate objects is more difficult than you think!
 
@@ -34,7 +34,7 @@ You may have noticed that the two shapes in the preceding figure are, in fact, i
 
 [![First frame showing shape transformation steps](../assets/images/600px/shape_transformations_first_frame.png){: .align-center loading="lazy"}](../assets/images/shape_transformations.gif)
 We can transform the red shape into the blue shape by translating it, flipping it, and then rotating it.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Our idea for defining *d*(*S*, *T*), then, is first to translate, flip, and rotate *S* so that it resembles *T* "as much as possible" to give us a fair comparison. Once we have done so, we should devise a metric to quantify the difference between the two shapes that will represent *d*(*S*, *T*).
 
@@ -53,7 +53,7 @@ For an example two-dimensional RMSD calculation, consider the figure below, whic
 
 [![RMSD calculation between simple shapes](../assets/images/600px/rmsd_simple_shapes.png){: .align-center loading="lazy" width="400px"}](../assets/images/rmsd_simple_shapes.png)
 Two shapes with four points sampled from each.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 The distances between corresponding points in this figure are equal to $$\sqrt{2}$$, 1, 4, and $$\sqrt{2}$$. As a result, we compute the RMSD as
 
@@ -71,7 +71,7 @@ Even if we assume that two shapes have already been overlapped and rotated appro
 
 [![Undersampling effects on circle and square shapes](../assets/images/600px/circle_square_undersampling.png){: .align-center loading="lazy" width="300px"}](../assets/images/circle_square_undersampling.png)
 A circle inscribed within a square. Sampling of only the four points where the shapes intersect will give an RMSD of zero, a flawed estimate for the distance between the two shapes.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 However, we have still assumed that we already rotated (and possibly flipped) *S* to be as "similar" to *T* as possible. In practice, after superimposing *S* and *T* to have the same center of mass, we would like to find the flip and/or rotation of *S* that *minimizes* the RMSD between our vectorizations of *S* and *T* over all possible ways of flipping and rotating *S*. It is this minimum RMSD that we define as *d*(*S*, *T*).
 
@@ -91,7 +91,7 @@ Whether a protein structure is experimentally validated or predicted by an algor
 
 [![Example of a PDB file format](../assets/images/600px/pdb_format_example.png){: .align-center loading="lazy"}](../assets/images/pdb_format_example.png)
 Lines 2,159 to 2,175 of the `.pdb` file for the experimentally verified SARS-CoV-2 spike protein structure, PDB entry 6vxx. These 17 lines contain information on the atoms taken from two amino acids, alanine and tyrosine. The rows corresponding to these amino acids’ alpha carbons are shown in green and appear as "CA" under the "Element" column. Column labels are as follows: "Index" refers to the number of the amino acid; "Element" identifies the chemical element to which this atom corresponds; "Chain" indicates which chain on which the atom is found; "Position" identifies the position in the protein of the amino acid from which the atom is taken; "Coordinates" indicates the x, y, and z coordinates of the atom’s position (in angstroms).
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **Note:** The above figure shows just part of the information needed to fully represent a protein structure. For example, a `.pdb` file will also contain information about the disulfide bonds between amino acids. For more information, consult the <a href="http://www.wwpdb.org/documentation/file-format" target="_blank">official PDB documentation</a>).
 {: .notice--info}
@@ -102,13 +102,13 @@ Although the Kabsch algorithm is powerful, we should be careful when applying it
 
 [![Illustration of RMSD limitations with mutations](../assets/images/600px/RMSD_weakness_mutation.png){: .align-center loading="lazy"}](../assets/images/RMSD_weakness_mutation.png)
 (Top) Two hypothetical protein structures that differ in only a single bond angle between the third and fourth amino acids, shown in red. Each circle represents an alpha carbon. (Bottom left) Superimposing the first three amino acids shows how much the change in the bond angle throws off the computation of RMSD by increasing the distances between corresponding alpha carbons. (Bottom right) The Kabsch algorithm would align the centers of gravity of the two structures in order to minimize RMSD between corresponding alpha carbons. This alignment belies the similarity in the structures and makes it difficult for the untrained observer to notice the proteins' similarity.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Another way in which the Kabsch algorithm can be tricked is in the case of an appended substructure that throws off the ordering of the amino acids. The following figure shows a toy example of a structure into which we incorporate a loop, thus throwing off the natural order of comparing amino acids. (The same effect is caused if one or more amino acids are deleted from one of the two proteins.)
 
 [![Illustration of RMSD limitations with flexible loops](../assets/images/600px/RMSD_weakness_loop.png){: .align-center loading="lazy"}](../assets/images/RMSD_weakness_loop.png)
 Two toy two protein structures, one of which includes a loop of three amino acids. After the loop, each amino acid in the orange structure will be compared against an amino acid that occurs farther long in the blue structure, thus increasing *d*(*s*<sub><em>i</em></sub>, *t*<sub><em>i</em></sub>)<sup>2</sup> for each such amino acid.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 To address this second issue, biologists often first align the sequences of two proteins, discarding any amino acids that do not align before performing a vectorization of structures for the RMSD calculation. We will soon see an example of a protein sequence alignment when comparing the coronavirus spike proteins.
 

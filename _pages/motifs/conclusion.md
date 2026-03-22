@@ -44,7 +44,7 @@ The figure below shows plots over time of particle concentrations in our well-mi
 
 [![Simulation chart showing interrupted signal output](../assets/images/600px/nf_sim_interrupted_chart.png){: .align-center loading="lazy"}](../assets/images/nf_sim_interrupted_chart.png)
 A plot of particle concentrations in the well-mixed repressilator model over time. Adding a significant number of *Y* particles to our simulation (the second blue peak) produces little ultimate disturbance to the concentrations of the three particles, which return to normal oscillations within a single cycle.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Because of the spike in the concentration of *Y*, the reaction *Y* + *Z* → *Y* suppresses the concentration of *Z* for longer than usual, and so the concentration of *X* is free to increase for longer than normal. As a result, the next peak of *X* particles is higher than normal.
 
@@ -54,7 +54,7 @@ Even with a much larger jolt to the concentration of *Y*, the concentrations of 
 
 [![Zoomed-in spike in interrupted signal output](../assets/images/600px/nf_sim_interrupted_chart_spike.png){: .align-center loading="lazy"}](../assets/images/nf_sim_interrupted_chart_spike.png)
 A larger increase in the concentration of *Y* particles than in the previous figure does not produce a substantive change in the system.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 The repressilator is not the only network motif that leads to oscillations of particle concentrations, but robustness to disturbance is a shared feature of all these motifs. Furthermore, the repressilator is not the most robust oscillator that we can build. Researchers have shown that at least five components are typically needed to build a very robust oscillator,[^repress] which may help explain why real oscillators tend to have more than three components.
 

@@ -38,7 +38,7 @@ Structural differences are challenging to show with a 2-D image, but if you foll
 
 [![Ridge-like feature in protein structure](../assets/images/600px/Ridge.png){: .align-center loading="lazy"}](../assets/images/Ridge.png)
 A visualization of the loop in the ACE2-binding ridge that is conformationally different between SARS-CoV-2 (left) and SARS-CoV (right). The coronavirus RBD is shown at the bottom in purple, and ACE2 is shown at the top in green. Structural differences cause certain amino acid residues, which are highlighted in various colors and described in the main text, to behave differently when ACE2 contacts each of the two viruses.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 In what follows, we use a three-letter identifier for an amino acid followed by a number to indicate the identity of that amino acid followed by its position within the protein sequence. For example, the phenylalanine at position 486 of the SARS-CoV-2 spike protein will be called Phe486.
 
@@ -55,7 +55,7 @@ Although the interaction with the hydrophobic pocket is the most critical differ
 
 [![Mutation hotspot at position 31](../assets/images/600px/Hotspot31.png){: .align-center loading="lazy"}](../assets/images/Hotspot31.png)
 Visualizations of hotspot 31 in SARS-CoV-2 (left) and SARS-CoV (right). The coronavirus RBD is shown at the bottom in purple, and ACE2 is shown at the top in green. In SARS-CoV, hotspot 31 corresponds to a salt bridge (red), which is broken in SARS-CoV-2 to form a new hydrogen bond with Gln493 (blue)
-{: style="font-size: medium;"}
+{: .img-caption}
 
 The figure above shows how the salt bridge differs in the two viruses. In SARS-CoV, shown on the right, the two residues point towards each other because in the RBM, Tyr442 (colored yellow) supports the salt bridge between Lys31 and Glu35 on ACE2. In SARS-CoV-2, shown on the left, the corresponding amino acid is the less bulky Leu455 (yellow), which provides less support to Lys31. This causes the salt bridge to break, so that Lys31 and Glu35 in ACE2 point in parallel toward Gln493 (colored blue) on the RBD, forming hydrogen bonds with the spike protein.[^Shang].
 
@@ -65,7 +65,7 @@ Finally, we consider **hotspot 353**, which involves another salt bridge, this o
 
 [![Mutation hotspot at position 353](../assets/images/600px/Hotspot353.png){: .align-center loading="lazy"}](../assets/images/Hotspot353.png)
 Visualizations of hotspot 353 in SARS-CoV-2 (left) and SARS-CoV (right). The RBD is shown in purple, and ACE2 is shown in green. In SARS-CoV, the RBD residue Thr487 (yellow) stabilizes the salt bridge between ACE2 residues Lys 353 and Asp38 (red). In SARS-CoV-2, the corresponding RBD residue Asn501 (yellow) provides less support, causing ACE2 residue Lys353 (red residue on the left) to be in a slightly different conformation and form a new hydrogen bond with the RBD.[^Shang]
-{: style="font-size: medium;"}
+{: .img-caption}
 
 In SARS-CoV, the methyl group of Thr487 (colored yellow in the right figure above) supports the salt bridge on ACE2, and the side-chain hydroxyl group of Thr487 forms a hydrogen bond with the RBM backbone. The corresponding SARS-CoV-2 amino acid Asn501 (colored yellow in left figure) also forms a hydrogen bond with the RBM main chain. However, similar to what happened in hotspot 31, Asn501 provides less support to the salt bridge, causing Lys353 on ACE2 (colored red) to be in a different conformation. This allows Lys353 to form an extra hydrogen bond with the main chain of the SARS-CoV-2 RBM while maintaining the salt bridge with Asp38 on ACE2.[^Shang]
 
@@ -89,7 +89,7 @@ The table below shows the interaction energies for each of our three regions of 
 
 [![Energy output graph from NAMD simulation](../assets/images/600px/NAMDEnergy2.png){: .align-center loading="lazy"}](../assets/images/NAMDEnergy2.png)
 ACE2 interaction energies of the chimeric SARS-CoV-2 RBD (left) and SARS-CoV RBD (right). The PDB files contain two biological assemblies, or instances, of the corresponding structure. The first instance includes chain A (ACE2) and chain E (RBD), and the second instance includes chain B (ACE2) and chain F (RBD). The overall interactive energies between the RBD and ACE2 are shown in the first two rows (green). Remaining rows show interaction energies for regions of interest: the loop site (yellow), hotspot 31 (red), and hotspot 353 (gray). Total energy is computed as the sum of electrostatic interactions and van der Waals (vdW) forces.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Furthermore, all three regions of interest have a lower total energy in SARS-CoV-2 than in SARS-CoV, with hotspot 31 (red) having the greatest negative contribution. We now have quantitative evidence that the conformational changes in the three sites do indeed increase the binding affinity between the spike protein and ACE2.
 

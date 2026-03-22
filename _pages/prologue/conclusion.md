@@ -31,7 +31,7 @@ The figure below shows how the Turing patterns produced by the Gray-Scott model 
 
 [![Parameter map showing morphological outcomes from Xmorphia model](../assets/images/600px/xmorphia-parameter-map.jpg){: .align-center loading="lazy" width="400px"}](../assets/images/xmorphia-parameter-map.jpg)
 Changing kill (x-axis) and feed (y-axis) parameters greatly affects the Turing patterns obtained in the Gray-Scott model. Each small square shows the patterns obtained from a given choice of feed and kill rate.  Note that many choices of parameters do not produce Turing patterns, which only result from a narrow "sweet spot" band of parameter choices. Image courtesy: Robert Munafo.[^robert]
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Later in this course, we will see an example of a biological system that is the opposite of fine-tuned. In a **robust** system, perturbations such as parameter variations do not lead to substantive changes in the ultimate behavior of the system.  Robustness is vital for processes, like your heartbeat, that must be resilient to small environmental changes.
 

@@ -73,7 +73,7 @@ Pr(*LT* → *L* + *T*) = *r*<sub>dissociate</sub>/(*r*<sub>bind</sub> + *r*<sub>
 
 [![Visualization of SSA simulation in chemotaxis pathway](../assets/images/600px/chemotaxis_visualizessa.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_visualizessa.png)
 A visualization of a single reaction event used by the Gillespie algorithm for ligand-receptor binding and dissociation. Red circles represent ligands (*L*), and orange wedges represent receptors (*T*). The wait time for the next reaction is drawn from an exponential distribution with mean 1/(*k*<sub>bind</sub> + *k*<sub>dissociate</sub>). The probability of this event corresponding to a binding or dissociation reaction is proportional to the rate of the respective reaction.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 To generalize the Gillespie algorithm to *n* reactions occurring at rates *r*<sub>1</sub>, *r*<sub>2</sub>, …, *r*<sub><em>n</em></sub>, the wait time between reactions will be exponentially distributed with average 1/(*r*<sub>1</sub> + *r*<sub>2</sub> + … + *r*<sub><em>n</em></sub>). Once we select the next reaction to occur, the likelihood that it is the *i*-th reaction is equal to
 
@@ -98,7 +98,7 @@ The figure below demonstrates that the Gillespie algorithm quickly converges qui
 
 [![Snapshot from SSA simulation tutorial step 4](../assets/images/600px/chemotaxis_tutorial4_ssa_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial4_ssa_vscode.png)
 A concentration plot over time for ligand-receptor dynamics via a BioNetGen simulation employing the Gillespie algorithm. Time is shown (in seconds) on the x-axis, and concentration is shown (in molecules/µm<sup>3</sup>) on the y-axis. The molecules quickly reach steady state concentrations that match those identified by hand.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 This simple ligand-receptor model is just the beginning of our study of chemotaxis. In the next section, we will delve into the complex biochemical details of chemotaxis. Furthermore, we will see that the Gillespie algorithm for stochastic simulations will scale easily as our model of this system grows more complex.
 

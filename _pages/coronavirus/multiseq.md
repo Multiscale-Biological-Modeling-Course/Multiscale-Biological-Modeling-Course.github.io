@@ -24,7 +24,7 @@ In part 1, we saw that the spike protein is much more variable than other region
 
 [![Spike protein similarity between coronavirus strains](../assets/images/600px/spike_protein_similarity.png){: .align-center loading="lazy"}](../assets/images/spike_protein_similarity.png)
 Variable and conserved regions in the SARS-CoV and SARS-CoV-2 spike proteins. The S1 domain tends to be more variable, whereas the S2 domain is more conserved.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 One variable spike protein region is the **receptor binding motif (RBM)**, part of the receptor binding domain (RBD), whose structure we predicted using GalaxyWEB in the [homology modeling tutorial](tutorial_homology). The RBM mediates contact with ACE2, as the following simplified animation of the process illustrates.
 
@@ -36,7 +36,7 @@ The figure below shows an alignment of the 70 amino acid long RBM region from SA
 
 [![Alignment of receptor-binding motifs (RBMs)](../assets/images/600px/RBM_alignment.png){: .align-center loading="lazy"}](../assets/images/RBM_alignment.png)
 An alignment of the RBM of the human SARS-CoV virus (first row) and the SARS-CoV-2 virus (second row). Amino acids that are highlighted in green represent matches between the two RBM sequences. Beneath each column, a bar illlustrates conservation between the two sequences, where full conservation indicates a match and partial conservation indicates a mismatch.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 We already know from our previous work in this module that just because the sequence of a protein has been greatly mutated does not mean that the structure of that protein has changed much. Therefore, in this lesson, we will start a structural comparison of the SARS-CoV and SARS-CoV-2 spike proteins. All of this analysis will be performed using the software resources ProDy and VMD.
 
@@ -57,7 +57,7 @@ If two similar protein structures differ in a few locations, then the correspond
 
 [![Diagram of a single bond angle in protein structure](../assets/images/600px/single_bond_angle.png){: .align-center loading="lazy"}](../assets/images/single_bond_angle.png)
 Two toy protein structures in which the bond angle between the third and fourth alpha carbon has been changed. This change does not affect the distance between the *i*-th and *j*-th alpha carbons when *i* and *j* are both at least equal to 4.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 However, note that when *i* and *j* are both at least equal to 4, the distance *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) between the *i*-th and *j*-th alpha carbons in *S* will still be similar to the distance *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) between the same alpha carbons in *T*. This observation leads us to a more rigorous approach for measuring differences in two protein structures, which compares all pairwise intraprotein distances *d*(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>) in one protein structure against the corresponding distances *d*(<em>t</em><sub><em>i</em></sub>, <em>t</em><sub><em>j</em></sub>) in the other structure.
 
@@ -72,7 +72,7 @@ We observe two facts about these contact maps. First, many black values cluster 
 
 [![Contact map of residues in protein structure](../assets/images/600px/Contact.png){: .align-center loading="lazy"}](../assets/images/Contact.png)
 The contact maps of the SARS-CoV-2 spike protein (top left), SARS-CoV spike protein (top right), single chain of the SARS-CoV-2 spike protein (bottom left), and single chain of the SARS-CoV spike protein (bottom right). If the distance between the *i*-th and *j*-th amino acids in a protein structure is 20.0 angstroms or less, then the (*i*, *j*)-th cell of the figure is colored black. The SARS-CoV-2 and SARS spike proteins have very similar contact maps, indicating that they have similar structures.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **STOP:** How do you think a contact map will change as we increase or decrease the threshold distance used to produce that map?
 {: .notice--primary}
@@ -106,13 +106,13 @@ By computing Qres at every position of the two coronavirus RBD regions, we can f
 
 [![Qres analysis results visualized](../assets/images/600px/QresResult.png){: .align-center loading="lazy"}](../assets/images/QresResult.png)
 A snapshot of the sequence alignment between the SARS-CoV RBD (first row) and the SARS-CoV-2 chimeric RBD[^Shang] (second row). Columns are colored along a spectrum from blue (high Qres) to red (low Qres), with positions that correspond to an inserted or deleted amino acid colored red. The region with low Qres corresponds to amino acids at positions 476 to 485 in the SARS-CoV-2 spike protein.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 The figure below shows a 3-D visualization of the ACE2 enzyme (green) bound with the superimposed structures of both the SARS-CoV and SARS-CoV-2 RBD. The same color-coding of columns of the multiple alignment in the figure above is used to color positions in the superimposed RBDs. The low-Qres region of the RBM alignment that we highlighted in the above figure is outlined in the figure below.
 
 [![Qres visualization in VMD software](../assets/images/600px/QresVMD.png){: .align-center loading="lazy"}](../assets/images/QresVMD.png)
 A visualization showing the superimposed structures of the SARS-CoV-2 chimeric RBD[^Shang]  and SARS-CoV RBD, with individual amino acids colored blue or red depending on whether Qres is high or low, respectively.  The ACE2 enzyme is shown in green. The boxed region corresponds to the part of the RBM having a potential structural difference. Because this region is adjacent to ACE2, the structural difference will likely affect ACE2 interactions.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **Note:** Although the rest of the proteins are similar, there are other parts of the RBD at the top of the protein that show dissimilarities in the two proteins, which may be attributable to an experimental artifact.
 {: .notice--info}

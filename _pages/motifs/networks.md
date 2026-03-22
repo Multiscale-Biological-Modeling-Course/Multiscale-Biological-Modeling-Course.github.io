@@ -24,7 +24,7 @@ Note that the edges in the *E. coli* transcription factor network below have dif
 
 [![E. coli transcription factor network in blue and orange](../assets/images/600px/e_coli_tf_network_blue_orange.png){: .align-center loading="lazy"}](../assets/images/e_coli_tf_network_blue_orange.png)
 A subset of the *E. coli* transcription factor network[^eColiNetwork] (click to enlarge). An edge from *X* to *Y* denotes that *X* is a transcription factor that regulates *Y*. Edges corresponding to activation are colored blue, and edges corresponding to repression are colored orange.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **STOP:** Select the expanded view of the transcription factor network in the figure above. Do you notice anything interesting about this network?
 {: .notice--primary}
@@ -37,7 +37,7 @@ A transcription factor is a protein, which means that because of the central dog
 
 [![Example of autoregulation in gene networks](../assets/images/600px/autoregulation_example.png){: .align-center loading="lazy"}](../assets/images/autoregulation_example.png)
 A simplified illustration of autoregulation, in which a gene is transcribed into messenger RNA (mRNA) and then translated into a transcription factor protein, and then this transcription factor regulates the same gene, producing a feedback loop. "Protein" labels the transcription factor binding factor protein, which binds to the DNA encoding this transcription factor, labeled by "Gene".
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Transcription factor autoregulation leads us to ask two questions. First, how can we justify that a transcription factor network has "surprisingly many" loops? And second, if autoregulation is so common, then why would a transcription factor have evolved to regulate its own transcription? We will address these questions in each of the next two lessons.
 

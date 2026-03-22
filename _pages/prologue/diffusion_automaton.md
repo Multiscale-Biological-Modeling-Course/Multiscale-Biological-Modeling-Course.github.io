@@ -42,13 +42,13 @@ We will begin with an example of the diffusion of only *A* particles; we will la
 
 [![Initial concentration map of chemical A](../assets/images/600px/initial_A_concentration.png){: .align-center loading="lazy" width="300px"}](../assets/images/initial_A_concentration.png)
 A 5 x 5 grid showing hypothetical initial concentrations of *A* particles. Cells are labeled by decimal numbers representing their concentration of *A* particles. The central cell has maximum concentration, and no particles are contained in any other cell.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 We will now update the grid of cells after one time step to mimic particle diffusion. To do so, we will spread out the concentration of particles in each square to its eight neighbors. For example, we could assume that 20% of the current cell's concentration diffuses to each of its four adjacent neighbors, and that 5% of the cell's concentration diffuses to each of its four diagonal neighbors. Because the central square in our ongoing example is the only cell with nonzero concentration, the updated concentrations after a single time step are shown in the following figure.
 
 [![Concentration of chemical A after one time step](../assets/images/600px/A_concentration_one_time_step.png){: .align-center loading="lazy" width="300px"}](../assets/images/A_concentration_one_time_step.png)
 A grid showing an update to the system in the previous figure after diffusion of particles after a single time step.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **Note:** The sum of the values in both grids in the figure above is equal to 1, which ensures the conservation of total mass in the system.
 {: .notice--info}
@@ -63,7 +63,7 @@ In summary, the central nine squares after two time steps are as shown in the fo
 
 [![Partial concentration map of A after two time steps](../assets/images/600px/A_concentration_two_time_steps_partial.png){: .align-center loading="lazy" width="300px"}](../assets/images/A_concentration_two_time_steps_partial.png)
 A grid showing an update to the central nine squares of the diffusion system in the previous figure after an additional time step. The cells labeled "?" are left as an exercise for the reader.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **STOP**: What should the values of the "?" cells be in the above figure?
 {: .notice--primary}
@@ -82,7 +82,7 @@ Revisiting our original example, say that <em>d</em><sub><em>A</em></sub> is equ
 
 [![A concentration profile with slower diffusion rate](../assets/images/600px/A_concentration_slower_diffusion.png){: .align-center loading="lazy" width="300px"}](../assets/images/A_concentration_slower_diffusion.png)
 An updated grid of cells showing the concentration of <em>A</em> particles after one time step if <em>d</em><sub><em>A</em></sub> = 0.2.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 ## Adding a second particle to our diffusion simulation
 
@@ -90,7 +90,7 @@ We now will add *B* particles to the simulation, which we assume also start with
 
 [![Diffusion profile for two initial particle sources](../assets/images/600px/two_particle_concentration_diffusion.png){: .align-center loading="lazy" width="300px"}](../assets/images/two_particle_concentration_diffusion.png)
 A figure showing cellular concentrations after one time step for two particles <em>A</em> and <em>B</em> that start at maximum concentration in the central square and diffuse at rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1. Each cell is labeled by the ordered pair ([<em>A</em>], [<em>B</em>]).
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **STOP**: Update the cells in the above figure after another generation of diffusion. Use the diffusion rates <em>d</em><sub><em>A</em></sub> = 0.2 and <em>d</em><sub><em>B</em></sub> = 0.1.
 {: .notice--primary}

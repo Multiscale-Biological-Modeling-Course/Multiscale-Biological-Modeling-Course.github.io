@@ -78,17 +78,17 @@ If we expand the size of the simulation and add multiple clusters of *B* particl
 If we keep the feed rate constant and increase the kill rate slightly to *k* = 0.097, then the patterns change significantly into spots.
 
 [![Gray-Scott pattern formation with parameters F=0.34, k=0.063](../assets/images/600px/gray-scott_f34_k63_first_frame.png){: .align-center loading="lazy"}](../assets/images/gray-scott_f34_k63.gif)
-{: style="font-size: medium;"}
+{: .img-caption}
 
 If we make the *A* particles a little happier as well, increasing  *f* to 0.038 and *k* to 0.099, then we have a different striped pattern.
 
 [![Gray-Scott pattern formation with parameters F=0.38, k=0.061](../assets/images/600px/gray-scott_f38_k61_first_frame.png){: .align-center loading="lazy"}](../assets/images/gray-scott_f38_k61.gif)
-{: style="font-size: medium;"}
+{: .img-caption}
 
 And if we increase *f* to 0.042 and *k* to 0.101, then again we see spots.
 
 [![Gray-Scott pattern formation with parameters F=0.42, k=0.059](../assets/images/600px/gray-scott_f42_k59_first_frame.png){: .align-center loading="lazy"}](../assets/images/gray-scott_f42_k59.gif)
-{: style="font-size: medium;"}
+{: .img-caption}
 
 The point is that very slight changes in our model's parameters can produce drastically different results in terms of the patterns that we witness. In this prologue's conclusion, we will connect this observation back to our original motivation of identifying the cause for animal skin patterns.
 

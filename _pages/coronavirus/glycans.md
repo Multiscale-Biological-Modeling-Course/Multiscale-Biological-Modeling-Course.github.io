@@ -47,13 +47,13 @@ From the visualization we created in the tutorial, we can see that glycans are p
 
 [![Comparison of glycan structures across organisms](../assets/images/600px/GlycanComparison.png){: .align-center loading="lazy"}](../assets/images/GlycanComparison.png)
 This figure shows the SARS-CoV-2 S protein in the closed conformation (left) and the protein with an open conformation of one chain (right) using the PDB entries 6vxx and 6vyb, respectively. The protein chains are shown in dark orange, yellow, and green. The presumed glycans are shown in red. Notice how in the open conformation, the RBD of one of the chain is pointed upwards, exposing it for ACE2 interactions.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Glycans are generally very flexible and have large internal motions that makes it difficult to get an accurate description of their 3D shapes. Fortunately, molecular dynamics (MD) simulations can be employed to predict the motions and shapes of the glycans. With a combination of MD and visualization tools (i.e. VMD), very nice looking snapshots of the glycans on the S protein can be created.
 
 [![Example glycan taken from Grant database](../assets/images/600px/Glycan_Grant.png){: .align-center loading="lazy"}](../assets/images/Glycan_Grant.png)
 Snapshots from molecular dynamics simulations of the SARS-CoV-2 S protein with different glycans shown in green, yellow, orange, and pink. Source: https://doi.org/10.1101/2020.04.07.030445 [^Grant]
-{: style="font-size: medium;"}
+{: .img-caption}
 
 ## SARS-CoV-2 Vaccine
 

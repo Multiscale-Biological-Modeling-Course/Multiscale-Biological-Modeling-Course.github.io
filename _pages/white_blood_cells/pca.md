@@ -23,7 +23,7 @@ Consider a circle inscribed in a square, as shown in the figure below. The ratio
 
 [![circle inscribed in square vs. sphere inscribed in cube illustrating volume ratios in 2D and 3D](../assets/images/600px/inscribed_circle_and_sphere.png){: .align-center loading="lazy"}](../assets/images/inscribed_circle_and_sphere.png)
 A circle inscribed in a square takes up more of the square (78.5 percent) than a sphere inscribed in a cube (52.4 percent).
-{: style="font-size: medium;"}
+{: .img-caption}
 
 We define an *n*-dimensional unit sphere as the set of points in *n*-dimensional space whose Euclidean distance from the origin is at most 1, and an *n*-dimensional cube as the set of points whose coordinates are all between 0 and 1. A precise definition of the volume of a multi-dimensional object is beyond the scope of our work, but as *n* increases, the sphere takes up less and less of the cube. As *n* tends toward infinity, the ratio of the volume of the *n*-dimensional unit sphere to the volume of the *n*-dimensional unit cube approaches zero!
 
@@ -49,13 +49,13 @@ We will introduce dimension reduction using the iris flower dataset that we intr
 
 [![Scatter plot of iris petal length vs. width for all flowers](../assets/images/600px/iris_petal_data_unlabeled.png){: .align-center loading="lazy"}](../assets/images/iris_petal_data_unlabeled.png)
 Petal length (x-axis) plotted against petal width (y-axis) for all flowers in the iris flower dataset.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 A line drawn through the center of the data (see figure below) provides a reasonable estimate of a flower's petal width given its length, and vice-versa. This line, a one-dimensional object, therefore approximates a collection of points in two dimensions.
 
 [![Iris petal data regression line showing best‐fit relationship](../assets/images/600px/iris_flowers_regression_line.png){: .align-center loading="lazy"}](../assets/images/iris_flowers_regression_line.png)
 A line passing through the plot of iris petal length against petal width. The line tells us approximately how long we can expect an iris petal to be given the petal's width, and vice-versa.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **STOP:** How could we have determined the line in the figure above?
 {: .notice--primary}
@@ -66,7 +66,7 @@ Given a line, we use *L*(*x*) to denote the *y*-coordinate of the point on the l
 
 [![visualization of vertical residuals from regression line](../assets/images/600px/residuals_y_coordinates.png){: .align-center loading="lazy" width="300px"}](../assets/images/residuals_y_coordinates.png)
 An example line and data points with a visual depiction of the points' residuals (dashed lines), which visualize the differences in actual y-values and those estimated by the line. The absolute value of a residual is the length of its dashed line, and the sign of a residual corresponds to whether it lies above or below the line.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 As the line changes, so will the points' residuals. The smaller the residuals become, the better the line fits the points. In linear regression, we are looking for the line that minimizes the sum of squared residuals.
 
@@ -74,7 +74,7 @@ Linear regression is not the only way to fit a line to a collection of data. Cho
 
 [![visualization of horizontal residuals when x is dependent variable](../assets/images/600px/residuals_x_coordinates.png){: .align-center loading="lazy" width="300px"}](../assets/images/residuals_x_coordinates.png)
 If *x* is the dependent variable, then the residuals with respect to a line become the horizontal distances between points and the line, and linear regression finds the line that minimizes the sum of the squares of these horizontal residuals over all possible lines through the data.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 **Note:** The linear regression line will likely differ according to which variable we choose as the dependent variable, since the quantity that we are minimizing changes. However, if a linear pattern is present in our data, then the two regression lines will be similar.
 {: .notice--info}
@@ -90,7 +90,7 @@ Instead of considering residuals based on distances to the line in only the *x*-
 
 [![projection of points onto line showing squared‐distance minimization](../assets/images/600px/residuals_projections.png){: .align-center loading="lazy" width="300px"}](../assets/images/residuals_projections.png)
 A line along with a collection of points; dashed lines show the shortest segments connecting each data point to its projection onto the line, which is the point on the line that is closest to the data point.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 The first principal component is often said to be the line that "explains the most variance in the data". If a correspondence exists between lily petal width and length, then the distances from points to the first principal component correspond to variation due to randomness. By minimizing the sum of squares of these distances, we limit the amount of variation in our data that we cannot explain with a linear relationship.
 
@@ -98,7 +98,7 @@ The following animated GIF shows a line rotating through a collection of data po
 
 [![first frame of animated PCA rotation illustrating distance changes](../assets/images/600px/pca_rotating_line_first_frame.png){: .align-center loading="lazy"}](../assets/images/pca_rotating_line_first_frame.png)
 An animated GIF showing that the distances from points to their projections onto a line change as the line rotates. The line of best fit is the one in which the sum of the square of these distances is minimized.  Source: amoeba, StackExchange user.[^amoeba]
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Another benefit of finding the first principal component of a dataset is that it allows us to *reduce* the dimensionality of our dataset from two dimensions to one. In the figure above, the projection of each point onto the line is shown in red. The projections of a collection of data points onto their first principal component gives a one-dimensional representation of the data.
 
@@ -107,7 +107,7 @@ Say that we wanted to generalize these ideas to three-dimensional space. The fir
 [![image-center](../assets/images/600px/three_dimensional_pca.png){: .align-center loading="lazy"}](../assets/images/three_dimensional_pca.png)
 [![image-center](../assets/images/600px/three_dimensional_pca_plane.png){: .align-center loading="lazy"}](../assets/images/three_dimensional_pca_plane.png)
 (Top) A collection of seven points, each labeled with a different color. Each point is projected onto the plane that minimizes the sum of squared distances between points and the plane. The line indicated is the first principal component of the data; this line lies within the plane, which is the case for any dataset. (Bottom) A reorientation of the plane such that the first principal component is shown as the x-axis, with colored points corresponding to the projections onto the plane from the top figure. The y-axis of this plane is known as the "second principal component" of the data.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Our three-dimensional minds will not permit us the intuition needed to visualize the extension of this idea into higher dimensions, but we can generalize these concepts mathematically. Given a collection of *m* data points (or vectors) in *n*-dimensional space, we are looking for a *d*-dimensional **hyperplane**, or an embedding of *d*-dimensional space inside *n*-dimensional space, such that the sum of squared distances from the points to the hyperplane is minimized. By taking the projections of points to their nearest point on this hyperplane, we reduce the dimension of the dataset from *n* to *d*.
 
@@ -133,19 +133,19 @@ The figure below shows a two-dimensional projection for individuals of known Eur
 
 [![image-center](../assets/images/600px/genotyping_europe.png){: .align-center loading="lazy" width="500px"}](../assets/images/genotyping_europe.png)
 The projection of a collection of marker vectors sampled from individuals of known European ethnicity onto the plane produced by PCA with *d* = 2. Individuals cluster by country, and neighboring European countries remain nearby in the projected dataset.[^Novembre2008]
-{: style="font-size: medium;"}
+{: .img-caption}
 
 If we zoom in on Switzerland, we can see that the countries around Switzerland tend to pull individuals toward them based on language spoken (see figure below).
 
 [![image-center](../assets/images/600px/genotyping_switzerland.png){: .align-center loading="lazy" width="400px"}](../assets/images/genotyping_switzerland.png)
 A PCA plot (*d* = 2) of individuals from Switzerland as well as neighboring countries shows that an individual's mother tongue correlates with the individual's genetic similarity to representatives from the neighboring country where that language is spoken.[^Novembre2008]
-{: style="font-size: medium;"}
+{: .img-caption}
 
 And if we zoom farther out, then we can see continental patterns emerge, with India standing out as its own entity. What is particularly remarkable about all these figures is that humans on the whole are genetically very similar, and yet PCA is able to find evidence of human migrations and separation lurking within our DNA.
 
 [![image-center](../assets/images/600px/genotyping_continents.png){: .align-center loading="lazy" width="400px"}](../assets/images/genotyping_continents.png)
 A PCA plot (*d* = 2) shows clustering of individuals from Europe, Asia, Africa, and India.[^Xing2009]
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Now that we have established the power of PCA to help us see patterns in high-dimensional biological data, we are ready to use CellOrganizer to build a shape space for our WBC images and apply PCA to this shape space to produce a lower-dimensional representation of the space that we can visualize.
 
@@ -161,13 +161,13 @@ The figure below shows the shape space of WBC images, reduced to three dimension
 
 [![image-center](../assets/images/600px/cellorg_pca_graph.png){: .align-center loading="lazy"}](../assets/images/cellorg_pca_graph.png)
 The projection of each WBC shape vector onto a three-dimensional PCA hyperplane produces the above three-dimensional space. Granulocytes are shown in blue, lymphocytes are shown in orange, and monocytes are shown in green.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 We can also subdivide granulocytes into basophils, eosinophils, and neutrophils. Updating our labels according to this subdivision produces the following figure.
 
 [![image-center](../assets/images/600px/cellorg_pca_graph_cell.png){: .align-center loading="lazy"}](../assets/images/cellorg_pca_graph_cell.png)
 The reduced dimension shape space from the previous figure, with granulocytes subdivided into basophils, eosinophils, and neutrophils.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 Although images from the same family do not cluster as tightly as the iris flower dataset --- which could be criticized as an unrealistic representation of real datasets --- images from the same type do appear to be nearby. This fact should give us hope that proximity in a shape space of lower dimension may help us correctly classify images of unknown family.
 

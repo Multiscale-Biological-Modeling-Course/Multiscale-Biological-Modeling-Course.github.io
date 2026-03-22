@@ -33,13 +33,13 @@ For example, the following figure shows the concentration over time of phosphory
 
 [![Chemotaxis model showing ligand addition phase 1](../assets/images/600px/chemotaxis_tutorial_addition01_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_addition01_vscode.png)
 Plots of relevant molecule concentrations in our model (in number of molecules in the cell) over time (in seconds) when the concentration of ligand grows exponentially with *l*<sub>0</sub> = 1000 and *k* = 0.1. The concentration of bound ligand (shown in red) quickly hits saturation, which causes a minimum in phosphorylated CheY (and therefore a low tumbling frequency). To respond, the cell increases the methylation of receptors, which boosts the concentration of phosphorylated CheY back to equilibrium.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 The following figure shows the results of multiple simulations in which we vary the growth parameter *k* and plot only the concentration of phosphorylated CheY over time. The larger the value of *k*, the faster the increase in receptor binding, and the steeper the drop in the concentration of phosphorylated CheY.
 
 [![Chemotaxis model after additional ligand exposure](../assets/images/600px/chemotaxis_tutorial_addition03.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_addition03.png)
 Plots of the concentration of phosphorylated CheY over time (in seconds) for different growth rates *k* of ligand concentration. The larger the value of *k*, the steeper the initial drop in the concentration of phosphorylated CheY, and the faster that methylation returns the concentration of phosphorylated CheY to equilibrium. The same equilibrium is obtained regardless of the value of *k*.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 More importantly, the above figure further illustrates the *robustness* of bacterial chemotaxis to the rate of growth in ligand concentration. Whether the growth of the attractant is slow or fast, methylation will always bring the cell back to the same equilibrium concentration of phosphorylated CheY and therefore the same background tumbling frequency.
 
@@ -63,13 +63,13 @@ The following figure plots the concentrations of molecules in our model as the c
 
 [![Chemotaxis model showing ligand removal phase 1](../assets/images/600px/chemotaxis_tutorial_removal01_vscode.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_removal01_vscode.png)
 Molecular concentrations (in number of molecules in the cell) over time (in seconds) for a simulated bacterium traveling down an attractant gradient with *l*<sub>0</sub> = 10<sup>7</sup> and *k* equal to -0.3. Phosphorylated CheY follows the opposite pattern to traveling up an attractant gradient, with the concentration of phosphorylated CheY rising quickly only to slowly decrease to equilibrium due to demethylation.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 To be thorough, we should also test the robustness of our model to see whether the CheY concentration will return to the same steady state for a variety of values of *k* when *k* is negative. As in the case of an increasing gradient, the figure below shows that the more sudden the change in the concentration of attractant (i.e., the more negative the value of *k*), the sharper the spike. And yet regardless of the value of *k*, methylation does its work to bring the concentration back to the same steady state, which has been confirmed by experimental observations.[^Krembel2015]
 
 [![Chemotaxis model after further ligand removal](../assets/images/600px/chemotaxis_tutorial_removal02.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_tutorial_removal02.png)
 Varying values of *k* in our exponential decrease in the concentration of attractant ligand produce the same equilibrium concentration of phosphorylated CheY. The smaller the value of *k*, the steeper the initial spike, and the faster the recovery to steady state.
-{: style="font-size: medium;"}
+{: .img-caption}
 
 ## From changing tumbling frequencies to an exploration algorithm
 
