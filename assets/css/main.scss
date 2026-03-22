@@ -392,14 +392,14 @@ code, pre, kbd, samp {
    Site footer
    ============================================================ */
 .page__footer {
-  background: #1a1a1a !important;
-  color: rgba(255,255,255,0.6);
+  background: #3a3a3a !important;
+  color: rgba(255,255,255,0.75);
   padding: 0 !important;
   font-size: 0.88rem;
 }
 
 .page__footer a {
-  color: rgba(255,255,255,0.6) !important;
+  color: rgba(255,255,255,0.75) !important;
   text-decoration: none !important;
 }
 
@@ -411,10 +411,10 @@ code, pre, kbd, samp {
 .site-footer__inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 3.5rem 1.5rem 3rem;
+  padding: 2rem 1.5rem 1.75rem;
   display: grid;
   grid-template-columns: auto 1fr auto;
-  align-items: start;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -437,17 +437,17 @@ code, pre, kbd, samp {
 }
 
 .site-footer__logo--cmu {
-  height: 26px;
+  height: 36px;
   width: auto;
-  opacity: 0.75;
+  opacity: 0.85;
   transition: opacity 0.2s;
   &:hover { opacity: 1; }
 }
 
 .site-footer__logo--philomath {
-  height: 30px;
+  height: 40px;
   width: auto;
-  opacity: 0.75;
+  opacity: 0.85;
   transition: opacity 0.2s;
   &:hover { opacity: 1; }
 }
@@ -464,10 +464,10 @@ code, pre, kbd, samp {
 
 .site-footer__legal {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.55);
   line-height: 1.6;
-  a { color: rgba(255,255,255,0.45) !important; }
-  a:hover { color: rgba(255,255,255,0.8) !important; }
+  a { color: rgba(255,255,255,0.6) !important; }
+  a:hover { color: rgba(255,255,255,0.9) !important; }
   em { font-style: italic; }
 }
 
