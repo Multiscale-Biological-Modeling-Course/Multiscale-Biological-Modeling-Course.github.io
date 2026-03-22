@@ -73,24 +73,7 @@ exclude:
   - assets/images_CMYK
   - assets/old
   - assets/tex
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
-# Travis bundles all gems in the vendor directory on its servers,
-# which Jekyll will mistakenly read.
-# This will likely make the process fail.
-# To avoid this, add vendor to the exclude list in your _config.yml file.
-exclude: [vendor]
+  - vendor
 
 # Plugins (previously gems:)
 plugins:
@@ -118,15 +101,41 @@ algolia:
 footer: custom
 
 defaults:
-  # _pages
+  # _pages (global)
   - scope:
       path: "_pages"
       type: pages
     values:
       layout: single
-      comments: true # adding comments
-      share: false # don't add social sharing to pages
+      comments: true
+      share: false
       author_profile: false
+
+  # Per-module og_image defaults — individual lesson pages inherit their module's image
+  - scope:
+      path: "_pages/prologue"
+    values:
+      og_image: "/assets/images/gray_scott_jupyter_high-res.png"
+
+  - scope:
+      path: "_pages/motifs"
+    values:
+      og_image: "/assets/images/repressilator_chart.png"
+
+  - scope:
+      path: "_pages/chemotaxis"
+    values:
+      og_image: "/assets/images/ecoli_glucose.png"
+
+  - scope:
+      path: "_pages/coronavirus"
+    values:
+      og_image: "/assets/images/SARS_spike_proteins.jpg"
+
+  - scope:
+      path: "_pages/white_blood_cells"
+    values:
+      og_image: "/assets/images/normal_adult_blood_smear.JPG"
 
 category_archive:
   type: liquid
