@@ -1,7 +1,7 @@
 ---
 permalink: /glossary/
-title: "Glossary"
-description: "Key terms in biological modeling, from reaction-diffusion systems and network motifs to protein structure and machine learning."
+title: "Glossary of Biological Modeling Terms"
+description: "Definitions of key terms in biological modeling: reaction-diffusion systems, network motifs, protein structure prediction, chemotaxis, machine learning, and more."
 comments: false
 share: false
 exclude_book_buttons: true
@@ -11,6 +11,7 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.6"
   overlay_image: /assets/images/f38_k61_compressed.webp
+  og_image: "/assets/images/turing_hero_poster.jpg"
   image_alt: "Turing pattern stripes produced by the Gray-Scott model."
 ---
 

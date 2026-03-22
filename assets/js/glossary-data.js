@@ -13,7 +13,7 @@ var GLOSS_DATA = {
     anchor: "ab-initio-structure-prediction"
   },
   "accuracy": {
-    def: "The fraction of data points a classifier correctly assigns to their true class; can be misleading when classes are imbalanced.",
+    def: "The fraction of data points a classifier correctly assigns to their true class. It can be misleading when classes are imbalanced, because a classifier can achieve high accuracy simply by predicting the majority class every time.",
     anchor: "accuracy"
   },
   "adaptation": {
@@ -33,17 +33,17 @@ var GLOSS_DATA = {
     anchor: "anisotropic-network-model-anm"
   },
   "attractant": {
-    def: "A chemical signal that bacteria move toward; common attractants for <em>E.\u00a0coli</em> include glucose and other electron acceptors.",
+    def: "A chemical signal that bacteria move toward. Common attractants for <em>E.\u00a0coli</em> include glucose and other electron acceptors.",
     anchor: "attractant"
   },
   "autoregulation": {
-    def: "A process in which a transcription factor binds to its own gene\u2019s regulatory region; negative autoregulation \u2014 where it represses its own production \u2014 is one of the most common network motifs.",
+    def: "A process in which a transcription factor binds to its own gene\u2019s regulatory region. When it represses its own production, this is called negative autoregulation, one of the most common network motifs.",
     anchor: "autoregulation"
   },
 
   /* B */
   "b-factor": {
-    def: "A measure in X-ray crystallography structures reflecting uncertainty in each atom\u2019s position; regions with high B-factors are more flexible.",
+    def: "A measure in X-ray crystallography structures reflecting uncertainty in each atom\u2019s position. Regions with high B-factors are more flexible and less precisely located.",
     anchor: "b-factor-temperature-factor"
   },
   "beta sheet": {
@@ -51,7 +51,7 @@ var GLOSS_DATA = {
     anchor: "beta-sheet"
   },
   "brownian motion": {
-    def: "The random movement of a small particle caused by collisions with surrounding molecules; the physical mechanism underlying diffusion.",
+    def: "The random movement of a small particle caused by collisions with surrounding molecules. It is the physical mechanism underlying diffusion.",
     anchor: "brownian-motion"
   },
 
@@ -61,7 +61,7 @@ var GLOSS_DATA = {
     anchor: "central-dogma-of-molecular-biology"
   },
   "cellular automaton": {
-    def: "A grid of cells where each cell\u2019s state updates at each time step based on fixed rules from its current state and its neighbors\u2019 states.",
+    def: "A grid of cells where each cell\u2019s state updates at each time step based on fixed rules that depend on its current state and its neighbors\u2019 states.",
     anchor: "cellular-automaton"
   },
   "coarse-grained model": {
@@ -81,7 +81,7 @@ var GLOSS_DATA = {
     anchor: "contact-map"
   },
   "cross-correlation": {
-    def: "A metric from \u22121 to 1 measuring how similarly two protein residues move: near 1 means they move together; near \u22121 means opposite directions.",
+    def: "A metric from \u22121 to 1 measuring how similarly two protein residues move. A value near 1 means they move together; a value near \u22121 means they move in opposite directions.",
     anchor: "cross-correlation"
   },
   "cross-validation": {
@@ -89,15 +89,15 @@ var GLOSS_DATA = {
     anchor: "cross-validation"
   },
   "cryo-electron microscopy": {
-    def: "A protein structure technique where molecules are flash-frozen and imaged with an electron microscope, requiring no crystals and capturing multiple conformations.",
+    def: "A protein structure technique where molecules are flash-frozen and imaged with an electron microscope, requiring no crystals and capable of capturing multiple conformations.",
     anchor: "cryo-electron-microscopy-cryo-em"
   },
   "curse of dimensionality": {
-    def: "Counterintuitive phenomena in high-dimensional spaces \u2014 such as near-equidistant random points \u2014 that make distance-based classifiers less effective.",
+    def: "A collection of counterintuitive phenomena that arise in high-dimensional spaces, such as nearly all random points becoming equidistant from each other, that make distance-based classifiers less effective.",
     anchor: "curse-of-dimensionality"
   },
   "chemotaxis": {
-    def: "The directed movement of an organism in response to a chemical gradient \u2014 toward attractants and away from repellents.",
+    def: "The directed movement of an organism in response to a chemical gradient, swimming toward attractants and away from repellents.",
     anchor: "chemotaxis"
   },
   "circadian rhythm": {
@@ -119,7 +119,7 @@ var GLOSS_DATA = {
     anchor: "damped-oscillation"
   },
   "dephosphorylation": {
-    def: "The removal of a phosphoryl group from a molecule; in chemotaxis, dephosphorylation of CheY by CheZ rapidly turns off the tumbling signal.",
+    def: "The removal of a phosphoryl group from a molecule. In chemotaxis, dephosphorylation of CheY by CheZ rapidly turns off the tumbling signal.",
     anchor: "dephosphorylation"
   },
   "diffusion": {
@@ -133,7 +133,7 @@ var GLOSS_DATA = {
     anchor: "elastic-network-model-enm"
   },
   "electrostatic interactions": {
-    def: "Forces between charged amino acid side chains \u2014 attraction between opposite charges and repulsion between like charges \u2014 that help determine protein conformation.",
+    def: "Forces between charged amino acid side chains that help determine protein conformation, including attraction between opposite charges and repulsion between like charges.",
     anchor: "electrostatic-interactions"
   },
   "emergent behavior": {
@@ -141,17 +141,17 @@ var GLOSS_DATA = {
     anchor: "emergent-behavior"
   },
   "euclidean distance": {
-    def: "The straight-line distance between two points in n-dimensional space; the standard distance metric used by k-nearest neighbors classifiers.",
+    def: "The straight-line distance between two points in n-dimensional space, and the standard distance metric used by k-nearest neighbors classifiers.",
     anchor: "euclidean-distance"
   },
   "exponential distribution": {
-    def: "A probability distribution describing the wait time between events in a Poisson process; the Gillespie algorithm draws reaction times from it.",
+    def: "A probability distribution describing the wait time between events in a Poisson process. The Gillespie algorithm draws reaction times from this distribution.",
     anchor: "exponential-distribution"
   },
 
   /* F */
   "feedforward loop": {
-    def: "A network motif in which transcription factor X regulates both Y and Z, and Y also regulates Z, enabling noise filtering, pulse generation, and sign-sensitive delay.",
+    def: "A network motif in which transcription factor X regulates both Y and Z, and Y also regulates Z. This architecture enables noise filtering, pulse generation, and sign-sensitive delay.",
     anchor: "feedforward-loop-ffl"
   },
   "force field": {
@@ -169,7 +169,7 @@ var GLOSS_DATA = {
     anchor: "gaussian-network-model-gnm"
   },
   "genetic code": {
-    def: "The universal mapping from RNA codons to amino acids; redundant since most amino acids are specified by multiple codons.",
+    def: "The universal mapping from RNA codons to amino acids, which is redundant because most amino acids are encoded by multiple codons.",
     anchor: "genetic-code"
   },
   "gillespie algorithm": {
@@ -181,7 +181,7 @@ var GLOSS_DATA = {
     anchor: "glycan-shield"
   },
   "glycan": {
-    def: "A carbohydrate structure attached to proteins or lipids; on the coronavirus spike protein, glycans form a shield against antibody detection.",
+    def: "A carbohydrate structure attached to proteins or lipids. On the coronavirus spike protein, glycans form a shield against antibody detection.",
     anchor: "glycan"
   },
   "gray-scott model": {
@@ -193,7 +193,7 @@ var GLOSS_DATA = {
     anchor: "genome"
   },
   "granulocyte": {
-    def: "A white blood cell family characterized by a multilobular nucleus; includes neutrophils, eosinophils, and basophils.",
+    def: "A white blood cell family characterized by a multilobular nucleus, including neutrophils, eosinophils, and basophils.",
     anchor: "granulocyte"
   },
 
@@ -203,7 +203,7 @@ var GLOSS_DATA = {
     anchor: "homology-modeling"
   },
   "homotrimer": {
-    def: "A protein complex formed from three identical chains; the coronavirus spike protein is a homotrimer.",
+    def: "A protein complex formed from three identical chains. The coronavirus spike protein is a homotrimer.",
     anchor: "homotrimer"
   },
 
@@ -219,7 +219,7 @@ var GLOSS_DATA = {
     anchor: "kabsch-algorithm"
   },
   "kill rate": {
-    def: "In the Gray-Scott model, the rate at which the predator particle B is removed; together with feed rate it governs which Turing pattern is produced.",
+    def: "In the Gray-Scott model, the rate at which the predator particle B is removed. Together with feed rate it governs which Turing pattern is produced.",
     anchor: "kill-rate"
   },
   "k-nearest neighbors": {
@@ -233,15 +233,15 @@ var GLOSS_DATA = {
     anchor: "levinthals-paradox"
   },
   "ligand": {
-    def: "A molecule that binds to a receptor protein; in chemotaxis, attractants and repellents are ligands that bind MCP receptors on <em>E.\u00a0coli</em>\u2019s surface.",
+    def: "A molecule that binds to a receptor protein. In chemotaxis, attractants and repellents are ligands that bind MCP receptors on <em>E.\u00a0coli</em>\u2019s surface.",
     anchor: "ligand"
   },
   "local minimum": {
-    def: "A point in an optimization landscape lower than all nearby points but not necessarily the global minimum; a central hazard in ab initio structure prediction.",
+    def: "A point in an optimization landscape lower than all nearby points but not necessarily the global minimum. It is a central hazard in ab initio structure prediction.",
     anchor: "local-minimum"
   },
   "lymphocyte": {
-    def: "A white blood cell family with a small, rounded nucleus; includes B cells and T cells that play central roles in adaptive immunity.",
+    def: "A white blood cell family with a small, rounded nucleus, including B cells and T cells that play central roles in adaptive immunity.",
     anchor: "lymphocyte"
   },
 
@@ -251,7 +251,7 @@ var GLOSS_DATA = {
     anchor: "mathematically-controlled-comparison"
   },
   "methylation": {
-    def: "The addition of a methyl group (\u2013CH\u2083) to a molecule; in <em>E.\u00a0coli</em> chemotaxis, MCP methylation serves as molecular memory enabling adaptation.",
+    def: "The addition of a methyl group (\u2013CH\u2083) to a molecule. In <em>E.\u00a0coli</em> chemotaxis, MCP methylation serves as molecular memory that enables adaptation.",
     anchor: "methylation"
   },
   "molecular dynamics": {
@@ -259,7 +259,7 @@ var GLOSS_DATA = {
     anchor: "molecular-dynamics-md"
   },
   "monocyte": {
-    def: "A white blood cell family with a single irregularly shaped nucleus; the largest white blood cells, able to differentiate into macrophages.",
+    def: "A white blood cell family with a single irregularly shaped nucleus. Monocytes are the largest white blood cells and can differentiate into macrophages.",
     anchor: "monocyte"
   },
   "morphogenesis": {
@@ -281,7 +281,7 @@ var GLOSS_DATA = {
     anchor: "network-motif"
   },
   "normal mode analysis": {
-    def: "A method for decomposing protein collective motions into independent vibrational modes; the slowest modes correspond to the largest-scale, functionally relevant motions.",
+    def: "A method for decomposing protein collective motions into independent vibrational modes. The slowest modes correspond to the largest-scale, functionally relevant motions.",
     anchor: "normal-mode-analysis-nma"
   },
 
@@ -291,7 +291,7 @@ var GLOSS_DATA = {
     anchor: "phosphorylation-cascade"
   },
   "phosphorylation": {
-    def: "A chemical reaction that attaches a phosphoryl group to a protein, changing its shape and activity; a key mechanism for rapid intracellular signaling.",
+    def: "A chemical reaction that attaches a phosphoryl group to a protein, changing its shape and activity. It is a key mechanism for rapid intracellular signaling.",
     anchor: "phosphorylation"
   },
   "peptide bond": {
@@ -299,7 +299,7 @@ var GLOSS_DATA = {
     anchor: "peptide-bond"
   },
   "poisson distribution": {
-    def: "A probability distribution modeling the number of independent events in a fixed time interval; the foundation of the Gillespie algorithm.",
+    def: "A probability distribution modeling the number of independent events in a fixed time interval and the foundation of the Gillespie algorithm.",
     anchor: "poisson-distribution"
   },
   "principal component analysis": {
@@ -311,7 +311,7 @@ var GLOSS_DATA = {
     anchor: "protein-data-bank-pdb"
   },
   "protein structure prediction": {
-    def: "The computational problem of determining a protein\u2019s 3D folded shape from its amino acid sequence; largely solved by AlphaFold in 2020.",
+    def: "The computational problem of determining a protein\u2019s 3D folded shape from its amino acid sequence, largely solved by AlphaFold in 2020.",
     anchor: "protein-structure-prediction"
   },
   "protein domain": {
@@ -321,7 +321,7 @@ var GLOSS_DATA = {
 
   /* Q */
   "q per residue": {
-    def: "A 0\u20131 metric measuring structural similarity at a specific residue position between two proteins; near 1 means nearly identical local structure.",
+    def: "A 0\u20131 metric measuring structural similarity at a specific residue position between two proteins. A value near 1 means nearly identical local structure.",
     anchor: "q-per-residue-qres"
   },
 
@@ -335,7 +335,7 @@ var GLOSS_DATA = {
     anchor: "receptor-binding-domain-rbd"
   },
   "random walk": {
-    def: "A path generated by steps each taken in a randomly chosen direction; after n steps the expected distance from the origin is proportional to \u221an.",
+    def: "A path generated by steps each taken in a randomly chosen direction. After n steps the expected distance from the origin is proportional to \u221an.",
     anchor: "random-walk"
   },
   "repressilator": {
@@ -343,7 +343,7 @@ var GLOSS_DATA = {
     anchor: "repressilator"
   },
   "response time": {
-    def: "The time a system takes to reach steady state after receiving a stimulus; negative autoregulation accelerates this compared to an unregulated gene.",
+    def: "The time a system takes to reach steady state after receiving a stimulus. Negative autoregulation accelerates this compared to an unregulated gene.",
     anchor: "response-time"
   },
   "robustness": {
@@ -351,7 +351,7 @@ var GLOSS_DATA = {
     anchor: "robustness"
   },
   "root mean square deviation": {
-    def: "A measure of the average distance between corresponding points in two structures after optimal alignment; widely used to compare predicted and known protein structures.",
+    def: "A measure of the average distance between corresponding points in two structures after optimal alignment, widely used to compare predicted and known protein structures.",
     anchor: "root-mean-square-deviation-rmsd"
   },
   "rule-based modeling": {
@@ -359,15 +359,15 @@ var GLOSS_DATA = {
     anchor: "rule-based-modeling"
   },
   "run and tumble": {
-    def: "The two-mode locomotion of <em>E.\u00a0coli</em>: counterclockwise flagella rotation propels it forward (run); clockwise rotation reorients it randomly (tumble).",
+    def: "The two-mode locomotion of <em>E.\u00a0coli</em>. Counterclockwise flagella rotation propels it forward (run), while clockwise rotation reorients it randomly (tumble).",
     anchor: "run-and-tumble"
   },
   "recall": {
-    def: "The fraction of true positives a classifier correctly identifies; low recall means dangerous false negatives in medical diagnostics.",
+    def: "The fraction of true positive examples a classifier correctly identifies. Low recall leads to dangerous false negatives in medical diagnostics.",
     anchor: "recall-sensitivity"
   },
   "repellent": {
-    def: "A chemical signal that bacteria move away from; <em>E.\u00a0coli</em> increases its tumbling frequency to escape regions of high repellent concentration.",
+    def: "A chemical signal that bacteria move away from. <em>E.\u00a0coli</em> increases its tumbling frequency to escape regions of high repellent concentration.",
     anchor: "repellent"
   },
 
@@ -385,11 +385,11 @@ var GLOSS_DATA = {
     anchor: "salt-bridge"
   },
   "shape space": {
-    def: "A mathematical space where each cell nucleus shape is encoded as a point; distance in shape space corresponds to dissimilarity in shape.",
+    def: "A mathematical space where each cell nucleus shape is encoded as a point. Distance in shape space corresponds to dissimilarity in shape.",
     anchor: "shape-space"
   },
   "spike protein": {
-    def: "A surface protein on coronaviruses that binds to human ACE2 receptors to gain cell entry; the primary target of COVID-19 vaccines.",
+    def: "A surface protein on coronaviruses that binds to human ACE2 receptors to gain cell entry and is the primary target of COVID-19 vaccines.",
     anchor: "spike-protein"
   },
   "steady state": {
@@ -399,17 +399,17 @@ var GLOSS_DATA = {
 
   /* T */
   "transcription factor": {
-    def: "A protein that binds to DNA near a gene and either activates or represses transcription; the master regulators of gene expression.",
+    def: "A protein that binds to DNA near a gene and either activates or represses transcription, making transcription factors the master regulators of gene expression.",
     anchor: "transcription-factor"
   },
   "turing patterns": {
-    def: "Striking spatial patterns \u2014 stripes, spots, and irregular textures \u2014 that arise spontaneously from reaction-diffusion systems, first predicted by Alan Turing in 1952.",
+    def: "Striking spatial patterns, including stripes, spots, and irregular textures, that arise spontaneously from reaction-diffusion systems. Alan Turing first predicted them in 1952.",
     anchor: "turing-patterns"
   },
 
   /* V */
   "van der waals interactions": {
-    def: "Weak attractive and repulsive forces between atoms from temporary electron distribution fluctuations; significant in aggregate for protein stability.",
+    def: "Weak attractive and repulsive forces between atoms arising from temporary electron distribution fluctuations. Though individually tiny, they are significant in aggregate for protein stability.",
     anchor: "van-der-waals-interactions"
   },
 
@@ -419,7 +419,7 @@ var GLOSS_DATA = {
     anchor: "well-mixed-assumption"
   },
   "white blood cell": {
-    def: "An immune system cell (leukocyte) that circulates in blood; the three major families \u2014 granulocytes, monocytes, lymphocytes \u2014 are distinguishable by nucleus shape.",
+    def: "An immune system cell (leukocyte) that circulates in the blood. The three major families are granulocytes, monocytes, and lymphocytes, distinguishable by the shape of their nucleus.",
     anchor: "white-blood-cell-leukocyte"
   },
 
