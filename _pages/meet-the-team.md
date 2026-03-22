@@ -13,21 +13,7 @@ comments: false
 share: false
 ---
 
-<div class="bm-founder">
-  <div class="bm-founder__photo">
-    <img src="../assets/images/600px/compeau_phillip_2023.jpg" alt="Phillip Compeau, Founder and Director of Biological Modeling" loading="lazy">
-  </div>
-  <div class="bm-founder__bio">
-    <p class="bm-founder__eyebrow">Founder &amp; Director</p>
-    <h2 class="bm-founder__name">Phillip Compeau</h2>
-    <div class="bm-founder__text" markdown="1">
-Phillip Compeau is a Teaching Professor of Computational Biology and the Assistant Dean for Innovation in Computing Education in the School of Computer Science at Carnegie Mellon University. He directs the [undergraduate program in computational biology](http://www.cbd.cmu.edu/education/bs-in-computational-biology/) and co-directs the [Precollege Program in Computational Biology](http://www.cbd.cmu.edu/education/pre-college-program-in-computational-biology/), both of which he co-founded.
-
-Phillip is passionate about open online education, and his education projects have reached hundreds of thousands of learners around the world. He is the co-author of [Bioinformatics Algorithms: An Active Learning Approach](http://bioinformaticsalgorithms.org), which has been adopted by 200 instructors in 40 countries, and which powers the popular [Bioinformatics Specialization on Coursera](https://www.coursera.org/specializations/bioinformatics). He co-founded the learning platform [Rosalind](http://rosalind.info) for learning programming, bioinformatics, and algorithms through independent problem solving. He founded [Programming for Lovers](http://compeau.cbd.cmu.edu/programming-for-lovers/), an online course in introductory programming motivated by fun scientific applications.
-    </div>
-    <a href="https://compeau.cbd.cmu.edu" class="bm-founder__link" target="_blank">Home Page →</a>
-  </div>
-</div>
+<div class="bm-founder"><div class="bm-founder__photo"><img src="../assets/images/600px/compeau_phillip_2023.jpg" alt="Phillip Compeau, Founder and Director of Biological Modeling" loading="lazy"></div><div class="bm-founder__bio"><p class="bm-founder__eyebrow">Founder &amp; Director</p><h2 class="bm-founder__name">Phillip Compeau</h2><div class="bm-founder__text"><p>Phillip Compeau is a Teaching Professor of Computational Biology and the Assistant Dean for Innovation in Computing Education in the School of Computer Science at Carnegie Mellon University. He directs the <a href="http://www.cbd.cmu.edu/education/bs-in-computational-biology/">undergraduate program in computational biology</a> and co-directs the <a href="http://www.cbd.cmu.edu/education/pre-college-program-in-computational-biology/">Precollege Program in Computational Biology</a>, both of which he co-founded.</p><p>Phillip is passionate about open online education, and his education projects have reached hundreds of thousands of learners around the world. He is the co-author of <a href="http://bioinformaticsalgorithms.org">Bioinformatics Algorithms: An Active Learning Approach</a>, which has been adopted by 200 instructors in 40 countries, and which powers the popular <a href="https://www.coursera.org/specializations/bioinformatics">Bioinformatics Specialization on Coursera</a>. He co-founded the learning platform <a href="http://rosalind.info">Rosalind</a> for learning programming, bioinformatics, and algorithms through independent problem solving. He founded <a href="http://compeau.cbd.cmu.edu/programming-for-lovers/">Programming for Lovers</a>, an online course in introductory programming motivated by fun scientific applications.</p></div><a href="https://compeau.cbd.cmu.edu" class="bm-founder__link" target="_blank">Home Page →</a></div></div>
 
 <h3 class="team-section__label">Content Team</h3>
 
