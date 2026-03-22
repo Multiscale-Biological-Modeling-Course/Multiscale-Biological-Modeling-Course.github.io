@@ -3255,11 +3255,14 @@ body.bm-contact .sidebar__right.sticky {
 
 .bm-founder {
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
-  background: #1d3557;
+  background: #fff;
   border-radius: 10px;
-  padding: 2.75rem 3rem;
+  border: 1px solid #e0e6ed;
+  border-left: 5px solid #c10814;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+  padding: 2rem 2.25rem;
   margin-bottom: 2.5rem;
 
   &__photo {
@@ -3267,13 +3270,13 @@ body.bm-contact .sidebar__right.sticky {
 
     img {
       display: block;
-      width: 190px;
-      height: 190px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center top;
-      border: 4px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+      border: 3px solid #e0e6ed;
+      box-shadow: 0 3px 16px rgba(0, 0, 0, 0.12);
     }
   }
 
@@ -3284,15 +3287,15 @@ body.bm-contact .sidebar__right.sticky {
     letter-spacing: 0.2em !important;
     text-transform: uppercase !important;
     color: #c10814 !important;
-    margin: 0 0 0.4rem !important;
+    margin: 0 0 0.35rem !important;
   }
 
   &__name {
     font-family: 'Outfit', sans-serif !important;
-    font-size: 2rem !important;
+    font-size: 1.9rem !important;
     font-weight: 700 !important;
-    color: #fff !important;
-    margin: 0 0 1.1rem !important;
+    color: #1d3557 !important;
+    margin: 0 0 1rem !important;
     line-height: 1.15 !important;
   }
 
@@ -3301,37 +3304,38 @@ body.bm-contact .sidebar__right.sticky {
       font-family: 'Source Serif 4', Georgia, serif;
       font-size: 0.93rem;
       line-height: 1.72;
-      color: rgba(255, 255, 255, 0.82);
+      color: #333;
       margin-bottom: 0.6rem;
     }
 
     a {
-      color: rgba(255, 255, 255, 0.9);
+      color: #1d3557;
       text-decoration: underline;
       text-underline-offset: 2px;
 
-      &:hover { color: #fff; }
+      &:hover { color: #c10814; }
     }
   }
 
   &__link {
     display: inline-block;
-    margin-top: 1.1rem;
+    margin-top: 1rem;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #fff !important;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #1d3557 !important;
+    background: #f0f5fa;
+    border: 1px solid #c5d4e3;
     padding: 0.45rem 1.2rem;
     border-radius: 4px;
     text-decoration: none !important;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, border-color 0.2s ease;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: #e0eaf4;
+      border-color: #1d3557;
     }
   }
 }
@@ -3341,15 +3345,16 @@ body.bm-contact .sidebar__right.sticky {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
-    padding: 2rem 1.75rem;
+    padding: 1.75rem;
+    border-left: 5px solid #c10814;
 
     &__photo img {
-      width: 130px;
-      height: 130px;
+      width: 120px;
+      height: 120px;
     }
 
     &__name {
-      font-size: 1.6rem !important;
+      font-size: 1.55rem !important;
     }
   }
 }
