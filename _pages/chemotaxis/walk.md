@@ -55,13 +55,13 @@ This question is a fundamental one, and we will return to it at the close of thi
 
 [^Parkinson2015]: Parkinson JS, Hazelbauer, Falke JJ. 2015. Signaling and sensory adaptation in *Escherichia coli* chemoreceptors: 2015 update. [Available online](https://www.sciencedirect.com/science/article/abs/pii/S0966842X15000578)
 
-[^Yang2019]: Yang W, Cassidy CK, Ames P, Diebolder CA, Schulten K, Luthey-Schulten Z, Parkinson JS, Briegel A. 2019. *In situ* confomraitonal changes of the *Escherichia coli* serine chemoreceptor in different signaling states. mBio. [Available online](https://mbio.asm.org/content/10/4/e00973-19/article-info)
+[^Yang2019]: Yang W, Cassidy CK, Ames P, Diebolder CA, Schulten K, Luthey-Schulten Z, Parkinson JS, Briegel A. 2019. *In situ* conformational changes of the *Escherichia coli* serine chemoreceptor in different signaling states. mBio. [Available online](https://mbio.asm.org/content/10/4/e00973-19/article-info)
 
 [^Saragosti2001]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2001. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)
 
-[^Gotz1987]: Gotz R and Schmitt R. 1987. *Rhizobium meliloti* swims by unidirectional, intermittent rotation of right-handed flagellar helices. J Bacteriol 169: 3146–3150. [Avaialbe online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC212363/)
+[^Gotz1987]: Gotz R and Schmitt R. 1987. *Rhizobium meliloti* swims by unidirectional, intermittent rotation of right-handed flagellar helices. J Bacteriol 169: 3146–3150. [Available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC212363/)
 
-[^Lim2019]: Lim S, Guo XK, Boedicker JQ. 2019. Connecting single-cell properties to collective behavior in multiple wild isolates of the *Enterobacter cloacae* complex. PLoS ONE 14(4): e0214719. [Avaialbe online](https://doi.org/10.1371/journal.pone.0214719)
+[^Lim2019]: Lim S, Guo XK, Boedicker JQ. 2019. Connecting single-cell properties to collective behavior in multiple wild isolates of the *Enterobacter cloacae* complex. PLoS ONE 14(4): e0214719. [Available online](https://doi.org/10.1371/journal.pone.0214719)
 
 [^Rashid2019]: Rashid S, Long Z, Singh S, Kohram M, Vashistha H, Navlakha S, Salman H, Oltvai ZH, Bar-Joseph Z. 2019. Adjustment in tumbling rates improves bacterial chemotaxis on obstacle-laden terrains. PNAS 116(24):11770-11775. [Available online](https://www.pnas.org/content/116/24/11770)
 

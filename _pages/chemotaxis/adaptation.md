@@ -43,7 +43,7 @@ Just as the phosphorylation of CheY can be reversed, MCP methylation can be undo
 The figure below adds CheR and CheB to provide a complete picture of the core pathways influencing chemotaxis. To model these pathways and see how our simulated bacterial system responds to different relative attractant concentrations, we will need to add quite a few molecules and reactions to our current model.
 
 [![Overview of chemotaxis signal transduction pathway](../assets/images/600px/chemotaxis_wholestory.png){: .align-center loading="lazy"}](../assets/images/chemotaxis_wholestory.png)
-The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates MCPs, while CheR demethylates MCPs. Blue lines denote phosphorylation, grey lines denote dephosphorylation, green arrows denote methylation, and red arrows denote demethlyation. Image modified from <a href="https://chemotaxis.biology.utah.edu/projects/projects.html">Parkinson Lab</a>'s illustrations.
+The chemotaxis signal-transduction pathway with methylation included. CheA phosphorylates CheB, which methylates MCPs, while CheR demethylates MCPs. Blue lines denote phosphorylation, grey lines denote dephosphorylation, green arrows denote methylation, and red arrows denote demethylation. Image modified from <a href="https://chemotaxis.biology.utah.edu/projects/projects.html">Parkinson Lab</a>'s illustrations.
 {: style="font-size: medium;"}
 
 ## Combinatorial explosion and the need for rule-based modeling
@@ -153,7 +153,7 @@ If you find chemotaxis biology as interesting as we do, then we suggest the foll
 
 [^Pierucci1978]: Pierucci O. 1978. Dimensions of *Escherichia coli* at various growth rates: Model of envelope growth. Journal of Bacteriology 135(2):559-574. [Available online](https://jb.asm.org/content/jb/135/2/559.full.pdf)
 
-[^Sim2017]: Sim M, Koirala S, Picton D, Strahl H, Hoskisson PA, Rao CV, Gillespie CS, Aldridge PD. 2017. Growth rate control of flaggelar assembly in *Escherichia coli* strain RP437. Scientific Reports 7:41189. [Available online](https://www.nature.com/articles/srep41189#:~:text=Escherichia%20coli%20is%20a%20prominent,distributed%20across%20the%20cell%20surface.)
+[^Sim2017]: Sim M, Koirala S, Picton D, Strahl H, Hoskisson PA, Rao CV, Gillespie CS, Aldridge PD. 2017. Growth rate control of flagellar assembly in *Escherichia coli* strain RP437. Scientific Reports 7:41189. [Available online](https://www.nature.com/articles/srep41189#:~:text=Escherichia%20coli%20is%20a%20prominent,distributed%20across%20the%20cell%20surface.)
 
 [^Baker2005]: Baker MD, Wolanin PM, Stock JB. 2005. Signal transduction in bacterial chemotaxis. BioEssays 28:9-22. [Available online](https://pubmed.ncbi.nlm.nih.gov/16369945/)
 
@@ -167,7 +167,7 @@ If you find chemotaxis biology as interesting as we do, then we suggest the foll
 
 [^Parkinson2015]: Parkinson JS, Hazelbauer, Falke JJ. 2015. Signaling and sensory adaptation in *Escherichia coli* chemoreceptors: 2015 update. [Available online](https://www.sciencedirect.com/science/article/abs/pii/S0966842X15000578)
 
-[^Yang2019]: Yang W, Cassidy CK, Ames P, Diebolder CA, Schulten K, Luthey-Schulten Z, Parkinson JS, Briegel A. 2019. *In situ* confomraitonal changes of the *Escherichia coli* serine chemoreceptor in different signaling states. mBio. [Available online](https://mbio.asm.org/content/10/4/e00973-19/article-info)
+[^Yang2019]: Yang W, Cassidy CK, Ames P, Diebolder CA, Schulten K, Luthey-Schulten Z, Parkinson JS, Briegel A. 2019. *In situ* conformational changes of the *Escherichia coli* serine chemoreceptor in different signaling states. mBio. [Available online](https://mbio.asm.org/content/10/4/e00973-19/article-info)
 
 [^Saragosti2001]: Saragosti J, Calvez V, Bournaveas, N, Perthame B, Buguin A, Silberzan P. 2001. Directional persistence of chemotactic bacteria in a traveling concentration wave. PNAS. [Available online](https://www.pnas.org/content/pnas/108/39/16235.full.pdf)
 
@@ -181,7 +181,7 @@ If you find chemotaxis biology as interesting as we do, then we suggest the foll
 
 [^Bray1993]: Bray D, Bourret RB, Simon MI. 1993. Computer simulation of phosphorylation cascade controlling bacterial chemotaxis. Molecular Biology of the Cell. [Available online](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC300951/)
 
-[^Li2004]: Li M, Hazelbauer GL. 2004. Cellular stoichimetry of the components of the chemotaxis signaling complex. Journal of Bacteriology. [Available online](https://jb.asm.org/content/186/12/3687)
+[^Li2004]: Li M, Hazelbauer GL. 2004. Cellular stoichiometry of the components of the chemotaxis signaling complex. Journal of Bacteriology. [Available online](https://jb.asm.org/content/186/12/3687)
 
 [^Stock1991]: Stock J, Lukat GS. 1991. Intracellular signal transduction networks. Annual Review of Biophysics and Biophysical Chemistry. [Available online](https://www.annualreviews.org/doi/abs/10.1146/annurev.bb.20.060191.000545)
 

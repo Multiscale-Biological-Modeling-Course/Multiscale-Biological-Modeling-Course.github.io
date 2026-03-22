@@ -50,7 +50,7 @@ In the following tutorial, we write some code to count the number of loops in th
 
 ## The negative autoregulation motif
 
-In a random network containing *n* nodes, the probability that a given edge is a loop is 1/*n*. Therefore, if the network has *e* edges, then we would on average see *e*/*n* loops in the network. In our case, *n* is 197 and *e* is 477; therefore, on average, we expect to see 197/497 ≈ 2.42 loops in a random network. Yet the real network of *E. coli* transcription factors that regulate each other contains 130 loops!
+In a random network containing *n* nodes, the probability that a given edge is a loop is 1/*n*. Therefore, if the network has *e* edges, then we would on average see *e*/*n* loops in the network. In our case, *n* is 197 and *e* is 477; therefore, on average, we expect to see 477/197 ≈ 2.42 loops in a random network. Yet the real network of *E. coli* transcription factors that regulate each other contains 130 loops!
 
 Furthermore, in a random network, we would expect that about half of the edges correspond to activation, and the other half correspond to repression. But if you followed the preceding tutorial, then you know that of the 130 loops in the *E. coli* network, 35 correspond to activation and 95 correspond to repression. Just as you would be surprised to flip a coin 130 times and see “heads” 95 times, the cell must be negatively autoregulating for some reason.
 
