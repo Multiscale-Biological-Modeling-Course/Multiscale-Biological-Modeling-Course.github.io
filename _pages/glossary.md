@@ -29,7 +29,7 @@ aside.sidebar__right.sticky {
   font-family: 'Source Serif 4', Georgia, serif;
   font-size: 1.05rem;
   color: #444;
-  max-width: 720px;
+  max-width: 900px;
   margin: 2rem 0 3rem;
   line-height: 1.7;
 }
@@ -39,7 +39,7 @@ aside.sidebar__right.sticky {
   flex-wrap: wrap;
   gap: 0.35rem 0.5rem;
   margin-bottom: 3.5rem;
-  max-width: 720px;
+  max-width: 900px;
 }
 .gloss-toc__link {
   font-family: 'Barlow Condensed', sans-serif;
@@ -67,11 +67,11 @@ aside.sidebar__right.sticky {
   color: #1d3557;
   border-bottom: 2px solid #c10814;
   padding-bottom: 0.3rem;
-  max-width: 720px;
+  max-width: 900px;
 }
 
 .gloss-entries {
-  max-width: 720px;
+  max-width: 900px;
 }
 
 .gloss-entry {
