@@ -2117,6 +2117,22 @@ body.bm-qs-open { overflow: hidden; }
   overflow-y: auto;
 }
 
+.bm-qs__section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #aaa;
+  padding: 0.55rem 1.1rem 0.25rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+#bm-qs-algolia .bm-qs__section-label {
+  border-top: 1px solid #f0f0f0;
+  margin-top: 0.25rem;
+}
+
 .bm-qhit {
   display: block;
   padding: 0.8rem 1.1rem;

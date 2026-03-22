@@ -62,10 +62,13 @@
              autocomplete="off" spellcheck="false">
       <kbd class="bm-qs__esc" id="bm-qs-esc">esc</kbd>
     </div>
-    <div id="bm-qs-hits" class="bm-qs__hits"></div>
+    <div class="bm-qs__hits" id="bm-qs-hits-wrap">
+      <div id="bm-qs-gloss"></div>
+      <div id="bm-qs-algolia"></div>
+    </div>
     <div class="bm-qs__footer">
       <span class="bm-qs__hint">↑↓ navigate &nbsp;·&nbsp; ↵ open &nbsp;·&nbsp; press <kbd>/</kbd> anytime</span>
-      <a href="{{ '/search/' | relative_url }}" class="bm-qs__all">Browse all results →</a>
+      <a id="bm-qs-all" href="{{ '/search/' | relative_url }}" class="bm-qs__all">Browse all results →</a>
     </div>
   </div>
 </div>
@@ -102,7 +105,10 @@ document.addEventListener('DOMContentLoaded', function() {
   var overlay   = document.getElementById('bm-qs');
   var backdrop  = document.getElementById('bm-qs-backdrop');
   var input     = document.getElementById('bm-qs-input');
-  var hitsEl    = document.getElementById('bm-qs-hits');
+  var hitsWrap  = document.getElementById('bm-qs-hits-wrap');
+  var glossEl   = document.getElementById('bm-qs-gloss');
+  var hitsEl    = document.getElementById('bm-qs-algolia');
+  var allLink   = document.getElementById('bm-qs-all');
   var escBtn    = document.getElementById('bm-qs-esc');
   var triggers  = document.querySelectorAll('.bm-search-trigger');
   var searchInst = null;
@@ -122,6 +128,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.remove('bm-qs-open');
     input.value = '';
     hitsEl.textContent = '';
+    glossEl.textContent = '';
+    allLink.href = '{{ "/search/" | relative_url }}';
     activeIdx = -1;
     if (searchInst) searchInst.helper.setQuery('').search();
   }
@@ -145,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     if (e.key === 'Escape') { closeOverlay(); return; }
 
-    var hits = hitsEl.querySelectorAll('.bm-qhit');
+    var hits = hitsWrap.querySelectorAll('.bm-qhit');
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       activeIdx = Math.min(activeIdx + 1, hits.length - 1);
@@ -166,11 +174,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function initSearch() {
     if (searchInst) return;
+    if (typeof GLOSS_DATA === 'undefined') {
+      var gs = document.createElement('script');
+      gs.src = '/assets/js/glossary-data.js';
+      document.head.appendChild(gs);
+    }
     if (window.instantsearch) { setupSearch(); return; }
     var s = document.createElement('script');
     s.src = 'https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.js';
     s.onload = setupSearch;
     document.head.appendChild(s);
+  }
+
+  function updateGlossSection(q) {
+    var ql = q ? q.trim().toLowerCase() : '';
+    if (!ql || typeof GLOSS_DATA === 'undefined') { glossEl.textContent = ''; return; }
+    var matches = Object.keys(GLOSS_DATA).filter(function (k) {
+      return k.indexOf(ql) !== -1;
+    }).sort(function (a, b) {
+      var ai = a.indexOf(ql), bi = b.indexOf(ql);
+      if (ai !== bi) return ai - bi;   /* earlier match position first */
+      return a.length - b.length;      /* then shorter term first */
+    }).slice(0, 3);
+    if (!matches.length) { glossEl.textContent = ''; return; }
+    var frag = document.createDocumentFragment();
+    var label = document.createElement('div');
+    label.className = 'bm-qs__section-label';
+    label.textContent = 'Glossary';
+    frag.appendChild(label);
+    matches.forEach(function (key) {
+      var d = GLOSS_DATA[key];
+      var a = document.createElement('a');
+      a.className = 'bm-qhit';
+      a.href = '/glossary/#' + d.anchor;
+      var titleDiv = document.createElement('div');
+      titleDiv.className = 'bm-qhit__title';
+      titleDiv.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+      var excDiv = document.createElement('div');
+      excDiv.className = 'bm-qhit__excerpt';
+      excDiv.textContent = d.def.replace(/<[^>]+>/g, '');
+      a.appendChild(titleDiv);
+      a.appendChild(excDiv);
+      frag.appendChild(a);
+    });
+    glossEl.textContent = '';
+    glossEl.appendChild(frag);
   }
 
   function setupSearch() {
@@ -188,12 +236,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     input.addEventListener('input', function () {
       activeIdx = -1;
-      searchInst.helper.setQuery(this.value).search();
+      var q = this.value;
+      updateGlossSection(q);
+      allLink.href = '{{ "/search/" | relative_url }}' + (q.trim() ? '?q=' + encodeURIComponent(q.trim()) : '');
+      searchInst.helper.setQuery(q).search();
     });
 
     searchInst.addWidget(
       window.instantsearch.widgets.hits({
-        container: '#bm-qs-hits',
+        container: '#bm-qs-algolia',
         templates: {
           item: function (hit) {
             var title   = (hit._highlightResult && hit._highlightResult.title && hit._highlightResult.title.value) || hit.title || 'Untitled';

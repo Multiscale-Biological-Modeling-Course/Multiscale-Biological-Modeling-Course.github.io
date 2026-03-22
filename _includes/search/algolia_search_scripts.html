@@ -59,7 +59,13 @@
   );
 
   search.start();
-  /* Trigger once so searchFunction runs and hides results on load */
-  search.helper.setQuery('').search();
+  /* Pre-populate from ?q= param (set by overlay "Browse all results" link) */
+  var urlQ = (new URLSearchParams(window.location.search)).get('q') || '';
+  if (urlQ) {
+    input.value = urlQ;
+    search.helper.setQuery(urlQ).search();
+  } else {
+    search.helper.setQuery('').search();
+  }
 })();
 </script>
