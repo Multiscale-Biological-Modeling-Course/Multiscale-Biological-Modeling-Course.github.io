@@ -2913,3 +2913,76 @@ body.bm-contact .sidebar__right.sticky {
   margin: 0;
   a { color: #1d3557; &:hover { color: #c10814; } }
 }
+
+/* ==========================================================================
+   Glossary inline term highlights & tooltip
+   ========================================================================== */
+
+/* The underlined term in body text */
+.gloss-term {
+  border-bottom: 1.5px dashed #c10814;
+  cursor: help;
+  color: inherit;
+}
+
+/* Tooltip card */
+#gloss-tooltip {
+  position: absolute;
+  z-index: 9999;
+  width: 280px;
+  background: #1d3557;
+  color: #e9eef4;
+  border-radius: 6px;
+  padding: 0.75rem 1rem 0.65rem;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.22);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* Arrow pointing down (tooltip above term) */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 7px solid transparent;
+    border-bottom-width: 0;
+    border-top-color: #1d3557;
+  }
+
+  /* When flipped below the term, arrow points up */
+  &.is-below::after {
+    bottom: auto;
+    top: -7px;
+    border-top-width: 0;
+    border-bottom-width: 7px;
+    border-top-color: transparent;
+    border-bottom-color: #1d3557;
+  }
+}
+
+.gloss-tooltip__body {
+  margin-bottom: 0.5rem;
+  em { font-style: italic; }
+}
+
+.gloss-tooltip__link {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #a8c8e8;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  &:hover { color: #fff; text-decoration: underline; }
+}
