@@ -1569,7 +1569,7 @@ figcaption,
   display: none; /* hidden on desktop */
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .mob-book-cta {
     display: block;
     background: #f9f9f9;
@@ -2037,7 +2037,8 @@ figcaption,
 
 /* === Tablet: hide sidebar so content leads === */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .sidebar {
+  .sidebar,
+  .sidebar__right {
     display: none !important;
   }
   .page__content,
