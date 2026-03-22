@@ -100,7 +100,7 @@ Phillip is passionate about open online education, and his education projects ha
 
 <h2>Acknowledgements</h2>
 
-<p>This online course is a training and dissemination effort for the <a href="https://mmbios.pitt.edu" target="_blank">National Center for Multiscale Modeling of Biological Systems (MMBioS)</a>. It is supported by the National Institutes of Health (grant ID: P41 GM103712).</p>
+<p>This online course is a training and dissemination effort for the <a href="https://mmbios.org" target="_blank">National Center for Multiscale Modeling of Biological Systems (MMBioS)</a>. It was supported by the National Institutes of Health (grant ID: P41 GM103712).</p>
 
 <p>We would first and foremost like to thank everyone working on MMBioS software; their work allowed this project to come about. Chiefly, thank you to the other members of our training and dissemination team (Alex Ropelewski, Joe Ayoob, and Rozita Laghaei) as well as the head of the MMBioS consortium, Jim Faeder.</p>
 
