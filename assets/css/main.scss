@@ -411,42 +411,41 @@ code, pre, kbd, samp {
 .site-footer__inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem 1.5rem 1.75rem;
+  padding: 1.1rem 2rem;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .site-footer__col {
   display: flex;
-  align-items: flex-start;
-  padding-top: 2px; /* optical alignment with nav text */
+  align-items: center;
 
   &--center {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.35rem;
     text-align: center;
   }
 
   &--right {
     justify-content: flex-end;
-    align-items: flex-start;
   }
 }
 
+/* Both logos constrained to the same max-width so they read as equal size */
 .site-footer__logo--cmu {
-  height: 36px;
-  width: auto;
+  max-width: 160px;
+  height: auto;
   opacity: 0.85;
   transition: opacity 0.2s;
   &:hover { opacity: 1; }
 }
 
 .site-footer__logo--philomath {
-  height: 40px;
-  width: auto;
+  max-width: 160px;
+  height: auto;
   opacity: 0.85;
   transition: opacity 0.2s;
   &:hover { opacity: 1; }
@@ -454,21 +453,27 @@ code, pre, kbd, samp {
 
 .site-footer__nav {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 0.4rem 1.5rem;
+  gap: 1.25rem;
   font-family: ‘Outfit’, sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .site-footer__legal {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.6;
-  a { color: rgba(255,255,255,0.6) !important; }
-  a:hover { color: rgba(255,255,255,0.9) !important; }
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.45);
+  white-space: nowrap;
+  a { color: rgba(255,255,255,0.5) !important; }
+  a:hover { color: rgba(255,255,255,0.85) !important; }
   em { font-style: italic; }
+}
+
+@media (max-width: 900px) {
+  .site-footer__nav { flex-wrap: wrap; white-space: normal; }
+  .site-footer__legal { white-space: normal; text-align: center; }
 }
 
 @media (max-width: 767px) {
@@ -476,10 +481,12 @@ code, pre, kbd, samp {
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
-    padding: 2rem 1.5rem;
-    gap: 1.5rem;
+    padding: 1.5rem 1.25rem;
+    gap: 1.25rem;
   }
   .site-footer__col--right { justify-content: center; }
+  .site-footer__logo--cmu,
+  .site-footer__logo--philomath { max-width: 130px; }
 }
 
 /* ==== Book-support modal ==== */
