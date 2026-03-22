@@ -15,8 +15,8 @@ share: false
 
 <div class="row">
 
-  <div class="column">
-    <div class="card">
+  <div class="column column--full">
+    <div class="card card--featured">
       <div class="card__photo"><img src="../assets/images/600px/compeau_phillip_2023.jpg" alt="Picture of Phillip Compeau, Founder and Director of Biological Modeling" loading="lazy"></div>
       <div class="container">
         <h2>Phillip Compeau</h2>
@@ -29,6 +29,12 @@ Phillip is passionate about open online education, and his education projects ha
     </div>
   </div>
 
+</div>
+
+<h3 class="team-section__label">Content Team</h3>
+
+<div class="row">
+
   <div class="column">
     <div class="card">
       <div class="card__photo"><img src="../assets/images/600px/lee_noah.png" alt="Portrait of Noah Yann Lee, Web Designer & Content Developer" loading="lazy"></div>
@@ -39,10 +45,6 @@ Phillip is passionate about open online education, and his education projects ha
       </div>
     </div>
   </div>
-
-</div>
-
-<div class="row">
 
   <div class="column">
     <div class="card">
@@ -55,6 +57,10 @@ Phillip is passionate about open online education, and his education projects ha
     </div>
   </div>
 
+</div>
+
+<div class="row">
+
   <div class="column">
     <div class="card">
       <div class="card__photo"><img src="../assets/images/600px/li_shuanger.png" alt="Portrait of Shuanger Li, Content Developer" loading="lazy"></div>
@@ -65,11 +71,6 @@ Phillip is passionate about open online education, and his education projects ha
       </div>
     </div>
   </div>
-
-</div>
-
-
-<div class="row">
 
   <div class="column">
     <div class="card">
@@ -82,6 +83,10 @@ Phillip is passionate about open online education, and his education projects ha
     </div>
   </div>
 
+</div>
+
+<div class="row">
+
   <div class="column">
     <div class="card">
       <div class="card__photo"><img src="../assets/images/600px/matamala_nicole.jpg" alt="Portrait of Nicole Matamala, Content Developer" loading="lazy"></div>
@@ -92,7 +97,6 @@ Phillip is passionate about open online education, and his education projects ha
       </div>
     </div>
   </div>
-<br>
 
 </div>
 
