@@ -374,15 +374,22 @@ code, pre, kbd, samp {
   text-decoration: none !important;
 }
 
-/* Search icon: white to match nav, dim on hover.
-   Must outspecific .greedy-nav a:not(.site-title) (0,2,1)
-   so use .greedy-nav a.search__toggle (0,2,1) — same spec, later wins. */
-.greedy-nav a.search__toggle {
+/* Suppress the theme's own search panel — we use the bm-qs overlay instead */
+.search-content { display: none !important; }
+
+/* Search icon button — now a <button> to avoid theme JS interference */
+.greedy-nav button.bm-search-trigger {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  cursor: pointer !important;
   color: #fff !important;
   display: inline-flex !important;
   align-items: center !important;
+  line-height: 1 !important;
 }
-.greedy-nav a.search__toggle:hover {
+.greedy-nav button.bm-search-trigger:hover {
   color: rgba(255,255,255,0.7) !important;
 }
 
@@ -434,18 +441,18 @@ code, pre, kbd, samp {
   }
 }
 
-/* Both logos constrained to the same max-width so they read as equal size */
+/* CMU is a wide wordmark so needs more px to reach similar visual area as Philomath */
 .site-footer__logo--cmu {
-  max-width: 160px;
-  height: auto;
+  height: 26px;
+  width: auto;
   opacity: 0.85;
   transition: opacity 0.2s;
   &:hover { opacity: 1; }
 }
 
 .site-footer__logo--philomath {
-  max-width: 160px;
-  height: auto;
+  height: 34px;
+  width: auto;
   opacity: 0.85;
   transition: opacity 0.2s;
   &:hover { opacity: 1; }
@@ -485,8 +492,8 @@ code, pre, kbd, samp {
     gap: 1.25rem;
   }
   .site-footer__col--right { justify-content: center; }
-  .site-footer__logo--cmu,
-  .site-footer__logo--philomath { max-width: 130px; }
+  .site-footer__logo--cmu { height: 22px; }
+  .site-footer__logo--philomath { height: 28px; }
 }
 
 /* ==== Book-support modal ==== */
@@ -616,7 +623,8 @@ code, pre, kbd, samp {
 
 /* Hide search icon on mobile — only one icon button needed */
 @media (max-width: 767px) {
-  .search__toggle {
+  .search__toggle,
+  button.bm-search-trigger {
     display: none !important;
   }
 }
@@ -1030,6 +1038,8 @@ html {
 }
 
 /* === Figure captions === */
+figure img { margin-bottom: 0.75rem !important; }
+
 .page__content p[style*="font-size"]:not(:has(.btn)),
 figcaption,
 .caption {
@@ -1039,7 +1049,7 @@ figcaption,
   font-style: normal;
   color: #666;
   line-height: 1.5;
-  margin-top: 1.1em;
+  margin-top: 0 !important;
   padding-left: 1.4em;
   text-indent: -1.4em;
   padding-right: 0;
