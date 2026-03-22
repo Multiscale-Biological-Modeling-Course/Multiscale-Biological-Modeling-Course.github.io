@@ -1140,25 +1140,39 @@ figcaption,
 
 /* === Team page acknowledgements === */
 .team-ack {
-  margin-top: 3.5rem;
-  border-top: 2px solid rgba(193, 8, 20, 0.15);
-  padding-top: 2.5rem;
+  margin-top: 3rem;
+  background: #f7f8f9;
+  border-radius: 8px;
+  border: 1px solid #e8eaed;
+  padding: 1.75rem 2rem;
 
   h2 {
-    font-family: 'Outfit', sans-serif !important;
-    font-weight: 700;
-    color: #1d3557 !important;
-    font-size: 1.4rem;
-    margin-top: 0;
-    margin-bottom: 1.25rem;
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    color: #888 !important;
+    margin-top: 0 !important;
+    margin-bottom: 1rem !important;
   }
 
   p {
     font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: #444;
-    max-width: 780px;
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: #666;
+    margin-bottom: 0.5rem;
+
+    &:last-child { margin-bottom: 0; }
+  }
+
+  a {
+    color: #555;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover { color: #1d3557; }
   }
 }
 
