@@ -193,29 +193,28 @@ document.addEventListener('DOMContentLoaded', function() {
       return k.indexOf(ql) !== -1;
     }).sort(function (a, b) {
       var ai = a.indexOf(ql), bi = b.indexOf(ql);
-      if (ai !== bi) return ai - bi;   /* earlier match position first */
-      return a.length - b.length;      /* then shorter term first */
-    }).slice(0, 3);
+      if (ai !== bi) return ai - bi;
+      return a.length - b.length;
+    }).slice(0, 2);
     if (!matches.length) { glossEl.textContent = ''; return; }
     var frag = document.createDocumentFragment();
-    var label = document.createElement('div');
-    label.className = 'bm-qs__section-label';
-    label.textContent = 'Glossary';
-    frag.appendChild(label);
+    var sectionLabel = document.createElement('div');
+    sectionLabel.className = 'bm-qs__section-label';
+    sectionLabel.textContent = 'Glossary';
+    frag.appendChild(sectionLabel);
     matches.forEach(function (key) {
       var d = GLOSS_DATA[key];
-      var a = document.createElement('a');
-      a.className = 'bm-qhit';
-      a.href = '/glossary/#' + d.anchor;
-      var titleDiv = document.createElement('div');
-      titleDiv.className = 'bm-qhit__title';
-      titleDiv.textContent = key.charAt(0).toUpperCase() + key.slice(1);
-      var excDiv = document.createElement('div');
-      excDiv.className = 'bm-qhit__excerpt';
-      excDiv.textContent = d.def.replace(/<[^>]+>/g, '');
-      a.appendChild(titleDiv);
-      a.appendChild(excDiv);
-      frag.appendChild(a);
+      var card = document.createElement('div');
+      card.className = 'bm-gloss-card';
+      var term = document.createElement('div');
+      term.className = 'bm-gloss-card__term';
+      term.textContent = key.charAt(0).toUpperCase() + key.slice(1);
+      var def = document.createElement('p');
+      def.className = 'bm-gloss-card__def';
+      def.textContent = d.def.replace(/<[^>]+>/g, '');
+      card.appendChild(term);
+      card.appendChild(def);
+      frag.appendChild(card);
     });
     glossEl.textContent = '';
     glossEl.appendChild(frag);
