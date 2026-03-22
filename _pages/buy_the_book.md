@@ -13,6 +13,9 @@ header:
   image_alt: "Turing pattern stripes produced by the Gray-Scott model"
 author_profile: false
 exclude_book_buttons: true
+classes:
+  - wide
+  - bm-book
 ---
 
 <div class="book-page">
