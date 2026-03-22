@@ -33,7 +33,7 @@
             {% endfor %}
         </ul>
         {% if site.search == true %}
-        <a class="search__toggle" href="{{ '/search/' | relative_url }}" aria-label="Search">
+        <a class="search__toggle bm-search-trigger" href="{{ '/search/' | relative_url }}" aria-label="Search (press /)"  title="Search (press /)">
           <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
             <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
           </svg>
@@ -45,6 +45,27 @@
         </button>
         <ul class="hidden-links hidden"></ul>
       </nav>
+    </div>
+  </div>
+</div>
+
+<!-- Quick-search overlay -->
+<div class="bm-qs" id="bm-qs" aria-hidden="true">
+  <div class="bm-qs__backdrop" id="bm-qs-backdrop"></div>
+  <div class="bm-qs__card" role="dialog" aria-label="Quick search" aria-modal="true">
+    <div class="bm-qs__inputrow">
+      <svg class="bm-qs__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input type="search" id="bm-qs-input" class="bm-qs__input"
+             placeholder="Search the course…"
+             autocomplete="off" spellcheck="false">
+      <kbd class="bm-qs__esc" id="bm-qs-esc">esc</kbd>
+    </div>
+    <div id="bm-qs-hits" class="bm-qs__hits"></div>
+    <div class="bm-qs__footer">
+      <span class="bm-qs__hint">↑↓ navigate &nbsp;·&nbsp; ↵ open &nbsp;·&nbsp; press <kbd>/</kbd> anytime</span>
+      <a href="{{ '/search/' | relative_url }}" class="bm-qs__all">Browse all results →</a>
     </div>
   </div>
 </div>
@@ -75,4 +96,121 @@ document.addEventListener('DOMContentLoaded', function() {
     t = setTimeout(forceMobileNav, 100);
   });
 });
+
+/* ── Quick-search overlay ── */
+(function () {
+  var overlay   = document.getElementById('bm-qs');
+  var backdrop  = document.getElementById('bm-qs-backdrop');
+  var input     = document.getElementById('bm-qs-input');
+  var hitsEl    = document.getElementById('bm-qs-hits');
+  var escBtn    = document.getElementById('bm-qs-esc');
+  var triggers  = document.querySelectorAll('.bm-search-trigger');
+  var searchInst = null;
+  var activeIdx  = -1;
+
+  function openOverlay() {
+    overlay.removeAttribute('aria-hidden');
+    overlay.classList.add('is-open');
+    document.body.classList.add('bm-qs-open');
+    input.focus();
+    initSearch();
+  }
+
+  function closeOverlay() {
+    overlay.setAttribute('aria-hidden', 'true');
+    overlay.classList.remove('is-open');
+    document.body.classList.remove('bm-qs-open');
+    input.value = '';
+    hitsEl.textContent = '';
+    activeIdx = -1;
+    if (searchInst) searchInst.helper.setQuery('').search();
+  }
+
+  triggers.forEach(function (el) {
+    el.addEventListener('click', function (e) { e.preventDefault(); openOverlay(); });
+  });
+  backdrop.addEventListener('click', closeOverlay);
+  escBtn.addEventListener('click', closeOverlay);
+
+  document.addEventListener('keydown', function (e) {
+    var tag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
+    var inField = tag === 'input' || tag === 'textarea' || tag === 'select';
+    var isOpen  = overlay.getAttribute('aria-hidden') !== 'true';
+
+    if (!isOpen) {
+      if ((e.key === '/' && !inField) || (e.key === 'k' && (e.metaKey || e.ctrlKey))) {
+        e.preventDefault(); openOverlay();
+      }
+      return;
+    }
+    if (e.key === 'Escape') { closeOverlay(); return; }
+
+    var hits = hitsEl.querySelectorAll('.bm-qhit');
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      activeIdx = Math.min(activeIdx + 1, hits.length - 1);
+      updateActive(hits);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      activeIdx = Math.max(activeIdx - 1, -1);
+      updateActive(hits);
+    } else if (e.key === 'Enter' && activeIdx >= 0 && hits[activeIdx]) {
+      hits[activeIdx].click();
+    }
+  });
+
+  function updateActive(hits) {
+    hits.forEach(function (h, i) { h.classList.toggle('is-active', i === activeIdx); });
+    if (activeIdx >= 0 && hits[activeIdx]) hits[activeIdx].scrollIntoView({ block: 'nearest' });
+  }
+
+  function initSearch() {
+    if (searchInst) return;
+    if (window.instantsearch) { setupSearch(); return; }
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.js';
+    s.onload = setupSearch;
+    document.head.appendChild(s);
+  }
+
+  function setupSearch() {
+    if (searchInst) return;
+    searchInst = window.instantsearch({
+      appId:     '{{ site.algolia.application_id }}',
+      apiKey:    '{{ site.algolia.search_only_api_key }}',
+      indexName: '{{ site.algolia.index_name }}',
+      searchFunction: function (helper) {
+        var q = helper.state.query;
+        if (!q || !q.trim()) { hitsEl.textContent = ''; activeIdx = -1; return; }
+        helper.search();
+      }
+    });
+
+    input.addEventListener('input', function () {
+      activeIdx = -1;
+      searchInst.helper.setQuery(this.value).search();
+    });
+
+    searchInst.addWidget(
+      window.instantsearch.widgets.hits({
+        container: '#bm-qs-hits',
+        templates: {
+          item: function (hit) {
+            var title   = (hit._highlightResult && hit._highlightResult.title && hit._highlightResult.title.value) || hit.title || 'Untitled';
+            var excerpt = (hit._highlightResult && hit._highlightResult.content && hit._highlightResult.content.value) || hit.content || '';
+            if (excerpt.length > 180) excerpt = excerpt.substring(0, 180) + '\u2026';
+            var url = '{{ site.url }}' + (hit.url || '/');
+            return '<a class="bm-qhit" href="' + url + '"><div class="bm-qhit__title">' + title + '</div>' + (excerpt ? '<div class="bm-qhit__excerpt">' + excerpt + '</div>' : '') + '</a>';
+          },
+          empty: function (res) {
+            return '<div class="bm-qhit__empty">No results for <strong>\u201c' + res.query + '\u201d</strong></div>';
+          }
+        }
+      })
+    );
+
+    searchInst.start();
+    searchInst.helper.setQuery('').search();
+  }
+})();
 </script>
