@@ -444,16 +444,20 @@ code, pre, kbd, samp {
 
 /* CMU is a wide wordmark so needs more px to reach similar visual area as Philomath */
 .site-footer__logo--cmu {
-  height: 26px;
-  width: auto;
+  height: 26px !important;
+  width: auto !important;
+  max-width: none !important;
+  display: block;
   opacity: 0.85;
   transition: opacity 0.2s;
   &:hover { opacity: 1; }
 }
 
 .site-footer__logo--philomath {
-  height: 34px;
-  width: auto;
+  height: 34px !important;
+  width: auto !important;
+  max-width: none !important;
+  display: block;
   opacity: 0.85;
   transition: opacity 0.2s;
   &:hover { opacity: 1; }
