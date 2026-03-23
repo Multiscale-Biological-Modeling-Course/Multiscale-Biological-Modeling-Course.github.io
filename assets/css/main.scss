@@ -1045,6 +1045,11 @@ html {
 /* === Figure captions === */
 figure img { margin-bottom: 0.75rem !important; }
 
+/* Image + caption are in the same <p> — add gap below the image */
+.page__content p img.align-center {
+  margin-bottom: 1.25rem !important;
+}
+
 .img-caption,
 figcaption,
 .caption {
