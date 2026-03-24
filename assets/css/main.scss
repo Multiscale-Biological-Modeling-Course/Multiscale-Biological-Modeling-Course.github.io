@@ -1050,9 +1050,11 @@ figure img { margin-bottom: 0.75rem !important; }
   margin-bottom: 1.25rem !important;
 }
 
-/* Add breathing room after the caption (same <p> as image) */
+/* Add breathing room and indentation after the caption (same <p> as image) */
 .page__content p:has(img.align-center) {
   margin-bottom: 2rem !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
 }
 
 .img-caption,
@@ -1067,9 +1069,8 @@ figcaption,
   line-height: 1.5;
   margin-top: 0.6rem !important;
   margin-bottom: 1.25rem !important;
-  padding-left: 1.4em;
-  text-indent: -1.4em;
-  padding-right: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 /* === Team page card redesign === */
