@@ -453,11 +453,11 @@ code, pre, kbd, samp {
   &:hover { opacity: 1; }
 }
 
-/* Sized so the lettering matches the CMU wordmark's cap height; the mark's long
-   phi descender means a smaller box height than the previous wordmark needed.
-   Kept at full opacity, unlike CMU, so the red heart in the mark stays true red. */
+/* Sized for visual balance against the CMU wordmark rather than cap-height parity:
+   this wordmark is horizontally compact, so matching cap height leaves it looking
+   light next to CMU. Kept at full opacity, unlike CMU, so the red heart reads true. */
 .site-footer__logo--philomath {
-  height: 29px !important;
+  height: 34px !important;
   width: auto !important;
   max-width: none !important;
   display: block;
@@ -498,7 +498,7 @@ code, pre, kbd, samp {
   }
   .site-footer__col--right { justify-content: center; }
   .site-footer__logo--cmu { height: 22px; }
-  .site-footer__logo--philomath { height: 24px; }
+  .site-footer__logo--philomath { height: 28px; }
 }
 
 /* ==== Book-support modal ==== */
