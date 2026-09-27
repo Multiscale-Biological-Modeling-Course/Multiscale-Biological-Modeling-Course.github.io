@@ -1,7 +1,7 @@
 ---
 permalink: /coronavirus/VMDTutorial
-title: "VMD Tutorial"
-description: "Quick VMD guide: navigate, color, and analyze coronavirus spike structures, use selection commands, and create movies for presentations."
+title: "VMD Tutorial: Visualizing Protein Structures"
+description: "A short VMD tutorial for beginners: download a protein from the PDB, load it into VMD, and select and color parts of the SARS-CoV-2 spike protein."
 excerpt: "Introduction to VMD (Visual Molecular Dynamics): how to load, visualize, and analyze protein structures including the SARS-CoV-2 spike protein."
 sidebar:
  nav: "coronavirus"
@@ -34,8 +34,6 @@ The molecule should now be listed in `VMD Main` as well as the visualization in 
 <img src="../_pages/coronavirus/files/Ridge%20Tutorial/Ridge3.png">
 
 <hr>
-
-**Section to be moved**
 
 #### Glycans
 

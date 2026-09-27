@@ -1,7 +1,7 @@
 ---
 permalink: /coronavirus/multiseq
 title: "Finding Local Differences in Protein Structures with Qres"
-description: "Compare spike sequences across coronaviruses with MultiSeq, zooming into variable hotspots that shape host specificity and immune escape."
+description: "What is Qres? Compare SARS-CoV and SARS-CoV-2 spike structures with contact maps and the Qres score in VMD's MultiSeq to find local structural differences."
 excerpt: "Use Qres and multiple sequence alignment to pinpoint local structural differences between SARS-CoV and SARS-CoV-2 spike protein structures."
 sidebar:
  nav: "coronavirus"

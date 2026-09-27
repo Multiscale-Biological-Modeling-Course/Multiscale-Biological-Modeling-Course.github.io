@@ -1,7 +1,7 @@
 ---
 permalink: /white_blood_cells/pca
-title: "Principal Components Analysis"
-description: "Apply PCA to white-blood-cell shape data, capturing major variation modes and reducing dimensionality before classification."
+title: "Principal Component Analysis (PCA) in Biology"
+description: "What is PCA? Learn principal component analysis with a biology example: reducing white blood cell shape data to its main axes of variation."
 excerpt: "Apply principal components analysis (PCA) to reduce high-dimensional white blood cell shape features and reveal cluster structure in image data."
 sidebar:
  nav: "white_blood_cells"

@@ -1,7 +1,7 @@
 ---
 permalink: /motifs/networks
 title: "Transcription Factor Networks"
-description: "Explore the E. coli transcription-factor network: small subgraph patterns that reveal underlying design principles."
+description: "What is a transcription factor network? Explore the E. coli network and the small recurring patterns, called network motifs, that reveal its design."
 excerpt: "Analyze transcription factor networks as directed graphs to identify recurring regulatory patterns and network motifs in gene regulation."
 sidebar:
  nav: "motifs"
