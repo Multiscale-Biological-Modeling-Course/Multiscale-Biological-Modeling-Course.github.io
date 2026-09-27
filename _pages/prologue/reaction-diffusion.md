@@ -1,7 +1,7 @@
 ---
 permalink: /prologue/reaction-diffusion
-title: "A Reaction-Diffusion Model Generating Turing Patterns"
-description: "Study reaction diffusion equations that link chemistry with diffusion, showing how Turing patterns emerge from simple instabilities."
+title: "Reaction-Diffusion and Turing Patterns"
+description: "A friendly introduction to reaction-diffusion: see how simple particle reactions plus diffusion produce Turing patterns like the spots and stripes on animals."
 excerpt: "Build a reaction-diffusion model showing how two interacting molecular species self-organize into Turing patterns through diffusion-driven instability."
 sidebar:
  nav: "prologue"

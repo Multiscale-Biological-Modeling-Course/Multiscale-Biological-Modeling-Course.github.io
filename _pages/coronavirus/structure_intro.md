@@ -1,7 +1,7 @@
 ---
 permalink: /coronavirus/structure_intro
-title: Protein Structure Prediction is Hard
-description: "Why is protein structure prediction hard? Discover experimental limits, computational advances, and the stakes for coronavirus spike research."
+title: "Why Protein Structure Prediction Is Hard"
+description: "How are protein structures determined? Compare X-ray crystallography and cryo-EM, why they are costly, and why predicting structure from sequence is hard."
 excerpt: "Understand why protein 3D structure prediction from amino acid sequence alone is computationally hard, despite decades of research in structural biology."
 sidebar:
  nav: "coronavirus"

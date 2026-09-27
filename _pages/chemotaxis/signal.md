@@ -1,7 +1,7 @@
 ---
 permalink: /chemotaxis/signal
-title: "Signaling and Ligand-Receptor Dynamics"
-description: "Analyze ligand-receptor dynamics in E. coli chemotaxis, using reversible reaction models to link external signals to intracellular responses."
+title: "Ligand-Receptor Binding and Cell Signaling"
+description: "How do receptors detect ligands? Model reversible ligand-receptor binding, compute its equilibrium, and see how E. coli turns an outside signal into a response."
 excerpt: "Explore ligand-receptor dynamics in E. coli chemotaxis signaling: how transmembrane receptors detect attractants and relay intracellular phosphorylation signals."
 sidebar:
  nav: "chemotaxis"

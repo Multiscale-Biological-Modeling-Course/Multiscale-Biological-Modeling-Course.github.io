@@ -1,7 +1,7 @@
 ---
 permalink: /motifs/transcription
-title: "Transcription and DNA-Protein Binding"
-description: "Review transcription-regulation basics: DNA-binding proteins, promoter architecture, and how genes communicate in regulatory networks."
+title: "Transcription: From DNA to RNA to Protein"
+description: "What is transcription? Learn how DNA is transcribed into RNA and translated into protein, and how transcription factors bind DNA to regulate genes."
 excerpt: "Learn how transcription factors bind DNA to regulate gene expression, and the molecular basis of transcription factor regulatory networks."
 sidebar:
  nav: "motifs"

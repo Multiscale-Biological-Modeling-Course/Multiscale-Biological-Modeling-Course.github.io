@@ -1,7 +1,7 @@
 ---
 permalink: /coronavirus/accuracy
-title: "Protein Structure Comparison"
-description: "Assess protein-structure accuracy: compare predicted and experimental spike models using RMSD, TM-score, and validation tools."
+title: "Comparing Protein Structures: Kabsch and RMSD"
+description: "How similar are two protein structures? Learn the Kabsch algorithm and RMSD, then compare predicted SARS-CoV-2 spike models to the experimental structure."
 excerpt: "Compare predicted versus experimentally determined protein structures using RMSD and TM-score metrics for quantitative structure validation."
 sidebar:
  nav: "coronavirus"

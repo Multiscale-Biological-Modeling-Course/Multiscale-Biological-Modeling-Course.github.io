@@ -1,7 +1,7 @@
 ---
 permalink: /coronavirus/ab_initio
 title: Ab initio Protein Structure Prediction
-description: "What is ab initio protein modeling? Explore energy landscapes, fragment libraries, and uses for novel coronavirus proteins"
+description: "What is ab initio protein structure prediction? Explore energy landscapes and fragment libraries, and apply them to the SARS-CoV-2 spike protein."
 excerpt: "Explore ab initio protein structure prediction: folding proteins computationally from sequence alone without relying on homologous template structures."
 sidebar:
  nav: "coronavirus"
