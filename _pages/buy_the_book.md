@@ -94,7 +94,7 @@ classes:
 
   <!-- Backers -->
   <div class="book-backers">
-    <p class="book-backers__text">Publication of <em>Biological Modeling: A Short Tour</em> was funded by several hundred backers through <a href="https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour" target="_blank" rel="noopener">Kickstarter</a> and <a href="https://www.indiegogo.com/projects/biological-modeling-a-short-tour" target="_blank" rel="noopener">Indiegogo</a>. We are grateful to every supporter who helped bring the book to life.</p>
+    <p class="book-backers__text">Publication of <em>Biological Modeling: A Short Tour</em> was funded by several hundred backers through crowdfunding campaigns on <a href="https://www.kickstarter.com/projects/phillipcompeau/biological-modeling-a-short-tour" target="_blank" rel="noopener">Kickstarter</a> and <a href="https://www.indiegogo.com/projects/biological-modeling-a-short-tour" target="_blank" rel="noopener">Indiegogo</a>. Both campaigns have ended, and these links go to their archived pages. We are grateful to every supporter who helped bring the book to life.</p>
   </div>
 
 </div>

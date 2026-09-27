@@ -134,11 +134,18 @@ header:
     var hero = document.querySelector('.page__hero--overlay');
     if (!hero) return;
     var vid = document.createElement('video');
-    vid.autoplay = true;
-    vid.muted    = true;
-    vid.loop     = true;
-    vid.poster   = '/assets/images/turing_hero_poster.jpg';
+    // Safari only autoplays when muted/autoplay/playsinline are real
+    // attributes present before the source loads, not just JS properties.
+    vid.muted = true;
+    vid.defaultMuted = true;
+    vid.setAttribute('muted', '');
+    vid.setAttribute('autoplay', '');
+    vid.setAttribute('loop', '');
     vid.setAttribute('playsinline', '');
+    vid.setAttribute('webkit-playsinline', '');
+    vid.setAttribute('preload', 'auto');
+    vid.setAttribute('aria-hidden', 'true');
+    vid.poster = '/assets/images/turing_hero_poster.jpg';
     vid.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1;filter:brightness(0.55);';
     var src = document.createElement('source');
     src.src  = '/assets/images/turing_hero_web.mp4';
@@ -147,6 +154,23 @@ header:
     hero.style.position = 'relative';
     hero.style.overflow = 'hidden';
     hero.insertBefore(vid, hero.firstChild);
+    var tryPlay = function () {
+      var p = vid.play();
+      if (p && p.catch) p.catch(function () {});
+    };
+    tryPlay();
+    vid.addEventListener('canplay', tryPlay, { once: true });
+    // If Safari still blocks autoplay (e.g. Low Power Mode), start on the
+    // visitor's first interaction with the page.
+    var onFirstInput = function () {
+      if (vid.paused) tryPlay();
+      ['pointerdown', 'touchstart', 'keydown'].forEach(function (ev) {
+        document.removeEventListener(ev, onFirstInput, true);
+      });
+    };
+    ['pointerdown', 'touchstart', 'keydown'].forEach(function (ev) {
+      document.addEventListener(ev, onFirstInput, true);
+    });
   }
   if (document.readyState === 'loading')
     document.addEventListener('DOMContentLoaded', init);
