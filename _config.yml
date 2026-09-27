@@ -18,7 +18,7 @@ subtitle: "A Free Online Course in Computational Biology"
 masthead_title: "<em>Biological Modeling</em>"
 logo: "/assets/images/200px/gray_scott_jupyter_high-res.png"
 url: "https://biologicalmodeling.org"
-og_image: "/assets/images/turing_hero_poster.jpg"
+og_image: "/assets/images/share_card.jpg"
 email:
 locale: "en-US"
 description: >- # this means to ignore newlines until "baseurl:"
@@ -73,7 +73,17 @@ exclude:
   - assets/images_CMYK
   - assets/old
   - assets/tex
+  - assets/single.html
   - vendor
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - README.md
+  - scripts
+  - figures
+  - search.json
 
 # Plugins (previously gems:)
 plugins:
@@ -101,6 +111,12 @@ algolia:
 footer: custom
 
 defaults:
+  # Share image for any page that doesn't set its own
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/share_card.jpg
+
   # _pages (global)
   - scope:
       path: "_pages"

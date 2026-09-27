@@ -1,4 +1,5 @@
 ---
+sitemap: false
 permalink: /coronavirus/VMDTutorial
 title: "VMD Tutorial"
 description: "Quick VMD guide: navigate, color, and analyze coronavirus spike structures, use selection commands, and create movies for presentations."

@@ -30,7 +30,7 @@ To get started, make sure that you have the following software resources install
 
 <a href="https://www.python.org/downloads/" target="_blank">Python</a> (2.7, 3.5, or later)
 
-<a href="http://prody.csb.pitt.edu/downloads/" target="_blank">ProDy</a>
+<a href="https://www.bahargroup.org/prody/downloads/" target="_blank">ProDy</a>
 
 <a href="https://numpy.org/install/" target="_blank">NumPy</a>
 

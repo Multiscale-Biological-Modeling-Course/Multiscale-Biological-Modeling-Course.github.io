@@ -1,7 +1,7 @@
 ---
 permalink: /chemotaxis/tutorial_purerandom
 title: "Software Tutorial: Modeling a Pure Random Walk Strategy"
-description: "Simulate a pure random walk and compare it to chemotactic strategies, revealing why unbiased movement canâ€™t guide bacteria to food."
+description: "Simulate a pure random walk and compare it to chemotactic strategies, revealing why unbiased movement can't guide bacteria to food."
 excerpt: "Tutorial: simulate a pure random walk exploration strategy as a baseline comparison for evaluating E. coli's chemotaxis algorithm efficiency."
 sidebar:
  nav: "chemotaxis"
@@ -54,7 +54,7 @@ Next, we specify all the model parameters:
 
 We also set a "seed" of our pseudorandom number generator to ensure that the sequence of "random" numbers given to us by Python will be the same every time we run the simulation. To obtain a different outcome, change the seed.
 
-**Note:** For more on seeding, please consult the discussion of pseudorandom number generation at [Programming for Lovers](http://compeau.cbd.cmu.edu/programming-for-lovers/chapter-2-forecasting-a-presidential-election-with-monte-carlo-simulation/#pitfalls).
+**Note:** For more on seeding, please consult the discussion of pseudorandom number generation at [Programming for Lovers](https://programmingforlovers.com/chapter-2-forecasting-a-presidential-election-with-monte-carlo-simulation/).
 {: .notice--info}
 
 ~~~ python
