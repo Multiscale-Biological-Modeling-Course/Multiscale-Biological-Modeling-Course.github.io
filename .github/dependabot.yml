@@ -1,0 +1,26 @@
+# Keeps the Ruby gems and GitHub Actions used to build and index the site
+# patched. Security fixes open as PRs immediately; routine version bumps are
+# batched into one monthly PR per ecosystem.
+version: 2
+updates:
+  - package-ecosystem: bundler
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      site-gems:
+        patterns: ["*"]
+  - package-ecosystem: bundler
+    directory: /.github/algolia
+    schedule:
+      interval: monthly
+    groups:
+      algolia-gems:
+        patterns: ["*"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]
