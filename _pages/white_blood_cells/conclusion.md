@@ -156,7 +156,6 @@ If you are reading this, and you've made it through our entire course, **thank y
 If you enjoyed modeling biology with code, here are a few free places to keep going.
 
 * **[Bioinformatics Algorithms](https://bioinformaticsalgorithms.org)**: our textbook and course on the algorithms behind genome analysis, from sequencing to evolution.
-* **[Rosalind](https://rosalind.info)**: hundreds of bioinformatics programming problems to test your skills.
 * **[Programming for Lovers](https://programmingforlovers.com)**: learn to program in Python or Go through scientific projects, from election forecasting to self-replicating automata.
 * **[Philomath](https://www.philomathlearning.com)**: live courses and streams on computing, biology, and AI.
 
