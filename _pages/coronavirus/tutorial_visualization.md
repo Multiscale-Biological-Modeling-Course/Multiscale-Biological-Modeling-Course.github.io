@@ -14,7 +14,7 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 In this tutorial, we will discuss how to visualize a protein structure and highlight specific amino acids of interest in the protein. We will focus on the region that we identified in the previous tutorial starting at around position 475 of the SARS-CoV-2 RBD, where we found that this RBD differs structurally from that of SARS-CoV.
 
-We will visualize the site in the SARS-CoV-2 RBD using the SARS-CoV-2 chimeric RBD complexed with the human ACE2 enzyme (PDB entry: <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>). Before completing this tutorial, you should have installed VMD and know how to load molecules into the program. If you need a refresher, visit the <a href="tutorial_multiseq" target="_blank">previous tutorial</a>.
+We will visualize the site in the SARS-CoV-2 RBD using the SARS-CoV-2 chimeric RBD complexed with the human ACE2 enzyme (PDB entry: <a href="https://www.rcsb.org/structure/6vw1" target="_blank">6vw1</a>). Before completing this tutorial, you should have installed VMD and know how to load molecules into the program. If you need a refresher, visit the <a href="tutorial_multiseq" target="_blank">previous tutorial</a> or our short <a href="VMDTutorial" target="_blank">VMD tutorial</a>.
 
 First, download the chimeric RBD `.pdb` file and load it into VMD.
 

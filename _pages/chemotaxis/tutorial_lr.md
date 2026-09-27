@@ -1,7 +1,7 @@
 ---
 permalink: /chemotaxis/tutorial_lr
 title: "Software Tutorial: Getting Started with BioNetGen and Modeling Ligand-Receptor Dynamics"
-description: "Hands-on introduction to BioNetGen: build and simulate ligand-receptor binding dynamics to kick off chemotaxis modeling."
+description: "BioNetGen tutorial for beginners: install BioNetGen, specify molecule types and reaction rules, and simulate ligand-receptor binding dynamics."
 excerpt: "Tutorial: get started with BioNetGen rule-based modeling by simulating ligand-receptor binding kinetics in E. coli bacterial chemotaxis."
 sidebar:
  nav: "chemotaxis"

@@ -1,7 +1,7 @@
 ---
 permalink: /coronavirus/biochemistry
-title: Protein Biochemistry
-description: "Review coronavirus spike protein biochemistry and its implications for entry, immunity, and therapeutics."
+title: "Protein Structure: From Amino Acids to Folding"
+description: "The four levels of protein structure, from amino acid chains to alpha helices, beta sheets, and 3-D folds, and why proteins seek their lowest energy shape."
 excerpt: "Review protein biochemistry: amino acid chemistry, protein folding, primary through quaternary structure, and how sequence determines 3D structure."
 sidebar:
  nav: "coronavirus"
