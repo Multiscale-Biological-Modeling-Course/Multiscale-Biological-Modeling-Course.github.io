@@ -1,6 +1,6 @@
 ---
 permalink: /motifs/oscillators
-title: "Biological Oscillators"
+title: "Biological Oscillators and the Repressilator"
 description: "From circadian clocks to the repressilator: learn how coupled motifs form biological oscillators and what makes them robust."
 excerpt: "Model biological oscillators including the repressilator: synthetic gene circuits using mutual repression to produce sustained periodic oscillations."
 sidebar:

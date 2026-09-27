@@ -1,7 +1,7 @@
 ---
 permalink: /chemotaxis/walk
-title: "E. coli Explores its World Via a Random Walk"
-description: "Explore the physics of E. coli runs and tumbles and how a constant tumbling rate powers an efficient exploratory random walk."
+title: "How E. coli Moves: Run and Tumble"
+description: "How does E. coli move? Its flagella alternate between runs and tumbles, producing a random walk. Learn the mechanism and why tumbling frequency matters."
 excerpt: "Learn how E. coli uses runs and tumbles to perform a biased random walk, enabling directed movement up chemical attractant gradients."
 sidebar:
  nav: "chemotaxis"

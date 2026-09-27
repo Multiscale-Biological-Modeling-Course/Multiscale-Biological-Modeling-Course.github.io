@@ -1,6 +1,6 @@
 ---
 permalink: /prologue/random_walk
-title: "Random Walks Model Diffusion"
+title: "Random Walks in Biology: Modeling Diffusion"
 description: "Learn how unbiased particle steps approximate diffusion and discover statistics that connect random walks to concentration gradients."
 excerpt: "Explore random walks as a mathematical model for Brownian motion and particle diffusion — the foundation of reaction-diffusion pattern formation."
 sidebar:
@@ -34,7 +34,7 @@ Although the movements of a single particle are random, we can draw conclusions 
 
 **Random Walk Theorem:** After *n* steps of unit length in a random walk, a particle will on average find itself a distance from its origin that is proportional to $$\sqrt{n}$$.
 
-**Note:** If you love mathematics and are interested in seeing a proof of this theorem, click <a href="../assets/tex/random_walk_theorem.pdf" download>here</a>.
+**Note:** If you love mathematics and are interested in seeing a proof of this theorem, click <a href="../assets/pdfs/random_walk_theorem.pdf" download>here</a>.
 {: .notice--info}
 
 Our experience of the world confirms the Random Walk Theorem's statement that randomly walking particles tend to drift away from their starting point. We understand, for example, that someone who has a respiratory virus can infect many others within an enclosed space as the viral particles expand outward. We also know that when a cake is baking in the oven, we will not need to wait long for delicious smells to waft from the kitchen.
