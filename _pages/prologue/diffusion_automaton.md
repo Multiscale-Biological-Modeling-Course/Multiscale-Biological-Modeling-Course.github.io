@@ -118,7 +118,7 @@ The video below shows an animation of a 101 x 101 board with <em>d</em><sub><em>
 **Note:** Particles technically "fall off" the sides of the board in the figure below, meaning that a given particle’s total concentration across all cells decreases over time.
 {: .notice--info}
 
-[![First frame of diffusion simulation movie](../assets/images/600px/diffusion_movie_first_frame.png){: .align-center loading="lazy"}](../assets/images/diffusion_movie.gif)
+<video class="bm-anim align-center" autoplay loop muted playsinline preload="metadata" poster="../assets/images/600px/diffusion_movie_first_frame.png" aria-label="Animation of a diffusion simulation"><source src="../assets/images/diffusion_movie.mp4" type="video/mp4"></video>
 
 [Next lesson](gray-scott){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

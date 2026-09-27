@@ -20,7 +20,7 @@ You may think that simulating the movements of proteins with hundreds of amino a
 
 A protein's molecular bonds are constantly vibrating, stretching and compressing, much like that of the oscillating mass-spring system shown in the figure below. Bonded atoms are held at a specific distance apart due to the attraction and repulsion of the negatively charged electrons and positively charged nucleus. If you were to push the atoms closer together or pull them farther apart, then they would "bounce back" to their equilibrium.
 
-[![Initial frame of mass-spring simulation](../assets/images/600px/mass-spring_first_frame.png){: .align-center loading="lazy"}](../assets/images/mass-spring.gif)
+<video class="bm-anim align-center" autoplay loop muted playsinline preload="metadata" poster="../assets/images/600px/mass-spring_first_frame.png" aria-label="Animation of a mass-spring simulation"><source src="../assets/images/mass-spring.mp4" type="video/mp4"></video>
 A mass-spring system in which a mass is attached to the end of a spring. The more that we move the mass from its equilibrium, the more that it will be repelled back toward equilibrium. Image courtesy: [flippingphysics.com](http://flippingphysics.com).
 {: .img-caption}
 

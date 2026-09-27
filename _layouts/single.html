@@ -555,3 +555,22 @@ document.addEventListener('DOMContentLoaded', function () {
   elements.forEach(function (el) { observer.observe(el); });
 })();
 </script>
+
+<script>
+/* Converted-GIF animations: respect reduced-motion, tap to pause/play */
+(function () {
+  var vids = document.querySelectorAll('video.bm-anim');
+  if (!vids.length) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  vids.forEach(function (v) {
+    if (reduce) {
+      v.removeAttribute('autoplay');
+      v.pause();
+    }
+    v.style.cursor = 'pointer';
+    v.addEventListener('click', function () {
+      if (v.paused) { v.play(); } else { v.pause(); }
+    });
+  });
+})();
+</script>

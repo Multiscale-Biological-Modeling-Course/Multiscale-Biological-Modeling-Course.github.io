@@ -32,7 +32,7 @@ We would like to develop a distance function *d*(*S*, *T*) quantifying how diffe
 
 You may have noticed that the two shapes in the preceding figure are, in fact, identical. To demonstrate that this is true, we can first move the red shape to superimpose it over the blue shape, then flip the red shape, and finally rotate it so that its boundary coincides with the blue shape, as shown in the animation below. In general, if a shape *S* can be translated, flipped, and/or rotated to produce shape *T*, then *S* and *T* are the same shape, and so *d*(*S*, *T*) should be equal to zero. The question is what *d*(*S*, *T*) should be if *S* and *T* are not the same shape.
 
-[![First frame showing shape transformation steps](../assets/images/600px/shape_transformations_first_frame.png){: .align-center loading="lazy"}](../assets/images/shape_transformations.gif)
+<video class="bm-anim align-center" autoplay loop muted playsinline preload="metadata" poster="../assets/images/600px/shape_transformations_first_frame.png" aria-label="Animation of shape transformation steps"><source src="../assets/images/shape_transformations.mp4" type="video/mp4"></video>
 We can transform the red shape into the blue shape by translating it, flipping it, and then rotating it.
 {: .img-caption}
 

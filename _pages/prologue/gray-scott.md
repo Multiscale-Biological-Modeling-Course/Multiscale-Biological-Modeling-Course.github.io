@@ -69,25 +69,25 @@ In contrast to the particle-based simulator introduced earlier, the Gray-Scott m
 
 Our first video shows an animation of the Gray-Scott model using the parameters *f* = 0.034 and *k* = 0.095. We use a comparable initial configuration of the automaton as in the diffusion example, in which a cluster of *B* particles are found in a board full of *A* particles.
 
-[![Initial frame of a Gray-Scott reaction-diffusion simulation](../assets/images/600px/gray-scott_movie_first_frame.png){: .align-center loading="lazy"}](../assets/images/gray-scott_movie.gif)
+<video class="bm-anim align-center" autoplay loop muted playsinline preload="metadata" poster="../assets/images/600px/gray-scott_movie_first_frame.png" aria-label="Animation of a Gray-Scott reaction-diffusion simulation"><source src="../assets/images/gray-scott_movie.mp4" type="video/mp4"></video>
 
 If we expand the size of the simulation and add multiple clusters of *B* particles to the automaton, then the patterns become more complex as waves of *B* particles collide.
 
-[![Gray-Scott model with multiple predator sources at start](../assets/images/600px/gray-scott_multiple_predators_first_frame.png){: .align-center loading="lazy"}](../assets/images/gray-scott_multiple_predators.gif)
+<video class="bm-anim align-center" autoplay loop muted playsinline preload="metadata" poster="../assets/images/600px/gray-scott_multiple_predators_first_frame.png" aria-label="Gray-Scott model with multiple predator sources"><source src="../assets/images/gray-scott_multiple_predators.mp4" type="video/mp4"></video>
 
 If we keep the feed rate constant and increase the kill rate slightly to *k* = 0.097, then the patterns change significantly into spots.
 
-[![Gray-Scott pattern formation with parameters F=0.34, k=0.063](../assets/images/600px/gray-scott_f34_k63_first_frame.png){: .align-center loading="lazy"}](../assets/images/gray-scott_f34_k63.gif)
+<video class="bm-anim align-center" autoplay loop muted playsinline preload="metadata" poster="../assets/images/600px/gray-scott_f34_k63_first_frame.png" aria-label="Gray-Scott pattern formation with parameters F=0.34, k=0.063"><source src="../assets/images/gray-scott_f34_k63.mp4" type="video/mp4"></video>
 {: .img-caption}
 
 If we make the *A* particles a little happier as well, increasing  *f* to 0.038 and *k* to 0.099, then we have a different striped pattern.
 
-[![Gray-Scott pattern formation with parameters F=0.38, k=0.061](../assets/images/600px/gray-scott_f38_k61_first_frame.png){: .align-center loading="lazy"}](../assets/images/gray-scott_f38_k61.gif)
+<video class="bm-anim align-center" autoplay loop muted playsinline preload="metadata" poster="../assets/images/600px/gray-scott_f38_k61_first_frame.png" aria-label="Gray-Scott pattern formation with parameters F=0.38, k=0.061"><source src="../assets/images/gray-scott_f38_k61.mp4" type="video/mp4"></video>
 {: .img-caption}
 
 And if we increase *f* to 0.042 and *k* to 0.101, then again we see spots.
 
-[![Gray-Scott pattern formation with parameters F=0.42, k=0.059](../assets/images/600px/gray-scott_f42_k59_first_frame.png){: .align-center loading="lazy"}](../assets/images/gray-scott_f42_k59.gif)
+<video class="bm-anim align-center" autoplay loop muted playsinline preload="metadata" poster="../assets/images/600px/gray-scott_f42_k59_first_frame.png" aria-label="Gray-Scott pattern formation with parameters F=0.42, k=0.059"><source src="../assets/images/gray-scott_f42_k59.mp4" type="video/mp4"></video>
 {: .img-caption}
 
 The point is that very slight changes in our model's parameters can produce drastically different results in terms of the patterns that we witness. In this prologue's conclusion, we will connect this observation back to our original motivation of identifying the cause for animal skin patterns.
