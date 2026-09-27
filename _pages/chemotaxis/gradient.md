@@ -1,7 +1,7 @@
 ---
 permalink: /chemotaxis/gradient
 title: "Modeling a Bacterium's Response to an Attractant Gradient"
-description: "Model a bacteriumâ€™s run-and-tumble strategy in an attractant gradient, predicting how tumbling frequency changes as it climbs toward a food source."
+description: "Model a bacterium's run-and-tumble strategy in an attractant gradient, predicting how tumbling frequency changes as it climbs toward a food source."
 excerpt: "Model how E. coli moves up an attractant gradient by sensing temporal concentration changes and biasing its random walk toward higher concentrations."
 sidebar:
  nav: "chemotaxis"

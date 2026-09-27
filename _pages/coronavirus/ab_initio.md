@@ -45,7 +45,7 @@ Researchers applying local search algorithms have devised a number of ways to av
 
 ## Applying an *ab initio* algorithm to a protein sequence
 
-To run an *ab initio* structure prediction algorithm on a real protein, we will use a software resource called <a href="https://zhanglab.ccmb.med.umich.edu/QUARK/" target="_blank">QUARK</a>, which is built upon the ideas discussed in the previous section, with some added features. For example, QUARK's algorithm applies a combination of *multiple* scoring functions to look for the lowest energy conformation across all of these functions.
+To run an *ab initio* structure prediction algorithm on a real protein, we will use a software resource called <a href="https://zhanggroup.org/QUARK/" target="_blank">QUARK</a>, which is built upon the ideas discussed in the previous section, with some added features. For example, QUARK's algorithm applies a combination of *multiple* scoring functions to look for the lowest energy conformation across all of these functions.
 
 Levinthal's paradox means that the search space of all possible structures for a protein is so large that accurately predicting large protein structures with *ab initio* modeling remains very difficult. As such, QUARK limits us to proteins with at most 200 amino acids, and so we will run it only on human hemoglobin subunit alpha.
 

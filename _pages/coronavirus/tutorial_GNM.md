@@ -14,12 +14,12 @@ image: "../assets/images/SARS_spike_proteins.jpg"
 
 In this tutorial, we will be performing GNM calculations on one of the chains in the SARS-CoV-2 spike protein (<a href="http://www.rcsb.org/structure/6VXX" target="_blank">6vxx</a>) and then visualizing the results using the plots that we discussed in the [main text](gnm#an-introduction-to-gaussian-network-models).
 
-We will be using <a href="http://prody.csb.pitt.edu/" target="_blank">ProDy</a>, an open-source Python package that allows users to perform protein structural dynamics analysis. Its flexibility allows users to select specific parts or atoms of the structure for conducting normal mode analysis and structure comparison.
+We will be using <a href="https://www.bahargroup.org/prody/" target="_blank">ProDy</a>, an open-source Python package that allows users to perform protein structural dynamics analysis. Its flexibility allows users to select specific parts or atoms of the structure for conducting normal mode analysis and structure comparison.
 
 First, please install the following software:
 
 * <a href="https://www.python.org/downloads/" target="_blank">Python</a> (2.7, 3.5, or later)
-* <a href="http://prody.csb.pitt.edu/downloads/" target="_blank">ProDy</a>
+* <a href="https://www.bahargroup.org/prody/downloads/" target="_blank">ProDy</a>
 * <a href="https://numpy.org/install/" target="_blank">NumPy</a>
 * <a href="https://biopython.org/" target="_blank">Biopython</a>
 * <a href="https://ipython.org/" target="_blank">IPython</a>

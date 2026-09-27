@@ -1,7 +1,7 @@
 ---
 permalink: /chemotaxis/gillespie
 title: "Stochastic Simulation of Chemical Reactions"
-description: "A primer on Gillespieâ€™s algorithm for simulating small-scale chemical reactions, with E. coli chemotaxis as a guiding example."
+description: "A primer on Gillespie's algorithm for simulating small-scale chemical reactions, with E. coli chemotaxis as a guiding example."
 excerpt: "Understand the Gillespie algorithm for stochastic simulation of chemical reactions, applied to modeling molecular noise in bacterial chemotaxis."
 sidebar:
  nav: "chemotaxis"

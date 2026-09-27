@@ -1,4 +1,5 @@
 ---
+sitemap: false
 permalink: /chemotaxis/solutions
 title: "Solutions"
 description: "Step-by-step solutions to exercises in the E. coli chemotaxis module, covering receptor adaptation, CheY phosphorylation, and BioNetGen simulations."

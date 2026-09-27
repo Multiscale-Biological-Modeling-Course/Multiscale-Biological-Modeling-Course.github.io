@@ -68,7 +68,7 @@ A grid showing an update to the central nine squares of the diffusion system in 
 **STOP**: What should the values of the "?" cells be in the above figure?
 {: .notice--primary}
 
-The coarse-grained model of particle diffusion that we have built is a variant of a **cellular automaton**, or a grid of cells in which we use fixed rules to update the status of a cell based on its current status and those of its neighbors. Cellular automata form a rich area of research applied to a wide variety of fields dating back to the middle of the 20th Century; if you are interested in learning more about them from the perspective of programming, then you might like to check out the <a href="http://compeau.cbd.cmu.edu/programming-for-lovers/chapter-3-building-a-self-replicating-cellular-automaton-with-top-down-programming/" target="_blank">Programming for Lovers</a> project.
+The coarse-grained model of particle diffusion that we have built is a variant of a **cellular automaton**, or a grid of cells in which we use fixed rules to update the status of a cell based on its current status and those of its neighbors. Cellular automata form a rich area of research applied to a wide variety of fields dating back to the middle of the 20th Century; if you are interested in learning more about them from the perspective of programming, then you might like to check out the <a href="https://programmingforlovers.com/chapter-3-building-a-self-replicating-cellular-automaton-with-top-down-programming/" target="_blank">Programming for Lovers</a> project.
 
 ## Slowing down the diffusion rate
 

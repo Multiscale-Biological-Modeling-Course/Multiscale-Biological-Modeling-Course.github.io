@@ -37,7 +37,7 @@ The best known classification algorithms for WBC image analysis[^Habibzadeh_2018
 **Neurons** are cells in the nervous system that are electrically charged and that use this charge as a method of communication to other cells. As you are reading this text, huge numbers of neurons are firing in your brain as it processes the visual information that it receives. The basic structure of a neuron is shown in the figure below.
 
 <figure>
-	<a href="../assets/images/components_of_neuron.png"><img src="../assets/images/600px/components_of_neuron.png"></a>
+	<a href="../assets/images/components_of_neuron.png"><img src="../assets/images/600px/components_of_neuron.png" alt="Diagram of a neuron showing dendrites, cell body, axon, and axon terminals."></a>
 	<figcaption>The components of a neuron. Electrical signals are passed down axons and exchanged at terminal boundaries between neurons. Image courtesy: Jennifer Walinga.</figcaption>
 </figure>
 
@@ -46,7 +46,7 @@ In 1943, Warren McCulloch (a neuroscientist) and Walter Pitts (a logician) devis
 The McCulloch-Pitts neuron with *n* equal to 2 and *b* equal to 2 is shown in the figure below. The only way that this neuron will fire is if both inputs *x*<sub>1</sub> and *x*<sub>2</sub> are equal to 1.
 
 <figure>
-	<a href="../assets/images/MP_neuron.png"><img src="../assets/images/600px/MP_neuron.png"></a>
+	<a href="../assets/images/MP_neuron.png"><img src="../assets/images/600px/MP_neuron.png" alt="A McCulloch-Pitts neuron with two binary inputs and threshold 2."></a>
 	<figcaption>A McCullough-Pitts neuron with <em>n</em> equal to 2 and *b* equal to 2. The neuron fires when <em>x</em><sub>1</sub> + <em>x</em><sub>2</sub> is at least equal to *b*, which occurs precisely when both input variables are equal to 1; if either input variable is equal to 0, then <em>x</em><sub>1</sub> + <em>x</em><sub>2</sub> will be less than *b* and the neuron will not fire (i.e., it will output 0).</figcaption>
 </figure>
 
@@ -61,21 +61,21 @@ In 1958, Frank Rosenblatt generalized the McCulloch-Pitts neuron into a **percep
 For example, consider the perceptron shown in the figure below; we assign the weight *w*<sub><em>i</em></sub> to the edge connecting input variable *x*<sub><em>i</em></sub> to the neuron.
 
 <figure>
-	<a href="../assets/images/perceptron.png"><img src="../assets/images/600px/perceptron.png"></a>
+	<a href="../assets/images/perceptron.png"><img src="../assets/images/600px/perceptron.png" alt="A perceptron with two weighted inputs and a threshold."></a>
 	<figcaption>A perceptron with two input variables. The perceptron includes a constant threshold and constant weights <em>w</em><sub>1</sub> and <em>w</em><sub>2</sub>. The perceptron outputs 1 when the weighted sum <em>w</em><sub>1</sub> · <em>x</em><sub>1</sub> + <em>w</em><sub>2</sub> · <em>x</em><sub>2</sub> is greater than or equal to *b*, and it outputs 0 otherwise.</figcaption>
 </figure>
 
 The modern concept of an artificial neuron, as shown in the figure below, generalizes the perceptron further in two ways. First, the input variables *x*<sub><em>i</em></sub> can have arbitrary decimal values (often, these inputs are constrained to be between 0 and 1). Second, rather than the neuron rigidly outputting 1 when *w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub> is greater than or equal to *b*, we subtract *b* from the weighted sum and pass the resulting value into a function *f* called an **activation function**; that is, the neuron outputs *f*(*w*<sub>1</sub> · *x*<sub>1</sub> + *w*<sub>2</sub> · *x*<sub>2</sub> + … + *w*<sub><em>n</em></sub> · *w*<sub><em>n</em></sub>). In this form of the neuron, *b* is called the **bias** of the neuron.
 
 <figure>
-	<a href="../assets/images/activation_function.png"><img src="../assets/images/600px/activation_function.png"></a>
+	<a href="../assets/images/activation_function.png"><img src="../assets/images/600px/activation_function.png" alt="An artificial neuron with two weighted inputs, a bias, and an activation function."></a>
 	<figcaption>A general form of an artificial neuron for two input variables <em>x</em><sub>1</sub> and <em>x</em><sub>2</sub>, two constant weights <em>w</em><sub>1</sub> and <em>w</em><sub>2</sub>, a constant bias *b*, and an activation function <em>f</em>. The output of the neuron, rather than being strictly 0 or 1, is <em>f</em>(<em>w</em><sub>1</sub> · <em>x</em><sub>1</sub> + <em>w</em><sub>2</sub> · <em>x</em><sub>2</sub> - *b*).</figcaption>
 </figure>
 
 A commonly used activation function is the **logistic function**, *f*(*x*) = 1/(1 + *e*<sup>-<em>x</em></sup>), shown in the figure below. Note that the output of this function ranges between 0 (when its input is very negative) and 1 (when its input is very positive).
 
 <figure>
-	<a href="../assets/images/logistic_function.png"><img src="../assets/images/600px/logistic_function.png"></a>
+	<a href="../assets/images/logistic_function.png"><img src="../assets/images/600px/logistic_function.png" alt="Plot of the logistic function, an S-shaped curve rising from 0 to 1."></a>
 	<figcaption>A plot of the logistic function <em>f</em>(<em>x</em>) = 1/(1 + <em>e</em><sup>-<em>x</em></sup>), an increasing function whose values range between 0 and 1.</figcaption>
 </figure>
 
@@ -87,7 +87,7 @@ A commonly used activation function is the **logistic function**, *f*(*x*) = 1/(
 The outputs of mathematical functions can be used as inputs to other functions via function composition. For example, if *f*(*x*) = 2*x*-1, *g*(*x*) = *e*<sup>*x*</sup>, and *h*(*x*) = cos(*x*), then *h*(*g*(*f*(*x*))) = cos(*e*<sup>2*x*-1</sup>). Similarly, we can use artificial neurons as building blocks by linking them together, with the outputs of some neurons serving as inputs to other neurons. Linking neurons in this way produces a **neural network** such as the one shown in the figure below, which we will take time to explain.
 
 <figure>
-	<a href="../assets/images/600px/neural_network_wbc.png"><img src="../assets/images/neural_network_wbc.png"></a>
+	<a href="../assets/images/neural_network_wbc.png"><img src="../assets/images/600px/neural_network_wbc.png" alt="A neural network with an input layer of white blood cell features, hidden layers, and an output layer of cell classes."></a>
 	<figcaption>An illustration of a potential neural network used for WBC image classification. This network assumes that each WBC is represented by *n* features, which serve as the input variables for the network. A number of hidden layers of additional neurons may be used, with connections between some of the neurons in adjacent layers. A final output layer of three neurons corresponds to each of the three WBC classes; our hope is that the weights of the neurons in the network are chosen so that the appropriate neuron outputs a value close to 1 corresponding to an image’s class, and that the other two neurons output values close to 0.</figcaption>
 </figure>
 
@@ -149,4 +149,15 @@ Despite these potential concerns with neural networks, they are starting to show
 If you are reading this, and you've made it through our entire course, **thank you** for joining us on this journey! We are grateful that you gave your time to us, and we wish you the best on your educational journey. Please don't hesitate to [contact us](../contact) if you have any questions, feedback, or would like to leave us a testimonial; we would love to hear from you.
 
 [Visit exercises](exercises){: .btn .btn--success .btn--large}
+{: style="font-size: 100%; text-align: center;"}
+
+## Where to go next
+
+If you enjoyed modeling biology with code, here are a few free places to keep going.
+
+* **[Bioinformatics Algorithms](https://bioinformaticsalgorithms.org)**: our textbook and course on the algorithms behind genome analysis, from sequencing to evolution.
+* **[Programming for Lovers](https://programmingforlovers.com)**: learn to program in Python or Go through scientific projects, from election forecasting to self-replicating automata.
+* **[Philomath](https://www.philomathlearning.com)**: live courses and streams on computing, biology, and AI.
+
+[Get updates on new courses](https://eepurl.com/iC9DSg){: .btn .btn--primary .btn--large}
 {: style="font-size: 100%; text-align: center;"}

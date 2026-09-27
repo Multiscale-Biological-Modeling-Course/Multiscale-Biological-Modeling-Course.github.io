@@ -539,7 +539,7 @@ aside.sidebar__right.sticky {
 <div class="gloss-entry" id="molecular-dynamics-md">
   <p class="gloss-entry__term">Molecular dynamics (MD)</p>
   <p class="gloss-entry__def">A simulation technique that models the movement of all atoms in a protein (and surrounding solvent) over time, using force fields to compute inter-atomic forces at each time step. MD can reveal how protein structure changes during biological function, but is computationally intensive.</p>
-  <a class="gloss-entry__link" href="/coronavirus/structural_diff">Module 3: Structural Differences →</a>
+  <a class="gloss-entry__link" href="/coronavirus/structural_differences">Module 3: Structural Differences →</a>
 </div>
 
 <div class="gloss-entry" id="monocyte">

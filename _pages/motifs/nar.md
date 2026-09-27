@@ -1,7 +1,7 @@
 ---
 permalink: /motifs/nar
 title: "The Negative Autoregulation Motif"
-description: "Dive into negative-autoregulation motifsâ€”mechanisms, mathematical models, and experiments showing faster, stabler gene control."
+description: "Dive into negative-autoregulation motifs: mechanisms, mathematical models, and experiments showing faster, stabler gene control."
 excerpt: "Explore the negative autoregulation (NAR) motif: how self-repressing transcription factors achieve faster response times and reduced expression noise."
 sidebar:
  nav: "motifs"

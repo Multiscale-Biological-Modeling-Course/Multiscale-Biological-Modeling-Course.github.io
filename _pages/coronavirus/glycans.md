@@ -1,4 +1,5 @@
 ---
+sitemap: false
 permalink: /coronavirus/glycans
 title: "Glycans"
 description: "Explore how complex glycans shield coronavirus spike proteins, influence immune evasion, and inform next-gen vaccine design."

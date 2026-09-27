@@ -26,7 +26,7 @@ Collective motions of the slowest mode in human hemoglobin from ANM calculations
 
 After we produce an animation like the one in the figure above, we also should attempt to explain it biologically. Human hemoglobin exists in two states: the tense state (T), in which it is not bound to an oxygen molecule, and the relaxed state (R), in which it is oxygenated. Hemoglobin's mobility shown in the above animation corresponds to its ability to transition between these two states, in which salt-bridges and contacts can shift by up to seven angstroms[^Davis]. This significant molecular flexibility exemplifies why we need to study protein dynamics as well as structure.
 
-We will now apply ANM to the SARS-CoV and SARS-CoV-2 spike proteins. We will also use <a href="http://prody.csb.pitt.edu/nmwiz/" target="_blank">NMWiz</a>, which is short for "normal mode wizard", to perform ANM calculations and create an animation of the SARS-CoV-2 (chimeric) RBD and the SARS-CoV RBD.
+We will now apply ANM to the SARS-CoV and SARS-CoV-2 spike proteins. We will also use <a href="https://www.bahargroup.org/prody/nmwiz/" target="_blank">NMWiz</a>, which is short for "normal mode wizard", to perform ANM calculations and create an animation of the SARS-CoV-2 (chimeric) RBD and the SARS-CoV RBD.
 
 [Visit tutorial](tutorial_ANM){: .btn .btn--warning .btn--large}
 {: style="font-size: 100%; text-align: center;"}

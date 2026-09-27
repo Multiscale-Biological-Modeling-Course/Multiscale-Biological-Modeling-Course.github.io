@@ -3,6 +3,7 @@ title: "Biological Modeling"
 layout: splash
 description: "Power up your computational and machine learning skills with our free course on modeling biological systems."
 excerpt: "Explore biological systems at multiple scales with our free computational biology course."
+image: /assets/images/share_card.jpg
 
 header:
   overlay_color: "#000"
@@ -119,7 +120,7 @@ header:
         <input type="text" name="b_d6c5cf945b9f30b956d8979c0_1b53ec2579" tabindex="-1" value="">
       </div>
       <div class="stay-connected__fields">
-        <input type="email" name="EMAIL" placeholder="Your email address" required class="stay-connected__input">
+        <input type="email" name="EMAIL" placeholder="Your email address" aria-label="Your email address" autocomplete="email" required class="stay-connected__input">
         <button type="submit" class="stay-connected__btn stay-connected__btn--primary">Subscribe</button>
       </div>
     </form>
